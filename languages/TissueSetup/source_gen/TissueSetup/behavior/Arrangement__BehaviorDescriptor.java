@@ -26,8 +26,9 @@ public final class Arrangement__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> get_total_radius_id4DdJmqSFaMT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_total_radius").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaMT").build();
   public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaOR").build();
   public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaRd").build();
+  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id4DdJmqSF9YK, get_length_in_cells_id4DdJmqSFaKv, get_total_radius_id4DdJmqSFaMT, get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id4DdJmqSF9YK, get_length_in_cells_id4DdJmqSFaKv, get_total_radius_id4DdJmqSFaMT, get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd, get_total_cell_number_id4XZPqyVOpH$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -46,6 +47,9 @@ public final class Arrangement__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static String get_width_in_cells_id4DdJmqSFaRd(@NotNull SNode __thisNode__) {
     return "-1";
+  }
+  /*package*/ static int get_total_cell_number_id4XZPqyVOpH$(@NotNull SNode __thisNode__) {
+    return -1;
   }
 
   /*package*/ Arrangement__BehaviorDescriptor() {
@@ -73,6 +77,8 @@ public final class Arrangement__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((String) get_height_in_cells_id4DdJmqSFaOR(node));
       case 4:
         return (T) ((String) get_width_in_cells_id4DdJmqSFaRd(node));
+      case 5:
+        return (T) ((Integer) get_total_cell_number_id4XZPqyVOpH$(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
