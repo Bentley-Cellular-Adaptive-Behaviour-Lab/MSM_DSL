@@ -25,22 +25,23 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
 
-  public static final SMethod<Integer> count_cell_number_id4XZPqyVOe45 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("count_cell_number").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
+  public static final SMethod<String> count_cell_number_id4XZPqyVOe45 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("count_cell_number").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Integer count_cell_number_id4XZPqyVOe45(@NotNull SNode __thisNode__) {
+  /*package*/ static String count_cell_number_id4XZPqyVOe45(@NotNull SNode __thisNode__) {
     int count = 0;
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
       count += 1;
     }
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tissues$psuU))) {
-      SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk);
+      count += (int) Arrangement__BehaviorDescriptor.get_total_cell_number_id4XZPqyVOpH$.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk));
     }
-    return count;
+    String number = String.valueOf(count);
+    return number;
   }
 
   /*package*/ Tissue_And_Cell_Container__BehaviorDescriptor() {
@@ -59,7 +60,7 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Integer) count_cell_number_id4XZPqyVOe45(node));
+        return (T) ((String) count_cell_number_id4XZPqyVOe45(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

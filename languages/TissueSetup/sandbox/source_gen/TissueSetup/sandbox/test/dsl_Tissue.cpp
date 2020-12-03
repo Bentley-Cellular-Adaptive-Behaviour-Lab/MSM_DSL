@@ -1,6 +1,8 @@
 
 #include "Tissue.h"
 void Tissue_Container::tissue_set_up() {
+    this->set_total_cell_number(311);
+
     // Cell Type Declarations //
     Cell_Type *Endothelial_Type;
 
@@ -8,15 +10,18 @@ void Tissue_Container::tissue_set_up() {
     Tissue_Type_Cylindrical *Vessel_Type;
 
     // Coordinate Declarations //
-    Coordinates Blood_Vessel_Pos;
+    Coordinates Endothelial_1_Pos;
+    Coordinates Vessel-1_Pos;
 
     // Cell Type Creation //
-    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 0, 0);
+    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
 
     // Tissue Type Creation //
-    Vessel_Type = define_tissue_type("Vessel", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 2, 20, 6);
+    Vessel_Type = define_tissue_type("Vessel", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 31, 10, 100);
 
+    Endothelial_1_Pos = Coordinates(25, 25, 25);
+    create_cell("Endothelial_1", Endothelial_Type, &(Endothelial_1_Pos));
 
-    Blood_Vessel_Pos = Coordinates(10, 10, 10);
-    create_tissue("Blood_Vessel", Vessel_Type, &(Blood_Vessel_Pos));
+    Vessel-1_Pos = Coordinates(100, 100, 100);
+    create_tissue("Vessel-1", Vessel_Type, &(Vessel-1_Pos));
 }
