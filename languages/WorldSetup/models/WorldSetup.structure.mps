@@ -8,6 +8,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
   </imports>
   <registry>
@@ -100,6 +101,11 @@
       <property role="TrG5h" value="Z_Size" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="5Ft8ZPDvlNR" role="1TKVEl">
+      <property role="IQ2nx" value="6547429004570090743" />
+      <property role="TrG5h" value="adhesiveness" />
+      <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7faAukhALBB">
     <property role="EcuMT" value="8343650468779203047" />
@@ -146,8 +152,8 @@
     </node>
     <node concept="1TJgyi" id="7faAukhALWw" role="1TKVEl">
       <property role="IQ2nx" value="8343650468779204384" />
-      <property role="TrG5h" value="permissive" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <property role="TrG5h" value="adhesiveness" />
+      <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
     </node>
     <node concept="1TJgyi" id="2OHr9yL8TsD" role="1TKVEl">
       <property role="IQ2nx" value="3255377508721465129" />

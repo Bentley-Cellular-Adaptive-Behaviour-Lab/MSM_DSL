@@ -569,7 +569,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2OHr9yL5L7x" role="356sEH">
-            <property role="TrG5h" value=")" />
+            <property role="TrG5h" value=");" />
           </node>
           <node concept="2EixSi" id="2OHr9yL5L3U" role="2EinRH" />
           <node concept="1WS0z7" id="2OHr9yL64B1" role="lGtFl">
@@ -674,7 +674,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2OHr9yL5L88" role="356sEH">
-            <property role="TrG5h" value=")" />
+            <property role="TrG5h" value=");" />
           </node>
           <node concept="2EixSi" id="2OHr9yL5L5Z" role="2EinRH" />
           <node concept="1WS0z7" id="2OHr9yL64HD" role="lGtFl">
@@ -694,7 +694,7 @@
         </node>
         <node concept="356sEK" id="cUvw_H2BvB" role="383Ya9">
           <node concept="356sEF" id="cUvw_H2BvC" role="356sEH">
-            <property role="TrG5h" value="gradient = create_gradient(" />
+            <property role="TrG5h" value="create_gradient(" />
           </node>
           <node concept="356sEF" id="2OHr9yL5L8h" role="356sEH">
             <property role="TrG5h" value="GRADIENT_TYPE" />
@@ -986,51 +986,6 @@
                       <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
                     </node>
                     <node concept="30H73N" id="2OHr9yL64Oq" role="2Oq$k0" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEK" id="2OHr9yL5Lfg" role="383Ya9">
-          <node concept="2EixSi" id="2OHr9yL5Lfi" role="2EinRH" />
-        </node>
-        <node concept="356sEK" id="cUvw_H2BvR" role="383Ya9">
-          <node concept="356sEF" id="cUvw_H2BvS" role="356sEH">
-            <property role="TrG5h" value="add_gradient_to_world(" />
-          </node>
-          <node concept="356sEF" id="2OHr9yL5Lg_" role="356sEH">
-            <property role="TrG5h" value="GRADIENT_NAME" />
-            <node concept="17Uvod" id="2OHr9yL78Hq" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="2OHr9yL78Ht" role="3zH0cK">
-                <node concept="3clFbS" id="2OHr9yL78Hu" role="2VODD2">
-                  <node concept="3clFbF" id="2OHr9yL78H$" role="3cqZAp">
-                    <node concept="2OqwBi" id="2OHr9yL78Hv" role="3clFbG">
-                      <node concept="3TrcHB" id="2OHr9yL78Hy" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                      </node>
-                      <node concept="30H73N" id="2OHr9yL78Hz" role="2Oq$k0" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="356sEF" id="2OHr9yL5LgC" role="356sEH">
-            <property role="TrG5h" value=", world);" />
-          </node>
-          <node concept="2EixSi" id="cUvw_H2BvU" role="2EinRH" />
-          <node concept="1WS0z7" id="2OHr9yL78jx" role="lGtFl">
-            <node concept="3JmXsc" id="2OHr9yL78j$" role="3Jn$fo">
-              <node concept="3clFbS" id="2OHr9yL78j_" role="2VODD2">
-                <node concept="3clFbF" id="2OHr9yL78jF" role="3cqZAp">
-                  <node concept="2OqwBi" id="2OHr9yL78jA" role="3clFbG">
-                    <node concept="3Tsc0h" id="2OHr9yL78jD" role="2OqNvi">
-                      <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
-                    </node>
-                    <node concept="30H73N" id="2OHr9yL78jE" role="2Oq$k0" />
                   </node>
                 </node>
               </node>
