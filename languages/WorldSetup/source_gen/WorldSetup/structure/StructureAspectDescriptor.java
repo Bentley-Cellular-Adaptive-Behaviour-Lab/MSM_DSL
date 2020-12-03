@@ -93,6 +93,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("X_Size", 0x73ca99e5119b1d41L).type(PrimitiveTypeId.INTEGER).origin("8343650468779203905").done();
     b.property("Y_Size", 0x73ca99e5119b1d43L).type(PrimitiveTypeId.INTEGER).origin("8343650468779203907").done();
     b.property("Z_Size", 0x73ca99e5119b1d46L).type(PrimitiveTypeId.INTEGER).origin("8343650468779203910").done();
+    b.property("adhesiveness", 0x5add23fd697d5cf7L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("6547429004570090743").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSink() {
@@ -118,7 +119,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203058");
     b.version(2);
-    b.property("permissive", 0x73ca99e5119b1f20L).type(PrimitiveTypeId.BOOLEAN).origin("8343650468779204384").done();
+    b.property("adhesiveness", 0x73ca99e5119b1f20L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("8343650468779204384").done();
     b.property("shape", 0x2d2d6c98b1239729L).type(MetaIdFactory.dataTypeId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2d2d6c98b1239724L)).origin("3255377508721465129").done();
     b.aggregate("Centre_Position", 0x73ca99e5119b1f1aL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("8343650468779204378").done();
     return b.create();
