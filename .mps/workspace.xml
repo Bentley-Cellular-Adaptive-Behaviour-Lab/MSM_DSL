@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ConsoleHistory">
+    <option name="tabs">
+      <list>
+        <TabState>
+          <option name="title" value="Console" />
+          <tab>
+            <model ref="aae5bcdc-5cfd-42e9-9d86-a8739a2a14b2/r:ffb966a8-f530-48ab-a8e3-83ec072514cf(TempModuleaae5bcdc-5cfd-42e9-9d86-a8739a2a14b2/ConsoleModel_521941911262500)">
+              <persistence version="9" />
+              <languages>
+                <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
+              </languages>
+              <imports />
+              <registry>
+                <language id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base">
+                  <concept id="1583916890557930028" name="jetbrains.mps.console.base.structure.ConsoleRoot" flags="ng" index="aymSD">
+                    <child id="1583916890557930415" name="history" index="aymYE" />
+                    <child id="1583916890557930417" name="commandHolder" index="aymYO" />
+                    <child id="9025248442620242919" name="cursor" index="1PhJh3" />
+                  </concept>
+                  <concept id="5758176878586720817" name="jetbrains.mps.console.base.structure.CommandHolderRef" flags="ng" index="2_V_lH">
+                    <reference id="5758176878586720818" name="target" index="2_V_lI" />
+                  </concept>
+                  <concept id="351968380916615243" name="jetbrains.mps.console.base.structure.CommandHolder" flags="ng" index="2Clz$F" />
+                  <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
+                </language>
+              </registry>
+              <node concept="aymSD" id="ENV9maHe0N">
+                <node concept="3balQm" id="ENV9maHe0O" role="aymYE" />
+                <node concept="2Clz$F" id="ENV9maHe0P" role="aymYO" />
+                <node concept="2_V_lH" id="ENV9maHe0Q" role="1PhJh3">
+                  <ref role="2_V_lI" node="ENV9maHe0P" resolve="CommandHolder" />
+                </node>
+              </node>
+            </model>
+          </tab>
+        </TabState>
+      </list>
+    </option>
+  </component>
+  <component name="DefaultSearchOptions3">
+    <search_options>
+      <finders>
+        <finders />
+      </finders>
+      <scope>
+        <scope_type scope_type="PROJECT" module="&lt;default&gt;" model="&lt;default&gt;" />
+      </scope>
+      <view>
+        <flags show_one_result="true" new_tab="false" />
+      </view>
+    </search_options>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MPSBookmarkManager">
+    <option name="myBookmarkInfos">
+      <array>
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+        <BookmarkInfo />
+      </array>
+    </option>
+  </component>
+  <component name="MessagesViewTool">
+    <option name="defaultListState">
+      <MessageListState>
+        <option name="autoscrollToSource" value="true" />
+        <option name="info" value="true" />
+        <option name="warnings" value="true" />
+      </MessageListState>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ivANj2HHILYXfff5tfOnFk0EJW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectPluginManager">
+    <option name="pluginsState">
+      <option name="de.itemis.mps.editor.celllayout.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.itemis.mps.selection.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.explorer.plugin.Explorer_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.shadowmodels.modelcheck.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="de.q60.mps.shadowmodels.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.editor.contextActionsTool.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Plugin_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.execution.configurations.pluginSolution.plugin.PluginSolution_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.actions.Ide_ProjectPlugin">
+        <value>
+          <PluginState>
+            <option name="myComponentsState">
+              <list>
+                <ComponentState>
+                  <option name="first" value="jetbrains.mps.ide.actions.BehaviorDialogsPersistentOptions_PreferencesComponent" />
+                  <params>
+                    <option name="addReturnsOnImplement" value="false" />
+                    <option name="sortAlphabetically" value="false" />
+                    <option name="removeAttributes" value="true" />
+                  </params>
+                </ComponentState>
+              </list>
+            </option>
+          </PluginState>
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.ide.make.actions.Make_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.lang.editor.tooltips.runtime.plugin.Runtime_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+      <option name="jetbrains.mps.vcs.mergehints.plugin.plugin.Plugin_ProjectPlugin">
+        <value>
+          <PluginState />
+        </value>
+      </option>
+    </option>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TissueSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7d9e4e5a-cc97-4826-9ff6-e37130e85d83" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:3be82b14-2598-4acf-850a-f448cd03db04(WorldSetup.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/sandbox/models/WorldSetup.test.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:f703c8f0-c0ab-4c95-8486-e957439d1b20(WorldSetup.editor) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7d9e4e5a-cc97-4826-9ff6-e37130e85d83" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7d9e4e5a-cc97-4826-9ff6-e37130e85d83" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="8343650468779203047" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TissueSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4cdc970e-22e3-415d-aa5a-0d0bc99812ac(TissueSetup.sandbox.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/sandbox/models/TissueSetup.sandbox.test.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <SELECTED>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="232636909712209638" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </SELECTED>
+        </subPane>
+      </pane>
+      <pane id="FileSystem" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/languages/WorldSetup/sandbox/WorldSetup.sandbox.msd" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tests in 'WorldSetup.structure'" type="JUnit Tests" factoryName="JUnit Tests" temporary="true">
+      <myJUnitSettings>
+        <MyState>
+          <option name="myModelRef" value="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" />
+          <option name="myModuleRef" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+          <option name="myInProcess" value="false" />
+          <option name="myReuseCaches" value="true" />
+          <option name="myOverrideCachesLocation" value="false" />
+          <option name="myDebug" value="false" />
+          <option name="myCachesPath" value="C:\Users\Tom\AppData\Roaming\JetBrains\MPSJUnitRC0" />
+          <option name="myTestCases">
+            <list />
+          </option>
+          <option name="myTestMethods">
+            <list />
+          </option>
+          <option name="myRunType" value="2" />
+        </MyState>
+      </myJUnitSettings>
+      <myJavaRunParameters>
+        <MyState>
+          <option name="myJavaParameters">
+            <JavaRunParameters>
+              <option name="jrePath" />
+              <option name="programParameters" />
+              <option name="useAlternativeJre" value="false" />
+              <option name="vmOptions" value="-ea" />
+              <option name="workingDirectory" value="C:\Windows\system32" />
+            </JavaRunParameters>
+          </option>
+        </MyState>
+      </myJavaRunParameters>
+      <myDeploySettings>
+        <MyState>
+          <option name="myPluginsToDeploy">
+            <list />
+          </option>
+        </MyState>
+      </myDeploySettings>
+      <method v="2">
+        <option name="jetbrains.mps.execution.configurations.pluginSolution.plugin.MakeNodePointers_BeforeTask" enabled="true" />
+        <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AssemblePluginsBeforeTask_BeforeTask" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit Tests.Tests in 'WorldSetup.structure'" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Tom\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="" />
+      <created>1602777653679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602777653679</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Initial version of tissue set up language. Added name checking rules to cells, tissues, and corresponding types.">
+      <created>1604510699712</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604510699712</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added new behaviours for cell counting to arrangements. Tissue container can now count all cells, whether they are in a tissue or not.">
+      <created>1604579446660</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604579446660</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Complete tissue language. World setup is work-in-progress.">
+      <created>1606990760894</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1606990760894</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="UsagesViewTool">
+    <version id="1" />
+    <tabs />
+    <default_view_options>
+      <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+    </default_view_options>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial version of tissue set up language. Added name checking rules to cells, tissues, and corresponding types." />
+    <MESSAGE value="Added new behaviours for cell counting to arrangements. Tissue container can now count all cells, whether they are in a tissue or not." />
+    <MESSAGE value="Complete tissue language. World setup is work-in-progress." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complete tissue language. World setup is work-in-progress." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="294" y="413" key="#MPSPropertiesConfigurable" timestamp="1606748237544">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="294" y="413" key="#MPSPropertiesConfigurable/0.0.2560.1400@0.0.2560.1400" timestamp="1606748237544" />
+    <state x="509" y="372" key="#Plugins" timestamp="1603463245724">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="509" y="372" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1603463245724" />
+    <state x="472" y="467" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard" timestamp="1606749620403">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="472" y="467" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard/0.0.2560.1400@0.0.2560.1400" timestamp="1606749620403" />
+    <state x="1085" y="406" key="#jetbrains.mps.ide.util.NodesChooser" timestamp="1603977297184">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1085" y="406" key="#jetbrains.mps.ide.util.NodesChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1603977297184" />
+    <state x="980" y="600" width="600" height="200" key="#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog" timestamp="1603968405502">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="980" y="600" width="600" height="200" key="#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1603968405502" />
+    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1606990760279">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1606990760279" />
+    <state x="428" y="458" key="FileChooserDialogImpl" timestamp="1606747821072">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="428" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1606747821072" />
+    <state x="904" y="582" width="700" height="204" key="Github.ShareDialog" timestamp="1606989501974">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="904" y="582" width="700" height="204" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606989501974" />
+    <state x="149" y="345" key="SettingsEditor" timestamp="1603968942657">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="149" y="345" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1603968942657" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1604510498196">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1604510498196" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1606990766665">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1606990766665" />
+    <state x="1081" y="606" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1606989487003">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1081" y="606" key="git4idea.remote.GitConfigureRemotesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606989487003" />
+    <state x="741" y="463" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog" timestamp="1606748236102">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="741" y="463" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606748236102" />
+    <state x="706" y="557" width="1240" height="282" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" timestamp="1606748154350">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="706" y="557" width="1240" height="282" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606748154350" />
+  </component>
+</project>

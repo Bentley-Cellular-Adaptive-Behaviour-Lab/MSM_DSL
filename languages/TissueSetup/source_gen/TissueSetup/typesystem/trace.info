@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,28,0" name="TissueSetup.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/325017853399707816">
+    <file name="TypesystemDescriptor.java">
+      <node id="325017853399707816" at="14,5,15,98" concept="5" />
+      <node id="325017853399707816" at="15,98,16,55" concept="2" />
+      <node id="325017853399707816" at="13,5,17,5" concept="0" />
+      <scope id="325017853399707816" at="14,5,16,55">
+        <var name="nonTypesystemRule" id="325017853399707816" />
+      </scope>
+    </file>
+    <file name="duplicateCellTypeName_NonTypesystemRule.java">
+      <node id="325017853400072116" at="30,39,31,177" concept="6" />
+      <node id="325017853400082937" at="34,7,35,66" concept="5" />
+      <node id="325017853400082937" at="35,66,36,290" concept="5" />
+      <node id="325017853399707816" at="40,50,41,33" concept="6" />
+      <node id="325017853399707816" at="43,68,44,102" concept="6" />
+      <node id="325017853399707816" at="46,30,47,17" concept="6" />
+      <node id="325017853399707816" at="51,0,52,0" concept="7" trace="Tissue_And_Cell_Container$ni" />
+      <node id="325017853399707816" at="52,0,53,0" concept="7" trace="Cell_Type$$n" />
+      <node id="325017853399707816" at="56,0,57,0" concept="7" trace="cell_types$$$44" />
+      <node id="325017853399707816" at="60,0,61,0" concept="7" trace="name$MnvL" />
+      <node id="325017853399707816" at="26,0,28,0" concept="1" trace="duplicateCellTypeName_NonTypesystemRule#()V" />
+      <node id="325017853400071884" at="30,0,33,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="325017853399707816" at="40,0,43,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="325017853399707816" at="43,0,46,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="325017853399707816" at="46,0,49,0" concept="4" trace="overrides#()Z" />
+      <node id="325017853400082937" at="33,9,37,7" concept="0" />
+      <node id="325017853400051820" at="28,122,38,5" concept="3" />
+      <node id="325017853399707816" at="28,0,40,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="325017853399707816" at="26,52,26,52" />
+      <scope id="325017853400071885" at="30,39,31,177" />
+      <scope id="325017853399707816" at="40,50,41,33" />
+      <scope id="325017853399707816" at="43,68,44,102" />
+      <scope id="325017853399707816" at="46,30,47,17" />
+      <scope id="325017853399707816" at="26,0,28,0" />
+      <scope id="325017853400082937" at="34,7,36,290">
+        <var name="_reporter_2309309498" id="325017853400082937" />
+        <var name="errorTarget" id="325017853400082937" />
+      </scope>
+      <scope id="325017853400071884" at="30,0,33,0">
+        <var name="it" id="325017853400071884" />
+      </scope>
+      <scope id="325017853399707816" at="40,0,43,0" />
+      <scope id="325017853399707816" at="43,0,46,0">
+        <var name="argument" id="325017853399707816" />
+      </scope>
+      <scope id="325017853399707816" at="46,0,49,0" />
+      <scope id="325017853400051822" at="33,9,37,7" />
+      <scope id="325017853399707817" at="28,122,38,5" />
+      <scope id="325017853399707816" at="28,0,40,0">
+        <var name="cell_type" id="325017853399707816" />
+        <var name="status" id="325017853399707816" />
+        <var name="typeCheckingContext" id="325017853399707816" />
+      </scope>
+      <unit id="325017853399707816" at="55,0,58,0" name="TissueSetup.typesystem.duplicateCellTypeName_NonTypesystemRule$LINKS" />
+      <unit id="325017853399707816" at="59,0,62,0" name="TissueSetup.typesystem.duplicateCellTypeName_NonTypesystemRule$PROPS" />
+      <unit id="325017853400071884" at="29,189,33,5" name="TissueSetup.typesystem.duplicateCellTypeName_NonTypesystemRule$1" />
+      <unit id="325017853399707816" at="50,0,54,0" name="TissueSetup.typesystem.duplicateCellTypeName_NonTypesystemRule$CONCEPTS" />
+      <unit id="325017853399707816" at="25,0,63,0" name="TissueSetup.typesystem.duplicateCellTypeName_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/325017853399777185">
+    <file name="TypesystemDescriptor.java">
+      <node id="325017853399777185" at="22,5,23,100" concept="5" />
+      <node id="325017853399777185" at="23,100,24,55" concept="2" />
+      <node id="325017853399777185" at="21,5,25,5" concept="0" />
+      <scope id="325017853399777185" at="22,5,24,55">
+        <var name="nonTypesystemRule" id="325017853399777185" />
+      </scope>
+    </file>
+    <file name="duplicateTissueTypeName_NonTypesystemRule.java">
+      <node id="325017853400223040" at="30,39,31,181" concept="6" />
+      <node id="325017853400237057" at="34,7,35,66" concept="5" />
+      <node id="325017853400237057" at="35,66,36,294" concept="5" />
+      <node id="325017853399777185" at="40,50,41,35" concept="6" />
+      <node id="325017853399777185" at="43,68,44,102" concept="6" />
+      <node id="325017853399777185" at="46,30,47,17" concept="6" />
+      <node id="325017853399777185" at="51,0,52,0" concept="7" trace="Tissue_And_Cell_Container$ni" />
+      <node id="325017853399777185" at="52,0,53,0" concept="7" trace="Tissue_Type$C4" />
+      <node id="325017853399777185" at="56,0,57,0" concept="7" trace="tissue_types$$ucF" />
+      <node id="325017853399777185" at="60,0,61,0" concept="7" trace="name$MnvL" />
+      <node id="325017853399777185" at="26,0,28,0" concept="1" trace="duplicateTissueTypeName_NonTypesystemRule#()V" />
+      <node id="325017853400222808" at="30,0,33,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="325017853399777185" at="40,0,43,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="325017853399777185" at="43,0,46,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="325017853399777185" at="46,0,49,0" concept="4" trace="overrides#()Z" />
+      <node id="325017853400237057" at="33,9,37,7" concept="0" />
+      <node id="325017853400203799" at="28,124,38,5" concept="3" />
+      <node id="325017853399777185" at="28,0,40,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="325017853399777185" at="26,54,26,54" />
+      <scope id="325017853400222809" at="30,39,31,181" />
+      <scope id="325017853399777185" at="40,50,41,35" />
+      <scope id="325017853399777185" at="43,68,44,102" />
+      <scope id="325017853399777185" at="46,30,47,17" />
+      <scope id="325017853399777185" at="26,0,28,0" />
+      <scope id="325017853400237057" at="34,7,36,294">
+        <var name="_reporter_2309309498" id="325017853400237057" />
+        <var name="errorTarget" id="325017853400237057" />
+      </scope>
+      <scope id="325017853400222808" at="30,0,33,0">
+        <var name="it" id="325017853400222808" />
+      </scope>
+      <scope id="325017853399777185" at="40,0,43,0" />
+      <scope id="325017853399777185" at="43,0,46,0">
+        <var name="argument" id="325017853399777185" />
+      </scope>
+      <scope id="325017853399777185" at="46,0,49,0" />
+      <scope id="325017853400203801" at="33,9,37,7" />
+      <scope id="325017853399777186" at="28,124,38,5" />
+      <scope id="325017853399777185" at="28,0,40,0">
+        <var name="status" id="325017853399777185" />
+        <var name="tissue_type" id="325017853399777185" />
+        <var name="typeCheckingContext" id="325017853399777185" />
+      </scope>
+      <unit id="325017853399777185" at="55,0,58,0" name="TissueSetup.typesystem.duplicateTissueTypeName_NonTypesystemRule$LINKS" />
+      <unit id="325017853399777185" at="59,0,62,0" name="TissueSetup.typesystem.duplicateTissueTypeName_NonTypesystemRule$PROPS" />
+      <unit id="325017853400222808" at="29,193,33,5" name="TissueSetup.typesystem.duplicateTissueTypeName_NonTypesystemRule$1" />
+      <unit id="325017853399777185" at="50,0,54,0" name="TissueSetup.typesystem.duplicateTissueTypeName_NonTypesystemRule$CONCEPTS" />
+      <unit id="325017853399777185" at="25,0,63,0" name="TissueSetup.typesystem.duplicateTissueTypeName_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/325017853399806563">
+    <file name="TypesystemDescriptor.java">
+      <node id="325017853399806563" at="18,5,19,96" concept="5" />
+      <node id="325017853399806563" at="19,96,20,55" concept="2" />
+      <node id="325017853399806563" at="17,5,21,5" concept="0" />
+      <scope id="325017853399806563" at="18,5,20,55">
+        <var name="nonTypesystemRule" id="325017853399806563" />
+      </scope>
+    </file>
+    <file name="duplicateTissueName_NonTypesystemRule.java">
+      <node id="325017853400184938" at="30,39,31,171" concept="6" />
+      <node id="325017853400197653" at="34,7,35,66" concept="5" />
+      <node id="325017853400197653" at="35,66,36,284" concept="5" />
+      <node id="325017853399806563" at="40,50,41,30" concept="6" />
+      <node id="325017853399806563" at="43,68,44,102" concept="6" />
+      <node id="325017853399806563" at="46,30,47,17" concept="6" />
+      <node id="325017853399806563" at="51,0,52,0" concept="7" trace="Tissue_And_Cell_Container$ni" />
+      <node id="325017853399806563" at="52,0,53,0" concept="7" trace="Tissue$nL" />
+      <node id="325017853399806563" at="56,0,57,0" concept="7" trace="tissues$psuU" />
+      <node id="325017853399806563" at="60,0,61,0" concept="7" trace="name$MnvL" />
+      <node id="325017853399806563" at="26,0,28,0" concept="1" trace="duplicateTissueName_NonTypesystemRule#()V" />
+      <node id="325017853400184527" at="30,0,33,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="325017853399806563" at="40,0,43,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="325017853399806563" at="43,0,46,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="325017853399806563" at="46,0,49,0" concept="4" trace="overrides#()Z" />
+      <node id="325017853400197653" at="33,9,37,7" concept="0" />
+      <node id="325017853400166934" at="28,119,38,5" concept="3" />
+      <node id="325017853399806563" at="28,0,40,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="325017853399806563" at="26,50,26,50" />
+      <scope id="325017853400184528" at="30,39,31,171" />
+      <scope id="325017853399806563" at="40,50,41,30" />
+      <scope id="325017853399806563" at="43,68,44,102" />
+      <scope id="325017853399806563" at="46,30,47,17" />
+      <scope id="325017853399806563" at="26,0,28,0" />
+      <scope id="325017853400197653" at="34,7,36,284">
+        <var name="_reporter_2309309498" id="325017853400197653" />
+        <var name="errorTarget" id="325017853400197653" />
+      </scope>
+      <scope id="325017853400184527" at="30,0,33,0">
+        <var name="it" id="325017853400184527" />
+      </scope>
+      <scope id="325017853399806563" at="40,0,43,0" />
+      <scope id="325017853399806563" at="43,0,46,0">
+        <var name="argument" id="325017853399806563" />
+      </scope>
+      <scope id="325017853399806563" at="46,0,49,0" />
+      <scope id="325017853400166936" at="33,9,37,7" />
+      <scope id="325017853399806564" at="28,119,38,5" />
+      <scope id="325017853399806563" at="28,0,40,0">
+        <var name="status" id="325017853399806563" />
+        <var name="tissue" id="325017853399806563" />
+        <var name="typeCheckingContext" id="325017853399806563" />
+      </scope>
+      <unit id="325017853399806563" at="55,0,58,0" name="TissueSetup.typesystem.duplicateTissueName_NonTypesystemRule$LINKS" />
+      <unit id="325017853399806563" at="59,0,62,0" name="TissueSetup.typesystem.duplicateTissueName_NonTypesystemRule$PROPS" />
+      <unit id="325017853400184527" at="29,183,33,5" name="TissueSetup.typesystem.duplicateTissueName_NonTypesystemRule$1" />
+      <unit id="325017853399806563" at="50,0,54,0" name="TissueSetup.typesystem.duplicateTissueName_NonTypesystemRule$CONCEPTS" />
+      <unit id="325017853399806563" at="25,0,63,0" name="TissueSetup.typesystem.duplicateTissueName_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/325017853399832185">
+    <file name="TypesystemDescriptor.java">
+      <node id="325017853399832185" at="10,5,11,94" concept="5" />
+      <node id="325017853399832185" at="11,94,12,55" concept="2" />
+      <node id="325017853399832185" at="9,33,13,5" concept="0" />
+      <scope id="325017853399832185" at="10,5,12,55">
+        <var name="nonTypesystemRule" id="325017853399832185" />
+      </scope>
+    </file>
+    <file name="duplicateCellName_NonTypesystemRule.java">
+      <node id="325017853400152575" at="30,39,31,167" concept="6" />
+      <node id="325017853400161415" at="34,7,35,66" concept="5" />
+      <node id="325017853400161415" at="35,66,36,279" concept="5" />
+      <node id="325017853399832185" at="40,50,41,28" concept="6" />
+      <node id="325017853399832185" at="43,68,44,102" concept="6" />
+      <node id="325017853399832185" at="46,30,47,17" concept="6" />
+      <node id="325017853399832185" at="51,0,52,0" concept="7" trace="Tissue_And_Cell_Container$ni" />
+      <node id="325017853399832185" at="52,0,53,0" concept="7" trace="Cell$yU" />
+      <node id="325017853399832185" at="56,0,57,0" concept="7" trace="cells$psWW" />
+      <node id="325017853399832185" at="60,0,61,0" concept="7" trace="name$MnvL" />
+      <node id="325017853399832185" at="26,0,28,0" concept="1" trace="duplicateCellName_NonTypesystemRule#()V" />
+      <node id="325017853400152343" at="30,0,33,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="325017853399832185" at="40,0,43,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="325017853399832185" at="43,0,46,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="325017853399832185" at="46,0,49,0" concept="4" trace="overrides#()Z" />
+      <node id="325017853400161415" at="33,9,37,7" concept="0" />
+      <node id="325017853400133370" at="28,117,38,5" concept="3" />
+      <node id="325017853399832185" at="28,0,40,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="325017853399832185" at="26,48,26,48" />
+      <scope id="325017853400152344" at="30,39,31,167" />
+      <scope id="325017853399832185" at="40,50,41,28" />
+      <scope id="325017853399832185" at="43,68,44,102" />
+      <scope id="325017853399832185" at="46,30,47,17" />
+      <scope id="325017853399832185" at="26,0,28,0" />
+      <scope id="325017853400161415" at="34,7,36,279">
+        <var name="_reporter_2309309498" id="325017853400161415" />
+        <var name="errorTarget" id="325017853400161415" />
+      </scope>
+      <scope id="325017853400152343" at="30,0,33,0">
+        <var name="it" id="325017853400152343" />
+      </scope>
+      <scope id="325017853399832185" at="40,0,43,0" />
+      <scope id="325017853399832185" at="43,0,46,0">
+        <var name="argument" id="325017853399832185" />
+      </scope>
+      <scope id="325017853399832185" at="46,0,49,0" />
+      <scope id="325017853400133372" at="33,9,37,7" />
+      <scope id="325017853399832186" at="28,117,38,5" />
+      <scope id="325017853399832185" at="28,0,40,0">
+        <var name="cell" id="325017853399832185" />
+        <var name="status" id="325017853399832185" />
+        <var name="typeCheckingContext" id="325017853399832185" />
+      </scope>
+      <unit id="325017853399832185" at="55,0,58,0" name="TissueSetup.typesystem.duplicateCellName_NonTypesystemRule$LINKS" />
+      <unit id="325017853399832185" at="59,0,62,0" name="TissueSetup.typesystem.duplicateCellName_NonTypesystemRule$PROPS" />
+      <unit id="325017853400152343" at="29,179,33,5" name="TissueSetup.typesystem.duplicateCellName_NonTypesystemRule$1" />
+      <unit id="325017853399832185" at="50,0,54,0" name="TissueSetup.typesystem.duplicateCellName_NonTypesystemRule$CONCEPTS" />
+      <unit id="325017853399832185" at="25,0,63,0" name="TissueSetup.typesystem.duplicateCellName_NonTypesystemRule" />
+    </file>
+  </root>
+</debug-info>
+
