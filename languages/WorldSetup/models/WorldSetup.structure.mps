@@ -150,15 +150,17 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="nguq:5qSYbADreY7" resolve="Position" />
     </node>
+    <node concept="1TJgyj" id="57aaQbDDBXl" role="1TKVEi">
+      <property role="IQ2ns" value="5893570766194507605" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="shape" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57aaQbDDBXe" resolve="Substrate_Shape" />
+    </node>
     <node concept="1TJgyi" id="7faAukhALWw" role="1TKVEl">
       <property role="IQ2nx" value="8343650468779204384" />
       <property role="TrG5h" value="adhesiveness" />
       <ref role="AX2Wp" to="tpee:4_5hYVHKxAU" resolve="_FloatNumberValue" />
-    </node>
-    <node concept="1TJgyi" id="2OHr9yL8TsD" role="1TKVEl">
-      <property role="IQ2nx" value="3255377508721465129" />
-      <property role="TrG5h" value="shape" />
-      <ref role="AX2Wp" node="2OHr9yL8Ts$" resolve="Substrate_Shapes" />
     </node>
     <node concept="PrWs8" id="2OHr9yL5zIe" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -228,19 +230,75 @@
       <property role="1L1pqM" value="Exponential" />
     </node>
   </node>
-  <node concept="25R3W" id="2OHr9yL8Ts$">
-    <property role="3F6X1D" value="3255377508721465124" />
-    <property role="TrG5h" value="Substrate_Shapes" />
-    <ref role="1H5jkz" node="2OHr9yL8Ts_" resolve="SUBSTRATE_SHAPE_CUBOIDAL" />
-    <node concept="25R33" id="2OHr9yL8Ts_" role="25R1y">
-      <property role="3tVfz5" value="3255377508721465125" />
-      <property role="TrG5h" value="SUBSTRATE_SHAPE_CUBOIDAL" />
-      <property role="1L1pqM" value="Cuboidal" />
+  <node concept="1TIwiD" id="57aaQbDDBXe">
+    <property role="EcuMT" value="5893570766194507598" />
+    <property role="TrG5h" value="Substrate_Shape" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="57aaQbDDBXf">
+    <property role="EcuMT" value="5893570766194507599" />
+    <property role="TrG5h" value="Substrate_Shape_Triangular" />
+    <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
+    <node concept="1TJgyi" id="4JVq81Fgy8C" role="1TKVEl">
+      <property role="IQ2nx" value="5475084672763568680" />
+      <property role="TrG5h" value="depth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="25R33" id="2OHr9yL8TsA" role="25R1y">
-      <property role="3tVfz5" value="3255377508721465126" />
-      <property role="TrG5h" value="SUBSTRATE_SHAPE_TRIANGULAR" />
-      <property role="1L1pqM" value="Triangular" />
+    <node concept="1TJgyj" id="57aaQbDDBXx" role="1TKVEi">
+      <property role="IQ2ns" value="5893570766194507617" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Vertex_1" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57aaQbDDBXz" resolve="Vertex" />
+    </node>
+    <node concept="1TJgyj" id="57aaQbDDBXD" role="1TKVEi">
+      <property role="IQ2ns" value="5893570766194507625" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Vertex_2" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57aaQbDDBXz" resolve="Vertex" />
+    </node>
+    <node concept="1TJgyj" id="57aaQbDDBXG" role="1TKVEi">
+      <property role="IQ2ns" value="5893570766194507628" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Vertex_3" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="57aaQbDDBXz" resolve="Vertex" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57aaQbDDBXg">
+    <property role="EcuMT" value="5893570766194507600" />
+    <property role="TrG5h" value="Substrate_Shape_Cuboid" />
+    <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
+    <node concept="1TJgyi" id="57aaQbDDBXo" role="1TKVEl">
+      <property role="IQ2nx" value="5893570766194507608" />
+      <property role="TrG5h" value="width" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57aaQbDDBXq" role="1TKVEl">
+      <property role="IQ2nx" value="5893570766194507610" />
+      <property role="TrG5h" value="height" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57aaQbDDBXt" role="1TKVEl">
+      <property role="IQ2nx" value="5893570766194507613" />
+      <property role="TrG5h" value="depth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="57aaQbDDBXz">
+    <property role="EcuMT" value="5893570766194507619" />
+    <property role="TrG5h" value="Vertex" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="57aaQbDDBX$" role="1TKVEl">
+      <property role="IQ2nx" value="5893570766194507620" />
+      <property role="TrG5h" value="X_Coordinate" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57aaQbDDBXA" role="1TKVEl">
+      <property role="IQ2nx" value="5893570766194507622" />
+      <property role="TrG5h" value="Y_Coordinate" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

@@ -31,16 +31,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
   </dependency>
-  <dependency className="WorldSetup.structure.EnumerationDescriptor_Substrate_Shapes">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.EnumerationLiteralsIndex" />
-    <classNode dependClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptor" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="jetbrains.mps.smodel.runtime.EnumerationDescriptorBase" />
-  </dependency>
   <dependency className="WorldSetup.structure.LanguageConceptSwitch">
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.LanguageConceptIndexBuilder" />
@@ -50,7 +40,6 @@
   <dependency className="WorldSetup.structure.StructureAspectDescriptor">
     <classNode dependClassName="WorldSetup.structure.EnumerationDescriptor_Gradient_Shapes" />
     <classNode dependClassName="WorldSetup.structure.EnumerationDescriptor_Gradient_Types" />
-    <classNode dependClassName="WorldSetup.structure.EnumerationDescriptor_Substrate_Shapes" />
     <classNode dependClassName="WorldSetup.structure.LanguageConceptSwitch" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

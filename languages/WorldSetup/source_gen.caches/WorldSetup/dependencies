@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="WorldSetup.Language">
     <classNode dependClassName="WorldSetup.behavior.BehaviorAspectDescriptor" />
+    <classNode dependClassName="WorldSetup.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="WorldSetup.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="WorldSetup.structure.StructureAspectDescriptor" />
     <classNode dependClassName="java.lang.Class" />
@@ -12,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageExtensions" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspect" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
