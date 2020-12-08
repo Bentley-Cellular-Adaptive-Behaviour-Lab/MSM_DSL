@@ -14,6 +14,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Sink;
   private ConceptPresentation props_Source;
   private ConceptPresentation props_Substrate;
+  private ConceptPresentation props_Substrate_Shape;
+  private ConceptPresentation props_Substrate_Shape_Cuboid;
+  private ConceptPresentation props_Substrate_Shape_Triangular;
+  private ConceptPresentation props_Vertex;
   private ConceptPresentation props_World_Container;
 
   @Override
@@ -56,6 +60,34 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Substrate = cpb.create();
         }
         return props_Substrate;
+      case LanguageConceptSwitch.Substrate_Shape:
+        if (props_Substrate_Shape == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Substrate_Shape");
+          props_Substrate_Shape = cpb.create();
+        }
+        return props_Substrate_Shape;
+      case LanguageConceptSwitch.Substrate_Shape_Cuboid:
+        if (props_Substrate_Shape_Cuboid == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Substrate_Shape_Cuboid");
+          props_Substrate_Shape_Cuboid = cpb.create();
+        }
+        return props_Substrate_Shape_Cuboid;
+      case LanguageConceptSwitch.Substrate_Shape_Triangular:
+        if (props_Substrate_Shape_Triangular == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Substrate_Shape_Triangular");
+          props_Substrate_Shape_Triangular = cpb.create();
+        }
+        return props_Substrate_Shape_Triangular;
+      case LanguageConceptSwitch.Vertex:
+        if (props_Vertex == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Vertex");
+          props_Vertex = cpb.create();
+        }
+        return props_Vertex;
       case LanguageConceptSwitch.World_Container:
         if (props_World_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

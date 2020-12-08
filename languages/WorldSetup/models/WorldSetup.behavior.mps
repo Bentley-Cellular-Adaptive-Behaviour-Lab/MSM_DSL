@@ -61,6 +61,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -475,6 +478,286 @@
     </node>
     <node concept="13hLZK" id="2OHr9yL6aIV" role="13h7CW">
       <node concept="3clFbS" id="2OHr9yL6aIW" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="57aaQbDEkkh">
+    <ref role="13h7C2" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+    <node concept="13i0hz" id="57aaQbDEkks" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_1_X" />
+      <node concept="3Tm1VV" id="57aaQbDEkkt" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDEkkG" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDEkkv" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDEkCt" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDEkCu" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDEkCv" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDEkEh" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="57aaQbDEmjU" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDEkPY" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDEkEF" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDEkZG" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEmu8" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBX$" resolve="X_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDEl63" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDEl7U" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDEkCu" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="57aaQbDElMG" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_1_Y" />
+      <node concept="3Tm1VV" id="57aaQbDElMH" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDElMI" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDElMJ" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDElMK" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDElML" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDElMM" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDElMN" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="57aaQbDEnaH" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDElMO" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDElMP" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDElMQ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEndp" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBXA" resolve="Y_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDElMR" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDElMS" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDElML" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="57aaQbDElaX" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_2_X" />
+      <node concept="3Tm1VV" id="57aaQbDElaY" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDElaZ" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDElb0" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDElb1" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDElb2" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDElb3" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDElb4" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="57aaQbDEngY" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDElb5" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDElb6" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDElFe" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEntN" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBX$" resolve="X_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDElb8" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDElb9" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDElb2" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="57aaQbDEofO" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_2_Y" />
+      <node concept="3Tm1VV" id="57aaQbDEofP" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDEofQ" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDEofR" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDEofS" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDEofT" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDEofU" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDEofV" role="33vP2m">
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <node concept="2OqwBi" id="57aaQbDEofW" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDEofX" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDEofY" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDEofZ" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEpcY" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBXA" resolve="Y_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDEog1" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDEog2" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDEofT" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="57aaQbDEloa" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_3_X" />
+      <node concept="3Tm1VV" id="57aaQbDElob" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDElqA" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDElod" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDElrW" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDElrX" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDElrY" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDElxp" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="57aaQbDEqp7" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDEq24" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDEpff" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDEqbv" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEqyS" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBX$" resolve="X_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDEqK3" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDErnc" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDElrX" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="57aaQbDErqj" role="13h7CS">
+      <property role="TrG5h" value="get_vertex_3_Y" />
+      <node concept="3Tm1VV" id="57aaQbDErqk" role="1B3o_S" />
+      <node concept="17QB3L" id="57aaQbDErql" role="3clF45" />
+      <node concept="3clFbS" id="57aaQbDErqm" role="3clF47">
+        <node concept="3cpWs8" id="57aaQbDErqn" role="3cqZAp">
+          <node concept="3cpWsn" id="57aaQbDErqo" role="3cpWs9">
+            <property role="TrG5h" value="vertex" />
+            <node concept="3uibUv" id="57aaQbDErqp" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="57aaQbDErqq" role="33vP2m">
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <node concept="2OqwBi" id="57aaQbDErqr" role="37wK5m">
+                <node concept="2OqwBi" id="57aaQbDErqs" role="2Oq$k0">
+                  <node concept="13iPFW" id="57aaQbDErqt" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="57aaQbDErQz" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="57aaQbDEs0U" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:57aaQbDDBXA" resolve="Y_Coordinate" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="57aaQbDErqw" role="3cqZAp">
+          <node concept="37vLTw" id="57aaQbDErqx" role="3cqZAk">
+            <ref role="3cqZAo" node="57aaQbDErqo" resolve="vertex" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="4JVq81FgwNn" role="13h7CS">
+      <property role="TrG5h" value="get_depth" />
+      <node concept="3Tm1VV" id="4JVq81FgwNo" role="1B3o_S" />
+      <node concept="17QB3L" id="4JVq81FgwV1" role="3clF45" />
+      <node concept="3clFbS" id="4JVq81FgwNq" role="3clF47">
+        <node concept="3cpWs8" id="4JVq81FgwXV" role="3cqZAp">
+          <node concept="3cpWsn" id="4JVq81FgwXW" role="3cpWs9">
+            <property role="TrG5h" value="depth" />
+            <node concept="3uibUv" id="4JVq81FgwXX" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2YIFZM" id="4JVq81FgxIr" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+              <node concept="2OqwBi" id="4JVq81FgxXb" role="37wK5m">
+                <node concept="13iPFW" id="4JVq81FgxLS" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4JVq81FgShO" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:4JVq81Fgy8C" resolve="depth" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4JVq81FgSrl" role="3cqZAp">
+          <node concept="37vLTw" id="4JVq81FgSss" role="3cqZAk">
+            <ref role="3cqZAo" node="4JVq81FgwXW" resolve="depth" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="57aaQbDEkki" role="13h7CW">
+      <node concept="3clFbS" id="57aaQbDEkkj" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="4JVq81Fh9Kz">
+    <ref role="13h7C2" to="s9ob:7faAukhALBM" resolve="Substrate" />
+    <node concept="13i0hz" id="4JVq81Fh9KI" role="13h7CS">
+      <property role="TrG5h" value="get_adhesiveness" />
+      <node concept="3Tm1VV" id="4JVq81Fh9KJ" role="1B3o_S" />
+      <node concept="17QB3L" id="4JVq81Fh9KY" role="3clF45" />
+      <node concept="3clFbS" id="4JVq81Fh9KL" role="3clF47">
+        <node concept="3cpWs8" id="4JVq81Fh9M2" role="3cqZAp">
+          <node concept="3cpWsn" id="4JVq81Fh9M5" role="3cpWs9">
+            <property role="TrG5h" value="adhesiveness" />
+            <node concept="17QB3L" id="4JVq81Fh9M1" role="1tU5fm" />
+            <node concept="2YIFZM" id="4JVq81Fh9NX" role="33vP2m">
+              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+              <node concept="2OqwBi" id="4JVq81Fham6" role="37wK5m">
+                <node concept="13iPFW" id="4JVq81Fha3e" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4JVq81Fhazq" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:7faAukhALWw" resolve="adhesiveness" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4JVq81FhaFk" role="3cqZAp">
+          <node concept="37vLTw" id="4JVq81FhaHb" role="3cqZAk">
+            <ref role="3cqZAo" node="4JVq81Fh9M5" resolve="adhesiveness" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="4JVq81Fh9K$" role="13h7CW">
+      <node concept="3clFbS" id="4JVq81Fh9K_" role="2VODD2" />
     </node>
   </node>
 </model>

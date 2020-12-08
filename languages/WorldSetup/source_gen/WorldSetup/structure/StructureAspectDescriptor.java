@@ -21,10 +21,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSink = createDescriptorForSink();
   /*package*/ final ConceptDescriptor myConceptSource = createDescriptorForSource();
   /*package*/ final ConceptDescriptor myConceptSubstrate = createDescriptorForSubstrate();
+  /*package*/ final ConceptDescriptor myConceptSubstrate_Shape = createDescriptorForSubstrate_Shape();
+  /*package*/ final ConceptDescriptor myConceptSubstrate_Shape_Cuboid = createDescriptorForSubstrate_Shape_Cuboid();
+  /*package*/ final ConceptDescriptor myConceptSubstrate_Shape_Triangular = createDescriptorForSubstrate_Shape_Triangular();
+  /*package*/ final ConceptDescriptor myConceptVertex = createDescriptorForVertex();
   /*package*/ final ConceptDescriptor myConceptWorld_Container = createDescriptorForWorld_Container();
   /*package*/ final EnumerationDescriptor myEnumerationGradient_Shapes = new EnumerationDescriptor_Gradient_Shapes();
   /*package*/ final EnumerationDescriptor myEnumerationGradient_Types = new EnumerationDescriptor_Gradient_Types();
-  /*package*/ final EnumerationDescriptor myEnumerationSubstrate_Shapes = new EnumerationDescriptor_Substrate_Shapes();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -40,7 +43,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptGradient, myConceptGrid, myConceptSink, myConceptSource, myConceptSubstrate, myConceptWorld_Container);
+    return Arrays.asList(myConceptGradient, myConceptGrid, myConceptSink, myConceptSource, myConceptSubstrate, myConceptSubstrate_Shape, myConceptSubstrate_Shape_Cuboid, myConceptSubstrate_Shape_Triangular, myConceptVertex, myConceptWorld_Container);
   }
 
   @Override
@@ -57,6 +60,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSource;
       case LanguageConceptSwitch.Substrate:
         return myConceptSubstrate;
+      case LanguageConceptSwitch.Substrate_Shape:
+        return myConceptSubstrate_Shape;
+      case LanguageConceptSwitch.Substrate_Shape_Cuboid:
+        return myConceptSubstrate_Shape_Cuboid;
+      case LanguageConceptSwitch.Substrate_Shape_Triangular:
+        return myConceptSubstrate_Shape_Triangular;
+      case LanguageConceptSwitch.Vertex:
+        return myConceptVertex;
       case LanguageConceptSwitch.World_Container:
         return myConceptWorld_Container;
       default:
@@ -66,7 +77,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationGradient_Shapes, myEnumerationGradient_Types, myEnumerationSubstrate_Shapes);
+    return Arrays.asList(myEnumerationGradient_Shapes, myEnumerationGradient_Types);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -120,8 +131,47 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203058");
     b.version(2);
     b.property("adhesiveness", 0x73ca99e5119b1f20L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("8343650468779204384").done();
-    b.property("shape", 0x2d2d6c98b1239729L).type(MetaIdFactory.dataTypeId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2d2d6c98b1239724L)).origin("3255377508721465129").done();
     b.aggregate("Centre_Position", 0x73ca99e5119b1f1aL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("8343650468779204378").done();
+    b.aggregate("shape", 0x51ca2b62e9a67f55L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL).optional(false).ordered(true).multiple(false).origin("5893570766194507605").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSubstrate_Shape() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
+    b.class_(false, false, false);
+    b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507598");
+    b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSubstrate_Shape_Cuboid() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Substrate_Shape_Cuboid", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L);
+    b.class_(false, false, false);
+    b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
+    b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507600");
+    b.version(2);
+    b.property("width", 0x51ca2b62e9a67f58L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507608").done();
+    b.property("height", 0x51ca2b62e9a67f5aL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507610").done();
+    b.property("depth", 0x51ca2b62e9a67f5dL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507613").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSubstrate_Shape_Triangular() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Substrate_Shape_Triangular", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL);
+    b.class_(false, false, false);
+    b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
+    b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507599");
+    b.version(2);
+    b.property("depth", 0x4bfb68806b422228L).type(PrimitiveTypeId.INTEGER).origin("5475084672763568680").done();
+    b.aggregate("Vertex_1", 0x51ca2b62e9a67f61L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507617").done();
+    b.aggregate("Vertex_2", 0x51ca2b62e9a67f69L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507625").done();
+    b.aggregate("Vertex_3", 0x51ca2b62e9a67f6cL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507628").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForVertex() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Vertex", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L);
+    b.class_(false, false, false);
+    b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507619");
+    b.version(2);
+    b.property("X_Coordinate", 0x51ca2b62e9a67f64L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507620").done();
+    b.property("Y_Coordinate", 0x51ca2b62e9a67f66L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507622").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWorld_Container() {

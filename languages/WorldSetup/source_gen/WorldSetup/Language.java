@@ -8,6 +8,7 @@ import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import WorldSetup.structure.ConceptPresentationAspectImpl;
@@ -46,6 +47,9 @@ public class Language extends LanguageRuntime {
     // AP: legacy part, must be migrated from switch: please use lang.descriptor mapping label 
     if (aspectClass == BehaviorAspectDescriptor.class) {
       return aspectClass.cast(new WorldSetup.behavior.BehaviorAspectDescriptor());
+    }
+    if (aspectClass == ConstraintsAspectDescriptor.class) {
+      return aspectClass.cast(new WorldSetup.constraints.ConstraintsAspectDescriptor());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
       return aspectClass.cast(new WorldSetup.structure.StructureAspectDescriptor());
