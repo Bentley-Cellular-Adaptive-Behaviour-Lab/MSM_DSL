@@ -8,6 +8,7 @@
   <imports>
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -38,6 +39,9 @@
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
+      <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
+        <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -75,6 +79,7 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -455,6 +460,93 @@
     <node concept="1YaCAy" id="i2Gwg1$MVL" role="1YuTPh">
       <property role="TrG5h" value="cell" />
       <ref role="1YaFvo" to="nguq:5qSYbADreY8" resolve="Cell" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6leo5vIfx5v">
+    <property role="TrG5h" value="noObjectCollisionsInContainer" />
+    <node concept="3clFbS" id="6leo5vIfx5w" role="18ibNy">
+      <node concept="3clFbJ" id="6leo5vIfX2o" role="3cqZAp">
+        <node concept="2OqwBi" id="6leo5vIfXcf" role="3clFbw">
+          <node concept="1YBJjd" id="6leo5vIfX2$" role="2Oq$k0">
+            <ref role="1YBMHb" node="6leo5vIfx5y" resolve="container" />
+          </node>
+          <node concept="2qgKlT" id="6leo5vIfXkw" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:1QpPlI51UW4" resolve="check_positions" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="6leo5vIfX2q" role="3clFbx">
+          <node concept="2MkqsV" id="6leo5vIfXou" role="3cqZAp">
+            <node concept="Xl_RD" id="6leo5vIfXyn" role="2MkJ7o">
+              <property role="Xl_RC" value="Object collision detected." />
+            </node>
+            <node concept="1YBJjd" id="6leo5vIfXzq" role="1urrMF">
+              <ref role="1YBMHb" node="6leo5vIfx5y" resolve="container" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6leo5vIfx5y" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3$QBVvWAIMR">
+    <property role="TrG5h" value="noCellCollision" />
+    <node concept="3clFbS" id="3$QBVvWAIMS" role="18ibNy">
+      <node concept="3clFbJ" id="3$QBVvWAIN3" role="3cqZAp">
+        <node concept="2OqwBi" id="3$QBVvWAIWU" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWAINf" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWAJ5Y" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:1QpPlI51TK3" resolve="check_boundaries" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3$QBVvWAIN5" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWAJaN" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWAJaZ" role="2MkJ7o">
+              <property role="Xl_RC" value="This cell overlaps with another cell or tissue in the container. Please check locations and boundaries." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWAJdF" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3$QBVvWAIMU" role="1YuTPh">
+      <property role="TrG5h" value="cell" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY8" resolve="Cell" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3$QBVvWAJeO">
+    <property role="TrG5h" value="noTissueCollision" />
+    <node concept="3clFbS" id="3$QBVvWAJeP" role="18ibNy">
+      <node concept="3clFbJ" id="3$QBVvWAJf0" role="3cqZAp">
+        <node concept="2OqwBi" id="3$QBVvWAJoR" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWAJfc" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWAJxt" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:1QpPlI51TNW" resolve="check_boundaries" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3$QBVvWAJf2" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWAJAi" role="3cqZAp">
+            <node concept="1YBJjd" id="3$QBVvWAJAN" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+            <node concept="Xl_RD" id="3$QBVvWAJAx" role="2MkJ7o">
+              <property role="Xl_RC" value="This tissue overlaps with another cell or tissue in the container. Please check locations and boundaries." />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3$QBVvWAJeR" role="1YuTPh">
+      <property role="TrG5h" value="tissue" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY6" resolve="Tissue" />
     </node>
   </node>
 </model>

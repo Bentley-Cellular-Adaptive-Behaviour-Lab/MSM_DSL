@@ -49,14 +49,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Cylindrical:
         if (props_Cylindrical == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<Arrangement_Cylindrical>");
+          cpb.rawPresentation("Cylindrical");
           props_Cylindrical = cpb.create();
         }
         return props_Cylindrical;
       case LanguageConceptSwitch.Flat:
         if (props_Flat == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<Arrangement_Flat>");
+          cpb.rawPresentation("Flat");
           props_Flat = cpb.create();
         }
         return props_Flat;
@@ -76,7 +76,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Square:
         if (props_Square == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("<Shape_Square>");
+          cpb.rawPresentation("SQUARE");
           props_Square = cpb.create();
         }
         return props_Square;
@@ -90,7 +90,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Tissue_And_Cell_Container:
         if (props_Tissue_And_Cell_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Tissue_And_Cell_Container");
+          cpb.presentationByName();
           props_Tissue_And_Cell_Container = cpb.create();
         }
         return props_Tissue_And_Cell_Container;

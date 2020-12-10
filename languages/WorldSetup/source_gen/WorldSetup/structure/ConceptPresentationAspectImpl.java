@@ -91,7 +91,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.World_Container:
         if (props_World_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("World_Container");
+          cpb.presentationByName();
           props_World_Container = cpb.create();
         }
         return props_World_Container;

@@ -82,6 +82,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690122");
     b.version(2);
+    b.property("total_cell_number", 0x4bfb68806b542077L).type(PrimitiveTypeId.INTEGER).origin("5475084672764747895").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCell() {
@@ -112,7 +113,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("cylinder_cross_section_cells", 0x56b8f8b9a96cef93L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690131").done();
     b.property("cylinder_length_in_cells", 0x56b8f8b9a96cef95L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690133").done();
     b.property("cylinder_total_radius", 0x56b8f8b9a96cef98L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690136").done();
-    b.alias("<Arrangement_Cylindrical>");
+    b.property("cylinder_total_cells", 0x4bfb68806b4ffab2L).type(PrimitiveTypeId.INTEGER).origin("5475084672764476082").done();
+    b.alias("Cylindrical");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFlat() {
@@ -123,7 +125,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("flat_height_in_cells", 0x56b8f8b9a96cef9eL).type(PrimitiveTypeId.INTEGER).origin("6249017959271690142").done();
     b.property("flat_width_in_cells", 0x56b8f8b9a96cefa0L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690144").done();
-    b.alias("<Arrangement_Flat>");
+    b.alias("Flat");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForPosition() {
@@ -151,7 +153,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("height", 0x56b8f8b9a96cefb1L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690161").done();
     b.property("width", 0x56b8f8b9a96cefb3L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690163").done();
-    b.alias("<Shape_Square>");
+    b.alias("SQUARE");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTissue() {
@@ -167,8 +169,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForTissue_And_Cell_Container() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Tissue_And_Cell_Container", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L);
     b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690117");
     b.version(2);
+    b.associate("World_Container", 0x1d99d55b84fedbc7L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L).optional(false).origin("2132970487586675655").done();
     b.aggregate("tissue_types", 0x4369a03b1c6088e9L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL).optional(true).ordered(true).multiple(true).origin("4857589848835393769").done();
     b.aggregate("cell_types", 0x4369a03b1c6088edL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL).optional(true).ordered(true).multiple(true).origin("4857589848835393773").done();
     b.aggregate("tissues", 0x56b8f8b9a96cef8cL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L).optional(true).ordered(true).multiple(true).origin("6249017959271690124").done();

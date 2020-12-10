@@ -10,24 +10,35 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
 
   public static final SMethod<String> count_cell_number_id4XZPqyVOe45 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("count_cell_number").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
+  public static final SMethod<Boolean> check_positions_id1QpPlI51UW4 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_positions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51UW4").build();
+  public static final SMethod<Boolean> check_cell_cell_overlap_id1QpPlI522xB = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_cell_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI522xB").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> check_cell_vessel_overlap_id1QpPlI522M$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_vessel_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI522M$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> check_cell_monolayer_overlap_id1QpPlI5237t = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI5237t").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> check_vessel_vessel_overlap_id1QpPlI523sw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_vessel_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523sw").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> check_vessel_monolayer_overlap_id1QpPlI523LR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523LR").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> check_monolayer_monolayer_overlap_id1p5qYO3gLDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_monolayer_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1p5qYO3gLDn").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -42,6 +53,117 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
     String number = String.valueOf(count);
     return number;
+  }
+  /*package*/ static boolean check_positions_id1QpPlI51UW4(@NotNull SNode __thisNode__) {
+    for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
+      return (boolean) Cell__BehaviorDescriptor.check_boundaries_id1QpPlI51TK3.invoke(cell);
+    }
+    for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tissues$psuU))) {
+      return (boolean) Tissue__BehaviorDescriptor.check_boundaries_id1QpPlI51TNW.invoke(tissue);
+    }
+    return false;
+  }
+  /*package*/ static boolean check_cell_cell_overlap_id1QpPlI522xB(@NotNull SNode __thisNode__, SNode cell_1, SNode cell_2) {
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(cell_1, LINKS.position$L2Mv), PROPS.z_coord$pLQj) == SPropertyOperations.getInteger(SLinkOperations.getTarget(cell_2, LINKS.position$L2Mv), PROPS.z_coord$pLQj)) {
+      if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_2) && Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell_2) || Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_2) && Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell_2)) {
+        if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_2) && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_2) || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_2) && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_2)) {
+
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+  /*package*/ static boolean check_cell_vessel_overlap_id1QpPlI522M$(@NotNull SNode __thisNode__, SNode cell, SNode tissue) {
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(tissue) || SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(tissue)) {
+      double cell_z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue, LINKS.position$KVlR), PROPS.z_coord$pLQj);
+      cell_z_offset = cell_z_offset * cell_z_offset;
+
+      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
+      double vessel_y_lower_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue, LINKS.position$KVlR), PROPS.y_coord$pGdV) - vessel_y_boundary_offset;
+      double vessel_y_upper_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue, LINKS.position$KVlR), PROPS.y_coord$pGdV) + vessel_y_boundary_offset;
+
+      if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) >= vessel_y_lower_boundary && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) <= vessel_y_upper_boundary || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) >= vessel_y_lower_boundary && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) <= vessel_y_upper_boundary) {
+
+        return true;
+      }
+    }
+    return false;
+  }
+  /*package*/ static boolean check_cell_monolayer_overlap_id1QpPlI5237t(@NotNull SNode __thisNode__, SNode cell, SNode tissue) {
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) {
+      if (SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) == SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue, LINKS.position$KVlR), PROPS.z_coord$pLQj)) {
+        if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(tissue) && Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(tissue) || Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(tissue) && Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(tissue)) {
+          if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(tissue) && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(tissue) || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(tissue) && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(tissue)) {
+
+            return true;
+          }
+        }
+      }
+    }
+    return false;
+  }
+  /*package*/ static boolean check_vessel_vessel_overlap_id1QpPlI523sw(@NotNull SNode __thisNode__, SNode vessel_1, SNode vessel_2) {
+    double min_dist;
+    double y_offset;
+    double z_offset;
+    double y_offset_squared;
+    double z_offset_squared;
+
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+
+    double radius_1 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+    double radius_2 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+
+    y_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR), PROPS.y_coord$pGdV) - SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR), PROPS.y_coord$pGdV);
+    z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR), PROPS.z_coord$pLQj);
+
+    y_offset_squared = y_offset * y_offset;
+    z_offset_squared = z_offset * z_offset;
+
+    min_dist = Math.sqrt(y_offset_squared + z_offset_squared);
+
+    if (radius_1 + radius_2 <= min_dist) {
+      return true;
+    }
+
+    return false;
+  }
+  /*package*/ static boolean check_vessel_monolayer_overlap_id1QpPlI523LR(@NotNull SNode __thisNode__, SNode tissue_monolayer, SNode tissue_vessel) {
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(tissue_vessel) || SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(tissue_vessel)) {
+      double cell_z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.z_coord$pLQj);
+      cell_z_offset = cell_z_offset * cell_z_offset;
+
+      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
+      double vessel_y_lower_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) - vessel_y_boundary_offset;
+      double vessel_y_upper_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) + vessel_y_boundary_offset;
+
+      if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(tissue_monolayer) >= vessel_y_lower_boundary && Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(tissue_monolayer) <= vessel_y_upper_boundary || Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(tissue_monolayer) >= vessel_y_lower_boundary && Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(tissue_monolayer) <= vessel_y_upper_boundary) {
+
+        return true;
+      }
+    }
+    return false;
+  }
+  /*package*/ static boolean check_monolayer_monolayer_overlap_id1p5qYO3gLDn(@NotNull SNode __thisNode__, SNode monolayer_1, SNode monolayer_2) {
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer_1, LINKS.position$KVlR), PROPS.z_coord$pLQj) == SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer_2, LINKS.position$KVlR), PROPS.z_coord$pLQj)) {
+      if (Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2)) {
+        if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2)) {
+
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   /*package*/ Tissue_And_Cell_Container__BehaviorDescriptor() {
@@ -61,6 +183,20 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     switch (methodIndex) {
       case 0:
         return (T) ((String) count_cell_number_id4XZPqyVOe45(node));
+      case 1:
+        return (T) ((Boolean) check_positions_id1QpPlI51UW4(node));
+      case 2:
+        return (T) ((Boolean) check_cell_cell_overlap_id1QpPlI522xB(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 3:
+        return (T) ((Boolean) check_cell_vessel_overlap_id1QpPlI522M$(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 4:
+        return (T) ((Boolean) check_cell_monolayer_overlap_id1QpPlI5237t(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 5:
+        return (T) ((Boolean) check_vessel_vessel_overlap_id1QpPlI523sw(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 6:
+        return (T) ((Boolean) check_vessel_monolayer_overlap_id1QpPlI523LR(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 7:
+        return (T) ((Boolean) check_monolayer_monolayer_overlap_id1p5qYO3gLDn(node, (SNode) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -95,5 +231,18 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     /*package*/ static final SReferenceLink tissue_type$$cvw = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x4369a03b1c616655L, "tissue_type");
     /*package*/ static final SContainmentLink arrangement$aAuk = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x4369a03b1c61664bL, "arrangement");
     /*package*/ static final SContainmentLink tissues$psuU = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x56b8f8b9a96cef8cL, "tissues");
+    /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
+    /*package*/ static final SContainmentLink position$KVlR = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x56b8f8b9a96e2a3eL, "position");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
+    /*package*/ static final SProperty cylinder_total_radius$p$uq = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef98L, "cylinder_total_radius");
+    /*package*/ static final SProperty y_coord$pGdV = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa5L, "y_coord");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
+    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
   }
 }

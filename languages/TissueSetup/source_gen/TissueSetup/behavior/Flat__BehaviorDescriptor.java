@@ -15,19 +15,26 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
 
   public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaOR").build();
   public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaRd").build();
+  public static final SMethod<Integer> get_total_width_int_id1QpPlI52vjz = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52vjz").build();
+  public static final SMethod<Integer> get_total_height_int_id1QpPlI52_it = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_height_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52_it").build();
   public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd, get_total_cell_number_id4XZPqyVOpH$);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd, get_total_width_int_id1QpPlI52vjz, get_total_height_int_id1QpPlI52_it, get_total_cell_number_id4XZPqyVOpH$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -39,6 +46,12 @@ public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static String get_width_in_cells_id4DdJmqSFaRd(@NotNull SNode __thisNode__) {
     String width = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy));
     return width;
+  }
+  /*package*/ static int get_total_width_int_id1QpPlI52vjz(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue$nL, false, false), LINKS.tissue_type$$cvw), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY);
+  }
+  /*package*/ static int get_total_height_int_id1QpPlI52_it(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue$nL, false, false), LINKS.tissue_type$$cvw), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.height$pTxW);
   }
   /*package*/ static int get_total_cell_number_id4XZPqyVOpH$(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy);
@@ -64,6 +77,10 @@ public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
       case 1:
         return (T) ((String) get_width_in_cells_id4DdJmqSFaRd(node));
       case 2:
+        return (T) ((Integer) get_total_width_int_id1QpPlI52vjz(node));
+      case 3:
+        return (T) ((Integer) get_total_height_int_id1QpPlI52_it(node));
+      case 4:
         return (T) ((Integer) get_total_cell_number_id4XZPqyVOpH$(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -97,5 +114,18 @@ public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
   private static final class PROPS {
     /*package*/ static final SProperty flat_height_in_cells$pFdw = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, 0x56b8f8b9a96cef9eL, "flat_height_in_cells");
     /*package*/ static final SProperty flat_width_in_cells$pFFy = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, 0x56b8f8b9a96cefa0L, "flat_width_in_cells");
+    /*package*/ static final SProperty width$pTZY = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb3L, "width");
+    /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Tissue$nL = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, "TissueSetup.structure.Tissue");
+    /*package*/ static final SConcept Square$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Square");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SReferenceLink tissue_type$$cvw = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x4369a03b1c616655L, "tissue_type");
+    /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
+    /*package*/ static final SContainmentLink shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "shape");
   }
 }
