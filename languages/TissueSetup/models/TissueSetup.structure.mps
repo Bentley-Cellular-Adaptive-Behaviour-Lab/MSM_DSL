@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -75,6 +76,15 @@
       <property role="20kJfa" value="cells" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5qSYbADreY8" resolve="Cell" />
+    </node>
+    <node concept="1TJgyj" id="1QpPlI4ZHJ7" role="1TKVEi">
+      <property role="IQ2ns" value="2132970487586675655" />
+      <property role="20kJfa" value="World_Container" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBz" resolve="World_Container" />
+    </node>
+    <node concept="PrWs8" id="1QpPlI505Gj" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreY6">
@@ -150,6 +160,11 @@
     <property role="TrG5h" value="Arrangement" />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4JVq81Fl21R" role="1TKVEl">
+      <property role="IQ2nx" value="5475084672764747895" />
+      <property role="TrG5h" value="total_cell_number" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYb">
     <property role="EcuMT" value="6249017959271690123" />
@@ -169,7 +184,7 @@
   <node concept="1TIwiD" id="5qSYbADreYh">
     <property role="EcuMT" value="6249017959271690129" />
     <property role="TrG5h" value="Cylindrical" />
-    <property role="34LRSv" value="&lt;Arrangement_Cylindrical&gt;" />
+    <property role="34LRSv" value="Cylindrical" />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYj" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690131" />
@@ -186,11 +201,16 @@
       <property role="TrG5h" value="cylinder_total_radius" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="4JVq81FjZEM" role="1TKVEl">
+      <property role="IQ2nx" value="5475084672764476082" />
+      <property role="TrG5h" value="cylinder_total_cells" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYs">
     <property role="EcuMT" value="6249017959271690140" />
     <property role="TrG5h" value="Flat" />
-    <property role="34LRSv" value="&lt;Arrangement_Flat&gt;" />
+    <property role="34LRSv" value="Flat" />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYu" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690142" />
@@ -206,7 +226,7 @@
   <node concept="1TIwiD" id="5qSYbADreYt">
     <property role="EcuMT" value="6249017959271690141" />
     <property role="TrG5h" value="Square" />
-    <property role="34LRSv" value="&lt;Shape_Square&gt;" />
+    <property role="34LRSv" value="SQUARE" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
     <node concept="1TJgyi" id="5qSYbADreYL" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690161" />

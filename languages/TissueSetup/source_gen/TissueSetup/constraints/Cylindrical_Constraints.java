@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import TissueSetup.behavior.Cylindrical__BehaviorDescriptor;
+import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -55,10 +56,24 @@ public class Cylindrical_Constraints extends BaseConstraintsDescriptor {
       return (int) Cylindrical__BehaviorDescriptor.calculate_cross_section_cells_id506$KtOAF5K.invoke(node);
     }
   }
+  public static class Cylinder_total_cells_Property extends BasePropertyConstraintsDescriptor {
+    public Cylinder_total_cells_Property(ConstraintsDescriptor container) {
+      super(PROPS.cylinder_total_cells$o_jT, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Arrangement__BehaviorDescriptor.get_total_cell_number_id4XZPqyVOpH$.invoke(node);
+    }
+  }
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
     properties.put(PROPS.cylinder_cross_section_cells$pzjl, new Cylinder_cross_section_cells_Property(this));
+    properties.put(PROPS.cylinder_total_cells$o_jT, new Cylinder_total_cells_Property(this));
     return properties;
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
@@ -72,5 +87,6 @@ public class Cylindrical_Constraints extends BaseConstraintsDescriptor {
 
   private static final class PROPS {
     /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
+    /*package*/ static final SProperty cylinder_total_cells$o_jT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x4bfb68806b4ffab2L, "cylinder_total_cells");
   }
 }

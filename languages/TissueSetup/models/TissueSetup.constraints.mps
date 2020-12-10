@@ -73,6 +73,18 @@
   </registry>
   <node concept="1M2fIO" id="4dDC3GsoDj_">
     <ref role="1M2myG" to="nguq:5qSYbADreYa" resolve="Arrangement" />
+    <node concept="EnEH3" id="4JVq81Fl2lk" role="1MhHOB">
+      <ref role="EomxK" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
+      <node concept="Eqf_E" id="4JVq81Fl2mA" role="EtsB7">
+        <node concept="3clFbS" id="4JVq81Fl2mB" role="2VODD2">
+          <node concept="3cpWs6" id="4JVq81Fl2n_" role="3cqZAp">
+            <node concept="3cmrfG" id="4JVq81Fl2BB" role="3cqZAk">
+              <property role="3cmrfH" value="-1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="9S07l" id="4dDC3GsoETk" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoETl" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoETG" role="3cqZAp">
@@ -98,6 +110,21 @@
         </node>
       </node>
     </node>
+    <node concept="EnEH3" id="4JVq81FjZYe" role="1MhHOB">
+      <ref role="EomxK" to="nguq:4JVq81FjZEM" resolve="cylinder_total_cells" />
+      <node concept="Eqf_E" id="4JVq81Fk00R" role="EtsB7">
+        <node concept="3clFbS" id="4JVq81Fk00S" role="2VODD2">
+          <node concept="3cpWs6" id="4JVq81Fk01Q" role="3cqZAp">
+            <node concept="2OqwBi" id="4JVq81Fk0lj" role="3cqZAk">
+              <node concept="EsrRn" id="4JVq81Fk02E" role="2Oq$k0" />
+              <node concept="2qgKlT" id="4JVq81Fk0tL" role="2OqNvi">
+                <ref role="37wK5l" to="4ebj:4XZPqyVOpH$" resolve="get_total_cell_number" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="9S07l" id="4dDC3GsoEOe" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoEOf" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoES8" role="3cqZAp">
@@ -110,6 +137,21 @@
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGoF">
     <ref role="1M2myG" to="nguq:5qSYbADreYs" resolve="Flat" />
+    <node concept="EnEH3" id="4JVq81Fl2Ga" role="1MhHOB">
+      <ref role="EomxK" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
+      <node concept="Eqf_E" id="4JVq81Fl2GO" role="EtsB7">
+        <node concept="3clFbS" id="4JVq81Fl2GP" role="2VODD2">
+          <node concept="3cpWs6" id="4JVq81Fl2HN" role="3cqZAp">
+            <node concept="2OqwBi" id="4JVq81Fl31u" role="3cqZAk">
+              <node concept="EsrRn" id="4JVq81Fl2ID" role="2Oq$k0" />
+              <node concept="2qgKlT" id="4JVq81Fl3iE" role="2OqNvi">
+                <ref role="37wK5l" to="4ebj:4XZPqyVOpH$" resolve="get_total_cell_number" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="9S07l" id="4dDC3GsoGoG" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGoH" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoGp3" role="3cqZAp">

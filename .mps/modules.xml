@@ -3,9 +3,8 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/TissueSetup/sandbox/TissueSetup.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/TissueSetup/sandbox/sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/WorldSetup/sandbox/WorldSetup.sandbox.msd" folder="" />
     </projectModules>
   </component>
 </project>

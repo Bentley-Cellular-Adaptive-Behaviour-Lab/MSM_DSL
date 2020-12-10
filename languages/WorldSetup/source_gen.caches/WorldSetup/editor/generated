@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="bvx189s13nbh2ie0hh3gcrt3nvjoj5v" />
+<product version="3" modelHash="370ihncfpovhh194nlzvaz8gh3td3f3">
+  <files names="EditorAspectDescriptorImpl.java:Gradient_Editor.java:Gradient_EditorBuilder_a.java:Grid_Editor.java:Grid_EditorBuilder_a.java:Source_Editor.java:Source_EditorBuilder_a.java:Substrate_Editor.java:Substrate_EditorBuilder_a.java:Substrate_Shape_Cuboid_Editor.java:Substrate_Shape_Cuboid_EditorBuilder_a.java:Substrate_Shape_Triangular_Editor.java:Substrate_Shape_Triangular_EditorBuilder_a.java:Vertex_Editor.java:Vertex_EditorBuilder_a.java:World_Container_Editor.java:World_Container_EditorBuilder_a.java" />
+</product>
 
