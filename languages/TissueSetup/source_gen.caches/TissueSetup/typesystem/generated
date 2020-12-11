@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="aut1oxa0iwfaftjon0onwrul9sbw1m4">
+<product version="3" modelHash="-ju0wdjmd3xpblrjjvk7ijf4if9rf4s">
   <files names="TypesystemDescriptor.java:duplicateCellName_NonTypesystemRule.java:duplicateCellTypeName_NonTypesystemRule.java:duplicateTissueName_NonTypesystemRule.java:duplicateTissueTypeName_NonTypesystemRule.java:noCellCollision_NonTypesystemRule.java:noObjectCollisionsInContainer_NonTypesystemRule.java:noTissueCollision_NonTypesystemRule.java" />
 </product>
 

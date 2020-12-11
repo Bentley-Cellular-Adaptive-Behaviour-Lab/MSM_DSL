@@ -31,6 +31,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -500,7 +501,7 @@
             <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
           </node>
           <node concept="2qgKlT" id="3$QBVvWAJ5Y" role="2OqNvi">
-            <ref role="37wK5l" to="4ebj:1QpPlI51TK3" resolve="check_boundaries" />
+            <ref role="37wK5l" to="4ebj:1QpPlI51TK3" resolve="check_object_boundaries" />
           </node>
         </node>
         <node concept="3clFbS" id="3$QBVvWAIN5" role="3clFbx">
@@ -511,6 +512,108 @@
             <node concept="1YBJjd" id="3$QBVvWAJdF" role="1urrMF">
               <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
             </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3$QBVvWCPKH" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWCPKJ" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWCPZV" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWCQ0a" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (upper X boundary is greater than the X-dimensions of the world)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWCQ25" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWCPUq" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWCPLh" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWCPZF" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWCJog" resolve="check_upper_x_world_boundaries" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3$QBVvWD0iG" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD0iH" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD0iI" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD0iJ" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (upper Y boundary is greater than the Y-dimensions of the world)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD0iK" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD0iL" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWD0iM" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWD0si" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWCLp9" resolve="check_upper_y_world_boundaries" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3$QBVvWD0tb" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD0tc" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD0td" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD0te" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (lower X boundary is lower than 0)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD0tf" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD0tg" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWD0th" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWD0zy" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWCTDn" resolve="check_lower_x_world_boundaries" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3$QBVvWD0XH" role="3cqZAp" />
+      <node concept="3clFbJ" id="3$QBVvWD0Gc" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD0Ge" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD0Zn" role="3cqZAp">
+            <node concept="1YBJjd" id="3$QBVvWD0ZL" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+            <node concept="Xl_RD" id="3$QBVvWD0ZA" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (lower X boundary is lower than 0)." />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD0QT" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWD0HK" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWD0Xt" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWCYG5" resolve="check_lower_y_world_boundaries" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3$QBVvWD0ZZ" role="3cqZAp" />
+      <node concept="3clFbJ" id="3$QBVvWD5bw" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD5by" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD5xi" role="3cqZAp">
+            <node concept="1YBJjd" id="3$QBVvWD5xj" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+            </node>
+            <node concept="Xl_RD" id="3$QBVvWD5xk" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (Z-location is either greater than the Z-dimensions of the world or less than zero)." />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD5mz" role="3clFbw">
+          <node concept="1YBJjd" id="3$QBVvWD5dq" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAIMU" resolve="cell" />
+          </node>
+          <node concept="2qgKlT" id="3$QBVvWD5x2" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWCOcR" resolve="check_z_world_boundaries" />
           </node>
         </node>
       </node>
@@ -529,7 +632,7 @@
             <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
           </node>
           <node concept="2qgKlT" id="3$QBVvWAJxt" role="2OqNvi">
-            <ref role="37wK5l" to="4ebj:1QpPlI51TNW" resolve="check_boundaries" />
+            <ref role="37wK5l" to="4ebj:1QpPlI51TNW" resolve="check_object_boundaries" />
           </node>
         </node>
         <node concept="3clFbS" id="3$QBVvWAJf2" role="3clFbx">
@@ -538,11 +641,114 @@
               <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
             </node>
             <node concept="Xl_RD" id="3$QBVvWAJAx" role="2MkJ7o">
-              <property role="Xl_RC" value="This tissue overlaps with another cell or tissue in the container. Please check locations and boundaries." />
+              <property role="Xl_RC" value="Tissue overlaps with another cell or tissue in the container. Please check locations and boundaries." />
             </node>
           </node>
         </node>
       </node>
+      <node concept="3clFbJ" id="3$QBVvWD7Vi" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD7Vj" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD7Vk" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD7Vl" role="2MkJ7o">
+              <property role="Xl_RC" value="Tissue boundaries extend out of the world - (upper X boundary is greater than the X-dimensions of the world)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD879" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD7Vn" role="3clFbw">
+          <node concept="2qgKlT" id="2AY95d_5D5u" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWDazm" resolve="check_upper_x_world_boundaries" />
+          </node>
+          <node concept="1YBJjd" id="3$QBVvWD850" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3$QBVvWD7Vq" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD7Vr" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD7Vs" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD7Vt" role="2MkJ7o">
+              <property role="Xl_RC" value="Tissue boundaries extend out of the world - (upper Y boundary is greater than the Y-dimensions of the world)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD8aS" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD7Vv" role="3clFbw">
+          <node concept="2qgKlT" id="2AY95d_5D63" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWDazU" resolve="check_upper_y_world_boundaries" />
+          </node>
+          <node concept="1YBJjd" id="3$QBVvWD8mM" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3$QBVvWD7Vy" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD7Vz" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD7V$" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD7V_" role="2MkJ7o">
+              <property role="Xl_RC" value="Tissue boundaries extend out of the world - (lower X boundary is lower than 0)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD8_1" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD7VB" role="3clFbw">
+          <node concept="2qgKlT" id="2AY95d_5D6C" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWDazH" resolve="check_lower_x_world_boundaries" />
+          </node>
+          <node concept="1YBJjd" id="3$QBVvWD8oM" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3$QBVvWD7VE" role="3cqZAp" />
+      <node concept="3clFbJ" id="3$QBVvWD7VF" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD7VG" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD7VH" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD7VJ" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (lower X boundary is lower than 0)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD8Cs" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD7VK" role="3clFbw">
+          <node concept="2qgKlT" id="2AY95d_5D7d" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWDa$h" resolve="check_lower_y_world_boundaries" />
+          </node>
+          <node concept="1YBJjd" id="3$QBVvWD8qK" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3$QBVvWD7VN" role="3cqZAp" />
+      <node concept="3clFbJ" id="3$QBVvWD7VO" role="3cqZAp">
+        <node concept="3clFbS" id="3$QBVvWD7VP" role="3clFbx">
+          <node concept="2MkqsV" id="3$QBVvWD7VQ" role="3cqZAp">
+            <node concept="Xl_RD" id="3$QBVvWD7VS" role="2MkJ7o">
+              <property role="Xl_RC" value="Cell boundaries extend out of the world - (Z-location is either greater than the Z-dimensions of the world or less than zero)." />
+            </node>
+            <node concept="1YBJjd" id="3$QBVvWD8HA" role="1urrMF">
+              <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3$QBVvWD7VT" role="3clFbw">
+          <node concept="2qgKlT" id="2AY95d_5D7M" role="2OqNvi">
+            <ref role="37wK5l" to="4ebj:3$QBVvWDa$u" resolve="check_z_world_boundaries" />
+          </node>
+          <node concept="1YBJjd" id="3$QBVvWD8FK" role="2Oq$k0">
+            <ref role="1YBMHb" node="3$QBVvWAJeR" resolve="tissue" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3$QBVvWD7N_" role="3cqZAp" />
     </node>
     <node concept="1YaCAy" id="3$QBVvWAJeR" role="1YuTPh">
       <property role="TrG5h" value="tissue" />

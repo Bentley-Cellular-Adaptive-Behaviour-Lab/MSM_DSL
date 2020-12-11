@@ -277,6 +277,18 @@
       <node concept="3F0A7n" id="4JVq81FjdPt" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
       </node>
+      <node concept="3F0ifn" id="3$QBVvWC5$w" role="3EZMnx">
+        <property role="3F0ifm" value="of cell type" />
+      </node>
+      <node concept="1iCGBv" id="3$QBVvWC5$K" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:7aglRcSXD5S" resolve="cell_type" />
+        <node concept="1sVBvm" id="3$QBVvWC5$M" role="1sWHZn">
+          <node concept="3F0A7n" id="3$QBVvWC5$Z" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
       <node concept="3F0ifn" id="4JVq81FjdPz" role="3EZMnx">
         <property role="3F0ifm" value="is located at " />
       </node>

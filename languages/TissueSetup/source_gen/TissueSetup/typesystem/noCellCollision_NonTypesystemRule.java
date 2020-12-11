@@ -19,10 +19,42 @@ public class noCellCollision_NonTypesystemRule extends AbstractNonTypesystemRule
   public noCellCollision_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((boolean) Cell__BehaviorDescriptor.check_boundaries_id1QpPlI51TK3.invoke(cell)) {
+    if ((boolean) Cell__BehaviorDescriptor.check_object_boundaries_id1QpPlI51TK3.invoke(cell)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "This cell overlaps with another cell or tissue in the container. Please check locations and boundaries.", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470112435", null, errorTarget);
+      }
+    }
+    if ((boolean) Cell__BehaviorDescriptor.check_upper_x_world_boundaries_id3$QBVvWCJog.invoke(cell)) {
+      {
+        final MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "Cell boundaries extend out of the world - (upper X boundary is greater than the X-dimensions of the world).", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470664699", null, errorTarget);
+      }
+    }
+    if ((boolean) Cell__BehaviorDescriptor.check_upper_y_world_boundaries_id3$QBVvWCLp9.invoke(cell)) {
+      {
+        final MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "Cell boundaries extend out of the world - (upper Y boundary is greater than the Y-dimensions of the world).", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470706862", null, errorTarget);
+      }
+    }
+    if ((boolean) Cell__BehaviorDescriptor.check_lower_x_world_boundaries_id3$QBVvWCTDn.invoke(cell)) {
+      {
+        final MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "Cell boundaries extend out of the world - (lower X boundary is lower than 0).", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470707533", null, errorTarget);
+      }
+    }
+
+    if ((boolean) Cell__BehaviorDescriptor.check_lower_y_world_boundaries_id3$QBVvWCYG5.invoke(cell)) {
+      {
+        final MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "Cell boundaries extend out of the world - (lower X boundary is lower than 0).", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470709719", null, errorTarget);
+      }
+    }
+
+    if ((boolean) Cell__BehaviorDescriptor.check_z_world_boundaries_id3$QBVvWCOcR.invoke(cell)) {
+      {
+        final MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell, "Cell boundaries extend out of the world - (Z-location is either greater than the Z-dimensions of the world or less than zero).", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470728274", null, errorTarget);
       }
     }
   }

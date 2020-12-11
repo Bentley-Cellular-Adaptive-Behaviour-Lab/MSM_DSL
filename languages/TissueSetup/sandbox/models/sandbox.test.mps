@@ -48,13 +48,13 @@
         <property id="6249017959271690161" name="height" index="3ZP1s8" />
         <property id="6249017959271690163" name="width" index="3ZP1sa" />
       </concept>
+      <concept id="6249017959271690140" name="TissueSetup.structure.Flat" flags="ng" index="3ZP1s_">
+        <property id="6249017959271690144" name="flat_width_in_cells" index="3ZP1sp" />
+        <property id="6249017959271690142" name="flat_height_in_cells" index="3ZP1sB" />
+      </concept>
       <concept id="6249017959271690129" name="TissueSetup.structure.Cylindrical" flags="ng" index="3ZP1sC">
         <property id="6249017959271690136" name="cylinder_total_radius" index="3ZP1sx" />
         <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
-      </concept>
-      <concept id="6249017959271690120" name="TissueSetup.structure.Cell" flags="ng" index="3ZP1sL">
-        <reference id="8255194269358657912" name="cell_type" index="1apGob" />
-        <child id="6249017959271770696" name="position" index="3ZPHbL" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="6249017959271690171" name="shape" index="3ZP1s2" />
@@ -64,7 +64,6 @@
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
         <child id="6249017959271690124" name="tissues" index="3ZP1sP" />
-        <child id="6249017959271690126" name="cells" index="3ZP1sR" />
       </concept>
       <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
         <property id="6249017959271690152" name="z_coord" index="3ZP1sh" />
@@ -77,44 +76,6 @@
       </concept>
     </language>
   </registry>
-  <node concept="3ZP1sW" id="4dDC3Gsompo">
-    <property role="TrG5h" value="One_Vessel_Configuration" />
-    <property role="3GE5qa" value="Tissues" />
-    <ref role="2ppKUs" node="1QpPlI51uYv" resolve="Linear_Gradient" />
-    <node concept="3ZP1sZ" id="4JVq81FjdON" role="3ZP1sP">
-      <property role="TrG5h" value="Blood_Vessel" />
-      <ref role="1v2cpI" node="4JVq81FiBD3" resolve="Vessel" />
-      <node concept="3ZP1sY" id="4JVq81FjdOO" role="3ZPHa7">
-        <property role="3ZP1sq" value="50" />
-        <property role="3ZP1ss" value="50" />
-        <property role="3ZP1sh" value="50" />
-      </node>
-    </node>
-    <node concept="1apGoc" id="4JVq81FiBD3" role="1v2izi">
-      <property role="TrG5h" value="Vessel" />
-      <ref role="1apGrN" node="72xqkGxLWco" resolve="Endothelial" />
-      <node concept="3ZP1sC" id="4JVq81FiBDb" role="1v2cpK">
-        <property role="3ZP1sG" value="10" />
-        <property role="3ZP1sx" value="20" />
-      </node>
-    </node>
-    <node concept="3ZP1sM" id="72xqkGxLWco" role="1v2izm">
-      <property role="TrG5h" value="Endothelial" />
-      <node concept="3ZP1s$" id="4JVq81FhUdX" role="3ZP1s2">
-        <property role="3ZP1s8" value="20" />
-        <property role="3ZP1sa" value="20" />
-      </node>
-    </node>
-    <node concept="3ZP1sL" id="72xqkGxLWcK" role="3ZP1sR">
-      <property role="TrG5h" value="Endothelial_1" />
-      <ref role="1apGob" node="72xqkGxLWco" resolve="Endothelial" />
-      <node concept="3ZP1sY" id="72xqkGxLWcL" role="3ZPHbL">
-        <property role="3ZP1sq" value="25" />
-        <property role="3ZP1ss" value="25" />
-        <property role="3ZP1sh" value="25" />
-      </node>
-    </node>
-  </node>
   <node concept="1yko06" id="1QpPlI51uYv">
     <property role="TrG5h" value="Linear_Gradient" />
     <property role="3GE5qa" value="Worlds" />
@@ -137,33 +98,10 @@
       </node>
     </node>
     <node concept="1yko03" id="1QpPlI51uYw" role="1yko01">
-      <property role="1ykoi$" value="100" />
-      <property role="1ykoiA" value="100" />
-      <property role="1ykoiz" value="100" />
+      <property role="1ykoi$" value="200" />
+      <property role="1ykoiA" value="200" />
+      <property role="1ykoiz" value="200" />
       <property role="NC7Wa" value="1.0f" />
-    </node>
-  </node>
-  <node concept="3ZP1sW" id="1QpPlI51v1J">
-    <property role="3GE5qa" value="Tissues" />
-    <property role="TrG5h" value="Two_Vessel_Confiugration" />
-    <ref role="2ppKUs" node="1QpPlI51v1V" resolve="Exponential_Gradient" />
-    <node concept="3ZP1sZ" id="1QpPlI51vpn" role="3ZP1sP">
-      <property role="TrG5h" value="Blood_Vessel_1" />
-      <ref role="1v2cpI" node="4JVq81FiBD3" resolve="Vessel" />
-      <node concept="3ZP1sY" id="1QpPlI51vpo" role="3ZPHa7">
-        <property role="3ZP1sq" value="20" />
-        <property role="3ZP1ss" value="20" />
-        <property role="3ZP1sh" value="20" />
-      </node>
-    </node>
-    <node concept="3ZP1sZ" id="1QpPlI51vpr" role="3ZP1sP">
-      <property role="TrG5h" value="Blood_Vessel_2" />
-      <ref role="1v2cpI" node="4JVq81FiBD3" resolve="Vessel" />
-      <node concept="3ZP1sY" id="1QpPlI51vps" role="3ZPHa7">
-        <property role="3ZP1sq" value="80" />
-        <property role="3ZP1ss" value="80" />
-        <property role="3ZP1sh" value="20" />
-      </node>
     </node>
   </node>
   <node concept="1yko06" id="1QpPlI51v1V">
@@ -193,6 +131,43 @@
       <property role="1ykoiA" value="100" />
       <property role="1ykoiz" value="100" />
       <property role="NC7Wa" value="1.0f" />
+    </node>
+  </node>
+  <node concept="3ZP1sW" id="2AY95d_6CGe">
+    <property role="3GE5qa" value="Tissues" />
+    <property role="TrG5h" value="Bad_Monolayers" />
+    <ref role="2ppKUs" node="1QpPlI51uYv" resolve="Linear_Gradient" />
+    <node concept="1apGoc" id="2AY95d_6CGm" role="1v2izi">
+      <property role="TrG5h" value="Vessel" />
+      <ref role="1apGrN" node="2AY95d_6CGf" resolve="Endothelial" />
+      <node concept="3ZP1sC" id="2AY95d_6CGq" role="1v2cpK">
+        <property role="3ZP1sG" value="5" />
+        <property role="3ZP1sx" value="10" />
+      </node>
+    </node>
+    <node concept="1apGoc" id="2AY95d_6CLV" role="1v2izi">
+      <property role="TrG5h" value="Monolayer" />
+      <ref role="1apGrN" node="2AY95d_6CGf" resolve="Endothelial" />
+      <node concept="3ZP1s_" id="2AY95d_6CM1" role="1v2cpK">
+        <property role="3ZP1sB" value="5" />
+        <property role="3ZP1sp" value="5" />
+      </node>
+    </node>
+    <node concept="3ZP1sM" id="2AY95d_6CGf" role="1v2izm">
+      <property role="TrG5h" value="Endothelial" />
+      <node concept="3ZP1s$" id="2AY95d_6CGj" role="3ZP1s2">
+        <property role="3ZP1s8" value="10" />
+        <property role="3ZP1sa" value="10" />
+      </node>
+    </node>
+    <node concept="3ZP1sZ" id="2AY95d_aORx" role="3ZP1sP">
+      <property role="TrG5h" value="Mono_1" />
+      <ref role="1v2cpI" node="2AY95d_6CLV" resolve="Monolayer" />
+      <node concept="3ZP1sY" id="2AY95d_aORy" role="3ZPHa7">
+        <property role="3ZP1sq" value="10" />
+        <property role="3ZP1ss" value="100" />
+        <property role="3ZP1sh" value="0" />
+      </node>
     </node>
   </node>
 </model>
