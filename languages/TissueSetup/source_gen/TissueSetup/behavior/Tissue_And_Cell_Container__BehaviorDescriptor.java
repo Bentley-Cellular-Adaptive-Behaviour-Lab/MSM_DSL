@@ -56,10 +56,10 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   }
   /*package*/ static boolean check_positions_id1QpPlI51UW4(@NotNull SNode __thisNode__) {
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
-      return (boolean) Cell__BehaviorDescriptor.check_boundaries_id1QpPlI51TK3.invoke(cell);
+      return (boolean) Cell__BehaviorDescriptor.check_object_boundaries_id1QpPlI51TK3.invoke(cell);
     }
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tissues$psuU))) {
-      return (boolean) Tissue__BehaviorDescriptor.check_boundaries_id1QpPlI51TNW.invoke(tissue);
+      return (boolean) Tissue__BehaviorDescriptor.check_object_boundaries_id1QpPlI51TNW.invoke(tissue);
     }
     return false;
   }
@@ -127,21 +127,21 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
 
     min_dist = Math.sqrt(y_offset_squared + z_offset_squared);
 
-    if (radius_1 + radius_2 <= min_dist) {
+    if (radius_1 + radius_2 >= min_dist) {
       return true;
+    } else {
+      return false;
     }
-
-    return false;
   }
-  /*package*/ static boolean check_vessel_monolayer_overlap_id1QpPlI523LR(@NotNull SNode __thisNode__, SNode tissue_monolayer, SNode tissue_vessel) {
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+  /*package*/ static boolean check_vessel_monolayer_overlap_id1QpPlI523LR(@NotNull SNode __thisNode__, SNode tissue_vessel, SNode tissue_monolayer) {
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
     if (SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(tissue_vessel) || SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(tissue_vessel)) {
-      double cell_z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.z_coord$pLQj);
-      cell_z_offset = cell_z_offset * cell_z_offset;
+      double z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj);
+      z_offset = z_offset * z_offset;
 
       double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue_vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
+      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - z_offset);
       double vessel_y_lower_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) - vessel_y_boundary_offset;
       double vessel_y_upper_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(tissue_vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) + vessel_y_boundary_offset;
 

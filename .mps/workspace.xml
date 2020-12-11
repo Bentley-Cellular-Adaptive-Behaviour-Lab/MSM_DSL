@@ -1,174 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BreakpointManager">
+    <breakpoint kind="JAVA_LINE_BREAKPOINT">
+      <JavaBreakpointInfo>
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="mySuspendPolicy" value="2" />
+        <option name="myIsLogMessage" value="false" />
+        <option name="myCreationTime" value="1607703991803" />
+        <option name="myIsEnabled" value="true" />
+      </JavaBreakpointInfo>
+    </breakpoint>
+    <breakpoint kind="JAVA_LINE_BREAKPOINT">
+      <JavaBreakpointInfo>
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
+        <option name="mySuspendPolicy" value="2" />
+        <option name="myIsLogMessage" value="false" />
+        <option name="myCreationTime" value="1607701289460" />
+        <option name="myIsEnabled" value="true" />
+      </JavaBreakpointInfo>
+    </breakpoint>
+    <breakpoint kind="JAVA_LINE_BREAKPOINT">
+      <JavaBreakpointInfo>
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="mySuspendPolicy" value="2" />
+        <option name="myIsLogMessage" value="false" />
+        <option name="myCreationTime" value="1607701508999" />
+        <option name="myIsEnabled" value="true" />
+      </JavaBreakpointInfo>
+    </breakpoint>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other.">
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/models/sandbox.test.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/sandbox/test/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/sandbox/test/dsl_Tissue.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/sandbox/test/dsl_World.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cell__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Position_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Position_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noCellCollision_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noObjectCollisionsInContainer_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noTissueCollision_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Vertex_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Vertex_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Vertex_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/checkTriangularBoundaries_NonTypesystemRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/modules.xml" afterDir="false" />
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/BehaviorAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/BehaviorAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Flat__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Flat__BehaviorDescriptor$PROPS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Flat__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Flat__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor$LINKS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Arrangement_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$Cylinder_cross_section_cells_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$Cylinder_cross_section_cells_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Flat_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_c1a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_c1a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/TypesystemDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/TypesystemDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.constraints.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/TissueSetup.sandbox.msd" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/sandbox.msd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/classes_gen/TissueSetup/sandbox/test/dsl_Tissue.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/classes_gen/TissueSetup/sandbox/test/trace.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/models/TissueSetup.sandbox.test.mps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/TissueSetup/sandbox/test/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/sandbox/test/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/TissueSetup/sandbox/test/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/TissueSetup/sandbox/test/dsl_Tissue.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/TissueSetup/sandbox/test/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/sandbox/test/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/models/sandbox.test.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/models/sandbox.test.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/sandbox/test/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen.caches/sandbox/test/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/sandbox/test/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/source_gen/sandbox/test/dsl_Tissue.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/BehaviorAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cell__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cell__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Flat__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Flat__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue_And_Cell_Container__BehaviorDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Arrangement_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Arrangement_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Cylindrical_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Cylindrical_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Flat_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Flat_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noCellCollision_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noCellCollision_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noTissueCollision_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/noTissueCollision_NonTypesystemRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/Language.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/TypesystemDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/TypesystemDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/sandbox/classes_gen/WorldSetup/test/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/sandbox/classes_gen/WorldSetup/test/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/sandbox/models/WorldSetup.test.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/sandbox/models/WorldSetup.test.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/sandbox/source_gen.caches/WorldSetup/test/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/sandbox/source_gen.caches/WorldSetup/test/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/sandbox/source_gen/WorldSetup/test/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/sandbox/source_gen/WorldSetup/test/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,9 +74,10 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="f627024b-61ef-4841-a6f4-d3d7f1ce73e6/r:c0466b03-92fe-4e5c-bfaa-e973331af3a9(TempModulef627024b-61ef-4841-a6f4-d3d7f1ce73e6/ConsoleModel_399046093607800)">
+            <model ref="2569409e-4c61-4713-903b-23257872e2f1/r:ea1f91f2-aa58-4608-a4bb-1ed6cdb9457f(TempModule2569409e-4c61-4713-903b-23257872e2f1/ConsoleModel_479539991501900)">
               <persistence version="9" />
               <languages>
+                <use id="de1ad86d-6e50-4a02-b306-d4d17f64c375" name="jetbrains.mps.console.base" version="0" />
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
               </languages>
               <imports />
@@ -197,16 +91,163 @@
                   <concept id="5758176878586720817" name="jetbrains.mps.console.base.structure.CommandHolderRef" flags="ng" index="2_V_lH">
                     <reference id="5758176878586720818" name="target" index="2_V_lI" />
                   </concept>
-                  <concept id="351968380916615243" name="jetbrains.mps.console.base.structure.CommandHolder" flags="ng" index="2Clz$F" />
-                  <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
+                  <concept id="351968380916615243" name="jetbrains.mps.console.base.structure.CommandHolder" flags="ng" index="2Clz$F">
+                    <child id="351968380916615460" name="command" index="2Clzx4" />
+                  </concept>
+                  <concept id="5637103006919122224" name="jetbrains.mps.console.base.structure.NewLineResponseItem" flags="ng" index="Zy5Tx" />
+                  <concept id="5637103006919121976" name="jetbrains.mps.console.base.structure.TextResponseItem" flags="ng" index="Zy5XD">
+                    <property id="5637103006919122193" name="text" index="Zy5T0" />
+                  </concept>
+                  <concept id="5637103006918228482" name="jetbrains.mps.console.base.structure.Response" flags="ng" index="ZBF_j">
+                    <child id="5637103006919120621" name="item" index="Zy5mW" />
+                  </concept>
+                  <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm">
+                    <child id="7195119950189425818" name="item" index="18xWvz" />
+                  </concept>
+                  <concept id="473081947980701568" name="jetbrains.mps.console.base.structure.HelpCommand" flags="ng" index="1PAEo6" />
                 </language>
               </registry>
-              <node concept="aymSD" id="3$QBVvWAHVd">
-                <node concept="3balQm" id="3$QBVvWAHVe" role="aymYE" />
-                <node concept="2Clz$F" id="3$QBVvWAHVf" role="aymYO" />
-                <node concept="2_V_lH" id="3$QBVvWAHVg" role="1PhJh3">
-                  <ref role="2_V_lI" node="3$QBVvWAHVf" resolve="CommandHolder" />
+              <node concept="aymSD" id="2AY95d_8Zwz">
+                <node concept="3balQm" id="2AY95d_8Zw$" role="aymYE">
+                  <node concept="2Clz$F" id="2AY95d_dkKS" role="18xWvz">
+                    <node concept="1PAEo6" id="2AY95d_dkKT" role="2Clzx4" />
+                  </node>
+                  <node concept="ZBF_j" id="2AY95d_dkLW" role="18xWvz">
+                    <node concept="Zy5XD" id="2AY95d_dkKV" role="Zy5mW">
+                      <property role="Zy5T0" value="Constructions available in console:" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkKW" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="2AY95d_dkKX" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkKY" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkKZ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL0" role="Zy5mW">
+                      <property role="Zy5T0" value="{ &lt;statements&gt; }   execute a statement list" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL1" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL2" role="Zy5mW">
+                      <property role="Zy5T0" value="&lt;expression&gt;       evaluate an expression and print its result" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL3" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL4" role="Zy5mW">
+                      <property role="Zy5T0" value="?                  display this help or a help page for a specific command" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL5" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL6" role="Zy5mW">
+                      <property role="Zy5T0" value="#print             print into the console window" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL7" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL8" role="Zy5mW">
+                      <property role="Zy5T0" value="#project           the current project" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL9" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLa" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLb" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLc" role="Zy5mW">
+                      <property role="Zy5T0" value="#showBrokenRefs    show broken references" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLd" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLe" role="Zy5mW">
+                      <property role="Zy5T0" value="#showGenPlan       show the generation plan" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLf" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLg" role="Zy5mW">
+                      <property role="Zy5T0" value="#stat              display useful statistics" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLh" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLi" role="Zy5mW">
+                      <property role="Zy5T0" value="#callAction        call an IDE action with custom parameters" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLj" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLk" role="Zy5mW">
+                      <property role="Zy5T0" value="#clean             clean files *.generated" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLl" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLm" role="Zy5mW">
+                      <property role="Zy5T0" value="#make              make models" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLn" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLo" role="Zy5mW">
+                      <property role="Zy5T0" value="#removeGenSources  delete the source_gen, source_gen.caches and classes_gen directories" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLp" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLq" role="Zy5mW">
+                      <property role="Zy5T0" value="#show              show sequence of nodes/references/models/modules in the Usages View panel" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLr" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLs" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLt" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLu" role="Zy5mW">
+                      <property role="Zy5T0" value="#reloadClasses     reload classes of all modules" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLv" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLw" role="Zy5mW">
+                      <property role="Zy5T0" value="#consoleModel      return a model, in which the console commands as well as its history are stored" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLx" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLy" role="Zy5mW">
+                      <property role="Zy5T0" value="#internalMode      access the IDE internal mode variable" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLz" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkL$" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkL_" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLA" role="Zy5mW">
+                      <property role="Zy5T0" value="#exec              execute a script" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLB" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLC" role="Zy5mW">
+                      <property role="Zy5T0" value="refactor           apply a function to manually selected nodes" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLD" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLE" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLF" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLG" role="Zy5mW">
+                      <property role="Zy5T0" value="ofAspect           filter models by their aspect" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLH" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLI" role="Zy5mW">
+                      <property role="Zy5T0" value="                   " />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLJ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLK" role="Zy5mW">
+                      <property role="Zy5T0" value="#instances         instances of a concept in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLL" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLM" role="Zy5mW">
+                      <property role="Zy5T0" value="#models            all models in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLN" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLO" role="Zy5mW">
+                      <property role="Zy5T0" value="#modules           all modules in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLP" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLQ" role="Zy5mW">
+                      <property role="Zy5T0" value="#nodes             all nodes in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLR" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLS" role="Zy5mW">
+                      <property role="Zy5T0" value="#references        all references in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLT" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2AY95d_dkLU" role="Zy5mW">
+                      <property role="Zy5T0" value="#usages            direct references to a node in scope" />
+                    </node>
+                    <node concept="Zy5Tx" id="2AY95d_dkLV" role="Zy5mW" />
+                  </node>
                 </node>
+                <node concept="2_V_lH" id="2AY95d_8ZwA" role="1PhJh3">
+                  <ref role="2_V_lI" node="2AY95d_dkKR" resolve="CommandHolder" />
+                </node>
+                <node concept="2Clz$F" id="2AY95d_dkKR" role="aymYO" />
               </node>
             </model>
           </tab>
@@ -347,6 +388,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,66 +398,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sandbox" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sandbox" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4cdc970e-22e3-415d-aa5a-0d0bc99812ac(sandbox.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/sandbox/models/sandbox.test.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Worlds" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -447,6 +429,26 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -465,11 +467,107 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueSetup.constraints) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.constraints.mps]" />
+              <option name="myItemId" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="86f5d26e-f844-4ae6-a000-e043b3768001" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sandbox" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,13 +599,12 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="2132970487587139695" />
+              <option name="myItemId" value="3007881541727193870" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -519,7 +616,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PathwayTesting" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="MPS.Debug">
     <configuration name="Tests in 'WorldSetup.structure'" type="JUnit Tests" factoryName="JUnit Tests" temporary="true">
       <myJUnitSettings>
         <MyState>
@@ -528,7 +625,7 @@
           <option name="myInProcess" value="false" />
           <option name="myReuseCaches" value="true" />
           <option name="myOverrideCachesLocation" value="false" />
-          <option name="myDebug" value="false" />
+          <option name="myDebug" value="true" />
           <option name="myCachesPath" value="C:\Users\Tom\AppData\Roaming\JetBrains\MPSJUnitRC0" />
           <option name="myTestCases">
             <list />
@@ -564,6 +661,29 @@
         <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AssemblePluginsBeforeTask_BeforeTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Debug" type="MPS" factoryName="MPS Instance">
+      <myMpsSettings>
+        <MyState>
+          <option name="myVmOptions" value="" />
+          <option name="myJrePath" value="" />
+          <option name="mySettingsPath" value="$USER_HOME$/AppData/Roaming/JetBrains/MPSInstanceRC" />
+        </MyState>
+      </myMpsSettings>
+      <myPluginsSettings>
+        <MyState>
+          <option name="myPluginsToDeploy">
+            <list />
+          </option>
+        </MyState>
+      </myPluginsSettings>
+      <method v="2">
+        <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.AssemblePluginsBeforeTask_BeforeTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit Tests.Tests in 'WorldSetup.structure'" />
+      <item itemvalue="MPS.Debug" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit Tests.Tests in 'WorldSetup.structure'" />
@@ -610,7 +730,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607427628411</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other. Some errors in importing language and collision detection.">
+      <created>1607614071420</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1607614071420</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -626,7 +753,8 @@
     <MESSAGE value="Complete tissue language. World setup is work-in-progress." />
     <MESSAGE value="Triangular substrates can now be defined in the world setup language." />
     <MESSAGE value="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other." />
+    <MESSAGE value="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other. Some errors in importing language and collision detection." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other. Some errors in importing language and collision detection." />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="413" key="#MPSPropertiesConfigurable" timestamp="1607513409264">
@@ -637,6 +765,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="509" y="372" key="#Plugins/0.0.2560.1400@0.0.2560.1400" timestamp="1603463245724" />
+    <state x="241" y="360" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607698155992">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="241" y="360" width="1092" height="714" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1607698155992" />
     <state x="472" y="467" key="#jetbrains.mps.ide.migration.MigrationAssistantWizard" timestamp="1606749620403">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -653,18 +785,50 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="455" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607441760555" />
-    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1607427627668">
+    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1607614070309">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607427627668" />
-    <state x="428" y="458" key="FileChooserDialogImpl" timestamp="1607513278501">
+    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1607614070309" />
+    <state x="428" y="458" key="FileChooserDialogImpl" timestamp="1607692574043">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="428" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1607513278501" />
+    <state x="428" y="458" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1607692574043" />
     <state x="904" y="582" width="700" height="204" key="Github.ShareDialog" timestamp="1606989501974">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="904" y="582" width="700" height="204" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1606989501974" />
+    <state width="757" height="500" key="GridCell.Tab.0.bottom" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.0.center" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.0.left" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.0.right" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.1.bottom" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.1.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.1.center" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.1.center/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.1.left" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.1.left/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
+    <state width="757" height="500" key="GridCell.Tab.1.right" timestamp="1607704294925">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="757" height="500" key="GridCell.Tab.1.right/0.0.2560.1400@0.0.2560.1400" timestamp="1607704294925" />
     <state x="84" y="114" key="SettingsEditor" timestamp="1606991277554">
       <screen x="0" y="23" width="1440" height="813" />
     </state>
@@ -690,6 +854,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="909" y="449" key="jetbrains.mps.ide.ui.dialogs.properties.choosers.ChooserDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1607513407087" />
+    <state x="299" y="429" width="885" height="549" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog" timestamp="1607702769466">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="299" y="429" width="885" height="549" key="jetbrains.mps.typesystem.uiActions.MyBaseNodeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1607702769466" />
     <state x="706" y="557" width="1240" height="282" key="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" timestamp="1606748154350">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

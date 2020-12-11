@@ -226,15 +226,17 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="TissueSetup.behavior.Tissue__BehaviorDescriptor">
-    <classNode dependClassName="TissueSetup.behavior.Cylindrical__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Flat__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />

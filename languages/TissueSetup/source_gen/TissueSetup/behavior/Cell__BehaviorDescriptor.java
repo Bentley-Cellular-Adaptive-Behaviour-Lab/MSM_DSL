@@ -30,22 +30,27 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, "TissueSetup.structure.Cell");
 
-  public static final SMethod<Boolean> check_boundaries_id1QpPlI51TK3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51TK3").build();
+  public static final SMethod<Boolean> check_object_boundaries_id1QpPlI51TK3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_object_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51TK3").build();
+  public static final SMethod<Boolean> check_upper_x_world_boundaries_id3$QBVvWCJog = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCJog").build();
+  public static final SMethod<Boolean> check_lower_x_world_boundaries_id3$QBVvWCTDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCTDn").build();
+  public static final SMethod<Boolean> check_upper_y_world_boundaries_id3$QBVvWCLp9 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCLp9").build();
+  public static final SMethod<Boolean> check_lower_y_world_boundaries_id3$QBVvWCYG5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCYG5").build();
+  public static final SMethod<Boolean> check_z_world_boundaries_id3$QBVvWCOcR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_z_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCOcR").build();
   public static final SMethod<Integer> get_lower_x_id1QpPlI524fx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524fx").build();
   public static final SMethod<Integer> get_lower_y_id1QpPlI524ju = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524ju").build();
   public static final SMethod<Integer> get_upper_x_id1QpPlI524rF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524rF").build();
   public static final SMethod<Integer> get_upper_y_id1QpPlI524zL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524zL").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_boundaries_id1QpPlI51TK3, get_lower_x_id1QpPlI524fx, get_lower_y_id1QpPlI524ju, get_upper_x_id1QpPlI524rF, get_upper_y_id1QpPlI524zL);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TK3, check_upper_x_world_boundaries_id3$QBVvWCJog, check_lower_x_world_boundaries_id3$QBVvWCTDn, check_upper_y_world_boundaries_id3$QBVvWCLp9, check_lower_y_world_boundaries_id3$QBVvWCYG5, check_z_world_boundaries_id3$QBVvWCOcR, get_lower_x_id1QpPlI524fx, get_lower_y_id1QpPlI524ju, get_upper_x_id1QpPlI524rF, get_upper_y_id1QpPlI524zL);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static boolean check_boundaries_id1QpPlI51TK3(@NotNull SNode __thisNode__) {
+  /*package*/ static boolean check_object_boundaries_id1QpPlI51TK3(@NotNull SNode __thisNode__) {
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.cells$psWW))) {
       if (!(Objects.equals(cell, __thisNode__))) {
         if ((boolean) Tissue_And_Cell_Container__BehaviorDescriptor.check_cell_cell_overlap_id1QpPlI522xB.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), __thisNode__, cell)) {
-          return false;
+          return true;
         }
       }
     }
@@ -59,6 +64,36 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
           return true;
         }
       }
+    }
+    return false;
+  }
+  /*package*/ static boolean check_upper_x_world_boundaries_id3$QBVvWCJog(@NotNull SNode __thisNode__) {
+    if (Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.X_Size$PwQq)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_lower_x_world_boundaries_id3$QBVvWCTDn(@NotNull SNode __thisNode__) {
+    if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(__thisNode__) < 0) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_upper_y_world_boundaries_id3$QBVvWCLp9(@NotNull SNode __thisNode__) {
+    if (Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Y_Size$Pxks)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_lower_y_world_boundaries_id3$QBVvWCYG5(@NotNull SNode __thisNode__) {
+    if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(__thisNode__) < 0) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_z_world_boundaries_id3$QBVvWCOcR(@NotNull SNode __thisNode__) {
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Z_Size$PAWO) || SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) < 0) {
+      return true;
     }
     return false;
   }
@@ -110,14 +145,24 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Boolean) check_boundaries_id1QpPlI51TK3(node));
+        return (T) ((Boolean) check_object_boundaries_id1QpPlI51TK3(node));
       case 1:
-        return (T) ((Integer) get_lower_x_id1QpPlI524fx(node));
+        return (T) ((Boolean) check_upper_x_world_boundaries_id3$QBVvWCJog(node));
       case 2:
-        return (T) ((Integer) get_lower_y_id1QpPlI524ju(node));
+        return (T) ((Boolean) check_lower_x_world_boundaries_id3$QBVvWCTDn(node));
       case 3:
-        return (T) ((Integer) get_upper_x_id1QpPlI524rF(node));
+        return (T) ((Boolean) check_upper_y_world_boundaries_id3$QBVvWCLp9(node));
       case 4:
+        return (T) ((Boolean) check_lower_y_world_boundaries_id3$QBVvWCYG5(node));
+      case 5:
+        return (T) ((Boolean) check_z_world_boundaries_id3$QBVvWCOcR(node));
+      case 6:
+        return (T) ((Integer) get_lower_x_id1QpPlI524fx(node));
+      case 7:
+        return (T) ((Integer) get_lower_y_id1QpPlI524ju(node));
+      case 8:
+        return (T) ((Integer) get_upper_x_id1QpPlI524rF(node));
+      case 9:
         return (T) ((Integer) get_upper_y_id1QpPlI524zL(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -160,12 +205,18 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SReferenceLink tissue_type$$cvw = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x4369a03b1c616655L, "tissue_type");
     /*package*/ static final SContainmentLink arrangement$aAuk = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x4369a03b1c61664bL, "arrangement");
     /*package*/ static final SContainmentLink tissues$psuU = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x56b8f8b9a96cef8cL, "tissues");
+    /*package*/ static final SReferenceLink World_Container$fGL6 = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x1d99d55b84fedbc7L, "World_Container");
+    /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
+    /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
     /*package*/ static final SReferenceLink cell_type$3r_d = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x7290577338f69178L, "cell_type");
     /*package*/ static final SContainmentLink shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "shape");
-    /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty X_Size$PwQq = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d41L, "X_Size");
+    /*package*/ static final SProperty Y_Size$Pxks = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d43L, "Y_Size");
+    /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
+    /*package*/ static final SProperty Z_Size$PAWO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d46L, "Z_Size");
     /*package*/ static final SProperty width$pTZY = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb3L, "width");
     /*package*/ static final SProperty x_coord$pFJT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa3L, "x_coord");
     /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");
