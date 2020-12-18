@@ -13,6 +13,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
@@ -48,6 +49,7 @@
     <property role="EcuMT" value="6249017959271690117" />
     <property role="TrG5h" value="Tissue_And_Cell_Container" />
     <property role="19KtqR" value="true" />
+    <property role="R4oN_" value="Root concept which stores user-defined cell and tissue types, and instances of cells and tissues in the simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4dDC3Gso8zD" role="1TKVEi">
       <property role="IQ2ns" value="4857589848835393769" />
@@ -90,6 +92,7 @@
   <node concept="1TIwiD" id="5qSYbADreY6">
     <property role="EcuMT" value="6249017959271690118" />
     <property role="TrG5h" value="Tissue" />
+    <property role="R4oN_" value="Concept for storing the location and type of a tissue." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
@@ -111,6 +114,7 @@
   <node concept="1TIwiD" id="5qSYbADreY7">
     <property role="EcuMT" value="6249017959271690119" />
     <property role="TrG5h" value="Position" />
+    <property role="R4oN_" value="Concept that stores the X,Y and Z coordinates of an object (used elsewhere, such as in gradient boundaries)." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5qSYbADreYz" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690147" />
@@ -131,6 +135,7 @@
   <node concept="1TIwiD" id="5qSYbADreY8">
     <property role="EcuMT" value="6249017959271690120" />
     <property role="TrG5h" value="Cell" />
+    <property role="R4oN_" value="Cell concept which stores the type and position of a cell in the simulation world. Other behaviours are not currently implemented." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5qSYbADryD8" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770696" />
@@ -153,12 +158,14 @@
     <property role="EcuMT" value="6249017959271690121" />
     <property role="TrG5h" value="Shape" />
     <property role="R5$K7" value="true" />
+    <property role="R4oN_" value="Abstract concept for storing the shape type of a cell." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5qSYbADreYa">
     <property role="EcuMT" value="6249017959271690122" />
     <property role="TrG5h" value="Arrangement" />
     <property role="R5$K7" value="true" />
+    <property role="R4oN_" value="Abstract concept for describing the arrangement of cells within the tissue." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4JVq81Fl21R" role="1TKVEl">
       <property role="IQ2nx" value="5475084672764747895" />
@@ -169,6 +176,7 @@
   <node concept="1TIwiD" id="5qSYbADreYb">
     <property role="EcuMT" value="6249017959271690123" />
     <property role="TrG5h" value="Cell_Type" />
+    <property role="R4oN_" value="Concept for storing the initial shape and behaviour (planned) of a cell." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5qSYbADreYV" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271690171" />
@@ -185,6 +193,7 @@
     <property role="EcuMT" value="6249017959271690129" />
     <property role="TrG5h" value="Cylindrical" />
     <property role="34LRSv" value="Cylindrical" />
+    <property role="R4oN_" value="Concept for describing a hollow, 2D cylindrical tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYj" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690131" />
@@ -211,6 +220,7 @@
     <property role="EcuMT" value="6249017959271690140" />
     <property role="TrG5h" value="Flat" />
     <property role="34LRSv" value="Flat" />
+    <property role="R4oN_" value="Concept for describing a flat (2D), rectangular tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYu" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690142" />
@@ -227,6 +237,7 @@
     <property role="EcuMT" value="6249017959271690141" />
     <property role="TrG5h" value="Square" />
     <property role="34LRSv" value="SQUARE" />
+    <property role="R4oN_" value="Square cell shape type." />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
     <node concept="1TJgyi" id="5qSYbADreYL" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690161" />
@@ -242,6 +253,7 @@
   <node concept="1TIwiD" id="7aglRcSXD5Z">
     <property role="EcuMT" value="8255194269358657919" />
     <property role="TrG5h" value="Tissue_Type" />
+    <property role="R4oN_" value="Concept which stores the arrangement of a tissue and the cell type that constitutes it." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7aglRcSXD60" role="1TKVEi">
       <property role="IQ2ns" value="8255194269358657920" />

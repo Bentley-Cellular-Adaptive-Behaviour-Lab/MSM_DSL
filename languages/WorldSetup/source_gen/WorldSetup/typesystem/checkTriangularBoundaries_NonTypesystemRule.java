@@ -24,6 +24,7 @@ public class checkTriangularBoundaries_NonTypesystemRule extends AbstractNonType
   public checkTriangularBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisTriangular, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // Check that the depth of the triangular substrate does not extend out of the world. 
     int centre_z = Integer.getInteger(Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisTriangular), CONCEPTS.Substrate$xo), LINKS.Centre_Position$epse)));
 
     if (centre_z - SPropertyOperations.getInteger(thisTriangular, PROPS.depth$5OPS) / 2 < 0 || centre_z + SPropertyOperations.getInteger(thisTriangular, PROPS.depth$5OPS) / 2 > SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisTriangular, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ), PROPS.Z_Size$PAWO)) {

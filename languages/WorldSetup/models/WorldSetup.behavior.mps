@@ -4,6 +4,7 @@
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="17" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -69,6 +70,22 @@
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -79,6 +96,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -113,6 +133,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXQcr" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXQcs" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXQct" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the maximum X-size of the world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXQcu" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL5W4_" role="13h7CS">
       <property role="TrG5h" value="get_Y_size" />
@@ -139,6 +169,16 @@
           <node concept="37vLTw" id="2OHr9yL5W4L" role="3cqZAk">
             <ref role="3cqZAo" node="2OHr9yL5W4E" resolve="size" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXQTs" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXQTt" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXQTu" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the maximum Y-size of the world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXQTv" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -169,6 +209,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXRAt" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXRAu" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXRAv" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the maximum Z-size of the world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXRAw" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="2OHr9yL5TjI" role="13h7CW">
       <node concept="3clFbS" id="2OHr9yL5TjJ" role="2VODD2" />
@@ -195,6 +245,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXTwI" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXTwJ" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXTwK" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the X-position of the source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXTwL" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL66Qs" role="13h7CS">
       <property role="TrG5h" value="get_Y_position" />
@@ -215,6 +275,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXTxp" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXTxq" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXTxr" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Y-position of the source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXTxs" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL67xm" role="13h7CS">
       <property role="TrG5h" value="get_Z_position" />
@@ -233,6 +303,16 @@
               <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXTB$" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXTB_" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXTBA" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Z-position of the source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXTBB" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -263,6 +343,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXTHB" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXTHC" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXTHD" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the source strength." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXTHE" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="2OHr9yL65i1" role="13h7CW">
       <node concept="3clFbS" id="2OHr9yL65i2" role="2VODD2" />
@@ -289,6 +379,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXSxj" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXSxk" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXSxl" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the X-position of the sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXSxm" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL68kW" role="13h7CS">
       <property role="TrG5h" value="get_Y_position" />
@@ -309,6 +409,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXSy6" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXSy7" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXSy8" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Y-position of the sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXSy9" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL68l6" role="13h7CS">
       <property role="TrG5h" value="get_Z_position" />
@@ -327,6 +437,16 @@
               <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXSC9" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXSCa" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXSCb" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Z-position of the sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXSCc" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -355,6 +475,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXO06" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXO07" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXO08" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the X-coordinate of the gradient's source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXO09" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL6cfy" role="13h7CS">
       <property role="TrG5h" value="get_source_Y_position" />
@@ -373,6 +503,16 @@
               <ref role="37wK5l" node="2OHr9yL66Qs" resolve="get_Y_position" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXO6m" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXO6n" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXO6o" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Y-coordinate of the gradient's source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXO6p" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -395,6 +535,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXOcu" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXOcv" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXOcw" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Z-coordinate of the gradient's source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXOcx" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL6e46" role="13h7CS">
       <property role="TrG5h" value="get_sink_X_position" />
@@ -413,6 +563,16 @@
               <ref role="37wK5l" node="2OHr9yL68kM" resolve="get_X_position" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXOdp" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXOdq" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXOdr" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the X-coordinate of the gradient's sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXOds" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -435,6 +595,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXOjD" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXOjE" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXOjF" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Y-coordinate of the gradient's sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXOjG" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL6fPc" role="13h7CS">
       <property role="TrG5h" value="get_sink_Z_position" />
@@ -455,6 +625,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXOpT" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXOpU" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXOpV" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Z-coordinate of the gradient's sink." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXOpW" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2OHr9yL8Zf7" role="13h7CS">
       <property role="TrG5h" value="get_source_strength" />
@@ -473,6 +653,16 @@
               <ref role="37wK5l" node="2OHr9yL8Xdi" resolve="get_source_strength" />
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXOw9" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXOwa" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXOwb" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the base strength of the gradient's source." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXOwc" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -516,6 +706,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXVFk" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXVFl" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXVFm" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the X-coordinate of the first triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXVFn" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="57aaQbDElMG" role="13h7CS">
       <property role="TrG5h" value="get_vertex_1_Y" />
@@ -549,6 +749,16 @@
           <node concept="37vLTw" id="57aaQbDElMS" role="3cqZAk">
             <ref role="3cqZAo" node="57aaQbDElML" resolve="vertex" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXVGC" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXVGD" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXVGE" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the Y-coordinate of the first triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXVGF" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -586,6 +796,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXWrD" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXWrE" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXWrF" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the X-coordinate of the second triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXWrG" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="57aaQbDEofO" role="13h7CS">
       <property role="TrG5h" value="get_vertex_2_Y" />
@@ -619,6 +839,16 @@
           <node concept="37vLTw" id="57aaQbDEog2" role="3cqZAk">
             <ref role="3cqZAo" node="57aaQbDEofT" resolve="vertex" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXXaM" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXXaN" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXXaO" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the Y-coordinate of the second triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXXaP" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -656,6 +886,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXXTN" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXXTO" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXXTP" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the X-coordinate of the third triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXXTQ" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="57aaQbDErqj" role="13h7CS">
       <property role="TrG5h" value="get_vertex_3_Y" />
@@ -691,6 +931,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQXYCW" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXYCX" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXYCY" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the Y-coordinate of the third triangular substrate vertex." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXYCZ" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4JVq81FgwNn" role="13h7CS">
       <property role="TrG5h" value="get_depth" />
@@ -719,6 +969,16 @@
           <node concept="37vLTw" id="4JVq81FgSss" role="3cqZAk">
             <ref role="3cqZAo" node="4JVq81FgwXW" resolve="depth" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXYEg" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXYEh" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXYEi" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the depth of the triangular prism." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXYEj" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -753,6 +1013,21 @@
           <node concept="37vLTw" id="4JVq81FhaHb" role="3cqZAk">
             <ref role="3cqZAo" node="4JVq81Fh9M5" resolve="adhesiveness" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQXUAU" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQXUAV" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXUAW" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the adhesiveness level of the substrate, which affects the probability that a cell can put down a focal " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQXUNa" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQXUNb" role="1dT_Ay">
+            <property role="1dT_AB" value="adhesion." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQXUAX" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>

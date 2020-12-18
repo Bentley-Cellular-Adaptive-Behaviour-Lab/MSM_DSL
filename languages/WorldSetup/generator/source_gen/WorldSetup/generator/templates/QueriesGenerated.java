@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate__BehaviorDescriptor;
+import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -200,6 +201,10 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_1_44(final PropertyMacroContext _context) {
     return (String) Substrate__BehaviorDescriptor.get_adhesiveness_id4JVq81Fh9KI.invoke(_context.getNode());
   }
+  public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
+    String path = SModelOperations.getOutputLocation(_context.getOriginalInputModel()).getPath();
+    return path;
+  }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b);
   }
@@ -342,6 +347,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7788773186966082150", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_NAME"));
     pvqMethods.put("5893570766194636501", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_DIRECTIONALITY"));
     pvqMethods.put("5475084672763729036", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_ADHESIVENESS"));
+    pvqMethods.put("805499748792787592", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "output_path"));
   }
   @NotNull
   @Override
@@ -451,6 +457,8 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_43(ctx);
         case 44:
           return QueriesGenerated.propertyMacro_GetValue_1_44(ctx);
+        case 45:
+          return QueriesGenerated.propertyMacro_GetValue_2_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
