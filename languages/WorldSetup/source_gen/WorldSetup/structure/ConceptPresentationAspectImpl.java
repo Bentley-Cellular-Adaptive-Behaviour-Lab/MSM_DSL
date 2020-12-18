@@ -28,6 +28,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Gradient:
         if (props_Gradient == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a protein gradient within the simulation world.");
           cpb.presentationByName();
           props_Gradient = cpb.create();
         }
@@ -35,6 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Grid:
         if (props_Grid == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing the base properties of the simulation world environment.");
           cpb.rawPresentation("Grid");
           props_Grid = cpb.create();
         }
@@ -42,6 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Sink:
         if (props_Sink == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing the location of where a gradient ends.");
           cpb.rawPresentation("Sink");
           props_Sink = cpb.create();
         }
@@ -49,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Source:
         if (props_Source == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing the source strength and location of a gradient.");
           cpb.rawPresentation("Source");
           props_Source = cpb.create();
         }
@@ -56,6 +60,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Substrate:
         if (props_Substrate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a cellular substrate that cells can grow on.");
           cpb.presentationByName();
           props_Substrate = cpb.create();
         }
@@ -63,13 +68,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Substrate_Shape:
         if (props_Substrate_Shape == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Substrate_Shape");
+          cpb.shortDesc("Abstract concept for storing the shape of a substrate.");
           props_Substrate_Shape = cpb.create();
         }
         return props_Substrate_Shape;
       case LanguageConceptSwitch.Substrate_Shape_Cuboid:
         if (props_Substrate_Shape_Cuboid == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a cuboidal substrate.");
           cpb.rawPresentation("Substrate_Shape_Cuboid");
           props_Substrate_Shape_Cuboid = cpb.create();
         }
@@ -77,6 +83,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Substrate_Shape_Triangular:
         if (props_Substrate_Shape_Triangular == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a substrate in the shape of a triagnular prism.");
           cpb.rawPresentation("Substrate_Shape_Triangular");
           props_Substrate_Shape_Triangular = cpb.create();
         }
@@ -84,6 +91,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Vertex:
         if (props_Vertex == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Vertex concept for a triangle.");
           cpb.rawPresentation("Vertex");
           props_Vertex = cpb.create();
         }
@@ -91,6 +99,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.World_Container:
         if (props_World_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing the gradients, substrate and properties of a simulation world.");
           cpb.presentationByName();
           props_World_Container = cpb.create();
         }

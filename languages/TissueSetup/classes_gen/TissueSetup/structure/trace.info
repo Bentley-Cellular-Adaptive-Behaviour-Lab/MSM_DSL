@@ -9,7 +9,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="11,0,108,0" name="TissueSetup.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,119,0" name="TissueSetup.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <unit at="10,0,48,0" name="TissueSetup.structure.LanguageConceptSwitch" />
@@ -21,15 +21,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690117">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690117" at="21,0,22,0" concept="1" trace="props_Tissue_And_Cell_Container" />
-      <node id="6249017959271690117" at="91,54,92,76" concept="3" />
-      <node id="6249017959271690117" at="92,76,93,35" concept="0" />
-      <node id="6249017959271690117" at="93,35,94,57" concept="0" />
-      <node id="6249017959271690117" at="95,9,96,47" concept="4" />
-      <node id="6249017959271690117" at="90,59,95,9" concept="2" />
-      <scope id="6249017959271690117" at="91,54,94,57">
+      <node id="6249017959271690117" at="100,54,101,76" concept="3" />
+      <node id="6249017959271690117" at="101,76,102,149" concept="0" />
+      <node id="6249017959271690117" at="102,149,103,35" concept="0" />
+      <node id="6249017959271690117" at="103,35,104,57" concept="0" />
+      <node id="6249017959271690117" at="105,9,106,47" concept="4" />
+      <node id="6249017959271690117" at="99,59,105,9" concept="2" />
+      <scope id="6249017959271690117" at="100,54,104,57">
         <var name="cpb" id="6249017959271690117" />
       </scope>
-      <scope id="6249017959271690117" at="90,59,96,47" />
+      <scope id="6249017959271690117" at="99,59,106,47" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690117" at="21,0,22,0" concept="5" trace="Tissue_And_Cell_Container" />
@@ -60,15 +61,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690118">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690118" at="20,0,21,0" concept="1" trace="props_Tissue" />
-      <node id="6249017959271690118" at="84,35,85,76" concept="3" />
-      <node id="6249017959271690118" at="85,76,86,35" concept="0" />
-      <node id="6249017959271690118" at="86,35,87,38" concept="0" />
-      <node id="6249017959271690118" at="88,9,89,28" concept="4" />
-      <node id="6249017959271690118" at="83,40,88,9" concept="2" />
-      <scope id="6249017959271690118" at="84,35,87,38">
+      <node id="6249017959271690118" at="92,35,93,76" concept="3" />
+      <node id="6249017959271690118" at="93,76,94,82" concept="0" />
+      <node id="6249017959271690118" at="94,82,95,35" concept="0" />
+      <node id="6249017959271690118" at="95,35,96,38" concept="0" />
+      <node id="6249017959271690118" at="97,9,98,28" concept="4" />
+      <node id="6249017959271690118" at="91,40,97,9" concept="2" />
+      <scope id="6249017959271690118" at="92,35,96,38">
         <var name="cpb" id="6249017959271690118" />
       </scope>
-      <scope id="6249017959271690118" at="83,40,89,28" />
+      <scope id="6249017959271690118" at="91,40,98,28" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690118" at="20,0,21,0" concept="5" trace="Tissue" />
@@ -96,15 +98,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690119">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690119" at="17,0,18,0" concept="1" trace="props_Position" />
-      <node id="6249017959271690119" at="64,37,65,76" concept="3" />
-      <node id="6249017959271690119" at="65,76,66,42" concept="0" />
-      <node id="6249017959271690119" at="66,42,67,40" concept="0" />
-      <node id="6249017959271690119" at="68,9,69,30" concept="4" />
-      <node id="6249017959271690119" at="63,42,68,9" concept="2" />
-      <scope id="6249017959271690119" at="64,37,67,40">
+      <node id="6249017959271690119" at="69,37,70,76" concept="3" />
+      <node id="6249017959271690119" at="70,76,71,136" concept="0" />
+      <node id="6249017959271690119" at="71,136,72,42" concept="0" />
+      <node id="6249017959271690119" at="72,42,73,40" concept="0" />
+      <node id="6249017959271690119" at="74,9,75,30" concept="4" />
+      <node id="6249017959271690119" at="68,42,74,9" concept="2" />
+      <scope id="6249017959271690119" at="69,37,73,40">
         <var name="cpb" id="6249017959271690119" />
       </scope>
-      <scope id="6249017959271690119" at="63,42,69,30" />
+      <scope id="6249017959271690119" at="68,42,75,30" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690119" at="17,0,18,0" concept="5" trace="Position" />
@@ -132,15 +135,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690120">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690120" at="13,0,14,0" concept="1" trace="props_Cell" />
-      <node id="6249017959271690120" at="36,33,37,76" concept="3" />
-      <node id="6249017959271690120" at="37,76,38,35" concept="0" />
-      <node id="6249017959271690120" at="38,35,39,36" concept="0" />
-      <node id="6249017959271690120" at="40,9,41,26" concept="4" />
-      <node id="6249017959271690120" at="35,38,40,9" concept="2" />
-      <scope id="6249017959271690120" at="36,33,39,36">
+      <node id="6249017959271690120" at="37,33,38,76" concept="3" />
+      <node id="6249017959271690120" at="38,76,39,158" concept="0" />
+      <node id="6249017959271690120" at="39,158,40,35" concept="0" />
+      <node id="6249017959271690120" at="40,35,41,36" concept="0" />
+      <node id="6249017959271690120" at="42,9,43,26" concept="4" />
+      <node id="6249017959271690120" at="36,38,42,9" concept="2" />
+      <scope id="6249017959271690120" at="37,33,41,36">
         <var name="cpb" id="6249017959271690120" />
       </scope>
-      <scope id="6249017959271690120" at="35,38,41,26" />
+      <scope id="6249017959271690120" at="36,38,43,26" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690120" at="13,0,14,0" concept="5" trace="Cell" />
@@ -168,14 +172,15 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690121">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690121" at="18,0,19,0" concept="1" trace="props_Shape" />
-      <node id="6249017959271690121" at="71,34,72,76" concept="3" />
-      <node id="6249017959271690121" at="72,76,73,37" concept="0" />
-      <node id="6249017959271690121" at="74,9,75,27" concept="4" />
-      <node id="6249017959271690121" at="70,39,74,9" concept="2" />
-      <scope id="6249017959271690121" at="71,34,73,37">
+      <node id="6249017959271690121" at="77,34,78,76" concept="3" />
+      <node id="6249017959271690121" at="78,76,79,82" concept="0" />
+      <node id="6249017959271690121" at="79,82,80,37" concept="0" />
+      <node id="6249017959271690121" at="81,9,82,27" concept="4" />
+      <node id="6249017959271690121" at="76,39,81,9" concept="2" />
+      <scope id="6249017959271690121" at="77,34,80,37">
         <var name="cpb" id="6249017959271690121" />
       </scope>
-      <scope id="6249017959271690121" at="70,39,75,27" />
+      <scope id="6249017959271690121" at="76,39,82,27" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690121" at="18,0,19,0" concept="5" trace="Shape" />
@@ -201,13 +206,14 @@
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690122" at="12,0,13,0" concept="1" trace="props_Arrangement" />
       <node id="6249017959271690122" at="30,40,31,76" concept="3" />
-      <node id="6249017959271690122" at="31,76,32,43" concept="0" />
-      <node id="6249017959271690122" at="33,9,34,33" concept="4" />
-      <node id="6249017959271690122" at="29,45,33,9" concept="2" />
-      <scope id="6249017959271690122" at="30,40,32,43">
+      <node id="6249017959271690122" at="31,76,32,103" concept="0" />
+      <node id="6249017959271690122" at="32,103,33,43" concept="0" />
+      <node id="6249017959271690122" at="34,9,35,33" concept="4" />
+      <node id="6249017959271690122" at="29,45,34,9" concept="2" />
+      <scope id="6249017959271690122" at="30,40,33,43">
         <var name="cpb" id="6249017959271690122" />
       </scope>
-      <scope id="6249017959271690122" at="29,45,34,33" />
+      <scope id="6249017959271690122" at="29,45,35,33" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690122" at="12,0,13,0" concept="5" trace="Arrangement" />
@@ -233,15 +239,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690123">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690123" at="14,0,15,0" concept="1" trace="props_Cell_Type" />
-      <node id="6249017959271690123" at="43,38,44,76" concept="3" />
-      <node id="6249017959271690123" at="44,76,45,35" concept="0" />
-      <node id="6249017959271690123" at="45,35,46,41" concept="0" />
-      <node id="6249017959271690123" at="47,9,48,31" concept="4" />
-      <node id="6249017959271690123" at="42,43,47,9" concept="2" />
-      <scope id="6249017959271690123" at="43,38,46,41">
+      <node id="6249017959271690123" at="45,38,46,76" concept="3" />
+      <node id="6249017959271690123" at="46,76,47,100" concept="0" />
+      <node id="6249017959271690123" at="47,100,48,35" concept="0" />
+      <node id="6249017959271690123" at="48,35,49,41" concept="0" />
+      <node id="6249017959271690123" at="50,9,51,31" concept="4" />
+      <node id="6249017959271690123" at="44,43,50,9" concept="2" />
+      <scope id="6249017959271690123" at="45,38,49,41">
         <var name="cpb" id="6249017959271690123" />
       </scope>
-      <scope id="6249017959271690123" at="42,43,48,31" />
+      <scope id="6249017959271690123" at="44,43,51,31" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690123" at="14,0,15,0" concept="5" trace="Cell_Type" />
@@ -268,15 +275,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690129">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690129" at="15,0,16,0" concept="1" trace="props_Cylindrical" />
-      <node id="6249017959271690129" at="50,40,51,76" concept="3" />
-      <node id="6249017959271690129" at="51,76,52,45" concept="0" />
-      <node id="6249017959271690129" at="52,45,53,43" concept="0" />
-      <node id="6249017959271690129" at="54,9,55,33" concept="4" />
-      <node id="6249017959271690129" at="49,45,54,9" concept="2" />
-      <scope id="6249017959271690129" at="50,40,53,43">
+      <node id="6249017959271690129" at="53,40,54,76" concept="3" />
+      <node id="6249017959271690129" at="54,76,55,106" concept="0" />
+      <node id="6249017959271690129" at="55,106,56,45" concept="0" />
+      <node id="6249017959271690129" at="56,45,57,43" concept="0" />
+      <node id="6249017959271690129" at="58,9,59,33" concept="4" />
+      <node id="6249017959271690129" at="52,45,58,9" concept="2" />
+      <scope id="6249017959271690129" at="53,40,57,43">
         <var name="cpb" id="6249017959271690129" />
       </scope>
-      <scope id="6249017959271690129" at="49,45,55,33" />
+      <scope id="6249017959271690129" at="52,45,59,33" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690129" at="15,0,16,0" concept="5" trace="Cylindrical" />
@@ -307,15 +315,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690140">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690140" at="16,0,17,0" concept="1" trace="props_Flat" />
-      <node id="6249017959271690140" at="57,33,58,76" concept="3" />
-      <node id="6249017959271690140" at="58,76,59,38" concept="0" />
-      <node id="6249017959271690140" at="59,38,60,36" concept="0" />
-      <node id="6249017959271690140" at="61,9,62,26" concept="4" />
-      <node id="6249017959271690140" at="56,38,61,9" concept="2" />
-      <scope id="6249017959271690140" at="57,33,60,36">
+      <node id="6249017959271690140" at="61,33,62,76" concept="3" />
+      <node id="6249017959271690140" at="62,76,63,106" concept="0" />
+      <node id="6249017959271690140" at="63,106,64,38" concept="0" />
+      <node id="6249017959271690140" at="64,38,65,36" concept="0" />
+      <node id="6249017959271690140" at="66,9,67,26" concept="4" />
+      <node id="6249017959271690140" at="60,38,66,9" concept="2" />
+      <scope id="6249017959271690140" at="61,33,65,36">
         <var name="cpb" id="6249017959271690140" />
       </scope>
-      <scope id="6249017959271690140" at="56,38,62,26" />
+      <scope id="6249017959271690140" at="60,38,67,26" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690140" at="16,0,17,0" concept="5" trace="Flat" />
@@ -344,15 +353,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690141">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="6249017959271690141" at="19,0,20,0" concept="1" trace="props_Square" />
-      <node id="6249017959271690141" at="77,35,78,76" concept="3" />
-      <node id="6249017959271690141" at="78,76,79,40" concept="0" />
-      <node id="6249017959271690141" at="79,40,80,38" concept="0" />
-      <node id="6249017959271690141" at="81,9,82,28" concept="4" />
-      <node id="6249017959271690141" at="76,40,81,9" concept="2" />
-      <scope id="6249017959271690141" at="77,35,80,38">
+      <node id="6249017959271690141" at="84,35,85,76" concept="3" />
+      <node id="6249017959271690141" at="85,76,86,51" concept="0" />
+      <node id="6249017959271690141" at="86,51,87,40" concept="0" />
+      <node id="6249017959271690141" at="87,40,88,38" concept="0" />
+      <node id="6249017959271690141" at="89,9,90,28" concept="4" />
+      <node id="6249017959271690141" at="83,40,89,9" concept="2" />
+      <scope id="6249017959271690141" at="84,35,88,38">
         <var name="cpb" id="6249017959271690141" />
       </scope>
-      <scope id="6249017959271690141" at="76,40,82,28" />
+      <scope id="6249017959271690141" at="83,40,90,28" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690141" at="19,0,20,0" concept="5" trace="Square" />
@@ -381,15 +391,16 @@
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/8255194269358657919">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="8255194269358657919" at="22,0,23,0" concept="1" trace="props_Tissue_Type" />
-      <node id="8255194269358657919" at="98,40,99,76" concept="3" />
-      <node id="8255194269358657919" at="99,76,100,35" concept="0" />
-      <node id="8255194269358657919" at="100,35,101,43" concept="0" />
-      <node id="8255194269358657919" at="102,9,103,33" concept="4" />
-      <node id="8255194269358657919" at="97,45,102,9" concept="2" />
-      <scope id="8255194269358657919" at="98,40,101,43">
+      <node id="8255194269358657919" at="108,40,109,76" concept="3" />
+      <node id="8255194269358657919" at="109,76,110,115" concept="0" />
+      <node id="8255194269358657919" at="110,115,111,35" concept="0" />
+      <node id="8255194269358657919" at="111,35,112,43" concept="0" />
+      <node id="8255194269358657919" at="113,9,114,33" concept="4" />
+      <node id="8255194269358657919" at="107,45,113,9" concept="2" />
+      <scope id="8255194269358657919" at="108,40,112,43">
         <var name="cpb" id="8255194269358657919" />
       </scope>
-      <scope id="8255194269358657919" at="97,45,103,33" />
+      <scope id="8255194269358657919" at="107,45,114,33" />
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="8255194269358657919" at="22,0,23,0" concept="5" trace="Tissue_Type" />

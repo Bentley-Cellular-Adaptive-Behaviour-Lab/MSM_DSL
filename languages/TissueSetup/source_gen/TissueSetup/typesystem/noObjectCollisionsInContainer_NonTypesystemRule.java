@@ -19,6 +19,8 @@ public class noObjectCollisionsInContainer_NonTypesystemRule extends AbstractNon
   public noObjectCollisionsInContainer_NonTypesystemRule() {
   }
   public void applyRule(final SNode container, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // Check all objects in the simulation to check they don't collide with each other, or extend out of the simulation 
+    // world. 
     if ((boolean) Tissue_And_Cell_Container__BehaviorDescriptor.check_positions_id1QpPlI51UW4.invoke(container)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

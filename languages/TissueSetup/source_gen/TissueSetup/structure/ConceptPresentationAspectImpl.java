@@ -29,12 +29,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Arrangement:
         if (props_Arrangement == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Abstract concept for describing the arrangement of cells within the tissue.");
           props_Arrangement = cpb.create();
         }
         return props_Arrangement;
       case LanguageConceptSwitch.Cell:
         if (props_Cell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Cell concept which stores the type and position of a cell in the simulation world. Other behaviours are not currently implemented.");
           cpb.presentationByName();
           props_Cell = cpb.create();
         }
@@ -42,6 +44,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Cell_Type:
         if (props_Cell_Type == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for storing the initial shape and behaviour (planned) of a cell.");
           cpb.presentationByName();
           props_Cell_Type = cpb.create();
         }
@@ -49,6 +52,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Cylindrical:
         if (props_Cylindrical == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a hollow, 2D cylindrical tissue and related attributes.");
           cpb.rawPresentation("Cylindrical");
           props_Cylindrical = cpb.create();
         }
@@ -56,6 +60,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Flat:
         if (props_Flat == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a flat (2D), rectangular tissue and related attributes.");
           cpb.rawPresentation("Flat");
           props_Flat = cpb.create();
         }
@@ -63,6 +68,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Position:
         if (props_Position == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept that stores the X,Y and Z coordinates of an object (used elsewhere, such as in gradient boundaries).");
           cpb.rawPresentation("Position");
           props_Position = cpb.create();
         }
@@ -70,12 +76,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Shape:
         if (props_Shape == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Abstract concept for storing the shape type of a cell.");
           props_Shape = cpb.create();
         }
         return props_Shape;
       case LanguageConceptSwitch.Square:
         if (props_Square == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Square cell shape type.");
           cpb.rawPresentation("SQUARE");
           props_Square = cpb.create();
         }
@@ -83,6 +91,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Tissue:
         if (props_Tissue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for storing the location and type of a tissue.");
           cpb.presentationByName();
           props_Tissue = cpb.create();
         }
@@ -90,6 +99,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Tissue_And_Cell_Container:
         if (props_Tissue_And_Cell_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Root concept which stores user-defined cell and tissue types, and instances of cells and tissues in the simulation world.");
           cpb.presentationByName();
           props_Tissue_And_Cell_Container = cpb.create();
         }
@@ -97,6 +107,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Tissue_Type:
         if (props_Tissue_Type == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept which stores the arrangement of a tissue and the cell type that constitutes it.");
           cpb.presentationByName();
           props_Tissue_Type = cpb.create();
         }

@@ -47,6 +47,9 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="8356039341262087992" name="line" index="1aUNEU" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
@@ -99,6 +102,14 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
+    <language id="c7fb639f-be78-4307-89b0-b5959c3fa8c8" name="jetbrains.mps.lang.text">
+      <concept id="155656958578482948" name="jetbrains.mps.lang.text.structure.Word" flags="nn" index="3oM_SD">
+        <property id="155656958578482949" name="value" index="3oM_SC" />
+      </concept>
+      <concept id="2535923850359271782" name="jetbrains.mps.lang.text.structure.Line" flags="nn" index="1PaTwC">
+        <child id="2535923850359271783" name="elements" index="1PaTwD" />
+      </concept>
+    </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
@@ -110,6 +121,49 @@
   <node concept="18kY7G" id="i2Gwg1zb2C">
     <property role="TrG5h" value="duplicateCellTypeName" />
     <node concept="3clFbS" id="i2Gwg1zb2D" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXH7W" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXH7X" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXH7Y" role="1PaTwD">
+            <property role="3oM_SC" value="Checks" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH8I" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH8L" role="1PaTwD">
+            <property role="3oM_SC" value="no" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH8P" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH8U" role="1PaTwD">
+            <property role="3oM_SC" value="cell" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH90" role="1PaTwD">
+            <property role="3oM_SC" value="type" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH97" role="1PaTwD">
+            <property role="3oM_SC" value="has" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH9f" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH9o" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH9y" role="1PaTwD">
+            <property role="3oM_SC" value="name" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH9H" role="1PaTwD">
+            <property role="3oM_SC" value="as" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXH9T" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHa6" role="1PaTwD">
+            <property role="3oM_SC" value="one." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="i2Gwg1$v1G" role="3cqZAp">
         <node concept="2OqwBi" id="i2Gwg1$y4y" role="3clFbw">
           <node concept="2OqwBi" id="i2Gwg1$w0M" role="2Oq$k0">
@@ -199,6 +253,49 @@
   <node concept="18kY7G" id="i2Gwg1zrYx">
     <property role="TrG5h" value="duplicateTissueTypeName" />
     <node concept="3clFbS" id="i2Gwg1zrYy" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXHBn" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXHBo" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXHBp" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHC9" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCc" role="1PaTwD">
+            <property role="3oM_SC" value="no" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCg" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCl" role="1PaTwD">
+            <property role="3oM_SC" value="tissue" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCr" role="1PaTwD">
+            <property role="3oM_SC" value="type" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCy" role="1PaTwD">
+            <property role="3oM_SC" value="has" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCE" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCN" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHCX" role="1PaTwD">
+            <property role="3oM_SC" value="name" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHD8" role="1PaTwD">
+            <property role="3oM_SC" value="as" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHDk" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHDx" role="1PaTwD">
+            <property role="3oM_SC" value="one." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="i2Gwg1_48n" role="3cqZAp">
         <node concept="2OqwBi" id="i2Gwg1_6Sn" role="3clFbw">
           <node concept="2OqwBi" id="i2Gwg1_4Om" role="2Oq$k0">
@@ -288,6 +385,46 @@
   <node concept="18kY7G" id="i2Gwg1zz9z">
     <property role="TrG5h" value="duplicateTissueName" />
     <node concept="3clFbS" id="i2Gwg1zz9$" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXHnM" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXHnN" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXHoB" role="1PaTwD">
+            <property role="3oM_SC" value="Checks" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHoD" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHoG" role="1PaTwD">
+            <property role="3oM_SC" value="no" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHoK" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHpO" role="1PaTwD">
+            <property role="3oM_SC" value="tissue" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHoP" role="1PaTwD">
+            <property role="3oM_SC" value="has" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHoV" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHp2" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHpa" role="1PaTwD">
+            <property role="3oM_SC" value="name" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHpj" role="1PaTwD">
+            <property role="3oM_SC" value="as" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHpt" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHpC" role="1PaTwD">
+            <property role="3oM_SC" value="one." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="i2Gwg1$V8m" role="3cqZAp">
         <node concept="2OqwBi" id="i2Gwg1$XWE" role="3clFbw">
           <node concept="2OqwBi" id="i2Gwg1$VSl" role="2Oq$k0">
@@ -377,6 +514,49 @@
   <node concept="18kY7G" id="i2Gwg1zDpT">
     <property role="TrG5h" value="duplicateCellName" />
     <node concept="3clFbS" id="i2Gwg1zDpU" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXGS6" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXGS7" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXGS8" role="1PaTwD">
+            <property role="3oM_SC" value="Checks" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGSS" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGSV" role="1PaTwD">
+            <property role="3oM_SC" value="no" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGSZ" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGUg" role="1PaTwD">
+            <property role="3oM_SC" value="cell" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGT4" role="1PaTwD">
+            <property role="3oM_SC" value="objects" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTa" role="1PaTwD">
+            <property role="3oM_SC" value="share" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTh" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTp" role="1PaTwD">
+            <property role="3oM_SC" value="same" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTy" role="1PaTwD">
+            <property role="3oM_SC" value="name" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTG" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGTR" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXGU3" role="1PaTwD">
+            <property role="3oM_SC" value="one." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="i2Gwg1$MVU" role="3cqZAp">
         <node concept="2OqwBi" id="i2Gwg1$PHY" role="3clFbw">
           <node concept="2OqwBi" id="i2Gwg1$NDX" role="2Oq$k0">
@@ -466,6 +646,77 @@
   <node concept="18kY7G" id="6leo5vIfx5v">
     <property role="TrG5h" value="noObjectCollisionsInContainer" />
     <node concept="3clFbS" id="6leo5vIfx5w" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXHZW" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXHZX" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXHZY" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4b" role="1PaTwD">
+            <property role="3oM_SC" value="all" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4n" role="1PaTwD">
+            <property role="3oM_SC" value="objects" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4r" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4w" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4A" role="1PaTwD">
+            <property role="3oM_SC" value="simulation" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI4H" role="1PaTwD">
+            <property role="3oM_SC" value="to" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI5O" role="1PaTwD">
+            <property role="3oM_SC" value="check" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI5X" role="1PaTwD">
+            <property role="3oM_SC" value="they" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI67" role="1PaTwD">
+            <property role="3oM_SC" value="don't" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI6i" role="1PaTwD">
+            <property role="3oM_SC" value="collide" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI6u" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI6F" role="1PaTwD">
+            <property role="3oM_SC" value="each" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI6T" role="1PaTwD">
+            <property role="3oM_SC" value="other," />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI78" role="1PaTwD">
+            <property role="3oM_SC" value="or" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI7o" role="1PaTwD">
+            <property role="3oM_SC" value="extend" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI7D" role="1PaTwD">
+            <property role="3oM_SC" value="out" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI7V" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI8e" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXI8y" role="1PaTwD">
+            <property role="3oM_SC" value="simulation" />
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="248hPtQXIdn" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXIdo" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXIhZ" role="1PaTwD">
+            <property role="3oM_SC" value="world." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="6leo5vIfX2o" role="3cqZAp">
         <node concept="2OqwBi" id="6leo5vIfXcf" role="3clFbw">
           <node concept="1YBJjd" id="6leo5vIfX2$" role="2Oq$k0">
@@ -495,6 +746,73 @@
   <node concept="18kY7G" id="3$QBVvWAIMR">
     <property role="TrG5h" value="noCellCollision" />
     <node concept="3clFbS" id="3$QBVvWAIMS" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXHMp" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXHMq" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXHMr" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHOx" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHOS" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHOW" role="1PaTwD">
+            <property role="3oM_SC" value="cell" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHP1" role="1PaTwD">
+            <property role="3oM_SC" value="does" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHP7" role="1PaTwD">
+            <property role="3oM_SC" value="not" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHPe" role="1PaTwD">
+            <property role="3oM_SC" value="overlap" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHPm" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHPv" role="1PaTwD">
+            <property role="3oM_SC" value="any" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHPD" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHPO" role="1PaTwD">
+            <property role="3oM_SC" value="objects" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHQ0" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHQd" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHRr" role="1PaTwD">
+            <property role="3oM_SC" value="simulation," />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHRE" role="1PaTwD">
+            <property role="3oM_SC" value="nor" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHRU" role="1PaTwD">
+            <property role="3oM_SC" value="extend" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHSb" role="1PaTwD">
+            <property role="3oM_SC" value="out" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHTH" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHU0" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHUk" role="1PaTwD">
+            <property role="3oM_SC" value="world" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXHUD" role="1PaTwD">
+            <property role="3oM_SC" value="bounds." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="3$QBVvWAIN3" role="3cqZAp">
         <node concept="2OqwBi" id="3$QBVvWAIWU" role="3clFbw">
           <node concept="1YBJjd" id="3$QBVvWAINf" role="2Oq$k0">
@@ -626,6 +944,73 @@
   <node concept="18kY7G" id="3$QBVvWAJeO">
     <property role="TrG5h" value="noTissueCollision" />
     <node concept="3clFbS" id="3$QBVvWAJeP" role="18ibNy">
+      <node concept="3SKdUt" id="248hPtQXIuu" role="3cqZAp">
+        <node concept="1PaTwC" id="248hPtQXIuv" role="1aUNEU">
+          <node concept="3oM_SD" id="248hPtQXIxl" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwF" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwG" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwH" role="1PaTwD">
+            <property role="3oM_SC" value="tissue" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwI" role="1PaTwD">
+            <property role="3oM_SC" value="does" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwJ" role="1PaTwD">
+            <property role="3oM_SC" value="not" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwK" role="1PaTwD">
+            <property role="3oM_SC" value="overlap" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwL" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwM" role="1PaTwD">
+            <property role="3oM_SC" value="any" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwN" role="1PaTwD">
+            <property role="3oM_SC" value="other" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwO" role="1PaTwD">
+            <property role="3oM_SC" value="objects" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwP" role="1PaTwD">
+            <property role="3oM_SC" value="in" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwQ" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwR" role="1PaTwD">
+            <property role="3oM_SC" value="simulation," />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwS" role="1PaTwD">
+            <property role="3oM_SC" value="nor" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwT" role="1PaTwD">
+            <property role="3oM_SC" value="extend" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwU" role="1PaTwD">
+            <property role="3oM_SC" value="out" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwV" role="1PaTwD">
+            <property role="3oM_SC" value="of" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwW" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwX" role="1PaTwD">
+            <property role="3oM_SC" value="world" />
+          </node>
+          <node concept="3oM_SD" id="248hPtQXIwY" role="1PaTwD">
+            <property role="3oM_SC" value="bounds." />
+          </node>
+        </node>
+      </node>
       <node concept="3clFbJ" id="3$QBVvWAJf0" role="3cqZAp">
         <node concept="2OqwBi" id="3$QBVvWAJoR" role="3clFbw">
           <node concept="1YBJjd" id="3$QBVvWAJfc" role="2Oq$k0">

@@ -8,6 +8,7 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
@@ -27,6 +28,8 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
+        <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -60,6 +63,7 @@
     <property role="EcuMT" value="8343650468779203043" />
     <property role="TrG5h" value="World_Container" />
     <property role="19KtqR" value="true" />
+    <property role="R4oN_" value="Concept for describing the gradients, substrate and properties of a simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7faAukhALB$" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779203044" />
@@ -82,13 +86,17 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="7faAukhALBM" resolve="Substrate" />
     </node>
-    <node concept="PrWs8" id="1QpPlI505GD" role="PzmwI">
+    <node concept="PrWs8" id="2Nrf2jTROu6" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="PrWs8" id="2Nrf2jTXfWt" role="PzmwI">
+      <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     </node>
   </node>
   <node concept="1TIwiD" id="7faAukhALBA">
     <property role="EcuMT" value="8343650468779203046" />
     <property role="TrG5h" value="Grid" />
+    <property role="R4oN_" value="Concept for describing the base properties of the simulation world environment." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7faAukhALP1" role="1TKVEl">
       <property role="IQ2nx" value="8343650468779203905" />
@@ -114,6 +122,7 @@
   <node concept="1TIwiD" id="7faAukhALBB">
     <property role="EcuMT" value="8343650468779203047" />
     <property role="TrG5h" value="Gradient" />
+    <property role="R4oN_" value="Concept for describing a protein gradient within the simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2OHr9yL8IkL" role="1TKVEl">
       <property role="IQ2nx" value="3255377508721419569" />
@@ -146,6 +155,7 @@
   <node concept="1TIwiD" id="7faAukhALBM">
     <property role="EcuMT" value="8343650468779203058" />
     <property role="TrG5h" value="Substrate" />
+    <property role="R4oN_" value="Concept for describing a cellular substrate that cells can grow on." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7faAukhALWq" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779204378" />
@@ -173,6 +183,7 @@
   <node concept="1TIwiD" id="cUvw_H2g1X">
     <property role="EcuMT" value="232636909712113789" />
     <property role="TrG5h" value="Source" />
+    <property role="R4oN_" value="Concept for describing the source strength and location of a gradient." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="cUvw_H2smI" role="1TKVEi">
       <property role="IQ2ns" value="232636909712164270" />
@@ -190,6 +201,7 @@
   <node concept="1TIwiD" id="cUvw_H2g1Y">
     <property role="EcuMT" value="232636909712113790" />
     <property role="TrG5h" value="Sink" />
+    <property role="R4oN_" value="Concept for describing the location of where a gradient ends." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="cUvw_H2smK" role="1TKVEi">
       <property role="IQ2ns" value="232636909712164272" />
@@ -237,11 +249,14 @@
   <node concept="1TIwiD" id="57aaQbDDBXe">
     <property role="EcuMT" value="5893570766194507598" />
     <property role="TrG5h" value="Substrate_Shape" />
+    <property role="R4oN_" value="Abstract concept for storing the shape of a substrate." />
+    <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="57aaQbDDBXf">
     <property role="EcuMT" value="5893570766194507599" />
     <property role="TrG5h" value="Substrate_Shape_Triangular" />
+    <property role="R4oN_" value="Concept for describing a substrate in the shape of a triagnular prism." />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
     <node concept="1TJgyi" id="4JVq81Fgy8C" role="1TKVEl">
       <property role="IQ2nx" value="5475084672763568680" />
@@ -273,6 +288,7 @@
   <node concept="1TIwiD" id="57aaQbDDBXg">
     <property role="EcuMT" value="5893570766194507600" />
     <property role="TrG5h" value="Substrate_Shape_Cuboid" />
+    <property role="R4oN_" value="Concept for describing a cuboidal substrate." />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
     <node concept="1TJgyi" id="57aaQbDDBXo" role="1TKVEl">
       <property role="IQ2nx" value="5893570766194507608" />
@@ -293,6 +309,7 @@
   <node concept="1TIwiD" id="57aaQbDDBXz">
     <property role="EcuMT" value="5893570766194507619" />
     <property role="TrG5h" value="Vertex" />
+    <property role="R4oN_" value="Vertex concept for a triangle." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="57aaQbDDBX$" role="1TKVEl">
       <property role="IQ2nx" value="5893570766194507620" />

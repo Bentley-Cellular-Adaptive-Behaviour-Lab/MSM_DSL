@@ -8,8 +8,8 @@
   </languages>
   <imports>
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
-    <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -32,9 +32,6 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
-      </concept>
-      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
-        <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -154,37 +151,6 @@
       </node>
       <node concept="356sEQ" id="4DdJmqSDt29" role="383Ya9">
         <property role="333NGx" value="    " />
-        <node concept="356sEK" id="4XZPqyVOHkP" role="383Ya9">
-          <node concept="356sEF" id="4XZPqyVOHkQ" role="356sEH">
-            <property role="TrG5h" value="this-&gt;set_total_cell_number(" />
-          </node>
-          <node concept="356sEF" id="4XZPqyVOJNq" role="356sEH">
-            <property role="TrG5h" value="TOTAL_CELL_NUMBER" />
-            <node concept="17Uvod" id="4XZPqyVOJNx" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="4XZPqyVOJNy" role="3zH0cK">
-                <node concept="3clFbS" id="4XZPqyVOJNz" role="2VODD2">
-                  <node concept="3cpWs6" id="4XZPqyVOJSs" role="3cqZAp">
-                    <node concept="2OqwBi" id="4XZPqyVOK3i" role="3cqZAk">
-                      <node concept="30H73N" id="4XZPqyVOJTj" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="4XZPqyVOKg8" role="2OqNvi">
-                        <ref role="37wK5l" to="4ebj:4XZPqyVOe45" resolve="count_cell_number" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="356sEF" id="4XZPqyVOJNt" role="356sEH">
-            <property role="TrG5h" value=");" />
-          </node>
-          <node concept="2EixSi" id="4XZPqyVOHkR" role="2EinRH" />
-        </node>
-        <node concept="356sEK" id="4XZPqyVOIqN" role="383Ya9">
-          <node concept="2EixSi" id="4XZPqyVOIqP" role="2EinRH" />
-        </node>
         <node concept="356sEK" id="4DdJmqSDx4k" role="383Ya9">
           <node concept="356sEF" id="4DdJmqSDx4l" role="356sEH">
             <property role="TrG5h" value="// Cell Type Declarations //" />

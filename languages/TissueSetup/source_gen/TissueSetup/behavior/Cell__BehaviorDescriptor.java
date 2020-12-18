@@ -38,10 +38,10 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> check_z_world_boundaries_id3$QBVvWCOcR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_z_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCOcR").build();
   public static final SMethod<Integer> get_lower_x_id1QpPlI524fx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524fx").build();
   public static final SMethod<Integer> get_lower_y_id1QpPlI524ju = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524ju").build();
-  public static final SMethod<Integer> get_upper_x_id1QpPlI524rF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524rF").build();
+  public static final SMethod<Integer> getupper_x_id1QpPlI524rF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("getupper_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524rF").build();
   public static final SMethod<Integer> get_upper_y_id1QpPlI524zL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524zL").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TK3, check_upper_x_world_boundaries_id3$QBVvWCJog, check_lower_x_world_boundaries_id3$QBVvWCTDn, check_upper_y_world_boundaries_id3$QBVvWCLp9, check_lower_y_world_boundaries_id3$QBVvWCYG5, check_z_world_boundaries_id3$QBVvWCOcR, get_lower_x_id1QpPlI524fx, get_lower_y_id1QpPlI524ju, get_upper_x_id1QpPlI524rF, get_upper_y_id1QpPlI524zL);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TK3, check_upper_x_world_boundaries_id3$QBVvWCJog, check_lower_x_world_boundaries_id3$QBVvWCTDn, check_upper_y_world_boundaries_id3$QBVvWCLp9, check_lower_y_world_boundaries_id3$QBVvWCYG5, check_z_world_boundaries_id3$QBVvWCOcR, get_lower_x_id1QpPlI524fx, get_lower_y_id1QpPlI524ju, getupper_x_id1QpPlI524rF, get_upper_y_id1QpPlI524zL);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -68,7 +68,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static boolean check_upper_x_world_boundaries_id3$QBVvWCJog(@NotNull SNode __thisNode__) {
-    if (Cell__BehaviorDescriptor.get_upper_x_id1QpPlI524rF.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.X_Size$PwQq)) {
+    if (Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.X_Size$PwQq)) {
       return true;
     }
     return false;
@@ -112,7 +112,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
       return -1;
     }
   }
-  /*package*/ static Integer get_upper_x_id1QpPlI524rF(@NotNull SNode __thisNode__) {
+  /*package*/ static Integer getupper_x_id1QpPlI524rF(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r)) {
 
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY) / 2);
@@ -161,7 +161,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
       case 7:
         return (T) ((Integer) get_lower_y_id1QpPlI524ju(node));
       case 8:
-        return (T) ((Integer) get_upper_x_id1QpPlI524rF(node));
+        return (T) ((Integer) getupper_x_id1QpPlI524rF(node));
       case 9:
         return (T) ((Integer) get_upper_y_id1QpPlI524zL(node));
       default:

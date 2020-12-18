@@ -19,6 +19,7 @@ public class noTissueCollision_NonTypesystemRule extends AbstractNonTypesystemRu
   public noTissueCollision_NonTypesystemRule() {
   }
   public void applyRule(final SNode tissue, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    // Check that the tissue does not overlap with any other objects in the simulation, nor extend out of the world bounds. 
     if ((boolean) Tissue__BehaviorDescriptor.check_object_boundaries_id1QpPlI51TNW.invoke(tissue)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

@@ -143,6 +143,30 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
+    <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
+      <concept id="6832197706140518104" name="jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference" flags="ng" index="zr_55" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
+      <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+    </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -178,6 +202,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -255,6 +282,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpE1Dz" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpE1D$" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWQV6" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWQV7" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWQV8" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the height of a square cell, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWQV9" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="2VHjcBpE516" role="13h7CS">
       <property role="TrG5h" value="get_width" />
@@ -284,6 +321,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpE52R" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpE52S" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWRCo" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWRCp" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWRCq" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the width of a square cell, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWRCr" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="4DdJmqSEEjb" role="13h7CW">
       <node concept="3clFbS" id="4DdJmqSEEjc" role="2VODD2" />
@@ -403,6 +450,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpEg4W" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpEg4X" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWIlx" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWIly" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWIlz" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the number of cells along the circumference of a cylindrical tissue." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWIl$" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4DdJmqSFfFR" role="13h7CS">
       <property role="TrG5h" value="get_length_in_cells" />
@@ -433,6 +490,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpEkwV" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpEkwW" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWJ2F" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWJ2G" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWJ2H" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the length of a cylindrical tissue in cells." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWJ2I" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4DdJmqSFkkm" role="13h7CS">
       <property role="TrG5h" value="get_total_radius" />
@@ -463,6 +530,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpElj8" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpElj9" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWJJP" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWJJQ" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWJJR" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the radius of a cylindrical tissue, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWJJS" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4XZPqyVOpQh" role="13h7CS">
       <property role="TrG5h" value="get_total_cell_number" />
@@ -487,6 +564,16 @@
       </node>
       <node concept="10Oyi0" id="4XZPqyVOqyI" role="3clF45" />
       <node concept="3Tm1VV" id="4XZPqyVOqyJ" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWKsZ" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWKt0" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWKt1" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the total number of cells in a cylindrical tissue." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWKt2" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="506$KtO_VOJ" role="13h7CS">
       <property role="TrG5h" value="calculate_total_ablumenal_steps" />
@@ -533,6 +620,16 @@
           <node concept="37vLTw" id="506$KtOA5tF" role="3cqZAk">
             <ref role="3cqZAo" node="506$KtOA3NE" resolve="i_steps" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWK$v" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWK$w" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWK$x" role="1dT_Ay">
+            <property role="1dT_AB" value="Calculates the number of steps needed to circumnavigate the entire radius of the cylinder." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWK$y" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -585,6 +682,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWKQS" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWKQT" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWKQU" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the total length of the cylinder, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWKQV" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -640,6 +747,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWL4H" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWL4I" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWL4J" role="1dT_Ay">
+            <property role="1dT_AB" value="Determines the number of cells in a cross-section based on the ablumenal steps of the vessel and the cell's height." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWL4K" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="4DdJmqSFaUk" role="13h7CW">
       <node concept="3clFbS" id="4DdJmqSFaUl" role="2VODD2" />
@@ -676,6 +793,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpEnAH" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpEnAI" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWMc4" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWMc5" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWMc6" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the height of the entire flat tissue, in cells." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWMc7" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4DdJmqSFnMr" role="13h7CS">
       <property role="TrG5h" value="get_width_in_cells" />
@@ -706,6 +833,16 @@
       </node>
       <node concept="17QB3L" id="2VHjcBpEn$J" role="3clF45" />
       <node concept="3Tm1VV" id="2VHjcBpEn$K" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWMTe" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWMTf" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWMTg" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the width of the entire flat tissue, in cells." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWMTh" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI52vjz" role="13h7CS">
       <property role="TrG5h" value="get_total_width_int" />
@@ -750,6 +887,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWNAo" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWNAp" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWNAq" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the width of the entire flat tissue, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWNAr" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -798,6 +945,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWNIb" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWNIc" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWNId" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the height of the entire flat tissue, in grid-points." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWNIe" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4XZPqyVOuEq" role="13h7CS">
       <property role="TrG5h" value="get_total_cell_number" />
@@ -822,6 +979,16 @@
       </node>
       <node concept="10Oyi0" id="4XZPqyVOvlA" role="3clF45" />
       <node concept="3Tm1VV" id="4XZPqyVOvlB" role="1B3o_S" />
+      <node concept="P$JXv" id="248hPtQWNQe" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWNQf" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWNQg" role="1dT_Ay">
+            <property role="1dT_AB" value="Gets the total number of cells in a flat tissue." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWNQh" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="4DdJmqSFmse" role="13h7CW">
       <node concept="3clFbS" id="4DdJmqSFmsf" role="2VODD2" />
@@ -856,6 +1023,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWOIy" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWOIz" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWOI$" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the X-coordinate of a position node." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWOI_" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4DdJmqSGaIc" role="13h7CS">
       <property role="TrG5h" value="get_y_coord" />
@@ -884,6 +1061,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWOJM" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWOJN" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWOJO" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Y-coordinate of a position node." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWOJP" role="3nqlJM">
+          <property role="x79VB" value="string" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="4DdJmqSGdUQ" role="13h7CS">
       <property role="TrG5h" value="get_z_coord" />
@@ -910,6 +1097,16 @@
           <node concept="37vLTw" id="4DdJmqSGfX8" role="3cqZAk">
             <ref role="3cqZAo" node="4DdJmqSGdXR" resolve="z_coord" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWPsN" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWPsO" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWPsP" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the Z-coordinate of a position node." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWPsQ" role="3nqlJM">
+          <property role="x79VB" value="string" />
         </node>
       </node>
     </node>
@@ -1017,6 +1214,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWUWR" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWUWS" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWUWT" role="1dT_Ay">
+            <property role="1dT_AB" value="Counts the total number of cells in the simulation world, including tissues." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWUWU" role="3nqlJM">
+          <property role="x79VB" value="String" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI51UW4" role="13h7CS">
       <property role="TrG5h" value="check_positions" />
@@ -1073,6 +1280,16 @@
         </node>
       </node>
       <node concept="10P_77" id="6leo5vIfxgu" role="3clF45" />
+      <node concept="P$JXv" id="248hPtQWVdo" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWVdp" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWVdq" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks that no objects in the simulation world overlap - returns true if there is any overlap at all." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWVdr" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI522xB" role="13h7CS">
       <property role="TrG5h" value="check_cell_cell_overlap" />
@@ -1180,7 +1397,7 @@
                         <ref role="3cqZAo" node="1QpPlI52Owt" resolve="cell_2" />
                       </node>
                       <node concept="2qgKlT" id="1QpPlI52XVE" role="2OqNvi">
-                        <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                        <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1QpPlI52WzK" role="3uHU7B">
@@ -1188,7 +1405,7 @@
                         <ref role="3cqZAo" node="1QpPlI52OvC" resolve="cell_1" />
                       </node>
                       <node concept="2qgKlT" id="1QpPlI52WIr" role="2OqNvi">
-                        <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                        <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                       </node>
                     </node>
                   </node>
@@ -1198,7 +1415,7 @@
                         <ref role="3cqZAo" node="1QpPlI52OvC" resolve="cell_1" />
                       </node>
                       <node concept="2qgKlT" id="1QpPlI52Uxv" role="2OqNvi">
-                        <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                        <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                       </node>
                     </node>
                     <node concept="2OqwBi" id="1QpPlI52VDo" role="3uHU7w">
@@ -1244,7 +1461,7 @@
                         <ref role="3cqZAo" node="1QpPlI52Owt" resolve="cell_2" />
                       </node>
                       <node concept="2qgKlT" id="1QpPlI52TUq" role="2OqNvi">
-                        <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                        <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                       </node>
                     </node>
                   </node>
@@ -1297,6 +1514,33 @@
           <ref role="ehGHo" to="nguq:5qSYbADreY8" resolve="Cell" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWVoF" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWVoG" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWVoH" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of two cell objects and checks that there is no overlap based on their shapes and sizes " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQWVz$" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWVz_" role="1dT_Ay">
+            <property role="1dT_AB" value="(returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWVoI" role="3nqlJM">
+          <property role="TUZQ4" value="Cell" />
+          <node concept="zr_55" id="248hPtQWVoK" role="zr_5Q">
+            <ref role="zr_51" node="1QpPlI52OvC" resolve="cell_1" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWVoL" role="3nqlJM">
+          <property role="TUZQ4" value="Cell" />
+          <node concept="zr_55" id="248hPtQWVoN" role="zr_5Q">
+            <ref role="zr_51" node="1QpPlI52Owt" resolve="cell_2" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWVoO" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI522M$" role="13h7CS">
       <property role="TrG5h" value="check_cell_vessel_overlap" />
@@ -1309,7 +1553,7 @@
               <node concept="2OqwBi" id="1p5qYO3gjdh" role="2Oq$k0">
                 <node concept="2OqwBi" id="1p5qYO3giZY" role="2Oq$k0">
                   <node concept="37vLTw" id="1p5qYO3giVZ" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                    <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                   </node>
                   <node concept="3TrEf2" id="1p5qYO3gj14" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -1345,7 +1589,7 @@
               </node>
               <node concept="2OqwBi" id="1p5qYO3ge4o" role="3uHU7w">
                 <node concept="37vLTw" id="1p5qYO3gdIh" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                  <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                 </node>
                 <node concept="2qgKlT" id="1p5qYO3ge5z" role="2OqNvi">
                   <ref role="37wK5l" node="1QpPlI533MM" resolve="get_lower_z" />
@@ -1355,7 +1599,7 @@
             <node concept="2dkUwp" id="1p5qYO3ggxi" role="3uHU7w">
               <node concept="2OqwBi" id="1p5qYO3ggRH" role="3uHU7w">
                 <node concept="37vLTw" id="1p5qYO3ggE6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                  <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                 </node>
                 <node concept="2qgKlT" id="1p5qYO3ggZD" role="2OqNvi">
                   <ref role="37wK5l" node="1QpPlI538TU" resolve="get_upper_z" />
@@ -1384,7 +1628,7 @@
                   <node concept="2OqwBi" id="1p5qYO3glmb" role="3uHU7w">
                     <node concept="2OqwBi" id="1p5qYO3gl7j" role="2Oq$k0">
                       <node concept="37vLTw" id="1p5qYO3giM3" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gla$" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -1439,7 +1683,7 @@
                       <node concept="2OqwBi" id="1p5qYO3gmT$" role="1m5AlR">
                         <node concept="2OqwBi" id="1p5qYO3gmDB" role="2Oq$k0">
                           <node concept="37vLTw" id="1p5qYO3gm_C" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                            <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                           </node>
                           <node concept="3TrEf2" id="1p5qYO3gmEW" role="2OqNvi">
                             <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -1462,7 +1706,7 @@
                       <node concept="2OqwBi" id="1p5qYO3gpct" role="1m5AlR">
                         <node concept="2OqwBi" id="1p5qYO3gpcu" role="2Oq$k0">
                           <node concept="37vLTw" id="1p5qYO3gpcv" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                            <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                           </node>
                           <node concept="3TrEf2" id="1p5qYO3gpcw" role="2OqNvi">
                             <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -1510,7 +1754,7 @@
                   <node concept="2OqwBi" id="1p5qYO3grgI" role="3uHU7B">
                     <node concept="2OqwBi" id="1p5qYO3gr4k" role="2Oq$k0">
                       <node concept="37vLTw" id="1p5qYO3gr0l" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gr5m" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -1534,7 +1778,7 @@
                   <node concept="2OqwBi" id="1p5qYO3gsRr" role="3uHU7B">
                     <node concept="2OqwBi" id="1p5qYO3gsDn" role="2Oq$k0">
                       <node concept="37vLTw" id="1p5qYO3gs_o" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="tissue" />
+                        <ref role="3cqZAo" node="1QpPlI532bj" resolve="vessel" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gsEp" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -1629,9 +1873,36 @@
         </node>
       </node>
       <node concept="37vLTG" id="1QpPlI532bj" role="3clF46">
-        <property role="TrG5h" value="tissue" />
+        <property role="TrG5h" value="vessel" />
         <node concept="3Tqbb2" id="1QpPlI532bI" role="1tU5fm">
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWV$9" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWW1B" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWW1C" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of a cell object and vessel-like object and checks that there is no overlap based on their shapes " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQWW1D" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWW1E" role="1dT_Ay">
+            <property role="1dT_AB" value="and sizes (returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWV$c" role="3nqlJM">
+          <property role="TUZQ4" value="Cell" />
+          <node concept="zr_55" id="248hPtQWV$e" role="zr_5Q">
+            <ref role="zr_51" node="1QpPlI532aM" resolve="cell" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWV$f" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQWV$h" role="zr_5Q">
+            <ref role="zr_51" node="1QpPlI532bj" resolve="vessel" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWV$i" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -1646,7 +1917,7 @@
               <node concept="2OqwBi" id="1p5qYO3gkw9" role="2Oq$k0">
                 <node concept="2OqwBi" id="1p5qYO3gkix" role="2Oq$k0">
                   <node concept="37vLTw" id="1p5qYO3gkew" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                    <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                   </node>
                   <node concept="3TrEf2" id="1p5qYO3gkjD" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -1687,7 +1958,7 @@
                                 <ref role="37wK5l" node="1QpPlI52faY" resolve="get_upper_y" />
                               </node>
                               <node concept="37vLTw" id="1p5qYO3gaH7" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="1p5qYO3gaH8" role="3uHU7B">
@@ -1713,7 +1984,7 @@
                                 <ref role="37wK5l" node="1QpPlI52f9_" resolve="get_lower_y" />
                               </node>
                               <node concept="37vLTw" id="1p5qYO3gaHh" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                               </node>
                             </node>
                           </node>
@@ -1733,7 +2004,7 @@
                                 <ref role="37wK5l" node="1QpPlI52f9_" resolve="get_lower_y" />
                               </node>
                               <node concept="37vLTw" id="1p5qYO3gaHp" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                               </node>
                             </node>
                           </node>
@@ -1751,7 +2022,7 @@
                                 <ref role="37wK5l" node="1QpPlI52faY" resolve="get_upper_y" />
                               </node>
                               <node concept="37vLTw" id="1p5qYO3gaHw" role="2Oq$k0">
-                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                                <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                               </node>
                             </node>
                           </node>
@@ -1767,7 +2038,7 @@
                             <ref role="37wK5l" node="1QpPlI52f8w" resolve="get_upper_x" />
                           </node>
                           <node concept="37vLTw" id="1p5qYO3gaHA" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="1p5qYO3gaHB" role="3uHU7B">
@@ -1775,7 +2046,7 @@
                             <ref role="3cqZAo" node="1p5qYO3fTFW" resolve="cell" />
                           </node>
                           <node concept="2qgKlT" id="1p5qYO3gaHD" role="2OqNvi">
-                            <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                            <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                           </node>
                         </node>
                       </node>
@@ -1785,7 +2056,7 @@
                             <ref role="3cqZAo" node="1p5qYO3fTFW" resolve="cell" />
                           </node>
                           <node concept="2qgKlT" id="1p5qYO3gaHH" role="2OqNvi">
-                            <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+                            <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="1p5qYO3gaHI" role="3uHU7w">
@@ -1793,7 +2064,7 @@
                             <ref role="37wK5l" node="1QpPlI52f7B" resolve="get_lower_x" />
                           </node>
                           <node concept="37vLTw" id="1p5qYO3gaHK" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                           </node>
                         </node>
                       </node>
@@ -1810,7 +2081,7 @@
                         </node>
                         <node concept="2OqwBi" id="1p5qYO3gaHQ" role="3uHU7w">
                           <node concept="37vLTw" id="1p5qYO3gaHR" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                           </node>
                           <node concept="2qgKlT" id="1p5qYO3gaHS" role="2OqNvi">
                             <ref role="37wK5l" node="1QpPlI52f7B" resolve="get_lower_x" />
@@ -1831,7 +2102,7 @@
                             <ref role="37wK5l" node="1QpPlI52f8w" resolve="get_upper_x" />
                           </node>
                           <node concept="37vLTw" id="1p5qYO3gaHZ" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                            <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                           </node>
                         </node>
                       </node>
@@ -1843,7 +2114,7 @@
                 <node concept="2OqwBi" id="1p5qYO3gaI2" role="3uHU7w">
                   <node concept="2OqwBi" id="1p5qYO3gaI3" role="2Oq$k0">
                     <node concept="37vLTw" id="1p5qYO3gaI4" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                      <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                     </node>
                     <node concept="3TrEf2" id="1p5qYO3gaI5" role="2OqNvi">
                       <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -1873,7 +2144,7 @@
             <node concept="2OqwBi" id="1p5qYO3gaId" role="2Oq$k0">
               <node concept="2OqwBi" id="1p5qYO3gaIe" role="2Oq$k0">
                 <node concept="37vLTw" id="1p5qYO3gaIf" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="tissue" />
+                  <ref role="3cqZAo" node="1p5qYO3fTGB" resolve="monolayer" />
                 </node>
                 <node concept="3TrEf2" id="1p5qYO3gaIg" role="2OqNvi">
                   <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -1901,9 +2172,36 @@
         </node>
       </node>
       <node concept="37vLTG" id="1p5qYO3fTGB" role="3clF46">
-        <property role="TrG5h" value="tissue" />
+        <property role="TrG5h" value="monolayer" />
         <node concept="3Tqbb2" id="1p5qYO3fTH0" role="1tU5fm">
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWW2e" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWWg7" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWWg8" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of a cell object and monolayer-like object and checks that there is no overlap based on their shapes " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQWWg9" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWWga" role="1dT_Ay">
+            <property role="1dT_AB" value="and sizes (returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWW2h" role="3nqlJM">
+          <property role="TUZQ4" value="Cell" />
+          <node concept="zr_55" id="248hPtQWW2j" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3fTFW" resolve="cell" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWW2k" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQWW2m" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3fTGB" resolve="monolayer" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWW2n" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -2215,6 +2513,33 @@
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWWhT" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWZeX" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWZeY" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of two vessel-like objects and checks that there is no overlap based on their shapes and sizes " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQWZeZ" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWZf0" role="1dT_Ay">
+            <property role="1dT_AB" value="(returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWWhW" role="3nqlJM">
+          <property role="TUZQ4" value="Vessel" />
+          <node concept="zr_55" id="248hPtQWWhY" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gUqh" resolve="vessel_1" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWWhZ" role="3nqlJM">
+          <property role="TUZQ4" value="Vessel" />
+          <node concept="zr_55" id="248hPtQWWi1" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gUr6" resolve="vessel_2" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWWi2" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI523LR" role="13h7CS">
       <property role="TrG5h" value="check_vessel_monolayer_overlap" />
@@ -2227,7 +2552,7 @@
               <node concept="2OqwBi" id="1p5qYO3gEf6" role="2Oq$k0">
                 <node concept="2OqwBi" id="1p5qYO3gEf7" role="2Oq$k0">
                   <node concept="37vLTw" id="1p5qYO3gGV7" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                    <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                   </node>
                   <node concept="3TrEf2" id="1p5qYO3gEf9" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -2251,7 +2576,7 @@
               <node concept="2OqwBi" id="1p5qYO3gHpX" role="2Oq$k0">
                 <node concept="2OqwBi" id="1p5qYO3gHcj" role="2Oq$k0">
                   <node concept="37vLTw" id="1p5qYO3gH8i" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                   </node>
                   <node concept="3TrEf2" id="1p5qYO3gHdI" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -2278,7 +2603,7 @@
                     <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
                   </node>
                   <node concept="37vLTw" id="2AY95d_93NI" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1p5qYO3gEfk" role="2OqNvi">
@@ -2287,7 +2612,7 @@
               </node>
               <node concept="2OqwBi" id="1p5qYO3gEfl" role="3uHU7w">
                 <node concept="37vLTw" id="2AY95d_93G2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                  <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                 </node>
                 <node concept="2qgKlT" id="1p5qYO3gEfn" role="2OqNvi">
                   <ref role="37wK5l" node="1QpPlI533MM" resolve="get_lower_z" />
@@ -2297,7 +2622,7 @@
             <node concept="2dkUwp" id="1p5qYO3gEfo" role="3uHU7w">
               <node concept="2OqwBi" id="1p5qYO3gEfp" role="3uHU7w">
                 <node concept="37vLTw" id="2AY95d_93Qs" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                  <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                 </node>
                 <node concept="2qgKlT" id="1p5qYO3gEfr" role="2OqNvi">
                   <ref role="37wK5l" node="1QpPlI538TU" resolve="get_upper_z" />
@@ -2309,7 +2634,7 @@
                     <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
                   </node>
                   <node concept="37vLTw" id="2AY95d_93P5" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                    <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1p5qYO3gEfw" role="2OqNvi">
@@ -2326,7 +2651,7 @@
                   <node concept="2OqwBi" id="1p5qYO3gEf_" role="3uHU7w">
                     <node concept="2OqwBi" id="1p5qYO3gEfA" role="2Oq$k0">
                       <node concept="37vLTw" id="1p5qYO3gJcp" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gEfC" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -2342,7 +2667,7 @@
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
                       </node>
                       <node concept="37vLTw" id="1p5qYO3gIUZ" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1p5qYO3gEfI" role="2OqNvi">
@@ -2381,7 +2706,7 @@
                       <node concept="2OqwBi" id="1p5qYO3gEfX" role="1m5AlR">
                         <node concept="2OqwBi" id="1p5qYO3gEfY" role="2Oq$k0">
                           <node concept="37vLTw" id="2AY95d_941z" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                            <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                           </node>
                           <node concept="3TrEf2" id="1p5qYO3gEg0" role="2OqNvi">
                             <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -2404,7 +2729,7 @@
                       <node concept="2OqwBi" id="1p5qYO3gEg6" role="1m5AlR">
                         <node concept="2OqwBi" id="1p5qYO3gEg7" role="2Oq$k0">
                           <node concept="37vLTw" id="2AY95d_944p" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                            <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                           </node>
                           <node concept="3TrEf2" id="1p5qYO3gEg9" role="2OqNvi">
                             <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
@@ -2452,7 +2777,7 @@
                   <node concept="2OqwBi" id="1p5qYO3gEgp" role="3uHU7B">
                     <node concept="2OqwBi" id="1p5qYO3gEgq" role="2Oq$k0">
                       <node concept="37vLTw" id="2AY95d_944V" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gEgs" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -2476,7 +2801,7 @@
                   <node concept="2OqwBi" id="1p5qYO3gEgz" role="3uHU7B">
                     <node concept="2OqwBi" id="1p5qYO3gEg$" role="2Oq$k0">
                       <node concept="37vLTw" id="2AY95d_94_p" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="tissue_vessel" />
+                        <ref role="3cqZAo" node="1p5qYO3gFA0" resolve="vessel" />
                       </node>
                       <node concept="3TrEf2" id="1p5qYO3gEgA" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:5qSYbADryCY" resolve="position" />
@@ -2507,7 +2832,7 @@
                         <ref role="37wK5l" node="1QpPlI52faY" resolve="get_upper_y" />
                       </node>
                       <node concept="37vLTw" id="2AY95d_94VF" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="1p5qYO3gEgO" role="3uHU7w">
@@ -2523,7 +2848,7 @@
                         <ref role="37wK5l" node="1QpPlI52faY" resolve="get_upper_y" />
                       </node>
                       <node concept="37vLTw" id="2AY95d_94T$" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                       </node>
                     </node>
                   </node>
@@ -2535,7 +2860,7 @@
                         <ref role="37wK5l" node="1QpPlI52f9_" resolve="get_lower_y" />
                       </node>
                       <node concept="37vLTw" id="2AY95d_94zi" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="1p5qYO3gEgZ" role="3uHU7w">
@@ -2548,7 +2873,7 @@
                         <ref role="37wK5l" node="1QpPlI52f9_" resolve="get_lower_y" />
                       </node>
                       <node concept="37vLTw" id="2AY95d_94Rt" role="2Oq$k0">
-                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="tissue_monolayer" />
+                        <ref role="3cqZAo" node="1p5qYO3gFEA" resolve="monolayer" />
                       </node>
                     </node>
                     <node concept="37vLTw" id="1p5qYO3gEh4" role="3uHU7w">
@@ -2565,15 +2890,42 @@
         </node>
       </node>
       <node concept="37vLTG" id="1p5qYO3gFA0" role="3clF46">
-        <property role="TrG5h" value="tissue_vessel" />
+        <property role="TrG5h" value="vessel" />
         <node concept="3Tqbb2" id="1p5qYO3gF_Z" role="1tU5fm">
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
         </node>
       </node>
       <node concept="37vLTG" id="1p5qYO3gFEA" role="3clF46">
-        <property role="TrG5h" value="tissue_monolayer" />
+        <property role="TrG5h" value="monolayer" />
         <node concept="3Tqbb2" id="1p5qYO3gFIU" role="1tU5fm">
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWZfO" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWZD8" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWZD9" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of a vessel-like and a monolayer-like object and checks that there is no overlap based on " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQX0ji" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX0jj" role="1dT_Ay">
+            <property role="1dT_AB" value="their shapes and sizes (returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWZfR" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQWZfT" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gFA0" resolve="vessel" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQWZfU" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQWZfW" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gFEA" resolve="monolayer" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWZfX" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -2848,6 +3200,33 @@
           <ref role="ehGHo" to="nguq:5qSYbADreY6" resolve="Tissue" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX0o6" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX0yd" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX0ye" role="1dT_Ay">
+            <property role="1dT_AB" value="Compares the locations of two vessel-like objects and checks that there is no overlap based on their shapes and sizes " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQX0yf" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX0yg" role="1dT_Ay">
+            <property role="1dT_AB" value="(returns true if there is overlap)." />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQX0o9" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQX0ob" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gMwJ" resolve="monolayer_1" />
+          </node>
+        </node>
+        <node concept="TUZQ0" id="248hPtQX0oc" role="3nqlJM">
+          <property role="TUZQ4" value="Tissue" />
+          <node concept="zr_55" id="248hPtQX0oe" role="zr_5Q">
+            <ref role="zr_51" node="1p5qYO3gMAv" resolve="monolayer_2" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX0of" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13hLZK" id="4XZPqyVOe3V" role="13h7CW">
       <node concept="3clFbS" id="4XZPqyVOe3W" role="2VODD2" />
@@ -3045,6 +3424,21 @@
           <node concept="3clFbT" id="6leo5vIfAjI" role="3cqZAk" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWEln" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWElo" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWElp" role="1dT_Ay">
+            <property role="1dT_AB" value="Iterates over all other objects defined in a simulation world and checks to see whether there is any potential " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQX24r" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX24s" role="1dT_Ay">
+            <property role="1dT_AB" value="overlap between the selected object boundaries and this cell. " />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWElq" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWCJog" role="13h7CS">
       <property role="TrG5h" value="check_upper_x_world_boundaries" />
@@ -3054,7 +3448,7 @@
         <node concept="3clFbJ" id="3$QBVvWCJok" role="3cqZAp">
           <node concept="3eOSWO" id="3$QBVvWCJol" role="3clFbw">
             <node concept="BsUDl" id="3$QBVvWCSko" role="3uHU7B">
-              <ref role="37wK5l" node="1QpPlI524rF" resolve="get_upper_x" />
+              <ref role="37wK5l" node="1QpPlI524rF" resolve="getupper_x" />
             </node>
             <node concept="2OqwBi" id="3$QBVvWCJor" role="3uHU7w">
               <node concept="2OqwBi" id="3$QBVvWCJos" role="2Oq$k0">
@@ -3093,6 +3487,16 @@
           <node concept="3clFbT" id="3$QBVvWCJoE" role="3cqZAk" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWEqZ" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWEr0" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWEr1" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the cell's position does not extend out of the upper X-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWEr2" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWCTDn" role="13h7CS">
       <property role="TrG5h" value="check_lower_x_world_boundaries" />
@@ -3118,6 +3522,16 @@
         </node>
         <node concept="3cpWs6" id="3$QBVvWCTDM" role="3cqZAp">
           <node concept="3clFbT" id="3$QBVvWCTDN" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWEBn" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWEBo" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWEBp" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the cell's position does not extend out of the lower X-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWEBq" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -3168,6 +3582,16 @@
           <node concept="3clFbT" id="3$QBVvWCLpz" role="3cqZAk" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWEL0" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWEL1" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWEL2" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the cell's position does not extend out of the upper Y-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWEL3" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWCYG5" role="13h7CS">
       <property role="TrG5h" value="check_lower_y_world_boundaries" />
@@ -3193,6 +3617,16 @@
         </node>
         <node concept="3cpWs6" id="3$QBVvWCYGg" role="3cqZAp">
           <node concept="3clFbT" id="3$QBVvWCYGh" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWEYL" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWEYM" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWEYN" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the cell's position does not extend out of the lower Y-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWEYO" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -3267,6 +3701,16 @@
         </node>
         <node concept="3cpWs6" id="3$QBVvWCOdg" role="3cqZAp">
           <node concept="3clFbT" id="3$QBVvWCOdh" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWF8M" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWF8N" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWF8O" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the cell's position does not extend out of the upper or lower Z-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWF8P" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -3347,6 +3791,16 @@
           <node concept="3cmrfG" id="1QpPlI52b9G" role="3cqZAk">
             <property role="3cmrfH" value="-1" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWFld" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWFle" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWFlf" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the lowest X-coordinate value of the cell for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWFlg" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -3433,9 +3887,19 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQWFDV" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWFDW" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWFDX" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the lowest Y-coordinate value of the cell for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWFDY" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI524rF" role="13h7CS">
-      <property role="TrG5h" value="get_upper_x" />
+      <property role="TrG5h" value="getupper_x" />
       <node concept="3Tm1VV" id="1QpPlI524rG" role="1B3o_S" />
       <node concept="3uibUv" id="1QpPlI524yg" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Integer" resolve="Integer" />
@@ -3515,6 +3979,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWFYT" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWFYU" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWFYV" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the highest X-coordinate value of the cell for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWFYW" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -3599,6 +4073,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQWHbT" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQWHbU" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQWHbV" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the highest Y-coordinate value of the cell for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQWHbW" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -4055,6 +4539,21 @@
           <node concept="3clFbT" id="6leo5vIfAK1" role="3cqZAk" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX24T" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX2v4" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2v5" role="1dT_Ay">
+            <property role="1dT_AB" value="Iterates over all other objects defined in a simulation world and checks to see whether there is any potential " />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="248hPtQX2v6" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2v7" role="1dT_Ay">
+            <property role="1dT_AB" value="overlap between the selected object boundaries and this tissue. " />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX24W" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWDazm" role="13h7CS">
       <property role="TrG5h" value="check_upper_x_world_boundaries" />
@@ -4110,6 +4609,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX2w7" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX2w8" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2w9" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the tissue's position does not extend out of the upper X-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX2wa" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWDazH" role="13h7CS">
       <property role="TrG5h" value="check_lower_x_world_boundaries" />
@@ -4142,6 +4651,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQX2FC" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX2FD" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2FE" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the tissue's position does not extend out of the lower X-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX2FF" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -4199,6 +4718,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX2O8" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX2O9" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2Oa" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the tissue's position does not extend out of the upper Y-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX2Ob" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="3$QBVvWDa$h" role="13h7CS">
       <property role="TrG5h" value="check_lower_y_world_boundaries" />
@@ -4231,6 +4760,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQX2Z9" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX2Za" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX2Zb" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks to see if the tissue's position does not extend out of the lower Y-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX2Zc" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
         </node>
       </node>
     </node>
@@ -4405,6 +4944,16 @@
           <node concept="3clFbT" id="3$QBVvWDa_0" role="3cqZAk" />
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX3$8" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX3$9" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX3$a" role="1dT_Ay">
+            <property role="1dT_AB" value="Checks whether the tissue extends out of either the lower or upper Z-boundary of the simulation world." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX3$b" role="3nqlJM">
+          <property role="x79VB" value="boolean" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI52f7B" role="13h7CS">
       <property role="TrG5h" value="get_lower_x" />
@@ -4559,6 +5108,16 @@
           <node concept="37vLTw" id="2AY95d_bQnz" role="3cqZAk">
             <ref role="3cqZAo" node="2AY95d_bQm$" resolve="lower_x" />
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQX3WL" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX3WM" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX3WN" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the lowest X-coordinate value of the tissue for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX3WO" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -4717,6 +5276,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX5cL" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX5cM" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX5cN" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the lowest Y-coordinate value of the tissue for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX5cO" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI52f8w" role="13h7CS">
       <property role="TrG5h" value="get_upper_x" />
@@ -4861,6 +5430,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQX5As" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX5At" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX5Au" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the higher X-coordinate value of the tissue for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX5Av" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
@@ -5019,6 +5598,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX6az" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX6a$" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX6a_" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the higher Y-coordinate value of the tissue for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX6aA" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI533MM" role="13h7CS">
       <property role="TrG5h" value="get_lower_z" />
@@ -5095,6 +5684,16 @@
           </node>
         </node>
       </node>
+      <node concept="P$JXv" id="248hPtQX6EU" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX6EV" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX6EW" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the lowest Z-coordinate value of the tissue for boundary-checking purposes." />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX6EX" role="3nqlJM">
+          <property role="x79VB" value="integer" />
+        </node>
+      </node>
     </node>
     <node concept="13i0hz" id="1QpPlI538TU" role="13h7CS">
       <property role="TrG5h" value="get_upper_z" />
@@ -5169,6 +5768,16 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="248hPtQX74b" role="lGtFl">
+        <node concept="TZ5HA" id="248hPtQX74c" role="TZ5H$">
+          <node concept="1dT_AC" id="248hPtQX74d" role="1dT_Ay">
+            <property role="1dT_AB" value="Returns the highest Z-coordinate value of the tissue for boundary-checking purposes" />
+          </node>
+        </node>
+        <node concept="x79VA" id="248hPtQX74e" role="3nqlJM">
+          <property role="x79VB" value="integer" />
         </node>
       </node>
     </node>
