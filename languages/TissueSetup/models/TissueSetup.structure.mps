@@ -235,9 +235,9 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYt">
     <property role="EcuMT" value="6249017959271690141" />
-    <property role="TrG5h" value="Square" />
-    <property role="34LRSv" value="SQUARE" />
+    <property role="TrG5h" value="Rectangular" />
     <property role="R4oN_" value="Square cell shape type." />
+    <property role="34LRSv" value="Rectangular" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
     <node concept="1TJgyi" id="5qSYbADreYL" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690161" />

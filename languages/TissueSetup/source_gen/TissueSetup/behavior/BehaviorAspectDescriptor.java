@@ -20,7 +20,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myArrangement__BehaviorDescriptor = new Arrangement__BehaviorDescriptor();
   private final BHDescriptor myCylindrical__BehaviorDescriptor = new Cylindrical__BehaviorDescriptor();
   private final BHDescriptor myFlat__BehaviorDescriptor = new Flat__BehaviorDescriptor();
-  private final BHDescriptor mySquare__BehaviorDescriptor = new Square__BehaviorDescriptor();
+  private final BHDescriptor myRectangular__BehaviorDescriptor = new Rectangular__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -40,9 +40,9 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 4:
         return myPosition__BehaviorDescriptor;
       case 5:
-        return myShape__BehaviorDescriptor;
+        return myRectangular__BehaviorDescriptor;
       case 6:
-        return mySquare__BehaviorDescriptor;
+        return myShape__BehaviorDescriptor;
       case 7:
         return myTissue__BehaviorDescriptor;
       case 8:
@@ -51,5 +51,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8aL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8aL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L)).seal();
 }

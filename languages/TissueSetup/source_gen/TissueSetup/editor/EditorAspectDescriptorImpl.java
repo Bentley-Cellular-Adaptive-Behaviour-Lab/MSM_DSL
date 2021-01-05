@@ -34,7 +34,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 4:
         return Collections.<ConceptEditor>singletonList(new Position_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new Square_Editor());
+        return Collections.<ConceptEditor>singletonList(new Rectangular_Editor());
       case 6:
         return Collections.<ConceptEditor>singletonList(new Tissue_Editor());
       case 7:

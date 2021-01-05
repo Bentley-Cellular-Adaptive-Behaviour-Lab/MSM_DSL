@@ -174,7 +174,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGBd">
-    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="Square" />
+    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="Rectangular" />
     <node concept="EnEH3" id="i2Gwg1ArMv" role="1MhHOB">
       <ref role="EomxK" to="nguq:5qSYbADreYL" resolve="height" />
       <node concept="QB0g5" id="i2Gwg1ArNL" role="QCWH9">

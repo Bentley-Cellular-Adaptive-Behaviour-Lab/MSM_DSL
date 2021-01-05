@@ -82,26 +82,6 @@ public class MakeAndRun {
       System.out.println("Build completed successfully.");
     }
 
-    try {
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent", "--analysis==\"time_to_pattern\"");
-      pb.redirectErrorStream();
-      Process p = pb.start();
-      InputStream input_stream = p.getInputStream();
-      BufferedReader reader = new BufferedReader(new InputStreamReader(input_stream));
-      String line = null;
-      while ((line = reader.readLine()) != null) {
-        System.out.println(line);
-      }
-      int exit_code = p.waitFor();
-    } catch (IOException e) {
-      e.printStackTrace();
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    } finally {
-      System.out.println("Build completed successfully.");
-    }
-
-
   }
   public static class utils {
     public enum operating_system {

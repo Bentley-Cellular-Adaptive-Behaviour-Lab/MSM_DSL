@@ -47,17 +47,17 @@
       <node id="4122658121470700304" at="91,5,92,17" concept="8" />
       <node id="4122658121470657358" at="95,496,96,18" concept="8" />
       <node id="4122658121470657360" at="97,5,98,17" concept="8" />
-      <node id="2132970487587320401" at="101,167,102,0" concept="9" />
-      <node id="2132970487587320402" at="102,0,103,333" concept="8" />
+      <node id="2132970487587320401" at="101,172,102,0" concept="9" />
+      <node id="2132970487587320402" at="102,0,103,338" concept="8" />
       <node id="2132970487587320427" at="104,5,105,14" concept="8" />
-      <node id="2132970487587318812" at="108,167,109,0" concept="9" />
-      <node id="2132970487587315360" at="109,0,110,334" concept="8" />
+      <node id="2132970487587318812" at="108,172,109,0" concept="9" />
+      <node id="2132970487587315360" at="109,0,110,339" concept="8" />
       <node id="2132970487587323711" at="111,12,112,16" concept="8" />
-      <node id="2132970487587323984" at="116,167,117,0" concept="9" />
-      <node id="2132970487587323985" at="117,0,118,333" concept="8" />
+      <node id="2132970487587323984" at="116,172,117,0" concept="9" />
+      <node id="2132970487587323985" at="117,0,118,338" concept="8" />
       <node id="2132970487587324012" at="119,12,120,16" concept="8" />
-      <node id="2132970487587331836" at="124,167,125,0" concept="9" />
-      <node id="2132970487587331837" at="125,0,126,334" concept="8" />
+      <node id="2132970487587331836" at="124,172,125,0" concept="9" />
+      <node id="2132970487587331837" at="125,0,126,339" concept="8" />
       <node id="2132970487587331866" at="127,12,128,16" concept="8" />
       <node id="2132970487587146628" at="136,114,137,21" concept="3" />
       <node id="2132970487587146628" at="141,114,142,49" concept="7" />
@@ -81,7 +81,7 @@
       <node id="2132970487587146628" at="197,0,198,0" concept="10" trace="Tissue_And_Cell_Container$ni" />
       <node id="2132970487587146628" at="198,0,199,0" concept="10" trace="Cylindrical$Bh" />
       <node id="2132970487587146628" at="199,0,200,0" concept="10" trace="Flat$W" />
-      <node id="2132970487587146628" at="200,0,201,0" concept="10" trace="Square$1r" />
+      <node id="2132970487587146628" at="200,0,201,0" concept="10" trace="Rectangular$1r" />
       <node id="2132970487587146628" at="204,0,205,0" concept="10" trace="cells$psWW" />
       <node id="2132970487587146628" at="205,0,206,0" concept="10" trace="tissue_type$$cvw" />
       <node id="2132970487587146628" at="206,0,207,0" concept="10" trace="arrangement$aAuk" />
@@ -172,10 +172,10 @@
       <scope id="2132970487587146628" at="46,0,48,0">
         <var name="__thisNode__" id="2132970487587146628" />
       </scope>
-      <scope id="2132970487587320400" at="101,167,103,333" />
-      <scope id="2132970487587310936" at="108,167,110,334" />
-      <scope id="2132970487587323983" at="116,167,118,333" />
-      <scope id="2132970487587331835" at="124,167,126,334" />
+      <scope id="2132970487587320400" at="101,172,103,338" />
+      <scope id="2132970487587310936" at="108,172,110,339" />
+      <scope id="2132970487587323983" at="116,172,118,338" />
+      <scope id="2132970487587331835" at="124,172,126,339" />
       <scope id="2132970487587146628" at="132,0,134,0" />
       <scope id="2132970487587282873" at="51,50,54,9" />
       <scope id="2132970487587539370" at="58,176,61,9" />
@@ -643,7 +643,7 @@
     </file>
   </root>
   <root nodeRef="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780895892682">
-    <file name="Square__BehaviorDescriptor.java">
+    <file name="Rectangular__BehaviorDescriptor.java">
       <node id="5354143780895892682" at="24,0,25,0" concept="10" trace="CONCEPT" />
       <node id="5354143780895892682" at="26,0,27,0" concept="10" trace="get_height_id4DdJmqSEQ4i" />
       <node id="5354143780895892682" at="27,0,28,0" concept="10" trace="get_width_id4DdJmqSEQ4q" />
@@ -665,7 +665,7 @@
       <node id="5354143780895892682" at="87,40,88,19" concept="8" />
       <node id="5354143780895892682" at="92,0,93,0" concept="10" trace="height$pTxW" />
       <node id="5354143780895892682" at="31,0,33,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5354143780895892682" at="43,0,45,0" concept="2" trace="Square__BehaviorDescriptor#()V" />
+      <node id="5354143780895892682" at="43,0,45,0" concept="2" trace="Rectangular__BehaviorDescriptor#()V" />
       <node id="5354143780895892682" at="53,49,56,5" concept="5" />
       <node id="5354143780895892682" at="69,49,72,5" concept="5" />
       <node id="5354143780895892682" at="34,0,38,0" concept="11" trace="get_height_id4DdJmqSEQ4i#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -678,7 +678,7 @@
       <node id="5354143780895892682" at="67,0,78,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="5354143780895892682" at="51,0,66,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5354143780895892682" at="31,63,31,63" />
-      <scope id="5354143780895892682" at="43,44,43,44" />
+      <scope id="5354143780895892682" at="43,49,43,49" />
       <scope id="5354143780895892682" at="47,114,48,21" />
       <scope id="5354143780895892682" at="54,26,55,56" />
       <scope id="5354143780895892682" at="58,13,59,61" />
@@ -727,8 +727,8 @@
         <var name="node" id="5354143780895892682" />
         <var name="parameters" id="5354143780895892682" />
       </scope>
-      <unit id="5354143780895892682" at="91,0,94,0" name="TissueSetup.behavior.Square__BehaviorDescriptor$PROPS" />
-      <unit id="5354143780895892682" at="23,0,95,0" name="TissueSetup.behavior.Square__BehaviorDescriptor" />
+      <unit id="5354143780895892682" at="91,0,94,0" name="TissueSetup.behavior.Rectangular__BehaviorDescriptor$PROPS" />
+      <unit id="5354143780895892682" at="23,0,95,0" name="TissueSetup.behavior.Rectangular__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896022437">
@@ -869,10 +869,10 @@
       <node id="5766458033124655248" at="59,101,60,111" concept="7" />
       <node id="5766458033124687079" at="60,111,61,34" concept="7" />
       <node id="5766458033124693738" at="61,34,62,19" concept="8" />
-      <node id="2132970487587362048" at="64,90,65,412" concept="8" />
+      <node id="2132970487587362048" at="64,90,65,417" concept="8" />
       <node id="5766458033124884979" at="67,99,68,0" concept="9" />
-      <node id="5766458033124851676" at="68,0,69,413" concept="7" />
-      <node id="5766458033124899201" at="69,413,70,31" concept="8" />
+      <node id="5766458033124851676" at="68,0,69,418" concept="7" />
+      <node id="5766458033124899201" at="69,418,70,31" concept="8" />
       <node id="5354143780896026259" at="77,114,78,21" concept="3" />
       <node id="5354143780896026259" at="82,114,83,49" concept="7" />
       <node id="5354143780896026259" at="84,26,85,56" concept="13" />
@@ -895,7 +895,7 @@
       <node id="5354143780896026259" at="135,0,136,0" concept="10" trace="width$pTZY" />
       <node id="5354143780896026259" at="136,0,137,0" concept="10" trace="height$pTxW" />
       <node id="5354143780896026259" at="140,0,141,0" concept="10" trace="Tissue$nL" />
-      <node id="5354143780896026259" at="141,0,142,0" concept="10" trace="Square$1r" />
+      <node id="5354143780896026259" at="141,0,142,0" concept="10" trace="Rectangular$1r" />
       <node id="5354143780896026259" at="142,0,143,0" concept="10" trace="Tissue_Type$C4" />
       <node id="5354143780896026259" at="146,0,147,0" concept="10" trace="tissue_type$$cvw" />
       <node id="5354143780896026259" at="147,0,148,0" concept="10" trace="cell_type$E3tO" />
@@ -921,7 +921,7 @@
       <scope id="5354143780896026259" at="41,63,41,63" />
       <scope id="5354143780896026259" at="73,49,73,49" />
       <scope id="5728532171720859028" at="56,91,57,181" />
-      <scope id="2132970487587361573" at="64,90,65,412" />
+      <scope id="2132970487587361573" at="64,90,65,417" />
       <scope id="5354143780896026259" at="77,114,78,21" />
       <scope id="5354143780896026259" at="84,26,85,56" />
       <scope id="5354143780896026259" at="88,13,89,74" />
@@ -1019,8 +1019,8 @@
       <node id="5354143780896078869" at="43,114,44,18" concept="8" />
       <node id="5354143780896079144" at="46,91,47,112" concept="7" />
       <node id="5354143780896087065" at="47,112,48,17" concept="8" />
-      <node id="2132970487587406412" at="50,89,51,363" concept="8" />
-      <node id="3007881541729618868" at="53,90,54,365" concept="8" />
+      <node id="2132970487587406412" at="50,89,51,368" concept="8" />
+      <node id="3007881541729618868" at="53,90,54,370" concept="8" />
       <node id="5728532171720881642" at="56,91,57,168" concept="8" />
       <node id="5354143780896073485" at="64,114,65,21" concept="3" />
       <node id="5354143780896073485" at="69,114,70,49" concept="7" />
@@ -1041,7 +1041,7 @@
       <node id="5354143780896073485" at="117,0,118,0" concept="10" trace="width$pTZY" />
       <node id="5354143780896073485" at="118,0,119,0" concept="10" trace="height$pTxW" />
       <node id="5354143780896073485" at="122,0,123,0" concept="10" trace="Tissue_Type$C4" />
-      <node id="5354143780896073485" at="123,0,124,0" concept="10" trace="Square$1r" />
+      <node id="5354143780896073485" at="123,0,124,0" concept="10" trace="Rectangular$1r" />
       <node id="5354143780896073485" at="127,0,128,0" concept="10" trace="cell_type$E3tO" />
       <node id="5354143780896073485" at="128,0,129,0" concept="10" trace="shape$q0mn" />
       <node id="5354143780896073485" at="39,0,41,0" concept="11" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -1062,8 +1062,8 @@
       <node id="5354143780896073485" at="68,0,89,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5354143780896073485" at="39,63,39,63" />
       <scope id="5354143780896073485" at="60,42,60,42" />
-      <scope id="2132970487587402982" at="50,89,51,363" />
-      <scope id="2132970487587427488" at="53,90,54,365" />
+      <scope id="2132970487587402982" at="50,89,51,368" />
+      <scope id="2132970487587427488" at="53,90,54,370" />
       <scope id="5728532171720878749" at="56,91,57,168" />
       <scope id="5354143780896073485" at="64,114,65,21" />
       <scope id="5354143780896073485" at="71,26,72,56" />

@@ -62,11 +62,11 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
     return i_steps;
   }
   /*package*/ static int get_total_length_int_id1QpPlI52lcy(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.cylinder_length_in_cells$pzLn) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue$nL, false, false), LINKS.tissue_type$$cvw), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.cylinder_length_in_cells$pzLn) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue$nL, false, false), LINKS.tissue_type$$cvw), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY);
   }
   /*package*/ static int calculate_cross_section_cells_id506$KtOAF5K(@NotNull SNode __thisNode__) {
 
-    int cross_section_cells = ((int) Cylindrical__BehaviorDescriptor.calculate_total_ablumenal_steps_id506$KtO_VOJ.invoke(__thisNode__)) / SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.height$pTxW);
+    int cross_section_cells = ((int) Cylindrical__BehaviorDescriptor.calculate_total_ablumenal_steps_id506$KtO_VOJ.invoke(__thisNode__)) / SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW);
     return cross_section_cells;
   }
 
@@ -138,7 +138,7 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tissue$nL = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, "TissueSetup.structure.Tissue");
-    /*package*/ static final SConcept Square$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Square");
+    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
     /*package*/ static final SConcept Tissue_Type$C4 = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, "TissueSetup.structure.Tissue_Type");
   }
 

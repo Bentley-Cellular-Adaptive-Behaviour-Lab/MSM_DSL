@@ -404,8 +404,8 @@
     </file>
   </root>
   <root nodeRef="r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueSetup.constraints)/4857589848835541453">
-    <file name="Square_Constraints.java">
-      <node id="4857589848835541453" at="26,31,27,30" concept="9" />
+    <file name="Rectangular_Constraints.java">
+      <node id="4857589848835541453" at="26,36,27,35" concept="9" />
       <node id="4857589848835541453" at="34,127,35,128" concept="4" />
       <node id="4857589848835541453" at="35,128,36,0" concept="6" />
       <node id="4857589848835541453" at="37,55,38,71" concept="1" />
@@ -431,10 +431,10 @@
       <node id="4857589848835541453" at="91,63,92,22" concept="5" />
       <node id="4857589848835541705" at="94,128,95,16" concept="5" />
       <node id="4857589848835541453" at="97,0,98,0" concept="7" trace="canBeChildBreakingPoint" />
-      <node id="4857589848835541453" at="100,0,101,0" concept="7" trace="Square$1r" />
+      <node id="4857589848835541453" at="100,0,101,0" concept="7" trace="Rectangular$1r" />
       <node id="4857589848835541453" at="104,0,105,0" concept="7" trace="height$pTxW" />
       <node id="4857589848835541453" at="105,0,106,0" concept="7" trace="width$pTZY" />
-      <node id="4857589848835541453" at="26,0,29,0" concept="0" trace="Square_Constraints#()V" />
+      <node id="4857589848835541453" at="26,0,29,0" concept="0" trace="Rectangular_Constraints#()V" />
       <node id="4857589848835541453" at="36,0,39,9" concept="2" />
       <node id="325017853400562847" at="46,0,49,0" concept="0" trace="Height_Property#(Ljetbrains/mps/smodel/runtime/ConstraintsDescriptor;)V" />
       <node id="325017853400562847" at="56,100,59,7" concept="2" />
@@ -451,7 +451,7 @@
       <node id="4857589848835541453" at="33,0,43,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
       <node id="4857589848835541453" at="31,103,43,6" concept="5" />
       <node id="4857589848835541453" at="30,0,45,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
-      <scope id="4857589848835541453" at="26,31,27,30" />
+      <scope id="4857589848835541453" at="26,36,27,35" />
       <scope id="4857589848835541453" at="37,55,38,71" />
       <scope id="325017853400562847" at="46,61,47,42" />
       <scope id="325017853400562847" at="50,38,51,18" />
@@ -514,12 +514,12 @@
       </scope>
       <scope id="4857589848835541453" at="31,103,43,6" />
       <scope id="4857589848835541453" at="30,0,45,0" />
-      <unit id="4857589848835541453" at="99,0,102,0" name="TissueSetup.constraints.Square_Constraints$CONCEPTS" />
-      <unit id="4857589848835541453" at="103,0,107,0" name="TissueSetup.constraints.Square_Constraints$PROPS" />
-      <unit id="4857589848835541453" at="32,15,43,5" name="TissueSetup.constraints.Square_Constraints$1" />
-      <unit id="325017853400562847" at="45,0,66,0" name="TissueSetup.constraints.Square_Constraints$Height_Property" />
-      <unit id="325017853400569997" at="66,0,87,0" name="TissueSetup.constraints.Square_Constraints$Width_Property" />
-      <unit id="4857589848835541453" at="25,0,108,0" name="TissueSetup.constraints.Square_Constraints" />
+      <unit id="4857589848835541453" at="99,0,102,0" name="TissueSetup.constraints.Rectangular_Constraints$CONCEPTS" />
+      <unit id="4857589848835541453" at="103,0,107,0" name="TissueSetup.constraints.Rectangular_Constraints$PROPS" />
+      <unit id="4857589848835541453" at="32,15,43,5" name="TissueSetup.constraints.Rectangular_Constraints$1" />
+      <unit id="325017853400562847" at="45,0,66,0" name="TissueSetup.constraints.Rectangular_Constraints$Height_Property" />
+      <unit id="325017853400569997" at="66,0,87,0" name="TissueSetup.constraints.Rectangular_Constraints$Width_Property" />
+      <unit id="4857589848835541453" at="25,0,108,0" name="TissueSetup.constraints.Rectangular_Constraints" />
     </file>
   </root>
 </debug-info>

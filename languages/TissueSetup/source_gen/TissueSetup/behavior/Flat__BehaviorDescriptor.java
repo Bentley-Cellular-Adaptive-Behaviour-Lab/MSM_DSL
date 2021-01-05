@@ -48,10 +48,10 @@ public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
     return width;
   }
   /*package*/ static int get_total_width_int_id1QpPlI52vjz(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY);
   }
   /*package*/ static int get_total_height_int_id1QpPlI52_it(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.height$pTxW);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW);
   }
   /*package*/ static int get_total_cell_number_id4XZPqyVOpH$(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy);
@@ -120,7 +120,7 @@ public final class Flat__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tissue_Type$C4 = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, "TissueSetup.structure.Tissue_Type");
-    /*package*/ static final SConcept Square$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Square");
+    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
   }
 
   private static final class LINKS {

@@ -216,7 +216,7 @@
     <classNode dependClassName="TissueSetup.editor.Flat_Editor" />
     <classNode dependClassName="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0_Editor" />
     <classNode dependClassName="TissueSetup.editor.Position_Editor" />
-    <classNode dependClassName="TissueSetup.editor.Square_Editor" />
+    <classNode dependClassName="TissueSetup.editor.Rectangular_Editor" />
     <classNode dependClassName="TissueSetup.editor.Tissue_And_Cell_Container_Editor" />
     <classNode dependClassName="TissueSetup.editor.Tissue_And_Cell_Container_SubstituteMenu" />
     <classNode dependClassName="TissueSetup.editor.Tissue_Editor" />
@@ -357,14 +357,14 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="TissueSetup.editor.Square_Editor">
-    <classNode dependClassName="TissueSetup.editor.Square_EditorBuilder_a" />
+  <dependency className="TissueSetup.editor.Rectangular_Editor">
+    <classNode dependClassName="TissueSetup.editor.Rectangular_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="TissueSetup.editor.Square_EditorBuilder_a">
+  <dependency className="TissueSetup.editor.Rectangular_EditorBuilder_a">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Objects" />
