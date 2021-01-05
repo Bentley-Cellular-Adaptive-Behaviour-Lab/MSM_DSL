@@ -186,10 +186,10 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">
-    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="Square" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="Rectangular" />
     <node concept="3EZMnI" id="4JVq81FhBQR" role="2wV5jI">
       <node concept="3F0ifn" id="4JVq81FhBQX" role="3EZMnx">
-        <property role="3F0ifm" value="Square with height" />
+        <property role="3F0ifm" value="Rectangular with height" />
       </node>
       <node concept="3F0A7n" id="4JVq81FhBR3" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYL" resolve="height" />
@@ -254,6 +254,9 @@
           </node>
           <node concept="3F0A7n" id="3mEqLZygWgL" role="3EZMnx">
             <ref role="1NtTu8" to="nguq:5qSYbADreYo" resolve="cylinder_total_radius" />
+          </node>
+          <node concept="3F0ifn" id="1PaE25wCV1r" role="3EZMnx">
+            <property role="3F0ifm" value="grid-points" />
           </node>
           <node concept="2iRfu4" id="3mEqLZygWgM" role="2iSdaV" />
         </node>

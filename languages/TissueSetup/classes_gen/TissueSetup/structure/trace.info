@@ -74,7 +74,7 @@
     </file>
     <file name="LanguageConceptSwitch.java">
       <node id="6249017959271690118" at="20,0,21,0" concept="5" trace="Tissue" />
-      <node id="6249017959271690118" at="33,45,34,45" concept="0" />
+      <node id="6249017959271690118" at="33,44,34,45" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690118" at="24,0,25,0" concept="1" trace="myConceptTissue" />
@@ -171,35 +171,35 @@
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690121">
     <file name="ConceptPresentationAspectImpl.java">
-      <node id="6249017959271690121" at="18,0,19,0" concept="1" trace="props_Shape" />
-      <node id="6249017959271690121" at="77,34,78,76" concept="3" />
-      <node id="6249017959271690121" at="78,76,79,82" concept="0" />
-      <node id="6249017959271690121" at="79,82,80,37" concept="0" />
-      <node id="6249017959271690121" at="81,9,82,27" concept="4" />
-      <node id="6249017959271690121" at="76,39,81,9" concept="2" />
-      <scope id="6249017959271690121" at="77,34,80,37">
+      <node id="6249017959271690121" at="19,0,20,0" concept="1" trace="props_Shape" />
+      <node id="6249017959271690121" at="85,34,86,76" concept="3" />
+      <node id="6249017959271690121" at="86,76,87,82" concept="0" />
+      <node id="6249017959271690121" at="87,82,88,37" concept="0" />
+      <node id="6249017959271690121" at="89,9,90,27" concept="4" />
+      <node id="6249017959271690121" at="84,39,89,9" concept="2" />
+      <scope id="6249017959271690121" at="85,34,88,37">
         <var name="cpb" id="6249017959271690121" />
       </scope>
-      <scope id="6249017959271690121" at="76,39,82,27" />
+      <scope id="6249017959271690121" at="84,39,90,27" />
     </file>
     <file name="LanguageConceptSwitch.java">
-      <node id="6249017959271690121" at="18,0,19,0" concept="5" trace="Shape" />
-      <node id="6249017959271690121" at="31,47,32,44" concept="0" />
+      <node id="6249017959271690121" at="19,0,20,0" concept="5" trace="Shape" />
+      <node id="6249017959271690121" at="32,50,33,44" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6249017959271690121" at="22,0,23,0" concept="1" trace="myConceptShape" />
-      <node id="6249017959271690121" at="60,39,61,30" concept="4" />
-      <node id="6249017959271690121" at="141,63,142,151" concept="3" />
-      <node id="6249017959271690121" at="142,151,143,33" concept="0" />
-      <node id="6249017959271690121" at="143,33,144,98" concept="0" />
-      <node id="6249017959271690121" at="144,98,145,17" concept="0" />
-      <node id="6249017959271690121" at="145,17,146,22" concept="4" />
-      <node id="6249017959271690121" at="141,0,148,0" concept="6" trace="createDescriptorForShape#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690121" at="60,39,61,30" />
-      <scope id="6249017959271690121" at="141,63,146,22">
+      <node id="6249017959271690121" at="23,0,24,0" concept="1" trace="myConceptShape" />
+      <node id="6249017959271690121" at="62,39,63,30" concept="4" />
+      <node id="6249017959271690121" at="152,63,153,151" concept="3" />
+      <node id="6249017959271690121" at="153,151,154,33" concept="0" />
+      <node id="6249017959271690121" at="154,33,155,98" concept="0" />
+      <node id="6249017959271690121" at="155,98,156,17" concept="0" />
+      <node id="6249017959271690121" at="156,17,157,22" concept="4" />
+      <node id="6249017959271690121" at="152,0,159,0" concept="6" trace="createDescriptorForShape#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690121" at="62,39,63,30" />
+      <scope id="6249017959271690121" at="152,63,157,22">
         <var name="b" id="6249017959271690121" />
       </scope>
-      <scope id="6249017959271690121" at="141,0,148,0" />
+      <scope id="6249017959271690121" at="152,0,159,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690122">
@@ -352,40 +352,40 @@
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690141">
     <file name="ConceptPresentationAspectImpl.java">
-      <node id="6249017959271690141" at="19,0,20,0" concept="1" trace="props_Square" />
-      <node id="6249017959271690141" at="84,35,85,76" concept="3" />
-      <node id="6249017959271690141" at="85,76,86,51" concept="0" />
-      <node id="6249017959271690141" at="86,51,87,40" concept="0" />
-      <node id="6249017959271690141" at="87,40,88,38" concept="0" />
-      <node id="6249017959271690141" at="89,9,90,28" concept="4" />
-      <node id="6249017959271690141" at="83,40,89,9" concept="2" />
-      <scope id="6249017959271690141" at="84,35,88,38">
+      <node id="6249017959271690141" at="18,0,19,0" concept="1" trace="props_Rectangular" />
+      <node id="6249017959271690141" at="77,40,78,76" concept="3" />
+      <node id="6249017959271690141" at="78,76,79,51" concept="0" />
+      <node id="6249017959271690141" at="79,51,80,45" concept="0" />
+      <node id="6249017959271690141" at="80,45,81,43" concept="0" />
+      <node id="6249017959271690141" at="82,9,83,33" concept="4" />
+      <node id="6249017959271690141" at="76,45,82,9" concept="2" />
+      <scope id="6249017959271690141" at="77,40,81,43">
         <var name="cpb" id="6249017959271690141" />
       </scope>
-      <scope id="6249017959271690141" at="83,40,90,28" />
+      <scope id="6249017959271690141" at="76,45,83,33" />
     </file>
     <file name="LanguageConceptSwitch.java">
-      <node id="6249017959271690141" at="19,0,20,0" concept="5" trace="Square" />
-      <node id="6249017959271690141" at="32,44,33,45" concept="0" />
+      <node id="6249017959271690141" at="18,0,19,0" concept="5" trace="Rectangular" />
+      <node id="6249017959271690141" at="31,47,32,50" concept="0" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <node id="6249017959271690141" at="23,0,24,0" concept="1" trace="myConceptSquare" />
-      <node id="6249017959271690141" at="62,40,63,31" concept="4" />
-      <node id="6249017959271690141" at="148,64,149,152" concept="3" />
-      <node id="6249017959271690141" at="149,152,150,34" concept="0" />
-      <node id="6249017959271690141" at="150,34,151,107" concept="0" />
-      <node id="6249017959271690141" at="151,107,152,98" concept="0" />
-      <node id="6249017959271690141" at="152,98,153,17" concept="0" />
-      <node id="6249017959271690161" at="153,17,154,113" concept="0" />
-      <node id="6249017959271690163" at="154,113,155,112" concept="0" />
-      <node id="6249017959271690141" at="155,112,156,22" concept="0" />
-      <node id="6249017959271690141" at="156,22,157,22" concept="4" />
-      <node id="6249017959271690141" at="148,0,159,0" concept="6" trace="createDescriptorForSquare#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690141" at="62,40,63,31" />
-      <scope id="6249017959271690141" at="148,64,157,22">
+      <node id="6249017959271690141" at="22,0,23,0" concept="1" trace="myConceptRectangular" />
+      <node id="6249017959271690141" at="60,45,61,36" concept="4" />
+      <node id="6249017959271690141" at="141,69,142,157" concept="3" />
+      <node id="6249017959271690141" at="142,157,143,34" concept="0" />
+      <node id="6249017959271690141" at="143,34,144,107" concept="0" />
+      <node id="6249017959271690141" at="144,107,145,98" concept="0" />
+      <node id="6249017959271690141" at="145,98,146,17" concept="0" />
+      <node id="6249017959271690161" at="146,17,147,113" concept="0" />
+      <node id="6249017959271690163" at="147,113,148,112" concept="0" />
+      <node id="6249017959271690141" at="148,112,149,27" concept="0" />
+      <node id="6249017959271690141" at="149,27,150,22" concept="4" />
+      <node id="6249017959271690141" at="141,0,152,0" concept="6" trace="createDescriptorForRectangular#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690141" at="60,45,61,36" />
+      <scope id="6249017959271690141" at="141,69,150,22">
         <var name="b" id="6249017959271690141" />
       </scope>
-      <scope id="6249017959271690141" at="148,0,159,0" />
+      <scope id="6249017959271690141" at="141,0,152,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/8255194269358657919">

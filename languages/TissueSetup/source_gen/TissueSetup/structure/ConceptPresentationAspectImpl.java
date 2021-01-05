@@ -15,8 +15,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Cylindrical;
   private ConceptPresentation props_Flat;
   private ConceptPresentation props_Position;
+  private ConceptPresentation props_Rectangular;
   private ConceptPresentation props_Shape;
-  private ConceptPresentation props_Square;
   private ConceptPresentation props_Tissue;
   private ConceptPresentation props_Tissue_And_Cell_Container;
   private ConceptPresentation props_Tissue_Type;
@@ -73,6 +73,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Position = cpb.create();
         }
         return props_Position;
+      case LanguageConceptSwitch.Rectangular:
+        if (props_Rectangular == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Square cell shape type.");
+          cpb.rawPresentation("Rectangular");
+          props_Rectangular = cpb.create();
+        }
+        return props_Rectangular;
       case LanguageConceptSwitch.Shape:
         if (props_Shape == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -80,14 +88,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Shape = cpb.create();
         }
         return props_Shape;
-      case LanguageConceptSwitch.Square:
-        if (props_Square == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Square cell shape type.");
-          cpb.rawPresentation("SQUARE");
-          props_Square = cpb.create();
-        }
-        return props_Square;
       case LanguageConceptSwitch.Tissue:
         if (props_Tissue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

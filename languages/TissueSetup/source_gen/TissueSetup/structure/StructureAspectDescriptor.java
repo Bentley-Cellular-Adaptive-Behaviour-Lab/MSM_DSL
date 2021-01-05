@@ -19,8 +19,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCylindrical = createDescriptorForCylindrical();
   /*package*/ final ConceptDescriptor myConceptFlat = createDescriptorForFlat();
   /*package*/ final ConceptDescriptor myConceptPosition = createDescriptorForPosition();
+  /*package*/ final ConceptDescriptor myConceptRectangular = createDescriptorForRectangular();
   /*package*/ final ConceptDescriptor myConceptShape = createDescriptorForShape();
-  /*package*/ final ConceptDescriptor myConceptSquare = createDescriptorForSquare();
   /*package*/ final ConceptDescriptor myConceptTissue = createDescriptorForTissue();
   /*package*/ final ConceptDescriptor myConceptTissue_And_Cell_Container = createDescriptorForTissue_And_Cell_Container();
   /*package*/ final ConceptDescriptor myConceptTissue_Type = createDescriptorForTissue_Type();
@@ -38,7 +38,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptArrangement, myConceptCell, myConceptCell_Type, myConceptCylindrical, myConceptFlat, myConceptPosition, myConceptShape, myConceptSquare, myConceptTissue, myConceptTissue_And_Cell_Container, myConceptTissue_Type);
+    return Arrays.asList(myConceptArrangement, myConceptCell, myConceptCell_Type, myConceptCylindrical, myConceptFlat, myConceptPosition, myConceptRectangular, myConceptShape, myConceptTissue, myConceptTissue_And_Cell_Container, myConceptTissue_Type);
   }
 
   @Override
@@ -57,10 +57,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFlat;
       case LanguageConceptSwitch.Position:
         return myConceptPosition;
+      case LanguageConceptSwitch.Rectangular:
+        return myConceptRectangular;
       case LanguageConceptSwitch.Shape:
         return myConceptShape;
-      case LanguageConceptSwitch.Square:
-        return myConceptSquare;
       case LanguageConceptSwitch.Tissue:
         return myConceptTissue;
       case LanguageConceptSwitch.Tissue_And_Cell_Container:
@@ -138,22 +138,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("z_coord", 0x56b8f8b9a96cefa8L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690152").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForShape() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Shape", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L);
-    b.class_(false, true, false);
-    b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690121");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSquare() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Square", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL);
+  private static ConceptDescriptor createDescriptorForRectangular() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Rectangular", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL);
     b.class_(false, false, false);
     b.super_("TissueSetup.structure.Shape", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690141");
     b.version(2);
     b.property("height", 0x56b8f8b9a96cefb1L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690161").done();
     b.property("width", 0x56b8f8b9a96cefb3L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690163").done();
-    b.alias("SQUARE");
+    b.alias("Rectangular");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForShape() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Shape", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L);
+    b.class_(false, true, false);
+    b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690121");
+    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTissue() {

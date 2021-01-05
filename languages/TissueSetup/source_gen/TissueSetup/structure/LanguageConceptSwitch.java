@@ -15,8 +15,8 @@ public final class LanguageConceptSwitch {
   public static final int Cylindrical = 3;
   public static final int Flat = 4;
   public static final int Position = 5;
-  public static final int Shape = 6;
-  public static final int Square = 7;
+  public static final int Rectangular = 6;
+  public static final int Shape = 7;
   public static final int Tissue = 8;
   public static final int Tissue_And_Cell_Container = 9;
   public static final int Tissue_Type = 10;
@@ -29,8 +29,8 @@ public final class LanguageConceptSwitch {
     builder.put(0x56b8f8b9a96cef91L, Cylindrical);
     builder.put(0x56b8f8b9a96cef9cL, Flat);
     builder.put(0x56b8f8b9a96cef87L, Position);
+    builder.put(0x56b8f8b9a96cef9dL, Rectangular);
     builder.put(0x56b8f8b9a96cef89L, Shape);
-    builder.put(0x56b8f8b9a96cef9dL, Square);
     builder.put(0x56b8f8b9a96cef86L, Tissue);
     builder.put(0x56b8f8b9a96cef85L, Tissue_And_Cell_Container);
     builder.put(0x7290577338f6917fL, Tissue_Type);

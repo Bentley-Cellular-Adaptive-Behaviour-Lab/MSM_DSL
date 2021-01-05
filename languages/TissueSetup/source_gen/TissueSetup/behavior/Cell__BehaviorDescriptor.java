@@ -98,32 +98,32 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static Integer get_lower_x_id1QpPlI524fx(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY) / 2);
     }
     return -1;
   }
   /*package*/ static Integer get_lower_y_id1QpPlI524ju(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.height$pTxW) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW) / 2);
     } else {
       return -1;
     }
   }
   /*package*/ static Integer getupper_x_id1QpPlI524rF(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.width$pTZY) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY) / 2);
     } else {
       return -1;
     }
   }
   /*package*/ static Integer get_upper_y_id1QpPlI524zL(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Square$1r), PROPS.height$pTxW) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW) / 2);
     } else {
       return -1;
     }
@@ -197,7 +197,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
     /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
     /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
-    /*package*/ static final SConcept Square$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Square");
+    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
   }
 
   private static final class LINKS {
