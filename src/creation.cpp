@@ -17,11 +17,10 @@ void World::label_env_exposed_von_neu_agents(void){
     //available to be activated...
     int i,j,k;
 
- for(i=0;i<xMAX;i++){
-            for(j=0;j<yMAX;j++){
-                for(k=0;k<zMAX;k++){
+ for (i = 0; i < this->gridXDimensions; i++) {
+            for (j = 0; j < this->gridYDimensions; j++) {
+                for (k = 0; k < this->gridZDimensions; k++){
                     if(grid[i][j][k].Eid!=NULL){
-
                         grid[i][j][k].Eid->calcInside();
                     }
                 }
@@ -35,8 +34,6 @@ void World::label_env_exposed_von_neu_agents(void){
                 if(ECagents[j]->nodeAgents[k]->checkNeighsVonForEnv()==true) count++;
             for(k=0;k<ECagents[j]->surfaceAgents.size();k++)
                 if(ECagents[j]->surfaceAgents[k]->checkNeighsVonForEnv()==true) count++;
-
-
         }
 }
         //-------------------------------------------------------------------------
