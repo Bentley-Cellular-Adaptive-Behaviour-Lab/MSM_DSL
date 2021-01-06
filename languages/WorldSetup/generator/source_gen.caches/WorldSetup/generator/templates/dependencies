@@ -4,6 +4,7 @@
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Gradient__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Grid__BehaviorDescriptor" />
+    <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Iterable" />
