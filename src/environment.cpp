@@ -56,7 +56,7 @@ void Env::calcInside(void){
             //cell = worldP->grid[Ex][Ey+i][Ez].Mids[0]->Cell;
         }
         i++;
-    }while((Ey+i<yMAX)&&(flag==0));
+    }while((Ey+i<worldP->gridYDimensions)&&(flag==0));
 
     if(flagInside==true){
         flag=0;
@@ -87,7 +87,7 @@ void Env::calcInside(void){
 
                 }
                 i++;
-            }while((Ez+i<zMAX)&&(flag==0));
+            }while((Ez+i<worldP->gridZDimensions)&&(flag==0));
 
             if(flagInside==true){
                 flag=0;
