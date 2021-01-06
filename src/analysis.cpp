@@ -1309,9 +1309,9 @@ void World::calcEnvVEGFlevel(void) {
     int count = 0;
     int countM = 0;
 
-    for (i = 0; i < xMAX; i++) {
-        for (j = 0; j < yMAX; j++) {
-            for (k = 0; k < zMAX; k++) {
+    for (i = 0; i < this->gridXDimensions; i++) {
+        for (j = 0; j < this->gridYDimensions; j++) {
+            for (k = 0; k < this->gridZDimensions; k++) {
                 if ((grid[i][j][k].type == E) && (grid[i][j][k].Eid->VEGF > 0.0f)) {
                     sum += grid[i][j][k].Eid->VEGF;
                     count++;
