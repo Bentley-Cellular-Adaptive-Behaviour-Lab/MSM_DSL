@@ -5,6 +5,7 @@ package Solution.test;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.io.File;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,12 +15,15 @@ import java.nio.file.Files;
 public class MakeAndRun {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/Solution/source_gen/Solution/test";
+    String output_string = "/Users/meadt/MPSProjects/MSM_DSL/solutions/Solution/source_gen/Solution/test";
 
     Path old_tissue_path;
     Path old_world_path;
     Path new_tissue_path;
     Path new_world_path;
+
+    String currentDirectory = System.getProperty("user.dir");
+    System.out.println("The current directory is: " + currentDirectory);
 
     // Determine DSL-generated file paths based on operating system. 
     switch (utils.getOS()) {
@@ -39,8 +43,8 @@ public class MakeAndRun {
         old_tissue_path = Paths.get(output_string + "/dsl_Tissue.cpp");
         old_world_path = Paths.get(output_string + "/dsl_World.cpp");
 
-        new_tissue_path = Paths.get(root_string + "/src/dsl_tissue.cpp");
-        new_world_path = Paths.get(root_string + "/src/dsl_tissue.cpp");
+        new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
+        new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");
 
 
         utils.copy_files(old_tissue_path, new_tissue_path, StandardCopyOption.REPLACE_EXISTING);
@@ -53,8 +57,8 @@ public class MakeAndRun {
         old_tissue_path = Paths.get(output_string + "/dsl_Tissue.cpp");
         old_world_path = Paths.get(output_string + "/dsl_World.cpp");
 
-        new_tissue_path = Paths.get(root_string + "/src/dsl_tissue.cpp");
-        new_world_path = Paths.get(root_string + "/src/dsl_tissue.cpp");
+        new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
+        new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");
 
 
         utils.copy_files(old_tissue_path, new_tissue_path, StandardCopyOption.REPLACE_EXISTING);
@@ -64,8 +68,9 @@ public class MakeAndRun {
     }
 
     try {
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent", "--analysis==\"time_to_pattern\"");
-      pb.redirectErrorStream();
+      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "--analysis==\"time_to_pattern\"");
+      pb.redirectErrorStream(true);
+      pb.directory(new File("src"));
       Process p = pb.start();
       InputStream input_stream = p.getInputStream();
       BufferedReader reader = new BufferedReader(new InputStreamReader(input_stream));
@@ -81,6 +86,27 @@ public class MakeAndRun {
     } finally {
       System.out.println("Build completed successfully.");
     }
+
+    try {
+      ProcessBuilder pb = new ProcessBuilder("./springAgent", "1", "0.9", "0.04", "2", "2", "15", "1", "2", "-1", "-1", "1");
+      pb.redirectErrorStream(true);
+      pb.directory(new File("src"));
+      Process p = pb.start();
+      InputStream input_stream = p.getInputStream();
+      BufferedReader reader = new BufferedReader(new InputStreamReader(input_stream));
+      String line = null;
+      while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+      }
+      int exit_code = p.waitFor();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } finally {
+      System.out.println("Run completed successfully.");
+    }
+
 
   }
   public static class utils {

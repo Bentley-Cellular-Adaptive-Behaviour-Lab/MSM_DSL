@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import WorldSetup.behavior.Grid__BehaviorDescriptor;
 import WorldSetup.behavior.Gradient__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate__BehaviorDescriptor;
@@ -136,69 +137,78 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_23(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_height_id7e7Fgy6tl4V.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_X_id57aaQbDEkks.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_width_id7e7Fgy6tn4Y.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_Y_id57aaQbDElMG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_depth_id7e7Fgy6tot2.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_26(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_27(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_X_id57aaQbDElaX.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_X_id57aaQbDEkks.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_28(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_Y_id57aaQbDEofO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_Y_id57aaQbDElMG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_X_id57aaQbDEloa.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_X_id57aaQbDElaX.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_Y_id57aaQbDErqj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_Y_id57aaQbDEofO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_33(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_X_id57aaQbDEloa.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_34(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_Y_id57aaQbDErqj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_35(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_36(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_depth_id4JVq81FgwNn.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_37(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_38(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_39(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_depth_id4JVq81FgwNn.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_40(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_41(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
   }
   public static Object propertyMacro_GetValue_1_42(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
   }
   public static Object propertyMacro_GetValue_1_43(final PropertyMacroContext _context) {
-    return "NO_DIRECTIONALITY";
+    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Centre_Position$epse));
   }
   public static Object propertyMacro_GetValue_1_44(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_45(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_46(final PropertyMacroContext _context) {
+    return "NO_DIRECTION";
+  }
+  public static Object propertyMacro_GetValue_1_47(final PropertyMacroContext _context) {
     return (String) Substrate__BehaviorDescriptor.get_adhesiveness_id4JVq81Fh9KI.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetValue_2_0(final PropertyMacroContext _context) {
@@ -325,6 +335,9 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("3255377508720835083", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_SOURCE_STRENGTH"));
     pvqMethods.put("3255377508720726914", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
     pvqMethods.put("7788773186966079140", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_NAME"));
+    pvqMethods.put("8324812688344774140", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SHAPE_HEIGHT"));
+    pvqMethods.put("8324812688344779513", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SHAPE_WIDTH"));
+    pvqMethods.put("8324812688344780409", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SHAPE_DEPTH"));
     pvqMethods.put("5893570766194681945", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_NAME"));
     pvqMethods.put("5893570766194682784", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "VERTEX_1_X"));
     pvqMethods.put("5893570766194731748", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "VERTEX_1_Y"));
@@ -458,6 +471,12 @@ public class QueriesGenerated extends QueryProviderBase {
         case 44:
           return QueriesGenerated.propertyMacro_GetValue_1_44(ctx);
         case 45:
+          return QueriesGenerated.propertyMacro_GetValue_1_45(ctx);
+        case 46:
+          return QueriesGenerated.propertyMacro_GetValue_1_46(ctx);
+        case 47:
+          return QueriesGenerated.propertyMacro_GetValue_1_47(ctx);
+        case 48:
           return QueriesGenerated.propertyMacro_GetValue_2_0(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
