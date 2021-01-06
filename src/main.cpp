@@ -356,7 +356,7 @@ void World::creationTimestep(int movie)
         ECagents[j]->gridAgents();
 
     /** set the memInit value if needed for watching cell growth and tip cell quantification **/
-    if (ECagents.size() == 0)
+    if (ECagents.size() < 0)
     	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
     cout << "memInit" << memINIT << endl;
 
