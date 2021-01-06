@@ -14,6 +14,4 @@ void Tissue_Container::tissue_set_up() {
 
     // Tissue Type Creation //
 
-    Endothelial_1_Pos = Coordinates(20, 20, 0);
-    create_cell("Endothelial_1", Endothelial_Type, &(Endothelial_1_Pos));
 }
