@@ -327,36 +327,37 @@ void World::simulateTimestep()
 
 void World::creationTimestep(int movie)
 {
-    if (MACROS > 0)
-        createMacrophages();
+//    if (MACROS > 0)
+//        createMacrophages();
+//
+//    //TOM:Commented out to test cell set up language. Assuming cell setup value is set to 1.
+//
+//    /** create EC cells spring mesh and memAgents within continuous space **/
+//    if ((CELL_SETUP == 2) || (CELL_SETUP == 1)) {
+//        //blind ended sprout (NCB and rearrangement)
+//        //vessel setup (JTB and PLoS)
+//        createECagents(Junct_arrange);
+//        connectMesh();
+//    }
+//    else if (CELL_SETUP == 3)
+//    {
+//        createMonolayer();
+//    }
+//    else if (CELL_SETUP == 4)
+//    {
+//        create_3D_round_cell();
+//    }
 
-    //TOM:Commented out to test cell set up language. Assuming cell setup value is set to 1.
-
-    /** create EC cells spring mesh and memAgents within continuous space **/
-    if ((CELL_SETUP == 2) || (CELL_SETUP == 1)) {
-        //blind ended sprout (NCB and rearrangement)
-        //vessel setup (JTB and PLoS)
-        createECagents(Junct_arrange);
-        connectMesh();
-    }
-    else if (CELL_SETUP == 3)
-    {
-        createMonolayer();
-    }
-    else if (CELL_SETUP == 4)
-    {
-        create_3D_round_cell();
-    }
-
-//	auto *tissue_container = new Tissue_Container(this);
-//	tissue_container->tissue_set_up();
+	auto *tissue_container = new Tissue_Container(this);
+	tissue_container->tissue_set_up();
 
     //now place agents onto gridded lattice
     for (int j = 0; j < (int) ECagents.size(); j++)
         ECagents[j]->gridAgents();
 
     /** set the memInit value if needed for watching cell growth and tip cell quantification **/
-    memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
+    if (ECagents.size() == 0)
+    	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
     cout << "memInit" << memINIT << endl;
 
     //create environment

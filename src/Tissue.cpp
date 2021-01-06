@@ -137,7 +137,12 @@ void Tissue_Container::create_cell(string name, Cell_Type *cell_type, Coordinate
             cell->determine_boundaries();
             store_cell(cell);
             EC *ecp = new EC((World*) m_world);
+
+			//Add the cell to list of tissue container's known cell agents.
             m_world->ECagents.push_back(ecp);
+
+			//Add the cell to list of tissue container's known cell agents.
+			this->m_single_cell_agents.push_back(ecp);
 
             check_position(cell);
 
@@ -259,7 +264,8 @@ void Tissue_Container::store_tissue(Tissue *tissue) {
 
 /*****************************************************************************************
 *  Name:		create_2d_square_cell
-*  Description: Places memAgents in a 2D square shape within the world grid.
+*  Description: Places memAgents in a 2D square shape within the world grid. Used to create
+*   			individual cells in the world.
 *  Returns:		void
 ******************************************************************************************/
 
@@ -270,7 +276,6 @@ void Tissue_Container::create_2d_square_cell(int cell_number,
                                              int cell_width,
                                              int cell_height) {
 
-    assert(cell_number > 0);
     //assert(centreX > 0); <- Check the effect of a periodic boundary on this.
     assert(centreY >= 0);
     assert(centreZ >= 0);
