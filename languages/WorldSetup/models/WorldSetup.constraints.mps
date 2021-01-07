@@ -16,6 +16,7 @@
   <imports>
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -82,16 +83,27 @@
       </concept>
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
+      <concept id="1163200368514" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler" flags="in" index="3k9gUc" />
+      <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
+      <concept id="1163202640154" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode" flags="nn" index="3khVwk" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
         <child id="1213098023997" name="property" index="1MhHOB" />
+        <child id="1213100494875" name="referent" index="1Mr941" />
+      </concept>
+      <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
+        <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
+        <child id="1163203787401" name="referentSetHandler" index="3kmjI7" />
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
+        <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -363,6 +375,29 @@
                 <node concept="37vLTw" id="4JVq81FtdFD" role="3uHU7B">
                   <ref role="3cqZAo" node="4JVq81Ftc4F" resolve="float_value" />
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6JBqwuekIzl">
+    <ref role="1M2myG" to="s9ob:7faAukhALBz" resolve="World_Container" />
+    <node concept="1N5Pfh" id="6JBqwuekIzm" role="1Mr941">
+      <ref role="1N5Vy1" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+      <node concept="3k9gUc" id="6JBqwuekI$6" role="3kmjI7">
+        <node concept="3clFbS" id="6JBqwuekI$7" role="2VODD2">
+          <node concept="3clFbF" id="6JBqwuekJrn" role="3cqZAp">
+            <node concept="2OqwBi" id="6JBqwuekJY2" role="3clFbG">
+              <node concept="2OqwBi" id="6JBqwuekJ_9" role="2Oq$k0">
+                <node concept="3khVwk" id="6JBqwuekJrm" role="2Oq$k0" />
+                <node concept="3TrEf2" id="6JBqwuekJHn" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:1QpPlI4ZHJ7" resolve="World_Container" />
+                </node>
+              </node>
+              <node concept="2oxUTD" id="6JBqwuekK9s" role="2OqNvi">
+                <node concept="3kakTB" id="6JBqwuekKcm" role="2oxUTC" />
               </node>
             </node>
           </node>
