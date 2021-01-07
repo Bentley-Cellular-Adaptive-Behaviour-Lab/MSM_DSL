@@ -153,9 +153,40 @@
         <property role="333NGx" value="    " />
         <node concept="356sEK" id="4DdJmqSDx4k" role="383Ya9">
           <node concept="356sEF" id="4DdJmqSDx4l" role="356sEH">
-            <property role="TrG5h" value="// Cell Type Declarations //" />
+            <property role="TrG5h" value="// Created using: " />
+          </node>
+          <node concept="356sEF" id="6JBqwuemgNN" role="356sEH">
+            <property role="TrG5h" value="NAME" />
+            <node concept="17Uvod" id="6JBqwuemgOF" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="6JBqwuemgOI" role="3zH0cK">
+                <node concept="3clFbS" id="6JBqwuemgOJ" role="2VODD2">
+                  <node concept="3clFbF" id="6JBqwuemgOP" role="3cqZAp">
+                    <node concept="2OqwBi" id="6JBqwuemgOK" role="3clFbG">
+                      <node concept="3TrcHB" id="6JBqwuemgON" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                      <node concept="30H73N" id="6JBqwuemgOO" role="2Oq$k0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="6JBqwuemgNO" role="356sEH">
+            <property role="TrG5h" value=" //" />
           </node>
           <node concept="2EixSi" id="4DdJmqSDx4m" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="6JBqwuemeWK" role="383Ya9">
+          <node concept="2EixSi" id="6JBqwuemeWM" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="6JBqwuemdZb" role="383Ya9">
+          <node concept="356sEF" id="6JBqwuemeWF" role="356sEH">
+            <property role="TrG5h" value="// Cell Type Declarations //" />
+          </node>
+          <node concept="2EixSi" id="6JBqwuemdZd" role="2EinRH" />
         </node>
         <node concept="356sEK" id="4DdJmqSDt25" role="383Ya9">
           <node concept="356sEF" id="4DdJmqSDt26" role="356sEH">
@@ -578,7 +609,7 @@
                               </node>
                               <node concept="1mIQ4w" id="4DdJmqSEj7$" role="2OqNvi">
                                 <node concept="chp4Y" id="4DdJmqSEjk0" role="cj9EA">
-                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Square" />
+                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Rectangular" />
                                 </node>
                               </node>
                             </node>
@@ -1388,6 +1419,22 @@
     </node>
     <node concept="n94m4" id="4DdJmqSDt1Y" role="lGtFl">
       <ref role="n9lRv" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    </node>
+    <node concept="17Uvod" id="6JBqwuemazs" role="lGtFl">
+      <property role="2qtEX9" value="name" />
+      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+      <node concept="3zFVjK" id="6JBqwuemazv" role="3zH0cK">
+        <node concept="3clFbS" id="6JBqwuemazw" role="2VODD2">
+          <node concept="3clFbF" id="6JBqwuemazA" role="3cqZAp">
+            <node concept="2OqwBi" id="6JBqwuemazx" role="3clFbG">
+              <node concept="3TrcHB" id="6JBqwuemaz$" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+              <node concept="30H73N" id="6JBqwuemaz_" role="2Oq$k0" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

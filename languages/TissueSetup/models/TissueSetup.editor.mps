@@ -145,22 +145,6 @@
         <node concept="2iRfu4" id="5qSYbADrf1W" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="5qSYbADrf2E" role="3EZMnx" />
-      <node concept="3EZMnI" id="1QpPlI505CP" role="3EZMnx">
-        <node concept="VPM3Z" id="1QpPlI505CR" role="3F10Kt" />
-        <node concept="3F0ifn" id="1QpPlI505CT" role="3EZMnx">
-          <property role="3F0ifm" value="Choose desired world-setup: " />
-        </node>
-        <node concept="1iCGBv" id="1QpPlI505Gv" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:1QpPlI4ZHJ7" resolve="World_Container" />
-          <node concept="1sVBvm" id="1QpPlI505Gx" role="1sWHZn">
-            <node concept="3F0A7n" id="1QpPlI505Kl" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            </node>
-          </node>
-        </node>
-        <node concept="2iRfu4" id="1QpPlI505CU" role="2iSdaV" />
-      </node>
       <node concept="2iRkQZ" id="5qSYbADreZi" role="2iSdaV" />
     </node>
   </node>
