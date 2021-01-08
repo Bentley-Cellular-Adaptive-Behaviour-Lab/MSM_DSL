@@ -76,7 +76,7 @@
     </node>
     <node concept="1TJgyi" id="6JBqwuejVw4" role="1TKVEl">
       <property role="IQ2nx" value="7775299862363355140" />
-      <property role="TrG5h" value="Graphics" />
+      <property role="TrG5h" value="Graphics_Option" />
       <ref role="AX2Wp" node="6JBqwuek81m" resolve="Graphics_Type" />
     </node>
     <node concept="PrWs8" id="6JBqwueqMLi" role="PzmwI">

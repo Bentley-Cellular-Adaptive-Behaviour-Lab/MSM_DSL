@@ -88,7 +88,7 @@
           <property role="3F0ifm" value="Graphics: " />
         </node>
         <node concept="3F0A7n" id="6JBqwueki7O" role="3EZMnx">
-          <ref role="1NtTu8" to="the3:6JBqwuejVw4" resolve="Graphics" />
+          <ref role="1NtTu8" to="the3:6JBqwuejVw4" resolve="Graphics_Option" />
         </node>
         <node concept="2iRfu4" id="6JBqwueki7r" role="2iSdaV" />
       </node>
