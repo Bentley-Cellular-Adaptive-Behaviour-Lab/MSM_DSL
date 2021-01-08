@@ -250,11 +250,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_3() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.Graphics$D56S;
+      final SProperty property = PROPS.Graphics_Option$D56S;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no Graphics>");
-      editorCell.setCellId("property_Graphics");
+      editorCell.setDefaultText("<no Graphics_Option>");
+      editorCell.setCellId("property_Graphics_Option");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), CONCEPTS.PropertyAttribute$Gb);
@@ -389,7 +389,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty Max_Time_Steps$CZuw = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb801L, "Max_Time_Steps");
     /*package*/ static final SProperty Analysis_Type$CZ0u = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb7ffL, "Analysis_Type");
-    /*package*/ static final SProperty Graphics$D56S = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb804L, "Graphics");
+    /*package*/ static final SProperty Graphics_Option$D56S = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb804L, "Graphics_Option");
   }
 
   private static final class CONCEPTS {

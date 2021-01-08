@@ -410,9 +410,7 @@ void Substrate::apply_substrate_to_cuboid() {
 			for (int k = z_start; k < z_end; k++) {
 				if (m_parent_world->grid[i][j][k].type == E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
-					assert(!ep->belongs_to_substrate);
 					ep->adhesiveness = m_adhesiveness;
-					ep->belongs_to_substrate = true;
 				}
 			}
 		}
@@ -508,9 +506,7 @@ void Substrate::apply_substrate_to_triangular_prism() {
 				if (m_parent_world->grid[i][j][k].type == E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
 					if (m_parent_world->is_within_triangle(ep, vertex_1, vertex_2, vertex_3)) {
-						assert(!ep->belongs_to_substrate);
 						ep->adhesiveness = m_adhesiveness;
-						ep->belongs_to_substrate = true;
 					}
 				}
 			}

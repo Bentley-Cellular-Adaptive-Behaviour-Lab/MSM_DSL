@@ -454,32 +454,34 @@ public:
 
 class Env {
 public:
-    ///pointer to the world class
-    World* worldP;
-    ///coordinate position of Env agent
-    int Ex, Ey, Ez;
-    ///env agent VEGF level
-    float VEGF;
-    ///no flow, just
-    float blood;
-    ///is it inside the vessel
-    bool inside;
-    ///does it contain astrocytes
-    bool Astro;
-    ///did it contain astrocytes before cell membrane occupied it
-    bool OldAstro;
+	///pointer to the world class
+	World *worldP;
+	///coordinate position of Env agent
+	int Ex, Ey, Ez;
+	///env agent VEGF level
+	float VEGF;
+	///no flow, just
+	float blood;
+	///is it inside the vessel
+	bool inside;
+	///does it contain astrocytes
+	bool Astro;
+	///did it contain astrocytes before cell membrane occupied it
+	bool OldAstro;
 
 
-    int checkForAstro(void);
-    int checkForEnv(void);
-    Env(World* WorldP);
-    ///check if the env agent is inside the vessel
-    void calcInside(void);
+	int checkForAstro(void);
 
-    // Determines the ability of filopodia to form focal adhesions
-    float adhesiveness;
-	bool belongs_to_substrate = false;
-};
+	int checkForEnv(void);
+
+	Env(World *WorldP);
+
+	///check if the env agent is inside the vessel
+	void calcInside(void);
+
+	// Determines the ability of filopodia to form focal adhesions
+	float adhesiveness;
+}
 ///------------------------------------------------------------------------------------
 ///General storage classes
 ///------------------------------------------------------------------------------------
