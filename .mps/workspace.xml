@@ -43,14 +43,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.test.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.test.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/test/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/test/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/RunMSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/Test_Tissue.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/Test_World.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -383,6 +375,72 @@
               <option name="myItemId" value="Project" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ed1fec9b-9952-45a9-89dd-67bc5b25c2e1(MSM.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.test.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7775299862363759943" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -411,6 +469,16 @@
               <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:71492510-3132-457a-8b26-e3ffbda57e8b(SimulationSettings.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/models/SimulationSettings.behavior.mps]" />
               <option name="myItemType" value="" />
@@ -426,67 +494,13 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:197aadbe-ffb4-4e8a-9da4-f4b87548c26e(SimulationSettings.constraints) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/models/SimulationSettings.constraints.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="SimulationSettings.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,7 +528,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemId" value="r:197aadbe-ffb4-4e8a-9da4-f4b87548c26e(SimulationSettings.constraints) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/models/SimulationSettings.constraints.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -524,23 +538,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemId" value="MSM" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="7775299862363808783" />
+              <option name="myItemId" value="r:ed1fec9b-9952-45a9-89dd-67bc5b25c2e1(MSM.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.test.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -741,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610034233263</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updated build configurations to use simulation settings language.">
+      <created>1610104858021</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610104858021</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -868,7 +881,8 @@
     <MESSAGE value="With a specified run configuration, the DSL can now write files to new locations." />
     <MESSAGE value="Changed &quot;square&quot; cell shape to rectangular to reflect the ability to change both height and width." />
     <MESSAGE value="Added simulation settings language, which now controls output and calling system commands to run the MSM." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added simulation settings language, which now controls output and calling system commands to run the MSM." />
+    <MESSAGE value="Updated build configurations to use simulation settings language." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated build configurations to use simulation settings language." />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="413" key="#MPSPropertiesConfigurable" timestamp="1610034096554">
@@ -905,10 +919,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="455" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1610020805242" />
-    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1610034232161">
+    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1610104857442">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1610034232161" />
+    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1610104857442" />
     <state x="591" y="598" key="EditParametersPopupWindow" timestamp="1608294597556">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -983,10 +997,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1604510498196" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1610034240459">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1610104955242">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1610034240459" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1610104955242" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608217511865">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
