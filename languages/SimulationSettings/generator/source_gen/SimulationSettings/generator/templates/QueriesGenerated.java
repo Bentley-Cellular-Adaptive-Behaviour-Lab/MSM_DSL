@@ -9,10 +9,13 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import SimulationSettings.behavior.Settings_Container__BehaviorDescriptor;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import java.util.HashMap;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -48,6 +51,29 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_1_6(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
   }
+  public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
+    SEnumerationLiteral sim_settings = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
+    if (sim_settings == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f7L, "None")) {
+      return "no_analysis";
+    } else if (sim_settings == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
+      return "bistability";
+    } else if (sim_settings == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
+      return "time_to_pattern";
+    } else {
+      return "INVALID_ANALYSIS";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
+    SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics$D56S);
+    if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
+      return "--graphics";
+    } else {
+      return "";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
+    return (String) Settings_Container__BehaviorDescriptor.get_max_time_id2$lOk5u_ZIH.invoke(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og));
+  }
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
@@ -58,6 +84,9 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7775299862364479109", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
     pvqMethods.put("7775299862364484749", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_Tissue"));
     pvqMethods.put("7775299862364492214", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
+    pvqMethods.put("2960502408755837804", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "ANALYSIS_TYPE"));
+    pvqMethods.put("2960502408755954193", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "GRAPHICS"));
+    pvqMethods.put("2960502408756064889", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "MAX_TIME"));
   }
   @NotNull
   @Override
@@ -91,6 +120,12 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_5(ctx);
         case 6:
           return QueriesGenerated.propertyMacro_GetValue_1_6(ctx);
+        case 7:
+          return QueriesGenerated.propertyMacro_GetValue_1_7(ctx);
+        case 8:
+          return QueriesGenerated.propertyMacro_GetValue_1_8(ctx);
+        case 9:
+          return QueriesGenerated.propertyMacro_GetValue_1_9(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -108,5 +143,7 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty Analysis_Type$CZ0u = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb7ffL, "Analysis_Type");
+    /*package*/ static final SProperty Graphics$D56S = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb804L, "Graphics");
   }
 }
