@@ -3,19 +3,19 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701289460" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701289460" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -42,146 +42,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/templates/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/templates/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.behavior.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.constraints.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.structure.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.typesystem.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/behavior/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/behavior/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/constraints/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/constraints/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/structure/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/structure/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/typesystem/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/typesystem/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/behavior/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/constraints/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/constraints/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/EnumerationDescriptor_Analysis_Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/EnumerationDescriptor_Graphics_Type.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/typesystem/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/typesystem/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/World_Container_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.test.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/templates/TissueSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/templates/TissueSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/Generator.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/Generator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/Solution.msd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/models/Solution.test.mps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/models/Solution.working.mps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen.caches/Solution/test/dependencies" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen.caches/Solution/test/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen/Solution/test/MakeAndRun.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen/Solution/test/dsl_Tissue.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen/Solution/test/dsl_World.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/source_gen/Solution/test/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.test.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.test.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/test/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/test/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/RunMSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/Test_Tissue.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/Test_World.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/test/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +63,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="35a68d51-32b0-4213-9519-746dbde69a7e/r:36c0ff1b-9c60-4276-8dfc-670fe30450c2(TempModule35a68d51-32b0-4213-9519-746dbde69a7e/ConsoleModel_262246532843700)">
+            <model ref="531e8c72-ca9b-467f-942c-b508579cac23/r:8bb65874-243c-459f-a3dd-9e4dfad91b1b(TempModule531e8c72-ca9b-467f-942c-b508579cac23/ConsoleModel_350605002666500)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -226,146 +95,146 @@
                   <concept id="473081947980701568" name="jetbrains.mps.console.base.structure.HelpCommand" flags="ng" index="1PAEo6" />
                 </language>
               </registry>
-              <node concept="aymSD" id="6JBqwuegEBE">
-                <node concept="3balQm" id="6JBqwuegEBF" role="aymYE">
-                  <node concept="2Clz$F" id="6JBqwuegEBG" role="18xWvz">
-                    <node concept="1PAEo6" id="6JBqwuegEBH" role="2Clzx4" />
+              <node concept="aymSD" id="2$lOk5u$XwQ">
+                <node concept="3balQm" id="2$lOk5u$XwR" role="aymYE">
+                  <node concept="2Clz$F" id="2$lOk5u$XwS" role="18xWvz">
+                    <node concept="1PAEo6" id="2$lOk5u$XwT" role="2Clzx4" />
                   </node>
-                  <node concept="ZBF_j" id="6JBqwuegEBI" role="18xWvz">
-                    <node concept="Zy5XD" id="6JBqwuegEBJ" role="Zy5mW">
+                  <node concept="ZBF_j" id="2$lOk5u$XwU" role="18xWvz">
+                    <node concept="Zy5XD" id="2$lOk5u$XwV" role="Zy5mW">
                       <property role="Zy5T0" value="Constructions available in console:" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBK" role="Zy5mW" />
-                    <node concept="Zy5Tx" id="6JBqwuegEBL" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBM" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XwW" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="2$lOk5u$XwX" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XwY" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBN" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBO" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XwZ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx0" role="Zy5mW">
                       <property role="Zy5T0" value="{ &lt;statements&gt; }   execute a statement list" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBP" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBQ" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx1" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx2" role="Zy5mW">
                       <property role="Zy5T0" value="&lt;expression&gt;       evaluate an expression and print its result" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBR" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBS" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx3" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx4" role="Zy5mW">
                       <property role="Zy5T0" value="?                  display this help or a help page for a specific command" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBT" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBU" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx5" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx6" role="Zy5mW">
                       <property role="Zy5T0" value="#print             print into the console window" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBV" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBW" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx7" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx8" role="Zy5mW">
                       <property role="Zy5T0" value="#project           the current project" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBX" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEBY" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx9" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxa" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEBZ" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC0" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxb" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxc" role="Zy5mW">
                       <property role="Zy5T0" value="#showBrokenRefs    show broken references" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC1" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC2" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxd" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxe" role="Zy5mW">
                       <property role="Zy5T0" value="#showGenPlan       show the generation plan" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC3" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC4" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxf" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxg" role="Zy5mW">
                       <property role="Zy5T0" value="#stat              display useful statistics" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC5" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC6" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxh" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxi" role="Zy5mW">
                       <property role="Zy5T0" value="#callAction        call an IDE action with custom parameters" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC7" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC8" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxj" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxk" role="Zy5mW">
                       <property role="Zy5T0" value="#clean             clean files *.generated" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC9" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECa" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxl" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxm" role="Zy5mW">
                       <property role="Zy5T0" value="#make              make models" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECb" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECc" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxn" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxo" role="Zy5mW">
                       <property role="Zy5T0" value="#removeGenSources  delete the source_gen, source_gen.caches and classes_gen directories" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECd" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECe" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxp" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxq" role="Zy5mW">
                       <property role="Zy5T0" value="#show              show sequence of nodes/references/models/modules in the Usages View panel" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECf" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECg" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxr" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxs" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECh" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECi" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxt" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxu" role="Zy5mW">
                       <property role="Zy5T0" value="#reloadClasses     reload classes of all modules" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECj" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECk" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxv" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxw" role="Zy5mW">
                       <property role="Zy5T0" value="#consoleModel      return a model, in which the console commands as well as its history are stored" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECl" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECm" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxx" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xxy" role="Zy5mW">
                       <property role="Zy5T0" value="#internalMode      access the IDE internal mode variable" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECn" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECo" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xxz" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$Xx$" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECp" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECq" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$Xx_" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxA" role="Zy5mW">
                       <property role="Zy5T0" value="#exec              execute a script" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECr" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECs" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxB" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxC" role="Zy5mW">
                       <property role="Zy5T0" value="refactor           apply a function to manually selected nodes" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECt" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECu" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxD" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxE" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECv" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECw" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxF" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxG" role="Zy5mW">
                       <property role="Zy5T0" value="ofAspect           filter models by their aspect" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECx" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECy" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxH" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxI" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECz" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegEC$" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxJ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxK" role="Zy5mW">
                       <property role="Zy5T0" value="#instances         instances of a concept in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegEC_" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECA" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxL" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxM" role="Zy5mW">
                       <property role="Zy5T0" value="#models            all models in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECB" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECC" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxN" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxO" role="Zy5mW">
                       <property role="Zy5T0" value="#modules           all modules in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECD" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECE" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxP" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxQ" role="Zy5mW">
                       <property role="Zy5T0" value="#nodes             all nodes in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECF" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECG" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxR" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxS" role="Zy5mW">
                       <property role="Zy5T0" value="#references        all references in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECH" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6JBqwuegECI" role="Zy5mW">
+                    <node concept="Zy5Tx" id="2$lOk5u$XxT" role="Zy5mW" />
+                    <node concept="Zy5XD" id="2$lOk5u$XxU" role="Zy5mW">
                       <property role="Zy5T0" value="#usages            direct references to a node in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6JBqwuegECJ" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="2$lOk5u$XxV" role="Zy5mW" />
                   </node>
                 </node>
-                <node concept="2Clz$F" id="6JBqwuegECK" role="aymYO" />
-                <node concept="2_V_lH" id="6JBqwuegECL" role="1PhJh3">
-                  <ref role="2_V_lI" node="6JBqwuegECK" resolve="CommandHolder" />
+                <node concept="2Clz$F" id="2$lOk5u$XxW" role="aymYO" />
+                <node concept="2_V_lH" id="2$lOk5u$XxX" role="1PhJh3">
+                  <ref role="2_V_lI" node="2$lOk5u$XxW" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -507,30 +376,11 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Project" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -555,6 +405,116 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:71492510-3132-457a-8b26-e3ffbda57e8b(SimulationSettings.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/models/SimulationSettings.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:197aadbe-ffb4-4e8a-9da4-f4b87548c26e(SimulationSettings.constraints) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/models/SimulationSettings.constraints.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Project" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -564,18 +524,36 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="e9669457-7467-45a3-816e-a1d8ab4d2582" />
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM" />
+              <option name="myItemId" value="SimulationSettings.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:ed1fec9b-9952-45a9-89dd-67bc5b25c2e1(MSM.test) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.test.mps]" />
+              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="7775299862363808783" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
+        </subPane>
+      </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
     </panes>
@@ -678,8 +656,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Java Application.MakeAndRun" />
       <item itemvalue="JUnit Tests.Tests in 'WorldSetup.structure'" />
+      <item itemvalue="Java Application.MakeAndRun" />
       <item itemvalue="MPS.Debug" />
     </list>
     <recent_temporary>
@@ -756,7 +734,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609855240856</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added simulation settings language, which now controls output and calling system commands to run the MSM.">
+      <created>1610034233263</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610034233263</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -882,7 +867,8 @@
     <MESSAGE value="Tested checking algorithms. Monolayers should now track other objects and world boundaries." />
     <MESSAGE value="With a specified run configuration, the DSL can now write files to new locations." />
     <MESSAGE value="Changed &quot;square&quot; cell shape to rectangular to reflect the ability to change both height and width." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed &quot;square&quot; cell shape to rectangular to reflect the ability to change both height and width." />
+    <MESSAGE value="Added simulation settings language, which now controls output and calling system commands to run the MSM." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added simulation settings language, which now controls output and calling system commands to run the MSM." />
   </component>
   <component name="WindowStateProjectService">
     <state x="294" y="413" key="#MPSPropertiesConfigurable" timestamp="1610034096554">
@@ -919,10 +905,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="455" key="#jetbrains.mps.workbench.dialogs.project.utildialogs.addmodelimport.AddRequiredModelImportsDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1610020805242" />
-    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1609855239975">
+    <state x="267" y="267" key="CommitChangelistDialog2" timestamp="1610034232161">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1609855239975" />
+    <state x="267" y="267" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1610034232161" />
     <state x="591" y="598" key="EditParametersPopupWindow" timestamp="1608294597556">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -997,10 +983,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1400@0.0.2560.1400" timestamp="1604510498196" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1609855405828">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1610034240459">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1609855405828" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1610034240459" />
     <state x="1097" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608217511865">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
