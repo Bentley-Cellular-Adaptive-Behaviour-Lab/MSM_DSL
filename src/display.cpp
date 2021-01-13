@@ -908,8 +908,7 @@ void World::viewMesh(void) {
 //----------------------------------------------------------------------------------------------------------
 
 void World:: viewMesh_diagramSpheres(void){
-    
-    
+
     //glEnable(GL_LIGHTING);
     Coordinates* cross;
     int upto;
@@ -918,16 +917,19 @@ void World:: viewMesh_diagramSpheres(void){
     float red, green, blue;
     vector<Coordinates> coords;
      vector <MemAgent*> triangleNodes;
-Coordinates one;
+	Coordinates one;
     Coordinates two;
     Coordinates three;
     if(sectX<0) sectX=0;
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2>xMAX) sectX2=xMAX;
-    if(sectY2>yMAX) sectY2=yMAX;
-    if(sectZ2>zMAX) sectZ2=zMAX;
+    if(sectX2 > gridXDimensions)
+    	sectX2 = gridXDimensions;
+    if(sectY2 > gridYDimensions)
+    	sectY2 = gridYDimensions;
+    if(sectZ2 > gridZDimensions)
+    	sectZ2 = gridZDimensions;
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -1062,7 +1064,7 @@ Coordinates one;
                                 glNormal3f(X,Y,Z);
                                 delete cross;
                                 
-                                if((fabs(mp->Mx-two.x)<xMAX/2.0f)&&(fabs(mp->Mx-three.x)<xMAX/2.0f)&&(fabs(two.x-three.x)<xMAX/2.0f)){
+                                if((fabs(mp->Mx-two.x)<gridXDimensions/2.0f)&&(fabs(mp->Mx-three.x)<gridXDimensions/2.0f)&&(fabs(two.x-three.x)<gridXDimensions/2.0f)){
                                     glColor4fv(array);
                                     glBegin(GL_TRIANGLES);		// Drawing Using Triangles
                                     glVertex3f(mp->Mx-recentreX, mp->My-recentreY, mp->Mz-recentreZ);		// Top
@@ -1165,7 +1167,7 @@ void World::viewGrid(void){
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2>xMAX) sectX2=xMAX;
+    if(sectX2 > xMAX) sectX2=xMAX;
     if(sectY2>yMAX) sectY2=yMAX;
     if(sectZ2>zMAX) sectZ2=zMAX;
     
