@@ -657,9 +657,12 @@ void World::viewMesh(void) {
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
 
-    if(sectX2>xMAX) sectX2=xMAX;
-    if(sectY2>yMAX) sectY2=yMAX;
-    if(sectZ2>zMAX) sectZ2=zMAX;
+    if(sectX2 > gridXDimensions)
+    	sectX2 = gridXDimensions;
+    if(sectY2 > gridYDimensions)
+    	sectY2 = gridYDimensions;
+    if(sectZ2 > gridZDimensions)
+    	sectZ2 = gridZDimensions;
 
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
 
@@ -819,7 +822,7 @@ void World::viewMesh(void) {
 
                                 glNormal3f(X,Y,Z);
 
-                                if((fabs(mp->Mx-two.x)<xMAX/2.0f)&&(fabs(mp->Mx-three.x)<xMAX/2.0f)&&(fabs(two.x-three.x)<xMAX/2.0f)){
+                                if((fabs(mp->Mx-two.x) < gridXDimensions/2.0f)&&(fabs(mp->Mx-three.x) < gridXDimensions/2.0f)&&(fabs(two.x-three.x) < gridXDimensions/2.0f)){
                                     glColor4fv(array);
                                     glBegin(GL_TRIANGLES);		// Drawing Using Triangles
                                     glVertex3f(mp->Mx-recentreX, mp->My-recentreY, mp->Mz-recentreZ);		// Top
