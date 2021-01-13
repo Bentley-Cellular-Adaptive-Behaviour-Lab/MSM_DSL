@@ -1,7 +1,7 @@
 
 #include "display.h"
 
-#if GRAPHICS
+
 #include "ScreenRecording.h"
 
 #include "objects.h"
@@ -359,9 +359,12 @@ void World::viewGridLines(void){
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2>xMAX) sectX2=xMAX;
-    if(sectY2>yMAX) sectY2=yMAX;
-    if(sectZ2>zMAX) sectZ2=zMAX;
+    if(sectX2 > xMAX)
+    	sectX2 = xMAX;
+    if(sectY2 > yMAX)
+    	sectY2 = yMAX;
+    if(sectZ2 > zMAX)
+    	sectZ2 = zMAX;
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -550,9 +553,12 @@ void World::drawSprings(MemAgent* mp, float red, float green, float blue){
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2>xMAX) sectX2=xMAX;
-    if(sectY2>yMAX) sectY2=yMAX;
-    if(sectZ2>zMAX) sectZ2=zMAX;
+    if(sectX2 > gridXDimensions)
+    	sectX2 = gridXDimensions;
+    if(sectY2 > gridYDimensions)
+    	sectY2 = gridYDimensions;
+    if(sectZ2 > gridZDimensions)
+    	sectZ2 = gridZDimensions;
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -1180,7 +1186,6 @@ void World::viewGrid(void){
                 //if(grid[i][j][k].Eid!=NULL)
                         //if(junctionView==1)DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, 0.1, 0.1, 1.0, 0.6, L);
                                if(grid[i][j][k].type==E){
-
 
                         if(viewInsideEnv==1){
                             if(grid[i][j][k].Eid->inside==true){
