@@ -1167,9 +1167,12 @@ void World::viewGrid(void){
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2 > xMAX) sectX2=xMAX;
-    if(sectY2>yMAX) sectY2=yMAX;
-    if(sectZ2>zMAX) sectZ2=zMAX;
+    if(sectX2 > gridXDimensions)
+    	sectX2 = gridXDimensions;
+    if(sectY2 > gridYDimensions)
+    	sectY2 = gridYDimensions;
+    if(sectZ2 > gridZDimensions)
+    	sectZ2 = gridZDimensions;
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -1178,10 +1181,11 @@ void World::viewGrid(void){
     int recentreZ = (int)(sectZ+(sectZ2-sectZ)/2.00);
     
     if(viewType==8){
-     glDepthMask(GL_FALSE);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
-}
+    	glDepthMask(GL_FALSE);
+    	glEnable(GL_BLEND);
+    	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA) ;
+    }
+
     //solid cubes
     for(i=sectX;i<sectX2;i++)
         for(j=sectY;j<sectY2;j++)
