@@ -359,12 +359,12 @@ void World::viewGridLines(void){
     if(sectY<0) sectY=0;
     if(sectZ<0) sectZ=0;
     
-    if(sectX2 > xMAX)
-    	sectX2 = xMAX;
-    if(sectY2 > yMAX)
-    	sectY2 = yMAX;
-    if(sectZ2 > zMAX)
-    	sectZ2 = zMAX;
+    if(sectX2 > gridXDimensions)
+    	sectX2 = gridXDimensions;
+    if(sectY2 > gridYDimensions)
+    	sectY2 = gridYDimensions;
+    if(sectZ2 > gridZDimensions)
+    	sectZ2 = gridZDimensions;
     
     int recentreX = (int)(sectX+(sectX2-sectX)/2.00);
     
@@ -616,7 +616,7 @@ void World::drawSprings(MemAgent* mp, float red, float green, float blue){
             
             //if(mp->SpringNeigh[j]==ECagents[1]->Springs[280]){ glColor4f(0.03,1.8, 1.2,1.0);
             if((junctionOnlyView==1)&&(mp->SpringNeigh[j]->Junction==true)){
-            if(sqrt(PN[j][0]*PN[j][0])<xMAX/2.0f){
+            if(sqrt(PN[j][0]*PN[j][0]) < gridXDimensions / 2.0f){
                 glBegin(GL_LINES);
                 glVertex3f(mp->Mx-recentreX, mp->My-recentreY, mp->Mz-recentreZ);
                 glVertex3f(mp->neigh[j]->Mx-recentreX, mp->neigh[j]->My-recentreY, mp->neigh[j]->Mz-recentreZ);
@@ -624,7 +624,7 @@ void World::drawSprings(MemAgent* mp, float red, float green, float blue){
             }
             }
             else if(junctionOnlyView==0){
-                if(sqrt(PN[j][0]*PN[j][0])<xMAX/2.0f){
+                if(sqrt(PN[j][0]*PN[j][0])< gridXDimensions / 2.0f){
                 glBegin(GL_LINES);
                 glVertex3f(mp->Mx-recentreX, mp->My-recentreY, mp->Mz-recentreZ);
                 glVertex3f(mp->neigh[j]->Mx-recentreX, mp->neigh[j]->My-recentreY, mp->neigh[j]->Mz-recentreZ);
