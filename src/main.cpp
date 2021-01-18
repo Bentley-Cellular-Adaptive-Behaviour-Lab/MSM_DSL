@@ -392,7 +392,8 @@ void World::creationTimestep(int movie)
     else if (ASTRO != NONE)
         createAstrocytes();
 
-    createBlood(); //labels the interior of vessels but not otherwise involved
+    if (!DSL_TESTING)
+    	createBlood(); //labels the interior of vessels but not otherwise involved
 
     //give Env objects correct VEGF level depending on chosen gradients
 //    setInitialVEGF();
@@ -710,9 +711,9 @@ void World::destroyWorld(void) {
     Macrophage* map;
     int i, j, k;
 
-    for (i = 0; i < xMAX; i++) {
-        for (j = 0; j < yMAX; j++) {
-            for (k = 0; k < zMAX; k++) {
+    for (i = 0; i < gridXDimensions; i++) {
+        for (j = 0; j < gridYDimensions; j++) {
+            for (k = 0; k < gridZDimensions; k++) {
                 if (grid[i][j][k].type == E) {
                     if (grid[i][j][k].Eid != NULL)
                         delete grid[i][j][k].Eid;

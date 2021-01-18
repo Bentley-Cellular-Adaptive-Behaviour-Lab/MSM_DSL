@@ -574,7 +574,7 @@ bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tiss
 
     min_dist = sqrt(y_offset_squared + z_offset_squared);
 
-    if (vessel_1_radius + vessel_2_radius <= min_dist) {
+    if (vessel_1_radius + vessel_2_radius >= min_dist) {
         return true;
     }
     return false;
@@ -1680,10 +1680,10 @@ void Tissue_Vessel::tissue_vessel_connect_mesh() {
                     POSplus = 0;
                 }
 
-                if (Xplus == xMAX) {
+                if (Xplus == this->m_world->gridXDimensions) {
                     Xplus = 0;
                 } else if (Xminus < 0) {
-                    Xminus = xMAX - 1;
+                    Xminus = this->m_world->gridXDimensions - 1;
                 }
 
                 // Go through all other agents, in each cell and find the ones it should be neighs with
@@ -1760,32 +1760,51 @@ void Tissue_Monolayer::create_monolayer() {
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 	int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
-    for(int i = 0; i < m_cell_number; i++) {
+    for (int i = 0; i < m_cell_number; i++) {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
-        EC *ecp = new EC((World*) this);
+        EC *ecp = new EC( this->m_world);
 
         //put the address into the vector Ecells
         m_world->ECagents.push_back(ecp);
 
         // Add this agent to the relevant tissue.
         store_cell_agent(ecp);
-
     }
 
-    for(int i = 0; i < m_cell_number; i++){
+//    for (int i = 0; i < m_cell_number; i++) {
+//
+//        if ( I == m_width_in_cells) {
+//            I = 0;
+//            j++;
+//        }
+//
+//        k = j % 2;
+//        tissue_create_2D_square_cell(i,
+//        							(int)(start_pos_X + (cell_width / 2.0f) + (I * cell_width)),
+//        							(int)(start_pos_Y + (cell_height / 2.0f) + (j * cell_height)),
+//									 (int)this->m_position->get_z_coord());
+//        I++;
+//    }
 
-        if ( I == m_width_in_cells) {
-            I = 0;
-            j++;
-        }
+	int start_pos_X = this->m_position->get_x_coord() - ((this->m_width_in_cells * cell_width) / 2);
+	int start_pos_Y = this->m_position->get_y_coord() - ((this->m_height_in_cells * cell_height) / 2);
 
-        k = j % 2;
-        tissue_create_2D_square_cell(i,
-        							(int)(Medium_width + (cell_width / 2.0f) + (I * cell_width)),
-        							(int)(Medium_width + (cell_height / 2.0f) + (j * cell_height)),
-									 (int)this->m_position->get_z_coord());
-        I++;
-    }
+	int current_pos_X = start_pos_X;
+	int current_pos_Y = start_pos_Y;
+
+	int count = 0;
+	for (int i = 0; i < this->m_height_in_cells; i++) {
+		for (int j = 0; j < this->m_width_in_cells; j++) {
+			tissue_create_2D_square_cell(count,
+        							(int) (current_pos_X + (cell_width / 2.0f)),
+        							(int) (current_pos_Y + (cell_height / 2.0f)),
+        							(int) this->m_position->get_z_coord());
+			count++;
+			current_pos_X += cell_width;
+		}
+		current_pos_Y += cell_height;
+	}
+
     tissue_connect_monolayer();
 
     //check for junctions to make junction springs
