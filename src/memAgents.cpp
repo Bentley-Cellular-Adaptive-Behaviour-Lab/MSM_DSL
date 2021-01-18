@@ -107,10 +107,10 @@ float MemAgent::FilLength(int type) {
             //score++;
             if (type == TIP) {
                 stored.push_back(Mcurrent);
-                if (Mcurrent->Mx - Mcurrent->filNeigh->Mx >= (float) xMAX / 2.0f)
-                    length += worldP->getDist(Mcurrent->Mx - xMAX, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
-                else if (Mcurrent->filNeigh->Mx - Mcurrent->Mx >= (float) xMAX / 2.0f)
-                    length += worldP->getDist(Mcurrent->Mx, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx - xMAX, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
+                if (Mcurrent->Mx - Mcurrent->filNeigh->Mx >= (float) this->worldP->gridXDimensions / 2.0f)
+                    length += worldP->getDist(Mcurrent->Mx - this->worldP->gridXDimensions, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
+                else if (Mcurrent->filNeigh->Mx - Mcurrent->Mx >= (float) this->worldP->gridXDimensions / 2.0f)
+                    length += worldP->getDist(Mcurrent->Mx, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx - this->worldP->gridXDimensions, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
                 else
                     length += worldP->getDist(Mcurrent->Mx, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
                 Mcurrent = Mcurrent->filNeigh;
@@ -199,11 +199,11 @@ bool MemAgent::filRetract(void) {
     D = (int) Mz - (int) mp->Mz;
 
     //toroidal adjustments
-    if(TOROIDAL_X==true){
-    if (sqrt(XA * XA) >= (int) ((float) xMAX / 2.0f)) {
+    if(TOROIDAL_X){
+    if (sqrt(XA * XA) >= (int) ((float) this->worldP->gridXDimensions / 2.0f)) {
 
-        if (XA > 0) XA = -(xMAX - XA);
-        else XA = xMAX - abs(XA);
+        if (XA > 0) XA = -(this->worldP->gridXDimensions - XA);
+        else XA = this->worldP->gridXDimensions - abs(XA);
         length = sqrt((XA * XA)+(B * B)+(D * D));
 
     } else {

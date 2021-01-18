@@ -179,10 +179,10 @@ Coordinates World::findMidPoint(float x1, float y1, float z1, float x2, float y2
 
     if(Length!=0){
         //toroidal adjustments
-        if(sqrt(PN[0]*PN[0])>=(float)xMAX/2.0f){
+        if(sqrt(PN[0]*PN[0])>=(float) gridXDimensions/2.0f){
 
-            if(PN[0]>0) PN[0]= (x1-xMAX)-x2;//-((float)xMAX- PN[0]);
-            else PN[0]=x1-(x2-xMAX);//(float)xMAX- fabs(PN[0]);
+            if(PN[0]>0) PN[0]= (x1-gridXDimensions)-x2;//-((float)xMAX- PN[0]);
+            else PN[0]=x1-(x2-gridXDimensions);//(float)xMAX- fabs(PN[0]);
 
         }
 
@@ -196,9 +196,9 @@ Coordinates World::findMidPoint(float x1, float y1, float z1, float x2, float y2
         coord.y = Coord[1];
         coord.z = Coord[2];
 
-        if(coord.x<0) coord.x+=xMAX;
-        else if(coord.x>=xMAX){
-             coord.x-=xMAX;
+        if(coord.x<0) coord.x += gridXDimensions;
+        else if(coord.x >= gridXDimensions){
+             coord.x -= gridXDimensions;
              //somehow its sometimes letting a coord.x at xAMX get through.. added quick fix in new Nodes for now. 
         }
     }
