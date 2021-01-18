@@ -408,10 +408,9 @@ void Substrate::apply_substrate_to_cuboid() {
 	for (int i = x_start; i < x_end; i++) {
 		for (int j = y_start; j < y_end; j++) {
 			for (int k = z_start; k < z_end; k++) {
-				if (m_parent_world->grid[i][j][k].type == E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
 					ep->adhesiveness = m_adhesiveness;
-				}
+
 			}
 		}
 	}
