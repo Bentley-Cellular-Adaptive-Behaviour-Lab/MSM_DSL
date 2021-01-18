@@ -126,12 +126,16 @@ void MemAgent::connectJunctions(bool alsoNormalSprings){
 
         //-------------------------------
         //toroidal only X
-        if(m>=xMAX) m=0;
-        if(m<0) m=xMAX-1;
-        if(n>=yMAX) n=0;
-        if(n<0) n=yMAX-1;
+        if (m >= this->worldP->gridXDimensions)
+        	m = 0;
+        if (m < 0)
+        	m = this->worldP->gridXDimensions - 1;
+        if (n >= this->worldP->gridYDimensions)
+        	n = 0;
+        if (n < 0)
+        	n = this->worldP->gridXDimensions - 1;
 
-        if(worldP->insideWorld(m, n, p)==true){
+        if(worldP->insideWorld(m, n, p)){
             if(worldP->grid[m][n][p].type==M){
                 for(s=0;s<worldP->grid[m][n][p].Mids.size();s++) {
                     if(worldP->grid[m][n][p].Mids[s]->Cell!=Cell) {

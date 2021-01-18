@@ -26,7 +26,7 @@ void World::check_if_InsideVessel(void){
     
     for(i=0;i<gridXDimensions;i++){
                 for(j=0;j<gridXDimensions;j++){
-                    for(k=0;k<zMAX;k++){
+                    for(k=0;k<gridZDimensions;k++){
                         if(grid[i][j][k].Eid!=NULL){
                             //only checking if was already inside...
                             if(grid[i][j][k].Eid->inside==true)

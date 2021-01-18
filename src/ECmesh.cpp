@@ -167,11 +167,11 @@ void EC::newNodes(void) {
             c = stp->end->Mz;
             XA = x - a;
             //toroidal adjustments
-            if(TOROIDAL_X==true){
-            if (sqrt(XA * XA) >= (float) xMAX / 2.0f) {
+            if(TOROIDAL_X){
+            if (sqrt(XA * XA) >= (float) this->worldP->gridXDimensions / 2.0f) {
 
-                if (XA > 0) XA = -((float) xMAX - XA);
-                else XA = (float) xMAX - fabs(XA);
+                if (XA > 0) XA = -((float) this->worldP->gridXDimensions - XA);
+                else XA = (float) this->worldP->gridXDimensions - fabs(XA);
                 length = sqrt((XA * XA)+((y - b)*(y - b))+((z - c)*(z - c)));
 
             } else {
@@ -189,12 +189,14 @@ void EC::newNodes(void) {
             	//create new node
             	Coord = worldP->findMidPoint(x, y, z, a, b, c, length);
 
-            	if(Coord.x>=xMAX) Coord.x-=xMAX;
-            	else if(Coord.x<0) Coord.x+=xMAX;
+            	if(Coord.x >= this->worldP->gridXDimensions)
+            		Coord.x -= this->worldP->gridXDimensions;
+            	else if(Coord.x < 0)
+            		Coord.x += this->worldP->gridXDimensions;
 
             	memp = new MemAgent(this, worldP);
             	//cout<<"newNode:"<<memp<<endl<<endl;
-            	if ((Coord.x < 0) || (Coord.x >= xMAX)) cout << "bug " << Coord.x;
+            	if ((Coord.x < 0) || (Coord.x >= this->worldP->gridXDimensions)) cout << "bug " << Coord.x;
 
 
             	memp->Mx = Coord.x;
