@@ -1,4 +1,5 @@
 
+#if GRAPHICS
 #include "display.h"
 
 

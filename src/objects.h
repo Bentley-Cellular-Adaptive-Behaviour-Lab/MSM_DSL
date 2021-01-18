@@ -481,7 +481,8 @@ public:
 
 	// Determines the ability of filopodia to form focal adhesions
 	float adhesiveness;
-}
+};
+
 ///------------------------------------------------------------------------------------
 ///General storage classes
 ///------------------------------------------------------------------------------------
