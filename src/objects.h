@@ -49,12 +49,12 @@ class CPM_module;
 //#endif
 
 /// below defines are set through makefile
-#define ANALYSIS_HYSTERESIS false
-#define ANALYSIS_TIME_TO_PATTERN false
-#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-#define GRAPHICS false
-#define ECpack 10
-#define MAXtime 10000 ///2000 ///480 for fil lifetime
+//#define ANALYSIS_HYSTERESIS false
+//#define ANALYSIS_TIME_TO_PATTERN false
+//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+//#define GRAPHICS false
+//#define ECpack 10
+//#define MAXtime 10000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
@@ -929,9 +929,9 @@ public:
 							std::tuple<float, float> triangle_point_1,
 							std::tuple<float, float> triangle_point_2,
 							std::tuple<float, float> triangle_point_3);
-	float get_sign(std::tuple<float, float> queried_point,
-				  std::tuple<float, float> triangle_point_1,
-				  std::tuple<float, float> triangle_point_2);
+	float get_sign(Env *ep,
+				  std::tuple<float, float> point_1,
+				  std::tuple<float, float> point_2);
 
 	World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
 };
