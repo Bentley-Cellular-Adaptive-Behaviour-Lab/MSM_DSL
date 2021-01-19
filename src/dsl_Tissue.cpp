@@ -19,6 +19,6 @@ void Tissue_Container::tissue_set_up() {
     Monolayer_Type = define_tissue_type("Monolayer", Endothelial_Type, CELL_CONFIGURATION_FLAT, 1, 6);
 
 
-    Monolayer_1_Pos = Coordinates(100, 50, 0);
+    Monolayer_1_Pos = Coordinates(40, 15, 0);
     create_tissue("Monolayer_1", Monolayer_Type, &(Monolayer_1_Pos));
 }

@@ -408,9 +408,10 @@ void Substrate::apply_substrate_to_cuboid() {
 	for (int i = x_start; i < x_end; i++) {
 		for (int j = y_start; j < y_end; j++) {
 			for (int k = z_start; k < z_end; k++) {
+				if (m_parent_world->grid[i][j][k].type==E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
 					ep->adhesiveness = m_adhesiveness;
-
+				}
 			}
 		}
 	}
@@ -486,7 +487,7 @@ void Substrate::apply_substrate_to_triangular_prism() {
 		y_end = m_parent_world->gridYDimensions;
 	}
 
-	// Compare y-coordinate values and set y_end to the largest one.
+	// Determine depth values.
 	z_start = int(m_centre_coordinates->z) - (substrate_shape->get_depth() / 2);
 	if (z_start < 0) {
 		z_start = 0;
@@ -731,22 +732,22 @@ void World::set_focal_adhesion(MemAgent *memp) {
 *  Returns:		void
 ******************************************************************************************/
 
-float World::get_sign(std::tuple<float, float> queried_point,
-					 std::tuple<float, float> triangle_point_1,
-					 std::tuple<float, float> triangle_point_2) {
-
-	float queried_point_x = std::get<0>(queried_point);
-	float queried_point_y = std::get<1>(queried_point);
-	float point_1_x = std::get<0>(triangle_point_1);
-	float point_1_y = std::get<1>(triangle_point_1);
-	float point_2_x = std::get<0>(triangle_point_2);
-	float point_2_y = std::get<1>(triangle_point_2);
-
-	return (queried_point_x - point_2_x) *
-	       (point_1_y - point_2_x) -
-	       (point_1_x - point_2_x) *
-	       (queried_point_y - point_2_y);
-}
+//float World::get_sign(std::tuple<float, float> queried_point,
+//					 std::tuple<float, float> triangle_point_1,
+//					 std::tuple<float, float> triangle_point_2) {
+//
+//	float queried_point_x = std::get<0>(queried_point);
+//	float queried_point_y = std::get<1>(queried_point);
+//	float point_1_x = std::get<0>(triangle_point_1);
+//	float point_1_y = std::get<1>(triangle_point_1);
+//	float point_2_x = std::get<0>(triangle_point_2);
+//	float point_2_y = std::get<1>(triangle_point_2);
+//
+//	return (queried_point_x - point_2_x) *
+//	       (point_1_y - point_2_x) -
+//	       (point_1_x - point_2_x) *
+//	       (queried_point_y - point_2_y);
+//}
 
 /*****************************************************************************************
 *  Name:		is_within_triangle
@@ -757,19 +758,41 @@ float World::get_sign(std::tuple<float, float> queried_point,
 *  Returns:		void
 ******************************************************************************************/
 
-bool World::is_within_triangle(Env *ep,
-							   std::tuple<float, float> triangle_point_1,
-							   std::tuple<float, float> triangle_point_2,
-							   std::tuple<float, float> triangle_point_3) {
-	auto env_x = float(ep->Ex);
-	auto env_y = float(ep->Ey);
-	tuple<float, float> queried_point = make_tuple(env_x, env_y);
+//bool World::is_within_triangle(Env *ep,
+//							   std::tuple<float, float> triangle_point_1,
+//							   std::tuple<float, float> triangle_point_2,
+//							   std::tuple<float, float> triangle_point_3) {
+//	auto env_x = float(ep->Ex);
+//	auto env_y = float(ep->Ey);
+//	tuple<float, float> queried_point = make_tuple(env_x, env_y);
+//
+//	bool b1, b2, b3;
+//
+//	b1 = get_sign(queried_point, triangle_point_1, triangle_point_2) < 0;
+//	b2 = get_sign(queried_point, triangle_point_2, triangle_point_3) < 0;
+//	b3 = get_sign(queried_point, triangle_point_3, triangle_point_1) < 0;
+//
+//	return ((b1 == b2) && (b2 == b3));
+//}
 
-	bool b1, b2, b3;
+float World::get_sign(Env *ep, std::tuple<float, float> p2, std::tuple<float, float> p3) {
+	//return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
+	return (ep->Ex - std::get<0>(p3))
+		 * (std::get<1>(p2) - std::get<1>(p3))
+		 - (std::get<0>(p2) - std::get<0>(p3))
+		 * (ep->Ey - std::get<1>(p3));
+}
 
-	b1 = get_sign(queried_point, triangle_point_1, triangle_point_2) < 0;
-	b2 = get_sign(queried_point, triangle_point_2, triangle_point_3) < 0;
-	b3 = get_sign(queried_point, triangle_point_3, triangle_point_1) < 0;
+bool World::is_within_triangle(Env *ep, std::tuple<float, float> v1, std::tuple<float, float> v2, std::tuple<float, float> v3) {
+	float d1, d2, d3;
+	bool has_neg, has_pos;
 
-	return ((b1 == b2) && (b2 == b3));
+	d1 = get_sign(ep, v1, v2);
+	d2 = get_sign(ep, v2, v3);
+	d3 = get_sign(ep, v3, v1);
+
+	has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
+	has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
+
+	return !(has_neg && has_pos);
 }
