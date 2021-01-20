@@ -596,8 +596,10 @@ bool MemAgent::checkNeighsVonForEnv(void) {
         //-------------------------------
         //toroidal only X
         if(TOROIDAL_X_env==true){
-        if (m >= xMAX) m = 0;
-        if (m < 0) m = xMAX - 1;
+        	if (m >= this->worldP->gridXDimensions)
+        		m = 0;
+        	if (m < 0)
+        		m = this->worldP->gridXDimensions - 1;
         }
         if (worldP->insideWorld(m, n, p) == true) {
             if (worldP->grid[m][n][p].type == E) {
