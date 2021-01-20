@@ -131,7 +131,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203058");
     b.version(2);
     b.property("adhesiveness", 0x73ca99e5119b1f20L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("8343650468779204384").done();
-    b.aggregate("Centre_Position", 0x73ca99e5119b1f1aL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("8343650468779204378").done();
     b.aggregate("shape", 0x51ca2b62e9a67f55L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL).optional(false).ordered(true).multiple(false).origin("5893570766194507605").done();
     return b.create();
   }
@@ -151,6 +150,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("width", 0x51ca2b62e9a67f58L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507608").done();
     b.property("height", 0x51ca2b62e9a67f5aL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507610").done();
     b.property("depth", 0x51ca2b62e9a67f5dL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507613").done();
+    b.aggregate("Substrate_Position", 0x227861932d6a58b7L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("2483842479244859575").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstrate_Shape_Triangular() {
@@ -159,6 +159,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507599");
     b.version(2);
+    b.property("z_location", 0x227861932d6f8049L).type(PrimitiveTypeId.INTEGER).origin("2483842479245197385").done();
     b.property("depth", 0x4bfb68806b422228L).type(PrimitiveTypeId.INTEGER).origin("5475084672763568680").done();
     b.aggregate("Vertex_1", 0x51ca2b62e9a67f61L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507617").done();
     b.aggregate("Vertex_2", 0x51ca2b62e9a67f69L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507625").done();

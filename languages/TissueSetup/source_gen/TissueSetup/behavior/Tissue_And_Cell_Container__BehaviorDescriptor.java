@@ -30,6 +30,7 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
 
   public static final SMethod<String> count_cell_number_id4XZPqyVOe45 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("count_cell_number").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
+  public static final SMethod<Integer> count_cell_number_int_id6yORN46v92v = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("count_cell_number_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yORN46v92v").build();
   public static final SMethod<Boolean> check_positions_id1QpPlI51UW4 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_positions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51UW4").build();
   public static final SMethod<Boolean> check_cell_cell_overlap_id1QpPlI522xB = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_cell_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI522xB").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> check_cell_vessel_overlap_id1QpPlI522M$ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_vessel_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI522M$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
@@ -38,7 +39,7 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   public static final SMethod<Boolean> check_vessel_monolayer_overlap_id1QpPlI523LR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523LR").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> check_monolayer_monolayer_overlap_id1p5qYO3gLDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_monolayer_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1p5qYO3gLDn").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45, count_cell_number_int_id6yORN46v92v, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -53,6 +54,16 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
     String number = String.valueOf(count);
     return number;
+  }
+  /*package*/ static int count_cell_number_int_id6yORN46v92v(@NotNull SNode __thisNode__) {
+    int count = 0;
+    for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
+      count += 1;
+    }
+    for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.tissues$psuU))) {
+      count += (int) Arrangement__BehaviorDescriptor.get_total_cell_number_id4XZPqyVOpH$.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk));
+    }
+    return count;
   }
   /*package*/ static boolean check_positions_id1QpPlI51UW4(@NotNull SNode __thisNode__) {
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
@@ -184,18 +195,20 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
       case 0:
         return (T) ((String) count_cell_number_id4XZPqyVOe45(node));
       case 1:
-        return (T) ((Boolean) check_positions_id1QpPlI51UW4(node));
+        return (T) ((Integer) count_cell_number_int_id6yORN46v92v(node));
       case 2:
-        return (T) ((Boolean) check_cell_cell_overlap_id1QpPlI522xB(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Boolean) check_positions_id1QpPlI51UW4(node));
       case 3:
-        return (T) ((Boolean) check_cell_vessel_overlap_id1QpPlI522M$(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Boolean) check_cell_cell_overlap_id1QpPlI522xB(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 4:
-        return (T) ((Boolean) check_cell_monolayer_overlap_id1QpPlI5237t(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Boolean) check_cell_vessel_overlap_id1QpPlI522M$(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 5:
-        return (T) ((Boolean) check_vessel_vessel_overlap_id1QpPlI523sw(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Boolean) check_cell_monolayer_overlap_id1QpPlI5237t(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 6:
-        return (T) ((Boolean) check_vessel_monolayer_overlap_id1QpPlI523LR(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Boolean) check_vessel_vessel_overlap_id1QpPlI523sw(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 7:
+        return (T) ((Boolean) check_vessel_monolayer_overlap_id1QpPlI523LR(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 8:
         return (T) ((Boolean) check_monolayer_monolayer_overlap_id1p5qYO3gLDn(node, (SNode) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);

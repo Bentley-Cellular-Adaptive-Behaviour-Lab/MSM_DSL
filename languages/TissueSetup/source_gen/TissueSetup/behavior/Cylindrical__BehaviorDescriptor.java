@@ -62,7 +62,7 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
     return i_steps;
   }
   /*package*/ static int get_total_length_int_id1QpPlI52lcy(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.cylinder_length_in_cells$pzLn) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue$nL, false, false), LINKS.tissue_type$$cvw), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.cylinder_length_in_cells$pzLn) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_Type$C4, false, false), LINKS.cell_type$E3tO), LINKS.shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY);
   }
   /*package*/ static int calculate_cross_section_cells_id506$KtOAF5K(@NotNull SNode __thisNode__) {
 
@@ -137,13 +137,11 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Tissue$nL = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, "TissueSetup.structure.Tissue");
-    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
     /*package*/ static final SConcept Tissue_Type$C4 = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, "TissueSetup.structure.Tissue_Type");
+    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink tissue_type$$cvw = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x4369a03b1c616655L, "tissue_type");
     /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
     /*package*/ static final SContainmentLink shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "shape");
   }

@@ -215,6 +215,11 @@
       <property role="TrG5h" value="cylinder_total_cells" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="6Z$0llyihG3" role="1TKVEl">
+      <property role="IQ2nx" value="8062570699132836611" />
+      <property role="TrG5h" value="cylinder_total_length_int" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYs">
     <property role="EcuMT" value="6249017959271690140" />

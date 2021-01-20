@@ -366,90 +366,122 @@
     </file>
     <file name="noTissueCollision_NonTypesystemRule.java">
       <node id="2380230844048926622" at="21,119,22,124" concept="7" />
-      <node id="4122658121470114194" at="24,7,25,66" concept="5" />
-      <node id="4122658121470114194" at="25,66,26,302" concept="5" />
-      <node id="4122658121470738132" at="30,7,31,66" concept="5" />
-      <node id="4122658121470738132" at="31,66,32,311" concept="5" />
-      <node id="4122658121470738140" at="36,7,37,66" concept="5" />
-      <node id="4122658121470738140" at="37,66,38,311" concept="5" />
-      <node id="4122658121470738148" at="42,7,43,66" concept="5" />
-      <node id="4122658121470738148" at="43,66,44,281" concept="5" />
-      <node id="4122658121470738154" at="46,5,47,0" concept="8" />
-      <node id="4122658121470738157" at="49,7,50,66" concept="5" />
-      <node id="4122658121470738157" at="50,66,51,279" concept="5" />
-      <node id="4122658121470738163" at="53,5,54,0" concept="8" />
-      <node id="4122658121470738166" at="56,7,57,66" concept="5" />
-      <node id="4122658121470738166" at="57,66,58,328" concept="5" />
-      <node id="4122658121470737637" at="60,5,61,0" concept="8" />
-      <node id="4122658121470112692" at="63,50,64,30" concept="6" />
-      <node id="4122658121470112692" at="66,68,67,102" concept="6" />
-      <node id="4122658121470112692" at="69,30,70,17" concept="6" />
-      <node id="4122658121470112692" at="74,0,75,0" concept="9" trace="Tissue$nL" />
+      <node id="8062570699130718537" at="23,100,24,88" concept="5" />
+      <node id="8062570699130719888" at="24,88,25,88" concept="5" />
+      <node id="8062570699130722188" at="25,88,26,88" concept="5" />
+      <node id="8062570699130724465" at="26,88,27,88" concept="5" />
+      <node id="8062570699130727047" at="27,88,28,88" concept="5" />
+      <node id="8062570699130729474" at="28,88,29,88" concept="5" />
+      <node id="8062570699130718462" at="29,88,30,0" concept="8" />
+      <node id="4122658121470114194" at="31,7,32,66" concept="5" />
+      <node id="4122658121470114194" at="32,66,33,447" concept="5" />
+      <node id="8062570699130770851" at="36,107,37,88" concept="5" />
+      <node id="4122658121470738132" at="38,7,39,66" concept="5" />
+      <node id="4122658121470738132" at="39,66,40,331" concept="5" />
+      <node id="8062570699130773038" at="43,107,44,88" concept="5" />
+      <node id="4122658121470738140" at="45,7,46,66" concept="5" />
+      <node id="4122658121470738140" at="46,66,47,331" concept="5" />
+      <node id="8062570699130775821" at="50,107,51,88" concept="5" />
+      <node id="4122658121470738148" at="52,7,53,66" concept="5" />
+      <node id="4122658121470738148" at="53,66,54,301" concept="5" />
+      <node id="4122658121470738154" at="56,5,57,0" concept="8" />
+      <node id="8062570699130779834" at="58,107,59,88" concept="5" />
+      <node id="4122658121470738157" at="60,7,61,66" concept="5" />
+      <node id="4122658121470738157" at="61,66,62,299" concept="5" />
+      <node id="4122658121470738163" at="64,5,65,0" concept="8" />
+      <node id="8062570699130782418" at="66,101,67,88" concept="5" />
+      <node id="8062570699130782883" at="67,88,68,88" concept="5" />
+      <node id="8062570699130782413" at="68,88,69,0" concept="8" />
+      <node id="4122658121470738166" at="70,7,71,66" concept="5" />
+      <node id="4122658121470738166" at="71,66,72,373" concept="5" />
+      <node id="4122658121470737637" at="74,5,75,0" concept="8" />
+      <node id="4122658121470112692" at="77,50,78,30" concept="6" />
+      <node id="4122658121470112692" at="80,68,81,102" concept="6" />
+      <node id="4122658121470112692" at="83,30,84,17" concept="6" />
+      <node id="4122658121470112692" at="88,0,89,0" concept="9" trace="Tissue$nL" />
       <node id="4122658121470112692" at="19,0,21,0" concept="1" trace="noTissueCollision_NonTypesystemRule#()V" />
-      <node id="4122658121470112692" at="63,0,66,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="4122658121470112692" at="66,0,69,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="4122658121470112692" at="69,0,72,0" concept="4" trace="overrides#()Z" />
-      <node id="4122658121470114194" at="23,100,27,7" concept="0" />
-      <node id="4122658121470738132" at="29,107,33,7" concept="0" />
-      <node id="4122658121470738140" at="35,107,39,7" concept="0" />
-      <node id="4122658121470738148" at="41,107,45,7" concept="0" />
-      <node id="4122658121470738157" at="48,107,52,7" concept="0" />
-      <node id="4122658121470738166" at="55,101,59,7" concept="0" />
-      <node id="4122658121470112704" at="22,124,28,5" concept="3" />
-      <node id="4122658121470738130" at="28,5,34,5" concept="3" />
-      <node id="4122658121470738138" at="34,5,40,5" concept="3" />
-      <node id="4122658121470738146" at="40,5,46,5" concept="3" />
-      <node id="4122658121470738155" at="47,0,53,5" concept="3" />
-      <node id="4122658121470738164" at="54,0,60,5" concept="3" />
-      <node id="4122658121470112692" at="21,0,63,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="4122658121470112692" at="77,0,80,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="4122658121470112692" at="80,0,83,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="4122658121470112692" at="83,0,86,0" concept="4" trace="overrides#()Z" />
+      <node id="4122658121470114194" at="30,0,34,7" concept="0" />
+      <node id="4122658121470738132" at="37,88,41,7" concept="0" />
+      <node id="4122658121470738140" at="44,88,48,7" concept="0" />
+      <node id="4122658121470738148" at="51,88,55,7" concept="0" />
+      <node id="4122658121470738157" at="59,88,63,7" concept="0" />
+      <node id="4122658121470738166" at="69,0,73,7" concept="0" />
+      <node id="4122658121470738130" at="35,5,42,5" concept="3" />
+      <node id="4122658121470738138" at="42,5,49,5" concept="3" />
+      <node id="4122658121470738146" at="49,5,56,5" concept="3" />
+      <node id="4122658121470738155" at="57,0,64,5" concept="3" />
+      <node id="4122658121470738164" at="65,0,74,5" concept="3" />
+      <node id="4122658121470112704" at="22,124,35,5" concept="3" />
+      <node id="4122658121470112692" at="21,0,77,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4122658121470112692" at="19,48,19,48" />
-      <scope id="4122658121470112692" at="63,50,64,30" />
-      <scope id="4122658121470112692" at="66,68,67,102" />
-      <scope id="4122658121470112692" at="69,30,70,17" />
+      <scope id="4122658121470112692" at="77,50,78,30" />
+      <scope id="4122658121470112692" at="80,68,81,102" />
+      <scope id="4122658121470112692" at="83,30,84,17" />
       <scope id="4122658121470112692" at="19,0,21,0" />
-      <scope id="4122658121470114194" at="24,7,26,302">
+      <scope id="4122658121470114194" at="31,7,33,447">
         <var name="_reporter_2309309498" id="4122658121470114194" />
         <var name="errorTarget" id="4122658121470114194" />
       </scope>
-      <scope id="4122658121470738132" at="30,7,32,311">
+      <scope id="4122658121470738132" at="38,7,40,331">
         <var name="_reporter_2309309498" id="4122658121470738132" />
         <var name="errorTarget" id="4122658121470738132" />
       </scope>
-      <scope id="4122658121470738140" at="36,7,38,311">
+      <scope id="4122658121470738140" at="45,7,47,331">
         <var name="_reporter_2309309498" id="4122658121470738140" />
         <var name="errorTarget" id="4122658121470738140" />
       </scope>
-      <scope id="4122658121470738148" at="42,7,44,281">
+      <scope id="4122658121470738148" at="52,7,54,301">
         <var name="_reporter_2309309498" id="4122658121470738148" />
         <var name="errorTarget" id="4122658121470738148" />
       </scope>
-      <scope id="4122658121470738157" at="49,7,51,279">
+      <scope id="4122658121470738157" at="60,7,62,299">
         <var name="_reporter_2309309498" id="4122658121470738157" />
         <var name="errorTarget" id="4122658121470738157" />
       </scope>
-      <scope id="4122658121470738166" at="56,7,58,328">
+      <scope id="4122658121470738166" at="70,7,72,373">
         <var name="_reporter_2309309498" id="4122658121470738166" />
         <var name="errorTarget" id="4122658121470738166" />
       </scope>
-      <scope id="4122658121470112692" at="63,0,66,0" />
-      <scope id="4122658121470112692" at="66,0,69,0">
+      <scope id="4122658121470112692" at="77,0,80,0" />
+      <scope id="4122658121470112692" at="80,0,83,0">
         <var name="argument" id="4122658121470112692" />
       </scope>
-      <scope id="4122658121470112692" at="69,0,72,0" />
-      <scope id="4122658121470112706" at="23,100,27,7" />
-      <scope id="4122658121470738131" at="29,107,33,7" />
-      <scope id="4122658121470738139" at="35,107,39,7" />
-      <scope id="4122658121470738147" at="41,107,45,7" />
-      <scope id="4122658121470738156" at="48,107,52,7" />
-      <scope id="4122658121470738165" at="55,101,59,7" />
-      <scope id="4122658121470112693" at="21,119,61,0" />
-      <scope id="4122658121470112692" at="21,0,63,0">
+      <scope id="4122658121470112692" at="83,0,86,0" />
+      <scope id="4122658121470738131" at="36,107,41,7">
+        <var name="upper_x" id="8062570699130770852" />
+      </scope>
+      <scope id="4122658121470738139" at="43,107,48,7">
+        <var name="upper_y" id="8062570699130773039" />
+      </scope>
+      <scope id="4122658121470738147" at="50,107,55,7">
+        <var name="lower_x" id="8062570699130775822" />
+      </scope>
+      <scope id="4122658121470738156" at="58,107,63,7">
+        <var name="lower_y" id="8062570699130779837" />
+      </scope>
+      <scope id="4122658121470738165" at="66,101,73,7">
+        <var name="lower_z" id="8062570699130782419" />
+        <var name="upper_z" id="8062570699130782884" />
+      </scope>
+      <scope id="4122658121470112706" at="23,100,34,7">
+        <var name="lower_x" id="8062570699130718540" />
+        <var name="lower_y" id="8062570699130719891" />
+        <var name="lower_z" id="8062570699130722191" />
+        <var name="upper_x" id="8062570699130724468" />
+        <var name="upper_y" id="8062570699130727050" />
+        <var name="upper_z" id="8062570699130729477" />
+      </scope>
+      <scope id="4122658121470112693" at="21,119,75,0" />
+      <scope id="4122658121470112692" at="21,0,77,0">
         <var name="status" id="4122658121470112692" />
         <var name="tissue" id="4122658121470112692" />
         <var name="typeCheckingContext" id="4122658121470112692" />
       </scope>
-      <unit id="4122658121470112692" at="73,0,76,0" name="TissueSetup.typesystem.noTissueCollision_NonTypesystemRule$CONCEPTS" />
-      <unit id="4122658121470112692" at="18,0,77,0" name="TissueSetup.typesystem.noTissueCollision_NonTypesystemRule" />
+      <unit id="4122658121470112692" at="87,0,90,0" name="TissueSetup.typesystem.noTissueCollision_NonTypesystemRule$CONCEPTS" />
+      <unit id="4122658121470112692" at="18,0,91,0" name="TissueSetup.typesystem.noTissueCollision_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/7299877976789619039">

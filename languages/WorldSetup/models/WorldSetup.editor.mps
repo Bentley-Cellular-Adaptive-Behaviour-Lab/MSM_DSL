@@ -43,6 +43,7 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -281,35 +282,14 @@
         <node concept="3F0A7n" id="4JVq81FonWk" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
-        <node concept="3F0ifn" id="4JVq81FonWq" role="3EZMnx">
-          <property role="3F0ifm" value="is located at" />
-        </node>
-        <node concept="3F1sOY" id="4JVq81FonWy" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:7faAukhALWq" resolve="Centre_Position" />
-        </node>
-        <node concept="3F0ifn" id="4JVq81FonWG" role="3EZMnx">
-          <property role="3F0ifm" value="." />
-        </node>
-        <node concept="2iRfu4" id="4JVq81FonWg" role="2iSdaV" />
-      </node>
-      <node concept="3EZMnI" id="4JVq81Foo0m" role="3EZMnx">
-        <node concept="VPM3Z" id="4JVq81Foo0o" role="3F10Kt" />
-        <node concept="3F0ifn" id="4JVq81FreI_" role="3EZMnx">
-          <property role="3F0ifm" value="    " />
-        </node>
-        <node concept="3F0A7n" id="4JVq81Foo0A" role="3EZMnx">
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        </node>
-        <node concept="3F0ifn" id="4JVq81Foo0G" role="3EZMnx">
+        <node concept="3F0ifn" id="29SopcHq_BK" role="3EZMnx">
           <property role="3F0ifm" value="has the following shape:" />
         </node>
-        <node concept="3F1sOY" id="4JVq81Foo0O" role="3EZMnx">
+        <node concept="3F1sOY" id="29SopcHq_BL" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:57aaQbDDBXl" resolve="shape" />
         </node>
-        <node concept="3F0ifn" id="4JVq81Foo35" role="3EZMnx">
-          <property role="3F0ifm" value="." />
-        </node>
-        <node concept="2iRfu4" id="4JVq81Foo0r" role="2iSdaV" />
+        <node concept="3F0ifn" id="29SopcHq_BM" role="3EZMnx" />
+        <node concept="2iRfu4" id="4JVq81FonWg" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="4JVq81Foo2c" role="3EZMnx">
         <node concept="VPM3Z" id="4JVq81Foo2e" role="3F10Kt" />
@@ -325,35 +305,49 @@
         <node concept="3F0A7n" id="4JVq81Foo2K" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:7faAukhALWw" resolve="adhesiveness" />
         </node>
-        <node concept="3F0ifn" id="4JVq81Foo2U" role="3EZMnx">
-          <property role="3F0ifm" value="." />
-        </node>
         <node concept="2iRfu4" id="4JVq81Foo2h" role="2iSdaV" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fp7dr">
     <ref role="1XX52x" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
-    <node concept="3EZMnI" id="4JVq81Fp7dt" role="2wV5jI">
-      <node concept="3F0ifn" id="4JVq81Fp7d$" role="3EZMnx">
-        <property role="3F0ifm" value="Cuboidal with a height of" />
+    <node concept="3EZMnI" id="29SopcHq_NF" role="2wV5jI">
+      <node concept="3EZMnI" id="29SopcHq_Qu" role="3EZMnx">
+        <node concept="VPM3Z" id="29SopcHq_Qw" role="3F10Kt" />
+        <node concept="3F0ifn" id="29SopcHq_Qy" role="3EZMnx">
+          <property role="3F0ifm" value="Cuboidal with width" />
+        </node>
+        <node concept="3F0A7n" id="29SopcHq_S5" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXo" resolve="width" />
+        </node>
+        <node concept="3F0ifn" id="29SopcHq_Ss" role="3EZMnx">
+          <property role="3F0ifm" value=", height" />
+        </node>
+        <node concept="3F0A7n" id="29SopcHq_U$" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXq" resolve="height" />
+        </node>
+        <node concept="3F0ifn" id="29SopcHq_Vt" role="3EZMnx">
+          <property role="3F0ifm" value="and depth" />
+        </node>
+        <node concept="3F0A7n" id="29SopcHq_Xs" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXt" resolve="depth" />
+        </node>
+        <node concept="3F0ifn" id="29SopcHq_XV" role="3EZMnx">
+          <property role="3F0ifm" value="." />
+        </node>
+        <node concept="2iRfu4" id="29SopcHq_Qz" role="2iSdaV" />
       </node>
-      <node concept="3F0A7n" id="4JVq81Fp7dE" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:57aaQbDDBXq" resolve="height" />
+      <node concept="3EZMnI" id="29SopcHq_ZE" role="3EZMnx">
+        <node concept="VPM3Z" id="29SopcHq_ZG" role="3F10Kt" />
+        <node concept="3F0ifn" id="29SopcHqA1Q" role="3EZMnx">
+          <property role="3F0ifm" value="Centrally located at coordinates" />
+        </node>
+        <node concept="3F1sOY" id="29SopcHqA2D" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:29SopcHq_yR" resolve="Substrate_Position" />
+        </node>
+        <node concept="2iRfu4" id="29SopcHq_ZJ" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4JVq81Fp7dM" role="3EZMnx">
-        <property role="3F0ifm" value=", width of" />
-      </node>
-      <node concept="3F0A7n" id="4JVq81Fp7dW" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:57aaQbDDBXo" resolve="width" />
-      </node>
-      <node concept="3F0ifn" id="4JVq81Fp7e8" role="3EZMnx">
-        <property role="3F0ifm" value="and depth of" />
-      </node>
-      <node concept="3F0A7n" id="4JVq81Fp7em" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:57aaQbDDBXt" resolve="depth" />
-      </node>
-      <node concept="2iRfu4" id="4JVq81Fp7dw" role="2iSdaV" />
+      <node concept="2iRkQZ" id="29SopcHq_NI" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fp7f9">
@@ -362,24 +356,45 @@
       <node concept="2iRkQZ" id="4JVq81Fp7gd" role="2iSdaV" />
       <node concept="3EZMnI" id="4JVq81Fp7fe" role="3EZMnx">
         <node concept="3F0ifn" id="4JVq81Fp7fg" role="3EZMnx">
-          <property role="3F0ifm" value="Triangular Prism with vertices at" />
-        </node>
-        <node concept="3F1sOY" id="4JVq81Fp7fo" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
-        </node>
-        <node concept="3F0ifn" id="4JVq81Fp7fw" role="3EZMnx">
-          <property role="3F0ifm" value="," />
-        </node>
-        <node concept="3F1sOY" id="4JVq81Fp7fE" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
-        </node>
-        <node concept="3F0ifn" id="4JVq81Fp7fQ" role="3EZMnx">
-          <property role="3F0ifm" value="and" />
-        </node>
-        <node concept="3F1sOY" id="4JVq81Fp7g4" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+          <property role="3F0ifm" value="Triangular Prism with vertices at:" />
         </node>
         <node concept="2iRfu4" id="4JVq81Fp7fh" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="29SopcHrrle" role="3EZMnx">
+        <node concept="2iRkQZ" id="29SopcHrrlh" role="2iSdaV" />
+        <node concept="3EZMnI" id="29SopcHrrrP" role="3EZMnx">
+          <node concept="VPM3Z" id="29SopcHrrrR" role="3F10Kt" />
+          <node concept="3XFhqQ" id="29SopcHrrtR" role="3EZMnx" />
+          <node concept="3F0ifn" id="29SopcHrryH" role="3EZMnx">
+            <property role="3F0ifm" value="Vertex 1:" />
+          </node>
+          <node concept="3F1sOY" id="29SopcHrruv" role="3EZMnx">
+            <ref role="1NtTu8" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+          </node>
+          <node concept="2iRfu4" id="29SopcHrrrU" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="29SopcHrrzI" role="3EZMnx">
+          <node concept="VPM3Z" id="29SopcHrrzK" role="3F10Kt" />
+          <node concept="3XFhqQ" id="29SopcHrr_o" role="3EZMnx" />
+          <node concept="3F0ifn" id="29SopcHrr_H" role="3EZMnx">
+            <property role="3F0ifm" value="Vertex 2:" />
+          </node>
+          <node concept="3F1sOY" id="29SopcHrrB0" role="3EZMnx">
+            <ref role="1NtTu8" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+          </node>
+          <node concept="2iRfu4" id="29SopcHrrzN" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="29SopcHrrC8" role="3EZMnx">
+          <node concept="VPM3Z" id="29SopcHrrCa" role="3F10Kt" />
+          <node concept="3XFhqQ" id="29SopcHrrDb" role="3EZMnx" />
+          <node concept="3F0ifn" id="29SopcHrrDw" role="3EZMnx">
+            <property role="3F0ifm" value="Vertex 3:" />
+          </node>
+          <node concept="3F1sOY" id="29SopcHrrE$" role="3EZMnx">
+            <ref role="1NtTu8" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+          </node>
+          <node concept="2iRfu4" id="29SopcHrrCd" role="2iSdaV" />
+        </node>
       </node>
       <node concept="3EZMnI" id="4JVq81Fp7gE" role="3EZMnx">
         <node concept="VPM3Z" id="4JVq81Fp7gG" role="3F10Kt" />
@@ -390,7 +405,13 @@
           <ref role="1NtTu8" to="s9ob:4JVq81Fgy8C" resolve="depth" />
         </node>
         <node concept="3F0ifn" id="4JVq81Fp7hK" role="3EZMnx">
-          <property role="3F0ifm" value="depth." />
+          <property role="3F0ifm" value="depth and is centrally located at Z" />
+        </node>
+        <node concept="3F0A7n" id="29SopcHrS9o" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:29SopcHrS19" resolve="z_location" />
+        </node>
+        <node concept="3F0ifn" id="29SopcHrSa2" role="3EZMnx">
+          <property role="3F0ifm" value="." />
         </node>
         <node concept="2iRfu4" id="4JVq81Fp7gJ" role="2iSdaV" />
       </node>

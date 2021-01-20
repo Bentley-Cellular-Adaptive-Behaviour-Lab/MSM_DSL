@@ -3,12 +3,9 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="1" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
-    <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -160,13 +157,6 @@
     <property role="TrG5h" value="Substrate" />
     <property role="R4oN_" value="Concept for describing a cellular substrate that cells can grow on." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7faAukhALWq" role="1TKVEi">
-      <property role="IQ2ns" value="8343650468779204378" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Centre_Position" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="nguq:5qSYbADreY7" resolve="Position" />
-    </node>
     <node concept="1TJgyj" id="57aaQbDDBXl" role="1TKVEi">
       <property role="IQ2ns" value="5893570766194507605" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -261,6 +251,11 @@
     <property role="TrG5h" value="Substrate_Shape_Triangular" />
     <property role="R4oN_" value="Concept for describing a substrate in the shape of a triagnular prism." />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
+    <node concept="1TJgyi" id="29SopcHrS19" role="1TKVEl">
+      <property role="IQ2nx" value="2483842479245197385" />
+      <property role="TrG5h" value="z_location" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyi" id="4JVq81Fgy8C" role="1TKVEl">
       <property role="IQ2nx" value="5475084672763568680" />
       <property role="TrG5h" value="depth" />
@@ -307,6 +302,13 @@
       <property role="IQ2nx" value="5893570766194507613" />
       <property role="TrG5h" value="depth" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="29SopcHq_yR" role="1TKVEi">
+      <property role="IQ2ns" value="2483842479244859575" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Substrate_Position" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="nguq:5qSYbADreY7" resolve="Position" />
     </node>
   </node>
   <node concept="1TIwiD" id="57aaQbDDBXz">

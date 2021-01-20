@@ -7,7 +7,6 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="qgeq" ref="r:eed912a6-16e8-466b-b48a-0e82310c46dd(jetbrains.mps.lang.editor.tooltips.editor)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -266,6 +265,19 @@
             </node>
             <node concept="2iRfu4" id="3mEqLZygWqM" role="2iSdaV" />
           </node>
+          <node concept="3EZMnI" id="6Z$0llyihJJ" role="3EZMnx">
+            <node concept="VPM3Z" id="6Z$0llyihJL" role="3F10Kt" />
+            <node concept="3F0ifn" id="6Z$0llyihLD" role="3EZMnx">
+              <property role="3F0ifm" value="The vessel will be " />
+            </node>
+            <node concept="3F0A7n" id="6Z$0llyihKz" role="3EZMnx">
+              <ref role="1NtTu8" to="nguq:6Z$0llyihG3" resolve="cylinder_total_length_int" />
+            </node>
+            <node concept="3F0ifn" id="6Z$0llyihNL" role="3EZMnx">
+              <property role="3F0ifm" value=" grid points long." />
+            </node>
+            <node concept="2iRfu4" id="6Z$0llyihJO" role="2iSdaV" />
+          </node>
         </node>
       </node>
       <node concept="2iRkQZ" id="4JVq81Fi8qY" role="2iSdaV" />
@@ -309,19 +321,19 @@
     <ref role="1XX52x" to="nguq:5qSYbADreY7" resolve="Position" />
     <node concept="3EZMnI" id="4JVq81FjdQ9" role="2wV5jI">
       <node concept="3F0ifn" id="4JVq81FjdQg" role="3EZMnx">
-        <property role="3F0ifm" value="X-coord" />
+        <property role="3F0ifm" value="X:" />
       </node>
       <node concept="3F0A7n" id="4JVq81FjdQm" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYz" resolve="x_coord" />
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQu" role="3EZMnx">
-        <property role="3F0ifm" value=", Y-coord" />
+        <property role="3F0ifm" value=", Y:" />
       </node>
       <node concept="3F0A7n" id="4JVq81FjdQC" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreY_" resolve="y_coord" />
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQO" role="3EZMnx">
-        <property role="3F0ifm" value="and Z-coord" />
+        <property role="3F0ifm" value=", Z:" />
       </node>
       <node concept="3F0A7n" id="4JVq81FjdR2" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYC" resolve="z_coord" />

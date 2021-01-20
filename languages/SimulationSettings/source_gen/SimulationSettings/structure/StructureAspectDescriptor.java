@@ -65,7 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("Analysis_Type", 0x6be76a078e4fb7ffL).type(MetaIdFactory.dataTypeId(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L)).origin("7775299862363355135").done();
     b.property("Max_Time_Steps", 0x6be76a078e4fb801L).type(PrimitiveTypeId.INTEGER).origin("7775299862363355137").done();
-    b.property("Graphics", 0x6be76a078e4fb804L).type(MetaIdFactory.dataTypeId(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L)).origin("7775299862363355140").done();
+    b.property("Graphics_Option", 0x6be76a078e4fb804L).type(MetaIdFactory.dataTypeId(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L)).origin("7775299862363355140").done();
     b.associate("Desired_World_Setup", 0x6be76a078e4fb7e5L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L).optional(false).origin("7775299862363355109").done();
     return b.create();
   }
