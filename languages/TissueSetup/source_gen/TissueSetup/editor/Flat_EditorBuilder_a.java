@@ -10,9 +10,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.tooltips.runtime.LazyTooltipCellEvaluator;
-import jetbrains.mps.lang.editor.tooltips.runtime.TooltipTimingProperties;
-import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.lang.editor.tooltips.runtime.TooltipWrapper;
+import jetbrains.mps.lang.editor.tooltips.runtime.TooltipTimingProperties;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -63,22 +62,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createTooltip_0(final EditorContext editorContext, final SNode node) {
-
     LazyTooltipCellEvaluator tooltip = new LazyTooltipCellEvaluator(editorContext, node, "TissueSetup.editor.GeneratedHints.tooltipHint_4rlqih_a0", true);
     EditorCell visibleCell = createCollection_1();
 
-    TooltipTimingProperties timing = new TooltipTimingProperties() {
-      @Override
-      public int getShortDelayBeforeShow() {
-        return Registry.intValue("ide.tooltip.initialDelay");
-      }
-
-      @Override
-      public int getShowImmediatelyPeriod() {
-        return Registry.intValue("ide.tooltip.reshowDelay");
-      }
-    };
-    TooltipWrapper editorCell = new TooltipWrapper(editorContext, node, visibleCell, tooltip, timing);
+    TooltipWrapper editorCell = new TooltipWrapper(editorContext, node, visibleCell, tooltip, TooltipTimingProperties.DEFAULT);
     editorCell.setCellId("Tooltip_4rlqih_a0");
     return editorCell;
   }

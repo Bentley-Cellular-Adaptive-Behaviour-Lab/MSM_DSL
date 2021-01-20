@@ -463,24 +463,16 @@
           <node concept="2YIFZM" id="4JVq81Ftngk" role="33vP2m">
             <ref role="37wK5l" to="wyt6:~Integer.getInteger(java.lang.String)" resolve="getInteger" />
             <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-            <node concept="2OqwBi" id="4JVq81Ftot$" role="37wK5m">
-              <node concept="2OqwBi" id="4JVq81Fto0q" role="2Oq$k0">
-                <node concept="1PxgMI" id="4JVq81FtnPI" role="2Oq$k0">
-                  <node concept="chp4Y" id="4JVq81FtnQz" role="3oSUPX">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBM" resolve="Substrate" />
-                  </node>
-                  <node concept="2OqwBi" id="4JVq81FtnrT" role="1m5AlR">
-                    <node concept="1YBJjd" id="4JVq81Ftnhh" role="2Oq$k0">
-                      <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
-                    </node>
-                    <node concept="1mfA1w" id="4JVq81Ftn_m" role="2OqNvi" />
-                  </node>
+            <node concept="2OqwBi" id="29SopcHrKFT" role="37wK5m">
+              <node concept="2OqwBi" id="4JVq81FtnrT" role="2Oq$k0">
+                <node concept="1YBJjd" id="4JVq81Ftnhh" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
                 </node>
-                <node concept="3TrEf2" id="4JVq81Fto93" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALWq" resolve="Centre_Position" />
+                <node concept="3TrEf2" id="29SopcHrKd8" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Substrate_Position" />
                 </node>
               </node>
-              <node concept="2qgKlT" id="4JVq81FtoBK" role="2OqNvi">
+              <node concept="2qgKlT" id="29SopcHrLlZ" role="2OqNvi">
                 <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_x_coord" />
               </node>
             </node>
@@ -494,24 +486,16 @@
           <node concept="2YIFZM" id="4JVq81FtoHc" role="33vP2m">
             <ref role="37wK5l" to="wyt6:~Integer.getInteger(java.lang.String)" resolve="getInteger" />
             <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-            <node concept="2OqwBi" id="4JVq81FtoHd" role="37wK5m">
-              <node concept="2OqwBi" id="4JVq81FtoHe" role="2Oq$k0">
-                <node concept="1PxgMI" id="4JVq81FtoHf" role="2Oq$k0">
-                  <node concept="chp4Y" id="4JVq81FtoHg" role="3oSUPX">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBM" resolve="Substrate" />
-                  </node>
-                  <node concept="2OqwBi" id="4JVq81FtoHh" role="1m5AlR">
-                    <node concept="1YBJjd" id="4JVq81FtoHi" role="2Oq$k0">
-                      <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
-                    </node>
-                    <node concept="1mfA1w" id="4JVq81FtoHj" role="2OqNvi" />
-                  </node>
+            <node concept="2OqwBi" id="29SopcHrMvr" role="37wK5m">
+              <node concept="2OqwBi" id="4JVq81FtoHh" role="2Oq$k0">
+                <node concept="1YBJjd" id="4JVq81FtoHi" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
                 </node>
-                <node concept="3TrEf2" id="4JVq81FtoHk" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALWq" resolve="Centre_Position" />
+                <node concept="3TrEf2" id="29SopcHrLZn" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Substrate_Position" />
                 </node>
               </node>
-              <node concept="2qgKlT" id="4JVq81FtoLp" role="2OqNvi">
+              <node concept="2qgKlT" id="29SopcHrNej" role="2OqNvi">
                 <ref role="37wK5l" to="4ebj:4DdJmqSGaIc" resolve="get_y_coord" />
               </node>
             </node>
@@ -525,24 +509,16 @@
           <node concept="2YIFZM" id="4JVq81FtoQ4" role="33vP2m">
             <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
             <ref role="37wK5l" to="wyt6:~Integer.getInteger(java.lang.String)" resolve="getInteger" />
-            <node concept="2OqwBi" id="4JVq81FtoQ5" role="37wK5m">
-              <node concept="2OqwBi" id="4JVq81FtoQ6" role="2Oq$k0">
-                <node concept="1PxgMI" id="4JVq81FtoQ7" role="2Oq$k0">
-                  <node concept="chp4Y" id="4JVq81FtoQ8" role="3oSUPX">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBM" resolve="Substrate" />
-                  </node>
-                  <node concept="2OqwBi" id="4JVq81FtoQ9" role="1m5AlR">
-                    <node concept="1YBJjd" id="4JVq81FtoQa" role="2Oq$k0">
-                      <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
-                    </node>
-                    <node concept="1mfA1w" id="4JVq81FtoQb" role="2OqNvi" />
-                  </node>
+            <node concept="2OqwBi" id="29SopcHrOdJ" role="37wK5m">
+              <node concept="2OqwBi" id="4JVq81FtoQ9" role="2Oq$k0">
+                <node concept="1YBJjd" id="4JVq81FtoQa" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4JVq81Ftekc" resolve="thisCuboid" />
                 </node>
-                <node concept="3TrEf2" id="4JVq81FtoQc" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALWq" resolve="Centre_Position" />
+                <node concept="3TrEf2" id="29SopcHrNN3" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Substrate_Position" />
                 </node>
               </node>
-              <node concept="2qgKlT" id="4JVq81FtpbK" role="2OqNvi">
+              <node concept="2qgKlT" id="29SopcHrOV3" role="2OqNvi">
                 <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
               </node>
             </node>
@@ -555,11 +531,11 @@
           <node concept="2MkqsV" id="4JVq81Ftznv" role="3cqZAp">
             <node concept="3cpWs3" id="4JVq81FtA5J" role="2MkJ7o">
               <node concept="Xl_RD" id="4JVq81FtAr0" role="3uHU7w">
-                <property role="Xl_RC" value="is out of bounds." />
+                <property role="Xl_RC" value=" is out of bounds." />
               </node>
               <node concept="3cpWs3" id="4JVq81FtzEi" role="3uHU7B">
                 <node concept="Xl_RD" id="4JVq81FtznI" role="3uHU7B">
-                  <property role="Xl_RC" value="Cuboid shape for substrate " />
+                  <property role="Xl_RC" value="Substrate " />
                 </node>
                 <node concept="2OqwBi" id="4JVq81Ft_yn" role="3uHU7w">
                   <node concept="2OqwBi" id="4JVq81FtzQP" role="2Oq$k0">
@@ -659,11 +635,11 @@
           <node concept="2MkqsV" id="4JVq81FtB$_" role="3cqZAp">
             <node concept="3cpWs3" id="4JVq81FtB$A" role="2MkJ7o">
               <node concept="Xl_RD" id="4JVq81FtB$B" role="3uHU7w">
-                <property role="Xl_RC" value="is out of bounds." />
+                <property role="Xl_RC" value=" is out of bounds." />
               </node>
               <node concept="3cpWs3" id="4JVq81FtB$C" role="3uHU7B">
                 <node concept="Xl_RD" id="4JVq81FtB$D" role="3uHU7B">
-                  <property role="Xl_RC" value="Cuboid shape for substrate " />
+                  <property role="Xl_RC" value="Substrate " />
                 </node>
                 <node concept="2OqwBi" id="4JVq81FtB$E" role="3uHU7w">
                   <node concept="2OqwBi" id="4JVq81FtB$F" role="2Oq$k0">
@@ -763,11 +739,11 @@
           <node concept="2MkqsV" id="4JVq81FtEkf" role="3cqZAp">
             <node concept="3cpWs3" id="4JVq81FtEkg" role="2MkJ7o">
               <node concept="Xl_RD" id="4JVq81FtEkh" role="3uHU7w">
-                <property role="Xl_RC" value="is out of bounds." />
+                <property role="Xl_RC" value=" is out of bounds." />
               </node>
               <node concept="3cpWs3" id="4JVq81FtEki" role="3uHU7B">
                 <node concept="Xl_RD" id="4JVq81FtEkj" role="3uHU7B">
-                  <property role="Xl_RC" value="Cuboid shape for substrate " />
+                  <property role="Xl_RC" value="Substrate " />
                 </node>
                 <node concept="2OqwBi" id="4JVq81FtEkk" role="3uHU7w">
                   <node concept="2OqwBi" id="4JVq81FtEkl" role="2Oq$k0">
@@ -924,29 +900,12 @@
         <node concept="3cpWsn" id="4JVq81FtHi8" role="3cpWs9">
           <property role="TrG5h" value="centre_z" />
           <node concept="10Oyi0" id="4JVq81FtHi9" role="1tU5fm" />
-          <node concept="2YIFZM" id="4JVq81FtHia" role="33vP2m">
-            <ref role="37wK5l" to="wyt6:~Integer.getInteger(java.lang.String)" resolve="getInteger" />
-            <ref role="1Pybhc" to="wyt6:~Integer" resolve="Integer" />
-            <node concept="2OqwBi" id="4JVq81FtHib" role="37wK5m">
-              <node concept="2OqwBi" id="4JVq81FtHic" role="2Oq$k0">
-                <node concept="1PxgMI" id="4JVq81FtHid" role="2Oq$k0">
-                  <node concept="chp4Y" id="4JVq81FtHie" role="3oSUPX">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBM" resolve="Substrate" />
-                  </node>
-                  <node concept="2OqwBi" id="4JVq81FtHif" role="1m5AlR">
-                    <node concept="1YBJjd" id="4JVq81FtHsd" role="2Oq$k0">
-                      <ref role="1YBMHb" node="4JVq81FtFyz" resolve="thisTriangular" />
-                    </node>
-                    <node concept="1mfA1w" id="4JVq81FtHih" role="2OqNvi" />
-                  </node>
-                </node>
-                <node concept="3TrEf2" id="4JVq81FtHii" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALWq" resolve="Centre_Position" />
-                </node>
-              </node>
-              <node concept="2qgKlT" id="4JVq81FtHij" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
-              </node>
+          <node concept="2OqwBi" id="29SopcHsb1z" role="33vP2m">
+            <node concept="1YBJjd" id="29SopcHsaQi" role="2Oq$k0">
+              <ref role="1YBMHb" node="4JVq81FtFyz" resolve="thisTriangular" />
+            </node>
+            <node concept="3TrcHB" id="29SopcHsbyy" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:29SopcHrS19" resolve="z_location" />
             </node>
           </node>
         </node>
@@ -957,11 +916,11 @@
           <node concept="2MkqsV" id="4JVq81FtFz6" role="3cqZAp">
             <node concept="3cpWs3" id="4JVq81FtFz7" role="2MkJ7o">
               <node concept="Xl_RD" id="4JVq81FtFz8" role="3uHU7w">
-                <property role="Xl_RC" value="is out of bounds." />
+                <property role="Xl_RC" value=" is out of bounds." />
               </node>
               <node concept="3cpWs3" id="4JVq81FtFz9" role="3uHU7B">
                 <node concept="Xl_RD" id="4JVq81FtFza" role="3uHU7B">
-                  <property role="Xl_RC" value="Cuboid shape for substrate " />
+                  <property role="Xl_RC" value="Substrate " />
                 </node>
                 <node concept="2OqwBi" id="4JVq81FtFzb" role="3uHU7w">
                   <node concept="2OqwBi" id="4JVq81FtFzc" role="2Oq$k0">

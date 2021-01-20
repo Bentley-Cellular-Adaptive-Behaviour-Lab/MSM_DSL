@@ -60,7 +60,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "X-coord");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "X:");
     editorCell.setCellId("Constant_hjjxd_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -91,7 +91,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Y-coord");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Y:");
     editorCell.setCellId("Constant_hjjxd_c0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -122,7 +122,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "and Z-coord");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Z:");
     editorCell.setCellId("Constant_hjjxd_e0");
     editorCell.setDefaultText("");
     return editorCell;

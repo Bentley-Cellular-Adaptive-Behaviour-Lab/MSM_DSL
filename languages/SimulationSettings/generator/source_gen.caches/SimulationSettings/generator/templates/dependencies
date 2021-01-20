@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="SimulationSettings.generator.templates.QueriesGenerated">
     <classNode dependClassName="SimulationSettings.behavior.Settings_Container__BehaviorDescriptor" />
+    <classNode dependClassName="TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

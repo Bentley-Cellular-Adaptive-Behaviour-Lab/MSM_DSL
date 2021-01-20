@@ -334,7 +334,7 @@
             </node>
           </node>
           <node concept="356sEF" id="7DI3IP9rY9U" role="356sEH">
-            <property role="TrG5h" value="_Type" />
+            <property role="TrG5h" value="_Type;" />
           </node>
           <node concept="2EixSi" id="7DI3IP9rXc4" role="2EinRH" />
           <node concept="1WS0z7" id="7DI3IP9rY9Z" role="lGtFl">

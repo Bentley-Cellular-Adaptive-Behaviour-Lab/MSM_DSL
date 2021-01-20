@@ -69,11 +69,25 @@ public class Cylindrical_Constraints extends BaseConstraintsDescriptor {
       return (int) Arrangement__BehaviorDescriptor.get_total_cell_number_id4XZPqyVOpH$.invoke(node);
     }
   }
+  public static class Cylinder_total_length_int_Property extends BasePropertyConstraintsDescriptor {
+    public Cylinder_total_length_int_Property(ConstraintsDescriptor container) {
+      super(PROPS.cylinder_total_length_int$Xfju, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Cylindrical__BehaviorDescriptor.get_total_length_int_id1QpPlI52lcy.invoke(node);
+    }
+  }
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
     properties.put(PROPS.cylinder_cross_section_cells$pzjl, new Cylinder_cross_section_cells_Property(this));
     properties.put(PROPS.cylinder_total_cells$o_jT, new Cylinder_total_cells_Property(this));
+    properties.put(PROPS.cylinder_total_length_int$Xfju, new Cylinder_total_length_int_Property(this));
     return properties;
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
@@ -88,5 +102,6 @@ public class Cylindrical_Constraints extends BaseConstraintsDescriptor {
   private static final class PROPS {
     /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
     /*package*/ static final SProperty cylinder_total_cells$o_jT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x4bfb68806b4ffab2L, "cylinder_total_cells");
+    /*package*/ static final SProperty cylinder_total_length_int$Xfju = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x6fe4015562491b03L, "cylinder_total_length_int");
   }
 }
