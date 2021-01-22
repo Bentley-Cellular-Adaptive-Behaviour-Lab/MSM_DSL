@@ -91,7 +91,7 @@
       <node id="2132970487587146628" at="209,0,210,0" concept="11" trace="grid$mgtJ" />
       <node id="2132970487587146628" at="210,0,211,0" concept="11" trace="position$L2Mv" />
       <node id="2132970487587146628" at="211,0,212,0" concept="11" trace="cell_type$3r_d" />
-      <node id="2132970487587146628" at="212,0,213,0" concept="11" trace="shape$q0mn" />
+      <node id="2132970487587146628" at="212,0,213,0" concept="11" trace="Shape$q0mn" />
       <node id="2132970487587146628" at="216,0,217,0" concept="11" trace="X_Size$PwQq" />
       <node id="2132970487587146628" at="217,0,218,0" concept="11" trace="Y_Size$Pxks" />
       <node id="2132970487587146628" at="218,0,219,0" concept="11" trace="z_coord$pLQj" />
@@ -899,7 +899,7 @@
       <node id="5354143780896026259" at="140,0,141,0" concept="11" trace="Tissue_Type$C4" />
       <node id="5354143780896026259" at="141,0,142,0" concept="11" trace="Rectangular$1r" />
       <node id="5354143780896026259" at="145,0,146,0" concept="11" trace="cell_type$E3tO" />
-      <node id="5354143780896026259" at="146,0,147,0" concept="11" trace="shape$q0mn" />
+      <node id="5354143780896026259" at="146,0,147,0" concept="11" trace="Shape$q0mn" />
       <node id="5354143780896026259" at="41,0,43,0" concept="12" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5354143780896026259" at="73,0,75,0" concept="2" trace="Cylindrical__BehaviorDescriptor#()V" />
       <node id="5354143780896026259" at="56,0,59,0" concept="12" trace="get_total_cell_number_id4XZPqyVOpH$#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
@@ -1043,7 +1043,7 @@
       <node id="5354143780896073485" at="122,0,123,0" concept="11" trace="Tissue_Type$C4" />
       <node id="5354143780896073485" at="123,0,124,0" concept="11" trace="Rectangular$1r" />
       <node id="5354143780896073485" at="127,0,128,0" concept="11" trace="cell_type$E3tO" />
-      <node id="5354143780896073485" at="128,0,129,0" concept="11" trace="shape$q0mn" />
+      <node id="5354143780896073485" at="128,0,129,0" concept="11" trace="Shape$q0mn" />
       <node id="5354143780896073485" at="39,0,41,0" concept="12" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5354143780896073485" at="60,0,62,0" concept="2" trace="Flat__BehaviorDescriptor#()V" />
       <node id="5354143780896073485" at="50,0,53,0" concept="12" trace="get_total_width_int_id1QpPlI52vjz#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />

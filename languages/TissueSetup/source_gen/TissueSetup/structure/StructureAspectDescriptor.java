@@ -16,6 +16,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptArrangement = createDescriptorForArrangement();
   /*package*/ final ConceptDescriptor myConceptCell = createDescriptorForCell();
   /*package*/ final ConceptDescriptor myConceptCell_Type = createDescriptorForCell_Type();
+  /*package*/ final ConceptDescriptor myConceptCell_Type_Reference = createDescriptorForCell_Type_Reference();
   /*package*/ final ConceptDescriptor myConceptCylindrical = createDescriptorForCylindrical();
   /*package*/ final ConceptDescriptor myConceptFlat = createDescriptorForFlat();
   /*package*/ final ConceptDescriptor myConceptPosition = createDescriptorForPosition();
@@ -34,11 +35,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.aggregatedLanguage(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, "ProteinSetup");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptArrangement, myConceptCell, myConceptCell_Type, myConceptCylindrical, myConceptFlat, myConceptPosition, myConceptRectangular, myConceptShape, myConceptTissue, myConceptTissue_And_Cell_Container, myConceptTissue_Type);
+    return Arrays.asList(myConceptArrangement, myConceptCell, myConceptCell_Type, myConceptCell_Type_Reference, myConceptCylindrical, myConceptFlat, myConceptPosition, myConceptRectangular, myConceptShape, myConceptTissue, myConceptTissue_And_Cell_Container, myConceptTissue_Type);
   }
 
   @Override
@@ -51,6 +53,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCell;
       case LanguageConceptSwitch.Cell_Type:
         return myConceptCell_Type;
+      case LanguageConceptSwitch.Cell_Type_Reference:
+        return myConceptCell_Type_Reference;
       case LanguageConceptSwitch.Cylindrical:
         return myConceptCylindrical;
       case LanguageConceptSwitch.Flat:
@@ -101,7 +105,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690123");
     b.version(2);
-    b.aggregate("shape", 0x56b8f8b9a96cefbbL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L).optional(false).ordered(true).multiple(false).origin("6249017959271690171").done();
+    b.aggregate("Shape", 0x56b8f8b9a96cefbbL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L).optional(false).ordered(true).multiple(false).origin("6249017959271690171").done();
+    b.aggregate("Owned_Protein_References", 0x18c0ec6efa21088dL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("1783685413825742989").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCell_Type_Reference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("TissueSetup", "Cell_Type_Reference", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L);
+    b.class_(false, false, false);
+    b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/1783685413825413975");
+    b.version(2);
+    b.associate("Cell_Type_Reference", 0x18c0ec6efa1eac4eL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL).optional(false).origin("1783685413825588302").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCylindrical() {

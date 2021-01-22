@@ -149,23 +149,41 @@
   </node>
   <node concept="24kQdi" id="4JVq81Fhwc1">
     <ref role="1XX52x" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
-    <node concept="3EZMnI" id="4JVq81Fhwc3" role="2wV5jI">
-      <node concept="3F0ifn" id="4JVq81FiFKZ" role="3EZMnx">
-        <property role="3F0ifm" value="-" />
+    <node concept="3EZMnI" id="1z0V6VU8XrN" role="2wV5jI">
+      <node concept="3EZMnI" id="1z0V6VU8XsE" role="3EZMnx">
+        <node concept="VPM3Z" id="1z0V6VU8XsG" role="3F10Kt" />
+        <node concept="3F0ifn" id="1z0V6VU8XsI" role="3EZMnx">
+          <property role="3F0ifm" value="-" />
+        </node>
+        <node concept="3F0A7n" id="1z0V6VU8XtN" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+        <node concept="3F0ifn" id="1z0V6VU8XuC" role="3EZMnx">
+          <property role="3F0ifm" value="has shape" />
+        </node>
+        <node concept="3F1sOY" id="1z0V6VU8XvI" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5qSYbADreYV" resolve="Shape" />
+        </node>
+        <node concept="3F0ifn" id="1z0V6VU8XwB" role="3EZMnx">
+          <property role="3F0ifm" value="." />
+        </node>
+        <node concept="2iRfu4" id="1z0V6VU8XsJ" role="2iSdaV" />
       </node>
-      <node concept="3F0A7n" id="4JVq81Fhwce" role="3EZMnx">
-        <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+      <node concept="3EZMnI" id="1z0V6VU8Xy3" role="3EZMnx">
+        <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
+        <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
+          <property role="3F0ifm" value="Expresses proteins:" />
+        </node>
+        <node concept="3EZMnI" id="1z0V6VU8X$g" role="3EZMnx">
+          <node concept="3F2HdR" id="1z0V6VU8X$B" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+            <node concept="2iRkQZ" id="1z0V6VU8X$D" role="2czzBx" />
+          </node>
+          <node concept="2iRkQZ" id="1z0V6VU8X$j" role="2iSdaV" />
+        </node>
+        <node concept="2iRfu4" id="1z0V6VU8Xy8" role="2iSdaV" />
       </node>
-      <node concept="l2Vlx" id="4JVq81Fhwc5" role="2iSdaV" />
-      <node concept="3F0ifn" id="4JVq81Fhwck" role="3EZMnx">
-        <property role="3F0ifm" value="has shape " />
-      </node>
-      <node concept="3F1sOY" id="4JVq81FhwcM" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreYV" resolve="shape" />
-      </node>
-      <node concept="3F0ifn" id="4JVq81FhE4h" role="3EZMnx">
-        <property role="3F0ifm" value="." />
-      </node>
+      <node concept="2iRkQZ" id="1z0V6VU8XrQ" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">

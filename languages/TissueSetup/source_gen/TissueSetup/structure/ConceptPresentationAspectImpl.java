@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Arrangement;
   private ConceptPresentation props_Cell;
   private ConceptPresentation props_Cell_Type;
+  private ConceptPresentation props_Cell_Type_Reference;
   private ConceptPresentation props_Cylindrical;
   private ConceptPresentation props_Flat;
   private ConceptPresentation props_Position;
@@ -49,6 +50,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Cell_Type = cpb.create();
         }
         return props_Cell_Type;
+      case LanguageConceptSwitch.Cell_Type_Reference:
+        if (props_Cell_Type_Reference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L, 0x18c0ec6efa1eac4eL, "Cell_Type_Reference", "", "");
+          props_Cell_Type_Reference = cpb.create();
+        }
+        return props_Cell_Type_Reference;
       case LanguageConceptSwitch.Cylindrical:
         if (props_Cylindrical == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

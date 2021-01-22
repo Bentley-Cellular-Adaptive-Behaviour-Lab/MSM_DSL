@@ -464,8 +464,6 @@ void World::updateMemAgents(void) {
 
     bool deleted;
 
-
-
     JunctionAgents.clear();
     ALLmemAgents.clear();
     //set all agents lists to then pick current memAgent for update from---------------------------------------------------------------------------------------------------------------------------------------------------------

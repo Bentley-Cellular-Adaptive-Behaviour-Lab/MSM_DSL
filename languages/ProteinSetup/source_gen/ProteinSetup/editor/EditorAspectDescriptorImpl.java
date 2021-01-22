@@ -30,6 +30,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
         return Collections.<ConceptEditor>singletonList(new Protein_Editor());
       case 5:
         return Collections.<ConceptEditor>singletonList(new Protein_Container_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new Protein_Reference_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
@@ -50,6 +52,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aec41L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc7cL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dcd1L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc43L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8b6d4dL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aec41L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc7cL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dcd1L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc43L), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8b6d4dL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL), MetaIdFactory.conceptId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL)).seal();
 }
