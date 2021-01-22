@@ -12,20 +12,22 @@ public final class LanguageConceptSwitch {
   public static final int Arrangement = 0;
   public static final int Cell = 1;
   public static final int Cell_Type = 2;
-  public static final int Cylindrical = 3;
-  public static final int Flat = 4;
-  public static final int Position = 5;
-  public static final int Rectangular = 6;
-  public static final int Shape = 7;
-  public static final int Tissue = 8;
-  public static final int Tissue_And_Cell_Container = 9;
-  public static final int Tissue_Type = 10;
+  public static final int Cell_Type_Reference = 3;
+  public static final int Cylindrical = 4;
+  public static final int Flat = 5;
+  public static final int Position = 6;
+  public static final int Rectangular = 7;
+  public static final int Shape = 8;
+  public static final int Tissue = 9;
+  public static final int Tissue_And_Cell_Container = 10;
+  public static final int Tissue_Type = 11;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL);
     builder.put(0x56b8f8b9a96cef8aL, Arrangement);
     builder.put(0x56b8f8b9a96cef88L, Cell);
     builder.put(0x56b8f8b9a96cef8bL, Cell_Type);
+    builder.put(0x18c0ec6efa1c0357L, Cell_Type_Reference);
     builder.put(0x56b8f8b9a96cef91L, Cylindrical);
     builder.put(0x56b8f8b9a96cef9cL, Flat);
     builder.put(0x56b8f8b9a96cef87L, Position);

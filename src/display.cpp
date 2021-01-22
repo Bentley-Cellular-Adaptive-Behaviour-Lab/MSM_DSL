@@ -1404,7 +1404,7 @@ void World::viewGrid(void){
                         }
                         if (AdhesivenessView == 1) {
 							red = grid[i][j][k].Eid->adhesiveness; green = grid[i][j][k].Eid->adhesiveness; grid[i][j][k].Eid->adhesiveness;
-							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].Eid->adhesiveness)*0.01,L);
+							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].Eid->adhesiveness)*0.1,L);
 						}
                     }
                     //........................................................................................................................................................................

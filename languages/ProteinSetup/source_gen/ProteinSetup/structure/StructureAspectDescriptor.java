@@ -36,6 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
+    deps.aggregatedLanguage(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, "TissueSetup");
   }
 
   @Override
@@ -150,6 +151,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Ligand_References", 0x30bad4de2ef1b5d6L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224143830").done();
     b.aggregate("Kinase_References", 0x30bad4de2ef1b6e7L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224144103").done();
     b.aggregate("TF_References", 0x30bad4de2ef1b7a1L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224144289").done();
+    b.aggregate("Parent_Cell_Type_References", 0x18c0ec6efa1e474fL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L).optional(true).ordered(true).multiple(true).origin("1783685413825562447").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProtein_Container() {

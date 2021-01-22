@@ -62,10 +62,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_height_id4DdJmqSEQ4i.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$q0mn));
+    return (String) Shape__BehaviorDescriptor.get_height_id4DdJmqSEQ4i.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn));
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_width_id4DdJmqSEQ4q.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$q0mn));
+    return (String) Shape__BehaviorDescriptor.get_width_id4DdJmqSEQ4q.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn));
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -171,7 +171,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_5(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.cell_types$$$44)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$q0mn), CONCEPTS.Rectangular$1r);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r);
       }
     });
   }
@@ -392,7 +392,7 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "shape");
+    /*package*/ static final SContainmentLink Shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "Shape");
     /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
     /*package*/ static final SContainmentLink arrangement$aAuk = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x4369a03b1c61664bL, "arrangement");
     /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");

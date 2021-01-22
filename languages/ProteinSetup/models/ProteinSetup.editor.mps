@@ -291,5 +291,23 @@
       <node concept="2iRkQZ" id="32UPdSIWyKi" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="1z0V6VU8QcJ">
+    <ref role="1XX52x" to="yzfv:32UPdSIWjQZ" resolve="Protein_Reference" />
+    <node concept="3EZMnI" id="1z0V6VU8Qf7" role="2wV5jI">
+      <node concept="3F0ifn" id="1z0V6VU8Qgg" role="3EZMnx">
+        <property role="3F0ifm" value="-" />
+      </node>
+      <node concept="1iCGBv" id="1z0V6VU8Qg_" role="3EZMnx">
+        <ref role="1NtTu8" to="yzfv:32UPdSIWjT7" resolve="Reference_Protein" />
+        <node concept="1sVBvm" id="1z0V6VU8QgB" role="1sWHZn">
+          <node concept="3F0A7n" id="1z0V6VU8Qhs" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="1z0V6VU8Qfa" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

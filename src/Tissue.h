@@ -11,7 +11,6 @@
 
 class Tissue_Container;
 
-
 enum cell_configurations{
 	CELL_CONFIGURATION_CYLINDRICAL,
 	CELL_CONFIGURATION_FLAT,

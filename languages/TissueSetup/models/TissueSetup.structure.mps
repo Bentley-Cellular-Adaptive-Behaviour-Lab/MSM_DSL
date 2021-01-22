@@ -6,6 +6,7 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
   </imports>
@@ -181,9 +182,16 @@
     <node concept="1TJgyj" id="5qSYbADreYV" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271690171" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="shape" />
+      <property role="20kJfa" value="Shape" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreY9" resolve="Shape" />
+    </node>
+    <node concept="1TJgyj" id="1z0V6VU8gyd" role="1TKVEi">
+      <property role="IQ2ns" value="1783685413825742989" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Owned_Protein_References" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="yzfv:32UPdSIWjQZ" resolve="Protein_Reference" />
     </node>
     <node concept="PrWs8" id="4dDC3GsoAE3" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -275,6 +283,17 @@
     </node>
     <node concept="PrWs8" id="4dDC3GsoAE5" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1z0V6VU70dn">
+    <property role="EcuMT" value="1783685413825413975" />
+    <property role="TrG5h" value="Cell_Type_Reference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="1z0V6VU7ELe" role="1TKVEi">
+      <property role="IQ2ns" value="1783685413825588302" />
+      <property role="20kJfa" value="Cell_Type_Reference" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5qSYbADreYb" resolve="Cell_Type" />
     </node>
   </node>
 </model>

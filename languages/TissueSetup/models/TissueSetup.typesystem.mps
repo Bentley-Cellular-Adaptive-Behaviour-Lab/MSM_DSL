@@ -9,10 +9,15 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
+        <child id="1154032183016" name="body" index="2LFqv$" />
+      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -50,6 +55,9 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -101,6 +109,9 @@
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
@@ -121,6 +132,14 @@
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
+      </concept>
+      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
+        <child id="1153944400369" name="variable" index="2Gsz3X" />
+        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
+      </concept>
+      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
+      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
+        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
       <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
@@ -1406,6 +1425,122 @@
     <node concept="1YaCAy" id="3$QBVvWAJeR" role="1YuTPh">
       <property role="TrG5h" value="tissue" />
       <ref role="1YaFvo" to="nguq:5qSYbADreY6" resolve="Tissue" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1z0V6VUax68">
+    <property role="TrG5h" value="duplicateOwnedProtein" />
+    <node concept="3clFbS" id="1z0V6VUax69" role="18ibNy">
+      <node concept="2Gpval" id="1z0V6VUaGRC" role="3cqZAp">
+        <node concept="2GrKxI" id="1z0V6VUaGRD" role="2Gsz3X">
+          <property role="TrG5h" value="current_reference" />
+        </node>
+        <node concept="2OqwBi" id="1z0V6VUaH3C" role="2GsD0m">
+          <node concept="1YBJjd" id="1z0V6VUaGTL" role="2Oq$k0">
+            <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
+          </node>
+          <node concept="3Tsc0h" id="1z0V6VUaHbT" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="1z0V6VUaGRF" role="2LFqv$">
+          <node concept="3cpWs8" id="1z0V6VUaJao" role="3cqZAp">
+            <node concept="3cpWsn" id="1z0V6VUaJap" role="3cpWs9">
+              <property role="TrG5h" value="current_name" />
+              <node concept="3uibUv" id="1z0V6VUaJaq" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="1z0V6VUaJOA" role="33vP2m">
+                <node concept="2OqwBi" id="1z0V6VUaJlx" role="2Oq$k0">
+                  <node concept="2GrUjf" id="1z0V6VUaJc_" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="1z0V6VUaGRD" resolve="current_reference" />
+                  </node>
+                  <node concept="3TrEf2" id="1z0V6VUaJxc" role="2OqNvi">
+                    <ref role="3Tt5mk" to="yzfv:32UPdSIWjT7" resolve="Reference_Protein" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="1z0V6VUaK3I" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Gpval" id="1z0V6VUaIHq" role="3cqZAp">
+            <node concept="2GrKxI" id="1z0V6VUaIHr" role="2Gsz3X">
+              <property role="TrG5h" value="query_reference" />
+            </node>
+            <node concept="2OqwBi" id="1z0V6VUaIWX" role="2GsD0m">
+              <node concept="1YBJjd" id="1z0V6VUaIN6" role="2Oq$k0">
+                <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
+              </node>
+              <node concept="3Tsc0h" id="1z0V6VUaJ8t" role="2OqNvi">
+                <ref role="3TtcxE" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="1z0V6VUaIHt" role="2LFqv$">
+              <node concept="3cpWs8" id="1z0V6VUaK7s" role="3cqZAp">
+                <node concept="3cpWsn" id="1z0V6VUaK7t" role="3cpWs9">
+                  <property role="TrG5h" value="query_name" />
+                  <node concept="3uibUv" id="1z0V6VUaK7u" role="1tU5fm">
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                  </node>
+                  <node concept="2OqwBi" id="1z0V6VUaKGm" role="33vP2m">
+                    <node concept="2OqwBi" id="1z0V6VUaKhX" role="2Oq$k0">
+                      <node concept="2GrUjf" id="1z0V6VUaK8M" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="1z0V6VUaIHr" resolve="query_reference" />
+                      </node>
+                      <node concept="3TrEf2" id="1z0V6VUaKxE" role="2OqNvi">
+                        <ref role="3Tt5mk" to="yzfv:32UPdSIWjT7" resolve="Reference_Protein" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="1z0V6VUaKSt" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbJ" id="1z0V6VUaKVl" role="3cqZAp">
+                <node concept="3clFbS" id="1z0V6VUaKVn" role="3clFbx">
+                  <node concept="2MkqsV" id="1z0V6VUaLRc" role="3cqZAp">
+                    <node concept="3cpWs3" id="1z0V6VUaMmS" role="2MkJ7o">
+                      <node concept="Xl_RD" id="1z0V6VUaLUy" role="3uHU7B">
+                        <property role="Xl_RC" value="Duplicate owned proteins are not allowed: " />
+                      </node>
+                      <node concept="37vLTw" id="1z0V6VUaMAd" role="3uHU7w">
+                        <ref role="3cqZAo" node="1z0V6VUaJap" resolve="current_name" />
+                      </node>
+                    </node>
+                    <node concept="1YBJjd" id="1z0V6VUaLS8" role="1urrMF">
+                      <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="1Wc70l" id="1z0V6VUaLus" role="3clFbw">
+                  <node concept="17QLQc" id="1z0V6VUaLGE" role="3uHU7w">
+                    <node concept="2GrUjf" id="1z0V6VUaLOQ" role="3uHU7w">
+                      <ref role="2Gs0qQ" node="1z0V6VUaGRD" resolve="current_reference" />
+                    </node>
+                    <node concept="2GrUjf" id="1z0V6VUaLvH" role="3uHU7B">
+                      <ref role="2Gs0qQ" node="1z0V6VUaIHr" resolve="query_reference" />
+                    </node>
+                  </node>
+                  <node concept="17R0WA" id="1z0V6VUaLeR" role="3uHU7B">
+                    <node concept="37vLTw" id="1z0V6VUaKWp" role="3uHU7B">
+                      <ref role="3cqZAo" node="1z0V6VUaK7t" resolve="query_name" />
+                    </node>
+                    <node concept="37vLTw" id="1z0V6VUaLfP" role="3uHU7w">
+                      <ref role="3cqZAo" node="1z0V6VUaJap" resolve="current_name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1z0V6VUax7O" role="1YuTPh">
+      <property role="TrG5h" value="cell_type" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
     </node>
   </node>
 </model>

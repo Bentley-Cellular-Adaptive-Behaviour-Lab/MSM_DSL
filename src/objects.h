@@ -1,3 +1,4 @@
+
 #ifndef OBJECTS_H_
 #define OBJECTS_H_
 
@@ -54,7 +55,7 @@ class CPM_module;
 //#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
 //#define GRAPHICS false
 //#define ECpack 10
-//#define MAXtime 10000 ///2000 ///480 for fil lifetime
+//#define MAXtime 100000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
@@ -414,7 +415,6 @@ class CPM_module{
 };
 ///----------------------------------------
 
-
 ///----------------------------------------
 
 class Coordinates {
@@ -603,6 +603,7 @@ public:
 
     std::vector<std::array<int, 3>> filopodiaExtensions;
     std::vector<std::array<int, 3>> filopodiaRetractions;
+
 };
 ///----------------------------------------
 
@@ -949,6 +950,6 @@ public:
 };
 ///------------------------------------------------------------------------------------
 
-
 extern World* WORLDpointer;
+
 #endif /*OBJECTS_H_*/

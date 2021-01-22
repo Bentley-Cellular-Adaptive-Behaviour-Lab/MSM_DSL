@@ -21,6 +21,12 @@
         <child id="5893570766194507625" name="Vertex_2" index="2Sr5gb" />
         <child id="5893570766194507628" name="Vertex_3" index="2Sr5ge" />
       </concept>
+      <concept id="5893570766194507600" name="WorldSetup.structure.Substrate_Shape_Cuboid" flags="ng" index="2Sr5gM">
+        <property id="5893570766194507610" name="height" index="2Sr5gS" />
+        <property id="5893570766194507608" name="width" index="2Sr5gU" />
+        <property id="5893570766194507613" name="depth" index="2Sr5gZ" />
+        <child id="2483842479244859575" name="Substrate_Position" index="f4z$$" />
+      </concept>
       <concept id="8343650468779203047" name="WorldSetup.structure.Gradient" flags="ng" index="1yko02">
         <child id="232636909712164280" name="source" index="1IcVIL" />
         <child id="232636909712164282" name="sink" index="1IcVIN" />
@@ -71,6 +77,9 @@
         <property id="3192789617414367503" name="timestep_delay" index="20LJwM" />
         <property id="3192789617414367375" name="regulation_strength" index="20LJAM" />
       </concept>
+      <concept id="3511352910224113087" name="ProteinSetup.structure.Protein_Reference" flags="ng" index="uiY_x">
+        <reference id="3511352910224113223" name="Reference_Protein" index="uiYEp" />
+      </concept>
     </language>
     <language id="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3" name="SimulationSettings">
       <concept id="7775299862363134673" name="SimulationSettings.structure.Settings_Container" flags="ng" index="3_EN3m">
@@ -105,7 +114,8 @@
         <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
-        <child id="6249017959271690171" name="shape" index="3ZP1s2" />
+        <child id="1783685413825742989" name="Owned_Protein_References" index="3ySujz" />
+        <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
@@ -128,7 +138,7 @@
     <property role="TrG5h" value="Settings" />
     <property role="3_Ed86" value="1000" />
     <property role="3_Ed83" value="6JBqwuek81o/Graphics_On" />
-    <ref role="3_EdRy" node="6yORN46BmMt" resolve="Irene_World" />
+    <ref role="3_EdRy" node="3Hd2qvDDxnv" resolve="Test_World" />
   </node>
   <node concept="3ZP1sW" id="5IVvCEUQ8P5">
     <property role="TrG5h" value="Working_Tissue" />
@@ -174,6 +184,9 @@
         <property role="3ZP1s8" value="20" />
         <property role="3ZP1sa" value="20" />
       </node>
+      <node concept="uiY_x" id="1z0V6VU96n8" role="3ySujz">
+        <ref role="uiYEp" node="2Lf4jQGzvEh" resolve="Random Protein" />
+      </node>
     </node>
   </node>
   <node concept="1yko06" id="5IVvCEUQ8P6">
@@ -202,13 +215,22 @@
       <property role="1ykoi$" value="200" />
       <property role="1ykoiA" value="200" />
       <property role="1ykoiz" value="20" />
-      <property role="NC7Wa" value="1.0f" />
+      <property role="NC7Wa" value="0.0f" />
     </node>
   </node>
   <node concept="3ZP1sW" id="3Hd2qvDDx6A">
     <property role="TrG5h" value="Test_Tissue" />
     <property role="3GE5qa" value="Tissue_Containers" />
     <ref role="2ppKUs" node="3Hd2qvDDxnv" resolve="Test_World" />
+    <node concept="3ZP1sZ" id="1z0V6VTLBbC" role="3ZP1sP">
+      <property role="TrG5h" value="monolayer" />
+      <ref role="1v2cpI" node="1z0V6VTJfLR" resolve="Monolayer" />
+      <node concept="3ZP1sY" id="1z0V6VTLBbD" role="3ZPHa7">
+        <property role="3ZP1sq" value="100" />
+        <property role="3ZP1ss" value="15" />
+        <property role="3ZP1sh" value="0" />
+      </node>
+    </node>
     <node concept="1apGoc" id="6Z$0lly8WYS" role="1v2izi">
       <property role="TrG5h" value="Vessel" />
       <ref role="1apGrN" node="3Hd2qvE05OR" resolve="Endothelial" />
@@ -217,29 +239,25 @@
         <property role="3ZP1sx" value="6" />
       </node>
     </node>
-    <node concept="3ZP1sZ" id="6Z$0lly8WXO" role="3ZP1sP">
-      <property role="TrG5h" value="Vessel_1" />
-      <ref role="1v2cpI" node="6Z$0lly8WYS" resolve="Vessel" />
-      <node concept="3ZP1sY" id="6Z$0lly8WXP" role="3ZPHa7">
-        <property role="3ZP1ss" value="10" />
-        <property role="3ZP1sq" value="100" />
-        <property role="3ZP1sh" value="10" />
-      </node>
-    </node>
-    <node concept="3ZP1sZ" id="6Z$0llymS9R" role="3ZP1sP">
-      <property role="TrG5h" value="Vessel_2" />
-      <ref role="1v2cpI" node="6Z$0lly8WYS" resolve="Vessel" />
-      <node concept="3ZP1sY" id="6Z$0llymS9S" role="3ZPHa7">
-        <property role="3ZP1sq" value="100" />
-        <property role="3ZP1ss" value="30" />
-        <property role="3ZP1sh" value="10" />
+    <node concept="1apGoc" id="1z0V6VTJfLR" role="1v2izi">
+      <property role="TrG5h" value="Monolayer" />
+      <ref role="1apGrN" node="3Hd2qvE05OR" resolve="Endothelial" />
+      <node concept="3ZP1s_" id="1z0V6VTJfN8" role="1v2cpK">
+        <property role="3ZP1sB" value="1" />
+        <property role="3ZP1sp" value="10" />
       </node>
     </node>
     <node concept="3ZP1sM" id="3Hd2qvE05OR" role="1v2izm">
       <property role="TrG5h" value="Endothelial" />
+      <node concept="uiY_x" id="1z0V6VUawv3" role="3ySujz">
+        <ref role="uiYEp" node="2Lf4jQGzfKD" resolve="Random Kinase" />
+      </node>
       <node concept="3ZP1s$" id="3Hd2qvE05SH" role="3ZP1s2">
         <property role="3ZP1s8" value="20" />
         <property role="3ZP1sa" value="20" />
+      </node>
+      <node concept="uiY_x" id="1z0V6VUawuz" role="3ySujz">
+        <ref role="uiYEp" node="2Lf4jQGzvEh" resolve="Random Protein" />
       </node>
     </node>
   </node>
@@ -247,17 +265,31 @@
     <property role="TrG5h" value="Test_World" />
     <property role="3GE5qa" value="World_Containers" />
     <ref role="3_H_MC" node="3Hd2qvDDx6A" resolve="Test_Tissue" />
+    <node concept="1yko0n" id="1z0V6VTWkR0" role="1yko0b">
+      <property role="TrG5h" value="Big_Left" />
+      <property role="1ykor5" value="1.0f" />
+      <node concept="2Sr5gM" id="1z0V6VTWkS0" role="2Sr5gR">
+        <property role="2Sr5gU" value="50" />
+        <property role="2Sr5gS" value="50" />
+        <property role="2Sr5gZ" value="50" />
+        <node concept="3ZP1sY" id="1z0V6VTWkS2" role="f4z$$">
+          <property role="3ZP1ss" value="30" />
+          <property role="3ZP1sq" value="0" />
+          <property role="3ZP1sh" value="25" />
+        </node>
+      </node>
+    </node>
     <node concept="1yko02" id="3Hd2qvE667x" role="1yko0e">
       <property role="TrG5h" value="VEGF_Gradient" />
       <node concept="1IcRTR" id="3Hd2qvE667y" role="1IcVIN">
         <node concept="3ZP1sY" id="3Hd2qvE667z" role="1IcVIT">
           <property role="3ZP1sq" value="0" />
-          <property role="3ZP1ss" value="100" />
+          <property role="3ZP1ss" value="0" />
           <property role="3ZP1sh" value="0" />
         </node>
       </node>
       <node concept="1IcRTO" id="3Hd2qvE667$" role="1IcVIL">
-        <property role="2s3HHA" value="20" />
+        <property role="2s3HHA" value="12" />
         <node concept="3ZP1sY" id="3Hd2qvE667_" role="1IcVIB">
           <property role="3ZP1sq" value="0" />
           <property role="3ZP1ss" value="200" />
@@ -269,7 +301,7 @@
       <property role="1ykoi$" value="200" />
       <property role="1ykoiA" value="200" />
       <property role="1ykoiz" value="200" />
-      <property role="NC7Wa" value="1.0f" />
+      <property role="NC7Wa" value="0.0f" />
     </node>
   </node>
   <node concept="1yko06" id="6yORN46BmMt">
@@ -347,6 +379,9 @@
       <node concept="3ZP1s$" id="6yORN46Bnow" role="3ZP1s2">
         <property role="3ZP1s8" value="10" />
         <property role="3ZP1sa" value="10" />
+      </node>
+      <node concept="uiY_x" id="1z0V6VUbuRJ" role="3ySujz">
+        <ref role="uiYEp" node="2Lf4jQGzfKD" resolve="Random Kinase" />
       </node>
     </node>
   </node>
