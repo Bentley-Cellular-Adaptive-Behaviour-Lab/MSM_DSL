@@ -120,7 +120,7 @@ public class QueriesGenerated extends QueryProviderBase {
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(_context.getNode(), PROPS.gradient_shape$5agZ), 0x2d2d6c98b122d8ccL)) {
       shape += "GRADIENT_SHAPE_CUBOID";
     } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(_context.getNode(), PROPS.gradient_shape$5agZ), 0x2d2d6c98b122d8cdL)) {
-      shape += "GRADIENT_SHAPE_POINT";
+      shape += "GRADIENT_SHAPE_SPHERE";
     } else {
       shape += "GRADIENT_SHAPE_INVALID";
     }

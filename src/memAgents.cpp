@@ -4,6 +4,8 @@
 #include <string.h>
 #include "objects.h"
 #include <math.h>
+#include "memAgents.h"
+#include "environment.h"
 
 using namespace std;
 
@@ -43,8 +45,6 @@ void MemAgent::NotchResponse(void) {
     int i = 0;
     int j;
     int flag = 0;
-
-    
 
     do {
         if (worldP->neigh[i].type == M) {
@@ -646,7 +646,6 @@ void MemAgent::VEGFRresponse(void) {
 
     //done exceed max level
     if (VEGFRactive > VEGFR) {
-        
         VEGFRactive = VEGFR;
     }
 

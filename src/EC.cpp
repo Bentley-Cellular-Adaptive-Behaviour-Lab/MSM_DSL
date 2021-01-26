@@ -8,11 +8,9 @@
 #include <functional>
 #include <numeric>
 #include <iterator>
+#include "memAgents.h"
 
 using namespace std;
-
-
-
 
 bool EC::tipCellTest(void){
     

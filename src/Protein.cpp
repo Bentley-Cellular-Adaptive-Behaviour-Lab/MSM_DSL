@@ -11,7 +11,8 @@
 
 #include "Protein.h"
 #include "objects.h"
-
+#include "memAgents.h"
+#include "environment.h"
 
 /*****************************************************************************************
 *  Name:		allocate_proteins
@@ -101,21 +102,41 @@ static void phosphorylate_proteins(MemAgent *memAgent) {
 }
 
 static void phosphorylate_protein(MemAgent *memAgent, std::string target_protein_name) {
-	// Protein* current_protein;
-	// Interaction* current_interaction;
-	// vector<Interaction*> relevant_interactions;
-	//
-	// // Gather all phosphorylation interactions for the target protein.
-	// for (int i; i < memAgent->owned_proteins.size(); i++) {
-	//		current_protein = owned_proteins[i];
-	// 		for (int j; j < current_protein->m_interactions.size(); j++) {
-	//			current_interaction = current_protein->m_interactions[j];
-	//			if (current_interaction->target_protein->get_name() == target_protein_name &&
-	//				current_interaction_type  == INTERACTION_TYPE_PHOSPHORYLATION) {
-	//				relevant_interactions.push_back(cu)
-	//				}
-	//	}
-	// }
+	 Protein* current_protein;
+	 Interaction* current_interaction;
+	 vector<Interaction*> phosphorylation_interactions;
+
+	 // Gather all phosphorylation interactions for the target protein.
+	 for (int i; i < memAgent->owned_proteins.size(); i++) {
+			current_protein = memAgent->owned_proteins[i];
+	 		for (int j; j < current_protein->m_interactions.size(); j++) {
+				current_interaction = current_protein->m_interactions[j];
+				// If the interaction is a phosphorylation reaction, and it targets the protein, then track it.
+				if (current_interaction->m_target_protein->get_name() == target_protein_name &&
+					current_interaction->get_interaction_type()  == INTERACTION_TYPE_PHOSPHORYLATION) {
+						phosphorylation_interactions.push_back(current_interaction);
+					}
+		}
+	 }
+
+	 // TODO: CHECK WITH KATIE THAT THIS DOES WHAT I THINK IT DOES.
+	 // Count the number of proteins that can do any phosphorylation interaction, in the nearby environment.
+	 Env *envAgent;
+
+	 for (int i = 0; i < memAgent->EnvNeighs.size(); i++) {
+	 	envAgent = memAgent->EnvNeighs[i];
+	 	for (int j = 0; j < envAgent->owned_proteins.size(); j++) {
+	 		current_protein = envAgent->owned_proteins[j];
+	 		for (int k = 0; k < phosphorylation_interactions.size(); j++) {
+	 			current_interaction = phosphorylation_interactions[k];
+	 			if (current_protein->get_name() == current_interaction->get_host_protein()->get_name()) {
+
+	 			}
+	 		}
+	 	}
+	 }
+
+	 // Determine the number of target proteins at this memAgent that can be phosphorylated - 1-1 assumed for now.
 }
 
 static float bind_proteins(MemAgent* memAgent, Protein* host_protein, Protein* target_protein) {
@@ -186,12 +207,18 @@ void Protein::set_current_agent_level(float new_level) {
 float Protein::get_current_cell_level() {
 	if (owned_by_cell_agent) {
 		return this->current_cell_level;
+	} else {
+		// Incorrect function called, return -1 to indicate this.
+		return -1.0f;
 	}
 }
 
 float Protein::get_current_agent_level() {
 	if (owned_by_nodeAgent || owned_by_springAgent || owned_by_surfaceAgent) {
 		return this->current_cell_level;
+	} else {
+		// Incorrect function called, return -1 to indicate this.
+		return -1.0f;
 	}
 }
 
@@ -229,6 +256,14 @@ Interaction::Interaction(int interaction_type,
 	this->m_target_protein = target_protein;
 	this->m_requires_phosphorylation = requires_phosphorylation;
 	this->m_requires_bound = requires_bound;
+}
+
+Protein* Interaction::get_host_protein() {
+	return this->m_host_protein;
+}
+
+int Interaction::get_interaction_type() {
+	return this->m_interaction_type;
 }
 
 Interaction_Phosphorylation::Interaction_Phosphorylation(int interactionType,

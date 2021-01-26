@@ -2,6 +2,9 @@
 #include <iomanip>
 #include "objects.h"
 #include <fstream>
+#include "memAgents.h"
+#include "environment.h"
+
 using namespace std;
 
 bool found_sp = false;

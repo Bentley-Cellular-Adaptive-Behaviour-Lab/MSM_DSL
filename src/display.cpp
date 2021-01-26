@@ -1,11 +1,11 @@
 
 #if GRAPHICS
+
 #include "display.h"
-
-
+#include "environment.h"
 #include "ScreenRecording.h"
-
 #include "objects.h"
+#include "memAgents.h"
 
 // J Switch for os type
 

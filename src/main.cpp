@@ -11,6 +11,7 @@
 
 #include "Tissue.h"
 #include "world.h"
+#include "memAgents.h"
 
 #if GRAPHICS
 #include "display.h"
@@ -491,7 +492,6 @@ void World::updateMemAgents(void) {
     //pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
     for (i = 0; i < upto; i++) {
 
-
         tipDeleteFlag = false;
 
         memp = ALLmemAgents[i];
@@ -500,7 +500,6 @@ void World::updateMemAgents(void) {
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
         deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
-
 
         if (deleted == false) {
 
