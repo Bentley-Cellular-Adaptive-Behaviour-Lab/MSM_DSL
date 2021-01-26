@@ -3,20 +3,17 @@
 #include "objects.h"
 #include <math.h>
 #include <cstdlib>
+#include "environment.h"
 
 //---------------------------------------------------------------
 void World::updateEnvironment(void){
 
     //check_if_InsideVessel();
 
-
 //updateVEGF();
 
 //cout<<macrophages[0]->coords.x<<endl;
     //grid[(int)((float)ECwidth/2.0f)][(int)((float)ECwidth/2.0f)][1].Eid->VEGF = 10.0f;
-
-
-
 }
 
 //-----------------------------------------------------------------
@@ -519,3 +516,4 @@ int J;
     }
 */
 //-------------------------------------------------------------------------
+

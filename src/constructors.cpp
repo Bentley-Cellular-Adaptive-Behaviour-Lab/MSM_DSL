@@ -5,6 +5,8 @@
 #include <iomanip>
 #include "objects.h"
 #include <random>
+#include "memAgents.h"
+#include "environment.h"
 
 //#include "ODEs.h"
 
@@ -35,7 +37,7 @@ Hysteresis::Hysteresis(void){
     Current_Dll4_incremented_level=0;
     stabilityTimer_overall=0;
     stabilityTimer_latest=0;
-     Dll4_SigRange = dll4_SIG*(MAX_dll4/100.0f); //vary Dll4_SIG to find optimal sig range
+    Dll4_SigRange = dll4_SIG*(MAX_dll4/100.0f); //vary Dll4_SIG to find optimal sig range
     Actin_SigRange  = 1.0f*(actinMax/100.0f); 
     
     CELL_STABLE = 200; //useing PloS model first, with 28t for delays (15 mins), but if change GRN notch delays to 4hrs period, with rearrangement model NCB2014 paper, then increase this value.

@@ -2,10 +2,9 @@
 #include <string>
 #include "objects.h"
 #include "space.h"
-#include "Interaction.h"
 
-//#ifndef MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
-//#define MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
+#ifndef MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
+#define MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
 
 class Interaction;
 
@@ -18,10 +17,6 @@ enum PROTEIN_LOCATIONS {
 };
 
 class Protein {
-
-	// The number of phosphorylated and bound proteins should be determined as and when they are interacting.
-
-	vector<Interaction*> interactions;
 
 	// Protein objects can potentially be owned by cell agents and surfaceAgents/nodeAgents/springAgents.
 	// This changes whether some values further below are used or not.
@@ -46,6 +41,11 @@ class Protein {
 	std::string name;
 
 public:
+
+	// The number of phosphorylated and bound proteins should be determined as and when they are interacting.
+
+	vector<Interaction*> m_interactions;
+
 	int get_location();
 	float get_current_cell_level();
 	float get_current_agent_level();
@@ -77,22 +77,27 @@ enum INTERACTION_TYPES {
 class Interaction {
 	int m_interaction_type;
 
-	// The protein that does the thing in question.
-	Protein *m_host_protein;
-
 	//Interaction conditions - these apply to the host protein only.
 	bool m_requires_phosphorylation;
 	bool m_requires_bound;
 
 public:
-// The protein that has the thing done to it.
-Protein *m_target_protein;
+	// The protein that does the thing in question.
+	Protein *m_host_protein;
+
+	// The protein that has the thing done to it.
+	Protein *m_target_protein;
+
+	int get_interaction_type();
+	Protein *get_host_protein();
+
 protected:
 	Interaction(int interaction_type,
 				Protein* host_protein,
 				Protein* target_protein,
 				bool requires_phosphorylation,
 				bool requires_bound);
+
 };
 
 class Interaction_Phosphorylation : public Interaction {
@@ -127,4 +132,4 @@ class Interaction_Transcription : public Interaction {
 							  int timestep_delay);
 };
 
-//#endif //MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
+#endif //MEMAGENTSPRINGMODEL_DSL_PROTEIN_H

@@ -4,6 +4,9 @@
 #include <string.h>
 #include "objects.h"
 #include <math.h>
+#include "memAgents.h"
+#include "environment.h"
+
 
 using namespace std;
 float storedOffset;

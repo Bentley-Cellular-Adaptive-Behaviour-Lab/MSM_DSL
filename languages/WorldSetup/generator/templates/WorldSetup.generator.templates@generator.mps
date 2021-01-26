@@ -996,7 +996,7 @@
                         <node concept="3clFbF" id="2OHr9yL77pR" role="3cqZAp">
                           <node concept="d57v9" id="2OHr9yL77I0" role="3clFbG">
                             <node concept="Xl_RD" id="2OHr9yL77KB" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_SHAPE_POINT" />
+                              <property role="Xl_RC" value="GRADIENT_SHAPE_SPHERE" />
                             </node>
                             <node concept="37vLTw" id="2OHr9yL77pQ" role="37vLTJ">
                               <ref role="3cqZAo" node="2OHr9yL74Xk" resolve="shape" />

@@ -2,6 +2,8 @@
 #include <iomanip>
 #include "objects.h"
 #include <fstream>
+#include "memAgents.h"
+
 using namespace std;
 
 // ---------------------------------------------------------------
