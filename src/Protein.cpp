@@ -15,12 +15,95 @@
 #include "environment.h"
 
 /*****************************************************************************************
-*  Name:		allocate_proteins
-*  Description: Allocates membrane and junction proteins to the relevant location and equally
-*  				for each agent.
+*  Name:		allocate_cell_proteins
+*  Description: Allocates membrane and junction proteins to the relevant location and
+*   			equally for each agent.
 *  Returns:		void
 ******************************************************************************************/
-static void allocate_proteins(EC* ec, Protein *protein) {
+static void allocate_cell_proteins(EC* ec, Protein *protein) {
+	int i;
+
+	// Get number of agents at the junction.
+	float divJunction = (float)count_junction_agents(ec);
+
+	// Get number of agents on the membrane.
+	float divMembrane;
+	ec->calcVonNeighs();
+	divMembrane = (float) ec->VonNeighs;
+
+	string protein_name = protein->get_name();
+	float current_cell_level = protein->get_current_cell_level();
+
+	// Distribute proteins based on protein location.
+
+	Protein *owned_protein;
+
+	switch (protein->get_location()) {
+		case PROTEIN_LOCATION_JUNCTION :
+			for (i = 0; i < ec->nodeAgents.size(); i++) {
+				owned_protein = get_protein(ec->nodeAgents[i], protein_name);
+				if (ec->nodeAgents[i]->junction) {
+					owned_protein->set_current_agent_level(current_cell_level / divJunction);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+
+			for (i = 0; i < ec->springAgents.size(); i++) {
+				owned_protein = get_protein(ec->springAgents[i], protein_name);
+				if (ec->springAgents[i]->junction) {
+					owned_protein->set_current_agent_level(current_cell_level / divJunction);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+
+			for (i = 0; i < ec->surfaceAgents.size(); i++) {
+				owned_protein = get_protein(ec->surfaceAgents[i], protein_name);
+				if (ec->surfaceAgents[i]->junction) {
+					owned_protein->set_current_agent_level(current_cell_level / divJunction);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+			break;
+
+		case PROTEIN_LOCATION_MEMBRANE :
+			for (i = 0; i < ec->nodeAgents.size(); i++) {
+				owned_protein = get_protein(ec->nodeAgents[i], protein_name);
+				if (ec->nodeAgents[i]->vonNeu) {
+					owned_protein->set_current_agent_level(current_cell_level / divMembrane);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+			for (i = 0; i < ec->springAgents.size(); i++) {
+				owned_protein = get_protein(ec->springAgents[i], protein_name);
+				if (ec->springAgents[i]->vonNeu) {
+					owned_protein->set_current_agent_level(current_cell_level / divMembrane);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+			for (i = 0; i < ec->surfaceAgents.size(); i++) {
+				owned_protein = get_protein(ec->surfaceAgents[i], protein_name);
+				if (ec->springAgents[i]->junction) {
+					owned_protein->set_current_agent_level(current_cell_level / divMembrane);
+				} else {
+					owned_protein->set_current_agent_level(0.0f);
+				}
+			}
+			break;
+	}
+}
+
+/*****************************************************************************************
+*  Name:		allocate_memagent_proteins
+*  Description: Allocates membrane and junction proteins to the relevant location and
+*   			equally for each agent.
+*  Returns:		void
+******************************************************************************************/
+static void allocate_env_proteins(Env* ep, Protein *protein) {
 	int i;
 
 	// Get number of agents at the junction.

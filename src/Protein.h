@@ -18,51 +18,70 @@ enum PROTEIN_LOCATIONS {
 
 class Protein {
 
-	// Protein objects can potentially be owned by cell agents and surfaceAgents/nodeAgents/springAgents.
-	// This changes whether some values further below are used or not.
-
-	bool owned_by_cell_agent = false;
-	bool owned_by_surfaceAgent = false;
-	bool owned_by_nodeAgent = false;
-	bool owned_by_springAgent = false;
-
-	// current_cell_level is used by cell agents (and set to -1 otherwise).
-	// current_agent_level is used by surfaceAgents/nodeAgents/springAgents (and set to -1 when used by cells).
-
-	float current_cell_level;
-	float current_agent_level;
-
-	// Max level and min level are used only when the protein is owned by the cells (and set to -1 otherwise).
-	float min_level;
-	float max_level;
-
-	int protein_location;
-
-	std::string name;
+	// Level refers to the total level of a protein when used by a cell agent, but the level at a
+	// given location when used by a memAgent or environment agent.
+	float m_level;
+	std::string m_name;
 
 public:
-
-	// The number of phosphorylated and bound proteins should be determined as and when they are interacting.
 
 	vector<Interaction*> m_interactions;
 
 	int get_location();
-	float get_current_cell_level();
-	float get_current_agent_level();
-	void set_current_cell_level(float new_level);
-	void set_current_agent_level(float new_level);
+	std::string get_name();
+	float get_level();
+	float set_level();
 
 	Protein();
 	~Protein();
 
-	std::string get_name();
-
 	vector<Interaction*> find_interactions(std::string target_protein_name);
+};
+
+class Protein_Env : public Protein {
+public:
+	Protein_Env();
+	~Protein_Env();
+};
+
+class Protein_Cell : public Protein {
+
+	float m_min_level;
+	float m_max_level;
+
+public:
+
+	float set_min_level();
+	float set_max_level();
+	float get_min_level();
+	float get_max_level();
+
+	Protein_Cell();
+	~Protein_Cell();
+};
+
+class Protein_MemAgent : public Protein {
+
+	float m_phosphorylated_number;
+
+public:
+
+	Protein_MemAgent();
+	~Protein_MemAgent();
+
 };
 
 static Protein* get_protein(EC* ec, std::string protein_name);
 static Protein* get_protein(MemAgent *memA, std::string protein_name);
-static void allocate_proteins(Protein *protein);
+
+//TODO: Have memAgents check their parent cell for proteins they can own as they are being created.
+
+// During set up, assign proteins to their relevant locations.
+static void add_cell_protein(EC *ec, Protein_Cell *protein_cell);
+static void add_env_protein(Env *ep, Protein_Env *protein_env); // <- Levels are expected to remain constant here.
+
+static void allocate_cell_proteins(EC *ec, Protein *protein);
+
 static int count_junction_agents(EC *ec);
 
 //-------------------------------------------------------------------------------------------------------------//
@@ -131,5 +150,7 @@ class Interaction_Transcription : public Interaction {
 							  float regulation_strength,
 							  int timestep_delay);
 };
+
+//-------------------------------------------------------------------------------------------------------------//
 
 #endif //MEMAGENTSPRINGMODEL_DSL_PROTEIN_H
