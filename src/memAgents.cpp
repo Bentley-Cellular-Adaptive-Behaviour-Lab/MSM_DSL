@@ -592,8 +592,6 @@ bool MemAgent::checkNeighsVonForEnv(void) {
             p = k;
         }
 
-
-        //-------------------------------
         //toroidal only X
         if(TOROIDAL_X_env==true){
         	if (m >= this->worldP->gridXDimensions)
@@ -615,12 +613,8 @@ bool MemAgent::checkNeighsVonForEnv(void) {
 
     if (flag == 1) return true;
     else {
-       
         return false;
-
     }
-   
-
 }
 //-----------------------------------
 //------------------------------------------------------------------------------
