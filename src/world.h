@@ -71,9 +71,15 @@ public:
 
     vector<float> calculate_dist_from_source(Env* ep);
 
+    // LEGACY VEGF SET-UP FUNCTIONS
     void calc_linear_env_VEGF(Env* ep);
     void calc_exp_env_VEGF(Env* ep);
     void calc_constant_env_VEGF(Env* ep);
+
+	// LEGACY VEGF SET-UP FUNCTIONS
+	void calc_linear_env_protein(Env* ep, std::string protein_name);
+	void calc_exp_env_protein(Env* ep, std::string protein_name);
+	void calc_constant_env_protein(Env* ep, std::string protein_name);
 
     void determine_directionality();
     void determine_source_to_sink_dists();

@@ -6,11 +6,43 @@
 #include "world.h"
 #include "memAgents.h"
 #include "environment.h"
+#include "protein.h"
+
+/*****************************************************************************************
+*  Name:		add_env_protein
+*  Description: Adds a protein to environment agents during set-up. If the protein already
+*				exists, instead add the new amount to the level already present.
+*  Returns:		void
+******************************************************************************************/
+static void add_env_protein(Env* ep, std::string name, float level) {
+	Protein_Env* new_protein;
+	if (ep->owned_proteins.size() > 0) {
+		//Check if the env agent already has this protein.
+		Protein_Env* current_protein;
+		for (int i; i < ep->owned_proteins.size(); i++) {
+			current_protein = ep->owned_proteins[i];
+			if (current_protein->get_name() == name) {
+				// This protein already exists at this location - increase the level by the new amount.
+				current_protein->set_level(current_protein->get_level() + level);
+			} else {
+				//Otherwise the protein doesn't exist, add it in using the new name and level.
+				new_protein = new Protein_Env(name, level);
+				ep->owned_proteins.push_back(new_protein);
+			}
+		}
+	} else {
+		//There are no proteins here, so don't bother checking.
+		new_protein = new Protein_Env(name, level);
+		ep->owned_proteins.push_back(new_protein);
+	}
+}
+
 //********************************************************************************************************************//
 
 // Gradient
 
 //********************************************************************************************************************//
+
 
 /*****************************************************************************************
 *  Name:		calc_constant_env_VEGF
@@ -95,6 +127,92 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
         ep->VEGF += exp(weight) * starting_protein_level;
     }
 }
+
+/*****************************************************************************************
+*  Name:		calc_constant_env_protein
+*  Description: Sets an environment agent's level of VEGF according to a constant gradient,
+*               applied on top of any existing gradients.
+*  Returns:		void
+******************************************************************************************/
+
+void Gradient::calc_constant_env_protein(Env* ep, std::string name) {
+	float starting_protein_level = float(m_source_starting_amount);
+	if (ep->blood == 0.0f) {
+		add_env_protein(ep, name, starting_protein_level);
+	}
+}
+
+/*****************************************************************************************
+*  Name:		calc_linear_env_protein
+*  Description: Sets an environment agent's level of VEGF according to a linear gradient,
+*               applied on top of any existing gradients.
+*  Returns:		void
+******************************************************************************************/
+
+void Gradient::calc_linear_env_protein(Env* ep, std::string name) {
+	float weight = 1.00f;
+	float starting_protein_level = float(m_source_starting_amount);
+
+	vector<float> ep_distances = calculate_dist_from_source(ep);
+
+	if (ep->blood == 0.0f) {
+		// Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
+		if (x_varying) {
+			if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
+				weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
+			}
+		}
+		if (y_varying) {
+			if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
+				weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
+			}
+		}
+		if (z_varying) {
+			if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
+				weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
+			}
+		}
+		// Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
+		add_env_protein(ep, name, weight * starting_protein_level);
+	}
+}
+
+/*****************************************************************************************
+*  Name:		calc_exp_env_protein
+*  Description: Sets an environment agent's level of protein according to a exponential gradient,
+*               applied on top of any existing gradients.
+*  Returns:		void
+******************************************************************************************/
+
+void Gradient::calc_exp_env_protein(Env* ep, std::string name) {
+	float weight = 1.00f;
+	float starting_protein_level = float(m_source_starting_amount);
+
+	vector<float> ep_distances = calculate_dist_from_source(ep);
+
+	if (ep->blood == 0.0f) {
+		// Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
+		if (x_varying) {
+			if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
+				weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
+			}
+		}
+		if (y_varying) {
+			if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
+				weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
+			}
+		}
+		if (z_varying) {
+			if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
+				weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
+			}
+		}
+		// Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
+		add_env_protein(ep, name, exp(weight) * starting_protein_level);
+	}
+}
+
+
 
 /*****************************************************************************************
 *  Name:		determine_source_to_sink_dists
