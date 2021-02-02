@@ -112,7 +112,7 @@ public:
 	MemAgent(EC* belongsTo, World* world); ///constructor
 	~MemAgent(void); ///destructor
 
-	vector<Protein*> owned_proteins;
+	vector<Protein_MemAgent*> owned_proteins;
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

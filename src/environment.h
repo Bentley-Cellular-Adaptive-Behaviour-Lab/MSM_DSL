@@ -38,7 +38,8 @@ public:
 	float adhesiveness;
 
 	// List of proteins found at this location.
-	vector<Protein*> owned_proteins;
+	vector<Protein_Env*> owned_proteins;
+	bool has_protein(std::string name);
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H
