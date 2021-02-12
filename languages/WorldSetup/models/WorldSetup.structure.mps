@@ -6,6 +6,7 @@
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -211,12 +212,12 @@
     <node concept="25R33" id="2OHr9yL8Hzc" role="25R1y">
       <property role="3tVfz5" value="3255377508721416396" />
       <property role="TrG5h" value="GRADIENT_SHAPE_CUBOID" />
-      <property role="1L1pqM" value="Cuboid" />
+      <property role="1L1pqM" value="Cuboidal" />
     </node>
     <node concept="25R33" id="2OHr9yL8Hzd" role="25R1y">
       <property role="3tVfz5" value="3255377508721416397" />
       <property role="TrG5h" value="GRADIENT_SHAPE_POINT" />
-      <property role="1L1pqM" value="Point" />
+      <property role="1L1pqM" value="Point/Spherical" />
     </node>
   </node>
   <node concept="25R3W" id="2OHr9yL8Hzg">
@@ -249,7 +250,7 @@
   <node concept="1TIwiD" id="57aaQbDDBXf">
     <property role="EcuMT" value="5893570766194507599" />
     <property role="TrG5h" value="Substrate_Shape_Triangular" />
-    <property role="R4oN_" value="Concept for describing a substrate in the shape of a triagnular prism." />
+    <property role="R4oN_" value="Concept for describing a substrate in the shape of a triangular prism." />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
     <node concept="1TJgyi" id="29SopcHrS19" role="1TKVEl">
       <property role="IQ2nx" value="2483842479245197385" />
@@ -259,6 +260,16 @@
     <node concept="1TJgyi" id="4JVq81Fgy8C" role="1TKVEl">
       <property role="IQ2nx" value="5475084672763568680" />
       <property role="TrG5h" value="depth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPog4b" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291698955" />
+      <property role="TrG5h" value="upper_z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPog4W" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291699004" />
+      <property role="TrG5h" value="lower_z" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="57aaQbDDBXx" role="1TKVEi">
@@ -301,6 +312,36 @@
     <node concept="1TJgyi" id="57aaQbDDBXt" role="1TKVEl">
       <property role="IQ2nx" value="5893570766194507613" />
       <property role="TrG5h" value="depth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPokoF" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716651" />
+      <property role="TrG5h" value="upper_x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPokpt" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716701" />
+      <property role="TrG5h" value="lower_x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPokqv" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716767" />
+      <property role="TrG5h" value="upper_y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPokrj" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716819" />
+      <property role="TrG5h" value="lower_y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPokrT" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716857" />
+      <property role="TrG5h" value="upper_z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPoksY" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612291716926" />
+      <property role="TrG5h" value="lower_z" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="29SopcHq_yR" role="1TKVEi">

@@ -6,7 +6,7 @@
 #include "world.h"
 #include "memAgents.h"
 #include "environment.h"
-#include "protein.h"
+#include "Protein.h"
 
 /*****************************************************************************************
 *  Name:		add_env_protein
@@ -19,7 +19,7 @@ static void add_env_protein(Env* ep, std::string name, float level) {
 	if (ep->owned_proteins.size() > 0) {
 		//Check if the env agent already has this protein.
 		Protein_Env* current_protein;
-		for (int i; i < ep->owned_proteins.size(); i++) {
+		for (int i =0 ; i < ep->owned_proteins.size(); i++) {
 			current_protein = ep->owned_proteins[i];
 			if (current_protein->get_name() == name) {
 				// This protein already exists at this location - increase the level by the new amount.
@@ -43,90 +43,57 @@ static void add_env_protein(Env* ep, std::string name, float level) {
 
 //********************************************************************************************************************//
 
+// LEGACY FUNCTIONS.
 
-/*****************************************************************************************
-*  Name:		calc_constant_env_VEGF
-*  Description: Sets an environment agent's level of VEGF according to a constant gradient,
-*               applied on top of any existing gradients.
-*  Returns:		void
-******************************************************************************************/
+///*****************************************************************************************
+//*  Name:		calc_constant_env_VEGF
+//*  Description: Sets an environment agent's level of VEGF according to a constant gradient,
+//*               applied on top of any existing gradients.
+//*  Returns:		void
+//******************************************************************************************/
+//
+//void Gradient::calc_constant_env_VEGF(Env* ep) {
+//	float starting_protein_level = float(m_source_starting_amount);
+//    if (ep->blood == 0.0f) {
+//        ep->VEGF += starting_protein_level;
+//    }
+//}
 
-void Gradient::calc_constant_env_VEGF(Env* ep) {
-	float starting_protein_level = float(m_source_starting_amount);
-    if (ep->blood == 0.0f) {
-        ep->VEGF += starting_protein_level;
-    }
-}
 
-/*****************************************************************************************
-*  Name:		calc_linear_env_VEGF
-*  Description: Sets an environment agent's level of VEGF according to a linear gradient,
-*               applied on top of any existing gradients.
-*  Returns:		void
-******************************************************************************************/
-
-void Gradient::calc_linear_env_VEGF(Env* ep) {
-    float weight = 1.00f;
-    float starting_protein_level = float(m_source_starting_amount);
-
-    vector<float> ep_distances = calculate_dist_from_source(ep);
-
-    if (ep->blood == 0.0f) {
-        // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-        if (x_varying) {
-			if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
-				weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
-			}
-        }
-        if (y_varying) {
-			if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
-				weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
-			}
-        }
-        if (z_varying) {
-			if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
-				weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
-			}
-        }
-        // Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-        ep->VEGF += weight * starting_protein_level;
-    }
-}
-
-/*****************************************************************************************
-*  Name:		calc_exp_env_VEGF
-*  Description: Sets an environment agent's level of VEGF according to a exponential gradient,
-*               applied on top of any existing gradients.
-*  Returns:		void
-******************************************************************************************/
-
-void Gradient::calc_exp_env_VEGF(Env* ep) {
-    float weight = 1.00f;
-	float starting_protein_level = float(m_source_starting_amount);
-
-    vector<float> ep_distances = calculate_dist_from_source(ep);
-
-    if (ep->blood == 0.0f) {
-        // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-        if (x_varying) {
-			if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
-				weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
-			}
-        }
-        if (y_varying) {
-			if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
-				weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
-			}
-        }
-        if (z_varying) {
-			if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
-				weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
-			}
-        }
-        // Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-        ep->VEGF += exp(weight) * starting_protein_level;
-    }
-}
+///*****************************************************************************************
+//*  Name:		calc_exp_env_VEGF
+//*  Description: Sets an environment agent's level of VEGF according to a exponential gradient,
+//*               applied on top of any existing gradients.
+//*  Returns:		void
+//******************************************************************************************/
+//
+//void Gradient::calc_exp_env_VEGF(Env* ep) {
+//    float weight = 1.00f;
+//	float starting_protein_level = float(m_source_starting_amount);
+//
+//    vector<float> ep_distances = calculate_dist_from_source(ep);
+//
+//    if (ep->blood == 0.0f) {
+//        // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
+//        if (x_varying) {
+//			if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
+//				weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
+//			}
+//        }
+//        if (y_varying) {
+//			if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
+//				weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
+//			}
+//        }
+//        if (z_varying) {
+//			if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
+//				weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
+//			}
+//        }
+//        // Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
+//        ep->VEGF += exp(weight) * starting_protein_level;
+//    }
+//}
 
 /*****************************************************************************************
 *  Name:		calc_constant_env_protein
@@ -135,10 +102,9 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::calc_constant_env_protein(Env* ep, std::string name) {
-	float starting_protein_level = float(m_source_starting_amount);
+void Gradient::calc_constant_env_protein(Env* ep, Protein_Env *protein) {
 	if (ep->blood == 0.0f) {
-		add_env_protein(ep, name, starting_protein_level);
+		add_env_protein(ep, protein);
 	}
 }
 
@@ -149,9 +115,8 @@ void Gradient::calc_constant_env_protein(Env* ep, std::string name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::calc_linear_env_protein(Env* ep, std::string name) {
+void Gradient::calc_linear_env_protein(Env* ep, Protein_Env *protein) {
 	float weight = 1.00f;
-	float starting_protein_level = float(m_source_starting_amount);
 
 	vector<float> ep_distances = calculate_dist_from_source(ep);
 
@@ -173,7 +138,7 @@ void Gradient::calc_linear_env_protein(Env* ep, std::string name) {
 			}
 		}
 		// Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-		add_env_protein(ep, name, weight * starting_protein_level);
+		add_env_protein(ep, protein, weight);
 	}
 }
 
@@ -184,9 +149,8 @@ void Gradient::calc_linear_env_protein(Env* ep, std::string name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::calc_exp_env_protein(Env* ep, std::string name) {
+void Gradient::calc_exp_env_protein(Env* ep, Protein_Env *protein) {
 	float weight = 1.00f;
-	float starting_protein_level = float(m_source_starting_amount);
 
 	vector<float> ep_distances = calculate_dist_from_source(ep);
 
@@ -208,7 +172,7 @@ void Gradient::calc_exp_env_protein(Env* ep, std::string name) {
 			}
 		}
 		// Increment VEGF by amount determined by cumulative weights of distance travelled along each varied axis.
-		add_env_protein(ep, name, exp(weight) * starting_protein_level);
+		add_env_protein(ep, protein, exp(weight));
 	}
 }
 
@@ -353,13 +317,13 @@ void Gradient::apply_gradient_to_sphere() {
 										((m_source_position->z - z) * (m_source_position->z - z)));
 								if (dist_from_source <= radius) {
 									if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-										calc_linear_env_VEGF(ep);
+										calc_linear_env_protein(ep, this->m_protein);
 									}
 									if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-										calc_exp_env_VEGF(ep);
+										calc_exp_env_protein(ep, this->m_protein);
 									}
 									if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-										calc_constant_env_VEGF(ep);
+										calc_constant_env_protein(ep, this->m_protein);
 									}
 								}
 							}
@@ -431,13 +395,13 @@ void Gradient::apply_gradient_to_cuboid() {
                     ep = m_parent_world->grid[i][j][k].Eid;
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            calc_linear_env_VEGF(ep);
+                            calc_linear_env_protein(ep, this->m_protein);
                         }
                         if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                            calc_exp_env_VEGF(ep);
+                            calc_exp_env_protein(ep, this->m_protein);
                         }
                         if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                            calc_constant_env_VEGF(ep);
+                            calc_constant_env_protein(ep, this->m_protein);
                         }
                     }
                 }
@@ -455,9 +419,8 @@ void Gradient::apply_gradient_to_cuboid() {
 Gradient::Gradient(World_Container *container,
                    int gradient_type,
                    int gradient_shape,
-                   string protein,
+                   Protein_Env* protein,
                    Coordinates *source_position,
-                   int source_starting_amount,
                    Coordinates *sink_position) {
 
     this->m_parent_container = container;
@@ -466,7 +429,6 @@ Gradient::Gradient(World_Container *container,
     this->m_gradient_shape = gradient_shape;
     this->m_protein = protein;
     this->m_source_position = source_position;
-    this->m_source_starting_amount = source_starting_amount;
     this->m_sink_position = sink_position;
 
     this->x_varying = false;
@@ -665,17 +627,16 @@ Substrate::Substrate(World_Container *container, Shape *substrate_shape, Coordin
 
 void World_Container::create_gradient(int gradient_type,
                                            int gradient_shape,
-                                           string protein,
+                                           std::string protein_name,
                                            Coordinates *source_position,
-                                           int source_starting_amount,
                                            Coordinates *sink_position) {
-    std::cout << "Creating gradient. Protein: " << protein << ".\n";
+    std::cout << "Creating gradient. Protein: " << protein_name << ".\n";
+    Protein_Env *gradient_protein = this->get_env_protein(protein_name);
 	auto *new_gradient = new Gradient(this,
 									  gradient_type,
 									  gradient_shape,
-									  protein,
+									  gradient_protein,
 									  source_position,
-									  source_starting_amount,
 									  sink_position);
     new_gradient->determine_source_to_sink_dists();
     if (gradient_shape == GRADIENT_SHAPE_CUBOID) {
@@ -760,7 +721,95 @@ World *World_Container::get_world() {
     return this->m_world;
 }
 
+Protein_Env* World_Container::create_env_protein(std::string name,
+												 float level) {
+	Protein_Env *new_env_protein;
+	new_env_protein = new Protein_Env(name, level);
+	store_protein(new_env_protein);
+	return new_env_protein;
+}
 
+Protein_Cell* World_Container::create_cell_protein(std::string name,
+												 float level,
+												 int location,
+												 float min_level,
+												 float max_level) {
+	Protein_Cell *new_cell_protein;
+	new_cell_protein = new Protein_Cell(name, level, location, min_level, max_level);
+	store_protein(new_cell_protein);
+	return new_cell_protein;
+}
+
+void World_Container::create_binding_interaction(int interaction_type,
+												Protein* host_protein,
+												Protein* target_protein,
+												int requires_bound,
+												int requires_phosphorylation,
+												float binding_probability) {
+	auto *new_interaction = new Interaction_Binding(interaction_type,
+																   host_protein,
+																   target_protein,
+																   requires_phosphorylation,
+																   requires_bound,
+																   binding_probability);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+}
+
+void World_Container::create_phosphorylation_interaction(int interaction_type,
+										Protein* host_protein,
+										Protein* target_protein,
+										int requires_bound,
+										int requires_phosphorylation,
+										float phosphorylation_probability) {
+	auto *new_interaction = new Interaction_Phosphorylation(interaction_type,
+													host_protein,
+													target_protein,
+													requires_phosphorylation,
+													requires_bound,
+													phosphorylation_probability);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+
+}
+
+
+void World_Container::create_regulation_interaction(int interaction_type,
+														 Protein* host_protein,
+														 Protein* target_protein,
+														 int requires_bound,
+														 int requires_phosphorylation,
+														 float regulation_strength,
+														 int timestep_delay) {
+	auto *new_interaction = new Interaction_Transcription(interaction_type,
+													host_protein,
+													target_protein,
+													requires_phosphorylation,
+													requires_bound,
+													regulation_strength,
+													timestep_delay);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+}
+
+
+
+void World_Container::store_protein(Protein* protein) {
+	this->m_proteins.push_back(protein);
+}
+
+Protein_Env* World_Container::get_env_protein(std::string protein_name) {
+	Protein_Env* env_protein;
+	Protein* current_protein;
+	for (auto & m_protein : this->m_proteins) {
+		current_protein = m_protein;
+		if (current_protein->get_name() == protein_name) {
+			assert(current_protein->get_location() == PROTEIN_LOCATION_ENVIRONMENT);
+			env_protein = reinterpret_cast<Protein_Env*>(current_protein);
+			return env_protein;
+		}
+	}
+}
 
 //********************************************************************************************************************//
 

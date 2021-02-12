@@ -113,6 +113,8 @@ public:
 	~MemAgent(void); ///destructor
 
 	vector<Protein_MemAgent*> owned_proteins;
+	float get_protein_level(std::string name);
+	void clear_proteins();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

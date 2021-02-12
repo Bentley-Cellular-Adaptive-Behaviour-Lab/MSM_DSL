@@ -32,8 +32,10 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
   public static final SMethod<String> get_vertex_3_X_id57aaQbDEloa = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEloa").build();
   public static final SMethod<String> get_vertex_3_Y_id57aaQbDErqj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDErqj").build();
   public static final SMethod<String> get_depth_id4JVq81FgwNn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81FgwNn").build();
+  public static final SMethod<Integer> get_upper_z_int_id2B5sNxPo4s_ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPo4s_").build();
+  public static final SMethod<Integer> get_lower_z_int_id2B5sNxPo7PW = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPo7PW").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_1_X_id57aaQbDEkks, get_vertex_1_Y_id57aaQbDElMG, get_vertex_2_X_id57aaQbDElaX, get_vertex_2_Y_id57aaQbDEofO, get_vertex_3_X_id57aaQbDEloa, get_vertex_3_Y_id57aaQbDErqj, get_depth_id4JVq81FgwNn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_1_X_id57aaQbDEkks, get_vertex_1_Y_id57aaQbDElMG, get_vertex_2_X_id57aaQbDElaX, get_vertex_2_Y_id57aaQbDEofO, get_vertex_3_X_id57aaQbDEloa, get_vertex_3_Y_id57aaQbDErqj, get_depth_id4JVq81FgwNn, get_upper_z_int_id2B5sNxPo4s_, get_lower_z_int_id2B5sNxPo7PW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -66,6 +68,14 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
     String depth = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS));
     return depth;
   }
+  /*package*/ static int get_upper_z_int_id2B5sNxPo4s_(@NotNull SNode __thisNode__) {
+    int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS) / 2;
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.z_location$4h36) + z_offset;
+  }
+  /*package*/ static int get_lower_z_int_id2B5sNxPo7PW(@NotNull SNode __thisNode__) {
+    int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS) / 2;
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.z_location$4h36) - z_offset;
+  }
 
   /*package*/ Substrate_Shape_Triangular__BehaviorDescriptor() {
   }
@@ -96,6 +106,10 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
         return (T) ((String) get_vertex_3_Y_id57aaQbDErqj(node));
       case 6:
         return (T) ((String) get_depth_id4JVq81FgwNn(node));
+      case 7:
+        return (T) ((Integer) get_upper_z_int_id2B5sNxPo4s_(node));
+      case 8:
+        return (T) ((Integer) get_lower_z_int_id2B5sNxPo7PW(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -135,5 +149,6 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
     /*package*/ static final SProperty X_Coordinate$UFZ4 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f64L, "X_Coordinate");
     /*package*/ static final SProperty Y_Coordinate$UGt6 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f66L, "Y_Coordinate");
     /*package*/ static final SProperty depth$5OPS = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x4bfb68806b422228L, "depth");
+    /*package*/ static final SProperty z_location$4h36 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x227861932d6f8049L, "z_location");
   }
 }

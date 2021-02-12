@@ -33,10 +33,10 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> get_total_radius_id4DdJmqSFaMT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_total_radius").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaMT").build();
   public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
   public static final SMethod<Integer> calculate_total_ablumenal_steps_id506$KtO_VOJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_total_ablumenal_steps").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("506$KtO_VOJ").build();
-  public static final SMethod<Integer> get_total_length_int_id1QpPlI52lcy = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_length_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52lcy").build();
+  public static final SMethod<Integer> get_total_width_int_id1QpPlI52lcy = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52lcy").build();
   public static final SMethod<Integer> calculate_cross_section_cells_id506$KtOAF5K = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_cross_section_cells").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("506$KtOAF5K").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id4DdJmqSF9YK, get_length_in_cells_id4DdJmqSFaKv, get_total_radius_id4DdJmqSFaMT, get_total_cell_number_id4XZPqyVOpH$, calculate_total_ablumenal_steps_id506$KtO_VOJ, get_total_length_int_id1QpPlI52lcy, calculate_cross_section_cells_id506$KtOAF5K);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id4DdJmqSF9YK, get_length_in_cells_id4DdJmqSFaKv, get_total_radius_id4DdJmqSFaMT, get_total_cell_number_id4XZPqyVOpH$, calculate_total_ablumenal_steps_id506$KtO_VOJ, get_total_width_int_id1QpPlI52lcy, calculate_cross_section_cells_id506$KtOAF5K);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -61,7 +61,7 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
     int i_steps = ((int) d_steps);
     return i_steps;
   }
-  /*package*/ static int get_total_length_int_id1QpPlI52lcy(@NotNull SNode __thisNode__) {
+  /*package*/ static int get_total_width_int_id1QpPlI52lcy(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getInteger(__thisNode__, PROPS.cylinder_length_in_cells$pzLn) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_Type$C4, false, false), LINKS.cell_type$E3tO), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY);
   }
   /*package*/ static int calculate_cross_section_cells_id506$KtOAF5K(@NotNull SNode __thisNode__) {
@@ -96,7 +96,7 @@ public final class Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
       case 4:
         return (T) ((Integer) calculate_total_ablumenal_steps_id506$KtO_VOJ(node));
       case 5:
-        return (T) ((Integer) get_total_length_int_id1QpPlI52lcy(node));
+        return (T) ((Integer) get_total_width_int_id1QpPlI52lcy(node));
       case 6:
         return (T) ((Integer) calculate_cross_section_cells_id506$KtOAF5K(node));
       default:

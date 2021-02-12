@@ -45,7 +45,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="2Lf4jQGyJ_h">
-    <property role="3GE5qa" value="Interaction" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="yzfv:2Lf4jQGytGG" resolve="Interaction" />
     <node concept="9S07l" id="2Lf4jQGyJ_w" role="9Vyp8">
       <node concept="3clFbS" id="2Lf4jQGyJ_x" role="2VODD2">
@@ -67,7 +67,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Lf4jQGzfPc">
-    <property role="3GE5qa" value="Interaction" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="yzfv:2Lf4jQGytLW" resolve="Interaction_Kinase" />
     <node concept="9S07l" id="2Lf4jQGzfPs" role="9Vyp8">
       <node concept="3clFbS" id="2Lf4jQGzfPt" role="2VODD2">
@@ -80,7 +80,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Lf4jQGzfVF">
-    <property role="3GE5qa" value="Interaction" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="yzfv:2Lf4jQGytNh" resolve="Interaction_Ligand" />
     <node concept="9S07l" id="2Lf4jQGzfVV" role="9Vyp8">
       <node concept="3clFbS" id="2Lf4jQGzfVW" role="2VODD2">
@@ -93,7 +93,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Lf4jQGzg2R">
-    <property role="3GE5qa" value="Interaction" />
+    <property role="3GE5qa" value="Interactions" />
     <ref role="1M2myG" to="yzfv:2Lf4jQGytL3" resolve="Interaction_TF" />
     <node concept="9S07l" id="2Lf4jQGzg37" role="9Vyp8">
       <node concept="3clFbS" id="2Lf4jQGzg38" role="2VODD2">
@@ -112,6 +112,56 @@
       <node concept="3clFbS" id="2Lf4jQGzvKC" role="2VODD2">
         <node concept="3cpWs6" id="2Lf4jQGzvKV" role="3cqZAp">
           <node concept="3clFbT" id="2Lf4jQGzvOW" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="29fgAF50xv1">
+    <property role="3GE5qa" value="Proteins" />
+    <ref role="1M2myG" to="yzfv:2Lf4jQGytcH" resolve="Protein" />
+    <node concept="9S07l" id="29fgAF52eLj" role="9Vyp8">
+      <node concept="3clFbS" id="29fgAF52eLk" role="2VODD2">
+        <node concept="3cpWs6" id="29fgAF52eLE" role="3cqZAp">
+          <node concept="3clFbT" id="29fgAF52eMF" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="29fgAF50zdK">
+    <property role="3GE5qa" value="Proteins" />
+    <ref role="1M2myG" to="yzfv:29fgAF50pdL" resolve="Protein_Cell" />
+    <node concept="9S07l" id="29fgAF50zeP" role="9Vyp8">
+      <node concept="3clFbS" id="29fgAF50zeQ" role="2VODD2">
+        <node concept="3cpWs6" id="29fgAF50ziJ" role="3cqZAp">
+          <node concept="3clFbT" id="29fgAF50zjK" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="29fgAF50zqF">
+    <property role="3GE5qa" value="Proteins" />
+    <ref role="1M2myG" to="yzfv:29fgAF50pi2" resolve="Protein_Environment" />
+    <node concept="9S07l" id="29fgAF50zs1" role="9Vyp8">
+      <node concept="3clFbS" id="29fgAF50zs2" role="2VODD2">
+        <node concept="3cpWs6" id="29fgAF50zwc" role="3cqZAp">
+          <node concept="3clFbT" id="29fgAF50zwE" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="29fgAF53LNO">
+    <property role="3GE5qa" value="Conditions" />
+    <ref role="1M2myG" to="yzfv:29fgAF50pK5" resolve="Condition_Binding" />
+    <node concept="9S07l" id="29fgAF53LOT" role="9Vyp8">
+      <node concept="3clFbS" id="29fgAF53LOU" role="2VODD2">
+        <node concept="3cpWs6" id="29fgAF53LTA" role="3cqZAp">
+          <node concept="3clFbT" id="29fgAF53LUS" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>

@@ -645,7 +645,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="1QpPlI52lcy" role="13h7CS">
-      <property role="TrG5h" value="get_total_length_int" />
+      <property role="TrG5h" value="get_total_width_int" />
       <node concept="3Tm1VV" id="1QpPlI52lcz" role="1B3o_S" />
       <node concept="10Oyi0" id="1QpPlI52ljl" role="3clF45" />
       <node concept="3clFbS" id="1QpPlI52lc_" role="3clF47">
@@ -5097,7 +5097,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6Z$0llyleoZ" role="2OqNvi">
-                          <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_length_int" />
+                          <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_width_int" />
                         </node>
                       </node>
                     </node>
@@ -5433,7 +5433,7 @@
                       </node>
                     </node>
                     <node concept="2qgKlT" id="1QpPlI52KfU" role="2OqNvi">
-                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_length_int" />
+                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_width_int" />
                     </node>
                   </node>
                 </node>

@@ -150,6 +150,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("width", 0x51ca2b62e9a67f58L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507608").done();
     b.property("height", 0x51ca2b62e9a67f5aL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507610").done();
     b.property("depth", 0x51ca2b62e9a67f5dL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507613").done();
+    b.property("upper_x", 0x29c573387561462bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716651").done();
+    b.property("lower_x", 0x29c573387561465dL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716701").done();
+    b.property("upper_y", 0x29c573387561469fL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716767").done();
+    b.property("lower_y", 0x29c57338756146d3L).type(PrimitiveTypeId.INTEGER).origin("3009938612291716819").done();
+    b.property("upper_z", 0x29c57338756146f9L).type(PrimitiveTypeId.INTEGER).origin("3009938612291716857").done();
+    b.property("lower_z", 0x29c573387561473eL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716926").done();
     b.aggregate("Substrate_Position", 0x227861932d6a58b7L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("2483842479244859575").done();
     return b.create();
   }
@@ -161,6 +167,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("z_location", 0x227861932d6f8049L).type(PrimitiveTypeId.INTEGER).origin("2483842479245197385").done();
     b.property("depth", 0x4bfb68806b422228L).type(PrimitiveTypeId.INTEGER).origin("5475084672763568680").done();
+    b.property("upper_z", 0x29c573387561010bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291698955").done();
+    b.property("lower_z", 0x29c573387561013cL).type(PrimitiveTypeId.INTEGER).origin("3009938612291699004").done();
     b.aggregate("Vertex_1", 0x51ca2b62e9a67f61L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507617").done();
     b.aggregate("Vertex_2", 0x51ca2b62e9a67f69L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507625").done();
     b.aggregate("Vertex_3", 0x51ca2b62e9a67f6cL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507628").done();

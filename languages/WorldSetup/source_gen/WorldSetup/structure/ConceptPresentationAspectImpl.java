@@ -83,7 +83,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Substrate_Shape_Triangular:
         if (props_Substrate_Shape_Triangular == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Concept for describing a substrate in the shape of a triagnular prism.");
+          cpb.shortDesc("Concept for describing a substrate in the shape of a triangular prism.");
           cpb.rawPresentation("Substrate_Shape_Triangular");
           props_Substrate_Shape_Triangular = cpb.create();
         }

@@ -8,6 +8,7 @@
 #include <numeric>
 #include <iterator>
 #include "memAgents.h"
+#include "EC.h"
 
 using namespace std;
 

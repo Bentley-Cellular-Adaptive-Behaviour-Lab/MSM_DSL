@@ -3,6 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
+    <use id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -18,15 +19,15 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
-        <child id="1186403803051" name="query" index="VblUZ" />
+        <property id="1186403713874" name="color" index="Vb096" />
       </concept>
-      <concept id="1186404574412" name="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" flags="ln" index="Veino" />
+      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1186414999511" name="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" flags="ln" index="VQ3r3">
+        <property id="1214316229833" name="underlined" index="2USNnj" />
+      </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
-      </concept>
-      <concept id="1225456267680" name="jetbrains.mps.lang.editor.structure.RGBColor" flags="ng" index="1iSF2X">
-        <property id="1225456424731" name="value" index="1iTho6" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
@@ -48,6 +49,13 @@
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
     </language>
+    <language id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips">
+      <concept id="1285659875393567816" name="jetbrains.mps.lang.editor.tooltips.structure.CellModel_Tooltip" flags="ng" index="1v6uyg">
+        <property id="4804083432920625643" name="lazy" index="2oejA6" />
+        <child id="3877544518697818164" name="tooltipCell" index="wsdo6" />
+        <child id="9185659875393569181" name="visibleCell" index="1j7Clw" />
+      </concept>
+    </language>
   </registry>
   <node concept="24kQdi" id="6JBqwuek7XN">
     <ref role="1XX52x" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
@@ -59,7 +67,7 @@
       <node concept="3EZMnI" id="6JBqwuelwNF" role="3EZMnx">
         <node concept="VPM3Z" id="6JBqwuelwNH" role="3F10Kt" />
         <node concept="3F0ifn" id="6JBqwuelz9r" role="3EZMnx">
-          <property role="3F0ifm" value="Settings Name: " />
+          <property role="3F0ifm" value="Settings Name:" />
         </node>
         <node concept="3F0A7n" id="6JBqwuelz9x" role="3EZMnx">
           <property role="1Intyy" value="true" />
@@ -68,74 +76,98 @@
         <node concept="2iRfu4" id="6JBqwuelwNK" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="6JBqwuek7Yq" role="3EZMnx" />
-      <node concept="3EZMnI" id="6JBqwuek7Z9" role="3EZMnx">
-        <node concept="VPM3Z" id="6JBqwuek7Zb" role="3F10Kt" />
-        <node concept="3F0ifn" id="6JBqwuek7Zu" role="3EZMnx">
-          <property role="3F0ifm" value="Maximum number of time steps: " />
+      <node concept="1v6uyg" id="2B5sNxPnwhN" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3F0ifn" id="2B5sNxPnwqW" role="wsdo6">
+          <property role="3F0ifm" value="Total rounds of updating the MSM undergoes during the simulation." />
         </node>
-        <node concept="3F0A7n" id="6JBqwuek7Zo" role="3EZMnx">
-          <ref role="1NtTu8" to="the3:6JBqwuejVw1" resolve="Max_Time_Steps" />
-          <node concept="Veino" id="5ni8RLSAzFK" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAzGF" role="VblUZ">
-              <property role="1iTho6" value="57ffa0" />
+        <node concept="3EZMnI" id="2B5sNxPnwjn" role="1j7Clw">
+          <node concept="3F0ifn" id="2B5sNxPnwjp" role="3EZMnx">
+            <property role="3F0ifm" value="Maximum number of time steps:" />
+            <node concept="VQ3r3" id="2B5sNxPnwF9" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
             </node>
           </node>
-        </node>
-        <node concept="2iRfu4" id="6JBqwuek7Ze" role="2iSdaV" />
-      </node>
-      <node concept="3F0ifn" id="6JBqwuek7ZC" role="3EZMnx" />
-      <node concept="3EZMnI" id="6JBqwuek801" role="3EZMnx">
-        <node concept="VPM3Z" id="6JBqwuek803" role="3F10Kt" />
-        <node concept="3F0ifn" id="6JBqwuek805" role="3EZMnx">
-          <property role="3F0ifm" value="Analysis Type: " />
-        </node>
-        <node concept="3F0A7n" id="6JBqwuek80p" role="3EZMnx">
-          <ref role="1NtTu8" to="the3:6JBqwuejVvZ" resolve="Analysis_Type" />
-          <node concept="Veino" id="5ni8RLSAz$2" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAz$Y" role="VblUZ">
-              <property role="1iTho6" value="00ffff" />
+          <node concept="3F0A7n" id="2B5sNxPnwla" role="3EZMnx">
+            <ref role="1NtTu8" to="the3:6JBqwuejVw1" resolve="Max_Time_Steps" />
+            <node concept="VechU" id="2B5sNxPSnkQ" role="3F10Kt">
+              <property role="Vb096" value="fLwANPr/green" />
             </node>
           </node>
+          <node concept="2iRfu4" id="2B5sNxPnwjq" role="2iSdaV" />
         </node>
-        <node concept="2iRfu4" id="6JBqwuek806" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="6JBqwuek80t" role="3EZMnx" />
-      <node concept="3EZMnI" id="6JBqwueki7m" role="3EZMnx">
-        <node concept="VPM3Z" id="6JBqwueki7o" role="3F10Kt" />
-        <node concept="3F0ifn" id="6JBqwueki7q" role="3EZMnx">
-          <property role="3F0ifm" value="Graphics: " />
+      <node concept="3F0ifn" id="2B5sNxPnwgp" role="3EZMnx" />
+      <node concept="1v6uyg" id="2B5sNxPnvN9" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3F0ifn" id="2B5sNxPnvRB" role="wsdo6">
+          <property role="3F0ifm" value="Run the MSM with additional analysis (bistability, patterning) or no analysis." />
         </node>
-        <node concept="3F0A7n" id="6JBqwueki7O" role="3EZMnx">
-          <ref role="1NtTu8" to="the3:6JBqwuejVw4" resolve="Graphics_Option" />
-          <node concept="Veino" id="5ni8RLSAzun" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAzvK" role="VblUZ">
-              <property role="1iTho6" value="00ffff" />
+        <node concept="3EZMnI" id="2B5sNxPnvPe" role="1j7Clw">
+          <node concept="3F0ifn" id="2B5sNxPnvPg" role="3EZMnx">
+            <property role="3F0ifm" value="Analysis Type:" />
+            <node concept="VQ3r3" id="2B5sNxPnwA8" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
             </node>
           </node>
+          <node concept="3F0A7n" id="2B5sNxPnvRk" role="3EZMnx">
+            <ref role="1NtTu8" to="the3:6JBqwuejVvZ" resolve="Analysis_Type" />
+            <node concept="VechU" id="2B5sNxPSnmy" role="3F10Kt">
+              <property role="Vb096" value="fLwANPt/cyan" />
+            </node>
+          </node>
+          <node concept="2iRfu4" id="2B5sNxPnvPh" role="2iSdaV" />
         </node>
-        <node concept="2iRfu4" id="6JBqwueki7r" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="6JBqwuekjoG" role="3EZMnx" />
-      <node concept="3EZMnI" id="6JBqwuekjpM" role="3EZMnx">
-        <node concept="VPM3Z" id="6JBqwuekjpO" role="3F10Kt" />
-        <node concept="3F0ifn" id="6JBqwuekjqk" role="3EZMnx">
-          <property role="3F0ifm" value="Desired Simulation World:" />
+      <node concept="3F0ifn" id="2B5sNxPnwaR" role="3EZMnx" />
+      <node concept="1v6uyg" id="2B5sNxPnvE9" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3F0ifn" id="2B5sNxPnvIn" role="wsdo6">
+          <property role="3F0ifm" value="Run the MSM with graphics on or off." />
         </node>
-        <node concept="1iCGBv" id="6JBqwuekjqu" role="3EZMnx">
-          <ref role="1NtTu8" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
-          <node concept="1sVBvm" id="6JBqwuekjqw" role="1sWHZn">
-            <node concept="3F0A7n" id="6JBqwuekjqG" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="Veino" id="5ni8RLSArM2" role="3F10Kt">
-                <node concept="1iSF2X" id="5ni8RLSArP9" role="VblUZ">
-                  <property role="1iTho6" value="00ffff" />
+        <node concept="3EZMnI" id="2B5sNxPnvFU" role="1j7Clw">
+          <node concept="3F0ifn" id="2B5sNxPnvFW" role="3EZMnx">
+            <property role="3F0ifm" value="Graphics:" />
+            <node concept="VQ3r3" id="2B5sNxPnw5A" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+          <node concept="3F0A7n" id="2B5sNxPnvWe" role="3EZMnx">
+            <ref role="1NtTu8" to="the3:6JBqwuejVw4" resolve="Graphics_Option" />
+            <node concept="VechU" id="2B5sNxPSnod" role="3F10Kt">
+              <property role="Vb096" value="fLwANPt/cyan" />
+            </node>
+          </node>
+          <node concept="2iRfu4" id="2B5sNxPnvFX" role="2iSdaV" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="2B5sNxPnwce" role="3EZMnx" />
+      <node concept="1v6uyg" id="2B5sNxPnwJe" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3F0ifn" id="2B5sNxPnwS7" role="wsdo6">
+          <property role="3F0ifm" value="Choose the simulation world set-up!" />
+        </node>
+        <node concept="3EZMnI" id="2B5sNxPnwKN" role="1j7Clw">
+          <node concept="3F0ifn" id="2B5sNxPnwL9" role="3EZMnx">
+            <property role="3F0ifm" value="Desired Simulation World:" />
+            <node concept="VQ3r3" id="2B5sNxPnwVd" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+          <node concept="1iCGBv" id="2B5sNxPnwN7" role="3EZMnx">
+            <ref role="1NtTu8" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
+            <node concept="1sVBvm" id="2B5sNxPnwN9" role="1sWHZn">
+              <node concept="3F0A7n" id="2B5sNxPnwNw" role="2wV5jI">
+                <property role="1Intyy" value="true" />
+                <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                <node concept="VechU" id="2B5sNxPSnqm" role="3F10Kt">
+                  <property role="Vb096" value="fLwANPt/cyan" />
                 </node>
               </node>
             </node>
           </node>
+          <node concept="2iRfu4" id="2B5sNxPnwKQ" role="2iSdaV" />
         </node>
-        <node concept="2iRfu4" id="6JBqwuekjpR" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="6JBqwuek7XS" role="2iSdaV" />
     </node>

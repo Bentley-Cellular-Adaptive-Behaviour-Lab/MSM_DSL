@@ -23,15 +23,15 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
-        <child id="1186403803051" name="query" index="VblUZ" />
+        <property id="1186403713874" name="color" index="Vb096" />
       </concept>
-      <concept id="1186404574412" name="jetbrains.mps.lang.editor.structure.BackgroundColorStyleClassItem" flags="ln" index="Veino" />
+      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1186414999511" name="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" flags="ln" index="VQ3r3">
+        <property id="1214316229833" name="underlined" index="2USNnj" />
+      </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
-      </concept>
-      <concept id="1225456267680" name="jetbrains.mps.lang.editor.structure.RGBColor" flags="ng" index="1iSF2X">
-        <property id="1225456424731" name="value" index="1iTho6" />
       </concept>
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
@@ -52,6 +52,7 @@
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
       </concept>
@@ -74,88 +75,114 @@
         </node>
         <node concept="3F0A7n" id="1QpPlI505Kh" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Veino" id="5ni8RLSAH_u" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAH_Z" role="VblUZ">
-              <property role="1iTho6" value="57ffa0" />
-            </node>
+          <node concept="VechU" id="2B5sNxPR6mF" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
           </node>
         </node>
         <node concept="2iRfu4" id="5qSYbADreZr" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="4JVq81Fn_nX" role="3EZMnx" />
-      <node concept="3EZMnI" id="4dDC3Gsontl" role="3EZMnx">
-        <node concept="VPM3Z" id="4dDC3Gsontn" role="3F10Kt" />
-        <node concept="3F0ifn" id="4dDC3Gsonu2" role="3EZMnx">
-          <property role="3F0ifm" value="    " />
-        </node>
-        <node concept="3F0ifn" id="4dDC3Gsontp" role="3EZMnx">
-          <property role="3F0ifm" value="1. Define cell types: " />
-        </node>
-        <node concept="3EZMnI" id="4JVq81Fil7x" role="3EZMnx">
-          <node concept="2iRkQZ" id="4JVq81Fil7y" role="2iSdaV" />
-          <node concept="3F2HdR" id="4dDC3GsontQ" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
-            <node concept="2iRkQZ" id="4dDC3GsontT" role="2czzBx" />
+      <node concept="3EZMnI" id="2B5sNxPA80y" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPA80$" role="3F10Kt" />
+        <node concept="2iRfu4" id="2B5sNxPA80B" role="2iSdaV" />
+        <node concept="3XFhqQ" id="2B5sNxPA85v" role="3EZMnx" />
+        <node concept="1v6uyg" id="2B5sNxPA85N" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPA88R" role="wsdo6">
+            <property role="3F0ifm" value="Specify cell types, shapes and behaviours." />
+          </node>
+          <node concept="3F0ifn" id="2B5sNxPA85X" role="1j7Clw">
+            <property role="3F0ifm" value="1. Define cell types:" />
+            <node concept="VQ3r3" id="2B5sNxPA8rg" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
           </node>
         </node>
-        <node concept="2iRfu4" id="4dDC3Gsontq" role="2iSdaV" />
+        <node concept="3EZMnI" id="2B5sNxPA87w" role="3EZMnx">
+          <node concept="2iRkQZ" id="2B5sNxPA87x" role="2iSdaV" />
+          <node concept="3F2HdR" id="2B5sNxPA87y" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+            <node concept="2iRkQZ" id="2B5sNxPA87z" role="2czzBx" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="4JVq81Fih1w" role="3EZMnx" />
-      <node concept="3EZMnI" id="4dDC3Gsonu_" role="3EZMnx">
-        <node concept="VPM3Z" id="4dDC3GsonuB" role="3F10Kt" />
-        <node concept="3F0ifn" id="4dDC3GsonuD" role="3EZMnx">
-          <property role="3F0ifm" value="    " />
+      <node concept="3EZMnI" id="2B5sNxPA8f8" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPA8fa" role="3F10Kt" />
+        <node concept="3XFhqQ" id="2B5sNxPA8gW" role="3EZMnx" />
+        <node concept="1v6uyg" id="2B5sNxPA8jU" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPA8lK" role="wsdo6">
+            <property role="3F0ifm" value="Specify tissue types, shapes and behaviours." />
+          </node>
+          <node concept="3F0ifn" id="2B5sNxPA8kj" role="1j7Clw">
+            <property role="3F0ifm" value="2. Define tissue types:" />
+            <node concept="VQ3r3" id="2B5sNxPA8st" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
         </node>
-        <node concept="3F0ifn" id="4dDC3Gsonvd" role="3EZMnx">
-          <property role="3F0ifm" value="2. Define tissue types: " />
-        </node>
-        <node concept="3EZMnI" id="4dDC3Gsonvl" role="3EZMnx">
-          <node concept="3F2HdR" id="4dDC3Gsonvu" role="3EZMnx">
+        <node concept="3EZMnI" id="2B5sNxPA8n4" role="3EZMnx">
+          <node concept="3F2HdR" id="2B5sNxPA8n5" role="3EZMnx">
             <ref role="1NtTu8" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
-            <node concept="2iRkQZ" id="4dDC3Gsonvw" role="2czzBx" />
+            <node concept="2iRkQZ" id="2B5sNxPA8n6" role="2czzBx" />
           </node>
-          <node concept="2iRkQZ" id="4dDC3Gsonvo" role="2iSdaV" />
+          <node concept="2iRkQZ" id="2B5sNxPA8n7" role="2iSdaV" />
         </node>
-        <node concept="2iRfu4" id="4dDC3GsonuE" role="2iSdaV" />
+        <node concept="2iRfu4" id="2B5sNxPA8fd" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4JVq81Fih26" role="3EZMnx" />
-      <node concept="3EZMnI" id="5qSYbADrf05" role="3EZMnx">
-        <node concept="VPM3Z" id="5qSYbADrf07" role="3F10Kt" />
-        <node concept="3F0ifn" id="5qSYbADrf09" role="3EZMnx">
-          <property role="3F0ifm" value="    " />
+      <node concept="3F0ifn" id="2B5sNxPp$iO" role="3EZMnx" />
+      <node concept="3EZMnI" id="2B5sNxPA8xi" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPA8xk" role="3F10Kt" />
+        <node concept="3XFhqQ" id="2B5sNxPA8yS" role="3EZMnx" />
+        <node concept="1v6uyg" id="2B5sNxPA8Bn" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPA8Dd" role="wsdo6">
+            <property role="3F0ifm" value="Create and place cells in the simulation world." />
+          </node>
+          <node concept="3F0ifn" id="2B5sNxPA8C5" role="1j7Clw">
+            <property role="3F0ifm" value="3. Create individual cells:" />
+            <node concept="VQ3r3" id="2B5sNxPAHXh" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
         </node>
-        <node concept="2iRfu4" id="5qSYbADrf0a" role="2iSdaV" />
-        <node concept="3F0ifn" id="5qSYbADrf1n" role="3EZMnx">
-          <property role="3F0ifm" value="3. Create individual cells: " />
-        </node>
-        <node concept="3EZMnI" id="4JVq81Fil7J" role="3EZMnx">
-          <node concept="2iRkQZ" id="4JVq81Fil7K" role="2iSdaV" />
-          <node concept="3F2HdR" id="5qSYbADrf1v" role="3EZMnx">
+        <node concept="3EZMnI" id="2B5sNxPA8$w" role="3EZMnx">
+          <node concept="2iRkQZ" id="2B5sNxPA8$x" role="2iSdaV" />
+          <node concept="3F2HdR" id="2B5sNxPA8$y" role="3EZMnx">
             <ref role="1NtTu8" to="nguq:5qSYbADreYe" resolve="cells" />
-            <node concept="2iRkQZ" id="5qSYbADrf1y" role="2czzBx" />
-            <node concept="VPM3Z" id="5qSYbADrf1z" role="3F10Kt" />
+            <node concept="2iRkQZ" id="2B5sNxPA8$z" role="2czzBx" />
+            <node concept="VPM3Z" id="2B5sNxPA8$$" role="3F10Kt" />
           </node>
         </node>
+        <node concept="2iRfu4" id="2B5sNxPA8xn" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4JVq81Fih2H" role="3EZMnx" />
-      <node concept="3EZMnI" id="5qSYbADrf1R" role="3EZMnx">
-        <node concept="VPM3Z" id="5qSYbADrf1T" role="3F10Kt" />
-        <node concept="3F0ifn" id="5qSYbADrf1V" role="3EZMnx">
-          <property role="3F0ifm" value="    " />
+      <node concept="3F0ifn" id="2B5sNxPp$Bh" role="3EZMnx" />
+      <node concept="3EZMnI" id="2B5sNxPvCih" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPvCij" role="3F10Kt" />
+        <node concept="3XFhqQ" id="2B5sNxPvCln" role="3EZMnx" />
+        <node concept="1v6uyg" id="2B5sNxPvCn8" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPvCrR" role="wsdo6">
+            <property role="3F0ifm" value="Create and place tissues in the simulation world." />
+          </node>
+          <node concept="3F0ifn" id="2B5sNxPvCoh" role="1j7Clw">
+            <property role="3F0ifm" value="4. Create tissues:" />
+            <node concept="VQ3r3" id="2B5sNxPvCpI" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
         </node>
-        <node concept="3F0ifn" id="5qSYbADrf2g" role="3EZMnx">
-          <property role="3F0ifm" value="4. Create tissues: " />
-        </node>
-        <node concept="3EZMnI" id="4JVq81Fil80" role="3EZMnx">
-          <node concept="2iRkQZ" id="4JVq81Fil81" role="2iSdaV" />
-          <node concept="3F2HdR" id="5qSYbADrf2y" role="3EZMnx">
+        <node concept="3EZMnI" id="2B5sNxPvCtV" role="3EZMnx">
+          <node concept="2iRkQZ" id="2B5sNxPvCtW" role="2iSdaV" />
+          <node concept="3F2HdR" id="2B5sNxPvCtX" role="3EZMnx">
             <ref role="1NtTu8" to="nguq:5qSYbADreYc" resolve="tissues" />
-            <node concept="2iRkQZ" id="5qSYbADrf2_" role="2czzBx" />
+            <node concept="2iRkQZ" id="2B5sNxPvCtY" role="2czzBx" />
           </node>
         </node>
-        <node concept="2iRfu4" id="5qSYbADrf1W" role="2iSdaV" />
+        <node concept="2iRfu4" id="2B5sNxPvCim" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="5qSYbADrf2E" role="3EZMnx" />
+      <node concept="3F0ifn" id="2B5sNxPvCgN" role="3EZMnx" />
       <node concept="2iRkQZ" id="5qSYbADreZi" role="2iSdaV" />
     </node>
   </node>
@@ -169,10 +196,8 @@
         </node>
         <node concept="3F0A7n" id="1z0V6VU8XtN" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Veino" id="5ni8RLSAI0Y" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAI1u" role="VblUZ">
-              <property role="1iTho6" value="57ffa0" />
-            </node>
+          <node concept="VechU" id="2B5sNxPR6I0" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
           </node>
         </node>
         <node concept="3F0ifn" id="1z0V6VU8XuC" role="3EZMnx">
@@ -211,10 +236,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FhBR3" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYL" resolve="height" />
-        <node concept="Veino" id="5ni8RLSAI_5" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAI_A" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6pN" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="l2Vlx" id="4JVq81FhBQT" role="2iSdaV" />
@@ -223,10 +246,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FhBRl" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYN" resolve="width" />
-        <node concept="Veino" id="5ni8RLSAIA$" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAIAP" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6ru" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
     </node>
@@ -239,10 +260,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FhUey" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="Veino" id="5ni8RLSAHCp" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAHD9" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6dS" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="3F0ifn" id="4JVq81FhUeC" role="3EZMnx">
@@ -254,10 +273,8 @@
           <node concept="3F0A7n" id="4JVq81FhUeV" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="Veino" id="5ni8RLSAHE_" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAHEQ" role="VblUZ">
-                <property role="1iTho6" value="00ffff" />
-              </node>
+            <node concept="VechU" id="2B5sNxPR6gg" role="3F10Kt">
+              <property role="Vb096" value="fLwANPt/cyan" />
             </node>
           </node>
         </node>
@@ -277,73 +294,72 @@
   <node concept="24kQdi" id="4JVq81Fi8p3">
     <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
     <node concept="3EZMnI" id="4JVq81Fi8qV" role="2wV5jI">
-      <node concept="1v6uyg" id="3mEqLZygWgi" role="3EZMnx">
-        <property role="2oejA6" value="true" />
-        <node concept="3EZMnI" id="3mEqLZygWgG" role="1j7Clw">
-          <node concept="VPM3Z" id="3mEqLZygWgH" role="3F10Kt" />
-          <node concept="3F0ifn" id="3mEqLZygWgI" role="3EZMnx">
-            <property role="3F0ifm" value="Cylindrical with a length of" />
+      <node concept="3EZMnI" id="2B5sNxPKgEv" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPKgEx" role="3F10Kt" />
+        <node concept="1v6uyg" id="2B5sNxPKgFP" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPKgGd" role="1j7Clw">
+            <property role="3F0ifm" value="Cylindrical" />
+            <node concept="VQ3r3" id="2B5sNxPKgVb" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
           </node>
-          <node concept="3F0A7n" id="3mEqLZygWgJ" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYl" resolve="cylinder_length_in_cells" />
-            <node concept="Veino" id="5ni8RLSAI6G" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAI7r" role="VblUZ">
-                <property role="1iTho6" value="57ffa0" />
+          <node concept="3EZMnI" id="2B5sNxPKgN$" role="wsdo6">
+            <node concept="2iRkQZ" id="2B5sNxPKgN_" role="2iSdaV" />
+            <node concept="3EZMnI" id="2B5sNxPKgNA" role="3EZMnx">
+              <node concept="VPM3Z" id="2B5sNxPKgNB" role="3F10Kt" />
+              <node concept="3F0A7n" id="2B5sNxPKgNC" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:5qSYbADreYj" resolve="cylinder_cross_section_cells" />
               </node>
-            </node>
-          </node>
-          <node concept="3F0ifn" id="3mEqLZygWgK" role="3EZMnx">
-            <property role="3F0ifm" value="cells and radius of" />
-          </node>
-          <node concept="3F0A7n" id="3mEqLZygWgL" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYo" resolve="cylinder_total_radius" />
-            <node concept="Veino" id="5ni8RLSAI8E" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAIa$" role="VblUZ">
-                <property role="1iTho6" value="57ffa0" />
+              <node concept="3F0ifn" id="2B5sNxPKgND" role="3EZMnx">
+                <property role="3F0ifm" value="cells will be generated along the circumference." />
               </node>
+              <node concept="2iRfu4" id="2B5sNxPKgNE" role="2iSdaV" />
             </node>
-          </node>
-          <node concept="3F0ifn" id="1PaE25wCV1r" role="3EZMnx">
-            <property role="3F0ifm" value="grid-points" />
-          </node>
-          <node concept="2iRfu4" id="3mEqLZygWgM" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="3mEqLZygWqp" role="wsdo6">
-          <node concept="2iRkQZ" id="3mEqLZygWqq" role="2iSdaV" />
-          <node concept="3EZMnI" id="3mEqLZygWh9" role="3EZMnx">
-            <node concept="VPM3Z" id="3mEqLZygWha" role="3F10Kt" />
-            <node concept="3F0A7n" id="3mEqLZygWhb" role="3EZMnx">
-              <ref role="1NtTu8" to="nguq:5qSYbADreYj" resolve="cylinder_cross_section_cells" />
+            <node concept="3EZMnI" id="2B5sNxPKgNF" role="3EZMnx">
+              <node concept="VPM3Z" id="2B5sNxPKgNG" role="3F10Kt" />
+              <node concept="3F0A7n" id="2B5sNxPKgNH" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:4JVq81FjZEM" resolve="cylinder_total_cells" />
+              </node>
+              <node concept="3F0ifn" id="2B5sNxPKgNI" role="3EZMnx">
+                <property role="3F0ifm" value="cells will be created in total." />
+              </node>
+              <node concept="2iRfu4" id="2B5sNxPKgNJ" role="2iSdaV" />
             </node>
-            <node concept="3F0ifn" id="3mEqLZygWhc" role="3EZMnx">
-              <property role="3F0ifm" value="cells will be generated along the circumference." />
+            <node concept="3EZMnI" id="2B5sNxPKgNK" role="3EZMnx">
+              <node concept="VPM3Z" id="2B5sNxPKgNL" role="3F10Kt" />
+              <node concept="3F0ifn" id="2B5sNxPKgNM" role="3EZMnx">
+                <property role="3F0ifm" value="The vessel will be " />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPKgNN" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:6Z$0llyihG3" resolve="cylinder_total_length_int" />
+              </node>
+              <node concept="3F0ifn" id="2B5sNxPKgNO" role="3EZMnx">
+                <property role="3F0ifm" value=" grid points long." />
+              </node>
+              <node concept="2iRfu4" id="2B5sNxPKgNP" role="2iSdaV" />
             </node>
-            <node concept="2iRfu4" id="3mEqLZygWhd" role="2iSdaV" />
-          </node>
-          <node concept="3EZMnI" id="3mEqLZygWqI" role="3EZMnx">
-            <node concept="VPM3Z" id="3mEqLZygWqJ" role="3F10Kt" />
-            <node concept="3F0A7n" id="3mEqLZygWqK" role="3EZMnx">
-              <ref role="1NtTu8" to="nguq:4JVq81FjZEM" resolve="cylinder_total_cells" />
-            </node>
-            <node concept="3F0ifn" id="3mEqLZygWqL" role="3EZMnx">
-              <property role="3F0ifm" value="cells will be created in total." />
-            </node>
-            <node concept="2iRfu4" id="3mEqLZygWqM" role="2iSdaV" />
-          </node>
-          <node concept="3EZMnI" id="6Z$0llyihJJ" role="3EZMnx">
-            <node concept="VPM3Z" id="6Z$0llyihJL" role="3F10Kt" />
-            <node concept="3F0ifn" id="6Z$0llyihLD" role="3EZMnx">
-              <property role="3F0ifm" value="The vessel will be " />
-            </node>
-            <node concept="3F0A7n" id="6Z$0llyihKz" role="3EZMnx">
-              <ref role="1NtTu8" to="nguq:6Z$0llyihG3" resolve="cylinder_total_length_int" />
-            </node>
-            <node concept="3F0ifn" id="6Z$0llyihNL" role="3EZMnx">
-              <property role="3F0ifm" value=" grid points long." />
-            </node>
-            <node concept="2iRfu4" id="6Z$0llyihJO" role="2iSdaV" />
           </node>
         </node>
+        <node concept="3F0ifn" id="2B5sNxPKgHY" role="3EZMnx">
+          <property role="3F0ifm" value="with a length of" />
+        </node>
+        <node concept="3F0A7n" id="2B5sNxPKgJs" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5qSYbADreYl" resolve="cylinder_length_in_cells" />
+          <node concept="VechU" id="2B5sNxPR6Dz" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2B5sNxPKgJT" role="3EZMnx">
+          <property role="3F0ifm" value="and radius of" />
+        </node>
+        <node concept="3F0A7n" id="2B5sNxPKgKQ" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5qSYbADreYo" resolve="cylinder_total_radius" />
+          <node concept="VechU" id="2B5sNxPR6Fe" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="2B5sNxPKgE$" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="4JVq81Fi8qY" role="2iSdaV" />
     </node>
@@ -357,10 +373,8 @@
       <node concept="3F0A7n" id="4JVq81FjdPt" role="3EZMnx">
         <property role="1$x2rV" value="Fill in name here" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="Veino" id="5ni8RLSAIiO" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAIjk" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6JU" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="3F0ifn" id="3$QBVvWC5$w" role="3EZMnx">
@@ -372,10 +386,8 @@
           <node concept="3F0A7n" id="3$QBVvWC5$Z" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="Veino" id="5ni8RLSAIki" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAImr" role="VblUZ">
-                <property role="1iTho6" value="57ffa0" />
-              </node>
+            <node concept="VechU" id="2B5sNxPR6M3" role="3F10Kt">
+              <property role="Vb096" value="fLwANPr/green" />
             </node>
           </node>
         </node>
@@ -400,10 +412,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FjdQm" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYz" resolve="x_coord" />
-        <node concept="Veino" id="5ni8RLSAIwB" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAIx7" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6u5" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQu" role="3EZMnx">
@@ -411,10 +421,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FjdQC" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreY_" resolve="y_coord" />
-        <node concept="Veino" id="5ni8RLSAIy5" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAIy_" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6we" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQO" role="3EZMnx">
@@ -422,10 +430,8 @@
       </node>
       <node concept="3F0A7n" id="4JVq81FjdR2" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5qSYbADreYC" resolve="z_coord" />
-        <node concept="Veino" id="5ni8RLSAIzm" role="3F10Kt">
-          <node concept="1iSF2X" id="5ni8RLSAIzQ" role="VblUZ">
-            <property role="1iTho6" value="57ffa0" />
-          </node>
+        <node concept="VechU" id="2B5sNxPR6xT" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
         </node>
       </node>
       <node concept="2iRfu4" id="4JVq81FjdQc" role="2iSdaV" />
@@ -435,91 +441,143 @@
     <ref role="1XX52x" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="3EZMnI" id="3mEqLZyeByR" role="2wV5jI">
       <node concept="2iRkQZ" id="3mEqLZyeByS" role="2iSdaV" />
-      <node concept="3EZMnI" id="4JVq81FjBZM" role="3EZMnx">
-        <node concept="3F0ifn" id="4JVq81FjBZS" role="3EZMnx">
+      <node concept="3EZMnI" id="2B5sNxPLRKU" role="3EZMnx">
+        <node concept="3F0ifn" id="2B5sNxPPxVF" role="3EZMnx">
           <property role="3F0ifm" value="-" />
         </node>
-        <node concept="3F0A7n" id="4JVq81FjBZY" role="3EZMnx">
+        <node concept="3F0A7n" id="2B5sNxPLRNv" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-          <node concept="Veino" id="5ni8RLSAICJ" role="3F10Kt">
-            <node concept="1iSF2X" id="5ni8RLSAID0" role="VblUZ">
-              <property role="1iTho6" value="57ffa0" />
-            </node>
+          <node concept="VechU" id="2B5sNxPR6ip" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
           </node>
         </node>
-        <node concept="l2Vlx" id="4JVq81FjBZO" role="2iSdaV" />
-        <node concept="3F0ifn" id="4JVq81FjC0c" role="3EZMnx">
+        <node concept="3F0ifn" id="2B5sNxPLROL" role="3EZMnx">
           <property role="3F0ifm" value="with tissue type" />
         </node>
-        <node concept="1iCGBv" id="4JVq81FjC0m" role="3EZMnx">
+        <node concept="1iCGBv" id="2B5sNxPLRQP" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
-          <node concept="1sVBvm" id="4JVq81FjC0o" role="1sWHZn">
-            <node concept="3F0A7n" id="4JVq81FjC0y" role="2wV5jI">
+          <node concept="1sVBvm" id="2B5sNxPLRQR" role="1sWHZn">
+            <node concept="3F0A7n" id="2B5sNxPLRRx" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="Veino" id="5ni8RLSAIEW" role="3F10Kt">
-                <node concept="1iSF2X" id="5ni8RLSAIFG" role="VblUZ">
-                  <property role="1iTho6" value="00ffff" />
-                </node>
+              <node concept="VechU" id="2B5sNxPR6k4" role="3F10Kt">
+                <property role="Vb096" value="fLwANPr/green" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="4JVq81FjC0H" role="3EZMnx">
-          <property role="3F0ifm" value="is located at" />
+        <node concept="3F0ifn" id="2B5sNxPLRSr" role="3EZMnx">
+          <property role="3F0ifm" value="is" />
         </node>
-        <node concept="3F1sOY" id="4JVq81FjC0Z" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPLRKW" role="3F10Kt" />
+        <node concept="1v6uyg" id="2B5sNxPLRMH" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPLRSP" role="1j7Clw">
+            <property role="3F0ifm" value="located" />
+          </node>
+          <node concept="3EZMnI" id="2B5sNxPM591" role="wsdo6">
+            <node concept="2iRkQZ" id="2B5sNxPM594" role="2iSdaV" />
+            <node concept="3EZMnI" id="2B5sNxPPy8p" role="3EZMnx">
+              <node concept="2iRfu4" id="2B5sNxPPy8q" role="2iSdaV" />
+              <node concept="3F0ifn" id="2B5sNxPPy8t" role="3EZMnx">
+                <property role="3F0ifm" value="Lower X:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPy9y" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5dr" resolve="lower_x" />
+              </node>
+              <node concept="3F0ifn" id="2B5sNxPPy9T" role="3EZMnx">
+                <property role="3F0ifm" value="Upper X:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPyaK" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5bx" resolve="upper_x" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="2B5sNxPPycG" role="3EZMnx">
+              <node concept="VPM3Z" id="2B5sNxPPycI" role="3F10Kt" />
+              <node concept="3F0ifn" id="2B5sNxPPycK" role="3EZMnx">
+                <property role="3F0ifm" value="Lower Y:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPyee" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5eH" resolve="lower_y" />
+              </node>
+              <node concept="3F0ifn" id="2B5sNxPPye_" role="3EZMnx">
+                <property role="3F0ifm" value="Upper Y:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPyfs" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5eb" resolve="upper_y" />
+              </node>
+              <node concept="2iRfu4" id="2B5sNxPPycL" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="2B5sNxPPyhN" role="3EZMnx">
+              <node concept="VPM3Z" id="2B5sNxPPyhP" role="3F10Kt" />
+              <node concept="3F0ifn" id="2B5sNxPPyhR" role="3EZMnx">
+                <property role="3F0ifm" value="Lower Z:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPyjd" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5gx" resolve="lower_z" />
+              </node>
+              <node concept="3F0ifn" id="2B5sNxPPyj$" role="3EZMnx">
+                <property role="3F0ifm" value="Upper Z:" />
+              </node>
+              <node concept="3F0A7n" id="2B5sNxPPykc" role="3EZMnx">
+                <ref role="1NtTu8" to="nguq:2B5sNxPM5fv" resolve="upper_z" />
+              </node>
+              <node concept="2iRfu4" id="2B5sNxPPyhS" role="2iSdaV" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2B5sNxPLRTK" role="3EZMnx">
+          <property role="3F0ifm" value="at" />
+        </node>
+        <node concept="3F1sOY" id="2B5sNxPLRUA" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:5qSYbADryCY" resolve="position" />
         </node>
-        <node concept="3F0ifn" id="4JVq81FjC1j" role="3EZMnx">
-          <property role="3F0ifm" value="." />
-        </node>
+        <node concept="2iRfu4" id="2B5sNxPLRKZ" role="2iSdaV" />
       </node>
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fl1FF">
     <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="Flat" />
     <node concept="3EZMnI" id="4JVq81Fl1FK" role="2wV5jI">
-      <node concept="1v6uyg" id="3mEqLZye8Js" role="3EZMnx">
-        <property role="2oejA6" value="true" />
-        <node concept="3EZMnI" id="3mEqLZye8XJ" role="wsdo6">
-          <node concept="3F0A7n" id="3mEqLZye8Yh" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
-          </node>
-          <node concept="3F0ifn" id="3mEqLZye8Zd" role="3EZMnx">
-            <property role="3F0ifm" value="cells will be created in total." />
-          </node>
-          <node concept="2iRfu4" id="3mEqLZye8XM" role="2iSdaV" />
-        </node>
-        <node concept="3EZMnI" id="3mEqLZye8Lw" role="1j7Clw">
-          <node concept="VPM3Z" id="3mEqLZye8Lx" role="3F10Kt" />
-          <node concept="3F0ifn" id="3mEqLZye8Ly" role="3EZMnx">
-            <property role="3F0ifm" value="Flat with a height of" />
-          </node>
-          <node concept="3F0A7n" id="3mEqLZye8Lz" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYu" resolve="flat_height_in_cells" />
-            <node concept="Veino" id="5ni8RLSAIqf" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAIqK" role="VblUZ">
-                <property role="1iTho6" value="57ffa0" />
-              </node>
+      <node concept="3EZMnI" id="2B5sNxPFce_" role="3EZMnx">
+        <node concept="VPM3Z" id="2B5sNxPFceB" role="3F10Kt" />
+        <node concept="1v6uyg" id="2B5sNxPFcjf" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="2B5sNxPFcoI" role="1j7Clw">
+            <property role="3F0ifm" value="Flat" />
+            <node concept="VQ3r3" id="2B5sNxPHMIp" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
             </node>
           </node>
-          <node concept="3F0ifn" id="3mEqLZye8L$" role="3EZMnx">
-            <property role="3F0ifm" value="cells and width" />
-          </node>
-          <node concept="3F0A7n" id="3mEqLZye8L_" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYw" resolve="flat_width_in_cells" />
-            <node concept="Veino" id="5ni8RLSAIrZ" role="3F10Kt">
-              <node concept="1iSF2X" id="5ni8RLSAIsv" role="VblUZ">
-                <property role="1iTho6" value="57ffa0" />
-              </node>
+          <node concept="3EZMnI" id="2B5sNxPFcmO" role="wsdo6">
+            <node concept="3F0A7n" id="2B5sNxPFcnp" role="3EZMnx">
+              <ref role="1NtTu8" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
             </node>
+            <node concept="3F0ifn" id="2B5sNxPFcnI" role="3EZMnx">
+              <property role="3F0ifm" value="cells will be created in total." />
+            </node>
+            <node concept="2iRfu4" id="2B5sNxPFcmR" role="2iSdaV" />
           </node>
-          <node concept="3F0ifn" id="3mEqLZye8LA" role="3EZMnx">
-            <property role="3F0ifm" value="cells" />
-          </node>
-          <node concept="2iRfu4" id="3mEqLZye8LB" role="2iSdaV" />
         </node>
+        <node concept="3F0ifn" id="2B5sNxPFcfy" role="3EZMnx">
+          <property role="3F0ifm" value="with height of" />
+        </node>
+        <node concept="3F0A7n" id="2B5sNxPFcgF" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5qSYbADreYu" resolve="flat_height_in_cells" />
+          <node concept="VechU" id="2B5sNxPR6$N" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2B5sNxPFch4" role="3EZMnx">
+          <property role="3F0ifm" value="cells and width" />
+        </node>
+        <node concept="3F0A7n" id="2B5sNxPFchX" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5qSYbADreYw" resolve="flat_width_in_cells" />
+          <node concept="VechU" id="2B5sNxPR6Bb" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="2B5sNxPFceE" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="4JVq81Fl1FN" role="2iSdaV" />
     </node>

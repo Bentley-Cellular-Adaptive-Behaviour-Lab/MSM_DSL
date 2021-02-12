@@ -40,6 +40,7 @@ public:
 	// List of proteins found at this location.
 	vector<Protein_Env*> owned_proteins;
 	bool has_protein(std::string name);
+	Protein_Env *get_protein(std::string protein_name);
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H

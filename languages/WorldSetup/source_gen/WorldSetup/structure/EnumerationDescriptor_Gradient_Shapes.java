@@ -15,8 +15,8 @@ public class EnumerationDescriptor_Gradient_Shapes extends EnumerationDescriptor
     super(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2d2d6c98b122d8cbL, "Gradient_Shapes", "r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3255377508721416395");
   }
 
-  private final EnumerationDescriptor.MemberDescriptor myMember_GRADIENT_SHAPE_CUBOID_0 = new EnumerationDescriptor.MemberDescriptor("GRADIENT_SHAPE_CUBOID", "Cuboid", 0x2d2d6c98b122d8ccL, "r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3255377508721416396");
-  private final EnumerationDescriptor.MemberDescriptor myMember_GRADIENT_SHAPE_POINT_0 = new EnumerationDescriptor.MemberDescriptor("GRADIENT_SHAPE_POINT", "Point", 0x2d2d6c98b122d8cdL, "r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3255377508721416397");
+  private final EnumerationDescriptor.MemberDescriptor myMember_GRADIENT_SHAPE_CUBOID_0 = new EnumerationDescriptor.MemberDescriptor("GRADIENT_SHAPE_CUBOID", "Cuboidal", 0x2d2d6c98b122d8ccL, "r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3255377508721416396");
+  private final EnumerationDescriptor.MemberDescriptor myMember_GRADIENT_SHAPE_POINT_0 = new EnumerationDescriptor.MemberDescriptor("GRADIENT_SHAPE_POINT", "Point/Spherical", 0x2d2d6c98b122d8cdL, "r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3255377508721416397");
 
   private final EnumerationLiteralsIndex myIndex = EnumerationLiteralsIndex.build(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2d2d6c98b122d8cbL, 0x2d2d6c98b122d8ccL, 0x2d2d6c98b122d8cdL);
   private final List<EnumerationDescriptor.MemberDescriptor> myMembers = new EnumerationDescriptorBase.MembersList(myIndex, myMember_GRADIENT_SHAPE_CUBOID_0, myMember_GRADIENT_SHAPE_POINT_0);

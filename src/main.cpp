@@ -12,6 +12,7 @@
 #include "Tissue.h"
 #include "world.h"
 #include "memAgents.h"
+#include "EC.h"
 
 #if GRAPHICS
 #include "display.h"
@@ -232,6 +233,7 @@ int main(int argc, char * argv[]) {
 //    World* world = new World();
 //    WORLDpointer = world;
 
+	w_container->set_up_proteins();
 	w_container->world_setup();
 	world = w_container->get_world();
 	WORLDpointer = world;
@@ -351,13 +353,15 @@ void World::creationTimestep(int movie)
 
 	auto *tissue_container = new Tissue_Container(this);
 	tissue_container->tissue_set_up();
+	tissue_container->set_up_proteins();
+	tissue_container->add_proteins_to_cell_agents();
 
     //now place agents onto gridded lattice
     for (int j = 0; j < (int) ECagents.size(); j++)
         ECagents[j]->gridAgents();
 
     /** set the memInit value if needed for watching cell growth and tip cell quantification **/
-    if (ECagents.size() < 0)
+    if (ECagents.size() > 0)
     	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
     cout << "memInit" << memINIT << endl;
 
@@ -452,7 +456,6 @@ void World::hysteresisAnalysis()
  * Activate receptors from local ligand levels
  */
 void World::updateMemAgents(void) {
-
 
     int upto;
     int i, j;

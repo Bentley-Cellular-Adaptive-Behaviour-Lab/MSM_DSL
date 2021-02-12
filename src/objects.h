@@ -701,6 +701,8 @@ public:
 	float get_sign(Env *ep,
 				  std::tuple<float, float> point_1,
 				  std::tuple<float, float> point_2);
+	void store_protein();
+	void store_interaction();
 
 	World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
 };
@@ -717,6 +719,7 @@ public:
     Macrophage(World* WP);
 };
 ///------------------------------------------------------------------------------------
+
 
 extern World* WORLDpointer;
 

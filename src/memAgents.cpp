@@ -6,6 +6,7 @@
 #include <math.h>
 #include "memAgents.h"
 #include "environment.h"
+#include "EC.h"
 
 using namespace std;
 
@@ -2296,4 +2297,20 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 
 
+}
+
+float MemAgent::get_protein_level(std::string name) {
+	Protein_MemAgent *current_protein;
+	for (auto & protein : this->owned_proteins) {
+		current_protein = protein;
+		if (current_protein->get_name() == name) {
+			return current_protein->get_level();
+		}
+	}
+}
+
+void MemAgent::clear_proteins() {
+	for (int i = 0; i < this->owned_proteins.size(); i++) {
+		delete owned_proteins[i];
+	}
 }

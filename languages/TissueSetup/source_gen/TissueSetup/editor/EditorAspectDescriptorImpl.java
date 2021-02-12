@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_vppb9r_a0", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vppb9r_a0"), new ConceptEditorHintImpl("tooltipHint_4rlqih_a0", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_4rlqih_a0"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_hccigz_b2a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b2a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b4a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b4a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b6a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b6a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b8a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b8a"), new ConceptEditorHintImpl("tooltipHint_vppb9r_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vppb9r_a0a"), new ConceptEditorHintImpl("tooltipHint_vzkxs3_f0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vzkxs3_f0a"), new ConceptEditorHintImpl("tooltipHint_4rlqih_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_4rlqih_a0a"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -28,17 +28,17 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 1:
         return Collections.<ConceptEditor>singletonList(new Cell_Type_Editor());
       case 2:
-        return Arrays.asList(new ConceptEditor[]{new Cylindrical_Editor(), new Cylindrical_tooltipHint_vppb9r_a0_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Cylindrical_Editor(), new Cylindrical_tooltipHint_vppb9r_a0a_Editor()});
       case 3:
-        return Arrays.asList(new ConceptEditor[]{new Flat_Editor(), new Flat_tooltipHint_4rlqih_a0_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Flat_Editor(), new Flat_tooltipHint_4rlqih_a0a_Editor()});
       case 4:
         return Collections.<ConceptEditor>singletonList(new Position_Editor());
       case 5:
         return Collections.<ConceptEditor>singletonList(new Rectangular_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new Tissue_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Tissue_Editor(), new Tissue_tooltipHint_vzkxs3_f0a_Editor()});
       case 7:
-        return Collections.<ConceptEditor>singletonList(new Tissue_And_Cell_Container_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Tissue_And_Cell_Container_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_Editor()});
       case 8:
         return Collections.<ConceptEditor>singletonList(new Tissue_Type_Editor());
       default:
