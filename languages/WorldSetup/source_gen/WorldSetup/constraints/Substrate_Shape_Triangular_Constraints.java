@@ -8,7 +8,14 @@ import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
+import WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor;
+import java.util.Map;
+import org.jetbrains.mps.openapi.language.SProperty;
+import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
+import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.SNodePointer;
@@ -35,6 +42,39 @@ public class Substrate_Shape_Triangular_Constraints extends BaseConstraintsDescr
       }
     };
   }
+  public static class Lower_z_Property extends BasePropertyConstraintsDescriptor {
+    public Lower_z_Property(ConstraintsDescriptor container) {
+      super(PROPS.lower_z$h6QS, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_lower_z_int_id2B5sNxPo7PW.invoke(node);
+    }
+  }
+  public static class Upper_z_Property extends BasePropertyConstraintsDescriptor {
+    public Upper_z_Property(ConstraintsDescriptor container) {
+      super(PROPS.upper_z$4b8Y, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_upper_z_int_id2B5sNxPo4s_.invoke(node);
+    }
+  }
+  @Override
+  protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
+    Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
+    properties.put(PROPS.lower_z$h6QS, new Lower_z_Property(this));
+    properties.put(PROPS.upper_z$4b8Y, new Upper_z_Property(this));
+    return properties;
+  }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     return true;
   }
@@ -42,5 +82,10 @@ public class Substrate_Shape_Triangular_Constraints extends BaseConstraintsDescr
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Substrate_Shape_Triangular$zL = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, "WorldSetup.structure.Substrate_Shape_Triangular");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty lower_z$h6QS = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x29c573387561013cL, "lower_z");
+    /*package*/ static final SProperty upper_z$4b8Y = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x29c573387561010bL, "upper_z");
   }
 }

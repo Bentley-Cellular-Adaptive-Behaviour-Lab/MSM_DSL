@@ -12,20 +12,23 @@ import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.runtime.DataTypeDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
-import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
+import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCondition = createDescriptorForCondition();
+  /*package*/ final ConceptDescriptor myConceptCondition_Binding = createDescriptorForCondition_Binding();
   /*package*/ final ConceptDescriptor myConceptCondition_Phosphorylated = createDescriptorForCondition_Phosphorylated();
   /*package*/ final ConceptDescriptor myConceptInteraction = createDescriptorForInteraction();
   /*package*/ final ConceptDescriptor myConceptInteraction_Kinase = createDescriptorForInteraction_Kinase();
   /*package*/ final ConceptDescriptor myConceptInteraction_Ligand = createDescriptorForInteraction_Ligand();
   /*package*/ final ConceptDescriptor myConceptInteraction_TF = createDescriptorForInteraction_TF();
   /*package*/ final ConceptDescriptor myConceptProtein = createDescriptorForProtein();
+  /*package*/ final ConceptDescriptor myConceptProtein_Cell = createDescriptorForProtein_Cell();
   /*package*/ final ConceptDescriptor myConceptProtein_Container = createDescriptorForProtein_Container();
+  /*package*/ final ConceptDescriptor myConceptProtein_Environment = createDescriptorForProtein_Environment();
   /*package*/ final ConceptDescriptor myConceptProtein_Reference = createDescriptorForProtein_Reference();
-  /*package*/ final EnumerationDescriptor myEnumerationLocation = new EnumerationDescriptor_Location();
+  /*package*/ final EnumerationDescriptor myEnumerationProtein_Cell_Location = new EnumerationDescriptor_Protein_Cell_Location();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -41,7 +44,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptCondition, myConceptCondition_Phosphorylated, myConceptInteraction, myConceptInteraction_Kinase, myConceptInteraction_Ligand, myConceptInteraction_TF, myConceptProtein, myConceptProtein_Container, myConceptProtein_Reference);
+    return Arrays.asList(myConceptCondition, myConceptCondition_Binding, myConceptCondition_Phosphorylated, myConceptInteraction, myConceptInteraction_Kinase, myConceptInteraction_Ligand, myConceptInteraction_TF, myConceptProtein, myConceptProtein_Cell, myConceptProtein_Container, myConceptProtein_Environment, myConceptProtein_Reference);
   }
 
   @Override
@@ -50,6 +53,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Condition:
         return myConceptCondition;
+      case LanguageConceptSwitch.Condition_Binding:
+        return myConceptCondition_Binding;
       case LanguageConceptSwitch.Condition_Phosphorylated:
         return myConceptCondition_Phosphorylated;
       case LanguageConceptSwitch.Interaction:
@@ -62,8 +67,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptInteraction_TF;
       case LanguageConceptSwitch.Protein:
         return myConceptProtein;
+      case LanguageConceptSwitch.Protein_Cell:
+        return myConceptProtein_Cell;
       case LanguageConceptSwitch.Protein_Container:
         return myConceptProtein_Container;
+      case LanguageConceptSwitch.Protein_Environment:
+        return myConceptProtein_Environment;
       case LanguageConceptSwitch.Protein_Reference:
         return myConceptProtein_Reference;
       default:
@@ -73,7 +82,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationLocation);
+    return Arrays.asList(myEnumerationProtein_Cell_Location);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -85,6 +94,16 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414433702");
     b.version(2);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCondition_Binding() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ProteinSetup", "Condition_Binding", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019c05L);
+    b.class_(false, false, false);
+    b.super_("ProteinSetup.structure.Condition", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aeba6L);
+    b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/2472267746788875269");
+    b.version(2);
+    b.associate("Required_Protein", 0x224f426ac51be09bL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL).optional(false).origin("2472267746790596763").done();
+    b.alias("Binding");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCondition_Phosphorylated() {
@@ -101,8 +120,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414363948");
     b.version(2);
+    b.property("interaction_type", 0x4854efb210abcdd0L).type(PrimitiveTypeId.STRING).origin("5212054216837418448").done();
+    b.property("binding_probability", 0x4854efb210adc271L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("5212054216837546609").done();
+    b.property("regulation_strength", 0x4854efb210adc27cL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("5212054216837546620").done();
+    b.property("timestep_delay", 0x4854efb210adc288L).type(PrimitiveTypeId.INTEGER).origin("5212054216837546632").done();
     b.associate("target_protein", 0x2c4f113dac89e3c7L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL).optional(false).origin("3192789617414366151").done();
-    b.aggregate("Conditions", 0x2c4f113dac8c886aL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aeba6L).optional(true).ordered(true).multiple(true).origin("3192789617414539370").done();
+    b.aggregate("Condition", 0x2c4f113dac8c886aL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aeba6L).optional(true).ordered(true).multiple(false).origin("3192789617414539370").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInteraction_Kinase() {
@@ -111,7 +134,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("ProteinSetup.structure.Interaction", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414364284");
     b.version(2);
-    b.property("binding_probability", 0x2c4f113dac89e4ffL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("3192789617414366463").done();
     b.alias("Kinase");
     return b.create();
   }
@@ -121,7 +143,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("ProteinSetup.structure.Interaction", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414364369");
     b.version(2);
-    b.property("binding_probability", 0x30bad4de2eefe490L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("3511352910224024720").done();
     b.alias("Ligand");
     return b.create();
   }
@@ -131,8 +152,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("ProteinSetup.structure.Interaction", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414364227");
     b.version(2);
-    b.property("regulation_strength", 0x2c4f113dac89e88fL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("3192789617414367375").done();
-    b.property("timestep_delay", 0x2c4f113dac89e90fL).type(PrimitiveTypeId.INTEGER).origin("3192789617414367503").done();
     b.alias("Transcription Factor");
     return b.create();
   }
@@ -142,25 +161,46 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414361901");
     b.version(2);
-    b.property("timesteps_active", 0x2c4f113dac89e6b3L).type(PrimitiveTypeId.INTEGER).origin("3192789617414366899").done();
-    b.property("start_level", 0x2c4f113dac89e76bL).type(PrimitiveTypeId.INTEGER).origin("3192789617414367083").done();
-    b.property("min_level", 0x2c4f113dac89e7c2L).type(PrimitiveTypeId.INTEGER).origin("3192789617414367170").done();
-    b.property("max_level", 0x2c4f113dac89e7e2L).type(PrimitiveTypeId.INTEGER).origin("3192789617414367202").done();
-    b.property("location", 0x2c4f113dac8ae4b9L).type(MetaIdFactory.dataTypeId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8a2240L)).origin("3192789617414431929").done();
-    b.aggregate("Interactions", 0x2c4f113dac8ae2bdL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL).optional(true).ordered(true).multiple(true).origin("3192789617414431421").done();
     b.aggregate("Ligand_References", 0x30bad4de2ef1b5d6L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224143830").done();
     b.aggregate("Kinase_References", 0x30bad4de2ef1b6e7L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224144103").done();
     b.aggregate("TF_References", 0x30bad4de2ef1b7a1L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("3511352910224144289").done();
     b.aggregate("Parent_Cell_Type_References", 0x18c0ec6efa1e474fL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L).optional(true).ordered(true).multiple(true).origin("1783685413825562447").done();
+    b.aggregate("Binding_Interactions", 0x451b6e6d088aeb5cL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dcd1L).optional(true).ordered(true).multiple(true).origin("4979695227562027868").done();
+    b.aggregate("Phosphorylation_Interactions", 0x451b6e6d088aeb62L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc7cL).optional(true).ordered(true).multiple(true).origin("4979695227562027874").done();
+    b.aggregate("Regulation_Interactions", 0x451b6e6d088aeb69L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc43L).optional(true).ordered(true).multiple(true).origin("4979695227562027881").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProtein_Cell() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ProteinSetup", "Protein_Cell", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019371L);
+    b.class_(false, false, false);
+    b.super_("ProteinSetup.structure.Protein", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL);
+    b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/2472267746788873073");
+    b.version(2);
+    b.property("timesteps_active", 0x224f426ac5019571L).type(PrimitiveTypeId.INTEGER).origin("2472267746788873585").done();
+    b.property("start_level", 0x224f426ac50195c8L).type(PrimitiveTypeId.INTEGER).origin("2472267746788873672").done();
+    b.property("min_level", 0x224f426ac50196acL).type(PrimitiveTypeId.INTEGER).origin("2472267746788873900").done();
+    b.property("max_level", 0x224f426ac5019705L).type(PrimitiveTypeId.INTEGER).origin("2472267746788873989").done();
+    b.property("location", 0x224f426ac5019792L).type(MetaIdFactory.dataTypeId(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8a2240L)).origin("2472267746788874130").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProtein_Container() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ProteinSetup", "Protein_Container", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8b6d4dL);
     b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/3192789617414466893");
     b.version(2);
-    b.aggregate("proteins", 0x2c4f113dac8b6ddaL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL).optional(true).ordered(true).multiple(true).origin("3192789617414467034").done();
+    b.aggregate("Cellular_Proteins", 0x2c4f113dac8b6ddaL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019371L).optional(true).ordered(true).multiple(true).origin("3192789617414467034").done();
+    b.aggregate("Environment_Proteins", 0x224f426ac508f11fL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019482L).optional(true).ordered(true).multiple(true).origin("2472267746789355807").done();
     b.alias("Protein Container");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProtein_Environment() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("ProteinSetup", "Protein_Environment", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019482L);
+    b.class_(false, false, false);
+    b.super_("ProteinSetup.structure.Protein", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL);
+    b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/2472267746788873346");
+    b.version(2);
+    b.property("starting_strength", 0x224f426ac5019a38L).type(PrimitiveTypeId.INTEGER).origin("2472267746788874808").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProtein_Reference() {

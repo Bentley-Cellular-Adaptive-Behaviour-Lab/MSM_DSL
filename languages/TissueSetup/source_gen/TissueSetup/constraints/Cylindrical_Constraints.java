@@ -79,7 +79,7 @@ public class Cylindrical_Constraints extends BaseConstraintsDescriptor {
     }
     @Override
     public Object getValue(SNode node) {
-      return (int) Cylindrical__BehaviorDescriptor.get_total_length_int_id1QpPlI52lcy.invoke(node);
+      return (int) Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(node);
     }
   }
   @Override

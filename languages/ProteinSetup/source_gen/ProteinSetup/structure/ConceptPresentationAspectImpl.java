@@ -10,13 +10,16 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Condition;
+  private ConceptPresentation props_Condition_Binding;
   private ConceptPresentation props_Condition_Phosphorylated;
   private ConceptPresentation props_Interaction;
   private ConceptPresentation props_Interaction_Kinase;
   private ConceptPresentation props_Interaction_Ligand;
   private ConceptPresentation props_Interaction_TF;
   private ConceptPresentation props_Protein;
+  private ConceptPresentation props_Protein_Cell;
   private ConceptPresentation props_Protein_Container;
+  private ConceptPresentation props_Protein_Environment;
   private ConceptPresentation props_Protein_Reference;
 
   @Override
@@ -31,6 +34,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Condition = cpb.create();
         }
         return props_Condition;
+      case LanguageConceptSwitch.Condition_Binding:
+        if (props_Condition_Binding == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("Binding");
+          props_Condition_Binding = cpb.create();
+        }
+        return props_Condition_Binding;
       case LanguageConceptSwitch.Condition_Phosphorylated:
         if (props_Condition_Phosphorylated == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -73,13 +83,27 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Protein = cpb.create();
         }
         return props_Protein;
+      case LanguageConceptSwitch.Protein_Cell:
+        if (props_Protein_Cell == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Protein_Cell = cpb.create();
+        }
+        return props_Protein_Cell;
       case LanguageConceptSwitch.Protein_Container:
         if (props_Protein_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("Protein Container");
+          cpb.presentationByName();
           props_Protein_Container = cpb.create();
         }
         return props_Protein_Container;
+      case LanguageConceptSwitch.Protein_Environment:
+        if (props_Protein_Environment == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Protein_Environment = cpb.create();
+        }
+        return props_Protein_Environment;
       case LanguageConceptSwitch.Protein_Reference:
         if (props_Protein_Reference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

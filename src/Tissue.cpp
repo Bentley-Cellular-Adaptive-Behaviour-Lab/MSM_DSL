@@ -14,6 +14,7 @@
 #include "space.h"
 #include "world.h"
 #include "memAgents.h"
+#include "EC.h"
 
 //********************************************************************************************************************//
 
@@ -137,7 +138,7 @@ void Tissue_Container::create_cell(string name, Cell_Type *cell_type, Coordinate
             cell = new Cell(this, name, m_world, position, cell_type);
             cell->determine_boundaries();
             store_cell(cell);
-            EC *ecp = new EC((World*) m_world);
+            EC *ecp = new EC((World *) m_world, cell_type);
 
 			//Add the cell to list of tissue container's known cell agents.
             m_world->ECagents.push_back(ecp);
@@ -420,12 +421,12 @@ void Tissue_Container::connect_2d_square_cell(int cell_number) {
 void Tissue_Container::check_positions() {
     Cell *current_cell;
     Tissue *current_tissue;
-    for (int i; i < cells.size(); i++) {
+    for (int i = 0; i < cells.size(); i++) {
         current_cell = cells[i];
         assert(current_cell->check_boundaries());
     }
 
-    for (int i; i < tissues.size(); i++) {
+    for (int i = 0; i < tissues.size(); i++) {
         current_tissue = tissues[i];
         assert(current_tissue->check_boundaries());
     }
@@ -651,11 +652,127 @@ bool Tissue_Container::check_monolayer_monolayer_overlap(Tissue_Monolayer *monol
     return false;
 }
 
+void Tissue_Container::add_proteins_to_cell_agents() {
+	EC* current_cell_agent;
+	Protein_Cell* current_type_protein;
+	Protein_Cell* new_agent_protein;
+	for (auto & ECagent : this->m_world->ECagents) {
+		//Get a cell agent in the MSM world.
+		current_cell_agent = ECagent;
+		for (auto & type_protein : current_cell_agent->m_cell_type->m_cell_proteins) {
+			// Deep copy cell protein values over to the cell agent, seeing as those values are going to be altered.
+			current_type_protein = type_protein;
+			new_agent_protein = new Protein_Cell(type_protein->get_name(),
+												 type_protein->get_level(),
+												 type_protein->get_location(),
+												 type_protein->get_min_level(),
+												 type_protein->get_max_level());
+			current_cell_agent->owned_proteins.push_back(new_agent_protein);
+		}
+	}
+}
 
-// Constructor //
+void Tissue_Container::add_protein_to_type(Cell_Type* cell_type, std::string name) {
+	Protein_Cell *cell_protein;
+	Protein *current_protein;
+
+	for (int i = 0; i < this->m_proteins.size(); i++) {
+		current_protein = this->m_proteins[i];
+		if (name == current_protein->get_name()) {
+			cell_protein = reinterpret_cast<Protein_Cell*>(current_protein);
+		}
+	}
+	cell_type->m_cell_proteins->push_back(cell_protein);
+}
+
+Protein_Env* Tissue_Container::create_env_protein(std::string name,
+										 float level) {
+	Protein_Env *new_env_protein;
+	new_env_protein = new Protein_Env(name, level);
+	store_protein(new_env_protein);
+	return new_env_protein;
+}
+
+Protein_Cell* Tissue_Container::create_cell_protein(std::string name,
+											  float level,
+											  int location,
+											  float min_level,
+											  float max_level) {
+	Protein_Cell *new_cell_protein;
+	new_cell_protein = new Protein_Cell(name, level, location, min_level, max_level);
+	store_protein(new_cell_protein);
+	return new_cell_protein;
+}
+
+void Tissue_Container::create_binding_interaction(int interaction_type,
+												 Protein* host_protein,
+												 Protein* target_protein,
+												 int requires_bound,
+												 int requires_phosphorylation,
+												 float binding_probability) {
+	auto *new_interaction = new Interaction_Binding(interaction_type,
+													host_protein,
+													target_protein,
+													requires_phosphorylation,
+													requires_bound,
+													binding_probability);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+}
+
+void Tissue_Container::create_phosphorylation_interaction(int interaction_type,
+														 Protein* host_protein,
+														 Protein* target_protein,
+														 int requires_bound,
+														 int requires_phosphorylation,
+														 float phosphorylation_probability) {
+	auto *new_interaction = new Interaction_Phosphorylation(interaction_type,
+															host_protein,
+															target_protein,
+															requires_phosphorylation,
+															requires_bound,
+															phosphorylation_probability);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+
+}
+
+
+void Tissue_Container::create_regulation_interaction(int interaction_type,
+													Protein* host_protein,
+													Protein* target_protein,
+													int requires_bound,
+													int requires_phosphorylation,
+													float regulation_strength,
+													int timestep_delay) {
+	auto *new_interaction = new Interaction_Transcription(interaction_type,
+														  host_protein,
+														  target_protein,
+														  requires_phosphorylation,
+														  requires_bound,
+														  regulation_strength,
+														  timestep_delay);
+	host_protein->store_interaction(new_interaction);
+	target_protein->store_interaction(new_interaction);
+}
+
+
+
+void Tissue_Container::store_protein(Protein* protein) {
+	this->m_proteins.push_back(protein);
+}
+
+// Constructors //
 
 Tissue_Container::Tissue_Container(World *world): m_world(world) {
 
+}
+
+Tissue_Container::Tissue_Container(World *world,
+								   World_Container *world_container) : m_world(world),
+								   									m_world_container(world_container) {
+	this->m_world = world;
+	this->m_world_container = world_container;
 }
 
 //********************************************************************************************************************//
@@ -1508,7 +1625,7 @@ void Tissue_Vessel::create_vessel() {
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
-        EC * ecp = new EC((World*) m_world);
+        EC * ecp = new EC((World *) m_world, this->m_tissue_type->m_cell_type);
 
         // Put the address into the world vector Ecells
         m_world->ECagents.push_back(ecp);
@@ -1763,7 +1880,7 @@ void Tissue_Monolayer::create_monolayer() {
 
     for (int i = 0; i < m_cell_number; i++) {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
-        EC *ecp = new EC( this->m_world);
+        EC *ecp = new EC(this->m_world, this->m_tissue_type->m_cell_type);
 
         //put the address into the vector Ecells
         m_world->ECagents.push_back(ecp);

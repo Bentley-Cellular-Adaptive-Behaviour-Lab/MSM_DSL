@@ -11,6 +11,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include "memAgents.h"
+#include "EC.h"
 
 vector <MemAgent*> deleteList;
 

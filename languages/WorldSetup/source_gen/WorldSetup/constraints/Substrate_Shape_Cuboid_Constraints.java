@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -105,12 +106,96 @@ public class Substrate_Shape_Cuboid_Constraints extends BaseConstraintsDescripto
       return propertyValue > 0;
     }
   }
+  public static class Upper_x_Property extends BasePropertyConstraintsDescriptor {
+    public Upper_x_Property(ConstraintsDescriptor container) {
+      super(PROPS.upper_x$b4Zf, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_upper_x_int_id2B5sNxPom2x.invoke(node);
+    }
+  }
+  public static class Lower_x_Property extends BasePropertyConstraintsDescriptor {
+    public Lower_x_Property(ConstraintsDescriptor container) {
+      super(PROPS.lower_x$e25P, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_lower_x_int_id2B5sNxPopz7.invoke(node);
+    }
+  }
+  public static class Upper_y_Property extends BasePropertyConstraintsDescriptor {
+    public Upper_y_Property(ConstraintsDescriptor container) {
+      super(PROPS.upper_y$eJ8P, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_upper_y_int_id2B5sNxPoroM.invoke(node);
+    }
+  }
+  public static class Lower_y_Property extends BasePropertyConstraintsDescriptor {
+    public Lower_y_Property(ConstraintsDescriptor container) {
+      super(PROPS.lower_y$hGHt, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_lower_y_int_id2B5sNxPosW8.invoke(node);
+    }
+  }
+  public static class Upper_z_Property extends BasePropertyConstraintsDescriptor {
+    public Upper_z_Property(ConstraintsDescriptor container) {
+      super(PROPS.upper_z$i9ln, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_upper_z_int_id2B5sNxPoyte.invoke(node);
+    }
+  }
+  public static class Lower_z_Property extends BasePropertyConstraintsDescriptor {
+    public Lower_z_Property(ConstraintsDescriptor container) {
+      super(PROPS.lower_z$lkJU, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
+    }
+    @Override
+    public Object getValue(SNode node) {
+      return (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_lower_z_int_id2B5sNxPoAKO.invoke(node);
+    }
+  }
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
     properties.put(PROPS.height$U$qd, new Height_Property(this));
     properties.put(PROPS.depth$U_7g, new Depth_Property(this));
     properties.put(PROPS.width$Uv0Q, new Width_Property(this));
+    properties.put(PROPS.upper_x$b4Zf, new Upper_x_Property(this));
+    properties.put(PROPS.lower_x$e25P, new Lower_x_Property(this));
+    properties.put(PROPS.upper_y$eJ8P, new Upper_y_Property(this));
+    properties.put(PROPS.lower_y$hGHt, new Lower_y_Property(this));
+    properties.put(PROPS.upper_z$i9ln, new Upper_z_Property(this));
+    properties.put(PROPS.lower_z$lkJU, new Lower_z_Property(this));
     return properties;
   }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
@@ -126,5 +211,11 @@ public class Substrate_Shape_Cuboid_Constraints extends BaseConstraintsDescripto
     /*package*/ static final SProperty height$U$qd = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5aL, "height");
     /*package*/ static final SProperty depth$U_7g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5dL, "depth");
     /*package*/ static final SProperty width$Uv0Q = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f58L, "width");
+    /*package*/ static final SProperty upper_x$b4Zf = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c573387561462bL, "upper_x");
+    /*package*/ static final SProperty lower_x$e25P = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c573387561465dL, "lower_x");
+    /*package*/ static final SProperty upper_y$eJ8P = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c573387561469fL, "upper_y");
+    /*package*/ static final SProperty lower_y$hGHt = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c57338756146d3L, "lower_y");
+    /*package*/ static final SProperty upper_z$i9ln = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c57338756146f9L, "upper_z");
+    /*package*/ static final SProperty lower_z$lkJU = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x29c573387561473eL, "lower_z");
   }
 }

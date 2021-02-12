@@ -15,10 +15,8 @@ void World_Container::world_setup() {
 
     Gradient_source = Coordinates(0, 200, 0);
     Gradient_sink = Coordinates(0, 0, 0);
-    create_gradient(GRADIENT_TYPE_LINEAR, GRADIENT_SHAPE_CUBOID, "VEGF", &(Gradient_source), 10, &(Gradient_sink));
+    create_gradient(GRADIENT_TYPE_LINEAR, GRADIENT_SHAPE_CUBOID, "Protein_A", &(Gradient_source), &(Gradient_sink));
 
     // SUBSTRATE CREATION
-
-
 
 }

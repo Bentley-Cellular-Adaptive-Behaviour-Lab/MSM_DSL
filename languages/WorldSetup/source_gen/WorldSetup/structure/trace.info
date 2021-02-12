@@ -19,7 +19,7 @@
       <unit at="10,0,46,0" name="WorldSetup.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,191,0" name="WorldSetup.structure.StructureAspectDescriptor" />
+      <unit at="18,0,199,0" name="WorldSetup.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/232636909712113789">
@@ -250,23 +250,25 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5893570766194507599" at="26,0,27,0" concept="2" trace="myConceptSubstrate_Shape_Triangular" />
       <node id="5893570766194507599" at="67,60,68,51" concept="6" />
-      <node id="5893570766194507599" at="156,84,157,171" concept="5" />
-      <node id="5893570766194507599" at="157,171,158,34" concept="1" />
-      <node id="5893570766194507599" at="158,34,159,116" concept="1" />
-      <node id="5893570766194507599" at="159,116,160,97" concept="1" />
-      <node id="5893570766194507599" at="160,97,161,17" concept="1" />
-      <node id="2483842479245197385" at="161,17,162,117" concept="1" />
-      <node id="5475084672763568680" at="162,117,163,112" concept="1" />
-      <node id="5893570766194507617" at="163,112,164,202" concept="1" />
-      <node id="5893570766194507625" at="164,202,165,202" concept="1" />
-      <node id="5893570766194507628" at="165,202,166,202" concept="1" />
-      <node id="5893570766194507599" at="166,202,167,22" concept="6" />
-      <node id="5893570766194507599" at="156,0,169,0" concept="8" trace="createDescriptorForSubstrate_Shape_Triangular#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5893570766194507599" at="162,84,163,171" concept="5" />
+      <node id="5893570766194507599" at="163,171,164,34" concept="1" />
+      <node id="5893570766194507599" at="164,34,165,116" concept="1" />
+      <node id="5893570766194507599" at="165,116,166,97" concept="1" />
+      <node id="5893570766194507599" at="166,97,167,17" concept="1" />
+      <node id="2483842479245197385" at="167,17,168,117" concept="1" />
+      <node id="5475084672763568680" at="168,117,169,112" concept="1" />
+      <node id="3009938612291698955" at="169,112,170,114" concept="1" />
+      <node id="3009938612291699004" at="170,114,171,114" concept="1" />
+      <node id="5893570766194507617" at="171,114,172,202" concept="1" />
+      <node id="5893570766194507625" at="172,202,173,202" concept="1" />
+      <node id="5893570766194507628" at="173,202,174,202" concept="1" />
+      <node id="5893570766194507599" at="174,202,175,22" concept="6" />
+      <node id="5893570766194507599" at="162,0,177,0" concept="8" trace="createDescriptorForSubstrate_Shape_Triangular#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5893570766194507599" at="67,60,68,51" />
-      <scope id="5893570766194507599" at="156,84,167,22">
+      <scope id="5893570766194507599" at="162,84,175,22">
         <var name="b" id="5893570766194507599" />
       </scope>
-      <scope id="5893570766194507599" at="156,0,169,0" />
+      <scope id="5893570766194507599" at="162,0,177,0" />
     </file>
   </root>
   <root nodeRef="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507600">
@@ -298,14 +300,20 @@
       <node id="5893570766194507608" at="149,17,150,112" concept="1" />
       <node id="5893570766194507610" at="150,112,151,113" concept="1" />
       <node id="5893570766194507613" at="151,113,152,112" concept="1" />
-      <node id="2483842479244859575" at="152,112,153,212" concept="1" />
-      <node id="5893570766194507600" at="153,212,154,22" concept="6" />
-      <node id="5893570766194507600" at="144,0,156,0" concept="8" trace="createDescriptorForSubstrate_Shape_Cuboid#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="3009938612291716651" at="152,112,153,114" concept="1" />
+      <node id="3009938612291716701" at="153,114,154,114" concept="1" />
+      <node id="3009938612291716767" at="154,114,155,114" concept="1" />
+      <node id="3009938612291716819" at="155,114,156,114" concept="1" />
+      <node id="3009938612291716857" at="156,114,157,114" concept="1" />
+      <node id="3009938612291716926" at="157,114,158,114" concept="1" />
+      <node id="2483842479244859575" at="158,114,159,212" concept="1" />
+      <node id="5893570766194507600" at="159,212,160,22" concept="6" />
+      <node id="5893570766194507600" at="144,0,162,0" concept="8" trace="createDescriptorForSubstrate_Shape_Cuboid#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5893570766194507600" at="65,56,66,47" />
-      <scope id="5893570766194507600" at="144,80,154,22">
+      <scope id="5893570766194507600" at="144,80,160,22">
         <var name="b" id="5893570766194507600" />
       </scope>
-      <scope id="5893570766194507600" at="144,0,156,0" />
+      <scope id="5893570766194507600" at="144,0,162,0" />
     </file>
   </root>
   <root nodeRef="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507619">
@@ -329,19 +337,19 @@
     <file name="StructureAspectDescriptor.java">
       <node id="5893570766194507619" at="27,0,28,0" concept="2" trace="myConceptVertex" />
       <node id="5893570766194507619" at="69,40,70,31" concept="6" />
-      <node id="5893570766194507619" at="169,64,170,151" concept="5" />
-      <node id="5893570766194507619" at="170,151,171,34" concept="1" />
-      <node id="5893570766194507619" at="171,34,172,97" concept="1" />
-      <node id="5893570766194507619" at="172,97,173,17" concept="1" />
-      <node id="5893570766194507620" at="173,17,174,119" concept="1" />
-      <node id="5893570766194507622" at="174,119,175,119" concept="1" />
-      <node id="5893570766194507619" at="175,119,176,22" concept="6" />
-      <node id="5893570766194507619" at="169,0,178,0" concept="8" trace="createDescriptorForVertex#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="5893570766194507619" at="177,64,178,151" concept="5" />
+      <node id="5893570766194507619" at="178,151,179,34" concept="1" />
+      <node id="5893570766194507619" at="179,34,180,97" concept="1" />
+      <node id="5893570766194507619" at="180,97,181,17" concept="1" />
+      <node id="5893570766194507620" at="181,17,182,119" concept="1" />
+      <node id="5893570766194507622" at="182,119,183,119" concept="1" />
+      <node id="5893570766194507619" at="183,119,184,22" concept="6" />
+      <node id="5893570766194507619" at="177,0,186,0" concept="8" trace="createDescriptorForVertex#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="5893570766194507619" at="69,40,70,31" />
-      <scope id="5893570766194507619" at="169,64,176,22">
+      <scope id="5893570766194507619" at="177,64,184,22">
         <var name="b" id="5893570766194507619" />
       </scope>
-      <scope id="5893570766194507619" at="169,0,178,0" />
+      <scope id="5893570766194507619" at="177,0,186,0" />
     </file>
   </root>
   <root nodeRef="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203043">
@@ -365,22 +373,22 @@
     <file name="StructureAspectDescriptor.java">
       <node id="8343650468779203043" at="28,0,29,0" concept="2" trace="myConceptWorld_Container" />
       <node id="8343650468779203043" at="71,49,72,40" concept="6" />
-      <node id="8343650468779203043" at="178,73,179,160" concept="5" />
-      <node id="8343650468779203043" at="179,160,180,33" concept="1" />
-      <node id="8343650468779203043" at="180,33,181,71" concept="1" />
-      <node id="8343650468779203043" at="181,71,182,97" concept="1" />
-      <node id="8343650468779203043" at="182,97,183,17" concept="1" />
-      <node id="7775299862363453103" at="183,17,184,188" concept="1" />
-      <node id="8343650468779203044" at="184,188,185,198" concept="1" />
-      <node id="8343650468779203051" at="185,198,186,201" concept="1" />
-      <node id="8343650468779203054" at="186,201,187,202" concept="1" />
-      <node id="8343650468779203043" at="187,202,188,22" concept="6" />
-      <node id="8343650468779203043" at="178,0,190,0" concept="8" trace="createDescriptorForWorld_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="8343650468779203043" at="186,73,187,160" concept="5" />
+      <node id="8343650468779203043" at="187,160,188,33" concept="1" />
+      <node id="8343650468779203043" at="188,33,189,71" concept="1" />
+      <node id="8343650468779203043" at="189,71,190,97" concept="1" />
+      <node id="8343650468779203043" at="190,97,191,17" concept="1" />
+      <node id="7775299862363453103" at="191,17,192,188" concept="1" />
+      <node id="8343650468779203044" at="192,188,193,198" concept="1" />
+      <node id="8343650468779203051" at="193,198,194,201" concept="1" />
+      <node id="8343650468779203054" at="194,201,195,202" concept="1" />
+      <node id="8343650468779203043" at="195,202,196,22" concept="6" />
+      <node id="8343650468779203043" at="186,0,198,0" concept="8" trace="createDescriptorForWorld_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="8343650468779203043" at="71,49,72,40" />
-      <scope id="8343650468779203043" at="178,73,188,22">
+      <scope id="8343650468779203043" at="186,73,196,22">
         <var name="b" id="8343650468779203043" />
       </scope>
-      <scope id="8343650468779203043" at="178,0,190,0" />
+      <scope id="8343650468779203043" at="186,0,198,0" />
     </file>
   </root>
   <root nodeRef="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203046">

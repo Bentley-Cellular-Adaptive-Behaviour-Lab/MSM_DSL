@@ -7,6 +7,7 @@
 #include <random>
 #include "memAgents.h"
 #include "environment.h"
+#include "EC.h"
 
 //#include "ODEs.h"
 
@@ -163,6 +164,7 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 
 MemAgent::~MemAgent(void){
 
+	this->clear_proteins();
 	EnvNeighs.clear();
 }
 

@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include "environment.h"
 
+
 //---------------------------------------------------------------
 void World::updateEnvironment(void){
 
@@ -517,4 +518,12 @@ int J;
 */
 //-------------------------------------------------------------------------
 
-
+Protein_Env* Env::get_protein(std::string protein_name) {
+	Protein_Env* current_protein;
+	for (auto & protein: this->owned_proteins) {
+		current_protein = protein;
+		if (current_protein->get_name() == protein_name) {
+			return current_protein;
+		}
+	}
+}

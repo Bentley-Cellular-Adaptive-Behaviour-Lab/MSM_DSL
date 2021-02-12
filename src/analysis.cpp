@@ -4,6 +4,7 @@
 #include <fstream>
 #include "memAgents.h"
 #include "environment.h"
+#include "EC.h"
 
 using namespace std;
 

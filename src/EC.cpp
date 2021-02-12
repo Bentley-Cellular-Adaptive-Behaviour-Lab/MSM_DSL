@@ -9,6 +9,7 @@
 #include <numeric>
 #include <iterator>
 #include "memAgents.h"
+#include "EC.h"
 
 using namespace std;
 
@@ -508,3 +509,9 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     
 }
 //------------------------------------------------------------------------------------------------
+
+// Tom: Extra constructor for DSL usage.
+EC::EC(World *world, Cell_Type *cell_type) {
+	this->worldP = world;
+	this->m_cell_type = cell_type;
+}

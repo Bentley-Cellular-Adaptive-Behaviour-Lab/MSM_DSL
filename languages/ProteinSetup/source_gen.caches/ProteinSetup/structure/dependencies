@@ -11,7 +11,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase" />
   </dependency>
-  <dependency className="ProteinSetup.structure.EnumerationDescriptor_Location">
+  <dependency className="ProteinSetup.structure.EnumerationDescriptor_Protein_Cell_Location">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
@@ -28,7 +28,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
   </dependency>
   <dependency className="ProteinSetup.structure.StructureAspectDescriptor">
-    <classNode dependClassName="ProteinSetup.structure.EnumerationDescriptor_Location" />
+    <classNode dependClassName="ProteinSetup.structure.EnumerationDescriptor_Protein_Cell_Location" />
     <classNode dependClassName="ProteinSetup.structure.LanguageConceptSwitch" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />

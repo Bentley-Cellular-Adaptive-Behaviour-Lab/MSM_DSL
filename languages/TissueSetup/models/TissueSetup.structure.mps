@@ -95,6 +95,36 @@
     <property role="TrG5h" value="Tissue" />
     <property role="R4oN_" value="Concept for storing the location and type of a tissue." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="2B5sNxPM5bx" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470113" />
+      <property role="TrG5h" value="upper_x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPM5dr" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470235" />
+      <property role="TrG5h" value="lower_x" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPM5eb" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470283" />
+      <property role="TrG5h" value="upper_y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPM5eH" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470317" />
+      <property role="TrG5h" value="lower_y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPM5fv" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470367" />
+      <property role="TrG5h" value="upper_z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2B5sNxPM5gx" role="1TKVEl">
+      <property role="IQ2nx" value="3009938612298470433" />
+      <property role="TrG5h" value="lower_z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

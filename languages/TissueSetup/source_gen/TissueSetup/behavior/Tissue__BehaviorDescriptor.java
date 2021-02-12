@@ -132,7 +132,7 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
     int lower_x = 0;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
       // this.tissue_type.arrangement:Cylindrical.get_total_length_int() 
-      lower_x = SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) - ((int) Cylindrical__BehaviorDescriptor.get_total_length_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2);
+      lower_x = SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) - ((int) Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) {
       lower_x = SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) - ((int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2);
     }
@@ -149,7 +149,7 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static Integer get_upper_x_id1QpPlI52f8w(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) + (int) Cylindrical__BehaviorDescriptor.get_total_length_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2;
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) + (int) Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2;
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) {
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR), PROPS.x_coord$pFJT) + ((int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2);
     } else {

@@ -15,10 +15,12 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Substrate_Shape_Cuboid__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, "WorldSetup.structure.Substrate_Shape_Cuboid");
@@ -26,8 +28,14 @@ public final class Substrate_Shape_Cuboid__BehaviorDescriptor extends BaseBHDesc
   public static final SMethod<String> get_height_id7e7Fgy6tl4V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7e7Fgy6tl4V").build();
   public static final SMethod<String> get_width_id7e7Fgy6tn4Y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7e7Fgy6tn4Y").build();
   public static final SMethod<String> get_depth_id7e7Fgy6tot2 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7e7Fgy6tot2").build();
+  public static final SMethod<Integer> get_upper_x_int_id2B5sNxPom2x = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_x_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPom2x").build();
+  public static final SMethod<Integer> get_lower_x_int_id2B5sNxPopz7 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_x_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPopz7").build();
+  public static final SMethod<Integer> get_upper_y_int_id2B5sNxPoroM = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPoroM").build();
+  public static final SMethod<Integer> get_lower_y_int_id2B5sNxPosW8 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPosW8").build();
+  public static final SMethod<Integer> get_upper_z_int_id2B5sNxPoyte = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPoyte").build();
+  public static final SMethod<Integer> get_lower_z_int_id2B5sNxPoAKO = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPoAKO").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_id7e7Fgy6tl4V, get_width_id7e7Fgy6tn4Y, get_depth_id7e7Fgy6tot2);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_id7e7Fgy6tl4V, get_width_id7e7Fgy6tn4Y, get_depth_id7e7Fgy6tot2, get_upper_x_int_id2B5sNxPom2x, get_lower_x_int_id2B5sNxPopz7, get_upper_y_int_id2B5sNxPoroM, get_lower_y_int_id2B5sNxPosW8, get_upper_z_int_id2B5sNxPoyte, get_lower_z_int_id2B5sNxPoAKO);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -43,6 +51,30 @@ public final class Substrate_Shape_Cuboid__BehaviorDescriptor extends BaseBHDesc
   /*package*/ static String get_depth_id7e7Fgy6tot2(@NotNull SNode __thisNode__) {
     String depth = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.depth$U_7g));
     return depth;
+  }
+  /*package*/ static int get_upper_x_int_id2B5sNxPom2x(@NotNull SNode __thisNode__) {
+    int x_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.width$Uv0Q) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.x_coord$pFJT) + x_offset;
+  }
+  /*package*/ static int get_lower_x_int_id2B5sNxPopz7(@NotNull SNode __thisNode__) {
+    int x_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.width$Uv0Q) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.x_coord$pFJT) - x_offset;
+  }
+  /*package*/ static int get_upper_y_int_id2B5sNxPoroM(@NotNull SNode __thisNode__) {
+    int y_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.height$U$qd) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.y_coord$pGdV) + y_offset;
+  }
+  /*package*/ static int get_lower_y_int_id2B5sNxPosW8(@NotNull SNode __thisNode__) {
+    int y_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.height$U$qd) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.y_coord$pGdV) - y_offset;
+  }
+  /*package*/ static int get_upper_z_int_id2B5sNxPoyte(@NotNull SNode __thisNode__) {
+    int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$U_7g) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.z_coord$pLQj) + z_offset;
+  }
+  /*package*/ static int get_lower_z_int_id2B5sNxPoAKO(@NotNull SNode __thisNode__) {
+    int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$U_7g) / 2;
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Substrate_Position$SqKU), PROPS.z_coord$pLQj) - z_offset;
   }
 
   /*package*/ Substrate_Shape_Cuboid__BehaviorDescriptor() {
@@ -66,6 +98,18 @@ public final class Substrate_Shape_Cuboid__BehaviorDescriptor extends BaseBHDesc
         return (T) ((String) get_width_id7e7Fgy6tn4Y(node));
       case 2:
         return (T) ((String) get_depth_id7e7Fgy6tot2(node));
+      case 3:
+        return (T) ((Integer) get_upper_x_int_id2B5sNxPom2x(node));
+      case 4:
+        return (T) ((Integer) get_lower_x_int_id2B5sNxPopz7(node));
+      case 5:
+        return (T) ((Integer) get_upper_y_int_id2B5sNxPoroM(node));
+      case 6:
+        return (T) ((Integer) get_lower_y_int_id2B5sNxPosW8(node));
+      case 7:
+        return (T) ((Integer) get_upper_z_int_id2B5sNxPoyte(node));
+      case 8:
+        return (T) ((Integer) get_lower_z_int_id2B5sNxPoAKO(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -99,5 +143,12 @@ public final class Substrate_Shape_Cuboid__BehaviorDescriptor extends BaseBHDesc
     /*package*/ static final SProperty height$U$qd = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5aL, "height");
     /*package*/ static final SProperty width$Uv0Q = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f58L, "width");
     /*package*/ static final SProperty depth$U_7g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5dL, "depth");
+    /*package*/ static final SProperty x_coord$pFJT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa3L, "x_coord");
+    /*package*/ static final SProperty y_coord$pGdV = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa5L, "y_coord");
+    /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Substrate_Position$SqKU = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x227861932d6a58b7L, "Substrate_Position");
   }
 }
