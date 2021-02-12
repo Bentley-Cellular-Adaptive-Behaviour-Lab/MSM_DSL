@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.debugger.testing</id>
+  <name>com.mbeddr.debugger.testing</name>
+  <version>1.0</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.core</depends>
+  <depends>com.mbeddr.debugger</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

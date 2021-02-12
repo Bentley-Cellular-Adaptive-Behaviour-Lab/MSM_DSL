@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.ext.statemachineInComponents</id>
+  <name>com.mbeddr.ext.statemachineInComponents</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.mpsutil</depends>
+  <depends>com.mbeddr.core</depends>
+  <depends>com.mbeddr.ext.components</depends>
+  <depends>com.mbeddr.ext.statemachine</depends>
+  <depends>com.mbeddr.spawner</depends>
+  <depends>com.mbeddr.debugger</depends>
+  <depends>com.mbeddr.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

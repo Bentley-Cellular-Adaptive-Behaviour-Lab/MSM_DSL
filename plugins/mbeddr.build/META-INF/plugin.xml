@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.build</id>
+  <name>com.mbeddr.build</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
+  <depends>de.itemis.mps.extensions.build</depends>
+  <depends>jetbrains.mps.execution.configurations</depends>
+  <depends>com.mbeddr.platform.build</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

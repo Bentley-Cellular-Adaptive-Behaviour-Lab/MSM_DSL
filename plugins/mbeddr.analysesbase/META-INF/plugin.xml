@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.analyses.base</id>
+  <name>com.mbeddr.analyses.base</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.core</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>com.mbeddr.cc.ple</depends>
+  <depends>com.mbeddr.doc</depends>
+  <depends>com.mbeddr.cc.req</depends>
+  <depends>com.mbeddr.ext.units</depends>
+  <depends>com.mbeddr.ext.components</depends>
+  <depends>de.slisson.mps.richtext</depends>
+  <depends>org.apache.commons</depends>
+  <depends>de.itemis.mps.editor.widgets</depends>
+  <depends>com.mbeddr.mpsutil.httpsupport</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>
