@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.ext.components</id>
+  <name>com.mbeddr.ext.components</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.mpsutil</depends>
+  <depends>com.mbeddr.core</depends>
+  <depends>com.mbeddr.spawner</depends>
+  <depends>com.mbeddr.debugger</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>de.itemis.mps.editor.diagram</depends>
+  <depends>com.mbeddr.ext.units</depends>
+  <depends>com.mbeddr.ext.concurrency</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>
