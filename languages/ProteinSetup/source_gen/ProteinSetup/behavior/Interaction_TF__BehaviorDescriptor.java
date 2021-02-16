@@ -24,8 +24,9 @@ public final class Interaction_TF__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89dc43L, "ProteinSetup.structure.Interaction_TF");
 
   public static final SMethod<String> get_type_string_id4xkVV8gEwgf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_type_string").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4xkVV8gEwgf").build();
+  public static final SMethod<Boolean> isUpregulated_id1RYUCxzPP2O = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isUpregulated").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1RYUCxzPP2O").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_type_string_id4xkVV8gEwgf);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_type_string_id4xkVV8gEwgf, isUpregulated_id1RYUCxzPP2O);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SPropertyOperations.assign(__thisNode__, PROPS.binding_probability$GaPB, "-1.0f");
@@ -33,6 +34,12 @@ public final class Interaction_TF__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static String get_type_string_id4xkVV8gEwgf(@NotNull SNode __thisNode__) {
     return "Regulation";
+  }
+  /*package*/ static boolean isUpregulated_id1RYUCxzPP2O(@NotNull SNode __thisNode__) {
+    if (Float.valueOf(SPropertyOperations.getString(__thisNode__, PROPS.regulation_strength$Gnhs)) >= 1.0f) {
+      return true;
+    }
+    return false;
   }
 
   /*package*/ Interaction_TF__BehaviorDescriptor() {
@@ -52,6 +59,8 @@ public final class Interaction_TF__BehaviorDescriptor extends BaseBHDescriptor {
     switch (methodIndex) {
       case 0:
         return (T) ((String) get_type_string_id4xkVV8gEwgf(node));
+      case 1:
+        return (T) ((Boolean) isUpregulated_id1RYUCxzPP2O(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -83,5 +92,6 @@ public final class Interaction_TF__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class PROPS {
     /*package*/ static final SProperty binding_probability$GaPB = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL, 0x4854efb210adc271L, "binding_probability");
+    /*package*/ static final SProperty regulation_strength$Gnhs = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89db2cL, 0x4854efb210adc27cL, "regulation_strength");
   }
 }

@@ -8,6 +8,7 @@ void Tissue_Container::tissue_set_up() {
 
     // Tissue Type Declarations //
     Tissue_Type_Cylindrical *Vessel_Type;
+    Tissue_Type_Flat *Monolayer_Type;
 
     // Coordinate Declarations //
     Coordinates Vessel_1_Pos;
@@ -17,6 +18,7 @@ void Tissue_Container::tissue_set_up() {
 
     // Tissue Type Creation //
     Vessel_Type = define_tissue_type("Vessel", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 3, 10, 6);
+    Monolayer_Type = define_tissue_type("Monolayer", Endothelial_Type, CELL_CONFIGURATION_FLAT, 10, 10);
 
 
     Vessel_1_Pos = Coordinates(100, 10, 20);

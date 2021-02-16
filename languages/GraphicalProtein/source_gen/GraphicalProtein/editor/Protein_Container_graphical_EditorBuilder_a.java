@@ -34,6 +34,9 @@ import de.itemis.mps.editor.diagram.runtime.model.AbstractEdgeAccessor;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpoint_Internal;
 import de.itemis.mps.editor.diagram.runtime.model.EndpointUtil;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpointReference;
+import de.itemis.mps.editor.diagram.runtime.shape.CompositeShape;
+import de.itemis.mps.editor.diagram.runtime.shape.ConditionalShape;
+import ProteinSetup.behavior.Interaction_TF__BehaviorDescriptor;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionType;
 import de.itemis.mps.editor.diagram.runtime.model.GeneratedConnectionType;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpoint;
@@ -43,10 +46,8 @@ import de.itemis.mps.editor.diagram.runtime.model.DiagramModel;
 import de.itemis.mps.editor.diagram.runtime.jgraph.TreeLayouter;
 import de.itemis.mps.editor.diagram.runtime.model.IPaletteEntryProvider;
 import de.itemis.mps.editor.diagram.runtime.model.CompositePaletteEntryProvider;
-import de.itemis.mps.editor.diagram.runtime.model.AbstractPaletteEntryProvider;
-import de.itemis.mps.editor.diagram.runtime.model.IPaletteEntry;
-import de.itemis.mps.editor.diagram.runtime.model.AbstractPaletteEntry;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import de.itemis.mps.editor.diagram.runtime.model.SubstituteInfoPaletteEntryProvider;
+import de.itemis.mps.editor.diagram.runtime.substitute.SubstituteInfoFactory;
 import de.itemis.mps.editor.diagram.runtime.jgraph.SubDiagramECell;
 import de.itemis.mps.editor.diagram.runtime.jgraph.RootDiagramECell;
 import de.itemis.mps.editor.diagram.runtime.jgraph.RootDCell;
@@ -123,7 +124,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
                               final List<Port> ports = new ArrayList<Port>();
 
-                              final IShape shape = null;
+                              final IShape shape = new ProteinCellShape();
 
                               AbstractBoxAccessor accessor = new AbstractBoxAccessor(new AccessorKey(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL))) {
                                 @Nullable
@@ -165,7 +166,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
                               final List<Port> ports = new ArrayList<Port>();
 
-                              final IShape shape = null;
+                              final IShape shape = new ProteinEnvironmentShape();
 
                               AbstractBoxAccessor accessor = new AbstractBoxAccessor(new AccessorKey(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL))) {
                                 @Nullable
@@ -208,7 +209,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionBinding_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Cell$GC), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -267,7 +268,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionPhosphorylation_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Cell$GC), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -326,7 +327,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new CompositeShape(new ConditionalShape(new Arrowhead(1.0, true, 2.0)) {
+                                public boolean applicable() {
+                                  return (boolean) Interaction_TF__BehaviorDescriptor.isUpregulated_id1RYUCxzPP2O.invoke(((SNode) _variablesContext.getValue("parameterObject")));
+                                }
+                              }, new ConditionalShape(new BlockedLine(1.0)) {
+                                public boolean applicable() {
+                                  return !((boolean) Interaction_TF__BehaviorDescriptor.isUpregulated_id1RYUCxzPP2O.invoke(((SNode) _variablesContext.getValue("parameterObject"))));
+                                }
+                              });
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionRegulation_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Cell$GC), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -385,7 +394,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionBinding_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -444,7 +453,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionPhosphorylation_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -499,12 +508,20 @@ import org.jetbrains.mps.openapi.language.SConcept;
                             public void run() {
                               final ContextVariables _variablesContext = ContextVariables.getCurrent();
                               final EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, parameterObject);
-                              editorCell.setCellId("transformedGraphElement_h0" + "." + "Interaction_Binding_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL));
+                              editorCell.setCellId("transformedGraphElement_h0" + "." + "InteractionRegulation_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL));
 
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
-                              AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("Interaction_Binding_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
+                              final IShape endShape = new CompositeShape(new ConditionalShape(new Arrowhead(1.0, true, 2.0)) {
+                                public boolean applicable() {
+                                  return (boolean) Interaction_TF__BehaviorDescriptor.isUpregulated_id1RYUCxzPP2O.invoke(((SNode) _variablesContext.getValue("parameterObject")));
+                                }
+                              }, new ConditionalShape(new BlockedLine(1.0)) {
+                                public boolean applicable() {
+                                  return !((boolean) Interaction_TF__BehaviorDescriptor.isUpregulated_id1RYUCxzPP2O.invoke(((SNode) _variablesContext.getValue("parameterObject"))));
+                                }
+                              });
+                              AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey("InteractionRegulation_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Protein_Environment$Pv), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.target_protein$NPAv), PROPS.name$MnvL))) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
                                   writeFrom(EndpointUtil.getSNode(endpoint), EndpointUtil.getPortName(endpoint));
@@ -674,36 +691,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                     DiagramModel model = DiagramModel.getModel(editorContext, node, "5212054216836328146", accessor);
                     model.setLayouter(new TreeLayouter());
 
-                    IPaletteEntryProvider paletteEntryProvider = new CompositePaletteEntryProvider(new AbstractPaletteEntryProvider() {
-                      @Override
-                      public Iterable<IPaletteEntry> getEntries() {
-                        List<IPaletteEntry> entries = ListSequence.fromList(new ArrayList<IPaletteEntry>());
-                        ListSequence.fromList(entries).addElement(new AbstractPaletteEntry() {
-                          @NotNull
-                          public String getText() {
-                            return CONCEPTS.Protein_Cell$GC.getName();
-                          }
-                          @Nullable
-                          public SNode execute() {
-                            SNode pcellInstance = SNodeFactoryOperations.createNewNode(CONCEPTS.Protein_Cell$GC, null);
-                            SModelOperations.addRootNode(SNodeOperations.getModel(node), pcellInstance);
-                            return pcellInstance;
-                          }
-                        });
-                        ListSequence.fromList(entries).addElement(new AbstractPaletteEntry() {
-                          @NotNull
-                          public String getText() {
-                            return CONCEPTS.Protein_Environment$Pv.getName();
-                          }
-                          public SNode execute() {
-                            SNode penvInstance = SNodeFactoryOperations.createNewNode(CONCEPTS.Protein_Environment$Pv, null);
-                            SModelOperations.addRootNode(SNodeOperations.getModel(node), penvInstance);
-                            return penvInstance;
-                          }
-                        });
-                        return entries;
-                      }
-                    });
+                    IPaletteEntryProvider paletteEntryProvider = new CompositePaletteEntryProvider(new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Cellular_Proteins$pCAK))), new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Environment_Proteins$b54T))));
                     model.setPaletteEntryProvider(paletteEntryProvider);
 
                     if (DiagramCreationContext.isSubdiagram()) {

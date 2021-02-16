@@ -42,565 +42,81 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/GraphicalProtein.mpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen.caches/GraphicalProtein/generator/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen.caches/GraphicalProtein/generator/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen.caches/GraphicalProtein/generator/templates/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen.caches/GraphicalProtein/generator/templates/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen/GraphicalProtein/generator/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen/GraphicalProtein/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen/GraphicalProtein/generator/templates/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/source_gen/GraphicalProtein/generator/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/templates/GraphicalProtein.generator.templates@generator.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.behavior.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.constraints.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.editor.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.structure.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.typesystem.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/behavior/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/behavior/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/constraints/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/constraints/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/structure/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/structure/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/typesystem/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/typesystem/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/behavior/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/constraints/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/constraints/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/Protein_Container_graphical_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/structure/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/typesystem/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/typesystem/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction_Kinase__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction_Ligand__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/Condition_Binding_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/Protein_Cell_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/Protein_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/Protein_Environment_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Condition_Binding_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Condition_Binding_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Environment_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Environment_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_e0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_e0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_g0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_g0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_i0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_i0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_k0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_tooltipHint_h51qz7_k0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_tooltipHint_vzkxs3_f0a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_tooltipHint_vzkxs3_f0a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_tooltipHint_7vfpny_a1a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_tooltipHint_7vfpny_a1a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_tooltipHint_7vfpny_a2a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_tooltipHint_7vfpny_a2a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_tooltipHint_koct37_b1a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_tooltipHint_koct37_b1a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Source_tooltipHint_x58f0o_c0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Source_tooltipHint_x58f0o_c0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_d1a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_d1a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_a0i0_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_a0i0_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b2a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b2a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b4a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b4a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b6a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_tooltipHint_qumq7g_b6a_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/Arrowhead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/BlockedLine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/DiagramColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/ProteinCellShape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/ProteinEnvironmentShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$10$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$10$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$12$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$12$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$14$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$14$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$16$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$16$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$4$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$6$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$6$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$8$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$8$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a0a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$Inline_Builder_335jdl_a1a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/classes_gen/GraphicalProtein/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/models/GraphicalProtein.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen.caches/GraphicalProtein/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/Protein_Container_graphical_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/GraphicalProtein/source_gen/GraphicalProtein/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/ConstraintsAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/ConstraintsAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$ConditionsListHandler_8npuke_a1b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$ConditionsListHandler_8npuke_a1b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$ConditionsListHandler_si4ecp_a1b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$ConditionsListHandler_si4ecp_a1b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$ConditionsListHandler_b5f3zq_a1b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$ConditionsListHandler_b5f3zq_a1b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Editor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$InteractionsListHandler_j55xpw_a1e0.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$LINKS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_EditorBuilder_a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/EnumerationDescriptor_Location.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/LanguageConceptSwitch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/classes_gen/ProteinSetup/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/models/ProteinSetup.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/behavior/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/structure/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/Interaction_TF__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_Kinase_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_Ligand_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Interaction_TF_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Cell_Editor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Cell_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/Protein_Reference_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/EnumerationDescriptor_Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/EnumerationDescriptor_Protein_Cell_Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen/ProteinSetup/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$Cylinder_total_length_int_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Cylindrical_Constraints$Cylinder_total_length_int_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/Tissue_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$positionSingleRoleHandler_tmo5f9_f0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$positionSingleRoleHandler_tmo5f9_f0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$Owned_Protein_ReferencesListHandler_iztune_a1b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$Owned_Protein_ReferencesListHandler_iztune_a1b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$ShapeSingleRoleHandler_iztune_d0a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$ShapeSingleRoleHandler_iztune_d0a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_Editor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_Editor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Position_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Rectangular_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cellsListHandler_hccigz_a2g0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$cellsListHandler_hccigz_a2g0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$tissue_typesListHandler_hccigz_a2e0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$tissue_typesListHandler_hccigz_a2e0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$tissuesListHandler_hccigz_a2i0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a$tissuesListHandler_hccigz_a2i0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$arrangementSingleRoleHandler_qi1jvw_f0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$arrangementSingleRoleHandler_qi1jvw_f0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Cylindrical__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/Tissue__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Cylindrical_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Cylindrical_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Tissue_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/Tissue_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0a_Editor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0a_Editor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Position_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Position_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Rectangular_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Rectangular_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Depth_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Depth_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Height_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Height_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Width_Property.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints$Width_Property.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Grid_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$positionSingleRoleHandler_x58f0o_a0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a$positionSingleRoleHandler_x58f0o_a0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Source_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$shapeSingleRoleHandler_fphtn9_d0a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a$shapeSingleRoleHandler_fphtn9_d0a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$Substrate_PositionSingleRoleHandler_r0xdaj_b1a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a$Substrate_PositionSingleRoleHandler_r0xdaj_b1a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_1SingleRoleHandler_15ya70_c0b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_1SingleRoleHandler_15ya70_c0b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_2SingleRoleHandler_15ya70_c1b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_2SingleRoleHandler_15ya70_c1b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_3SingleRoleHandler_15ya70_c2b0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_3SingleRoleHandler_15ya70_c2b0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Vertex_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gridSingleRoleHandler_qumq7g_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gridSingleRoleHandler_qumq7g_c2a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$substratesListHandler_qumq7g_a2g0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$substratesListHandler_qumq7g_a2g0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/EnumerationDescriptor_Gradient_Shapes.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/EnumerationDescriptor_Gradient_Shapes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Substrate_Shape_Cuboid__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Substrate_Shape_Triangular__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Cuboid_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/Substrate_Shape_Triangular_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Grid_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Source_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Source_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Vertex_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Vertex_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/EnumerationDescriptor_Gradient_Shapes.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/EnumerationDescriptor_Gradient_Shapes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/MSM.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/MSM.msd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/RunMSM.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Working_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Working_Tissue.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Working_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Working_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/RunMSM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Working_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Working_Tissue.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Working_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Working_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ECmesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Protein.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tissue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/display.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -621,7 +137,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="34c44109-5ab4-4c73-90ae-d1a5f25807f5/r:9e7911c9-7cbf-4333-ab8e-623928909043(TempModule34c44109-5ab4-4c73-90ae-d1a5f25807f5/ConsoleModel_316375698488)">
+            <model ref="0624ff7c-6168-49ad-9cd6-803dcd709b84/r:af0890b2-0758-42b9-979d-750006e4661d(TempModule0624ff7c-6168-49ad-9cd6-803dcd709b84/ConsoleModel_29992282807367)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -653,146 +169,146 @@
                   <concept id="473081947980701568" name="jetbrains.mps.console.base.structure.HelpCommand" flags="ng" index="1PAEo6" />
                 </language>
               </registry>
-              <node concept="aymSD" id="4krrAO8kBYx">
-                <node concept="3balQm" id="4krrAO8kBYy" role="aymYE">
-                  <node concept="2Clz$F" id="4krrAO8kBYz" role="18xWvz">
-                    <node concept="1PAEo6" id="4krrAO8kBY$" role="2Clzx4" />
+              <node concept="aymSD" id="1RYUCxzCVul">
+                <node concept="3balQm" id="1RYUCxzCVum" role="aymYE">
+                  <node concept="2Clz$F" id="1RYUCxzCVun" role="18xWvz">
+                    <node concept="1PAEo6" id="1RYUCxzCVuo" role="2Clzx4" />
                   </node>
-                  <node concept="ZBF_j" id="4krrAO8kBY_" role="18xWvz">
-                    <node concept="Zy5XD" id="4krrAO8kBYA" role="Zy5mW">
+                  <node concept="ZBF_j" id="1RYUCxzCVup" role="18xWvz">
+                    <node concept="Zy5XD" id="1RYUCxzCVuq" role="Zy5mW">
                       <property role="Zy5T0" value="Constructions available in console:" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYB" role="Zy5mW" />
-                    <node concept="Zy5Tx" id="4krrAO8kBYC" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYD" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVur" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="1RYUCxzCVus" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVut" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYE" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYF" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuu" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuv" role="Zy5mW">
                       <property role="Zy5T0" value="{ &lt;statements&gt; }   execute a statement list" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYG" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYH" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuw" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVux" role="Zy5mW">
                       <property role="Zy5T0" value="&lt;expression&gt;       evaluate an expression and print its result" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYI" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYJ" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuy" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuz" role="Zy5mW">
                       <property role="Zy5T0" value="?                  display this help or a help page for a specific command" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYK" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYL" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVu$" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVu_" role="Zy5mW">
                       <property role="Zy5T0" value="#print             print into the console window" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYM" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYN" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuA" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuB" role="Zy5mW">
                       <property role="Zy5T0" value="#project           the current project" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYO" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYP" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuC" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuD" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYQ" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYR" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuE" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuF" role="Zy5mW">
                       <property role="Zy5T0" value="#showBrokenRefs    show broken references" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYS" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYT" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuG" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuH" role="Zy5mW">
                       <property role="Zy5T0" value="#showGenPlan       show the generation plan" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYU" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYV" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuI" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuJ" role="Zy5mW">
                       <property role="Zy5T0" value="#stat              display useful statistics" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYW" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYX" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuK" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuL" role="Zy5mW">
                       <property role="Zy5T0" value="#callAction        call an IDE action with custom parameters" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBYY" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBYZ" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuM" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuN" role="Zy5mW">
                       <property role="Zy5T0" value="#clean             clean files *.generated" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ0" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ1" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuO" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuP" role="Zy5mW">
                       <property role="Zy5T0" value="#make              make models" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ2" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ3" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuQ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuR" role="Zy5mW">
                       <property role="Zy5T0" value="#removeGenSources  delete the source_gen, source_gen.caches and classes_gen directories" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ4" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ5" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuS" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuT" role="Zy5mW">
                       <property role="Zy5T0" value="#show              show sequence of nodes/references/models/modules in the Usages View panel" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ6" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ7" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuU" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuV" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ8" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ9" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuW" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuX" role="Zy5mW">
                       <property role="Zy5T0" value="#reloadClasses     reload classes of all modules" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZa" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZb" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVuY" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVuZ" role="Zy5mW">
                       <property role="Zy5T0" value="#consoleModel      return a model, in which the console commands as well as its history are stored" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZc" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZd" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVv0" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVv1" role="Zy5mW">
                       <property role="Zy5T0" value="#internalMode      access the IDE internal mode variable" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZe" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZf" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVv2" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVv3" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZg" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZh" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVv4" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVv5" role="Zy5mW">
                       <property role="Zy5T0" value="#exec              execute a script" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZi" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZj" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVv6" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVv7" role="Zy5mW">
                       <property role="Zy5T0" value="refactor           apply a function to manually selected nodes" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZk" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZl" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVv8" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVv9" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZm" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZn" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVva" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvb" role="Zy5mW">
                       <property role="Zy5T0" value="ofAspect           filter models by their aspect" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZo" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZp" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvc" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvd" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZq" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZr" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVve" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvf" role="Zy5mW">
                       <property role="Zy5T0" value="#instances         instances of a concept in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZs" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZt" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvg" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvh" role="Zy5mW">
                       <property role="Zy5T0" value="#models            all models in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZu" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZv" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvi" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvj" role="Zy5mW">
                       <property role="Zy5T0" value="#modules           all modules in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZw" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZx" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvk" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvl" role="Zy5mW">
                       <property role="Zy5T0" value="#nodes             all nodes in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZy" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZz" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvm" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvn" role="Zy5mW">
                       <property role="Zy5T0" value="#references        all references in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZ$" role="Zy5mW" />
-                    <node concept="Zy5XD" id="4krrAO8kBZ_" role="Zy5mW">
+                    <node concept="Zy5Tx" id="1RYUCxzCVvo" role="Zy5mW" />
+                    <node concept="Zy5XD" id="1RYUCxzCVvp" role="Zy5mW">
                       <property role="Zy5T0" value="#usages            direct references to a node in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="4krrAO8kBZA" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="1RYUCxzCVvq" role="Zy5mW" />
                   </node>
                 </node>
-                <node concept="2Clz$F" id="4krrAO8kBZB" role="aymYO" />
-                <node concept="2_V_lH" id="4krrAO8kBZC" role="1PhJh3">
-                  <ref role="2_V_lI" node="4krrAO8kBZB" resolve="CommandHolder" />
+                <node concept="2Clz$F" id="1RYUCxzCVvr" role="aymYO" />
+                <node concept="2_V_lH" id="1RYUCxzCVvs" role="1PhJh3">
+                  <ref role="2_V_lI" node="1RYUCxzCVvr" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -817,7 +333,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="memAgent_refactoring" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -829,6 +345,13 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/meadt/MSM_DSL" />
+      </set>
+    </option>
   </component>
   <component name="MPSBookmarkManager">
     <option name="myBookmarkInfos">
@@ -1099,123 +622,18 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="Scope" />
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:a200c5d6-08d5-4841-b9f3-6fe238607831(ProteinSetup.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/ProteinSetup/models/ProteinSetup.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Conditions" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:a200c5d6-08d5-4841-b9f3-6fe238607831(ProteinSetup.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/ProteinSetup/models/ProteinSetup.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d2fd60f8-3c89-4c6f-8e5c-906585991aac(GraphicalProtein.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/GraphicalProtein/models/GraphicalProtein.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:a200c5d6-08d5-4841-b9f3-6fe238607831(ProteinSetup.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/ProteinSetup/models/ProteinSetup.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Proteins" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -1244,7 +662,79 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" />
+              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:34eb34b1-0060-47b6-be02-0187de93386c(GraphicalProtein.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/GraphicalProtein/models/GraphicalProtein.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:d2fd60f8-3c89-4c6f-8e5c-906585991aac(GraphicalProtein.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/GraphicalProtein/models/GraphicalProtein.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:3bb67cc9-de0f-433d-990b-9bc4be9c0c8f(GraphicalProtein.structure) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/GraphicalProtein/models/GraphicalProtein.structure.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -1263,6 +753,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:aa0fdb33-9c60-48e1-be69-5ac3f0b9331a(MSM.user_simulation) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="430c26ba-1e4e-4feb-aa35-1a3b19a81eed(GraphicalProtein)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:d2fd60f8-3c89-4c6f-8e5c-906585991aac(GraphicalProtein.editor) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/GraphicalProtein/models/GraphicalProtein.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Shapes" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -1294,16 +802,7 @@
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="Scope" />
       <pane id="CustomProjectView_com.mbeddr.mpsutil.favourites.plugin.plugin.FavouritesProjectView">
         <subPane />
       </pane>
@@ -1318,7 +817,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MSM-DSL-master-Kelvin/Domain-Languages" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.libraryManager" />
   </component>
   <component name="RunManager" selected="Java Application.MakeAndRun">
