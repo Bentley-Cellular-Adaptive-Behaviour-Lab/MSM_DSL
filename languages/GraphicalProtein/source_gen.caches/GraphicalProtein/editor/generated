@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="a5ean3jkwwihllzsqfbdabiwvfo5pgs">
-  <files names="EditorAspectDescriptorImpl.java:Protein_Container_graphical_Editor.java:Protein_Container_graphical_EditorBuilder_a.java" />
+<product version="3" modelHash="-3f3m6yoknq942cf0dtslujaxfsj510p">
+  <files names="Arrowhead.java:BlockedLine.java:DiagramColors.java:EditorAspectDescriptorImpl.java:ProteinCellShape.java:ProteinEnvironmentShape.java:Protein_Container_graphical_Editor.java:Protein_Container_graphical_EditorBuilder_a.java" />
 </product>
 
