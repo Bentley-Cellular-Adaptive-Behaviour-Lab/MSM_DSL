@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>org.iets3.core.os</id>
+  <name>org.iets3.core.os</name>
+  <version>2020.3.4758.09957a6</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>de.slisson.mps.tables</depends>
+  <depends>de.itemis.mps.editor.diagram</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>com.mbeddr.mpsutil.editorsupport</depends>
+  <depends>com.mbeddr.mpsutil.interpreter</depends>
+  <depends>com.mbeddr.mpsutil.varscope</depends>
+  <depends>com.mbeddr.mpsutil.contextactions</depends>
+  <depends>de.itemis.mps.editor.math</depends>
+  <depends>com.mbeddr.mpsutil.editor.querylist</depends>
+  <depends>com.mbeddr.mpsutil.treenotations</depends>
+  <depends>com.mbeddr.mpsutil.spreferences</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

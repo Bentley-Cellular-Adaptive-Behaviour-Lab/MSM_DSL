@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>org.iets3.comp.os</id>
+  <name>org.iets3.comp.os</name>
+  <version>2020.3.4758.09957a6</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>org.iets3.core.os</depends>
+  <depends>org.iets3.req.os</depends>
+  <depends>de.itemis.mps.grammarcells</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>
