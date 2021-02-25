@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import TissueSetup.behavior.Cylindrical__BehaviorDescriptor;
-import TissueSetup.behavior.Flat__BehaviorDescriptor;
+import TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor;
+import TissueSetup.behavior.Arrangement_Flat__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -46,10 +46,10 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int x_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        x_offset = (int) Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2;
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        x_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
       } else {
-        x_offset = (int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2;
+        x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.x_coord$pFJT) - x_offset;
     }
@@ -75,10 +75,10 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int x_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        x_offset = (int) Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) / 2;
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        x_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
       } else {
-        x_offset = (int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2;
+        x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.x_coord$pFJT) + x_offset;
     }
@@ -94,10 +94,10 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int y_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        y_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        y_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       } else {
-        y_offset = (int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2;
+        y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.y_coord$pGdV) - y_offset;
     }
@@ -113,10 +113,10 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int y_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        y_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        y_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       } else {
-        y_offset = (int) Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) / 2;
+        y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
       return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.y_coord$pGdV) + y_offset;
     }
@@ -132,8 +132,8 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int z_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        z_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        z_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       } else {
         z_offset = 0;
       }
@@ -151,8 +151,8 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
     @Override
     public Object getValue(SNode node) {
       int z_offset;
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
-        z_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+        z_offset = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       } else {
         z_offset = 0;
       }
@@ -200,8 +200,8 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tissue$nL = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, "TissueSetup.structure.Tissue");
-    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
-    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
+    /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
   }
 
   private static final class PROPS {

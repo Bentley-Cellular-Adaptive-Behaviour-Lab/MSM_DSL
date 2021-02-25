@@ -160,7 +160,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoEOd">
-    <ref role="1M2myG" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+    <ref role="1M2myG" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
     <node concept="EnEH3" id="506$KtOBSnc" role="1MhHOB">
       <ref role="EomxK" to="nguq:5qSYbADreYj" resolve="cylinder_cross_section_cells" />
       <node concept="Eqf_E" id="506$KtOBSqm" role="EtsB7">
@@ -217,7 +217,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGoF">
-    <ref role="1M2myG" to="nguq:5qSYbADreYs" resolve="Flat" />
+    <ref role="1M2myG" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
     <node concept="EnEH3" id="4JVq81Fl2Ga" role="1MhHOB">
       <ref role="EomxK" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
       <node concept="Eqf_E" id="4JVq81Fl2GO" role="EtsB7">
@@ -284,7 +284,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGBd">
-    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="Rectangular" />
+    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
     <node concept="EnEH3" id="i2Gwg1ArMv" role="1MhHOB">
       <ref role="EomxK" to="nguq:5qSYbADreYL" resolve="height" />
       <node concept="QB0g5" id="i2Gwg1ArNL" role="QCWH9">
@@ -442,7 +442,7 @@
                     <node concept="2OqwBi" id="2B5sNxPMTvY" role="3uHU7B">
                       <node concept="1PxgMI" id="2B5sNxPMTiD" role="2Oq$k0">
                         <node concept="chp4Y" id="2B5sNxPMTl3" role="3oSUPX">
-                          <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                          <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                         </node>
                         <node concept="2OqwBi" id="2B5sNxPMSJ6" role="1m5AlR">
                           <node concept="2OqwBi" id="2B5sNxPMRW8" role="2Oq$k0">
@@ -481,7 +481,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPMa6L" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPMa9N" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>
@@ -496,7 +496,7 @@
                       <node concept="2OqwBi" id="2B5sNxPMYrS" role="3uHU7B">
                         <node concept="1PxgMI" id="2B5sNxPMYct" role="2Oq$k0">
                           <node concept="chp4Y" id="2B5sNxPMYf5" role="3oSUPX">
-                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Flat" />
+                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
                           </node>
                           <node concept="2OqwBi" id="2B5sNxPMXei" role="1m5AlR">
                             <node concept="2OqwBi" id="2B5sNxPMWSj" role="2Oq$k0">
@@ -568,7 +568,7 @@
                     <node concept="2OqwBi" id="2B5sNxPN52a" role="3uHU7B">
                       <node concept="1PxgMI" id="2B5sNxPN52b" role="2Oq$k0">
                         <node concept="chp4Y" id="2B5sNxPN52c" role="3oSUPX">
-                          <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                          <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                         </node>
                         <node concept="2OqwBi" id="2B5sNxPN52d" role="1m5AlR">
                           <node concept="2OqwBi" id="2B5sNxPN52e" role="2Oq$k0">
@@ -607,7 +607,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPN52q" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPN52r" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>
@@ -622,7 +622,7 @@
                       <node concept="2OqwBi" id="2B5sNxPN52y" role="3uHU7B">
                         <node concept="1PxgMI" id="2B5sNxPN52z" role="2Oq$k0">
                           <node concept="chp4Y" id="2B5sNxPN52$" role="3oSUPX">
-                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Flat" />
+                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
                           </node>
                           <node concept="2OqwBi" id="2B5sNxPN52_" role="1m5AlR">
                             <node concept="2OqwBi" id="2B5sNxPN52A" role="2Oq$k0">
@@ -687,7 +687,7 @@
                   <node concept="2OqwBi" id="2B5sNxPQpPw" role="37vLTx">
                     <node concept="1PxgMI" id="2B5sNxPQpB0" role="2Oq$k0">
                       <node concept="chp4Y" id="2B5sNxPQpE7" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                       </node>
                       <node concept="2OqwBi" id="2B5sNxPQoHS" role="1m5AlR">
                         <node concept="2OqwBi" id="2B5sNxPQo5x" role="2Oq$k0">
@@ -725,7 +725,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPN6QU" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPN6QV" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>
@@ -740,7 +740,7 @@
                       <node concept="2OqwBi" id="2B5sNxPN6R2" role="3uHU7B">
                         <node concept="1PxgMI" id="2B5sNxPN6R3" role="2Oq$k0">
                           <node concept="chp4Y" id="2B5sNxPN6R4" role="3oSUPX">
-                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Flat" />
+                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
                           </node>
                           <node concept="2OqwBi" id="2B5sNxPN6R5" role="1m5AlR">
                             <node concept="2OqwBi" id="2B5sNxPN6R6" role="2Oq$k0">
@@ -805,7 +805,7 @@
                   <node concept="2OqwBi" id="2B5sNxPQqKY" role="37vLTx">
                     <node concept="1PxgMI" id="2B5sNxPQqKZ" role="2Oq$k0">
                       <node concept="chp4Y" id="2B5sNxPQqL0" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                       </node>
                       <node concept="2OqwBi" id="2B5sNxPQqL1" role="1m5AlR">
                         <node concept="2OqwBi" id="2B5sNxPQqL2" role="2Oq$k0">
@@ -843,7 +843,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPNjuc" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPNjud" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>
@@ -858,7 +858,7 @@
                       <node concept="2OqwBi" id="2B5sNxPNjuk" role="3uHU7B">
                         <node concept="1PxgMI" id="2B5sNxPNjul" role="2Oq$k0">
                           <node concept="chp4Y" id="2B5sNxPNjum" role="3oSUPX">
-                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Flat" />
+                            <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
                           </node>
                           <node concept="2OqwBi" id="2B5sNxPNjun" role="1m5AlR">
                             <node concept="2OqwBi" id="2B5sNxPNjuo" role="2Oq$k0">
@@ -926,7 +926,7 @@
                   <node concept="2OqwBi" id="2B5sNxPSz7c" role="37vLTx">
                     <node concept="1PxgMI" id="2B5sNxPSyUg" role="2Oq$k0">
                       <node concept="chp4Y" id="2B5sNxPSyW_" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                       </node>
                       <node concept="2OqwBi" id="2B5sNxPSy2l" role="1m5AlR">
                         <node concept="2OqwBi" id="2B5sNxPSx$7" role="2Oq$k0">
@@ -961,7 +961,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPNl7T" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPNl7U" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>
@@ -1021,7 +1021,7 @@
                   <node concept="2OqwBi" id="2B5sNxPSA_q" role="37vLTx">
                     <node concept="1PxgMI" id="2B5sNxPS_Si" role="2Oq$k0">
                       <node concept="chp4Y" id="2B5sNxPSAqk" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                       </node>
                       <node concept="2OqwBi" id="2B5sNxPS_xe" role="1m5AlR">
                         <node concept="2OqwBi" id="2B5sNxPS_2y" role="2Oq$k0">
@@ -1056,7 +1056,7 @@
               </node>
               <node concept="1mIQ4w" id="2B5sNxPNod8" role="2OqNvi">
                 <node concept="chp4Y" id="2B5sNxPNod9" role="cj9EA">
-                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+                  <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
                 </node>
               </node>
             </node>

@@ -607,16 +607,6 @@
               </node>
               <node concept="2iRfu4" id="4xkVV8gAPWX" role="2iSdaV" />
             </node>
-            <node concept="3EZMnI" id="4xkVV8gAQ5Z" role="3EZMnx">
-              <node concept="VPM3Z" id="4xkVV8gAQ61" role="3F10Kt" />
-              <node concept="3F0ifn" id="4xkVV8gAQ63" role="3EZMnx">
-                <property role="3F0ifm" value="Level: " />
-              </node>
-              <node concept="3F0A7n" id="4xkVV8gAQ7f" role="3EZMnx">
-                <ref role="1NtTu8" to="yzfv:29fgAF50pCS" resolve="starting_strength" />
-              </node>
-              <node concept="2iRfu4" id="4xkVV8gAQ64" role="2iSdaV" />
-            </node>
             <node concept="2iRkQZ" id="4xkVV8gAPW_" role="2iSdaV" />
           </node>
         </node>

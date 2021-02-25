@@ -86,12 +86,12 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     return false;
   }
   /*package*/ static boolean check_cell_vessel_overlap_id1QpPlI522M$(@NotNull SNode __thisNode__, SNode cell, SNode vessel) {
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
     if (SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(vessel) || SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(vessel)) {
       double cell_z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.z_coord$pLQj);
       cell_z_offset = cell_z_offset * cell_z_offset;
 
-      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
       double vessel_y_lower_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) - vessel_y_boundary_offset;
       double vessel_y_upper_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) + vessel_y_boundary_offset;
@@ -104,8 +104,8 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     return false;
   }
   /*package*/ static boolean check_cell_monolayer_overlap_id1QpPlI5237t(@NotNull SNode __thisNode__, SNode cell, SNode monolayer) {
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) {
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
       if (SPropertyOperations.getInteger(SLinkOperations.getTarget(cell, LINKS.position$L2Mv), PROPS.z_coord$pLQj) == SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj)) {
         if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer) && Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer) || Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer) && Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer)) {
           if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer) || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer)) {
@@ -124,11 +124,11 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     double y_offset_squared;
     double z_offset_squared;
 
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
 
-    double radius_1 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-    double radius_2 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+    double radius_1 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+    double radius_2 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
 
     y_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR), PROPS.y_coord$pGdV) - SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR), PROPS.y_coord$pGdV);
     z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR), PROPS.z_coord$pLQj);
@@ -145,13 +145,13 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
   }
   /*package*/ static boolean check_vessel_monolayer_overlap_id1QpPlI523LR(@NotNull SNode __thisNode__, SNode vessel, SNode monolayer) {
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh));
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
     if (SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(vessel) || SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(vessel)) {
       double z_offset = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.z_coord$pLQj) - SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR), PROPS.z_coord$pLQj);
       z_offset = z_offset * z_offset;
 
-      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
       double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - z_offset);
       double vessel_y_lower_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) - vessel_y_boundary_offset;
       double vessel_y_upper_boundary = SPropertyOperations.getInteger(SLinkOperations.getTarget(vessel, LINKS.position$KVlR), PROPS.y_coord$pGdV) + vessel_y_boundary_offset;
@@ -164,8 +164,8 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     return false;
   }
   /*package*/ static boolean check_monolayer_monolayer_overlap_id1p5qYO3gLDn(@NotNull SNode __thisNode__, SNode monolayer_1, SNode monolayer_2) {
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
-    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
+    assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
     if (SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer_1, LINKS.position$KVlR), PROPS.z_coord$pLQj) == SPropertyOperations.getInteger(SLinkOperations.getTarget(monolayer_2, LINKS.position$KVlR), PROPS.z_coord$pLQj)) {
       if (Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2)) {
         if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2)) {
@@ -255,7 +255,7 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
-    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
+    /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
   }
 }

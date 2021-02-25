@@ -200,7 +200,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("ProteinSetup.structure.Protein", 0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL);
     b.origin("r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)/2472267746788873346");
     b.version(2);
-    b.property("starting_strength", 0x224f426ac5019a38L).type(PrimitiveTypeId.INTEGER).origin("2472267746788874808").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProtein_Reference() {

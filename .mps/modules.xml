@@ -6,6 +6,7 @@
       <modulePath path="$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/Units/Units.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSM/MSM.msd" folder="" />
     </projectModules>

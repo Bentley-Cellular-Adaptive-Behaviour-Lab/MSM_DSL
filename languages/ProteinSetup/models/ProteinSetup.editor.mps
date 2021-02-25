@@ -460,19 +460,6 @@
         </node>
         <node concept="2iRfu4" id="29fgAF50CkI" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="29fgAF50CkJ" role="3EZMnx">
-        <node concept="VPM3Z" id="29fgAF50CkK" role="3F10Kt" />
-        <node concept="3F0ifn" id="29fgAF50CkL" role="3EZMnx">
-          <property role="3F0ifm" value="Level: " />
-        </node>
-        <node concept="3F0A7n" id="29fgAF50CkM" role="3EZMnx">
-          <ref role="1NtTu8" to="yzfv:29fgAF50pCS" resolve="starting_strength" />
-          <node concept="VechU" id="29fgAF50CkN" role="3F10Kt">
-            <property role="Vb096" value="fLwANPr/green" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="29fgAF50CkO" role="2iSdaV" />
-      </node>
       <node concept="3EZMnI" id="29fgAF50Cl8" role="3EZMnx">
         <node concept="VPM3Z" id="29fgAF50Cl9" role="3F10Kt" />
         <node concept="3F0ifn" id="29fgAF50Cla" role="3EZMnx">

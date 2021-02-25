@@ -150,14 +150,14 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_1(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_2(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Flat$W);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W);
       }
     });
   }
@@ -170,21 +170,21 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_5(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.cell_types$$$44)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_6(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_7(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Flat$W);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W);
       }
     });
   }
@@ -399,8 +399,8 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
-    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
-    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
+    /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
+    /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
   }
 }

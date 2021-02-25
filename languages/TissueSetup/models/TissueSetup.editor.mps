@@ -229,7 +229,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">
-    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="Rectangular" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
     <node concept="3EZMnI" id="4JVq81FhBQR" role="2wV5jI">
       <node concept="3F0ifn" id="4JVq81FhBQX" role="3EZMnx">
         <property role="3F0ifm" value="Rectangular with height" />
@@ -292,7 +292,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fi8p3">
-    <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="Cylindrical" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
     <node concept="3EZMnI" id="4JVq81Fi8qV" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPKgEv" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPKgEx" role="3F10Kt" />
@@ -537,7 +537,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fl1FF">
-    <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="Flat" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
     <node concept="3EZMnI" id="4JVq81Fl1FK" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPFce_" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPFceB" role="3F10Kt" />

@@ -55,11 +55,11 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.tissues$psuU))) {
-      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh)) {
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
         if ((boolean) Tissue_And_Cell_Container__BehaviorDescriptor.check_cell_vessel_overlap_id1QpPlI522M$.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), __thisNode__, tissue)) {
           return true;
         }
-      } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Flat$W)) {
+      } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(tissue, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
         if ((boolean) Tissue_And_Cell_Container__BehaviorDescriptor.check_cell_monolayer_overlap_id1QpPlI5237t.invoke(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), __thisNode__, tissue)) {
           return true;
         }
@@ -68,7 +68,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static boolean check_upper_x_world_boundaries_id3$QBVvWCJog(@NotNull SNode __thisNode__) {
-    if (Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.X_Size$PwQq)) {
+    if (Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(__thisNode__) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ))) {
       return true;
     }
     return false;
@@ -80,7 +80,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static boolean check_upper_y_world_boundaries_id3$QBVvWCLp9(@NotNull SNode __thisNode__) {
-    if (Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(__thisNode__) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Y_Size$Pxks)) {
+    if (Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(__thisNode__) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ))) {
       return true;
     }
     return false;
@@ -92,38 +92,38 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static boolean check_z_world_boundaries_id3$QBVvWCOcR(@NotNull SNode __thisNode__) {
-    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) > SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Z_Size$PAWO) || SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) < 0) {
+    if (SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ)) || SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.z_coord$pLQj) < 0) {
       return true;
     }
     return false;
   }
   /*package*/ static Integer get_lower_x_id1QpPlI524fx(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.width$pTZY) / 2);
     }
     return -1;
   }
   /*package*/ static Integer get_lower_y_id1QpPlI524ju(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) - (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.height$pTxW) / 2);
     } else {
       return -1;
     }
   }
   /*package*/ static Integer getupper_x_id1QpPlI524rF(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.width$pTZY) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.x_coord$pFJT) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.width$pTZY) / 2);
     } else {
       return -1;
     }
   }
   /*package*/ static Integer get_upper_y_id1QpPlI524zL(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r)) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
 
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Rectangular$1r), PROPS.height$pTxW) / 2);
+      return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.position$L2Mv), PROPS.y_coord$pGdV) + (SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.cell_type$3r_d), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.height$pTxW) / 2);
     } else {
       return -1;
     }
@@ -195,9 +195,9 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
-    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
-    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
-    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
+    /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
+    /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
   }
 
   private static final class LINKS {
@@ -213,10 +213,7 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty X_Size$PwQq = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d41L, "X_Size");
-    /*package*/ static final SProperty Y_Size$Pxks = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d43L, "Y_Size");
     /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
-    /*package*/ static final SProperty Z_Size$PAWO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d46L, "Z_Size");
     /*package*/ static final SProperty width$pTZY = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb3L, "width");
     /*package*/ static final SProperty x_coord$pFJT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa3L, "x_coord");
     /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");

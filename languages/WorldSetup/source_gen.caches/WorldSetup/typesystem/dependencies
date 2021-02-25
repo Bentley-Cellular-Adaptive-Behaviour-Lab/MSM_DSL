@@ -5,11 +5,14 @@
     <classNode dependClassName="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule" />
     <classNode dependClassName="WorldSetup.typesystem.duplicateGradientName_NonTypesystemRule" />
     <classNode dependClassName="WorldSetup.typesystem.duplicateSubstrateName_NonTypesystemRule" />
+    <classNode dependClassName="WorldSetup.typesystem.typeof_Float_Declaration_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule">
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
+    <classNode dependClassName="WorldSetup.behavior.Grid__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
@@ -29,6 +32,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
   </dependency>
   <dependency className="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule">
+    <classNode dependClassName="WorldSetup.behavior.Grid__BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.MessageTarget" />
     <classNode dependClassName="jetbrains.mps.errors.messageTargets.NodeMessageTarget" />
@@ -87,6 +92,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
+  </dependency>
+  <dependency className="WorldSetup.typesystem.typeof_Float_Declaration_InferenceRule">
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
 </dependenciesRoot>
 

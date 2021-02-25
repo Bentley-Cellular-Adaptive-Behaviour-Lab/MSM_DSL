@@ -12,38 +12,72 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Collections;
+import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.SubstituteMenu;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndex;
 import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_qumq7g_b2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b2a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b4a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b4a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b6a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b6a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0i0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0i0"), new ConceptEditorHintImpl("tooltipHint_koct37_b1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_b1a"), new ConceptEditorHintImpl("tooltipHint_7vfpny_a1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_7vfpny_a1a"), new ConceptEditorHintImpl("tooltipHint_7vfpny_a2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_7vfpny_a2a"), new ConceptEditorHintImpl("tooltipHint_x58f0o_c0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_x58f0o_c0"), new ConceptEditorHintImpl("tooltipHint_fphtn9_d1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_fphtn9_d1a"), new ConceptEditorHintImpl("tooltipHint_r0xdaj_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_r0xdaj_a0a"), new ConceptEditorHintImpl("tooltipHint_15ya70_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_15ya70_a0a"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_qumq7g_b2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b2a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b4a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b4a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b6a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b6a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0i0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0i0"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0k0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0k0"), new ConceptEditorHintImpl("tooltipHint_koct37_b1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_b1a"), new ConceptEditorHintImpl("tooltipHint_fphtn9_d1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_fphtn9_d1a"), new ConceptEditorHintImpl("tooltipHint_r0xdaj_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_r0xdaj_a0a"), new ConceptEditorHintImpl("tooltipHint_15ya70_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_15ya70_a0a"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Arrays.asList(new ConceptEditor[]{new Gradient_Editor(), new Gradient_tooltipHint_7vfpny_a1a_Editor(), new Gradient_tooltipHint_7vfpny_a2a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Editor());
       case 1:
-        return Arrays.asList(new ConceptEditor[]{new Grid_Editor(), new Grid_tooltipHint_koct37_b1a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Shape_Cuboidal_Editor());
       case 2:
-        return Arrays.asList(new ConceptEditor[]{new Source_Editor(), new Source_tooltipHint_x58f0o_c0_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Shape_Point_Editor());
       case 3:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Editor(), new Substrate_tooltipHint_fphtn9_d1a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Shape_SinkAndSource_Editor());
       case 4:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Cuboid_Editor(), new Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Type_Constant_Editor());
       case 5:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Triangular_Editor(), new Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Type_Custom_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new Vertex_Editor());
+        return Collections.<ConceptEditor>singletonList(new Gradient_Type_Exponential_Editor());
       case 7:
-        return Arrays.asList(new ConceptEditor[]{new World_Container_Editor(), new World_Container_tooltipHint_qumq7g_a0i0_Editor(), new World_Container_tooltipHint_qumq7g_b2a_Editor(), new World_Container_tooltipHint_qumq7g_b4a_Editor(), new World_Container_tooltipHint_qumq7g_b6a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Gradient_Type_Linear_Editor());
+      case 8:
+        return Arrays.asList(new ConceptEditor[]{new Grid_Editor(), new Grid_tooltipHint_koct37_b1a_Editor()});
+      case 9:
+        return Collections.<ConceptEditor>singletonList(new Sink_Editor());
+      case 10:
+        return Collections.<ConceptEditor>singletonList(new SinkAndSource_Editor());
+      case 11:
+        return Collections.<ConceptEditor>singletonList(new Source_Editor());
+      case 12:
+        return Arrays.asList(new ConceptEditor[]{new Substrate_Editor(), new Substrate_tooltipHint_fphtn9_d1a_Editor()});
+      case 13:
+        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Cuboid_Editor(), new Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_Editor()});
+      case 14:
+        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Triangular_Editor(), new Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_Editor()});
+      case 15:
+        return Collections.<ConceptEditor>singletonList(new Vertex_Editor());
+      case 16:
+        return Arrays.asList(new ConceptEditor[]{new World_Container_Editor(), new World_Container_tooltipHint_qumq7g_a0i0_Editor(), new World_Container_tooltipHint_qumq7g_a0k0_Editor(), new World_Container_tooltipHint_qumq7g_b2a_Editor(), new World_Container_tooltipHint_qumq7g_b4a_Editor(), new World_Container_tooltipHint_qumq7g_b6a_Editor()});
       default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
 
+  @NotNull
+  public Collection<ConceptEditorComponent> getDeclaredEditorComponents(SAbstractConcept concept, String editorComponentId) {
+    SAbstractConcept cncpt = ((SAbstractConcept) concept);
+    switch (conceptIndex1.index(cncpt)) {
+      case 0:
+        if (true) {
+          if ("WorldSetup.editor.DummyForGrammarCells".equals(editorComponentId)) {
+            return Collections.<ConceptEditorComponent>singletonList(new DummyForGrammarCells());
+          }
+        }
+        break;
+      default:
+    }
+    return Collections.<ConceptEditorComponent>emptyList();
+  }
   public Collection<ConceptEditorHint> getHints() {
     return myHints;
   }
@@ -52,14 +86,19 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   @Override
   public Collection<SubstituteMenu> getDeclaredDefaultSubstituteMenus(SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (conceptIndex1.index(cncpt)) {
+    switch (conceptIndex2.index(cncpt)) {
       case 0:
-        return Collections.<SubstituteMenu>singletonList(new World_Container_SubstituteMenu());
+        return Collections.<SubstituteMenu>singletonList(new Env_Protein_Reference_SubstituteMenu());
+      case 1:
+        return Collections.<SubstituteMenu>singletonList(new Gradient_SubstituteMenu());
+      case 2:
+        return Collections.<SubstituteMenu>singletonList(new VariableReference_SubstituteMenu());
       default:
     }
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L)).seal();
-  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028bcaL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028b08L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ba2L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028b68L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028af4L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007eL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0xa2797e0f27a84eaL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L)).seal();
+  private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).seal();
+  private static final ConceptSwitchIndex conceptIndex2 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac8692226L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac8771740L)).seal();
 }

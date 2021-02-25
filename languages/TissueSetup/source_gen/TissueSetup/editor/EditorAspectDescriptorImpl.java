@@ -18,23 +18,23 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_hccigz_b2a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b2a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b4a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b4a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b6a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b6a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b8a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b8a"), new ConceptEditorHintImpl("tooltipHint_vppb9r_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vppb9r_a0a"), new ConceptEditorHintImpl("tooltipHint_vzkxs3_f0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vzkxs3_f0a"), new ConceptEditorHintImpl("tooltipHint_4rlqih_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_4rlqih_a0a"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_hccigz_b2a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b2a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b4a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b4a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b6a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b6a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b8a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b8a"), new ConceptEditorHintImpl("tooltipHint_6asmbt_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_6asmbt_a0a"), new ConceptEditorHintImpl("tooltipHint_vzkxs3_f0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vzkxs3_f0a"), new ConceptEditorHintImpl("tooltipHint_kmq33_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_kmq33_a0a"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new Cell_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Arrangement_Cylindrical_Editor(), new Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_Editor()});
       case 1:
-        return Collections.<ConceptEditor>singletonList(new Cell_Type_Editor());
+        return Arrays.asList(new ConceptEditor[]{new Arrangement_Flat_Editor(), new Arrangement_Flat_tooltipHint_kmq33_a0a_Editor()});
       case 2:
-        return Arrays.asList(new ConceptEditor[]{new Cylindrical_Editor(), new Cylindrical_tooltipHint_vppb9r_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Cell_Editor());
       case 3:
-        return Arrays.asList(new ConceptEditor[]{new Flat_Editor(), new Flat_tooltipHint_4rlqih_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Cell_Type_Editor());
       case 4:
         return Collections.<ConceptEditor>singletonList(new Position_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new Rectangular_Editor());
+        return Collections.<ConceptEditor>singletonList(new Shape_Rectangular_Editor());
       case 6:
         return Arrays.asList(new ConceptEditor[]{new Tissue_Editor(), new Tissue_tooltipHint_vzkxs3_f0a_Editor()});
       case 7:
@@ -70,6 +70,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
 }

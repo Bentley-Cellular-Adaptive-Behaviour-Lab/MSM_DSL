@@ -3,7 +3,6 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
-    <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup" version="0" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
@@ -282,11 +281,6 @@
     <property role="3GE5qa" value="Proteins" />
     <property role="TrG5h" value="Protein_Environment" />
     <ref role="1TJDcQ" node="2Lf4jQGytcH" resolve="Protein" />
-    <node concept="1TJgyi" id="29fgAF50pCS" role="1TKVEl">
-      <property role="IQ2nx" value="2472267746788874808" />
-      <property role="TrG5h" value="starting_strength" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
   </node>
   <node concept="1TIwiD" id="29fgAF50pK5">
     <property role="EcuMT" value="2472267746788875269" />

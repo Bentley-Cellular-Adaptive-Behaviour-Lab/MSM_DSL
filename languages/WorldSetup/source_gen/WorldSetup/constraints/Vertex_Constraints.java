@@ -42,7 +42,8 @@ public class Vertex_Constraints extends BaseConstraintsDescriptor {
       return result;
     }
     private static boolean staticValidateProperty(SNode node, int propertyValue) {
-      return propertyValue > 0 && propertyValue <= SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(node))), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.X_Size$PwQq);
+      String string_max = String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(node))), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), LINKS.X_Size$K10L), LINKS.value$SBs3));
+      return propertyValue > 0 && propertyValue <= Integer.valueOf(string_max);
     }
   }
   public static class Y_Coordinate_Property extends BasePropertyConstraintsDescriptor {
@@ -63,7 +64,8 @@ public class Vertex_Constraints extends BaseConstraintsDescriptor {
       return result;
     }
     private static boolean staticValidateProperty(SNode node, int propertyValue) {
-      return propertyValue > 0 && propertyValue <= SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(node))), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Y_Size$Pxks);
+      String string_max = String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(SNodeOperations.getParent(node))), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), LINKS.X_Size$K10L), LINKS.value$SBs3));
+      return propertyValue > 0 && propertyValue <= Integer.valueOf(string_max);
     }
   }
   @Override
@@ -81,12 +83,12 @@ public class Vertex_Constraints extends BaseConstraintsDescriptor {
 
   private static final class PROPS {
     /*package*/ static final SProperty X_Coordinate$UFZ4 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f64L, "X_Coordinate");
-    /*package*/ static final SProperty X_Size$PwQq = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d41L, "X_Size");
     /*package*/ static final SProperty Y_Coordinate$UGt6 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f66L, "Y_Coordinate");
-    /*package*/ static final SProperty Y_Size$Pxks = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d43L, "Y_Size");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
+    /*package*/ static final SContainmentLink X_Size$K10L = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x2f6b1b828a3a339fL, "X_Size");
+    /*package*/ static final SContainmentLink value$SBs3 = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7668L, "value");
   }
 }
