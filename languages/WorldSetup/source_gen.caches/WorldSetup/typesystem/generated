@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-4c2k1nzgz1iaqdwvvozk4b4ysly67r6">
-  <files names="TypesystemDescriptor.java:checkCuboidBoundaries_NonTypesystemRule.java:checkTriangularBoundaries_NonTypesystemRule.java:duplicateGradientName_NonTypesystemRule.java:duplicateSubstrateName_NonTypesystemRule.java" />
+<product version="3" modelHash="-eb6t0detifa9bcrykdgsprbo0c7dovo">
+  <files names="TypesystemDescriptor.java:checkCuboidBoundaries_NonTypesystemRule.java:checkTriangularBoundaries_NonTypesystemRule.java:duplicateGradientName_NonTypesystemRule.java:duplicateSubstrateName_NonTypesystemRule.java:typeof_Float_Declaration_InferenceRule.java" />
 </product>
 

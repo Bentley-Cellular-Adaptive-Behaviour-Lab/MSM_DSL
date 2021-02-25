@@ -12,15 +12,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="8,0,28,0" name="WorldSetup.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,33,0" name="WorldSetup.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)/5475084672766665781">
     <file name="TypesystemDescriptor.java">
-      <node id="5475084672766665781" at="18,5,19,98" concept="5" />
-      <node id="5475084672766665781" at="19,98,20,55" concept="2" />
-      <node id="5475084672766665781" at="17,5,21,5" concept="0" />
-      <scope id="5475084672766665781" at="18,5,20,55">
+      <node id="5475084672766665781" at="23,5,24,98" concept="5" />
+      <node id="5475084672766665781" at="24,98,25,55" concept="2" />
+      <node id="5475084672766665781" at="22,5,26,5" concept="0" />
+      <scope id="5475084672766665781" at="23,5,25,55">
         <var name="nonTypesystemRule" id="5475084672766665781" />
       </scope>
     </file>
@@ -78,10 +78,10 @@
   </root>
   <root nodeRef="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)/5475084672766712072">
     <file name="TypesystemDescriptor.java">
-      <node id="5475084672766712072" at="22,5,23,99" concept="5" />
-      <node id="5475084672766712072" at="23,99,24,55" concept="2" />
-      <node id="5475084672766712072" at="21,5,25,5" concept="0" />
-      <scope id="5475084672766712072" at="22,5,24,55">
+      <node id="5475084672766712072" at="27,5,28,99" concept="5" />
+      <node id="5475084672766712072" at="28,99,29,55" concept="2" />
+      <node id="5475084672766712072" at="26,5,30,5" concept="0" />
+      <scope id="5475084672766712072" at="27,5,29,55">
         <var name="nonTypesystemRule" id="5475084672766712072" />
       </scope>
     </file>
@@ -139,155 +139,199 @@
   </root>
   <root nodeRef="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)/5475084672766895368">
     <file name="TypesystemDescriptor.java">
-      <node id="5475084672766895368" at="10,5,11,98" concept="5" />
-      <node id="5475084672766895368" at="11,98,12,55" concept="2" />
-      <node id="5475084672766895368" at="9,33,13,5" concept="0" />
-      <scope id="5475084672766895368" at="10,5,12,55">
+      <node id="5475084672766895368" at="15,5,16,98" concept="5" />
+      <node id="5475084672766895368" at="16,98,17,55" concept="2" />
+      <node id="5475084672766895368" at="14,5,18,5" concept="0" />
+      <scope id="5475084672766895368" at="15,5,17,55">
         <var name="nonTypesystemRule" id="5475084672766895368" />
       </scope>
     </file>
     <file name="checkCuboidBoundaries_NonTypesystemRule.java">
-      <node id="2380230844049000360" at="26,123,27,83" concept="7" />
-      <node id="5475084672766926100" at="27,83,28,171" concept="5" />
-      <node id="5475084672766937929" at="28,171,29,171" concept="5" />
-      <node id="5475084672766938497" at="29,171,30,171" concept="5" />
-      <node id="5475084672766940542" at="30,171,31,0" concept="8" />
-      <node id="5475084672766981599" at="33,7,34,66" concept="5" />
-      <node id="5475084672766981599" at="34,66,35,369" concept="5" />
-      <node id="5475084672767002948" at="37,5,38,0" concept="8" />
-      <node id="5475084672766998821" at="40,7,41,66" concept="5" />
-      <node id="5475084672766998821" at="41,66,42,369" concept="5" />
-      <node id="5475084672766998450" at="44,5,45,0" concept="8" />
-      <node id="5475084672767010063" at="47,7,48,66" concept="5" />
-      <node id="5475084672767010063" at="48,66,49,369" concept="5" />
-      <node id="5475084672767009510" at="51,5,52,0" concept="8" />
-      <node id="5475084672766895368" at="54,50,55,46" concept="6" />
-      <node id="5475084672766895368" at="57,68,58,102" concept="6" />
-      <node id="5475084672766895368" at="60,30,61,17" concept="6" />
-      <node id="5475084672766895368" at="65,0,66,0" concept="9" trace="Substrate_Position$SqKU" />
-      <node id="5475084672766895368" at="66,0,67,0" concept="9" trace="grid$mgtJ" />
-      <node id="5475084672766895368" at="70,0,71,0" concept="9" trace="Substrate$xo" />
-      <node id="5475084672766895368" at="71,0,72,0" concept="9" trace="World_Container$fW" />
-      <node id="5475084672766895368" at="72,0,73,0" concept="9" trace="Substrate_Shape_Cuboid$DK" />
-      <node id="5475084672766895368" at="76,0,77,0" concept="9" trace="name$MnvL" />
-      <node id="5475084672766895368" at="77,0,78,0" concept="9" trace="X_Size$PwQq" />
-      <node id="5475084672766895368" at="78,0,79,0" concept="9" trace="width$Uv0Q" />
-      <node id="5475084672766895368" at="79,0,80,0" concept="9" trace="Y_Size$Pxks" />
-      <node id="5475084672766895368" at="80,0,81,0" concept="9" trace="height$U$qd" />
-      <node id="5475084672766895368" at="81,0,82,0" concept="9" trace="Z_Size$PAWO" />
-      <node id="5475084672766895368" at="82,0,83,0" concept="9" trace="depth$U_7g" />
-      <node id="5475084672766895368" at="24,0,26,0" concept="1" trace="checkCuboidBoundaries_NonTypesystemRule#()V" />
-      <node id="5475084672766895368" at="54,0,57,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5475084672766895368" at="57,0,60,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="5475084672766895368" at="60,0,63,0" concept="4" trace="overrides#()Z" />
-      <node id="5475084672766981599" at="32,353,36,7" concept="0" />
-      <node id="5475084672766998821" at="39,355,43,7" concept="0" />
-      <node id="5475084672767010063" at="46,353,50,7" concept="0" />
-      <node id="5475084672766940185" at="31,0,37,5" concept="3" />
-      <node id="5475084672766998819" at="38,0,44,5" concept="3" />
-      <node id="5475084672767010061" at="45,0,51,5" concept="3" />
-      <node id="5475084672766895368" at="26,0,54,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="5475084672766895368" at="24,52,24,52" />
-      <scope id="5475084672766895368" at="54,50,55,46" />
-      <scope id="5475084672766895368" at="57,68,58,102" />
-      <scope id="5475084672766895368" at="60,30,61,17" />
-      <scope id="5475084672766895368" at="24,0,26,0" />
-      <scope id="5475084672766981599" at="33,7,35,369">
+      <node id="2380230844049000360" at="27,123,28,83" concept="7" />
+      <node id="5475084672766926100" at="28,83,29,171" concept="5" />
+      <node id="5475084672766937929" at="29,171,30,171" concept="5" />
+      <node id="5475084672766938497" at="30,171,31,171" concept="5" />
+      <node id="5475084672766940542" at="31,171,32,0" concept="8" />
+      <node id="91108499532820950" at="32,0,33,228" concept="5" />
+      <node id="91108499532837461" at="33,228,34,228" concept="5" />
+      <node id="91108499532841619" at="34,228,35,228" concept="5" />
+      <node id="91108499532819632" at="35,228,36,0" concept="8" />
+      <node id="5475084672766981599" at="38,7,39,66" concept="5" />
+      <node id="5475084672766981599" at="39,66,40,369" concept="5" />
+      <node id="5475084672767002948" at="42,5,43,0" concept="8" />
+      <node id="5475084672766998821" at="45,7,46,66" concept="5" />
+      <node id="5475084672766998821" at="46,66,47,369" concept="5" />
+      <node id="5475084672766998450" at="49,5,50,0" concept="8" />
+      <node id="5475084672767010063" at="52,7,53,66" concept="5" />
+      <node id="5475084672767010063" at="53,66,54,369" concept="5" />
+      <node id="5475084672767009510" at="56,5,57,0" concept="8" />
+      <node id="5475084672766895368" at="59,50,60,46" concept="6" />
+      <node id="5475084672766895368" at="62,68,63,102" concept="6" />
+      <node id="5475084672766895368" at="65,30,66,17" concept="6" />
+      <node id="5475084672766895368" at="70,0,71,0" concept="9" trace="Substrate_Position$SqKU" />
+      <node id="5475084672766895368" at="71,0,72,0" concept="9" trace="grid$mgtJ" />
+      <node id="5475084672766895368" at="75,0,76,0" concept="9" trace="World_Container$fW" />
+      <node id="5475084672766895368" at="76,0,77,0" concept="9" trace="Substrate$xo" />
+      <node id="5475084672766895368" at="77,0,78,0" concept="9" trace="Substrate_Shape_Cuboid$DK" />
+      <node id="5475084672766895368" at="81,0,82,0" concept="9" trace="name$MnvL" />
+      <node id="5475084672766895368" at="82,0,83,0" concept="9" trace="width$Uv0Q" />
+      <node id="5475084672766895368" at="83,0,84,0" concept="9" trace="height$U$qd" />
+      <node id="5475084672766895368" at="84,0,85,0" concept="9" trace="depth$U_7g" />
+      <node id="5475084672766895368" at="25,0,27,0" concept="1" trace="checkCuboidBoundaries_NonTypesystemRule#()V" />
+      <node id="5475084672766895368" at="59,0,62,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5475084672766895368" at="62,0,65,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5475084672766895368" at="65,0,68,0" concept="4" trace="overrides#()Z" />
+      <node id="5475084672766981599" at="37,183,41,7" concept="0" />
+      <node id="5475084672766998821" at="44,185,48,7" concept="0" />
+      <node id="5475084672767010063" at="51,183,55,7" concept="0" />
+      <node id="5475084672766940185" at="36,0,42,5" concept="3" />
+      <node id="5475084672766998819" at="43,0,49,5" concept="3" />
+      <node id="5475084672767010061" at="50,0,56,5" concept="3" />
+      <node id="5475084672766895368" at="27,0,59,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="5475084672766895368" at="25,52,25,52" />
+      <scope id="5475084672766895368" at="59,50,60,46" />
+      <scope id="5475084672766895368" at="62,68,63,102" />
+      <scope id="5475084672766895368" at="65,30,66,17" />
+      <scope id="5475084672766895368" at="25,0,27,0" />
+      <scope id="5475084672766981599" at="38,7,40,369">
         <var name="_reporter_2309309498" id="5475084672766981599" />
         <var name="errorTarget" id="5475084672766981599" />
       </scope>
-      <scope id="5475084672766998821" at="40,7,42,369">
+      <scope id="5475084672766998821" at="45,7,47,369">
         <var name="_reporter_2309309498" id="5475084672766998821" />
         <var name="errorTarget" id="5475084672766998821" />
       </scope>
-      <scope id="5475084672767010063" at="47,7,49,369">
+      <scope id="5475084672767010063" at="52,7,54,369">
         <var name="_reporter_2309309498" id="5475084672767010063" />
         <var name="errorTarget" id="5475084672767010063" />
       </scope>
-      <scope id="5475084672766895368" at="54,0,57,0" />
-      <scope id="5475084672766895368" at="57,0,60,0">
+      <scope id="5475084672766895368" at="59,0,62,0" />
+      <scope id="5475084672766895368" at="62,0,65,0">
         <var name="argument" id="5475084672766895368" />
       </scope>
-      <scope id="5475084672766895368" at="60,0,63,0" />
-      <scope id="5475084672766940187" at="32,353,36,7" />
-      <scope id="5475084672766998820" at="39,355,43,7" />
-      <scope id="5475084672767010062" at="46,353,50,7" />
-      <scope id="5475084672766895369" at="26,123,52,0">
+      <scope id="5475084672766895368" at="65,0,68,0" />
+      <scope id="5475084672766940187" at="37,183,41,7" />
+      <scope id="5475084672766998820" at="44,185,48,7" />
+      <scope id="5475084672767010062" at="51,183,55,7" />
+      <scope id="5475084672766895369" at="27,123,57,0">
         <var name="centre_x" id="5475084672766926103" />
         <var name="centre_y" id="5475084672766937930" />
         <var name="centre_z" id="5475084672766938498" />
+        <var name="grid_x_size" id="91108499532820953" />
+        <var name="grid_y_size" id="91108499532837462" />
+        <var name="grid_z_size" id="91108499532841620" />
       </scope>
-      <scope id="5475084672766895368" at="26,0,54,0">
+      <scope id="5475084672766895368" at="27,0,59,0">
         <var name="status" id="5475084672766895368" />
         <var name="thisCuboid" id="5475084672766895368" />
         <var name="typeCheckingContext" id="5475084672766895368" />
       </scope>
-      <unit id="5475084672766895368" at="64,0,68,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$LINKS" />
-      <unit id="5475084672766895368" at="69,0,74,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$CONCEPTS" />
-      <unit id="5475084672766895368" at="75,0,84,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$PROPS" />
-      <unit id="5475084672766895368" at="23,0,85,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule" />
+      <unit id="5475084672766895368" at="69,0,73,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$LINKS" />
+      <unit id="5475084672766895368" at="74,0,79,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$CONCEPTS" />
+      <unit id="5475084672766895368" at="80,0,86,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule$PROPS" />
+      <unit id="5475084672766895368" at="24,0,87,0" name="WorldSetup.typesystem.checkCuboidBoundaries_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)/5475084672767015072">
     <file name="TypesystemDescriptor.java">
-      <node id="5475084672767015072" at="14,5,15,102" concept="5" />
-      <node id="5475084672767015072" at="15,102,16,55" concept="2" />
-      <node id="5475084672767015072" at="13,5,17,5" concept="0" />
-      <scope id="5475084672767015072" at="14,5,16,55">
+      <node id="5475084672767015072" at="19,5,20,102" concept="5" />
+      <node id="5475084672767015072" at="20,102,21,55" concept="2" />
+      <node id="5475084672767015072" at="18,5,22,5" concept="0" />
+      <scope id="5475084672767015072" at="19,5,21,55">
         <var name="nonTypesystemRule" id="5475084672767015072" />
       </scope>
     </file>
     <file name="checkTriangularBoundaries_NonTypesystemRule.java">
-      <node id="2380230844049001797" at="25,127,26,90" concept="7" />
-      <node id="5475084672767022215" at="26,90,27,89" concept="5" />
-      <node id="5475084672767022780" at="27,89,28,0" concept="8" />
-      <node id="5475084672767015110" at="30,7,31,66" concept="5" />
-      <node id="5475084672767015110" at="31,66,32,377" concept="5" />
-      <node id="5475084672767015072" at="36,50,37,50" concept="6" />
-      <node id="5475084672767015072" at="39,68,40,102" concept="6" />
-      <node id="5475084672767015072" at="42,30,43,17" concept="6" />
-      <node id="5475084672767015072" at="47,0,48,0" concept="9" trace="z_location$4h36" />
-      <node id="5475084672767015072" at="48,0,49,0" concept="9" trace="name$MnvL" />
-      <node id="5475084672767015072" at="49,0,50,0" concept="9" trace="Z_Size$PAWO" />
-      <node id="5475084672767015072" at="50,0,51,0" concept="9" trace="depth$5OPS" />
-      <node id="5475084672767015072" at="54,0,55,0" concept="9" trace="Substrate$xo" />
+      <node id="2380230844049001797" at="26,127,27,90" concept="7" />
+      <node id="5475084672767022215" at="27,90,28,89" concept="5" />
+      <node id="91108499532865383" at="28,89,29,232" concept="5" />
+      <node id="5475084672767022780" at="29,232,30,0" concept="8" />
+      <node id="5475084672767015110" at="32,7,33,66" concept="5" />
+      <node id="5475084672767015110" at="33,66,34,377" concept="5" />
+      <node id="5475084672767015072" at="38,50,39,50" concept="6" />
+      <node id="5475084672767015072" at="41,68,42,102" concept="6" />
+      <node id="5475084672767015072" at="44,30,45,17" concept="6" />
+      <node id="5475084672767015072" at="49,0,50,0" concept="9" trace="z_location$4h36" />
+      <node id="5475084672767015072" at="50,0,51,0" concept="9" trace="name$MnvL" />
+      <node id="5475084672767015072" at="51,0,52,0" concept="9" trace="depth$5OPS" />
       <node id="5475084672767015072" at="55,0,56,0" concept="9" trace="World_Container$fW" />
-      <node id="5475084672767015072" at="56,0,57,0" concept="9" trace="Substrate_Shape_Triangular$zL" />
-      <node id="5475084672767015072" at="60,0,61,0" concept="9" trace="grid$mgtJ" />
-      <node id="5475084672767015072" at="23,0,25,0" concept="1" trace="checkTriangularBoundaries_NonTypesystemRule#()V" />
-      <node id="5475084672767015072" at="36,0,39,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5475084672767015072" at="39,0,42,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="5475084672767015072" at="42,0,45,0" concept="4" trace="overrides#()Z" />
-      <node id="5475084672767015110" at="29,365,33,7" concept="0" />
-      <node id="5475084672767015108" at="28,0,34,5" concept="3" />
-      <node id="5475084672767015072" at="25,0,36,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="5475084672767015072" at="23,56,23,56" />
-      <scope id="5475084672767015072" at="36,50,37,50" />
-      <scope id="5475084672767015072" at="39,68,40,102" />
-      <scope id="5475084672767015072" at="42,30,43,17" />
-      <scope id="5475084672767015072" at="23,0,25,0" />
-      <scope id="5475084672767015110" at="30,7,32,377">
+      <node id="5475084672767015072" at="56,0,57,0" concept="9" trace="Substrate$xo" />
+      <node id="5475084672767015072" at="57,0,58,0" concept="9" trace="Substrate_Shape_Triangular$zL" />
+      <node id="5475084672767015072" at="61,0,62,0" concept="9" trace="grid$mgtJ" />
+      <node id="5475084672767015072" at="24,0,26,0" concept="1" trace="checkTriangularBoundaries_NonTypesystemRule#()V" />
+      <node id="5475084672767015072" at="38,0,41,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5475084672767015072" at="41,0,44,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5475084672767015072" at="44,0,47,0" concept="4" trace="overrides#()Z" />
+      <node id="5475084672767015110" at="31,191,35,7" concept="0" />
+      <node id="5475084672767015108" at="30,0,36,5" concept="3" />
+      <node id="5475084672767015072" at="26,0,38,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="5475084672767015072" at="24,56,24,56" />
+      <scope id="5475084672767015072" at="38,50,39,50" />
+      <scope id="5475084672767015072" at="41,68,42,102" />
+      <scope id="5475084672767015072" at="44,30,45,17" />
+      <scope id="5475084672767015072" at="24,0,26,0" />
+      <scope id="5475084672767015110" at="32,7,34,377">
         <var name="_reporter_2309309498" id="5475084672767015110" />
         <var name="errorTarget" id="5475084672767015110" />
       </scope>
-      <scope id="5475084672767015072" at="36,0,39,0" />
-      <scope id="5475084672767015072" at="39,0,42,0">
+      <scope id="5475084672767015072" at="38,0,41,0" />
+      <scope id="5475084672767015072" at="41,0,44,0">
         <var name="argument" id="5475084672767015072" />
       </scope>
-      <scope id="5475084672767015072" at="42,0,45,0" />
-      <scope id="5475084672767015109" at="29,365,33,7" />
-      <scope id="5475084672767015073" at="25,127,34,5">
+      <scope id="5475084672767015072" at="44,0,47,0" />
+      <scope id="5475084672767015109" at="31,191,35,7" />
+      <scope id="5475084672767015073" at="26,127,36,5">
         <var name="centre_z" id="5475084672767022216" />
+        <var name="grid_z_size" id="91108499532865384" />
       </scope>
-      <scope id="5475084672767015072" at="25,0,36,0">
+      <scope id="5475084672767015072" at="26,0,38,0">
         <var name="status" id="5475084672767015072" />
         <var name="thisTriangular" id="5475084672767015072" />
         <var name="typeCheckingContext" id="5475084672767015072" />
       </scope>
-      <unit id="5475084672767015072" at="59,0,62,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$LINKS" />
-      <unit id="5475084672767015072" at="53,0,58,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$CONCEPTS" />
-      <unit id="5475084672767015072" at="46,0,52,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$PROPS" />
-      <unit id="5475084672767015072" at="22,0,63,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule" />
+      <unit id="5475084672767015072" at="60,0,63,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$LINKS" />
+      <unit id="5475084672767015072" at="48,0,53,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$PROPS" />
+      <unit id="5475084672767015072" at="54,0,59,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule$CONCEPTS" />
+      <unit id="5475084672767015072" at="23,0,64,0" name="WorldSetup.typesystem.checkTriangularBoundaries_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)/5490954312206142837">
+    <file name="TypesystemDescriptor.java">
+      <node id="5490954312206142837" at="11,5,12,89" concept="5" />
+      <node id="5490954312206142837" at="12,89,13,47" concept="2" />
+      <node id="5490954312206142837" at="10,33,14,5" concept="0" />
+      <scope id="5490954312206142837" at="11,5,13,47">
+        <var name="inferenceRule" id="5490954312206142837" />
+      </scope>
+    </file>
+    <file name="typeof_Float_Declaration_InferenceRule.java">
+      <node id="5490954312206142837" at="19,50,20,41" concept="6" />
+      <node id="5490954312206142837" at="22,68,23,102" concept="6" />
+      <node id="5490954312206142837" at="25,30,26,17" concept="6" />
+      <node id="5490954312206142837" at="30,0,31,0" concept="9" trace="Float_Declaration$XK" />
+      <node id="5490954312206142837" at="15,0,17,0" concept="1" trace="typeof_Float_Declaration_InferenceRule#()V" />
+      <node id="5490954312206142837" at="17,0,19,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="5490954312206142837" at="19,0,22,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5490954312206142837" at="22,0,25,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5490954312206142837" at="25,0,28,0" concept="4" trace="overrides#()Z" />
+      <scope id="5490954312206142837" at="15,51,15,51" />
+      <scope id="5490954312206142838" at="17,117,17,117" />
+      <scope id="5490954312206142837" at="19,50,20,41" />
+      <scope id="5490954312206142837" at="22,68,23,102" />
+      <scope id="5490954312206142837" at="25,30,26,17" />
+      <scope id="5490954312206142837" at="15,0,17,0" />
+      <scope id="5490954312206142837" at="17,0,19,0">
+        <var name="decl" id="5490954312206142837" />
+        <var name="status" id="5490954312206142837" />
+        <var name="typeCheckingContext" id="5490954312206142837" />
+      </scope>
+      <scope id="5490954312206142837" at="19,0,22,0" />
+      <scope id="5490954312206142837" at="22,0,25,0">
+        <var name="argument" id="5490954312206142837" />
+      </scope>
+      <scope id="5490954312206142837" at="25,0,28,0" />
+      <unit id="5490954312206142837" at="29,0,32,0" name="WorldSetup.typesystem.typeof_Float_Declaration_InferenceRule$CONCEPTS" />
+      <unit id="5490954312206142837" at="14,0,33,0" name="WorldSetup.typesystem.typeof_Float_Declaration_InferenceRule" />
     </file>
   </root>
 </debug-info>

@@ -1,21 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependenciesRoot>
-  <dependency className="MSM.user_simulation.RunMSM">
-    <classNode dependClassName="java.io.BufferedReader" />
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="java.io.InputStream" />
-    <classNode dependClassName="java.io.InputStreamReader" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Process" />
-    <classNode dependClassName="java.lang.ProcessBuilder" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.nio.file.Files" />
-    <classNode dependClassName="java.nio.file.Path" />
-    <classNode dependClassName="java.nio.file.Paths" />
-    <classNode dependClassName="java.nio.file.StandardCopyOption" />
-  </dependency>
-</dependenciesRoot>
+<dependenciesRoot />
 

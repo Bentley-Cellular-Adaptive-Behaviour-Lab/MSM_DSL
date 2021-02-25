@@ -16,12 +16,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL, "WorldSetup.structure.Source");
@@ -29,9 +27,8 @@ public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> get_X_position_id2OHr9yL65ib = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL65ib").build();
   public static final SMethod<String> get_Y_position_id2OHr9yL66Qs = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL66Qs").build();
   public static final SMethod<String> get_Z_position_id2OHr9yL67xm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL67xm").build();
-  public static final SMethod<String> get_source_strength_id2OHr9yL8Xdi = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_strength").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL8Xdi").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_X_position_id2OHr9yL65ib, get_Y_position_id2OHr9yL66Qs, get_Z_position_id2OHr9yL67xm, get_source_strength_id2OHr9yL8Xdi);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_X_position_id2OHr9yL65ib, get_Y_position_id2OHr9yL66Qs, get_Z_position_id2OHr9yL67xm);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -44,10 +41,6 @@ public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static String get_Z_position_id2OHr9yL67xm(@NotNull SNode __thisNode__) {
     return Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$ghW5));
-  }
-  /*package*/ static String get_source_strength_id2OHr9yL8Xdi(@NotNull SNode __thisNode__) {
-    String strength = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.source_strength$KPNu));
-    return strength;
   }
 
   /*package*/ Source__BehaviorDescriptor() {
@@ -71,8 +64,6 @@ public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((String) get_Y_position_id2OHr9yL66Qs(node));
       case 2:
         return (T) ((String) get_Z_position_id2OHr9yL67xm(node));
-      case 3:
-        return (T) ((String) get_source_strength_id2OHr9yL8Xdi(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -104,9 +95,5 @@ public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink position$ghW5 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL, 0x33a7e096d09c5aeL, "position");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty source_strength$KPNu = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL, 0x2d2d6c98b123b7feL, "source_strength");
   }
 }

@@ -1012,7 +1012,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setCellId("Collection_335jdl_a0b0");
       editorCell.addEditorCell(createConstant_7());
       editorCell.addEditorCell(createCollection_6());
-      editorCell.addEditorCell(createCollection_7());
       return editorCell;
     }
     private EditorCell createConstant_7() {
@@ -1062,47 +1061,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
         getCellFactory().popCellContext();
       }
     }
-    private EditorCell createCollection_7() {
-      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-      editorCell.setCellId("Collection_335jdl_c0a1a");
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.SELECTABLE, false);
-      editorCell.getStyle().putAll(style);
-      editorCell.addEditorCell(createConstant_9());
-      editorCell.addEditorCell(createProperty_7());
-      return editorCell;
-    }
-    private EditorCell createConstant_9() {
-      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Level: ");
-      editorCell.setCellId("Constant_335jdl_a2a0b0");
-      editorCell.setDefaultText("");
-      return editorCell;
-    }
-    private EditorCell createProperty_7() {
-      getCellFactory().pushCellContext();
-      try {
-        final SProperty property = PROPS.starting_strength$pULs;
-        getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-        EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-        editorCell.setDefaultText("<no starting_strength>");
-        editorCell.setCellId("property_starting_strength");
-        editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
-        setCellContext(editorCell);
-        Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
-        Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
-          }
-        });
-        if (Sequence.fromIterable(currentPropertyAttributes).isNotEmpty()) {
-          EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
-          return manager.createNodeRoleAttributeCell(Sequence.fromIterable(currentPropertyAttributes).first(), AttributeKind.PROPERTY, editorCell);
-        } else
-        return editorCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    }
   }
 
   private static final class PROPS {
@@ -1115,7 +1073,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SProperty min_level$JRFZ = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019371L, 0x224f426ac50196acL, "min_level");
     /*package*/ static final SProperty max_level$KNZ0 = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019371L, 0x224f426ac5019705L, "max_level");
     /*package*/ static final SProperty timesteps_active$yHaS = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019371L, 0x224f426ac5019571L, "timesteps_active");
-    /*package*/ static final SProperty starting_strength$pULs = MetaAdapterFactory.getProperty(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019482L, 0x224f426ac5019a38L, "starting_strength");
   }
 
   private static final class LINKS {

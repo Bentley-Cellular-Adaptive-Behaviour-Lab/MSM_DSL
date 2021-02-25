@@ -377,18 +377,18 @@
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/5475084672763854261">
-    <file name="Rectangular_Editor.java">
-      <node id="5475084672763854261" at="11,79,12,77" concept="6" />
+    <file name="Shape_Rectangular_Editor.java">
+      <node id="5475084672763854261" at="11,79,12,83" concept="6" />
       <node id="5475084672763854261" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5475084672763854261" at="11,79,12,77" />
+      <scope id="5475084672763854261" at="11,79,12,83" />
       <scope id="5475084672763854261" at="11,0,14,0">
         <var name="editorContext" id="5475084672763854261" />
         <var name="node" id="5475084672763854261" />
       </scope>
-      <unit id="5475084672763854261" at="10,0,15,0" name="TissueSetup.editor.Rectangular_Editor" />
+      <unit id="5475084672763854261" at="10,0,15,0" name="TissueSetup.editor.Shape_Rectangular_Editor" />
     </file>
-    <file name="Rectangular_EditorBuilder_a.java">
-      <node id="5475084672763854261" at="38,91,39,19" concept="9" />
+    <file name="Shape_Rectangular_EditorBuilder_a.java">
+      <node id="5475084672763854261" at="38,97,39,19" concept="9" />
       <node id="5475084672763854261" at="39,19,40,18" concept="1" />
       <node id="5475084672763854261" at="45,26,46,18" concept="6" />
       <node id="5475084672763854261" at="49,39,50,32" concept="6" />
@@ -450,7 +450,7 @@
       <node id="5475084672763854261" at="49,0,52,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5475084672763854275" at="85,0,88,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="5475084672763854293" at="119,0,122,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5475084672763854261" at="38,0,42,0" concept="0" trace="Rectangular_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5475084672763854261" at="38,0,42,0" concept="0" trace="Shape_Rectangular_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5475084672763854261" at="43,0,48,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="5475084672763854275" at="83,155,88,9" concept="5" />
       <node id="5475084672763854275" at="88,9,93,24" concept="3" />
@@ -469,7 +469,7 @@
       <scope id="5475084672763854275" at="94,15,95,40" />
       <scope id="5475084672763854293" at="119,41,120,118" />
       <scope id="5475084672763854293" at="128,15,129,40" />
-      <scope id="5475084672763854261" at="38,91,40,18" />
+      <scope id="5475084672763854261" at="38,97,40,18" />
       <scope id="5475084672763854275" at="89,74,91,145">
         <var name="manager" id="5475084672763854275" />
       </scope>
@@ -518,11 +518,11 @@
       <scope id="5475084672763854293" at="104,41,130,5" />
       <scope id="5475084672763854275" at="70,0,98,0" />
       <scope id="5475084672763854293" at="104,0,132,0" />
-      <unit id="5475084672763854261" at="138,0,141,0" name="TissueSetup.editor.Rectangular_EditorBuilder_a$CONCEPTS" />
-      <unit id="5475084672763854275" at="84,102,88,7" name="TissueSetup.editor.Rectangular_EditorBuilder_a$1" />
-      <unit id="5475084672763854293" at="118,102,122,7" name="TissueSetup.editor.Rectangular_EditorBuilder_a$2" />
-      <unit id="5475084672763854261" at="133,0,137,0" name="TissueSetup.editor.Rectangular_EditorBuilder_a$PROPS" />
-      <unit id="5475084672763854261" at="34,0,142,0" name="TissueSetup.editor.Rectangular_EditorBuilder_a" />
+      <unit id="5475084672763854261" at="138,0,141,0" name="TissueSetup.editor.Shape_Rectangular_EditorBuilder_a$CONCEPTS" />
+      <unit id="5475084672763854275" at="84,102,88,7" name="TissueSetup.editor.Shape_Rectangular_EditorBuilder_a$1" />
+      <unit id="5475084672763854293" at="118,102,122,7" name="TissueSetup.editor.Shape_Rectangular_EditorBuilder_a$2" />
+      <unit id="5475084672763854261" at="133,0,137,0" name="TissueSetup.editor.Shape_Rectangular_EditorBuilder_a$PROPS" />
+      <unit id="5475084672763854261" at="34,0,142,0" name="TissueSetup.editor.Shape_Rectangular_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/5475084672763929498">
@@ -852,18 +852,18 @@
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/5475084672763987523">
-    <file name="Cylindrical_Editor.java">
-      <node id="5475084672763987523" at="11,79,12,77" concept="6" />
+    <file name="Arrangement_Cylindrical_Editor.java">
+      <node id="5475084672763987523" at="11,79,12,89" concept="6" />
       <node id="5475084672763987523" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5475084672763987523" at="11,79,12,77" />
+      <scope id="5475084672763987523" at="11,79,12,89" />
       <scope id="5475084672763987523" at="11,0,14,0">
         <var name="editorContext" id="5475084672763987523" />
         <var name="node" id="5475084672763987523" />
       </scope>
-      <unit id="5475084672763987523" at="10,0,15,0" name="TissueSetup.editor.Cylindrical_Editor" />
+      <unit id="5475084672763987523" at="10,0,15,0" name="TissueSetup.editor.Arrangement_Cylindrical_Editor" />
     </file>
-    <file name="Cylindrical_EditorBuilder_a.java">
-      <node id="5475084672763987523" at="42,91,43,19" concept="9" />
+    <file name="Arrangement_Cylindrical_EditorBuilder_a.java">
+      <node id="5475084672763987523" at="42,103,43,19" concept="9" />
       <node id="5475084672763987523" at="43,19,44,18" concept="1" />
       <node id="5475084672763987523" at="49,26,50,18" concept="6" />
       <node id="5475084672763987523" at="53,39,54,32" concept="6" />
@@ -948,7 +948,7 @@
       <node id="5475084672763987523" at="86,0,89,0" concept="4" trace="createTooltip_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3009938612297993180" at="119,0,122,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3009938612297993270" at="153,0,156,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5475084672763987523" at="42,0,46,0" concept="0" trace="Cylindrical_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5475084672763987523" at="42,0,46,0" concept="0" trace="Arrangement_Cylindrical_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5475084672763987523" at="47,0,52,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3009938612297993180" at="117,155,122,9" concept="5" />
       <node id="3009938612297993180" at="122,9,127,24" concept="3" />
@@ -971,7 +971,7 @@
       <scope id="3009938612297993180" at="128,15,129,40" />
       <scope id="3009938612297993270" at="153,41,154,118" />
       <scope id="3009938612297993270" at="162,15,163,40" />
-      <scope id="5475084672763987523" at="42,91,44,18" />
+      <scope id="5475084672763987523" at="42,103,44,18" />
       <scope id="3009938612297993180" at="123,74,125,145">
         <var name="manager" id="3009938612297993180" />
       </scope>
@@ -1040,29 +1040,29 @@
       <scope id="3009938612297993270" at="138,41,164,5" />
       <scope id="3009938612297993180" at="104,0,132,0" />
       <scope id="3009938612297993270" at="138,0,166,0" />
-      <unit id="5475084672763987523" at="172,0,175,0" name="TissueSetup.editor.Cylindrical_EditorBuilder_a$CONCEPTS" />
-      <unit id="3009938612297993180" at="118,102,122,7" name="TissueSetup.editor.Cylindrical_EditorBuilder_a$1" />
-      <unit id="3009938612297993270" at="152,102,156,7" name="TissueSetup.editor.Cylindrical_EditorBuilder_a$2" />
-      <unit id="5475084672763987523" at="167,0,171,0" name="TissueSetup.editor.Cylindrical_EditorBuilder_a$PROPS" />
-      <unit id="5475084672763987523" at="38,0,176,0" name="TissueSetup.editor.Cylindrical_EditorBuilder_a" />
+      <unit id="5475084672763987523" at="172,0,175,0" name="TissueSetup.editor.Arrangement_Cylindrical_EditorBuilder_a$CONCEPTS" />
+      <unit id="3009938612297993180" at="118,102,122,7" name="TissueSetup.editor.Arrangement_Cylindrical_EditorBuilder_a$1" />
+      <unit id="3009938612297993270" at="152,102,156,7" name="TissueSetup.editor.Arrangement_Cylindrical_EditorBuilder_a$2" />
+      <unit id="5475084672763987523" at="167,0,171,0" name="TissueSetup.editor.Arrangement_Cylindrical_EditorBuilder_a$PROPS" />
+      <unit id="5475084672763987523" at="38,0,176,0" name="TissueSetup.editor.Arrangement_Cylindrical_EditorBuilder_a" />
     </file>
-    <file name="Cylindrical_tooltipHint_vppb9r_a0a_Editor.java">
+    <file name="Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_Editor.java">
       <node id="3009938612297993444" at="14,0,15,0" concept="2" trace="myContextHints" />
       <node id="3009938612297993444" at="17,47,18,26" concept="6" />
-      <node id="3009938612297993444" at="20,79,21,100" concept="6" />
+      <node id="3009938612297993444" at="20,79,21,112" concept="6" />
       <node id="3009938612297993444" at="20,0,23,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3009938612297993444" at="15,0,20,0" concept="4" trace="getContextHints#()Ljava/util/Collection;" />
       <scope id="3009938612297993444" at="17,47,18,26" />
-      <scope id="3009938612297993444" at="20,79,21,100" />
+      <scope id="3009938612297993444" at="20,79,21,112" />
       <scope id="3009938612297993444" at="20,0,23,0">
         <var name="editorContext" id="3009938612297993444" />
         <var name="node" id="3009938612297993444" />
       </scope>
       <scope id="3009938612297993444" at="15,0,20,0" />
-      <unit id="3009938612297993444" at="13,0,24,0" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_Editor" />
+      <unit id="3009938612297993444" at="13,0,24,0" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_Editor" />
     </file>
-    <file name="Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a.java">
-      <node id="3009938612297993444" at="37,114,38,19" concept="9" />
+    <file name="Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a.java">
+      <node id="3009938612297993444" at="37,126,38,19" concept="9" />
       <node id="3009938612297993444" at="38,19,39,18" concept="1" />
       <node id="3009938612297993444" at="44,26,45,18" concept="6" />
       <node id="3009938612297993444" at="48,39,49,32" concept="6" />
@@ -1174,7 +1174,7 @@
       <node id="3009938612297993448" at="97,0,100,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3009938612297993453" at="138,0,141,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3009938612297993459" at="186,0,189,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3009938612297993444" at="37,0,41,0" concept="0" trace="Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3009938612297993444" at="37,0,41,0" concept="0" trace="Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3009938612297993444" at="42,0,47,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3009938612297993448" at="95,155,100,9" concept="5" />
       <node id="3009938612297993448" at="100,9,105,24" concept="3" />
@@ -1207,7 +1207,7 @@
       <scope id="3009938612297993453" at="147,15,148,40" />
       <scope id="3009938612297993459" at="186,41,187,118" />
       <scope id="3009938612297993459" at="195,15,196,40" />
-      <scope id="3009938612297993444" at="37,114,39,18" />
+      <scope id="3009938612297993444" at="37,126,39,18" />
       <scope id="3009938612297993448" at="101,74,103,145">
         <var name="manager" id="3009938612297993448" />
       </scope>
@@ -1296,12 +1296,12 @@
       <scope id="3009938612297993448" at="85,0,110,0" />
       <scope id="3009938612297993453" at="126,0,151,0" />
       <scope id="3009938612297993459" at="174,0,199,0" />
-      <unit id="3009938612297993444" at="212,0,215,0" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a$CONCEPTS" />
-      <unit id="3009938612297993448" at="96,102,100,7" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a$1" />
-      <unit id="3009938612297993453" at="137,102,141,7" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a$2" />
-      <unit id="3009938612297993459" at="185,102,189,7" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a$3" />
-      <unit id="3009938612297993444" at="206,0,211,0" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a$PROPS" />
-      <unit id="3009938612297993444" at="33,0,216,0" name="TissueSetup.editor.Cylindrical_tooltipHint_vppb9r_a0a_EditorBuilder_a" />
+      <unit id="3009938612297993444" at="212,0,215,0" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a$CONCEPTS" />
+      <unit id="3009938612297993448" at="96,102,100,7" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a$1" />
+      <unit id="3009938612297993453" at="137,102,141,7" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a$2" />
+      <unit id="3009938612297993459" at="185,102,189,7" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a$3" />
+      <unit id="3009938612297993444" at="206,0,211,0" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a$PROPS" />
+      <unit id="3009938612297993444" at="33,0,216,0" name="TissueSetup.editor.Arrangement_Cylindrical_tooltipHint_6asmbt_a0a_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/5475084672764271953">
@@ -2588,30 +2588,30 @@
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/5475084672764746475">
-    <file name="Flat_Editor.java">
-      <node id="5475084672764746475" at="11,79,12,70" concept="6" />
+    <file name="Arrangement_Flat_Editor.java">
+      <node id="5475084672764746475" at="11,79,12,82" concept="6" />
       <node id="5475084672764746475" at="11,0,14,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5475084672764746475" at="11,79,12,70" />
+      <scope id="5475084672764746475" at="11,79,12,82" />
       <scope id="5475084672764746475" at="11,0,14,0">
         <var name="editorContext" id="5475084672764746475" />
         <var name="node" id="5475084672764746475" />
       </scope>
-      <unit id="5475084672764746475" at="10,0,15,0" name="TissueSetup.editor.Flat_Editor" />
+      <unit id="5475084672764746475" at="10,0,15,0" name="TissueSetup.editor.Arrangement_Flat_Editor" />
     </file>
-    <file name="Flat_EditorBuilder_a.java">
-      <node id="5475084672764746475" at="42,84,43,19" concept="9" />
+    <file name="Arrangement_Flat_EditorBuilder_a.java">
+      <node id="5475084672764746475" at="42,96,43,19" concept="9" />
       <node id="5475084672764746475" at="43,19,44,18" concept="1" />
       <node id="5475084672764746475" at="49,26,50,18" concept="6" />
       <node id="5475084672764746475" at="53,39,54,32" concept="6" />
       <node id="5475084672764746475" at="57,43,58,120" concept="5" />
-      <node id="5475084672764746475" at="58,120,59,48" concept="1" />
-      <node id="5475084672764746475" at="59,48,60,28" concept="1" />
+      <node id="5475084672764746475" at="58,120,59,47" concept="1" />
+      <node id="5475084672764746475" at="59,47,60,28" concept="1" />
       <node id="5475084672764746475" at="60,28,61,31" concept="1" />
       <node id="3009938612296663973" at="61,31,62,51" concept="1" />
       <node id="5475084672764746475" at="62,51,63,22" concept="6" />
       <node id="5475084672764746475" at="65,43,66,122" concept="5" />
-      <node id="5475084672764746475" at="66,122,67,49" concept="1" />
-      <node id="5475084672764746475" at="67,49,68,34" concept="5" />
+      <node id="5475084672764746475" at="66,122,67,48" concept="1" />
+      <node id="5475084672764746475" at="67,48,68,34" concept="5" />
       <node id="3009938612296663975" at="68,34,69,49" concept="1" />
       <node id="5475084672764746475" at="69,49,70,40" concept="1" />
       <node id="3009938612296664271" at="70,40,71,48" concept="1" />
@@ -2620,23 +2620,23 @@
       <node id="3009938612296664132" at="73,49,74,49" concept="1" />
       <node id="3009938612296664189" at="74,49,75,49" concept="1" />
       <node id="5475084672764746475" at="75,49,76,22" concept="6" />
-      <node id="5475084672764746475" at="78,91,79,155" concept="5" />
-      <node id="5475084672764746475" at="79,155,80,48" concept="5" />
+      <node id="5475084672764746475" at="78,91,79,154" concept="5" />
+      <node id="5475084672764746475" at="79,154,80,48" concept="5" />
       <node id="5475084672764746475" at="80,48,81,0" concept="7" />
       <node id="5475084672764746475" at="81,0,82,127" concept="5" />
-      <node id="5475084672764746475" at="82,127,83,47" concept="1" />
-      <node id="5475084672764746475" at="83,47,84,22" concept="6" />
+      <node id="5475084672764746475" at="82,127,83,46" concept="1" />
+      <node id="5475084672764746475" at="83,46,84,22" concept="6" />
       <node id="5475084672764746475" at="86,40,87,55" concept="6" />
       <node id="3009938612296664622" at="89,41,90,97" concept="5" />
-      <node id="3009938612296664622" at="90,97,91,49" concept="1" />
-      <node id="3009938612296664622" at="91,49,92,34" concept="5" />
+      <node id="3009938612296664622" at="90,97,91,48" concept="1" />
+      <node id="3009938612296664622" at="91,48,92,34" concept="5" />
       <node id="3009938612297345945" at="92,34,93,48" concept="1" />
       <node id="3009938612296664622" at="93,48,94,40" concept="1" />
       <node id="3009938612296664622" at="94,40,95,34" concept="1" />
       <node id="3009938612296664622" at="95,34,96,22" concept="6" />
       <node id="3009938612296664034" at="98,41,99,107" concept="5" />
-      <node id="3009938612296664034" at="99,107,100,48" concept="1" />
-      <node id="3009938612296664034" at="100,48,101,34" concept="1" />
+      <node id="3009938612296664034" at="99,107,100,47" concept="1" />
+      <node id="3009938612296664034" at="100,47,101,34" concept="1" />
       <node id="3009938612296664034" at="101,34,102,22" concept="6" />
       <node id="3009938612296664107" at="104,41,105,39" concept="1" />
       <node id="3009938612296664107" at="106,9,107,65" concept="5" />
@@ -2656,8 +2656,8 @@
       <node id="3009938612296664107" at="126,12,127,24" concept="6" />
       <node id="3009938612296664107" at="128,15,129,40" concept="1" />
       <node id="3009938612296664132" at="132,41,133,108" concept="5" />
-      <node id="3009938612296664132" at="133,108,134,48" concept="1" />
-      <node id="3009938612296664132" at="134,48,135,34" concept="1" />
+      <node id="3009938612296664132" at="133,108,134,47" concept="1" />
+      <node id="3009938612296664132" at="134,47,135,34" concept="1" />
       <node id="3009938612296664132" at="135,34,136,22" concept="6" />
       <node id="3009938612296664189" at="138,41,139,39" concept="1" />
       <node id="3009938612296664189" at="140,9,141,64" concept="5" />
@@ -2684,7 +2684,7 @@
       <node id="5475084672764746475" at="86,0,89,0" concept="4" trace="createTooltip_1#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3009938612296664107" at="119,0,122,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="3009938612296664189" at="153,0,156,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5475084672764746475" at="42,0,46,0" concept="0" trace="Flat_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5475084672764746475" at="42,0,46,0" concept="0" trace="Arrangement_Flat_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5475084672764746475" at="47,0,52,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3009938612296664107" at="117,155,122,9" concept="5" />
       <node id="3009938612296664107" at="122,9,127,24" concept="3" />
@@ -2707,7 +2707,7 @@
       <scope id="3009938612296664107" at="128,15,129,40" />
       <scope id="3009938612296664189" at="153,41,154,118" />
       <scope id="3009938612296664189" at="162,15,163,40" />
-      <scope id="5475084672764746475" at="42,84,44,18" />
+      <scope id="5475084672764746475" at="42,96,44,18" />
       <scope id="3009938612296664107" at="123,74,125,145">
         <var name="manager" id="3009938612296664107" />
       </scope>
@@ -2776,29 +2776,29 @@
       <scope id="3009938612296664189" at="138,41,164,5" />
       <scope id="3009938612296664107" at="104,0,132,0" />
       <scope id="3009938612296664189" at="138,0,166,0" />
-      <unit id="5475084672764746475" at="172,0,175,0" name="TissueSetup.editor.Flat_EditorBuilder_a$CONCEPTS" />
-      <unit id="3009938612296664107" at="118,102,122,7" name="TissueSetup.editor.Flat_EditorBuilder_a$1" />
-      <unit id="3009938612296664189" at="152,102,156,7" name="TissueSetup.editor.Flat_EditorBuilder_a$2" />
-      <unit id="5475084672764746475" at="167,0,171,0" name="TissueSetup.editor.Flat_EditorBuilder_a$PROPS" />
-      <unit id="5475084672764746475" at="38,0,176,0" name="TissueSetup.editor.Flat_EditorBuilder_a" />
+      <unit id="5475084672764746475" at="172,0,175,0" name="TissueSetup.editor.Arrangement_Flat_EditorBuilder_a$CONCEPTS" />
+      <unit id="3009938612296664107" at="118,102,122,7" name="TissueSetup.editor.Arrangement_Flat_EditorBuilder_a$1" />
+      <unit id="3009938612296664189" at="152,102,156,7" name="TissueSetup.editor.Arrangement_Flat_EditorBuilder_a$2" />
+      <unit id="5475084672764746475" at="167,0,171,0" name="TissueSetup.editor.Arrangement_Flat_EditorBuilder_a$PROPS" />
+      <unit id="5475084672764746475" at="38,0,176,0" name="TissueSetup.editor.Arrangement_Flat_EditorBuilder_a" />
     </file>
-    <file name="Flat_tooltipHint_4rlqih_a0a_Editor.java">
+    <file name="Arrangement_Flat_tooltipHint_kmq33_a0a_Editor.java">
       <node id="3009938612296664500" at="14,0,15,0" concept="2" trace="myContextHints" />
       <node id="3009938612296664500" at="17,47,18,26" concept="6" />
-      <node id="3009938612296664500" at="20,79,21,93" concept="6" />
+      <node id="3009938612296664500" at="20,79,21,104" concept="6" />
       <node id="3009938612296664500" at="20,0,23,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3009938612296664500" at="15,0,20,0" concept="4" trace="getContextHints#()Ljava/util/Collection;" />
       <scope id="3009938612296664500" at="17,47,18,26" />
-      <scope id="3009938612296664500" at="20,79,21,93" />
+      <scope id="3009938612296664500" at="20,79,21,104" />
       <scope id="3009938612296664500" at="20,0,23,0">
         <var name="editorContext" id="3009938612296664500" />
         <var name="node" id="3009938612296664500" />
       </scope>
       <scope id="3009938612296664500" at="15,0,20,0" />
-      <unit id="3009938612296664500" at="13,0,24,0" name="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0a_Editor" />
+      <unit id="3009938612296664500" at="13,0,24,0" name="TissueSetup.editor.Arrangement_Flat_tooltipHint_kmq33_a0a_Editor" />
     </file>
-    <file name="Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a.java">
-      <node id="3009938612296664500" at="33,107,34,19" concept="9" />
+    <file name="Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a.java">
+      <node id="3009938612296664500" at="33,118,34,19" concept="9" />
       <node id="3009938612296664500" at="34,19,35,18" concept="1" />
       <node id="3009938612296664500" at="40,26,41,18" concept="6" />
       <node id="3009938612296664500" at="44,39,45,32" concept="6" />
@@ -2807,8 +2807,8 @@
       <node id="3009938612296664500" at="50,48,51,28" concept="1" />
       <node id="3009938612296664500" at="51,28,52,31" concept="1" />
       <node id="3009938612296664500" at="53,9,54,41" concept="1" />
-      <node id="3009938612296664500" at="54,41,55,120" concept="1" />
-      <node id="3009938612296664500" at="55,120,56,53" concept="1" />
+      <node id="3009938612296664500" at="54,41,55,119" concept="1" />
+      <node id="3009938612296664500" at="55,119,56,53" concept="1" />
       <node id="3009938612296664500" at="56,53,57,39" concept="1" />
       <node id="3009938612296664500" at="58,15,59,40" concept="1" />
       <node id="3009938612296664500" at="60,5,61,22" concept="6" />
@@ -2840,7 +2840,7 @@
       <node id="3009938612296664500" at="30,0,32,0" concept="2" trace="myNode" />
       <node id="3009938612296664500" at="44,0,47,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="3009938612296664537" at="82,0,85,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3009938612296664500" at="33,0,37,0" concept="0" trace="Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3009938612296664500" at="33,0,37,0" concept="0" trace="Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="3009938612296664500" at="38,0,43,0" concept="4" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="3009938612296664537" at="80,155,85,9" concept="5" />
       <node id="3009938612296664537" at="85,9,90,24" concept="3" />
@@ -2855,7 +2855,7 @@
       <scope id="3009938612296664500" at="58,15,59,40" />
       <scope id="3009938612296664537" at="82,41,83,118" />
       <scope id="3009938612296664537" at="91,15,92,40" />
-      <scope id="3009938612296664500" at="33,107,35,18" />
+      <scope id="3009938612296664500" at="33,118,35,18" />
       <scope id="3009938612296664537" at="86,74,88,145">
         <var name="manager" id="3009938612296664537" />
       </scope>
@@ -2889,10 +2889,10 @@
       </scope>
       <scope id="3009938612296664537" at="70,41,93,5" />
       <scope id="3009938612296664537" at="70,0,95,0" />
-      <unit id="3009938612296664500" at="102,0,105,0" name="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a$PROPS" />
-      <unit id="3009938612296664500" at="106,0,109,0" name="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a$CONCEPTS" />
-      <unit id="3009938612296664537" at="81,102,85,7" name="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a$1" />
-      <unit id="3009938612296664500" at="29,0,110,0" name="TissueSetup.editor.Flat_tooltipHint_4rlqih_a0a_EditorBuilder_a" />
+      <unit id="3009938612296664500" at="102,0,105,0" name="TissueSetup.editor.Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a$PROPS" />
+      <unit id="3009938612296664500" at="106,0,109,0" name="TissueSetup.editor.Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a$CONCEPTS" />
+      <unit id="3009938612296664537" at="81,102,85,7" name="TissueSetup.editor.Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a$1" />
+      <unit id="3009938612296664500" at="29,0,110,0" name="TissueSetup.editor.Arrangement_Flat_tooltipHint_kmq33_a0a_EditorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:016df6cd-4964-417f-b0ea-800f4416087d(TissueSetup.editor)/6249017959271690173">

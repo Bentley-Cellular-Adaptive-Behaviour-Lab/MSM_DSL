@@ -9,8 +9,9 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import WorldSetup.behavior.Grid__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -29,21 +30,25 @@ public class checkCuboidBoundaries_NonTypesystemRule extends AbstractNonTypesyst
     int centre_y = Integer.getInteger(Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(thisCuboid, LINKS.Substrate_Position$SqKU)));
     int centre_z = Integer.getInteger(Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(thisCuboid, LINKS.Substrate_Position$SqKU)));
 
-    if (centre_x - SPropertyOperations.getInteger(thisCuboid, PROPS.width$Uv0Q) / 2 < 0 || centre_x + SPropertyOperations.getInteger(thisCuboid, PROPS.width$Uv0Q) / 2 > SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ), PROPS.X_Size$PwQq)) {
+    int grid_x_size = Integer.valueOf(Grid__BehaviorDescriptor.get_X_size_id2OHr9yL5TjS.invoke(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ)));
+    int grid_y_size = Integer.valueOf(Grid__BehaviorDescriptor.get_Y_size_id2OHr9yL5W4_.invoke(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ)));
+    int grid_z_size = Integer.valueOf(Grid__BehaviorDescriptor.get_Z_size_id2OHr9yL5X16.invoke(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ)));
+
+    if (centre_x - SPropertyOperations.getInteger(thisCuboid, PROPS.width$Uv0Q) / 2 < 0 || centre_x + SPropertyOperations.getInteger(thisCuboid, PROPS.width$Uv0Q) / 2 > grid_x_size) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate " + SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), PROPS.name$MnvL) + " is out of bounds.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "5475084672766981599", null, errorTarget);
       }
     }
 
-    if (centre_y - SPropertyOperations.getInteger(thisCuboid, PROPS.height$U$qd) / 2 < 0 || centre_y + SPropertyOperations.getInteger(thisCuboid, PROPS.height$U$qd) / 2 > SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ), PROPS.Y_Size$Pxks)) {
+    if (centre_y - SPropertyOperations.getInteger(thisCuboid, PROPS.height$U$qd) / 2 < 0 || centre_y + SPropertyOperations.getInteger(thisCuboid, PROPS.height$U$qd) / 2 > grid_y_size) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate " + SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), PROPS.name$MnvL) + " is out of bounds.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "5475084672766998821", null, errorTarget);
       }
     }
 
-    if (centre_z - SPropertyOperations.getInteger(thisCuboid, PROPS.depth$U_7g) / 2 < 0 || centre_y + SPropertyOperations.getInteger(thisCuboid, PROPS.depth$U_7g) / 2 > SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ), PROPS.Z_Size$PAWO)) {
+    if (centre_z - SPropertyOperations.getInteger(thisCuboid, PROPS.depth$U_7g) / 2 < 0 || centre_y + SPropertyOperations.getInteger(thisCuboid, PROPS.depth$U_7g) / 2 > grid_z_size) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate " + SPropertyOperations.getString(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), PROPS.name$MnvL) + " is out of bounds.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "5475084672767010063", null, errorTarget);
@@ -67,18 +72,15 @@ public class checkCuboidBoundaries_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Substrate$xo = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
     /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
+    /*package*/ static final SConcept Substrate$xo = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
     /*package*/ static final SConcept Substrate_Shape_Cuboid$DK = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, "WorldSetup.structure.Substrate_Shape_Cuboid");
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty X_Size$PwQq = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d41L, "X_Size");
     /*package*/ static final SProperty width$Uv0Q = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f58L, "width");
-    /*package*/ static final SProperty Y_Size$Pxks = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d43L, "Y_Size");
     /*package*/ static final SProperty height$U$qd = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5aL, "height");
-    /*package*/ static final SProperty Z_Size$PAWO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d46L, "Z_Size");
     /*package*/ static final SProperty depth$U_7g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5dL, "depth");
   }
 }

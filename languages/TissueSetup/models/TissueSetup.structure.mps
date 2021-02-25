@@ -229,7 +229,7 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYh">
     <property role="EcuMT" value="6249017959271690129" />
-    <property role="TrG5h" value="Cylindrical" />
+    <property role="TrG5h" value="Arrangement_Cylindrical" />
     <property role="34LRSv" value="Cylindrical" />
     <property role="R4oN_" value="Concept for describing a hollow, 2D cylindrical tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
@@ -261,7 +261,7 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYs">
     <property role="EcuMT" value="6249017959271690140" />
-    <property role="TrG5h" value="Flat" />
+    <property role="TrG5h" value="Arrangement_Flat" />
     <property role="34LRSv" value="Flat" />
     <property role="R4oN_" value="Concept for describing a flat (2D), rectangular tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
@@ -278,7 +278,7 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYt">
     <property role="EcuMT" value="6249017959271690141" />
-    <property role="TrG5h" value="Rectangular" />
+    <property role="TrG5h" value="Shape_Rectangular" />
     <property role="R4oN_" value="Square cell shape type." />
     <property role="34LRSv" value="Rectangular" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
