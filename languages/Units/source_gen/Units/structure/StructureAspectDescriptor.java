@@ -103,7 +103,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)/3416854989769245876");
     b.version(2);
-    b.aggregate("Distance", 0x2f6b1b828a3784b5L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3416854989769245877").done();
+    b.aggregate("expr", 0x2f6b1b828a3784b5L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3416854989769245877").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGridpoints_Dist() {

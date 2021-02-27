@@ -16,10 +16,6 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
-        <property id="1186414551515" name="flag" index="VOm3f" />
-      </concept>
-      <concept id="1233759184865" name="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" flags="ln" index="11LMrY" />
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
       </concept>
@@ -33,9 +29,6 @@
       </concept>
       <concept id="1073389577006" name="jetbrains.mps.lang.editor.structure.CellModel_Constant" flags="sn" stub="3610246225209162225" index="3F0ifn">
         <property id="1073389577007" name="text" index="3F0ifm" />
-      </concept>
-      <concept id="1219418625346" name="jetbrains.mps.lang.editor.structure.IStyleContainer" flags="ng" index="3F0Thp">
-        <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
@@ -78,15 +71,12 @@
         <ref role="1NtTu8" to="ottv:2XF6Saab7pC" resolve="value" />
         <node concept="1sVBvm" id="2XF6SaadTsi" role="1sWHZn">
           <node concept="3F1sOY" id="2XF6SaadTsp" role="2wV5jI">
-            <ref role="1NtTu8" to="ottv:2XF6SaadSiP" resolve="Distance" />
+            <ref role="1NtTu8" to="ottv:2XF6SaadSiP" resolve="expr" />
           </node>
         </node>
       </node>
       <node concept="3F1sOY" id="2XF6SaadTsx" role="3EZMnx">
         <ref role="1NtTu8" to="ottv:2XF6Saab7ET" resolve="units" />
-        <node concept="11LMrY" id="4v4kI3DmDUE" role="3F10Kt">
-          <property role="VOm3f" value="true" />
-        </node>
       </node>
     </node>
   </node>

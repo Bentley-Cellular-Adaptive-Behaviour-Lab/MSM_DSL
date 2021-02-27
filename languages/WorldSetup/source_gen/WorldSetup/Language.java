@@ -13,9 +13,7 @@ import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
 import WorldSetup.editor.EditorAspectDescriptorImpl;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
-import WorldSetup.structure.ConceptPresentationAspectImpl;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import WorldSetup.typesystem.TypesystemDescriptor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.language.LanguageExtensions;
 
@@ -53,19 +51,19 @@ public class Language extends LanguageRuntime {
       return aspectClass.cast(new WorldSetup.behavior.BehaviorAspectDescriptor());
     }
     if (aspectClass == ConstraintsAspectDescriptor.class) {
-      return aspectClass.cast(new WorldSetup.constraints.ConstraintsAspectDescriptor());
+      return aspectClass.cast(new ());
     }
     if (aspectClass == EditorAspectDescriptor.class) {
       return aspectClass.cast(new EditorAspectDescriptorImpl());
     }
     if (aspectClass == StructureAspectDescriptor.class) {
-      return aspectClass.cast(new WorldSetup.structure.StructureAspectDescriptor());
+      return aspectClass.cast(new ());
     }
     if (aspectClass == ConceptPresentationAspect.class) {
-      return aspectClass.cast(new ConceptPresentationAspectImpl());
+      return aspectClass.cast(new ());
     }
     if (aspectClass == IHelginsDescriptor.class) {
-      return aspectClass.cast(new TypesystemDescriptor());
+      return aspectClass.cast(new ());
     }
     return null;
   }

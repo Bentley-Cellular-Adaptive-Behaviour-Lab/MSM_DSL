@@ -21,9 +21,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -108,14 +105,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return editorCell;
     }
     private EditorCell createRefNode_0() {
-      SingleRoleCellProvider provider = new DistanceSingleRoleHandler_xzm3y3_a0a0a(myNode, LINKS.Distance$fJhI, getEditorContext());
+      SingleRoleCellProvider provider = new exprSingleRoleHandler_xzm3y3_a0a0a(myNode, LINKS.expr$fJhI, getEditorContext());
       return provider.createCell();
     }
-    private static class DistanceSingleRoleHandler_xzm3y3_a0a0a extends SingleRoleCellProvider {
+    private static class exprSingleRoleHandler_xzm3y3_a0a0a extends SingleRoleCellProvider {
       @NotNull
       private SNode myNode;
 
-      public DistanceSingleRoleHandler_xzm3y3_a0a0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      public exprSingleRoleHandler_xzm3y3_a0a0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
         super(containmentLink, context);
         myNode = ownerNode;
       }
@@ -128,8 +125,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
       protected EditorCell createChildCell(SNode child) {
         EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.Distance$fJhI, child));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.Distance$fJhI, child));
+        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), LINKS.expr$fJhI, child));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), LINKS.expr$fJhI, child));
         installCellInfo(child, editorCell, false);
         return editorCell;
       }
@@ -141,16 +138,16 @@ import org.jetbrains.mps.openapi.language.SConcept;
           editorCell.setSubstituteInfo((isEmpty ? new SEmptyContainmentSubstituteInfo(editorCell) : new SChildSubstituteInfo(editorCell)));
         }
         if (editorCell.getSRole() == null) {
-          editorCell.setSRole(LINKS.Distance$fJhI);
+          editorCell.setSRole(LINKS.expr$fJhI);
         }
       }
       @Override
       protected EditorCell createEmptyCell() {
         getCellFactory().pushCellContext();
-        getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.Distance$fJhI));
+        getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), LINKS.expr$fJhI));
         try {
           EditorCell editorCell = super.createEmptyCell();
-          editorCell.setCellId("empty_Distance");
+          editorCell.setCellId("empty_expr");
           installCellInfo(null, editorCell, true);
           setCellContext(editorCell);
           return editorCell;
@@ -159,7 +156,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
         }
       }
       protected String getNoTargetText() {
-        return "<no Distance>";
+        return "<no expr>";
       }
     }
   }
@@ -199,9 +196,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.units$DnBC);
       }
-      Style style = new StyleImpl();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -224,7 +218,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink value$SBs3 = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7668L, "value");
-    /*package*/ static final SContainmentLink Distance$fJhI = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a3784b4L, 0x2f6b1b828a3784b5L, "Distance");
+    /*package*/ static final SContainmentLink expr$fJhI = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a3784b4L, 0x2f6b1b828a3784b5L, "expr");
     /*package*/ static final SContainmentLink units$DnBC = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7ab9L, "units");
   }
 

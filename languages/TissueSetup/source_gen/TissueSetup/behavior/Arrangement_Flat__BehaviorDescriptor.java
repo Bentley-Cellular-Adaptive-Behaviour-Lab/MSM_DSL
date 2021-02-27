@@ -48,10 +48,10 @@ public final class Arrangement_Flat__BehaviorDescriptor extends BaseBHDescriptor
     return width;
   }
   /*package*/ static int get_total_width_int_id1QpPlI52vjz(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.width$pTZY);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy) * SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
   }
   /*package*/ static int get_total_height_int_id1QpPlI52_it(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r), PROPS.height$pTxW);
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_Type$C4), LINKS.cell_type$E3tO), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
   }
   /*package*/ static int get_total_cell_number_id4XZPqyVOpH$(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getInteger(__thisNode__, PROPS.flat_height_in_cells$pFdw) * SPropertyOperations.getInteger(__thisNode__, PROPS.flat_width_in_cells$pFFy);
@@ -114,8 +114,6 @@ public final class Arrangement_Flat__BehaviorDescriptor extends BaseBHDescriptor
   private static final class PROPS {
     /*package*/ static final SProperty flat_height_in_cells$pFdw = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, 0x56b8f8b9a96cef9eL, "flat_height_in_cells");
     /*package*/ static final SProperty flat_width_in_cells$pFFy = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, 0x56b8f8b9a96cefa0L, "flat_width_in_cells");
-    /*package*/ static final SProperty width$pTZY = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb3L, "width");
-    /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");
   }
 
   private static final class CONCEPTS {

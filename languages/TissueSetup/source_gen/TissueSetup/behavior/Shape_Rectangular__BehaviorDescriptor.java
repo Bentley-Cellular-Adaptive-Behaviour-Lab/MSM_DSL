@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
@@ -32,11 +31,12 @@ public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static String get_height_id4DdJmqSEQ4i(@NotNull SNode __thisNode__) {
-    String height = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.height$pTxW));
+
+    String height = String.valueOf(SPropertyOperations.getString(__thisNode__));
     return height;
   }
   /*package*/ static String get_width_id4DdJmqSEQ4q(@NotNull SNode __thisNode__) {
-    String width = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.height$pTxW));
+    String width = String.valueOf(SPropertyOperations.getString(__thisNode__));
     return width;
   }
 
@@ -86,9 +86,5 @@ public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescripto
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");
   }
 }

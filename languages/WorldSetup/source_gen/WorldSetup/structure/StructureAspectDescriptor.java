@@ -136,7 +136,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/3416854989769421750");
     b.version(2);
-    b.aggregate("Adhesiveness_Exp", 0x2f6b1b828a3a33b7L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3416854989769421751").done();
+    b.aggregate("expr", 0x2f6b1b828a3a33b7L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3416854989769421751").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEnv_Protein_Reference() {
@@ -152,7 +152,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5490954312198980850");
     b.version(2);
-    b.aggregate("Decl", 0x4c33c9dac8850507L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("5490954312198980871").done();
+    b.aggregate("expr", 0x4c33c9dac8850507L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("5490954312198980871").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGradient() {
@@ -309,8 +309,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203058");
     b.version(2);
-    b.property("adhesiveness", 0x73ca99e5119b1f20L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("8343650468779204384").done();
     b.aggregate("shape", 0x51ca2b62e9a67f55L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL).optional(false).ordered(true).multiple(false).origin("5893570766194507605").done();
+    b.aggregate("Adhesiveness", 0x383c8857e006bc76L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2f6b1b828a3a33b6L).optional(false).ordered(true).multiple(false).origin("4052263675728673910").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstrate_Shape() {
@@ -326,9 +326,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507600");
     b.version(2);
-    b.property("width", 0x51ca2b62e9a67f58L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507608").done();
-    b.property("height", 0x51ca2b62e9a67f5aL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507610").done();
-    b.property("depth", 0x51ca2b62e9a67f5dL).type(PrimitiveTypeId.INTEGER).origin("5893570766194507613").done();
     b.property("upper_x", 0x29c573387561462bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716651").done();
     b.property("lower_x", 0x29c573387561465dL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716701").done();
     b.property("upper_y", 0x29c573387561469fL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716767").done();
@@ -336,6 +333,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("upper_z", 0x29c57338756146f9L).type(PrimitiveTypeId.INTEGER).origin("3009938612291716857").done();
     b.property("lower_z", 0x29c573387561473eL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716926").done();
     b.aggregate("Substrate_Position", 0x227861932d6a58b7L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("2483842479244859575").done();
+    b.aggregate("Width", 0x383c8857e006d9dfL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681439").done();
+    b.aggregate("Height", 0x383c8857e006d9e2L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681442").done();
+    b.aggregate("Depth", 0x383c8857e006d9e6L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681446").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstrate_Shape_Triangular() {
@@ -344,13 +344,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507599");
     b.version(2);
-    b.property("z_location", 0x227861932d6f8049L).type(PrimitiveTypeId.INTEGER).origin("2483842479245197385").done();
     b.property("depth", 0x4bfb68806b422228L).type(PrimitiveTypeId.INTEGER).origin("5475084672763568680").done();
     b.property("upper_z", 0x29c573387561010bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291698955").done();
     b.property("lower_z", 0x29c573387561013cL).type(PrimitiveTypeId.INTEGER).origin("3009938612291699004").done();
     b.aggregate("Vertex_1", 0x51ca2b62e9a67f61L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507617").done();
     b.aggregate("Vertex_2", 0x51ca2b62e9a67f69L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507625").done();
     b.aggregate("Vertex_3", 0x51ca2b62e9a67f6cL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507628").done();
+    b.aggregate("Depth", 0x383c8857e006d9cfL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681423").done();
+    b.aggregate("Z_Location", 0x383c8857e006d9d4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681428").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForVariableReference() {
@@ -366,8 +367,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507619");
     b.version(2);
-    b.property("X_Coordinate", 0x51ca2b62e9a67f64L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507620").done();
-    b.property("Y_Coordinate", 0x51ca2b62e9a67f66L).type(PrimitiveTypeId.INTEGER).origin("5893570766194507622").done();
+    b.aggregate("X_Coord", 0x383c8857e003efc5L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728490437").done();
+    b.aggregate("Y_Coord", 0x383c8857e003efc7L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728490439").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForWorld_Container() {

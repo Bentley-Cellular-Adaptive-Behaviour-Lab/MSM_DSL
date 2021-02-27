@@ -350,8 +350,8 @@
       <node id="3416854989769245876" at="102,159,103,34" concept="0" />
       <node id="3416854989769245876" at="103,34,104,92" concept="0" />
       <node id="3416854989769245876" at="104,92,105,17" concept="0" />
-      <node id="3416854989769245877" at="105,17,106,202" concept="0" />
-      <node id="3416854989769245876" at="106,202,107,22" concept="4" />
+      <node id="3416854989769245877" at="105,17,106,198" concept="0" />
+      <node id="3416854989769245876" at="106,198,107,22" concept="4" />
       <node id="3416854989769245876" at="101,0,109,0" concept="6" trace="createDescriptorForDistance_Expression#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="3416854989769245876" at="53,53,54,44" />
       <scope id="3416854989769245876" at="101,77,107,22">

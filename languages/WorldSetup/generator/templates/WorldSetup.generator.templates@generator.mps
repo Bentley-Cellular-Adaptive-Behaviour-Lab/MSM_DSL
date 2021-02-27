@@ -508,7 +508,7 @@
                         </node>
                       </node>
                       <node concept="2qgKlT" id="2OHr9yL60_z" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:2OHr9yL5TjS" resolve="get_X_size" />
+                        <ref role="37wK5l" to="pxw4:2OHr9yL5TjS" resolve="get_X_size_string" />
                       </node>
                     </node>
                   </node>
@@ -535,7 +535,7 @@
                         </node>
                       </node>
                       <node concept="2qgKlT" id="2OHr9yL61qf" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:2OHr9yL5W4_" resolve="get_Y_size" />
+                        <ref role="37wK5l" to="pxw4:2OHr9yL5W4_" resolve="get_Y_size_string" />
                       </node>
                     </node>
                   </node>
@@ -2188,7 +2188,7 @@
                         </node>
                       </node>
                       <node concept="2qgKlT" id="7e7Fgy6tt6_" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:7e7Fgy6tl4V" resolve="get_height" />
+                        <ref role="37wK5l" to="pxw4:7e7Fgy6tl4V" resolve="get_height_string" />
                       </node>
                     </node>
                   </node>
@@ -2220,7 +2220,7 @@
                         </node>
                       </node>
                       <node concept="2qgKlT" id="7e7Fgy6tuDX" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:7e7Fgy6tn4Y" resolve="get_width" />
+                        <ref role="37wK5l" to="pxw4:7e7Fgy6tn4Y" resolve="get_width_string" />
                       </node>
                     </node>
                   </node>
@@ -2252,7 +2252,7 @@
                         </node>
                       </node>
                       <node concept="2qgKlT" id="7e7Fgy6twNr" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:7e7Fgy6tot2" resolve="get_depth" />
+                        <ref role="37wK5l" to="pxw4:7e7Fgy6tot2" resolve="get_depth_string" />
                       </node>
                     </node>
                   </node>
@@ -2362,8 +2362,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="57aaQbDEuwU" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDEkks" resolve="get_vertex_1_X" />
+                        <node concept="2qgKlT" id="3wWy5vw3$Z4" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3wWy5vw2hFm" resolve="get_vertex_1_X_string" />
                         </node>
                       </node>
                     </node>
@@ -2395,7 +2395,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="57aaQbDEw4L" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDElMG" resolve="get_vertex_1_Y" />
+                          <ref role="37wK5l" to="pxw4:57aaQbDElMG" resolve="get_vertex_1_Y_string" />
                         </node>
                       </node>
                     </node>
@@ -2454,8 +2454,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="4JVq81Fgsut" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDElaX" resolve="get_vertex_2_X" />
+                        <node concept="2qgKlT" id="3wWy5vw3_cP" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3wWy5vw2w5C" resolve="get_vertex_2_X_string" />
                         </node>
                       </node>
                     </node>
@@ -2486,8 +2486,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="4JVq81Fgt0F" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDEofO" resolve="get_vertex_2_Y" />
+                        <node concept="2qgKlT" id="3wWy5vw3_K0" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3wWy5vw2w6j" resolve="get_vertex_2_Y_string" />
                         </node>
                       </node>
                     </node>
@@ -2546,8 +2546,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="4JVq81FgtFc" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDEloa" resolve="get_vertex_3_X" />
+                        <node concept="2qgKlT" id="3wWy5vw3_GY" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3wWy5vw2_kf" resolve="get_vertex_3_X_string" />
                         </node>
                       </node>
                     </node>
@@ -2578,8 +2578,8 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="4JVq81FgucL" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:57aaQbDErqj" resolve="get_vertex_3_Y" />
+                        <node concept="2qgKlT" id="3wWy5vw3_XJ" role="2OqNvi">
+                          <ref role="37wK5l" to="pxw4:3wWy5vw2_kU" resolve="get_vertex_3_Y_string" />
                         </node>
                       </node>
                     </node>
@@ -2867,7 +2867,7 @@
               <node concept="3zFVjK" id="4JVq81FgBs2" role="3zH0cK">
                 <node concept="3clFbS" id="4JVq81FgBs3" role="2VODD2">
                   <node concept="3clFbF" id="29SopcHsq4B" role="3cqZAp">
-                    <node concept="2OqwBi" id="29SopcHsq4C" role="3clFbG">
+                    <node concept="2OqwBi" id="3wWy5vw3EVu" role="3clFbG">
                       <node concept="2OqwBi" id="29SopcHsq4D" role="2Oq$k0">
                         <node concept="1PxgMI" id="29SopcHsq4E" role="2Oq$k0">
                           <node concept="chp4Y" id="29SopcHsq4F" role="3oSUPX">
@@ -2880,12 +2880,12 @@
                             </node>
                           </node>
                         </node>
-                        <node concept="3TrEf2" id="29SopcHsq4J" role="2OqNvi">
+                        <node concept="3TrEf2" id="3wWy5vw3ELN" role="2OqNvi">
                           <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Substrate_Position" />
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="29SopcHsq4K" role="2OqNvi">
-                        <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_x_coord" />
+                      <node concept="2qgKlT" id="3wWy5vw3F9D" role="2OqNvi">
+                        <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
                       </node>
                     </node>
                   </node>
@@ -2971,25 +2971,21 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="29SopcHtXg4" role="3zH0cK">
                 <node concept="3clFbS" id="29SopcHtXg5" role="2VODD2">
-                  <node concept="3clFbF" id="29SopcHtZgt" role="3cqZAp">
-                    <node concept="2YIFZM" id="29SopcHtZiN" role="3clFbG">
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <node concept="2OqwBi" id="29SopcHtZB3" role="37wK5m">
-                        <node concept="1PxgMI" id="29SopcHtZB4" role="2Oq$k0">
-                          <node concept="chp4Y" id="29SopcHtZB5" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
-                          </node>
-                          <node concept="2OqwBi" id="29SopcHtZB6" role="1m5AlR">
-                            <node concept="30H73N" id="29SopcHtZB7" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="29SopcHtZB8" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
-                            </node>
+                  <node concept="3cpWs6" id="3wWy5vw3Fxc" role="3cqZAp">
+                    <node concept="2OqwBi" id="3wWy5vw3HCL" role="3cqZAk">
+                      <node concept="1PxgMI" id="3wWy5vw3Hto" role="2Oq$k0">
+                        <node concept="chp4Y" id="3wWy5vw3HuZ" role="3oSUPX">
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                        </node>
+                        <node concept="2OqwBi" id="3wWy5vw3Gho" role="1m5AlR">
+                          <node concept="30H73N" id="3wWy5vw3G3Q" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="3wWy5vw3Gy8" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
                           </node>
                         </node>
-                        <node concept="3TrcHB" id="29SopcHtZB9" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:29SopcHrS19" resolve="z_location" />
-                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="3wWy5vw3P09" role="2OqNvi">
+                        <ref role="37wK5l" to="pxw4:3wWy5vw3KqH" resolve="get_z_location_string" />
                       </node>
                     </node>
                   </node>
@@ -3126,7 +3122,7 @@
                     <node concept="2OqwBi" id="4JVq81Fh9zE" role="3clFbG">
                       <node concept="30H73N" id="4JVq81Fh9mM" role="2Oq$k0" />
                       <node concept="2qgKlT" id="4JVq81FhaWr" role="2OqNvi">
-                        <ref role="37wK5l" to="pxw4:4JVq81Fh9KI" resolve="get_adhesiveness" />
+                        <ref role="37wK5l" to="pxw4:4JVq81Fh9KI" resolve="get_adhesiveness_string" />
                       </node>
                     </node>
                   </node>

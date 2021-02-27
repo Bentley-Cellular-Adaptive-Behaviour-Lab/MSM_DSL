@@ -51,17 +51,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.x_coord$pFJT) - x_offset;
-    }
-    @Override
-    public boolean hasOwnSetter() {
-      return true;
-    }
-    @Override
-    public void setPropertyValue(SNode node, Object propertyValue) {
-      staticSetPropertyValue(node, SPropertyOperations.castInteger(propertyValue));
-    }
-    private static void staticSetPropertyValue(SNode node, int propertyValue) {
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) - x_offset;
     }
   }
   public static class Upper_x_Property extends BasePropertyConstraintsDescriptor {
@@ -80,7 +70,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.x_coord$pFJT) + x_offset;
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) + x_offset;
     }
   }
   public static class Lower_y_Property extends BasePropertyConstraintsDescriptor {
@@ -99,7 +89,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.y_coord$pGdV) - y_offset;
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) - y_offset;
     }
   }
   public static class Upper_y_Property extends BasePropertyConstraintsDescriptor {
@@ -118,7 +108,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.y_coord$pGdV) + y_offset;
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) + y_offset;
     }
   }
   public static class Lower_z_Property extends BasePropertyConstraintsDescriptor {
@@ -137,7 +127,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         z_offset = 0;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.z_coord$pLQj) - z_offset;
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) - z_offset;
     }
   }
   public static class Upper_z_Property extends BasePropertyConstraintsDescriptor {
@@ -156,7 +146,7 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
       } else {
         z_offset = 0;
       }
-      return SPropertyOperations.getInteger(SLinkOperations.getTarget(node, LINKS.position$KVlR), PROPS.z_coord$pLQj) + z_offset;
+      return SPropertyOperations.getString(SLinkOperations.getTarget(node, LINKS.position$KVlR)) + z_offset;
     }
   }
   @Override
@@ -206,14 +196,11 @@ public class Tissue_Constraints extends BaseConstraintsDescriptor {
 
   private static final class PROPS {
     /*package*/ static final SProperty lower_x$5_n8 = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c8535bL, "lower_x");
-    /*package*/ static final SProperty x_coord$pFJT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa3L, "x_coord");
     /*package*/ static final SProperty upper_x$1OS7 = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c852e1L, "upper_x");
     /*package*/ static final SProperty lower_y$8SKd = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c853adL, "lower_y");
     /*package*/ static final SProperty cylinder_total_radius$p$uq = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef98L, "cylinder_total_radius");
-    /*package*/ static final SProperty y_coord$pGdV = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa5L, "y_coord");
     /*package*/ static final SProperty upper_y$69gx = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c8538bL, "upper_y");
     /*package*/ static final SProperty lower_z$cBP8 = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c85421L, "lower_z");
-    /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
     /*package*/ static final SProperty upper_z$9t7C = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x29c5733875c853dfL, "upper_z");
   }
 

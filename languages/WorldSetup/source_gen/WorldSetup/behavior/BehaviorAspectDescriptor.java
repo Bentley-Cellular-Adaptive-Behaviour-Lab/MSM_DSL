@@ -15,6 +15,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySource__BehaviorDescriptor = new Source__BehaviorDescriptor();
   private final BHDescriptor mySink__BehaviorDescriptor = new Sink__BehaviorDescriptor();
   private final BHDescriptor myGradient_Type__BehaviorDescriptor = new Gradient_Type__BehaviorDescriptor();
+  private final BHDescriptor myGradient_Shape_Point__BehaviorDescriptor = new Gradient_Shape_Point__BehaviorDescriptor();
   private final BHDescriptor myGradient_Shape_Cuboidal__BehaviorDescriptor = new Gradient_Shape_Cuboidal__BehaviorDescriptor();
   private final BHDescriptor myGradient_Shape_SinkAndSource__BehaviorDescriptor = new Gradient_Shape_SinkAndSource__BehaviorDescriptor();
   private final BHDescriptor mySubstrate_Shape_Triangular__BehaviorDescriptor = new Substrate_Shape_Triangular__BehaviorDescriptor();
@@ -32,24 +33,26 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myGradient_Shape_Cuboidal__BehaviorDescriptor;
       case 1:
-        return myGradient_Shape_SinkAndSource__BehaviorDescriptor;
+        return myGradient_Shape_Point__BehaviorDescriptor;
       case 2:
-        return myGradient_Type__BehaviorDescriptor;
+        return myGradient_Shape_SinkAndSource__BehaviorDescriptor;
       case 3:
-        return myGrid__BehaviorDescriptor;
+        return myGradient_Type__BehaviorDescriptor;
       case 4:
-        return mySink__BehaviorDescriptor;
+        return myGrid__BehaviorDescriptor;
       case 5:
-        return mySource__BehaviorDescriptor;
+        return mySink__BehaviorDescriptor;
       case 6:
-        return mySubstrate__BehaviorDescriptor;
+        return mySource__BehaviorDescriptor;
       case 7:
-        return mySubstrate_Shape_Cuboid__BehaviorDescriptor;
+        return mySubstrate__BehaviorDescriptor;
       case 8:
+        return mySubstrate_Shape_Cuboid__BehaviorDescriptor;
+      case 9:
         return mySubstrate_Shape_Triangular__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007eL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028bcaL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007eL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L), MetaIdFactory.conceptId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL)).seal();
 }

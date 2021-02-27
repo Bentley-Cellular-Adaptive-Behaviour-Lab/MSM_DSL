@@ -14,11 +14,11 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import com.mbeddr.mpsutil.interpreter.rt.InterpreterBase;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, "TissueSetup.structure.Position");
@@ -33,15 +33,16 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String get_x_coord_id4DdJmqSGafn(@NotNull SNode __thisNode__) {
-    String x_coord = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.x_coord$pFJT));
+    Object thing = <!TextGen not found for 'jetbrains.mps.baseLanguage.structure.Expression'!>;
+    String x_coord = String.valueOf(InterpreterBase.__NEXT__INTERPRETER__);
     return x_coord;
   }
   /*package*/ static String get_y_coord_id4DdJmqSGaIc(@NotNull SNode __thisNode__) {
-    String y_coord = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.y_coord$pGdV));
+    String y_coord = String.valueOf(SPropertyOperations.getString(__thisNode__));
     return y_coord;
   }
   /*package*/ static String get_z_coord_id4DdJmqSGdUQ(@NotNull SNode __thisNode__) {
-    String z_coord = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.z_coord$pLQj));
+    String z_coord = String.valueOf(SPropertyOperations.getString(__thisNode__));
     return z_coord;
   }
 
@@ -93,11 +94,5 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty x_coord$pFJT = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa3L, "x_coord");
-    /*package*/ static final SProperty y_coord$pGdV = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa5L, "y_coord");
-    /*package*/ static final SProperty z_coord$pLQj = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x56b8f8b9a96cefa8L, "z_coord");
   }
 }

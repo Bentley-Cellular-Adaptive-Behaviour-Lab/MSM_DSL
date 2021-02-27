@@ -36,6 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, "ProteinSetup");
+    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
   }
 
   @Override
@@ -147,9 +148,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690119");
     b.version(2);
-    b.property("x_coord", 0x56b8f8b9a96cefa3L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690147").done();
-    b.property("y_coord", 0x56b8f8b9a96cefa5L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690149").done();
-    b.property("z_coord", 0x56b8f8b9a96cefa8L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690152").done();
+    b.aggregate("X_Coord", 0x47c452e0e9687f75L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5171349398070263669").done();
+    b.aggregate("Y_Coord", 0x47c452e0e9687f77L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5171349398070263671").done();
+    b.aggregate("Z_Coord", 0x47c452e0e9687f7aL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5171349398070263674").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForShape() {
@@ -165,8 +166,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("TissueSetup.structure.Shape", 0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690141");
     b.version(2);
-    b.property("height", 0x56b8f8b9a96cefb1L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690161").done();
-    b.property("width", 0x56b8f8b9a96cefb3L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690163").done();
+    b.aggregate("Width", 0x47c452e0e9687f6cL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5171349398070263660").done();
+    b.aggregate("Height", 0x47c452e0e9687f6eL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5171349398070263662").done();
     b.alias("Rectangular");
     return b.create();
   }

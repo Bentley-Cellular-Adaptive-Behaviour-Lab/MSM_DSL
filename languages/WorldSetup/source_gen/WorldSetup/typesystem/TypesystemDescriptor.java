@@ -9,8 +9,12 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_Float_Declaration_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_Adhesiveness_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkAdhesiveness_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new checkCuboidBoundaries_NonTypesystemRule();

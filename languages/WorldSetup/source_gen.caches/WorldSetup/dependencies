@@ -2,11 +2,7 @@
 <dependenciesRoot>
   <dependency className="WorldSetup.Language">
     <classNode dependClassName="WorldSetup.behavior.BehaviorAspectDescriptor" />
-    <classNode dependClassName="WorldSetup.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="WorldSetup.editor.EditorAspectDescriptorImpl" />
-    <classNode dependClassName="WorldSetup.structure.ConceptPresentationAspectImpl" />
-    <classNode dependClassName="WorldSetup.structure.StructureAspectDescriptor" />
-    <classNode dependClassName="WorldSetup.typesystem.TypesystemDescriptor" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

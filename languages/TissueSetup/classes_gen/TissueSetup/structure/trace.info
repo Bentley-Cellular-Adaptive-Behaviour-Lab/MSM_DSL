@@ -15,7 +15,7 @@
       <unit at="10,0,50,0" name="TissueSetup.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="15,0,213,0" name="TissueSetup.structure.StructureAspectDescriptor" />
+      <unit at="15,0,214,0" name="TissueSetup.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/1783685413825413975">
@@ -37,19 +37,19 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="1783685413825413975" at="21,0,22,0" concept="1" trace="myConceptCell_Type_Reference" />
-      <node id="1783685413825413975" at="60,53,61,44" concept="4" />
-      <node id="1783685413825413975" at="137,77,138,165" concept="3" />
-      <node id="1783685413825413975" at="138,165,139,34" concept="0" />
-      <node id="1783685413825413975" at="139,34,140,98" concept="0" />
-      <node id="1783685413825413975" at="140,98,141,17" concept="0" />
-      <node id="1783685413825588302" at="141,17,142,183" concept="0" />
-      <node id="1783685413825413975" at="142,183,143,22" concept="4" />
-      <node id="1783685413825413975" at="137,0,145,0" concept="6" trace="createDescriptorForCell_Type_Reference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="1783685413825413975" at="60,53,61,44" />
-      <scope id="1783685413825413975" at="137,77,143,22">
+      <node id="1783685413825413975" at="61,53,62,44" concept="4" />
+      <node id="1783685413825413975" at="138,77,139,165" concept="3" />
+      <node id="1783685413825413975" at="139,165,140,34" concept="0" />
+      <node id="1783685413825413975" at="140,34,141,98" concept="0" />
+      <node id="1783685413825413975" at="141,98,142,17" concept="0" />
+      <node id="1783685413825588302" at="142,17,143,183" concept="0" />
+      <node id="1783685413825413975" at="143,183,144,22" concept="4" />
+      <node id="1783685413825413975" at="138,0,146,0" concept="6" trace="createDescriptorForCell_Type_Reference#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="1783685413825413975" at="61,53,62,44" />
+      <scope id="1783685413825413975" at="138,77,144,22">
         <var name="b" id="1783685413825413975" />
       </scope>
-      <scope id="1783685413825413975" at="137,0,145,0" />
+      <scope id="1783685413825413975" at="138,0,146,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690117">
@@ -72,24 +72,24 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690117" at="26,0,27,0" concept="1" trace="myConceptTissue_And_Cell_Container" />
-      <node id="6249017959271690117" at="70,59,71,50" concept="4" />
-      <node id="6249017959271690117" at="189,83,190,171" concept="3" />
-      <node id="6249017959271690117" at="190,171,191,33" concept="0" />
-      <node id="6249017959271690117" at="191,33,192,71" concept="0" />
-      <node id="6249017959271690117" at="192,71,193,98" concept="0" />
-      <node id="6249017959271690117" at="193,98,194,17" concept="0" />
-      <node id="2132970487586675655" at="194,17,195,179" concept="0" />
-      <node id="4857589848835393769" at="195,179,196,204" concept="0" />
-      <node id="4857589848835393773" at="196,204,197,202" concept="0" />
-      <node id="6249017959271690124" at="197,202,198,199" concept="0" />
-      <node id="6249017959271690126" at="198,199,199,197" concept="0" />
-      <node id="6249017959271690117" at="199,197,200,22" concept="4" />
-      <node id="6249017959271690117" at="189,0,202,0" concept="6" trace="createDescriptorForTissue_And_Cell_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690117" at="70,59,71,50" />
-      <scope id="6249017959271690117" at="189,83,200,22">
+      <node id="6249017959271690117" at="71,59,72,50" concept="4" />
+      <node id="6249017959271690117" at="190,83,191,171" concept="3" />
+      <node id="6249017959271690117" at="191,171,192,33" concept="0" />
+      <node id="6249017959271690117" at="192,33,193,71" concept="0" />
+      <node id="6249017959271690117" at="193,71,194,98" concept="0" />
+      <node id="6249017959271690117" at="194,98,195,17" concept="0" />
+      <node id="2132970487586675655" at="195,17,196,179" concept="0" />
+      <node id="4857589848835393769" at="196,179,197,204" concept="0" />
+      <node id="4857589848835393773" at="197,204,198,202" concept="0" />
+      <node id="6249017959271690124" at="198,202,199,199" concept="0" />
+      <node id="6249017959271690126" at="199,199,200,197" concept="0" />
+      <node id="6249017959271690117" at="200,197,201,22" concept="4" />
+      <node id="6249017959271690117" at="190,0,203,0" concept="6" trace="createDescriptorForTissue_And_Cell_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690117" at="71,59,72,50" />
+      <scope id="6249017959271690117" at="190,83,201,22">
         <var name="b" id="6249017959271690117" />
       </scope>
-      <scope id="6249017959271690117" at="189,0,202,0" />
+      <scope id="6249017959271690117" at="190,0,203,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690118">
@@ -112,27 +112,27 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690118" at="25,0,26,0" concept="1" trace="myConceptTissue" />
-      <node id="6249017959271690118" at="68,40,69,31" concept="4" />
-      <node id="6249017959271690118" at="173,64,174,152" concept="3" />
-      <node id="6249017959271690118" at="174,152,175,34" concept="0" />
-      <node id="6249017959271690118" at="175,34,176,71" concept="0" />
-      <node id="6249017959271690118" at="176,71,177,98" concept="0" />
-      <node id="6249017959271690118" at="177,98,178,17" concept="0" />
-      <node id="3009938612298470113" at="178,17,179,114" concept="0" />
-      <node id="3009938612298470235" at="179,114,180,114" concept="0" />
-      <node id="3009938612298470283" at="180,114,181,114" concept="0" />
-      <node id="3009938612298470317" at="181,114,182,114" concept="0" />
-      <node id="3009938612298470367" at="182,114,183,114" concept="0" />
-      <node id="3009938612298470433" at="183,114,184,114" concept="0" />
-      <node id="4857589848835450453" at="184,114,185,175" concept="0" />
-      <node id="6249017959271770686" at="185,175,186,202" concept="0" />
-      <node id="6249017959271690118" at="186,202,187,22" concept="4" />
-      <node id="6249017959271690118" at="173,0,189,0" concept="6" trace="createDescriptorForTissue#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690118" at="68,40,69,31" />
-      <scope id="6249017959271690118" at="173,64,187,22">
+      <node id="6249017959271690118" at="69,40,70,31" concept="4" />
+      <node id="6249017959271690118" at="174,64,175,152" concept="3" />
+      <node id="6249017959271690118" at="175,152,176,34" concept="0" />
+      <node id="6249017959271690118" at="176,34,177,71" concept="0" />
+      <node id="6249017959271690118" at="177,71,178,98" concept="0" />
+      <node id="6249017959271690118" at="178,98,179,17" concept="0" />
+      <node id="3009938612298470113" at="179,17,180,114" concept="0" />
+      <node id="3009938612298470235" at="180,114,181,114" concept="0" />
+      <node id="3009938612298470283" at="181,114,182,114" concept="0" />
+      <node id="3009938612298470317" at="182,114,183,114" concept="0" />
+      <node id="3009938612298470367" at="183,114,184,114" concept="0" />
+      <node id="3009938612298470433" at="184,114,185,114" concept="0" />
+      <node id="4857589848835450453" at="185,114,186,175" concept="0" />
+      <node id="6249017959271770686" at="186,175,187,202" concept="0" />
+      <node id="6249017959271690118" at="187,202,188,22" concept="4" />
+      <node id="6249017959271690118" at="174,0,190,0" concept="6" trace="createDescriptorForTissue#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690118" at="69,40,70,31" />
+      <scope id="6249017959271690118" at="174,64,188,22">
         <var name="b" id="6249017959271690118" />
       </scope>
-      <scope id="6249017959271690118" at="173,0,189,0" />
+      <scope id="6249017959271690118" at="174,0,190,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690119">
@@ -155,21 +155,21 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690119" at="22,0,23,0" concept="1" trace="myConceptPosition" />
-      <node id="6249017959271690119" at="62,42,63,33" concept="4" />
-      <node id="6249017959271690119" at="145,66,146,154" concept="3" />
-      <node id="6249017959271690119" at="146,154,147,34" concept="0" />
-      <node id="6249017959271690119" at="147,34,148,98" concept="0" />
-      <node id="6249017959271690119" at="148,98,149,17" concept="0" />
-      <node id="6249017959271690147" at="149,17,150,114" concept="0" />
-      <node id="6249017959271690149" at="150,114,151,114" concept="0" />
-      <node id="6249017959271690152" at="151,114,152,114" concept="0" />
-      <node id="6249017959271690119" at="152,114,153,22" concept="4" />
-      <node id="6249017959271690119" at="145,0,155,0" concept="6" trace="createDescriptorForPosition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690119" at="62,42,63,33" />
-      <scope id="6249017959271690119" at="145,66,153,22">
+      <node id="6249017959271690119" at="63,42,64,33" concept="4" />
+      <node id="6249017959271690119" at="146,66,147,154" concept="3" />
+      <node id="6249017959271690119" at="147,154,148,34" concept="0" />
+      <node id="6249017959271690119" at="148,34,149,98" concept="0" />
+      <node id="6249017959271690119" at="149,98,150,17" concept="0" />
+      <node id="5171349398070263669" at="150,17,151,201" concept="0" />
+      <node id="5171349398070263671" at="151,201,152,201" concept="0" />
+      <node id="5171349398070263674" at="152,201,153,201" concept="0" />
+      <node id="6249017959271690119" at="153,201,154,22" concept="4" />
+      <node id="6249017959271690119" at="146,0,156,0" concept="6" trace="createDescriptorForPosition#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690119" at="63,42,64,33" />
+      <scope id="6249017959271690119" at="146,66,154,22">
         <var name="b" id="6249017959271690119" />
       </scope>
-      <scope id="6249017959271690119" at="145,0,155,0" />
+      <scope id="6249017959271690119" at="146,0,156,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690120">
@@ -192,21 +192,21 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690120" at="19,0,20,0" concept="1" trace="myConceptCell" />
-      <node id="6249017959271690120" at="56,38,57,29" concept="4" />
-      <node id="6249017959271690120" at="117,62,118,150" concept="3" />
-      <node id="6249017959271690120" at="118,150,119,34" concept="0" />
-      <node id="6249017959271690120" at="119,34,120,71" concept="0" />
-      <node id="6249017959271690120" at="120,71,121,98" concept="0" />
-      <node id="6249017959271690120" at="121,98,122,17" concept="0" />
-      <node id="8255194269358657912" at="122,17,123,173" concept="0" />
-      <node id="6249017959271770696" at="123,173,124,202" concept="0" />
-      <node id="6249017959271690120" at="124,202,125,22" concept="4" />
-      <node id="6249017959271690120" at="117,0,127,0" concept="6" trace="createDescriptorForCell#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690120" at="56,38,57,29" />
-      <scope id="6249017959271690120" at="117,62,125,22">
+      <node id="6249017959271690120" at="57,38,58,29" concept="4" />
+      <node id="6249017959271690120" at="118,62,119,150" concept="3" />
+      <node id="6249017959271690120" at="119,150,120,34" concept="0" />
+      <node id="6249017959271690120" at="120,34,121,71" concept="0" />
+      <node id="6249017959271690120" at="121,71,122,98" concept="0" />
+      <node id="6249017959271690120" at="122,98,123,17" concept="0" />
+      <node id="8255194269358657912" at="123,17,124,173" concept="0" />
+      <node id="6249017959271770696" at="124,173,125,202" concept="0" />
+      <node id="6249017959271690120" at="125,202,126,22" concept="4" />
+      <node id="6249017959271690120" at="118,0,128,0" concept="6" trace="createDescriptorForCell#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690120" at="57,38,58,29" />
+      <scope id="6249017959271690120" at="118,62,126,22">
         <var name="b" id="6249017959271690120" />
       </scope>
-      <scope id="6249017959271690120" at="117,0,127,0" />
+      <scope id="6249017959271690120" at="118,0,128,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690121">
@@ -228,18 +228,18 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690121" at="23,0,24,0" concept="1" trace="myConceptShape" />
-      <node id="6249017959271690121" at="64,39,65,30" concept="4" />
-      <node id="6249017959271690121" at="155,63,156,151" concept="3" />
-      <node id="6249017959271690121" at="156,151,157,33" concept="0" />
-      <node id="6249017959271690121" at="157,33,158,98" concept="0" />
-      <node id="6249017959271690121" at="158,98,159,17" concept="0" />
-      <node id="6249017959271690121" at="159,17,160,22" concept="4" />
-      <node id="6249017959271690121" at="155,0,162,0" concept="6" trace="createDescriptorForShape#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690121" at="64,39,65,30" />
-      <scope id="6249017959271690121" at="155,63,160,22">
+      <node id="6249017959271690121" at="65,39,66,30" concept="4" />
+      <node id="6249017959271690121" at="156,63,157,151" concept="3" />
+      <node id="6249017959271690121" at="157,151,158,33" concept="0" />
+      <node id="6249017959271690121" at="158,33,159,98" concept="0" />
+      <node id="6249017959271690121" at="159,98,160,17" concept="0" />
+      <node id="6249017959271690121" at="160,17,161,22" concept="4" />
+      <node id="6249017959271690121" at="156,0,163,0" concept="6" trace="createDescriptorForShape#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690121" at="65,39,66,30" />
+      <scope id="6249017959271690121" at="156,63,161,22">
         <var name="b" id="6249017959271690121" />
       </scope>
-      <scope id="6249017959271690121" at="155,0,162,0" />
+      <scope id="6249017959271690121" at="156,0,163,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690122">
@@ -261,19 +261,19 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690122" at="16,0,17,0" concept="1" trace="myConceptArrangement" />
-      <node id="6249017959271690122" at="50,45,51,36" concept="4" />
-      <node id="6249017959271690122" at="84,69,85,157" concept="3" />
-      <node id="6249017959271690122" at="85,157,86,33" concept="0" />
-      <node id="6249017959271690122" at="86,33,87,98" concept="0" />
-      <node id="6249017959271690122" at="87,98,88,17" concept="0" />
-      <node id="5475084672764747895" at="88,17,89,124" concept="0" />
-      <node id="6249017959271690122" at="89,124,90,22" concept="4" />
-      <node id="6249017959271690122" at="84,0,92,0" concept="6" trace="createDescriptorForArrangement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690122" at="50,45,51,36" />
-      <scope id="6249017959271690122" at="84,69,90,22">
+      <node id="6249017959271690122" at="51,45,52,36" concept="4" />
+      <node id="6249017959271690122" at="85,69,86,157" concept="3" />
+      <node id="6249017959271690122" at="86,157,87,33" concept="0" />
+      <node id="6249017959271690122" at="87,33,88,98" concept="0" />
+      <node id="6249017959271690122" at="88,98,89,17" concept="0" />
+      <node id="5475084672764747895" at="89,17,90,124" concept="0" />
+      <node id="6249017959271690122" at="90,124,91,22" concept="4" />
+      <node id="6249017959271690122" at="85,0,93,0" concept="6" trace="createDescriptorForArrangement#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690122" at="51,45,52,36" />
+      <scope id="6249017959271690122" at="85,69,91,22">
         <var name="b" id="6249017959271690122" />
       </scope>
-      <scope id="6249017959271690122" at="84,0,92,0" />
+      <scope id="6249017959271690122" at="85,0,93,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690123">
@@ -296,21 +296,21 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690123" at="20,0,21,0" concept="1" trace="myConceptCell_Type" />
-      <node id="6249017959271690123" at="58,43,59,34" concept="4" />
-      <node id="6249017959271690123" at="127,67,128,155" concept="3" />
-      <node id="6249017959271690123" at="128,155,129,34" concept="0" />
-      <node id="6249017959271690123" at="129,34,130,71" concept="0" />
-      <node id="6249017959271690123" at="130,71,131,98" concept="0" />
-      <node id="6249017959271690123" at="131,98,132,17" concept="0" />
-      <node id="6249017959271690171" at="132,17,133,199" concept="0" />
-      <node id="1783685413825742989" at="133,199,134,216" concept="0" />
-      <node id="6249017959271690123" at="134,216,135,22" concept="4" />
-      <node id="6249017959271690123" at="127,0,137,0" concept="6" trace="createDescriptorForCell_Type#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690123" at="58,43,59,34" />
-      <scope id="6249017959271690123" at="127,67,135,22">
+      <node id="6249017959271690123" at="59,43,60,34" concept="4" />
+      <node id="6249017959271690123" at="128,67,129,155" concept="3" />
+      <node id="6249017959271690123" at="129,155,130,34" concept="0" />
+      <node id="6249017959271690123" at="130,34,131,71" concept="0" />
+      <node id="6249017959271690123" at="131,71,132,98" concept="0" />
+      <node id="6249017959271690123" at="132,98,133,17" concept="0" />
+      <node id="6249017959271690171" at="133,17,134,199" concept="0" />
+      <node id="1783685413825742989" at="134,199,135,216" concept="0" />
+      <node id="6249017959271690123" at="135,216,136,22" concept="4" />
+      <node id="6249017959271690123" at="128,0,138,0" concept="6" trace="createDescriptorForCell_Type#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690123" at="59,43,60,34" />
+      <scope id="6249017959271690123" at="128,67,136,22">
         <var name="b" id="6249017959271690123" />
       </scope>
-      <scope id="6249017959271690123" at="127,0,137,0" />
+      <scope id="6249017959271690123" at="128,0,138,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690129">
@@ -333,25 +333,25 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690129" at="17,0,18,0" concept="1" trace="myConceptArrangement_Cylindrical" />
-      <node id="6249017959271690129" at="52,57,53,48" concept="4" />
-      <node id="6249017959271690129" at="92,81,93,169" concept="3" />
-      <node id="6249017959271690129" at="93,169,94,34" concept="0" />
-      <node id="6249017959271690129" at="94,34,95,113" concept="0" />
-      <node id="6249017959271690129" at="95,113,96,98" concept="0" />
-      <node id="6249017959271690129" at="96,98,97,17" concept="0" />
-      <node id="6249017959271690131" at="97,17,98,135" concept="0" />
-      <node id="6249017959271690133" at="98,135,99,131" concept="0" />
-      <node id="6249017959271690136" at="99,131,100,128" concept="0" />
-      <node id="5475084672764476082" at="100,128,101,127" concept="0" />
-      <node id="8062570699132836611" at="101,127,102,132" concept="0" />
-      <node id="6249017959271690129" at="102,132,103,27" concept="0" />
-      <node id="6249017959271690129" at="103,27,104,22" concept="4" />
-      <node id="6249017959271690129" at="92,0,106,0" concept="6" trace="createDescriptorForArrangement_Cylindrical#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690129" at="52,57,53,48" />
-      <scope id="6249017959271690129" at="92,81,104,22">
+      <node id="6249017959271690129" at="53,57,54,48" concept="4" />
+      <node id="6249017959271690129" at="93,81,94,169" concept="3" />
+      <node id="6249017959271690129" at="94,169,95,34" concept="0" />
+      <node id="6249017959271690129" at="95,34,96,113" concept="0" />
+      <node id="6249017959271690129" at="96,113,97,98" concept="0" />
+      <node id="6249017959271690129" at="97,98,98,17" concept="0" />
+      <node id="6249017959271690131" at="98,17,99,135" concept="0" />
+      <node id="6249017959271690133" at="99,135,100,131" concept="0" />
+      <node id="6249017959271690136" at="100,131,101,128" concept="0" />
+      <node id="5475084672764476082" at="101,128,102,127" concept="0" />
+      <node id="8062570699132836611" at="102,127,103,132" concept="0" />
+      <node id="6249017959271690129" at="103,132,104,27" concept="0" />
+      <node id="6249017959271690129" at="104,27,105,22" concept="4" />
+      <node id="6249017959271690129" at="93,0,107,0" concept="6" trace="createDescriptorForArrangement_Cylindrical#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690129" at="53,57,54,48" />
+      <scope id="6249017959271690129" at="93,81,105,22">
         <var name="b" id="6249017959271690129" />
       </scope>
-      <scope id="6249017959271690129" at="92,0,106,0" />
+      <scope id="6249017959271690129" at="93,0,107,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690140">
@@ -374,22 +374,22 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690140" at="18,0,19,0" concept="1" trace="myConceptArrangement_Flat" />
-      <node id="6249017959271690140" at="54,50,55,41" concept="4" />
-      <node id="6249017959271690140" at="106,74,107,162" concept="3" />
-      <node id="6249017959271690140" at="107,162,108,34" concept="0" />
-      <node id="6249017959271690140" at="108,34,109,113" concept="0" />
-      <node id="6249017959271690140" at="109,113,110,98" concept="0" />
-      <node id="6249017959271690140" at="110,98,111,17" concept="0" />
-      <node id="6249017959271690142" at="111,17,112,127" concept="0" />
-      <node id="6249017959271690144" at="112,127,113,126" concept="0" />
-      <node id="6249017959271690140" at="113,126,114,20" concept="0" />
-      <node id="6249017959271690140" at="114,20,115,22" concept="4" />
-      <node id="6249017959271690140" at="106,0,117,0" concept="6" trace="createDescriptorForArrangement_Flat#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690140" at="54,50,55,41" />
-      <scope id="6249017959271690140" at="106,74,115,22">
+      <node id="6249017959271690140" at="55,50,56,41" concept="4" />
+      <node id="6249017959271690140" at="107,74,108,162" concept="3" />
+      <node id="6249017959271690140" at="108,162,109,34" concept="0" />
+      <node id="6249017959271690140" at="109,34,110,113" concept="0" />
+      <node id="6249017959271690140" at="110,113,111,98" concept="0" />
+      <node id="6249017959271690140" at="111,98,112,17" concept="0" />
+      <node id="6249017959271690142" at="112,17,113,127" concept="0" />
+      <node id="6249017959271690144" at="113,127,114,126" concept="0" />
+      <node id="6249017959271690140" at="114,126,115,20" concept="0" />
+      <node id="6249017959271690140" at="115,20,116,22" concept="4" />
+      <node id="6249017959271690140" at="107,0,118,0" concept="6" trace="createDescriptorForArrangement_Flat#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690140" at="55,50,56,41" />
+      <scope id="6249017959271690140" at="107,74,116,22">
         <var name="b" id="6249017959271690140" />
       </scope>
-      <scope id="6249017959271690140" at="106,0,117,0" />
+      <scope id="6249017959271690140" at="107,0,118,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690141">
@@ -412,22 +412,22 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="6249017959271690141" at="24,0,25,0" concept="1" trace="myConceptShape_Rectangular" />
-      <node id="6249017959271690141" at="66,51,67,42" concept="4" />
-      <node id="6249017959271690141" at="162,75,163,163" concept="3" />
-      <node id="6249017959271690141" at="163,163,164,34" concept="0" />
-      <node id="6249017959271690141" at="164,34,165,107" concept="0" />
-      <node id="6249017959271690141" at="165,107,166,98" concept="0" />
-      <node id="6249017959271690141" at="166,98,167,17" concept="0" />
-      <node id="6249017959271690161" at="167,17,168,113" concept="0" />
-      <node id="6249017959271690163" at="168,113,169,112" concept="0" />
-      <node id="6249017959271690141" at="169,112,170,27" concept="0" />
-      <node id="6249017959271690141" at="170,27,171,22" concept="4" />
-      <node id="6249017959271690141" at="162,0,173,0" concept="6" trace="createDescriptorForShape_Rectangular#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="6249017959271690141" at="66,51,67,42" />
-      <scope id="6249017959271690141" at="162,75,171,22">
+      <node id="6249017959271690141" at="67,51,68,42" concept="4" />
+      <node id="6249017959271690141" at="163,75,164,163" concept="3" />
+      <node id="6249017959271690141" at="164,163,165,34" concept="0" />
+      <node id="6249017959271690141" at="165,34,166,107" concept="0" />
+      <node id="6249017959271690141" at="166,107,167,98" concept="0" />
+      <node id="6249017959271690141" at="167,98,168,17" concept="0" />
+      <node id="5171349398070263660" at="168,17,169,199" concept="0" />
+      <node id="5171349398070263662" at="169,199,170,200" concept="0" />
+      <node id="6249017959271690141" at="170,200,171,27" concept="0" />
+      <node id="6249017959271690141" at="171,27,172,22" concept="4" />
+      <node id="6249017959271690141" at="163,0,174,0" concept="6" trace="createDescriptorForShape_Rectangular#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="6249017959271690141" at="67,51,68,42" />
+      <scope id="6249017959271690141" at="163,75,172,22">
         <var name="b" id="6249017959271690141" />
       </scope>
-      <scope id="6249017959271690141" at="162,0,173,0" />
+      <scope id="6249017959271690141" at="163,0,174,0" />
     </file>
   </root>
   <root nodeRef="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/8255194269358657919">
@@ -450,21 +450,21 @@
     </file>
     <file name="StructureAspectDescriptor.java">
       <node id="8255194269358657919" at="27,0,28,0" concept="1" trace="myConceptTissue_Type" />
-      <node id="8255194269358657919" at="72,45,73,36" concept="4" />
-      <node id="8255194269358657919" at="202,69,203,157" concept="3" />
-      <node id="8255194269358657919" at="203,157,204,34" concept="0" />
-      <node id="8255194269358657919" at="204,34,205,71" concept="0" />
-      <node id="8255194269358657919" at="205,71,206,98" concept="0" />
-      <node id="8255194269358657919" at="206,98,207,17" concept="0" />
-      <node id="8255194269358657920" at="207,17,208,173" concept="0" />
-      <node id="4857589848835450443" at="208,173,209,205" concept="0" />
-      <node id="8255194269358657919" at="209,205,210,22" concept="4" />
-      <node id="8255194269358657919" at="202,0,212,0" concept="6" trace="createDescriptorForTissue_Type#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
-      <scope id="8255194269358657919" at="72,45,73,36" />
-      <scope id="8255194269358657919" at="202,69,210,22">
+      <node id="8255194269358657919" at="73,45,74,36" concept="4" />
+      <node id="8255194269358657919" at="203,69,204,157" concept="3" />
+      <node id="8255194269358657919" at="204,157,205,34" concept="0" />
+      <node id="8255194269358657919" at="205,34,206,71" concept="0" />
+      <node id="8255194269358657919" at="206,71,207,98" concept="0" />
+      <node id="8255194269358657919" at="207,98,208,17" concept="0" />
+      <node id="8255194269358657920" at="208,17,209,173" concept="0" />
+      <node id="4857589848835450443" at="209,173,210,205" concept="0" />
+      <node id="8255194269358657919" at="210,205,211,22" concept="4" />
+      <node id="8255194269358657919" at="203,0,213,0" concept="6" trace="createDescriptorForTissue_Type#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <scope id="8255194269358657919" at="73,45,74,36" />
+      <scope id="8255194269358657919" at="203,69,211,22">
         <var name="b" id="8255194269358657919" />
       </scope>
-      <scope id="8255194269358657919" at="202,0,212,0" />
+      <scope id="8255194269358657919" at="203,0,213,0" />
     </file>
   </root>
 </debug-info>

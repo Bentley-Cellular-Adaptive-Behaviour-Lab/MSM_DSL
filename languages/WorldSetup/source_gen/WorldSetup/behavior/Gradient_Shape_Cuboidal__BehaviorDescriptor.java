@@ -5,24 +5,97 @@ package WorldSetup.behavior;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.iets3.core.expr.base.behavior.IETS3ExprEvalHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Gradient_Shape_Cuboidal__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, "WorldSetup.structure.Gradient_Shape_Cuboidal");
 
+  public static final SMethod<String> get_height_string_id3wWy5vw26dt = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26dt").build();
+  public static final SMethod<Integer> get_height_int_id3wWy5vw6HeS = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_height_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw6HeS").build();
+  public static final SMethod<String> get_width_string_id3wWy5vw26dY = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26dY").build();
+  public static final SMethod<Integer> get_width_int_id3wWy5vw26eb = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_width_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26eb").build();
+  public static final SMethod<String> get_depth_string_id3wWy5vw26ev = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26ev").build();
+  public static final SMethod<Integer> get_depth_int_id3wWy5vw26eG = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_depth_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26eG").build();
+  public static final SMethod<Integer> get_upper_x_int_id3wWy5vw26f0 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_x_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26f0").build();
+  public static final SMethod<Integer> get_lower_x_int_id3wWy5vw26fw = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_x_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26fw").build();
+  public static final SMethod<Integer> get_upper_y_int_id3wWy5vw26g0 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26g0").build();
+  public static final SMethod<Integer> get_lower_y_int_id3wWy5vw26gw = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26gw").build();
+  public static final SMethod<Integer> get_upper_z_int_id3wWy5vw26h0 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26h0").build();
+  public static final SMethod<Integer> get_lower_z_int_id3wWy5vw26hw = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw26hw").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_string_id3wWy5vw26dt, get_height_int_id3wWy5vw6HeS, get_width_string_id3wWy5vw26dY, get_width_int_id3wWy5vw26eb, get_depth_string_id3wWy5vw26ev, get_depth_int_id3wWy5vw26eG, get_upper_x_int_id3wWy5vw26f0, get_lower_x_int_id3wWy5vw26fw, get_upper_y_int_id3wWy5vw26g0, get_lower_y_int_id3wWy5vw26gw, get_upper_z_int_id3wWy5vw26h0, get_lower_z_int_id3wWy5vw26hw);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static String get_height_string_id3wWy5vw26dt(@NotNull SNode __thisNode__) {
+    String height = String.valueOf(((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_height_int_id3wWy5vw6HeS.invoke(__thisNode__)));
+    return height;
+  }
+  /*package*/ static int get_height_int_id3wWy5vw6HeS(@NotNull SNode __thisNode__) {
+    int height = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Height$z5pv), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return height;
+  }
+  /*package*/ static String get_width_string_id3wWy5vw26dY(@NotNull SNode __thisNode__) {
+    String width = String.valueOf(((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_width_int_id3wWy5vw26eb.invoke(__thisNode__)));
+    return width;
+  }
+  /*package*/ static int get_width_int_id3wWy5vw26eb(@NotNull SNode __thisNode__) {
+    int height = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Width$yZL7), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return height;
+  }
+  /*package*/ static String get_depth_string_id3wWy5vw26ev(@NotNull SNode __thisNode__) {
+    String depth = String.valueOf(((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_depth_int_id3wWy5vw26eG.invoke(__thisNode__)));
+    return depth;
+  }
+  /*package*/ static int get_depth_int_id3wWy5vw26eG(@NotNull SNode __thisNode__) {
+    int depth = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Depth$z6lz), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return depth;
+  }
+  /*package*/ static int get_upper_x_int_id3wWy5vw26f0(@NotNull SNode __thisNode__) {
+    int x_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_width_int_id3wWy5vw26eb.invoke(__thisNode__)) / 2;
+    int x_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.X_Coord$jBPh), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return x_coord_value + x_offset;
+  }
+  /*package*/ static int get_lower_x_int_id3wWy5vw26fw(@NotNull SNode __thisNode__) {
+    int x_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_width_int_id3wWy5vw26eb.invoke(__thisNode__)) / 2;
+    int x_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.X_Coord$jBPh), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return x_coord_value - x_offset;
+  }
+  /*package*/ static int get_upper_y_int_id3wWy5vw26g0(@NotNull SNode __thisNode__) {
+    int y_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_height_int_id3wWy5vw6HeS.invoke(__thisNode__)) / 2;
+    int y_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.Y_Coord$jHeC), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return y_coord_value + y_offset;
+  }
+  /*package*/ static int get_lower_y_int_id3wWy5vw26gw(@NotNull SNode __thisNode__) {
+    int y_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_height_int_id3wWy5vw6HeS.invoke(__thisNode__)) / 2;
+    int y_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.Y_Coord$jHeC), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return y_coord_value - y_offset;
+  }
+  /*package*/ static int get_upper_z_int_id3wWy5vw26h0(@NotNull SNode __thisNode__) {
+    int z_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_depth_int_id3wWy5vw26eG.invoke(__thisNode__)) / 2;
+    int z_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.Z_Coord$jHVF), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return z_coord_value + z_offset;
+  }
+  /*package*/ static int get_lower_z_int_id3wWy5vw26hw(@NotNull SNode __thisNode__) {
+    int z_offset = ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_depth_int_id3wWy5vw26eG.invoke(__thisNode__)) / 2;
+    int z_coord_value = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Centre$BDk6), LINKS.Z_Coord$jHVF), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return z_coord_value - z_offset;
+  }
 
   /*package*/ Gradient_Shape_Cuboidal__BehaviorDescriptor() {
   }
@@ -39,6 +112,30 @@ public final class Gradient_Shape_Cuboidal__BehaviorDescriptor extends BaseBHDes
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((String) get_height_string_id3wWy5vw26dt(node));
+      case 1:
+        return (T) ((Integer) get_height_int_id3wWy5vw6HeS(node));
+      case 2:
+        return (T) ((String) get_width_string_id3wWy5vw26dY(node));
+      case 3:
+        return (T) ((Integer) get_width_int_id3wWy5vw26eb(node));
+      case 4:
+        return (T) ((String) get_depth_string_id3wWy5vw26ev(node));
+      case 5:
+        return (T) ((Integer) get_depth_int_id3wWy5vw26eG(node));
+      case 6:
+        return (T) ((Integer) get_upper_x_int_id3wWy5vw26f0(node));
+      case 7:
+        return (T) ((Integer) get_lower_x_int_id3wWy5vw26fw(node));
+      case 8:
+        return (T) ((Integer) get_upper_y_int_id3wWy5vw26g0(node));
+      case 9:
+        return (T) ((Integer) get_lower_y_int_id3wWy5vw26gw(node));
+      case 10:
+        return (T) ((Integer) get_upper_z_int_id3wWy5vw26h0(node));
+      case 11:
+        return (T) ((Integer) get_lower_z_int_id3wWy5vw26hw(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -66,5 +163,17 @@ public final class Gradient_Shape_Cuboidal__BehaviorDescriptor extends BaseBHDes
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Height$z5pv = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2f6b1b828a386005L, "Height");
+    /*package*/ static final SContainmentLink value$SBs3 = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7668L, "value");
+    /*package*/ static final SContainmentLink expr$fJhI = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a3784b4L, 0x2f6b1b828a3784b5L, "expr");
+    /*package*/ static final SContainmentLink Width$yZL7 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2f6b1b828a386002L, "Width");
+    /*package*/ static final SContainmentLink Depth$z6lz = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2f6b1b828a386009L, "Depth");
+    /*package*/ static final SContainmentLink Centre$BDk6 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be386ef420L, "Centre");
+    /*package*/ static final SContainmentLink X_Coord$jBPh = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x47c452e0e9687f75L, "X_Coord");
+    /*package*/ static final SContainmentLink Y_Coord$jHeC = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x47c452e0e9687f77L, "Y_Coord");
+    /*package*/ static final SContainmentLink Z_Coord$jHVF = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, 0x47c452e0e9687f7aL, "Z_Coord");
   }
 }
