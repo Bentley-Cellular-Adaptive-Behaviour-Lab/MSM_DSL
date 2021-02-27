@@ -266,11 +266,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.adhesiveness$evLD;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no adhesiveness>");
-      editorCell.setCellId("property_adhesiveness");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -306,7 +306,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty adhesiveness$evLD = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, 0x73ca99e5119b1f20L, "adhesiveness");
   }
 
   private static final class CONCEPTS {

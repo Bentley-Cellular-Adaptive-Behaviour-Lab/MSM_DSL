@@ -9,6 +9,7 @@
     <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
+    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -147,20 +148,26 @@
     <property role="TrG5h" value="Position" />
     <property role="R4oN_" value="Concept that stores the X,Y and Z coordinates of an object (used elsewhere, such as in gradient boundaries)." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="5qSYbADreYz" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690147" />
-      <property role="TrG5h" value="x_coord" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="4v4kI3Dq7XP" role="1TKVEi">
+      <property role="IQ2ns" value="5171349398070263669" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="X_Coord" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
-    <node concept="1TJgyi" id="5qSYbADreY_" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690149" />
-      <property role="TrG5h" value="y_coord" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="4v4kI3Dq7XR" role="1TKVEi">
+      <property role="IQ2ns" value="5171349398070263671" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Y_Coord" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
-    <node concept="1TJgyi" id="5qSYbADreYC" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690152" />
-      <property role="TrG5h" value="z_coord" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="4v4kI3Dq7XU" role="1TKVEi">
+      <property role="IQ2ns" value="5171349398070263674" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Z_Coord" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreY8">
@@ -243,11 +250,6 @@
       <property role="TrG5h" value="cylinder_length_in_cells" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="5qSYbADreYo" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690136" />
-      <property role="TrG5h" value="cylinder_total_radius" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyi" id="4JVq81FjZEM" role="1TKVEl">
       <property role="IQ2nx" value="5475084672764476082" />
       <property role="TrG5h" value="cylinder_total_cells" />
@@ -257,6 +259,13 @@
       <property role="IQ2nx" value="8062570699132836611" />
       <property role="TrG5h" value="cylinder_total_length_int" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="3wWy5vw4eP2" role="1TKVEi">
+      <property role="IQ2ns" value="4052263675729341762" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Cylinder_Radius" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYs">
@@ -282,15 +291,19 @@
     <property role="R4oN_" value="Square cell shape type." />
     <property role="34LRSv" value="Rectangular" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
-    <node concept="1TJgyi" id="5qSYbADreYL" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690161" />
-      <property role="TrG5h" value="height" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
+      <property role="IQ2ns" value="5171349398070263660" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Width" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
-    <node concept="1TJgyi" id="5qSYbADreYN" role="1TKVEl">
-      <property role="IQ2nx" value="6249017959271690163" />
-      <property role="TrG5h" value="width" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="4v4kI3Dq7XI" role="1TKVEi">
+      <property role="IQ2ns" value="5171349398070263662" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Height" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="7aglRcSXD5Z">

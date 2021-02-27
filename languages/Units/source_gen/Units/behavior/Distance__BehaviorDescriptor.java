@@ -15,25 +15,43 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.iets3.core.expr.base.behavior.IETS3ExprEvalHelper;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, "Units.structure.Distance");
 
-  public static final SMethod<Void> convert_from_to_id2XF6SaadVZL = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("convert_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2XF6SaadVZL").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> convert_from_to_id2XF6SaadVZL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("convert_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2XF6SaadVZL").build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Integer> get_unit_val_id2XF6SaadYiG = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_unit_val").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2XF6SaadYiG").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_distance_in_gridpoints_id3wWy5vw4P8z = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_distance_in_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw4P8z").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Integer> get_value_int_id3wWy5vw4PXg = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_value_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw4PXg").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(convert_from_to_id2XF6SaadVZL, get_unit_val_id2XF6SaadYiG);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(convert_from_to_id2XF6SaadVZL, get_unit_val_id2XF6SaadYiG, get_distance_in_gridpoints_id3wWy5vw4P8z, get_value_int_id3wWy5vw4PXg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static void convert_from_to_id2XF6SaadVZL(@NotNull SNode __thisNode__, SNode unit_1, SNode unit_2) {
+  /*package*/ static int convert_from_to_id2XF6SaadVZL(@NotNull SNode __thisNode__, int current_value, SNode unit_1, SNode unit_2) {
+    int target_value = current_value;
     int unit_1_val = Distance__BehaviorDescriptor.get_unit_val_id2XF6SaadYiG.invoke(__thisNode__, unit_1);
     int unit_2_val = Distance__BehaviorDescriptor.get_unit_val_id2XF6SaadYiG.invoke(__thisNode__, unit_2);
+
+    int conversion_steps = unit_2_val - unit_1_val;
+
+    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case. 
+    if (conversion_steps > 0) {
+      // Converting is going up in units, so divide the current value by 1000 for each conversion step. 
+      target_value = target_value / (1000 * conversion_steps);
+    } else if (conversion_steps < 0) {
+      // Converting is going down in units, so multiply the current value by 1000 for each conversion step. 
+      target_value = target_value / (1000 * -conversion_steps);
+    }
+    return target_value;
   }
   /*package*/ static Integer get_unit_val_id2XF6SaadYiG(@NotNull SNode __thisNode__, SNode unit) {
     int val = -1;
@@ -47,6 +65,14 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
       val = 4;
     }
     return val;
+  }
+  /*package*/ static int get_distance_in_gridpoints_id3wWy5vw4P8z(@NotNull SNode __thisNode__, SNode target_units, int scaling) {
+    // target_units are the units that were used to define the gridpoint scaling (i.e. dist between gridpoints equals xyz target_units). 
+    // scaling is the defined unit distance between two gridpoints. 
+    return ((int) Distance__BehaviorDescriptor.convert_from_to_id2XF6SaadVZL.invoke(__thisNode__, ((int) ((int) Distance__BehaviorDescriptor.get_value_int_id3wWy5vw4PXg.invoke(__thisNode__))), SLinkOperations.getTarget(__thisNode__, LINKS.units$DnBC), target_units)) / scaling;
+  }
+  /*package*/ static int get_value_int_id3wWy5vw4PXg(@NotNull SNode __thisNode__) {
+    return ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.value$SBs3), LINKS.expr$fJhI)));
   }
 
   /*package*/ Distance__BehaviorDescriptor() {
@@ -65,10 +91,13 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        convert_from_to_id2XF6SaadVZL(node, (SNode) parameters[0], (SNode) parameters[1]);
-        return null;
+        return (T) ((Integer) convert_from_to_id2XF6SaadVZL(node, ((int) (Integer) parameters[0]), (SNode) parameters[1], (SNode) parameters[2]));
       case 1:
         return (T) ((Integer) get_unit_val_id2XF6SaadYiG(node, (SNode) parameters[0]));
+      case 2:
+        return (T) ((Integer) get_distance_in_gridpoints_id3wWy5vw4P8z(node, (SNode) parameters[0], ((int) (Integer) parameters[1])));
+      case 3:
+        return (T) ((Integer) get_value_int_id3wWy5vw4PXg(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -103,5 +132,11 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SConcept Millimetre$Wa = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d70L, "Units.structure.Millimetre");
     /*package*/ static final SConcept Micrometre$WD = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d71L, "Units.structure.Micrometre");
     /*package*/ static final SConcept Nanometre$X8 = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d72L, "Units.structure.Nanometre");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink units$DnBC = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7ab9L, "units");
+    /*package*/ static final SContainmentLink value$SBs3 = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7668L, "value");
+    /*package*/ static final SContainmentLink expr$fJhI = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a3784b4L, 0x2f6b1b828a3784b5L, "expr");
   }
 }

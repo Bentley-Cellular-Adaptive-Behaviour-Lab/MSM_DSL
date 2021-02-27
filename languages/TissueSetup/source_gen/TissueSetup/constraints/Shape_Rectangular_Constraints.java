@@ -8,17 +8,10 @@ import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Map;
-import org.jetbrains.mps.openapi.language.SProperty;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import java.util.HashMap;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
@@ -42,55 +35,6 @@ public class Shape_Rectangular_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
-  public static class Height_Property extends BasePropertyConstraintsDescriptor {
-    public Height_Property(ConstraintsDescriptor container) {
-      super(PROPS.height$pTxW, container);
-    }
-    @Override
-    public boolean hasOwnValidator() {
-      return true;
-    }
-    private static final SNodePointer validatePropertyBreakingPoint = new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueSetup.constraints)", "325017853400562929");
-    @Override
-    public boolean validateValue(SNode node, Object propertyValue, CheckingNodeContext checkingNodeContext) {
-      boolean result = staticValidateProperty(node, SPropertyOperations.castInteger(propertyValue));
-      if (!(result) && checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(validatePropertyBreakingPoint);
-      }
-      return result;
-    }
-    private static boolean staticValidateProperty(SNode node, int propertyValue) {
-      return propertyValue > 0;
-    }
-  }
-  public static class Width_Property extends BasePropertyConstraintsDescriptor {
-    public Width_Property(ConstraintsDescriptor container) {
-      super(PROPS.width$pTZY, container);
-    }
-    @Override
-    public boolean hasOwnValidator() {
-      return true;
-    }
-    private static final SNodePointer validatePropertyBreakingPoint = new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueSetup.constraints)", "325017853400570052");
-    @Override
-    public boolean validateValue(SNode node, Object propertyValue, CheckingNodeContext checkingNodeContext) {
-      boolean result = staticValidateProperty(node, SPropertyOperations.castInteger(propertyValue));
-      if (!(result) && checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(validatePropertyBreakingPoint);
-      }
-      return result;
-    }
-    private static boolean staticValidateProperty(SNode node, int propertyValue) {
-      return propertyValue > 0;
-    }
-  }
-  @Override
-  protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
-    Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
-    properties.put(PROPS.height$pTxW, new Height_Property(this));
-    properties.put(PROPS.width$pTZY, new Width_Property(this));
-    return properties;
-  }
   private static boolean staticCanBeAChild(SNode node, SNode parentNode, SAbstractConcept childConcept, SContainmentLink link) {
     return true;
   }
@@ -98,10 +42,5 @@ public class Shape_Rectangular_Constraints extends BaseConstraintsDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty height$pTxW = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb1L, "height");
-    /*package*/ static final SProperty width$pTZY = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x56b8f8b9a96cefb3L, "width");
   }
 }

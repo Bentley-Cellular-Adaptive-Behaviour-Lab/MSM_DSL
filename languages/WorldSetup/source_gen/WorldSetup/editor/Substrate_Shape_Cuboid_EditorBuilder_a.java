@@ -40,8 +40,8 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class Substrate_Shape_Cuboid_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -116,11 +116,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.width$Uv0Q;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no width>");
-      editorCell.setCellId("property_width");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -150,11 +150,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.height$U$qd;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no height>");
-      editorCell.setCellId("property_height");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null1");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -184,11 +184,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_2() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.depth$U_7g;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no depth>");
-      editorCell.setCellId("property_depth");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null2");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -285,12 +285,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     protected String getNoTargetText() {
       return "<no Substrate_Position>";
     }
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty width$Uv0Q = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f58L, "width");
-    /*package*/ static final SProperty height$U$qd = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5aL, "height");
-    /*package*/ static final SProperty depth$U_7g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x51ca2b62e9a67f5dL, "depth");
   }
 
   private static final class CONCEPTS {

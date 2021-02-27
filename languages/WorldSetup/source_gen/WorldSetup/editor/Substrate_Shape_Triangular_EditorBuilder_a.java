@@ -401,11 +401,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.z_location$4h36;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no z_location>");
-      editorCell.setCellId("property_z_location");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -441,7 +441,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class PROPS {
     /*package*/ static final SProperty depth$5OPS = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x4bfb68806b422228L, "depth");
-    /*package*/ static final SProperty z_location$4h36 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x227861932d6f8049L, "z_location");
   }
 
   private static final class CONCEPTS {

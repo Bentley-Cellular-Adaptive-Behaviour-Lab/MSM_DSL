@@ -14,8 +14,9 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.iets3.core.expr.base.behavior.IETS3ExprEvalHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -25,56 +26,98 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, "WorldSetup.structure.Substrate_Shape_Triangular");
 
-  public static final SMethod<String> get_vertex_1_X_id57aaQbDEkks = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEkks").build();
-  public static final SMethod<String> get_vertex_1_Y_id57aaQbDElMG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDElMG").build();
-  public static final SMethod<String> get_vertex_2_X_id57aaQbDElaX = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDElaX").build();
-  public static final SMethod<String> get_vertex_2_Y_id57aaQbDEofO = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEofO").build();
-  public static final SMethod<String> get_vertex_3_X_id57aaQbDEloa = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEloa").build();
-  public static final SMethod<String> get_vertex_3_Y_id57aaQbDErqj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDErqj").build();
+  public static final SMethod<Integer> get_vertex_1_X_int_id57aaQbDEkks = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_1_X_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEkks").build();
+  public static final SMethod<String> get_vertex_1_X_string_id3wWy5vw2hFm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_X_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2hFm").build();
+  public static final SMethod<Integer> get_vertex_1_Y_int_id3wWy5vw2lIl = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_1_Y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2lIl").build();
+  public static final SMethod<String> get_vertex_1_Y_string_id57aaQbDElMG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_Y_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDElMG").build();
+  public static final SMethod<Integer> get_vertex_2_X_int_id3wWy5vw2w5e = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_2_X_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2w5e").build();
+  public static final SMethod<String> get_vertex_2_X_string_id3wWy5vw2w5C = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_X_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2w5C").build();
+  public static final SMethod<Integer> get_vertex_2_Y_int_id3wWy5vw2w5T = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_2_Y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2w5T").build();
+  public static final SMethod<String> get_vertex_2_Y_string_id3wWy5vw2w6j = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_Y_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2w6j").build();
+  public static final SMethod<Integer> get_vertex_3_X_int_id3wWy5vw2_jP = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_3_X_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2_jP").build();
+  public static final SMethod<String> get_vertex_3_X_string_id3wWy5vw2_kf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_X_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2_kf").build();
+  public static final SMethod<Integer> get_vertex_3_Y_int_id3wWy5vw2_kw = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_3_Y_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2_kw").build();
+  public static final SMethod<String> get_vertex_3_Y_string_id3wWy5vw2_kU = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_Y_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw2_kU").build();
   public static final SMethod<String> get_depth_id4JVq81FgwNn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81FgwNn").build();
+  public static final SMethod<Integer> get_z_location_int_id3wWy5vw3Cyg = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_z_location_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw3Cyg").build();
+  public static final SMethod<String> get_z_location_string_id3wWy5vw3KqH = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_z_location_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw3KqH").build();
   public static final SMethod<Integer> get_upper_z_int_id2B5sNxPo4s_ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_upper_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPo4s_").build();
   public static final SMethod<Integer> get_lower_z_int_id2B5sNxPo7PW = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_lower_z_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2B5sNxPo7PW").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_1_X_id57aaQbDEkks, get_vertex_1_Y_id57aaQbDElMG, get_vertex_2_X_id57aaQbDElaX, get_vertex_2_Y_id57aaQbDEofO, get_vertex_3_X_id57aaQbDEloa, get_vertex_3_Y_id57aaQbDErqj, get_depth_id4JVq81FgwNn, get_upper_z_int_id2B5sNxPo4s_, get_lower_z_int_id2B5sNxPo7PW);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_1_X_int_id57aaQbDEkks, get_vertex_1_X_string_id3wWy5vw2hFm, get_vertex_1_Y_int_id3wWy5vw2lIl, get_vertex_1_Y_string_id57aaQbDElMG, get_vertex_2_X_int_id3wWy5vw2w5e, get_vertex_2_X_string_id3wWy5vw2w5C, get_vertex_2_Y_int_id3wWy5vw2w5T, get_vertex_2_Y_string_id3wWy5vw2w6j, get_vertex_3_X_int_id3wWy5vw2_jP, get_vertex_3_X_string_id3wWy5vw2_kf, get_vertex_3_Y_int_id3wWy5vw2_kw, get_vertex_3_Y_string_id3wWy5vw2_kU, get_depth_id4JVq81FgwNn, get_z_location_int_id3wWy5vw3Cyg, get_z_location_string_id3wWy5vw3KqH, get_upper_z_int_id2B5sNxPo4s_, get_lower_z_int_id2B5sNxPo7PW);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String get_vertex_1_X_id57aaQbDEkks(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_1$UwXl), PROPS.X_Coordinate$UFZ4));
-    return vertex;
+  /*package*/ static int get_vertex_1_X_int_id57aaQbDEkks(@NotNull SNode __thisNode__) {
+    int x_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_1$UwXl), LINKS.X_Coord$$NNM), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return x_coord;
   }
-  /*package*/ static String get_vertex_1_Y_id57aaQbDElMG(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_1$UwXl), PROPS.Y_Coordinate$UGt6));
-    return vertex;
+  /*package*/ static String get_vertex_1_X_string_id3wWy5vw2hFm(@NotNull SNode __thisNode__) {
+    String x_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_X_int_id57aaQbDEkks.invoke(__thisNode__)));
+    return x_coord;
   }
-  /*package*/ static String get_vertex_2_X_id57aaQbDElaX(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_2$UBKM), PROPS.X_Coordinate$UFZ4));
-    return vertex;
+  /*package*/ static int get_vertex_1_Y_int_id3wWy5vw2lIl(@NotNull SNode __thisNode__) {
+    int y_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_1$UwXl), LINKS.Y_Coord$$OhO), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return y_coord;
   }
-  /*package*/ static String get_vertex_2_Y_id57aaQbDEofO(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_2$UBKM), PROPS.Y_Coordinate$UGt6));
-    return vertex;
+  /*package*/ static String get_vertex_1_Y_string_id57aaQbDElMG(@NotNull SNode __thisNode__) {
+    String y_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_Y_int_id3wWy5vw2lIl.invoke(__thisNode__)));
+    return y_coord;
   }
-  /*package*/ static String get_vertex_3_X_id57aaQbDEloa(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_3$UCtP), PROPS.X_Coordinate$UFZ4));
-    return vertex;
+  /*package*/ static int get_vertex_2_X_int_id3wWy5vw2w5e(@NotNull SNode __thisNode__) {
+    int x_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_2$UBKM), LINKS.X_Coord$$NNM), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return x_coord;
   }
-  /*package*/ static String get_vertex_3_Y_id57aaQbDErqj(@NotNull SNode __thisNode__) {
-    String vertex = String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_3$UCtP), PROPS.Y_Coordinate$UGt6));
-    return vertex;
+  /*package*/ static String get_vertex_2_X_string_id3wWy5vw2w5C(@NotNull SNode __thisNode__) {
+    String x_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_X_int_id3wWy5vw2w5e.invoke(__thisNode__)));
+    return x_coord;
+  }
+  /*package*/ static int get_vertex_2_Y_int_id3wWy5vw2w5T(@NotNull SNode __thisNode__) {
+    int y_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_2$UBKM), LINKS.Y_Coord$$OhO), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return y_coord;
+  }
+  /*package*/ static String get_vertex_2_Y_string_id3wWy5vw2w6j(@NotNull SNode __thisNode__) {
+    String y_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_Y_int_id3wWy5vw2w5T.invoke(__thisNode__)));
+    return y_coord;
+  }
+  /*package*/ static int get_vertex_3_X_int_id3wWy5vw2_jP(@NotNull SNode __thisNode__) {
+    int x_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_3$UCtP), LINKS.X_Coord$$NNM), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return x_coord;
+  }
+  /*package*/ static String get_vertex_3_X_string_id3wWy5vw2_kf(@NotNull SNode __thisNode__) {
+    String x_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_X_int_id3wWy5vw2_jP.invoke(__thisNode__)));
+    return x_coord;
+  }
+  /*package*/ static int get_vertex_3_Y_int_id3wWy5vw2_kw(@NotNull SNode __thisNode__) {
+    int y_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Vertex_3$UCtP), LINKS.Y_Coord$$OhO), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return y_coord;
+  }
+  /*package*/ static String get_vertex_3_Y_string_id3wWy5vw2_kU(@NotNull SNode __thisNode__) {
+    String y_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_Y_int_id3wWy5vw2_kw.invoke(__thisNode__)));
+    return y_coord;
   }
   /*package*/ static String get_depth_id4JVq81FgwNn(@NotNull SNode __thisNode__) {
     String depth = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS));
     return depth;
   }
+  /*package*/ static int get_z_location_int_id3wWy5vw3Cyg(@NotNull SNode __thisNode__) {
+    int z_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Z_Location$8QOp), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return z_coord;
+  }
+  /*package*/ static String get_z_location_string_id3wWy5vw3KqH(@NotNull SNode __thisNode__) {
+    String z_coord = String.valueOf(((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_z_location_int_id3wWy5vw3Cyg.invoke(__thisNode__)));
+    return z_coord;
+  }
   /*package*/ static int get_upper_z_int_id2B5sNxPo4s_(@NotNull SNode __thisNode__) {
     int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS) / 2;
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.z_location$4h36) + z_offset;
+    int z_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Z_Location$8QOp), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return z_coord + z_offset;
   }
   /*package*/ static int get_lower_z_int_id2B5sNxPo7PW(@NotNull SNode __thisNode__) {
     int z_offset = SPropertyOperations.getInteger(__thisNode__, PROPS.depth$5OPS) / 2;
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.z_location$4h36) - z_offset;
+    int z_coord = ((int) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Z_Location$8QOp), LINKS.value$SBs3), LINKS.expr$fJhI)));
+    return z_coord - z_offset;
   }
 
   /*package*/ Substrate_Shape_Triangular__BehaviorDescriptor() {
@@ -93,22 +136,38 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) get_vertex_1_X_id57aaQbDEkks(node));
+        return (T) ((Integer) get_vertex_1_X_int_id57aaQbDEkks(node));
       case 1:
-        return (T) ((String) get_vertex_1_Y_id57aaQbDElMG(node));
+        return (T) ((String) get_vertex_1_X_string_id3wWy5vw2hFm(node));
       case 2:
-        return (T) ((String) get_vertex_2_X_id57aaQbDElaX(node));
+        return (T) ((Integer) get_vertex_1_Y_int_id3wWy5vw2lIl(node));
       case 3:
-        return (T) ((String) get_vertex_2_Y_id57aaQbDEofO(node));
+        return (T) ((String) get_vertex_1_Y_string_id57aaQbDElMG(node));
       case 4:
-        return (T) ((String) get_vertex_3_X_id57aaQbDEloa(node));
+        return (T) ((Integer) get_vertex_2_X_int_id3wWy5vw2w5e(node));
       case 5:
-        return (T) ((String) get_vertex_3_Y_id57aaQbDErqj(node));
+        return (T) ((String) get_vertex_2_X_string_id3wWy5vw2w5C(node));
       case 6:
-        return (T) ((String) get_depth_id4JVq81FgwNn(node));
+        return (T) ((Integer) get_vertex_2_Y_int_id3wWy5vw2w5T(node));
       case 7:
-        return (T) ((Integer) get_upper_z_int_id2B5sNxPo4s_(node));
+        return (T) ((String) get_vertex_2_Y_string_id3wWy5vw2w6j(node));
       case 8:
+        return (T) ((Integer) get_vertex_3_X_int_id3wWy5vw2_jP(node));
+      case 9:
+        return (T) ((String) get_vertex_3_X_string_id3wWy5vw2_kf(node));
+      case 10:
+        return (T) ((Integer) get_vertex_3_Y_int_id3wWy5vw2_kw(node));
+      case 11:
+        return (T) ((String) get_vertex_3_Y_string_id3wWy5vw2_kU(node));
+      case 12:
+        return (T) ((String) get_depth_id4JVq81FgwNn(node));
+      case 13:
+        return (T) ((Integer) get_z_location_int_id3wWy5vw3Cyg(node));
+      case 14:
+        return (T) ((String) get_z_location_string_id3wWy5vw3KqH(node));
+      case 15:
+        return (T) ((Integer) get_upper_z_int_id2B5sNxPo4s_(node));
+      case 16:
         return (T) ((Integer) get_lower_z_int_id2B5sNxPo7PW(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -141,14 +200,16 @@ public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBH
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Vertex_1$UwXl = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f61L, "Vertex_1");
+    /*package*/ static final SContainmentLink X_Coord$$NNM = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x383c8857e003efc5L, "X_Coord");
+    /*package*/ static final SContainmentLink value$SBs3 = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, 0x2f6b1b828a2c7668L, "value");
+    /*package*/ static final SContainmentLink expr$fJhI = MetaAdapterFactory.getContainmentLink(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a3784b4L, 0x2f6b1b828a3784b5L, "expr");
+    /*package*/ static final SContainmentLink Y_Coord$$OhO = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x383c8857e003efc7L, "Y_Coord");
     /*package*/ static final SContainmentLink Vertex_2$UBKM = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f69L, "Vertex_2");
     /*package*/ static final SContainmentLink Vertex_3$UCtP = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f6cL, "Vertex_3");
+    /*package*/ static final SContainmentLink Z_Location$8QOp = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x383c8857e006d9d4L, "Z_Location");
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty X_Coordinate$UFZ4 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f64L, "X_Coordinate");
-    /*package*/ static final SProperty Y_Coordinate$UGt6 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f66L, "Y_Coordinate");
     /*package*/ static final SProperty depth$5OPS = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x4bfb68806b422228L, "depth");
-    /*package*/ static final SProperty z_location$4h36 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x227861932d6f8049L, "z_location");
   }
 }

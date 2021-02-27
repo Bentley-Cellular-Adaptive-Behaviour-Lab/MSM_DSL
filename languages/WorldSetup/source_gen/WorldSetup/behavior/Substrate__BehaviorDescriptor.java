@@ -14,25 +14,27 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.iets3.core.expr.base.behavior.IETS3ExprEvalHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Substrate__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
 
-  public static final SMethod<String> get_adhesiveness_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81Fh9KI").build();
+  public static final SMethod<String> get_adhesiveness_string_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81Fh9KI").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_adhesiveness_id4JVq81Fh9KI);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_adhesiveness_string_id4JVq81Fh9KI);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String get_adhesiveness_id4JVq81Fh9KI(@NotNull SNode __thisNode__) {
-    String adhesiveness = String.valueOf(SPropertyOperations.getString(__thisNode__, PROPS.adhesiveness$evLD));
-    return adhesiveness;
+  /*package*/ static String get_adhesiveness_string_id4JVq81Fh9KI(@NotNull SNode __thisNode__) {
+    float adhesiveness = ((float) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.Adhesiveness$q9mr), LINKS.expr$PjvJ)));
+    String adhesiveness_string = String.valueOf(adhesiveness);
+    return adhesiveness_string;
   }
 
   /*package*/ Substrate__BehaviorDescriptor() {
@@ -51,7 +53,7 @@ public final class Substrate__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) get_adhesiveness_id4JVq81Fh9KI(node));
+        return (T) ((String) get_adhesiveness_string_id4JVq81Fh9KI(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -81,7 +83,8 @@ public final class Substrate__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty adhesiveness$evLD = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, 0x73ca99e5119b1f20L, "adhesiveness");
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Adhesiveness$q9mr = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, 0x383c8857e006bc76L, "Adhesiveness");
+    /*package*/ static final SContainmentLink expr$PjvJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2f6b1b828a3a33b6L, 0x2f6b1b828a3a33b7L, "expr");
   }
 }

@@ -234,21 +234,15 @@
       <node concept="3F0ifn" id="4JVq81FhBQX" role="3EZMnx">
         <property role="3F0ifm" value="Rectangular with height" />
       </node>
-      <node concept="3F0A7n" id="4JVq81FhBR3" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreYL" resolve="height" />
-        <node concept="VechU" id="2B5sNxPR6pN" role="3F10Kt">
-          <property role="Vb096" value="fLwANPr/green" />
-        </node>
+      <node concept="3F1sOY" id="4v4kI3Dq8v6" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XI" resolve="Height" />
       </node>
       <node concept="l2Vlx" id="4JVq81FhBQT" role="2iSdaV" />
       <node concept="3F0ifn" id="4JVq81FhBRb" role="3EZMnx">
         <property role="3F0ifm" value="and width" />
       </node>
-      <node concept="3F0A7n" id="4JVq81FhBRl" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreYN" resolve="width" />
-        <node concept="VechU" id="2B5sNxPR6ru" role="3F10Kt">
-          <property role="Vb096" value="fLwANPr/green" />
-        </node>
+      <node concept="3F1sOY" id="4v4kI3Dq8vl" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XG" resolve="Width" />
       </node>
     </node>
   </node>
@@ -410,29 +404,20 @@
       <node concept="3F0ifn" id="4JVq81FjdQg" role="3EZMnx">
         <property role="3F0ifm" value="X:" />
       </node>
-      <node concept="3F0A7n" id="4JVq81FjdQm" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreYz" resolve="x_coord" />
-        <node concept="VechU" id="2B5sNxPR6u5" role="3F10Kt">
-          <property role="Vb096" value="fLwANPr/green" />
-        </node>
+      <node concept="3F1sOY" id="4v4kI3Dq8u7" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XP" resolve="X_Coord" />
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQu" role="3EZMnx">
         <property role="3F0ifm" value=", Y:" />
       </node>
-      <node concept="3F0A7n" id="4JVq81FjdQC" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreY_" resolve="y_coord" />
-        <node concept="VechU" id="2B5sNxPR6we" role="3F10Kt">
-          <property role="Vb096" value="fLwANPr/green" />
-        </node>
+      <node concept="3F1sOY" id="4v4kI3Dq8uv" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XR" resolve="Y_Coord" />
       </node>
       <node concept="3F0ifn" id="4JVq81FjdQO" role="3EZMnx">
         <property role="3F0ifm" value=", Z:" />
       </node>
-      <node concept="3F0A7n" id="4JVq81FjdR2" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5qSYbADreYC" resolve="z_coord" />
-        <node concept="VechU" id="2B5sNxPR6xT" role="3F10Kt">
-          <property role="Vb096" value="fLwANPr/green" />
-        </node>
+      <node concept="3F1sOY" id="4v4kI3Dq8uO" role="3EZMnx">
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XU" resolve="Z_Coord" />
       </node>
       <node concept="2iRfu4" id="4JVq81FjdQc" role="2iSdaV" />
     </node>

@@ -5518,12 +5518,12 @@
       <node id="3009938612293873033" at="262,48,263,34" concept="1" />
       <node id="3009938612293873033" at="263,34,264,22" concept="6" />
       <node id="5475084672765624496" at="266,41,267,39" concept="1" />
-      <node id="5475084672765624496" at="268,9,269,57" concept="5" />
-      <node id="5475084672765624496" at="269,57,270,76" concept="1" />
+      <node id="5475084672765624496" at="268,9,269,31" concept="5" />
+      <node id="5475084672765624496" at="269,31,270,76" concept="1" />
       <node id="5475084672765624496" at="270,76,271,149" concept="5" />
-      <node id="5475084672765624496" at="271,149,272,53" concept="1" />
-      <node id="5475084672765624496" at="272,53,273,52" concept="1" />
-      <node id="5475084672765624496" at="273,52,274,36" concept="5" />
+      <node id="5475084672765624496" at="271,149,272,45" concept="1" />
+      <node id="5475084672765624496" at="272,45,273,44" concept="1" />
+      <node id="5475084672765624496" at="273,44,274,36" concept="5" />
       <node id="3009938612299783369" at="274,36,275,105" concept="1" />
       <node id="5475084672765624496" at="275,105,276,42" concept="1" />
       <node id="5475084672765624496" at="276,42,277,86" concept="1" />
@@ -5543,9 +5543,8 @@
       <node id="3009938612295685050" at="302,47,303,34" concept="1" />
       <node id="3009938612295685050" at="303,34,304,22" concept="6" />
       <node id="5475084672765624075" at="308,0,309,0" concept="8" trace="name$MnvL" />
-      <node id="5475084672765624075" at="309,0,310,0" concept="8" trace="adhesiveness$evLD" />
-      <node id="5475084672765624075" at="313,0,314,0" concept="8" trace="PropertyAttribute$Gb" />
-      <node id="5475084672765624075" at="317,0,318,0" concept="8" trace="shape$pmbr" />
+      <node id="5475084672765624075" at="312,0,313,0" concept="8" trace="PropertyAttribute$Gb" />
+      <node id="5475084672765624075" at="316,0,317,0" concept="8" trace="shape$pmbr" />
       <node id="5475084672765624075" at="48,0,50,0" concept="2" trace="myNode" />
       <node id="5475084672765624075" at="131,0,133,0" concept="2" trace="myNode" />
       <node id="5475084672765624075" at="62,0,65,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -5745,14 +5744,14 @@
       <scope id="5475084672765624084" at="92,0,120,0" />
       <scope id="5475084672765624482" at="206,0,234,0" />
       <scope id="5475084672765624496" at="266,0,294,0" />
-      <unit id="5475084672765624075" at="312,0,315,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$CONCEPTS" />
-      <unit id="5475084672765624075" at="316,0,319,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$LINKS" />
+      <unit id="5475084672765624075" at="307,0,310,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$PROPS" />
+      <unit id="5475084672765624075" at="311,0,314,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$CONCEPTS" />
+      <unit id="5475084672765624075" at="315,0,318,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$LINKS" />
       <unit id="5475084672765624084" at="106,102,110,7" name="WorldSetup.editor.Substrate_EditorBuilder_a$1" />
       <unit id="5475084672765624482" at="220,102,224,7" name="WorldSetup.editor.Substrate_EditorBuilder_a$2" />
       <unit id="5475084672765624496" at="280,102,284,7" name="WorldSetup.editor.Substrate_EditorBuilder_a$3" />
-      <unit id="5475084672765624075" at="307,0,311,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$PROPS" />
       <unit id="5475084672765624075" at="130,0,181,0" name="WorldSetup.editor.Substrate_EditorBuilder_a$shapeSingleRoleHandler_fphtn9_d0a" />
-      <unit id="5475084672765624075" at="47,0,320,0" name="WorldSetup.editor.Substrate_EditorBuilder_a" />
+      <unit id="5475084672765624075" at="47,0,319,0" name="WorldSetup.editor.Substrate_EditorBuilder_a" />
     </file>
     <file name="Substrate_tooltipHint_fphtn9_d1a_Editor.java">
       <node id="3009938612293873125" at="14,0,15,0" concept="2" trace="myContextHints" />
@@ -5912,12 +5911,12 @@
       <node id="3009938612293992577" at="112,48,113,34" concept="1" />
       <node id="3009938612293992577" at="113,34,114,22" concept="6" />
       <node id="3009938612293992694" at="116,41,117,39" concept="1" />
-      <node id="3009938612293992694" at="118,9,119,50" concept="5" />
-      <node id="3009938612293992694" at="119,50,120,76" concept="1" />
+      <node id="3009938612293992694" at="118,9,119,31" concept="5" />
+      <node id="3009938612293992694" at="119,31,120,76" concept="1" />
       <node id="3009938612293992694" at="120,76,121,149" concept="5" />
-      <node id="3009938612293992694" at="121,149,122,46" concept="1" />
-      <node id="3009938612293992694" at="122,46,123,45" concept="1" />
-      <node id="3009938612293992694" at="123,45,124,36" concept="5" />
+      <node id="3009938612293992694" at="121,149,122,45" concept="1" />
+      <node id="3009938612293992694" at="122,45,123,44" concept="1" />
+      <node id="3009938612293992694" at="123,44,124,36" concept="5" />
       <node id="3009938612299782560" at="124,36,125,105" concept="1" />
       <node id="3009938612293992694" at="125,105,126,42" concept="1" />
       <node id="3009938612293992694" at="126,42,127,86" concept="1" />
@@ -5933,12 +5932,12 @@
       <node id="3009938612293992697" at="146,48,147,34" concept="1" />
       <node id="3009938612293992697" at="147,34,148,22" concept="6" />
       <node id="3009938612293992698" at="150,41,151,39" concept="1" />
-      <node id="3009938612293992698" at="152,9,153,51" concept="5" />
-      <node id="3009938612293992698" at="153,51,154,76" concept="1" />
+      <node id="3009938612293992698" at="152,9,153,31" concept="5" />
+      <node id="3009938612293992698" at="153,31,154,76" concept="1" />
       <node id="3009938612293992698" at="154,76,155,149" concept="5" />
-      <node id="3009938612293992698" at="155,149,156,47" concept="1" />
-      <node id="3009938612293992698" at="156,47,157,46" concept="1" />
-      <node id="3009938612293992698" at="157,46,158,36" concept="5" />
+      <node id="3009938612293992698" at="155,149,156,45" concept="1" />
+      <node id="3009938612293992698" at="156,45,157,45" concept="1" />
+      <node id="3009938612293992698" at="157,45,158,36" concept="5" />
       <node id="3009938612299782682" at="158,36,159,105" concept="1" />
       <node id="3009938612293992698" at="159,105,160,42" concept="1" />
       <node id="3009938612293992698" at="160,42,161,86" concept="1" />
@@ -5954,11 +5953,11 @@
       <node id="3009938612293992701" at="180,48,181,34" concept="1" />
       <node id="3009938612293992701" at="181,34,182,22" concept="6" />
       <node id="3009938612293992702" at="184,41,185,39" concept="1" />
-      <node id="3009938612293992702" at="186,9,187,50" concept="5" />
-      <node id="3009938612293992702" at="187,50,188,76" concept="1" />
+      <node id="3009938612293992702" at="186,9,187,31" concept="5" />
+      <node id="3009938612293992702" at="187,31,188,76" concept="1" />
       <node id="3009938612293992702" at="188,76,189,149" concept="5" />
-      <node id="3009938612293992702" at="189,149,190,46" concept="1" />
-      <node id="3009938612293992702" at="190,46,191,45" concept="1" />
+      <node id="3009938612293992702" at="189,149,190,45" concept="1" />
+      <node id="3009938612293992702" at="190,45,191,45" concept="1" />
       <node id="3009938612293992702" at="191,45,192,36" concept="5" />
       <node id="3009938612299782939" at="192,36,193,105" concept="1" />
       <node id="3009938612293992702" at="193,105,194,42" concept="1" />
@@ -6007,11 +6006,8 @@
       <node id="5475084672765817691" at="279,35,280,26" concept="6" />
       <node id="5475084672765817691" at="281,17,282,42" concept="1" />
       <node id="5475084672765817691" at="285,40,286,39" concept="6" />
-      <node id="5475084672765817691" at="291,0,292,0" concept="8" trace="width$Uv0Q" />
-      <node id="5475084672765817691" at="292,0,293,0" concept="8" trace="height$U$qd" />
-      <node id="5475084672765817691" at="293,0,294,0" concept="8" trace="depth$U_7g" />
-      <node id="5475084672765817691" at="297,0,298,0" concept="8" trace="PropertyAttribute$Gb" />
-      <node id="5475084672765817691" at="301,0,302,0" concept="8" trace="Substrate_Position$SqKU" />
+      <node id="5475084672765817691" at="291,0,292,0" concept="8" trace="PropertyAttribute$Gb" />
+      <node id="5475084672765817691" at="295,0,296,0" concept="8" trace="Substrate_Position$SqKU" />
       <node id="5475084672765817691" at="47,0,49,0" concept="2" trace="myNode" />
       <node id="5475084672765817691" at="239,0,241,0" concept="2" trace="myNode" />
       <node id="5475084672765817691" at="61,0,64,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -6197,14 +6193,13 @@
       <scope id="3009938612293992694" at="116,0,144,0" />
       <scope id="3009938612293992698" at="150,0,178,0" />
       <scope id="3009938612293992702" at="184,0,212,0" />
-      <unit id="5475084672765817691" at="296,0,299,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$CONCEPTS" />
-      <unit id="5475084672765817691" at="300,0,303,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$LINKS" />
+      <unit id="5475084672765817691" at="290,0,293,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$CONCEPTS" />
+      <unit id="5475084672765817691" at="294,0,297,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$LINKS" />
       <unit id="3009938612293992694" at="130,102,134,7" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$1" />
       <unit id="3009938612293992698" at="164,102,168,7" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$2" />
       <unit id="3009938612293992702" at="198,102,202,7" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$3" />
-      <unit id="5475084672765817691" at="290,0,295,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$PROPS" />
       <unit id="5475084672765817691" at="238,0,289,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a$Substrate_PositionSingleRoleHandler_r0xdaj_b1a" />
-      <unit id="5475084672765817691" at="46,0,304,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a" />
+      <unit id="5475084672765817691" at="46,0,298,0" name="WorldSetup.editor.Substrate_Shape_Cuboid_EditorBuilder_a" />
     </file>
     <file name="Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_Editor.java">
       <node id="3009938612293992860" at="14,0,15,0" concept="2" trace="myContextHints" />
@@ -6799,12 +6794,12 @@
       <node id="5475084672765817968" at="397,48,398,34" concept="1" />
       <node id="5475084672765817968" at="398,34,399,22" concept="6" />
       <node id="2483842479245197912" at="401,41,402,39" concept="1" />
-      <node id="2483842479245197912" at="403,9,404,55" concept="5" />
-      <node id="2483842479245197912" at="404,55,405,76" concept="1" />
+      <node id="2483842479245197912" at="403,9,404,31" concept="5" />
+      <node id="2483842479245197912" at="404,31,405,76" concept="1" />
       <node id="2483842479245197912" at="405,76,406,149" concept="5" />
-      <node id="2483842479245197912" at="406,149,407,51" concept="1" />
-      <node id="2483842479245197912" at="407,51,408,50" concept="1" />
-      <node id="2483842479245197912" at="408,50,409,36" concept="5" />
+      <node id="2483842479245197912" at="406,149,407,45" concept="1" />
+      <node id="2483842479245197912" at="407,45,408,44" concept="1" />
+      <node id="2483842479245197912" at="408,44,409,36" concept="5" />
       <node id="3009938612299782423" at="409,36,410,105" concept="1" />
       <node id="2483842479245197912" at="410,105,411,42" concept="1" />
       <node id="2483842479245197912" at="411,42,412,86" concept="1" />
@@ -6823,8 +6818,7 @@
       <node id="5475084672765817801" at="438,0,439,0" concept="8" trace="Vertex_2$UBKM" />
       <node id="5475084672765817801" at="439,0,440,0" concept="8" trace="Vertex_3$UCtP" />
       <node id="5475084672765817801" at="443,0,444,0" concept="8" trace="depth$5OPS" />
-      <node id="5475084672765817801" at="444,0,445,0" concept="8" trace="z_location$4h36" />
-      <node id="5475084672765817801" at="448,0,449,0" concept="8" trace="PropertyAttribute$Gb" />
+      <node id="5475084672765817801" at="447,0,448,0" concept="8" trace="PropertyAttribute$Gb" />
       <node id="5475084672765817801" at="48,0,50,0" concept="2" trace="myNode" />
       <node id="5475084672765817801" at="146,0,148,0" concept="2" trace="myNode" />
       <node id="5475084672765817801" at="222,0,224,0" concept="2" trace="myNode" />
@@ -7126,15 +7120,15 @@
       <scope id="2483842479245197912" at="401,41,427,5" />
       <scope id="5475084672765817960" at="367,0,395,0" />
       <scope id="2483842479245197912" at="401,0,429,0" />
-      <unit id="5475084672765817801" at="447,0,450,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$CONCEPTS" />
+      <unit id="5475084672765817801" at="442,0,445,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$PROPS" />
+      <unit id="5475084672765817801" at="446,0,449,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$CONCEPTS" />
       <unit id="5475084672765817960" at="381,102,385,7" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$1" />
       <unit id="2483842479245197912" at="415,102,419,7" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$2" />
-      <unit id="5475084672765817801" at="442,0,446,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$PROPS" />
       <unit id="5475084672765817801" at="436,0,441,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$LINKS" />
       <unit id="5475084672765817801" at="145,0,196,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$Vertex_1SingleRoleHandler_15ya70_c0b0" />
       <unit id="5475084672765817801" at="221,0,272,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$Vertex_2SingleRoleHandler_15ya70_c1b0" />
       <unit id="5475084672765817801" at="297,0,348,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a$Vertex_3SingleRoleHandler_15ya70_c2b0" />
-      <unit id="5475084672765817801" at="47,0,451,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a" />
+      <unit id="5475084672765817801" at="47,0,450,0" name="WorldSetup.editor.Substrate_Shape_Triangular_EditorBuilder_a" />
     </file>
     <file name="Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_Editor.java">
       <node id="3009938612294037505" at="14,0,15,0" concept="2" trace="myContextHints" />
@@ -7327,12 +7321,12 @@
       <node id="5475084672765862881" at="66,47,67,34" concept="1" />
       <node id="5475084672765862881" at="67,34,68,22" concept="6" />
       <node id="5475084672765862887" at="70,41,71,39" concept="1" />
-      <node id="5475084672765862887" at="72,9,73,57" concept="5" />
-      <node id="5475084672765862887" at="73,57,74,76" concept="1" />
+      <node id="5475084672765862887" at="72,9,73,31" concept="5" />
+      <node id="5475084672765862887" at="73,31,74,76" concept="1" />
       <node id="5475084672765862887" at="74,76,75,149" concept="5" />
-      <node id="5475084672765862887" at="75,149,76,53" concept="1" />
-      <node id="5475084672765862887" at="76,53,77,52" concept="1" />
-      <node id="5475084672765862887" at="77,52,78,36" concept="5" />
+      <node id="5475084672765862887" at="75,149,76,45" concept="1" />
+      <node id="5475084672765862887" at="76,45,77,44" concept="1" />
+      <node id="5475084672765862887" at="77,44,78,36" concept="5" />
       <node id="3009938612299782103" at="78,36,79,105" concept="1" />
       <node id="5475084672765862887" at="79,105,80,42" concept="1" />
       <node id="5475084672765862887" at="80,42,81,86" concept="1" />
@@ -7348,12 +7342,12 @@
       <node id="5475084672765862895" at="100,47,101,34" concept="1" />
       <node id="5475084672765862895" at="101,34,102,22" concept="6" />
       <node id="5475084672765862905" at="104,41,105,39" concept="1" />
-      <node id="5475084672765862905" at="106,9,107,57" concept="5" />
-      <node id="5475084672765862905" at="107,57,108,76" concept="1" />
+      <node id="5475084672765862905" at="106,9,107,31" concept="5" />
+      <node id="5475084672765862905" at="107,31,108,76" concept="1" />
       <node id="5475084672765862905" at="108,76,109,149" concept="5" />
-      <node id="5475084672765862905" at="109,149,110,53" concept="1" />
-      <node id="5475084672765862905" at="110,53,111,52" concept="1" />
-      <node id="5475084672765862905" at="111,52,112,36" concept="5" />
+      <node id="5475084672765862905" at="109,149,110,45" concept="1" />
+      <node id="5475084672765862905" at="110,45,111,45" concept="1" />
+      <node id="5475084672765862905" at="111,45,112,36" concept="5" />
       <node id="3009938612299781915" at="112,36,113,105" concept="1" />
       <node id="5475084672765862905" at="113,105,114,42" concept="1" />
       <node id="5475084672765862905" at="114,42,115,86" concept="1" />
@@ -7364,9 +7358,7 @@
       <node id="5475084672765862905" at="124,89,125,145" concept="6" />
       <node id="5475084672765862905" at="126,12,127,24" concept="6" />
       <node id="5475084672765862905" at="128,15,129,40" concept="1" />
-      <node id="5475084672765862872" at="134,0,135,0" concept="8" trace="X_Coordinate$UFZ4" />
-      <node id="5475084672765862872" at="135,0,136,0" concept="8" trace="Y_Coordinate$UGt6" />
-      <node id="5475084672765862872" at="139,0,140,0" concept="8" trace="PropertyAttribute$Gb" />
+      <node id="5475084672765862872" at="134,0,135,0" concept="8" trace="PropertyAttribute$Gb" />
       <node id="5475084672765862872" at="35,0,37,0" concept="2" trace="myNode" />
       <node id="5475084672765862872" at="49,0,52,0" concept="4" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5475084672765862887" at="85,0,88,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -7439,11 +7431,10 @@
       <scope id="5475084672765862905" at="104,41,130,5" />
       <scope id="5475084672765862887" at="70,0,98,0" />
       <scope id="5475084672765862905" at="104,0,132,0" />
-      <unit id="5475084672765862872" at="138,0,141,0" name="WorldSetup.editor.Vertex_EditorBuilder_a$CONCEPTS" />
+      <unit id="5475084672765862872" at="133,0,136,0" name="WorldSetup.editor.Vertex_EditorBuilder_a$CONCEPTS" />
       <unit id="5475084672765862887" at="84,102,88,7" name="WorldSetup.editor.Vertex_EditorBuilder_a$1" />
       <unit id="5475084672765862905" at="118,102,122,7" name="WorldSetup.editor.Vertex_EditorBuilder_a$2" />
-      <unit id="5475084672765862872" at="133,0,137,0" name="WorldSetup.editor.Vertex_EditorBuilder_a$PROPS" />
-      <unit id="5475084672765862872" at="34,0,142,0" name="WorldSetup.editor.Vertex_EditorBuilder_a" />
+      <unit id="5475084672765862872" at="34,0,137,0" name="WorldSetup.editor.Vertex_EditorBuilder_a" />
     </file>
   </root>
 </debug-info>

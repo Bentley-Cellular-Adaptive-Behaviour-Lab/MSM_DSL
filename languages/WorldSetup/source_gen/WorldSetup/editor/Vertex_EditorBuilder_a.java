@@ -28,8 +28,8 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class Vertex_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -70,11 +70,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_0() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.X_Coordinate$UFZ4;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no X_Coordinate>");
-      editorCell.setCellId("property_X_Coordinate");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -104,11 +104,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createProperty_1() {
     getCellFactory().pushCellContext();
     try {
-      final SProperty property = PROPS.Y_Coordinate$UGt6;
+      final SProperty property;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
-      editorCell.setDefaultText("<no Y_Coordinate>");
-      editorCell.setCellId("property_Y_Coordinate");
+      editorCell.setDefaultText("<no null>");
+      editorCell.setCellId("property_null1");
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
       editorCell.getStyle().putAll(style);
@@ -128,11 +128,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     } finally {
       getCellFactory().popCellContext();
     }
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty X_Coordinate$UFZ4 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f64L, "X_Coordinate");
-    /*package*/ static final SProperty Y_Coordinate$UGt6 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, 0x51ca2b62e9a67f66L, "Y_Coordinate");
   }
 
   private static final class CONCEPTS {
