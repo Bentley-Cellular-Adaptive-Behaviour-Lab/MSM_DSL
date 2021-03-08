@@ -8,12 +8,15 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import WorldSetup.behavior.Grid__BehaviorDescriptor;
+import WorldSetup.behavior.Adhesiveness__BehaviorDescriptor;
 import WorldSetup.behavior.Gradient_Shape_SinkAndSource__BehaviorDescriptor;
 import WorldSetup.behavior.Gradient_Type__BehaviorDescriptor;
+import TissueSetup.behavior.Position__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import WorldSetup.behavior.Gradient_Shape_Cuboidal__BehaviorDescriptor;
+import WorldSetup.behavior.Gradient_Shape_Point__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor;
-import TissueSetup.behavior.Position__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -50,6 +53,12 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_3(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_4(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_5(final PropertyMacroContext _context) {
     String type = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
       type += "Shape_Cuboid";
@@ -60,50 +69,49 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return type;
   }
-  public static Object propertyMacro_GetValue_1_4(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
-  }
-  public static Object propertyMacro_GetValue_1_5(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
-  }
   public static Object propertyMacro_GetValue_1_6(final PropertyMacroContext _context) {
-    return (String) Grid__BehaviorDescriptor.get_X_size_id2OHr9yL5TjS.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
-    return (String) Grid__BehaviorDescriptor.get_Y_size_id2OHr9yL5W4_.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
-    return (String) Grid__BehaviorDescriptor.get_Z_size_id2OHr9yL5X16.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ), PROPS.X_Size$4fO));
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    String adhesiveness = String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ), LINKS.Adhesiveness$MVtr));
-    return adhesiveness;
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ), PROPS.Y_Size$4WR));
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ), PROPS.Z_Size$5SV));
   }
   public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_source_X_position_id2OHr9yL6aJ5.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    return Adhesiveness__BehaviorDescriptor.get_adhesiveness_value_decimal_id1r0uutBGt3g.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.grid$mgtJ), LINKS.Adhesiveness$MVtr)).toString();
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_source_Y_position_id2OHr9yL6cfy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
-  }
-  public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_source_Z_position_id2OHr9yL6deA.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
-  }
-  public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
+  public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcex_string_id2OHr9yL6aJ5.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+  }
+  public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcey_string_id2OHr9yL6cfy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+  }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sink_X_position_id2OHr9yL6e46.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcez_string_id2OHr9yL6deA.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sink_Y_position_id2OHr9yL6eOG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sink_Z_position_id2OHr9yL6fPc.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinkx_string_id2OHr9yL6e46.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
   }
   public static Object propertyMacro_GetValue_1_18(final PropertyMacroContext _context) {
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinky_string_id2OHr9yL6eOG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+  }
+  public static Object propertyMacro_GetValue_1_19(final PropertyMacroContext _context) {
+    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinkz_string_id2OHr9yL6fPc.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+  }
+  public static Object propertyMacro_GetValue_1_20(final PropertyMacroContext _context) {
     String type = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Constant$aC)) {
       type += "GRADIENT_TYPE_CONSTANT";
@@ -116,7 +124,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return type;
   }
-  public static Object propertyMacro_GetValue_1_19(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_21(final PropertyMacroContext _context) {
     String shape = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
       shape += "GRADIENT_SHAPE_CUBOIDAL";
@@ -127,50 +135,32 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return shape;
   }
-  public static Object propertyMacro_GetValue_1_20(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Protein_Reference$RzUn), PROPS.name$MnvL);
-  }
-  public static Object propertyMacro_GetValue_1_21(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
-  }
   public static Object propertyMacro_GetValue_1_22(final PropertyMacroContext _context) {
-    String amount_string;
-    amount_string = String.valueOf(Gradient_Type__BehaviorDescriptor.get_starting_amount_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)));
-    return amount_string;
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Protein_Reference$RzUn), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_23(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    String type = "";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Constant$aC)) {
-      type += "GRADIENT_TYPE_CONSTANT";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Custom$$t)) {
-      type += "GRADIENT_TYPE_CUSTOM";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Linear$GA)) {
-      type += "GRADIENT_TYPE_LINEAR";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Exponential$g0)) {
-      type += "GRADIENT_TYPE_EXPONENTIAL";
-    }
-    return type;
+    return Gradient_Type__BehaviorDescriptor.get_conc_decimal_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)).toString();
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
-    String shape = "";
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-      shape += "GRADIENT_SHAPE_CUBOIDAL";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-      shape += "GRADIENT_SHAPE_POINT";
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-      shape += "GRADIENT_SHAPE_SINKANDSOURCE";
-    }
-    return shape;
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_26(final PropertyMacroContext _context) {
-    String amount_string;
-    amount_string = String.valueOf(Gradient_Type__BehaviorDescriptor.get_starting_amount_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)));
-    return amount_string;
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_27(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+  }
+  public static Object propertyMacro_GetValue_1_28(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+  }
+  public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+
+  }
+  public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
     String type = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Constant$aC)) {
       type += "GRADIENT_TYPE_CONSTANT";
@@ -183,7 +173,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return type;
   }
-  public static Object propertyMacro_GetValue_1_28(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
     String shape = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
       shape += "GRADIENT_SHAPE_CUBOIDAL";
@@ -194,120 +184,202 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return shape;
   }
-  public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
-    String amount_string;
-    amount_string = String.valueOf(Gradient_Type__BehaviorDescriptor.get_starting_amount_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)));
-    return amount_string;
-  }
-  public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
-  }
-  public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_height_id7e7Fgy6tl4V.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
-  }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_width_id7e7Fgy6tn4Y.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Protein_Reference$RzUn), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_33(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_depth_id7e7Fgy6tot2.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
+    return Gradient_Type__BehaviorDescriptor.get_conc_decimal_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)).toString();
   }
   public static Object propertyMacro_GetValue_1_34(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    String direction = "";
+    if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be389157efL)) {
+      direction += "GRADIENT_DIRECTION_DEC_X";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be389157f6L)) {
+      direction += "GRADIENT_DIRECTION_DEC_Y";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be38915801L)) {
+      direction += "GRADIENT_DIRECTION_DEC_Z";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be389157dbL)) {
+      direction += "GRADIENT_DIRECTION_INC_X";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be389157f2L)) {
+      direction += "GRADIENT_DIRECTION_INC_Y";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), PROPS.Gradient_Direction$WkrF), 0x2e0657be389157fbL)) {
+      direction += "GRADIENT_DIRECTION_INC_Z";
+    }
+    return direction;
   }
   public static Object propertyMacro_GetValue_1_35(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_X_id57aaQbDEkks.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_36(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_1_Y_id57aaQbDElMG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_width_string_id3wWy5vw26dY.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
   }
   public static Object propertyMacro_GetValue_1_37(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_height_string_id3wWy5vw26dt.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
   }
   public static Object propertyMacro_GetValue_1_38(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_X_id57aaQbDElaX.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_depth_string_id3wWy5vw26ev.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
   }
   public static Object propertyMacro_GetValue_1_39(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_2_Y_id57aaQbDEofO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_40(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrex_string_id3wWy5vw6wW0.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
   }
   public static Object propertyMacro_GetValue_1_41(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_X_id57aaQbDEloa.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrey_string_id3wWy5vw6y03.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
   }
   public static Object propertyMacro_GetValue_1_42(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex_3_Y_id57aaQbDErqj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrez_string_id3wWy5vw6yQo.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
   }
   public static Object propertyMacro_GetValue_1_43(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    String type = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Constant$aC)) {
+      type += "GRADIENT_TYPE_CONSTANT";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Custom$$t)) {
+      type += "GRADIENT_TYPE_CUSTOM";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Linear$GA)) {
+      type += "GRADIENT_TYPE_LINEAR";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt), CONCEPTS.Gradient_Type_Exponential$g0)) {
+      type += "GRADIENT_TYPE_EXPONENTIAL";
+    }
+    return type;
   }
   public static Object propertyMacro_GetValue_1_44(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    String shape = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
+      shape += "GRADIENT_SHAPE_CUBOIDAL";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
+      shape += "GRADIENT_SHAPE_POINT";
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
+      shape += "GRADIENT_SHAPE_SINKANDSOURCE";
+    }
+    return shape;
   }
   public static Object propertyMacro_GetValue_1_45(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Protein_Reference$RzUn), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_46(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return Gradient_Type__BehaviorDescriptor.get_conc_decimal_id2zgk2Od53yT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Type$Psmt)).toString();
   }
   public static Object propertyMacro_GetValue_1_47(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_depth_id4JVq81FgwNn.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_48(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_radius_string_id3wWy5vw6$0J.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
   }
   public static Object propertyMacro_GetValue_1_49(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Substrate_Position$SqKU));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_50(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Substrate_Position$SqKU));
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_height_string_id7e7Fgy6tl4V.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_51(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Substrate_Position$SqKU));
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_width_string_id7e7Fgy6tn4Y.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_52(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_depth_string_id7e7Fgy6tot2.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
   }
   public static Object propertyMacro_GetValue_1_53(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), PROPS.z_location$4h36));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_54(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex1x_string_id3wWy5vw2hFm.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_55(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex1y_string_id57aaQbDElMG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_56(final PropertyMacroContext _context) {
-    return "NO_DIRECTION";
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_57(final PropertyMacroContext _context) {
-    return (String) Substrate__BehaviorDescriptor.get_adhesiveness_id4JVq81Fh9KI.invoke(_context.getNode());
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex2X_string_id3wWy5vw2w5C.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
   }
   public static Object propertyMacro_GetValue_1_58(final PropertyMacroContext _context) {
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex2y_string_id3wWy5vw2w6j.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+  }
+  public static Object propertyMacro_GetValue_1_59(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_60(final PropertyMacroContext _context) {
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex3x_string_id3wWy5vw2_kf.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+  }
+  public static Object propertyMacro_GetValue_1_61(final PropertyMacroContext _context) {
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex3y_string_id3wWy5vw2_kU.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+  }
+  public static Object propertyMacro_GetValue_1_62(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_63(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_64(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_65(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_66(final PropertyMacroContext _context) {
+    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_depth_string_id4JVq81FgwNn.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+  }
+  public static Object propertyMacro_GetValue_1_67(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_68(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+  }
+  public static Object propertyMacro_GetValue_1_69(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+  }
+  public static Object propertyMacro_GetValue_1_70(final PropertyMacroContext _context) {
+    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+  }
+  public static Object propertyMacro_GetValue_1_71(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_72(final PropertyMacroContext _context) {
+    return Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_zcoord_string_id3wWy5vw3KqH.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+  }
+  public static Object propertyMacro_GetValue_1_73(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_74(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_75(final PropertyMacroContext _context) {
+    return "NO_DIRECTION";
+  }
+  public static Object propertyMacro_GetValue_1_76(final PropertyMacroContext _context) {
+    return (String) Substrate__BehaviorDescriptor.get_adhesiveness_string_id4JVq81Fh9KI.invoke(_context.getNode());
+  }
+  public static Object propertyMacro_GetValue_1_77(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b);
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS);
+      }
+    });
   }
   public static Iterable<SNode> sourceNodesQuery_1_1(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe);
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m);
+      }
+    });
   }
   public static Iterable<SNode> sourceNodesQuery_1_2(final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe);
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx);
+      }
+    });
   }
   public static Iterable<SNode> sourceNodesQuery_1_3(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS);
-      }
-    });
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe);
   }
   public static Iterable<SNode> sourceNodesQuery_1_4(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS);
-      }
-    });
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe);
   }
   public static Iterable<SNode> sourceNodesQuery_1_5(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
@@ -319,58 +391,90 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_6(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_7(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_8(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_9(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_10(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx);
+      }
+    });
+  }
+  public static Iterable<SNode> sourceNodesQuery_1_11(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.gradients$mn2b)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx);
+      }
+    });
+  }
+  public static Iterable<SNode> sourceNodesQuery_1_12(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK);
       }
     });
   }
-  public static Iterable<SNode> sourceNodesQuery_1_11(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_13(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL);
       }
     });
   }
-  public static Iterable<SNode> sourceNodesQuery_1_12(final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable<SNode> sourceNodesQuery_1_14(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK);
+      }
+    });
+  }
+  public static Iterable<SNode> sourceNodesQuery_1_15(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL);
+      }
+    });
+  }
+  public static Iterable<SNode> sourceNodesQuery_1_16(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(_context.getNode(), LINKS.substrates$mnJe);
   }
   private final Map<String, SourceNodesQuery> snsqMethods = new HashMap<String, SourceNodesQuery>();
   {
     int i = 0;
     snsqMethods.put("3255377508720661529", new SNsQ(i++));
+    snsqMethods.put("7621702746849157899", new SNsQ(i++));
+    snsqMethods.put("7621702746849202598", new SNsQ(i++));
     snsqMethods.put("5893570766194573914", new SNsQ(i++));
     snsqMethods.put("7788773186966030522", new SNsQ(i++));
     snsqMethods.put("3255377508720724420", new SNsQ(i++));
     snsqMethods.put("3255377508720724844", new SNsQ(i++));
     snsqMethods.put("3255377508720725268", new SNsQ(i++));
+    snsqMethods.put("7621702746849219744", new SNsQ(i++));
     snsqMethods.put("5490954312203686838", new SNsQ(i++));
+    snsqMethods.put("7621702746849318886", new SNsQ(i++));
     snsqMethods.put("5490954312204308550", new SNsQ(i++));
     snsqMethods.put("7788773186966077849", new SNsQ(i++));
     snsqMethods.put("5893570766194668323", new SNsQ(i++));
@@ -418,6 +522,14 @@ public class QueriesGenerated extends QueryProviderBase {
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_11(ctx));
         case 12:
           return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_12(ctx));
+        case 13:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_13(ctx));
+        case 14:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_14(ctx));
+        case 15:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_15(ctx));
+        case 16:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_1_16(ctx));
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -429,6 +541,8 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7775299862364103366", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NAME"));
     pvqMethods.put("3255377508720662419", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
     pvqMethods.put("3255377508720663411", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849158766", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849202588", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
     pvqMethods.put("5893570766194580725", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_SHAPE_OBJECT"));
     pvqMethods.put("5893570766194607781", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBTRATE_NAME"));
     pvqMethods.put("7788773186966053120", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_NAME"));
@@ -450,12 +564,29 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("3255377508720725824", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
     pvqMethods.put("3255377508720835083", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_SOURCE_STRENGTH"));
     pvqMethods.put("3255377508720726914", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849245494", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849252772", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_X"));
+    pvqMethods.put("7621702746849264233", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_Y"));
+    pvqMethods.put("7621702746849267580", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_Z"));
     pvqMethods.put("5490954312203686704", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_TYPE"));
     pvqMethods.put("5490954312203686763", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_SHAPE"));
+    pvqMethods.put("7621702746848818597", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
     pvqMethods.put("5490954312203686809", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_STARTING_STRENGTH"));
+    pvqMethods.put("7621702746848956005", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_DIRECTION"));
+    pvqMethods.put("7621702746849347602", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849351222", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_WIDTH"));
+    pvqMethods.put("7621702746849359619", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_HEIGHT"));
+    pvqMethods.put("7621702746849362570", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_DEPTH"));
+    pvqMethods.put("7621702746849320603", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849324851", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_X"));
+    pvqMethods.put("7621702746849335515", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_Y"));
+    pvqMethods.put("7621702746849341858", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "POSITION_Z"));
     pvqMethods.put("5490954312204308411", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_TYPE"));
     pvqMethods.put("5490954312204308470", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_SHAPE"));
+    pvqMethods.put("7621702746848825691", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
     pvqMethods.put("5490954312204308520", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_STARTING_STRENGTH"));
+    pvqMethods.put("7621702746849274077", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_NAME"));
+    pvqMethods.put("7621702746849365009", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "GRADIENT_RADIUS"));
     pvqMethods.put("7788773186966079140", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SUBSTRATE_NAME"));
     pvqMethods.put("8324812688344774140", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SHAPE_HEIGHT"));
     pvqMethods.put("8324812688344779513", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SHAPE_WIDTH"));
@@ -619,6 +750,44 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_57(ctx);
         case 58:
           return QueriesGenerated.propertyMacro_GetValue_1_58(ctx);
+        case 59:
+          return QueriesGenerated.propertyMacro_GetValue_1_59(ctx);
+        case 60:
+          return QueriesGenerated.propertyMacro_GetValue_1_60(ctx);
+        case 61:
+          return QueriesGenerated.propertyMacro_GetValue_1_61(ctx);
+        case 62:
+          return QueriesGenerated.propertyMacro_GetValue_1_62(ctx);
+        case 63:
+          return QueriesGenerated.propertyMacro_GetValue_1_63(ctx);
+        case 64:
+          return QueriesGenerated.propertyMacro_GetValue_1_64(ctx);
+        case 65:
+          return QueriesGenerated.propertyMacro_GetValue_1_65(ctx);
+        case 66:
+          return QueriesGenerated.propertyMacro_GetValue_1_66(ctx);
+        case 67:
+          return QueriesGenerated.propertyMacro_GetValue_1_67(ctx);
+        case 68:
+          return QueriesGenerated.propertyMacro_GetValue_1_68(ctx);
+        case 69:
+          return QueriesGenerated.propertyMacro_GetValue_1_69(ctx);
+        case 70:
+          return QueriesGenerated.propertyMacro_GetValue_1_70(ctx);
+        case 71:
+          return QueriesGenerated.propertyMacro_GetValue_1_71(ctx);
+        case 72:
+          return QueriesGenerated.propertyMacro_GetValue_1_72(ctx);
+        case 73:
+          return QueriesGenerated.propertyMacro_GetValue_1_73(ctx);
+        case 74:
+          return QueriesGenerated.propertyMacro_GetValue_1_74(ctx);
+        case 75:
+          return QueriesGenerated.propertyMacro_GetValue_1_75(ctx);
+        case 76:
+          return QueriesGenerated.propertyMacro_GetValue_1_76(ctx);
+        case 77:
+          return QueriesGenerated.propertyMacro_GetValue_1_77(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -627,7 +796,10 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty z_location$4h36 = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x227861932d6f8049L, "z_location");
+    /*package*/ static final SProperty X_Size$4fO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a582177L, "X_Size");
+    /*package*/ static final SProperty Y_Size$4WR = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217aL, "Y_Size");
+    /*package*/ static final SProperty Z_Size$5SV = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217eL, "Z_Size");
+    /*package*/ static final SProperty Gradient_Direction$WkrF = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be3891587cL, "Gradient_Direction");
   }
 
   private static final class LINKS {
@@ -637,7 +809,8 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink Gradient_Shape$PxJO = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0xa2797e0f27f92b1L, "Gradient_Shape");
     /*package*/ static final SContainmentLink Gradient_Type$Psmt = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0xa2797e0f27f92afL, "Gradient_Type");
     /*package*/ static final SReferenceLink Protein_Reference$RzUn = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0x4c33c9dac86cd39bL, "Protein_Reference");
-    /*package*/ static final SContainmentLink Substrate_Position$SqKU = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x227861932d6a58b7L, "Substrate_Position");
+    /*package*/ static final SContainmentLink Centre$BDk6 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be386ef420L, "Centre");
+    /*package*/ static final SContainmentLink Centre$SqKU = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x227861932d6a58b7L, "Centre");
     /*package*/ static final SContainmentLink gradients$mn2b = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19ebL, "gradients");
     /*package*/ static final SContainmentLink substrates$mnJe = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19eeL, "substrates");
   }

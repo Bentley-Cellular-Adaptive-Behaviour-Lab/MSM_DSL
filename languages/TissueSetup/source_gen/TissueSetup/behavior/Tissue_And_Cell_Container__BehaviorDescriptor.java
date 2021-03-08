@@ -16,20 +16,19 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import Units.behavior.Distance__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
 
-  public static final SMethod<String> count_cell_number_id4XZPqyVOe45 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("count_cell_number").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
+  public static final SMethod<String> count_cell_number_string_id4XZPqyVOe45 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("count_cell_number_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOe45").build();
   public static final SMethod<Integer> count_cell_number_int_id6yORN46v92v = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("count_cell_number_int").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6yORN46v92v").build();
   public static final SMethod<Boolean> check_positions_id1QpPlI51UW4 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_positions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51UW4").build();
   public static final SMethod<Boolean> check_cell_cell_overlap_id1QpPlI522xB = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_cell_cell_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI522xB").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
@@ -39,12 +38,12 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   public static final SMethod<Boolean> check_vessel_monolayer_overlap_id1QpPlI523LR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523LR").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> check_monolayer_monolayer_overlap_id1p5qYO3gLDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_monolayer_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1p5qYO3gLDn").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_id4XZPqyVOe45, count_cell_number_int_id6yORN46v92v, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_string_id4XZPqyVOe45, count_cell_number_int_id6yORN46v92v, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String count_cell_number_id4XZPqyVOe45(@NotNull SNode __thisNode__) {
+  /*package*/ static String count_cell_number_string_id4XZPqyVOe45(@NotNull SNode __thisNode__) {
     int count = 0;
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.cells$psWW))) {
       count += 1;
@@ -75,10 +74,25 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     return false;
   }
   /*package*/ static boolean check_cell_cell_overlap_id1QpPlI522xB(@NotNull SNode __thisNode__, SNode cell_1, SNode cell_2) {
-    if (SPropertyOperations.getString(SLinkOperations.getTarget(cell_1, LINKS.position$L2Mv)) == SPropertyOperations.getString(SLinkOperations.getTarget(cell_2, LINKS.position$L2Mv))) {
-      if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_2) && Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_1) <= Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell_2) || Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell_2) && Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell_1) <= Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell_2)) {
-        if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_2) && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_2) || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_1) >= Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell_2) && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_1) <= Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell_2)) {
+    //  Get cell 1 boundaries. 
+    long cell_1_lower_x = Cell__BehaviorDescriptor.get_cell_lowerx_decimal_id1QpPlI524fx.invoke(cell_1).longValue();
+    long cell_1_upper_x = Cell__BehaviorDescriptor.get_cell_upperx_decimal_id1QpPlI524rF.invoke(cell_1).longValue();
+    long cell_1_lower_y = Cell__BehaviorDescriptor.get_cell_lowery_decimal_id1QpPlI524ju.invoke(cell_1).longValue();
+    long cell_1_upper_y = Cell__BehaviorDescriptor.get_cell_uppery_decimal_id1QpPlI524zL.invoke(cell_1).longValue();
 
+    // Get cell 2 boundaries. 
+    long cell_2_lower_x = Cell__BehaviorDescriptor.get_cell_lowerx_decimal_id1QpPlI524fx.invoke(cell_2).longValue();
+    long cell_2_upper_x = Cell__BehaviorDescriptor.get_cell_upperx_decimal_id1QpPlI524rF.invoke(cell_2).longValue();
+    long cell_2_lower_y = Cell__BehaviorDescriptor.get_cell_lowery_decimal_id1QpPlI524ju.invoke(cell_2).longValue();
+    long cell_2_upper_y = Cell__BehaviorDescriptor.get_cell_uppery_decimal_id1QpPlI524zL.invoke(cell_2).longValue();
+
+    // Do the two cells have the same Z-position? 
+    if (Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(cell_1, LINKS.position$L2Mv)).compareTo(Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(cell_2, LINKS.position$L2Mv))) == 0) {
+      // Do cells overlap in X? 
+      if (cell_1_lower_x >= cell_2_lower_x && cell_1_lower_x <= cell_2_upper_x || cell_1_upper_x >= cell_2_lower_x && cell_1_upper_x <= cell_2_upper_x) {
+        // Do cells overlap in Y? 
+        if (cell_1_lower_y >= cell_2_lower_y && cell_1_lower_y <= cell_2_upper_y || cell_1_upper_y >= cell_2_lower_y && cell_1_upper_y <= cell_2_upper_y) {
+          // If cells overlap in both X and Y, then there is actual overlap, so return true to the error function. 
           return true;
         }
       }
@@ -87,51 +101,107 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   }
   /*package*/ static boolean check_cell_vessel_overlap_id1QpPlI522M$(@NotNull SNode __thisNode__, SNode cell, SNode vessel) {
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
-    if (SPropertyOperations.getString(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(vessel) || SPropertyOperations.getString(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(vessel)) {
-      double cell_z_offset = SPropertyOperations.getString(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)) - SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR));
-      cell_z_offset = cell_z_offset * cell_z_offset;
 
-      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
-      double vessel_y_lower_boundary = SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)) - vessel_y_boundary_offset;
-      double vessel_y_upper_boundary = SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)) + vessel_y_boundary_offset;
+    //  Get cell Z position. 
+    long cell_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)).longValue();
 
-      if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) >= vessel_y_lower_boundary && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) <= vessel_y_upper_boundary || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) >= vessel_y_lower_boundary && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) <= vessel_y_upper_boundary) {
+    //  Get vessel Z boundaries. 
+    long vessel_lower_z = Tissue__BehaviorDescriptor.get_tissue_lowerz_decimal_id2xqP3eG2H6N.invoke(vessel).longValue();
+    long vessel_upper_z = Tissue__BehaviorDescriptor.get_tissue_upperz_decimal_id2xqP3eG2lHe.invoke(vessel).longValue();
 
-        return true;
+    // Is the cell within the same Z boundaries as the cell? 
+    if (cell_z_position >= vessel_lower_z && cell_z_position <= vessel_upper_z) {
+
+      // Get cell X boundaries. 
+      long cell_lower_x = Cell__BehaviorDescriptor.get_cell_lowerx_decimal_id1QpPlI524fx.invoke(cell).longValue();
+      long cell_upper_x = Cell__BehaviorDescriptor.get_cell_upperx_decimal_id1QpPlI524rF.invoke(cell).longValue();
+
+      // Get vessel X boundaries. 
+      long vessel_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(vessel).longValue();
+      long vessel_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(vessel).longValue();
+
+      // Is the cell within the length of the vessel? 
+
+      if (cell_lower_x >= vessel_lower_x && cell_lower_x <= vessel_upper_x || cell_upper_x >= vessel_lower_x && cell_upper_x <= vessel_upper_x) {
+
+        // Get the cell Y boundaries. 
+        long cell_lower_y = Cell__BehaviorDescriptor.get_cell_lowery_decimal_id1QpPlI524ju.invoke(cell).longValue();
+        long cell_upper_y = Cell__BehaviorDescriptor.get_cell_uppery_decimal_id1QpPlI524zL.invoke(cell).longValue();
+
+        // Get the rest of the needed vessel positional information. 
+        long vessel_y_position = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)).longValue();
+        long vessel_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)).longValue();
+        long vessel_radius = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)).longValue();
+
+        // At a particular Z-level, the vessel takes up a certain region of Y. 
+        // We're doing Pythagoras here to determine the Y-positions we need to check - get the first squared distance (the Z-axis in this case). 
+        long cell_z_offset = cell_z_position - vessel_z_position;
+        cell_z_offset = cell_z_offset * cell_z_offset;
+
+        // Get the second squared distance (the X-axis in this case, which is always equal to the radius). 
+        long vessel_radius_squared = vessel_radius * vessel_radius;
+
+        // Determine which Y-positions we need to check using Pythagoras' theorem. 
+        double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
+        // The needed Y positions are between the boundaries determined by the Y-Offset 
+        double vessel_y_lower_boundary = vessel_y_position - vessel_y_boundary_offset;
+        double vessel_y_upper_boundary = vessel_y_position + vessel_y_boundary_offset;
+
+        // Is the cell within this Y-position? 
+        if (cell_lower_y >= vessel_y_lower_boundary && cell_lower_y <= vessel_y_upper_boundary || cell_upper_y >= vessel_y_lower_boundary && cell_upper_y <= vessel_y_upper_boundary) {
+          // If yes, return true to the error function. 
+          return true;
+        }
       }
     }
     return false;
   }
   /*package*/ static boolean check_cell_monolayer_overlap_id1QpPlI5237t(@NotNull SNode __thisNode__, SNode cell, SNode monolayer) {
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      if (SPropertyOperations.getString(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)) == SPropertyOperations.getString(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR))) {
-        if (Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer) && Cell__BehaviorDescriptor.get_lower_x_id1QpPlI524fx.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer) || Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer) && Cell__BehaviorDescriptor.getupper_x_id1QpPlI524rF.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer)) {
-          if (Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) && Cell__BehaviorDescriptor.get_lower_y_id1QpPlI524ju.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer) || Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) && Cell__BehaviorDescriptor.get_upper_y_id1QpPlI524zL.invoke(cell) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer)) {
 
-            return true;
-          }
+    // Get cell and monolayer Z positions. 
+    long cell_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(cell, LINKS.position$L2Mv)).longValue();
+    long monolayer_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR)).longValue();
+
+    if (cell_z_position == monolayer_z_position) {
+      //  Get cell boundaries. 
+      long cell_lower_x = Cell__BehaviorDescriptor.get_cell_lowerx_decimal_id1QpPlI524fx.invoke(cell).longValue();
+      long cell_upper_x = Cell__BehaviorDescriptor.get_cell_upperx_decimal_id1QpPlI524rF.invoke(cell).longValue();
+      long cell_lower_y = Cell__BehaviorDescriptor.get_cell_lowery_decimal_id1QpPlI524ju.invoke(cell).longValue();
+      long cell_upper_y = Cell__BehaviorDescriptor.get_cell_uppery_decimal_id1QpPlI524zL.invoke(cell).longValue();
+
+      // Get monolayer boundaries. 
+      long monolayer_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(monolayer).longValue();
+      long monolayer_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer).longValue();
+      long monolayer_lower_y = Tissue__BehaviorDescriptor.get_tissue_lowery_decimal_id2xqP3eG2_Xp.invoke(monolayer).longValue();
+      long monolayer_upper_y = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer).longValue();
+
+      // Do the cell and monolayer have overlapping X coordinates? 
+      if (cell_lower_x >= monolayer_lower_x && cell_lower_x <= monolayer_upper_x || cell_upper_x >= monolayer_lower_x && cell_upper_x <= monolayer_upper_x) {
+        // Do the cell and monolayer have overlapping Y coordinates? 
+        if (cell_lower_x >= monolayer_lower_y && cell_lower_y <= monolayer_upper_y || cell_upper_y >= monolayer_lower_y && cell_upper_y <= monolayer_upper_y) {
+          // If yes, the cell and monolayer overlap, so return true to the error function. 
+          return true;
         }
       }
     }
     return false;
   }
   /*package*/ static boolean check_vessel_vessel_overlap_id1QpPlI523sw(@NotNull SNode __thisNode__, SNode vessel_1, SNode vessel_2) {
-    double min_dist;
-    double y_offset;
-    double z_offset;
-    double y_offset_squared;
-    double z_offset_squared;
-
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
 
-    double radius_1 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-    double radius_2 = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+    double min_dist;
+    long y_offset;
+    long z_offset;
+    long y_offset_squared;
+    long z_offset_squared;
 
-    y_offset = SPropertyOperations.getString(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR)) - SPropertyOperations.getString(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR));
-    z_offset = SPropertyOperations.getString(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR)) - SPropertyOperations.getString(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR));
+    long radius_1 = Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), LINKS.Cylinder_Radius$5MFi)).longValue();
+    long radius_2 = Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), LINKS.Cylinder_Radius$5MFi)).longValue();
+
+    y_offset = (Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR)).subtract(Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR)))).longValue();
+    z_offset = (Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(vessel_1, LINKS.position$KVlR)).subtract(Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(vessel_2, LINKS.position$KVlR)))).longValue();
 
     y_offset_squared = y_offset * y_offset;
     z_offset_squared = z_offset * z_offset;
@@ -147,18 +217,55 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   /*package*/ static boolean check_vessel_monolayer_overlap_id1QpPlI523LR(@NotNull SNode __thisNode__, SNode vessel, SNode monolayer) {
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
-    if (SPropertyOperations.getString(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR)) >= Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(vessel) || SPropertyOperations.getString(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR)) <= Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(vessel)) {
-      double z_offset = SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)) - SPropertyOperations.getString(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR));
-      z_offset = z_offset * z_offset;
+    //  Get monolayer Z position. 
+    long monolayer_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(monolayer, LINKS.position$KVlR)).longValue();
 
-      double vessel_radius_squared = SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq) * SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-      double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - z_offset);
-      double vessel_y_lower_boundary = SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)) - vessel_y_boundary_offset;
-      double vessel_y_upper_boundary = SPropertyOperations.getString(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)) + vessel_y_boundary_offset;
+    //  Get vessel Z boundaries. 
+    long vessel_lower_z = Tissue__BehaviorDescriptor.get_tissue_lowerz_decimal_id2xqP3eG2H6N.invoke(vessel).longValue();
+    long vessel_upper_z = Tissue__BehaviorDescriptor.get_tissue_upperz_decimal_id2xqP3eG2lHe.invoke(vessel).longValue();
 
-      if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) >= vessel_y_lower_boundary && Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer) <= vessel_y_upper_boundary || Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer) >= vessel_y_lower_boundary && Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer) <= vessel_y_upper_boundary) {
+    // Is the monolayer within the same Z boundaries as the cell? 
+    if (monolayer_z_position >= vessel_lower_z && monolayer_z_position <= vessel_upper_z) {
 
-        return true;
+      // Get monolayer X boundaries. 
+      long monolayer_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(monolayer).longValue();
+      long monolayer_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer).longValue();
+
+      // Get vessel X boundaries. 
+      long vessel_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(vessel).longValue();
+      long vessel_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(vessel).longValue();
+
+      // Is the monolayer within the length of the vessel? 
+      if (monolayer_lower_x >= vessel_lower_x && monolayer_lower_x <= vessel_upper_x || monolayer_upper_x >= vessel_lower_x && monolayer_upper_x <= vessel_upper_x) {
+
+        // Get the monolayer Y boundaries. 
+        long monolayer_lower_y = Tissue__BehaviorDescriptor.get_tissue_lowery_decimal_id2xqP3eG2_Xp.invoke(monolayer).longValue();
+        long monolayer_upper_y = Tissue__BehaviorDescriptor.get_tissue_uppery_decimal_id2xqP3eG233W.invoke(monolayer).longValue();
+
+        // Get the rest of the needed vessel positional information. 
+        long vessel_y_position = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)).longValue();
+        long vessel_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(vessel, LINKS.position$KVlR)).longValue();
+        long vessel_radius = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(vessel, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)).longValue();
+
+        // At a particular Z-level, the vessel takes up a certain region of Y. 
+        // We're doing Pythagoras here to determine the Y-positions we need to check - get the first squared distance (the Z-axis in this case). 
+        long cell_z_offset = monolayer_z_position - vessel_z_position;
+        cell_z_offset = cell_z_offset * cell_z_offset;
+
+        // Get the second squared distance (the X-axis in this case, which is always equal to the radius). 
+        long vessel_radius_squared = vessel_radius * vessel_radius;
+
+        // Determine which Y-positions we need to check using Pythagoras' theorem. 
+        double vessel_y_boundary_offset = Math.sqrt(vessel_radius_squared - cell_z_offset);
+        // The needed Y positions are between the boundaries determined by the Y-Offset 
+        double vessel_y_lower_boundary = vessel_y_position - vessel_y_boundary_offset;
+        double vessel_y_upper_boundary = vessel_y_position + vessel_y_boundary_offset;
+
+        // Is the cell within this Y-position? 
+        if (monolayer_lower_y >= vessel_y_lower_boundary && monolayer_lower_y <= vessel_y_upper_boundary || monolayer_upper_y >= vessel_y_lower_boundary && monolayer_upper_y <= vessel_y_upper_boundary) {
+          // If yes, return true to the error function. 
+          return true;
+        }
       }
     }
     return false;
@@ -166,10 +273,30 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   /*package*/ static boolean check_monolayer_monolayer_overlap_id1p5qYO3gLDn(@NotNull SNode __thisNode__, SNode monolayer_1, SNode monolayer_2) {
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_1, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
     assert (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(monolayer_2, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W));
-    if (SPropertyOperations.getString(SLinkOperations.getTarget(monolayer_1, LINKS.position$KVlR)) == SPropertyOperations.getString(SLinkOperations.getTarget(monolayer_2, LINKS.position$KVlR))) {
-      if (Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(monolayer_2)) {
-        if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2) || Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) >= Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(monolayer_2) && Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_1) <= Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(monolayer_2)) {
 
+    // Get monolayer Z positions. 
+    long mono1_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(monolayer_1, LINKS.position$KVlR)).longValue();
+    long mono2_z_position = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(monolayer_2, LINKS.position$KVlR)).longValue();
+
+    if (mono1_z_position == mono2_z_position) {
+
+      //  Get the first monolayer boundaries. 
+      long mono1_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(monolayer_1).longValue();
+      long mono1_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer_1).longValue();
+      long mono1_lower_y = Tissue__BehaviorDescriptor.get_tissue_lowery_decimal_id2xqP3eG2_Xp.invoke(monolayer_1).longValue();
+      long mono1_upper_y = Tissue__BehaviorDescriptor.get_tissue_uppery_decimal_id2xqP3eG233W.invoke(monolayer_1).longValue();
+
+      // Get the second monolayer boundaries. 
+      long mono2_lower_x = Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(monolayer_2).longValue();
+      long mono2_upper_x = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer_2).longValue();
+      long mono2_lower_y = Tissue__BehaviorDescriptor.get_tissue_lowery_decimal_id2xqP3eG2_Xp.invoke(monolayer_2).longValue();
+      long mono2_upper_y = Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(monolayer_2).longValue();
+
+      // Do the monolayers have overlapping X coordinates? 
+      if (mono1_lower_x >= mono2_lower_x && mono1_lower_x <= mono2_upper_x || mono1_upper_x >= mono2_lower_x && mono1_upper_x <= mono2_upper_x) {
+        // Do the monolayers have overlapping Y coordinates? 
+        if (mono1_lower_x >= mono2_lower_y && mono1_lower_y <= mono2_upper_y || mono1_upper_y >= mono2_lower_y && mono1_upper_y <= mono2_upper_y) {
+          // If yes, the monolayers overlap, so return true to the error function. 
           return true;
         }
       }
@@ -193,7 +320,7 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) count_cell_number_id4XZPqyVOe45(node));
+        return (T) ((String) count_cell_number_string_id4XZPqyVOe45(node));
       case 1:
         return (T) ((Integer) count_cell_number_int_id6yORN46v92v(node));
       case 2:
@@ -246,14 +373,11 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     /*package*/ static final SContainmentLink tissues$psuU = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x56b8f8b9a96cef8cL, "tissues");
     /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
     /*package*/ static final SContainmentLink position$KVlR = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x56b8f8b9a96e2a3eL, "position");
+    /*package*/ static final SContainmentLink Cylinder_Radius$5MFi = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x383c8857e010ed42L, "Cylinder_Radius");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
     /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty cylinder_total_radius$p$uq = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef98L, "cylinder_total_radius");
   }
 }

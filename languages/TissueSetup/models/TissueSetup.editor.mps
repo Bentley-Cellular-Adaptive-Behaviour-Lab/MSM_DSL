@@ -4,7 +4,6 @@
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <use id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips" version="0" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
@@ -347,11 +346,8 @@
         <node concept="3F0ifn" id="2B5sNxPKgJT" role="3EZMnx">
           <property role="3F0ifm" value="and radius of" />
         </node>
-        <node concept="3F0A7n" id="2B5sNxPKgKQ" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5qSYbADreYo" resolve="cylinder_total_radius" />
-          <node concept="VechU" id="2B5sNxPR6Fe" role="3F10Kt">
-            <property role="Vb096" value="fLwANPr/green" />
-          </node>
+        <node concept="3F1sOY" id="5yIQRIoq$LO" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:3wWy5vw4eP2" resolve="Cylinder_Radius" />
         </node>
         <node concept="2iRfu4" id="2B5sNxPKgE$" role="2iSdaV" />
       </node>
@@ -452,68 +448,9 @@
           </node>
         </node>
         <node concept="3F0ifn" id="2B5sNxPLRSr" role="3EZMnx">
-          <property role="3F0ifm" value="is" />
+          <property role="3F0ifm" value="is located at" />
         </node>
         <node concept="VPM3Z" id="2B5sNxPLRKW" role="3F10Kt" />
-        <node concept="1v6uyg" id="2B5sNxPLRMH" role="3EZMnx">
-          <property role="2oejA6" value="true" />
-          <node concept="3F0ifn" id="2B5sNxPLRSP" role="1j7Clw">
-            <property role="3F0ifm" value="located" />
-          </node>
-          <node concept="3EZMnI" id="2B5sNxPM591" role="wsdo6">
-            <node concept="2iRkQZ" id="2B5sNxPM594" role="2iSdaV" />
-            <node concept="3EZMnI" id="2B5sNxPPy8p" role="3EZMnx">
-              <node concept="2iRfu4" id="2B5sNxPPy8q" role="2iSdaV" />
-              <node concept="3F0ifn" id="2B5sNxPPy8t" role="3EZMnx">
-                <property role="3F0ifm" value="Lower X:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPy9y" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5dr" resolve="lower_x" />
-              </node>
-              <node concept="3F0ifn" id="2B5sNxPPy9T" role="3EZMnx">
-                <property role="3F0ifm" value="Upper X:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPyaK" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5bx" resolve="upper_x" />
-              </node>
-            </node>
-            <node concept="3EZMnI" id="2B5sNxPPycG" role="3EZMnx">
-              <node concept="VPM3Z" id="2B5sNxPPycI" role="3F10Kt" />
-              <node concept="3F0ifn" id="2B5sNxPPycK" role="3EZMnx">
-                <property role="3F0ifm" value="Lower Y:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPyee" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5eH" resolve="lower_y" />
-              </node>
-              <node concept="3F0ifn" id="2B5sNxPPye_" role="3EZMnx">
-                <property role="3F0ifm" value="Upper Y:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPyfs" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5eb" resolve="upper_y" />
-              </node>
-              <node concept="2iRfu4" id="2B5sNxPPycL" role="2iSdaV" />
-            </node>
-            <node concept="3EZMnI" id="2B5sNxPPyhN" role="3EZMnx">
-              <node concept="VPM3Z" id="2B5sNxPPyhP" role="3F10Kt" />
-              <node concept="3F0ifn" id="2B5sNxPPyhR" role="3EZMnx">
-                <property role="3F0ifm" value="Lower Z:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPyjd" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5gx" resolve="lower_z" />
-              </node>
-              <node concept="3F0ifn" id="2B5sNxPPyj$" role="3EZMnx">
-                <property role="3F0ifm" value="Upper Z:" />
-              </node>
-              <node concept="3F0A7n" id="2B5sNxPPykc" role="3EZMnx">
-                <ref role="1NtTu8" to="nguq:2B5sNxPM5fv" resolve="upper_z" />
-              </node>
-              <node concept="2iRfu4" id="2B5sNxPPyhS" role="2iSdaV" />
-            </node>
-          </node>
-        </node>
-        <node concept="3F0ifn" id="2B5sNxPLRTK" role="3EZMnx">
-          <property role="3F0ifm" value="at" />
-        </node>
         <node concept="3F1sOY" id="2B5sNxPLRUA" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:5qSYbADryCY" resolve="position" />
         </node>

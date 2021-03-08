@@ -2,18 +2,10 @@
 <model ref="r:a56d053d-0d3a-4c15-97ba-ae6cc010ef88(Units.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="5dae8159-ab99-46bb-a40d-0cee30ee7018" name="jetbrains.mps.lang.constraints.rules.kinds" version="0" />
-    <use id="ea3159bf-f48e-4720-bde2-86dba75f0d34" name="jetbrains.mps.lang.context.defs" version="0" />
-    <use id="e51810c5-7308-4642-bcb6-469e61b5dd18" name="jetbrains.mps.lang.constraints.msg.specification" version="0" />
-    <use id="134c38d4-e3af-4d9e-b069-1c7df0a4005d" name="jetbrains.mps.lang.constraints.rules.skeleton" version="0" />
-    <use id="b3551702-269c-4f05-ba61-58060cef4292" name="jetbrains.mps.lang.rulesAndMessages" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="6" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="3ad5badc-1d9c-461c-b7b1-fa2fcd0a0ae7" name="jetbrains.mps.lang.context" version="0" />
-    <use id="ad93155d-79b2-4759-b10c-55123e763903" name="jetbrains.mps.lang.messages" version="0" />
-    <devkit ref="00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)" />
   </languages>
   <imports>
+    <import index="prp3" ref="r:52ea8481-08b2-4cbd-ad9d-1b42825f7d09(jetbrains.mps.lang.constraints.rules.kinds.constraints)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" implicit="true" />
   </imports>
   <registry>
@@ -94,26 +86,78 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="2XF6Saae4E5">
-    <property role="3GE5qa" value="Distance" />
-    <ref role="1M2myG" to="ottv:2XF6SaadW1c" resolve="Centimetre" />
-    <node concept="9S07l" id="2XF6Saae4E6" role="9Vyp8">
-      <node concept="3clFbS" id="2XF6Saae4E7" role="2VODD2">
-        <node concept="3cpWs6" id="2XF6Saae4I0" role="3cqZAp">
-          <node concept="3clFbT" id="2XF6Saae4Iu" role="3cqZAk">
+  <node concept="1M2fIO" id="6gyex3vkeNU">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:6gyex3vkeNL" resolve="Unit_Amount_Combined_Concentration" />
+    <node concept="9S07l" id="6gyex3vkeNV" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkeNW" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkeRH" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkeRP" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="53FFamGUss">
-    <property role="3GE5qa" value="Distance" />
-    <ref role="1M2myG" to="ottv:2XF6SaadUJ5" resolve="Gridpoints_Dist" />
-    <node concept="9S07l" id="53FFamGUst" role="9Vyp8">
-      <node concept="3clFbS" id="53FFamGUsu" role="2VODD2">
-        <node concept="3cpWs6" id="53FFamGUwn" role="3cqZAp">
-          <node concept="3clFbT" id="53FFamGU$E" role="3cqZAk">
+  <node concept="1M2fIO" id="6gyex3vkeSE">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:2XF6Saab6mL" resolve="Unit_Concentration" />
+    <node concept="9S07l" id="6gyex3vkeSF" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkeSG" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkeWt" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkf0m" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6gyex3vkf16">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:I3BIb0TJmA" resolve="Nanomolar" />
+    <node concept="9S07l" id="6gyex3vkf17" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkf18" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkf4T" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkf5f" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6gyex3vkf9d">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:I3BIb0TJmz" resolve="Molar" />
+    <node concept="9S07l" id="6gyex3vkf9e" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkf9f" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkf9j" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkfdc" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6gyex3vkfdB">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:I3BIb0TJm_" resolve="Millimolar" />
+    <node concept="9S07l" id="6gyex3vkfdC" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkfdD" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkfhq" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkfhy" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6gyex3vkfhX">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1M2myG" to="ottv:I3BIb0TJm$" resolve="Micromolar" />
+    <node concept="9S07l" id="6gyex3vkfhY" role="9Vyp8">
+      <node concept="3clFbS" id="6gyex3vkfhZ" role="2VODD2">
+        <node concept="3cpWs6" id="6gyex3vkflK" role="3cqZAp">
+          <node concept="3clFbT" id="6gyex3vkflS" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>

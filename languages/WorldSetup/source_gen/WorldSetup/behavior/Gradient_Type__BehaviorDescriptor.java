@@ -6,6 +6,7 @@ import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -14,24 +15,33 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import Units.behavior.Mass_Concentration__BehaviorDescriptor;
+import Units.behavior.Amount_Concentration__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
-import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Gradient_Type__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L, "WorldSetup.structure.Gradient_Type");
 
-  public static final SMethod<Integer> get_starting_amount_id2zgk2Od53yT = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_starting_amount").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2zgk2Od53yT").build();
+  public static final SMethod<BigDecimal> get_conc_decimal_id2zgk2Od53yT = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_conc_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2zgk2Od53yT").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_starting_amount_id2zgk2Od53yT);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_conc_decimal_id2zgk2Od53yT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Integer get_starting_amount_id2zgk2Od53yT(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getInteger(__thisNode__, PROPS.starting_amount$hFOt);
+  /*package*/ static BigDecimal get_conc_decimal_id2zgk2Od53yT(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$h6_l), CONCEPTS.Mass_Concentration$qz)) {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$h6_l), CONCEPTS.Mass_Concentration$qz));
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$h6_l), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.cast(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$h6_l), CONCEPTS.Amount_Concentration$r2));
+    }
+    return BigDecimal.ZERO;
   }
 
   /*package*/ Gradient_Type__BehaviorDescriptor() {
@@ -50,7 +60,7 @@ public final class Gradient_Type__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Integer) get_starting_amount_id2zgk2Od53yT(node));
+        return (T) ((BigDecimal) get_conc_decimal_id2zgk2Od53yT(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -80,7 +90,12 @@ public final class Gradient_Type__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty starting_amount$hFOt = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L, 0x28d0502d0d1398fdL, "starting_amount");
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Starting_Concentration$h6_l = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L, 0x7a945de34a0a4d50L, "Starting_Concentration");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "Units.structure.Mass_Concentration");
+    /*package*/ static final SConcept Amount_Concentration$r2 = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L, "Units.structure.Amount_Concentration");
   }
 }

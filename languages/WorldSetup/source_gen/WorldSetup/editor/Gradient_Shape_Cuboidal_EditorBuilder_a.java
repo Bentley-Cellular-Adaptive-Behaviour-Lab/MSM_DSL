@@ -180,7 +180,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Width:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Width :");
     editorCell.setCellId("Constant_l5bgkd_e1a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -271,7 +271,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Height:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Height :");
     editorCell.setCellId("Constant_l5bgkd_e2a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -362,7 +362,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Depth:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Depth :");
     editorCell.setCellId("Constant_l5bgkd_e3a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -453,7 +453,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_5() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Direction:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Direction :");
     editorCell.setCellId("Constant_l5bgkd_e4a");
     editorCell.setDefaultText("");
     return editorCell;

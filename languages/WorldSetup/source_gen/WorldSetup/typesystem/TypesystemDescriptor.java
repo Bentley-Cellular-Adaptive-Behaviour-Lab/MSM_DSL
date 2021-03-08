@@ -17,11 +17,31 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new checkCuboidBoundaries_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkCoarseness_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new checkTriangularBoundaries_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkCuboidGradientBoundaries_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkCuboidSubstrateBoundaries_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkPointGradientBoundaries_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkSinkAndSourceGradientBoundaries_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkTriangularSubstrateBoundaries_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new checkVertexSubstrateBoundaries_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

@@ -9,12 +9,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import TissueSetup.behavior.Shape__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
+import TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.HashMap;
@@ -82,7 +83,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) Arrangement__BehaviorDescriptor.get_length_in_cells_id4DdJmqSFaKv.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_total_radius_id4DdJmqSFaMT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return (String) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_string_id4DdJmqSFkkm.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -103,13 +104,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_22(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
   }
   public static Object propertyMacro_GetValue_1_23(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -124,13 +125,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
   }
   public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
   }
   public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
   }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
