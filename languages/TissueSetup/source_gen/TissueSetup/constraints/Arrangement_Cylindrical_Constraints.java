@@ -79,7 +79,7 @@ public class Arrangement_Cylindrical_Constraints extends BaseConstraintsDescript
     }
     @Override
     public Object getValue(SNode node) {
-      return (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(node);
+      return (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_gridpoints_id1QpPlI52lcy.invoke(node);
     }
   }
   @Override

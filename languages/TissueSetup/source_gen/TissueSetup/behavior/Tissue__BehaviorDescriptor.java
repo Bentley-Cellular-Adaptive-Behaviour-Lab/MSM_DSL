@@ -10,6 +10,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -31,19 +32,32 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, "TissueSetup.structure.Tissue");
 
   public static final SMethod<Boolean> check_object_boundaries_id1QpPlI51TNW = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_object_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51TNW").build();
-  public static final SMethod<Boolean> check_upper_x_world_boundaries_id3$QBVvWDazm = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazm").build();
-  public static final SMethod<Boolean> check_lower_x_world_boundaries_id3$QBVvWDazH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazH").build();
-  public static final SMethod<Boolean> check_upper_y_world_boundaries_id3$QBVvWDazU = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazU").build();
-  public static final SMethod<Boolean> check_lower_y_world_boundaries_id3$QBVvWDa$h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDa$h").build();
-  public static final SMethod<Boolean> check_z_world_boundaries_id3$QBVvWDa$u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_z_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDa$u").build();
-  public static final SMethod<Integer> get_lower_x_id1QpPlI52f7B = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52f7B").build();
-  public static final SMethod<Integer> get_lower_y_id1QpPlI52f9_ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52f9_").build();
-  public static final SMethod<Integer> get_upper_x_id1QpPlI52f8w = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52f8w").build();
-  public static final SMethod<Integer> get_upper_y_id1QpPlI52faY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52faY").build();
-  public static final SMethod<Integer> get_lower_z_id1QpPlI533MM = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_z").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI533MM").build();
-  public static final SMethod<Integer> get_upper_z_id1QpPlI538TU = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_z").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI538TU").build();
+  public static final SMethod<Boolean> check_upperx_world_boundary_id3$QBVvWDazm = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upperx_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazm").build();
+  public static final SMethod<Boolean> check_lowerx_world_boundary_id3$QBVvWDazH = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lowerx_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazH").build();
+  public static final SMethod<Boolean> check_uppery_world_boundary_id3$QBVvWDazU = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_uppery_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDazU").build();
+  public static final SMethod<Boolean> check_lowery_world_boundary_id3$QBVvWDa$h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lowery_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDa$h").build();
+  public static final SMethod<Boolean> check_upperz_world_boundary_id3$QBVvWDa$u = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upperz_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWDa$u").build();
+  public static final SMethod<Boolean> check_lowerz_world_boundary_id6B5I$h9mndJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lowerz_world_boundary").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9mndJ").build();
+  public static final SMethod<BigDecimal> get_tissue_upperx_decimal_id2xqP3eG1cnO = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_upperx_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG1cnO").build();
+  public static final SMethod<String> get_tissue_upperx_string_id6B5I$h9rj$y = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_upperx_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rj$y").build();
+  public static final SMethod<Integer> get_tissue_upperx_gridpoint_id57WjpeqnMK6 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_upperx_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqnMK6").build();
+  public static final SMethod<BigDecimal> get_tissue_uppery_decimal_id2xqP3eG233W = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_uppery_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG233W").build();
+  public static final SMethod<String> get_tissue_uppery_string_id6B5I$h9rn5L = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_uppery_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rn5L").build();
+  public static final SMethod<Integer> get_tissue_uppery_gridpoint_id57Wjpeqo8L3 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_uppery_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqo8L3").build();
+  public static final SMethod<BigDecimal> get_tissue_upperz_decimal_id2xqP3eG2lHe = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_upperz_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG2lHe").build();
+  public static final SMethod<String> get_tissue_upperz_string_id6B5I$h9rpXM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_upperz_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rpXM").build();
+  public static final SMethod<Integer> get_tissue_upperz_gridpoint_id57WjpeqopM_ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_upperz_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqopM_").build();
+  public static final SMethod<BigDecimal> get_tissue_lowerx_decimal_id2xqP3eG28rS = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_lowerx_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG28rS").build();
+  public static final SMethod<String> get_tissue_lowerx_string_id6B5I$h9rsyc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_lowerx_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rsyc").build();
+  public static final SMethod<Integer> get_tissue_lowerx_gridpoint_id57Wjpeqov5H = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_lowerx_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqov5H").build();
+  public static final SMethod<BigDecimal> get_tissue_lowery_decimal_id2xqP3eG2_Xp = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_lowery_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG2_Xp").build();
+  public static final SMethod<String> get_tissue_lowery_string_id6B5I$h9rv01 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_lowery_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rv01").build();
+  public static final SMethod<Integer> get_tissue_lowery_gridpoint_id57WjpeqoyKx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_lowery_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqoyKx").build();
+  public static final SMethod<BigDecimal> get_tissue_lowerz_decimal_id2xqP3eG2H6N = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_tissue_lowerz_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG2H6N").build();
+  public static final SMethod<String> get_tissue_lowerz_string_id6B5I$h9rx$a = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_tissue_lowerz_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6B5I$h9rx$a").build();
+  public static final SMethod<Integer> get_tissue_lowerz_gridpoint_id57WjpeqoAXQ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_tissue_lowerz_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqoAXQ").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TNW, check_upper_x_world_boundaries_id3$QBVvWDazm, check_lower_x_world_boundaries_id3$QBVvWDazH, check_upper_y_world_boundaries_id3$QBVvWDazU, check_lower_y_world_boundaries_id3$QBVvWDa$h, check_z_world_boundaries_id3$QBVvWDa$u, get_lower_x_id1QpPlI52f7B, get_lower_y_id1QpPlI52f9_, get_upper_x_id1QpPlI52f8w, get_upper_y_id1QpPlI52faY, get_lower_z_id1QpPlI533MM, get_upper_z_id1QpPlI538TU);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TNW, check_upperx_world_boundary_id3$QBVvWDazm, check_lowerx_world_boundary_id3$QBVvWDazH, check_uppery_world_boundary_id3$QBVvWDazU, check_lowery_world_boundary_id3$QBVvWDa$h, check_upperz_world_boundary_id3$QBVvWDa$u, check_lowerz_world_boundary_id6B5I$h9mndJ, get_tissue_upperx_decimal_id2xqP3eG1cnO, get_tissue_upperx_string_id6B5I$h9rj$y, get_tissue_upperx_gridpoint_id57WjpeqnMK6, get_tissue_uppery_decimal_id2xqP3eG233W, get_tissue_uppery_string_id6B5I$h9rn5L, get_tissue_uppery_gridpoint_id57Wjpeqo8L3, get_tissue_upperz_decimal_id2xqP3eG2lHe, get_tissue_upperz_string_id6B5I$h9rpXM, get_tissue_upperz_gridpoint_id57WjpeqopM_, get_tissue_lowerx_decimal_id2xqP3eG28rS, get_tissue_lowerx_string_id6B5I$h9rsyc, get_tissue_lowerx_gridpoint_id57Wjpeqov5H, get_tissue_lowery_decimal_id2xqP3eG2_Xp, get_tissue_lowery_string_id6B5I$h9rv01, get_tissue_lowery_gridpoint_id57WjpeqoyKx, get_tissue_lowerz_decimal_id2xqP3eG2H6N, get_tissue_lowerz_string_id6B5I$h9rx$a, get_tissue_lowerz_gridpoint_id57WjpeqoAXQ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -88,98 +102,205 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return false;
   }
-  /*package*/ static boolean check_upper_x_world_boundaries_id3$QBVvWDazm(@NotNull SNode __thisNode__) {
-    float upper_x;
-
-    if (Tissue__BehaviorDescriptor.get_upper_x_id1QpPlI52f8w.invoke(__thisNode__) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ))) {
+  /*package*/ static boolean check_upperx_world_boundary_id3$QBVvWDazm(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_upperx_gridpoint_id57WjpeqnMK6.invoke(__thisNode__)) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       return true;
-    } else {
-      return false;
-    }
-  }
-  /*package*/ static boolean check_lower_x_world_boundaries_id3$QBVvWDazH(@NotNull SNode __thisNode__) {
-    if (Tissue__BehaviorDescriptor.get_lower_x_id1QpPlI52f7B.invoke(__thisNode__) < 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  /*package*/ static boolean check_upper_y_world_boundaries_id3$QBVvWDazU(@NotNull SNode __thisNode__) {
-    if (Tissue__BehaviorDescriptor.get_upper_y_id1QpPlI52faY.invoke(__thisNode__) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ))) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  /*package*/ static boolean check_lower_y_world_boundaries_id3$QBVvWDa$h(@NotNull SNode __thisNode__) {
-    if (Tissue__BehaviorDescriptor.get_lower_y_id1QpPlI52f9_.invoke(__thisNode__) < 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  /*package*/ static boolean check_z_world_boundaries_id3$QBVvWDa$u(@NotNull SNode __thisNode__) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      if (Tissue__BehaviorDescriptor.get_upper_z_id1QpPlI538TU.invoke(__thisNode__) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ)) || Tissue__BehaviorDescriptor.get_lower_z_id1QpPlI533MM.invoke(__thisNode__) < 0) {
-        return true;
-      }
-    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      if (SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) > SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.World_Container$fGL6), LINKS.grid$mgtJ)) || SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) < 0) {
-        return true;
-      }
     }
     return false;
   }
-  /*package*/ static Integer get_lower_x_id1QpPlI52f7B(@NotNull SNode __thisNode__) {
-    int lower_x = 0;
+  /*package*/ static boolean check_lowerx_world_boundary_id3$QBVvWDazH(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_lowerx_gridpoint_id57Wjpeqov5H.invoke(__thisNode__)) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_uppery_world_boundary_id3$QBVvWDazU(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_uppery_gridpoint_id57Wjpeqo8L3.invoke(__thisNode__)) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_lowery_world_boundary_id3$QBVvWDa$h(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(__thisNode__)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_upperz_world_boundary_id3$QBVvWDa$u(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_upperz_gridpoint_id57WjpeqopM_.invoke(__thisNode__)) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static boolean check_lowerz_world_boundary_id6B5I$h9mndJ(@NotNull SNode __thisNode__) {
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    if (((int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(__thisNode__)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
+      return true;
+    }
+    return false;
+  }
+  /*package*/ static BigDecimal get_tissue_upperx_decimal_id2xqP3eG1cnO(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      // this.tissue_type.arrangement:Cylindrical.get_total_length_int() 
-      lower_x = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) - ((int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2);
+      BigDecimal x_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_decimal_id2xqP3eG1lgv.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)).divide(BigDecimal.valueOf(2));
+      BigDecimal x_coord = Position__BehaviorDescriptor.get_position_xcoord_decimal_id5yIQRIor6fe.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord.add(x_offset);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      lower_x = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) - ((int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2);
+      BigDecimal x_offset = Arrangement_Flat__BehaviorDescriptor.get_total_width_decimal_id2xqP3eG1DSS.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)).divide(BigDecimal.valueOf(2));
+      BigDecimal x_coord = Position__BehaviorDescriptor.get_position_xcoord_decimal_id5yIQRIor6fe.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord.add(x_offset);
     }
-    return lower_x;
+    return BigDecimal.valueOf(-1);
   }
-  /*package*/ static Integer get_lower_y_id1QpPlI52f9_(@NotNull SNode __thisNode__) {
-    int lower_y = 0;
+  /*package*/ static String get_tissue_upperx_string_id6B5I$h9rj$y(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_upperx_gridpoint_id57WjpeqnMK6(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      lower_y = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) - SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      int x_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_gridpoints_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
+      int x_coord = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord + x_offset;
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      lower_y = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) - ((int) Arrangement_Flat__BehaviorDescriptor.get_total_height_int_id1QpPlI52_it.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2);
+      int x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_gridpoints_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
+      int x_coord = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord + x_offset;
     }
-    return lower_y;
+    return 0;
   }
-  /*package*/ static Integer get_upper_x_id1QpPlI52f8w(@NotNull SNode __thisNode__) {
+  /*package*/ static BigDecimal get_tissue_uppery_decimal_id2xqP3eG233W(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) + (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_int_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
+      BigDecimal y_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      BigDecimal y_coord = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord.add(y_offset);
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) + ((int) Arrangement_Flat__BehaviorDescriptor.get_total_width_int_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2);
-    } else {
-      return -1;
+      BigDecimal y_offset = Arrangement_Flat__BehaviorDescriptor.get_total_height_decimal_id2xqP3eG1Kzh.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)).divide(BigDecimal.valueOf(2));
+      BigDecimal y_coord = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord.add(y_offset);
     }
+    return BigDecimal.valueOf(-1);
   }
-  /*package*/ static Integer get_upper_y_id1QpPlI52faY(@NotNull SNode __thisNode__) {
-    int upper_y = 0;
+  /*package*/ static String get_tissue_uppery_string_id6B5I$h9rn5L(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_uppery_decimal_id2xqP3eG233W.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_uppery_gridpoint_id57Wjpeqo8L3(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      upper_y = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) + SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
+      int y_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      int y_coord = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord + y_offset;
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
-      upper_y = SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) + ((int) Arrangement_Flat__BehaviorDescriptor.get_total_height_int_id1QpPlI52_it.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2);
+      int y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_height_gridpoints_id1QpPlI52_it.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
+      int y_coord = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord + y_offset;
     }
-    return upper_y;
+    return 0;
   }
-  /*package*/ static Integer get_lower_z_id1QpPlI533MM(@NotNull SNode __thisNode__) {
+  /*package*/ static BigDecimal get_tissue_upperz_decimal_id2xqP3eG2lHe(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) - SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-    } else {
-      return -1;
+      BigDecimal z_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      BigDecimal z_coord = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord.add(z_offset);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      BigDecimal z_coord = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord;
     }
+    return BigDecimal.valueOf(-1);
   }
-  /*package*/ static Integer get_upper_z_id1QpPlI538TU(@NotNull SNode __thisNode__) {
+  /*package*/ static String get_tissue_upperz_string_id6B5I$h9rpXM(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_upperz_decimal_id2xqP3eG2lHe.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_upperz_gridpoint_id57WjpeqopM_(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      return SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR)) + SPropertyOperations.getInteger(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_radius$p$uq);
-    } else {
-      return -1;
+      int z_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      int z_coord = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord + z_offset;
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      int z_coord = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord;
     }
+    return 0;
+  }
+  /*package*/ static BigDecimal get_tissue_lowerx_decimal_id2xqP3eG28rS(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      BigDecimal x_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_decimal_id2xqP3eG1lgv.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      BigDecimal x_coord = Position__BehaviorDescriptor.get_position_xcoord_decimal_id5yIQRIor6fe.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord.subtract(x_offset);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      BigDecimal x_offset = Arrangement_Flat__BehaviorDescriptor.get_total_width_decimal_id2xqP3eG1DSS.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)).divide(BigDecimal.valueOf(2));
+      BigDecimal x_coord = Position__BehaviorDescriptor.get_position_xcoord_decimal_id5yIQRIor6fe.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord.subtract(x_offset);
+    }
+    return BigDecimal.valueOf(-1);
+  }
+  /*package*/ static String get_tissue_lowerx_string_id6B5I$h9rsyc(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_lowerx_decimal_id2xqP3eG28rS.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_lowerx_gridpoint_id57Wjpeqov5H(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      int x_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_total_width_gridpoints_id1QpPlI52lcy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
+      int x_coord = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord - x_offset;
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      int x_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_width_gridpoints_id1QpPlI52vjz.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
+      int x_coord = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return x_coord - x_offset;
+    }
+    return 0;
+  }
+  /*package*/ static BigDecimal get_tissue_lowery_decimal_id2xqP3eG2_Xp(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      BigDecimal y_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      BigDecimal y_coord = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord.subtract(y_offset);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      BigDecimal y_offset = Arrangement_Flat__BehaviorDescriptor.get_total_height_decimal_id2xqP3eG1Kzh.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)).divide(BigDecimal.valueOf(2));
+      BigDecimal y_coord = Position__BehaviorDescriptor.get_position_ycoord_decimal_id1r0uutBEDZt.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord.subtract(y_offset);
+    }
+    return BigDecimal.valueOf(-1);
+  }
+  /*package*/ static String get_tissue_lowery_string_id6B5I$h9rv01(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_lowery_decimal_id2xqP3eG2_Xp.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_lowery_gridpoint_id57WjpeqoyKx(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      int y_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      int y_coord = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord - y_offset;
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      int y_offset = (int) Arrangement_Flat__BehaviorDescriptor.get_total_height_gridpoints_id1QpPlI52_it.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) / 2;
+      int y_coord = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return y_coord - y_offset;
+    }
+    return 0;
+  }
+  /*package*/ static BigDecimal get_tissue_lowerz_decimal_id2xqP3eG2H6N(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      BigDecimal z_offset = Arrangement_Cylindrical__BehaviorDescriptor.get_radius_decimal_id3wWy5vw4lLO.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+      BigDecimal z_coord = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord.subtract(z_offset);
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      BigDecimal z_coord = Position__BehaviorDescriptor.get_position_zcoord_decimal_id1r0uutBEEFm.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord;
+    }
+    return BigDecimal.valueOf(-1);
+  }
+  /*package*/ static String get_tissue_lowerz_string_id6B5I$h9rx$a(@NotNull SNode __thisNode__) {
+    return Tissue__BehaviorDescriptor.get_tissue_upperx_decimal_id2xqP3eG1cnO.invoke(__thisNode__).toString();
+  }
+  /*package*/ static int get_tissue_lowerz_gridpoint_id57WjpeqoAXQ(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
+      int z_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
+      int z_coord = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord - z_offset;
+    } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {
+      int z_coord = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
+      return z_coord;
+    }
+    return 0;
   }
 
   /*package*/ Tissue__BehaviorDescriptor() {
@@ -200,27 +321,53 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         return (T) ((Boolean) check_object_boundaries_id1QpPlI51TNW(node));
       case 1:
-        return (T) ((Boolean) check_upper_x_world_boundaries_id3$QBVvWDazm(node));
+        return (T) ((Boolean) check_upperx_world_boundary_id3$QBVvWDazm(node));
       case 2:
-        return (T) ((Boolean) check_lower_x_world_boundaries_id3$QBVvWDazH(node));
+        return (T) ((Boolean) check_lowerx_world_boundary_id3$QBVvWDazH(node));
       case 3:
-        return (T) ((Boolean) check_upper_y_world_boundaries_id3$QBVvWDazU(node));
+        return (T) ((Boolean) check_uppery_world_boundary_id3$QBVvWDazU(node));
       case 4:
-        return (T) ((Boolean) check_lower_y_world_boundaries_id3$QBVvWDa$h(node));
+        return (T) ((Boolean) check_lowery_world_boundary_id3$QBVvWDa$h(node));
       case 5:
-        return (T) ((Boolean) check_z_world_boundaries_id3$QBVvWDa$u(node));
+        return (T) ((Boolean) check_upperz_world_boundary_id3$QBVvWDa$u(node));
       case 6:
-        return (T) ((Integer) get_lower_x_id1QpPlI52f7B(node));
+        return (T) ((Boolean) check_lowerz_world_boundary_id6B5I$h9mndJ(node));
       case 7:
-        return (T) ((Integer) get_lower_y_id1QpPlI52f9_(node));
+        return (T) ((BigDecimal) get_tissue_upperx_decimal_id2xqP3eG1cnO(node));
       case 8:
-        return (T) ((Integer) get_upper_x_id1QpPlI52f8w(node));
+        return (T) ((String) get_tissue_upperx_string_id6B5I$h9rj$y(node));
       case 9:
-        return (T) ((Integer) get_upper_y_id1QpPlI52faY(node));
+        return (T) ((Integer) get_tissue_upperx_gridpoint_id57WjpeqnMK6(node));
       case 10:
-        return (T) ((Integer) get_lower_z_id1QpPlI533MM(node));
+        return (T) ((BigDecimal) get_tissue_uppery_decimal_id2xqP3eG233W(node));
       case 11:
-        return (T) ((Integer) get_upper_z_id1QpPlI538TU(node));
+        return (T) ((String) get_tissue_uppery_string_id6B5I$h9rn5L(node));
+      case 12:
+        return (T) ((Integer) get_tissue_uppery_gridpoint_id57Wjpeqo8L3(node));
+      case 13:
+        return (T) ((BigDecimal) get_tissue_upperz_decimal_id2xqP3eG2lHe(node));
+      case 14:
+        return (T) ((String) get_tissue_upperz_string_id6B5I$h9rpXM(node));
+      case 15:
+        return (T) ((Integer) get_tissue_upperz_gridpoint_id57WjpeqopM_(node));
+      case 16:
+        return (T) ((BigDecimal) get_tissue_lowerx_decimal_id2xqP3eG28rS(node));
+      case 17:
+        return (T) ((String) get_tissue_lowerx_string_id6B5I$h9rsyc(node));
+      case 18:
+        return (T) ((Integer) get_tissue_lowerx_gridpoint_id57Wjpeqov5H(node));
+      case 19:
+        return (T) ((BigDecimal) get_tissue_lowery_decimal_id2xqP3eG2_Xp(node));
+      case 20:
+        return (T) ((String) get_tissue_lowery_string_id6B5I$h9rv01(node));
+      case 21:
+        return (T) ((Integer) get_tissue_lowery_gridpoint_id57WjpeqoyKx(node));
+      case 22:
+        return (T) ((BigDecimal) get_tissue_lowerz_decimal_id2xqP3eG2H6N(node));
+      case 23:
+        return (T) ((String) get_tissue_lowerz_string_id6B5I$h9rx$a(node));
+      case 24:
+        return (T) ((Integer) get_tissue_lowerz_gridpoint_id57WjpeqoAXQ(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -267,6 +414,11 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty cylinder_total_radius$p$uq = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef98L, "cylinder_total_radius");
+    /*package*/ static final SProperty Neg_X_Space$kMcp = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d69L, "Neg_X_Space");
+    /*package*/ static final SProperty X_Size$4fO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a582177L, "X_Size");
+    /*package*/ static final SProperty Neg_Y_Space$kSxO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d6fL, "Neg_Y_Space");
+    /*package*/ static final SProperty Y_Size$4WR = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217aL, "Y_Size");
+    /*package*/ static final SProperty Neg_Z_Space$kZ6g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d76L, "Neg_Z_Space");
+    /*package*/ static final SProperty Z_Size$5SV = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217eL, "Z_Size");
   }
 }

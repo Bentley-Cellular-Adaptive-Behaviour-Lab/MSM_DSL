@@ -18,7 +18,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_hccigz_b2a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b2a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b4a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b4a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b6a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b6a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b8a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b8a"), new ConceptEditorHintImpl("tooltipHint_6asmbt_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_6asmbt_a0a"), new ConceptEditorHintImpl("tooltipHint_vzkxs3_f0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_vzkxs3_f0a"), new ConceptEditorHintImpl("tooltipHint_kmq33_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_kmq33_a0a"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_hccigz_b2a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b2a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b4a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b4a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b6a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b6a"), new ConceptEditorHintImpl("tooltipHint_hccigz_b8a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_hccigz_b8a"), new ConceptEditorHintImpl("tooltipHint_6asmbt_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_6asmbt_a0a"), new ConceptEditorHintImpl("tooltipHint_kmq33_a0a", "", false, "TissueSetup.editor.GeneratedHints.tooltipHint_kmq33_a0a"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -36,7 +36,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 5:
         return Collections.<ConceptEditor>singletonList(new Shape_Rectangular_Editor());
       case 6:
-        return Arrays.asList(new ConceptEditor[]{new Tissue_Editor(), new Tissue_tooltipHint_vzkxs3_f0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Tissue_Editor());
       case 7:
         return Arrays.asList(new ConceptEditor[]{new Tissue_And_Cell_Container_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_Editor()});
       case 8:

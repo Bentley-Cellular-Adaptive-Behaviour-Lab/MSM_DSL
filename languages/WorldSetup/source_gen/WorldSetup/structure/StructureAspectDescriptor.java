@@ -42,6 +42,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptVertex = createDescriptorForVertex();
   /*package*/ final ConceptDescriptor myConceptWorld_Container = createDescriptorForWorld_Container();
   /*package*/ final EnumerationDescriptor myEnumerationGradient_Direction = new EnumerationDescriptor_Gradient_Direction();
+  /*package*/ final EnumerationDescriptor myEnumerationScaling_Enum = new EnumerationDescriptor_Scaling_Enum();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -124,7 +125,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationGradient_Direction);
+    return Arrays.asList(myEnumerationGradient_Direction, myEnumerationScaling_Enum);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -221,7 +222,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/2940938711094954720");
     b.version(2);
-    b.property("starting_amount", 0x28d0502d0d1398fdL).type(PrimitiveTypeId.INTEGER).origin("2940938711096072445").done();
+    b.aggregate("Starting_Concentration", 0x7a945de34a0a4d50L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("8832787999961533776").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGradient_Type_Constant() {
@@ -269,11 +270,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203046");
     b.version(2);
-    b.aggregate("X_Size", 0x2f6b1b828a3a339fL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("3416854989769421727").done();
-    b.aggregate("Y_Size", 0x2f6b1b828a3a33a2L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("3416854989769421730").done();
-    b.aggregate("Z_Size", 0x2f6b1b828a3a33a6L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("3416854989769421734").done();
-    b.aggregate("Scale_To_Distance", 0x2f6b1b828a2c89f4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("3416854989768526324").done();
-    b.aggregate("Adhesiveness", 0x143aeb296a9f63eL).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("91108499532674622").done();
+    b.property("X_Size", 0x51fc4d939a582177L).type(PrimitiveTypeId.INTEGER).origin("5907682107548246391").done();
+    b.property("Y_Size", 0x51fc4d939a58217aL).type(PrimitiveTypeId.INTEGER).origin("5907682107548246394").done();
+    b.property("Z_Size", 0x51fc4d939a58217eL).type(PrimitiveTypeId.INTEGER).origin("5907682107548246398").done();
+    b.property("Neg_X_Space", 0x105a92b3dce40d69L).type(PrimitiveTypeId.INTEGER).origin("1178415553713540457").done();
+    b.property("Neg_Y_Space", 0x105a92b3dce40d6fL).type(PrimitiveTypeId.INTEGER).origin("1178415553713540463").done();
+    b.property("Neg_Z_Space", 0x105a92b3dce40d76L).type(PrimitiveTypeId.INTEGER).origin("1178415553713540470").done();
+    b.property("Scaling", 0x51fc4d939a306dc0L).type(MetaIdFactory.dataTypeId(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51fc4d939a2fb7f9L)).origin("5907682107545644480").done();
+    b.aggregate("Buffer", 0x51fc4d939a555236L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("5907682107548062262").done();
+    b.aggregate("Adhesiveness", 0x143aeb296a9f63eL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2f6b1b828a3a33b6L).optional(false).ordered(true).multiple(false).origin("91108499532674622").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSink() {
@@ -326,13 +331,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507600");
     b.version(2);
-    b.property("upper_x", 0x29c573387561462bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716651").done();
-    b.property("lower_x", 0x29c573387561465dL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716701").done();
-    b.property("upper_y", 0x29c573387561469fL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716767").done();
-    b.property("lower_y", 0x29c57338756146d3L).type(PrimitiveTypeId.INTEGER).origin("3009938612291716819").done();
-    b.property("upper_z", 0x29c57338756146f9L).type(PrimitiveTypeId.INTEGER).origin("3009938612291716857").done();
-    b.property("lower_z", 0x29c573387561473eL).type(PrimitiveTypeId.INTEGER).origin("3009938612291716926").done();
-    b.aggregate("Substrate_Position", 0x227861932d6a58b7L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("2483842479244859575").done();
+    b.aggregate("Centre", 0x227861932d6a58b7L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("2483842479244859575").done();
     b.aggregate("Width", 0x383c8857e006d9dfL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681439").done();
     b.aggregate("Height", 0x383c8857e006d9e2L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681442").done();
     b.aggregate("Depth", 0x383c8857e006d9e6L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681446").done();
@@ -344,9 +343,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Substrate_Shape", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4eL);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5893570766194507599");
     b.version(2);
-    b.property("depth", 0x4bfb68806b422228L).type(PrimitiveTypeId.INTEGER).origin("5475084672763568680").done();
-    b.property("upper_z", 0x29c573387561010bL).type(PrimitiveTypeId.INTEGER).origin("3009938612291698955").done();
-    b.property("lower_z", 0x29c573387561013cL).type(PrimitiveTypeId.INTEGER).origin("3009938612291699004").done();
     b.aggregate("Vertex_1", 0x51ca2b62e9a67f61L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507617").done();
     b.aggregate("Vertex_2", 0x51ca2b62e9a67f69L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507625").done();
     b.aggregate("Vertex_3", 0x51ca2b62e9a67f6cL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507628").done();

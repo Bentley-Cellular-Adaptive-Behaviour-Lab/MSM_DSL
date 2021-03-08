@@ -3,13 +3,12 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
-    <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
+    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
     <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
-    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -96,36 +95,6 @@
     <property role="TrG5h" value="Tissue" />
     <property role="R4oN_" value="Concept for storing the location and type of a tissue." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2B5sNxPM5bx" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470113" />
-      <property role="TrG5h" value="upper_x" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPM5dr" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470235" />
-      <property role="TrG5h" value="lower_x" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPM5eb" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470283" />
-      <property role="TrG5h" value="upper_y" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPM5eH" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470317" />
-      <property role="TrG5h" value="lower_y" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPM5fv" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470367" />
-      <property role="TrG5h" value="upper_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPM5gx" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612298470433" />
-      <property role="TrG5h" value="lower_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

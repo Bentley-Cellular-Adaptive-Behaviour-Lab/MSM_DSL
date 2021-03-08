@@ -6,6 +6,7 @@ import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -14,30 +15,37 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import Units.behavior.Distance__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
 
-  public static final SMethod<String> get_height_id4DdJmqSEQ4i = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSEQ4i").build();
-  public static final SMethod<String> get_width_id4DdJmqSEQ4q = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSEQ4q").build();
+  public static final SMethod<BigDecimal> get_rectangular_width_decimal_id2VHjcBpE516 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_width_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VHjcBpE516").build();
+  public static final SMethod<String> get_rectangular_width_string_id1r0uutBQrtQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_width_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBQrtQ").build();
+  public static final SMethod<BigDecimal> get_rectangular_height_decimal_id2VHjcBpE1B3 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_height_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VHjcBpE1B3").build();
+  public static final SMethod<String> get_rectangular_height_string_id1r0uutBQos0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_height_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBQos0").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_id4DdJmqSEQ4i, get_width_id4DdJmqSEQ4q);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_rectangular_width_decimal_id2VHjcBpE516, get_rectangular_width_string_id1r0uutBQrtQ, get_rectangular_height_decimal_id2VHjcBpE1B3, get_rectangular_height_string_id1r0uutBQos0);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String get_height_id4DdJmqSEQ4i(@NotNull SNode __thisNode__) {
-
-    String height = String.valueOf(SPropertyOperations.getString(__thisNode__));
-    return height;
+  /*package*/ static BigDecimal get_rectangular_width_decimal_id2VHjcBpE516(@NotNull SNode __thisNode__) {
+    return Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Width$jAnj));
   }
-  /*package*/ static String get_width_id4DdJmqSEQ4q(@NotNull SNode __thisNode__) {
-    String width = String.valueOf(SPropertyOperations.getString(__thisNode__));
-    return width;
+  /*package*/ static String get_rectangular_width_string_id1r0uutBQrtQ(@NotNull SNode __thisNode__) {
+    return Shape_Rectangular__BehaviorDescriptor.get_rectangular_width_decimal_id2VHjcBpE516.invoke(__thisNode__).toString();
+  }
+  /*package*/ static BigDecimal get_rectangular_height_decimal_id2VHjcBpE1B3(@NotNull SNode __thisNode__) {
+    return Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Height$jAPl));
+  }
+  /*package*/ static String get_rectangular_height_string_id1r0uutBQos0(@NotNull SNode __thisNode__) {
+    return Shape_Rectangular__BehaviorDescriptor.get_rectangular_height_decimal_id2VHjcBpE1B3.invoke(__thisNode__).toString();
   }
 
   /*package*/ Shape_Rectangular__BehaviorDescriptor() {
@@ -56,9 +64,13 @@ public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescripto
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) get_height_id4DdJmqSEQ4i(node));
+        return (T) ((BigDecimal) get_rectangular_width_decimal_id2VHjcBpE516(node));
       case 1:
-        return (T) ((String) get_width_id4DdJmqSEQ4q(node));
+        return (T) ((String) get_rectangular_width_string_id1r0uutBQrtQ(node));
+      case 2:
+        return (T) ((BigDecimal) get_rectangular_height_decimal_id2VHjcBpE1B3(node));
+      case 3:
+        return (T) ((String) get_rectangular_height_string_id1r0uutBQos0(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -86,5 +98,10 @@ public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescripto
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Width$jAnj = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x47c452e0e9687f6cL, "Width");
+    /*package*/ static final SContainmentLink Height$jAPl = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x47c452e0e9687f6eL, "Height");
   }
 }

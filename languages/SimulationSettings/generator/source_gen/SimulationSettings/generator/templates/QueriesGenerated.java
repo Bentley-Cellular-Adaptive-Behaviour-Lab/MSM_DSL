@@ -13,7 +13,6 @@ import TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import SimulationSettings.behavior.Settings_Container__BehaviorDescriptor;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import java.util.HashMap;
@@ -50,7 +49,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_6(final PropertyMacroContext _context) {
-    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
   }
   public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
     SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
@@ -71,7 +70,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    return Settings_Container__BehaviorDescriptor.get_max_time_id2$lOk5u_ZIH.invoke(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og));
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
     SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
@@ -92,10 +91,10 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
-    return Settings_Container__BehaviorDescriptor.get_max_time_id2$lOk5u_ZIH.invoke(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og));
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
   }
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
@@ -177,5 +176,6 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty Graphics_Option$D56S = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb804L, "Graphics_Option");
     /*package*/ static final SProperty Analysis_Type$CZ0u = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb7ffL, "Analysis_Type");
+    /*package*/ static final SProperty Max_Time_Steps$CZuw = MetaAdapterFactory.getProperty(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb801L, "Max_Time_Steps");
   }
 }

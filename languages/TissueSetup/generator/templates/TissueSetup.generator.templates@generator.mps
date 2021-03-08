@@ -90,9 +90,14 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -770,15 +775,20 @@
               <node concept="3zFVjK" id="4DdJmqSFwtx" role="3zH0cK">
                 <node concept="3clFbS" id="4DdJmqSFwty" role="2VODD2">
                   <node concept="3clFbF" id="4DdJmqSFwtU" role="3cqZAp">
-                    <node concept="2OqwBi" id="4DdJmqSFx85" role="3clFbG">
-                      <node concept="2OqwBi" id="4DdJmqSFwFr" role="2Oq$k0">
-                        <node concept="30H73N" id="4DdJmqSFwtT" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="4DdJmqSFwV0" role="2OqNvi">
-                          <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                    <node concept="2OqwBi" id="57WjpeqhVO9" role="3clFbG">
+                      <node concept="1PxgMI" id="57WjpeqhV_9" role="2Oq$k0">
+                        <node concept="chp4Y" id="57WjpeqhVAL" role="3oSUPX">
+                          <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+                        </node>
+                        <node concept="2OqwBi" id="4DdJmqSFwFr" role="1m5AlR">
+                          <node concept="30H73N" id="4DdJmqSFwtT" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="4DdJmqSFwV0" role="2OqNvi">
+                            <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                          </node>
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="4DdJmqSFxts" role="2OqNvi">
-                        <ref role="37wK5l" to="4ebj:4DdJmqSFaMT" resolve="get_total_radius" />
+                      <node concept="2qgKlT" id="57WjpeqhW8f" role="2OqNvi">
+                        <ref role="37wK5l" to="4ebj:4DdJmqSFkkm" resolve="get_radius_string" />
                       </node>
                     </node>
                   </node>
@@ -1048,7 +1058,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGguT" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_x_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_position_xcoord_string" />
                         </node>
                       </node>
                     </node>
@@ -1075,7 +1085,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGhzf" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGaIc" resolve="get_y_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGaIc" resolve="get_position_ycoord_string" />
                         </node>
                       </node>
                     </node>
@@ -1102,7 +1112,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGits" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_position_zcoord_string" />
                         </node>
                       </node>
                     </node>
@@ -1250,7 +1260,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGoND" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_x_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGafn" resolve="get_position_xcoord_string" />
                         </node>
                       </node>
                     </node>
@@ -1277,7 +1287,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGpaQ" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGaIc" resolve="get_y_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGaIc" resolve="get_position_ycoord_string" />
                         </node>
                       </node>
                     </node>
@@ -1304,7 +1314,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="4DdJmqSGqiw" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_z_coord" />
+                          <ref role="37wK5l" to="4ebj:4DdJmqSGdUQ" resolve="get_position_zcoord_string" />
                         </node>
                       </node>
                     </node>

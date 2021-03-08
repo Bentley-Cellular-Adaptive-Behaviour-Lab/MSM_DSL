@@ -49,7 +49,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Sink:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Sink :");
     editorCell.setCellId("Constant_p7by30_a0");
     editorCell.setDefaultText("");
     return editorCell;

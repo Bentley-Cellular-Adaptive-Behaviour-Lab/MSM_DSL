@@ -39,9 +39,6 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfoSmartReferenceDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
-import jetbrains.mps.lang.editor.tooltips.runtime.LazyTooltipCellEvaluator;
-import jetbrains.mps.lang.editor.tooltips.runtime.TooltipWrapper;
-import jetbrains.mps.lang.editor.tooltips.runtime.TooltipTimingProperties;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
@@ -90,8 +87,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefCell_0());
     editorCell.addEditorCell(createConstant_2());
-    editorCell.addEditorCell(createTooltip_1());
-    editorCell.addEditorCell(createConstant_4());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
@@ -229,43 +224,20 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is located at");
     editorCell.setCellId("Constant_vzkxs3_e0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createTooltip_0(final EditorContext editorContext, final SNode node) {
-    LazyTooltipCellEvaluator tooltip = new LazyTooltipCellEvaluator(editorContext, node, "TissueSetup.editor.GeneratedHints.tooltipHint_vzkxs3_f0a", true);
-    EditorCell visibleCell = createConstant_3();
-
-    TooltipWrapper editorCell = new TooltipWrapper(editorContext, node, visibleCell, tooltip, TooltipTimingProperties.DEFAULT);
-    editorCell.setCellId("Tooltip_vzkxs3_f0a");
-    return editorCell;
-  }
-  private EditorCell createTooltip_1() {
-    return createTooltip_0(getEditorContext(), myNode);
-  }
-  private EditorCell createConstant_3() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "located");
-    editorCell.setCellId("Constant_vzkxs3_a5a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_4() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "at");
-    editorCell.setCellId("Constant_vzkxs3_g0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new positionSingleRoleHandler_vzkxs3_h0a(myNode, LINKS.position$KVlR, getEditorContext());
+    SingleRoleCellProvider provider = new positionSingleRoleHandler_vzkxs3_f0a(myNode, LINKS.position$KVlR, getEditorContext());
     return provider.createCell();
   }
-  private static class positionSingleRoleHandler_vzkxs3_h0a extends SingleRoleCellProvider {
+  private static class positionSingleRoleHandler_vzkxs3_f0a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public positionSingleRoleHandler_vzkxs3_h0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public positionSingleRoleHandler_vzkxs3_f0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }

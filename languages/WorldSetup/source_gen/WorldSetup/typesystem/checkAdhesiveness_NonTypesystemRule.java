@@ -7,30 +7,30 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import org.iets3.core.expr.base.behavior.IETS3ExprEvalHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import WorldSetup.behavior.Adhesiveness__BehaviorDescriptor;
+import java.math.BigDecimal;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class checkAdhesiveness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkAdhesiveness_NonTypesystemRule() {
   }
   public void applyRule(final SNode adhesiveness, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    float value = ((float) IETS3ExprEvalHelper.evaluate(SLinkOperations.getTarget(adhesiveness, LINKS.expr$PjvJ)));
-    if (value > 1.0) {
+    if (Adhesiveness__BehaviorDescriptor.get_adhesiveness_value_decimal_id1r0uutBGt3g.invoke(adhesiveness).compareTo(BigDecimal.ZERO) == -1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(adhesiveness, "Adhesiveness must be a value between 0 and 1. Currently greater than 1.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "6390286245169241663", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(adhesiveness, "Adhesiveness must be a value between 0 and 1. Currently less than 0.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "6390286245169241663", null, errorTarget);
       }
-    } else if (value < 0.0) {
+    }
+
+    if (Adhesiveness__BehaviorDescriptor.get_adhesiveness_value_decimal_id1r0uutBGt3g.invoke(adhesiveness).compareTo(BigDecimal.ONE) == 1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(adhesiveness, "Adhesiveness must be a value between 0 and 1. Currently less than 0.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "6390286245169245058", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(adhesiveness, "Adhesiveness must be a value between 0 and 1. Currently greater than 1.", "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1639444299147902359", null, errorTarget);
       }
     }
   }
@@ -42,10 +42,6 @@ public class checkAdhesiveness_NonTypesystemRule extends AbstractNonTypesystemRu
   }
   public boolean overrides() {
     return false;
-  }
-
-  private static final class LINKS {
-    /*package*/ static final SContainmentLink expr$PjvJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2f6b1b828a3a33b6L, 0x2f6b1b828a3a33b7L, "expr");
   }
 
   private static final class CONCEPTS {

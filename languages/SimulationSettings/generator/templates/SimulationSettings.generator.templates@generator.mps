@@ -13,10 +13,10 @@
     <import index="eoo2" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
-    <import index="dtzy" ref="r:71492510-3132-457a-8b26-e3ffbda57e8b(SimulationSettings.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1171,7 +1171,7 @@
                                   </node>
                                 </node>
                                 <node concept="2qgKlT" id="6yORN46wmes" role="2OqNvi">
-                                  <ref role="37wK5l" to="4ebj:4XZPqyVOe45" resolve="count_cell_number" />
+                                  <ref role="37wK5l" to="4ebj:4XZPqyVOe45" resolve="count_cell_number_string" />
                                 </node>
                               </node>
                             </node>
@@ -1354,16 +1354,20 @@
                             <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                             <node concept="3zFVjK" id="3Hd2qvD$D9w" role="3zH0cK">
                               <node concept="3clFbS" id="3Hd2qvD$D9x" role="2VODD2">
-                                <node concept="3cpWs6" id="3Hd2qvD$DJm" role="3cqZAp">
-                                  <node concept="2OqwBi" id="3Hd2qvD$DJn" role="3cqZAk">
-                                    <node concept="1PxgMI" id="3Hd2qvD$DJo" role="2Oq$k0">
-                                      <node concept="chp4Y" id="3Hd2qvD$DJp" role="3oSUPX">
-                                        <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                <node concept="3cpWs6" id="5dLEvTKsqT6" role="3cqZAp">
+                                  <node concept="2YIFZM" id="5dLEvTKssMT" role="3cqZAk">
+                                    <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                    <node concept="2OqwBi" id="5dLEvTKsutn" role="37wK5m">
+                                      <node concept="1PxgMI" id="5dLEvTKsuto" role="2Oq$k0">
+                                        <node concept="chp4Y" id="5dLEvTKsutp" role="3oSUPX">
+                                          <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                        </node>
+                                        <node concept="30H73N" id="5dLEvTKsutq" role="1m5AlR" />
                                       </node>
-                                      <node concept="30H73N" id="3Hd2qvD$DJq" role="1m5AlR" />
-                                    </node>
-                                    <node concept="2qgKlT" id="3Hd2qvD$DJr" role="2OqNvi">
-                                      <ref role="37wK5l" to="dtzy:2$lOk5u_ZIH" resolve="get_max_time" />
+                                      <node concept="3TrcHB" id="5dLEvTKsutr" role="2OqNvi">
+                                        <ref role="3TsBF5" to="the3:6JBqwuejVw1" resolve="Max_Time_Steps" />
+                                      </node>
                                     </node>
                                   </node>
                                 </node>
@@ -1546,16 +1550,20 @@
                         <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
                         <node concept="3zFVjK" id="3Hd2qvD$mDZ" role="3zH0cK">
                           <node concept="3clFbS" id="3Hd2qvD$mE0" role="2VODD2">
-                            <node concept="3cpWs6" id="3Hd2qvD$$9o" role="3cqZAp">
-                              <node concept="2OqwBi" id="3Hd2qvD$_l7" role="3cqZAk">
-                                <node concept="1PxgMI" id="3Hd2qvD$$Qh" role="2Oq$k0">
-                                  <node concept="chp4Y" id="3Hd2qvD$_0F" role="3oSUPX">
-                                    <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                            <node concept="3cpWs6" id="5dLEvTKsxF9" role="3cqZAp">
+                              <node concept="2YIFZM" id="5dLEvTKsxFa" role="3cqZAk">
+                                <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                                <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                                <node concept="2OqwBi" id="5dLEvTKsxFb" role="37wK5m">
+                                  <node concept="1PxgMI" id="5dLEvTKsxFc" role="2Oq$k0">
+                                    <node concept="chp4Y" id="5dLEvTKsxFd" role="3oSUPX">
+                                      <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                    </node>
+                                    <node concept="30H73N" id="5dLEvTKsxFe" role="1m5AlR" />
                                   </node>
-                                  <node concept="30H73N" id="3Hd2qvD$$xA" role="1m5AlR" />
-                                </node>
-                                <node concept="2qgKlT" id="3Hd2qvD$_Ek" role="2OqNvi">
-                                  <ref role="37wK5l" to="dtzy:2$lOk5u_ZIH" resolve="get_max_time" />
+                                  <node concept="3TrcHB" id="5dLEvTKsxFf" role="2OqNvi">
+                                    <ref role="3TsBF5" to="the3:6JBqwuejVw1" resolve="Max_Time_Steps" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -1589,7 +1597,7 @@
                                   </node>
                                 </node>
                                 <node concept="2qgKlT" id="6yORN46yI1h" role="2OqNvi">
-                                  <ref role="37wK5l" to="4ebj:4XZPqyVOe45" resolve="count_cell_number" />
+                                  <ref role="37wK5l" to="4ebj:4XZPqyVOe45" resolve="count_cell_number_string" />
                                 </node>
                               </node>
                             </node>

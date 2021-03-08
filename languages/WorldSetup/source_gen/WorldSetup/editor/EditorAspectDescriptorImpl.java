@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_qumq7g_b2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b2a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b4a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b4a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b6a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b6a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0i0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0i0"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0k0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0k0"), new ConceptEditorHintImpl("tooltipHint_koct37_b1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_b1a"), new ConceptEditorHintImpl("tooltipHint_fphtn9_d1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_fphtn9_d1a"), new ConceptEditorHintImpl("tooltipHint_r0xdaj_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_r0xdaj_a0a"), new ConceptEditorHintImpl("tooltipHint_15ya70_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_15ya70_a0a"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_qumq7g_b2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b2a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b4a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b4a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_b6a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_b6a"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0i0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0i0"), new ConceptEditorHintImpl("tooltipHint_qumq7g_a0k0", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_qumq7g_a0k0"), new ConceptEditorHintImpl("tooltipHint_koct37_a0a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_a0a"), new ConceptEditorHintImpl("tooltipHint_koct37_a1a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_a1a"), new ConceptEditorHintImpl("tooltipHint_koct37_a2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_a2a"), new ConceptEditorHintImpl("tooltipHint_koct37_a3a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_koct37_a3a"), new ConceptEditorHintImpl("tooltipHint_fphtn9_b2a", "", false, "WorldSetup.editor.GeneratedHints.tooltipHint_fphtn9_b2a"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
@@ -41,7 +41,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 7:
         return Collections.<ConceptEditor>singletonList(new Gradient_Type_Linear_Editor());
       case 8:
-        return Arrays.asList(new ConceptEditor[]{new Grid_Editor(), new Grid_tooltipHint_koct37_b1a_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Grid_Editor(), new Grid_tooltipHint_koct37_a0a_Editor(), new Grid_tooltipHint_koct37_a1a_Editor(), new Grid_tooltipHint_koct37_a2a_Editor(), new Grid_tooltipHint_koct37_a3a_Editor()});
       case 9:
         return Collections.<ConceptEditor>singletonList(new Sink_Editor());
       case 10:
@@ -49,11 +49,11 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 11:
         return Collections.<ConceptEditor>singletonList(new Source_Editor());
       case 12:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Editor(), new Substrate_tooltipHint_fphtn9_d1a_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Substrate_Editor(), new Substrate_tooltipHint_fphtn9_b2a_Editor()});
       case 13:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Cuboid_Editor(), new Substrate_Shape_Cuboid_tooltipHint_r0xdaj_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Substrate_Shape_Cuboid_Editor());
       case 14:
-        return Arrays.asList(new ConceptEditor[]{new Substrate_Shape_Triangular_Editor(), new Substrate_Shape_Triangular_tooltipHint_15ya70_a0a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Substrate_Shape_Triangular_Editor());
       case 15:
         return Collections.<ConceptEditor>singletonList(new Vertex_Editor());
       case 16:

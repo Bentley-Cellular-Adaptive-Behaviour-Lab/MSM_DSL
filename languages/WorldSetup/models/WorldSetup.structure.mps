@@ -3,14 +3,13 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
-    <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
+    <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
-    <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -20,6 +19,7 @@
         <property id="672037151186491528" name="presentation" index="1L1pqM" />
       </concept>
       <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <reference id="1075010451642646892" name="defaultMember" index="1H5jkz" />
         <child id="3348158742936976577" name="members" index="25R1y" />
       </concept>
       <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
@@ -110,31 +110,10 @@
     <property role="TrG5h" value="Grid" />
     <property role="R4oN_" value="Concept for describing the base properties of the simulation world environment." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="2XF6Saaezev" role="1TKVEi">
-      <property role="IQ2ns" value="3416854989769421727" />
+    <node concept="1TJgyj" id="57Wjpeqll8Q" role="1TKVEi">
+      <property role="IQ2ns" value="5907682107548062262" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="X_Size" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
-    </node>
-    <node concept="1TJgyj" id="2XF6Saaezey" role="1TKVEi">
-      <property role="IQ2ns" value="3416854989769421730" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Y_Size" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
-    </node>
-    <node concept="1TJgyj" id="2XF6SaaezeA" role="1TKVEi">
-      <property role="IQ2ns" value="3416854989769421734" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Z_Size" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
-    </node>
-    <node concept="1TJgyj" id="2XF6Saab8BO" role="1TKVEi">
-      <property role="IQ2ns" value="3416854989768526324" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Scale_To_Distance" />
+      <property role="20kJfa" value="Buffer" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
@@ -143,7 +122,42 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Adhesiveness" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+      <ref role="20lvS9" node="2XF6SaaezeQ" resolve="Adhesiveness" />
+    </node>
+    <node concept="1TJgyi" id="57Wjpeqm25R" role="1TKVEl">
+      <property role="IQ2nx" value="5907682107548246391" />
+      <property role="TrG5h" value="X_Size" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57Wjpeqm25U" role="1TKVEl">
+      <property role="IQ2nx" value="5907682107548246394" />
+      <property role="TrG5h" value="Y_Size" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57Wjpeqm25Y" role="1TKVEl">
+      <property role="IQ2nx" value="5907682107548246398" />
+      <property role="TrG5h" value="Z_Size" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="11q$FfsT0PD" role="1TKVEl">
+      <property role="IQ2nx" value="1178415553713540457" />
+      <property role="TrG5h" value="Neg_X_Space" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="11q$FfsT0PJ" role="1TKVEl">
+      <property role="IQ2nx" value="1178415553713540463" />
+      <property role="TrG5h" value="Neg_Y_Space" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="11q$FfsT0PQ" role="1TKVEl">
+      <property role="IQ2nx" value="1178415553713540470" />
+      <property role="TrG5h" value="Neg_Z_Space" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="57Wjpeqc6R0" role="1TKVEl">
+      <property role="IQ2nx" value="5907682107545644480" />
+      <property role="TrG5h" value="Scaling" />
+      <ref role="AX2Wp" node="57WjpeqbVvT" resolve="Scaling_Enum" />
     </node>
   </node>
   <node concept="1TIwiD" id="7faAukhALBB">
@@ -244,21 +258,6 @@
     <property role="R4oN_" value="Concept for describing a substrate in the shape of a triangular prism." />
     <property role="3GE5qa" value="Substrates" />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
-    <node concept="1TJgyi" id="4JVq81Fgy8C" role="1TKVEl">
-      <property role="IQ2nx" value="5475084672763568680" />
-      <property role="TrG5h" value="depth" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPog4b" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291698955" />
-      <property role="TrG5h" value="upper_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPog4W" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291699004" />
-      <property role="TrG5h" value="lower_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyj" id="57aaQbDDBXx" role="1TKVEi">
       <property role="IQ2ns" value="5893570766194507617" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -301,40 +300,10 @@
     <property role="R4oN_" value="Concept for describing a cuboidal substrate." />
     <property role="3GE5qa" value="Substrates" />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
-    <node concept="1TJgyi" id="2B5sNxPokoF" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716651" />
-      <property role="TrG5h" value="upper_x" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPokpt" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716701" />
-      <property role="TrG5h" value="lower_x" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPokqv" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716767" />
-      <property role="TrG5h" value="upper_y" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPokrj" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716819" />
-      <property role="TrG5h" value="lower_y" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPokrT" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716857" />
-      <property role="TrG5h" value="upper_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="2B5sNxPoksY" role="1TKVEl">
-      <property role="IQ2nx" value="3009938612291716926" />
-      <property role="TrG5h" value="lower_z" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyj" id="29SopcHq_yR" role="1TKVEi">
       <property role="IQ2ns" value="2483842479244859575" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Substrate_Position" />
+      <property role="20kJfa" value="Centre" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="nguq:5qSYbADreY7" resolve="Position" />
     </node>
@@ -396,10 +365,12 @@
     <property role="R4oN_" value="Describes how the gradient varies in space." />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyi" id="2zgk2Od4TzX" role="1TKVEl">
-      <property role="IQ2nx" value="2940938711096072445" />
-      <property role="TrG5h" value="starting_amount" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    <node concept="1TJgyj" id="7Eknuda2$Pg" role="1TKVEi">
+      <property role="IQ2ns" value="8832787999961533776" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Starting_Concentration" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
     </node>
   </node>
   <node concept="1TIwiD" id="2zgk2Od0CFO">
@@ -653,6 +624,22 @@
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="25R3W" id="57WjpeqbVvT">
+    <property role="3F6X1D" value="5907682107545597945" />
+    <property role="TrG5h" value="Scaling_Enum" />
+    <property role="3GE5qa" value="Scaling" />
+    <ref role="1H5jkz" node="57Wjpeqc5T8" resolve="Half_Micron" />
+    <node concept="25R33" id="57Wjpeqc5T8" role="25R1y">
+      <property role="3tVfz5" value="5907682107545640520" />
+      <property role="TrG5h" value="Half_Micron" />
+      <property role="1L1pqM" value="0.5 Microns" />
+    </node>
+    <node concept="25R33" id="57Wjpeqc5Ta" role="25R1y">
+      <property role="3tVfz5" value="5907682107545640522" />
+      <property role="TrG5h" value="One_Micron" />
+      <property role="1L1pqM" value="1 Micron" />
     </node>
   </node>
 </model>

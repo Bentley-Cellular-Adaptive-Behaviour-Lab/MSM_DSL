@@ -35,8 +35,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
-    deps.aggregatedLanguage(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, "ProteinSetup");
     deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
+    deps.aggregatedLanguage(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, "ProteinSetup");
   }
 
   @Override
@@ -98,9 +98,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("cylinder_cross_section_cells", 0x56b8f8b9a96cef93L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690131").done();
     b.property("cylinder_length_in_cells", 0x56b8f8b9a96cef95L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690133").done();
-    b.property("cylinder_total_radius", 0x56b8f8b9a96cef98L).type(PrimitiveTypeId.INTEGER).origin("6249017959271690136").done();
     b.property("cylinder_total_cells", 0x4bfb68806b4ffab2L).type(PrimitiveTypeId.INTEGER).origin("5475084672764476082").done();
     b.property("cylinder_total_length_int", 0x6fe4015562491b03L).type(PrimitiveTypeId.INTEGER).origin("8062570699132836611").done();
+    b.aggregate("Cylinder_Radius", 0x383c8857e010ed42L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675729341762").done();
     b.alias("Cylindrical");
     return b.create();
   }
@@ -177,12 +177,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690118");
     b.version(2);
-    b.property("upper_x", 0x29c5733875c852e1L).type(PrimitiveTypeId.INTEGER).origin("3009938612298470113").done();
-    b.property("lower_x", 0x29c5733875c8535bL).type(PrimitiveTypeId.INTEGER).origin("3009938612298470235").done();
-    b.property("upper_y", 0x29c5733875c8538bL).type(PrimitiveTypeId.INTEGER).origin("3009938612298470283").done();
-    b.property("lower_y", 0x29c5733875c853adL).type(PrimitiveTypeId.INTEGER).origin("3009938612298470317").done();
-    b.property("upper_z", 0x29c5733875c853dfL).type(PrimitiveTypeId.INTEGER).origin("3009938612298470367").done();
-    b.property("lower_z", 0x29c5733875c85421L).type(PrimitiveTypeId.INTEGER).origin("3009938612298470433").done();
     b.associate("tissue_type", 0x4369a03b1c616655L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL).optional(false).origin("4857589848835450453").done();
     b.aggregate("position", 0x56b8f8b9a96e2a3eL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L).optional(false).ordered(true).multiple(false).origin("6249017959271770686").done();
     return b.create();

@@ -2,9 +2,11 @@
 <dependenciesRoot>
   <dependency className="WorldSetup.generator.templates.QueriesGenerated">
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
+    <classNode dependClassName="WorldSetup.behavior.Adhesiveness__BehaviorDescriptor" />
+    <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_Cuboidal__BehaviorDescriptor" />
+    <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_Point__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_SinkAndSource__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Gradient_Type__BehaviorDescriptor" />
-    <classNode dependClassName="WorldSetup.behavior.Grid__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate__BehaviorDescriptor" />
@@ -24,6 +26,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

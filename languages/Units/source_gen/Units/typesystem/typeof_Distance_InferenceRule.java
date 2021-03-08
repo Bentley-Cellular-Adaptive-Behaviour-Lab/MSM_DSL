@@ -23,7 +23,7 @@ public class typeof_Distance_InferenceRule extends AbstractInferenceRule_Runtime
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(distance, LINKS.value$SBs3), LINKS.expr$fJhI);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "5497703887388107921", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "5497703887388107927", true), (SNode) PTF.createIntegerType(null), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "5497703887388107927", true), (SNode) PTF.createRealType(null), false, true, _info_12389875345);
     }
   }
   public SAbstractConcept getApplicableConcept() {

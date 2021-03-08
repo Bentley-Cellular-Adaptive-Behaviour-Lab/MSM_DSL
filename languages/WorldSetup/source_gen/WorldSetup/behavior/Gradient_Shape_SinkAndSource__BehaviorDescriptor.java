@@ -23,35 +23,35 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Gradient_Shape_SinkAndSource__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL, "WorldSetup.structure.Gradient_Shape_SinkAndSource");
 
-  public static final SMethod<String> get_source_X_position_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6aJ5").build();
-  public static final SMethod<String> get_source_Y_position_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6cfy").build();
-  public static final SMethod<String> get_source_Z_position_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6deA").build();
-  public static final SMethod<String> get_sink_X_position_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6e46").build();
-  public static final SMethod<String> get_sink_Y_position_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6eOG").build();
-  public static final SMethod<String> get_sink_Z_position_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6fPc").build();
+  public static final SMethod<String> get_sourcex_string_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcex_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6aJ5").build();
+  public static final SMethod<String> get_sourcey_string_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcey_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6cfy").build();
+  public static final SMethod<String> get_sourcez_string_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcez_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6deA").build();
+  public static final SMethod<String> get_sinkx_string_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkx_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6e46").build();
+  public static final SMethod<String> get_sinky_string_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinky_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6eOG").build();
+  public static final SMethod<String> get_sinkz_string_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkz_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6fPc").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_source_X_position_id2OHr9yL6aJ5, get_source_Y_position_id2OHr9yL6cfy, get_source_Z_position_id2OHr9yL6deA, get_sink_X_position_id2OHr9yL6e46, get_sink_Y_position_id2OHr9yL6eOG, get_sink_Z_position_id2OHr9yL6fPc);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_sourcex_string_id2OHr9yL6aJ5, get_sourcey_string_id2OHr9yL6cfy, get_sourcez_string_id2OHr9yL6deA, get_sinkx_string_id2OHr9yL6e46, get_sinky_string_id2OHr9yL6eOG, get_sinkz_string_id2OHr9yL6fPc);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String get_source_X_position_id2OHr9yL6aJ5(@NotNull SNode __thisNode__) {
-    return Source__BehaviorDescriptor.get_X_position_id2OHr9yL65ib.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+  /*package*/ static String get_sourcex_string_id2OHr9yL6aJ5(@NotNull SNode __thisNode__) {
+    return Source__BehaviorDescriptor.get_source_x_string_id1r0uutBEy5V.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
   }
-  /*package*/ static String get_source_Y_position_id2OHr9yL6cfy(@NotNull SNode __thisNode__) {
-    return Source__BehaviorDescriptor.get_Y_position_id2OHr9yL66Qs.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+  /*package*/ static String get_sourcey_string_id2OHr9yL6cfy(@NotNull SNode __thisNode__) {
+    return Source__BehaviorDescriptor.get_source_y_string_id1r0uutBEy6b.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
   }
-  /*package*/ static String get_source_Z_position_id2OHr9yL6deA(@NotNull SNode __thisNode__) {
-    return Source__BehaviorDescriptor.get_Z_position_id2OHr9yL67xm.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+  /*package*/ static String get_sourcez_string_id2OHr9yL6deA(@NotNull SNode __thisNode__) {
+    return Source__BehaviorDescriptor.get_source_z_string_id1r0uutBEy6r.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
   }
-  /*package*/ static String get_sink_X_position_id2OHr9yL6e46(@NotNull SNode __thisNode__) {
-    return Sink__BehaviorDescriptor.get_X_position_id2OHr9yL68kM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+  /*package*/ static String get_sinkx_string_id2OHr9yL6e46(@NotNull SNode __thisNode__) {
+    return Sink__BehaviorDescriptor.get_sink_x_string_id2OHr9yL68kM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
   }
-  /*package*/ static String get_sink_Y_position_id2OHr9yL6eOG(@NotNull SNode __thisNode__) {
-    return Sink__BehaviorDescriptor.get_Y_position_id2OHr9yL68kW.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+  /*package*/ static String get_sinky_string_id2OHr9yL6eOG(@NotNull SNode __thisNode__) {
+    return Sink__BehaviorDescriptor.get_sink_y_string_id2OHr9yL68kW.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
   }
-  /*package*/ static String get_sink_Z_position_id2OHr9yL6fPc(@NotNull SNode __thisNode__) {
-    return Sink__BehaviorDescriptor.get_Z_position_id2OHr9yL68l6.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+  /*package*/ static String get_sinkz_string_id2OHr9yL6fPc(@NotNull SNode __thisNode__) {
+    return Sink__BehaviorDescriptor.get_sink_z_string_id11q$FfsWVZM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
   }
 
   /*package*/ Gradient_Shape_SinkAndSource__BehaviorDescriptor() {
@@ -70,17 +70,17 @@ public final class Gradient_Shape_SinkAndSource__BehaviorDescriptor extends Base
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) get_source_X_position_id2OHr9yL6aJ5(node));
+        return (T) ((String) get_sourcex_string_id2OHr9yL6aJ5(node));
       case 1:
-        return (T) ((String) get_source_Y_position_id2OHr9yL6cfy(node));
+        return (T) ((String) get_sourcey_string_id2OHr9yL6cfy(node));
       case 2:
-        return (T) ((String) get_source_Z_position_id2OHr9yL6deA(node));
+        return (T) ((String) get_sourcez_string_id2OHr9yL6deA(node));
       case 3:
-        return (T) ((String) get_sink_X_position_id2OHr9yL6e46(node));
+        return (T) ((String) get_sinkx_string_id2OHr9yL6e46(node));
       case 4:
-        return (T) ((String) get_sink_Y_position_id2OHr9yL6eOG(node));
+        return (T) ((String) get_sinky_string_id2OHr9yL6eOG(node));
       case 5:
-        return (T) ((String) get_sink_Z_position_id2OHr9yL6fPc(node));
+        return (T) ((String) get_sinkz_string_id2OHr9yL6fPc(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

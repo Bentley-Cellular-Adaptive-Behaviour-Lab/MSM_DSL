@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="TissueSetup.generator.templates.QueriesGenerated">
+    <classNode dependClassName="TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Arrangement__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Shape__BehaviorDescriptor" />

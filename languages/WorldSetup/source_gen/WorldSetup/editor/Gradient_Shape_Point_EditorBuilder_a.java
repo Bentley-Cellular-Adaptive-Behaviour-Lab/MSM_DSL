@@ -72,7 +72,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "--> { Centre:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "--> { Centre :");
     editorCell.setCellId("Constant_e79t1g_b0a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -163,7 +163,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Radius:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Radius :");
     editorCell.setCellId("Constant_e79t1g_e1a");
     editorCell.setDefaultText("");
     return editorCell;
