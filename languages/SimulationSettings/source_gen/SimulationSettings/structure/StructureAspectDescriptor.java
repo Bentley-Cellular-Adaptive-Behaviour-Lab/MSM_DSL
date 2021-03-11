@@ -60,7 +60,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SimulationSettings", "Settings_Container", 0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L);
     b.class_(false, false, true);
     b.parent(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d7416f5b-63c6-40ff-a2a8-046b90a45484(SimulationSettings.structure)/7775299862363134673");
     b.version(2);
     b.property("Analysis_Type", 0x6be76a078e4fb7ffL).type(MetaIdFactory.dataTypeId(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L)).origin("7775299862363355135").done();

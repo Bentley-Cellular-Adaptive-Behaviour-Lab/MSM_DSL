@@ -46,7 +46,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Run the MSM with additional analysis (bistability, patterning) or no analysis.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Run the MSM with graphics on or off.");
     editorCell.setCellId("Constant_4qjk26_a0");
     editorCell.setDefaultText("");
     return editorCell;

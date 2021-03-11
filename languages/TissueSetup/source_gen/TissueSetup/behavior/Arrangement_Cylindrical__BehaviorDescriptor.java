@@ -64,7 +64,7 @@ public final class Arrangement_Cylindrical__BehaviorDescriptor extends BaseBHDes
     return radius;
   }
   /*package*/ static int get_radius_gridpoints_id57Wjpeqocpj(@NotNull SNode __thisNode__) {
-    SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
+    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
     float scale = 0;
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
       scale = ((float) 0.5);
@@ -205,8 +205,8 @@ public final class Arrangement_Cylindrical__BehaviorDescriptor extends BaseBHDes
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Cylinder_Radius$5MFi = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x383c8857e010ed42L, "Cylinder_Radius");
-    /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
     /*package*/ static final SReferenceLink World_Container$fGL6 = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x1d99d55b84fedbc7L, "World_Container");
+    /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
     /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
     /*package*/ static final SContainmentLink Shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "Shape");
     /*package*/ static final SContainmentLink Width$jAnj = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, 0x47c452e0e9687f6cL, "Width");
@@ -214,7 +214,6 @@ public final class Arrangement_Cylindrical__BehaviorDescriptor extends BaseBHDes
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
     /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
     /*package*/ static final SConcept Tissue_Type$C4 = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, "TissueSetup.structure.Tissue_Type");
     /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");

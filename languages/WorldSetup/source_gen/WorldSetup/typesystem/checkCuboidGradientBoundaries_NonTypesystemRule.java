@@ -33,7 +33,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate lower X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(thisCuboid) + "X gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298838", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate lower X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(thisCuboid) + " X gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "3967240825596671238", null, errorTarget);
       }
     }
 
@@ -41,7 +41,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperx_gridpoints_id57WjpeqpIsP.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate upper X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperx_gridpoints_id57WjpeqpIsP.invoke(thisCuboid) + "X gridpoint upper boundary: " + (SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298881", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate upper X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperx_gridpoints_id57WjpeqpIsP.invoke(thisCuboid) + " X gridpoint upper boundary: " + (SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298881", null, errorTarget);
       }
     }
 
@@ -49,7 +49,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowery_gridpoints_id57WjpeqpPoL.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate lower Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(thisCuboid) + "Y gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298933", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate lower Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(thisCuboid) + " Y gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298933", null, errorTarget);
       }
     }
 
@@ -57,7 +57,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_uppery_gridpoints_id57WjpeqpNHo.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate upper Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_uppery_gridpoints_id57WjpeqpNHo.invoke(thisCuboid) + "Y gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298976", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate upper Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_uppery_gridpoints_id57WjpeqpNHo.invoke(thisCuboid) + " Y gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714298976", null, errorTarget);
       }
     }
 
@@ -65,7 +65,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_id57WjpeqpSJw.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_id57WjpeqpSJw.invoke(thisCuboid) + "Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714299028", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_id57WjpeqpSJw.invoke(thisCuboid) + " Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714299028", null, errorTarget);
       }
     }
 
@@ -73,7 +73,7 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
     if ((int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperz_gridpoints_id11q$FfsSAUS.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.Substrate$xo, false, false), "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperz_gridpoints_id11q$FfsSAUS.invoke(thisCuboid) + "Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714299071", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisCuboid, "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperz_gridpoints_id11q$FfsSAUS.invoke(thisCuboid) + " Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714299071", null, errorTarget);
       }
     }
   }
@@ -89,7 +89,6 @@ public class checkCuboidGradientBoundaries_NonTypesystemRule extends AbstractNon
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
-    /*package*/ static final SConcept Substrate$xo = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
     /*package*/ static final SConcept Gradient_Shape_Cuboidal$1m = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, "WorldSetup.structure.Gradient_Shape_Cuboidal");
   }
 

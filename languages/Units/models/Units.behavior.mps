@@ -803,6 +803,21 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="3seu8bO8W0J" role="3cqZAp">
+          <node concept="3cpWsn" id="3seu8bO8W0K" role="3cpWs9">
+            <property role="TrG5h" value="scale_value" />
+            <node concept="3uibUv" id="3seu8bO8W0L" role="1tU5fm">
+              <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
+            </node>
+            <node concept="2YIFZM" id="3seu8bO8Wsz" role="33vP2m">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.valueOf(double)" resolve="valueOf" />
+              <ref role="1Pybhc" to="xlxw:~BigDecimal" resolve="BigDecimal" />
+              <node concept="37vLTw" id="3seu8bO8Wub" role="37wK5m">
+                <ref role="3cqZAo" node="3wWy5vw4Pnp" resolve="scaling" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="57Wjpeqbaer" role="3cqZAp">
           <node concept="3cpWsn" id="57Wjpeqbaes" role="3cpWs9">
             <property role="TrG5h" value="gridpoint_value" />

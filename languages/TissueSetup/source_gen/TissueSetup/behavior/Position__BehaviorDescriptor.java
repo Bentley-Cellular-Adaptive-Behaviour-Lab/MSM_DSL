@@ -65,7 +65,14 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
     return Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Z_Coord$jHVF));
   }
   /*package*/ static int get_position_X_gridpoint_id57WjpeqnuX1(@NotNull SNode __thisNode__) {
-    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    SNode grid;
+    if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
+      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    } else {
+      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
+    }
     float scale = 0;
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
       scale = ((float) 0.5);
@@ -77,7 +84,14 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
     return x_coord;
   }
   /*package*/ static int get_position_Y_gridpoint_id57WjpeqnDsZ(@NotNull SNode __thisNode__) {
-    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    SNode grid;
+    if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
+      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    } else {
+      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
+    }
     float scale = 0;
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
       scale = ((float) 0.5);
@@ -89,7 +103,14 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
     return y_coord;
   }
   /*package*/ static int get_position_Z_gridpoint_id57WjpeqnGbT(@NotNull SNode __thisNode__) {
-    SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    SNode grid;
+    if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
+      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
+    } else {
+      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
+    }
     float scale = 0;
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
       scale = ((float) 0.5);
@@ -173,6 +194,7 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
+    /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
   }
 
   private static final class PROPS {

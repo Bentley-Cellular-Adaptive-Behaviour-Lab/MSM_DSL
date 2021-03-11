@@ -46,7 +46,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Run the MSM with graphics on or off.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Choose the simulation world set-up!");
     editorCell.setCellId("Constant_aczk9b_a0");
     editorCell.setDefaultText("");
     return editorCell;

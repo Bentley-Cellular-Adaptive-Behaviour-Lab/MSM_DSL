@@ -19,15 +19,15 @@
       <unit at="10,0,28,0" name="SimulationSettings.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="18,0,73,0" name="SimulationSettings.structure.StructureAspectDescriptor" />
+      <unit at="18,0,72,0" name="SimulationSettings.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d7416f5b-63c6-40ff-a2a8-046b90a45484(SimulationSettings.structure)/7775299862363134673">
     <file name="ConceptPresentationAspectImpl.java">
       <node id="7775299862363134673" at="12,0,13,0" concept="2" trace="props_Settings_Container" />
       <node id="7775299862363134673" at="20,47,21,76" concept="5" />
-      <node id="7775299862363134673" at="21,76,22,35" concept="1" />
-      <node id="7775299862363134673" at="22,35,23,50" concept="1" />
+      <node id="7775299862363134673" at="21,76,22,153" concept="1" />
+      <node id="7775299862363134673" at="22,153,23,50" concept="1" />
       <node id="7775299862363134673" at="24,9,25,40" concept="6" />
       <node id="7775299862363134673" at="19,52,24,9" concept="3" />
       <scope id="7775299862363134673" at="20,47,23,50">
@@ -45,20 +45,19 @@
       <node id="7775299862363134673" at="59,76,60,171" concept="5" />
       <node id="7775299862363134673" at="60,171,61,33" concept="1" />
       <node id="7775299862363134673" at="61,33,62,76" concept="1" />
-      <node id="7775299862363134673" at="62,76,63,71" concept="1" />
-      <node id="7775299862363134673" at="63,71,64,105" concept="1" />
-      <node id="7775299862363134673" at="64,105,65,17" concept="1" />
-      <node id="7775299862363355135" at="65,17,66,184" concept="1" />
-      <node id="7775299862363355137" at="66,184,67,121" concept="1" />
-      <node id="7775299862363355140" at="67,121,68,186" concept="1" />
-      <node id="7775299862363355109" at="68,186,69,183" concept="1" />
-      <node id="7775299862363134673" at="69,183,70,22" concept="6" />
-      <node id="7775299862363134673" at="59,0,72,0" concept="8" trace="createDescriptorForSettings_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
+      <node id="7775299862363134673" at="62,76,63,105" concept="1" />
+      <node id="7775299862363134673" at="63,105,64,17" concept="1" />
+      <node id="7775299862363355135" at="64,17,65,184" concept="1" />
+      <node id="7775299862363355137" at="65,184,66,121" concept="1" />
+      <node id="7775299862363355140" at="66,121,67,186" concept="1" />
+      <node id="7775299862363355109" at="67,186,68,183" concept="1" />
+      <node id="7775299862363134673" at="68,183,69,22" concept="6" />
+      <node id="7775299862363134673" at="59,0,71,0" concept="8" trace="createDescriptorForSettings_Container#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="7775299862363134673" at="43,52,44,43" />
-      <scope id="7775299862363134673" at="59,76,70,22">
+      <scope id="7775299862363134673" at="59,76,69,22">
         <var name="b" id="7775299862363134673" />
       </scope>
-      <scope id="7775299862363134673" at="59,0,72,0" />
+      <scope id="7775299862363134673" at="59,0,71,0" />
     </file>
   </root>
   <root nodeRef="r:d7416f5b-63c6-40ff-a2a8-046b90a45484(SimulationSettings.structure)/7775299862363355126">

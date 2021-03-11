@@ -37,6 +37,10 @@
       <concept id="5944657839003601246" name="jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration" flags="ig" index="2BsEeg">
         <property id="168363875802087287" name="showInUI" index="2gpH_U" />
       </concept>
+      <concept id="1186403694788" name="jetbrains.mps.lang.editor.structure.ColorStyleClassItem" flags="ln" index="VaVBg">
+        <property id="1186403713874" name="color" index="Vb096" />
+      </concept>
+      <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
@@ -518,6 +522,9 @@
               </node>
               <node concept="3F0A7n" id="4xkVV8gAPLm" role="3EZMnx">
                 <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                <node concept="VechU" id="3seu8bOaGtT" role="3F10Kt">
+                  <property role="Vb096" value="fLwANPr/green" />
+                </node>
               </node>
               <node concept="2iRfu4" id="4xkVV8gAPL9" role="2iSdaV" />
             </node>
@@ -528,6 +535,9 @@
               </node>
               <node concept="3F0A7n" id="4xkVV8gAPMr" role="3EZMnx">
                 <ref role="1NtTu8" to="yzfv:29fgAF50pui" resolve="location" />
+                <node concept="VechU" id="3seu8bOaGtV" role="3F10Kt">
+                  <property role="Vb096" value="fLwANPt/cyan" />
+                </node>
               </node>
               <node concept="2iRfu4" id="4xkVV8gAPM9" role="2iSdaV" />
             </node>

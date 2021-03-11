@@ -19,7 +19,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.Settings_Container:
         if (props_Settings_Container == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByName();
+          cpb.presentationByReference(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb7e5L, "Desired_World_Setup", "", "");
           props_Settings_Container = cpb.create();
         }
         return props_Settings_Container;

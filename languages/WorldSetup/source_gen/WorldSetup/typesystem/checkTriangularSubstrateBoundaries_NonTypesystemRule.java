@@ -32,7 +32,7 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
     if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisTriangular, CONCEPTS.Substrate$xo, false, false), "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) + "Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714250155", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisTriangular, "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) + "Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714250155", null, errorTarget);
       }
     }
 
@@ -40,7 +40,7 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
     if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) > SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisTriangular, CONCEPTS.Substrate$xo, false, false), "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(thisTriangular) + "Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714255976", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisTriangular, "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(thisTriangular) + "Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714255976", null, errorTarget);
       }
     }
   }
@@ -56,7 +56,6 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
-    /*package*/ static final SConcept Substrate$xo = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
     /*package*/ static final SConcept Substrate_Shape_Triangular$zL = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, "WorldSetup.structure.Substrate_Shape_Triangular");
   }
 

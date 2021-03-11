@@ -293,7 +293,7 @@ public final class Tissue__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static int get_tissue_lowerz_gridpoint_id57WjpeqoAXQ(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) {
-      int z_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)) / 2;
+      int z_offset = (int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
       int z_coord = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.position$KVlR));
       return z_coord - z_offset;
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W)) {

@@ -33,7 +33,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerx_gridpoint_id3V40ltqZX_8.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate lower X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerx_gridpoint_id3V40ltqZX_8.invoke(thisPoint) + "X gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343420", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate lower X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerx_gridpoint_id3V40ltqZX_8.invoke(thisPoint) + " X gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343420", null, errorTarget);
       }
     }
 
@@ -41,7 +41,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperx_gridpoint_id3V40ltqZZ20.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate upper X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperx_gridpoint_id3V40ltqZZ20.invoke(thisPoint) + "X gridpoint upper boundary: " + (SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343463", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate upper X extends out of world. X gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperx_gridpoint_id3V40ltqZZ20.invoke(thisPoint) + " X gridpoint upper boundary: " + (SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343463", null, errorTarget);
       }
     }
 
@@ -49,7 +49,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowery_gridpoint_id3V40ltqZXKj.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate lower Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowery_gridpoint_id3V40ltqZXKj.invoke(thisPoint) + "Y gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343515", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate lower Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowery_gridpoint_id3V40ltqZXKj.invoke(thisPoint) + " Y gridpoint lower boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343515", null, errorTarget);
       }
     }
 
@@ -57,7 +57,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_uppery_gridpoint_id3V40ltqZZ24.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate upper Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_uppery_gridpoint_id3V40ltqZZ24.invoke(thisPoint) + "Y gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343558", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate upper Y extends out of world. Y gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_uppery_gridpoint_id3V40ltqZZ24.invoke(thisPoint) + " Y gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343558", null, errorTarget);
       }
     }
 
@@ -65,7 +65,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerz_gridpoint_id3V40ltqZYtk.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerz_gridpoint_id3V40ltqZYtk.invoke(thisPoint) + "Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343610", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate lower Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerz_gridpoint_id3V40ltqZYtk.invoke(thisPoint) + " Z gridpoint boundary: " + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343610", null, errorTarget);
       }
     }
 
@@ -73,7 +73,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperz_gridpoint_id3V40ltqZZ28.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.Substrate$xo, false, false), "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperz_gridpoint_id3V40ltqZZ28.invoke(thisPoint) + "Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343653", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisPoint, "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperz_gridpoint_id3V40ltqZZ28.invoke(thisPoint) + " Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714343653", null, errorTarget);
       }
     }
   }
@@ -89,7 +89,6 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
-    /*package*/ static final SConcept Substrate$xo = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
     /*package*/ static final SConcept Gradient_Shape_Point$wx = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028bcaL, "WorldSetup.structure.Gradient_Shape_Point");
   }
 

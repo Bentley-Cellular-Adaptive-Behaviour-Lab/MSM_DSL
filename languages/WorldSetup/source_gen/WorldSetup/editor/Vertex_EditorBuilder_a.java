@@ -48,10 +48,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "X-coord :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{ X-coord :");
     editorCell.setCellId("Constant_gblnas_a0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -171,6 +172,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no Y_Coord>";
     }
+  }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
+    editorCell.setCellId("Constant_gblnas_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private static final class LINKS {
