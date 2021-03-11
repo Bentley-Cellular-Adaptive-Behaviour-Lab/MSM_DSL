@@ -77,7 +77,6 @@ public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean check_upperx_world_boundary_id3$QBVvWCJog(@NotNull SNode __thisNode__) {
     SNode grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
-
     if (((int) Cell__BehaviorDescriptor.get_cell_upperx_gridpoint_id57Wjpeqnkzu.invoke(__thisNode__)) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       return true;
     }

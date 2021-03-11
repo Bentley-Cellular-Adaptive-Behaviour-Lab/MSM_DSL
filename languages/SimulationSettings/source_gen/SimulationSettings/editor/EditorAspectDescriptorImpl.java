@@ -18,13 +18,13 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase implements EditorHintsProvider {
-  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_h51qz7_e0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_e0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_g0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_g0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_i0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_i0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_k0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_k0"));
+  private Collection<ConceptEditorHint> myHints = Arrays.<ConceptEditorHint>asList(new ConceptEditorHintImpl("tooltipHint_h51qz7_c0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_c0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_e0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_e0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_g0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_g0"), new ConceptEditorHintImpl("tooltipHint_h51qz7_i0", "", false, "SimulationSettings.editor.GeneratedHints.tooltipHint_h51qz7_i0"));
   @NotNull
   public Collection<ConceptEditor> getDeclaredEditors(SAbstractConcept concept) {
     SAbstractConcept cncpt = ((SAbstractConcept) concept);
     switch (conceptIndex.index(cncpt)) {
       case 0:
-        return Arrays.asList(new ConceptEditor[]{new Settings_Container_Editor(), new Settings_Container_tooltipHint_h51qz7_e0_Editor(), new Settings_Container_tooltipHint_h51qz7_g0_Editor(), new Settings_Container_tooltipHint_h51qz7_i0_Editor(), new Settings_Container_tooltipHint_h51qz7_k0_Editor()});
+        return Arrays.asList(new ConceptEditor[]{new Settings_Container_Editor(), new Settings_Container_tooltipHint_h51qz7_c0_Editor(), new Settings_Container_tooltipHint_h51qz7_e0_Editor(), new Settings_Container_tooltipHint_h51qz7_g0_Editor(), new Settings_Container_tooltipHint_h51qz7_i0_Editor()});
       default:
     }
     return Collections.<ConceptEditor>emptyList();

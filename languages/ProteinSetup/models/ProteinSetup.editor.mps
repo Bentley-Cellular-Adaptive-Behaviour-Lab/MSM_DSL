@@ -409,7 +409,7 @@
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
             <node concept="VechU" id="2B5sNxPTmfD" role="3F10Kt">
-              <property role="Vb096" value="fLwANPr/green" />
+              <property role="Vb096" value="fLwANPt/cyan" />
             </node>
           </node>
         </node>

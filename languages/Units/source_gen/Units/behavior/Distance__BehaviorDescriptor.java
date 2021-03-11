@@ -76,6 +76,7 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
     // target_units are the units that were used to define the gridpoint scaling (i.e. dist between gridpoints equals xyz target_units) - for the moment, this will always be either 1.0 or 0.5 microns. 
     // scaling is the defined unit distance between two gridpoints. 
     SNode target_unit = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d71L, "Units.structure.Micrometre"));
+    BigDecimal scale_value = BigDecimal.valueOf(scaling);
     int gridpoint_value = Distance__BehaviorDescriptor.convert_from_to_id2XF6SaadVZL.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.units$DnBC), target_unit).divide(BigDecimal.valueOf(scaling)).intValue();
     SNodeOperations.deleteNode(target_unit);
     return gridpoint_value;

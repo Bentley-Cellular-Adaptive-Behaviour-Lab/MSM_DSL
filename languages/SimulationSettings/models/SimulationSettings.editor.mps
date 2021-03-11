@@ -21,7 +21,6 @@
         <property id="1186403713874" name="color" index="Vb096" />
       </concept>
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
-      <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
       <concept id="1186414999511" name="jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem" flags="ln" index="VQ3r3">
         <property id="1214316229833" name="underlined" index="2USNnj" />
       </concept>
@@ -61,18 +60,6 @@
     <node concept="3EZMnI" id="6JBqwuek7XP" role="2wV5jI">
       <node concept="3F0ifn" id="6JBqwuek7Y$" role="3EZMnx">
         <property role="3F0ifm" value="Simulation Settings:" />
-      </node>
-      <node concept="3F0ifn" id="6JBqwuel_Hw" role="3EZMnx" />
-      <node concept="3EZMnI" id="6JBqwuelwNF" role="3EZMnx">
-        <node concept="VPM3Z" id="6JBqwuelwNH" role="3F10Kt" />
-        <node concept="3F0ifn" id="6JBqwuelz9r" role="3EZMnx">
-          <property role="3F0ifm" value="Settings Name:" />
-        </node>
-        <node concept="3F0A7n" id="6JBqwuelz9x" role="3EZMnx">
-          <property role="1Intyy" value="true" />
-          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        </node>
-        <node concept="2iRfu4" id="6JBqwuelwNK" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="6JBqwuek7Yq" role="3EZMnx" />
       <node concept="1v6uyg" id="2B5sNxPnwhN" role="3EZMnx">

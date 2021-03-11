@@ -1,22 +1,23 @@
 #include "world.h"
 
 void World_Container::world_setup() {
-    // Created using: Working_World // 
+    // Created using: World // 
 
     World *world;
-    Coordinates Gradient_source, Gradient_sink;
+
 
     // WORLD CREATION
 
-    world = create_world(200, 200, 20, 0.0f);
+    world = create_world(0, 0, 0, 1.0);
     m_world = world;
 
     // GRADIENT CREATION
 
-    Gradient_source = Coordinates(0, 200, 0);
-    Gradient_sink = Coordinates(0, 0, 0);
-    create_gradient(GRADIENT_TYPE_LINEAR, GRADIENT_SHAPE_CUBOID, "Protein_A", &(Gradient_source), &(Gradient_sink));
+
+
 
     // SUBSTRATE CREATION
+
+
 
 }

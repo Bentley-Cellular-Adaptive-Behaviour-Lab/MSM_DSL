@@ -45,28 +45,36 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setBig(true);
     setCellContext(editorCell);
     editorCell.addEditorCell(createConstant_0());
-    editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_1());
+    editorCell.addEditorCell(createConstant_3());
     editorCell.addEditorCell(createRefNode_2());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "X:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
     editorCell.setCellId("Constant_hjjxd_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "X:");
+    editorCell.setCellId("Constant_hjjxd_b0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new X_CoordSingleRoleHandler_hjjxd_b0(myNode, LINKS.X_Coord$jBPh, getEditorContext());
+    SingleRoleCellProvider provider = new X_CoordSingleRoleHandler_hjjxd_c0(myNode, LINKS.X_Coord$jBPh, getEditorContext());
     return provider.createCell();
   }
-  private static class X_CoordSingleRoleHandler_hjjxd_b0 extends SingleRoleCellProvider {
+  private static class X_CoordSingleRoleHandler_hjjxd_c0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public X_CoordSingleRoleHandler_hjjxd_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public X_CoordSingleRoleHandler_hjjxd_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -113,21 +121,21 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return "<no X_Coord>";
     }
   }
-  private EditorCell createConstant_1() {
+  private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Y:");
-    editorCell.setCellId("Constant_hjjxd_c0");
+    editorCell.setCellId("Constant_hjjxd_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new Y_CoordSingleRoleHandler_hjjxd_d0(myNode, LINKS.Y_Coord$jHeC, getEditorContext());
+    SingleRoleCellProvider provider = new Y_CoordSingleRoleHandler_hjjxd_e0(myNode, LINKS.Y_Coord$jHeC, getEditorContext());
     return provider.createCell();
   }
-  private static class Y_CoordSingleRoleHandler_hjjxd_d0 extends SingleRoleCellProvider {
+  private static class Y_CoordSingleRoleHandler_hjjxd_e0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public Y_CoordSingleRoleHandler_hjjxd_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public Y_CoordSingleRoleHandler_hjjxd_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -174,21 +182,21 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return "<no Y_Coord>";
     }
   }
-  private EditorCell createConstant_2() {
+  private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Z:");
-    editorCell.setCellId("Constant_hjjxd_e0");
+    editorCell.setCellId("Constant_hjjxd_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createRefNode_2() {
-    SingleRoleCellProvider provider = new Z_CoordSingleRoleHandler_hjjxd_f0(myNode, LINKS.Z_Coord$jHVF, getEditorContext());
+    SingleRoleCellProvider provider = new Z_CoordSingleRoleHandler_hjjxd_g0(myNode, LINKS.Z_Coord$jHVF, getEditorContext());
     return provider.createCell();
   }
-  private static class Z_CoordSingleRoleHandler_hjjxd_f0 extends SingleRoleCellProvider {
+  private static class Z_CoordSingleRoleHandler_hjjxd_g0 extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public Z_CoordSingleRoleHandler_hjjxd_f0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public Z_CoordSingleRoleHandler_hjjxd_g0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -234,6 +242,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no Z_Coord>";
     }
+  }
+  private EditorCell createConstant_4() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
+    editorCell.setCellId("Constant_hjjxd_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
   }
 
   private static final class LINKS {

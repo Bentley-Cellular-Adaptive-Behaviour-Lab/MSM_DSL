@@ -3,10 +3,10 @@
   <dependency className="SimulationSettings.editor.EditorAspectDescriptorImpl">
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_Editor" />
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_SubstituteMenu" />
+    <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_c0_Editor" />
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_e0_Editor" />
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_g0_Editor" />
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_i0_Editor" />
-    <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_k0_Editor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -100,6 +100,30 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
+  <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_c0_Editor">
+    <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_c0_EditorBuilder_a" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_c0_EditorBuilder_a">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
   <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_e0_Editor">
     <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_e0_EditorBuilder_a" />
     <classNode dependClassName="java.lang.Override" />
@@ -161,30 +185,6 @@
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_i0_EditorBuilder_a">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
-  </dependency>
-  <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_k0_Editor">
-    <classNode dependClassName="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_k0_EditorBuilder_a" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="SimulationSettings.editor.Settings_Container_tooltipHint_h51qz7_k0_EditorBuilder_a">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />

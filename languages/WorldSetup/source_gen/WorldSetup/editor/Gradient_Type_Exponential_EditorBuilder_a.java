@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -22,7 +23,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SEmptyContainmentSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class Gradient_Type_Exponential_EditorBuilder_a extends AbstractEditorBuilder {
@@ -51,7 +51,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     setCellContext(editorCell);
     editorCell.addEditorCell(createCollection_1());
     editorCell.addEditorCell(createCollection_2());
-    editorCell.addEditorCell(createConstant_3());
+    editorCell.addEditorCell(createCollection_3());
+    editorCell.addEditorCell(createConstant_4());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -59,33 +60,50 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setCellId("Collection_vu7fcu_a0");
     editorCell.addEditorCell(createConstant_0());
     editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Exponential");
     editorCell.setCellId("Constant_vu7fcu_a0a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.UNDERLINED, true);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "--> { Starting amount:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "--> {");
     editorCell.setCellId("Constant_vu7fcu_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
+  private EditorCell createCollection_2() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
+    editorCell.setCellId("Collection_vu7fcu_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_0());
+    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createRefNode_0());
+    return editorCell;
+  }
+  private EditorCell createIndentCell_0() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createConstant_2() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Starting Concentration :");
+    editorCell.setCellId("Constant_vu7fcu_b1a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new Starting_ConcentrationSingleRoleHandler_vu7fcu_c0a(myNode, LINKS.Starting_Concentration$h6_l, getEditorContext());
+    SingleRoleCellProvider provider = new Starting_ConcentrationSingleRoleHandler_vu7fcu_c1a(myNode, LINKS.Starting_Concentration$h6_l, getEditorContext());
     return provider.createCell();
   }
-  private static class Starting_ConcentrationSingleRoleHandler_vu7fcu_c0a extends SingleRoleCellProvider {
+  private static class Starting_ConcentrationSingleRoleHandler_vu7fcu_c1a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public Starting_ConcentrationSingleRoleHandler_vu7fcu_c0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public Starting_ConcentrationSingleRoleHandler_vu7fcu_c1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -132,51 +150,36 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return "<no Starting_Concentration>";
     }
   }
-  private EditorCell createCollection_2() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_vu7fcu_b0");
+    editorCell.setCellId("Collection_vu7fcu_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_0());
     editorCell.addEditorCell(createIndentCell_1());
-    editorCell.addEditorCell(createIndentCell_2());
-    editorCell.addEditorCell(createIndentCell_3());
-    editorCell.addEditorCell(createConstant_2());
+    editorCell.addEditorCell(createConstant_3());
     editorCell.addEditorCell(createRefNode_1());
-    return editorCell;
-  }
-  private EditorCell createIndentCell_0() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
   private EditorCell createIndentCell_1() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
-  private EditorCell createIndentCell_2() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createIndentCell_3() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Exponent : ");
-    editorCell.setCellId("Constant_vu7fcu_e1a");
+  private EditorCell createConstant_3() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Exponent :");
+    editorCell.setCellId("Constant_vu7fcu_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createRefNode_1() {
-    SingleRoleCellProvider provider = new ExponentSingleRoleHandler_vu7fcu_f1a(myNode, LINKS.Exponent$pOs_, getEditorContext());
+    SingleRoleCellProvider provider = new ExponentSingleRoleHandler_vu7fcu_c2a(myNode, LINKS.Exponent$pOs_, getEditorContext());
     return provider.createCell();
   }
-  private static class ExponentSingleRoleHandler_vu7fcu_f1a extends SingleRoleCellProvider {
+  private static class ExponentSingleRoleHandler_vu7fcu_c2a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public ExponentSingleRoleHandler_vu7fcu_f1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public ExponentSingleRoleHandler_vu7fcu_c2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -223,9 +226,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       return "<no Exponent>";
     }
   }
-  private EditorCell createConstant_3() {
+  private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_vu7fcu_c0");
+    editorCell.setCellId("Constant_vu7fcu_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
