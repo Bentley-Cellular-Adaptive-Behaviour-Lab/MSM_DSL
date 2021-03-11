@@ -9,14 +9,14 @@ void World_Container::world_setup() {
 
     // WORLD CREATION
 
-    world = create_world(0, 0, 0, 1.0);
+    world = create_world(20, 20, 20, 1.0);
     m_world = world;
 
     // GRADIENT CREATION
 
 
     Gradient_centre = Coordinates(0, 0, 0)
-    create_gradient(GRADIENT_TYPE_CONSTANT, GRADIENT_SHAPE_CUBOIDAL, "VEGF", 1, ,  &(Gradient_centre), 10, 10, 10);
+    create_gradient(GRADIENT_TYPE_CONSTANT, GRADIENT_SHAPE_CUBOIDAL, "VEGF", 1, GRADIENT_DIRECTION_INC_X,  &(Gradient_centre), 10, 10, 10);
 
 
     // SUBSTRATE CREATION
