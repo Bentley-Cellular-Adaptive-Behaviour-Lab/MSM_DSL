@@ -68,6 +68,7 @@
         <child id="2472267746789355807" name="Environment_Proteins" index="3BhVdP" />
       </concept>
       <concept id="3192789617414361901" name="ProteinSetup.structure.Protein" flags="ng" index="20LG8g">
+        <child id="4979695227562027881" name="Regulation_Interactions" index="1d$ok4" />
         <child id="4979695227562027868" name="Binding_Interactions" index="1d$okL" />
       </concept>
       <concept id="3192789617414363948" name="ProteinSetup.structure.Interaction" flags="ng" index="20LGCh">
@@ -77,14 +78,11 @@
         <property id="5212054216837418448" name="interaction_type" index="1oZM9y" />
         <reference id="3192789617414366151" name="target_protein" index="20LJbU" />
       </concept>
+      <concept id="3192789617414364227" name="ProteinSetup.structure.Interaction_TF" flags="ng" index="20LGPY" />
       <concept id="3192789617414364369" name="ProteinSetup.structure.Interaction_Ligand" flags="ng" index="20LGRG" />
-      <concept id="3511352910224113087" name="ProteinSetup.structure.Protein_Reference" flags="ng" index="uiY_x">
-        <reference id="3511352910224113223" name="Reference_Protein" index="uiYEp" />
-      </concept>
       <concept id="2472267746788873073" name="ProteinSetup.structure.Protein_Cell" flags="ng" index="3BjH4r">
         <property id="2472267746788873900" name="min_level" index="3BjHj6" />
         <property id="2472267746788873989" name="max_level" index="3BjHlJ" />
-        <property id="2472267746788874130" name="location" index="3BjHnS" />
         <property id="2472267746788873585" name="timesteps_active" index="3BjHsr" />
         <property id="2472267746788873672" name="start_level" index="3BjHuy" />
       </concept>
@@ -151,12 +149,27 @@
         <property id="6720495385597071501" name="bounds_x" index="gqqTZ" />
         <property id="4583510071007917016" name="transform" index="TgtnS" />
       </concept>
+      <concept id="2319506556913310852" name="de.itemis.mps.editor.diagram.layout.structure.Layout_Connection" flags="ng" index="2VclpC">
+        <child id="4767615435799372763" name="labels" index="3ul5Gx" />
+      </concept>
+      <concept id="2319506556913310727" name="de.itemis.mps.editor.diagram.layout.structure.Point" flags="ng" index="2VclrF">
+        <property id="2319506556913310861" name="x" index="2Vclpx" />
+        <property id="2319506556913310863" name="y" index="2Vclpz" />
+      </concept>
       <concept id="8963411245960991886" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMap" flags="ng" index="37mRI7">
         <child id="8963411245960991904" name="entries" index="37mRID" />
       </concept>
       <concept id="8963411245960991903" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMapEntry" flags="ng" index="37mRIm">
         <property id="8963411245960998400" name="key" index="37mO49" />
         <child id="8963411245960998404" name="value" index="37mO4d" />
+      </concept>
+      <concept id="4767615435799372731" name="de.itemis.mps.editor.diagram.layout.structure.Layout_EdgeLabel" flags="ng" index="3ul5H1">
+        <property id="4767615435799372759" name="type" index="3ul5GH" />
+        <child id="4767615435799372761" name="position" index="3ul5Gz" />
+      </concept>
+      <concept id="3253043142928125505" name="de.itemis.mps.editor.diagram.layout.structure.RelativePosition" flags="ng" index="3wpmZ1">
+        <child id="3253043142928125557" name="referencePoint" index="3wpmZP" />
+        <child id="3253043142928125559" name="offset" index="3wpmZR" />
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
@@ -173,7 +186,6 @@
         <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
-        <child id="1783685413825742989" name="Owned_Protein_References" index="3ySujz" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
@@ -196,15 +208,21 @@
       <property role="3BjHj6" value="0" />
       <property role="3BjHlJ" value="0" />
       <property role="3BjHsr" value="0" />
-      <property role="3BjHnS" value="2Lf4jQGyy9U/Cell_Junction" />
+      <node concept="20LGPY" id="3seu8bOh3mH" role="1d$ok4">
+        <property role="1oZM9y" value="Regulation" />
+        <property role="1oYiR3" value="-1.0f" />
+        <property role="1oYiRe" value="1.f" />
+        <property role="1oYiOU" value="10" />
+        <ref role="20LJbU" node="3seu8bOh3lI" resolve="Dll4" />
+      </node>
     </node>
     <node concept="3BjHrC" id="7Eknuda3KAt" role="3BhVdP">
       <property role="TrG5h" value="VEGF" />
-      <node concept="20LGRG" id="3seu8bOaEFI" role="1d$okL">
+      <node concept="20LGRG" id="3seu8bOeBlo" role="1d$okL">
         <property role="1oZM9y" value="Binding" />
         <property role="1oYiOU" value="-1" />
         <property role="1oYiRe" value="-1.0f" />
-        <property role="1oYiR3" value="1.0f" />
+        <property role="1oYiR3" value="0.5f" />
         <ref role="20LJbU" node="1QuNJ_We6fd" resolve="VEGFR" />
       </node>
     </node>
@@ -212,9 +230,9 @@
       <node concept="37mRIm" id="1QuNJ_We6fj" role="37mRID">
         <property role="37mO49" value="VEGFR" />
         <node concept="gqqVs" id="1QuNJ_We6fh" role="37mO4d">
-          <property role="gqqTZ" value="393.0002983642578" />
+          <property role="gqqTZ" value="503.0002983642578" />
           <property role="gqqTW" value="12.0" />
-          <property role="gqqTX" value="204.0" />
+          <property role="gqqTX" value="172.0" />
           <property role="gqqTy" value="112.0" />
           <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
         </node>
@@ -222,7 +240,7 @@
       <node concept="37mRIm" id="1QuNJ_We6fl" role="37mRID">
         <property role="37mO49" value="VEGF" />
         <node concept="gqqVs" id="1QuNJ_We6fk" role="37mO4d">
-          <property role="gqqTZ" value="12.000100000000003" />
+          <property role="gqqTZ" value="67.0001" />
           <property role="gqqTW" value="42.0" />
           <property role="gqqTX" value="212.0" />
           <property role="gqqTy" value="52.0" />
@@ -231,13 +249,66 @@
       </node>
       <node concept="37mRIm" id="1QuNJ_We6fT" role="37mRID">
         <node concept="gqqVs" id="1QuNJ_We6fS" role="37mO4d">
-          <property role="gqqTZ" value="458.0" />
-          <property role="gqqTW" value="261.0" />
+          <property role="gqqTZ" value="824.0" />
+          <property role="gqqTW" value="12.0" />
           <property role="gqqTX" value="484.0" />
           <property role="gqqTy" value="112.0" />
           <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
         </node>
       </node>
+      <node concept="37mRIm" id="3seu8bOftzZ" role="37mRID">
+        <property role="37mO49" value="InteractionBinding_VEGF_VEGFR" />
+        <node concept="2VclpC" id="3seu8bOftzY" role="37mO4d">
+          <node concept="3ul5H1" id="3seu8bOft$0" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3seu8bOft$1" role="3ul5Gz">
+              <node concept="2VclrF" id="3seu8bOft$2" role="3wpmZR">
+                <property role="2Vclpx" value="289.5001991821289" />
+                <property role="2Vclpz" value="153.0" />
+              </node>
+              <node concept="2VclrF" id="3seu8bOft$3" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3seu8bOh3m3" role="37mRID">
+        <property role="37mO49" value="Dll4" />
+        <node concept="gqqVs" id="3seu8bOh3m2" role="37mO4d">
+          <property role="gqqTZ" value="854.0" />
+          <property role="gqqTW" value="12.0" />
+          <property role="gqqTX" value="172.0" />
+          <property role="gqqTy" value="112.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3seu8bOh3mN" role="37mRID">
+        <property role="37mO49" value="InteractionRegulation_VEGFR_Dll4" />
+        <node concept="2VclpC" id="3seu8bOh3mM" role="37mO4d">
+          <node concept="3ul5H1" id="3seu8bOh3mO" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3seu8bOh3mP" role="3ul5Gz">
+              <node concept="2VclrF" id="3seu8bOh3mQ" role="3wpmZR">
+                <property role="2Vclpx" value="689.5001491821289" />
+                <property role="2Vclpz" value="158.0" />
+              </node>
+              <node concept="2VclrF" id="3seu8bOh3mR" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3BjH4r" id="3seu8bOh3lI" role="20L7NB">
+      <property role="TrG5h" value="Dll4" />
+      <property role="3BjHuy" value="0" />
+      <property role="3BjHj6" value="0" />
+      <property role="3BjHlJ" value="0" />
+      <property role="3BjHsr" value="0" />
     </node>
   </node>
   <node concept="2VpVke" id="6gyex3vkeGO">
@@ -362,46 +433,40 @@
   <node concept="3ZP1sW" id="6mloH5uDvzP">
     <property role="TrG5h" value="Tissue" />
     <ref role="2ppKUs" node="1mt1AeX5dFS" resolve="World" />
-    <node concept="1apGoc" id="6mloH5uDvG9" role="1v2izi">
-      <property role="TrG5h" value="Vessel_Type" />
-      <ref role="1apGrN" node="6mloH5uDv_7" resolve="Endothelial" />
-      <node concept="3ZP1sC" id="6mloH5uX1YU" role="1v2cpK">
+    <node concept="1apGoc" id="3seu8bOhpqj" role="1v2izi">
+      <property role="TrG5h" value="Vessel" />
+      <ref role="1apGrN" node="3seu8bOhpnU" resolve="Endothelial" />
+      <node concept="3ZP1sC" id="3seu8bOhpqs" role="1v2cpK">
         <property role="3ZP1sG" value="10" />
-        <node concept="2_hQR_" id="6mloH5uX1YW" role="3ob6kl">
-          <node concept="2_n9WQ" id="6mloH5uX1YY" role="2_hQRE">
-            <node concept="30bXRB" id="6mloH5uX1ZL" role="2_n9WR">
-              <property role="30bXRw" value="6" />
+        <node concept="2_hQR_" id="3seu8bOhpqu" role="3ob6kl">
+          <node concept="2_n9WQ" id="3seu8bOhpqw" role="2_hQRE">
+            <node concept="30bXRB" id="3seu8bOhpr1" role="2_n9WR">
+              <property role="30bXRw" value="10" />
             </node>
           </node>
-          <node concept="2_hRrN" id="6mloH5uX20n" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3seu8bOhprt" role="2_hQ4V" />
         </node>
       </node>
     </node>
-    <node concept="3ZP1sM" id="6mloH5uDv_7" role="1v2izm">
+    <node concept="3ZP1sM" id="3seu8bOhpnU" role="1v2izm">
       <property role="TrG5h" value="Endothelial" />
-      <node concept="3ZP1s$" id="6mloH5uTNLb" role="3ZP1s2">
-        <node concept="2_hQR_" id="6mloH5uTNLd" role="2IF2Qc">
-          <node concept="2_n9WQ" id="6mloH5uTNLf" role="2_hQRE">
-            <node concept="30bXRB" id="3seu8bO1T2I" role="2_n9WR">
+      <node concept="3ZP1s$" id="3seu8bOi$4l" role="3ZP1s2">
+        <node concept="2_hQR_" id="3seu8bOi$4n" role="2IF2Qc">
+          <node concept="2_n9WQ" id="3seu8bOi$4p" role="2_hQRE">
+            <node concept="30bXRB" id="3seu8bOi$5L" role="2_n9WR">
               <property role="30bXRw" value="10" />
             </node>
           </node>
-          <node concept="2_hRrN" id="6mloH5uTNOj" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3seu8bOi$67" role="2_hQ4V" />
         </node>
-        <node concept="2_hQR_" id="6mloH5uTNLl" role="2IF2Qe">
-          <node concept="2_n9WQ" id="6mloH5uTNLn" role="2_hQRE">
-            <node concept="30bXRB" id="3seu8bO1T20" role="2_n9WR">
+        <node concept="2_hQR_" id="3seu8bOi$4v" role="2IF2Qe">
+          <node concept="2_n9WQ" id="3seu8bOi$4x" role="2_hQRE">
+            <node concept="30bXRB" id="3seu8bOi$50" role="2_n9WR">
               <property role="30bXRw" value="10" />
             </node>
           </node>
-          <node concept="2_hRrN" id="6mloH5uTNMW" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3seu8bOi$5m" role="2_hQ4V" />
         </node>
-      </node>
-      <node concept="uiY_x" id="6mloH5uXtR7" role="3ySujz">
-        <ref role="uiYEp" node="7Eknuda3KAt" resolve="VEGF" />
-      </node>
-      <node concept="uiY_x" id="6mloH5uXtRn" role="3ySujz">
-        <ref role="uiYEp" node="1QuNJ_We6fd" resolve="VEGFR" />
       </node>
     </node>
   </node>

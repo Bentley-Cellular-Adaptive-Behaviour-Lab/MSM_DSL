@@ -6,8 +6,8 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class DiagramColors {
-  public static final Color EnvironmentProteinObjectBackgroundColor = Color.decode("#c0111f");
-  public static final Color CellProteinObjectBackgroundColor = Color.decode("#5b84b1");
+  public static final Color EnvironmentProteinObjectBackgroundColor = Color.decode("#bb2167");
+  public static final Color CellProteinObjectBackgroundColor = Color.decode("#08415d");
   public static final Color TextColor = Color.WHITE;
   public static final Color ObjectBorderColour = Color.BLACK;
 
