@@ -154,6 +154,11 @@
       <property role="TrG5h" value="timestep_delay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="1S53i999Px8" role="1TKVEl">
+      <property role="IQ2nx" value="2163149636928755784" />
+      <property role="TrG5h" value="stoichiometry" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2Lf4jQGytL3">
     <property role="EcuMT" value="3192789617414364227" />

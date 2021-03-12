@@ -377,6 +377,9 @@
         </node>
         <node concept="3F0A7n" id="57WjpeqcpLk" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+          <node concept="VechU" id="1S53i998Del" role="3F10Kt">
+            <property role="Vb096" value="fLwANPt/cyan" />
+          </node>
         </node>
         <node concept="2iRfu4" id="2XF6SaabILZ" role="2iSdaV" />
       </node>
