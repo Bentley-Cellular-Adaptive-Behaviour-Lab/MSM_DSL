@@ -29,7 +29,7 @@ public class RunMSM {
     // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder. 
     switch (utils.getOS()) {
       case WINDOWS:
-        old_tissue_path = Paths.get(output_string + "\\" + "Tissue" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "\\" + "Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "\\" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "\\src\\dsl_Tissue.cpp");
@@ -45,7 +45,7 @@ public class RunMSM {
       case LINUX:
 
       case MAC:
-        old_tissue_path = Paths.get(output_string + "/" + "Tissue" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "/" + "Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");

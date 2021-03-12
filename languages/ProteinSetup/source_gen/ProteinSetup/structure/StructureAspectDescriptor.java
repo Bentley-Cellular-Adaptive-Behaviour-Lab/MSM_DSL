@@ -124,6 +124,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("binding_probability", 0x4854efb210adc271L).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("5212054216837546609").done();
     b.property("regulation_strength", 0x4854efb210adc27cL).type(MetaIdFactory.dataTypeId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x494547eeedc219baL)).origin("5212054216837546620").done();
     b.property("timestep_delay", 0x4854efb210adc288L).type(PrimitiveTypeId.INTEGER).origin("5212054216837546632").done();
+    b.property("stoichiometry", 0x1e050d2249275848L).type(PrimitiveTypeId.INTEGER).origin("2163149636928755784").done();
     b.associate("target_protein", 0x2c4f113dac89e3c7L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac89d32dL).optional(false).origin("3192789617414366151").done();
     b.aggregate("Condition", 0x2c4f113dac8c886aL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8aeba6L).optional(true).ordered(true).multiple(false).origin("3192789617414539370").done();
     return b.create();
