@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="group.margincell_review">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.readonly-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.annotation-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.editor-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.editor.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell.editor-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.annotation-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.readonly.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.review.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.margincell_review/languages/group.margincell_review/com.mbeddr.mpsutil.margincell-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

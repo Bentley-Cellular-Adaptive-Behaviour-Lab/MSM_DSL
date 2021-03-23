@@ -36,7 +36,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
-    deps.aggregatedLanguage(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, "ProteinSetup");
+    deps.aggregatedLanguage(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, "SpeciesSetup");
   }
 
   @Override
@@ -132,7 +132,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690123");
     b.version(2);
     b.aggregate("Shape", 0x56b8f8b9a96cefbbL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L).optional(false).ordered(true).multiple(false).origin("6249017959271690171").done();
-    b.aggregate("Owned_Protein_References", 0x18c0ec6efa21088dL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL).optional(true).ordered(true).multiple(true).origin("1783685413825742989").done();
+    b.aggregate("Owned_Species", 0x2b13de3ac0e23edfL).target(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L).optional(true).ordered(true).multiple(true).origin("3104068912113925855").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCell_Type_Reference() {

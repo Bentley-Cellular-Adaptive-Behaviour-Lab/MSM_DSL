@@ -8,6 +8,7 @@
   <imports>
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -202,7 +203,7 @@
               <property role="3F0ifm" value="Choose which proteins can be used for this world." />
             </node>
             <node concept="3F0ifn" id="4KNMtF8nGra" role="1j7Clw">
-              <property role="3F0ifm" value="Desired protein set-up:" />
+              <property role="3F0ifm" value="Desired species set-up:" />
               <node concept="VQ3r3" id="4KNMtF8nGrb" role="3F10Kt">
                 <property role="2USNnj" value="gtbM8PH/underlined" />
               </node>
@@ -210,7 +211,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="4KNMtF8nGrc" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8nGog" resolve="Desired_Protein_Container" />
+          <ref role="1NtTu8" to="s9ob:4KNMtF8nGog" resolve="Desired_Species_Container" />
           <node concept="1sVBvm" id="4KNMtF8nGrd" role="1sWHZn">
             <node concept="3F0A7n" id="4KNMtF8nGre" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -223,7 +224,6 @@
         </node>
         <node concept="2iRfu4" id="4KNMtF8nGrg" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4KNMtF8nGq9" role="3EZMnx" />
       <node concept="2iRkQZ" id="4JVq81Fmyqm" role="2iSdaV" />
     </node>
   </node>
@@ -482,13 +482,18 @@
           <property role="3F0ifm" value="Protein:" />
         </node>
         <node concept="1iCGBv" id="4KNMtF8iHj$" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8rder" resolve="Protein_Reference" />
+          <ref role="1NtTu8" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
           <node concept="1sVBvm" id="4KNMtF8iHjA" role="1sWHZn">
-            <node concept="3F0A7n" id="4KNMtF8iHjJ" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="VechU" id="3seu8bO3K8c" role="3F10Kt">
-                <property role="Vb096" value="fLwANPt/cyan" />
+            <node concept="1iCGBv" id="2GjRzF12jlF" role="2wV5jI">
+              <ref role="1NtTu8" to="kxky:6YfiulflYYS" resolve="Species" />
+              <node concept="1sVBvm" id="2GjRzF12jlG" role="1sWHZn">
+                <node concept="3F0A7n" id="2GjRzF12jlL" role="2wV5jI">
+                  <property role="1Intyy" value="true" />
+                  <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                  <node concept="VechU" id="2GjRzF12Zt1" role="3F10Kt">
+                    <property role="Vb096" value="fLwANPt/cyan" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -861,15 +866,6 @@
         <node concept="3F0ifn" id="2S6lVSSzWPH" role="3EZMnx">
           <property role="3F0ifm" value="Constant" />
         </node>
-        <node concept="3F0ifn" id="2S6lVSSzWPJ" role="3EZMnx">
-          <property role="3F0ifm" value="--&gt; { Starting amount :" />
-        </node>
-        <node concept="3F1sOY" id="7Eknuda2ZWg" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-        </node>
-        <node concept="3F0ifn" id="2S6lVSS$9dY" role="3EZMnx">
-          <property role="3F0ifm" value="}" />
-        </node>
         <node concept="2iRfu4" id="2S6lVSSzWPL" role="2iSdaV" />
       </node>
     </node>
@@ -883,35 +879,7 @@
         <node concept="3F0ifn" id="2S6lVSS$ltW" role="3EZMnx">
           <property role="3F0ifm" value="Exponential" />
         </node>
-        <node concept="3F0ifn" id="2S6lVSS$ltY" role="3EZMnx">
-          <property role="3F0ifm" value="--&gt; {" />
-        </node>
         <node concept="2iRfu4" id="2S6lVSS$lu1" role="2iSdaV" />
-      </node>
-      <node concept="3EZMnI" id="3seu8bO3Kg_" role="3EZMnx">
-        <node concept="VPM3Z" id="3seu8bO3KgA" role="3F10Kt" />
-        <node concept="3XFhqQ" id="3seu8bO3KgB" role="3EZMnx" />
-        <node concept="3F0ifn" id="3seu8bO3KgC" role="3EZMnx">
-          <property role="3F0ifm" value="Starting Concentration :" />
-        </node>
-        <node concept="3F1sOY" id="3seu8bO3KgD" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-        </node>
-        <node concept="2iRfu4" id="3seu8bO3KgE" role="2iSdaV" />
-      </node>
-      <node concept="3EZMnI" id="2S6lVSS_jt0" role="3EZMnx">
-        <node concept="VPM3Z" id="2S6lVSS_jt1" role="3F10Kt" />
-        <node concept="3XFhqQ" id="2S6lVSS_jt2" role="3EZMnx" />
-        <node concept="3F0ifn" id="2S6lVSS_jtB" role="3EZMnx">
-          <property role="3F0ifm" value="Exponent :" />
-        </node>
-        <node concept="3F1sOY" id="4KNMtF8u0ZN" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8tLoz" resolve="Exponent" />
-        </node>
-        <node concept="2iRfu4" id="2S6lVSS_jt9" role="2iSdaV" />
-      </node>
-      <node concept="3F0ifn" id="2S6lVSS$lu2" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
       </node>
     </node>
   </node>
@@ -988,15 +956,6 @@
       <node concept="3EZMnI" id="2S6lVSS_wPQ" role="3EZMnx">
         <node concept="3F0ifn" id="2S6lVSS_wPR" role="3EZMnx">
           <property role="3F0ifm" value="Linear" />
-        </node>
-        <node concept="3F0ifn" id="2S6lVSS_wPT" role="3EZMnx">
-          <property role="3F0ifm" value="--&gt; { Starting amount :" />
-        </node>
-        <node concept="3F1sOY" id="7Eknuda2ZWN" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-        </node>
-        <node concept="3F0ifn" id="2S6lVSS_wPV" role="3EZMnx">
-          <property role="3F0ifm" value="}" />
         </node>
         <node concept="2iRfu4" id="2S6lVSS_wPW" role="2iSdaV" />
       </node>

@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="de.itemis.mps.editor.widgets">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.bool.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.collapsible.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.mouselistener.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.dropdown.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.collapsible-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.enumeration.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.bool-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.collapsible.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.dropdown-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.dropdown.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.dropdown.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.bool.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.dropdown-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.enumeration-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.enumeration-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.collapsible-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.bool.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.collapsible.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.mouselistener.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.bool-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.enumeration.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.widgets/languages/de.itemis.mps.editor.widgets/de.itemis.mps.editor.enumeration.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

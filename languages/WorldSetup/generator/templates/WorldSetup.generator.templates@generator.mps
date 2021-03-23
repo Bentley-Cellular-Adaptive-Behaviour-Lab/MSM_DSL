@@ -9,6 +9,7 @@
   <imports>
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
+    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior)" implicit="true" />
@@ -1413,14 +1414,19 @@
               <node concept="3zFVjK" id="4KNMtF8PM4w" role="3zH0cK">
                 <node concept="3clFbS" id="4KNMtF8PM4x" role="2VODD2">
                   <node concept="3clFbF" id="4KNMtF8PM96" role="3cqZAp">
-                    <node concept="2OqwBi" id="4KNMtF8PMPr" role="3clFbG">
-                      <node concept="2OqwBi" id="4KNMtF8PMmB" role="2Oq$k0">
-                        <node concept="30H73N" id="4KNMtF8PM95" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="4KNMtF8PMBr" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Protein_Reference" />
+                    <node concept="2OqwBi" id="2GjRzF10TKz" role="3clFbG">
+                      <node concept="2OqwBi" id="4KNMtF8PMPr" role="2Oq$k0">
+                        <node concept="2OqwBi" id="4KNMtF8PMmB" role="2Oq$k0">
+                          <node concept="30H73N" id="4KNMtF8PM95" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="4KNMtF8PMBr" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="2GjRzF10Tl8" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="4KNMtF8PNeR" role="2OqNvi">
+                      <node concept="3TrcHB" id="2GjRzF10UwQ" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
@@ -1461,21 +1467,25 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="2OHr9yL6vCc" role="3zH0cK">
                 <node concept="3clFbS" id="2OHr9yL6vCd" role="2VODD2">
-                  <node concept="3cpWs6" id="6B5I$h9vl1d" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9vl1e" role="3cqZAk">
-                      <node concept="2OqwBi" id="6B5I$h9vl1f" role="2Oq$k0">
-                        <node concept="2OqwBi" id="6B5I$h9vl1g" role="2Oq$k0">
-                          <node concept="30H73N" id="6B5I$h9vl1h" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="6B5I$h9vl1i" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                  <node concept="3clFbF" id="2GjRzF11qOa" role="3cqZAp">
+                    <node concept="2YIFZM" id="2GjRzF11rIa" role="3clFbG">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                      <node concept="2OqwBi" id="2GjRzF11snX" role="37wK5m">
+                        <node concept="2OqwBi" id="2GjRzF11snY" role="2Oq$k0">
+                          <node concept="2OqwBi" id="2GjRzF11snZ" role="2Oq$k0">
+                            <node concept="30H73N" id="2GjRzF11so0" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2GjRzF11so1" role="2OqNvi">
+                              <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="2GjRzF11so2" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="6B5I$h9vl1j" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:2zgk2Od53yT" resolve="get_conc_decimal" />
+                        <node concept="3TrEf2" id="2GjRzF11so3" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:3tt6YLES8iO" resolve="Starting_Concentration" />
                         </node>
-                      </node>
-                      <node concept="liA8E" id="6B5I$h9vl1k" role="2OqNvi">
-                        <ref role="37wK5l" to="xlxw:~BigDecimal.toString()" resolve="toString" />
                       </node>
                     </node>
                   </node>
@@ -1993,14 +2003,19 @@
               <node concept="3zFVjK" id="6B5I$h9yJmA" role="3zH0cK">
                 <node concept="3clFbS" id="6B5I$h9yJmB" role="2VODD2">
                   <node concept="3clFbF" id="6B5I$h9yJrc" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9yKp5" role="3clFbG">
-                      <node concept="2OqwBi" id="6B5I$h9yJCH" role="2Oq$k0">
-                        <node concept="30H73N" id="6B5I$h9yJrb" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="6B5I$h9yJTx" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Protein_Reference" />
+                    <node concept="2OqwBi" id="2GjRzF10M4Z" role="3clFbG">
+                      <node concept="2OqwBi" id="6B5I$h9yKp5" role="2Oq$k0">
+                        <node concept="2OqwBi" id="6B5I$h9yJCH" role="2Oq$k0">
+                          <node concept="30H73N" id="6B5I$h9yJrb" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="6B5I$h9yJTx" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="2GjRzF10LV5" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="6B5I$h9yKMF" role="2OqNvi">
+                      <node concept="3TrcHB" id="2GjRzF10Muv" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
@@ -2022,21 +2037,25 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="4KNMtF8Ndeq" role="3zH0cK">
                 <node concept="3clFbS" id="4KNMtF8Nder" role="2VODD2">
-                  <node concept="3cpWs6" id="4KNMtF8NdeC" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9uQcg" role="3cqZAk">
-                      <node concept="2OqwBi" id="6B5I$h9uOO7" role="2Oq$k0">
-                        <node concept="2OqwBi" id="6B5I$h9uOiR" role="2Oq$k0">
-                          <node concept="30H73N" id="6B5I$h9uO5l" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="6B5I$h9uOzB" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                  <node concept="3clFbF" id="2GjRzF11ujI" role="3cqZAp">
+                    <node concept="2YIFZM" id="2GjRzF11ujJ" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="2GjRzF11ujK" role="37wK5m">
+                        <node concept="2OqwBi" id="2GjRzF11ujL" role="2Oq$k0">
+                          <node concept="2OqwBi" id="2GjRzF11ujM" role="2Oq$k0">
+                            <node concept="30H73N" id="2GjRzF11ujN" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2GjRzF11ujO" role="2OqNvi">
+                              <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="2GjRzF11ujP" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="6B5I$h9uPIE" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:2zgk2Od53yT" resolve="get_conc_decimal" />
+                        <node concept="3TrEf2" id="2GjRzF11ujQ" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:3tt6YLES8iO" resolve="Starting_Concentration" />
                         </node>
-                      </node>
-                      <node concept="liA8E" id="6B5I$h9uQMD" role="2OqNvi">
-                        <ref role="37wK5l" to="xlxw:~BigDecimal.toString()" resolve="toString" />
                       </node>
                     </node>
                   </node>
@@ -2887,14 +2906,19 @@
               <node concept="3zFVjK" id="6B5I$h9yL5s" role="3zH0cK">
                 <node concept="3clFbS" id="6B5I$h9yL5t" role="2VODD2">
                   <node concept="3clFbF" id="6B5I$h9yL5P" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9yM0I" role="3clFbG">
-                      <node concept="2OqwBi" id="6B5I$h9yLjm" role="2Oq$k0">
-                        <node concept="30H73N" id="6B5I$h9yL5O" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="6B5I$h9yLG7" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Protein_Reference" />
+                    <node concept="2OqwBi" id="2GjRzF10Sq1" role="3clFbG">
+                      <node concept="2OqwBi" id="6B5I$h9yM0I" role="2Oq$k0">
+                        <node concept="2OqwBi" id="6B5I$h9yLjm" role="2Oq$k0">
+                          <node concept="30H73N" id="6B5I$h9yL5O" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="6B5I$h9yLG7" role="2OqNvi">
+                            <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="2GjRzF10Sc5" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                         </node>
                       </node>
-                      <node concept="3TrcHB" id="6B5I$h9yMuK" role="2OqNvi">
+                      <node concept="3TrcHB" id="2GjRzF10SBg" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
@@ -2916,21 +2940,25 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="4KNMtF8P_0D" role="3zH0cK">
                 <node concept="3clFbS" id="4KNMtF8P_0E" role="2VODD2">
-                  <node concept="3cpWs6" id="6B5I$h9vkmQ" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9vkmR" role="3cqZAk">
-                      <node concept="2OqwBi" id="6B5I$h9vkmS" role="2Oq$k0">
-                        <node concept="2OqwBi" id="6B5I$h9vkmT" role="2Oq$k0">
-                          <node concept="30H73N" id="6B5I$h9vkmU" role="2Oq$k0" />
-                          <node concept="3TrEf2" id="6B5I$h9vkmV" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                  <node concept="3clFbF" id="2GjRzF11tfm" role="3cqZAp">
+                    <node concept="2YIFZM" id="2GjRzF11tfn" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="2GjRzF11tfo" role="37wK5m">
+                        <node concept="2OqwBi" id="2GjRzF11tfp" role="2Oq$k0">
+                          <node concept="2OqwBi" id="2GjRzF11tfq" role="2Oq$k0">
+                            <node concept="30H73N" id="2GjRzF11tfr" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="2GjRzF11tfs" role="2OqNvi">
+                              <ref role="3Tt5mk" to="s9ob:4KNMtF8rder" resolve="Species_Reference" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="2GjRzF11tft" role="2OqNvi">
+                            <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="6B5I$h9vkmW" role="2OqNvi">
-                          <ref role="37wK5l" to="pxw4:2zgk2Od53yT" resolve="get_conc_decimal" />
+                        <node concept="3TrEf2" id="2GjRzF11tfu" role="2OqNvi">
+                          <ref role="3Tt5mk" to="kxky:3tt6YLES8iO" resolve="Starting_Concentration" />
                         </node>
-                      </node>
-                      <node concept="liA8E" id="6B5I$h9vkmX" role="2OqNvi">
-                        <ref role="37wK5l" to="xlxw:~BigDecimal.toString()" resolve="toString" />
                       </node>
                     </node>
                   </node>

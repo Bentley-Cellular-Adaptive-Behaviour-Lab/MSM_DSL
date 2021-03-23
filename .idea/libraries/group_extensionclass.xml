@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.extensionclass">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.extensionclass/com.mbeddr.mpsutil.extensionclass-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.extensionclass/com.mbeddr.mpsutil.extensionclass.annotation-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.extensionclass/com.mbeddr.mpsutil.extensionclass-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.extensionclass/com.mbeddr.mpsutil.extensionclass.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.extensionclass/com.mbeddr.mpsutil.extensionclass.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

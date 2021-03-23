@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="iets3.req.os">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.req.plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.glossary-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.req.plugin-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.glossary-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.req.core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.req.core-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os/org.iets3.glossary.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

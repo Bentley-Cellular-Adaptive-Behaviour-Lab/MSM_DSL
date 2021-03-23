@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="plantuml">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.plantuml/lib/plantuml/rhino-1.7.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.plantuml/lib/plantuml/plantuml.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

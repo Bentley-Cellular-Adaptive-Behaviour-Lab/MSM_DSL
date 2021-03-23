@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.core.codereview">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/codereview/languages/com.mbeddr.core.codereview/com.mbeddr.core.codereview.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/codereview/languages/com.mbeddr.core.codereview/com.mbeddr.core.codereview-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

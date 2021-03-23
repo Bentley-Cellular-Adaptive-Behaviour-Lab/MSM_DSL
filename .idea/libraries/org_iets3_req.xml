@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="org.iets3.req">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.req.os/languages/iets3.req.os.devkit/org.iets3.req.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

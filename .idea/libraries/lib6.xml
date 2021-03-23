@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="lib6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/poi-ooxml-schemas-3.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/commons-collections4-4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/poi-3.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/xmlbeans-2.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/poi-ooxml-3.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/lib/curvesapi-1.04.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

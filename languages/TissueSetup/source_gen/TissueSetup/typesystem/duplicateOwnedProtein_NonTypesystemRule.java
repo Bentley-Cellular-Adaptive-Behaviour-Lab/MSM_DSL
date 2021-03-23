@@ -25,14 +25,14 @@ public class duplicateOwnedProtein_NonTypesystemRule extends AbstractNonTypesyst
   public duplicateOwnedProtein_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell_type, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode current_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Protein_References$LemL))) {
-      String current_name = SPropertyOperations.getString(SLinkOperations.getTarget(current_reference, LINKS.Reference_Protein$9Gfm), PROPS.name$MnvL);
-      for (SNode query_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Protein_References$LemL))) {
-        String query_name = SPropertyOperations.getString(SLinkOperations.getTarget(query_reference, LINKS.Reference_Protein$9Gfm), PROPS.name$MnvL);
+    for (SNode current_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Species$sIXq))) {
+      String current_name = SPropertyOperations.getString(SLinkOperations.getTarget(current_reference, LINKS.Species$q080), PROPS.name$MnvL);
+      for (SNode query_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Species$sIXq))) {
+        String query_name = SPropertyOperations.getString(SLinkOperations.getTarget(query_reference, LINKS.Species$q080), PROPS.name$MnvL);
         if (Objects.equals(query_name, current_name) && !(Objects.equals(query_reference, current_reference))) {
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell_type, "Duplicate owned proteins are not allowed: " + current_name, "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "1783685413826403788", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cell_type, "Duplicate owned species are not allowed: " + current_name, "r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "1783685413826403788", null, errorTarget);
           }
         }
       }
@@ -49,8 +49,8 @@ public class duplicateOwnedProtein_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Reference_Protein$9Gfm = MetaAdapterFactory.getReferenceLink(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL, 0x30bad4de2ef13e47L, "Reference_Protein");
-    /*package*/ static final SContainmentLink Owned_Protein_References$LemL = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x18c0ec6efa21088dL, "Owned_Protein_References");
+    /*package*/ static final SReferenceLink Species$q080 = MetaAdapterFactory.getReferenceLink(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L, 0x6f8f49e54f57efb8L, "Species");
+    /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 
   private static final class PROPS {

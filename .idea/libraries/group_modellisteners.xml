@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.modellisteners">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.modellisteners/languages/group.modellisteners/com.mbeddr.mpsutil.modellisteners-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.modellisteners/languages/group.modellisteners/com.mbeddr.mpsutil.modellisteners-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.modellisteners/languages/group.modellisteners/com.mbeddr.mpsutil.modellisteners.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.modellisteners/languages/group.modellisteners/com.mbeddr.mpsutil.modellisteners.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.modellisteners/languages/group.modellisteners/com.mbeddr.mpsutil.modellisteners.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

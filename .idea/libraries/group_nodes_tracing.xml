@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="group.nodes_tracing">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.nodes_tracing/com.mbeddr.mpsutil.nodes_tracing.test-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.nodes_tracing/com.mbeddr.mpsutil.nodes_tracing.test.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.nodes_tracing/com.mbeddr.mpsutil.nodes_tracing.test-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

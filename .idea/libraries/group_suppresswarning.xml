@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.suppresswarning">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.suppresswarning/languages/group.suppresswarning/com.mbeddr.mpsutil.suppresswarning.gen-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.suppresswarning/languages/group.suppresswarning/com.mbeddr.mpsutil.suppresswarning.gen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.suppresswarning/languages/group.suppresswarning/com.mbeddr.mpsutil.suppresswarning.gen-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.suppresswarning/languages/group.suppresswarning/com.mbeddr.mpsutil.suppresswarning.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.suppresswarning/languages/group.suppresswarning/com.mbeddr.mpsutil.suppresswarning-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

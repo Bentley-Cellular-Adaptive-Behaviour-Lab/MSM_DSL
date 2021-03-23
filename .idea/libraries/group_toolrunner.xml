@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="group.toolrunner">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.toolrunner/com.mbeddr.mpsutil.toolrunner.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.toolrunner/com.mbeddr.mpsutil.toolrunner-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

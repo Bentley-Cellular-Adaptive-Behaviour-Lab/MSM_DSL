@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.ple">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition.c-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.fm.interpreter-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.c-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.fm.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.fm.interpreter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.fm-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations.interpreter-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations.pluginSolution-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt.comp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations.interpreter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.c-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt.comp-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt.comp-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.annotations.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition.c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple/com.mbeddr.cc.var.composition.c-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

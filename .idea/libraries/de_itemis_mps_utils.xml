@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="de.itemis.mps.utils">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.modelmerger.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.nodeversioning.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.nodeversioning.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/com.mbeddr.mpsutil.serializer.xml-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.nodeversioning-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.modelmerger.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.nodeversioning.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.nodeversioning-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.modelmerger.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.modelmerger-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/com.mbeddr.mpsutil.serializer.xml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.utils/languages/de.itemis.mps.utils/de.itemis.mps.modelmerger-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

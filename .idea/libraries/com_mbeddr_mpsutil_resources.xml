@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.mpsutil.resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/com.mbeddr.mpsutil.resources/com.mbeddr.mpsutil.resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/com.mbeddr.mpsutil.resources/com.mbeddr.mpsutil.resources-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

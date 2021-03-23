@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="mps-math-editor">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.symbols.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.notations-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.notations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.symbols-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.notations-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-math-editor/languages/mps-math-editor/de.itemis.mps.editor.math.runtime-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

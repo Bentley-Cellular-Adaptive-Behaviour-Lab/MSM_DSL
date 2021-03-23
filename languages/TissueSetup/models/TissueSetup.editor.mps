@@ -138,7 +138,7 @@
             <property role="3F0ifm" value="Create and place cells in the simulation world." />
           </node>
           <node concept="3F0ifn" id="2B5sNxPA8C5" role="1j7Clw">
-            <property role="3F0ifm" value="3. Create individual cells:" />
+            <property role="3F0ifm" value="3. Create cells:" />
             <node concept="VQ3r3" id="2B5sNxPAHXh" role="3F10Kt">
               <property role="2USNnj" value="gtbM8PH/underlined" />
             </node>
@@ -225,7 +225,7 @@
         </node>
         <node concept="3EZMnI" id="1z0V6VU8X$g" role="3EZMnx">
           <node concept="3F2HdR" id="1z0V6VU8X$B" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+            <ref role="1NtTu8" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
             <node concept="2iRkQZ" id="1z0V6VU8X$D" role="2czzBx" />
           </node>
           <node concept="2iRkQZ" id="1z0V6VU8X$j" role="2iSdaV" />
@@ -246,7 +246,7 @@
       <node concept="3EZMnI" id="6mloH5uSvZt" role="3EZMnx">
         <node concept="VPM3Z" id="6mloH5uSvZv" role="3F10Kt" />
         <node concept="3F0ifn" id="6mloH5uSvZx" role="3EZMnx">
-          <property role="3F0ifm" value="Rectangular {" />
+          <property role="3F0ifm" value="Rectangular --&gt; {" />
         </node>
         <node concept="2iRfu4" id="6mloH5uSvZy" role="2iSdaV" />
       </node>
@@ -559,7 +559,7 @@
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="VechU" id="6mloH5uR4ur" role="3F10Kt">
-                <property role="Vb096" value="fLwANPr/green" />
+                <property role="Vb096" value="fLwANPt/cyan" />
               </node>
             </node>
           </node>

@@ -297,8 +297,8 @@
       <node id="6249017959271690123" at="131,71,132,98" concept="0" />
       <node id="6249017959271690123" at="132,98,133,17" concept="0" />
       <node id="6249017959271690171" at="133,17,134,199" concept="0" />
-      <node id="1783685413825742989" at="134,199,135,216" concept="0" />
-      <node id="6249017959271690123" at="135,216,136,22" concept="4" />
+      <node id="3104068912113925855" at="134,199,135,205" concept="0" />
+      <node id="6249017959271690123" at="135,205,136,22" concept="4" />
       <node id="6249017959271690123" at="128,0,138,0" concept="6" trace="createDescriptorForCell_Type#()Ljetbrains/mps/smodel/runtime/ConceptDescriptor;" />
       <scope id="6249017959271690123" at="59,43,60,34" />
       <scope id="6249017959271690123" at="128,67,136,22">

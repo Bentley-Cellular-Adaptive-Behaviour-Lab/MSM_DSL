@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="mps-multiline">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-multiline/languages/mps-multiline/de.slisson.mps.editor.multiline.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

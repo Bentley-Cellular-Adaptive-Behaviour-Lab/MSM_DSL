@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="5v3ee8kt9rw64mh3xxmrc0y77oc5epl">
+  <files names="TypesystemDescriptor.java:checkNoDuplicateProducts_NonTypesystemRule.java:checkNoDuplicateReactants_NonTypesystemRule.java:typeof_exponent_InferenceRule.java:updateReactionRelations_NonTypesystemRule.java" />
+</product>
+

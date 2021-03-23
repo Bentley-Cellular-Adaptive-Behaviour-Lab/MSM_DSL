@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="group.treenotation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.styles-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation.styles.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.treenotations/languages/group.treenotation/com.mbeddr.mpsutil.treenotation-generator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

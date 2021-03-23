@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/languages/GraphicalProtein/GraphicalProtein.iml" filepath="$PROJECT_DIR$/languages/GraphicalProtein/GraphicalProtein.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solutions/MSM/MSM.iml" filepath="$PROJECT_DIR$/solutions/MSM/MSM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.iml" filepath="$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MSM_DSL.iml" filepath="$PROJECT_DIR$/.idea/MSM_DSL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/solutions/MSM_DSL.interpreter/MSM_DSL.interpreter.iml" filepath="$PROJECT_DIR$/solutions/MSM_DSL.interpreter/MSM_DSL.interpreter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/ODE/ODE.iml" filepath="$PROJECT_DIR$/languages/ODE/ODE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.iml" filepath="$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.iml" filepath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.iml" filepath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/TissueSetup/TissueSetup.iml" filepath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/Units/Units.iml" filepath="$PROJECT_DIR$/languages/Units/Units.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/WorldSetup/WorldSetup.iml" filepath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/SimulationSettings/generator/generator.iml" filepath="$PROJECT_DIR$/languages/SimulationSettings/generator/generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/ProteinSetup/generator/generator1.iml" filepath="$PROJECT_DIR$/languages/ProteinSetup/generator/generator1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/TissueSetup/generator/generator2.iml" filepath="$PROJECT_DIR$/languages/TissueSetup/generator/generator2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/SpeciesSetup/generator/generator3.iml" filepath="$PROJECT_DIR$/languages/SpeciesSetup/generator/generator3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/GraphicalProtein/generator/generator4.iml" filepath="$PROJECT_DIR$/languages/GraphicalProtein/generator/generator4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/WorldSetup/generator/generator5.iml" filepath="$PROJECT_DIR$/languages/WorldSetup/generator/generator5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/Units/generator/generator6.iml" filepath="$PROJECT_DIR$/languages/Units/generator/generator6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/ODE/generator/generator7.iml" filepath="$PROJECT_DIR$/languages/ODE/generator/generator7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/TissueSetup/sandbox/sandbox.iml" filepath="$PROJECT_DIR$/languages/TissueSetup/sandbox/sandbox.iml" />
+    </modules>
+  </component>
+</project>

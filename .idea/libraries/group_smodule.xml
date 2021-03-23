@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.smodule">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.smodule/languages/group.smodule/com.mbeddr.mpsutil.smodule.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.smodule/languages/group.smodule/com.mbeddr.mpsutil.smodule.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.smodule/languages/group.smodule/com.mbeddr.mpsutil.smodule-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.smodule/languages/group.smodule/com.mbeddr.mpsutil.smodule-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.smodule/languages/group.smodule/com.mbeddr.mpsutil.smodule.runtime-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
