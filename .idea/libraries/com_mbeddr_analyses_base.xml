@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.analyses.base">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.base.verification_conditions-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.base-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.base.verification_conditions-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.utils.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.utils-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.base.verification_conditions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.analysesbase/languages/com.mbeddr.analyses.base/com.mbeddr.analyses.base.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

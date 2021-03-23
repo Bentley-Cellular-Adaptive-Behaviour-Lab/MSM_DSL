@@ -6,7 +6,6 @@
     <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_Cuboidal__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_Point__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Gradient_Shape_SinkAndSource__BehaviorDescriptor" />
-    <classNode dependClassName="WorldSetup.behavior.Gradient_Type__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor" />
     <classNode dependClassName="WorldSetup.behavior.Substrate__BehaviorDescriptor" />

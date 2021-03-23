@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="group.compare">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.comparator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.baselang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.generator-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.generator-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.baselang-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.generator.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.generator.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.comparator-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern.baselang-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare.pattern-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.compare/languages/group.compare/com.mbeddr.mpsutil.compare-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

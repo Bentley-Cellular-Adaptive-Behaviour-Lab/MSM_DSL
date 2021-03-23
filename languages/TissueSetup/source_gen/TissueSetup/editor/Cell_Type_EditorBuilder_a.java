@@ -240,17 +240,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new Owned_Protein_ReferencesListHandler_iztune_a1d0(myNode, getEditorContext());
+    AbstractCellListHandler handler = new Owned_SpeciesListHandler_iztune_a1d0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_Owned_Protein_References");
+    editorCell.setCellId("refNodeList_Owned_Species");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class Owned_Protein_ReferencesListHandler_iztune_a1d0 extends RefNodeListHandler {
+  private static class Owned_SpeciesListHandler_iztune_a1d0 extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public Owned_Protein_ReferencesListHandler_iztune_a1d0(SNode ownerNode, EditorContext context) {
+    public Owned_SpeciesListHandler_iztune_a1d0(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -260,10 +260,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.Owned_Protein_References$LemL;
+      return LINKS.Owned_Species$sIXq;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Protein_Reference$se;
+      return CONCEPTS.Species_Reference$ga;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -273,7 +273,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_Protein_ReferencesListHandler_iztune_a1d0.this.getNode(), LINKS.Owned_Protein_References$LemL));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_SpeciesListHandler_iztune_a1d0.this.getNode(), LINKS.Owned_Species$sIXq));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -332,11 +332,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-    /*package*/ static final SConcept Protein_Reference$se = MetaAdapterFactory.getConcept(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x30bad4de2ef13dbfL, "ProteinSetup.structure.Protein_Reference");
+    /*package*/ static final SConcept Species_Reference$ga = MetaAdapterFactory.getConcept(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L, "SpeciesSetup.structure.Species_Reference");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "Shape");
-    /*package*/ static final SContainmentLink Owned_Protein_References$LemL = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x18c0ec6efa21088dL, "Owned_Protein_References");
+    /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 }

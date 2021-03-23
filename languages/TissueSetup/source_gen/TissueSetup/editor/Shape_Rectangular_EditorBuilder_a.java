@@ -65,7 +65,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Rectangular {");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Rectangular --> {");
     editorCell.setCellId("Constant_l4n1ja_a0a");
     editorCell.setDefaultText("");
     return editorCell;

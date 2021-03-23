@@ -90,7 +90,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createCollection_7());
     editorCell.addEditorCell(createConstant_9());
     editorCell.addEditorCell(createCollection_9());
-    editorCell.addEditorCell(createConstant_11());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -637,7 +636,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return createTooltip_8(getEditorContext(), myNode);
   }
   private EditorCell createConstant_10() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Desired protein set-up:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Desired species set-up:");
     editorCell.setCellId("Constant_qumq7g_a0a01a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
@@ -646,14 +645,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefCell_1() {
-    final SReferenceLink referenceLink = LINKS.Desired_Protein_Container$YKoO;
+    final SReferenceLink referenceLink = LINKS.Desired_Species_Container$YKoO;
     SReferenceCellProvider provider = new SReferenceCellProvider(getNode(), referenceLink, getEditorContext()) {
       protected EditorCell createReferenceCell(final SNode targetNode) {
         EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
           public EditorCell compute() {
             return new Inline_Builder1(getEditorContext(), getNode(), targetNode).createCell();
           }
-        }, targetNode, LINKS.Desired_Protein_Container$YKoO);
+        }, targetNode, LINKS.Desired_Species_Container$YKoO);
         CellUtil.setupIDeprecatableStyles(targetNode, cell);
         setSemanticNodeToCells(cell, getNode());
         installDeleteActions_notnull(cell);
@@ -661,12 +660,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     };
 
-    provider.setNoTargetText("<no Desired_Protein_Container>");
+    provider.setNoTargetText("<no Desired_Species_Container>");
     EditorCell editorCell = provider.createCell();
 
     if (editorCell.getSRole() == null) {
       editorCell.setReferenceCell(true);
-      editorCell.setSRole(LINKS.Desired_Protein_Container$YKoO);
+      editorCell.setSRole(LINKS.Desired_Species_Container$YKoO);
     }
     editorCell.setSubstituteInfo(new SReferenceSubstituteInfo(editorCell, referenceLink));
     Iterable<SNode> referenceAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.LinkAttribute$v_);
@@ -731,12 +730,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
-  private EditorCell createConstant_11() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_qumq7g_l0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -754,6 +747,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SContainmentLink gradients$mn2b = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19ebL, "gradients");
     /*package*/ static final SContainmentLink substrates$mnJe = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19eeL, "substrates");
     /*package*/ static final SReferenceLink Desired_Tissue_Container$Tkkc = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x6be76a078e5136afL, "Desired_Tissue_Container");
-    /*package*/ static final SReferenceLink Desired_Protein_Container$YKoO = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x4c33c9dac85ec610L, "Desired_Protein_Container");
+    /*package*/ static final SReferenceLink Desired_Species_Container$YKoO = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x4c33c9dac85ec610L, "Desired_Species_Container");
   }
 }

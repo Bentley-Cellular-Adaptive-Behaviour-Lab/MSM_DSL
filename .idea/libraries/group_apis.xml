@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="group.apis">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.plantuml/languages/group.apis/org.apache.batik.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.plantuml/languages/group.apis/org.xml.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

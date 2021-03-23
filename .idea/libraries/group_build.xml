@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="group.build">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.buildassistent/languages/group.build/com.mbeddr.mpsutil.buildassistant-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.buildassistent/languages/group.build/com.mbeddr.mpsutil.buildassistant.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

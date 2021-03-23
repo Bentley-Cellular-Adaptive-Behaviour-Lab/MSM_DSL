@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.physicalunits">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units.devkit/com.mbeddr.physicalunits.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,40 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.doc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.self-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_xhtml-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_latex-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.self.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.latex-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.meta-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.latex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_latex-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.terms-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.terms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_xhtml-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect.ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.pluginSolution-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.meta.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_latex.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.self-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.meta-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.terms-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.spreadsheat-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.gen_xhtml.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.spreadsheat-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.spreadsheat.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc/com.mbeddr.doc.aspect.ui-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

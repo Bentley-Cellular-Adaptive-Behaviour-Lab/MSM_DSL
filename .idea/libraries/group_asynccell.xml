@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="group.asynccell">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.asynccell/languages/group.asynccell/com.mbeddr.mpsutil.asynccell.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.asynccell/languages/group.asynccell/com.mbeddr.mpsutil.asynccell-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

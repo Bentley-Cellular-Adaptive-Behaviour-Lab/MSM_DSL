@@ -14,7 +14,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
-    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
   </imports>
   <registry>
@@ -54,9 +53,6 @@
       </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
-        <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
@@ -5010,91 +5006,6 @@
   <node concept="13h7C7" id="2zgk2Od53yI">
     <property role="3GE5qa" value="Gradients" />
     <ref role="13h7C2" to="s9ob:2zgk2Od0CFw" resolve="Gradient_Type" />
-    <node concept="13i0hz" id="2zgk2Od53yT" role="13h7CS">
-      <property role="TrG5h" value="get_conc_decimal" />
-      <node concept="3Tm1VV" id="2zgk2Od53yU" role="1B3o_S" />
-      <node concept="3clFbS" id="2zgk2Od53yW" role="3clF47">
-        <node concept="3clFbJ" id="6B5I$h9vU$y" role="3cqZAp">
-          <node concept="3clFbS" id="6B5I$h9vU$$" role="3clFbx">
-            <node concept="3cpWs6" id="6B5I$h9vXmo" role="3cqZAp">
-              <node concept="2OqwBi" id="6B5I$h9vXrN" role="3cqZAk">
-                <node concept="1PxgMI" id="6B5I$h9vXrO" role="2Oq$k0">
-                  <node concept="chp4Y" id="6B5I$h9vXrP" role="3oSUPX">
-                    <ref role="cht4Q" to="ottv:I3BIb0TJmR" resolve="Mass_Concentration" />
-                  </node>
-                  <node concept="2OqwBi" id="6B5I$h9vXrQ" role="1m5AlR">
-                    <node concept="13iPFW" id="6B5I$h9vXrR" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="6B5I$h9vXrS" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2qgKlT" id="6B5I$h9vXrT" role="2OqNvi">
-                  <ref role="37wK5l" to="ki9o:7Eknuda1wme" resolve="get_massconc_value_decimal" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="6B5I$h9vUTv" role="3clFbw">
-            <node concept="2OqwBi" id="6B5I$h9vUH1" role="2Oq$k0">
-              <node concept="13iPFW" id="6B5I$h9vU$O" role="2Oq$k0" />
-              <node concept="3TrEf2" id="6B5I$h9vUL7" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-              </node>
-            </node>
-            <node concept="1mIQ4w" id="6B5I$h9vVgi" role="2OqNvi">
-              <node concept="chp4Y" id="6B5I$h9vViG" role="cj9EA">
-                <ref role="cht4Q" to="ottv:I3BIb0TJmR" resolve="Mass_Concentration" />
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="6B5I$h9vY7O" role="3eNLev">
-            <node concept="2OqwBi" id="6B5I$h9vY_U" role="3eO9$A">
-              <node concept="2OqwBi" id="6B5I$h9vYez" role="2Oq$k0">
-                <node concept="13iPFW" id="6B5I$h9vY91" role="2Oq$k0" />
-                <node concept="3TrEf2" id="6B5I$h9vYfD" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="6B5I$h9vYU8" role="2OqNvi">
-                <node concept="chp4Y" id="6B5I$h9vYYu" role="cj9EA">
-                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbS" id="6B5I$h9vY7Q" role="3eOfB_">
-              <node concept="3cpWs6" id="6B5I$h9vZ1B" role="3cqZAp">
-                <node concept="2OqwBi" id="6B5I$h9vZ1C" role="3cqZAk">
-                  <node concept="1PxgMI" id="6B5I$h9vZ1D" role="2Oq$k0">
-                    <node concept="chp4Y" id="6B5I$h9vZi5" role="3oSUPX">
-                      <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
-                    </node>
-                    <node concept="2OqwBi" id="6B5I$h9vZ1F" role="1m5AlR">
-                      <node concept="13iPFW" id="6B5I$h9vZ1G" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="6B5I$h9vZ1H" role="2OqNvi">
-                        <ref role="3Tt5mk" to="s9ob:7Eknuda2$Pg" resolve="Starting_Concentration" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="6B5I$h9vZLx" role="2OqNvi">
-                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="6B5I$h9w06Y" role="3cqZAp">
-          <node concept="10M0yZ" id="6B5I$h9w0bP" role="3cqZAk">
-            <ref role="3cqZAo" to="xlxw:~BigDecimal.ZERO" resolve="ZERO" />
-            <ref role="1PxDUh" to="xlxw:~BigDecimal" resolve="BigDecimal" />
-          </node>
-        </node>
-      </node>
-      <node concept="3uibUv" id="1r0uutBEvxb" role="3clF45">
-        <ref role="3uigEE" to="xlxw:~BigDecimal" resolve="BigDecimal" />
-      </node>
-    </node>
     <node concept="13hLZK" id="2zgk2Od53yJ" role="13h7CW">
       <node concept="3clFbS" id="2zgk2Od53yK" role="2VODD2" />
     </node>

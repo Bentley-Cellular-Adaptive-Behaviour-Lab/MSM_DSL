@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.refactoring">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.refactoring/languages/group.refactoring/com.mbeddr.mpsutil.refactoring-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.refactoring/languages/group.refactoring/com.mbeddr.mpsutil.refactoring-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.refactoring/languages/group.refactoring/com.mbeddr.mpsutil.refactoring.rt-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.refactoring/languages/group.refactoring/com.mbeddr.mpsutil.refactoring.rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.refactoring/languages/group.refactoring/com.mbeddr.mpsutil.refactoring.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.datepicker">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.datepicker/com.mbeddr.mpsutil.datepicker-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.datepicker/com.mbeddr.mpsutil.datepicker.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.datepicker/com.mbeddr.mpsutil.datepicker.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.datepicker/com.mbeddr.mpsutil.datepicker.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.datepicker/com.mbeddr.mpsutil.datepicker-generator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

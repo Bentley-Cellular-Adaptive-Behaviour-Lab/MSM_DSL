@@ -9,6 +9,7 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" />
+    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -76,9 +77,9 @@
     </node>
     <node concept="1TJgyj" id="4KNMtF8nGog" role="1TKVEi">
       <property role="IQ2ns" value="5490954312196474384" />
-      <property role="20kJfa" value="Desired_Protein_Container" />
+      <property role="20kJfa" value="Desired_Species_Container" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="yzfv:2Lf4jQGyQPd" resolve="Protein_Container" />
+      <ref role="20lvS9" to="kxky:3tt6YLES54a" resolve="Species_Container" />
     </node>
     <node concept="1TJgyj" id="7faAukhALB$" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779203044" />
@@ -168,9 +169,9 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4KNMtF8rder" role="1TKVEi">
       <property role="IQ2ns" value="5490954312197395355" />
-      <property role="20kJfa" value="Protein_Reference" />
+      <property role="20kJfa" value="Species_Reference" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="yzfv:29fgAF50pi2" resolve="Protein_Environment" />
+      <ref role="20lvS9" to="kxky:6YfiulflYYz" resolve="Species_Reference" />
     </node>
     <node concept="1TJgyj" id="CB_Y3MvTaJ" role="1TKVEi">
       <property role="IQ2ns" value="731720456867910319" />
@@ -365,13 +366,6 @@
     <property role="R4oN_" value="Describes how the gradient varies in space." />
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7Eknuda2$Pg" role="1TKVEi">
-      <property role="IQ2ns" value="8832787999961533776" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Starting_Concentration" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2zgk2Od0CFO">
     <property role="EcuMT" value="2940938711094954740" />

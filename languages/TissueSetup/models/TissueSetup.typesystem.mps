@@ -12,8 +12,7 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" implicit="true" />
+    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -35,6 +34,7 @@
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -57,9 +57,6 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
-      </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -983,24 +980,22 @@
           <node concept="1YBJjd" id="1z0V6VUaGTL" role="2Oq$k0">
             <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
           </node>
-          <node concept="3Tsc0h" id="1z0V6VUaHbT" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+          <node concept="3Tsc0h" id="2GjRzF0Txjn" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
           </node>
         </node>
         <node concept="3clFbS" id="1z0V6VUaGRF" role="2LFqv$">
           <node concept="3cpWs8" id="1z0V6VUaJao" role="3cqZAp">
             <node concept="3cpWsn" id="1z0V6VUaJap" role="3cpWs9">
               <property role="TrG5h" value="current_name" />
-              <node concept="3uibUv" id="1z0V6VUaJaq" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-              </node>
+              <node concept="17QB3L" id="2GjRzF0TxM$" role="1tU5fm" />
               <node concept="2OqwBi" id="1z0V6VUaJOA" role="33vP2m">
                 <node concept="2OqwBi" id="1z0V6VUaJlx" role="2Oq$k0">
                   <node concept="2GrUjf" id="1z0V6VUaJc_" role="2Oq$k0">
                     <ref role="2Gs0qQ" node="1z0V6VUaGRD" resolve="current_reference" />
                   </node>
-                  <node concept="3TrEf2" id="1z0V6VUaJxc" role="2OqNvi">
-                    <ref role="3Tt5mk" to="yzfv:32UPdSIWjT7" resolve="Reference_Protein" />
+                  <node concept="3TrEf2" id="2GjRzF0Txtx" role="2OqNvi">
+                    <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1z0V6VUaK3I" role="2OqNvi">
@@ -1017,24 +1012,22 @@
               <node concept="1YBJjd" id="1z0V6VUaIN6" role="2Oq$k0">
                 <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
               </node>
-              <node concept="3Tsc0h" id="1z0V6VUaJ8t" role="2OqNvi">
-                <ref role="3TtcxE" to="nguq:1z0V6VU8gyd" resolve="Owned_Protein_References" />
+              <node concept="3Tsc0h" id="2GjRzF0Txgt" role="2OqNvi">
+                <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
               </node>
             </node>
             <node concept="3clFbS" id="1z0V6VUaIHt" role="2LFqv$">
               <node concept="3cpWs8" id="1z0V6VUaK7s" role="3cqZAp">
                 <node concept="3cpWsn" id="1z0V6VUaK7t" role="3cpWs9">
                   <property role="TrG5h" value="query_name" />
-                  <node concept="3uibUv" id="1z0V6VUaK7u" role="1tU5fm">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                  </node>
+                  <node concept="17QB3L" id="2GjRzF0TxVk" role="1tU5fm" />
                   <node concept="2OqwBi" id="1z0V6VUaKGm" role="33vP2m">
                     <node concept="2OqwBi" id="1z0V6VUaKhX" role="2Oq$k0">
                       <node concept="2GrUjf" id="1z0V6VUaK8M" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1z0V6VUaIHr" resolve="query_reference" />
                       </node>
-                      <node concept="3TrEf2" id="1z0V6VUaKxE" role="2OqNvi">
-                        <ref role="3Tt5mk" to="yzfv:32UPdSIWjT7" resolve="Reference_Protein" />
+                      <node concept="3TrEf2" id="2GjRzF0TxFa" role="2OqNvi">
+                        <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1z0V6VUaKSt" role="2OqNvi">
@@ -1048,7 +1041,7 @@
                   <node concept="2MkqsV" id="1z0V6VUaLRc" role="3cqZAp">
                     <node concept="3cpWs3" id="1z0V6VUaMmS" role="2MkJ7o">
                       <node concept="Xl_RD" id="1z0V6VUaLUy" role="3uHU7B">
-                        <property role="Xl_RC" value="Duplicate owned proteins are not allowed: " />
+                        <property role="Xl_RC" value="Duplicate owned species are not allowed: " />
                       </node>
                       <node concept="37vLTw" id="1z0V6VUaMAd" role="3uHU7w">
                         <ref role="3cqZAo" node="1z0V6VUaJap" resolve="current_name" />

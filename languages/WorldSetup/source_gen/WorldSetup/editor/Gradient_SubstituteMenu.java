@@ -50,7 +50,7 @@ public class Gradient_SubstituteMenu extends SubstituteMenuBase {
 
     public SMP_ReferenceScope_gyd9fo_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
-      super((SAbstractConcept) CONCEPTS.Gradient$hS, LINKS.Protein_Reference$RzUn);
+      super((SAbstractConcept) CONCEPTS.Gradient$hS, LINKS.Species_Reference$RzUn);
     }
     @NotNull
     @Override
@@ -92,6 +92,6 @@ public class Gradient_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Protein_Reference$RzUn = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0x4c33c9dac86cd39bL, "Protein_Reference");
+    /*package*/ static final SReferenceLink Species_Reference$RzUn = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0x4c33c9dac86cd39bL, "Species_Reference");
   }
 }

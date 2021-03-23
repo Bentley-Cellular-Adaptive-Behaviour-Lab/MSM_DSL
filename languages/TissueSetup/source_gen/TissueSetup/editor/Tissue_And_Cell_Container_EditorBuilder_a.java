@@ -401,7 +401,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return createTooltip_4(getEditorContext(), myNode);
   }
   private EditorCell createConstant_6() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Create individual cells:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Create cells:");
     editorCell.setCellId("Constant_hccigz_a1g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);

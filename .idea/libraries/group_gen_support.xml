@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="group.gen-support">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.xml.fix-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.xml.fix-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.genutil-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.xml.fix.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.genutil-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.genutil.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.mappingLabels.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.mappingLabels-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.gensupport/languages/group.gen-support/com.mbeddr.mpsutil.mappingLabels-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

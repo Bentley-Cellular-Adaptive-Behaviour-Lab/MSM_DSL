@@ -113,7 +113,10 @@
             <property role="3oM_SC" value="be" />
           </node>
           <node concept="3oM_SD" id="3wWy5vw6WLY" role="1PaTwD">
-            <property role="3oM_SC" value="integers." />
+            <property role="3oM_SC" value="real" />
+          </node>
+          <node concept="3oM_SD" id="3tt6YLESXcB" role="1PaTwD">
+            <property role="3oM_SC" value="numbers." />
           </node>
         </node>
       </node>

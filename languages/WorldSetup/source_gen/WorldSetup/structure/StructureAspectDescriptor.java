@@ -162,7 +162,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203047");
     b.version(2);
-    b.associate("Protein_Reference", 0x4c33c9dac86cd39bL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019482L).optional(false).origin("5490954312197395355").done();
+    b.associate("Species_Reference", 0x4c33c9dac86cd39bL).target(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L).optional(false).origin("5490954312197395355").done();
     b.aggregate("Gradient_Type", 0xa2797e0f27f92afL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L).optional(false).ordered(true).multiple(false).origin("731720456867910319").done();
     b.aggregate("Gradient_Shape", 0xa2797e0f27f92b1L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028accL).optional(false).ordered(true).multiple(false).origin("731720456867910321").done();
     return b.create();
@@ -222,7 +222,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, true, false);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/2940938711094954720");
     b.version(2);
-    b.aggregate("Starting_Concentration", 0x7a945de34a0a4d50L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("8832787999961533776").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGradient_Type_Constant() {
@@ -374,7 +373,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203043");
     b.version(2);
     b.associate("Desired_Tissue_Container", 0x6be76a078e5136afL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L).optional(false).origin("7775299862363453103").done();
-    b.associate("Desired_Protein_Container", 0x4c33c9dac85ec610L).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x2c4f113dac8b6d4dL).optional(false).origin("5490954312196474384").done();
+    b.associate("Desired_Species_Container", 0x4c33c9dac85ec610L).target(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x375d1bec6ae0510aL).optional(false).origin("5490954312196474384").done();
     b.aggregate("grid", 0x73ca99e5119b19e4L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L).optional(false).ordered(true).multiple(false).origin("8343650468779203044").done();
     b.aggregate("gradients", 0x73ca99e5119b19ebL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L).optional(true).ordered(true).multiple(true).origin("8343650468779203051").done();
     b.aggregate("substrates", 0x73ca99e5119b19eeL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L).optional(true).ordered(true).multiple(true).origin("8343650468779203054").done();

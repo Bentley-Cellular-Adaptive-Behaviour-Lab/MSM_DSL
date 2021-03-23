@@ -16,11 +16,14 @@
     <dependency reexport="false">61c69711-ed61-4850-81d9-7714ff227fb0(com.mbeddr.core.expressions)</dependency>
     <dependency reexport="false">6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)</dependency>
     <dependency reexport="false">fa13cc63-c476-4d46-9c96-d53670abe7bc(de.itemis.mps.editor.diagram)</dependency>
+    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(Species2)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:7b512b3e-e40d-4b8a-826b-e51031d2e9a0:ODE" version="0" />
     <language slang="l:ea515ac2-fe2e-495a-a1e2-243a14826d03:ProteinSetup" version="0" />
     <language slang="l:e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3:SimulationSettings" version="0" />
+    <language slang="l:84970ad9-a964-4f15-a393-dc0fcd724c0f:Species2" version="0" />
+    <language slang="l:f3f95abc-aef1-4f78-aa77-fb36d4ba916a:SpeciesSetup" version="0" />
     <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueSetup" version="0" />
     <language slang="l:276cd304-748c-4d5d-aad0-4b34e2a42ced:WorldSetup" version="0" />
     <language slang="l:d4280a54-f6df-4383-aa41-d1b2bffa7eb1:com.mbeddr.core.base" version="5" />
@@ -50,6 +53,7 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="6bf39b0f-e5ee-4eac-9432-e74685e20512(MSM)" version="0" />
+    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(Species2)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" version="0" />
     <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
     <module reference="223dd778-c44f-4ef3-9535-7aa7d12244a6(com.mbeddr.core.debug)" version="0" />
