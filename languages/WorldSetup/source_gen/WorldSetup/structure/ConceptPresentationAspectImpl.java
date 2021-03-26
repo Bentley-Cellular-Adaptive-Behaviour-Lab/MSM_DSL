@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Adhesiveness;
-  private ConceptPresentation props_Env_Protein_Reference;
   private ConceptPresentation props_Float_Declaration;
   private ConceptPresentation props_Gradient;
   private ConceptPresentation props_GradientFunctionDeclaration;
@@ -47,13 +46,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Adhesiveness = cpb.create();
         }
         return props_Adhesiveness;
-      case LanguageConceptSwitch.Env_Protein_Reference:
-        if (props_Env_Protein_Reference == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac8692226L, 0x4c33c9dac869223aL, "Protein", "", "");
-          props_Env_Protein_Reference = cpb.create();
-        }
-        return props_Env_Protein_Reference;
       case LanguageConceptSwitch.Float_Declaration:
         if (props_Float_Declaration == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -196,7 +188,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Substrate_Shape_Cuboid == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Concept for describing a cuboidal substrate.");
-          cpb.rawPresentation("Substrate_Shape_Cuboid");
+          cpb.rawPresentation("Cuboidal");
           props_Substrate_Shape_Cuboid = cpb.create();
         }
         return props_Substrate_Shape_Cuboid;
@@ -204,7 +196,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_Substrate_Shape_Triangular == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Concept for describing a substrate in the shape of a triangular prism.");
-          cpb.rawPresentation("Substrate_Shape_Triangular");
+          cpb.rawPresentation("Triangular Prism");
           props_Substrate_Shape_Triangular = cpb.create();
         }
         return props_Substrate_Shape_Triangular;

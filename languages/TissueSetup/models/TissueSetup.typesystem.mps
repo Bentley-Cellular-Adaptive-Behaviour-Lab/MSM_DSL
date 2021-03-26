@@ -12,7 +12,7 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
-    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -40,6 +40,7 @@
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -103,6 +104,9 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="1966870290088668512" name="jetbrains.mps.lang.smodel.structure.Enum_MemberLiteral" flags="ng" index="2ViDtV">
+        <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -116,6 +120,9 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
+      </concept>
+      <concept id="5779574625830813396" name="jetbrains.mps.lang.smodel.structure.EnumerationIdRefExpression" flags="ng" index="1XH99k">
+        <reference id="5779574625830813397" name="enumDeclaration" index="1XH99l" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -994,8 +1001,8 @@
                   <node concept="2GrUjf" id="1z0V6VUaJc_" role="2Oq$k0">
                     <ref role="2Gs0qQ" node="1z0V6VUaGRD" resolve="current_reference" />
                   </node>
-                  <node concept="3TrEf2" id="2GjRzF0Txtx" role="2OqNvi">
-                    <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
+                  <node concept="3TrEf2" id="109yD1sv4tr" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1z0V6VUaK3I" role="2OqNvi">
@@ -1026,8 +1033,8 @@
                       <node concept="2GrUjf" id="1z0V6VUaK8M" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1z0V6VUaIHr" resolve="query_reference" />
                       </node>
-                      <node concept="3TrEf2" id="2GjRzF0TxFa" role="2OqNvi">
-                        <ref role="3Tt5mk" to="kxky:6YfiulflYYS" resolve="Species" />
+                      <node concept="3TrEf2" id="109yD1sv4nH" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1z0V6VUaKSt" role="2OqNvi">
@@ -2140,6 +2147,80 @@
     <node concept="1YaCAy" id="3seu8bO0dOU" role="1YuTPh">
       <property role="TrG5h" value="cell" />
       <ref role="1YaFvo" to="nguq:5qSYbADreY8" resolve="Cell" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="109yD1sCUyE">
+    <property role="TrG5h" value="checkSpeciesLocation" />
+    <node concept="3clFbS" id="109yD1sCUyF" role="18ibNy">
+      <node concept="2Gpval" id="109yD1sCUz5" role="3cqZAp">
+        <node concept="2GrKxI" id="109yD1sCUz6" role="2Gsz3X">
+          <property role="TrG5h" value="species_ref" />
+        </node>
+        <node concept="2OqwBi" id="109yD1sCUGq" role="2GsD0m">
+          <node concept="1YBJjd" id="109yD1sCUz_" role="2Oq$k0">
+            <ref role="1YBMHb" node="109yD1sCUyH" resolve="cellType" />
+          </node>
+          <node concept="3Tsc0h" id="109yD1sCUQz" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="109yD1sCUz8" role="2LFqv$">
+          <node concept="3clFbJ" id="109yD1sCUTa" role="3cqZAp">
+            <node concept="3clFbC" id="109yD1sCVW6" role="3clFbw">
+              <node concept="2OqwBi" id="109yD1sCVxh" role="3uHU7B">
+                <node concept="2OqwBi" id="109yD1sCV7O" role="2Oq$k0">
+                  <node concept="2GrUjf" id="109yD1sCUTm" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="109yD1sCUz6" resolve="species_ref" />
+                  </node>
+                  <node concept="3TrEf2" id="109yD1sCVkz" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="109yD1sCVI0" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="109yD1sCWST" role="3uHU7w">
+                <node concept="1XH99k" id="109yD1sCWlk" role="2Oq$k0">
+                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                </node>
+                <node concept="2ViDtV" id="109yD1sCX6y" role="2OqNvi">
+                  <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="109yD1sCUTc" role="3clFbx">
+              <node concept="2MkqsV" id="109yD1sCXhU" role="3cqZAp">
+                <node concept="2GrUjf" id="109yD1sCZrQ" role="1urrMF">
+                  <ref role="2Gs0qQ" node="109yD1sCUz6" resolve="species_ref" />
+                </node>
+                <node concept="3cpWs3" id="109yD1sCYy1" role="2MkJ7o">
+                  <node concept="Xl_RD" id="109yD1sCYFM" role="3uHU7w">
+                    <property role="Xl_RC" value=" cannot be used by cells, if it is defined as extracellular." />
+                  </node>
+                  <node concept="2OqwBi" id="109yD1sCXSZ" role="3uHU7B">
+                    <node concept="2OqwBi" id="109yD1sCXqf" role="2Oq$k0">
+                      <node concept="2GrUjf" id="109yD1sCXip" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="109yD1sCUz6" resolve="species_ref" />
+                      </node>
+                      <node concept="3TrEf2" id="109yD1sCXIN" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="109yD1sCY5O" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="109yD1sCUyH" role="1YuTPh">
+      <property role="TrG5h" value="cellType" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
     </node>
   </node>
 </model>

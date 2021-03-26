@@ -26,9 +26,9 @@ public class duplicateOwnedProtein_NonTypesystemRule extends AbstractNonTypesyst
   }
   public void applyRule(final SNode cell_type, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode current_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Species$sIXq))) {
-      String current_name = SPropertyOperations.getString(SLinkOperations.getTarget(current_reference, LINKS.Species$q080), PROPS.name$MnvL);
+      String current_name = SPropertyOperations.getString(SLinkOperations.getTarget(current_reference, LINKS.Species$26Ka), PROPS.name$MnvL);
       for (SNode query_reference : ListSequence.fromList(SLinkOperations.getChildren(cell_type, LINKS.Owned_Species$sIXq))) {
-        String query_name = SPropertyOperations.getString(SLinkOperations.getTarget(query_reference, LINKS.Species$q080), PROPS.name$MnvL);
+        String query_name = SPropertyOperations.getString(SLinkOperations.getTarget(query_reference, LINKS.Species$26Ka), PROPS.name$MnvL);
         if (Objects.equals(query_name, current_name) && !(Objects.equals(query_reference, current_reference))) {
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
@@ -49,7 +49,7 @@ public class duplicateOwnedProtein_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Species$q080 = MetaAdapterFactory.getReferenceLink(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L, 0x6f8f49e54f57efb8L, "Species");
+    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
     /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 
