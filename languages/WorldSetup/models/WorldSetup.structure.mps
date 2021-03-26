@@ -5,11 +5,10 @@
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
   </languages>
   <imports>
-    <import index="yzfv" ref="r:e3261ba3-2300-4b3f-813e-77f8187dc48f(ProteinSetup.structure)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" />
-    <import index="kxky" ref="r:2195aa8a-6524-4bf0-a55a-8f5e288eeb26(SpeciesSetup.structure)" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -79,7 +78,7 @@
       <property role="IQ2ns" value="5490954312196474384" />
       <property role="20kJfa" value="Desired_Species_Container" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="kxky:3tt6YLES54a" resolve="Species_Container" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     </node>
     <node concept="1TJgyj" id="7faAukhALB$" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779203044" />
@@ -167,12 +166,6 @@
     <property role="R4oN_" value="Describes a protein gradient within the simulation world." />
     <property role="3GE5qa" value="Gradients" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4KNMtF8rder" role="1TKVEi">
-      <property role="IQ2ns" value="5490954312197395355" />
-      <property role="20kJfa" value="Species_Reference" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="kxky:6YfiulflYYz" resolve="Species_Reference" />
-    </node>
     <node concept="1TJgyj" id="CB_Y3MvTaJ" role="1TKVEi">
       <property role="IQ2ns" value="731720456867910319" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -186,6 +179,13 @@
       <property role="20kJfa" value="Gradient_Shape" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2zgk2Od0CFc" resolve="Gradient_Shape" />
+    </node>
+    <node concept="1TJgyj" id="109yD1sHKQA" role="1TKVEi">
+      <property role="IQ2ns" value="1155607132032667046" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="SpeciesReference" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     </node>
     <node concept="PrWs8" id="2OHr9yL5zIc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -258,6 +258,7 @@
     <property role="TrG5h" value="Substrate_Shape_Triangular" />
     <property role="R4oN_" value="Concept for describing a substrate in the shape of a triangular prism." />
     <property role="3GE5qa" value="Substrates" />
+    <property role="34LRSv" value="Triangular Prism" />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
     <node concept="1TJgyj" id="57aaQbDDBXx" role="1TKVEi">
       <property role="IQ2ns" value="5893570766194507617" />
@@ -300,6 +301,7 @@
     <property role="TrG5h" value="Substrate_Shape_Cuboid" />
     <property role="R4oN_" value="Concept for describing a cuboidal substrate." />
     <property role="3GE5qa" value="Substrates" />
+    <property role="34LRSv" value="Cuboidal" />
     <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="Substrate_Shape" />
     <node concept="1TJgyj" id="29SopcHq_yR" role="1TKVEi">
       <property role="IQ2ns" value="2483842479244859575" />
@@ -571,18 +573,6 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <property role="20kJfa" value="Expression" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="4KNMtF8qi8A">
-    <property role="EcuMT" value="5490954312197153318" />
-    <property role="TrG5h" value="Env_Protein_Reference" />
-    <property role="3GE5qa" value="Gradients" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="4KNMtF8qi8U" role="1TKVEi">
-      <property role="IQ2ns" value="5490954312197153338" />
-      <property role="20kJfa" value="Protein" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="yzfv:29fgAF50pi2" resolve="Protein_Environment" />
     </node>
   </node>
   <node concept="1TIwiD" id="4KNMtF8tLt0">

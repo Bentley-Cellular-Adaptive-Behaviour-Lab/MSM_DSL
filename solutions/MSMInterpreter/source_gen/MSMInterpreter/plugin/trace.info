@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/3751132065236767060:jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123140:jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159:jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="9,0,18,0" name="MSMInterpreter.plugin.ExtensionDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:e9b61b1b-5a82-4d0d-bb8b-04fb1003ec2f(MSMInterpreter.plugin)/7376055817164849254">
+    <file name="InterpreterMSMInterpreter.java">
+      <node id="7376055817164849254" at="30,38,31,11" concept="3" />
+      <node id="4855747457100351179" at="37,13,38,42" concept="3" />
+      <node id="4855747457100351179" at="38,42,39,48" concept="3" />
+      <node id="4855747457100351179" at="39,48,40,68" concept="3" />
+      <node id="4855747457100361080" at="41,194,42,306" concept="6" />
+      <node id="4855747457100366119" at="43,18,44,304" concept="6" />
+      <node id="4855747457100351179" at="46,47,47,30" concept="6" />
+      <node id="4855747457100351179" at="48,49,49,19" concept="9" />
+      <node id="4855747457100351179" at="50,39,51,88" concept="9" />
+      <node id="4855747457100351179" at="54,38,55,54" concept="6" />
+      <node id="4855747457100351179" at="59,32,60,35" concept="6" />
+      <node id="4855747457100351179" at="64,42,65,20" concept="6" />
+      <node id="7376055817164849261" at="76,85,77,242" concept="3" />
+      <node id="7376055817164849254" at="81,0,82,0" concept="7" trace="Species$uQ2a" />
+      <node id="7376055817164849254" at="82,0,83,0" concept="7" trace="Starting_Concentration$a3uk" />
+      <node id="7376055817164849254" at="83,0,84,0" concept="7" trace="value$X0Sw" />
+      <node id="7376055817164849254" at="84,0,85,0" concept="7" trace="expr$WZts" />
+      <node id="7376055817164849254" at="85,0,86,0" concept="7" trace="value$XeHW" />
+      <node id="7376055817164849254" at="89,0,90,0" concept="7" trace="Amount_Concentration$r2" />
+      <node id="7376055817164849254" at="90,0,91,0" concept="7" trace="Mass_Concentration$qz" />
+      <node id="7376055817164849254" at="91,0,92,0" concept="7" trace="SpeciesExpression$Vm" />
+      <node id="4855747457100361046" at="43,16,45,11" concept="1" />
+      <node id="7376055817164849254" at="71,0,73,0" concept="5" trace="populateTypeMappers#(Ljava/util/List;)V" />
+      <node id="7376055817164849254" at="30,0,33,0" concept="2" trace="InterpreterMSMInterpreter#()V" />
+      <node id="4855747457100351179" at="54,0,57,0" concept="5" trace="getInfo#()Lcom/mbeddr/mpsutil/interpreter/rt/EvaluatorInfo;" />
+      <node id="7376055817164849254" at="76,0,79,0" concept="5" trace="populateRelationships#(Ljava/util/List;)V" />
+      <node id="4855747457100351179" at="58,0,62,0" concept="5" trace="toString#()Ljava/lang/String;" />
+      <node id="4855747457100351179" at="63,0,67,0" concept="5" trace="canLookupBeCached#()Z" />
+      <node id="4855747457100356278" at="40,68,45,11" concept="4" />
+      <node id="4855747457100351179" at="36,121,52,9" concept="10" />
+      <node id="4855747457100351179" at="36,0,54,0" concept="5" trace="evaluateEvaluator#(Lorg/jetbrains/mps/openapi/model/SNode;Lcom/mbeddr/mpsutil/interpreter/rt/IContext;Lcom/mbeddr/mpsutil/interpreter/rt/ICoverageAnalyzer;Lcom/mbeddr/mpsutil/interpreter/rt/ComputationTrace;)Ljava/lang/Object;" />
+      <node id="4855747457100351179" at="34,76,67,7" concept="3" />
+      <node id="7376055817164849254" at="34,0,69,0" concept="5" trace="populateEvaluators#(Ljava/util/List;)V" />
+      <scope id="7376055817164849254" at="71,79,71,79" />
+      <scope id="7376055817164849254" at="30,38,31,11" />
+      <scope id="4855747457100356280" at="41,194,42,306" />
+      <scope id="4855747457100361047" at="43,18,44,304" />
+      <scope id="4855747457100351179" at="46,47,47,30" />
+      <scope id="4855747457100351179" at="48,49,49,19" />
+      <scope id="4855747457100351179" at="50,39,51,88" />
+      <scope id="4855747457100351179" at="54,38,55,54" />
+      <scope id="4855747457100351179" at="59,32,60,35" />
+      <scope id="4855747457100351179" at="64,42,65,20" />
+      <scope id="7376055817164849254" at="76,85,77,242" />
+      <scope id="4855747457100351179" at="46,9,48,9">
+        <var name="stop" id="4855747457100351179" />
+      </scope>
+      <scope id="4855747457100351179" at="48,9,50,9">
+        <var name="ex" id="4855747457100351179" />
+      </scope>
+      <scope id="4855747457100351179" at="50,9,52,9">
+        <var name="ex" id="4855747457100351179" />
+      </scope>
+      <scope id="7376055817164849254" at="71,0,73,0">
+        <var name="typeMappers" id="7376055817164849254" />
+      </scope>
+      <scope id="7376055817164849254" at="30,0,33,0" />
+      <scope id="4855747457100351179" at="54,0,57,0" />
+      <scope id="7376055817164849254" at="76,0,79,0">
+        <var name="relationships" id="7376055817164849254" />
+      </scope>
+      <scope id="4855747457100351179" at="58,0,62,0" />
+      <scope id="4855747457100351179" at="63,0,67,0" />
+      <scope id="4855747457100351179" at="37,13,45,11" />
+      <scope id="4855747457100351179" at="36,121,52,9" />
+      <scope id="4855747457100351179" at="36,0,54,0">
+        <var name="context" id="4855747457100351179" />
+        <var name="coverage" id="4855747457100351179" />
+        <var name="node" id="4855747457100351179" />
+        <var name="trace" id="4855747457100351179" />
+      </scope>
+      <scope id="7376055817164849254" at="34,76,67,7" />
+      <scope id="7376055817164849254" at="34,0,69,0">
+        <var name="evaluators" id="7376055817164849254" />
+      </scope>
+      <unit id="7376055817164849254" at="88,0,93,0" name="MSMInterpreter.plugin.InterpreterMSMInterpreter$CONCEPTS" />
+      <unit id="7376055817164849254" at="80,0,87,0" name="MSMInterpreter.plugin.InterpreterMSMInterpreter$LINKS" />
+      <unit id="4855747457100351179" at="35,74,67,5" name="MSMInterpreter.plugin.InterpreterMSMInterpreter$1" />
+      <unit id="7376055817164849254" at="29,0,94,0" name="MSMInterpreter.plugin.InterpreterMSMInterpreter" />
+    </file>
+    <file name="MSMInterpreter_extension.java">
+      <node id="7376055817164849254" at="10,37,11,70" concept="8" />
+      <node id="7376055817164849254" at="14,26,15,55" concept="3" />
+      <node id="7376055817164849254" at="17,28,18,55" concept="3" />
+      <node id="7376055817164849254" at="21,29,22,43" concept="6" />
+      <node id="7376055817164849254" at="10,0,13,0" concept="2" trace="MSMInterpreter_extension#()V" />
+      <node id="7376055817164849254" at="14,0,17,0" concept="0" trace="activate#()V" />
+      <node id="7376055817164849254" at="17,0,20,0" concept="0" trace="deactivate#()V" />
+      <node id="7376055817164849254" at="21,0,24,0" concept="0" trace="get#()Lcom/mbeddr/mpsutil/interpreter/rt/IInterpreter;" />
+      <scope id="7376055817164849254" at="10,37,11,70" />
+      <scope id="7376055817164849254" at="14,26,15,55" />
+      <scope id="7376055817164849254" at="17,28,18,55" />
+      <scope id="7376055817164849254" at="21,29,22,43" />
+      <scope id="7376055817164849254" at="10,0,13,0" />
+      <scope id="7376055817164849254" at="14,0,17,0" />
+      <scope id="7376055817164849254" at="17,0,20,0" />
+      <scope id="7376055817164849254" at="21,0,24,0" />
+      <unit id="7376055817164849254" at="9,0,25,0" name="MSMInterpreter.plugin.MSMInterpreter_extension" />
+    </file>
+  </root>
+</debug-info>
+

@@ -14,7 +14,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -30,6 +29,7 @@ import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -72,7 +72,6 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createCollection_1());
     editorCell.addEditorCell(createCollection_2());
     editorCell.addEditorCell(createCollection_3());
-    editorCell.addEditorCell(createCollection_4());
     editorCell.addEditorCell(createConstant_4());
     editorCell.addEditorCell(createConstant_5());
     return editorCell;
@@ -84,32 +83,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_0());
+    editorCell.addEditorCell(createProperty_0());
+    editorCell.addEditorCell(createConstant_1());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "- Cell Type --> {");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "-");
     editorCell.setCellId("Constant_iztune_a0a");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createCollection_2() {
-    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_iztune_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_0());
-    editorCell.addEditorCell(createConstant_1());
-    editorCell.addEditorCell(createProperty_0());
-    return editorCell;
-  }
-  private EditorCell createIndentCell_0() {
-    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
-    return editorCell;
-  }
-  private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Name :");
-    editorCell.setCellId("Constant_iztune_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -141,36 +121,42 @@ import org.jetbrains.mps.openapi.language.SConcept;
       getCellFactory().popCellContext();
     }
   }
-  private EditorCell createCollection_3() {
+  private EditorCell createConstant_1() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, " --> {");
+    editorCell.setCellId("Constant_iztune_c0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_2() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_iztune_c0");
+    editorCell.setCellId("Collection_iztune_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(createIndentCell_1());
+    editorCell.addEditorCell(createIndentCell_0());
     editorCell.addEditorCell(createConstant_2());
     editorCell.addEditorCell(createRefNode_0());
     return editorCell;
   }
-  private EditorCell createIndentCell_1() {
+  private EditorCell createIndentCell_0() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
     return editorCell;
   }
   private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Shape :");
-    editorCell.setCellId("Constant_iztune_b2a");
+    editorCell.setCellId("Constant_iztune_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createRefNode_0() {
-    SingleRoleCellProvider provider = new ShapeSingleRoleHandler_iztune_c2a(myNode, LINKS.Shape$q0mn, getEditorContext());
+    SingleRoleCellProvider provider = new ShapeSingleRoleHandler_iztune_c1a(myNode, LINKS.Shape$q0mn, getEditorContext());
     return provider.createCell();
   }
-  private static class ShapeSingleRoleHandler_iztune_c2a extends SingleRoleCellProvider {
+  private static class ShapeSingleRoleHandler_iztune_c1a extends SingleRoleCellProvider {
     @NotNull
     private SNode myNode;
 
-    public ShapeSingleRoleHandler_iztune_c2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+    public ShapeSingleRoleHandler_iztune_c1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
       super(containmentLink, context);
       myNode = ownerNode;
     }
@@ -217,40 +203,40 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return "<no Shape>";
     }
   }
-  private EditorCell createCollection_4() {
+  private EditorCell createCollection_3() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
-    editorCell.setCellId("Collection_iztune_d0");
+    editorCell.setCellId("Collection_iztune_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_3());
-    editorCell.addEditorCell(createCollection_5());
+    editorCell.addEditorCell(createCollection_4());
     return editorCell;
   }
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Expresses proteins:");
-    editorCell.setCellId("Constant_iztune_a3a");
+    editorCell.setCellId("Constant_iztune_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createCollection_5() {
+  private EditorCell createCollection_4() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_iztune_b3a");
+    editorCell.setCellId("Collection_iztune_b2a");
     editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new Owned_SpeciesListHandler_iztune_a1d0(myNode, getEditorContext());
+    AbstractCellListHandler handler = new Owned_SpeciesListHandler_iztune_a1c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_Owned_Species");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class Owned_SpeciesListHandler_iztune_a1d0 extends RefNodeListHandler {
+  private static class Owned_SpeciesListHandler_iztune_a1c0 extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public Owned_SpeciesListHandler_iztune_a1d0(SNode ownerNode, EditorContext context) {
+    public Owned_SpeciesListHandler_iztune_a1c0(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -263,7 +249,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return LINKS.Owned_Species$sIXq;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Species_Reference$ga;
+      return CONCEPTS.SpeciesReference$sM;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -273,7 +259,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_SpeciesListHandler_iztune_a1d0.this.getNode(), LINKS.Owned_Species$sIXq));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_SpeciesListHandler_iztune_a1c0.this.getNode(), LINKS.Owned_Species$sIXq));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -315,13 +301,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
   }
   private EditorCell createConstant_4() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_iztune_e0");
+    editorCell.setCellId("Constant_iztune_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
-    editorCell.setCellId("Constant_iztune_f0");
+    editorCell.setCellId("Constant_iztune_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -332,7 +318,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
-    /*package*/ static final SConcept Species_Reference$ga = MetaAdapterFactory.getConcept(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L, "SpeciesSetup.structure.Species_Reference");
+    /*package*/ static final SConcept SpeciesReference$sM = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, "SpeciesSetup.structure.SpeciesReference");
   }
 
   private static final class LINKS {

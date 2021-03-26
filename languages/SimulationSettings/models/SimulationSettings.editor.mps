@@ -58,8 +58,17 @@
   <node concept="24kQdi" id="6JBqwuek7XN">
     <ref role="1XX52x" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
     <node concept="3EZMnI" id="6JBqwuek7XP" role="2wV5jI">
-      <node concept="3F0ifn" id="6JBqwuek7Y$" role="3EZMnx">
-        <property role="3F0ifm" value="Simulation Settings:" />
+      <node concept="3EZMnI" id="109yD1sBOv4" role="3EZMnx">
+        <node concept="2iRfu4" id="109yD1sBOv5" role="2iSdaV" />
+        <node concept="3F0ifn" id="6JBqwuek7Y$" role="3EZMnx">
+          <property role="3F0ifm" value="Simulation Settings :" />
+        </node>
+        <node concept="3F0A7n" id="109yD1sBOvR" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          <node concept="VechU" id="109yD1sCO$Y" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="6JBqwuek7Yq" role="3EZMnx" />
       <node concept="1v6uyg" id="2B5sNxPnwhN" role="3EZMnx">

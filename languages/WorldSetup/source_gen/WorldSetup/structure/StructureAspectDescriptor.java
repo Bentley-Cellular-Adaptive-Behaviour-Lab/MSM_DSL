@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAdhesiveness = createDescriptorForAdhesiveness();
-  /*package*/ final ConceptDescriptor myConceptEnv_Protein_Reference = createDescriptorForEnv_Protein_Reference();
   /*package*/ final ConceptDescriptor myConceptFloat_Declaration = createDescriptorForFloat_Declaration();
   /*package*/ final ConceptDescriptor myConceptGradient = createDescriptorForGradient();
   /*package*/ final ConceptDescriptor myConceptGradientFunctionDeclaration = createDescriptorForGradientFunctionDeclaration();
@@ -55,13 +54,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, "org.iets3.core.expr.base");
     deps.aggregatedLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
+    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesSetup");
     deps.aggregatedLanguage(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, "TissueSetup");
     deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAdhesiveness, myConceptEnv_Protein_Reference, myConceptFloat_Declaration, myConceptGradient, myConceptGradientFunctionDeclaration, myConceptGradient_Shape, myConceptGradient_Shape_Cuboidal, myConceptGradient_Shape_Point, myConceptGradient_Shape_SinkAndSource, myConceptGradient_Type, myConceptGradient_Type_Constant, myConceptGradient_Type_Custom, myConceptGradient_Type_Exponential, myConceptGradient_Type_Linear, myConceptGrid, myConceptSink, myConceptSinkAndSource, myConceptSource, myConceptSubstrate, myConceptSubstrate_Shape, myConceptSubstrate_Shape_Cuboid, myConceptSubstrate_Shape_Triangular, myConceptVariableReference, myConceptVertex, myConceptWorld_Container);
+    return Arrays.asList(myConceptAdhesiveness, myConceptFloat_Declaration, myConceptGradient, myConceptGradientFunctionDeclaration, myConceptGradient_Shape, myConceptGradient_Shape_Cuboidal, myConceptGradient_Shape_Point, myConceptGradient_Shape_SinkAndSource, myConceptGradient_Type, myConceptGradient_Type_Constant, myConceptGradient_Type_Custom, myConceptGradient_Type_Exponential, myConceptGradient_Type_Linear, myConceptGrid, myConceptSink, myConceptSinkAndSource, myConceptSource, myConceptSubstrate, myConceptSubstrate_Shape, myConceptSubstrate_Shape_Cuboid, myConceptSubstrate_Shape_Triangular, myConceptVariableReference, myConceptVertex, myConceptWorld_Container);
   }
 
   @Override
@@ -70,8 +70,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myIndexSwitch.index(id)) {
       case LanguageConceptSwitch.Adhesiveness:
         return myConceptAdhesiveness;
-      case LanguageConceptSwitch.Env_Protein_Reference:
-        return myConceptEnv_Protein_Reference;
       case LanguageConceptSwitch.Float_Declaration:
         return myConceptFloat_Declaration;
       case LanguageConceptSwitch.Gradient:
@@ -140,14 +138,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("expr", 0x2f6b1b828a3a33b7L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3416854989769421751").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForEnv_Protein_Reference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Env_Protein_Reference", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac8692226L);
-    b.class_(false, false, false);
-    b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/5490954312197153318");
-    b.version(2);
-    b.associate("Protein", 0x4c33c9dac869223aL).target(0xea515ac2fe2e495aL, 0xa1e2243a14826d03L, 0x224f426ac5019482L).optional(false).origin("5490954312197153338").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForFloat_Declaration() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("WorldSetup", "Float_Declaration", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac88504f2L);
     b.class_(false, false, false);
@@ -162,9 +152,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203047");
     b.version(2);
-    b.associate("Species_Reference", 0x4c33c9dac86cd39bL).target(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x6f8f49e54f57efa3L).optional(false).origin("5490954312197395355").done();
     b.aggregate("Gradient_Type", 0xa2797e0f27f92afL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L).optional(false).ordered(true).multiple(false).origin("731720456867910319").done();
     b.aggregate("Gradient_Shape", 0xa2797e0f27f92b1L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028accL).optional(false).ordered(true).multiple(false).origin("731720456867910321").done();
+    b.aggregate("SpeciesReference", 0x10098a905cb70da6L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL).optional(false).ordered(true).multiple(false).origin("1155607132032667046").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForGradientFunctionDeclaration() {
@@ -334,6 +324,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Width", 0x383c8857e006d9dfL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681439").done();
     b.aggregate("Height", 0x383c8857e006d9e2L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681442").done();
     b.aggregate("Depth", 0x383c8857e006d9e6L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681446").done();
+    b.alias("Cuboidal");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSubstrate_Shape_Triangular() {
@@ -347,6 +338,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Vertex_3", 0x51ca2b62e9a67f6cL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L).optional(false).ordered(true).multiple(false).origin("5893570766194507628").done();
     b.aggregate("Depth", 0x383c8857e006d9cfL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681423").done();
     b.aggregate("Z_Location", 0x383c8857e006d9d4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L).optional(false).ordered(true).multiple(false).origin("4052263675728681428").done();
+    b.alias("Triangular Prism");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForVariableReference() {
@@ -373,7 +365,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/8343650468779203043");
     b.version(2);
     b.associate("Desired_Tissue_Container", 0x6be76a078e5136afL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L).optional(false).origin("7775299862363453103").done();
-    b.associate("Desired_Species_Container", 0x4c33c9dac85ec610L).target(0xf3f95abcaef14f78L, 0xaa77fb36d4ba916aL, 0x375d1bec6ae0510aL).optional(false).origin("5490954312196474384").done();
+    b.associate("Desired_Species_Container", 0x4c33c9dac85ec610L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL).optional(false).origin("5490954312196474384").done();
     b.aggregate("grid", 0x73ca99e5119b19e4L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L).optional(false).ordered(true).multiple(false).origin("8343650468779203044").done();
     b.aggregate("gradients", 0x73ca99e5119b19ebL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L).optional(true).ordered(true).multiple(true).origin("8343650468779203051").done();
     b.aggregate("substrates", 0x73ca99e5119b19eeL).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L).optional(true).ordered(true).multiple(true).origin("8343650468779203054").done();

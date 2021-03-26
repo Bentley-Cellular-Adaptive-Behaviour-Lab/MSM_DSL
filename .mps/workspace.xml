@@ -12,19 +12,19 @@
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -42,458 +42,323 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/MSM_DSL.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Eclipse_Debugger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_dslfoundry_plaintextgen.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_base.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_cbmc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_cbmc_devkit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_fm.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_sat4j.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_spin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_spin_devkit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_analyses_z3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_cc_req.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_cc_req_c.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_cc_reqtrace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_cc_reqtrace_c.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_cc_variability.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_commenting.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_components.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_concurrency.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_core.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_core1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_core_codereview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_core_debugger.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_debugger_testing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_doc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_documentation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_components.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_concurrency.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_math.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_serialization.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_statemachine.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_statemachineInComponents.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ext_units.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_math.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_mpsutil_guides.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_mpsutil_resources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_physicalunits.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_platform.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_platform_build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_ple.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_statemachines.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_mbeddr_statemachinesInComponents.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_microsoft_z3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_opencsv.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/come_mbeddr_xmodel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_csv_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_io_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_lang3_3_3_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_math3_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/commons_primitives_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_blutil.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_celllayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_editor_diagram.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_editor_widgets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_extensions_build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_grammarcells.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_nativelibs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_nativelibs_loader.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_selection.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_tooltips.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_itemis_mps_utils.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_q60_mps_libs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_q60_shadowmodels.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_q60_shadowmodels_examples.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_slisson_mps_conditionalEditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/de_slisson_mps_hacks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/diff_match_patch.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/emma.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/functionaljava_1_8_4_8_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_actionsfilter_lang.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_apis.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_asynccell.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_baseLanguage.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_breadcrumb.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_ccmenu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_common.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_compare.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_contextactions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_dataflow.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_datepicker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_ecore.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_editingGuide.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_editor_querylist.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_editor_support.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_emma.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_extensionclass.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_filepicker.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_gen_support.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_generatorfacade.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_genreview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_httpsupport.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_incrementalcomputation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_infrastructure_misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_intentions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_interpreter.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_interpreter_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_jfreechart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_json.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_jung.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_lang_support.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_licensemanager.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_margincell_review.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_modellisteners.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_multilingual.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_nodes_tracing.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_org_mockito.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_parameterizedMenu.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_placeholderTextList.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_plantuml.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_postprocessGeneratedFiles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_preferenceform.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_process.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_projectview.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_projectview_vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_rcp.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_refactoring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_smodule.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_spreferences.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_suppresswarning.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_toolrunner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_treenotation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_ui_support.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_userstyles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_varscope.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_waitfor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/group_xml_actions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_assessment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_comp_os.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_core_os.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_req_os.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/iets3_trace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jaxen_1_1_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jdom2_2_0_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jfreechart.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jung.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/languages.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mbeddr.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/microba_0_4_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/miglayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mps_apache_commons_math.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mps_math_editor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mps_multiline.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mps_richtext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mps_tables.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/opencsv_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_iets3_core_expr_genjava.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/org_iets3_req.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/pcollections_28apr2016.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/plantuml.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/swingx_core_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/takari_cpsuite_1_2_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic13 .png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/mac_install/pic9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/settings_lang/Picture1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/tissue_lang/Picture1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/tissue_lang/Picture2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/tissue_lang/Picture3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/tissue_lang/Picture4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/tissue_lang/Picture5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/world_lang/Picture1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/world_lang/Picture2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/world_lang/Picture3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/img/world_lang/Picture4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/LINUX_INSTALLATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/MAC_INSTALLATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/install/WINDOWS_INSTALLATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lang/SETTINGS_LANG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lang/SPECIES_LANG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lang/TISSUE_LANG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/lang/WORLD_LANG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/GraphicalProtein.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/GraphicalProtein/generator/generator4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ODE/ODE.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ODE/generator/generator7.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ProteinSetup/generator/generator1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/generator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/Species2.mpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/templates/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/templates/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/templates/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/generator/templates/Species2.generator.templates@generator.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/models/Species2.behavior.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/models/Species2.constraints.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/models/Species2.editor.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/models/Species2.structure.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/models/Species2.typesystem.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/behavior/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/behavior/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/constraints/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/constraints/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/editor/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/editor/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/structure/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/structure/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/typesystem/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/typesystem/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/behavior/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/IrreversibleReaction_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/Reaction_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/ReversibleReaction_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Arrowhead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/DiagramColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/IrreversibleReaction_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/IrreversibleReaction_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Parameter_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Parameter_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Rate_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Rate_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReactionShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReversibleReaction_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReversibleReaction_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_graphical_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_graphical_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/SpeciesShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/EnumerationDescriptor_SpeciesLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/noDuplicateProducts_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/noDuplicateReactants_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/generator3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/templates/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/templates/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/templates/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.generator.templates@generator.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.editor.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.intentions.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/intentions/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/intentions/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/Language.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Power__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Reaction__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species_Container__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Product_Expression_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reactant_Expression_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Expression_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_NonReversible_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Reversible_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Arrowhead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/DiagramColors.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction2_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction2_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/ReactionShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_NonReversible_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_NonReversible_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reversible_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reversible_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Term_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Term_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/SpeciesShape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_graphical_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_graphical_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a2a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a2a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a4a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a4a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a6a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a6a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Expression_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Expression_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_tooltipHint_nkm0p4_b0a_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_tooltipHint_nkm0p4_b0a_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/IntentionsDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/TestInterpreter_Intention.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/evalExpression_Intention.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/updateReactionSpecies_Intention.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/EnumerationDescriptor_SpeciesLocation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkNoDuplicateProducts_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkNoDuplicateReactants_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkpoints" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/typeof_exponent_InferenceRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/updateReactionRelations_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/generator2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/sandbox/sandbox.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Units/Units.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Units/generator/generator6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/generator5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.msd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/models/MSM.interpreter.plugin.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen.caches/MSM/interpreter/plugin/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen.caches/MSM/interpreter/plugin/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/ExtensionDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/InterpreterMSMInterpreter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/MSMInterpreter_extension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM/MSM.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSM_DSL.interpreter/MSM_DSL.interpreter.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.intentions.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.textGen.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/intentions/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/intentions/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/Reaction_Term__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/SpeciesPowerExpression__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesReference_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/intentions/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/IrreversibleReaction_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/ReversibleReaction_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesContainer_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesExpression_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesPowerExpression_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesReference_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/Species_TextGen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/typeof_PowerExpression_InferenceRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/warnExtracellularReaction_NonTypesystemRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/checkSpeciesLocation_NonTypesystemRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/dsl_Species.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/MSMInterpreter.msd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/models/MSMInterpreter.plugin.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen/MSMInterpreter/plugin/InterpreterMSMInterpreter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen/MSMInterpreter/plugin/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ProteinSetup/source_gen.caches/ProteinSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/classes_gen/SimulationSettings/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/Settings_Container_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/source_gen/SimulationSettings/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/Species2.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/SpeciesSetup.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/SpeciesSetup/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/SpeciesSetup/templates/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/Species2/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/SpeciesSetup/templates/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/SpeciesSetup/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/SpeciesSetup/templates/QueriesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/SpeciesSetup/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/source_gen/Species2/generator/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen/SpeciesSetup/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/generator/templates/Species2.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/templates/SpeciesSetup.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/Species2.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/Species2.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.constraints.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/Species2.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/Species2.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/Species2.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.typesystem.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/behavior/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/constraints/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/constraints/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/editor/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/structure/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/Species2/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/IrreversibleReaction_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/IrreversibleReaction_Constraints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/Reaction_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/Reaction_Constraints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/ReversibleReaction_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/ReversibleReaction_Constraints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/checkpoints" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/checkpoints" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Arrowhead.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/DiagramColors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/IrreversibleReaction_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/IrreversibleReaction_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/IrreversibleReaction_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/IrreversibleReaction_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Parameter_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Parameter_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Parameter_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Rate_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Rate_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Rate_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Rate_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReactionShape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Reaction_Term_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Reaction_Term_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Reaction_Term_SubstituteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReversibleReaction_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/ReversibleReaction_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/ReversibleReaction_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesContainer_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_graphical_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species2Container_graphical_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesContainer_graphical_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/SpeciesShape.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/Species_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Species_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/EnumerationDescriptor_SpeciesLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/EnumerationDescriptor_SpeciesLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/LanguageConceptSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/checkpoints" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/checkpoints" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/checkpoints" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/checkpoints" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/constrainStoichiometry_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/constrainStoichiometry_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/noDuplicateProducts_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/noDuplicateProducts_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/noDuplicateReactants_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/noDuplicateReactants_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/Species2/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/generator/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/templates/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generator/templates/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/Generator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/templates/QueriesGenerated.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/templates/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/generator/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.generator.templates@generator.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.editor.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.intentions.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/intentions/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/intentions/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/structure/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/Language.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/BehaviorAspectDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Power__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Reaction__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species_Container__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Product_Expression_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reactant_Expression_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Expression_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_NonReversible_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Reaction_Reversible_Constraints.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/checkpoints" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/checkpoints" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Arrowhead.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Arrowhead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/DiagramColors.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/DiagramColors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Parameter_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesReference_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Parameter_Expression_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesReference_SubstituteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction2_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesContainer_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction2_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/ReactionShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/ReactionShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_NonReversible_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_NonReversible_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reference_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Reaction_Reference_SubstituteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reversible_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Reversible_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Term_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Reaction_Term_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Reaction_Term_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/SpeciesShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesExpression_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_graphical_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesContainer_graphical_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_graphical_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a2a_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a2a_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a4a_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a4a_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a6a_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Container_tooltipHint_fjtrzr_a6a_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/Species_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Expression_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Expression_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesExpression_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_Reference_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/editor/SpeciesExpression_SubstituteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_tooltipHint_nkm0p4_b0a_Editor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_tooltipHint_nkm0p4_b0a_EditorBuilder_a.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/IntentionsDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/intentions/IntentionsDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/TestInterpreter_Intention.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/intentions/updateRelations_Intention.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/evalExpression_Intention.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/updateReactionSpecies_Intention.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/EnumerationDescriptor_SpeciesLocation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/LanguageConceptSwitch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/checkpoints" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkNoDuplicateProducts_NonTypesystemRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkNoDuplicateReactants_NonTypesystemRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/checkpoints" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/typeof_exponent_InferenceRule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/updateReactionRelations_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/updateRelations_NonTypesystemRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/Language.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/Language.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a$PROPS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_EditorBuilder_a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/editor/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/TypesystemDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/TypesystemDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule$LINKS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/classes_gen/TissueSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.editor.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/models/TissueSetup.typesystem.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen.caches/TissueSetup/typesystem/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/Language.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Arrangement_Cylindrical_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Arrangement_Cylindrical_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Arrangement_Flat_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Arrangement_Flat_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Cell_Type_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Shape_Rectangular_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Shape_Rectangular_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_And_Cell_Container_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/Tissue_Type_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/editor/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/duplicateOwnedProtein_NonTypesystemRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/source_gen/TissueSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Units/models/Units.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Units/models/Units.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Units/source_gen.caches/Units/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Units/source_gen.caches/Units/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Units/source_gen.caches/Units/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Units/source_gen.caches/Units/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Units/source_gen/Units/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Units/source_gen/Units/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Units/source_gen/Units/typesystem/typeof_Distance_InferenceRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Units/source_gen/Units/typesystem/typeof_Distance_InferenceRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$3.class" afterDir="false" />
@@ -502,53 +367,60 @@
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$LINKS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a$PROPS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/Gradient_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gradientsListHandler_qumq7g_a2e0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gradientsListHandler_qumq7g_a2e0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gridSingleRoleHandler_qumq7g_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$gridSingleRoleHandler_qumq7g_c2a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$substratesListHandler_qumq7g_a2g0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a$substratesListHandler_qumq7g_a2g0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/World_Container_EditorBuilder_a.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/LanguageConceptSwitch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.behavior.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.editor.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/behavior/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/editor/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Gradient_Type__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/Gradient_Type__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Env_Protein_Reference_SubstituteMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_SubstituteMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_Cuboidal_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_Cuboidal_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_Point_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_Point_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_SinkAndSource_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Shape_SinkAndSource_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_SubstituteMenu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Constant_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Constant_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Custom_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Custom_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Exponential_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Exponential_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Linear_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Gradient_Type_Linear_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/World_Container_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Cuboid_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_Shape_Triangular_EditorBuilder_a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_b3a_Editor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_b2a_Editor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_b3a_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/Substrate_tooltipHint_fphtn9_b2a_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/LanguageConceptSwitch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.msd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/models/MSM.interpreter.plugin.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen.caches/MSM/interpreter/plugin/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen.caches/MSMInterpreter/plugin/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen.caches/MSM/interpreter/plugin/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen.caches/MSMInterpreter/plugin/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/ExtensionDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen/MSMInterpreter/plugin/ExtensionDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/InterpreterMSMInterpreter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/MSMInterpreter_extension.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMInterpreter/source_gen/MSMInterpreter/plugin/MSMInterpreter_extension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM.interpreter/source_gen/MSM/interpreter/plugin/trace.info" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/MSM.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/MSM.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/RunMSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/Tissue_Container.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/World_Container.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/trace.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -570,7 +442,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="cf4a0cc0-60ef-4cf7-9490-8fdd32c1523f/r:044809eb-22ed-43ab-bc9a-64afcd349d90(TempModulecf4a0cc0-60ef-4cf7-9490-8fdd32c1523f/ConsoleModel_76542442166300)">
+            <model ref="18a8bd64-12bc-411d-a8fa-017b4352d533/r:55859419-60b3-41a6-be56-0a99778510cf(TempModule18a8bd64-12bc-411d-a8fa-017b4352d533/ConsoleModel_353038612002300)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -590,11 +462,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="109yD1ssjD$">
-                <node concept="3balQm" id="109yD1ssjD_" role="aymYE" />
-                <node concept="2Clz$F" id="109yD1ssjDA" role="aymYO" />
-                <node concept="2_V_lH" id="109yD1ssjDB" role="1PhJh3">
-                  <ref role="2_V_lI" node="109yD1ssjDA" resolve="CommandHolder" />
+              <node concept="aymSD" id="7$MIerkjDGA">
+                <node concept="3balQm" id="7$MIerkjDGB" role="aymYE" />
+                <node concept="2Clz$F" id="7$MIerkjDGC" role="aymYO" />
+                <node concept="2_V_lH" id="7$MIerkjDGD" role="1PhJh3">
+                  <ref role="2_V_lI" node="7$MIerkjDGC" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -663,6 +535,11 @@
         </BookmarkInfo>
         <BookmarkInfo>
           <option name="nodeRef" value="r:312cc601-c630-4b1c-9a81-c3195573be78(SpeciesSetup.editor)/3989375547139870693" />
+          <option name="myNumber" value="-1" />
+          <option name="myIsNull" value="false" />
+        </BookmarkInfo>
+        <BookmarkInfo>
+          <option name="nodeRef" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/4855747457097071656" />
           <option name="myNumber" value="-1" />
           <option name="myIsNull" value="false" />
         </BookmarkInfo>
@@ -987,6 +864,86 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e7b8419-3c44-4e03-9b6b-be1d63c5dba1(SpeciesSetup.intentions) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.intentions.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddeb8060-1e2a-4543-a472-1be0c447d0c4" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMInterpreter" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddeb8060-1e2a-4543-a472-1be0c447d0c4" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMInterpreter" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:e9b61b1b-5a82-4d0d-bb8b-04fb1003ec2f(MSMInterpreter.plugin) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMInterpreter/models/MSMInterpreter.plugin.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -1029,17 +986,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(Species2)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(Species2.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/Species2.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemId" value="ddeb8060-1e2a-4543-a472-1be0c447d0c4" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -1049,7 +996,21 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(Species2)" />
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -1059,15 +1020,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(Species2)" />
+              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(Species2.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/Species2.typesystem.mps]" />
+              <option name="myItemId" value="MSM" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="1155607132028377500" />
+              <option name="myItemId" value="r:aa0fdb33-9c60-48e1-be69-5ac3f0b9331a(MSM.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.user_simulation.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -1360,7 +1321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1615474723693</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Created new species language. Preparing to refactor.">
+      <created>1616495998804</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1616495998805</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -2158,6 +2126,7 @@
     <MESSAGE value="Commit before import reshuffling" />
     <MESSAGE value="Testing changing world boundaries" />
     <MESSAGE value="Implemented auto-updating world boundary functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented auto-updating world boundary functionality." />
+    <MESSAGE value="Created new species language. Preparing to refactor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new species language. Preparing to refactor." />
   </component>
 </project>
