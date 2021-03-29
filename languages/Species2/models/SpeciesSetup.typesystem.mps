@@ -15,6 +15,9 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
+        <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1239714755177" name="jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation" flags="nn" index="2$Kvd9">
         <child id="1239714902950" name="expression" index="2$L3a6" />
@@ -49,8 +52,10 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
+        <child id="1082485599094" name="ifFalseStatement" index="9aQIa" />
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
+        <child id="1206060520071" name="elsifClauses" index="3eNLev" />
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
@@ -63,6 +68,10 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
+        <child id="1206060619838" name="condition" index="3eO9$A" />
+        <child id="1206060644605" name="statementList" index="3eOfB_" />
+      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
@@ -119,7 +128,21 @@
       <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
         <reference id="4705942098322467736" name="decl" index="21nZrZ" />
       </concept>
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -150,6 +173,7 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
     </language>
   </registry>
   <node concept="18kY7G" id="2Hxmt3eYkCd">
@@ -594,6 +618,403 @@
     <node concept="1YaCAy" id="J83UdHo7r7" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4Q3VeFU0AE2">
+    <property role="TrG5h" value="noSpeciesInReactionRate" />
+    <property role="3GE5qa" value="CheckingRules" />
+    <node concept="3clFbS" id="4Q3VeFU0AE3" role="18ibNy">
+      <node concept="3clFbJ" id="4Q3VeFU0CWz" role="3cqZAp">
+        <node concept="3clFbS" id="4Q3VeFU0CW_" role="3clFbx">
+          <node concept="3clFbJ" id="4Q3VeFU0D9b" role="3cqZAp">
+            <node concept="3eOSWO" id="4Q3VeFU0Mgo" role="3clFbw">
+              <node concept="3cmrfG" id="4Q3VeFU0Mgr" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="4Q3VeFU0IU$" role="3uHU7B">
+                <node concept="2OqwBi" id="4Q3VeFU0D9c" role="2Oq$k0">
+                  <node concept="1PxgMI" id="4Q3VeFU0D9d" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="4Q3VeFU0D9e" role="3oSUPX">
+                      <ref role="cht4Q" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+                    </node>
+                    <node concept="2OqwBi" id="4Q3VeFU0D9f" role="1m5AlR">
+                      <node concept="1YBJjd" id="4Q3VeFU0D9g" role="2Oq$k0">
+                        <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                      </node>
+                      <node concept="1mfA1w" id="4Q3VeFU0D9h" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="4Q3VeFU0D9i" role="2OqNvi">
+                    <ref role="37wK5l" to="f3yh:J83UdHe8mr" resolve="getExprSpecies" />
+                    <node concept="2OqwBi" id="4Q3VeFU0FML" role="37wK5m">
+                      <node concept="2OqwBi" id="4Q3VeFU0ELB" role="2Oq$k0">
+                        <node concept="1PxgMI" id="4Q3VeFU0E_e" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="4Q3VeFU0EAG" role="3oSUPX">
+                            <ref role="cht4Q" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
+                          </node>
+                          <node concept="1YBJjd" id="4Q3VeFU0D9k" role="1m5AlR">
+                            <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4Q3VeFU0F$3" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLq" resolve="Rate" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="4Q3VeFU0Gsw" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfk4" resolve="Expression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="34oBXx" id="4Q3VeFU0L6w" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="4Q3VeFU0D9m" role="3clFbx">
+              <node concept="a7r0C" id="4Q3VeFU0Mok" role="3cqZAp">
+                <node concept="3cpWs3" id="4Q3VeFU0Wcn" role="a7wSD">
+                  <node concept="Xl_RD" id="4Q3VeFU0WAP" role="3uHU7w">
+                    <property role="Xl_RC" value=" if this is not correct." />
+                  </node>
+                  <node concept="3cpWs3" id="4Q3VeFU0V02" role="3uHU7B">
+                    <node concept="3cpWs3" id="4Q3VeFU0QCq" role="3uHU7B">
+                      <node concept="3cpWs3" id="4Q3VeFU0P2x" role="3uHU7B">
+                        <node concept="3cpWs3" id="4Q3VeFU0NOK" role="3uHU7B">
+                          <node concept="3cpWs3" id="4Q3VeFU0MFi" role="3uHU7B">
+                            <node concept="Xl_RD" id="4Q3VeFU0MoA" role="3uHU7B">
+                              <property role="Xl_RC" value="Reaction " />
+                            </node>
+                            <node concept="2OqwBi" id="4Q3VeFU0MSH" role="3uHU7w">
+                              <node concept="1YBJjd" id="4Q3VeFU0MFE" role="2Oq$k0">
+                                <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                              </node>
+                              <node concept="3TrcHB" id="4Q3VeFU0NmG" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="Xl_RD" id="4Q3VeFU0Od8" role="3uHU7w">
+                            <property role="Xl_RC" value=" 's rate " />
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="4Q3VeFU0PIf" role="3uHU7w">
+                          <node concept="2OqwBi" id="4Q3VeFU0P5S" role="2Oq$k0">
+                            <node concept="1PxgMI" id="4Q3VeFU0P5T" role="2Oq$k0">
+                              <property role="1BlNFB" value="true" />
+                              <node concept="chp4Y" id="4Q3VeFU0P5U" role="3oSUPX">
+                                <ref role="cht4Q" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
+                              </node>
+                              <node concept="1YBJjd" id="4Q3VeFU0P5V" role="1m5AlR">
+                                <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="4Q3VeFU0P5W" role="2OqNvi">
+                              <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLq" resolve="Rate" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="4Q3VeFU0QiT" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="4Q3VeFU0QGE" role="3uHU7w">
+                        <property role="Xl_RC" value=" uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " />
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4Q3VeFU0V4q" role="3uHU7w">
+                      <node concept="2OqwBi" id="4Q3VeFU0V4r" role="2Oq$k0">
+                        <node concept="1PxgMI" id="4Q3VeFU0V4s" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="4Q3VeFU0V4t" role="3oSUPX">
+                            <ref role="cht4Q" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
+                          </node>
+                          <node concept="1YBJjd" id="4Q3VeFU0V4u" role="1m5AlR">
+                            <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                          </node>
+                        </node>
+                        <node concept="3TrEf2" id="4Q3VeFU0V4v" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLq" resolve="Rate" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="4Q3VeFU0V4w" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1YBJjd" id="4Q3VeFU0Xkc" role="1urrMF">
+                  <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                </node>
+              </node>
+            </node>
+            <node concept="9aQIb" id="4Q3VeFU0XQB" role="9aQIa">
+              <node concept="3clFbS" id="4Q3VeFU0XQC" role="9aQI4">
+                <node concept="3clFbJ" id="4Q3VeFU0YxG" role="3cqZAp">
+                  <node concept="3clFbS" id="4Q3VeFU0YxI" role="3clFbx">
+                    <node concept="a7r0C" id="4Q3VeFU0Z8M" role="3cqZAp">
+                      <node concept="3cpWs3" id="4Q3VeFU0Z8N" role="a7wSD">
+                        <node concept="Xl_RD" id="4Q3VeFU0Z8O" role="3uHU7w">
+                          <property role="Xl_RC" value=" if this is not correct." />
+                        </node>
+                        <node concept="3cpWs3" id="4Q3VeFU0Z8P" role="3uHU7B">
+                          <node concept="3cpWs3" id="4Q3VeFU0Z8Q" role="3uHU7B">
+                            <node concept="3cpWs3" id="4Q3VeFU0Z8R" role="3uHU7B">
+                              <node concept="3cpWs3" id="4Q3VeFU0Z8S" role="3uHU7B">
+                                <node concept="3cpWs3" id="4Q3VeFU0Z8T" role="3uHU7B">
+                                  <node concept="Xl_RD" id="4Q3VeFU0Z8U" role="3uHU7B">
+                                    <property role="Xl_RC" value="Reaction " />
+                                  </node>
+                                  <node concept="2OqwBi" id="4Q3VeFU0Z8V" role="3uHU7w">
+                                    <node concept="1YBJjd" id="4Q3VeFU0Z8W" role="2Oq$k0">
+                                      <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                    </node>
+                                    <node concept="3TrcHB" id="4Q3VeFU0Z8X" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="4Q3VeFU0Z8Y" role="3uHU7w">
+                                  <property role="Xl_RC" value=" 's rate " />
+                                </node>
+                              </node>
+                              <node concept="2OqwBi" id="4Q3VeFU0Z8Z" role="3uHU7w">
+                                <node concept="2OqwBi" id="4Q3VeFU0Z90" role="2Oq$k0">
+                                  <node concept="1PxgMI" id="4Q3VeFU0Z91" role="2Oq$k0">
+                                    <property role="1BlNFB" value="true" />
+                                    <node concept="chp4Y" id="4Q3VeFU10JD" role="3oSUPX">
+                                      <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                    </node>
+                                    <node concept="1YBJjd" id="4Q3VeFU0Z93" role="1m5AlR">
+                                      <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                    </node>
+                                  </node>
+                                  <node concept="3TrEf2" id="4Q3VeFU1180" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLu" resolve="ForwardRate" />
+                                  </node>
+                                </node>
+                                <node concept="3TrcHB" id="4Q3VeFU0Z95" role="2OqNvi">
+                                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="4Q3VeFU0Z96" role="3uHU7w">
+                              <property role="Xl_RC" value=" uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " />
+                            </node>
+                          </node>
+                          <node concept="2OqwBi" id="4Q3VeFU13nK" role="3uHU7w">
+                            <node concept="2OqwBi" id="4Q3VeFU12se" role="2Oq$k0">
+                              <node concept="1PxgMI" id="4Q3VeFU12sf" role="2Oq$k0">
+                                <property role="1BlNFB" value="true" />
+                                <node concept="chp4Y" id="4Q3VeFU12sg" role="3oSUPX">
+                                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                </node>
+                                <node concept="1YBJjd" id="4Q3VeFU12sh" role="1m5AlR">
+                                  <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="4Q3VeFU12si" role="2OqNvi">
+                                <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLu" resolve="ForwardRate" />
+                              </node>
+                            </node>
+                            <node concept="3TrcHB" id="4Q3VeFU13B5" role="2OqNvi">
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="1YBJjd" id="4Q3VeFU0Z9e" role="1urrMF">
+                        <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3eOSWO" id="4Q3VeFU0YyT" role="3clFbw">
+                    <node concept="3cmrfG" id="4Q3VeFU0YyU" role="3uHU7w">
+                      <property role="3cmrfH" value="0" />
+                    </node>
+                    <node concept="2OqwBi" id="4Q3VeFU0YyV" role="3uHU7B">
+                      <node concept="2OqwBi" id="4Q3VeFU0YyW" role="2Oq$k0">
+                        <node concept="1PxgMI" id="4Q3VeFU0YyX" role="2Oq$k0">
+                          <property role="1BlNFB" value="true" />
+                          <node concept="chp4Y" id="4Q3VeFU0YyY" role="3oSUPX">
+                            <ref role="cht4Q" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+                          </node>
+                          <node concept="2OqwBi" id="4Q3VeFU0YyZ" role="1m5AlR">
+                            <node concept="1YBJjd" id="4Q3VeFU0Yz0" role="2Oq$k0">
+                              <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                            </node>
+                            <node concept="1mfA1w" id="4Q3VeFU0Yz1" role="2OqNvi" />
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="4Q3VeFU0Yz2" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:J83UdHe8mr" resolve="getExprSpecies" />
+                          <node concept="2OqwBi" id="4Q3VeFU0Yz3" role="37wK5m">
+                            <node concept="3TrEf2" id="4Q3VeFU0Yz9" role="2OqNvi">
+                              <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfk4" resolve="Expression" />
+                            </node>
+                            <node concept="2OqwBi" id="4Q3VeFU11aS" role="2Oq$k0">
+                              <node concept="1PxgMI" id="4Q3VeFU11aT" role="2Oq$k0">
+                                <property role="1BlNFB" value="true" />
+                                <node concept="chp4Y" id="4Q3VeFU11aU" role="3oSUPX">
+                                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                </node>
+                                <node concept="1YBJjd" id="4Q3VeFU11aV" role="1m5AlR">
+                                  <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="4Q3VeFU11aW" role="2OqNvi">
+                                <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLu" resolve="ForwardRate" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="34oBXx" id="4Q3VeFU0Yza" role="2OqNvi" />
+                    </node>
+                  </node>
+                  <node concept="3eNFk2" id="4Q3VeFU13Cs" role="3eNLev">
+                    <node concept="3clFbS" id="4Q3VeFU13Cu" role="3eOfB_">
+                      <node concept="a7r0C" id="4Q3VeFU15it" role="3cqZAp">
+                        <node concept="3cpWs3" id="4Q3VeFU15iu" role="a7wSD">
+                          <node concept="Xl_RD" id="4Q3VeFU15iv" role="3uHU7w">
+                            <property role="Xl_RC" value=" if this is not correct." />
+                          </node>
+                          <node concept="3cpWs3" id="4Q3VeFU15iw" role="3uHU7B">
+                            <node concept="3cpWs3" id="4Q3VeFU15ix" role="3uHU7B">
+                              <node concept="3cpWs3" id="4Q3VeFU15iy" role="3uHU7B">
+                                <node concept="3cpWs3" id="4Q3VeFU15iz" role="3uHU7B">
+                                  <node concept="3cpWs3" id="4Q3VeFU15i$" role="3uHU7B">
+                                    <node concept="Xl_RD" id="4Q3VeFU15i_" role="3uHU7B">
+                                      <property role="Xl_RC" value="Reaction " />
+                                    </node>
+                                    <node concept="2OqwBi" id="4Q3VeFU15iA" role="3uHU7w">
+                                      <node concept="1YBJjd" id="4Q3VeFU15iB" role="2Oq$k0">
+                                        <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                      </node>
+                                      <node concept="3TrcHB" id="4Q3VeFU15iC" role="2OqNvi">
+                                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="Xl_RD" id="4Q3VeFU15iD" role="3uHU7w">
+                                    <property role="Xl_RC" value=" 's rate " />
+                                  </node>
+                                </node>
+                                <node concept="2OqwBi" id="4Q3VeFU15iE" role="3uHU7w">
+                                  <node concept="2OqwBi" id="4Q3VeFU15iF" role="2Oq$k0">
+                                    <node concept="1PxgMI" id="4Q3VeFU15iG" role="2Oq$k0">
+                                      <property role="1BlNFB" value="true" />
+                                      <node concept="chp4Y" id="4Q3VeFU15iH" role="3oSUPX">
+                                        <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                      </node>
+                                      <node concept="1YBJjd" id="4Q3VeFU15iI" role="1m5AlR">
+                                        <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                      </node>
+                                    </node>
+                                    <node concept="3TrEf2" id="4Q3VeFU17mJ" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLs" resolve="ReverseRate" />
+                                    </node>
+                                  </node>
+                                  <node concept="3TrcHB" id="4Q3VeFU15iK" role="2OqNvi">
+                                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="Xl_RD" id="4Q3VeFU15iL" role="3uHU7w">
+                                <property role="Xl_RC" value=" uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " />
+                              </node>
+                            </node>
+                            <node concept="2OqwBi" id="4Q3VeFU15iM" role="3uHU7w">
+                              <node concept="2OqwBi" id="4Q3VeFU15iN" role="2Oq$k0">
+                                <node concept="1PxgMI" id="4Q3VeFU15iO" role="2Oq$k0">
+                                  <property role="1BlNFB" value="true" />
+                                  <node concept="chp4Y" id="4Q3VeFU15iP" role="3oSUPX">
+                                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                  </node>
+                                  <node concept="1YBJjd" id="4Q3VeFU15iQ" role="1m5AlR">
+                                    <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                  </node>
+                                </node>
+                                <node concept="3TrEf2" id="4Q3VeFU17$8" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLs" resolve="ReverseRate" />
+                                </node>
+                              </node>
+                              <node concept="3TrcHB" id="4Q3VeFU15iS" role="2OqNvi">
+                                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="1YBJjd" id="4Q3VeFU15iT" role="1urrMF">
+                          <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eOSWO" id="4Q3VeFU14rP" role="3eO9$A">
+                      <node concept="3cmrfG" id="4Q3VeFU14rQ" role="3uHU7w">
+                        <property role="3cmrfH" value="0" />
+                      </node>
+                      <node concept="2OqwBi" id="4Q3VeFU14rR" role="3uHU7B">
+                        <node concept="2OqwBi" id="4Q3VeFU14rS" role="2Oq$k0">
+                          <node concept="1PxgMI" id="4Q3VeFU14rT" role="2Oq$k0">
+                            <property role="1BlNFB" value="true" />
+                            <node concept="chp4Y" id="4Q3VeFU14rU" role="3oSUPX">
+                              <ref role="cht4Q" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+                            </node>
+                            <node concept="2OqwBi" id="4Q3VeFU14rV" role="1m5AlR">
+                              <node concept="1YBJjd" id="4Q3VeFU14rW" role="2Oq$k0">
+                                <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                              </node>
+                              <node concept="1mfA1w" id="4Q3VeFU14rX" role="2OqNvi" />
+                            </node>
+                          </node>
+                          <node concept="2qgKlT" id="4Q3VeFU14rY" role="2OqNvi">
+                            <ref role="37wK5l" to="f3yh:J83UdHe8mr" resolve="getExprSpecies" />
+                            <node concept="2OqwBi" id="4Q3VeFU14rZ" role="37wK5m">
+                              <node concept="3TrEf2" id="4Q3VeFU14s0" role="2OqNvi">
+                                <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfk4" resolve="Expression" />
+                              </node>
+                              <node concept="2OqwBi" id="4Q3VeFU14s1" role="2Oq$k0">
+                                <node concept="1PxgMI" id="4Q3VeFU14s2" role="2Oq$k0">
+                                  <property role="1BlNFB" value="true" />
+                                  <node concept="chp4Y" id="4Q3VeFU14s3" role="3oSUPX">
+                                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                                  </node>
+                                  <node concept="1YBJjd" id="4Q3VeFU14s4" role="1m5AlR">
+                                    <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+                                  </node>
+                                </node>
+                                <node concept="3TrEf2" id="4Q3VeFU15go" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLs" resolve="ReverseRate" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="34oBXx" id="4Q3VeFU14s6" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="4Q3VeFU0D1X" role="3clFbw">
+          <node concept="1YBJjd" id="4Q3VeFU0CXU" role="2Oq$k0">
+            <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="reaction" />
+          </node>
+          <node concept="1mIQ4w" id="4Q3VeFU0D4b" role="2OqNvi">
+            <node concept="chp4Y" id="4Q3VeFU0D6F" role="cj9EA">
+              <ref role="cht4Q" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4Q3VeFU0AE5" role="1YuTPh">
+      <property role="TrG5h" value="reaction" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
     </node>
   </node>
 </model>
