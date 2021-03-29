@@ -42,8 +42,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.behavior.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -486,6 +485,24 @@
               <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CheckingRules" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -502,6 +519,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:aa0fdb33-9c60-48e1-be69-5ac3f0b9331a(MSM.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/models/MSM.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -567,7 +598,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="7376055817164375088" />
+              <option name="myItemId" value="5585568456830868589" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -888,7 +919,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617008779024</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Changed the reaction rate warning to apply to the species container, before iterating over all reactions.">
+      <created>1617009061083</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1617009061083</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -1690,6 +1728,7 @@
     <MESSAGE value="Implemented new ODE language, with generators for C++." />
     <MESSAGE value="Including all unversioned files. Just in case." />
     <MESSAGE value="Added a warning when a reaction uses a rate that doesn't reference any species." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a warning when a reaction uses a rate that doesn't reference any species." />
+    <MESSAGE value="Changed the reaction rate warning to apply to the species container, before iterating over all reactions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed the reaction rate warning to apply to the species container, before iterating over all reactions." />
   </component>
 </project>
