@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="2in1eybsecb77m7mv2mrwxii4wekm32">
-  <files names="TypesystemDescriptor.java:constrainStoichiometry_NonTypesystemRule.java:noDuplicateProducts_NonTypesystemRule.java:noDuplicateReactants_NonTypesystemRule.java:typeof_PowerExpression_InferenceRule.java:updateRelations_NonTypesystemRule.java:warnExtracellularReaction_NonTypesystemRule.java" />
+<product version="3" modelHash="7y3asn4hctn2r4ck8ej2tvmswq9hn4e">
+  <files names="TypesystemDescriptor.java:constrainStoichiometry_NonTypesystemRule.java:noDuplicateProducts_NonTypesystemRule.java:noDuplicateReactants_NonTypesystemRule.java:noSpeciesInReactionRate_NonTypesystemRule.java:typeof_PowerExpression_InferenceRule.java:updateRelations_NonTypesystemRule.java:warnExtracellularReaction_NonTypesystemRule.java" />
 </product>
 
