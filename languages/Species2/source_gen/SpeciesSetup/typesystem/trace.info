@@ -328,73 +328,78 @@
       </scope>
     </file>
     <file name="noSpeciesInReactionRate_NonTypesystemRule.java">
-      <node id="5585568456830559764" at="31,9,32,68" concept="6" />
-      <node id="5585568456830559764" at="32,68,33,750" concept="6" />
-      <node id="5585568456830612018" at="37,11,38,70" concept="6" />
-      <node id="5585568456830612018" at="38,70,39,762" concept="6" />
-      <node id="5585568456830637213" at="42,11,43,70" concept="6" />
-      <node id="5585568456830637213" at="43,70,44,762" concept="6" />
-      <node id="5585568456830511746" at="50,50,51,32" concept="7" />
-      <node id="5585568456830511746" at="53,68,54,102" concept="7" />
-      <node id="5585568456830511746" at="56,30,57,17" concept="7" />
-      <node id="5585568456830511746" at="61,0,62,0" concept="8" trace="SpeciesContainer$Ig" />
-      <node id="5585568456830511746" at="62,0,63,0" concept="8" trace="IrreversibleReaction$ja" />
-      <node id="5585568456830511746" at="63,0,64,0" concept="8" trace="ReversibleReaction$fi" />
-      <node id="5585568456830511746" at="64,0,65,0" concept="8" trace="Reaction$JH" />
-      <node id="5585568456830511746" at="68,0,69,0" concept="8" trace="Rate$Otxh" />
-      <node id="5585568456830511746" at="69,0,70,0" concept="8" trace="Expression$Wv16" />
-      <node id="5585568456830511746" at="70,0,71,0" concept="8" trace="ForwardRate$OzkM" />
-      <node id="5585568456830511746" at="71,0,72,0" concept="8" trace="ReverseRate$OtVr" />
-      <node id="5585568456830511746" at="75,0,76,0" concept="8" trace="name$MnvL" />
+      <node id="5585568456830819684" at="32,11,33,70" concept="6" />
+      <node id="5585568456830819684" at="33,70,34,768" concept="6" />
+      <node id="5585568456830819717" at="38,13,39,72" concept="6" />
+      <node id="5585568456830819717" at="39,72,40,780" concept="6" />
+      <node id="5585568456830819766" at="43,13,44,72" concept="6" />
+      <node id="5585568456830819766" at="44,72,45,780" concept="6" />
+      <node id="5585568456830511746" at="52,50,53,40" concept="7" />
+      <node id="5585568456830511746" at="55,68,56,102" concept="7" />
+      <node id="5585568456830511746" at="58,30,59,17" concept="7" />
+      <node id="5585568456830511746" at="63,0,64,0" concept="8" trace="SpeciesContainer$Ig" />
+      <node id="5585568456830511746" at="64,0,65,0" concept="8" trace="IrreversibleReaction$ja" />
+      <node id="5585568456830511746" at="65,0,66,0" concept="8" trace="ReversibleReaction$fi" />
+      <node id="5585568456830511746" at="69,0,70,0" concept="8" trace="Rate$Otxh" />
+      <node id="5585568456830511746" at="70,0,71,0" concept="8" trace="Expression$Wv16" />
+      <node id="5585568456830511746" at="71,0,72,0" concept="8" trace="ForwardRate$OzkM" />
+      <node id="5585568456830511746" at="72,0,73,0" concept="8" trace="ReverseRate$OtVr" />
+      <node id="5585568456830511746" at="73,0,74,0" concept="8" trace="Reactions$hnPe" />
+      <node id="5585568456830511746" at="77,0,78,0" concept="8" trace="name$MnvL" />
       <node id="5585568456830511746" at="26,0,28,0" concept="1" trace="noSpeciesInReactionRate_NonTypesystemRule#()V" />
-      <node id="5585568456830511746" at="50,0,53,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="5585568456830511746" at="53,0,56,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="5585568456830511746" at="56,0,59,0" concept="5" trace="overrides#()Z" />
-      <node id="5585568456830559764" at="30,364,34,9" concept="0" />
-      <node id="5585568456830612018" at="36,371,40,11" concept="0" />
-      <node id="5585568456830637213" at="41,378,45,11" concept="0" />
-      <node id="5585568456830609516" at="35,14,46,9" concept="4" />
-      <node id="5585568456830606759" at="35,12,47,7" concept="0" />
-      <node id="5585568456830521931" at="29,83,47,7" concept="4" />
-      <node id="5585568456830521123" at="28,121,48,5" concept="4" />
-      <node id="5585568456830511746" at="28,0,50,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="5585568456830511746" at="52,0,55,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="5585568456830511746" at="55,0,58,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5585568456830511746" at="58,0,61,0" concept="5" trace="overrides#()Z" />
+      <node id="5585568456830819684" at="31,366,35,11" concept="0" />
+      <node id="5585568456830819717" at="37,381,41,13" concept="0" />
+      <node id="5585568456830819766" at="42,388,46,13" concept="0" />
+      <node id="5585568456830819715" at="36,16,47,11" concept="4" />
+      <node id="5585568456830819713" at="36,14,48,9" concept="0" />
+      <node id="5585568456830819664" at="30,85,48,9" concept="4" />
+      <node id="5585568456830819662" at="29,119,49,7" concept="4" />
+      <node id="5585568456830814665" at="28,129,50,5" concept="3" />
+      <node id="5585568456830511746" at="28,0,52,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="5585568456830511746" at="26,54,26,54" />
-      <scope id="5585568456830511746" at="50,50,51,32" />
-      <scope id="5585568456830511746" at="53,68,54,102" />
-      <scope id="5585568456830511746" at="56,30,57,17" />
+      <scope id="5585568456830511746" at="52,50,53,40" />
+      <scope id="5585568456830511746" at="55,68,56,102" />
+      <scope id="5585568456830511746" at="58,30,59,17" />
       <scope id="5585568456830511746" at="26,0,28,0" />
-      <scope id="5585568456830559764" at="31,9,33,750">
-        <var name="_reporter_2309309498" id="5585568456830559764" />
-        <var name="errorTarget" id="5585568456830559764" />
+      <scope id="5585568456830819684" at="32,11,34,768">
+        <var name="_reporter_2309309498" id="5585568456830819684" />
+        <var name="errorTarget" id="5585568456830819684" />
       </scope>
-      <scope id="5585568456830612018" at="37,11,39,762">
-        <var name="_reporter_2309309498" id="5585568456830612018" />
-        <var name="errorTarget" id="5585568456830612018" />
+      <scope id="5585568456830819717" at="38,13,40,780">
+        <var name="_reporter_2309309498" id="5585568456830819717" />
+        <var name="errorTarget" id="5585568456830819717" />
       </scope>
-      <scope id="5585568456830637213" at="42,11,44,762">
-        <var name="_reporter_2309309498" id="5585568456830637213" />
-        <var name="errorTarget" id="5585568456830637213" />
+      <scope id="5585568456830819766" at="43,13,45,780">
+        <var name="_reporter_2309309498" id="5585568456830819766" />
+        <var name="errorTarget" id="5585568456830819766" />
       </scope>
-      <scope id="5585568456830511746" at="50,0,53,0" />
-      <scope id="5585568456830511746" at="53,0,56,0">
+      <scope id="5585568456830511746" at="52,0,55,0" />
+      <scope id="5585568456830511746" at="55,0,58,0">
         <var name="argument" id="5585568456830511746" />
       </scope>
-      <scope id="5585568456830511746" at="56,0,59,0" />
-      <scope id="5585568456830521942" at="30,364,34,9" />
-      <scope id="5585568456830609518" at="36,371,40,11" />
-      <scope id="5585568456830630430" at="41,378,45,11" />
-      <scope id="5585568456830606760" at="35,14,46,9" />
-      <scope id="5585568456830521125" at="29,83,47,7" />
-      <scope id="5585568456830511747" at="28,121,48,5" />
-      <scope id="5585568456830511746" at="28,0,50,0">
-        <var name="reaction" id="5585568456830511746" />
+      <scope id="5585568456830511746" at="58,0,61,0" />
+      <scope id="5585568456830819683" at="31,366,35,11" />
+      <scope id="5585568456830819716" at="37,381,41,13" />
+      <scope id="5585568456830819765" at="42,388,46,13" />
+      <scope id="5585568456830819714" at="36,16,47,11" />
+      <scope id="5585568456830819663" at="30,85,48,9" />
+      <scope id="5585568456830814671" at="29,119,49,7" />
+      <scope id="5585568456830511747" at="28,129,50,5" />
+      <scope id="5585568456830814665" at="28,129,50,5">
+        <var name="reaction" id="5585568456830814667" />
+      </scope>
+      <scope id="5585568456830511746" at="28,0,52,0">
+        <var name="speciesContainer" id="5585568456830511746" />
         <var name="status" id="5585568456830511746" />
         <var name="typeCheckingContext" id="5585568456830511746" />
       </scope>
-      <unit id="5585568456830511746" at="74,0,77,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$PROPS" />
-      <unit id="5585568456830511746" at="60,0,66,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$CONCEPTS" />
-      <unit id="5585568456830511746" at="67,0,73,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$LINKS" />
-      <unit id="5585568456830511746" at="25,0,78,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule" />
+      <unit id="5585568456830511746" at="76,0,79,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$PROPS" />
+      <unit id="5585568456830511746" at="62,0,67,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$CONCEPTS" />
+      <unit id="5585568456830511746" at="68,0,75,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule$LINKS" />
+      <unit id="5585568456830511746" at="25,0,80,0" name="SpeciesSetup.typesystem.noSpeciesInReactionRate_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/848945724348462788">
