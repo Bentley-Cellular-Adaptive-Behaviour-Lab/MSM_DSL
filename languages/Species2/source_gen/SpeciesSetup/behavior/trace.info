@@ -309,7 +309,7 @@
       <node id="5585568456830868589" at="33,0,34,0" concept="11" trace="BH_METHODS" />
       <node id="5585568456830913004" at="38,114,39,301" concept="7" />
       <node id="5585568456830929094" at="39,301,40,26" concept="7" />
-      <node id="5585568456830927087" at="42,51,43,21" concept="3" />
+      <node id="5585568456830927087" at="42,98,43,21" concept="3" />
       <node id="5585568456830930725" at="45,5,46,17" concept="8" />
       <node id="5585568456830868589" at="53,114,54,21" concept="3" />
       <node id="5585568456830868589" at="58,114,59,49" concept="7" />
@@ -324,6 +324,7 @@
       <node id="5585568456830868589" at="96,0,97,0" concept="11" trace="SpeciesContainer$Ig" />
       <node id="5585568456830868589" at="100,0,101,0" concept="11" trace="Rate$Otxh" />
       <node id="5585568456830868589" at="101,0,102,0" concept="11" trace="Expression$Wv16" />
+      <node id="5585568456830868589" at="102,0,103,0" concept="11" trace="Species$uQ2a" />
       <node id="5585568456830868589" at="35,0,37,0" concept="12" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5585568456830868589" at="49,0,51,0" concept="2" trace="IrreversibleReaction__BehaviorDescriptor#()V" />
       <node id="5585568456830924722" at="41,62,44,7" concept="5" />
@@ -340,7 +341,7 @@
       <node id="5585568456830868589" at="57,0,70,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5585568456830868589" at="35,63,35,63" />
       <scope id="5585568456830868589" at="49,58,49,58" />
-      <scope id="5585568456830924724" at="42,51,43,21" />
+      <scope id="5585568456830924724" at="42,98,43,21" />
       <scope id="5585568456830868589" at="53,114,54,21" />
       <scope id="5585568456830868589" at="60,26,61,56" />
       <scope id="5585568456830868589" at="64,13,65,94" />
@@ -389,8 +390,8 @@
         <var name="parameters" id="5585568456830868589" />
       </scope>
       <unit id="5585568456830868589" at="95,0,98,0" name="SpeciesSetup.behavior.IrreversibleReaction__BehaviorDescriptor$CONCEPTS" />
-      <unit id="5585568456830868589" at="99,0,103,0" name="SpeciesSetup.behavior.IrreversibleReaction__BehaviorDescriptor$LINKS" />
-      <unit id="5585568456830868589" at="28,0,104,0" name="SpeciesSetup.behavior.IrreversibleReaction__BehaviorDescriptor" />
+      <unit id="5585568456830868589" at="99,0,104,0" name="SpeciesSetup.behavior.IrreversibleReaction__BehaviorDescriptor$LINKS" />
+      <unit id="5585568456830868589" at="28,0,105,0" name="SpeciesSetup.behavior.IrreversibleReaction__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/5585568456830947233">
@@ -401,11 +402,11 @@
       <node id="5585568456830947233" at="34,0,35,0" concept="11" trace="BH_METHODS" />
       <node id="5585568456830947258" at="39,121,40,308" concept="7" />
       <node id="5585568456830947274" at="40,308,41,26" concept="7" />
-      <node id="5585568456830947287" at="43,51,44,21" concept="3" />
+      <node id="5585568456830947287" at="43,98,44,21" concept="3" />
       <node id="5585568456830947291" at="46,5,47,17" concept="8" />
       <node id="5585568456830964132" at="49,121,50,308" concept="7" />
       <node id="5585568456830964148" at="50,308,51,26" concept="7" />
-      <node id="5585568456830964161" at="53,51,54,21" concept="3" />
+      <node id="5585568456830964161" at="53,98,54,21" concept="3" />
       <node id="5585568456830964165" at="56,5,57,17" concept="8" />
       <node id="5585568456830947233" at="64,114,65,21" concept="3" />
       <node id="5585568456830947233" at="69,114,70,49" concept="7" />
@@ -421,7 +422,8 @@
       <node id="5585568456830947233" at="109,0,110,0" concept="11" trace="SpeciesContainer$Ig" />
       <node id="5585568456830947233" at="113,0,114,0" concept="11" trace="ForwardRate$OzkM" />
       <node id="5585568456830947233" at="114,0,115,0" concept="11" trace="Expression$Wv16" />
-      <node id="5585568456830947233" at="115,0,116,0" concept="11" trace="ReverseRate$OtVr" />
+      <node id="5585568456830947233" at="115,0,116,0" concept="11" trace="Species$uQ2a" />
+      <node id="5585568456830947233" at="116,0,117,0" concept="11" trace="ReverseRate$OtVr" />
       <node id="5585568456830947233" at="36,0,38,0" concept="12" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="5585568456830947233" at="60,0,62,0" concept="2" trace="ReversibleReaction__BehaviorDescriptor#()V" />
       <node id="5585568456830947282" at="42,62,45,7" concept="5" />
@@ -441,8 +443,8 @@
       <node id="5585568456830947233" at="68,0,83,0" concept="6" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="5585568456830947233" at="36,63,36,63" />
       <scope id="5585568456830947233" at="60,56,60,56" />
-      <scope id="5585568456830947286" at="43,51,44,21" />
-      <scope id="5585568456830964160" at="53,51,54,21" />
+      <scope id="5585568456830947286" at="43,98,44,21" />
+      <scope id="5585568456830964160" at="53,98,54,21" />
       <scope id="5585568456830947233" at="64,114,65,21" />
       <scope id="5585568456830947233" at="71,26,72,56" />
       <scope id="5585568456830947233" at="75,13,76,101" />
@@ -504,8 +506,8 @@
         <var name="parameters" id="5585568456830947233" />
       </scope>
       <unit id="5585568456830947233" at="108,0,111,0" name="SpeciesSetup.behavior.ReversibleReaction__BehaviorDescriptor$CONCEPTS" />
-      <unit id="5585568456830947233" at="112,0,117,0" name="SpeciesSetup.behavior.ReversibleReaction__BehaviorDescriptor$LINKS" />
-      <unit id="5585568456830947233" at="28,0,118,0" name="SpeciesSetup.behavior.ReversibleReaction__BehaviorDescriptor" />
+      <unit id="5585568456830947233" at="112,0,118,0" name="SpeciesSetup.behavior.ReversibleReaction__BehaviorDescriptor$LINKS" />
+      <unit id="5585568456830947233" at="28,0,119,0" name="SpeciesSetup.behavior.ReversibleReaction__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/7376055817164375088">
