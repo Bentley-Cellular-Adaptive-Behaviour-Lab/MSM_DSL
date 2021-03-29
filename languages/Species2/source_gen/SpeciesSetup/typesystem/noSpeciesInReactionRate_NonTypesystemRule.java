@@ -7,10 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -25,30 +25,32 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public class noSpeciesInReactionRate_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public noSpeciesInReactionRate_NonTypesystemRule() {
   }
-  public void applyRule(final SNode reaction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
-      if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(reaction), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16))).count() > 0) {
-        {
-          final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(reaction, "Reaction " + SPropertyOperations.getString(reaction, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830559764", null, errorTarget);
-        }
-      } else {
-        if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(reaction), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))).count() > 0) {
+  public void applyRule(final SNode speciesContainer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(speciesContainer, LINKS.Reactions$hnPe))) {
+      if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
+        if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(reaction), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16))).count() > 0) {
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(reaction, "Reaction " + SPropertyOperations.getString(reaction, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830612018", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(speciesContainer, "Reaction " + SPropertyOperations.getString(speciesContainer, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830819684", null, errorTarget);
           }
-        } else if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(reaction), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16))).count() > 0) {
-          {
-            final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(reaction, "Reaction " + SPropertyOperations.getString(reaction, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830637213", null, errorTarget);
+        } else {
+          if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(speciesContainer), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))).count() > 0) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(speciesContainer, "Reaction " + SPropertyOperations.getString(speciesContainer, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830819717", null, errorTarget);
+            }
+          } else if (ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(speciesContainer), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16))).count() > 0) {
+            {
+              final MessageTarget errorTarget = new NodeMessageTarget();
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(speciesContainer, "Reaction " + SPropertyOperations.getString(speciesContainer, PROPS.name$MnvL) + " 's rate " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + " uses no species. This will apply a constant rate of change to all species in this reaction. Please add species to " + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + " if this is not correct.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "5585568456830819766", null, errorTarget);
+            }
           }
         }
       }
     }
   }
   public SAbstractConcept getApplicableConcept() {
-    return CONCEPTS.Reaction$JH;
+    return CONCEPTS.SpeciesContainer$Ig;
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     return new IsApplicableStatus(argument.getConcept().isSubConceptOf(getApplicableConcept()), null);
@@ -61,7 +63,6 @@ public class noSpeciesInReactionRate_NonTypesystemRule extends AbstractNonTypesy
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
     /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");
     /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
-    /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
   }
 
   private static final class LINKS {
@@ -69,6 +70,7 @@ public class noSpeciesInReactionRate_NonTypesystemRule extends AbstractNonTypesy
     /*package*/ static final SContainmentLink Expression$Wv16 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x2b6159d0ceecf504L, "Expression");
     /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
     /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");
+    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
   }
 
   private static final class PROPS {
