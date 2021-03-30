@@ -215,6 +215,7 @@
       </node>
       <node concept="3EZMnI" id="1z0V6VU8Xy3" role="3EZMnx">
         <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
+        <node concept="3XFhqQ" id="5gBmBO5aXxc" role="3EZMnx" />
         <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
           <property role="3F0ifm" value="Expresses proteins:" />
         </node>
@@ -289,6 +290,9 @@
         </node>
         <node concept="3F0A7n" id="109yD1sIO7n" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          <node concept="VechU" id="5gBmBO5i44g" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+          </node>
         </node>
         <node concept="3F0ifn" id="6mloH5uS3N7" role="3EZMnx">
           <property role="3F0ifm" value=" --&gt; {" />
@@ -504,7 +508,7 @@
         <ref role="1NtTu8" to="nguq:4v4kI3Dq7XU" resolve="Z_Coord" />
       </node>
       <node concept="3F0ifn" id="6mloH5uS3Mg" role="3EZMnx">
-        <property role="3F0ifm" value="}" />
+        <property role="3F0ifm" value="} " />
       </node>
       <node concept="2iRfu4" id="4JVq81FjdQc" role="2iSdaV" />
     </node>
@@ -563,7 +567,7 @@
       <node concept="3F0ifn" id="6mloH5uQCwh" role="3EZMnx">
         <property role="3F0ifm" value="}" />
       </node>
-      <node concept="3F0ifn" id="6mloH5uS3IV" role="3EZMnx" />
+      <node concept="3F0ifn" id="5gBmBO5fPc4" role="3EZMnx" />
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fl1FF">
