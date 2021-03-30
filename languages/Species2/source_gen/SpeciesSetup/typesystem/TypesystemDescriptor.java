@@ -13,6 +13,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new SpeciesInReactionRate_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new constrainStoichiometry_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -22,10 +26,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new noDuplicateReactants_NonTypesystemRule();
-      this.myNonTypesystemRules.add(nonTypesystemRule);
-    }
-    {
-      NonTypesystemRule_Runtime nonTypesystemRule = new noSpeciesInReactionRate_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

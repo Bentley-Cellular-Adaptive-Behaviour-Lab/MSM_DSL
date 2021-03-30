@@ -3,10 +3,10 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701289460" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -21,10 +21,10 @@
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607701289460" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -41,16 +41,21 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="Checking rule for species in reaction rates now checks for specific species and reports them.">
+      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/SpeciesInReactionRate_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.typesystem.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/IrreversibleReaction__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/IrreversibleReaction__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/ReversibleReaction__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/ReversibleReaction__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/noSpeciesInReactionRate_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/noSpeciesInReactionRate_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/noSpeciesInReactionRate_NonTypesystemRule.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/updateRelations_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/typesystem/updateRelations_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/models/MSM.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen.caches/MSM/user_simulation/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/dsl_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/source_gen/MSM/user_simulation/dsl_Species.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +77,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="7c4da308-f072-46e8-ae0e-8a25b9ad8f4e/r:16338bd6-c804-4ca2-beea-f93689f0ae18(TempModule7c4da308-f072-46e8-ae0e-8a25b9ad8f4e/ConsoleModel_143402558248600)">
+            <model ref="8633b47f-8a06-42a7-b9c5-2d1b9635c870/r:b4e763ec-1cd8-4db0-8204-7be79d69c78a(TempModule8633b47f-8a06-42a7-b9c5-2d1b9635c870/ConsoleModel_229712787734100)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -92,11 +97,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="4Q3VeFTZpcA">
-                <node concept="3balQm" id="4Q3VeFTZpcB" role="aymYE" />
-                <node concept="2Clz$F" id="4Q3VeFTZpcC" role="aymYO" />
-                <node concept="2_V_lH" id="4Q3VeFTZpcD" role="1PhJh3">
-                  <ref role="2_V_lI" node="4Q3VeFTZpcC" resolve="CommandHolder" />
+              <node concept="aymSD" id="1BTHGszTh44">
+                <node concept="3balQm" id="1BTHGszTh45" role="aymYE" />
+                <node concept="2Clz$F" id="1BTHGszTh46" role="aymYO" />
+                <node concept="2_V_lH" id="1BTHGszTh47" role="1PhJh3">
+                  <ref role="2_V_lI" node="1BTHGszTh46" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -448,46 +453,24 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="install" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lang" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -522,73 +505,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CheckingRules" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -598,22 +519,48 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CheckingRules" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="5585568456830511746" />
+              <option name="myItemId" value="6bf39b0f-e5ee-4eac-9432-e74685e20512" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="install" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lang" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="CustomProjectView_org.iets3.core.plugin.plugin.SpecExplorer">
@@ -966,7 +913,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617010285857</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Checking rule for species in reaction rates now checks for specific species and reports them.">
+      <created>1617010695241</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1617010695241</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -1747,7 +1701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added new behaviours for cell counting to arrangements. Tissue container can now count all cells, whether they are in a tissue or not." />
     <MESSAGE value="Complete tissue language. World setup is work-in-progress." />
     <MESSAGE value="Triangular substrates can now be defined in the world setup language." />
     <MESSAGE value="Added new checking algorithms to determine whether tissue and cell objects are colliding with each other." />
@@ -1772,6 +1725,7 @@
     <MESSAGE value="Added function for reversible reactions to check whether their forward rate contains their species." />
     <MESSAGE value="Added function for reversible reactions to check whether their reverse rate contains their species." />
     <MESSAGE value="Changed species finding functions to use species nodes as arguments, as opposed to species expressions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed species finding functions to use species nodes as arguments, as opposed to species expressions." />
+    <MESSAGE value="Checking rule for species in reaction rates now checks for specific species and reports them." />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking rule for species in reaction rates now checks for specific species and reports them." />
   </component>
 </project>
