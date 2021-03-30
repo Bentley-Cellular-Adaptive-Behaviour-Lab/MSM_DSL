@@ -7,16 +7,30 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import SpeciesSetup.behavior.Species__BehaviorDescriptor;
+import SpeciesSetup.behavior.Reaction_Term__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class updateRelations_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public updateRelations_NonTypesystemRule() {
   }
   public void applyRule(final SNode container, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SpeciesContainer__BehaviorDescriptor.update_relations_idJ83UdHo8mt.invoke(container);
+    for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Species$hnnc))) {
+      Species__BehaviorDescriptor.cleanReactionRelations_id1Ch7j$Nakak.invoke(species);
+    }
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Reactions$hnPe))) {
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+        Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+      }
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+        Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+      }
+    }
   }
   public SAbstractConcept getApplicableConcept() {
     return CONCEPTS.SpeciesContainer$Ig;
@@ -26,6 +40,13 @@ public class updateRelations_NonTypesystemRule extends AbstractNonTypesystemRule
   }
   public boolean overrides() {
     return false;
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
+    /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
+    /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
+    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
   }
 
   private static final class CONCEPTS {
