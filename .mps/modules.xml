@@ -7,8 +7,9 @@
       <modulePath path="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/Units/Units.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/MSM/MSM.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/MSMInterpreter/MSMInterpreter.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/MSMOld/MSM.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" folder="" />
     </projectModules>
   </component>
 </project>

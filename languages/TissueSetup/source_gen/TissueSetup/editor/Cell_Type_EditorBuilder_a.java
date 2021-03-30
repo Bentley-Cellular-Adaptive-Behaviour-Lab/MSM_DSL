@@ -209,34 +209,39 @@ import org.jetbrains.mps.openapi.language.SConcept;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createIndentCell_1());
     editorCell.addEditorCell(createConstant_3());
     editorCell.addEditorCell(createCollection_4());
     return editorCell;
   }
+  private EditorCell createIndentCell_1() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Expresses proteins:");
-    editorCell.setCellId("Constant_iztune_a2a");
+    editorCell.setCellId("Constant_iztune_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createCollection_4() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Vertical());
-    editorCell.setCellId("Collection_iztune_b2a");
+    editorCell.setCellId("Collection_iztune_c2a");
     editorCell.addEditorCell(createRefNodeList_0());
     return editorCell;
   }
   private EditorCell createRefNodeList_0() {
-    AbstractCellListHandler handler = new Owned_SpeciesListHandler_iztune_a1c0(myNode, getEditorContext());
+    AbstractCellListHandler handler = new Owned_SpeciesListHandler_iztune_a2c0(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_Owned_Species");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class Owned_SpeciesListHandler_iztune_a1c0 extends RefNodeListHandler {
+  private static class Owned_SpeciesListHandler_iztune_a2c0 extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public Owned_SpeciesListHandler_iztune_a1c0(SNode ownerNode, EditorContext context) {
+    public Owned_SpeciesListHandler_iztune_a2c0(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -259,7 +264,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_SpeciesListHandler_iztune_a1c0.this.getNode(), LINKS.Owned_Species$sIXq));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(Owned_SpeciesListHandler_iztune_a2c0.this.getNode(), LINKS.Owned_Species$sIXq));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();

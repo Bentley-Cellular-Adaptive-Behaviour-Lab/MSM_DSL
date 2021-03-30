@@ -15,14 +15,14 @@ import java.nio.file.Files;
 public class RunMSM {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSM/source_gen/MSM/user_simulation";
+    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMOld/source_gen/MSM/user_simulation";
 
     Path old_tissue_path;
     Path old_world_path;
     Path new_tissue_path;
     Path new_world_path;
 
-    System.out.println("Using world: " + "World_Container");
+    System.out.println("Using world: " + "World");
     System.out.println("The current directory is: " + root_string);
     System.out.println("Transferring auto-generated files from: " + output_string);
 
@@ -30,7 +30,7 @@ public class RunMSM {
     switch (utils.getOS()) {
       case WINDOWS:
         old_tissue_path = Paths.get(output_string + "\\" + "Tissue_Container" + ".cpp");
-        old_world_path = Paths.get(output_string + "\\" + "World_Container" + ".cpp");
+        old_world_path = Paths.get(output_string + "\\" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "\\src\\dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "\\src\\dsl_World.cpp");
@@ -46,7 +46,7 @@ public class RunMSM {
 
       case MAC:
         old_tissue_path = Paths.get(output_string + "/" + "Tissue_Container" + ".cpp");
-        old_world_path = Paths.get(output_string + "/" + "World_Container" + ".cpp");
+        old_world_path = Paths.get(output_string + "/" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");
