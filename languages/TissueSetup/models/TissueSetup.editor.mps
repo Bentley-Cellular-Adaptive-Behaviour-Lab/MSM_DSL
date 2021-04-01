@@ -402,7 +402,7 @@
         <node concept="3F0A7n" id="6mloH5uWA9c" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:5qSYbADreYl" resolve="cylinder_length_in_cells" />
           <node concept="VechU" id="6mloH5uX22H" role="3F10Kt">
-            <property role="Vb096" value="fLwANPr/green" />
+            <property role="Vb096" value="g1_qVrt/darkMagenta" />
           </node>
         </node>
         <node concept="3F0ifn" id="6mloH5uX22d" role="3EZMnx">

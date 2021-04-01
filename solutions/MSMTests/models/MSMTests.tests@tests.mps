@@ -21,10 +21,12 @@
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
+      <concept id="2325284917965760583" name="jetbrains.mps.lang.test.structure.BeforeTestsMethod" flags="ig" index="0EjCn" />
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
       <concept id="1216913645126" name="jetbrains.mps.lang.test.structure.NodesTestCase" flags="lg" index="1lH9Xt">
+        <child id="2325284917965993569" name="beforeTests" index="0EEgL" />
         <child id="1217501822150" name="nodesToCheck" index="1SKRRt" />
         <child id="1217501895093" name="testMethods" index="1SL9yI" />
       </concept>
@@ -42,6 +44,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
+        <child id="1137022507850" name="body" index="2VODD2" />
+      </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -57,10 +62,27 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
     </language>
+    <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldSetup">
+      <concept id="3416854989769421750" name="WorldSetup.structure.Adhesiveness" flags="ng" index="2_kiwO">
+        <child id="3416854989769421751" name="expr" index="2_kiwP" />
+      </concept>
+      <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
+        <child id="91108499532674622" name="Adhesiveness" index="2nU_yc" />
+        <child id="5907682107548062262" name="Buffer" index="3bEhY_" />
+      </concept>
+      <concept id="8343650468779203043" name="WorldSetup.structure.World_Container" flags="ng" index="1yko06">
+        <reference id="5490954312196474384" name="Desired_Species_Container" index="24rgZa" />
+        <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
+        <child id="8343650468779203044" name="grid" index="1yko01" />
+      </concept>
+    </language>
     <language id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes">
       <concept id="5115872837157054170" name="org.iets3.core.expr.simpleTypes.structure.NumberLiteral" flags="ng" index="30bXRB">
         <property id="5115872837157054173" name="value" index="30bXRw" />
       </concept>
+    </language>
+    <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
+      <concept id="3125878369731540203" name="SpeciesSetup.structure.SpeciesContainer" flags="ng" index="3_zqOV" />
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
@@ -70,7 +92,20 @@
       <concept id="1171978097730" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" flags="nn" index="3vlDli" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
+      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
+      </concept>
+      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
+        <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
@@ -107,10 +142,15 @@
         <property id="6249017959271690144" name="flat_width_in_cells" index="3ZP1sp" />
         <property id="6249017959271690142" name="flat_height_in_cells" index="3ZP1sB" />
       </concept>
+      <concept id="6249017959271690129" name="TissueSetup.structure.Arrangement_Cylindrical" flags="ng" index="3ZP1sC">
+        <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
+        <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
+      </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
+        <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
       </concept>
@@ -127,28 +167,135 @@
       <node concept="3cqZAl" id="1GhuSprocns" role="3clF45" />
       <node concept="3clFbS" id="1GhuSprocnw" role="3clF47">
         <node concept="3vlDli" id="1GhuSproqK5" role="3cqZAp">
-          <node concept="2OqwBi" id="1GhuSprorgj" role="3tpDZB">
-            <node concept="2OqwBi" id="1GhuSproqQS" role="2Oq$k0">
-              <node concept="3xONca" id="1GhuSproqKb" role="2Oq$k0">
-                <ref role="3xOPvv" node="1GhuSprocnB" resolve="FlatType" />
+          <node concept="2OqwBi" id="5jwSz93T_BP" role="3tpDZA">
+            <node concept="1PxgMI" id="5jwSz93T_vH" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="5jwSz93T_ww" role="3oSUPX">
+                <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
               </node>
-              <node concept="3TrEf2" id="1GhuSpror7_" role="2OqNvi">
-                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+              <node concept="2OqwBi" id="5jwSz93Tymj" role="1m5AlR">
+                <node concept="3xONca" id="5jwSz93Tymk" role="2Oq$k0">
+                  <ref role="3xOPvv" node="1GhuSprocnB" resolve="FlatType" />
+                </node>
+                <node concept="3TrEf2" id="5jwSz93Tyml" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                </node>
               </node>
             </node>
-            <node concept="2qgKlT" id="1GhuSprorvw" role="2OqNvi">
-              <ref role="37wK5l" to="4ebj:4XZPqyVOpH$" resolve="get_total_cell_number" />
+            <node concept="3TrcHB" id="5jwSz93T_UN" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
             </node>
           </node>
-          <node concept="3cmrfG" id="1GhuSpror$e" role="3tpDZA">
+          <node concept="3cmrfG" id="5jwSz93TytG" role="3tpDZB">
             <property role="3cmrfH" value="25" />
           </node>
         </node>
       </node>
     </node>
+    <node concept="1LZb2c" id="6Q32zZgRcYX" role="1SL9yI">
+      <property role="TrG5h" value="test_CylindricalTypeCellNumber" />
+      <node concept="3cqZAl" id="6Q32zZgRcYY" role="3clF45" />
+      <node concept="3clFbS" id="6Q32zZgRcZ2" role="3clF47">
+        <node concept="3vlDli" id="5jwSz93TgFT" role="3cqZAp">
+          <node concept="2OqwBi" id="5jwSz93Ty7n" role="3tpDZA">
+            <node concept="1PxgMI" id="5jwSz93Ty7o" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="5jwSz93Ty7p" role="3oSUPX">
+                <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+              </node>
+              <node concept="2OqwBi" id="5jwSz93Ty7q" role="1m5AlR">
+                <node concept="3xONca" id="5jwSz93Ty7r" role="2Oq$k0">
+                  <ref role="3xOPvv" node="6Q32zZgRcZm" resolve="CylindricalType" />
+                </node>
+                <node concept="3TrEf2" id="5jwSz93Ty7s" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                </node>
+              </node>
+            </node>
+            <node concept="3TrcHB" id="5jwSz93Ty7t" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:5qSYbADreYj" resolve="cylinder_cross_section_cells" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="5jwSz93Tylt" role="3tpDZB">
+            <property role="3cmrfH" value="1" />
+          </node>
+        </node>
+        <node concept="3vlDli" id="6Q32zZgRf47" role="3cqZAp">
+          <node concept="2OqwBi" id="5jwSz93Tv06" role="3tpDZA">
+            <node concept="1PxgMI" id="5jwSz93Tv07" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="5jwSz93Tv08" role="3oSUPX">
+                <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+              </node>
+              <node concept="2OqwBi" id="5jwSz93Tv09" role="1m5AlR">
+                <node concept="3xONca" id="5jwSz93Tv0a" role="2Oq$k0">
+                  <ref role="3xOPvv" node="6Q32zZgRcZm" resolve="CylindricalType" />
+                </node>
+                <node concept="3TrEf2" id="5jwSz93Tv0b" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                </node>
+              </node>
+            </node>
+            <node concept="3TrcHB" id="5jwSz93TCDg" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:4JVq81FjZEM" resolve="cylinder_total_cells" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="5jwSz93Tvk_" role="3tpDZB">
+            <property role="3cmrfH" value="10" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1LZb2c" id="3eqdKU_ooYy" role="1SL9yI">
+      <property role="TrG5h" value="test_TotalCellNumber" />
+      <node concept="3cqZAl" id="3eqdKU_ooYz" role="3clF45" />
+      <node concept="3clFbS" id="3eqdKU_ooYB" role="3clF47">
+        <node concept="3vlDli" id="3eqdKU_ooZH" role="3cqZAp">
+          <node concept="3cmrfG" id="3eqdKU_ooZN" role="3tpDZB">
+            <property role="3cmrfH" value="35" />
+          </node>
+          <node concept="2OqwBi" id="3eqdKU_op6B" role="3tpDZA">
+            <node concept="3xONca" id="3eqdKU_ooZU" role="2Oq$k0">
+              <ref role="3xOPvv" node="3eqdKU_ooZS" resolve="TissueContainer" />
+            </node>
+            <node concept="2qgKlT" id="3eqdKU_opnz" role="2OqNvi">
+              <ref role="37wK5l" to="4ebj:6yORN46v92v" resolve="count_cell_number_int" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="5jwSz93TjDc" role="1SKRRt">
+      <node concept="1yko06" id="5jwSz93TjDA" role="1qenE9">
+        <property role="TrG5h" value="World" />
+        <ref role="3_H_MC" node="1GhuSprockJ" resolve="TissueContainer" />
+        <ref role="24rgZa" node="5jwSz93TjFW" resolve="Species" />
+        <node concept="1yko03" id="5jwSz93TjDB" role="1yko01">
+          <node concept="2_hQR_" id="5jwSz93TjDC" role="3bEhY_">
+            <node concept="2_n9WQ" id="5jwSz93TjDD" role="2_hQRE">
+              <node concept="30bXRB" id="5jwSz93TjEA" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="5jwSz93TjF2" role="2_hQ4V" />
+          </node>
+          <node concept="2_kiwO" id="5jwSz93TjDG" role="2nU_yc">
+            <node concept="30bXRB" id="5jwSz93TjE6" role="2_kiwP">
+              <property role="30bXRw" value="1.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="5jwSz93TjFp" role="1SKRRt">
+      <node concept="3_zqOV" id="5jwSz93TjFW" role="1qenE9">
+        <property role="TrG5h" value="Species" />
+      </node>
+    </node>
     <node concept="1qefOq" id="1GhuSprockK" role="1SKRRt">
       <node concept="3ZP1sW" id="1GhuSprockJ" role="1qenE9">
         <property role="TrG5h" value="TissueContainer" />
+        <ref role="2ppKUs" node="5jwSz93TjDA" resolve="World" />
         <node concept="1apGoc" id="1GhuSprocn6" role="1v2izi">
           <property role="TrG5h" value="FlatType" />
           <ref role="1apGrN" node="1GhuSprockN" resolve="CellType" />
@@ -160,28 +307,52 @@
             <property role="TrG5h" value="FlatType" />
           </node>
         </node>
+        <node concept="1apGoc" id="6Q32zZgPZE$" role="1v2izi">
+          <property role="TrG5h" value="CylindricalType" />
+          <ref role="1apGrN" node="1GhuSprockN" resolve="CellType" />
+          <node concept="3ZP1sC" id="6Q32zZgPZEF" role="1v2cpK">
+            <property role="3ZP1sG" value="10" />
+            <node concept="2_hQR_" id="6Q32zZgPZEH" role="3ob6kl">
+              <node concept="2_n9WQ" id="6Q32zZgPZEJ" role="2_hQRE">
+                <node concept="30bXRB" id="6Q32zZgPZFa" role="2_n9WR">
+                  <property role="30bXRw" value="6" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="6Q32zZgPZFA" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="3xLA65" id="6Q32zZgRcZm" role="lGtFl">
+            <property role="TrG5h" value="CylindricalType" />
+          </node>
+        </node>
         <node concept="3ZP1sM" id="1GhuSprockN" role="1v2izm">
           <property role="TrG5h" value="CellType" />
           <node concept="3ZP1s$" id="1GhuSprockR" role="3ZP1s2">
             <node concept="2_hQR_" id="1GhuSprockT" role="2IF2Qc">
               <node concept="2_n9WQ" id="1GhuSprockV" role="2_hQRE">
-                <node concept="30bXRB" id="1GhuSprocmp" role="2_n9WR">
-                  <property role="30bXRw" value="10" />
+                <node concept="30bXRB" id="5jwSz93SUea" role="2_n9WR">
+                  <property role="30bXRw" value="20" />
                 </node>
               </node>
               <node concept="2_hRrN" id="1GhuSprocmJ" role="2_hQ4V" />
             </node>
             <node concept="2_hQR_" id="1GhuSprocl1" role="2IF2Qe">
               <node concept="2_n9WQ" id="1GhuSprocl3" role="2_hQRE">
-                <node concept="30bXRB" id="1GhuSprocly" role="2_n9WR">
-                  <property role="30bXRw" value="10" />
+                <node concept="30bXRB" id="5jwSz93SUdy" role="2_n9WR">
+                  <property role="30bXRw" value="20" />
                 </node>
               </node>
               <node concept="2_hRrN" id="1GhuSproclY" role="2_hQ4V" />
             </node>
           </node>
         </node>
+        <node concept="3xLA65" id="3eqdKU_ooZS" role="lGtFl">
+          <property role="TrG5h" value="TissueContainer" />
+        </node>
       </node>
+    </node>
+    <node concept="0EjCn" id="5jwSz93T54b" role="0EEgL">
+      <node concept="3clFbS" id="5jwSz93T54c" role="2VODD2" />
     </node>
   </node>
 </model>

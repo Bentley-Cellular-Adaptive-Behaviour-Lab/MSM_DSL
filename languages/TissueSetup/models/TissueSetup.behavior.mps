@@ -843,93 +843,10 @@
           <node concept="3cpWsn" id="57WjpeqbmoU" role="3cpWs9">
             <property role="TrG5h" value="radius_gridpoints" />
             <node concept="10Oyi0" id="57WjpeqmwS9" role="1tU5fm" />
-            <node concept="3cmrfG" id="57WjpeqmBTf" role="33vP2m">
-              <property role="3cmrfH" value="0" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbJ" id="57WjpeqbhP3" role="3cqZAp">
-          <node concept="3clFbS" id="57WjpeqbhP5" role="3clFbx">
-            <node concept="3clFbF" id="57WjpeqegB4" role="3cqZAp">
-              <node concept="37vLTI" id="57WjpeqesVu" role="3clFbG">
-                <node concept="2OqwBi" id="57Wjpeqet$c" role="37vLTx">
-                  <node concept="2OqwBi" id="57Wjpeqet4O" role="2Oq$k0">
-                    <node concept="13iPFW" id="57WjpeqesVT" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="57Wjpeqetf4" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:3wWy5vw4eP2" resolve="Cylinder_Radius" />
-                    </node>
-                  </node>
-                  <node concept="2qgKlT" id="57WjpeqfrZk" role="2OqNvi">
-                    <ref role="37wK5l" to="ki9o:3wWy5vw4P8z" resolve="get_distance_in_gridpoints" />
-                    <node concept="10QFUN" id="57Wjpeqfu44" role="37wK5m">
-                      <node concept="10OMs4" id="57Wjpeqfua_" role="10QFUM" />
-                      <node concept="3b6qkQ" id="57Wjpeqfuh3" role="10QFUP">
-                        <property role="$nhwW" value="0.5" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="37vLTw" id="57WjpeqegB3" role="37vLTJ">
-                  <ref role="3cqZAo" node="57WjpeqbmoU" resolve="radius_gridpoints" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2OqwBi" id="57WjpeqdFPY" role="3clFbw">
-            <node concept="2OqwBi" id="57WjpeqbiHz" role="2Oq$k0">
-              <node concept="37vLTw" id="57WjpeqbhVg" role="2Oq$k0">
-                <ref role="3cqZAo" node="3wWy5vw7kOw" resolve="world_grid" />
-              </node>
-              <node concept="3TrcHB" id="57WjpeqdFG7" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
-              </node>
-            </node>
-            <node concept="21noJN" id="57WjpeqdG5R" role="2OqNvi">
-              <node concept="21nZrQ" id="57WjpeqdG6f" role="21noJM">
-                <ref role="21nZrZ" to="s9ob:57Wjpeqc5T8" resolve="Half_Micron" />
-              </node>
-            </node>
-          </node>
-          <node concept="3eNFk2" id="57WjpeqbDkb" role="3eNLev">
-            <node concept="3clFbS" id="57WjpeqbDkd" role="3eOfB_">
-              <node concept="3clFbF" id="57Wjpeqfuok" role="3cqZAp">
-                <node concept="37vLTI" id="57Wjpeqfuol" role="3clFbG">
-                  <node concept="2OqwBi" id="57Wjpeqfuom" role="37vLTx">
-                    <node concept="2OqwBi" id="57Wjpeqfuon" role="2Oq$k0">
-                      <node concept="13iPFW" id="57Wjpeqfuoo" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="57Wjpeqfuop" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:3wWy5vw4eP2" resolve="Cylinder_Radius" />
-                      </node>
-                    </node>
-                    <node concept="2qgKlT" id="57Wjpeqfuoq" role="2OqNvi">
-                      <ref role="37wK5l" to="ki9o:3wWy5vw4P8z" resolve="get_distance_in_gridpoints" />
-                      <node concept="10QFUN" id="57Wjpeqfuor" role="37wK5m">
-                        <node concept="10OMs4" id="57Wjpeqfuos" role="10QFUM" />
-                        <node concept="3b6qkQ" id="57Wjpeqfuot" role="10QFUP">
-                          <property role="$nhwW" value="1.0" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="57Wjpeqfuou" role="37vLTJ">
-                    <ref role="3cqZAo" node="57WjpeqbmoU" resolve="radius_gridpoints" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="57WjpeqdGqb" role="3eO9$A">
-              <node concept="2OqwBi" id="57WjpeqbDxA" role="2Oq$k0">
-                <node concept="37vLTw" id="57WjpeqbDxB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3wWy5vw7kOw" resolve="world_grid" />
-                </node>
-                <node concept="3TrcHB" id="57WjpeqdGgk" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
-                </node>
-              </node>
-              <node concept="21noJN" id="57WjpeqdGwY" role="2OqNvi">
-                <node concept="21nZrQ" id="57WjpeqdGxm" role="21noJM">
-                  <ref role="21nZrZ" to="s9ob:57Wjpeqc5Ta" resolve="One_Micron" />
-                </node>
+            <node concept="2OqwBi" id="6Q32zZgRjle" role="33vP2m">
+              <node concept="13iPFW" id="6Q32zZgRiCC" role="2Oq$k0" />
+              <node concept="2qgKlT" id="6Q32zZgRk7C" role="2OqNvi">
+                <ref role="37wK5l" node="57Wjpeqocpj" resolve="get_radius_gridpoints" />
               </node>
             </node>
           </node>
