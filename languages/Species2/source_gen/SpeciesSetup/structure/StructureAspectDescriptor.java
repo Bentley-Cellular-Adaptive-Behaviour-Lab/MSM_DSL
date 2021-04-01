@@ -29,6 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSpeciesExpression = createDescriptorForSpeciesExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesPowerExpression = createDescriptorForSpeciesPowerExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesReference = createDescriptorForSpeciesReference();
+  /*package*/ final EnumerationDescriptor myEnumerationNeighbourValues = new EnumerationDescriptor_NeighbourValues();
   /*package*/ final EnumerationDescriptor myEnumerationSpeciesLocation = new EnumerationDescriptor_SpeciesLocation();
   private final LanguageConceptSwitch myIndexSwitch;
 
@@ -88,7 +89,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationSpeciesLocation);
+    return Arrays.asList(myEnumerationNeighbourValues, myEnumerationSpeciesLocation);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -120,6 +121,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("org.iets3.core.expr.base.structure.Expression", 0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/7376055817164471393");
     b.version(2);
+    b.associate("Parameter", 0x54e0e23243e71cb1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116136999484595377").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRate() {
@@ -175,6 +177,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540207");
     b.version(2);
     b.property("Location", 0x2b6159d0ceed5ea1L).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L)).origin("3125878369731567265").done();
+    b.property("UsesValue", 0x54e0e23243ed3238L).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0e23243ed3233L)).origin("6116136999484994104").done();
     b.associate("Degradation_Term", 0x665d03af8984818bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063115").done();
     b.associate("Production_Term", 0x665d03af898481a1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063137").done();
     b.aggregate("Starting_Concentration", 0x375d1bec6ae084b4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("3989375547139458228").done();

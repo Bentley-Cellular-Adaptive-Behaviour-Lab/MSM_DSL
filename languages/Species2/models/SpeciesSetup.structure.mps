@@ -19,6 +19,7 @@
         <property id="672037151186491528" name="presentation" index="1L1pqM" />
       </concept>
       <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <reference id="1075010451642646892" name="defaultMember" index="1H5jkz" />
         <child id="3348158742936976577" name="members" index="25R1y" />
       </concept>
       <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
@@ -143,6 +144,11 @@
       <property role="IQ2nx" value="3125878369731567265" />
       <property role="TrG5h" value="Location" />
       <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
+    </node>
+    <node concept="1TJgyi" id="5jwSz93Vj8S" role="1TKVEl">
+      <property role="IQ2nx" value="6116136999484994104" />
+      <property role="TrG5h" value="UsesValue" />
+      <ref role="AX2Wp" node="5jwSz93Vj8N" resolve="NeighbourValues" />
     </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
@@ -288,6 +294,12 @@
     <property role="EcuMT" value="7376055817164471393" />
     <property role="TrG5h" value="ParameterExpression" />
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    <node concept="1TJgyj" id="5jwSz93TLML" role="1TKVEi">
+      <property role="IQ2ns" value="6116136999484595377" />
+      <property role="20kJfa" value="Parameter" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
   </node>
   <node concept="1TIwiD" id="1Ch7j$N9SJL">
     <property role="EcuMT" value="1878314651098778609" />
@@ -298,6 +310,21 @@
       <property role="20kJfa" value="Reaction_Reference" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjI" resolve="Reaction" />
+    </node>
+  </node>
+  <node concept="25R3W" id="5jwSz93Vj8N">
+    <property role="3F6X1D" value="6116136999484994099" />
+    <property role="TrG5h" value="NeighbourValues" />
+    <ref role="1H5jkz" node="5jwSz93Vj8O" resolve="ThisValue" />
+    <node concept="25R33" id="5jwSz93Vj8O" role="25R1y">
+      <property role="3tVfz5" value="6116136999484994100" />
+      <property role="TrG5h" value="ThisValue" />
+      <property role="1L1pqM" value="Parent Cell's Value" />
+    </node>
+    <node concept="25R33" id="5jwSz93Vj8P" role="25R1y">
+      <property role="3tVfz5" value="6116136999484994101" />
+      <property role="TrG5h" value="NeighbourValue" />
+      <property role="1L1pqM" value="Neighbour's Value" />
     </node>
   </node>
 </model>

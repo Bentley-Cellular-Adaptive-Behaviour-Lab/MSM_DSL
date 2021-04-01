@@ -80,12 +80,7 @@ public final class Arrangement_Cylindrical__BehaviorDescriptor extends BaseBHDes
   /*package*/ static int calculate_total_ablumenal_steps_id506$KtO_VOJ(@NotNull SNode __thisNode__) {
     SNode world_grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
 
-    int radius_gridpoints = 0;
-    if (SEnumOperations.isMember(SPropertyOperations.getEnum(world_grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
-      radius_gridpoints = (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Cylinder_Radius$5MFi), ((float) (float) 0.5));
-    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(world_grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e4aL)) {
-      radius_gridpoints = (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Cylinder_Radius$5MFi), ((float) (float) 1.0));
-    }
+    int radius_gridpoints = ((int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(__thisNode__));
 
     double d_steps = 2 * 3.14 * radius_gridpoints;
     int i_steps = ((int) d_steps);

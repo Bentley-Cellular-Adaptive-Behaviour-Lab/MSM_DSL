@@ -45,7 +45,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.ParameterExpression:
         if (props_ParameterExpression == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.rawPresentation("ParameterExpression");
+          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter", "", "");
           props_ParameterExpression = cpb.create();
         }
         return props_ParameterExpression;
