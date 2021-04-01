@@ -28,9 +28,10 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
 
   public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Void> update_relations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("update_relations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, update_relations_idJ83UdHo8mt);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, update_relations_idJ83UdHo8mt);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -46,6 +47,18 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       }
     }
     return speciesList;
+  }
+  /*package*/ static List<SNode> getExprParameters_id3eqdKU_qMQ$(@NotNull SNode __thisNode__, SNode expr) {
+    // Gets all parameters in an expression, including sub-expressions. 
+    List<SNode> parameterList = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
+      if (SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA)) {
+        ListSequence.fromList(parameterList).addElement(SNodeOperations.as(child, CONCEPTS.ParameterExpression$CA));
+      } else if (SNodeOperations.isInstanceOf(child, CONCEPTS.Expression$D_) && !(SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA))) {
+        ListSequence.fromList(parameterList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(__thisNode__, SNodeOperations.as(child, CONCEPTS.Expression$D_))));
+      }
+    }
+    return parameterList;
   }
   /*package*/ static void update_relations_idJ83UdHo8mt(@NotNull SNode __thisNode__) {
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Species$hnnc))) {
@@ -79,6 +92,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       case 0:
         return (T) ((List<SNode>) getExprSpecies_idJ83UdHe8mr(node, (SNode) parameters[0]));
       case 1:
+        return (T) ((List<SNode>) getExprParameters_id3eqdKU_qMQ$(node, (SNode) parameters[0]));
+      case 2:
         update_relations_idJ83UdHo8mt(node);
         return null;
       default:
@@ -113,6 +128,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   private static final class CONCEPTS {
     /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
     /*package*/ static final SConcept Expression$D_ = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L, "org.iets3.core.expr.base.structure.Expression");
+    /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
   }
 
   private static final class LINKS {
