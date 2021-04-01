@@ -67,6 +67,12 @@
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
       <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
+        <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
+        <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
+        <property id="5907682107548246398" name="Z_Size" index="3bD6NH" />
+        <property id="1178415553713540470" name="Neg_Z_Space" index="3cJDZ5" />
+        <property id="1178415553713540457" name="Neg_X_Space" index="3cJDZq" />
+        <property id="1178415553713540463" name="Neg_Y_Space" index="3cJDZs" />
         <child id="91108499532674622" name="Adhesiveness" index="2nU_yc" />
         <child id="5907682107548062262" name="Buffer" index="3bEhY_" />
       </concept>
@@ -286,6 +292,12 @@
         <ref role="3_H_MC" node="1GhuSprockJ" resolve="TissueContainer" />
         <ref role="24rgZa" node="5jwSz93TjFW" resolve="Species" />
         <node concept="1yko03" id="5jwSz93TjDB" role="1yko01">
+          <property role="3bD6N$" value="500" />
+          <property role="3bD6ND" value="500" />
+          <property role="3bD6NH" value="500" />
+          <property role="3cJDZq" value="-500" />
+          <property role="3cJDZs" value="-500" />
+          <property role="3cJDZ5" value="-500" />
           <node concept="2_hQR_" id="5jwSz93TjDC" role="3bEhY_">
             <node concept="2_n9WQ" id="5jwSz93TjDD" role="2_hQRE">
               <node concept="30bXRB" id="5jwSz93TjEA" role="2_n9WR">
