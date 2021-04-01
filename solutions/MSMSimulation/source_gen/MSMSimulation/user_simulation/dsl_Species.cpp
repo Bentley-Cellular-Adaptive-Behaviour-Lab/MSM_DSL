@@ -1,16 +1,18 @@
-typedef boost::array<double, 2> ode_state_type;
+typedef boost::array<double, 3> ode_state_type;
 
 GRN_ODE::ODE_system(const ode_state_type &x, ode_state_type &dxdt, double t) {
 // Species Definitions //
 	double Notch = x[0];
 	double Delta = x[1];
+	double NeighbourDelta = x[2];
 // Rate Definitions //
-	double rate_k1 = calc_k1_rate(Notch);
-	double rate_k2 = calc_k2_rate(Delta);
 // Production and Degradation Rates //
+	double rate_Notch_prod = calc_k1_rate();
+	double rate_Delta_prod = calc_k2_rate();
 // ODE Definitions //
-	dxdt[0] =; // Rate of change for species Notch
-	dxdt[1] =; // Rate of change for species Delta
+	dxdt[0] = +rate_Notch_prod; // Rate of change for species Notch
+	dxdt[1] = +rate_Delta_prod; // Rate of change for species Delta
+	dxdt[2] =; // Rate of change for species NeighbourDelta
 }
 
 static double calc_k1_rate(double Notch) {
@@ -21,8 +23,8 @@ static double calc_k2_rate(double Delta) {
 	return <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!> * (<!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!> - Delta);
 }
 
-static double calc_f_rate(double Delta, double Delta) {
-	return Math.pow(Delta, <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!>) / <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!> + Math.pow(Delta, <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!>);
+static double calc_f_rate(double NeighbourDelta, double NeighbourDelta) {
+	return Math.pow(NeighbourDelta, <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!>) / <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!> + Math.pow(NeighbourDelta, <!TextGen not found for 'SpeciesSetup.structure.ParameterExpression'!>);
 }
 
 static double calc_g_rate(double Notch) {
