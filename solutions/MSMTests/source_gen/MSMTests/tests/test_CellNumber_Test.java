@@ -23,13 +23,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SProperty;
 
 @MPSLaunch
-public class test_cellNumber_Test extends BaseTransformationTest {
+public class test_CellNumber_Test extends BaseTransformationTest {
   @ClassRule
-  public static final TestParametersCache ourParamCache = new TestParametersCache(test_cellNumber_Test.class, "${project_home}", "r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)", false);
+  public static final TestParametersCache ourParamCache = new TestParametersCache(test_CellNumber_Test.class, "${project_home}", "r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)", false);
   @Rule
   public final RunWithCommand myWithCommandRule = new RunWithCommand(this);
 
-  public test_cellNumber_Test() {
+  public test_CellNumber_Test() {
     super(ourParamCache);
   }
 

@@ -181,7 +181,7 @@
     <property role="2XOHcw" value="${project_home}" />
   </node>
   <node concept="1lH9Xt" id="5gBmBO5mXTR">
-    <property role="TrG5h" value="test_cellNumber" />
+    <property role="TrG5h" value="test_CellNumber" />
     <property role="3GE5qa" value="TissueTests" />
     <node concept="1LZb2c" id="1GhuSprocnr" role="1SL9yI">
       <property role="TrG5h" value="test_FlatTypeCellNumber" />
@@ -389,24 +389,24 @@
           <node concept="3ZP1sY" id="3eqdKU_p6yt" role="3ZPHbL">
             <node concept="2_hQR_" id="3eqdKU_p6yu" role="2IF2Ql">
               <node concept="2_n9WQ" id="3eqdKU_p6yv" role="2_hQRE">
-                <node concept="30bXRB" id="3eqdKU_p6$V" role="2_n9WR">
-                  <property role="30bXRw" value="50" />
+                <node concept="30bXRB" id="3eqdKU_pdJQ" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
                 </node>
               </node>
               <node concept="2_hRrN" id="3eqdKU_p6$i" role="2_hQ4V" />
             </node>
             <node concept="2_hQR_" id="3eqdKU_p6yy" role="2IF2Qn">
               <node concept="2_n9WQ" id="3eqdKU_p6yz" role="2_hQRE">
-                <node concept="30bXRB" id="3eqdKU_p6_u" role="2_n9WR">
-                  <property role="30bXRw" value="50" />
+                <node concept="30bXRB" id="3eqdKU_pdKr" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
                 </node>
               </node>
               <node concept="2_hRrN" id="3eqdKU_p6_R" role="2_hQ4V" />
             </node>
             <node concept="2_hQR_" id="3eqdKU_p6yA" role="2IF2Qq">
               <node concept="2_n9WQ" id="3eqdKU_p6yB" role="2_hQRE">
-                <node concept="30bXRB" id="3eqdKU_p6Al" role="2_n9WR">
-                  <property role="30bXRw" value="50" />
+                <node concept="30bXRB" id="3eqdKU_pdL2" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
                 </node>
               </node>
               <node concept="2_hRrN" id="3eqdKU_p6AH" role="2_hQ4V" />
@@ -471,6 +471,14 @@
     <node concept="0EjCn" id="5jwSz93T54b" role="0EEgL">
       <node concept="3clFbS" id="5jwSz93T54c" role="2VODD2" />
     </node>
+  </node>
+  <node concept="1lH9Xt" id="3eqdKU_pdJa">
+    <property role="TrG5h" value="test_TissuesObjectOverlap" />
+    <property role="3GE5qa" value="TissueTests" />
+  </node>
+  <node concept="1lH9Xt" id="3eqdKU_pdJk">
+    <property role="TrG5h" value="test_TissuesObjectBoundaries" />
+    <property role="3GE5qa" value="TissueTests" />
   </node>
 </model>
 
