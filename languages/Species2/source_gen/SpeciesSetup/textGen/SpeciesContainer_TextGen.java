@@ -54,8 +54,11 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
         tgs.append("_rate(");
 
         // Next, add in the arguments to the function definition. 
-        // Get all of the species involved in the reaction. 
+        // Get all of the species and parameters involved in the reaction. 
         List<SNode> speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
+        List<SNode> parameterList = SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
+
+        List<SNode> combinedList = ListSequence.fromList(speciesList).addSequence(ListSequence.fromList(parameterList));
         int count = 0;
         for (SNode species : ListSequence.fromList(speciesList)) {
           count++;

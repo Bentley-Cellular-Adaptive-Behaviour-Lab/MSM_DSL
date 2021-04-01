@@ -40,7 +40,7 @@ public final class ReversibleReaction__BehaviorDescriptor extends BaseBHDescript
     List<SNode> speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16));
     boolean found = false;
     for (SNode species : ListSequence.fromList(speciesList)) {
-      if (Objects.equals(SLinkOperations.getTarget(species, LINKS.Species$uQ2a), targetSpecies)) {
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(species, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), targetSpecies)) {
         found = true;
       }
     }
@@ -50,7 +50,7 @@ public final class ReversibleReaction__BehaviorDescriptor extends BaseBHDescript
     List<SNode> speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig), SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16));
     boolean found = false;
     for (SNode species : ListSequence.fromList(speciesList)) {
-      if (Objects.equals(SLinkOperations.getTarget(species, LINKS.Species$uQ2a), targetSpecies)) {
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(species, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), targetSpecies)) {
         found = true;
       }
     }
@@ -107,6 +107,7 @@ public final class ReversibleReaction__BehaviorDescriptor extends BaseBHDescript
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
+    /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
   }
 
   private static final class LINKS {
