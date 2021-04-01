@@ -42,8 +42,8 @@ public class test_cellNumber_Test extends BaseTransformationTest {
     new TestBody(this).test_test_CylindricalTypeCellNumber();
   }
   @Test
-  public void test_test_TotalCellNumber() throws Throwable {
-    new TestBody(this).test_test_TotalCellNumber();
+  public void test_test_ContainerCellNumber() throws Throwable {
+    new TestBody(this).test_test_ContainerCellNumber();
   }
 
   @BeforeClass
@@ -69,11 +69,11 @@ public class test_cellNumber_Test extends BaseTransformationTest {
       Assert.assertEquals(1, SPropertyOperations.getInteger(SNodeOperations.as(SLinkOperations.getTarget(getNodeById("7891162241286273700"), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_cross_section_cells$pzjl));
       Assert.assertEquals(10, SPropertyOperations.getInteger(SNodeOperations.as(SLinkOperations.getTarget(getNodeById("7891162241286273700"), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_total_cells$o_jT));
     }
-    public void test_test_TotalCellNumber() throws Exception {
+    public void test_test_ContainerCellNumber() throws Exception {
       addNodeById("6116136999484471884");
       addNodeById("6116136999484472025");
       addNodeById("1950475930617038128");
-      Assert.assertEquals(35, (int) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_int_id6yORN46v92v.invoke(getNodeById("1950475930617038127")));
+      Assert.assertEquals(36, (int) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_int_id6yORN46v92v.invoke(getNodeById("1950475930617038127")));
     }
 
 

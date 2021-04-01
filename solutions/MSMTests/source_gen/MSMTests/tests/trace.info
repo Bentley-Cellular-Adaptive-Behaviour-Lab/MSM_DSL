@@ -12,7 +12,7 @@
       <node id="6063914916284980855" at="32,33,33,25" concept="6" />
       <node id="1950475930617038299" at="37,63,38,54" concept="1" />
       <node id="7891162241286590397" at="41,70,42,61" concept="1" />
-      <node id="3718344978391469986" at="45,60,46,51" concept="1" />
+      <node id="3718344978391469986" at="45,64,46,55" concept="1" />
       <node id="6063914916284980855" at="55,52,56,19" concept="6" />
       <node id="6116136999484471884" at="59,65,60,41" concept="1" />
       <node id="6116136999484472025" at="60,41,61,41" concept="1" />
@@ -23,7 +23,7 @@
       <node id="1950475930617038128" at="67,41,68,41" concept="1" />
       <node id="6116136999484459769" at="68,41,69,246" concept="1" />
       <node id="7891162241286598919" at="69,246,70,239" concept="1" />
-      <node id="6116136999484471884" at="72,62,73,41" concept="1" />
+      <node id="6116136999484471884" at="72,66,73,41" concept="1" />
       <node id="6116136999484472025" at="73,41,74,41" concept="1" />
       <node id="1950475930617038128" at="74,41,75,41" concept="1" />
       <node id="3718344978391470061" at="75,41,76,162" concept="1" />
@@ -40,15 +40,15 @@
       <node id="6063914916284980855" at="55,0,58,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
       <node id="1950475930617038299" at="36,0,40,0" concept="3" trace="test_test_FlatTypeCellNumber#()V" />
       <node id="7891162241286590397" at="40,0,44,0" concept="3" trace="test_test_CylindricalTypeCellNumber#()V" />
-      <node id="3718344978391469986" at="44,0,48,0" concept="3" trace="test_test_TotalCellNumber#()V" />
+      <node id="3718344978391469986" at="44,0,48,0" concept="3" trace="test_test_ContainerCellNumber#()V" />
       <node id="1950475930617038299" at="59,0,65,0" concept="3" trace="test_test_FlatTypeCellNumber#()V" />
-      <node id="3718344978391469986" at="72,0,78,0" concept="3" trace="test_test_TotalCellNumber#()V" />
+      <node id="3718344978391469986" at="72,0,78,0" concept="3" trace="test_test_ContainerCellNumber#()V" />
       <node id="7891162241286590397" at="65,0,72,0" concept="3" trace="test_test_CylindricalTypeCellNumber#()V" />
       <scope id="6063914916284980855" at="50,36,50,36" />
       <scope id="6063914916284980855" at="32,33,33,25" />
       <scope id="1950475930617038299" at="37,63,38,54" />
       <scope id="7891162241286590397" at="41,70,42,61" />
-      <scope id="3718344978391469986" at="45,60,46,51" />
+      <scope id="3718344978391469986" at="45,64,46,55" />
       <scope id="6063914916284980855" at="55,52,56,19" />
       <scope id="6063914916284980855" at="32,0,35,0" />
       <scope id="6063914916284980855" at="49,0,52,0" />
@@ -59,7 +59,7 @@
       <scope id="7891162241286590397" at="40,0,44,0" />
       <scope id="3718344978391469986" at="44,0,48,0" />
       <scope id="1950475930617038299" at="59,65,63,228" />
-      <scope id="3718344978391469986" at="72,62,76,162" />
+      <scope id="3718344978391469986" at="72,66,76,162" />
       <scope id="7891162241286590397" at="65,72,70,239" />
       <scope id="1950475930617038299" at="59,0,65,0" />
       <scope id="3718344978391469986" at="72,0,78,0" />
