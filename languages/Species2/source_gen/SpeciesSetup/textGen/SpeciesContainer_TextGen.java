@@ -38,7 +38,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append("];\n");
     }
 
-    // Create rate definitions for each rate used in a reaction. 
+    // Create rate definitions for each rate used . 
     tgs.append("// Rate Definitions //\n");
     for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Reactions$hnPe))) {
       // Unfortunately, this bit gets quite messy, so I've decided to over-comment rather than under-comment here. 
@@ -55,10 +55,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
         // Get all of the unique species and parameters involved in the reaction. 
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16))));
-        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+        List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         int count = 0;
-        for (SNode expr : ListSequence.fromList(exprList)) {
+        for (SNode expr : ListSequence.fromList(filteredList)) {
           count++;
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
@@ -67,7 +67,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
           // Check if we've reached the end of the list, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(exprList).count()) {
+          if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
@@ -85,10 +85,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
         // Get all of the unique species involved and parameters in the forward reaction. 
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))));
-        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+        List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         int count = 0;
-        for (SNode expr : ListSequence.fromList(exprList)) {
+        for (SNode expr : ListSequence.fromList(filteredList)) {
           count++;
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
@@ -97,7 +97,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(exprList).count()) {
+          if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
@@ -112,10 +112,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
         tgs.append("_rate(");
         exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16))));
-        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+        filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         count = 0;
-        for (SNode expr : ListSequence.fromList(exprList)) {
+        for (SNode expr : ListSequence.fromList(filteredList)) {
           count++;
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
@@ -123,7 +123,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
-          if (count < ListSequence.fromList(exprList).count()) {
+          if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
@@ -145,10 +145,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S), LINKS.Expression$Wv16))));
-        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+        List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         int count = 0;
-        for (SNode expr : ListSequence.fromList(exprList)) {
+        for (SNode expr : ListSequence.fromList(filteredList)) {
           count++;
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
@@ -157,7 +157,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(exprList).count()) {
+          if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
@@ -174,10 +174,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S), LINKS.Expression$Wv16))));
-        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+        List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         int count = 0;
-        for (SNode expr : ListSequence.fromList(exprList)) {
+        for (SNode expr : ListSequence.fromList(filteredList)) {
           count++;
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
@@ -186,7 +186,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(exprList).count()) {
+          if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
@@ -282,7 +282,6 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
         tgs.appendNode(species);
         tgs.append("_prod");
       }
-
       tgs.append("; // Rate of change for species ");
       tgs.appendNode(species);
       tgs.append("\n");
@@ -295,10 +294,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append("_rate(");
       List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16));
       ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16))));
-      SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+      List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
       int count = 0;
-      for (SNode expr : ListSequence.fromList(exprList)) {
+      for (SNode expr : ListSequence.fromList(filteredList)) {
         count++;
         if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
           tgs.append("double ");
@@ -309,7 +308,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
           tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
         }
         // Check if we've reached the end of the list of species, if not, add a comma for the next argument. 
-        if (count < ListSequence.fromList(exprList).count()) {
+        if (count < ListSequence.fromList(filteredList).count()) {
           tgs.append(", ");
         }
       }
