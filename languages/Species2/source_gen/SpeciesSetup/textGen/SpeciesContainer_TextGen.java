@@ -8,18 +8,16 @@ import jetbrains.mps.text.impl.TextGenSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
-import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
   @Override
@@ -34,7 +32,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
     tgs.append("// Species Definitions //\n");
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Species$hnnc))) {
       tgs.append("\tdouble ");
-      tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+      tgs.appendNode(species);
       tgs.append(" = x[");
       tgs.append(as_xqs0x0_a0a0a3a8a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
       tgs.append("];\n");
@@ -48,23 +46,28 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
         // Define the rate and write the first part of the reaction function call. 
         tgs.append("\tdouble rate_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
         tgs.append(" = calc_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
         tgs.append("_rate(");
 
         // Next, add in the arguments to the function definition. 
-        // Get all of the species and parameters involved in the reaction. 
-        List<SNode> speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
-        List<SNode> parameterList = SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
+        // Get all of the unique species and parameters involved in the reaction. 
+        List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
+        ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16))));
+        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
-        List<SNode> combinedList = ListSequence.fromList(speciesList).addSequence(ListSequence.fromList(parameterList));
         int count = 0;
-        for (SNode species : ListSequence.fromList(speciesList)) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
           count++;
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(species, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
-          // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(speciesList).count()) {
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+          }
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+          }
+          // Check if we've reached the end of the list, if not, add a comma for the next argument. 
+          if (count < ListSequence.fromList(exprList).count()) {
             tgs.append(", ");
           }
         }
@@ -73,21 +76,28 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       } else if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
         // Define the forward rate and write the first part of the reaction function call. 
         tgs.append("\tdouble rate_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
         tgs.append(" = calc_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
         tgs.append("_rate(");
 
         // Next, add in the arguments to the function definition. 
-        // Get all of the species involved in the forward reaction. 
-        List<SNode> speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16));
+        // Get all of the unique species involved and parameters in the forward reaction. 
+        List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16));
+        ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))));
+        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
 
         int count = 0;
-        for (SNode species : ListSequence.fromList(speciesList)) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
           count++;
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(species, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+          }
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+          }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))).count()) {
+          if (count < ListSequence.fromList(exprList).count()) {
             tgs.append(", ");
           }
         }
@@ -96,23 +106,29 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
         // Now, do the same for the reverse rate. 
         tgs.append("\tdouble rate_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
         tgs.append(" = calc_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
         tgs.append("_rate(");
-        speciesList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16));
+        exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16));
+        ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), LINKS.Expression$Wv16))));
+        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+
         count = 0;
-        for (SNode species : ListSequence.fromList(speciesList)) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
           count++;
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(species, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
-          // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(speciesList).count()) {
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+          }
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+          }
+          if (count < ListSequence.fromList(exprList).count()) {
             tgs.append(", ");
           }
         }
         // End the function and start a new line. 
         tgs.append(");\n");
-
       }
     }
 
@@ -122,25 +138,27 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       if ((SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) != null)) {
         // Define the production rate and write the first part of the reaction function call. 
         tgs.append("\tdouble rate_");
-        tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+        tgs.appendNode(species);
         tgs.append("_prod = calc_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S));
         tgs.append("_rate(");
+
+        List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S), LINKS.Expression$Wv16));
+        ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S), LINKS.Expression$Wv16))));
+        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+
         int count = 0;
-        for (SNode element : ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, CONCEPTS.SpeciesExpression$Vm);
-          }
-        })) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
           count++;
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(element, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+          }
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+          }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S))).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, CONCEPTS.SpeciesExpression$Vm);
-            }
-          }).count()) {
-            tgs.append(",");
+          if (count < ListSequence.fromList(exprList).count()) {
+            tgs.append(", ");
           }
         }
         // End the function and start a new line. 
@@ -149,25 +167,27 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
         // Define the degradation rate and write the first part of the reaction function call. 
         tgs.append("\tdouble rate_");
-        tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+        tgs.appendNode(species);
         tgs.append("_deg = calc_");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S), PROPS.name$MnvL));
+        tgs.appendNode(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S));
         tgs.append("_rate(");
+
+        List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S), LINKS.Expression$Wv16));
+        ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S), LINKS.Expression$Wv16))));
+        SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+
         int count = 0;
-        for (SNode element : ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S))).where(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SNodeOperations.isInstanceOf(it, CONCEPTS.SpeciesExpression$Vm);
-          }
-        })) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
           count++;
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(element, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+          }
+          if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+            tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+          }
           // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
-          if (count < ListSequence.fromList(SNodeOperations.getChildren(SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S))).where(new IWhereFilter<SNode>() {
-            public boolean accept(SNode it) {
-              return SNodeOperations.isInstanceOf(it, CONCEPTS.SpeciesExpression$Vm);
-            }
-          }).count()) {
-            tgs.append(",");
+          if (count < ListSequence.fromList(exprList).count()) {
+            tgs.append(", ");
           }
         }
         // End the function and start a new line. 
@@ -183,11 +203,11 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append(as_xqs0x0_a0a0a2a02a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
       tgs.append("] =");
       // For each reaction where the species is a reactant, create terms for the reaction. 
-      for (SNode reaction : Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1), LINKS.Reaction_Reference$PJYZ))) {
-        if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
+      for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1))) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
           tgs.append(" -rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
@@ -195,10 +215,10 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             }
           }
 
-        } else if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
+        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
           tgs.append(" -rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
@@ -206,8 +226,8 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             }
           }
           tgs.append(" +rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
@@ -219,26 +239,26 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
       if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
         tgs.append(" -rate_");
-        tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+        tgs.appendNode(species);
         tgs.append("_deg");
       }
 
       // For each reaction where the species is a product, create terms for the reaction. 
-      for (SNode reaction : Sequence.fromIterable(SLinkOperations.collect(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03), LINKS.Reaction_Reference$PJYZ))) {
-        if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
+      for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03))) {
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
           tgs.append(" +rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
               tgs.append(as_xqs0x0_a0a0a2a0a2a0a01a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
             }
           }
-        } else if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
+        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
           tgs.append(" +rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
@@ -246,8 +266,8 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
             }
           }
           tgs.append(" -rate_");
-          tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
+          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
             if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
               // Find the stoichiometry of the species, then multiply the rate by that. 
               tgs.append("*");
@@ -259,27 +279,37 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
       if ((SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) != null)) {
         tgs.append(" +rate_");
-        tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+        tgs.appendNode(species);
         tgs.append("_prod");
       }
 
       tgs.append("; // Rate of change for species ");
-      tgs.append(SPropertyOperations.getString(species, PROPS.name$MnvL));
+      tgs.appendNode(species);
       tgs.append("\n");
     }
     tgs.append("}\n\n");
 
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Parameters$hoyh))) {
       tgs.append("static double calc_");
-      tgs.append(SPropertyOperations.getString(parameter, PROPS.name$MnvL));
+      tgs.appendNode(parameter);
       tgs.append("_rate(");
+      List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16));
+      ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16))));
+      SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(ctx.getPrimaryInput(), exprList);
+
       int count = 0;
-      for (SNode element : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16)))) {
+      for (SNode expr : ListSequence.fromList(exprList)) {
         count++;
-        tgs.append("double ");
-        tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(element, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL));
+        if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+          tgs.append("double ");
+          tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+        }
+        if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+          tgs.append("double ");
+          tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+        }
         // Check if we've reached the end of the list of species, if not, add a comma for the next argument. 
-        if (count < ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(ctx.getPrimaryInput(), SLinkOperations.getTarget(parameter, LINKS.Expression$Wv16))).count()) {
+        if (count < ListSequence.fromList(exprList).count()) {
           tgs.append(", ");
         }
       }
@@ -322,29 +352,28 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
     /*package*/ static final SReferenceLink Rate$Otxh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, 0x665d03af898abc5aL, "Rate");
     /*package*/ static final SContainmentLink Expression$Wv16 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x2b6159d0ceecf504L, "Expression");
-    /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
     /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
     /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");
     /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
     /*package*/ static final SReferenceLink Production_Term$Cs3S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af898481a1L, "Production_Term");
     /*package*/ static final SReferenceLink Degradation_Term$Cd2S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af8984818bL, "Degradation_Term");
+    /*package*/ static final SReferenceLink Reaction_Reference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "Reaction_Reference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
-    /*package*/ static final SReferenceLink Reaction_Reference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "Reaction_Reference");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
     /*package*/ static final SContainmentLink ProductOf$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOf");
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
   }
 
-  private static final class PROPS {
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-    /*package*/ static final SProperty Stoichiometry$Wmha = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f3L, "Stoichiometry");
-  }
-
   private static final class CONCEPTS {
     /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");
     /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
+    /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
     /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty Stoichiometry$Wmha = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f3L, "Stoichiometry");
   }
 }

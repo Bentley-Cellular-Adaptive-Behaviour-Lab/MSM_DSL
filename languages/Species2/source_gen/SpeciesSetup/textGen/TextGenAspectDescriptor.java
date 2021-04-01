@@ -25,8 +25,12 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     switch (myIndex.index(concept)) {
       case LanguageConceptSwitch.IrreversibleReaction:
         return new IrreversibleReaction_TextGen();
+      case LanguageConceptSwitch.Parameter:
+        return new Parameter_TextGen();
       case LanguageConceptSwitch.ParameterExpression:
         return new ParameterExpression_TextGen();
+      case LanguageConceptSwitch.Reaction_Reference:
+        return new Reaction_Reference_TextGen();
       case LanguageConceptSwitch.ReversibleReaction:
         return new ReversibleReaction_TextGen();
       case LanguageConceptSwitch.Species:

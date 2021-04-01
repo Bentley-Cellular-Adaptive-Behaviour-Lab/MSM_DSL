@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="8f46c90w9h7g6pvtsp9juzw6vj79ibc">
-  <files names="IrreversibleReaction_TextGen.java:ParameterExpression_TextGen.java:ReversibleReaction_TextGen.java:SpeciesContainer_TextGen.java:SpeciesExpression_TextGen.java:SpeciesPowerExpression_TextGen.java:SpeciesReference_TextGen.java:Species_TextGen.java:TextGenAspectDescriptor.java" />
+<product version="3" modelHash="bx62p90p36dne33gddaq6iep6ik5crk">
+  <files names="IrreversibleReaction_TextGen.java:ParameterExpression_TextGen.java:Parameter_TextGen.java:Reaction_Reference_TextGen.java:ReversibleReaction_TextGen.java:SpeciesContainer_TextGen.java:SpeciesExpression_TextGen.java:SpeciesPowerExpression_TextGen.java:SpeciesReference_TextGen.java:Species_TextGen.java:TextGenAspectDescriptor.java" />
 </product>
 
