@@ -1586,7 +1586,7 @@
               <property role="3oM_SC" value="including" />
             </node>
             <node concept="3oM_SD" id="3eqdKU_qMQM" role="1PaTwD">
-              <property role="3oM_SC" value="sub-expressions" />
+              <property role="3oM_SC" value="sub-expressions." />
             </node>
           </node>
         </node>
