@@ -6,10 +6,10 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -24,10 +24,10 @@
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -45,22 +45,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/Parameter_TextGen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/Reaction_Reference_TextGen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.behavior.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.textGen.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.textGen.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/IrreversibleReaction_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/IrreversibleReaction_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/ReversibleReaction_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/ReversibleReaction_TextGen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesContainer_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesContainer_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/trace.info" afterDir="false" />
     </list>
@@ -84,7 +77,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="d212f584-cf1e-4b7a-931d-8a1f59fdbd5d/r:14b7f0e6-5c9c-4329-bdf0-aa147faca5cf(TempModuled212f584-cf1e-4b7a-931d-8a1f59fdbd5d/ConsoleModel_46457611702200)">
+            <model ref="a48c8049-ff47-4812-b9cc-8dd66df867b6/r:f66de360-ffc2-4415-8491-b0a1729369e8(TempModulea48c8049-ff47-4812-b9cc-8dd66df867b6/ConsoleModel_68084388932999)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -104,11 +97,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="3eqdKU_olnR">
-                <node concept="3balQm" id="3eqdKU_olnS" role="aymYE" />
-                <node concept="2Clz$F" id="3eqdKU_olnT" role="aymYO" />
-                <node concept="2_V_lH" id="3eqdKU_olnU" role="1PhJh3">
-                  <ref role="2_V_lI" node="3eqdKU_olnT" resolve="CommandHolder" />
+              <node concept="aymSD" id="7urfyWpk1kI">
+                <node concept="3balQm" id="7urfyWpk1kJ" role="aymYE" />
+                <node concept="2Clz$F" id="7urfyWpk1kK" role="aymYO" />
+                <node concept="2_V_lH" id="7urfyWpk1kL" role="1PhJh3">
+                  <ref role="2_V_lI" node="7urfyWpk1kK" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -460,16 +453,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -498,14 +481,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -535,8 +522,42 @@
               <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -558,7 +579,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
+          <SELECTED>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
@@ -571,36 +592,12 @@
               <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <SELECTED>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="848945724345845136" />
+              <option name="myItemId" value="6063914916284915022" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -1136,7 +1133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617272277606</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Added function to filter expression lists for unique species and parameters when constructing arguments.">
+      <created>1617286174540</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617286174540</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -1885,7 +1889,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Version for Irene's use." />
     <MESSAGE value="Version for Irene's use. Now testing the vessel scenario." />
     <MESSAGE value="Commit before import reshuffling" />
     <MESSAGE value="Testing changing world boundaries" />
@@ -1910,6 +1913,7 @@
     <MESSAGE value="Changed parameter and species expression functions to return a list of generic expression nodes." />
     <MESSAGE value="Changed parameter and species expression functions to return a list of generic expression nodes and amended usages of these functions to reflect that fact." />
     <MESSAGE value="Changed textgen for reactions to return the name of the reaction." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed textgen for reactions to return the name of the reaction." />
+    <MESSAGE value="Added function to filter expression lists for unique species and parameters when constructing arguments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added function to filter expression lists for unique species and parameters when constructing arguments." />
   </component>
 </project>

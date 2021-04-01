@@ -34,7 +34,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Void> update_relations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("update_relations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
-  public static final SMethod<Void> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, update_relations_idJ83UdHo8mt, filterExpressionList_id3eqdKU_H9WR);
 
@@ -78,30 +78,40 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       }
     }
   }
-  /*package*/ static void filterExpressionList_id3eqdKU_H9WR(@NotNull SNode __thisNode__, List<SNode> exprList) {
+  /*package*/ static List<SNode> filterExpressionList_id3eqdKU_H9WR(@NotNull SNode __thisNode__, List<SNode> exprList) {
+    List<SNode> filteredList = ListSequence.fromList(new ArrayList<SNode>());
+    String currentName;
     for (SNode currentExpr : ListSequence.fromList(exprList)) {
-      String currentName;
       if (SNodeOperations.isInstanceOf(currentExpr, CONCEPTS.SpeciesExpression$Vm)) {
         currentName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(currentExpr, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL);
-        for (SNode queryExpr : ListSequence.fromList(exprList)) {
+        boolean notInList = true;
+        for (SNode queryExpr : ListSequence.fromList(filteredList)) {
           if (SNodeOperations.isInstanceOf(queryExpr, CONCEPTS.SpeciesExpression$Vm)) {
-            if (Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(queryExpr, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL), currentName) && !(Objects.equals(queryExpr, currentExpr))) {
-              ListSequence.fromList(exprList).removeElement(queryExpr);
+            if (Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(queryExpr, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL), currentName)) {
+              notInList = false;
             }
           }
+        }
+        if (notInList) {
+          ListSequence.fromList(filteredList).addElement(currentExpr);
         }
       }
       if (SNodeOperations.isInstanceOf(currentExpr, CONCEPTS.ParameterExpression$CA)) {
         currentName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(currentExpr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
-        for (SNode queryExpr : ListSequence.fromList(exprList)) {
+        boolean notInList = true;
+        for (SNode queryExpr : ListSequence.fromList(filteredList)) {
           if (SNodeOperations.isInstanceOf(queryExpr, CONCEPTS.ParameterExpression$CA)) {
-            if (Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(queryExpr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL), currentName) && !(Objects.equals(queryExpr, currentExpr))) {
-              ListSequence.fromList(exprList).removeElement(queryExpr);
+            if (Objects.equals(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(queryExpr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL), currentName)) {
+              notInList = false;
             }
           }
         }
+        if (notInList) {
+          ListSequence.fromList(filteredList).addElement(currentExpr);
+        }
       }
     }
+    return filteredList;
   }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
@@ -127,8 +137,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         update_relations_idJ83UdHo8mt(node);
         return null;
       case 3:
-        filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]);
-        return null;
+        return (T) ((List<SNode>) filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
