@@ -12,22 +12,24 @@ public final class LanguageConceptSwitch {
   public static final int IrreversibleReaction = 0;
   public static final int Parameter = 1;
   public static final int ParameterExpression = 2;
-  public static final int Rate = 3;
-  public static final int Reaction = 4;
-  public static final int Reaction_Reference = 5;
-  public static final int Reaction_Term = 6;
-  public static final int ReversibleReaction = 7;
-  public static final int Species = 8;
-  public static final int SpeciesContainer = 9;
-  public static final int SpeciesExpression = 10;
-  public static final int SpeciesPowerExpression = 11;
-  public static final int SpeciesReference = 12;
+  public static final int ParameterReference = 3;
+  public static final int Rate = 4;
+  public static final int Reaction = 5;
+  public static final int Reaction_Reference = 6;
+  public static final int Reaction_Term = 7;
+  public static final int ReversibleReaction = 8;
+  public static final int Species = 9;
+  public static final int SpeciesContainer = 10;
+  public static final int SpeciesExpression = 11;
+  public static final int SpeciesPowerExpression = 12;
+  public static final int SpeciesReference = 13;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL);
     builder.put(0x2b6159d0ceecfaeaL, IrreversibleReaction);
     builder.put(0x2b6159d0ceecf4f1L, Parameter);
     builder.put(0x665d03af898abc61L, ParameterExpression);
+    builder.put(0x65d0f96c4dec199dL, ParameterReference);
     builder.put(0x2b6159d0ceecf4f0L, Rate);
     builder.put(0x2b6159d0ceecf4eeL, Reaction);
     builder.put(0x1a111d3933278bf1L, Reaction_Reference);
