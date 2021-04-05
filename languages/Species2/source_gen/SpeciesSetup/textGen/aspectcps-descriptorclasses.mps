@@ -259,6 +259,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -457,6 +460,7 @@
   <node concept="312cEu" id="R">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="IrreversibleReaction_TextGen" />
+    <property role="3GE5qa" value="Reactions" />
     <uo k="s:originTrace" v="n:4855747457091408387" />
     <node concept="3Tm1VV" id="S" role="1B3o_S">
       <uo k="s:originTrace" v="n:4855747457091408387" />
@@ -548,6 +552,7 @@
   <node concept="312cEu" id="1g">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ParameterExpression_TextGen" />
+    <property role="3GE5qa" value="Parameters" />
     <uo k="s:originTrace" v="n:3718344978391721386" />
     <node concept="3Tm1VV" id="1h" role="1B3o_S">
       <uo k="s:originTrace" v="n:3718344978391721386" />
@@ -646,6 +651,7 @@
   <node concept="312cEu" id="1F">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Parameter_TextGen" />
+    <property role="3GE5qa" value="Parameters" />
     <uo k="s:originTrace" v="n:3718344978392975241" />
     <node concept="3Tm1VV" id="1G" role="1B3o_S">
       <uo k="s:originTrace" v="n:3718344978392975241" />
@@ -737,6 +743,7 @@
   <node concept="312cEu" id="24">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Reaction_Reference_TextGen" />
+    <property role="3GE5qa" value="Reactions" />
     <uo k="s:originTrace" v="n:3718344978392934838" />
     <node concept="3Tm1VV" id="25" role="1B3o_S">
       <uo k="s:originTrace" v="n:3718344978392934838" />
@@ -835,6 +842,7 @@
   <node concept="312cEu" id="2v">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="ReversibleReaction_TextGen" />
+    <property role="3GE5qa" value="Reactions" />
     <uo k="s:originTrace" v="n:848945724347238774" />
     <node concept="3Tm1VV" id="2w" role="1B3o_S">
       <uo k="s:originTrace" v="n:848945724347238774" />
@@ -926,6 +934,7 @@
   <node concept="312cEu" id="2S">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SpeciesContainer_TextGen" />
+    <property role="3GE5qa" value="Species" />
     <uo k="s:originTrace" v="n:1878314651097997811" />
     <node concept="3Tm1VV" id="2T" role="1B3o_S">
       <uo k="s:originTrace" v="n:1878314651097997811" />
@@ -8079,6 +8088,7 @@
   <node concept="312cEu" id="xW">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SpeciesExpression_TextGen" />
+    <property role="3GE5qa" value="Species" />
     <uo k="s:originTrace" v="n:4855747457092103444" />
     <node concept="3Tm1VV" id="xX" role="1B3o_S">
       <uo k="s:originTrace" v="n:4855747457092103444" />
@@ -8177,6 +8187,7 @@
   <node concept="312cEu" id="yn">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SpeciesPowerExpression_TextGen" />
+    <property role="3GE5qa" value="Species" />
     <uo k="s:originTrace" v="n:4855747457098858695" />
     <node concept="3Tm1VV" id="yo" role="1B3o_S">
       <uo k="s:originTrace" v="n:4855747457098858695" />
@@ -8352,6 +8363,7 @@
   <node concept="312cEu" id="z8">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="SpeciesReference_TextGen" />
+    <property role="3GE5qa" value="Species" />
     <uo k="s:originTrace" v="n:1878314651099528293" />
     <node concept="3Tm1VV" id="z9" role="1B3o_S">
       <uo k="s:originTrace" v="n:1878314651099528293" />
@@ -8450,6 +8462,7 @@
   <node concept="312cEu" id="zz">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="Species_TextGen" />
+    <property role="3GE5qa" value="Species" />
     <uo k="s:originTrace" v="n:1878314651099930830" />
     <node concept="3Tm1VV" id="z$" role="1B3o_S">
       <uo k="s:originTrace" v="n:1878314651099930830" />

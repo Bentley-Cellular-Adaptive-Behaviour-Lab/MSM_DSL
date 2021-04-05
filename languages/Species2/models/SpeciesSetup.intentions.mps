@@ -52,6 +52,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -69,6 +72,7 @@
   </registry>
   <node concept="2S6QgY" id="1Ch7j$NaSlv">
     <property role="TrG5h" value="updateRelations" />
+    <property role="3GE5qa" value="Species" />
     <ref role="2ZfgGC" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     <node concept="2S6ZIM" id="1Ch7j$NaSlw" role="2ZfVej">
       <node concept="3clFbS" id="1Ch7j$NaSlx" role="2VODD2">
