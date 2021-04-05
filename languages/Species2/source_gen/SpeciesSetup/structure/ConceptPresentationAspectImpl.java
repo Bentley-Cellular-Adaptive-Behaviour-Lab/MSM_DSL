@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_IrreversibleReaction;
   private ConceptPresentation props_Parameter;
   private ConceptPresentation props_ParameterExpression;
+  private ConceptPresentation props_ParameterReference;
   private ConceptPresentation props_Rate;
   private ConceptPresentation props_Reaction;
   private ConceptPresentation props_Reaction_Reference;
@@ -49,6 +50,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ParameterExpression = cpb.create();
         }
         return props_ParameterExpression;
+      case LanguageConceptSwitch.ParameterReference:
+        if (props_ParameterReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL, 0x65d0f96c4dec199eL, "target", "", "");
+          props_ParameterReference = cpb.create();
+        }
+        return props_ParameterReference;
       case LanguageConceptSwitch.Rate:
         if (props_Rate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

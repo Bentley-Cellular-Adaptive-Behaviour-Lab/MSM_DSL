@@ -19,6 +19,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
   /*package*/ final ConceptDescriptor myConceptParameter = createDescriptorForParameter();
   /*package*/ final ConceptDescriptor myConceptParameterExpression = createDescriptorForParameterExpression();
+  /*package*/ final ConceptDescriptor myConceptParameterReference = createDescriptorForParameterReference();
   /*package*/ final ConceptDescriptor myConceptRate = createDescriptorForRate();
   /*package*/ final ConceptDescriptor myConceptReaction = createDescriptorForReaction();
   /*package*/ final ConceptDescriptor myConceptReaction_Reference = createDescriptorForReaction_Reference();
@@ -49,7 +50,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptIrreversibleReaction, myConceptParameter, myConceptParameterExpression, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference);
+    return Arrays.asList(myConceptIrreversibleReaction, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference);
   }
 
   @Override
@@ -62,6 +63,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptParameter;
       case LanguageConceptSwitch.ParameterExpression:
         return myConceptParameterExpression;
+      case LanguageConceptSwitch.ParameterReference:
+        return myConceptParameterReference;
       case LanguageConceptSwitch.Rate:
         return myConceptRate;
       case LanguageConceptSwitch.Reaction:
@@ -113,6 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540209");
     b.version(2);
     b.aggregate("Expression", 0x2b6159d0ceecf504L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3125878369731540228").done();
+    b.aggregate("UsedBy", 0x65d0f96c4dec22c1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL).optional(true).ordered(true).multiple(true).origin("7336638036545643201").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameterExpression() {
@@ -122,6 +126,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/7376055817164471393");
     b.version(2);
     b.associate("Parameter", 0x54e0e23243e71cb1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116136999484595377").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForParameterReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ParameterReference", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL);
+    b.class_(false, false, false);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/7336638036545640861");
+    b.version(2);
+    b.associate("target", 0x65d0f96c4dec199eL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("7336638036545640862").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForRate() {

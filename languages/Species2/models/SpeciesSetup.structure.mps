@@ -192,6 +192,20 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="6ngYmLdV2b1" role="1TKVEi">
+      <property role="IQ2ns" value="7336638036545643201" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="UsedBy" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6ngYmLdV1At" resolve="ParameterReference" />
+    </node>
+    <node concept="1TJgyj" id="6ngYmLdVbZS" role="1TKVEi">
+      <property role="IQ2ns" value="7336638036545683448" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Uses" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6ngYmLdV1At" resolve="ParameterReference" />
+    </node>
     <node concept="PrWs8" id="2Hxmt3eVfk2" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -343,6 +357,18 @@
       <property role="3tVfz5" value="6116136999484994101" />
       <property role="TrG5h" value="NeighbourValue" />
       <property role="1L1pqM" value="Neighbour's Value" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6ngYmLdV1At">
+    <property role="EcuMT" value="7336638036545640861" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ParameterReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6ngYmLdV1Au" role="1TKVEi">
+      <property role="IQ2ns" value="7336638036545640862" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
     </node>
   </node>
 </model>
