@@ -6,19 +6,19 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607701289460" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701289460" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -44,23 +44,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.textGen.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/models/SpeciesSetup.textGen.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen.caches/SpeciesSetup/textGen/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesContainer_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/SpeciesContainer_TextGen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/Species2/source_gen/SpeciesSetup/textGen/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_CellNumber_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_CellNumber_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_TissuesObjectBoundaries_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_TissuesObjectBoundaries_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/trace.info" afterDir="false" />
-    </list>
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +65,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="38c5e685-68bd-4e76-9cd6-952ec9c7c5d6/r:35c42b4a-39e9-4a01-ac94-5db955b4b09c(TempModule38c5e685-68bd-4e76-9cd6-952ec9c7c5d6/ConsoleModel_390333421472700)">
+            <model ref="25f9dda5-c53e-4a0e-9184-dbfb1dd9f06e/r:663b0349-925a-4b16-9abb-8f4706cf4d11(TempModule25f9dda5-c53e-4a0e-9184-dbfb1dd9f06e/ConsoleModel_393184233610200)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -101,11 +85,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="4MHqxdtb$v7">
-                <node concept="3balQm" id="4MHqxdtb$v8" role="aymYE" />
-                <node concept="2Clz$F" id="4MHqxdtb$v9" role="aymYO" />
-                <node concept="2_V_lH" id="4MHqxdtb$va" role="1PhJh3">
-                  <ref role="2_V_lI" node="4MHqxdtb$v9" resolve="CommandHolder" />
+              <node concept="aymSD" id="6ngYmLdT74O">
+                <node concept="3balQm" id="6ngYmLdT74P" role="aymYE" />
+                <node concept="2Clz$F" id="6ngYmLdT74Q" role="aymYO" />
+                <node concept="2_V_lH" id="6ngYmLdT74R" role="1PhJh3">
+                  <ref role="2_V_lI" node="6ngYmLdT74Q" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -467,6 +451,34 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="install" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="lang" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -475,91 +487,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.textGen.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -634,6 +562,50 @@
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSMTests" />
               <option name="myItemType" value="" />
@@ -642,6 +614,46 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/Species2/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -675,34 +687,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="install" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="docs" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="lang" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
         </subPane>
       </pane>
       <pane id="CustomProjectView_org.iets3.core.plugin.plugin.SpecExplorer">
@@ -1297,7 +1281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617290115094</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added test to check that cell boundary locations are correct.">
+      <created>1617614705998</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1617614705998</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -2046,7 +2037,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Commit before import reshuffling" />
     <MESSAGE value="Testing changing world boundaries" />
     <MESSAGE value="Implemented auto-updating world boundary functionality." />
     <MESSAGE value="Created new species language. Preparing to refactor." />
@@ -2071,6 +2061,7 @@
     <MESSAGE value="Changed textgen for reactions to return the name of the reaction." />
     <MESSAGE value="Added function to filter expression lists for unique species and parameters when constructing arguments." />
     <MESSAGE value="Added species/parameter filter to species expression textgen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added species/parameter filter to species expression textgen" />
+    <MESSAGE value="Added test to check that cell boundary locations are correct." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test to check that cell boundary locations are correct." />
   </component>
 </project>

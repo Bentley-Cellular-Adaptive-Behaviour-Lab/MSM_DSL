@@ -159,6 +159,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -191,6 +194,7 @@
     </language>
   </registry>
   <node concept="WtQ9Q" id="1Ch7j$N6U7N">
+    <property role="3GE5qa" value="Species" />
     <ref role="WuzLi" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     <node concept="9MYSb" id="1Ch7j$N6WrB" role="33IsuW">
       <node concept="3clFbS" id="1Ch7j$N6WrC" role="2VODD2">
@@ -4224,6 +4228,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="1Ch7j$NcJL_">
+    <property role="3GE5qa" value="Species" />
     <ref role="WuzLi" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     <node concept="11bSqf" id="1Ch7j$NcJLA" role="11c4hB">
       <node concept="3clFbS" id="1Ch7j$NcJLB" role="2VODD2">
@@ -4246,6 +4251,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="1Ch7j$Nei3e">
+    <property role="3GE5qa" value="Species" />
     <ref role="WuzLi" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     <node concept="11bSqf" id="1Ch7j$Nei3f" role="11c4hB">
       <node concept="3clFbS" id="1Ch7j$Nei3g" role="2VODD2">
@@ -4263,6 +4269,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="4dz59nqW983">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="WuzLi" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="11bSqf" id="4dz59nqW984" role="11c4hB">
       <node concept="3clFbS" id="4dz59nqW985" role="2VODD2">
@@ -4280,6 +4287,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="4dz59nqYMOk">
+    <property role="3GE5qa" value="Species" />
     <ref role="WuzLi" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
     <node concept="11bSqf" id="4dz59nqYMOl" role="11c4hB">
       <node concept="3clFbS" id="4dz59nqYMOm" role="2VODD2">
@@ -4302,6 +4310,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="4dz59nro$37">
+    <property role="3GE5qa" value="Species" />
     <ref role="WuzLi" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
     <node concept="11bSqf" id="4dz59nro$38" role="11c4hB">
       <node concept="3clFbS" id="4dz59nro$39" role="2VODD2">
@@ -4336,6 +4345,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="J83UdHjs_Q">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="WuzLi" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="11bSqf" id="J83UdHjs_R" role="11c4hB">
       <node concept="3clFbS" id="J83UdHjs_S" role="2VODD2">
@@ -4353,6 +4363,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="3eqdKU_pmmE">
+    <property role="3GE5qa" value="Parameters" />
     <ref role="WuzLi" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
     <node concept="11bSqf" id="3eqdKU_pmmF" role="11c4hB">
       <node concept="3clFbS" id="3eqdKU_pmmG" role="2VODD2">
@@ -4375,6 +4386,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="3eqdKU_tYAQ">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="WuzLi" to="w3cn:1Ch7j$N9SJL" resolve="Reaction_Reference" />
     <node concept="11bSqf" id="3eqdKU_tYAR" role="11c4hB">
       <node concept="3clFbS" id="3eqdKU_tYAS" role="2VODD2">
@@ -4397,6 +4409,7 @@
     </node>
   </node>
   <node concept="WtQ9Q" id="3eqdKU_u8u9">
+    <property role="3GE5qa" value="Parameters" />
     <ref role="WuzLi" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
     <node concept="11bSqf" id="3eqdKU_u8ua" role="11c4hB">
       <node concept="3clFbS" id="3eqdKU_u8ub" role="2VODD2">

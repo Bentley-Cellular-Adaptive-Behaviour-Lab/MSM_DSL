@@ -114,10 +114,6 @@
         <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
         <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
       </concept>
-      <concept id="6249017959271690120" name="TissueSetup.structure.Cell" flags="ng" index="3ZP1sL">
-        <reference id="8255194269358657912" name="cell_type" index="1apGob" />
-        <child id="6249017959271770696" name="position" index="3ZPHbL" />
-      </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
@@ -125,12 +121,6 @@
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
-        <child id="6249017959271690126" name="cells" index="3ZP1sR" />
-      </concept>
-      <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
-        <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
-        <child id="5171349398070263671" name="Y_Coord" index="2IF2Qn" />
-        <child id="5171349398070263674" name="Z_Coord" index="2IF2Qq" />
       </concept>
     </language>
   </registry>
@@ -295,36 +285,6 @@
   <node concept="3ZP1sW" id="5gBmBO5mHPf">
     <property role="TrG5h" value="Tissues" />
     <ref role="2ppKUs" node="5gBmBO5mHPg" resolve="World" />
-    <node concept="3ZP1sL" id="4MHqxdtbSVx" role="3ZP1sR">
-      <property role="TrG5h" value="Cell1" />
-      <ref role="1apGob" node="5IAKCQEZzdF" resolve="CellType1" />
-      <node concept="3ZP1sY" id="4MHqxdtbSVy" role="3ZPHbL">
-        <node concept="2_hQR_" id="4MHqxdtbSVz" role="2IF2Ql">
-          <node concept="2_n9WQ" id="4MHqxdtbSV$" role="2_hQRE">
-            <node concept="30bXRB" id="4MHqxdtbSWt" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="4MHqxdtbSWv" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="4MHqxdtbSVB" role="2IF2Qn">
-          <node concept="2_n9WQ" id="4MHqxdtbSVC" role="2_hQRE">
-            <node concept="30bXRB" id="4MHqxdtbSX4" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="4MHqxdtbSXu" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="4MHqxdtbSVF" role="2IF2Qq">
-          <node concept="2_n9WQ" id="4MHqxdtbSVG" role="2_hQRE">
-            <node concept="30bXRB" id="4MHqxdtbSXX" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="4MHqxdtbSY$" role="2_hQ4V" />
-        </node>
-      </node>
-    </node>
     <node concept="1apGoc" id="5IAKCQEZzfm" role="1v2izi">
       <property role="TrG5h" value="TissueType" />
       <ref role="1apGrN" node="5IAKCQEZzdF" resolve="CellType1" />

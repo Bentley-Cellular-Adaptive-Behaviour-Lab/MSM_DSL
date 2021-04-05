@@ -38,8 +38,14 @@
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="2Hxmt3eVfFH">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="9S07l" id="2Hxmt3eVfFI" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfFJ" role="2VODD2">
@@ -50,6 +56,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfOn">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfOo" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfOp" role="2VODD2">
@@ -62,6 +69,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfWw">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfWx" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfWy" role="2VODD2">

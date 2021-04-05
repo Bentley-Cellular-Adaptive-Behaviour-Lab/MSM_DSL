@@ -174,7 +174,7 @@
   </registry>
   <node concept="18kY7G" id="2Hxmt3eYkCd">
     <property role="TrG5h" value="noDuplicateReactants" />
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <node concept="3clFbS" id="2Hxmt3eYkCe" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYkCp" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYkCq" role="2Gsz3X">
@@ -295,7 +295,7 @@
   </node>
   <node concept="18kY7G" id="2Hxmt3eYqYx">
     <property role="TrG5h" value="noDuplicateProducts" />
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <node concept="3clFbS" id="2Hxmt3eYqYy" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYqY$" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYqY_" role="2Gsz3X">
@@ -416,7 +416,7 @@
   </node>
   <node concept="18kY7G" id="109yD1stpAs">
     <property role="TrG5h" value="constrainStoichiometry" />
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <node concept="3clFbS" id="109yD1stpAt" role="18ibNy">
       <node concept="3clFbJ" id="109yD1stpAI" role="3cqZAp">
         <node concept="3eOVzh" id="109yD1stqLV" role="3clFbw">
@@ -451,7 +451,7 @@
   </node>
   <node concept="18kY7G" id="109yD1sMU8G">
     <property role="TrG5h" value="warnExtracellularReaction" />
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <node concept="3clFbS" id="109yD1sMU8H" role="18ibNy">
       <node concept="3cpWs8" id="109yD1sMYd8" role="3cqZAp">
         <node concept="3cpWsn" id="109yD1sMYdb" role="3cpWs9">
@@ -545,7 +545,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="4dz59nrkACh">
-    <property role="3GE5qa" value="InferenceRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="typeof_PowerExpression" />
     <node concept="3clFbS" id="4dz59nrkACi" role="18ibNy">
       <node concept="1ZobV4" id="4dz59nrkAHU" role="3cqZAp">
@@ -597,7 +597,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="J83UdHo7r4">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="updateRelations" />
     <node concept="3clFbS" id="J83UdHo7r5" role="18ibNy">
       <node concept="2Gpval" id="1Ch7j$Nbdhs" role="3cqZAp">
@@ -698,7 +698,7 @@
   </node>
   <node concept="18kY7G" id="4Q3VeFU0AE2">
     <property role="TrG5h" value="SpeciesInReactionRate" />
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <node concept="3clFbS" id="4Q3VeFU0AE3" role="18ibNy">
       <node concept="2Gpval" id="4Q3VeFU1KB9" role="3cqZAp">
         <node concept="2GrKxI" id="4Q3VeFU1KBb" role="2Gsz3X">

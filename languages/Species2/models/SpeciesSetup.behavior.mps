@@ -185,6 +185,9 @@
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -222,12 +225,14 @@
     </language>
   </registry>
   <node concept="13h7C7" id="6pt0UY9ykgK">
+    <property role="3GE5qa" value="Species" />
     <ref role="13h7C2" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
     <node concept="13hLZK" id="6pt0UY9ykgL" role="13h7CW">
       <node concept="3clFbS" id="6pt0UY9ykgM" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="1Ch7j$N9XgI">
+    <property role="3GE5qa" value="Species" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
     <node concept="13i0hz" id="1Ch7j$N9XgT" role="13h7CS">
       <property role="TrG5h" value="create_relation" />
@@ -860,6 +865,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1Ch7j$Naka9">
+    <property role="3GE5qa" value="Species" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     <node concept="13i0hz" id="1Ch7j$Nakak" role="13h7CS">
       <property role="TrG5h" value="cleanReactionRelations" />
@@ -1396,6 +1402,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="J83UdHe8mg">
+    <property role="3GE5qa" value="Species" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     <node concept="13i0hz" id="J83UdHe8mr" role="13h7CS">
       <property role="TrG5h" value="getExprSpecies" />
@@ -2130,6 +2137,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU1XLH">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU210_" role="13h7CS">
       <property role="TrG5h" value="rateContainsSpecies" />
@@ -2240,6 +2248,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU2gYx">
+    <property role="3GE5qa" value="Reactions" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU2gYQ" role="13h7CS">
       <property role="TrG5h" value="forwardRateContainsSpecies" />

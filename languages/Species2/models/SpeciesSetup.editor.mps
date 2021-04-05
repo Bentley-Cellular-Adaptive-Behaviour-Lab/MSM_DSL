@@ -267,7 +267,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2Hxmt3eVgJ7">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     <node concept="3EZMnI" id="2Hxmt3eVgJ9" role="2wV5jI">
       <node concept="3EZMnI" id="109yD1s_yQc" role="3EZMnx">
@@ -377,7 +377,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVheJ">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     <node concept="3EZMnI" id="2Hxmt3eVhfd" role="2wV5jI">
       <node concept="3EZMnI" id="2Hxmt3eVqAD" role="3EZMnx">
@@ -482,7 +482,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVhgV">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
     <node concept="3EZMnI" id="2Hxmt3eVhgX" role="2wV5jI">
       <node concept="3F0A7n" id="2Hxmt3eVhhb" role="3EZMnx">
@@ -516,7 +516,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVqBh">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="3EZMnI" id="2Hxmt3eVqBj" role="2wV5jI">
       <node concept="37jFXN" id="6pt0UY9$jLD" role="3F10Kt" />
@@ -576,7 +576,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVtCN">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="3EZMnI" id="6pt0UY9B8yK" role="2wV5jI">
       <node concept="37jFXN" id="6pt0UY9B8yL" role="3F10Kt" />
@@ -651,14 +651,14 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVXfT">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Reactions" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjK" resolve="Rate" />
     <node concept="3F1sOY" id="2Hxmt3eVXfV" role="2wV5jI">
       <ref role="1NtTu8" to="w3cn:2Hxmt3eVfsU" resolve="Parameter" />
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eW7AQ">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Parameters" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
     <node concept="3EZMnI" id="2Hxmt3eW7AS" role="2wV5jI">
       <node concept="3EZMnI" id="2Hxmt3eW7B2" role="3EZMnx">
@@ -704,7 +704,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eWvNW">
-    <property role="3GE5qa" value="Graphical" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     <node concept="2aJ2om" id="2Hxmt3eWvO0" role="CpUAK">
       <ref role="2$4xQ3" node="2Hxmt3eWvNU" resolve="graphical" />
@@ -1542,7 +1542,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="109yD1s_Nhj">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     <node concept="3EZMnI" id="109yD1s_Nhn" role="2wV5jI">
       <node concept="1iCGBv" id="109yD1s_Nhs" role="3EZMnx">
@@ -1561,7 +1561,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="109yD1s_YGK">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Species" />
     <ref role="1XX52x" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
     <node concept="3EZMnI" id="109yD1s_YGQ" role="2wV5jI">
       <node concept="3F0ifn" id="109yD1s_YGS" role="3EZMnx">
@@ -1592,7 +1592,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="5jwSz93TGm7">
-    <property role="3GE5qa" value="Default" />
+    <property role="3GE5qa" value="Parameters" />
     <ref role="1XX52x" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
     <node concept="1iCGBv" id="5jwSz93UAmJ" role="2wV5jI">
       <ref role="1NtTu8" to="w3cn:5jwSz93TLML" resolve="Parameter" />

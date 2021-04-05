@@ -505,7 +505,7 @@
     </node>
   </node>
   <node concept="312cEu" id="1r">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="SpeciesInReactionRate_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:5585568456830511746" />
     <node concept="3clFbW" id="1s" role="jymVt">
@@ -1413,7 +1413,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6d">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="constrainStoichiometry_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:1155607132028377500" />
     <node concept="3clFbW" id="6e" role="jymVt">
@@ -1667,7 +1667,7 @@
     </node>
   </node>
   <node concept="312cEu" id="7q">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="noDuplicateProducts_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:3125878369732374433" />
     <node concept="3clFbW" id="7r" role="jymVt">
@@ -2041,7 +2041,7 @@
     </node>
   </node>
   <node concept="312cEu" id="99">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="noDuplicateReactants_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:3125878369732348429" />
     <node concept="3clFbW" id="9a" role="jymVt">
@@ -2415,7 +2415,7 @@
     </node>
   </node>
   <node concept="312cEu" id="aS">
-    <property role="3GE5qa" value="InferenceRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="typeof_PowerExpression_InferenceRule" />
     <uo k="s:originTrace" v="n:4855747457097820689" />
     <node concept="3clFbW" id="aT" role="jymVt">
@@ -2845,7 +2845,7 @@
     </node>
   </node>
   <node concept="312cEu" id="d3">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="updateRelations_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:848945724348462788" />
     <node concept="3clFbW" id="d4" role="jymVt">
@@ -3141,7 +3141,7 @@
     </node>
   </node>
   <node concept="312cEu" id="eo">
-    <property role="3GE5qa" value="CheckingRules" />
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="warnExtracellularReaction_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:1155607132034015788" />
     <node concept="3clFbW" id="ep" role="jymVt">

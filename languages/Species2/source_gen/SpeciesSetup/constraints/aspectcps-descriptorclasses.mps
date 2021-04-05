@@ -290,6 +290,7 @@
     </node>
   </node>
   <node concept="312cEu" id="G">
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="IrreversibleReaction_Constraints" />
     <uo k="s:originTrace" v="n:3125878369731542816" />
     <node concept="3Tm1VV" id="H" role="1B3o_S">
@@ -628,6 +629,7 @@
     </node>
   </node>
   <node concept="312cEu" id="27">
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="Reaction_Constraints" />
     <uo k="s:originTrace" v="n:3125878369731541741" />
     <node concept="3Tm1VV" id="28" role="1B3o_S">
@@ -965,6 +967,7 @@
     </node>
   </node>
   <node concept="312cEu" id="3y">
+    <property role="3GE5qa" value="Reactions" />
     <property role="TrG5h" value="ReversibleReaction_Constraints" />
     <uo k="s:originTrace" v="n:3125878369731542295" />
     <node concept="3Tm1VV" id="3z" role="1B3o_S">

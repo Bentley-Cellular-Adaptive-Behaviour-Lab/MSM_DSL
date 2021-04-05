@@ -187,6 +187,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -1350,6 +1353,7 @@
     </node>
   </node>
   <node concept="312cEu" id="6I">
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="EnumerationDescriptor_NeighbourValues" />
     <uo k="s:originTrace" v="n:6116136999484994099" />
     <node concept="2tJIrI" id="6J" role="jymVt">
@@ -1820,6 +1824,7 @@
     </node>
   </node>
   <node concept="312cEu" id="8K">
+    <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="EnumerationDescriptor_SpeciesLocation" />
     <uo k="s:originTrace" v="n:3125878369731557799" />
     <node concept="2tJIrI" id="8L" role="jymVt">
