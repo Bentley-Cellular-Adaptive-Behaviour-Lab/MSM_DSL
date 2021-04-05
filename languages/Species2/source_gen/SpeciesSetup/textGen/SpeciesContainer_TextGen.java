@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
 import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -202,86 +203,107 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append("\tdxdt[");
       tgs.append(as_xqs0x0_a0a0a2a02a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
       tgs.append("] =");
-      // For each reaction where the species is a reactant, create terms for the reaction. 
-      for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1))) {
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
-          tgs.append(" -rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a2a0a5a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
-            }
-          }
 
-        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
+      // Handle instances where a species isn't used in a reaction or the neighbour value is being used, otherwise, create ODEs using each reaction the species participates in. 
+
+      if (Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1)).count(), 0) && SEnumOperations.isMember(SPropertyOperations.getEnum(species, PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L)) {
+        if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
           tgs.append(" -rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a2a0a0f0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
-            }
-          }
+          tgs.appendNode(species);
+          tgs.append("_deg");
+        }
+        if ((SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) != null)) {
           tgs.append(" +rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a5a0a0f0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+          tgs.appendNode(species);
+          tgs.append("_prod");
+        }
+        if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) == null) && (SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) == null)) {
+          tgs.append(" 0");
+        }
+      } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(species, PROPS.UsesValue$4P_Q), 0x54e0e23243ed3235L)) {
+        tgs.append(" 0");
+      } else {
+        // For each reaction where the species is a reactant, create terms for the reaction. 
+        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1))) {
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
+            tgs.append(" -rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a1a0h0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
+            }
+
+          } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
+            tgs.append(" -rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0b0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
+            }
+            tgs.append(" +rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0b0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
             }
           }
         }
-      }
 
-      if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
-        tgs.append(" -rate_");
-        tgs.appendNode(species);
-        tgs.append("_deg");
-      }
-
-      // For each reaction where the species is a product, create terms for the reaction. 
-      for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03))) {
-        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
-          tgs.append(" +rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a2a0a01a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
-            }
-          }
-        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
-          tgs.append(" +rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a2a0a0k0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
-            }
-          }
+        if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
           tgs.append(" -rate_");
-          tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
-          for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
-            if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
-              // Find the stoichiometry of the species, then multiply the rate by that. 
-              tgs.append("*");
-              tgs.append(as_xqs0x0_a0a0a2a0a5a0a0k0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+          tgs.appendNode(species);
+          tgs.append("_deg");
+        }
+
+        // For each reaction where the species is a product, create terms for the reaction. 
+        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03))) {
+          if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
+            tgs.append(" +rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a6a0h0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
+            }
+          } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
+            tgs.append(" +rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0g0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
+            }
+            tgs.append(" -rate_");
+            tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
+            for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), LINKS.Product_Terms$WnXb))) {
+              if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
+                // Find the stoichiometry of the species, then multiply the rate by that. 
+                tgs.append("*");
+                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0g0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+              }
             }
           }
         }
+        if ((SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) != null)) {
+          tgs.append(" +rate_");
+          tgs.appendNode(species);
+          tgs.append("_prod");
+        }
       }
 
-      if ((SLinkOperations.getTarget(species, LINKS.Production_Term$Cs3S) != null)) {
-        tgs.append(" +rate_");
-        tgs.appendNode(species);
-        tgs.append("_prod");
-      }
       tgs.append("; // Rate of change for species ");
       tgs.appendNode(species);
       tgs.append("\n");
@@ -328,22 +350,22 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
   private static <T> T as_xqs0x0_a0a0a2a02a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a5a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a1a0h0u0a(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0f0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0b0a7a02a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0f0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0b0a7a02a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a01a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a6a0h0u0a(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0k0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0g0a7a02a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0k0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0g0a7a02a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
@@ -373,6 +395,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
   }
 
   private static final class PROPS {
+    /*package*/ static final SProperty UsesValue$4P_Q = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x54e0e23243ed3238L, "UsesValue");
     /*package*/ static final SProperty Stoichiometry$Wmha = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f3L, "Stoichiometry");
   }
 }

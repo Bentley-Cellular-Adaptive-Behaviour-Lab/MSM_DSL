@@ -27,20 +27,34 @@
   </root>
   <root nodeRef="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)/3718344978391686100">
     <file name="test_TissuesObjectBoundaries_Test.java">
-      <node id="3718344978391686100" at="21,46,22,25" concept="6" />
-      <node id="3718344978391686100" at="28,52,29,19" concept="6" />
-      <node id="3718344978391686100" at="16,0,18,0" concept="4" trace="ourParamCache" />
-      <node id="3718344978391686100" at="18,0,20,0" concept="2" trace="myWithCommandRule" />
-      <node id="3718344978391686100" at="21,0,24,0" concept="0" trace="test_TissuesObjectBoundaries_Test#()V" />
-      <node id="3718344978391686100" at="28,0,31,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <scope id="3718344978391686100" at="21,46,22,25" />
-      <scope id="3718344978391686100" at="28,52,29,19" />
-      <scope id="3718344978391686100" at="21,0,24,0" />
-      <scope id="3718344978391686100" at="28,0,31,0">
+      <node id="3718344978391686100" at="24,46,25,25" concept="6" />
+      <node id="5525188949253757439" at="29,59,30,50" concept="1" />
+      <node id="3718344978391686100" at="35,52,36,19" concept="6" />
+      <node id="5525188949253741652" at="39,61,40,41" concept="1" />
+      <node id="5525188949253757348" at="40,41,41,41" concept="1" />
+      <node id="5525188949253742344" at="41,41,42,41" concept="1" />
+      <node id="5525188949253757469" at="42,41,43,145" concept="1" />
+      <node id="5525188949253770001" at="43,145,44,145" concept="1" />
+      <node id="5525188949253771825" at="44,145,45,146" concept="1" />
+      <node id="5525188949253772287" at="45,146,46,146" concept="1" />
+      <node id="3718344978391686100" at="19,0,21,0" concept="4" trace="ourParamCache" />
+      <node id="3718344978391686100" at="21,0,23,0" concept="2" trace="myWithCommandRule" />
+      <node id="3718344978391686100" at="24,0,27,0" concept="0" trace="test_TissuesObjectBoundaries_Test#()V" />
+      <node id="3718344978391686100" at="35,0,38,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="5525188949253757439" at="28,0,32,0" concept="3" trace="test_test_CellBoundaries#()V" />
+      <node id="5525188949253757439" at="39,0,48,0" concept="3" trace="test_test_CellBoundaries#()V" />
+      <scope id="3718344978391686100" at="24,46,25,25" />
+      <scope id="5525188949253757439" at="29,59,30,50" />
+      <scope id="3718344978391686100" at="35,52,36,19" />
+      <scope id="3718344978391686100" at="24,0,27,0" />
+      <scope id="3718344978391686100" at="35,0,38,0">
         <var name="owner" id="3718344978391686100" />
       </scope>
-      <unit id="3718344978391686100" at="26,0,35,0" name="MSMTests.tests.test_TissuesObjectBoundaries_Test$TestBody" />
-      <unit id="3718344978391686100" at="14,0,36,0" name="MSMTests.tests.test_TissuesObjectBoundaries_Test" />
+      <scope id="5525188949253757439" at="28,0,32,0" />
+      <scope id="5525188949253757439" at="39,61,46,146" />
+      <scope id="5525188949253757439" at="39,0,48,0" />
+      <unit id="3718344978391686100" at="33,0,51,0" name="MSMTests.tests.test_TissuesObjectBoundaries_Test$TestBody" />
+      <unit id="3718344978391686100" at="17,0,52,0" name="MSMTests.tests.test_TissuesObjectBoundaries_Test" />
     </file>
   </root>
   <root nodeRef="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)/6063914916284980855">
@@ -51,24 +65,21 @@
       <node id="3718344978391469986" at="45,64,46,55" concept="1" />
       <node id="6063914916284980855" at="55,52,56,19" concept="6" />
       <node id="6116136999484471884" at="59,65,60,41" concept="1" />
-      <node id="6116136999484472025" at="60,41,61,41" concept="1" />
-      <node id="1950475930617038128" at="61,41,62,41" concept="1" />
-      <node id="1950475930617097221" at="62,41,63,228" concept="1" />
-      <node id="6116136999484471884" at="65,72,66,41" concept="1" />
-      <node id="6116136999484472025" at="66,41,67,41" concept="1" />
-      <node id="1950475930617038128" at="67,41,68,41" concept="1" />
-      <node id="6116136999484459769" at="68,41,69,246" concept="1" />
-      <node id="7891162241286598919" at="69,246,70,239" concept="1" />
-      <node id="6116136999484471884" at="72,66,73,41" concept="1" />
-      <node id="6116136999484472025" at="73,41,74,41" concept="1" />
-      <node id="1950475930617038128" at="74,41,75,41" concept="1" />
-      <node id="3718344978391470061" at="75,41,76,162" concept="1" />
-      <node id="6063914916284980855" at="83,0,84,0" concept="4" trace="arrangement$aAuk" />
-      <node id="6063914916284980855" at="87,0,88,0" concept="4" trace="Arrangement_Flat$W" />
-      <node id="6063914916284980855" at="88,0,89,0" concept="4" trace="Arrangement_Cylindrical$Bh" />
-      <node id="6063914916284980855" at="92,0,93,0" concept="4" trace="total_cell_number$ujP3" />
-      <node id="6063914916284980855" at="93,0,94,0" concept="4" trace="cylinder_cross_section_cells$pzjl" />
-      <node id="6063914916284980855" at="94,0,95,0" concept="4" trace="cylinder_total_cells$o_jT" />
+      <node id="1950475930617038128" at="60,41,61,41" concept="1" />
+      <node id="1950475930617097221" at="61,41,62,228" concept="1" />
+      <node id="6116136999484471884" at="64,72,65,41" concept="1" />
+      <node id="1950475930617038128" at="65,41,66,41" concept="1" />
+      <node id="6116136999484459769" at="66,41,67,246" concept="1" />
+      <node id="7891162241286598919" at="67,246,68,239" concept="1" />
+      <node id="6116136999484471884" at="70,66,71,41" concept="1" />
+      <node id="1950475930617038128" at="71,41,72,41" concept="1" />
+      <node id="3718344978391470061" at="72,41,73,162" concept="1" />
+      <node id="6063914916284980855" at="80,0,81,0" concept="4" trace="arrangement$aAuk" />
+      <node id="6063914916284980855" at="84,0,85,0" concept="4" trace="Arrangement_Flat$W" />
+      <node id="6063914916284980855" at="85,0,86,0" concept="4" trace="Arrangement_Cylindrical$Bh" />
+      <node id="6063914916284980855" at="89,0,90,0" concept="4" trace="total_cell_number$ujP3" />
+      <node id="6063914916284980855" at="90,0,91,0" concept="4" trace="cylinder_cross_section_cells$pzjl" />
+      <node id="6063914916284980855" at="91,0,92,0" concept="4" trace="cylinder_total_cells$o_jT" />
       <node id="6063914916284980855" at="27,0,29,0" concept="4" trace="ourParamCache" />
       <node id="6063914916284980855" at="29,0,31,0" concept="2" trace="myWithCommandRule" />
       <node id="6063914916284980855" at="32,0,35,0" concept="0" trace="test_CellNumber_Test#()V" />
@@ -77,9 +88,9 @@
       <node id="1950475930617038299" at="36,0,40,0" concept="3" trace="test_test_FlatTypeCellNumber#()V" />
       <node id="7891162241286590397" at="40,0,44,0" concept="3" trace="test_test_CylindricalTypeCellNumber#()V" />
       <node id="3718344978391469986" at="44,0,48,0" concept="3" trace="test_test_ContainerCellNumber#()V" />
-      <node id="1950475930617038299" at="59,0,65,0" concept="3" trace="test_test_FlatTypeCellNumber#()V" />
-      <node id="3718344978391469986" at="72,0,78,0" concept="3" trace="test_test_ContainerCellNumber#()V" />
-      <node id="7891162241286590397" at="65,0,72,0" concept="3" trace="test_test_CylindricalTypeCellNumber#()V" />
+      <node id="1950475930617038299" at="59,0,64,0" concept="3" trace="test_test_FlatTypeCellNumber#()V" />
+      <node id="3718344978391469986" at="70,0,75,0" concept="3" trace="test_test_ContainerCellNumber#()V" />
+      <node id="7891162241286590397" at="64,0,70,0" concept="3" trace="test_test_CylindricalTypeCellNumber#()V" />
       <scope id="6063914916284980855" at="50,36,50,36" />
       <scope id="6063914916284980855" at="32,33,33,25" />
       <scope id="1950475930617038299" at="37,63,38,54" />
@@ -91,20 +102,20 @@
       <scope id="6063914916284980855" at="55,0,58,0">
         <var name="owner" id="6063914916284980855" />
       </scope>
+      <scope id="1950475930617038299" at="59,65,62,228" />
+      <scope id="3718344978391469986" at="70,66,73,162" />
       <scope id="1950475930617038299" at="36,0,40,0" />
       <scope id="7891162241286590397" at="40,0,44,0" />
       <scope id="3718344978391469986" at="44,0,48,0" />
-      <scope id="1950475930617038299" at="59,65,63,228" />
-      <scope id="3718344978391469986" at="72,66,76,162" />
-      <scope id="7891162241286590397" at="65,72,70,239" />
-      <scope id="1950475930617038299" at="59,0,65,0" />
-      <scope id="3718344978391469986" at="72,0,78,0" />
-      <scope id="7891162241286590397" at="65,0,72,0" />
-      <unit id="6063914916284980855" at="82,0,85,0" name="MSMTests.tests.test_CellNumber_Test$LINKS" />
-      <unit id="6063914916284980855" at="86,0,90,0" name="MSMTests.tests.test_CellNumber_Test$CONCEPTS" />
-      <unit id="6063914916284980855" at="91,0,96,0" name="MSMTests.tests.test_CellNumber_Test$PROPS" />
-      <unit id="6063914916284980855" at="53,0,81,0" name="MSMTests.tests.test_CellNumber_Test$TestBody" />
-      <unit id="6063914916284980855" at="25,0,97,0" name="MSMTests.tests.test_CellNumber_Test" />
+      <scope id="7891162241286590397" at="64,72,68,239" />
+      <scope id="1950475930617038299" at="59,0,64,0" />
+      <scope id="3718344978391469986" at="70,0,75,0" />
+      <scope id="7891162241286590397" at="64,0,70,0" />
+      <unit id="6063914916284980855" at="79,0,82,0" name="MSMTests.tests.test_CellNumber_Test$LINKS" />
+      <unit id="6063914916284980855" at="83,0,87,0" name="MSMTests.tests.test_CellNumber_Test$CONCEPTS" />
+      <unit id="6063914916284980855" at="88,0,93,0" name="MSMTests.tests.test_CellNumber_Test$PROPS" />
+      <unit id="6063914916284980855" at="53,0,78,0" name="MSMTests.tests.test_CellNumber_Test$TestBody" />
+      <unit id="6063914916284980855" at="25,0,94,0" name="MSMTests.tests.test_CellNumber_Test" />
     </file>
   </root>
 </debug-info>
