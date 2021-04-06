@@ -7662,6 +7662,81 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="3fk35jmzURR" role="13h7CS">
+      <property role="TrG5h" value="getGridXNegSize" />
+      <node concept="3Tm1VV" id="3fk35jmzURS" role="1B3o_S" />
+      <node concept="10Oyi0" id="3fk35jmzURT" role="3clF45" />
+      <node concept="3clFbS" id="3fk35jmzURU" role="3clF47">
+        <node concept="3cpWs6" id="3fk35jmzURV" role="3cqZAp">
+          <node concept="2OqwBi" id="3fk35jmzURW" role="3cqZAk">
+            <node concept="2OqwBi" id="3fk35jmzURX" role="2Oq$k0">
+              <node concept="2OqwBi" id="3fk35jmzURY" role="2Oq$k0">
+                <node concept="13iPFW" id="3fk35jmzURZ" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3fk35jmzUS0" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:1QpPlI4ZHJ7" resolve="World_Container" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="3fk35jmzUS1" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+              </node>
+            </node>
+            <node concept="3TrcHB" id="3fk35jmzUS2" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="3fk35jmzUS3" role="13h7CS">
+      <property role="TrG5h" value="getGridYNegSize" />
+      <node concept="3Tm1VV" id="3fk35jmzUS4" role="1B3o_S" />
+      <node concept="10Oyi0" id="3fk35jmzUS5" role="3clF45" />
+      <node concept="3clFbS" id="3fk35jmzUS6" role="3clF47">
+        <node concept="3cpWs6" id="3fk35jmzUS7" role="3cqZAp">
+          <node concept="2OqwBi" id="3fk35jmzUS8" role="3cqZAk">
+            <node concept="2OqwBi" id="3fk35jmzUS9" role="2Oq$k0">
+              <node concept="2OqwBi" id="3fk35jmzUSa" role="2Oq$k0">
+                <node concept="13iPFW" id="3fk35jmzUSb" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3fk35jmzUSc" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:1QpPlI4ZHJ7" resolve="World_Container" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="3fk35jmzUSd" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+              </node>
+            </node>
+            <node concept="3TrcHB" id="3fk35jmzUSe" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="3fk35jmzUSf" role="13h7CS">
+      <property role="TrG5h" value="getGridZNegSize" />
+      <node concept="3Tm1VV" id="3fk35jmzUSg" role="1B3o_S" />
+      <node concept="10Oyi0" id="3fk35jmzUSh" role="3clF45" />
+      <node concept="3clFbS" id="3fk35jmzUSi" role="3clF47">
+        <node concept="3cpWs6" id="3fk35jmzUSj" role="3cqZAp">
+          <node concept="2OqwBi" id="3fk35jmzUSk" role="3cqZAk">
+            <node concept="2OqwBi" id="3fk35jmzUSl" role="2Oq$k0">
+              <node concept="2OqwBi" id="3fk35jmzUSm" role="2Oq$k0">
+                <node concept="13iPFW" id="3fk35jmzUSn" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3fk35jmzUSo" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:1QpPlI4ZHJ7" resolve="World_Container" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="3fk35jmzUSp" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+              </node>
+            </node>
+            <node concept="3TrcHB" id="3fk35jmzUSq" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13hLZK" id="4XZPqyVOe3V" role="13h7CW">
       <node concept="3clFbS" id="4XZPqyVOe3W" role="2VODD2" />
     </node>
