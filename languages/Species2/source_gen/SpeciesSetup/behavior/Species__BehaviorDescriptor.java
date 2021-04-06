@@ -18,18 +18,22 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Objects;
+import Units.behavior.Amount_Concentration__BehaviorDescriptor;
+import Units.behavior.Mass_Concentration__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
 
   public static final SMethod<Void> cleanReactionRelations_id1Ch7j$Nakak = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanReactionRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Ch7j$Nakak").build();
+  public static final SMethod<Float> getConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getConcentrationValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmCFN3").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, getConcentrationValue_id3fk35jmCFN3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -76,7 +80,13 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         }
       }
     }
-
+  }
+  /*package*/ static float getConcentrationValue_id3fk35jmCFN3(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Amount_Concentration$r2)).floatValue();
+    } else {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Mass_Concentration$qz)).floatValue();
+    }
   }
 
   /*package*/ Species__BehaviorDescriptor() {
@@ -97,6 +107,8 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
       case 0:
         cleanReactionRelations_id1Ch7j$Nakak(node);
         return null;
+      case 1:
+        return (T) ((Float) getConcentrationValue_id3fk35jmCFN3(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -132,5 +144,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
     /*package*/ static final SContainmentLink ProductOf$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOf");
+    /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Amount_Concentration$r2 = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L, "Units.structure.Amount_Concentration");
+    /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "Units.structure.Mass_Concentration");
   }
 }

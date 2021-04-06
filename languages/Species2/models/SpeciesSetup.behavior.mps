@@ -12,6 +12,8 @@
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" implicit="true" />
+    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" implicit="true" />
+    <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)" implicit="true" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -62,6 +64,7 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
@@ -1402,7 +1405,82 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="1Ch7j$NaoAg" role="3cqZAp" />
+      </node>
+    </node>
+    <node concept="13i0hz" id="3fk35jmCFN3" role="13h7CS">
+      <property role="TrG5h" value="getConcentrationValue" />
+      <node concept="3Tm1VV" id="3fk35jmCFN4" role="1B3o_S" />
+      <node concept="10OMs4" id="3fk35jmCFUn" role="3clF45" />
+      <node concept="3clFbS" id="3fk35jmCFN6" role="3clF47">
+        <node concept="3clFbJ" id="3fk35jmCFUM" role="3cqZAp">
+          <node concept="2OqwBi" id="3fk35jmCG6O" role="3clFbw">
+            <node concept="2OqwBi" id="3fk35jmCFYW" role="2Oq$k0">
+              <node concept="13iPFW" id="3fk35jmCFUS" role="2Oq$k0" />
+              <node concept="3TrEf2" id="3fk35jmCG0f" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+              </node>
+            </node>
+            <node concept="1mIQ4w" id="3fk35jmCGaV" role="2OqNvi">
+              <node concept="chp4Y" id="3fk35jmCGdq" role="cj9EA">
+                <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="3fk35jmCFUO" role="3clFbx">
+            <node concept="3cpWs6" id="3fk35jmCHIU" role="3cqZAp">
+              <node concept="2OqwBi" id="3fk35jmCHK5" role="3cqZAk">
+                <node concept="2OqwBi" id="3fk35jmCHK6" role="2Oq$k0">
+                  <node concept="1PxgMI" id="3fk35jmCHK7" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="3fk35jmCHK8" role="3oSUPX">
+                      <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                    </node>
+                    <node concept="2OqwBi" id="3fk35jmCHK9" role="1m5AlR">
+                      <node concept="13iPFW" id="3fk35jmCHKa" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="3fk35jmCHKb" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3fk35jmCHKc" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3fk35jmCHKd" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="3fk35jmCI8a" role="9aQIa">
+            <node concept="3clFbS" id="3fk35jmCI8b" role="9aQI4">
+              <node concept="3cpWs6" id="3fk35jmCIle" role="3cqZAp">
+                <node concept="2OqwBi" id="3fk35jmCIlf" role="3cqZAk">
+                  <node concept="2OqwBi" id="3fk35jmCIlg" role="2Oq$k0">
+                    <node concept="1PxgMI" id="3fk35jmCIlh" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="chp4Y" id="3fk35jmCIqU" role="3oSUPX">
+                        <ref role="cht4Q" to="ottv:I3BIb0TJmR" resolve="Mass_Concentration" />
+                      </node>
+                      <node concept="2OqwBi" id="3fk35jmCIlj" role="1m5AlR">
+                        <node concept="13iPFW" id="3fk35jmCIlk" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="3fk35jmCIll" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2qgKlT" id="3fk35jmCIQS" role="2OqNvi">
+                      <ref role="37wK5l" to="ki9o:7Eknuda1wme" resolve="get_massconc_value_decimal" />
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="3fk35jmCIln" role="2OqNvi">
+                    <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="13hLZK" id="1Ch7j$Nakaa" role="13h7CW">

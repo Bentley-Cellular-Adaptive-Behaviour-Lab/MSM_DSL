@@ -9,12 +9,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import WorldSetup.behavior.Adhesiveness__BehaviorDescriptor;
-import WorldSetup.behavior.Gradient_Shape_SinkAndSource__BehaviorDescriptor;
+import WorldSetup.behavior.Source__BehaviorDescriptor;
+import WorldSetup.behavior.Sink__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import WorldSetup.behavior.Gradient_Shape_Cuboidal__BehaviorDescriptor;
 import WorldSetup.behavior.Gradient_Shape_Point__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate_Shape_Cuboid__BehaviorDescriptor;
+import WorldSetup.behavior.Vertex__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate_Shape_Triangular__BehaviorDescriptor;
 import WorldSetup.behavior.Substrate__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -90,25 +92,37 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcex_string_id2OHr9yL6aJ5.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int sourceX = (int) Source__BehaviorDescriptor.get_source_x_gridpoint_id57Wjpeqq5HN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+    return String.valueOf(sourceX - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcey_string_id2OHr9yL6cfy.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int sourceY = (int) Source__BehaviorDescriptor.get_source_y_gridpoint_id57Wjpeqq5I1.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+    return String.valueOf(sourceY - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sourcez_string_id2OHr9yL6deA.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negZSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+    int sourceZ = (int) Source__BehaviorDescriptor.get_source_z_gridpoint_id57Wjpeqq5If.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
+    return String.valueOf(sourceZ - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinkx_string_id2OHr9yL6e46.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int sinkX = (int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+    return String.valueOf(sinkX - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_18(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinky_string_id2OHr9yL6eOG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int sinkY = (int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+    return String.valueOf(sinkY - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_19(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_SinkAndSource__BehaviorDescriptor.get_sinkz_string_id2OHr9yL6fPc.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS));
+    int negZSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+    int sinkZ = (int) Sink__BehaviorDescriptor.get_sink_z_gridpoint_id57Wjpeqq56O.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
+    return String.valueOf(sinkZ - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_20(final PropertyMacroContext _context) {
     String type = "";
@@ -150,14 +164,19 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_27(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_28(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
-
+    int negZSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m), LINKS.Centre$BDk6));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
     String type = "";
@@ -222,13 +241,19 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_40(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrex_string_id3wWy5vw6wW0.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx), LINKS.Centre$rS1i));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_41(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrey_string_id3wWy5vw6y03.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx), LINKS.Centre$rS1i));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_42(final PropertyMacroContext _context) {
-    return (String) Gradient_Shape_Point__BehaviorDescriptor.get_point_centrez_string_id3wWy5vw6yQo.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
+    int negZSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx), LINKS.Centre$rS1i));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_43(final PropertyMacroContext _context) {
     String type = "";
@@ -282,28 +307,40 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_54(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex1x_string_id3wWy5vw2hFm.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_55(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex1y_string_id57aaQbDElMG.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int Y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_56(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_57(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex2X_string_id3wWy5vw2w5C.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_58(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex2y_string_id3wWy5vw2w6j.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int Y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_59(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_60(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex3x_string_id3wWy5vw2_kf.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_61(final PropertyMacroContext _context) {
-    return (String) Substrate_Shape_Triangular__BehaviorDescriptor.get_vertex3y_string_id3wWy5vw2_kU.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int Y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_62(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -324,13 +361,19 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_68(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    int negXSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_69(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+    int X = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    return String.valueOf(X - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_70(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    int negZSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK), LINKS.Centre$SqKU));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_71(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -798,6 +841,9 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SProperty X_Size$4fO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a582177L, "X_Size");
     /*package*/ static final SProperty Y_Size$4WR = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217aL, "Y_Size");
     /*package*/ static final SProperty Z_Size$5SV = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217eL, "Z_Size");
+    /*package*/ static final SProperty Neg_X_Space$kMcp = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d69L, "Neg_X_Space");
+    /*package*/ static final SProperty Neg_Y_Space$kSxO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d6fL, "Neg_Y_Space");
+    /*package*/ static final SProperty Neg_Z_Space$kZ6g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d76L, "Neg_Z_Space");
     /*package*/ static final SProperty Gradient_Direction$WkrF = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be3891587cL, "Gradient_Direction");
   }
 
@@ -806,11 +852,18 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
     /*package*/ static final SContainmentLink Adhesiveness$MVtr = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x143aeb296a9f63eL, "Adhesiveness");
     /*package*/ static final SContainmentLink Gradient_Shape$PxJO = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0xa2797e0f27f92b1L, "Gradient_Shape");
+    /*package*/ static final SContainmentLink SinkAndSource$aCJG = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL, 0x2e0657be386ef3e2L, "SinkAndSource");
+    /*package*/ static final SContainmentLink Source$59pe = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0xa2797e0f27a84eaL, 0xa2797e0f27a8500L, "Source");
+    /*package*/ static final SContainmentLink Sink$58Vc = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0xa2797e0f27a84eaL, 0xa2797e0f27a84feL, "Sink");
     /*package*/ static final SContainmentLink Gradient_Type$Psmt = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0xa2797e0f27f92afL, "Gradient_Type");
     /*package*/ static final SContainmentLink SpeciesReference$1HMH = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0x10098a905cb70da6L, "SpeciesReference");
     /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
     /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
     /*package*/ static final SContainmentLink Centre$BDk6 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be386ef420L, "Centre");
+    /*package*/ static final SContainmentLink Centre$rS1i = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028bcaL, 0x2e0657be386ef40bL, "Centre");
+    /*package*/ static final SContainmentLink Vertex_1$UwXl = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f61L, "Vertex_1");
+    /*package*/ static final SContainmentLink Vertex_2$UBKM = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f69L, "Vertex_2");
+    /*package*/ static final SContainmentLink Vertex_3$UCtP = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f6cL, "Vertex_3");
     /*package*/ static final SContainmentLink Centre$SqKU = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, 0x227861932d6a58b7L, "Centre");
     /*package*/ static final SContainmentLink gradients$mn2b = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19ebL, "gradients");
     /*package*/ static final SContainmentLink substrates$mnJe = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19eeL, "substrates");
@@ -819,6 +872,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class CONCEPTS {
     /*package*/ static final SConcept Substrate_Shape_Cuboid$DK = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f50L, "WorldSetup.structure.Substrate_Shape_Cuboid");
     /*package*/ static final SConcept Substrate_Shape_Triangular$zL = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, "WorldSetup.structure.Substrate_Shape_Triangular");
+    /*package*/ static final SConcept World_Container$fW = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
     /*package*/ static final SConcept Gradient_Shape_SinkAndSource$zS = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL, "WorldSetup.structure.Gradient_Shape_SinkAndSource");
     /*package*/ static final SConcept Gradient_Type_Constant$aC = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028b08L, "WorldSetup.structure.Gradient_Type_Constant");
     /*package*/ static final SConcept Gradient_Type_Custom$$t = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ba2L, "WorldSetup.structure.Gradient_Type_Custom");
