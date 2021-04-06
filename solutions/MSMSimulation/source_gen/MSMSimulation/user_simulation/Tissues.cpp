@@ -16,6 +16,9 @@ void Tissue_Container::tissue_set_up() {
 
     // Tissue Type Creation //
 
+    // Cell Creation //
     Cell_Pos = Coordinates(0, 0, 0);
     create_cell("Cell", CellType_Type, &(Cell_Pos));
+
+    // Tissue Creation //
 }

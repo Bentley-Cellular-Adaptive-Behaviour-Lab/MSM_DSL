@@ -18,12 +18,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import Units.behavior.Distance__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
@@ -37,8 +39,11 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
   public static final SMethod<Boolean> check_vessel_vessel_overlap_id1QpPlI523sw = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_vessel_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523sw").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> check_vessel_monolayer_overlap_id1QpPlI523LR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_vessel_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI523LR").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> check_monolayer_monolayer_overlap_id1p5qYO3gLDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_monolayer_monolayer_overlap").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1p5qYO3gLDn").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> getGridXNegSize_id3fk35jmzURR = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getGridXNegSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmzURR").build();
+  public static final SMethod<Integer> getGridYNegSize_id3fk35jmzUS3 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getGridYNegSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmzUS3").build();
+  public static final SMethod<Integer> getGridZNegSize_id3fk35jmzUSf = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getGridZNegSize").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmzUSf").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_string_id4XZPqyVOe45, count_cell_number_int_id6yORN46v92v, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(count_cell_number_string_id4XZPqyVOe45, count_cell_number_int_id6yORN46v92v, check_positions_id1QpPlI51UW4, check_cell_cell_overlap_id1QpPlI522xB, check_cell_vessel_overlap_id1QpPlI522M$, check_cell_monolayer_overlap_id1QpPlI5237t, check_vessel_vessel_overlap_id1QpPlI523sw, check_vessel_monolayer_overlap_id1QpPlI523LR, check_monolayer_monolayer_overlap_id1p5qYO3gLDn, getGridXNegSize_id3fk35jmzURR, getGridYNegSize_id3fk35jmzUS3, getGridZNegSize_id3fk35jmzUSf);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -303,6 +308,15 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     }
     return false;
   }
+  /*package*/ static int getGridXNegSize_id3fk35jmzURR(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp);
+  }
+  /*package*/ static int getGridYNegSize_id3fk35jmzUS3(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
+  }
+  /*package*/ static int getGridZNegSize_id3fk35jmzUSf(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.World_Container$fGL6), LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g);
+  }
 
   /*package*/ Tissue_And_Cell_Container__BehaviorDescriptor() {
   }
@@ -337,6 +351,12 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
         return (T) ((Boolean) check_vessel_monolayer_overlap_id1QpPlI523LR(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 8:
         return (T) ((Boolean) check_monolayer_monolayer_overlap_id1p5qYO3gLDn(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 9:
+        return (T) ((Integer) getGridXNegSize_id3fk35jmzURR(node));
+      case 10:
+        return (T) ((Integer) getGridYNegSize_id3fk35jmzUS3(node));
+      case 11:
+        return (T) ((Integer) getGridZNegSize_id3fk35jmzUSf(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -374,10 +394,18 @@ public final class Tissue_And_Cell_Container__BehaviorDescriptor extends BaseBHD
     /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
     /*package*/ static final SContainmentLink position$KVlR = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L, 0x56b8f8b9a96e2a3eL, "position");
     /*package*/ static final SContainmentLink Cylinder_Radius$5MFi = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x383c8857e010ed42L, "Cylinder_Radius");
+    /*package*/ static final SReferenceLink World_Container$fGL6 = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x1d99d55b84fedbc7L, "World_Container");
+    /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
     /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty Neg_X_Space$kMcp = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d69L, "Neg_X_Space");
+    /*package*/ static final SProperty Neg_Y_Space$kSxO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d6fL, "Neg_Y_Space");
+    /*package*/ static final SProperty Neg_Z_Space$kZ6g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d76L, "Neg_Z_Space");
   }
 }
