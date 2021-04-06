@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import TissueSetup.behavior.Shape_Rectangular__BehaviorDescriptor;
 import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
 import TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor;
+import TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -112,13 +113,19 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_22(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    int negXSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridXNegSize_id3fk35jmzURR.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_23(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    int negYSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridYNegSize_id3fk35jmzUS3.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    int negZSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridZNegSize_id3fk35jmzUSf.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -133,13 +140,19 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_xcoord_string_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    int negXSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridXNegSize_id3fk35jmzURR.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_ycoord_string_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    int negYSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridYNegSize_id3fk35jmzUS3.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_position_zcoord_string_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    int negZSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridZNegSize_id3fk35jmzUSf.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -411,6 +424,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class CONCEPTS {
     /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
     /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
     /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
   }
 }
