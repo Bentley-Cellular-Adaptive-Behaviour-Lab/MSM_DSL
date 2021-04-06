@@ -17,6 +17,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_noCyclicalReferences_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_noSelfReferringParams_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new constrainStoichiometry_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
@@ -26,6 +34,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new noDuplicateReactants_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new updateParameterRelations_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {

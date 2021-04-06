@@ -4,7 +4,7 @@
     <classNode dependClassName="TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Arrangement__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
-    <classNode dependClassName="TissueSetup.behavior.Shape__BehaviorDescriptor" />
+    <classNode dependClassName="TissueSetup.behavior.Shape_Rectangular__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

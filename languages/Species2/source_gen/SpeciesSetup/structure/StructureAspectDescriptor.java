@@ -117,6 +117,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.aggregate("Expression", 0x2b6159d0ceecf504L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3125878369731540228").done();
     b.aggregate("UsedBy", 0x65d0f96c4dec22c1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL).optional(true).ordered(true).multiple(true).origin("7336638036545643201").done();
+    b.aggregate("Uses", 0x65d0f96c4decbff8L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL).optional(true).ordered(true).multiple(true).origin("7336638036545683448").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameterExpression() {

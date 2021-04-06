@@ -33,10 +33,11 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
 
   public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Void> update_relations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("update_relations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
+  public static final SMethod<Void> updateSpeciesRelations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateSpeciesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
+  public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6UEPGYOxbAr").build();
   public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, update_relations_idJ83UdHo8mt, filterExpressionList_id3eqdKU_H9WR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -65,7 +66,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return parameterList;
   }
-  /*package*/ static void update_relations_idJ83UdHo8mt(@NotNull SNode __thisNode__) {
+  /*package*/ static void updateSpeciesRelations_idJ83UdHo8mt(@NotNull SNode __thisNode__) {
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Species$hnnc))) {
       Species__BehaviorDescriptor.cleanReactionRelations_id1Ch7j$Nakak.invoke(species);
     }
@@ -77,6 +78,16 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
       }
     }
+  }
+  /*package*/ static void updateParameterRelations_id6UEPGYOxbAr(@NotNull SNode __thisNode__) {
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Parameters$hoyh))) {
+      Parameter__BehaviorDescriptor.updateUsesRelations_id6ngYmLdX6q5.invoke(parameter);
+    }
+    // Iterate over the same list twice, because "usedBy" relations check the "uses" relations during their updating.  
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Parameters$hoyh))) {
+      Parameter__BehaviorDescriptor.updateUsedByRelations_id6ngYmLdX8Ap.invoke(parameter);
+    }
+
   }
   /*package*/ static List<SNode> filterExpressionList_id3eqdKU_H9WR(@NotNull SNode __thisNode__, List<SNode> exprList) {
     List<SNode> filteredList = ListSequence.fromList(new ArrayList<SNode>());
@@ -134,9 +145,12 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       case 1:
         return (T) ((List<SNode>) getExprParameters_id3eqdKU_qMQ$(node, (SNode) parameters[0]));
       case 2:
-        update_relations_idJ83UdHo8mt(node);
+        updateSpeciesRelations_idJ83UdHo8mt(node);
         return null;
       case 3:
+        updateParameterRelations_id6UEPGYOxbAr(node);
+        return null;
+      case 4:
         return (T) ((List<SNode>) filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -178,6 +192,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
     /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
     /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
   }

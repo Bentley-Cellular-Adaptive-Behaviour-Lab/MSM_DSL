@@ -955,5 +955,210 @@
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
     </node>
   </node>
+  <node concept="18kY7G" id="6UEPGYOx7HN">
+    <property role="TrG5h" value="updateParameterRelations" />
+    <property role="3GE5qa" value="Parameters" />
+    <node concept="3clFbS" id="6UEPGYOx7HO" role="18ibNy">
+      <node concept="2Gpval" id="ufje78lHGT" role="3cqZAp">
+        <node concept="2GrKxI" id="ufje78lHGU" role="2Gsz3X">
+          <property role="TrG5h" value="param" />
+        </node>
+        <node concept="2OqwBi" id="ufje78lI5$" role="2GsD0m">
+          <node concept="1YBJjd" id="ufje78lHUP" role="2Oq$k0">
+            <ref role="1YBMHb" node="6UEPGYOx7HQ" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="ufje78lIg$" role="2OqNvi">
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="ufje78lHGW" role="2LFqv$">
+          <node concept="3clFbF" id="ufje78lIj2" role="3cqZAp">
+            <node concept="2OqwBi" id="ufje78lIjf" role="3clFbG">
+              <node concept="2GrUjf" id="ufje78lIj1" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="ufje78lHGU" resolve="param" />
+              </node>
+              <node concept="2qgKlT" id="ufje78lIym" role="2OqNvi">
+                <ref role="37wK5l" to="f3yh:6ngYmLdX6q5" resolve="updateUsesRelations" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="ufje78lIAO" role="3cqZAp">
+        <node concept="2GrKxI" id="ufje78lIAQ" role="2Gsz3X">
+          <property role="TrG5h" value="param" />
+        </node>
+        <node concept="2OqwBi" id="ufje78lIMf" role="2GsD0m">
+          <node concept="1YBJjd" id="ufje78lIBw" role="2Oq$k0">
+            <ref role="1YBMHb" node="6UEPGYOx7HQ" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="ufje78lJgK" role="2OqNvi">
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="ufje78lIAU" role="2LFqv$">
+          <node concept="3clFbF" id="ufje78lJhd" role="3cqZAp">
+            <node concept="2OqwBi" id="ufje78lJpU" role="3clFbG">
+              <node concept="2GrUjf" id="ufje78lJhj" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="ufje78lIAQ" resolve="param" />
+              </node>
+              <node concept="2qgKlT" id="ufje78lJCW" role="2OqNvi">
+                <ref role="37wK5l" to="f3yh:6ngYmLdX8Ap" resolve="updateUsedByRelations" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6UEPGYOx7HQ" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="ufje78nf9C">
+    <property role="TrG5h" value="check_noSelfReferringParams" />
+    <property role="3GE5qa" value="Parameters" />
+    <node concept="3clFbS" id="ufje78nf9D" role="18ibNy">
+      <node concept="2Gpval" id="ufje78nf9O" role="3cqZAp">
+        <node concept="2GrKxI" id="ufje78nf9P" role="2Gsz3X">
+          <property role="TrG5h" value="usesRef" />
+        </node>
+        <node concept="2OqwBi" id="ufje78nfkR" role="2GsD0m">
+          <node concept="1YBJjd" id="ufje78nfa8" role="2Oq$k0">
+            <ref role="1YBMHb" node="ufje78nf9F" resolve="param" />
+          </node>
+          <node concept="3Tsc0h" id="ufje78nfvp" role="2OqNvi">
+            <ref role="3TtcxE" to="w3cn:6ngYmLdVbZS" resolve="Uses" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="ufje78nf9R" role="2LFqv$">
+          <node concept="3clFbJ" id="ufje78nfyl" role="3cqZAp">
+            <node concept="17R0WA" id="ufje78ng5Z" role="3clFbw">
+              <node concept="1YBJjd" id="ufje78ngaL" role="3uHU7w">
+                <ref role="1YBMHb" node="ufje78nf9F" resolve="param" />
+              </node>
+              <node concept="2OqwBi" id="ufje78nfG4" role="3uHU7B">
+                <node concept="2GrUjf" id="ufje78nfyx" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="ufje78nf9P" resolve="usesRef" />
+                </node>
+                <node concept="3TrEf2" id="ufje78nfS5" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6ngYmLdV1Au" resolve="target" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="ufje78nfyn" role="3clFbx">
+              <node concept="2MkqsV" id="ufje78ngcw" role="3cqZAp">
+                <node concept="3cpWs3" id="ufje78ngw_" role="2MkJ7o">
+                  <node concept="2OqwBi" id="ufje78ngHS" role="3uHU7w">
+                    <node concept="1YBJjd" id="ufje78ngwR" role="2Oq$k0">
+                      <ref role="1YBMHb" node="ufje78nf9F" resolve="param" />
+                    </node>
+                    <node concept="3TrcHB" id="ufje78ngX0" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="Xl_RD" id="ufje78ngcG" role="3uHU7B">
+                    <property role="Xl_RC" value="Parameters cannot reference themselves - please provide a value instead of: " />
+                  </node>
+                </node>
+                <node concept="1YBJjd" id="ufje78nh2m" role="1urrMF">
+                  <ref role="1YBMHb" node="ufje78nf9F" resolve="param" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="ufje78nf9F" role="1YuTPh">
+      <property role="TrG5h" value="param" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="ufje78nX35">
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="check_noCyclicalReferences" />
+    <node concept="3clFbS" id="ufje78nX36" role="18ibNy">
+      <node concept="2Gpval" id="ufje78nX3h" role="3cqZAp">
+        <node concept="2GrKxI" id="ufje78nX3i" role="2Gsz3X">
+          <property role="TrG5h" value="usesParam" />
+        </node>
+        <node concept="2OqwBi" id="ufje78nXew" role="2GsD0m">
+          <node concept="1YBJjd" id="ufje78nX3L" role="2Oq$k0">
+            <ref role="1YBMHb" node="ufje78nX38" resolve="parameter" />
+          </node>
+          <node concept="3Tsc0h" id="ufje78nXp2" role="2OqNvi">
+            <ref role="3TtcxE" to="w3cn:6ngYmLdVbZS" resolve="Uses" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="ufje78nX3k" role="2LFqv$">
+          <node concept="2Gpval" id="ufje78nXrv" role="3cqZAp">
+            <node concept="2GrKxI" id="ufje78nXrw" role="2Gsz3X">
+              <property role="TrG5h" value="usedByParam" />
+            </node>
+            <node concept="2OqwBi" id="ufje78nXAC" role="2GsD0m">
+              <node concept="1YBJjd" id="ufje78nXrT" role="2Oq$k0">
+                <ref role="1YBMHb" node="ufje78nX38" resolve="parameter" />
+              </node>
+              <node concept="3Tsc0h" id="ufje78nXO5" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:6ngYmLdV2b1" resolve="UsedBy" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="ufje78nXry" role="2LFqv$">
+              <node concept="3clFbJ" id="ufje78nXOx" role="3cqZAp">
+                <node concept="17R0WA" id="ufje78nYva" role="3clFbw">
+                  <node concept="2OqwBi" id="ufje78nYHQ" role="3uHU7w">
+                    <node concept="2GrUjf" id="ufje78nYyy" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="ufje78nXrw" resolve="usedByParam" />
+                    </node>
+                    <node concept="3TrEf2" id="ufje78nYTa" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6ngYmLdV1Au" resolve="target" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="ufje78nXYg" role="3uHU7B">
+                    <node concept="2GrUjf" id="ufje78nXOH" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="ufje78nX3i" resolve="usesParam" />
+                    </node>
+                    <node concept="3TrEf2" id="ufje78nY8G" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6ngYmLdV1Au" resolve="target" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="ufje78nXOz" role="3clFbx">
+                  <node concept="2MkqsV" id="ufje78nYYm" role="3cqZAp">
+                    <node concept="3cpWs3" id="ufje78nZhZ" role="2MkJ7o">
+                      <node concept="2OqwBi" id="ufje78nZXK" role="3uHU7w">
+                        <node concept="2OqwBi" id="ufje78nZus" role="2Oq$k0">
+                          <node concept="2GrUjf" id="ufje78nZih" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="ufje78nX3i" resolve="usesParam" />
+                          </node>
+                          <node concept="3TrEf2" id="ufje78nZHW" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:6ngYmLdV1Au" resolve="target" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="ufje78o0bh" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="ufje78nYYy" role="3uHU7B">
+                        <property role="Xl_RC" value="This parameter cannot use and be used by parameter : " />
+                      </node>
+                    </node>
+                    <node concept="1YBJjd" id="ufje78o0Gf" role="1urrMF">
+                      <ref role="1YBMHb" node="ufje78nX38" resolve="parameter" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="ufje78nX38" role="1YuTPh">
+      <property role="TrG5h" value="parameter" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+  </node>
 </model>
 

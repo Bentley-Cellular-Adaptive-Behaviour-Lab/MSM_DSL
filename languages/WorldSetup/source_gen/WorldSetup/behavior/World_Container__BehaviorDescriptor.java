@@ -56,12 +56,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
   /*package*/ static void updateGrid_id11q$FfsT8bU(@NotNull SNode __thisNode__) {
     // Checks all objects in the simulation and adjusts the border and negative space values according to the object locations. 
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.X_Size$4fO, ((int) World_Container__BehaviorDescriptor.calc_worldX_gridpoint_size_id57Wjpeqm20n.invoke(__thisNode__)));
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Y_Size$4WR, ((int) World_Container__BehaviorDescriptor.calc_worldY_gridpoint_size_id57Wjpeqm20N.invoke(__thisNode__)));
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Z_Size$5SV, ((int) World_Container__BehaviorDescriptor.calc_worldZ_gridpoint_size_id57Wjpeqm21r.invoke(__thisNode__)));
+    int x_size = ((int) World_Container__BehaviorDescriptor.calc_worldX_gridpoint_size_id57Wjpeqm20n.invoke(__thisNode__));
+    int y_size = ((int) World_Container__BehaviorDescriptor.calc_worldY_gridpoint_size_id57Wjpeqm20N.invoke(__thisNode__));
+    int z_size = ((int) World_Container__BehaviorDescriptor.calc_worldZ_gridpoint_size_id57Wjpeqm21r.invoke(__thisNode__));
+
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.X_Size$4fO, x_size);
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Y_Size$4WR, y_size);
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Z_Size$5SV, z_size);
   }
   /*package*/ static int calc_worldX_gridpoint_size_id57Wjpeqm20n(@NotNull SNode __thisNode__) {
     int lowest_x = ((int) World_Container__BehaviorDescriptor.find_lowestX_gridpoint_id57Wjpeqm233.invoke(__thisNode__));
+    int buffer = (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ));
     // Take the opportunity to update the negative space value while we're here. 
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp, lowest_x - (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)));
     return (((int) World_Container__BehaviorDescriptor.find_highestX_gridpoint_id57Wjpeqm24M.invoke(__thisNode__)) - lowest_x) + ((int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)) * 2);
