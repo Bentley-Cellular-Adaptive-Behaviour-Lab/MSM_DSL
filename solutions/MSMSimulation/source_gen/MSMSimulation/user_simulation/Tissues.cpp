@@ -7,18 +7,21 @@ void Tissue_Container::tissue_set_up() {
     Cell_Type *CellType_Type;
 
     // Tissue Type Declarations //
+    Tissue_Type_Flat *TissueType_Type;
 
     // Coordinate Declarations //
-    Coordinates Cell_Pos;
+    Coordinates Tissue_Pos;
 
     // Cell Type Creation //
     CellType_Type = define_cell_type("CellType", CELL_SHAPE_SQUARE, 10, 10);
 
     // Tissue Type Creation //
+    TissueType_Type = define_tissue_type("TissueType", CellType_Type, CELL_CONFIGURATION_FLAT, 10, 10);
 
     // Cell Creation //
-    Cell_Pos = Coordinates(0, 0, 0);
-    create_cell("Cell", CellType_Type, &(Cell_Pos));
 
     // Tissue Creation //
+
+    Tissue_Pos = Coordinates(120, 120, 20);
+    create_tissue("Tissue", TissueType_Type, &(Tissue_Pos));
 }

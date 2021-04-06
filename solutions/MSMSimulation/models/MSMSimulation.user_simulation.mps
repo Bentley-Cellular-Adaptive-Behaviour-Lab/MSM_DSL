@@ -136,13 +136,17 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
+      <concept id="8255194269358657919" name="TissueSetup.structure.Tissue_Type" flags="ng" index="1apGoc">
+        <reference id="8255194269358657920" name="cell_type" index="1apGrN" />
+        <child id="4857589848835450443" name="arrangement" index="1v2cpK" />
+      </concept>
       <concept id="6249017959271690141" name="TissueSetup.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="Width" index="2IF2Qc" />
         <child id="5171349398070263662" name="Height" index="2IF2Qe" />
       </concept>
-      <concept id="6249017959271690120" name="TissueSetup.structure.Cell" flags="ng" index="3ZP1sL">
-        <reference id="8255194269358657912" name="cell_type" index="1apGob" />
-        <child id="6249017959271770696" name="position" index="3ZPHbL" />
+      <concept id="6249017959271690140" name="TissueSetup.structure.Arrangement_Flat" flags="ng" index="3ZP1s_">
+        <property id="6249017959271690144" name="flat_width_in_cells" index="3ZP1sp" />
+        <property id="6249017959271690142" name="flat_height_in_cells" index="3ZP1sB" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
@@ -150,13 +154,18 @@
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
+        <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
-        <child id="6249017959271690126" name="cells" index="3ZP1sR" />
+        <child id="6249017959271690124" name="tissues" index="3ZP1sP" />
       </concept>
       <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
         <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
         <child id="5171349398070263671" name="Y_Coord" index="2IF2Qn" />
         <child id="5171349398070263674" name="Z_Coord" index="2IF2Qq" />
+      </concept>
+      <concept id="6249017959271690118" name="TissueSetup.structure.Tissue" flags="ng" index="3ZP1sZ">
+        <reference id="4857589848835450453" name="tissue_type" index="1v2cpI" />
+        <child id="6249017959271770686" name="position" index="3ZPHa7" />
       </concept>
     </language>
   </registry>
@@ -322,34 +331,42 @@
   <node concept="3ZP1sW" id="5gBmBO5mHPf">
     <property role="TrG5h" value="Tissues" />
     <ref role="2ppKUs" node="3fk35jmuDw2" resolve="World" />
-    <node concept="3ZP1sL" id="1qp0FKQJigJ" role="3ZP1sR">
-      <property role="TrG5h" value="Cell" />
-      <ref role="1apGob" node="1qp0FKQI6dn" resolve="CellType" />
-      <node concept="3ZP1sY" id="1qp0FKQJigK" role="3ZPHbL">
-        <node concept="2_hQR_" id="1qp0FKQJigL" role="2IF2Ql">
-          <node concept="2_n9WQ" id="1qp0FKQJigM" role="2_hQRE">
-            <node concept="30bXRB" id="1qp0FKQJihF" role="2_n9WR">
+    <node concept="3ZP1sZ" id="3fk35jm_JA8" role="3ZP1sP">
+      <property role="TrG5h" value="Tissue" />
+      <ref role="1v2cpI" node="3fk35jm_JA1" resolve="TissueType" />
+      <node concept="3ZP1sY" id="3fk35jm_JA9" role="3ZPHa7">
+        <node concept="2_hQR_" id="3fk35jm_JAa" role="2IF2Ql">
+          <node concept="2_n9WQ" id="3fk35jm_JAb" role="2_hQRE">
+            <node concept="30bXRB" id="3fk35jm_JB4" role="2_n9WR">
               <property role="30bXRw" value="0" />
             </node>
           </node>
-          <node concept="2_hRrN" id="1qp0FKQJiib" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3fk35jm_JBC" role="2_hQ4V" />
         </node>
-        <node concept="2_hQR_" id="1qp0FKQJigP" role="2IF2Qn">
-          <node concept="2_n9WQ" id="1qp0FKQJigQ" role="2_hQRE">
-            <node concept="30bXRB" id="1qp0FKQJiiE" role="2_n9WR">
+        <node concept="2_hQR_" id="3fk35jm_JAe" role="2IF2Qn">
+          <node concept="2_n9WQ" id="3fk35jm_JAf" role="2_hQRE">
+            <node concept="30bXRB" id="3fk35jm_JCb" role="2_n9WR">
               <property role="30bXRw" value="0" />
             </node>
           </node>
-          <node concept="2_hRrN" id="1qp0FKQJij4" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3fk35jm_JCP" role="2_hQ4V" />
         </node>
-        <node concept="2_hQR_" id="1qp0FKQJigT" role="2IF2Qq">
-          <node concept="2_n9WQ" id="1qp0FKQJigU" role="2_hQRE">
-            <node concept="30bXRB" id="1qp0FKQJijD" role="2_n9WR">
+        <node concept="2_hQR_" id="3fk35jm_JAi" role="2IF2Qq">
+          <node concept="2_n9WQ" id="3fk35jm_JAj" role="2_hQRE">
+            <node concept="30bXRB" id="3fk35jm_JDu" role="2_n9WR">
               <property role="30bXRw" value="0" />
             </node>
           </node>
-          <node concept="2_hRrN" id="1qp0FKQJikg" role="2_hQ4V" />
+          <node concept="2_hRrN" id="3fk35jm_JDQ" role="2_hQ4V" />
         </node>
+      </node>
+    </node>
+    <node concept="1apGoc" id="3fk35jm_JA1" role="1v2izi">
+      <property role="TrG5h" value="TissueType" />
+      <ref role="1apGrN" node="1qp0FKQI6dn" resolve="CellType" />
+      <node concept="3ZP1s_" id="3fk35jm_JA5" role="1v2cpK">
+        <property role="3ZP1sB" value="10" />
+        <property role="3ZP1sp" value="10" />
       </node>
     </node>
     <node concept="3ZP1sM" id="1qp0FKQI6dn" role="1v2izm">
@@ -449,11 +466,11 @@
     <ref role="3_H_MC" node="5gBmBO5mHPf" resolve="Tissues" />
     <ref role="24rgZa" node="5gBmBO5mHPe" resolve="Species" />
     <node concept="1yko03" id="3fk35jmuDw3" role="1yko01">
-      <property role="3cJDZq" value="-30" />
-      <property role="3cJDZs" value="-30" />
+      <property role="3cJDZq" value="-120" />
+      <property role="3cJDZs" value="-120" />
       <property role="3cJDZ5" value="-20" />
-      <property role="3bD6N$" value="60" />
-      <property role="3bD6ND" value="60" />
+      <property role="3bD6N$" value="240" />
+      <property role="3bD6ND" value="240" />
       <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="3fk35jmuDw4" role="3bEhY_">
         <node concept="2_n9WQ" id="3fk35jmuDw5" role="2_hQRE">
