@@ -6,11 +6,11 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import TissueSetup.behavior.Shape__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import TissueSetup.behavior.Shape_Rectangular__BehaviorDescriptor;
 import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
 import TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -62,10 +62,18 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_height_id4DdJmqSEQ4i.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn));
+    String height = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
+      height += Shape_Rectangular__BehaviorDescriptor.get_rectangular_height_string_id1r0uutBQos0.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
+    }
+    return height;
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_width_id4DdJmqSEQ4q.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn));
+    String width = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
+      width += Shape_Rectangular__BehaviorDescriptor.get_rectangular_width_string_id1r0uutBQrtQ.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
+    }
+    return width;
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -77,7 +85,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$E3tO), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_cross_section_cells_id4DdJmqSF9YK.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_cross_section_cells$pzjl));
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
     return (String) Arrangement__BehaviorDescriptor.get_length_in_cells_id4DdJmqSFaKv.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
@@ -383,6 +391,7 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
   }
 
   private static final class LINKS {
@@ -400,8 +409,8 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   private static final class CONCEPTS {
+    /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
     /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
     /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
-    /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
   }
 }

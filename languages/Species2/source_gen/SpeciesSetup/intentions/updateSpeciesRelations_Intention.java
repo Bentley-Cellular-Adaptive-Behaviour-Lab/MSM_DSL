@@ -20,14 +20,14 @@ import jetbrains.mps.openapi.intentions.IntentionDescriptor;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
-public final class updateRelations_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
+public final class updateSpeciesRelations_Intention extends AbstractIntentionDescriptor implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-  public updateRelations_Intention() {
+  public updateSpeciesRelations_Intention() {
     super(Kind.NORMAL, false, new SNodePointer("r:9e7b8419-3c44-4e03-9b6b-be1d63c5dba1(SpeciesSetup.intentions)", "1878314651099039071"));
   }
   @Override
   public String getPresentation() {
-    return "updateRelations";
+    return "updateSpeciesRelations";
   }
   @Override
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -48,7 +48,7 @@ public final class updateRelations_Intention extends AbstractIntentionDescriptor
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "ManuallyUpdateRelations";
+      return "ManuallyUpdateSpeciesRelations";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
@@ -66,7 +66,7 @@ public final class updateRelations_Intention extends AbstractIntentionDescriptor
     }
     @Override
     public IntentionDescriptor getDescriptor() {
-      return updateRelations_Intention.this;
+      return updateSpeciesRelations_Intention.this;
     }
   }
 
