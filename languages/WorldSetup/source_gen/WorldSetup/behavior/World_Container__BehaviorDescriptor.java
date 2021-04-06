@@ -16,6 +16,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import Units.behavior.Distance__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import TissueSetup.behavior.Cell__BehaviorDescriptor;
 import TissueSetup.behavior.Tissue__BehaviorDescriptor;
@@ -33,6 +35,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
 
   public static final SMethod<Void> updateGrid_id11q$FfsT8bU = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateGrid").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsT8bU").build();
+  public static final SMethod<Integer> get_buffer_gridpoint_size_id3fk35jmuJOF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmuJOF").build();
   public static final SMethod<Integer> calc_worldX_gridpoint_size_id57Wjpeqm20n = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldX_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm20n").build();
   public static final SMethod<Integer> calc_worldY_gridpoint_size_id57Wjpeqm20N = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldY_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm20N").build();
   public static final SMethod<Integer> calc_worldZ_gridpoint_size_id57Wjpeqm21r = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldZ_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm21r").build();
@@ -49,7 +52,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Integer> find_highestY_gridpoint_id57Wjpeqm24Q = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestY_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24Q").build();
   public static final SMethod<Integer> find_highestZ_gridpoint_id57Wjpeqm24U = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestZ_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24U").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateGrid_id11q$FfsT8bU, calc_worldX_gridpoint_size_id57Wjpeqm20n, calc_worldY_gridpoint_size_id57Wjpeqm20N, calc_worldZ_gridpoint_size_id57Wjpeqm21r, get_worldX_gridpoint_size_id57Wjpeqm21V, get_worldY_gridpoint_size_id57Wjpeqm22f, get_worldZ_gridpoint_size_id57Wjpeqm22B, get_NegXSpace_size_id11q$FfsTzRH, get_NegYSpace_size_id11q$FfsTzRR, get_NegZSpace_size_id11q$FfsTzS1, find_lowestX_gridpoint_id57Wjpeqm233, find_lowestY_gridpoint_id57Wjpeqm23A, find_lowestZ_gridpoint_id57Wjpeqm24a, find_highestX_gridpoint_id57Wjpeqm24M, find_highestY_gridpoint_id57Wjpeqm24Q, find_highestZ_gridpoint_id57Wjpeqm24U);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateGrid_id11q$FfsT8bU, get_buffer_gridpoint_size_id3fk35jmuJOF, calc_worldX_gridpoint_size_id57Wjpeqm20n, calc_worldY_gridpoint_size_id57Wjpeqm20N, calc_worldZ_gridpoint_size_id57Wjpeqm21r, get_worldX_gridpoint_size_id57Wjpeqm21V, get_worldY_gridpoint_size_id57Wjpeqm22f, get_worldZ_gridpoint_size_id57Wjpeqm22B, get_NegXSpace_size_id11q$FfsTzRH, get_NegYSpace_size_id11q$FfsTzRR, get_NegZSpace_size_id11q$FfsTzS1, find_lowestX_gridpoint_id57Wjpeqm233, find_lowestY_gridpoint_id57Wjpeqm23A, find_lowestZ_gridpoint_id57Wjpeqm24a, find_highestX_gridpoint_id57Wjpeqm24M, find_highestY_gridpoint_id57Wjpeqm24Q, find_highestZ_gridpoint_id57Wjpeqm24U);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -64,24 +67,36 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Y_Size$4WR, y_size);
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Z_Size$5SV, z_size);
   }
+  /*package*/ static int get_buffer_gridpoint_size_id3fk35jmuJOF(@NotNull SNode __thisNode__) {
+    // Workaround for MPS' bullshit generation not finding grid behaviours - delete when Jetbrains get their act together. 
+    float scale = 0;
+    if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
+      scale = ((float) 0.5);
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Scaling$mTyg), 0x51fc4d939a305e4aL)) {
+      scale = ((float) 1.0);
+    }
+    return (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), LINKS.Buffer$9SPv), ((float) scale));
+  }
   /*package*/ static int calc_worldX_gridpoint_size_id57Wjpeqm20n(@NotNull SNode __thisNode__) {
     int lowest_x = ((int) World_Container__BehaviorDescriptor.find_lowestX_gridpoint_id57Wjpeqm233.invoke(__thisNode__));
-    int buffer = (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ));
+    int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
     // Take the opportunity to update the negative space value while we're here. 
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp, lowest_x - (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)));
-    return (((int) World_Container__BehaviorDescriptor.find_highestX_gridpoint_id57Wjpeqm24M.invoke(__thisNode__)) - lowest_x) + ((int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)) * 2);
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp, lowest_x - buffer);
+    return (((int) World_Container__BehaviorDescriptor.find_highestX_gridpoint_id57Wjpeqm24M.invoke(__thisNode__)) - lowest_x) + (buffer * 2);
   }
   /*package*/ static int calc_worldY_gridpoint_size_id57Wjpeqm20N(@NotNull SNode __thisNode__) {
     int lowest_y = ((int) World_Container__BehaviorDescriptor.find_lowestY_gridpoint_id57Wjpeqm23A.invoke(__thisNode__));
+    int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
     // Take the opportunity to update the negative space value while we're here. 
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO, lowest_y - (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)));
-    return (((int) World_Container__BehaviorDescriptor.find_highestY_gridpoint_id57Wjpeqm24Q.invoke(__thisNode__)) - lowest_y) + ((int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)) * 2);
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO, lowest_y - buffer);
+    return (((int) World_Container__BehaviorDescriptor.find_highestY_gridpoint_id57Wjpeqm24Q.invoke(__thisNode__)) - lowest_y) + (buffer * 2);
   }
   /*package*/ static int calc_worldZ_gridpoint_size_id57Wjpeqm21r(@NotNull SNode __thisNode__) {
     int lowest_z = ((int) World_Container__BehaviorDescriptor.find_lowestZ_gridpoint_id57Wjpeqm24a.invoke(__thisNode__));
+    int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
     // Take the opportunity to update the negative space value while we're here. 
-    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g, lowest_z - (int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)));
-    return (((int) World_Container__BehaviorDescriptor.find_highestZ_gridpoint_id57Wjpeqm24U.invoke(__thisNode__)) - lowest_z) + ((int) Grid__BehaviorDescriptor.get_buffer_gridpoint_size_id11q$FfsTmr2.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ)) * 2);
+    SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g, lowest_z - buffer);
+    return (((int) World_Container__BehaviorDescriptor.find_highestZ_gridpoint_id57Wjpeqm24U.invoke(__thisNode__)) - lowest_z) + (buffer * 2);
   }
   /*package*/ static int get_worldX_gridpoint_size_id57Wjpeqm21V(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getInteger(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.X_Size$4fO);
@@ -595,34 +610,36 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         updateGrid_id11q$FfsT8bU(node);
         return null;
       case 1:
-        return (T) ((Integer) calc_worldX_gridpoint_size_id57Wjpeqm20n(node));
+        return (T) ((Integer) get_buffer_gridpoint_size_id3fk35jmuJOF(node));
       case 2:
-        return (T) ((Integer) calc_worldY_gridpoint_size_id57Wjpeqm20N(node));
+        return (T) ((Integer) calc_worldX_gridpoint_size_id57Wjpeqm20n(node));
       case 3:
-        return (T) ((Integer) calc_worldZ_gridpoint_size_id57Wjpeqm21r(node));
+        return (T) ((Integer) calc_worldY_gridpoint_size_id57Wjpeqm20N(node));
       case 4:
-        return (T) ((Integer) get_worldX_gridpoint_size_id57Wjpeqm21V(node));
+        return (T) ((Integer) calc_worldZ_gridpoint_size_id57Wjpeqm21r(node));
       case 5:
-        return (T) ((Integer) get_worldY_gridpoint_size_id57Wjpeqm22f(node));
+        return (T) ((Integer) get_worldX_gridpoint_size_id57Wjpeqm21V(node));
       case 6:
-        return (T) ((Integer) get_worldZ_gridpoint_size_id57Wjpeqm22B(node));
+        return (T) ((Integer) get_worldY_gridpoint_size_id57Wjpeqm22f(node));
       case 7:
-        return (T) ((Integer) get_NegXSpace_size_id11q$FfsTzRH(node));
+        return (T) ((Integer) get_worldZ_gridpoint_size_id57Wjpeqm22B(node));
       case 8:
-        return (T) ((Integer) get_NegYSpace_size_id11q$FfsTzRR(node));
+        return (T) ((Integer) get_NegXSpace_size_id11q$FfsTzRH(node));
       case 9:
-        return (T) ((Integer) get_NegZSpace_size_id11q$FfsTzS1(node));
+        return (T) ((Integer) get_NegYSpace_size_id11q$FfsTzRR(node));
       case 10:
-        return (T) ((Integer) find_lowestX_gridpoint_id57Wjpeqm233(node));
+        return (T) ((Integer) get_NegZSpace_size_id11q$FfsTzS1(node));
       case 11:
-        return (T) ((Integer) find_lowestY_gridpoint_id57Wjpeqm23A(node));
+        return (T) ((Integer) find_lowestX_gridpoint_id57Wjpeqm233(node));
       case 12:
-        return (T) ((Integer) find_lowestZ_gridpoint_id57Wjpeqm24a(node));
+        return (T) ((Integer) find_lowestY_gridpoint_id57Wjpeqm23A(node));
       case 13:
-        return (T) ((Integer) find_highestX_gridpoint_id57Wjpeqm24M(node));
+        return (T) ((Integer) find_lowestZ_gridpoint_id57Wjpeqm24a(node));
       case 14:
-        return (T) ((Integer) find_highestY_gridpoint_id57Wjpeqm24Q(node));
+        return (T) ((Integer) find_highestX_gridpoint_id57Wjpeqm24M(node));
       case 15:
+        return (T) ((Integer) find_highestY_gridpoint_id57Wjpeqm24Q(node));
+      case 16:
         return (T) ((Integer) find_highestZ_gridpoint_id57Wjpeqm24U(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -655,6 +672,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink grid$mgtJ = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x73ca99e5119b19e4L, "grid");
+    /*package*/ static final SContainmentLink Buffer$9SPv = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a555236L, "Buffer");
     /*package*/ static final SReferenceLink Desired_Tissue_Container$Tkkc = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x6be76a078e5136afL, "Desired_Tissue_Container");
     /*package*/ static final SContainmentLink cells$psWW = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x56b8f8b9a96cef8eL, "cells");
     /*package*/ static final SContainmentLink tissues$psuU = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x56b8f8b9a96cef8cL, "tissues");
@@ -675,6 +693,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     /*package*/ static final SProperty X_Size$4fO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a582177L, "X_Size");
     /*package*/ static final SProperty Y_Size$4WR = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217aL, "Y_Size");
     /*package*/ static final SProperty Z_Size$5SV = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217eL, "Z_Size");
+    /*package*/ static final SProperty Scaling$mTyg = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a306dc0L, "Scaling");
     /*package*/ static final SProperty Neg_X_Space$kMcp = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d69L, "Neg_X_Space");
     /*package*/ static final SProperty Neg_Y_Space$kSxO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d6fL, "Neg_Y_Space");
     /*package*/ static final SProperty Neg_Z_Space$kZ6g = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x105a92b3dce40d76L, "Neg_Z_Space");
