@@ -14,6 +14,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior)" implicit="true" />
     <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" implicit="true" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -1805,24 +1806,24 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="2OHr9yL6vCc" role="3zH0cK">
                 <node concept="3clFbS" id="2OHr9yL6vCd" role="2VODD2">
-                  <node concept="3clFbF" id="2GjRzF11qOa" role="3cqZAp">
-                    <node concept="2YIFZM" id="2GjRzF11rIa" role="3clFbG">
+                  <node concept="3clFbF" id="3fk35jmDA$4" role="3cqZAp">
+                    <node concept="2YIFZM" id="3fk35jmDA$5" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
-                      <node concept="2OqwBi" id="2GjRzF11snX" role="37wK5m">
-                        <node concept="2OqwBi" id="2GjRzF11snY" role="2Oq$k0">
-                          <node concept="2OqwBi" id="2GjRzF11snZ" role="2Oq$k0">
-                            <node concept="30H73N" id="2GjRzF11so0" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="109yD1sLyqU" role="2OqNvi">
+                      <node concept="2OqwBi" id="3fk35jmDA$6" role="37wK5m">
+                        <node concept="2OqwBi" id="3fk35jmDA$7" role="2Oq$k0">
+                          <node concept="2OqwBi" id="3fk35jmDA$8" role="2Oq$k0">
+                            <node concept="30H73N" id="3fk35jmDA$9" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="3fk35jmDA$a" role="2OqNvi">
                               <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
                             </node>
                           </node>
-                          <node concept="3TrEf2" id="109yD1sLywZ" role="2OqNvi">
+                          <node concept="3TrEf2" id="3fk35jmDA$b" role="2OqNvi">
                             <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="3TrEf2" id="109yD1swQGn" role="2OqNvi">
-                          <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                        <node concept="2qgKlT" id="3fk35jmDA$c" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
                         </node>
                       </node>
                     </node>
@@ -2511,22 +2512,22 @@
                 <node concept="3clFbS" id="4KNMtF8Nder" role="2VODD2">
                   <node concept="3clFbF" id="2GjRzF11ujI" role="3cqZAp">
                     <node concept="2YIFZM" id="2GjRzF11ujJ" role="3clFbG">
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <node concept="2OqwBi" id="2GjRzF11ujK" role="37wK5m">
-                        <node concept="2OqwBi" id="2GjRzF11ujL" role="2Oq$k0">
-                          <node concept="2OqwBi" id="2GjRzF11ujM" role="2Oq$k0">
-                            <node concept="30H73N" id="2GjRzF11ujN" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="109yD1sLzVw" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <node concept="2OqwBi" id="3fk35jmD$8Y" role="37wK5m">
+                        <node concept="2OqwBi" id="3fk35jmD$8Z" role="2Oq$k0">
+                          <node concept="2OqwBi" id="3fk35jmD$90" role="2Oq$k0">
+                            <node concept="30H73N" id="3fk35jmD$91" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="3fk35jmD$92" role="2OqNvi">
                               <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
                             </node>
                           </node>
-                          <node concept="3TrEf2" id="109yD1sL$bl" role="2OqNvi">
+                          <node concept="3TrEf2" id="3fk35jmD$93" role="2OqNvi">
                             <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="3TrEf2" id="109yD1swTpK" role="2OqNvi">
-                          <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                        <node concept="2qgKlT" id="3fk35jmD$94" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
                         </node>
                       </node>
                     </node>
@@ -3562,24 +3563,24 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="4KNMtF8P_0D" role="3zH0cK">
                 <node concept="3clFbS" id="4KNMtF8P_0E" role="2VODD2">
-                  <node concept="3clFbF" id="2GjRzF11tfm" role="3cqZAp">
-                    <node concept="2YIFZM" id="2GjRzF11tfn" role="3clFbG">
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                  <node concept="3clFbF" id="3fk35jmDB0r" role="3cqZAp">
+                    <node concept="2YIFZM" id="3fk35jmDB0s" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <node concept="2OqwBi" id="2GjRzF11tfo" role="37wK5m">
-                        <node concept="2OqwBi" id="2GjRzF11tfp" role="2Oq$k0">
-                          <node concept="2OqwBi" id="2GjRzF11tfq" role="2Oq$k0">
-                            <node concept="30H73N" id="2GjRzF11tfr" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="109yD1sLA5a" role="2OqNvi">
+                      <node concept="2OqwBi" id="3fk35jmDB0t" role="37wK5m">
+                        <node concept="2OqwBi" id="3fk35jmDB0u" role="2Oq$k0">
+                          <node concept="2OqwBi" id="3fk35jmDB0v" role="2Oq$k0">
+                            <node concept="30H73N" id="3fk35jmDB0w" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="3fk35jmDB0x" role="2OqNvi">
                               <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
                             </node>
                           </node>
-                          <node concept="3TrEf2" id="109yD1sLAi9" role="2OqNvi">
+                          <node concept="3TrEf2" id="3fk35jmDB0y" role="2OqNvi">
                             <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="3TrEf2" id="109yD1swUFF" role="2OqNvi">
-                          <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                        <node concept="2qgKlT" id="3fk35jmDB0z" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
                         </node>
                       </node>
                     </node>
