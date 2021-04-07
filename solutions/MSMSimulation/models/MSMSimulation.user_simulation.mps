@@ -71,9 +71,6 @@
       </concept>
     </language>
     <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
-      <concept id="7336638036545640861" name="SpeciesSetup.structure.ParameterReference" flags="ng" index="Cfe3L">
-        <reference id="7336638036545640862" name="target" index="Cfe3M" />
-      </concept>
       <concept id="1878314651098778609" name="SpeciesSetup.structure.Reaction_Reference" flags="ng" index="DdDr8">
         <reference id="1878314651098778610" name="Reaction_Reference" index="DdDrb" />
       </concept>
@@ -87,8 +84,6 @@
         <reference id="7376055817164471386" name="Rate" index="3JPVZP" />
       </concept>
       <concept id="3125878369731540209" name="SpeciesSetup.structure.Parameter" flags="ng" index="3_zqOx">
-        <child id="7336638036545683448" name="Uses" index="Cf4qk" />
-        <child id="7336638036545643201" name="UsedBy" index="CfdIH" />
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
       </concept>
       <concept id="3125878369731540210" name="SpeciesSetup.structure.Reaction_Term" flags="ng" index="3_zqOy">
@@ -428,20 +423,8 @@
     </node>
     <node concept="3_zqOx" id="ufje78mwdZ" role="3_zqUl">
       <property role="TrG5h" value="P1" />
-      <node concept="3JPVZe" id="ufje78oGAI" role="3_zqNk">
-        <ref role="n1ZU3" node="ufje78mwek" resolve="P2" />
-      </node>
-      <node concept="Cfe3L" id="ufje78oGAM" role="Cf4qk">
-        <ref role="Cfe3M" node="ufje78mwek" resolve="P2" />
-      </node>
-    </node>
-    <node concept="3_zqOx" id="ufje78mwek" role="3_zqUl">
-      <property role="TrG5h" value="P2" />
-      <node concept="Cfe3L" id="ufje78oGAN" role="CfdIH">
-        <ref role="Cfe3M" node="ufje78mwdZ" resolve="P1" />
-      </node>
-      <node concept="30bXRB" id="ufje78oGAW" role="3_zqNk">
-        <property role="30bXRw" value="0.2" />
+      <node concept="1cBA6y" id="6YT8FA9ELSe" role="3_zqNk">
+        <ref role="1cBA6z" node="6UEPGYOy7Rd" resolve="A" />
       </node>
     </node>
     <node concept="3_zqOZ" id="6UEPGYOy7Rd" role="3_zqUg">
@@ -470,7 +453,7 @@
         </node>
         <node concept="3bpmH1" id="6UEPGYOy7T6" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="ufje78mweN" role="3_z4Rx">
+      <node concept="DdDr8" id="6YT8FA9ELSk" role="3_z4Rx">
         <ref role="DdDrb" node="ufje78mweC" resolve="R" />
       </node>
     </node>

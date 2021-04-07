@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import WorldSetup.behavior.Adhesiveness__BehaviorDescriptor;
 import WorldSetup.behavior.Source__BehaviorDescriptor;
 import WorldSetup.behavior.Sink__BehaviorDescriptor;
+import SpeciesSetup.behavior.Species__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import WorldSetup.behavior.Gradient_Shape_Cuboidal__BehaviorDescriptor;
@@ -155,7 +156,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    return String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka), LINKS.Starting_Concentration$a3uk));
+    return String.valueOf((float) Species__BehaviorDescriptor.getConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -206,7 +207,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_33(final PropertyMacroContext _context) {
-    return String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka), LINKS.Starting_Concentration$a3uk));
+    return String.valueOf((float) Species__BehaviorDescriptor.getConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_34(final PropertyMacroContext _context) {
     String direction = "";
@@ -283,7 +284,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_46(final PropertyMacroContext _context) {
-    return String.valueOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka), LINKS.Starting_Concentration$a3uk));
+    return String.valueOf((float) Species__BehaviorDescriptor.getConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_47(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -858,7 +859,6 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SContainmentLink Gradient_Type$Psmt = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0xa2797e0f27f92afL, "Gradient_Type");
     /*package*/ static final SContainmentLink SpeciesReference$1HMH = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, 0x10098a905cb70da6L, "SpeciesReference");
     /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
-    /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
     /*package*/ static final SContainmentLink Centre$BDk6 = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d1213c6L, 0x2e0657be386ef420L, "Centre");
     /*package*/ static final SContainmentLink Centre$rS1i = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028bcaL, 0x2e0657be386ef40bL, "Centre");
     /*package*/ static final SContainmentLink Vertex_1$UwXl = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, 0x51ca2b62e9a67f61L, "Vertex_1");

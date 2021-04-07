@@ -11,15 +11,15 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="9,0,53,0" name="SpeciesSetup.typesystem.TypesystemDescriptor" />
+      <unit at="9,0,65,0" name="SpeciesSetup.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/1155607132028377500">
     <file name="TypesystemDescriptor.java">
-      <node id="1155607132028377500" at="27,5,28,99" concept="6" />
-      <node id="1155607132028377500" at="28,99,29,55" concept="2" />
-      <node id="1155607132028377500" at="26,5,30,5" concept="0" />
-      <scope id="1155607132028377500" at="27,5,29,55">
+      <node id="1155607132028377500" at="39,5,40,99" concept="6" />
+      <node id="1155607132028377500" at="40,99,41,55" concept="2" />
+      <node id="1155607132028377500" at="38,5,42,5" concept="0" />
+      <scope id="1155607132028377500" at="39,5,41,55">
         <var name="nonTypesystemRule" id="1155607132028377500" />
       </scope>
     </file>
@@ -66,10 +66,10 @@
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/1155607132034015788">
     <file name="TypesystemDescriptor.java">
-      <node id="1155607132034015788" at="47,5,48,102" concept="6" />
-      <node id="1155607132034015788" at="48,102,49,55" concept="2" />
-      <node id="1155607132034015788" at="46,5,50,5" concept="0" />
-      <scope id="1155607132034015788" at="47,5,49,55">
+      <node id="1155607132034015788" at="59,5,60,102" concept="6" />
+      <node id="1155607132034015788" at="60,102,61,55" concept="2" />
+      <node id="1155607132034015788" at="58,5,62,5" concept="0" />
+      <scope id="1155607132034015788" at="59,5,61,55">
         <var name="nonTypesystemRule" id="1155607132034015788" />
       </scope>
     </file>
@@ -130,10 +130,10 @@
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/3125878369732348429">
     <file name="TypesystemDescriptor.java">
-      <node id="3125878369732348429" at="35,5,36,97" concept="6" />
-      <node id="3125878369732348429" at="36,97,37,55" concept="2" />
-      <node id="3125878369732348429" at="34,5,38,5" concept="0" />
-      <scope id="3125878369732348429" at="35,5,37,55">
+      <node id="3125878369732348429" at="47,5,48,97" concept="6" />
+      <node id="3125878369732348429" at="48,97,49,55" concept="2" />
+      <node id="3125878369732348429" at="46,5,50,5" concept="0" />
+      <scope id="3125878369732348429" at="47,5,49,55">
         <var name="nonTypesystemRule" id="3125878369732348429" />
       </scope>
     </file>
@@ -196,10 +196,10 @@
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/3125878369732374433">
     <file name="TypesystemDescriptor.java">
-      <node id="3125878369732374433" at="31,5,32,96" concept="6" />
-      <node id="3125878369732374433" at="32,96,33,55" concept="2" />
-      <node id="3125878369732374433" at="30,5,34,5" concept="0" />
-      <scope id="3125878369732374433" at="31,5,33,55">
+      <node id="3125878369732374433" at="43,5,44,96" concept="6" />
+      <node id="3125878369732374433" at="44,96,45,55" concept="2" />
+      <node id="3125878369732374433" at="42,5,46,5" concept="0" />
+      <scope id="3125878369732374433" at="43,5,45,55">
         <var name="nonTypesystemRule" id="3125878369732374433" />
       </scope>
     </file>
@@ -550,10 +550,10 @@
   </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/7974422277788040051">
     <file name="TypesystemDescriptor.java">
-      <node id="7974422277788040051" at="39,5,40,101" concept="6" />
-      <node id="7974422277788040051" at="40,101,41,55" concept="2" />
-      <node id="7974422277788040051" at="38,5,42,5" concept="0" />
-      <scope id="7974422277788040051" at="39,5,41,55">
+      <node id="7974422277788040051" at="51,5,52,101" concept="6" />
+      <node id="7974422277788040051" at="52,101,53,55" concept="2" />
+      <node id="7974422277788040051" at="50,5,54,5" concept="0" />
+      <scope id="7974422277788040051" at="51,5,53,55">
         <var name="nonTypesystemRule" id="7974422277788040051" />
       </scope>
     </file>
@@ -601,12 +601,198 @@
       <unit id="7974422277788040051" at="18,0,47,0" name="SpeciesSetup.typesystem.updateParameterRelations_NonTypesystemRule" />
     </file>
   </root>
+  <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/8050503989174880544">
+    <file name="TypesystemDescriptor.java">
+      <node id="8050503989174880544" at="27,5,28,103" concept="6" />
+      <node id="8050503989174880544" at="28,103,29,55" concept="2" />
+      <node id="8050503989174880544" at="26,5,30,5" concept="0" />
+      <scope id="8050503989174880544" at="27,5,29,55">
+        <var name="nonTypesystemRule" id="8050503989174880544" />
+      </scope>
+    </file>
+    <file name="check_uniqueParameterNames_NonTypesystemRule.java">
+      <node id="8050503989174892104" at="30,11,31,70" concept="6" />
+      <node id="8050503989174892104" at="31,70,32,244" concept="6" />
+      <node id="8050503989174880544" at="38,50,39,40" concept="7" />
+      <node id="8050503989174880544" at="41,68,42,102" concept="7" />
+      <node id="8050503989174880544" at="44,30,45,17" concept="7" />
+      <node id="8050503989174880544" at="49,0,50,0" concept="8" trace="name$MnvL" />
+      <node id="8050503989174880544" at="53,0,54,0" concept="8" trace="Parameters$hoyh" />
+      <node id="8050503989174880544" at="57,0,58,0" concept="8" trace="SpeciesContainer$Ig" />
+      <node id="8050503989174880544" at="24,0,26,0" concept="1" trace="check_uniqueParameterNames_NonTypesystemRule#()V" />
+      <node id="8050503989174880544" at="38,0,41,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8050503989174880544" at="41,0,44,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8050503989174880544" at="44,0,47,0" concept="5" trace="overrides#()Z" />
+      <node id="8050503989174892104" at="29,198,33,11" concept="0" />
+      <node id="8050503989174884395" at="28,117,34,9" concept="4" />
+      <node id="8050503989174881185" at="27,117,35,7" concept="3" />
+      <node id="8050503989174880573" at="26,122,36,5" concept="3" />
+      <node id="8050503989174880544" at="26,0,38,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="8050503989174880544" at="24,57,24,57" />
+      <scope id="8050503989174880544" at="38,50,39,40" />
+      <scope id="8050503989174880544" at="41,68,42,102" />
+      <scope id="8050503989174880544" at="44,30,45,17" />
+      <scope id="8050503989174880544" at="24,0,26,0" />
+      <scope id="8050503989174892104" at="30,11,32,244">
+        <var name="_reporter_2309309498" id="8050503989174892104" />
+        <var name="errorTarget" id="8050503989174892104" />
+      </scope>
+      <scope id="8050503989174880544" at="38,0,41,0" />
+      <scope id="8050503989174880544" at="41,0,44,0">
+        <var name="argument" id="8050503989174880544" />
+      </scope>
+      <scope id="8050503989174880544" at="44,0,47,0" />
+      <scope id="8050503989174884397" at="29,198,33,11" />
+      <scope id="8050503989174881188" at="28,117,34,9" />
+      <scope id="8050503989174880576" at="27,117,35,7" />
+      <scope id="8050503989174881185" at="27,117,35,7">
+        <var name="queryParam" id="8050503989174881186" />
+      </scope>
+      <scope id="8050503989174880545" at="26,122,36,5" />
+      <scope id="8050503989174880573" at="26,122,36,5">
+        <var name="currentParam" id="8050503989174880574" />
+      </scope>
+      <scope id="8050503989174880544" at="26,0,38,0">
+        <var name="container" id="8050503989174880544" />
+        <var name="status" id="8050503989174880544" />
+        <var name="typeCheckingContext" id="8050503989174880544" />
+      </scope>
+      <unit id="8050503989174880544" at="48,0,51,0" name="SpeciesSetup.typesystem.check_uniqueParameterNames_NonTypesystemRule$PROPS" />
+      <unit id="8050503989174880544" at="52,0,55,0" name="SpeciesSetup.typesystem.check_uniqueParameterNames_NonTypesystemRule$LINKS" />
+      <unit id="8050503989174880544" at="56,0,59,0" name="SpeciesSetup.typesystem.check_uniqueParameterNames_NonTypesystemRule$CONCEPTS" />
+      <unit id="8050503989174880544" at="23,0,60,0" name="SpeciesSetup.typesystem.check_uniqueParameterNames_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/8050503989175221979">
+    <file name="TypesystemDescriptor.java">
+      <node id="8050503989175221979" at="31,5,32,102" concept="6" />
+      <node id="8050503989175221979" at="32,102,33,55" concept="2" />
+      <node id="8050503989175221979" at="30,5,34,5" concept="0" />
+      <scope id="8050503989175221979" at="31,5,33,55">
+        <var name="nonTypesystemRule" id="8050503989175221979" />
+      </scope>
+    </file>
+    <file name="check_uniqueReactionNames_NonTypesystemRule.java">
+      <node id="8050503989175222449" at="30,11,31,70" concept="6" />
+      <node id="8050503989175222449" at="31,70,32,246" concept="6" />
+      <node id="8050503989175221979" at="38,50,39,40" concept="7" />
+      <node id="8050503989175221979" at="41,68,42,102" concept="7" />
+      <node id="8050503989175221979" at="44,30,45,17" concept="7" />
+      <node id="8050503989175221979" at="49,0,50,0" concept="8" trace="name$MnvL" />
+      <node id="8050503989175221979" at="53,0,54,0" concept="8" trace="Reactions$hnPe" />
+      <node id="8050503989175221979" at="57,0,58,0" concept="8" trace="SpeciesContainer$Ig" />
+      <node id="8050503989175221979" at="24,0,26,0" concept="1" trace="check_uniqueReactionNames_NonTypesystemRule#()V" />
+      <node id="8050503989175221979" at="38,0,41,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8050503989175221979" at="41,0,44,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8050503989175221979" at="44,0,47,0" concept="5" trace="overrides#()Z" />
+      <node id="8050503989175222449" at="29,210,33,11" concept="0" />
+      <node id="8050503989175222436" at="28,119,34,9" concept="4" />
+      <node id="8050503989175222430" at="27,119,35,7" concept="3" />
+      <node id="8050503989175222424" at="26,122,36,5" concept="3" />
+      <node id="8050503989175221979" at="26,0,38,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="8050503989175221979" at="24,56,24,56" />
+      <scope id="8050503989175221979" at="38,50,39,40" />
+      <scope id="8050503989175221979" at="41,68,42,102" />
+      <scope id="8050503989175221979" at="44,30,45,17" />
+      <scope id="8050503989175221979" at="24,0,26,0" />
+      <scope id="8050503989175222449" at="30,11,32,246">
+        <var name="_reporter_2309309498" id="8050503989175222449" />
+        <var name="errorTarget" id="8050503989175222449" />
+      </scope>
+      <scope id="8050503989175221979" at="38,0,41,0" />
+      <scope id="8050503989175221979" at="41,0,44,0">
+        <var name="argument" id="8050503989175221979" />
+      </scope>
+      <scope id="8050503989175221979" at="44,0,47,0" />
+      <scope id="8050503989175222448" at="29,210,33,11" />
+      <scope id="8050503989175222435" at="28,119,34,9" />
+      <scope id="8050503989175222429" at="27,119,35,7" />
+      <scope id="8050503989175222430" at="27,119,35,7">
+        <var name="queryReaction" id="8050503989175222431" />
+      </scope>
+      <scope id="8050503989175221980" at="26,122,36,5" />
+      <scope id="8050503989175222424" at="26,122,36,5">
+        <var name="currentReaction" id="8050503989175222425" />
+      </scope>
+      <scope id="8050503989175221979" at="26,0,38,0">
+        <var name="container" id="8050503989175221979" />
+        <var name="status" id="8050503989175221979" />
+        <var name="typeCheckingContext" id="8050503989175221979" />
+      </scope>
+      <unit id="8050503989175221979" at="48,0,51,0" name="SpeciesSetup.typesystem.check_uniqueReactionNames_NonTypesystemRule$PROPS" />
+      <unit id="8050503989175221979" at="52,0,55,0" name="SpeciesSetup.typesystem.check_uniqueReactionNames_NonTypesystemRule$LINKS" />
+      <unit id="8050503989175221979" at="56,0,59,0" name="SpeciesSetup.typesystem.check_uniqueReactionNames_NonTypesystemRule$CONCEPTS" />
+      <unit id="8050503989175221979" at="23,0,60,0" name="SpeciesSetup.typesystem.check_uniqueReactionNames_NonTypesystemRule" />
+    </file>
+  </root>
+  <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/8050503989175226145">
+    <file name="TypesystemDescriptor.java">
+      <node id="8050503989175226145" at="35,5,36,101" concept="6" />
+      <node id="8050503989175226145" at="36,101,37,55" concept="2" />
+      <node id="8050503989175226145" at="34,5,38,5" concept="0" />
+      <scope id="8050503989175226145" at="35,5,37,55">
+        <var name="nonTypesystemRule" id="8050503989175226145" />
+      </scope>
+    </file>
+    <file name="check_uniqueSpeciesNames_NonTypesystemRule.java">
+      <node id="8050503989175226172" at="30,11,31,70" concept="6" />
+      <node id="8050503989175226172" at="31,70,32,244" concept="6" />
+      <node id="8050503989175226145" at="38,50,39,40" concept="7" />
+      <node id="8050503989175226145" at="41,68,42,102" concept="7" />
+      <node id="8050503989175226145" at="44,30,45,17" concept="7" />
+      <node id="8050503989175226145" at="49,0,50,0" concept="8" trace="name$MnvL" />
+      <node id="8050503989175226145" at="53,0,54,0" concept="8" trace="Species$hnnc" />
+      <node id="8050503989175226145" at="57,0,58,0" concept="8" trace="SpeciesContainer$Ig" />
+      <node id="8050503989175226145" at="24,0,26,0" concept="1" trace="check_uniqueSpeciesNames_NonTypesystemRule#()V" />
+      <node id="8050503989175226145" at="38,0,41,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="8050503989175226145" at="41,0,44,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8050503989175226145" at="44,0,47,0" concept="5" trace="overrides#()Z" />
+      <node id="8050503989175226172" at="29,206,33,11" concept="0" />
+      <node id="8050503989175226159" at="28,116,34,9" concept="4" />
+      <node id="8050503989175226153" at="27,116,35,7" concept="3" />
+      <node id="8050503989175226147" at="26,122,36,5" concept="3" />
+      <node id="8050503989175226145" at="26,0,38,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="8050503989175226145" at="24,55,24,55" />
+      <scope id="8050503989175226145" at="38,50,39,40" />
+      <scope id="8050503989175226145" at="41,68,42,102" />
+      <scope id="8050503989175226145" at="44,30,45,17" />
+      <scope id="8050503989175226145" at="24,0,26,0" />
+      <scope id="8050503989175226172" at="30,11,32,244">
+        <var name="_reporter_2309309498" id="8050503989175226172" />
+        <var name="errorTarget" id="8050503989175226172" />
+      </scope>
+      <scope id="8050503989175226145" at="38,0,41,0" />
+      <scope id="8050503989175226145" at="41,0,44,0">
+        <var name="argument" id="8050503989175226145" />
+      </scope>
+      <scope id="8050503989175226145" at="44,0,47,0" />
+      <scope id="8050503989175226171" at="29,206,33,11" />
+      <scope id="8050503989175226158" at="28,116,34,9" />
+      <scope id="8050503989175226152" at="27,116,35,7" />
+      <scope id="8050503989175226153" at="27,116,35,7">
+        <var name="querySpecies" id="8050503989175226154" />
+      </scope>
+      <scope id="8050503989175226146" at="26,122,36,5" />
+      <scope id="8050503989175226147" at="26,122,36,5">
+        <var name="currentSpecies" id="8050503989175226148" />
+      </scope>
+      <scope id="8050503989175226145" at="26,0,38,0">
+        <var name="container" id="8050503989175226145" />
+        <var name="status" id="8050503989175226145" />
+        <var name="typeCheckingContext" id="8050503989175226145" />
+      </scope>
+      <unit id="8050503989175226145" at="48,0,51,0" name="SpeciesSetup.typesystem.check_uniqueSpeciesNames_NonTypesystemRule$PROPS" />
+      <unit id="8050503989175226145" at="52,0,55,0" name="SpeciesSetup.typesystem.check_uniqueSpeciesNames_NonTypesystemRule$LINKS" />
+      <unit id="8050503989175226145" at="56,0,59,0" name="SpeciesSetup.typesystem.check_uniqueSpeciesNames_NonTypesystemRule$CONCEPTS" />
+      <unit id="8050503989175226145" at="23,0,60,0" name="SpeciesSetup.typesystem.check_uniqueSpeciesNames_NonTypesystemRule" />
+    </file>
+  </root>
   <root nodeRef="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)/848945724348462788">
     <file name="TypesystemDescriptor.java">
-      <node id="848945724348462788" at="43,5,44,92" concept="6" />
-      <node id="848945724348462788" at="44,92,45,55" concept="2" />
-      <node id="848945724348462788" at="42,5,46,5" concept="0" />
-      <scope id="848945724348462788" at="43,5,45,55">
+      <node id="848945724348462788" at="55,5,56,92" concept="6" />
+      <node id="848945724348462788" at="56,92,57,55" concept="2" />
+      <node id="848945724348462788" at="54,5,58,5" concept="0" />
+      <scope id="848945724348462788" at="55,5,57,55">
         <var name="nonTypesystemRule" id="848945724348462788" />
       </scope>
     </file>
