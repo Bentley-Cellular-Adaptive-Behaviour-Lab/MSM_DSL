@@ -16,7 +16,7 @@ void World_Container::world_setup() {
 
 
     Gradient_centre = Coordinates(120, 120, 120)
-    create_gradient(GRADIENT_TYPE_CONSTANT, GRADIENT_SHAPE_CUBOIDAL, "Notch", (instance of Amount_Concentration), GRADIENT_DIRECTION_DEC_X,  &(Gradient_centre), 100, 100, 100);
+    create_gradient(GRADIENT_TYPE_CONSTANT, GRADIENT_SHAPE_CUBOIDAL, "Notch", 1.0, GRADIENT_DIRECTION_DEC_X,  &(Gradient_centre), 100, 100, 100);
 
 
     // SUBSTRATE CREATION

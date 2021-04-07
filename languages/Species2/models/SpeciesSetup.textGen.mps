@@ -238,6 +238,13 @@
             <property role="lacIc" value="&gt; ode_state_type;\n\n" />
           </node>
         </node>
+        <node concept="3clFbH" id="6YT8FA9FilQ" role="3cqZAp" />
+        <node concept="lc7rE" id="6YT8FA9FvHG" role="3cqZAp">
+          <node concept="la8eA" id="6YT8FA9F$oD" role="lcghm">
+            <property role="lacIc" value="// ODE Systems //\n" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="6YT8FA9Fr9K" role="3cqZAp" />
         <node concept="lc7rE" id="1Ch7j$N7yS9" role="3cqZAp">
           <node concept="l9hG8" id="1Ch7j$N7yVF" role="lcghm">
             <node concept="Xl_RD" id="1Ch7j$N7z3z" role="lb14g">
@@ -371,11 +378,8 @@
             <node concept="3oM_SD" id="1Ch7j$Nhhq7" role="1PaTwD">
               <property role="3oM_SC" value="rate" />
             </node>
-            <node concept="3oM_SD" id="4dz59nqUxaX" role="1PaTwD">
-              <property role="3oM_SC" value="used" />
-            </node>
-            <node concept="3oM_SD" id="4UXSm1Fm5SC" role="1PaTwD">
-              <property role="3oM_SC" value="." />
+            <node concept="3oM_SD" id="6YT8FA9GlNJ" role="1PaTwD">
+              <property role="3oM_SC" value="used." />
             </node>
           </node>
         </node>
@@ -3924,6 +3928,12 @@
           </node>
         </node>
         <node concept="3clFbH" id="4dz59nqWGRb" role="3cqZAp" />
+        <node concept="lc7rE" id="6YT8FA9FbnG" role="3cqZAp">
+          <node concept="la8eA" id="6YT8FA9Ff7K" role="lcghm">
+            <property role="lacIc" value="// Rate Functions //\n" />
+          </node>
+        </node>
+        <node concept="3clFbH" id="6YT8FA9EYvR" role="3cqZAp" />
         <node concept="2Gpval" id="4dz59nqWHw4" role="3cqZAp">
           <node concept="2GrKxI" id="4dz59nqWHw6" role="2Gsz3X">
             <property role="TrG5h" value="parameter" />

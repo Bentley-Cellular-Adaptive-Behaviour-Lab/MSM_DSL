@@ -27,6 +27,9 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
     tgs.append("typedef boost::array<double, ");
     tgs.append(as_xqs0x0_a0a0a2a0(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Species$hnnc).size(), Integer.class).toString());
     tgs.append("> ode_state_type;\n\n");
+
+    tgs.append("// ODE Systems //\n");
+
     tgs.append("GRN_ODE::ODE_system(const ode_state_type &x, ode_state_type &dxdt, double t) {\n");
 
     // Define the levels of each reaction - so that they can be used throughout this function. 
@@ -35,11 +38,11 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append("\tdouble ");
       tgs.appendNode(species);
       tgs.append(" = x[");
-      tgs.append(as_xqs0x0_a0a0a3a8a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
+      tgs.append(as_xqs0x0_a0a0a3a11a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
       tgs.append("];\n");
     }
 
-    // Create rate definitions for each rate used . 
+    // Create rate definitions for each rate used. 
     tgs.append("// Rate Definitions //\n");
     for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Reactions$hnPe))) {
       // Unfortunately, this bit gets quite messy, so I've decided to over-comment rather than under-comment here. 
@@ -201,7 +204,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Species$hnnc))) {
       // Set up the first part of the reaction equation. 
       tgs.append("\tdxdt[");
-      tgs.append(as_xqs0x0_a0a0a2a02a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
+      tgs.append(as_xqs0x0_a0a0a2a32a0(SNodeOperations.getIndexInParent(species), Integer.class).toString());
       tgs.append("] =");
 
       // Handle instances where a species isn't used in a reaction or the neighbour value is being used, otherwise, create ODEs using each reaction the species participates in. 
@@ -232,7 +235,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a2a0a1a0h0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a1a0h0x0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
 
@@ -243,7 +246,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0b0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0b0a7a32a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
             tgs.append(" +rate_");
@@ -252,7 +255,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0b0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0b0a7a32a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
           }
@@ -273,7 +276,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a2a0a6a0h0u0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a6a0h0x0a(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
           } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.Reaction_Reference$PJYZ), CONCEPTS.ReversibleReaction$fi)) {
@@ -283,7 +286,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0g0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a2a0a0g0a7a32a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
             tgs.append(" -rate_");
@@ -292,7 +295,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
               if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), species)) {
                 // Find the stoichiometry of the species, then multiply the rate by that. 
                 tgs.append("*");
-                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0g0a7a02a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
+                tgs.append(as_xqs0x0_a0a0a2a0a5a0a0g0a7a32a0(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha), Integer.class).toString());
               }
             }
           }
@@ -309,6 +312,8 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
       tgs.append("\n");
     }
     tgs.append("}\n\n");
+
+    tgs.append("// Rate Functions //\n");
 
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Parameters$hoyh))) {
       tgs.append("static double calc_");
@@ -344,28 +349,28 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
   private static <T> T as_xqs0x0_a0a0a2a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a3a8a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a3a11a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a32a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a1a0h0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a1a0h0x0a(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0b0a7a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0b0a7a32a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0b0a7a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0b0a7a32a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a6a0h0u0a(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a6a0h0x0a(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0g0a7a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a2a0a0g0a7a32a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0g0a7a02a0(Object o, Class<T> type) {
+  private static <T> T as_xqs0x0_a0a0a2a0a5a0a0g0a7a32a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 
