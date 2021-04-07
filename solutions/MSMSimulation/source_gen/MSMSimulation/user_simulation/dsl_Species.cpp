@@ -13,10 +13,6 @@ GRN_ODE::ODE_system(const ode_state_type &x, ode_state_type &dxdt, double t) {
 }
 
 static double calc_P1_rate() {
-	return P2;
-}
-
-static double calc_P2_rate() {
-	return 0.2;
+	return A;
 }
 
