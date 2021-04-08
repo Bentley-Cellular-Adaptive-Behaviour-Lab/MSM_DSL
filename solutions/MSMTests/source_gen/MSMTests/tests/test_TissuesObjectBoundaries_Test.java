@@ -13,6 +13,7 @@ import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import junit.framework.Assert;
 import TissueSetup.behavior.Cell__BehaviorDescriptor;
+import TissueSetup.behavior.Tissue__BehaviorDescriptor;
 
 @MPSLaunch
 public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
@@ -29,6 +30,10 @@ public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
   public void test_test_CellBoundaries() throws Throwable {
     new TestBody(this).test_test_CellBoundaries();
   }
+  @Test
+  public void test_test_MonolayerBoundaries() throws Throwable {
+    new TestBody(this).test_test_MonolayerBoundaries();
+  }
 
   /*package*/ static class TestBody extends BaseTestBody {
 
@@ -44,6 +49,23 @@ public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
       Assert.assertEquals(20, (int) Cell__BehaviorDescriptor.get_cell_uppery_gridpoint_id57WjpeqnoVB.invoke(getNodeById("5525188949253742518")));
       Assert.assertEquals(-20, (int) Cell__BehaviorDescriptor.get_cell_lowerx_gridpoint_id57WjpeqmNIV.invoke(getNodeById("5525188949253742518")));
       Assert.assertEquals(-20, (int) Cell__BehaviorDescriptor.get_cell_lowery_gridpoint_id57WjpeqmZqc.invoke(getNodeById("5525188949253742518")));
+
+      Assert.assertEquals(70, (int) Cell__BehaviorDescriptor.get_cell_upperx_gridpoint_id57Wjpeqnkzu.invoke(getNodeById("4930435313487953658")));
+      Assert.assertEquals(70, (int) Cell__BehaviorDescriptor.get_cell_uppery_gridpoint_id57WjpeqnoVB.invoke(getNodeById("4930435313487953658")));
+      Assert.assertEquals(30, (int) Cell__BehaviorDescriptor.get_cell_lowerx_gridpoint_id57WjpeqmNIV.invoke(getNodeById("4930435313487953658")));
+      Assert.assertEquals(30, (int) Cell__BehaviorDescriptor.get_cell_lowery_gridpoint_id57WjpeqmZqc.invoke(getNodeById("4930435313487953658")));
+    }
+    public void test_test_MonolayerBoundaries() throws Exception {
+      addNodeById("5525188949253741652");
+      addNodeById("5525188949253757348");
+      addNodeById("5525188949253742344");
+      Assert.assertEquals(300, (int) Tissue__BehaviorDescriptor.get_tissue_upperx_gridpoint_id57WjpeqnMK6.invoke(getNodeById("599220133721249215")));
+      Assert.assertEquals(300, (int) Tissue__BehaviorDescriptor.get_tissue_uppery_gridpoint_id57Wjpeqo8L3.invoke(getNodeById("599220133721249215")));
+      Assert.assertEquals(200, (int) Tissue__BehaviorDescriptor.get_tissue_upperz_gridpoint_id57WjpeqopM_.invoke(getNodeById("599220133721249215")));
+      Assert.assertEquals(100, (int) Tissue__BehaviorDescriptor.get_tissue_lowerx_gridpoint_id57Wjpeqov5H.invoke(getNodeById("599220133721249215")));
+      Assert.assertEquals(100, (int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(getNodeById("599220133721249215")));
+      Assert.assertEquals(200, (int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(getNodeById("599220133721249215")));
+
     }
 
 

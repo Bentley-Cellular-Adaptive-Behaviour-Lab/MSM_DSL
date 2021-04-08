@@ -243,7 +243,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1Ch7j$N9XgI">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfjM" resolve="Reaction_Term" />
     <node concept="13i0hz" id="1Ch7j$N9XgT" role="13h7CS">
       <property role="TrG5h" value="create_relation" />
@@ -1527,14 +1527,6 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="6YT8FA9HQD5" role="3cqZAp">
-          <node concept="2OqwBi" id="6YT8FA9HQD6" role="1gVkn0">
-            <node concept="37vLTw" id="6YT8FA9HQD7" role="2Oq$k0">
-              <ref role="3cqZAo" node="J83UdHe8oj" resolve="expr" />
-            </node>
-            <node concept="3x8VRR" id="6YT8FA9HQD8" role="2OqNvi" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="J83UdHe8QA" role="3cqZAp">
           <node concept="3cpWsn" id="J83UdHe8QD" role="3cpWs9">
             <property role="TrG5h" value="speciesList" />
@@ -1750,14 +1742,6 @@
             </node>
           </node>
         </node>
-        <node concept="1gVbGN" id="6YT8FA9H_zs" role="3cqZAp">
-          <node concept="2OqwBi" id="6YT8FA9HAWy" role="1gVkn0">
-            <node concept="37vLTw" id="6YT8FA9HA_y" role="2Oq$k0">
-              <ref role="3cqZAo" node="3eqdKU_qMRz" resolve="expr" />
-            </node>
-            <node concept="3x8VRR" id="6YT8FA9HBMo" role="2OqNvi" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="3eqdKU_qMQN" role="3cqZAp">
           <node concept="3cpWsn" id="3eqdKU_qMQO" role="3cpWs9">
             <property role="TrG5h" value="parameterList" />
@@ -1970,7 +1954,7 @@
           </node>
           <node concept="2OqwBi" id="1Ch7j$Nbexv" role="2GsD0m">
             <node concept="3Tsc0h" id="1Ch7j$NbeGH" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
             </node>
             <node concept="13iPFW" id="J83UdHo9DO" role="2Oq$k0" />
           </node>
@@ -2456,7 +2440,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU1XLH">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU210_" role="13h7CS">
       <property role="TrG5h" value="rateContainsSpecies" />
@@ -2567,7 +2551,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4Q3VeFU2gYx">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="13h7C2" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="13i0hz" id="4Q3VeFU2gYQ" role="13h7CS">
       <property role="TrG5h" value="forwardRateContainsSpecies" />

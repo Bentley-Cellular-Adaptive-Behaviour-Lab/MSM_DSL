@@ -28,13 +28,17 @@ import de.itemis.mps.editor.diagram.runtime.model.AccessorKey;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import de.itemis.mps.editor.diagram.runtime.DiagramUtil;
 import de.itemis.mps.editor.diagram.runtime.model.AbstractEdgeAccessor;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpoint_Internal;
 import de.itemis.mps.editor.diagram.runtime.model.EndpointUtil;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpointReference;
+import de.itemis.mps.editor.diagram.runtime.shape.CompositeShape;
+import de.itemis.mps.editor.diagram.runtime.shape.ConditionalShape;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionType;
 import de.itemis.mps.editor.diagram.runtime.model.DiagramModel;
 import de.itemis.mps.editor.diagram.runtime.model.IPaletteEntryProvider;
@@ -57,7 +61,6 @@ import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Objects;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -156,7 +159,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                         }
                         for (final SNode parameterObject : new Object() {
                           public Iterable<SNode> query() {
-                            return SLinkOperations.getChildren(node, LINKS.Reactions$hnPe);
+                            return SLinkOperations.getChildren(node, LINKS.Processes$hnPe);
                           }
                         }.query()) {
                           ContextVariables.withParentAndValue(_variablesContext, "parameterObject", parameterObject, new Runnable() {
@@ -198,7 +201,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
                         }
                         for (final SNode parameterObject : new Object() {
                           public Iterable<SNode> query() {
-                            return SLinkOperations.collectMany(SLinkOperations.getChildren(node, LINKS.Reactions$hnPe), LINKS.Reactant_Terms$Wnv9);
+                            List<SNode> reactants = ListSequence.fromList(new ArrayList<SNode>());
+                            for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
+                              public boolean accept(SNode it) {
+                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Reaction$JH);
+                              }
+                            })) {
+                              for (SNode reactant : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(reaction, CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9))) {
+                                ListSequence.fromList(reactants).addElement(reactant);
+                              }
+                            }
+                            return reactants;
                           }
                         }.query()) {
                           ContextVariables.withParentAndValue(_variablesContext, "parameterObject", parameterObject, new Runnable() {
@@ -265,7 +278,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
                         }
                         for (final SNode parameterObject : new Object() {
                           public Iterable<SNode> query() {
-                            return SLinkOperations.collectMany(SLinkOperations.getChildren(node, LINKS.Reactions$hnPe), LINKS.Product_Terms$WnXb);
+                            List<SNode> products = ListSequence.fromList(new ArrayList<SNode>());
+                            for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
+                              public boolean accept(SNode it) {
+                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Reaction$JH);
+                              }
+                            })) {
+                              for (SNode product : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(reaction, CONCEPTS.Reaction$JH), LINKS.Product_Terms$WnXb))) {
+                                ListSequence.fromList(products).addElement(product);
+                              }
+                            }
+                            return products;
                           }
                         }.query()) {
                           ContextVariables.withParentAndValue(_variablesContext, "parameterObject", parameterObject, new Runnable() {
@@ -280,7 +303,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                               }
 
                               final IShape startShape = null;
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(2.0, true, 1.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Species_Ref$Wnde), PROPS.name$MnvL) + "_productRelation")) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -330,6 +353,81 @@ import org.jetbrains.mps.openapi.language.SConcept;
                             }
                           });
                         }
+                        for (final SNode parameterObject : new Object() {
+                          public Iterable<SNode> query() {
+                            List<SNode> modifiers = ListSequence.fromList(new ArrayList<SNode>());
+                            for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
+                              public boolean accept(SNode it) {
+                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Modifier$l6);
+                              }
+                            })) {
+                              ListSequence.fromList(modifiers).addElement(SNodeOperations.as(process, CONCEPTS.Modifier$l6));
+                            }
+                            return modifiers;
+                          }
+                        }.query()) {
+                          ContextVariables.withParentAndValue(_variablesContext, "parameterObject", parameterObject, new Runnable() {
+                            public void run() {
+                              final ContextVariables _variablesContext = ContextVariables.getCurrent();
+                              final EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, parameterObject);
+                              editorCell.setCellId("transformedGraphElement_e0" + "." + SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL));
+
+
+                              final IShape startShape = null;
+                              final IShape endShape = new CompositeShape(new ConditionalShape(new BlockedLine(2.0, 1.0)) {
+                                public boolean applicable() {
+                                  return SNodeOperations.isInstanceOf(((SNode) _variablesContext.getValue("parameterObject")), CONCEPTS.Inhibits$am);
+                                }
+                              }, new ConditionalShape(new Arrowhead(2.0, true, 2.0)) {
+                                public boolean applicable() {
+                                  return !(SNodeOperations.isInstanceOf(((SNode) _variablesContext.getValue("parameterObject")), CONCEPTS.Upregulates$aP));
+                                }
+                              });
+                              AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL))) {
+                                @Override
+                                public void writeFrom(IConnectionEndpoint_Internal endpoint) {
+                                  writeFrom(EndpointUtil.getSNode(endpoint), EndpointUtil.getPortName(endpoint));
+                                }
+                                public void writeFrom(final SNode targetNode, final String port) {
+                                }
+                                @Override
+                                public void writeTo(IConnectionEndpoint_Internal endpoint) {
+                                  writeTo(EndpointUtil.getSNode(endpoint), EndpointUtil.getPortName(endpoint));
+                                }
+                                public void writeTo(final SNode targetNode, final String port) {
+                                }
+                                @Override
+                                public IConnectionEndpointReference readFrom() {
+                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL));
+                                }
+                                @Override
+                                public IConnectionEndpointReference readTo() {
+                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL));
+                                }
+                                @Override
+                                public IShape getStartShape() {
+                                  return startShape;
+                                }
+                                @Override
+                                public IShape getEndShape() {
+                                  return endShape;
+                                }
+                                @Override
+                                public void delete() {
+                                }
+                                @Nullable
+                                public SNode getSNode() {
+                                  return parameterObject;
+                                }
+
+                              };
+                              accessor.setRootCell(editorCell);
+
+
+                              elements.add(accessor);
+                            }
+                          });
+                        }
                         return elements;
                       }
                       @Override
@@ -342,7 +440,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
                     DiagramModel model = DiagramModel.getModel(editorContext, node, "3125878369731869964", accessor);
 
-                    IPaletteEntryProvider paletteEntryProvider = new CompositePaletteEntryProvider(new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Reactions$hnPe))), new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Species$hnnc))));
+                    IPaletteEntryProvider paletteEntryProvider = new CompositePaletteEntryProvider(new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Processes$hnPe))), new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Species$hnnc))));
                     model.setPaletteEntryProvider(paletteEntryProvider);
 
                     if (DiagramCreationContext.isSubdiagram()) {
@@ -734,7 +832,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
@@ -743,6 +841,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
+    /*package*/ static final SConcept Inhibits$am = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL, "SpeciesSetup.structure.Inhibits");
+    /*package*/ static final SConcept Upregulates$aP = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL, "SpeciesSetup.structure.Upregulates");
+    /*package*/ static final SConcept Modifier$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
   }
 }

@@ -782,7 +782,7 @@
               <uo k="s:originTrace" v="n:5585568456830815756" />
             </node>
             <node concept="3Tsc0h" id="2X" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
               <uo k="s:originTrace" v="n:5585568456830819634" />
             </node>
           </node>
@@ -2757,7 +2757,7 @@
     </node>
   </node>
   <node concept="312cEu" id="d0">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="check_uniqueReactionNames_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:8050503989175221979" />
     <node concept="3clFbW" id="d1" role="jymVt">
@@ -2818,7 +2818,7 @@
               <uo k="s:originTrace" v="n:8050503989175222427" />
             </node>
             <node concept="3Tsc0h" id="dq" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
               <uo k="s:originTrace" v="n:8050503989175224865" />
             </node>
           </node>
@@ -2837,7 +2837,7 @@
                   <uo k="s:originTrace" v="n:8050503989175222433" />
                 </node>
                 <node concept="3Tsc0h" id="dw" role="2OqNvi">
-                  <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+                  <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
                   <uo k="s:originTrace" v="n:8050503989175225519" />
                 </node>
               </node>
@@ -3391,7 +3391,7 @@
     </node>
   </node>
   <node concept="312cEu" id="fY">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="constrainStoichiometry_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:1155607132028377500" />
     <node concept="3clFbW" id="fZ" role="jymVt">
@@ -3645,7 +3645,7 @@
     </node>
   </node>
   <node concept="312cEu" id="hb">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="noDuplicateProducts_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:3125878369732374433" />
     <node concept="3clFbW" id="hc" role="jymVt">
@@ -4019,7 +4019,7 @@
     </node>
   </node>
   <node concept="312cEu" id="iU">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="noDuplicateReactants_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:3125878369732348429" />
     <node concept="3clFbW" id="iV" role="jymVt">
@@ -5232,7 +5232,7 @@
               <uo k="s:originTrace" v="n:5585568456831624766" />
             </node>
             <node concept="3Tsc0h" id="oL" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
               <uo k="s:originTrace" v="n:5585568456831626320" />
             </node>
           </node>
@@ -5359,7 +5359,7 @@
     </node>
   </node>
   <node concept="312cEu" id="pe">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="warnExtracellularReaction_NonTypesystemRule" />
     <uo k="s:originTrace" v="n:1155607132034015788" />
     <node concept="3clFbW" id="pf" role="jymVt">

@@ -77,6 +77,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.addEditorCell(createCollection_4());
     editorCell.addEditorCell(createConstant_11());
     editorCell.addEditorCell(createCollection_6());
+    editorCell.addEditorCell(createConstant_16());
     return editorCell;
   }
   private EditorCell createCollection_1() {
@@ -310,7 +311,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return createTooltip_2(getEditorContext(), myNode);
   }
   private EditorCell createConstant_7() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "2. Set Reactions");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "2. Define Parameters");
     editorCell.setCellId("Constant_jaklk3_a1e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
@@ -326,13 +327,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_8() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Define how species interact and the ");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Create additional constants that can be used");
     editorCell.setCellId("Constant_jaklk3_a0b4a");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_9() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "of these interactions.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to define reaction rates.");
     editorCell.setCellId("Constant_jaklk3_b0b4a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -344,17 +345,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNodeList_1() {
-    AbstractCellListHandler handler = new ReactionsListHandler_jaklk3_d4a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new ParametersListHandler_jaklk3_d4a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_Reactions");
+    editorCell.setCellId("refNodeList_Parameters");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class ReactionsListHandler_jaklk3_d4a extends RefNodeListHandler {
+  private static class ParametersListHandler_jaklk3_d4a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public ReactionsListHandler_jaklk3_d4a(SNode ownerNode, EditorContext context) {
+    public ParametersListHandler_jaklk3_d4a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -364,10 +365,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.Reactions$hnPe;
+      return LINKS.Parameters$hoyh;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Reaction$JH;
+      return CONCEPTS.Parameter$La;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -377,7 +378,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(ReactionsListHandler_jaklk3_d4a.this.getNode(), LINKS.Reactions$hnPe));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(ParametersListHandler_jaklk3_d4a.this.getNode(), LINKS.Parameters$hoyh));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -457,7 +458,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return createTooltip_4(getEditorContext(), myNode);
   }
   private EditorCell createConstant_12() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Define Parameters");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Set Reactions");
     editorCell.setCellId("Constant_jaklk3_a1g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
@@ -473,13 +474,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createConstant_13() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Create additional constants that can be used");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Define how species interact and the ");
     editorCell.setCellId("Constant_jaklk3_a0b6a");
     editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createConstant_14() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "to define reaction rates.");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "of these interactions.");
     editorCell.setCellId("Constant_jaklk3_b0b6a");
     editorCell.setDefaultText("");
     return editorCell;
@@ -491,17 +492,17 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createRefNodeList_2() {
-    AbstractCellListHandler handler = new ParametersListHandler_jaklk3_d6a(myNode, getEditorContext());
+    AbstractCellListHandler handler = new ProcessesListHandler_jaklk3_d6a(myNode, getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_Parameters");
+    editorCell.setCellId("refNodeList_Processes");
     editorCell.setSRole(handler.getElementSRole());
     return editorCell;
   }
-  private static class ParametersListHandler_jaklk3_d6a extends RefNodeListHandler {
+  private static class ProcessesListHandler_jaklk3_d6a extends RefNodeListHandler {
     @NotNull
     private SNode myNode;
 
-    public ParametersListHandler_jaklk3_d6a(SNode ownerNode, EditorContext context) {
+    public ProcessesListHandler_jaklk3_d6a(SNode ownerNode, EditorContext context) {
       super(context, false);
       myNode = ownerNode;
     }
@@ -511,10 +512,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       return myNode;
     }
     public SContainmentLink getSLink() {
-      return LINKS.Parameters$hoyh;
+      return LINKS.Processes$hnPe;
     }
     public SAbstractConcept getChildSConcept() {
-      return CONCEPTS.Parameter$La;
+      return CONCEPTS.Process$y1;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
@@ -524,7 +525,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(ParametersListHandler_jaklk3_d6a.this.getNode(), LINKS.Parameters$hoyh));
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(ProcessesListHandler_jaklk3_d6a.this.getNode(), LINKS.Processes$hnPe));
       try {
         EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell();
@@ -564,6 +565,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
       }
     }
   }
+  private EditorCell createConstant_16() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_jaklk3_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
@@ -572,13 +579,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private static final class CONCEPTS {
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept Species$Kc = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
-    /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
     /*package*/ static final SConcept Parameter$La = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, "SpeciesSetup.structure.Parameter");
+    /*package*/ static final SConcept Process$y1 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L, "SpeciesSetup.structure.Process");
   }
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
   }
 }

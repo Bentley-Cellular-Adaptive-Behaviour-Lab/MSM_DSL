@@ -16,10 +16,13 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptInhibits = createDescriptorForInhibits();
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
+  /*package*/ final ConceptDescriptor myConceptModifier = createDescriptorForModifier();
   /*package*/ final ConceptDescriptor myConceptParameter = createDescriptorForParameter();
   /*package*/ final ConceptDescriptor myConceptParameterExpression = createDescriptorForParameterExpression();
   /*package*/ final ConceptDescriptor myConceptParameterReference = createDescriptorForParameterReference();
+  /*package*/ final ConceptDescriptor myConceptProcess = createDescriptorForProcess();
   /*package*/ final ConceptDescriptor myConceptRate = createDescriptorForRate();
   /*package*/ final ConceptDescriptor myConceptReaction = createDescriptorForReaction();
   /*package*/ final ConceptDescriptor myConceptReaction_Reference = createDescriptorForReaction_Reference();
@@ -30,8 +33,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSpeciesExpression = createDescriptorForSpeciesExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesPowerExpression = createDescriptorForSpeciesPowerExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesReference = createDescriptorForSpeciesReference();
+  /*package*/ final ConceptDescriptor myConceptUpregulates = createDescriptorForUpregulates();
   /*package*/ final EnumerationDescriptor myEnumerationNeighbourValues = new EnumerationDescriptor_NeighbourValues();
   /*package*/ final EnumerationDescriptor myEnumerationSpeciesLocation = new EnumerationDescriptor_SpeciesLocation();
+  /*package*/ final EnumerationDescriptor myEnumerationUseSpeciesInRate = new EnumerationDescriptor_UseSpeciesInRate();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -50,21 +55,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptIrreversibleReaction, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference);
+    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.Inhibits:
+        return myConceptInhibits;
       case LanguageConceptSwitch.IrreversibleReaction:
         return myConceptIrreversibleReaction;
+      case LanguageConceptSwitch.Modifier:
+        return myConceptModifier;
       case LanguageConceptSwitch.Parameter:
         return myConceptParameter;
       case LanguageConceptSwitch.ParameterExpression:
         return myConceptParameterExpression;
       case LanguageConceptSwitch.ParameterReference:
         return myConceptParameterReference;
+      case LanguageConceptSwitch.Process:
+        return myConceptProcess;
       case LanguageConceptSwitch.Rate:
         return myConceptRate;
       case LanguageConceptSwitch.Reaction:
@@ -85,6 +96,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSpeciesPowerExpression;
       case LanguageConceptSwitch.SpeciesReference:
         return myConceptSpeciesReference;
+      case LanguageConceptSwitch.Upregulates:
+        return myConceptUpregulates;
       default:
         return null;
     }
@@ -92,13 +105,22 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationNeighbourValues, myEnumerationSpeciesLocation);
+    return Arrays.asList(myEnumerationNeighbourValues, myEnumerationSpeciesLocation, myEnumerationUseSpeciesInRate);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForInhibits() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Inhibits", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL);
+    b.class_(false, false, false);
+    b.super_("SpeciesSetup.structure.Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663380262908");
+    b.version(2);
+    b.alias("Inhibition");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForIrreversibleReaction() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "IrreversibleReaction", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL);
     b.class_(false, false, false);
@@ -107,6 +129,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.associate("Rate", 0x665d03af898abc5aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("7376055817164471386").done();
     b.alias("Irreversible Reaction");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForModifier() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.class_(false, true, false);
+    b.super_("SpeciesSetup.structure.Process", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663379962152");
+    b.version(2);
+    b.associate("Modifier", 0x54e0a6c604985a9cL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116071663379962524").done();
+    b.associate("Source", 0x54e0a6c6049cf06dL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263021").done();
+    b.associate("Target", 0x54e0a6c6049cf06aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263018").done();
+    b.alias("Modifier");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameter() {
@@ -137,6 +172,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("target", 0x65d0f96c4dec199eL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("7336638036545640862").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForProcess() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Process", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L);
+    b.class_(false, true, false);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663380262963");
+    b.version(2);
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForRate() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Rate", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f0L);
     b.class_(false, false, false);
@@ -148,6 +191,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForReaction() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Reaction", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL);
     b.class_(false, true, false);
+    b.super_("SpeciesSetup.structure.Process", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540206");
     b.version(2);
@@ -204,8 +248,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540203");
     b.version(2);
+    b.property("UsingSpeciesInRates", 0x54e0a6c6049f7a5aL).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049f7a4fL)).origin("6116071663380429402").done();
     b.aggregate("Species", 0x2b6159d0ceecf740L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(true).ordered(true).multiple(true).origin("3125878369731540800").done();
-    b.aggregate("Reactions", 0x2b6159d0ceecf742L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL).optional(true).ordered(true).multiple(true).origin("3125878369731540802").done();
+    b.aggregate("Processes", 0x2b6159d0ceecf742L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L).optional(true).ordered(true).multiple(true).origin("3125878369731540802").done();
     b.aggregate("Parameters", 0x2b6159d0ceecf745L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).ordered(true).multiple(true).origin("3125878369731540805").done();
     return b.create();
   }
@@ -234,6 +279,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/1155607132028676490");
     b.version(2);
     b.associate("Species", 0x10098a905c7a298bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("1155607132028676491").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForUpregulates() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Upregulates", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL);
+    b.class_(false, false, false);
+    b.super_("SpeciesSetup.structure.Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663380262909");
+    b.version(2);
+    b.alias("Upregulation");
     return b.create();
   }
 }

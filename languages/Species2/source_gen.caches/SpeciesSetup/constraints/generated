@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-aaqyafr4bsxbtcrgq37mb6zrqtx6akc">
-  <files names="ConstraintsAspectDescriptor.java:IrreversibleReaction_Constraints.java:Reaction_Constraints.java:ReversibleReaction_Constraints.java" />
+<product version="3" modelHash="5ptmw6pv5hjugmwzateiod2i5td2t4e">
+  <files names="ConstraintsAspectDescriptor.java:Inhibits_Constraints.java:IrreversibleReaction_Constraints.java:Modifier_Constraints.java:Process_Constraints.java:Reaction_Constraints.java:ReversibleReaction_Constraints.java:Upregulates_Constraints.java" />
 </product>
 

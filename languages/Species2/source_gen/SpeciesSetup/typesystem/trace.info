@@ -457,7 +457,7 @@
       <node id="5585568456830511746" at="74,0,75,0" concept="8" trace="Species_Ref$Wnde" />
       <node id="5585568456830511746" at="75,0,76,0" concept="8" trace="Reactant_Terms$Wnv9" />
       <node id="5585568456830511746" at="76,0,77,0" concept="8" trace="Product_Terms$WnXb" />
-      <node id="5585568456830511746" at="77,0,78,0" concept="8" trace="Reactions$hnPe" />
+      <node id="5585568456830511746" at="77,0,78,0" concept="8" trace="Processes$hnPe" />
       <node id="5585568456830511746" at="81,0,82,0" concept="8" trace="name$MnvL" />
       <node id="5585568456830511746" at="85,0,86,0" concept="8" trace="IrreversibleReaction$ja" />
       <node id="5585568456830511746" at="86,0,87,0" concept="8" trace="ReversibleReaction$fi" />
@@ -679,7 +679,7 @@
       <node id="8050503989175221979" at="41,68,42,102" concept="7" />
       <node id="8050503989175221979" at="44,30,45,17" concept="7" />
       <node id="8050503989175221979" at="49,0,50,0" concept="8" trace="name$MnvL" />
-      <node id="8050503989175221979" at="53,0,54,0" concept="8" trace="Reactions$hnPe" />
+      <node id="8050503989175221979" at="53,0,54,0" concept="8" trace="Processes$hnPe" />
       <node id="8050503989175221979" at="57,0,58,0" concept="8" trace="SpeciesContainer$Ig" />
       <node id="8050503989175221979" at="24,0,26,0" concept="1" trace="check_uniqueReactionNames_NonTypesystemRule#()V" />
       <node id="8050503989175221979" at="38,0,41,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
@@ -806,7 +806,7 @@
       <node id="848945724348462788" at="46,0,47,0" concept="8" trace="Species$hnnc" />
       <node id="848945724348462788" at="47,0,48,0" concept="8" trace="Reactant_Terms$Wnv9" />
       <node id="848945724348462788" at="48,0,49,0" concept="8" trace="Product_Terms$WnXb" />
-      <node id="848945724348462788" at="49,0,50,0" concept="8" trace="Reactions$hnPe" />
+      <node id="848945724348462788" at="49,0,50,0" concept="8" trace="Processes$hnPe" />
       <node id="848945724348462788" at="53,0,54,0" concept="8" trace="SpeciesContainer$Ig" />
       <node id="848945724348462788" at="20,0,22,0" concept="1" trace="updateRelations_NonTypesystemRule#()V" />
       <node id="1878314651099124828" at="22,122,25,5" concept="3" />

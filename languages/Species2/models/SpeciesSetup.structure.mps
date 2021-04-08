@@ -78,9 +78,9 @@
     <node concept="1TJgyj" id="2Hxmt3eVft2" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540802" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Reactions" />
+      <property role="20kJfa" value="Processes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="2Hxmt3eVfjI" resolve="Reaction" />
+      <ref role="20lvS9" node="5jwDGo4Bf0N" resolve="Process" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVft5" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540805" />
@@ -92,13 +92,18 @@
     <node concept="PrWs8" id="109yD1swrWZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="1TJgyi" id="5jwDGo4BRDq" role="1TKVEl">
+      <property role="IQ2nx" value="6116071663380429402" />
+      <property role="TrG5h" value="UsingSpeciesInRates" />
+      <ref role="AX2Wp" node="5jwDGo4BRDf" resolve="UseSpeciesInRate" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjI">
     <property role="EcuMT" value="3125878369731540206" />
     <property role="TrG5h" value="Reaction" />
     <property role="R5$K7" value="true" />
-    <property role="3GE5qa" value="Reactions" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
     <node concept="1TJgyj" id="2Hxmt3eVfjT" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540217" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -170,7 +175,7 @@
   <node concept="1TIwiD" id="2Hxmt3eVfjK">
     <property role="EcuMT" value="3125878369731540208" />
     <property role="TrG5h" value="Rate" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2Hxmt3eVfsU" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540794" />
@@ -213,7 +218,7 @@
   <node concept="1TIwiD" id="2Hxmt3eVfjM">
     <property role="EcuMT" value="3125878369731540210" />
     <property role="TrG5h" value="Reaction_Term" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="2Hxmt3eVfjN" role="1TKVEl">
       <property role="IQ2nx" value="3125878369731540211" />
@@ -231,7 +236,7 @@
     <property role="EcuMT" value="3125878369731541730" />
     <property role="TrG5h" value="ReversibleReaction" />
     <property role="34LRSv" value="Reversible Reaction" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" node="2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="1TJgyj" id="6pt0UY9yFLu" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164471390" />
@@ -250,7 +255,7 @@
     <property role="EcuMT" value="3125878369731541738" />
     <property role="TrG5h" value="IrreversibleReaction" />
     <property role="34LRSv" value="Irreversible Reaction" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" node="2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="1TJgyj" id="6pt0UY9yFLq" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164471386" />
@@ -334,7 +339,7 @@
   <node concept="1TIwiD" id="1Ch7j$N9SJL">
     <property role="EcuMT" value="1878314651098778609" />
     <property role="TrG5h" value="Reaction_Reference" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1Ch7j$N9SJM" role="1TKVEi">
       <property role="IQ2ns" value="1878314651098778610" />
@@ -369,6 +374,75 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5jwDGo4A5$C">
+    <property role="EcuMT" value="6116071663379962152" />
+    <property role="TrG5h" value="Modifier" />
+    <property role="34LRSv" value="Modifier" />
+    <property role="3GE5qa" value="Processes" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
+    <node concept="1TJgyj" id="5jwDGo4A5Es" role="1TKVEi">
+      <property role="IQ2ns" value="6116071663379962524" />
+      <property role="20kJfa" value="Modifier" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+    <node concept="1TJgyj" id="5jwDGo4Bf1H" role="1TKVEi">
+      <property role="IQ2ns" value="6116071663380263021" />
+      <property role="20kJfa" value="Source" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+    <node concept="1TJgyj" id="5jwDGo4Bf1E" role="1TKVEi">
+      <property role="IQ2ns" value="6116071663380263018" />
+      <property role="20kJfa" value="Target" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+    <node concept="PrWs8" id="5jwDGo4Bf3s" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5jwDGo4BeZW">
+    <property role="EcuMT" value="6116071663380262908" />
+    <property role="TrG5h" value="Inhibits" />
+    <property role="3GE5qa" value="Processes" />
+    <property role="34LRSv" value="Inhibition" />
+    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Modifier" />
+  </node>
+  <node concept="1TIwiD" id="5jwDGo4BeZX">
+    <property role="EcuMT" value="6116071663380262909" />
+    <property role="TrG5h" value="Upregulates" />
+    <property role="3GE5qa" value="Processes" />
+    <property role="34LRSv" value="Upregulation" />
+    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Modifier" />
+  </node>
+  <node concept="1TIwiD" id="5jwDGo4Bf0N">
+    <property role="EcuMT" value="6116071663380262963" />
+    <property role="TrG5h" value="Process" />
+    <property role="R5$K7" value="true" />
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="5jwDGo4Cbjj" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+  </node>
+  <node concept="25R3W" id="5jwDGo4BRDf">
+    <property role="3F6X1D" value="6116071663380429391" />
+    <property role="TrG5h" value="UseSpeciesInRate" />
+    <property role="3GE5qa" value="Species" />
+    <ref role="1H5jkz" node="5jwDGo4BRDg" resolve="Yes" />
+    <node concept="25R33" id="5jwDGo4BRDg" role="25R1y">
+      <property role="3tVfz5" value="6116071663380429392" />
+      <property role="TrG5h" value="Yes" />
+      <property role="1L1pqM" value="Yes" />
+    </node>
+    <node concept="25R33" id="5jwDGo4BRDh" role="25R1y">
+      <property role="3tVfz5" value="6116071663380429393" />
+      <property role="TrG5h" value="No" />
+      <property role="1L1pqM" value="No" />
     </node>
   </node>
 </model>
