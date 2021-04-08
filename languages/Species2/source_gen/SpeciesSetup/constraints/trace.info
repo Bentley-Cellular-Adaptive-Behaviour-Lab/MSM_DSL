@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,33,0" name="SpeciesSetup.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,41,0" name="SpeciesSetup.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesSetup.constraints)/3125878369731541741">
@@ -136,6 +136,170 @@
       <unit id="3125878369731542816" at="43,0,46,0" name="SpeciesSetup.constraints.IrreversibleReaction_Constraints$CONCEPTS" />
       <unit id="3125878369731542816" at="25,15,36,5" name="SpeciesSetup.constraints.IrreversibleReaction_Constraints$1" />
       <unit id="3125878369731542816" at="18,0,47,0" name="SpeciesSetup.constraints.IrreversibleReaction_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesSetup.constraints)/6116071663379962155">
+    <file name="Modifier_Constraints.java">
+      <node id="6116071663379962155" at="19,33,20,32" concept="9" />
+      <node id="6116071663379962155" at="27,127,28,128" concept="4" />
+      <node id="6116071663379962155" at="28,128,29,0" concept="6" />
+      <node id="6116071663379962155" at="30,55,31,71" concept="1" />
+      <node id="6116071663379962155" at="32,9,33,0" concept="6" />
+      <node id="6116071663379962155" at="33,0,34,22" concept="5" />
+      <node id="6116071663379962406" at="38,128,39,16" concept="5" />
+      <node id="6116071663379962155" at="41,0,42,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="6116071663379962155" at="44,0,45,0" concept="7" trace="Modifier$l6" />
+      <node id="6116071663379962155" at="19,0,22,0" concept="0" trace="Modifier_Constraints#()V" />
+      <node id="6116071663379962155" at="29,0,32,9" concept="2" />
+      <node id="6116071663379962155" at="38,0,41,0" concept="8" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="6116071663379962155" at="26,0,36,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="6116071663379962155" at="24,103,36,6" concept="5" />
+      <node id="6116071663379962155" at="23,0,38,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="6116071663379962155" at="19,33,20,32" />
+      <scope id="6116071663379962155" at="30,55,31,71" />
+      <scope id="6116071663379962157" at="38,128,39,16" />
+      <scope id="6116071663379962155" at="19,0,22,0" />
+      <scope id="6116071663379962155" at="38,0,41,0">
+        <var name="childConcept" id="6116071663379962155" />
+        <var name="link" id="6116071663379962155" />
+        <var name="node" id="6116071663379962155" />
+        <var name="parentNode" id="6116071663379962155" />
+      </scope>
+      <scope id="6116071663379962155" at="27,127,34,22">
+        <var name="result" id="6116071663379962155" />
+      </scope>
+      <scope id="6116071663379962155" at="26,0,36,0">
+        <var name="checkingNodeContext" id="6116071663379962155" />
+        <var name="context" id="6116071663379962155" />
+      </scope>
+      <scope id="6116071663379962155" at="24,103,36,6" />
+      <scope id="6116071663379962155" at="23,0,38,0" />
+      <unit id="6116071663379962155" at="43,0,46,0" name="SpeciesSetup.constraints.Modifier_Constraints$CONCEPTS" />
+      <unit id="6116071663379962155" at="25,15,36,5" name="SpeciesSetup.constraints.Modifier_Constraints$1" />
+      <unit id="6116071663379962155" at="18,0,47,0" name="SpeciesSetup.constraints.Modifier_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesSetup.constraints)/6116071663380432440">
+    <file name="Process_Constraints.java">
+      <node id="6116071663380432440" at="19,32,20,31" concept="9" />
+      <node id="6116071663380432440" at="27,127,28,128" concept="4" />
+      <node id="6116071663380432440" at="28,128,29,0" concept="6" />
+      <node id="6116071663380432440" at="30,55,31,71" concept="1" />
+      <node id="6116071663380432440" at="32,9,33,0" concept="6" />
+      <node id="6116071663380432440" at="33,0,34,22" concept="5" />
+      <node id="6116071663380432691" at="38,128,39,17" concept="5" />
+      <node id="6116071663380432440" at="41,0,42,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="6116071663380432440" at="44,0,45,0" concept="7" trace="Process$y1" />
+      <node id="6116071663380432440" at="19,0,22,0" concept="0" trace="Process_Constraints#()V" />
+      <node id="6116071663380432440" at="29,0,32,9" concept="2" />
+      <node id="6116071663380432440" at="38,0,41,0" concept="8" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="6116071663380432440" at="26,0,36,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="6116071663380432440" at="24,103,36,6" concept="5" />
+      <node id="6116071663380432440" at="23,0,38,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="6116071663380432440" at="19,32,20,31" />
+      <scope id="6116071663380432440" at="30,55,31,71" />
+      <scope id="6116071663380432442" at="38,128,39,17" />
+      <scope id="6116071663380432440" at="19,0,22,0" />
+      <scope id="6116071663380432440" at="38,0,41,0">
+        <var name="childConcept" id="6116071663380432440" />
+        <var name="link" id="6116071663380432440" />
+        <var name="node" id="6116071663380432440" />
+        <var name="parentNode" id="6116071663380432440" />
+      </scope>
+      <scope id="6116071663380432440" at="27,127,34,22">
+        <var name="result" id="6116071663380432440" />
+      </scope>
+      <scope id="6116071663380432440" at="26,0,36,0">
+        <var name="checkingNodeContext" id="6116071663380432440" />
+        <var name="context" id="6116071663380432440" />
+      </scope>
+      <scope id="6116071663380432440" at="24,103,36,6" />
+      <scope id="6116071663380432440" at="23,0,38,0" />
+      <unit id="6116071663380432440" at="43,0,46,0" name="SpeciesSetup.constraints.Process_Constraints$CONCEPTS" />
+      <unit id="6116071663380432440" at="25,15,36,5" name="SpeciesSetup.constraints.Process_Constraints$1" />
+      <unit id="6116071663380432440" at="18,0,47,0" name="SpeciesSetup.constraints.Process_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesSetup.constraints)/6116071663380433005">
+    <file name="Inhibits_Constraints.java">
+      <node id="6116071663380433005" at="19,33,20,32" concept="9" />
+      <node id="6116071663380433005" at="27,127,28,128" concept="4" />
+      <node id="6116071663380433005" at="28,128,29,0" concept="6" />
+      <node id="6116071663380433005" at="30,55,31,71" concept="1" />
+      <node id="6116071663380433005" at="32,9,33,0" concept="6" />
+      <node id="6116071663380433005" at="33,0,34,22" concept="5" />
+      <node id="6116071663380433256" at="38,128,39,16" concept="5" />
+      <node id="6116071663380433005" at="41,0,42,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="6116071663380433005" at="44,0,45,0" concept="7" trace="Inhibits$am" />
+      <node id="6116071663380433005" at="19,0,22,0" concept="0" trace="Inhibits_Constraints#()V" />
+      <node id="6116071663380433005" at="29,0,32,9" concept="2" />
+      <node id="6116071663380433005" at="38,0,41,0" concept="8" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="6116071663380433005" at="26,0,36,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="6116071663380433005" at="24,103,36,6" concept="5" />
+      <node id="6116071663380433005" at="23,0,38,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="6116071663380433005" at="19,33,20,32" />
+      <scope id="6116071663380433005" at="30,55,31,71" />
+      <scope id="6116071663380433007" at="38,128,39,16" />
+      <scope id="6116071663380433005" at="19,0,22,0" />
+      <scope id="6116071663380433005" at="38,0,41,0">
+        <var name="childConcept" id="6116071663380433005" />
+        <var name="link" id="6116071663380433005" />
+        <var name="node" id="6116071663380433005" />
+        <var name="parentNode" id="6116071663380433005" />
+      </scope>
+      <scope id="6116071663380433005" at="27,127,34,22">
+        <var name="result" id="6116071663380433005" />
+      </scope>
+      <scope id="6116071663380433005" at="26,0,36,0">
+        <var name="checkingNodeContext" id="6116071663380433005" />
+        <var name="context" id="6116071663380433005" />
+      </scope>
+      <scope id="6116071663380433005" at="24,103,36,6" />
+      <scope id="6116071663380433005" at="23,0,38,0" />
+      <unit id="6116071663380433005" at="43,0,46,0" name="SpeciesSetup.constraints.Inhibits_Constraints$CONCEPTS" />
+      <unit id="6116071663380433005" at="25,15,36,5" name="SpeciesSetup.constraints.Inhibits_Constraints$1" />
+      <unit id="6116071663380433005" at="18,0,47,0" name="SpeciesSetup.constraints.Inhibits_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesSetup.constraints)/6116071663380433321">
+    <file name="Upregulates_Constraints.java">
+      <node id="6116071663380433321" at="19,36,20,35" concept="9" />
+      <node id="6116071663380433321" at="27,127,28,128" concept="4" />
+      <node id="6116071663380433321" at="28,128,29,0" concept="6" />
+      <node id="6116071663380433321" at="30,55,31,71" concept="1" />
+      <node id="6116071663380433321" at="32,9,33,0" concept="6" />
+      <node id="6116071663380433321" at="33,0,34,22" concept="5" />
+      <node id="6116071663380433327" at="38,128,39,16" concept="5" />
+      <node id="6116071663380433321" at="41,0,42,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="6116071663380433321" at="44,0,45,0" concept="7" trace="Upregulates$aP" />
+      <node id="6116071663380433321" at="19,0,22,0" concept="0" trace="Upregulates_Constraints#()V" />
+      <node id="6116071663380433321" at="29,0,32,9" concept="2" />
+      <node id="6116071663380433321" at="38,0,41,0" concept="8" trace="staticCanBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Z" />
+      <node id="6116071663380433321" at="26,0,36,0" concept="3" trace="invoke#(Ljetbrains/mps/smodel/runtime/ConstraintContext_CanBeChild;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Ljava/lang/Boolean;" />
+      <node id="6116071663380433321" at="24,103,36,6" concept="5" />
+      <node id="6116071663380433321" at="23,0,38,0" concept="3" trace="calculateCanBeChildConstraint#()Ljetbrains/mps/smodel/runtime/ConstraintFunction;" />
+      <scope id="6116071663380433321" at="19,36,20,35" />
+      <scope id="6116071663380433321" at="30,55,31,71" />
+      <scope id="6116071663380433323" at="38,128,39,16" />
+      <scope id="6116071663380433321" at="19,0,22,0" />
+      <scope id="6116071663380433321" at="38,0,41,0">
+        <var name="childConcept" id="6116071663380433321" />
+        <var name="link" id="6116071663380433321" />
+        <var name="node" id="6116071663380433321" />
+        <var name="parentNode" id="6116071663380433321" />
+      </scope>
+      <scope id="6116071663380433321" at="27,127,34,22">
+        <var name="result" id="6116071663380433321" />
+      </scope>
+      <scope id="6116071663380433321" at="26,0,36,0">
+        <var name="checkingNodeContext" id="6116071663380433321" />
+        <var name="context" id="6116071663380433321" />
+      </scope>
+      <scope id="6116071663380433321" at="24,103,36,6" />
+      <scope id="6116071663380433321" at="23,0,38,0" />
+      <unit id="6116071663380433321" at="43,0,46,0" name="SpeciesSetup.constraints.Upregulates_Constraints$CONCEPTS" />
+      <unit id="6116071663380433321" at="25,15,36,5" name="SpeciesSetup.constraints.Upregulates_Constraints$1" />
+      <unit id="6116071663380433321" at="18,0,47,0" name="SpeciesSetup.constraints.Upregulates_Constraints" />
     </file>
   </root>
 </debug-info>

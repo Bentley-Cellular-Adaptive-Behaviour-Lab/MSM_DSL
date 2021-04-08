@@ -23,7 +23,7 @@ public class updateRelations_NonTypesystemRule extends AbstractNonTypesystemRule
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Species$hnnc))) {
       Species__BehaviorDescriptor.cleanReactionRelations_id1Ch7j$Nakak.invoke(species);
     }
-    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Reactions$hnPe))) {
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
         Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
       }
@@ -46,7 +46,7 @@ public class updateRelations_NonTypesystemRule extends AbstractNonTypesystemRule
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
   }
 
   private static final class CONCEPTS {

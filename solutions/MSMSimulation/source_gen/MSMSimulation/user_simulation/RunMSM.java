@@ -22,15 +22,15 @@ public class RunMSM {
     Path new_tissue_path;
     Path new_world_path;
 
-    System.out.println("Using world: " + "");
+    System.out.println("Using world: " + "World");
     System.out.println("The current directory is: " + root_string);
     System.out.println("Transferring auto-generated files from: " + output_string);
 
     // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder. 
     switch (utils.getOS()) {
       case WINDOWS:
-        old_tissue_path = Paths.get(output_string + "\\" + "" + ".cpp");
-        old_world_path = Paths.get(output_string + "\\" + "" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "\\" + "Tissues" + ".cpp");
+        old_world_path = Paths.get(output_string + "\\" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "\\src\\dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "\\src\\dsl_World.cpp");
@@ -45,8 +45,8 @@ public class RunMSM {
       case LINUX:
 
       case MAC:
-        old_tissue_path = Paths.get(output_string + "/" + "" + ".cpp");
-        old_world_path = Paths.get(output_string + "/" + "" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "/" + "Tissues" + ".cpp");
+        old_world_path = Paths.get(output_string + "/" + "World" + ".cpp");
 
         new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");
@@ -63,8 +63,8 @@ public class RunMSM {
 
     // Attempt to build the MSM using the settings defined in the parent node. 
     try {
-      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "false" + " " + "no_analysis" + " " + "100" + " " + "");
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "false", "no_analysis", "100", "");
+      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "false" + " " + "no_analysis" + " " + "100" + " " + "30");
+      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "false", "no_analysis", "100", "30");
       pb.redirectErrorStream(true);
       pb.directory(new File("src"));
       Process p = pb.start();

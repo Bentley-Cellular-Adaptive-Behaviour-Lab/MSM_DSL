@@ -79,7 +79,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setDefaultText("<no Stoichiometry>");
       editorCell.setCellId("property_Stoichiometry");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);

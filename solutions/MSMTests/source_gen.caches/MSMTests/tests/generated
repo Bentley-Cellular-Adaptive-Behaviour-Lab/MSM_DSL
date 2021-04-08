@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-abvdjnyvafqj0g1gvxvjvtqx17hl4uf">
-  <files names="test_CellNumber_Test.java:test_TissuesObjectBoundaries_Test.java:test_TissuesObjectOverlap_Test.java" />
+<product version="3" modelHash="1njsj44qd9rax7nzyb68qese7e75ki9">
+  <files names="test_CellNumber_Test.java:test_TissueProperties_Test.java:test_TissuesObjectBoundaries_Test.java:test_TissuesObjectOverlap_Test.java" />
 </product>
 

@@ -9,27 +9,34 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int IrreversibleReaction = 0;
-  public static final int Parameter = 1;
-  public static final int ParameterExpression = 2;
-  public static final int ParameterReference = 3;
-  public static final int Rate = 4;
-  public static final int Reaction = 5;
-  public static final int Reaction_Reference = 6;
-  public static final int Reaction_Term = 7;
-  public static final int ReversibleReaction = 8;
-  public static final int Species = 9;
-  public static final int SpeciesContainer = 10;
-  public static final int SpeciesExpression = 11;
-  public static final int SpeciesPowerExpression = 12;
-  public static final int SpeciesReference = 13;
+  public static final int Inhibits = 0;
+  public static final int IrreversibleReaction = 1;
+  public static final int Modifier = 2;
+  public static final int Parameter = 3;
+  public static final int ParameterExpression = 4;
+  public static final int ParameterReference = 5;
+  public static final int Process = 6;
+  public static final int Rate = 7;
+  public static final int Reaction = 8;
+  public static final int Reaction_Reference = 9;
+  public static final int Reaction_Term = 10;
+  public static final int ReversibleReaction = 11;
+  public static final int Species = 12;
+  public static final int SpeciesContainer = 13;
+  public static final int SpeciesExpression = 14;
+  public static final int SpeciesPowerExpression = 15;
+  public static final int SpeciesReference = 16;
+  public static final int Upregulates = 17;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL);
+    builder.put(0x54e0a6c6049ceffcL, Inhibits);
     builder.put(0x2b6159d0ceecfaeaL, IrreversibleReaction);
+    builder.put(0x54e0a6c604985928L, Modifier);
     builder.put(0x2b6159d0ceecf4f1L, Parameter);
     builder.put(0x665d03af898abc61L, ParameterExpression);
     builder.put(0x65d0f96c4dec199dL, ParameterReference);
+    builder.put(0x54e0a6c6049cf033L, Process);
     builder.put(0x2b6159d0ceecf4f0L, Rate);
     builder.put(0x2b6159d0ceecf4eeL, Reaction);
     builder.put(0x1a111d3933278bf1L, Reaction_Reference);
@@ -40,6 +47,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x10098a905c97eb32L, SpeciesExpression);
     builder.put(0x665d03af89891f10L, SpeciesPowerExpression);
     builder.put(0x10098a905c7a298aL, SpeciesReference);
+    builder.put(0x54e0a6c6049ceffdL, Upregulates);
     myIndex = builder.seal();
   }
 

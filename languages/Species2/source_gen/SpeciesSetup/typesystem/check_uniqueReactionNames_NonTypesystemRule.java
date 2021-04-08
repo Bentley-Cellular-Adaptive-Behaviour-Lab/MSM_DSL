@@ -24,8 +24,8 @@ public class check_uniqueReactionNames_NonTypesystemRule extends AbstractNonType
   public check_uniqueReactionNames_NonTypesystemRule() {
   }
   public void applyRule(final SNode container, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode currentReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Reactions$hnPe))) {
-      for (SNode queryReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Reactions$hnPe))) {
+    for (SNode currentReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
+      for (SNode queryReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
         if (Objects.equals(SPropertyOperations.getString(currentReaction, PROPS.name$MnvL), SPropertyOperations.getString(queryReaction, PROPS.name$MnvL)) && !(Objects.equals(currentReaction, queryReaction))) {
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
@@ -50,7 +50,7 @@ public class check_uniqueReactionNames_NonTypesystemRule extends AbstractNonType
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
   }
 
   private static final class CONCEPTS {

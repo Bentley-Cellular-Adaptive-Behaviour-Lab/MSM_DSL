@@ -45,11 +45,17 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static List<SNode> getExprSpecies_idJ83UdHe8mr(@NotNull SNode __thisNode__, SNode expr) {
     // Gets all species in an expression, including sub-expressions 
     List<SNode> speciesList = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
-      if (SNodeOperations.isInstanceOf(child, CONCEPTS.SpeciesExpression$Vm)) {
-        ListSequence.fromList(speciesList).addElement(SNodeOperations.as(child, CONCEPTS.SpeciesExpression$Vm));
-      } else if (SNodeOperations.isInstanceOf(child, CONCEPTS.Expression$D_) && !(SNodeOperations.isInstanceOf(child, CONCEPTS.SpeciesExpression$Vm))) {
-        ListSequence.fromList(speciesList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(__thisNode__, SNodeOperations.as(child, CONCEPTS.Expression$D_))));
+    if (ListSequence.fromList(SNodeOperations.getChildren(expr)).count() > 0) {
+      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
+        if (SNodeOperations.isInstanceOf(child, CONCEPTS.SpeciesExpression$Vm)) {
+          ListSequence.fromList(speciesList).addElement(SNodeOperations.as(child, CONCEPTS.SpeciesExpression$Vm));
+        } else if (SNodeOperations.isInstanceOf(child, CONCEPTS.Expression$D_) && !(SNodeOperations.isInstanceOf(child, CONCEPTS.SpeciesExpression$Vm))) {
+          ListSequence.fromList(speciesList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(__thisNode__, SNodeOperations.as(child, CONCEPTS.Expression$D_))));
+        }
+      }
+    } else {
+      if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+        ListSequence.fromList(speciesList).addElement(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
       }
     }
     return speciesList;
@@ -57,11 +63,17 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static List<SNode> getExprParameters_id3eqdKU_qMQ$(@NotNull SNode __thisNode__, SNode expr) {
     // Gets all parameters in an expression, including sub-expressions. 
     List<SNode> parameterList = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
-      if (SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA)) {
-        ListSequence.fromList(parameterList).addElement(SNodeOperations.as(child, CONCEPTS.ParameterExpression$CA));
-      } else if (SNodeOperations.isInstanceOf(child, CONCEPTS.Expression$D_) && !(SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA))) {
-        ListSequence.fromList(parameterList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(__thisNode__, SNodeOperations.as(child, CONCEPTS.Expression$D_))));
+    if (ListSequence.fromList(SNodeOperations.getChildren(expr)).count() > 0) {
+      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
+        if (SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA)) {
+          ListSequence.fromList(parameterList).addElement(SNodeOperations.as(child, CONCEPTS.ParameterExpression$CA));
+        } else if (SNodeOperations.isInstanceOf(child, CONCEPTS.Expression$D_) && !(SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA))) {
+          ListSequence.fromList(parameterList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(__thisNode__, SNodeOperations.as(child, CONCEPTS.Expression$D_))));
+        }
+      }
+    } else {
+      if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+        ListSequence.fromList(parameterList).addElement(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
       }
     }
     return parameterList;
@@ -70,7 +82,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Species$hnnc))) {
       Species__BehaviorDescriptor.cleanReactionRelations_id1Ch7j$Nakak.invoke(species);
     }
-    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Reactions$hnPe))) {
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
         Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
       }
@@ -191,7 +203,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
     /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");

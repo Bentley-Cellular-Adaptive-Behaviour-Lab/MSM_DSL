@@ -174,7 +174,7 @@
   </registry>
   <node concept="18kY7G" id="2Hxmt3eYkCd">
     <property role="TrG5h" value="noDuplicateReactants" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="2Hxmt3eYkCe" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYkCp" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYkCq" role="2Gsz3X">
@@ -295,7 +295,7 @@
   </node>
   <node concept="18kY7G" id="2Hxmt3eYqYx">
     <property role="TrG5h" value="noDuplicateProducts" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="2Hxmt3eYqYy" role="18ibNy">
       <node concept="2Gpval" id="2Hxmt3eYqY$" role="3cqZAp">
         <node concept="2GrKxI" id="2Hxmt3eYqY_" role="2Gsz3X">
@@ -416,7 +416,7 @@
   </node>
   <node concept="18kY7G" id="109yD1stpAs">
     <property role="TrG5h" value="constrainStoichiometry" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="109yD1stpAt" role="18ibNy">
       <node concept="3clFbJ" id="109yD1stpAI" role="3cqZAp">
         <node concept="3eOVzh" id="109yD1stqLV" role="3clFbw">
@@ -451,7 +451,7 @@
   </node>
   <node concept="18kY7G" id="109yD1sMU8G">
     <property role="TrG5h" value="warnExtracellularReaction" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="109yD1sMU8H" role="18ibNy">
       <node concept="3cpWs8" id="109yD1sMYd8" role="3cqZAp">
         <node concept="3cpWsn" id="109yD1sMYdb" role="3cpWs9">
@@ -686,7 +686,7 @@
             <ref role="1YBMHb" node="J83UdHo7r7" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="4Q3VeFU4QLg" role="2OqNvi">
-            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
           </node>
         </node>
       </node>
@@ -709,7 +709,7 @@
             <ref role="1YBMHb" node="4Q3VeFU0AE5" resolve="speciesContainer" />
           </node>
           <node concept="3Tsc0h" id="4Q3VeFU1LOM" role="2OqNvi">
-            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
           </node>
         </node>
         <node concept="3clFbS" id="4Q3VeFU1KBf" role="2LFqv$">
@@ -1242,31 +1242,31 @@
   </node>
   <node concept="18kY7G" id="6YT8FA9DRVr">
     <property role="TrG5h" value="check_uniqueReactionNames" />
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="6YT8FA9DRVs" role="18ibNy">
       <node concept="2Gpval" id="6YT8FA9DS2o" role="3cqZAp">
         <node concept="2GrKxI" id="6YT8FA9DS2p" role="2Gsz3X">
-          <property role="TrG5h" value="currentReaction" />
+          <property role="TrG5h" value="Process" />
         </node>
         <node concept="2OqwBi" id="6YT8FA9DS2q" role="2GsD0m">
           <node concept="1YBJjd" id="6YT8FA9DS2r" role="2Oq$k0">
             <ref role="1YBMHb" node="6YT8FA9DRVu" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="6YT8FA9DSCx" role="2OqNvi">
-            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
           </node>
         </node>
         <node concept="3clFbS" id="6YT8FA9DS2t" role="2LFqv$">
           <node concept="2Gpval" id="6YT8FA9DS2u" role="3cqZAp">
             <node concept="2GrKxI" id="6YT8FA9DS2v" role="2Gsz3X">
-              <property role="TrG5h" value="queryReaction" />
+              <property role="TrG5h" value="Process" />
             </node>
             <node concept="2OqwBi" id="6YT8FA9DS2w" role="2GsD0m">
               <node concept="1YBJjd" id="6YT8FA9DS2x" role="2Oq$k0">
                 <ref role="1YBMHb" node="6YT8FA9DRVu" resolve="container" />
               </node>
               <node concept="3Tsc0h" id="6YT8FA9DSMJ" role="2OqNvi">
-                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Reactions" />
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
               </node>
             </node>
             <node concept="3clFbS" id="6YT8FA9DS2z" role="2LFqv$">
@@ -1274,16 +1274,16 @@
                 <node concept="1Wc70l" id="6YT8FA9DS2_" role="3clFbw">
                   <node concept="17QLQc" id="6YT8FA9DS2A" role="3uHU7w">
                     <node concept="2GrUjf" id="6YT8FA9DS2B" role="3uHU7w">
-                      <ref role="2Gs0qQ" node="6YT8FA9DS2v" resolve="queryReaction" />
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2v" resolve="Process" />
                     </node>
                     <node concept="2GrUjf" id="6YT8FA9DS2C" role="3uHU7B">
-                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="currentReaction" />
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
                     </node>
                   </node>
                   <node concept="17R0WA" id="6YT8FA9DS2D" role="3uHU7B">
                     <node concept="2OqwBi" id="6YT8FA9DS2E" role="3uHU7B">
                       <node concept="2GrUjf" id="6YT8FA9DS2F" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="currentReaction" />
+                        <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
                       </node>
                       <node concept="3TrcHB" id="6YT8FA9DS2G" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -1291,7 +1291,7 @@
                     </node>
                     <node concept="2OqwBi" id="6YT8FA9DS2H" role="3uHU7w">
                       <node concept="2GrUjf" id="6YT8FA9DS2I" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="6YT8FA9DS2v" resolve="queryReaction" />
+                        <ref role="2Gs0qQ" node="6YT8FA9DS2v" resolve="Process" />
                       </node>
                       <node concept="3TrcHB" id="6YT8FA9DS2J" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -1302,10 +1302,10 @@
                 <node concept="3clFbS" id="6YT8FA9DS2K" role="3clFbx">
                   <node concept="2MkqsV" id="6YT8FA9DS2L" role="3cqZAp">
                     <node concept="Xl_RD" id="6YT8FA9DS2M" role="2MkJ7o">
-                      <property role="Xl_RC" value="Reaction names must be unique." />
+                      <property role="Xl_RC" value="Process names must be unique." />
                     </node>
                     <node concept="2GrUjf" id="6YT8FA9DS2N" role="1urrMF">
-                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="currentReaction" />
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
                     </node>
                   </node>
                 </node>

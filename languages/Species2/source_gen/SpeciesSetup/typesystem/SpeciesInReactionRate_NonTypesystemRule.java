@@ -27,7 +27,7 @@ public class SpeciesInReactionRate_NonTypesystemRule extends AbstractNonTypesyst
   public SpeciesInReactionRate_NonTypesystemRule() {
   }
   public void applyRule(final SNode speciesContainer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(speciesContainer, LINKS.Reactions$hnPe))) {
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(speciesContainer, LINKS.Processes$hnPe))) {
       if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
         for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
           SNode species = SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde);
@@ -74,7 +74,7 @@ public class SpeciesInReactionRate_NonTypesystemRule extends AbstractNonTypesyst
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
   }
 
   private static final class PROPS {

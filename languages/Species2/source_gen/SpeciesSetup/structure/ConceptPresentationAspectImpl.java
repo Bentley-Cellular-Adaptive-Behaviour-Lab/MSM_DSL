@@ -9,10 +9,13 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_Inhibits;
   private ConceptPresentation props_IrreversibleReaction;
+  private ConceptPresentation props_Modifier;
   private ConceptPresentation props_Parameter;
   private ConceptPresentation props_ParameterExpression;
   private ConceptPresentation props_ParameterReference;
+  private ConceptPresentation props_Process;
   private ConceptPresentation props_Rate;
   private ConceptPresentation props_Reaction;
   private ConceptPresentation props_Reaction_Reference;
@@ -23,12 +26,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_SpeciesExpression;
   private ConceptPresentation props_SpeciesPowerExpression;
   private ConceptPresentation props_SpeciesReference;
+  private ConceptPresentation props_Upregulates;
 
   @Override
   @Nullable
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.Inhibits:
+        if (props_Inhibits == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Inhibits = cpb.create();
+        }
+        return props_Inhibits;
       case LanguageConceptSwitch.IrreversibleReaction:
         if (props_IrreversibleReaction == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -36,6 +47,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_IrreversibleReaction = cpb.create();
         }
         return props_IrreversibleReaction;
+      case LanguageConceptSwitch.Modifier:
+        if (props_Modifier == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Modifier = cpb.create();
+        }
+        return props_Modifier;
       case LanguageConceptSwitch.Parameter:
         if (props_Parameter == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -57,6 +74,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_ParameterReference = cpb.create();
         }
         return props_ParameterReference;
+      case LanguageConceptSwitch.Process:
+        if (props_Process == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          props_Process = cpb.create();
+        }
+        return props_Process;
       case LanguageConceptSwitch.Rate:
         if (props_Rate == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -127,6 +150,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SpeciesReference = cpb.create();
         }
         return props_SpeciesReference;
+      case LanguageConceptSwitch.Upregulates:
+        if (props_Upregulates == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_Upregulates = cpb.create();
+        }
+        return props_Upregulates;
     }
     return null;
   }

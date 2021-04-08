@@ -45,7 +45,7 @@
     </language>
   </registry>
   <node concept="1M2fIO" id="2Hxmt3eVfFH">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
     <node concept="9S07l" id="2Hxmt3eVfFI" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfFJ" role="2VODD2">
@@ -56,7 +56,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfOn">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfOo" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfOp" role="2VODD2">
@@ -69,12 +69,62 @@
     </node>
   </node>
   <node concept="1M2fIO" id="2Hxmt3eVfWw">
-    <property role="3GE5qa" value="Reactions" />
+    <property role="3GE5qa" value="Processes" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfFE" resolve="IrreversibleReaction" />
     <node concept="9S07l" id="2Hxmt3eVfWx" role="9Vyp8">
       <node concept="3clFbS" id="2Hxmt3eVfWy" role="2VODD2">
         <node concept="3cpWs6" id="2Hxmt3eVg0r" role="3cqZAp">
           <node concept="3clFbT" id="2Hxmt3eVg4s" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5jwDGo4A5$F">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+    <node concept="9S07l" id="5jwDGo4A5$G" role="9Vyp8">
+      <node concept="3clFbS" id="5jwDGo4A5$H" role="2VODD2">
+        <node concept="3cpWs6" id="5jwDGo4A5CA" role="3cqZAp">
+          <node concept="3clFbT" id="5jwDGo4A5D4" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5jwDGo4BSoS">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4Bf0N" resolve="Process" />
+    <node concept="9S07l" id="5jwDGo4BSoT" role="9Vyp8">
+      <node concept="3clFbS" id="5jwDGo4BSoU" role="2VODD2">
+        <node concept="3cpWs6" id="5jwDGo4BSsN" role="3cqZAp">
+          <node concept="3clFbT" id="5jwDGo4BStz" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5jwDGo4BSxH">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+    <node concept="9S07l" id="5jwDGo4BSxI" role="9Vyp8">
+      <node concept="3clFbS" id="5jwDGo4BSxJ" role="2VODD2">
+        <node concept="3cpWs6" id="5jwDGo4BS_C" role="3cqZAp">
+          <node concept="3clFbT" id="5jwDGo4BSA6" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5jwDGo4BSAD">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4BeZX" resolve="Upregulates" />
+    <node concept="9S07l" id="5jwDGo4BSAE" role="9Vyp8">
+      <node concept="3clFbS" id="5jwDGo4BSAF" role="2VODD2">
+        <node concept="3cpWs6" id="5jwDGo4BSAJ" role="3cqZAp">
+          <node concept="3clFbT" id="5jwDGo4BSEK" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>
