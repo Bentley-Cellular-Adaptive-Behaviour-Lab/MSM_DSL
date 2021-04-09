@@ -89,6 +89,27 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
     </node>
+    <node concept="1TJgyj" id="20T6jFUT_Vc" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823994400460" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="ODEStates" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFUTtKH" resolve="ODEStateComponent" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFUZ5DJ" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823995841135" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="ODESystem" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFUTtKI" resolve="ODESystemComponent" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFV4pU$" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823997234852" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="RateFunctions" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFUT_Vb" resolve="RateFunctionsComponent" />
+    </node>
     <node concept="PrWs8" id="109yD1swrWZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -150,6 +171,13 @@
       <property role="20kJfa" value="ProductOf" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="1Ch7j$N9SJL" resolve="Reaction_Reference" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFVj3f6" role="1TKVEi">
+      <property role="IQ2ns" value="2321914824001074118" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Modifies" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFVj3f3" resolve="ModifierReference" />
     </node>
     <node concept="1TJgyi" id="2Hxmt3eVlUx" role="1TKVEl">
       <property role="IQ2nx" value="3125878369731567265" />
@@ -343,7 +371,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1Ch7j$N9SJM" role="1TKVEi">
       <property role="IQ2ns" value="1878314651098778610" />
-      <property role="20kJfa" value="Reaction_Reference" />
+      <property role="20kJfa" value="ReactionReference" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjI" resolve="Reaction" />
     </node>
@@ -443,6 +471,94 @@
       <property role="3tVfz5" value="6116071663380429393" />
       <property role="TrG5h" value="No" />
       <property role="1L1pqM" value="No" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20T6jFUTtJQ">
+    <property role="EcuMT" value="2321914823994366966" />
+    <property role="TrG5h" value="TextGenComponent" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFUTtKH">
+    <property role="EcuMT" value="2321914823994367021" />
+    <property role="TrG5h" value="ODEStateComponent" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFUTtKI">
+    <property role="EcuMT" value="2321914823994367022" />
+    <property role="TrG5h" value="ODESystemComponent" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+    <node concept="1TJgyj" id="20T6jFV8YjK" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823998432496" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="SpeciesDefinitions" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFV8YjJ" resolve="SpeciesDefinitionComponent" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFV8Sal" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823998407317" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="ParameterDefinitions" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFV7hC9" resolve="ParameterDefinitionComponent" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFVdiyW" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823999563964" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="RateDefintions" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFVbuBm" resolve="RateDefinition" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFVbpIY" role="1TKVEi">
+      <property role="IQ2ns" value="2321914823999069118" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="ODEDefinitions" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="20T6jFVb0Zt" resolve="ODEDefinitions" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="20T6jFUT_Vb">
+    <property role="EcuMT" value="2321914823994400459" />
+    <property role="TrG5h" value="RateFunctionsComponent" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFV7hC9">
+    <property role="EcuMT" value="2321914823997987337" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <property role="TrG5h" value="ParameterDefinitionComponent" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFV8YjJ">
+    <property role="EcuMT" value="2321914823998432495" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <property role="TrG5h" value="SpeciesDefinitionComponent" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFVb0Zt">
+    <property role="EcuMT" value="2321914823998967773" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <property role="TrG5h" value="ODEDefinitions" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFVbuBm">
+    <property role="EcuMT" value="2321914823999089110" />
+    <property role="3GE5qa" value="TextGenComponents" />
+    <property role="TrG5h" value="RateDefinition" />
+    <ref role="1TJDcQ" node="20T6jFUTtJQ" resolve="TextGenComponent" />
+  </node>
+  <node concept="1TIwiD" id="20T6jFVj3f3">
+    <property role="EcuMT" value="2321914824001074115" />
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="ModifierReference" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="20T6jFVj3f4" role="1TKVEi">
+      <property role="IQ2ns" value="2321914824001074116" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="5jwDGo4A5$C" resolve="Modifier" />
     </node>
   </node>
 </model>

@@ -42,11 +42,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     // Clean reactions that have been deleted. 
     // Clean references where this species is no longer being used as a reactant, or it has been duplicated. 
     for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ReactsIn$_Wy1))) {
-      if ((SLinkOperations.getTarget(reaction_ref, LINKS.Reaction_Reference$PJYZ) == null)) {
+      if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
         // Reaction has been deleted, so remove this reference. 
         SNodeOperations.deleteNode(reaction_ref);
       } else {
-        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
+        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
           // Otherwise, check to see if the species is being used even once as a reactant, keep the reference if so. 
           boolean isReactant = false;
           if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), __thisNode__)) {
@@ -62,11 +62,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     }
     // Clean references where this species is no longer a product. 
     for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ProductOf$_X03))) {
-      if ((SLinkOperations.getTarget(reaction_ref, LINKS.Reaction_Reference$PJYZ) == null)) {
+      if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
         // Reaction has been deleted, so remove this reference. 
         SNodeOperations.deleteNode(reaction_ref);
       } else {
-        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.Reaction_Reference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
+        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
           // Otherwise, check to see if the species is being used even once as a product, keep the reference if so. 
           boolean isProduct = false;
           if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), __thisNode__)) {
@@ -139,7 +139,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Reaction_Reference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "Reaction_Reference");
+    /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");

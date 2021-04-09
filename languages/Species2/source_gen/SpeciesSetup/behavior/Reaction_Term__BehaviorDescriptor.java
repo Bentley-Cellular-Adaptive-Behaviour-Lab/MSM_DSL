@@ -41,7 +41,7 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
     // Creates a reaction reference node and associates it with the relevant species, but only if it doesn't already exist. 
     if ((SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde) != null) && !(((boolean) Reaction_Term__BehaviorDescriptor.isRelationPresent_id1Ch7j$NgJ_b.invoke(__thisNode__)))) {
       SNode newReactionRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, "SpeciesSetup.structure.Reaction_Reference"));
-      SLinkOperations.setTarget(newReactionRef, LINKS.Reaction_Reference$PJYZ, SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Reaction$JH, false, false));
+      SLinkOperations.setTarget(newReactionRef, LINKS.ReactionReference$PJYZ, SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Reaction$JH, false, false));
 
       // If this is found on the left-hand side of the equation, then let the species know it is a reactant. 
       // Otherwise, it is a product. 
@@ -65,14 +65,14 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9)).contains(__thisNode__)) {
       // This is a reactant term, then check over the species reactant relations.   
       for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsIn$_Wy1))) {
-        if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Reaction_Reference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
+        if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;
         }
       }
     } else {
       // This is a product term, then check over the species product relations. 
       for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOf$_X03))) {
-        if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Reaction_Reference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
+        if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;
         }
       }
@@ -130,7 +130,7 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Reaction_Reference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "Reaction_Reference");
+    /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");

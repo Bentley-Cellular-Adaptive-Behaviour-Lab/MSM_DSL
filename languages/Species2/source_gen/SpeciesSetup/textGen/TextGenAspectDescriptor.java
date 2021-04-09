@@ -27,10 +27,24 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new Inhibits_TextGen();
       case LanguageConceptSwitch.IrreversibleReaction:
         return new IrreversibleReaction_TextGen();
+      case LanguageConceptSwitch.Modifier:
+        return new Modifier_TextGen();
+      case LanguageConceptSwitch.ODEDefinitions:
+        return new ODEDefinitions_TextGen();
+      case LanguageConceptSwitch.ODEStateComponent:
+        return new ODEStateComponent_TextGen();
+      case LanguageConceptSwitch.ODESystemComponent:
+        return new ODESystemComponent_TextGen();
       case LanguageConceptSwitch.Parameter:
         return new Parameter_TextGen();
+      case LanguageConceptSwitch.ParameterDefinitionComponent:
+        return new ParameterDefinitionComponent_TextGen();
       case LanguageConceptSwitch.ParameterExpression:
         return new ParameterExpression_TextGen();
+      case LanguageConceptSwitch.RateDefinition:
+        return new RateDefinition_TextGen();
+      case LanguageConceptSwitch.RateFunctionsComponent:
+        return new RateFunctionsComponent_TextGen();
       case LanguageConceptSwitch.Reaction_Reference:
         return new Reaction_Reference_TextGen();
       case LanguageConceptSwitch.ReversibleReaction:
@@ -39,6 +53,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new Species_TextGen();
       case LanguageConceptSwitch.SpeciesContainer:
         return new SpeciesContainer_TextGen();
+      case LanguageConceptSwitch.SpeciesDefinitionComponent:
+        return new SpeciesDefinitionComponent_TextGen();
       case LanguageConceptSwitch.SpeciesExpression:
         return new SpeciesExpression_TextGen();
       case LanguageConceptSwitch.SpeciesPowerExpression:
