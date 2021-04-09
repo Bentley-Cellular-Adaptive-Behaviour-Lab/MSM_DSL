@@ -5050,5 +5050,41 @@
       </node>
     </node>
   </node>
+  <node concept="WtQ9Q" id="5jwDGo4G5yK">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="WuzLi" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
+    <node concept="11bSqf" id="5jwDGo4G5yL" role="11c4hB">
+      <node concept="3clFbS" id="5jwDGo4G5yM" role="2VODD2">
+        <node concept="lc7rE" id="5jwDGo4G5_d" role="3cqZAp">
+          <node concept="l9hG8" id="5jwDGo4G5_x" role="lcghm">
+            <node concept="2OqwBi" id="5jwDGo4G5JS" role="lb14g">
+              <node concept="117lpO" id="5jwDGo4G5An" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5jwDGo4G5Ys" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="WtQ9Q" id="5jwDGo4G61C">
+    <property role="3GE5qa" value="Processes" />
+    <ref role="WuzLi" to="w3cn:5jwDGo4BeZX" resolve="Upregulates" />
+    <node concept="11bSqf" id="5jwDGo4G61D" role="11c4hB">
+      <node concept="3clFbS" id="5jwDGo4G61E" role="2VODD2">
+        <node concept="lc7rE" id="5jwDGo4G61X" role="3cqZAp">
+          <node concept="l9hG8" id="5jwDGo4G62h" role="lcghm">
+            <node concept="2OqwBi" id="5jwDGo4G6cC" role="lb14g">
+              <node concept="117lpO" id="5jwDGo4G637" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5jwDGo4G6ro" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

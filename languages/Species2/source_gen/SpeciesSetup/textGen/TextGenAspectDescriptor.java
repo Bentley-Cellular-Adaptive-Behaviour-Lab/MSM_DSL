@@ -23,6 +23,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
   @Override
   public TextGenDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     switch (myIndex.index(concept)) {
+      case LanguageConceptSwitch.Inhibits:
+        return new Inhibits_TextGen();
       case LanguageConceptSwitch.IrreversibleReaction:
         return new IrreversibleReaction_TextGen();
       case LanguageConceptSwitch.Parameter:
@@ -43,6 +45,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new SpeciesPowerExpression_TextGen();
       case LanguageConceptSwitch.SpeciesReference:
         return new SpeciesReference_TextGen();
+      case LanguageConceptSwitch.Upregulates:
+        return new Upregulates_TextGen();
     }
     return null;
   }
