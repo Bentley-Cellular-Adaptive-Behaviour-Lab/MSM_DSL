@@ -41,6 +41,8 @@ import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpointReference;
 import de.itemis.mps.editor.diagram.runtime.shape.CompositeShape;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionType;
 import de.itemis.mps.editor.diagram.runtime.model.DiagramModel;
+import de.itemis.mps.editor.diagram.runtime.jgraph.LayeredLayouter;
+import org.eclipse.elk.core.options.Direction;
 import de.itemis.mps.editor.diagram.runtime.model.IPaletteEntryProvider;
 import de.itemis.mps.editor.diagram.runtime.model.CompositePaletteEntryProvider;
 import de.itemis.mps.editor.diagram.runtime.model.SubstituteInfoPaletteEntryProvider;
@@ -300,7 +302,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                                   return SNodeOperations.isInstanceOf(SNodeOperations.as(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), CONCEPTS.ReversibleReaction$fi);
                                 }
                               };
-                              final IShape endShape = null;
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Species_Ref$Wnde), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), PROPS.name$MnvL) + "_reactantRelation")) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -525,6 +527,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                     };
 
                     DiagramModel model = DiagramModel.getModel(editorContext, node, "3125878369731869964", accessor);
+                    model.setLayouter(new LayeredLayouter(Direction.DOWN));
 
                     IPaletteEntryProvider paletteEntryProvider = new CompositePaletteEntryProvider(new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Processes$hnPe))), new SubstituteInfoPaletteEntryProvider(new SubstituteInfoFactory(editorContext, node).forChildLink(node, SLinkOperations.findLinkDeclaration(LINKS.Species$hnnc))));
                     model.setPaletteEntryProvider(paletteEntryProvider);

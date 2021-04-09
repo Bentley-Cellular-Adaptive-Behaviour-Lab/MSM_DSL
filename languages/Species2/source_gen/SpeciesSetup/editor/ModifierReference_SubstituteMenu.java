@@ -23,13 +23,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 
-public class Reaction_Reference_SubstituteMenu extends SubstituteMenuBase {
+public class ModifierReference_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_vau8ld_a(), CONCEPTS.Reaction_Reference$_p));
-    result.add(new SMP_Subconcepts_vau8ld_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SMP_ReferenceScope_quq4wy_a(), CONCEPTS.ModifierReference$8K));
+    result.add(new SMP_Subconcepts_quq4wy_b());
     return result;
   }
 
@@ -37,7 +37,7 @@ public class Reaction_Reference_SubstituteMenu extends SubstituteMenuBase {
   @Override
   public List<SubstituteMenuItem> createMenuItems(@NotNull SubstituteMenuContext context) {
     context.getEditorMenuTrace().pushTraceInfo();
-    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for Reaction_Reference. Generated from implicit smart reference attribute.", new SNodePointer("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)", "1878314651098778609")));
+    context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("default substitute menu for ModifierReference. Generated from implicit smart reference attribute.", new SNodePointer("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)", "2321914824001074115")));
     try {
       return super.createMenuItems(context);
     } finally {
@@ -46,11 +46,11 @@ public class Reaction_Reference_SubstituteMenu extends SubstituteMenuBase {
   }
 
 
-  public class SMP_ReferenceScope_vau8ld_a extends ReferenceScopeSubstituteMenuPart {
+  public class SMP_ReferenceScope_quq4wy_a extends ReferenceScopeSubstituteMenuPart {
 
-    public SMP_ReferenceScope_vau8ld_a() {
+    public SMP_ReferenceScope_quq4wy_a() {
       // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
-      super((SAbstractConcept) CONCEPTS.Reaction_Reference$_p, LINKS.ReactionReference$PJYZ);
+      super((SAbstractConcept) CONCEPTS.ModifierReference$8K, LINKS.target$hsJa);
     }
     @NotNull
     @Override
@@ -65,15 +65,15 @@ public class Reaction_Reference_SubstituteMenu extends SubstituteMenuBase {
     }
 
   }
-  public class SMP_Subconcepts_vau8ld_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
+  public class SMP_Subconcepts_quq4wy_b extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(final SubstituteMenuContext _context) {
-      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.Reaction_Reference$_p);
+      return ConceptDescendantsCache.getInstance().getDirectDescendants(CONCEPTS.ModifierReference$8K);
     }
     @NotNull
     @Override
     public List<SubstituteMenuItem> createItems(SubstituteMenuContext context) {
       context.getEditorMenuTrace().pushTraceInfo();
-      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "Reaction_Reference", null));
+      context.getEditorMenuTrace().setDescriptor(new EditorMenuDescriptorBase("include menus for all the direct subconcepts of " + "ModifierReference", null));
       try {
         return super.createItems(context);
       } finally {
@@ -88,10 +88,10 @@ public class Reaction_Reference_SubstituteMenu extends SubstituteMenuBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Reaction_Reference$_p = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, "SpeciesSetup.structure.Reaction_Reference");
+    /*package*/ static final SConcept ModifierReference$8K = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference");
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
+    /*package*/ static final SReferenceLink target$hsJa = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, 0x2039193afb4c33c4L, "target");
   }
 }

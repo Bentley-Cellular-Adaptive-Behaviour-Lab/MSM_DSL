@@ -200,11 +200,15 @@
     </language>
     <language id="fa13cc63-c476-4d46-9c96-d53670abe7bc" name="de.itemis.mps.editor.diagram">
       <concept id="6554619383003875357" name="de.itemis.mps.editor.diagram.structure.InlineEditorComponent" flags="ig" index="238au4" />
+      <concept id="8433227566817223068" name="de.itemis.mps.editor.diagram.structure.LayeredLayoutAlgorithm" flags="ng" index="39fpm">
+        <property id="7623784619795245948" name="direction" index="1NdBj4" />
+      </concept>
       <concept id="6554619383001456740" name="de.itemis.mps.editor.diagram.structure.BoxEndpointTarget" flags="ng" index="23hSZX">
         <child id="6554619383001456819" name="targetId" index="23hSWE" />
       </concept>
       <concept id="6554619382999975769" name="de.itemis.mps.editor.diagram.structure.Content_GenericElementQuery_OuterNode" flags="ng" index="23r2z0" />
       <concept id="1110129820007229393" name="de.itemis.mps.editor.diagram.structure.CellModel_Diagram" flags="ng" index="27vDVx">
+        <child id="8433227566816393050" name="layoutAlgorithm" index="35U2g" />
         <child id="1981294357059564524" name="paletteSources" index="1RuSHk" />
       </concept>
       <concept id="3155126767690989914" name="de.itemis.mps.editor.diagram.structure.Content_GenericBoxQuery" flags="ng" index="ahg9e">
@@ -1339,6 +1343,18 @@
               </node>
             </node>
           </node>
+          <node concept="2xQOud" id="20T6jFUSupY" role="1PNbKK">
+            <ref role="2xQOue" node="2Hxmt3eWKwS" resolve="Arrowhead" />
+            <node concept="3b6qkQ" id="20T6jFUSupZ" role="1xbcaF">
+              <property role="$nhwW" value="1.0" />
+            </node>
+            <node concept="3clFbT" id="20T6jFUSuq0" role="1xbcaF">
+              <property role="3clFbU" value="true" />
+            </node>
+            <node concept="3b6qkQ" id="20T6jFUSuq1" role="1xbcaF">
+              <property role="$nhwW" value="2.0" />
+            </node>
+          </node>
         </node>
         <node concept="238au4" id="2Hxmt3eXagP" role="3kqczz">
           <node concept="3F0A7n" id="2Hxmt3eXasF" role="2wV5jI">
@@ -1749,6 +1765,9 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="39fpm" id="20T6jFV9Y5r" role="35U2g">
+        <property role="1NdBj4" value="6Bd7VwqYQBY/DOWN" />
       </node>
     </node>
   </node>
