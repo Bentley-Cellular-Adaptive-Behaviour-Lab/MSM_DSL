@@ -2808,7 +2808,7 @@
         <node concept="2Gpval" id="dl" role="3cqZAp">
           <uo k="s:originTrace" v="n:8050503989175222424" />
           <node concept="2GrKxI" id="dm" role="2Gsz3X">
-            <property role="TrG5h" value="currentReaction" />
+            <property role="TrG5h" value="Process" />
             <uo k="s:originTrace" v="n:8050503989175222425" />
           </node>
           <node concept="2OqwBi" id="dn" role="2GsD0m">
@@ -2827,7 +2827,7 @@
             <node concept="2Gpval" id="dr" role="3cqZAp">
               <uo k="s:originTrace" v="n:8050503989175222430" />
               <node concept="2GrKxI" id="ds" role="2Gsz3X">
-                <property role="TrG5h" value="queryReaction" />
+                <property role="TrG5h" value="queryProcess" />
                 <uo k="s:originTrace" v="n:8050503989175222431" />
               </node>
               <node concept="2OqwBi" id="dt" role="2GsD0m">
@@ -2850,12 +2850,12 @@
                     <node concept="17QLQc" id="d$" role="3uHU7w">
                       <uo k="s:originTrace" v="n:8050503989175222438" />
                       <node concept="2GrUjf" id="dA" role="3uHU7w">
-                        <ref role="2Gs0qQ" node="ds" resolve="queryReaction" />
+                        <ref role="2Gs0qQ" node="ds" resolve="queryProcess" />
                         <uo k="s:originTrace" v="n:8050503989175222439" />
                       </node>
                       <node concept="2GrUjf" id="dB" role="3uHU7B">
-                        <ref role="2Gs0qQ" node="dm" resolve="currentReaction" />
-                        <uo k="s:originTrace" v="n:8050503989175222440" />
+                        <ref role="2Gs0qQ" node="dm" resolve="Process" />
+                        <uo k="s:originTrace" v="n:6116071663381448662" />
                       </node>
                     </node>
                     <node concept="17R0WA" id="d_" role="3uHU7B">
@@ -2863,8 +2863,8 @@
                       <node concept="2OqwBi" id="dC" role="3uHU7B">
                         <uo k="s:originTrace" v="n:8050503989175222442" />
                         <node concept="2GrUjf" id="dE" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="dm" resolve="currentReaction" />
-                          <uo k="s:originTrace" v="n:8050503989175222443" />
+                          <ref role="2Gs0qQ" node="ds" resolve="queryProcess" />
+                          <uo k="s:originTrace" v="n:6116071663381447558" />
                         </node>
                         <node concept="3TrcHB" id="dF" role="2OqNvi">
                           <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -2874,8 +2874,8 @@
                       <node concept="2OqwBi" id="dD" role="3uHU7w">
                         <uo k="s:originTrace" v="n:8050503989175222445" />
                         <node concept="2GrUjf" id="dG" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="ds" resolve="queryReaction" />
-                          <uo k="s:originTrace" v="n:8050503989175222446" />
+                          <ref role="2Gs0qQ" node="dm" resolve="Process" />
+                          <uo k="s:originTrace" v="n:6116071663381448763" />
                         </node>
                         <node concept="3TrcHB" id="dH" role="2OqNvi">
                           <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -2919,11 +2919,11 @@
                               <node concept="liA8E" id="dV" role="2OqNvi">
                                 <ref role="37wK5l" to="u78q:~TypeCheckingContext.reportTypeError(org.jetbrains.mps.openapi.model.SNode,java.lang.String,java.lang.String,java.lang.String,jetbrains.mps.errors.QuickFixProvider,jetbrains.mps.errors.messageTargets.MessageTarget)" resolve="reportTypeError" />
                                 <node concept="2GrUjf" id="dX" role="37wK5m">
-                                  <ref role="2Gs0qQ" node="dm" resolve="currentReaction" />
-                                  <uo k="s:originTrace" v="n:8050503989175222451" />
+                                  <ref role="2Gs0qQ" node="dm" resolve="Process" />
+                                  <uo k="s:originTrace" v="n:6116071663381448918" />
                                 </node>
                                 <node concept="Xl_RD" id="dY" role="37wK5m">
-                                  <property role="Xl_RC" value="Reaction names must be unique." />
+                                  <property role="Xl_RC" value="Process names must be unique." />
                                   <uo k="s:originTrace" v="n:8050503989175222450" />
                                 </node>
                                 <node concept="Xl_RD" id="dZ" role="37wK5m">

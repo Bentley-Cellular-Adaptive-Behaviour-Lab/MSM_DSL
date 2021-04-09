@@ -24,12 +24,12 @@ public class check_uniqueReactionNames_NonTypesystemRule extends AbstractNonType
   public check_uniqueReactionNames_NonTypesystemRule() {
   }
   public void applyRule(final SNode container, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    for (SNode currentReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
-      for (SNode queryReaction : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
-        if (Objects.equals(SPropertyOperations.getString(currentReaction, PROPS.name$MnvL), SPropertyOperations.getString(queryReaction, PROPS.name$MnvL)) && !(Objects.equals(currentReaction, queryReaction))) {
+    for (SNode Process : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
+      for (SNode queryProcess : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
+        if (Objects.equals(SPropertyOperations.getString(queryProcess, PROPS.name$MnvL), SPropertyOperations.getString(Process, PROPS.name$MnvL)) && !(Objects.equals(Process, queryProcess))) {
           {
             final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(currentReaction, "Reaction names must be unique.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "8050503989175222449", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(Process, "Process names must be unique.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "8050503989175222449", null, errorTarget);
           }
         }
       }

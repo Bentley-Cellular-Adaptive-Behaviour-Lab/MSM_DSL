@@ -87,7 +87,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
 
     // Create definitions for each reaction rate and production/degradation rate. 
     tgs.append("// Rate Definitions //\n");
-    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Reactions$hnPe))) {
+    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(ctx.getPrimaryInput(), LINKS.Processes$hnPe))) {
       // Unfortunately, this bit gets quite messy, so I've decided to over-comment rather than under-comment here. 
       // We need to include different rate templates depending on whether the reaction is reversible or not. 
       if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
@@ -424,7 +424,7 @@ public class SpeciesContainer_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SReferenceLink Rate$Otxh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, 0x665d03af898abc5aL, "Rate");
     /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
     /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");
-    /*package*/ static final SContainmentLink Reactions$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Reactions");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
     /*package*/ static final SReferenceLink Production_Term$Cs3S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af898481a1L, "Production_Term");
     /*package*/ static final SReferenceLink Degradation_Term$Cd2S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af8984818bL, "Degradation_Term");
     /*package*/ static final SReferenceLink Reaction_Reference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "Reaction_Reference");

@@ -159,7 +159,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
                         }
                         for (final SNode parameterObject : new Object() {
                           public Iterable<SNode> query() {
-                            return SLinkOperations.getChildren(node, LINKS.Processes$hnPe);
+                            List<SNode> reactions = ListSequence.fromList(new ArrayList<SNode>());
+                            for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
+                              public boolean accept(SNode it) {
+                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Reaction$JH);
+                              }
+                            })) {
+                              ListSequence.fromList(reactions).addElement(SNodeOperations.as(reaction, CONCEPTS.Reaction$JH));
+                            }
+                            return reactions;
                           }
                         }.query()) {
                           ContextVariables.withParentAndValue(_variablesContext, "parameterObject", parameterObject, new Runnable() {
@@ -303,7 +311,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
                               }
 
                               final IShape startShape = null;
-                              final IShape endShape = new Arrowhead(2.0, true, 1.0);
+                              final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Species_Ref$Wnde), PROPS.name$MnvL) + "_productRelation")) {
                                 @Override
                                 public void writeFrom(IConnectionEndpoint_Internal endpoint) {
@@ -356,12 +364,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
                         for (final SNode parameterObject : new Object() {
                           public Iterable<SNode> query() {
                             List<SNode> modifiers = ListSequence.fromList(new ArrayList<SNode>());
-                            for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
+                            for (SNode modifier : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
                               public boolean accept(SNode it) {
                                 return SNodeOperations.isInstanceOf(it, CONCEPTS.Modifier$l6);
                               }
                             })) {
-                              ListSequence.fromList(modifiers).addElement(SNodeOperations.as(process, CONCEPTS.Modifier$l6));
+                              ListSequence.fromList(modifiers).addElement(SNodeOperations.as(modifier, CONCEPTS.Modifier$l6));
                             }
                             return modifiers;
                           }
@@ -378,9 +386,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
                                 public boolean applicable() {
                                   return SNodeOperations.isInstanceOf(((SNode) _variablesContext.getValue("parameterObject")), CONCEPTS.Inhibits$am);
                                 }
-                              }, new ConditionalShape(new Arrowhead(2.0, true, 2.0)) {
+                              }, new ConditionalShape(new Arrowhead(1.0, true, 2.0)) {
                                 public boolean applicable() {
-                                  return !(SNodeOperations.isInstanceOf(((SNode) _variablesContext.getValue("parameterObject")), CONCEPTS.Upregulates$aP));
+                                  return SNodeOperations.isInstanceOf(((SNode) _variablesContext.getValue("parameterObject")), CONCEPTS.Upregulates$aP);
                                 }
                               });
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL))) {
@@ -398,11 +406,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
                                 }
                                 @Override
                                 public IConnectionEndpointReference readFrom() {
-                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL));
+                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Source$9HG6), PROPS.name$MnvL));
                                 }
                                 @Override
                                 public IConnectionEndpointReference readTo() {
-                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(((SNode) _variablesContext.getValue("parameterObject")), PROPS.name$MnvL));
+                                  return EndpointUtil.createEndpointReferenceForIdSafe(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Target$9C3I), PROPS.name$MnvL));
                                 }
                                 @Override
                                 public IShape getStartShape() {
@@ -836,6 +844,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
+    /*package*/ static final SReferenceLink Source$9HG6 = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06dL, "Source");
+    /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
     /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
   }
 
