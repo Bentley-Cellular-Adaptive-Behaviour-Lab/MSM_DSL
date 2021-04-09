@@ -33,7 +33,7 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
 
       // Handle instances where a species isn't used in a reaction or the neighbour value is being used, otherwise, create ODEs using each reaction the species participates in. 
 
-      if (Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1)).count(), 0) && SEnumOperations.isMember(SPropertyOperations.getEnum(species, PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L) && Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03)).count(), 0)) {
+      if (Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsInProcess$_Wy1)).count(), 0) && SEnumOperations.isMember(SPropertyOperations.getEnum(species, PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L) && Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOfProcess$_X03)).count(), 0)) {
         if ((SLinkOperations.getTarget(species, LINKS.Degradation_Term$Cd2S) != null)) {
           tgs.append(" -rate_");
           tgs.appendNode(species);
@@ -51,7 +51,7 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
         tgs.append(" 0");
       } else {
         // For each reaction where the species is a reactant, create terms for the reaction. 
-        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsIn$_Wy1))) {
+        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ReactsInProcess$_Wy1))) {
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.ReactionReference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
             tgs.append(" -rate_");
             tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.ReactionReference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
@@ -92,7 +92,7 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
         }
 
         // For each reaction where the species is a product, create terms for the reaction. 
-        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOf$_X03))) {
+        for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(species, LINKS.ProductOfProcess$_X03))) {
           if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(reaction, LINKS.ReactionReference$PJYZ), CONCEPTS.IrreversibleReaction$ja)) {
             tgs.append(" +rate_");
             tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(reaction, LINKS.ReactionReference$PJYZ), CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
@@ -172,9 +172,9 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
     /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");
-    /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
+    /*package*/ static final SContainmentLink ReactsInProcess$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsInProcess");
     /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
-    /*package*/ static final SContainmentLink ProductOf$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOf");
+    /*package*/ static final SContainmentLink ProductOfProcess$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOfProcess");
     /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
   }
 

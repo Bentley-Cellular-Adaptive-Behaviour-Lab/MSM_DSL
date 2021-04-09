@@ -34,9 +34,10 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
       case 0:
         if (true) {
           // concept 
-          intentions = new IntentionFactory[2];
+          intentions = new IntentionFactory[3];
           intentions[0] = new updateSpeciesRelations_Intention();
           intentions[1] = new updateParameterRelations_Intention();
+          intentions[2] = new updateEverything_Intention();
         }
         break;
       default:
@@ -48,9 +49,10 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[2];
+    IntentionFactory[] rv = new IntentionFactory[3];
     rv[0] = new updateSpeciesRelations_Intention();
     rv[1] = new updateParameterRelations_Intention();
+    rv[2] = new updateEverything_Intention();
     return Arrays.asList(rv);
   }
   private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL)).seal();
