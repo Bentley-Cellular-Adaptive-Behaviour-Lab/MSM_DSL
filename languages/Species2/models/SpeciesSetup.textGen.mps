@@ -2112,7 +2112,7 @@
                         <ref role="2Gs0qQ" node="20T6jFVdM8F" resolve="species" />
                       </node>
                       <node concept="3Tsc0h" id="20T6jFVdMaM" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsIn" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsInProcess" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="20T6jFVdMaN" role="2LFqv$">
@@ -2626,7 +2626,7 @@
                         <ref role="2Gs0qQ" node="20T6jFVdM8F" resolve="species" />
                       </node>
                       <node concept="3Tsc0h" id="20T6jFVdMdU" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOf" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOfProcess" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="20T6jFVdMdV" role="2LFqv$">
@@ -3095,7 +3095,7 @@
                         <ref role="2Gs0qQ" node="20T6jFVdM8F" resolve="species" />
                       </node>
                       <node concept="3Tsc0h" id="20T6jFVdMgL" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOf" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOfProcess" />
                       </node>
                     </node>
                     <node concept="34oBXx" id="20T6jFVdMgM" role="2OqNvi" />
@@ -3109,7 +3109,7 @@
                           <ref role="2Gs0qQ" node="20T6jFVdM8F" resolve="species" />
                         </node>
                         <node concept="3Tsc0h" id="20T6jFVdMgS" role="2OqNvi">
-                          <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsIn" />
+                          <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsInProcess" />
                         </node>
                       </node>
                       <node concept="34oBXx" id="20T6jFVdMgT" role="2OqNvi" />

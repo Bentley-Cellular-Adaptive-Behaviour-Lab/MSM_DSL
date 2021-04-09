@@ -47,9 +47,9 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
       // Otherwise, it is a product. 
       try {
         if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9)).contains(__thisNode__)) {
-          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsIn$_Wy1)).addElement(newReactionRef);
+          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsInProcess$_Wy1)).addElement(newReactionRef);
         } else {
-          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOf$_X03)).addElement(newReactionRef);
+          ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOfProcess$_X03)).addElement(newReactionRef);
         }
       } catch (NullPointerException ex) {
         // Species was not found, so throw an exception. 
@@ -64,14 +64,14 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
     boolean isRelationPresent = false;
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9)).contains(__thisNode__)) {
       // This is a reactant term, then check over the species reactant relations.   
-      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsIn$_Wy1))) {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsInProcess$_Wy1))) {
         if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;
         }
       }
     } else {
       // This is a product term, then check over the species product relations. 
-      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOf$_X03))) {
+      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOfProcess$_X03))) {
         if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;
         }
@@ -132,9 +132,9 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
   private static final class LINKS {
     /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
-    /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
+    /*package*/ static final SContainmentLink ReactsInProcess$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsInProcess");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
-    /*package*/ static final SContainmentLink ProductOf$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOf");
+    /*package*/ static final SContainmentLink ProductOfProcess$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOfProcess");
   }
 
   private static final class CONCEPTS {

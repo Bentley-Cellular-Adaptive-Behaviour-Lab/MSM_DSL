@@ -161,22 +161,29 @@
     <node concept="1TJgyj" id="2Hxmt3eVhgJ" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731548207" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="ReactsIn" />
+      <property role="20kJfa" value="ReactsInProcess" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="1Ch7j$N9SJL" resolve="Reaction_Reference" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVhgL" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731548209" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="ProductOf" />
+      <property role="20kJfa" value="ProductOfProcess" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="1Ch7j$N9SJL" resolve="Reaction_Reference" />
     </node>
     <node concept="1TJgyj" id="20T6jFVj3f6" role="1TKVEi">
       <property role="IQ2ns" value="2321914824001074118" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Modifies" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <property role="20kJfa" value="ModifiesProcess" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="20T6jFVj3f3" resolve="ModifierReference" />
+    </node>
+    <node concept="1TJgyj" id="20T6jFVkHQK" role="1TKVEi">
+      <property role="IQ2ns" value="2321914824001510832" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="ModifiedByProcess" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="20T6jFVj3f3" resolve="ModifierReference" />
     </node>
     <node concept="1TJgyi" id="2Hxmt3eVlUx" role="1TKVEl">

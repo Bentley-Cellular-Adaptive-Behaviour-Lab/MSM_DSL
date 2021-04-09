@@ -34,11 +34,12 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
 
   public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Void> updateSpeciesRelations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateSpeciesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
+  public static final SMethod<Void> updateSpeciesReactions_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateSpeciesReactions").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
+  public static final SMethod<Void> updateModifiers_id20T6jFVk_r2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateModifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVk_r2").build();
   public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6UEPGYOxbAr").build();
   public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesReactions_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setTarget(__thisNode__, LINKS.ODEStates$e3uZ, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2dL, "SpeciesSetup.structure.ODEStateComponent")));
@@ -82,16 +83,28 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return parameterList;
   }
-  /*package*/ static void updateSpeciesRelations_idJ83UdHo8mt(@NotNull SNode __thisNode__) {
+  /*package*/ static void updateSpeciesReactions_idJ83UdHo8mt(@NotNull SNode __thisNode__) {
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Species$hnnc))) {
       Species__BehaviorDescriptor.cleanReactionRelations_id1Ch7j$Nakak.invoke(species);
     }
-    for (SNode reaction : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
-      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
-        Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Reaction$JH)) {
+        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9))) {
+          Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+        }
+        for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.Reaction$JH), LINKS.Product_Terms$WnXb))) {
+          Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+        }
       }
-      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
-        Reaction_Term__BehaviorDescriptor.create_relation_id1Ch7j$N9XgT.invoke(term);
+    }
+  }
+  /*package*/ static void updateModifiers_id20T6jFVk_r2(@NotNull SNode __thisNode__) {
+    for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Species$hnnc))) {
+      Species__BehaviorDescriptor.cleanModifierRelations_id20T6jFVkZPx.invoke(species);
+    }
+    for (SNode modifier : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
+      if (SNodeOperations.isInstanceOf(modifier, CONCEPTS.Modifier$l6)) {
+        Modifier__BehaviorDescriptor.createRelations_id20T6jFVkE_s.invoke(SNodeOperations.as(modifier, CONCEPTS.Modifier$l6));
       }
     }
   }
@@ -103,7 +116,6 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Parameters$hoyh))) {
       Parameter__BehaviorDescriptor.updateUsedByRelations_id6ngYmLdX8Ap.invoke(parameter);
     }
-
   }
   /*package*/ static List<SNode> filterExpressionList_id3eqdKU_H9WR(@NotNull SNode __thisNode__, List<SNode> exprList) {
     List<SNode> filteredList = ListSequence.fromList(new ArrayList<SNode>());
@@ -161,12 +173,15 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       case 1:
         return (T) ((List<SNode>) getExprParameters_id3eqdKU_qMQ$(node, (SNode) parameters[0]));
       case 2:
-        updateSpeciesRelations_idJ83UdHo8mt(node);
+        updateSpeciesReactions_idJ83UdHo8mt(node);
         return null;
       case 3:
-        updateParameterRelations_id6UEPGYOxbAr(node);
+        updateModifiers_id20T6jFVk_r2(node);
         return null;
       case 4:
+        updateParameterRelations_id6UEPGYOxbAr(node);
+        return null;
+      case 5:
         return (T) ((List<SNode>) filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -214,6 +229,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
     /*package*/ static final SConcept Expression$D_ = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L, "org.iets3.core.expr.base.structure.Expression");
     /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
+    /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
+    /*package*/ static final SConcept Modifier$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
   }
 
   private static final class PROPS {

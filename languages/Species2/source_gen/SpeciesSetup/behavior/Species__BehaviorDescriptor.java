@@ -31,9 +31,10 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
 
   public static final SMethod<Void> cleanReactionRelations_id1Ch7j$Nakak = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanReactionRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Ch7j$Nakak").build();
+  public static final SMethod<Void> cleanModifierRelations_id20T6jFVkZPx = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanModifierRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVkZPx").build();
   public static final SMethod<Float> getConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getConcentrationValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmCFN3").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, getConcentrationValue_id3fk35jmCFN3);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getConcentrationValue_id3fk35jmCFN3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -41,7 +42,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static void cleanReactionRelations_id1Ch7j$Nakak(@NotNull SNode __thisNode__) {
     // Clean reactions that have been deleted. 
     // Clean references where this species is no longer being used as a reactant, or it has been duplicated. 
-    for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ReactsIn$_Wy1))) {
+    for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ReactsInProcess$_Wy1))) {
       if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
         // Reaction has been deleted, so remove this reference. 
         SNodeOperations.deleteNode(reaction_ref);
@@ -61,7 +62,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
     // Clean references where this species is no longer a product. 
-    for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ProductOf$_X03))) {
+    for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ProductOfProcess$_X03))) {
       if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
         // Reaction has been deleted, so remove this reference. 
         SNodeOperations.deleteNode(reaction_ref);
@@ -78,6 +79,18 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
             SNodeOperations.deleteNode(reaction_ref);
           }
         }
+      }
+    }
+  }
+  /*package*/ static void cleanModifierRelations_id20T6jFVkZPx(@NotNull SNode __thisNode__) {
+    for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ModifiesProcess$UMOC))) {
+      if (!(Objects.equals(SLinkOperations.getTarget(SLinkOperations.getTarget(relation, LINKS.target$hsJa), LINKS.Source$9HG6), __thisNode__))) {
+        SNodeOperations.deleteNode(relation);
+      }
+    }
+    for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ModifiedByProcess$uVT0))) {
+      if (!(Objects.equals(SLinkOperations.getTarget(SLinkOperations.getTarget(relation, LINKS.target$hsJa), LINKS.Target$9C3I), __thisNode__))) {
+        SNodeOperations.deleteNode(relation);
       }
     }
   }
@@ -108,6 +121,9 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         cleanReactionRelations_id1Ch7j$Nakak(node);
         return null;
       case 1:
+        cleanModifierRelations_id20T6jFVkZPx(node);
+        return null;
+      case 2:
         return (T) ((Float) getConcentrationValue_id3fk35jmCFN3(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -142,8 +158,13 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
-    /*package*/ static final SContainmentLink ReactsIn$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsIn");
-    /*package*/ static final SContainmentLink ProductOf$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOf");
+    /*package*/ static final SContainmentLink ReactsInProcess$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsInProcess");
+    /*package*/ static final SContainmentLink ProductOfProcess$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOfProcess");
+    /*package*/ static final SReferenceLink target$hsJa = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, 0x2039193afb4c33c4L, "target");
+    /*package*/ static final SReferenceLink Source$9HG6 = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06dL, "Source");
+    /*package*/ static final SContainmentLink ModifiesProcess$UMOC = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2039193afb4c33c6L, "ModifiesProcess");
+    /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
+    /*package*/ static final SContainmentLink ModifiedByProcess$uVT0 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2039193afb52ddb0L, "ModifiedByProcess");
     /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
   }
 

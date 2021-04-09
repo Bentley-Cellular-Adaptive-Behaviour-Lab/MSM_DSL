@@ -325,9 +325,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("Degradation_Term", 0x665d03af8984818bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063115").done();
     b.associate("Production_Term", 0x665d03af898481a1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063137").done();
     b.aggregate("Starting_Concentration", 0x375d1bec6ae084b4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("3989375547139458228").done();
-    b.aggregate("ReactsIn", 0x2b6159d0ceed142fL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548207").done();
-    b.aggregate("ProductOf", 0x2b6159d0ceed1431L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548209").done();
-    b.aggregate("Modifies", 0x2039193afb4c33c6L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(false).ordered(true).multiple(false).origin("2321914824001074118").done();
+    b.aggregate("ReactsInProcess", 0x2b6159d0ceed142fL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548207").done();
+    b.aggregate("ProductOfProcess", 0x2b6159d0ceed1431L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548209").done();
+    b.aggregate("ModifiesProcess", 0x2039193afb4c33c6L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(true).ordered(true).multiple(true).origin("2321914824001074118").done();
+    b.aggregate("ModifiedByProcess", 0x2039193afb52ddb0L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(true).ordered(true).multiple(true).origin("2321914824001510832").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesContainer() {
