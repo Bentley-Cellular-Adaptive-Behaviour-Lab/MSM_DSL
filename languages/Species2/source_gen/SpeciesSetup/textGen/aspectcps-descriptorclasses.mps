@@ -1622,7 +1622,7 @@
                         <uo k="s:originTrace" v="n:2321914823999693489" />
                       </node>
                       <node concept="3Tsc0h" id="6b" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsIn" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsInProcess" />
                         <uo k="s:originTrace" v="n:2321914823999693490" />
                       </node>
                     </node>
@@ -2508,7 +2508,7 @@
                         <uo k="s:originTrace" v="n:2321914823999693689" />
                       </node>
                       <node concept="3Tsc0h" id="9W" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOf" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOfProcess" />
                         <uo k="s:originTrace" v="n:2321914823999693690" />
                       </node>
                     </node>
@@ -3329,7 +3329,7 @@
                         <uo k="s:originTrace" v="n:2321914823999693872" />
                       </node>
                       <node concept="3Tsc0h" id="dw" role="2OqNvi">
-                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOf" />
+                        <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgL" resolve="ProductOfProcess" />
                         <uo k="s:originTrace" v="n:2321914823999693873" />
                       </node>
                     </node>
@@ -3351,7 +3351,7 @@
                           <uo k="s:originTrace" v="n:2321914823999693879" />
                         </node>
                         <node concept="3Tsc0h" id="dC" role="2OqNvi">
-                          <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsIn" />
+                          <ref role="3TtcxE" to="w3cn:2Hxmt3eVhgJ" resolve="ReactsInProcess" />
                           <uo k="s:originTrace" v="n:2321914823999693880" />
                         </node>
                       </node>
