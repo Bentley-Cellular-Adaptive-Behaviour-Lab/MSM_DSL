@@ -33,12 +33,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import de.itemis.mps.editor.diagram.runtime.DiagramUtil;
+import de.itemis.mps.editor.diagram.runtime.shape.ConditionalShape;
 import de.itemis.mps.editor.diagram.runtime.model.AbstractEdgeAccessor;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpoint_Internal;
 import de.itemis.mps.editor.diagram.runtime.model.EndpointUtil;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionEndpointReference;
 import de.itemis.mps.editor.diagram.runtime.shape.CompositeShape;
-import de.itemis.mps.editor.diagram.runtime.shape.ConditionalShape;
 import de.itemis.mps.editor.diagram.runtime.model.IConnectionType;
 import de.itemis.mps.editor.diagram.runtime.model.DiagramModel;
 import de.itemis.mps.editor.diagram.runtime.model.IPaletteEntryProvider;
@@ -79,9 +79,9 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -295,7 +295,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
                                 editorCell.addEditorCell(labelCell);
                               }
 
-                              final IShape startShape = null;
+                              final IShape startShape = new ConditionalShape(new Arrowhead(1.0, true, 2.0)) {
+                                public boolean applicable() {
+                                  return SNodeOperations.isInstanceOf(SNodeOperations.as(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), CONCEPTS.ReversibleReaction$fi);
+                                }
+                              };
                               final IShape endShape = null;
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Species_Ref$Wnde), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), PROPS.name$MnvL) + "_reactantRelation")) {
                                 @Override
@@ -372,7 +376,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
                                 editorCell.addEditorCell(labelCell);
                               }
 
-                              final IShape startShape = null;
+                              final IShape startShape = new ConditionalShape(new Arrowhead(1.0, true, 2.0)) {
+                                public boolean applicable() {
+                                  return SNodeOperations.isInstanceOf(SNodeOperations.as(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), CONCEPTS.ReversibleReaction$fi);
+                                }
+                              };
                               final IShape endShape = new Arrowhead(1.0, true, 2.0);
                               AbstractEdgeAccessor accessor = new AbstractEdgeAccessor(new AccessorKey(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(((SNode) _variablesContext.getValue("parameterObject"))), CONCEPTS.Reaction$JH), PROPS.name$MnvL) + "_" + SPropertyOperations.getString(SLinkOperations.getTarget(((SNode) _variablesContext.getValue("parameterObject")), LINKS.Species_Ref$Wnde), PROPS.name$MnvL) + "_productRelation")) {
                                 @Override
@@ -1212,6 +1220,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
         EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
         editorCell.setDefaultText("<no Stoichiometry>");
         editorCell.setCellId("property_Stoichiometry");
+        Style style = new StyleImpl();
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
+        editorCell.getStyle().putAll(style);
         editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
         setCellContext(editorCell);
         Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -1257,6 +1268,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
         EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
         editorCell.setDefaultText("<no Stoichiometry>");
         editorCell.setCellId("property_Stoichiometry1");
+        Style style = new StyleImpl();
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
+        editorCell.getStyle().putAll(style);
         editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
         setCellContext(editorCell);
         Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);

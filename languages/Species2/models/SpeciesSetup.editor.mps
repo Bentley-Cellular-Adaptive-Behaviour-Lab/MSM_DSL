@@ -1290,6 +1290,37 @@
               </node>
             </node>
           </node>
+          <node concept="3S3z86" id="20T6jFUQtgY" role="1PNbKK">
+            <node concept="2xQOud" id="20T6jFUQtgZ" role="3S3z8C">
+              <ref role="2xQOue" node="2Hxmt3eWKwS" resolve="Arrowhead" />
+              <node concept="3b6qkQ" id="20T6jFUQth0" role="1xbcaF">
+                <property role="$nhwW" value="1.0" />
+              </node>
+              <node concept="3clFbT" id="20T6jFUQth1" role="1xbcaF">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="3b6qkQ" id="20T6jFUQth2" role="1xbcaF">
+                <property role="$nhwW" value="2.0" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="20T6jFUQth3" role="3S3z90">
+              <node concept="1PxgMI" id="20T6jFUQth4" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="20T6jFUQth5" role="3oSUPX">
+                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
+                </node>
+                <node concept="2OqwBi" id="20T6jFUQth6" role="1m5AlR">
+                  <node concept="37u81S" id="20T6jFUQth7" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="20T6jFUQth8" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="20T6jFUQth9" role="2OqNvi">
+                <node concept="chp4Y" id="20T6jFUQtha" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1PNbMa" id="2Hxmt3eWAkJ" role="1PN8qh">
           <node concept="23hSZX" id="2Hxmt3eWJiU" role="ljJml">
@@ -1312,6 +1343,9 @@
         <node concept="238au4" id="2Hxmt3eXagP" role="3kqczz">
           <node concept="3F0A7n" id="2Hxmt3eXasF" role="2wV5jI">
             <ref role="1NtTu8" to="w3cn:2Hxmt3eVfjN" resolve="Stoichiometry" />
+            <node concept="VechU" id="20T6jFURs0J" role="3F10Kt">
+              <property role="Vb096" value="fLwANPs/magenta" />
+            </node>
           </node>
         </node>
       </node>
@@ -1432,6 +1466,37 @@
               </node>
             </node>
           </node>
+          <node concept="3S3z86" id="20T6jFUQsdJ" role="1PNbKK">
+            <node concept="2xQOud" id="20T6jFUQtfa" role="3S3z8C">
+              <ref role="2xQOue" node="2Hxmt3eWKwS" resolve="Arrowhead" />
+              <node concept="3b6qkQ" id="20T6jFUQtfN" role="1xbcaF">
+                <property role="$nhwW" value="1.0" />
+              </node>
+              <node concept="3clFbT" id="20T6jFUQtg7" role="1xbcaF">
+                <property role="3clFbU" value="true" />
+              </node>
+              <node concept="3b6qkQ" id="20T6jFUQtgF" role="1xbcaF">
+                <property role="$nhwW" value="2.0" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="20T6jFUQsNW" role="3S3z90">
+              <node concept="1PxgMI" id="20T6jFUQsDb" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="20T6jFUQsDP" role="3oSUPX">
+                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
+                </node>
+                <node concept="2OqwBi" id="20T6jFUQsmc" role="1m5AlR">
+                  <node concept="37u81S" id="20T6jFUQses" role="2Oq$k0" />
+                  <node concept="1mfA1w" id="20T6jFUQswA" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="1mIQ4w" id="20T6jFUQt5_" role="2OqNvi">
+                <node concept="chp4Y" id="20T6jFUQt8P" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="1PNbMa" id="2Hxmt3eX2Xv" role="1PN8qh">
           <node concept="23hSZX" id="2Hxmt3eXabZ" role="ljJml">
@@ -1500,6 +1565,9 @@
         <node concept="238au4" id="2Hxmt3eXasI" role="3kqczz">
           <node concept="3F0A7n" id="2Hxmt3eXaCV" role="2wV5jI">
             <ref role="1NtTu8" to="w3cn:2Hxmt3eVfjN" resolve="Stoichiometry" />
+            <node concept="VechU" id="20T6jFUQWHR" role="3F10Kt">
+              <property role="Vb096" value="fLwANPs/magenta" />
+            </node>
           </node>
         </node>
       </node>
