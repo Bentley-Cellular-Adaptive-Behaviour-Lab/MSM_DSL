@@ -63,8 +63,8 @@ public class RunMSM {
 
     // Attempt to build the MSM using the settings defined in the parent node. 
     try {
-      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "false" + " " + "no_analysis" + " " + "100" + " " + "30");
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "false", "no_analysis", "100", "30");
+      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "false" + " " + "no_analysis" + " " + "100" + " " + "0");
+      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "false", "no_analysis", "100", "0");
       pb.redirectErrorStream(true);
       pb.directory(new File("src"));
       Process p = pb.start();

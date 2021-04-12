@@ -2,8 +2,6 @@
 <dependenciesRoot>
   <dependency className="SpeciesSetup.intentions.IntentionsDescriptor">
     <classNode dependClassName="SpeciesSetup.intentions.updateEverything_Intention" />
-    <classNode dependClassName="SpeciesSetup.intentions.updateParameterRelations_Intention" />
-    <classNode dependClassName="SpeciesSetup.intentions.updateSpeciesRelations_Intention" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -30,46 +28,6 @@
     <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionExecutable" />
     <classNode dependClassName="jetbrains.mps.openapi.intentions.Kind" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
-  </dependency>
-  <dependency className="SpeciesSetup.intentions.updateParameterRelations_Intention">
-    <classNode dependClassName="SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.Kind" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
-    <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
-  </dependency>
-  <dependency className="SpeciesSetup.intentions.updateSpeciesRelations_Intention">
-    <classNode dependClassName="SpeciesSetup.behavior.Reaction_Term__BehaviorDescriptor" />
-    <classNode dependClassName="SpeciesSetup.behavior.Species__BehaviorDescriptor" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="jetbrains.mps.intentions.AbstractIntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionExecutable" />
-    <classNode dependClassName="jetbrains.mps.openapi.intentions.Kind" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />

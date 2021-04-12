@@ -458,7 +458,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return createTooltip_4(getEditorContext(), myNode);
   }
   private EditorCell createConstant_12() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Set Reactions");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "3. Set Interactions");
     editorCell.setCellId("Constant_jaklk3_a1g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);

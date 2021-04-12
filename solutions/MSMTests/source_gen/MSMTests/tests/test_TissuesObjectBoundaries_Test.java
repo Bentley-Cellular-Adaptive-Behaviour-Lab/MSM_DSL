@@ -34,6 +34,10 @@ public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
   public void test_test_MonolayerBoundaries() throws Throwable {
     new TestBody(this).test_test_MonolayerBoundaries();
   }
+  @Test
+  public void test_test_VesselBoundaries() throws Throwable {
+    new TestBody(this).test_test_VesselBoundaries();
+  }
 
   /*package*/ static class TestBody extends BaseTestBody {
 
@@ -65,7 +69,17 @@ public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
       Assert.assertEquals(100, (int) Tissue__BehaviorDescriptor.get_tissue_lowerx_gridpoint_id57Wjpeqov5H.invoke(getNodeById("599220133721249215")));
       Assert.assertEquals(100, (int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(getNodeById("599220133721249215")));
       Assert.assertEquals(200, (int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(getNodeById("599220133721249215")));
-
+    }
+    public void test_test_VesselBoundaries() throws Exception {
+      addNodeById("5525188949253741652");
+      addNodeById("5525188949253757348");
+      addNodeById("5525188949253742344");
+      Assert.assertEquals(0, (int) Tissue__BehaviorDescriptor.get_tissue_upperx_gridpoint_id57WjpeqnMK6.invoke(getNodeById("583075595211780836")));
+      Assert.assertEquals(-188, (int) Tissue__BehaviorDescriptor.get_tissue_uppery_gridpoint_id57Wjpeqo8L3.invoke(getNodeById("583075595211780836")));
+      Assert.assertEquals(-188, (int) Tissue__BehaviorDescriptor.get_tissue_upperz_gridpoint_id57WjpeqopM_.invoke(getNodeById("583075595211780836")));
+      Assert.assertEquals(-400, (int) Tissue__BehaviorDescriptor.get_tissue_lowerx_gridpoint_id57Wjpeqov5H.invoke(getNodeById("583075595211780836")));
+      Assert.assertEquals(-212, (int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(getNodeById("583075595211780836")));
+      Assert.assertEquals(-212, (int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(getNodeById("583075595211780836")));
     }
 
 
