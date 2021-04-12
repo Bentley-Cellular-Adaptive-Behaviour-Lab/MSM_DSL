@@ -388,7 +388,7 @@
       <node id="2321914823999693434" at="42,87,43,32" concept="2" />
       <node id="2321914823999693435" at="43,32,44,34" concept="2" />
       <node id="2321914823999693437" at="44,34,45,30" concept="2" />
-      <node id="2321914823999693446" at="47,164,48,27" concept="2" />
+      <node id="2321914823999693446" at="47,269,48,27" concept="2" />
       <node id="2321914823999693467" at="50,125,51,25" concept="2" />
       <node id="2321914823999693470" at="52,14,53,93" concept="8" />
       <node id="2321914823999693495" at="55,146,56,34" concept="2" />
@@ -431,41 +431,50 @@
       <node id="2321914823999693858" at="127,87,128,32" concept="2" />
       <node id="2321914823999693859" at="128,32,129,34" concept="2" />
       <node id="2321914823999693861" at="129,34,130,30" concept="2" />
-      <node id="2321914823999693891" at="132,7,133,53" concept="2" />
-      <node id="2321914823999693892" at="133,53,134,30" concept="2" />
-      <node id="2321914823999693894" at="134,30,135,23" concept="2" />
-      <node id="2321914823999693379" at="138,70,139,47" concept="7" />
-      <node id="2321914823999693532" at="141,81,142,47" concept="7" />
-      <node id="2321914823999693590" at="144,82,145,47" concept="7" />
-      <node id="2321914823999693639" at="147,82,148,47" concept="7" />
-      <node id="2321914823999693732" at="150,81,151,47" concept="7" />
-      <node id="2321914823999693789" at="153,82,154,47" concept="7" />
-      <node id="2321914823999693838" at="156,82,157,47" concept="7" />
-      <node id="2321914823999069098" at="161,0,162,0" concept="10" trace="SpeciesContainer$Ig" />
-      <node id="2321914823999069098" at="162,0,163,0" concept="10" trace="IrreversibleReaction$ja" />
-      <node id="2321914823999069098" at="163,0,164,0" concept="10" trace="ReversibleReaction$fi" />
-      <node id="2321914823999069098" at="167,0,168,0" concept="10" trace="Degradation_Term$Cd2S" />
-      <node id="2321914823999069098" at="168,0,169,0" concept="10" trace="Production_Term$Cs3S" />
-      <node id="2321914823999069098" at="169,0,170,0" concept="10" trace="ReactionReference$PJYZ" />
-      <node id="2321914823999069098" at="170,0,171,0" concept="10" trace="Rate$Otxh" />
-      <node id="2321914823999069098" at="171,0,172,0" concept="10" trace="Species_Ref$Wnde" />
-      <node id="2321914823999069098" at="172,0,173,0" concept="10" trace="Reactant_Terms$Wnv9" />
-      <node id="2321914823999069098" at="173,0,174,0" concept="10" trace="ForwardRate$OzkM" />
-      <node id="2321914823999069098" at="174,0,175,0" concept="10" trace="ReverseRate$OtVr" />
-      <node id="2321914823999069098" at="175,0,176,0" concept="10" trace="ReactsInProcess$_Wy1" />
-      <node id="2321914823999069098" at="176,0,177,0" concept="10" trace="Product_Terms$WnXb" />
-      <node id="2321914823999069098" at="177,0,178,0" concept="10" trace="ProductOfProcess$_X03" />
-      <node id="2321914823999069098" at="178,0,179,0" concept="10" trace="Species$hnnc" />
-      <node id="2321914823999069098" at="182,0,183,0" concept="10" trace="UsesValue$4P_Q" />
-      <node id="2321914823999069098" at="183,0,184,0" concept="10" trace="Stoichiometry$Wmha" />
+      <node id="5263669171485458835" at="132,7,133,38" concept="8" />
+      <node id="5263669171484861088" at="135,120,136,32" concept="2" />
+      <node id="5263669171484874369" at="136,32,137,128" concept="2" />
+      <node id="5263669171484912306" at="138,127,139,32" concept="2" />
+      <node id="5263669171484912373" at="139,32,140,128" concept="2" />
+      <node id="2321914823999693891" at="142,7,143,53" concept="2" />
+      <node id="2321914823999693892" at="143,53,144,30" concept="2" />
+      <node id="2321914823999693894" at="144,30,145,23" concept="2" />
+      <node id="2321914823999693379" at="148,70,149,47" concept="7" />
+      <node id="2321914823999693532" at="151,81,152,47" concept="7" />
+      <node id="2321914823999693590" at="154,82,155,47" concept="7" />
+      <node id="2321914823999693639" at="157,82,158,47" concept="7" />
+      <node id="2321914823999693732" at="160,81,161,47" concept="7" />
+      <node id="2321914823999693789" at="163,82,164,47" concept="7" />
+      <node id="2321914823999693838" at="166,82,167,47" concept="7" />
+      <node id="2321914823999069098" at="171,0,172,0" concept="10" trace="SpeciesContainer$Ig" />
+      <node id="2321914823999069098" at="172,0,173,0" concept="10" trace="IrreversibleReaction$ja" />
+      <node id="2321914823999069098" at="173,0,174,0" concept="10" trace="ReversibleReaction$fi" />
+      <node id="2321914823999069098" at="174,0,175,0" concept="10" trace="Inhibits$am" />
+      <node id="2321914823999069098" at="178,0,179,0" concept="10" trace="Degradation_Term$Cd2S" />
+      <node id="2321914823999069098" at="179,0,180,0" concept="10" trace="Production_Term$Cs3S" />
+      <node id="2321914823999069098" at="180,0,181,0" concept="10" trace="ModifiedByProcess$uVT0" />
+      <node id="2321914823999069098" at="181,0,182,0" concept="10" trace="ReactionReference$PJYZ" />
+      <node id="2321914823999069098" at="182,0,183,0" concept="10" trace="Rate$Otxh" />
+      <node id="2321914823999069098" at="183,0,184,0" concept="10" trace="Species_Ref$Wnde" />
+      <node id="2321914823999069098" at="184,0,185,0" concept="10" trace="Reactant_Terms$Wnv9" />
+      <node id="2321914823999069098" at="185,0,186,0" concept="10" trace="ForwardRate$OzkM" />
+      <node id="2321914823999069098" at="186,0,187,0" concept="10" trace="ReverseRate$OtVr" />
+      <node id="2321914823999069098" at="187,0,188,0" concept="10" trace="ReactsInProcess$_Wy1" />
+      <node id="2321914823999069098" at="188,0,189,0" concept="10" trace="Product_Terms$WnXb" />
+      <node id="2321914823999069098" at="189,0,190,0" concept="10" trace="ProductOfProcess$_X03" />
+      <node id="2321914823999069098" at="190,0,191,0" concept="10" trace="target$hsJa" />
+      <node id="2321914823999069098" at="191,0,192,0" concept="10" trace="Modifier$ZNcM" />
+      <node id="2321914823999069098" at="192,0,193,0" concept="10" trace="Species$hnnc" />
+      <node id="2321914823999069098" at="196,0,197,0" concept="10" trace="UsesValue$4P_Q" />
+      <node id="2321914823999069098" at="197,0,198,0" concept="10" trace="Stoichiometry$Wmha" />
       <node id="2321914823999693443" at="46,9,49,9" concept="4" />
-      <node id="2321914823999693379" at="138,0,141,0" concept="11" trace="as_chrd2i_a0a0a2a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693532" at="141,0,144,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a1a0h0e0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693590" at="144,0,147,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a0b0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693639" at="147,0,150,0" concept="11" trace="as_chrd2i_a0a0a2a0a5a0a0b0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693732" at="150,0,153,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a6a0h0e0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693789" at="153,0,156,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a0g0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
-      <node id="2321914823999693838" at="156,0,159,0" concept="11" trace="as_chrd2i_a0a0a2a0a5a0a0g0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693379" at="148,0,151,0" concept="11" trace="as_chrd2i_a0a0a2a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693532" at="151,0,154,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a1a0h0e0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693590" at="154,0,157,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a0b0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693639" at="157,0,160,0" concept="11" trace="as_chrd2i_a0a0a2a0a5a0a0b0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693732" at="160,0,163,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a6a0h0e0a#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693789" at="163,0,166,0" concept="11" trace="as_chrd2i_a0a0a2a0a2a0a0g0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
+      <node id="2321914823999693838" at="166,0,169,0" concept="11" trace="as_chrd2i_a0a0a2a0a5a0a0g0a7a4a0#(Ljava/lang/Object;Ljava/lang/Class;)null" />
       <node id="2321914823999693419" at="36,355,41,9" concept="4" />
       <node id="2321914823999693431" at="41,9,46,9" concept="4" />
       <node id="2321914823999693507" at="58,177,63,15" concept="4" />
@@ -482,23 +491,27 @@
       <node id="2321914823999693704" at="98,192,105,13" concept="3" />
       <node id="2321914823999693761" at="108,197,115,13" concept="3" />
       <node id="2321914823999693810" at="117,197,124,13" concept="3" />
+      <node id="5263669171484855947" at="134,119,141,9" concept="4" />
+      <node id="5263669171484846406" at="133,38,142,7" concept="3" />
       <node id="2321914823999693692" at="95,121,125,11" concept="4" />
       <node id="2321914823999693492" at="54,120,85,11" concept="4" />
       <node id="2321914823999693686" at="94,92,126,9" concept="3" />
       <node id="2321914823999693486" at="53,93,86,9" concept="3" />
       <node id="2321914823999693468" at="52,12,132,7" concept="0" />
       <node id="2321914823999693417" at="35,0,132,7" concept="4" />
-      <node id="2321914823999693354" at="27,42,136,5" concept="3" />
-      <node id="2321914823999069098" at="22,0,138,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="2321914823999693444" at="47,164,48,27" />
+      <node id="2321914823999693354" at="27,42,146,5" concept="3" />
+      <node id="2321914823999069098" at="22,0,148,0" concept="5" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="2321914823999693444" at="47,269,48,27" />
       <scope id="2321914823999693465" at="50,125,51,25" />
-      <scope id="2321914823999693379" at="138,70,139,47" />
-      <scope id="2321914823999693532" at="141,81,142,47" />
-      <scope id="2321914823999693590" at="144,82,145,47" />
-      <scope id="2321914823999693639" at="147,82,148,47" />
-      <scope id="2321914823999693732" at="150,81,151,47" />
-      <scope id="2321914823999693789" at="153,82,154,47" />
-      <scope id="2321914823999693838" at="156,82,157,47" />
+      <scope id="2321914823999693379" at="148,70,149,47" />
+      <scope id="2321914823999693532" at="151,81,152,47" />
+      <scope id="2321914823999693590" at="154,82,155,47" />
+      <scope id="2321914823999693639" at="157,82,158,47" />
+      <scope id="2321914823999693732" at="160,81,161,47" />
+      <scope id="2321914823999693789" at="163,82,164,47" />
+      <scope id="2321914823999693838" at="166,82,167,47" />
+      <scope id="5263669171484855949" at="135,120,137,128" />
+      <scope id="5263669171484900023" at="138,127,140,128" />
       <scope id="2321914823999693420" at="37,88,40,29" />
       <scope id="2321914823999693432" at="42,87,45,30" />
       <scope id="2321914823999693513" at="59,101,62,150" />
@@ -509,31 +522,31 @@
       <scope id="2321914823999693770" at="110,101,113,151" />
       <scope id="2321914823999693819" at="119,101,122,151" />
       <scope id="2321914823999693856" at="127,87,130,30" />
-      <scope id="2321914823999693379" at="138,0,141,0">
+      <scope id="2321914823999693379" at="148,0,151,0">
         <var name="o" id="2321914823999693379" />
         <var name="type" id="2321914823999693379" />
       </scope>
-      <scope id="2321914823999693532" at="141,0,144,0">
+      <scope id="2321914823999693532" at="151,0,154,0">
         <var name="o" id="2321914823999693532" />
         <var name="type" id="2321914823999693532" />
       </scope>
-      <scope id="2321914823999693590" at="144,0,147,0">
+      <scope id="2321914823999693590" at="154,0,157,0">
         <var name="o" id="2321914823999693590" />
         <var name="type" id="2321914823999693590" />
       </scope>
-      <scope id="2321914823999693639" at="147,0,150,0">
+      <scope id="2321914823999693639" at="157,0,160,0">
         <var name="o" id="2321914823999693639" />
         <var name="type" id="2321914823999693639" />
       </scope>
-      <scope id="2321914823999693732" at="150,0,153,0">
+      <scope id="2321914823999693732" at="160,0,163,0">
         <var name="o" id="2321914823999693732" />
         <var name="type" id="2321914823999693732" />
       </scope>
-      <scope id="2321914823999693789" at="153,0,156,0">
+      <scope id="2321914823999693789" at="163,0,166,0">
         <var name="o" id="2321914823999693789" />
         <var name="type" id="2321914823999693789" />
       </scope>
-      <scope id="2321914823999693838" at="156,0,159,0">
+      <scope id="2321914823999693838" at="166,0,169,0">
         <var name="o" id="2321914823999693838" />
         <var name="type" id="2321914823999693838" />
       </scope>
@@ -561,7 +574,11 @@
       <scope id="2321914823999693810" at="117,197,124,13">
         <var name="term" id="2321914823999693811" />
       </scope>
+      <scope id="5263669171484846412" at="134,119,141,9" />
       <scope id="2321914823999693693" at="96,146,105,13" />
+      <scope id="5263669171484846406" at="133,38,142,7">
+        <var name="process" id="5263669171484846408" />
+      </scope>
       <scope id="2321914823999693493" at="55,146,65,0" />
       <scope id="2321914823999693418" at="36,355,49,9" />
       <scope id="2321914823999693551" at="66,151,84,13" />
@@ -575,21 +592,21 @@
         <var name="reaction" id="2321914823999693487" />
       </scope>
       <scope id="2321914823999693469" at="52,14,131,9" />
-      <scope id="2321914823999693363" at="28,109,135,23" />
-      <scope id="2321914823999693354" at="27,42,136,5">
+      <scope id="2321914823999693363" at="28,109,145,23" />
+      <scope id="2321914823999693354" at="27,42,146,5">
         <var name="species" id="2321914823999693355" />
       </scope>
-      <scope id="2321914823999069098" at="23,54,136,5">
+      <scope id="2321914823999069098" at="23,54,146,5">
         <var name="container" id="2321914824000118240" />
         <var name="tgs" id="2321914823999069098" />
       </scope>
-      <scope id="2321914823999069098" at="22,0,138,0">
+      <scope id="2321914823999069098" at="22,0,148,0">
         <var name="ctx" id="2321914823999069098" />
       </scope>
-      <unit id="2321914823999069098" at="181,0,185,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$PROPS" />
-      <unit id="2321914823999069098" at="160,0,165,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$CONCEPTS" />
-      <unit id="2321914823999069098" at="166,0,180,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$LINKS" />
-      <unit id="2321914823999069098" at="21,0,186,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen" />
+      <unit id="2321914823999069098" at="195,0,199,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$PROPS" />
+      <unit id="2321914823999069098" at="170,0,176,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$CONCEPTS" />
+      <unit id="2321914823999069098" at="177,0,194,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen$LINKS" />
+      <unit id="2321914823999069098" at="21,0,200,0" name="SpeciesSetup.textGen.ODEDefinitions_TextGen" />
     </file>
     <file name="TextGenAspectDescriptor.java">
       <node id="2321914823999069098" at="32,48,33,44" concept="7" />

@@ -35,30 +35,31 @@ public final class Modifier__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void createRelations_id20T6jFVkE_s(@NotNull SNode __thisNode__) {
+    boolean isAlreadyPresent = false;
     for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Source$9HG6), LINKS.ModifiesProcess$UMOC))) {
       // Check all modifies relations for the source species, if not found, then add a new reference. 
-      boolean isAlreadyPresent = false;
       if (Objects.equals(SLinkOperations.getTarget(relation, LINKS.target$hsJa), __thisNode__)) {
         isAlreadyPresent = true;
       }
-      if (!(isAlreadyPresent)) {
-        SNode sourceRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference"));
-        SLinkOperations.setTarget(sourceRef, LINKS.target$hsJa, __thisNode__);
-        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Source$9HG6), LINKS.ModifiesProcess$UMOC)).addElement(sourceRef);
-      }
     }
+    if (!(isAlreadyPresent)) {
+      SNode sourceRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference"));
+      SLinkOperations.setTarget(sourceRef, LINKS.target$hsJa, __thisNode__);
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Source$9HG6), LINKS.ModifiesProcess$UMOC)).addElement(sourceRef);
+    }
+    isAlreadyPresent = false;
     for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Target$9C3I), LINKS.ModifiedByProcess$uVT0))) {
       // Check all modified by relations for the target species, if not found, then add a new reference. 
-      boolean isAlreadyPresent = false;
       if (Objects.equals(SLinkOperations.getTarget(relation, LINKS.target$hsJa), __thisNode__)) {
         isAlreadyPresent = true;
       }
-      if (!(isAlreadyPresent)) {
-        SNode sourceRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference"));
-        SLinkOperations.setTarget(sourceRef, LINKS.target$hsJa, __thisNode__);
-        ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Source$9HG6), LINKS.ModifiesProcess$UMOC)).addElement(sourceRef);
-      }
     }
+    if (!(isAlreadyPresent)) {
+      SNode targetRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference"));
+      SLinkOperations.setTarget(targetRef, LINKS.target$hsJa, __thisNode__);
+      ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Target$9C3I), LINKS.ModifiedByProcess$uVT0)).addElement(targetRef);
+    }
+
   }
 
   /*package*/ Modifier__BehaviorDescriptor() {
