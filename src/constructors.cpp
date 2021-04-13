@@ -7,7 +7,6 @@
 #include <random>
 #include "memAgents.h"
 #include "environment.h"
-#include "EC.h"
 
 //#include "ODEs.h"
 
@@ -164,7 +163,6 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 
 MemAgent::~MemAgent(void){
 
-	this->clear_proteins();
 	EnvNeighs.clear();
 }
 
@@ -332,7 +330,7 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     gridYDimensions = yMAX;
     gridZDimensions = zMAX;
 
-    cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << endl;
+//    cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << endl;
 
     int i, j;
     grid = new ppLocation[xMAX];
@@ -464,7 +462,7 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
 
     scale_ProtLevels_to_CellSize();
 
-    cout << "Grid size - X: " << gridXDimensions
+    cout << "Grid size - X: " << gridXDimensions << "\n"
          << "Y: " << gridYDimensions << "\n"
          << "Z: " << gridZDimensions << "\n";
 
