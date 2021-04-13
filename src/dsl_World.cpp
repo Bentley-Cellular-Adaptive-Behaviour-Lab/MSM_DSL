@@ -8,7 +8,7 @@ void World_Container::world_setup() {
 
     // WORLD CREATION
 
-    world = create_world(40, 40, 40, 0.5);
+    world = create_world(240, 64, 64, 0.5);
     m_world = world;
 
     // GRADIENT CREATION
