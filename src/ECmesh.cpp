@@ -389,7 +389,7 @@ bool EC::testSpringLength(float P[3], float N[3], Spring* stp) {
 
 bool World::toroidalTest(float P[3], float N[3]) {
 
-    if ((sqrt((P[0] - N[0])*(P[0] - N[0]))<(float) xMAX / 2.0f)) return (false);
+    if ((sqrt((P[0] - N[0])*(P[0] - N[0]))<(float) gridXDimensions / 2.0f)) return (false);
     else return (true);
 }
 //-------------------------------------------------------------------------------------------------------------
