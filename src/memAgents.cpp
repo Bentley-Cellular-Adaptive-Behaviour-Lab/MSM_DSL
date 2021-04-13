@@ -6,7 +6,6 @@
 #include <math.h>
 #include "memAgents.h"
 #include "environment.h"
-#include "EC.h"
 
 using namespace std;
 
@@ -375,19 +374,19 @@ MemAgent* MemAgent::find_nearest_triangle_node(void) {
 
     MemAgent* nearest;
 
-    if (fabs(Mx - triangle[0]->Mx) >= (float) xMAX / 2.0f) {
-        if (Mx > triangle[0]->Mx) dist1 = worldP->getDist(Mx - xMAX, My, Mz, triangle[0]->Mx, triangle[0]->My, triangle[0]->Mz);
-        else dist1 = worldP->getDist(Mx, My, Mz, triangle[0]->Mx - xMAX, triangle[0]->My, triangle[0]->Mz);
+    if (fabs(Mx - triangle[0]->Mx) >= (float) worldP->gridXDimensions / 2.0f) {
+        if (Mx > triangle[0]->Mx) dist1 = worldP->getDist(Mx - worldP->gridXDimensions, My, Mz, triangle[0]->Mx, triangle[0]->My, triangle[0]->Mz);
+        else dist1 = worldP->getDist(Mx, My, Mz, triangle[0]->Mx - worldP->gridXDimensions, triangle[0]->My, triangle[0]->Mz);
     } else dist1 = worldP->getDist(Mx, My, Mz, triangle[0]->Mx, triangle[0]->My, triangle[0]->Mz);
 
-    if (fabs(Mx - triangle[1]->Mx) >= (float) xMAX / 2.0f) {
-        if (Mx > triangle[1]->Mx) dist2 = worldP->getDist(Mx - xMAX, My, Mz, triangle[1]->Mx, triangle[1]->My, triangle[1]->Mz);
-        else dist2 = worldP->getDist(Mx, My, Mz, triangle[1]->Mx - xMAX, triangle[1]->My, triangle[1]->Mz);
+    if (fabs(Mx - triangle[1]->Mx) >= (float) worldP->gridXDimensions / 2.0f) {
+        if (Mx > triangle[1]->Mx) dist2 = worldP->getDist(Mx - worldP->gridXDimensions, My, Mz, triangle[1]->Mx, triangle[1]->My, triangle[1]->Mz);
+        else dist2 = worldP->getDist(Mx, My, Mz, triangle[1]->Mx - worldP->gridXDimensions, triangle[1]->My, triangle[1]->Mz);
     } else dist2 = worldP-> getDist(Mx, My, Mz, triangle[1]->Mx, triangle[1]->My, triangle[1]->Mz);
 
-    if (fabs(Mx - triangle[2]->Mx) >= (float) xMAX / 2.0f) {
-        if (Mx > triangle[2]->Mx) dist3 = worldP->getDist(Mx - xMAX, My, Mz, triangle[2]->Mx, triangle[2]->My, triangle[2]->Mz);
-        else dist3 = worldP->getDist(Mx, My, Mz, triangle[2]->Mx - xMAX, triangle[2]->My, triangle[2]->Mz);
+    if (fabs(Mx - triangle[2]->Mx) >= (float) worldP->gridXDimensions / 2.0f) {
+        if (Mx > triangle[2]->Mx) dist3 = worldP->getDist(Mx - worldP->gridXDimensions, My, Mz, triangle[2]->Mx, triangle[2]->My, triangle[2]->Mz);
+        else dist3 = worldP->getDist(Mx, My, Mz, triangle[2]->Mx - worldP->gridXDimensions, triangle[2]->My, triangle[2]->Mz);
     } else dist3 = worldP->getDist(Mx, My, Mz, triangle[2]->Mx, triangle[2]->My, triangle[2]->Mz);
 
     if ((dist1 <= dist2) && (dist1 <= dist3)) nearest = triangle[0];
@@ -593,6 +592,8 @@ bool MemAgent::checkNeighsVonForEnv(void) {
             p = k;
         }
 
+
+        //-------------------------------
         //toroidal only X
         if(TOROIDAL_X_env==true){
         	if (m >= this->worldP->gridXDimensions)
@@ -614,8 +615,12 @@ bool MemAgent::checkNeighsVonForEnv(void) {
 
     if (flag == 1) return true;
     else {
+       
         return false;
+
     }
+   
+
 }
 //-----------------------------------
 //------------------------------------------------------------------------------
@@ -2297,20 +2302,4 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 
 
-}
-
-float MemAgent::get_protein_level(std::string name) {
-	Protein_MemAgent *current_protein;
-	for (auto & protein : this->owned_proteins) {
-		current_protein = protein;
-		if (current_protein->get_name() == name) {
-			return current_protein->get_level();
-		}
-	}
-}
-
-void MemAgent::clear_proteins() {
-	for (int i = 0; i < this->owned_proteins.size(); i++) {
-		delete owned_proteins[i];
-	}
 }
