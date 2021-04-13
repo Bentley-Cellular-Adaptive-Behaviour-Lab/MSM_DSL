@@ -51,12 +51,12 @@ class Env;
 //#endif
 
 /// below defines are set through makefile
-//#define ANALYSIS_HYSTERESIS false
-//#define ANALYSIS_TIME_TO_PATTERN false
-//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-//#define GRAPHICS false
-//#define ECpack 1
-//#define MAXtime 100000 ///2000 ///480 for fil lifetime
+#define ANALYSIS_HYSTERESIS false
+#define ANALYSIS_TIME_TO_PATTERN false
+#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+#define GRAPHICS false
+#define ECpack 10
+#define MAXtime 100000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
@@ -88,14 +88,14 @@ extern ofstream RUNSfile;
 #define Ygap 40//cell_setup_2: Ygap=40
 #define Zgap 1
 #define xMAXplus 40
-#define xMAX vesselLength// Testing: vesselLength
-#define yMAX 250// Testing: ((vesselRadius*2)+gap+1000)
-#define zMAX (vesselRadius*2)+(gap*2)// Testing: (vesselRadius*2)+(gap*2)
+#define xMAX 500// Testing: vesselLength
+#define yMAX 500// Testing: ((vesselRadius*2)+gap+1000)
+#define zMAX 500// Testing: (vesselRadius*2)+(gap*2)
 
 ///CELL_SETUP
 #define CELL_SETUP 1 ///1 = vessel toroidal bottom of y axis (PLoS), 2 = blind ended sprout (NCB, rearrangement papers centre y axis, non toroidal), 3 = monolayer, 4 = single cells in a dish, 5 = zebrafish
 #define BLINDENDED_SPROUT false
-#define ECELLS 1
+#define ECELLS 10
 #define ECcross 1///cell_setup2: 2 //no. of ECELLs to a cross section of vessel
 
 #define ECwidth 20///cell_setup2: 10 //width along vessel of ECELL = width of one ECpack
