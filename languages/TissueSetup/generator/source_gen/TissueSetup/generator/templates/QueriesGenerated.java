@@ -92,7 +92,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return (String) Arrangement__BehaviorDescriptor.get_length_in_cells_id4DdJmqSFaKv.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return (String) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_string_id4DdJmqSFkkm.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh));
+    return Integer.toString((int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
