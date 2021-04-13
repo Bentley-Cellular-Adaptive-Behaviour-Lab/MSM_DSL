@@ -6,19 +6,19 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -45,7 +45,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="Removed old folders from languages and solutions directory. Adding the rest of the language files into versioning. Fixed left over issues related to process migration.">
+      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/springAgent" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Protein.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tissue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/display.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +95,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="a2fdbc59-2204-455f-9547-d8c49f14b294/r:00549324-eddd-4eab-b2af-b9d97e97b90b(TempModulea2fdbc59-2204-455f-9547-d8c49f14b294/ConsoleModel_68606817133361)">
+            <model ref="aef17bfc-d8c3-43d1-a4c5-0de2485ed501/r:e9c681cc-69c1-4d28-abbe-ddefdc8fc84a(TempModuleaef17bfc-d8c3-43d1-a4c5-0de2485ed501/ConsoleModel_76941652382645)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -99,146 +127,146 @@
                   <concept id="473081947980701568" name="jetbrains.mps.console.base.structure.HelpCommand" flags="ng" index="1PAEo6" />
                 </language>
               </registry>
-              <node concept="aymSD" id="40_YE9$MIgD">
-                <node concept="3balQm" id="40_YE9$MIgE" role="aymYE">
-                  <node concept="2Clz$F" id="40_YE9$MIgF" role="18xWvz">
-                    <node concept="1PAEo6" id="40_YE9$MIgG" role="2Clzx4" />
+              <node concept="aymSD" id="HZF7MJANaG">
+                <node concept="3balQm" id="HZF7MJANaH" role="aymYE">
+                  <node concept="2Clz$F" id="HZF7MJANaI" role="18xWvz">
+                    <node concept="1PAEo6" id="HZF7MJANaJ" role="2Clzx4" />
                   </node>
-                  <node concept="ZBF_j" id="40_YE9$MIgH" role="18xWvz">
-                    <node concept="Zy5XD" id="40_YE9$MIgI" role="Zy5mW">
+                  <node concept="ZBF_j" id="HZF7MJANaK" role="18xWvz">
+                    <node concept="Zy5XD" id="HZF7MJANaL" role="Zy5mW">
                       <property role="Zy5T0" value="Constructions available in console:" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgJ" role="Zy5mW" />
-                    <node concept="Zy5Tx" id="40_YE9$MIgK" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgL" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaM" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="HZF7MJANaN" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaO" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgM" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgN" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaP" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaQ" role="Zy5mW">
                       <property role="Zy5T0" value="{ &lt;statements&gt; }   execute a statement list" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgO" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgP" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaR" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaS" role="Zy5mW">
                       <property role="Zy5T0" value="&lt;expression&gt;       evaluate an expression and print its result" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgQ" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgR" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaT" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaU" role="Zy5mW">
                       <property role="Zy5T0" value="?                  display this help or a help page for a specific command" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgS" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgT" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaV" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaW" role="Zy5mW">
                       <property role="Zy5T0" value="#print             print into the console window" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgU" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgV" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaX" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANaY" role="Zy5mW">
                       <property role="Zy5T0" value="#project           the current project" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgW" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgX" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANaZ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb0" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIgY" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIgZ" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb1" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb2" role="Zy5mW">
                       <property role="Zy5T0" value="#showBrokenRefs    show broken references" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh0" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh1" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb3" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb4" role="Zy5mW">
                       <property role="Zy5T0" value="#showGenPlan       show the generation plan" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh2" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh3" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb5" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb6" role="Zy5mW">
                       <property role="Zy5T0" value="#stat              display useful statistics" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh4" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh5" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb7" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb8" role="Zy5mW">
                       <property role="Zy5T0" value="#callAction        call an IDE action with custom parameters" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh6" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh7" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb9" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANba" role="Zy5mW">
                       <property role="Zy5T0" value="#clean             clean files *.generated" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh8" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh9" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbb" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbc" role="Zy5mW">
                       <property role="Zy5T0" value="#make              make models" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIha" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhb" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbd" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbe" role="Zy5mW">
                       <property role="Zy5T0" value="#removeGenSources  delete the source_gen, source_gen.caches and classes_gen directories" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhc" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhd" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbf" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbg" role="Zy5mW">
                       <property role="Zy5T0" value="#show              show sequence of nodes/references/models/modules in the Usages View panel" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhe" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhf" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbh" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbi" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhg" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhh" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbj" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbk" role="Zy5mW">
                       <property role="Zy5T0" value="#reloadClasses     reload classes of all modules" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhi" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhj" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbl" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbm" role="Zy5mW">
                       <property role="Zy5T0" value="#consoleModel      return a model, in which the console commands as well as its history are stored" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhk" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhl" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbn" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbo" role="Zy5mW">
                       <property role="Zy5T0" value="#internalMode      access the IDE internal mode variable" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhm" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhn" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbp" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbq" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIho" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhp" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbr" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbs" role="Zy5mW">
                       <property role="Zy5T0" value="#exec              execute a script" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhq" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhr" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbt" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbu" role="Zy5mW">
                       <property role="Zy5T0" value="refactor           apply a function to manually selected nodes" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhs" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIht" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbv" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbw" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhu" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhv" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbx" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANby" role="Zy5mW">
                       <property role="Zy5T0" value="ofAspect           filter models by their aspect" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhw" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhx" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbz" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANb$" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhy" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhz" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANb_" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbA" role="Zy5mW">
                       <property role="Zy5T0" value="#instances         instances of a concept in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIh$" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIh_" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbB" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbC" role="Zy5mW">
                       <property role="Zy5T0" value="#models            all models in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhA" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhB" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbD" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbE" role="Zy5mW">
                       <property role="Zy5T0" value="#modules           all modules in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhC" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhD" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbF" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbG" role="Zy5mW">
                       <property role="Zy5T0" value="#nodes             all nodes in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhE" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhF" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbH" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbI" role="Zy5mW">
                       <property role="Zy5T0" value="#references        all references in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhG" role="Zy5mW" />
-                    <node concept="Zy5XD" id="40_YE9$MIhH" role="Zy5mW">
+                    <node concept="Zy5Tx" id="HZF7MJANbJ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="HZF7MJANbK" role="Zy5mW">
                       <property role="Zy5T0" value="#usages            direct references to a node in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="40_YE9$MIhI" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="HZF7MJANbL" role="Zy5mW" />
                   </node>
                 </node>
-                <node concept="2Clz$F" id="40_YE9$MIhJ" role="aymYO" />
-                <node concept="2_V_lH" id="40_YE9$MIhK" role="1PhJh3">
-                  <ref role="2_V_lI" node="40_YE9$MIhJ" resolve="CommandHolder" />
+                <node concept="2Clz$F" id="HZF7MJANbM" role="aymYO" />
+                <node concept="2_V_lH" id="HZF7MJANbN" role="1PhJh3">
+                  <ref role="2_V_lI" node="HZF7MJANbM" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -263,7 +291,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="ODE_Lang" />
+        <entry key="$PROJECT_DIR$" value="dev-irene-version" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -591,16 +619,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -617,6 +635,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -625,55 +653,9 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <SELECTED>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -1386,6 +1368,433 @@
   <component name="UsagesViewTool">
     <version id="1" />
     <tabs>
+      <tab>
+        <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+          </child>
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
+          </child>
+        </result_provider>
+        <query>
+          <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
+          <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
+            <node ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29" title="copy(Path,Path,CopyOption...):Path" />
+          </holder>
+        </query>
+        <usage_view>
+          <tree_wrapper>
+            <view_options>
+              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents caption="" excluded="false" isresult="false" results_section="false">
+              <role name="main root" />
+              <child caption="Searched nodes" excluded="false" isresult="false" results_section="false">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" />
+                <role name="searched nodes" />
+                <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="JDK" excluded="false" isresult="false" results_section="false" module_ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="java.nio.file@java_stub" excluded="false" isresult="false" results_section="false">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="Files" info="" excluded="false" isresult="false" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="copy(Path,Path,CopyOption...):Path" info="(role: member in: Files)" excluded="false" isresult="true" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                      </child>
+                      <model uid="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+              <child caption="Usages" excluded="false" isresult="false" results_section="true">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" />
+                <role name="results" />
+                <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                    </child>
+                  </child>
+                </child>
+                <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+      </tab>
+      <tab>
+        <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+          </child>
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
+          </child>
+        </result_provider>
+        <query>
+          <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
+          <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
+            <node ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/4052263675729498659" title="get_distance_in_gridpoints(long):BigDecimal" />
+          </holder>
+        </query>
+        <usage_view>
+          <tree_wrapper>
+            <view_options>
+              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents caption="" excluded="false" isresult="false" results_section="false">
+              <role name="main root" />
+              <child caption="Searched nodes" excluded="false" isresult="false" results_section="false">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" />
+                <role name="searched nodes" />
+                <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="Units" excluded="false" isresult="false" results_section="false" module_ref="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(Units)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="Units.behavior" excluded="false" isresult="false" results_section="false">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="Distance_Behavior" info="" excluded="false" isresult="false" results_section="false" nodePtr="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/3416854989769261030" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: method in: Distance_Behavior)" excluded="false" isresult="true" results_section="false" nodePtr="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/4052263675729498659">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                      </child>
+                      <model uid="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+              <child caption="Usages" excluded="false" isresult="false" results_section="true">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" />
+                <role name="results" />
+                <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="TissueSetup" excluded="false" isresult="false" results_section="true" module_ref="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="TissueSetup.behavior" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="Arrangement_Cylindrical_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896026259" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="calculate_total_ablumenal_steps():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124654383">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675729408956">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730150654">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587361570">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="width_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149721099">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149724100">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="calculate_cross_section_cells():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124847984">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="height_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736485">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736501">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="Arrangement_Flat_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896073485" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587402979">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="width_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730322385">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730326391">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="get_total_height_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587427485">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="height_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339189">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339205">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" />
+                    </child>
+                  </child>
+                </child>
+                <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="TissueSetup" excluded="false" isresult="false" results_section="true" module_ref="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="TissueSetup.behavior" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="Arrangement_Cylindrical_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896026259" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="calculate_total_ablumenal_steps():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124654383">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675729408956">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730150654">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587361570">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="width_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149721099">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149724100">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="calculate_cross_section_cells():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124847984">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="height_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736485">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736501">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <child caption="Arrangement_Flat_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896073485" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587402979">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="width_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730322385">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730326391">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                        <child caption="get_total_height_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587427485">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="height_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339189">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="root to target" />
+                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339205">
+                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                              <role name="target" />
+                            </child>
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+      </tab>
+      <tab>
+        <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder" />
+          </child>
+          <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">
+            <generated_finder class_name="jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder" />
+          </child>
+        </result_provider>
+        <query>
+          <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
+          <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
+            <node ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29" title="copy(Path,Path,CopyOption...):Path" />
+          </holder>
+        </query>
+        <usage_view>
+          <tree_wrapper>
+            <view_options>
+              <options category_option="false" module_option="true" model_option="true" root_option="true" path_option="false" count_option="true" info_option="true" view_searched_nodes_option="true" group_searched_nodes_option="true" autoscroll_option="false" />
+            </view_options>
+            <contents caption="" excluded="false" isresult="false" results_section="false">
+              <role name="main root" />
+              <child caption="Searched nodes" excluded="false" isresult="false" results_section="false">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.SearchedNodesNodeData" />
+                <role name="searched nodes" />
+                <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="JDK" excluded="false" isresult="false" results_section="false" module_ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="java.nio.file@java_stub" excluded="false" isresult="false" results_section="false">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="Files" info="" excluded="false" isresult="false" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="copy(Path,Path,CopyOption...):Path" info="(role: member in: Files)" excluded="false" isresult="true" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="target" />
+                        </child>
+                      </child>
+                      <model uid="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+              <child caption="Usages" excluded="false" isresult="false" results_section="true">
+                <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ResultsNodeData" />
+                <role name="results" />
+                <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                    </child>
+                  </child>
+                </child>
+                <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
+                  <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
+                  <role name="category:Category" />
+                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                    <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
+                    <role name="module" />
+                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                      <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
+                      <role name="model" />
+                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                        <role name="root" />
+                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                          <role name="root to target" />
+                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
+                            <role name="target" />
+                          </child>
+                        </child>
+                      </child>
+                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                    </child>
+                  </child>
+                </child>
+              </child>
+            </contents>
+          </tree_wrapper>
+        </usage_view>
+      </tab>
       <tab>
         <result_provider class_name="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode">
           <child rpn="jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode">

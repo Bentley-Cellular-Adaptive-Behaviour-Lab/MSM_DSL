@@ -6,7 +6,6 @@
 #include <math.h>
 #include "memAgents.h"
 #include "environment.h"
-#include "EC.h"
 
 
 using namespace std;
@@ -1733,8 +1732,6 @@ void World::createNewEnvAgent(int x, int y, int z){
         
         
     }
-
-
 //-------------------------------------------------------------------------------------------------------------
     
 //-------------------------------------------------------------------------
@@ -2334,8 +2331,5 @@ int World::AlreadyPicked(int a, int* pastNo, int chose) {
 }
 //-----------------------------------------------------------------------------------------------------
 
-EC::EC(World *world, Cell_Type *cell_type) : worldP(world), m_cell_type(cell_type) {
-
-}
 
 

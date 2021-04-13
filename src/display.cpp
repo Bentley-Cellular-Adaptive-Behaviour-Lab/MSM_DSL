@@ -6,7 +6,6 @@
 #include "ScreenRecording.h"
 #include "objects.h"
 #include "memAgents.h"
-#include "EC.h"
 
 // J Switch for os type
 
@@ -78,7 +77,7 @@ GLfloat lights_rotation[16] = {1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };
 
 float scale = 1.0;
 int sectX =0;
-int sectX2  =xMAX;
+int sectX2  = xMAX;
 int sectY =0;
 int sectY2 =yMAX;
 int sectZ = 0;
@@ -87,9 +86,11 @@ int sectZ2 =zMAX;
 /*float camposx= 0.0f;
 float camposy= -1000;
 float camposz= - 250*/;
-float camposx = -20.0f;
-float camposy = 150.0f;////sectY2/2.0f-10;
-float camposz = -100.0f*3;
+
+float camposx = 0.0f;
+float camposy = 0.0f;////sectY2/2.0f-10;
+float camposz = -100.0f;
+
 float camPitch=1;
 float camHeading=1;
 
