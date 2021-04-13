@@ -8,7 +8,6 @@
 #include <numeric>
 #include <iterator>
 #include "memAgents.h"
-#include "EC.h"
 
 using namespace std;
 
@@ -360,9 +359,9 @@ bool EC::testSpringLength(float P[3], float N[3], Spring* stp) {
     B = ((int) P[1]-(int) N[1])*((int) P[1]-(int) N[1]);
     D = ((int) P[2]-(int) N[2])*((int) P[2]-(int) N[2]);
 
-    if (A >= xMAX / 2.0f) {
-        if (P[0] > N[0]) A = ((int) (P[0] - xMAX)-(int) N[0])*((int) (P[0] - xMAX)-(int) N[0]);
-        else A = ((int) (P[0] - xMAX)-(int) N[0])*((int) (P[0] - xMAX)-(int) N[0]);
+    if (A >= worldP->gridXDimensions / 2.0f) {
+        if (P[0] > N[0]) A = ((int) (P[0] - worldP->gridXDimensions)-(int) N[0])*((int) (P[0] - worldP->gridXDimensions)-(int) N[0]);
+        else A = ((int) (P[0] - worldP->gridXDimensions)-(int) N[0])*((int) (P[0] - worldP->gridXDimensions)-(int) N[0]);
     }
     //if the spring stretches past its nearest neighs
     if (sqrt((double) A) >= 1) need = true;
