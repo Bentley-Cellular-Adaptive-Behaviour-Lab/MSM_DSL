@@ -93,7 +93,7 @@ void World::setFilLocation(int x, int y, int z, MemAgent * ident) {
 
 bool World::insideWorld(int i, int j, int k) {
 
-    if ((i < 0) || (j < 0) || (k < 0) || (i >= xMAX) || (j >= yMAX) || (k >= zMAX)) return (false);
+    if ((i < 0) || (j < 0) || (k < 0) || (i >= gridXDimensions) || (j >= gridYDimensions) || (k >= gridZDimensions)) return (false);
     else return (true);
 }
 
