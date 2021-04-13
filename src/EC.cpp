@@ -9,7 +9,6 @@
 #include <numeric>
 #include <iterator>
 #include "memAgents.h"
-#include "EC.h"
 
 using namespace std;
 
@@ -381,7 +380,6 @@ int uptoN;
 void EC::characterizeActNotchBoundaries(int which, int other){
     
     int i, j, y, n, k, m, p, s, x, t, B, flag;
-   
     int sum=0;
     bool allow;
     int sumJunction=0;
@@ -391,7 +389,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     }
     vector <EC*> neighbours;
     //hypothesis - why equal boundaries no offset fails more than equal boundaries offset - offset one is fighting on more fronts - or bigger fronts so has distributed its dll4 thinner all over as it were - so is essentially using less to inhibit the ones more likely to become tips - facing the vegf. We know that turing down dll4 helps the pattern to stabilise in high vegf...
-    
+
     //group agents into which boundary they are in, with which cell,
     for(s=0;s<nodeAgents.size();s++){
         // - show how many neighbour cells it has  and how big each bounday is.. in percentage of agents..
@@ -441,8 +439,10 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                     
                     //-------------------------------
                     //toroidal only X
-                    if(m>=xMAX) m=0;
-                    if(m<0) m=xMAX-1;
+                    if(m >= worldP->gridXDimensions)
+                    	m = 0;
+                    if(m < 0)
+                    	m = worldP->gridXDimensions - 1;
                     //-------------------------------
                     
                     if(worldP->insideWorld(m, n, p)==true){
@@ -483,22 +483,16 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                                                     junctionSizes[t]++ ;
                                                     neighbours.push_back(worldP->grid[m][n][p].Mids[y]->Cell);
                                                 }
-                                                
                                             }
                                     }
-                                    
                                 }
-                                
                             }
                         }
-                        
                     }
-                    
                 }
             }
         }
     }
-    
     
     for(i=0;i<worldP->cellNeighbourhoods[which].size();i++){
         cout<<junctionSizes[i]<<" ";
@@ -509,9 +503,3 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     
 }
 //------------------------------------------------------------------------------------------------
-
-// Tom: Extra constructor for DSL usage.
-EC::EC(World *world, Cell_Type *cell_type) {
-	this->worldP = world;
-	this->m_cell_type = cell_type;
-}
