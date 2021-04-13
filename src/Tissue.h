@@ -4,7 +4,7 @@
 #include <vector>
 #include "objects.h"
 #include "space.h"
-#include "world.h"
+
 
 #ifndef MEMAGENTSPRINGMODEL_DSL_TISSUE_H
 #define MEMAGENTSPRINGMODEL_DSL_TISSUE_H
@@ -22,7 +22,6 @@ public:
     string m_name;
     Shape *m_shape;
 	Tissue_Container *m_tissue_container;
-	vector<Protein_Cell*> m_cell_proteins;
 
     Cell_Type(Tissue_Container *tissue_container, string name, Shape *shape);
 };
@@ -217,27 +216,22 @@ public:
 class Tissue_Container {
 public:
 
-    vector<Tissue_Type*> tissue_types;
-    vector<Cell_Type*> cell_types;
-    vector<Tissue*> tissues;
-    vector<Cell*> cells;
-    vector<EC*> m_single_cell_agents;
+    vector <Tissue_Type*> tissue_types;
+    vector <Cell_Type*> cell_types;
+    vector <Tissue*> tissues;
+    vector <Cell*> cells;
 
-    vector<Protein*> m_proteins;
+    vector <EC*> m_single_cell_agents;
 
-    // In a perfect world (no pun intended), only the world container would be needed, but I'm adding both to avoid
-    // conflicts with objects.h
-    World_Container *m_world_container;
     World *m_world;
 
     Tissue_Container(World* world);
-	Tissue_Container(World* world, World_Container *world_container);
 
     void tissue_set_up();
 
     Cell_Type *define_cell_type(string name, int cell_shape_type, int height, int width);
 
-	// Defines a cylindrical configuration.
+    // Defines a cylindrical configuration.
     Tissue_Type_Cylindrical *define_tissue_type(string name,
                                     Cell_Type *cell_type,
                                     int tissue_configuration,
@@ -284,38 +278,6 @@ public:
     bool check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2);
     bool check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer);
     bool check_monolayer_monolayer_overlap(Tissue_Monolayer *monolayer_1, Tissue_Monolayer *monolayer_2);
-
-	void set_up_proteins();
-	void add_proteins_to_cell_agents();
-	void add_protein_to_type(Cell_Type* cell_type, std::string name);
-
-	Protein_Env *create_env_protein(std::string name, float level);
-	Protein_Cell *create_cell_protein(std::string name, float level, int location, float min_level, float max_level);
-
-	void store_protein(Protein* protein);
-
-	void create_binding_interaction(int interaction_type,
-									Protein* protein_A,
-									Protein* protein_B,
-									int requires_bound,
-									int requires_phosphorylation,
-									float binding_probability);
-
-	void create_phosphorylation_interaction(int interaction_type,
-											Protein* protein_A,
-											Protein* protein_B,
-											int requires_bound,
-											int requires_phosphorylation,
-											float phosphorylation_probability);
-
-	void create_regulation_interaction(int interaction_type,
-									   Protein* protein_A,
-									   Protein* protein_B,
-									   int requires_bound,
-									   int requires_phosphorylation,
-									   float regulation_strength,
-									   int timestep_delay);
-
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_TISSUE_H
