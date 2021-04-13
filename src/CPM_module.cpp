@@ -11,7 +11,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include "memAgents.h"
-#include "EC.h"
 
 vector <MemAgent*> deleteList;
 
@@ -1409,8 +1408,8 @@ void MedAgent::checkNeighs(void) {
 
         //-------------------------------
         //toroidal only X
-        if (m >= xMAX) m = 0;
-        if (m < 0) m = xMAX - 1;
+        if (m >= worldP->gridXDimensions) m = 0;
+        if (m < 0) m = worldP->gridXDimensions - 1;
 
         if (n >= yMAX) n = 0;
         if (n < 0) n = yMAX - 1;
