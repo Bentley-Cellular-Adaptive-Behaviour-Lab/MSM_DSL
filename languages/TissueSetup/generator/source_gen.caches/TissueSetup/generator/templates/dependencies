@@ -6,6 +6,7 @@
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Shape_Rectangular__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />

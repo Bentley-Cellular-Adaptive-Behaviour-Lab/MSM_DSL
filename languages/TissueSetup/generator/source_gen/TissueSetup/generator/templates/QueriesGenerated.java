@@ -65,14 +65,14 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
     String height = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
-      height += Shape_Rectangular__BehaviorDescriptor.get_rectangular_height_string_id1r0uutBQos0.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
+      height += Integer.toString((int) Shape_Rectangular__BehaviorDescriptor.get_rectangular_height_gridpoints_id2siCC6BFTh5.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)));
     }
     return height;
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
     String width = "";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
-      width += Shape_Rectangular__BehaviorDescriptor.get_rectangular_width_string_id1r0uutBQrtQ.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r));
+      width += Integer.toString((int) Shape_Rectangular__BehaviorDescriptor.get_rectangular_width_gridpoints_id2siCC6BFJkZ.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)));
     }
     return width;
   }
