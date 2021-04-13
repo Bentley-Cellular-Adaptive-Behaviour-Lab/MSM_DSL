@@ -4,7 +4,6 @@
 #include <fstream>
 #include "memAgents.h"
 #include "environment.h"
-#include "EC.h"
 
 using namespace std;
 
@@ -48,11 +47,11 @@ std::vector< std::vector<float> > World::getGridSiteData()
 {
     std::vector< std::vector<float> > retval;
 
-//    for(int x = 0; x < xMAX; x++)
+//    for(int x = 0; x < gridXDimensions; x++)
 //    {
-//        for(int y = 0; y < yMAX; y++)
+//        for(int y = 0; y < gridYDimensions; y++)
 //        {
-//            for(int z = 0; z < zMAX; z++)
+//            for(int z = 0; z < gridZDimensions; z++)
 //            {
 //                cout << "x: " << x << " y: " << y << " z: " << z << " type= " << grid[x][y][z].type << endl;
 //            }
