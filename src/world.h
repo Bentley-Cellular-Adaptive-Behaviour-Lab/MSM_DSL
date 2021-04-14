@@ -92,7 +92,7 @@ public:
              int gradient_type,
              string protein,
              Coordinates *source_position,
-             float source_starting_amount,
+             float starting_amount,
              Coordinates *sink_position);
 
 	//Constructor for cuboidal gradients.
@@ -100,7 +100,7 @@ public:
 			 int gradient_type,
 			 string protein,
 			 Coordinates *centre_position,
-			 float source_starting_amount,
+			 float starting_amount,
 			 int height,
 			 int width,
 			 int depth);
@@ -110,7 +110,7 @@ public:
 			 int gradient_type,
 			 string protein_name,
 			 Coordinates *centre_position,
-			 float source_starting_amount,
+			 float starting_amount,
 			 int sphere_radius);
 
     vector<float> calculate_dist_from_source(Env* ep);
