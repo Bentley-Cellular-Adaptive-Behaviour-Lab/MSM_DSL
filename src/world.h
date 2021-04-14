@@ -57,21 +57,21 @@ class Gradient {
 public:
     int m_gradient_type;
     int m_gradient_shape;
-    string m_protein;
+    string m_protein_name;
     Coordinates *m_source_position;
     Coordinates *m_sink_position;
     vector<float> m_source_to_sink_distances;
-    int m_source_starting_amount;
+    float m_source_starting_amount;
 
-
-    // Booleans to check whether the gradient changes along the relevant axis.
-    bool x_varying;
-    bool y_varying;
-    bool z_varying;
+    // Booleans to check whether the gradient changes along the relevant axis - used with sink and source gradients.
+    bool x_varying = false;
+    bool y_varying = false;
+    bool z_varying = false;
 
     World_Container *m_parent_container;
     World *m_parent_world;
 
+    //Constructor for sink and source gradients.
     Gradient(World_Container *container,
              int gradient_type,
              int gradient_shape,
@@ -79,6 +79,15 @@ public:
              Coordinates *source,
              int source_starting_amount,
              Coordinates *sink);
+
+	//Constructor for cuboidal gradients.
+	Gradient(World_Container *container,
+			 int gradient_type,
+			 int gradient_shape,
+			 string protein,
+			 Coordinates *source,
+			 int source_starting_amount,
+			 Coordinates *sink);
 
     vector<float> calculate_dist_from_source(Env* ep);
 
@@ -108,15 +117,21 @@ public:
 						  int substrate_direction,
 						  float adhesiveness);
 
+    [[deprecated("Use overloaded functions specific to each gradient type.")]]
+	void create_gradient(int gradient_type,
+						 int gradient_shape,
+						 string protein,
+						 Coordinates *source_position,
+						 int source_starting_amount,
+						 Coordinates *sink_position);
+
     void create_gradient(int gradient_type,
-                              int gradient_shape,
                               string protein,
                               Coordinates *source_position,
                               int source_starting_amount,
                               Coordinates *sink_position);
 
     void create_gradient(int gradient_type,
-						 int gradient_shape,
 						 string protein_name,
 						 float starting_strength,
 						 int gradient_direction,
