@@ -115,6 +115,16 @@ public:
                               int source_starting_amount,
                               Coordinates *sink_position);
 
+    void create_gradient(int gradient_type,
+						 int gradient_shape,
+						 string protein_name,
+						 float starting_strength,
+						 int gradient_direction,
+						 Coordinates *centre_position,
+						 int gradient_height,
+						 int gradient_width,
+						 int gradient_depth);
+
     void store_substrate(Substrate *gradient);
     void store_gradient(Gradient *gradient);
 

@@ -573,6 +573,17 @@ void World_Container::create_gradient(int gradient_type,
     store_gradient(new_gradient);
 }
 
+void World_Container::create_gradient(int gradient_type,
+									  int gradient_shape,
+									  string protein_name,
+									  float starting_strength,
+									  int gradient_direction,
+									  Coordinates *centre_position, int gradient_height,
+									  int gradient_width,
+									  int gradient_depth) {
+
+}
+
 /*****************************************************************************************
 *  Name:		create_substrate()
 *  Description: Creates a substrate object and applies it to environment agents in the
