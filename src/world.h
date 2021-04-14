@@ -150,19 +150,25 @@ public:
 						 Coordinates *sink_position);
 
 	void create_gradient(int gradient_type,
-					  	 string protein_name,
-					  	 Coordinates *source_position,
-					  	 int source_starting_amount,
-					  	 Coordinates *sink_position);
+						 string protein,
+						 Coordinates *source_position,
+						 float source_starting_amount,
+						 Coordinates *sink_position);
+
+	void create_gradient(int gradient_type,
+						 string protein,
+						 Coordinates *centre_position,
+						 float starting_amount,
+						 int gradient_direction,
+						 int height,
+						 int width,
+						 int depth);
 
     void create_gradient(int gradient_type,
 						 string protein_name,
-						 float starting_strength,
-						 int gradient_direction,
 						 Coordinates *centre_position,
-						 int gradient_height,
-						 int gradient_width,
-						 int gradient_depth);
+						 float starting_amount,
+						 int sphere_radius);
 
     void store_substrate(Substrate *gradient);
     void store_gradient(Gradient *gradient);

@@ -625,7 +625,7 @@ void World_Container::create_gradient(int gradient_type,
 void World_Container::create_gradient(int gradient_type,
 									  string protein_name,
 									  Coordinates *source_position,
-									  int source_starting_amount,
+									  float source_starting_amount,
 									  Coordinates *sink_position) {
 	std::cout << "Creating sink and source gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
@@ -650,21 +650,21 @@ void World_Container::create_gradient(int gradient_type,
 ******************************************************************************************/
 void World_Container::create_gradient(int gradient_type,
 									  string protein_name,
+									  Coordinates *centre_position,
 									  float starting_amount,
 									  int gradient_direction,
-									  Coordinates *centre_position,
-									  int gradient_height,
-									  int gradient_width,
-									  int gradient_depth) {
+									  int height,
+									  int width,
+									  int depth) {
 	std::cout << "Creating cuboidal gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
 								      gradient_type,
 								      protein_name,
 								      centre_position,
 								      starting_amount,
-								      gradient_height,
-									  gradient_width,
-									  gradient_depth);
+								      height,
+									  width,
+									  depth);
 	new_gradient->m_gradient_direction = gradient_direction;
 	new_gradient->apply_gradient_to_cuboid();
 	std::cout << "Gradient created." <<  endl;
@@ -673,23 +673,20 @@ void World_Container::create_gradient(int gradient_type,
 
 void World_Container::create_gradient(int gradient_type,
 									  string protein_name,
-									  float starting_amount,
-									  int gradient_direction,
 									  Coordinates *centre_position,
-									  int gradient_height,
-									  int gradient_width,
-									  int gradient_depth) {
-	std::cout << "Creating cuboidal gradient. Protein: " << protein_name << ".\n";
+									  float starting_amount,
+									  int sphere_radius) {
+	std::cout << "Creating spherical, point-source gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
 									  gradient_type,
 									  protein_name,
 									  centre_position,
 									  starting_amount,
-									  gradient_height,
-									  gradient_width,
-									  gradient_depth);
-	new_gradient->m_gradient_direction = gradient_direction;
-	new_gradient->apply_gradient_to_cuboid();
+									  sphere_radius);
+	new_gradient->x_varying = true;
+	new_gradient->y_varying = true;
+	new_gradient->z_varying = true;
+	new_gradient->apply_gradient_to_sphere();
 	std::cout << "Gradient created." <<  endl;
 	store_gradient(new_gradient);
 }
