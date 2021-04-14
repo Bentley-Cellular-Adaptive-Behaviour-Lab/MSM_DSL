@@ -11,9 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Changed calc_dist_from_source to check which gradient shape is being applied">
-      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Swapped width and height arguments for cuboidal gradient constructore" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +70,7 @@
       <workItem from="1618305670458" duration="184000" />
       <workItem from="1618305941908" duration="3939000" />
       <workItem from="1618392336956" duration="1209000" />
-      <workItem from="1618394055761" duration="11224000" />
+      <workItem from="1618394055761" duration="14811000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -249,7 +247,35 @@
       <option name="project" value="LOCAL" />
       <updated>1618415293278</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Cuboidal gradients now calculate weights based on a single axis.">
+      <created>1618418989919</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1618418989919</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Cuboidal gradients now calculate weights based on a single axis.">
+      <created>1618419647266</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1618419647266</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Apply gradient to cuboid uses the correct dimensions (swapped height and width)">
+      <created>1618419692794</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1618419692794</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Swapped width and height arguments for cuboidal gradient constructore">
+      <created>1618419766066</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1618419766066</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,9 +294,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later." />
-    <MESSAGE value="Changed insideWorldFunction to use the grid dimension member variables." />
-    <MESSAGE value="Changed getGridSiteData to use gridXDimensions" />
     <MESSAGE value="Changed characterizeActNotchBoundaries to use gridXDimensions" />
     <MESSAGE value="Changed checkNeighs to use gridXDimensions." />
     <MESSAGE value="Changed testSpringLength to use gridXDimensions." />
@@ -293,7 +316,10 @@
     <MESSAGE value="Implemented apply_gradient_to_cuboid function" />
     <MESSAGE value="Separating out calc_linear_env_vegf functionality" />
     <MESSAGE value="Changed calc_dist_from_source to check which gradient shape is being applied" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed calc_dist_from_source to check which gradient shape is being applied" />
+    <MESSAGE value="Cuboidal gradients now calculate weights based on a single axis." />
+    <MESSAGE value="Apply gradient to cuboid uses the correct dimensions (swapped height and width)" />
+    <MESSAGE value="Swapped width and height arguments for cuboidal gradient constructore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Swapped width and height arguments for cuboidal gradient constructore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
