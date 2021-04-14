@@ -2318,256 +2318,6 @@
               </node>
             </node>
           </node>
-          <node concept="356sEF" id="4KNMtF8NdeN" role="356sEH">
-            <property role="TrG5h" value=", " />
-          </node>
-          <node concept="356sEF" id="4KNMtF8Oy4j" role="356sEH">
-            <property role="TrG5h" value="GRADIENT_DIRECTION" />
-            <node concept="17Uvod" id="6B5I$h9zgT_" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="6B5I$h9zgTA" role="3zH0cK">
-                <node concept="3clFbS" id="6B5I$h9zgTB" role="2VODD2">
-                  <node concept="3cpWs8" id="6B5I$h9zh$3" role="3cqZAp">
-                    <node concept="3cpWsn" id="6B5I$h9zh$6" role="3cpWs9">
-                      <property role="TrG5h" value="direction" />
-                      <node concept="17QB3L" id="6B5I$h9zh$2" role="1tU5fm" />
-                      <node concept="Xl_RD" id="6B5I$h9zhI2" role="33vP2m">
-                        <property role="Xl_RC" value="" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbJ" id="6B5I$h9zhIS" role="3cqZAp">
-                    <node concept="3clFbS" id="6B5I$h9zhIU" role="3clFbx">
-                      <node concept="3clFbF" id="6B5I$h9zjzI" role="3cqZAp">
-                        <node concept="d57v9" id="6B5I$h9zjZf" role="3clFbG">
-                          <node concept="Xl_RD" id="6B5I$h9zk9k" role="37vLTx">
-                            <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_X" />
-                          </node>
-                          <node concept="37vLTw" id="6B5I$h9zjzG" role="37vLTJ">
-                            <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="6B5I$h9zlqm" role="3clFbw">
-                      <node concept="2OqwBi" id="6B5I$h9zkJk" role="2Oq$k0">
-                        <node concept="1PxgMI" id="6B5I$h9zjkw" role="2Oq$k0">
-                          <node concept="chp4Y" id="6B5I$h9zjpI" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                          </node>
-                          <node concept="2OqwBi" id="6B5I$h9zhYC" role="1m5AlR">
-                            <node concept="30H73N" id="6B5I$h9zhJu" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="6B5I$h9zijB" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3TrcHB" id="6B5I$h9zl0a" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                        </node>
-                      </node>
-                      <node concept="21noJN" id="6B5I$h9zlGj" role="2OqNvi">
-                        <node concept="21nZrQ" id="6B5I$h9zlM4" role="21noJM">
-                          <ref role="21nZrZ" to="s9ob:2S6lVSS$lvJ" resolve="X_Decreasing" />
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3eNFk2" id="6B5I$h9zlZc" role="3eNLev">
-                      <node concept="3clFbS" id="6B5I$h9zlZe" role="3eOfB_">
-                        <node concept="3clFbF" id="6B5I$h9zmoU" role="3cqZAp">
-                          <node concept="d57v9" id="6B5I$h9zmoV" role="3clFbG">
-                            <node concept="Xl_RD" id="6B5I$h9zmoW" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_Y" />
-                            </node>
-                            <node concept="37vLTw" id="6B5I$h9zmoX" role="37vLTJ">
-                              <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6B5I$h9zm9_" role="3eO9$A">
-                        <node concept="2OqwBi" id="6B5I$h9zm9A" role="2Oq$k0">
-                          <node concept="1PxgMI" id="6B5I$h9zm9B" role="2Oq$k0">
-                            <node concept="chp4Y" id="6B5I$h9zm9C" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                            </node>
-                            <node concept="2OqwBi" id="6B5I$h9zm9D" role="1m5AlR">
-                              <node concept="30H73N" id="6B5I$h9zm9E" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="6B5I$h9zm9F" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="6B5I$h9zm9G" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                          </node>
-                        </node>
-                        <node concept="21noJN" id="6B5I$h9zm9H" role="2OqNvi">
-                          <node concept="21nZrQ" id="6B5I$h9zmm_" role="21noJM">
-                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvQ" resolve="Y_Decreasing" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3eNFk2" id="6B5I$h9zmHu" role="3eNLev">
-                      <node concept="2OqwBi" id="6B5I$h9zp3C" role="3eO9$A">
-                        <node concept="2OqwBi" id="6B5I$h9zokC" role="2Oq$k0">
-                          <node concept="1PxgMI" id="6B5I$h9znQk" role="2Oq$k0">
-                            <node concept="chp4Y" id="6B5I$h9zo7S" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                            </node>
-                            <node concept="2OqwBi" id="6B5I$h9znav" role="1m5AlR">
-                              <node concept="30H73N" id="6B5I$h9zmT5" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="6B5I$h9znA9" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="6B5I$h9zoz3" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                          </node>
-                        </node>
-                        <node concept="21noJN" id="6B5I$h9zpe_" role="2OqNvi">
-                          <node concept="21nZrQ" id="6B5I$h9zpmi" role="21noJM">
-                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lw1" resolve="Z_Decreasing" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbS" id="6B5I$h9zmHw" role="3eOfB_">
-                        <node concept="3clFbF" id="6B5I$h9zpyx" role="3cqZAp">
-                          <node concept="d57v9" id="6B5I$h9zpyy" role="3clFbG">
-                            <node concept="Xl_RD" id="6B5I$h9zpyz" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_Z" />
-                            </node>
-                            <node concept="37vLTw" id="6B5I$h9zpy$" role="37vLTJ">
-                              <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3eNFk2" id="6B5I$h9zpDs" role="3eNLev">
-                      <node concept="3clFbS" id="6B5I$h9zpDu" role="3eOfB_">
-                        <node concept="3clFbF" id="6B5I$h9zqeS" role="3cqZAp">
-                          <node concept="d57v9" id="6B5I$h9zqeT" role="3clFbG">
-                            <node concept="Xl_RD" id="6B5I$h9zqeU" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_X" />
-                            </node>
-                            <node concept="37vLTw" id="6B5I$h9zqeV" role="37vLTJ">
-                              <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6B5I$h9zpQh" role="3eO9$A">
-                        <node concept="2OqwBi" id="6B5I$h9zpQi" role="2Oq$k0">
-                          <node concept="1PxgMI" id="6B5I$h9zpQj" role="2Oq$k0">
-                            <node concept="chp4Y" id="6B5I$h9zpQk" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                            </node>
-                            <node concept="2OqwBi" id="6B5I$h9zpQl" role="1m5AlR">
-                              <node concept="30H73N" id="6B5I$h9zpQm" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="6B5I$h9zpQn" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="6B5I$h9zpQo" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                          </node>
-                        </node>
-                        <node concept="21noJN" id="6B5I$h9zpQp" role="2OqNvi">
-                          <node concept="21nZrQ" id="6B5I$h9zqaB" role="21noJM">
-                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvr" resolve="X_Increasing" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3eNFk2" id="6B5I$h9zqXe" role="3eNLev">
-                      <node concept="3clFbS" id="6B5I$h9zqXf" role="3eOfB_">
-                        <node concept="3clFbF" id="6B5I$h9zqXg" role="3cqZAp">
-                          <node concept="d57v9" id="6B5I$h9zqXh" role="3clFbG">
-                            <node concept="Xl_RD" id="6B5I$h9zqXi" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_Y" />
-                            </node>
-                            <node concept="37vLTw" id="6B5I$h9zqXj" role="37vLTJ">
-                              <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6B5I$h9zqXk" role="3eO9$A">
-                        <node concept="2OqwBi" id="6B5I$h9zqXl" role="2Oq$k0">
-                          <node concept="1PxgMI" id="6B5I$h9zqXm" role="2Oq$k0">
-                            <node concept="chp4Y" id="6B5I$h9zqXn" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                            </node>
-                            <node concept="2OqwBi" id="6B5I$h9zqXo" role="1m5AlR">
-                              <node concept="30H73N" id="6B5I$h9zqXp" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="6B5I$h9zqXq" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="6B5I$h9zqXr" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                          </node>
-                        </node>
-                        <node concept="21noJN" id="6B5I$h9zqXs" role="2OqNvi">
-                          <node concept="21nZrQ" id="6B5I$h9zrr_" role="21noJM">
-                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvM" resolve="Y_Increasing" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="3eNFk2" id="6B5I$h9zrI4" role="3eNLev">
-                      <node concept="3clFbS" id="6B5I$h9zrI5" role="3eOfB_">
-                        <node concept="3clFbF" id="6B5I$h9zrI6" role="3cqZAp">
-                          <node concept="d57v9" id="6B5I$h9zrI7" role="3clFbG">
-                            <node concept="Xl_RD" id="6B5I$h9zrI8" role="37vLTx">
-                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_Z" />
-                            </node>
-                            <node concept="37vLTw" id="6B5I$h9zrI9" role="37vLTJ">
-                              <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="2OqwBi" id="6B5I$h9zrIa" role="3eO9$A">
-                        <node concept="2OqwBi" id="6B5I$h9zrIb" role="2Oq$k0">
-                          <node concept="1PxgMI" id="6B5I$h9zrIc" role="2Oq$k0">
-                            <node concept="chp4Y" id="6B5I$h9zrId" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
-                            </node>
-                            <node concept="2OqwBi" id="6B5I$h9zrIe" role="1m5AlR">
-                              <node concept="30H73N" id="6B5I$h9zrIf" role="2Oq$k0" />
-                              <node concept="3TrEf2" id="6B5I$h9zrIg" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="6B5I$h9zrIh" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
-                          </node>
-                        </node>
-                        <node concept="21noJN" id="6B5I$h9zrIi" role="2OqNvi">
-                          <node concept="21nZrQ" id="6B5I$h9zsp4" role="21noJM">
-                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvV" resolve="Z_Increasing" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="3cpWs6" id="6B5I$h9zt5o" role="3cqZAp">
-                    <node concept="37vLTw" id="6B5I$h9ztmd" role="3cqZAk">
-                      <ref role="3cqZAo" node="6B5I$h9zh$6" resolve="direction" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="356sEF" id="4KNMtF8Os75" role="356sEH">
             <property role="TrG5h" value=", &amp;(" />
           </node>
@@ -2594,6 +2344,256 @@
             <property role="TrG5h" value="_centre)" />
           </node>
           <node concept="356sEF" id="4KNMtF8OnQK" role="356sEH">
+            <property role="TrG5h" value=", " />
+          </node>
+          <node concept="356sEF" id="6ZdR30bdKBS" role="356sEH">
+            <property role="TrG5h" value="GRADIENT_DIRECTION" />
+            <node concept="17Uvod" id="6ZdR30bdKBT" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="6ZdR30bdKBU" role="3zH0cK">
+                <node concept="3clFbS" id="6ZdR30bdKBV" role="2VODD2">
+                  <node concept="3cpWs8" id="6ZdR30bdKBW" role="3cqZAp">
+                    <node concept="3cpWsn" id="6ZdR30bdKBX" role="3cpWs9">
+                      <property role="TrG5h" value="direction" />
+                      <node concept="17QB3L" id="6ZdR30bdKBY" role="1tU5fm" />
+                      <node concept="Xl_RD" id="6ZdR30bdKBZ" role="33vP2m">
+                        <property role="Xl_RC" value="" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbJ" id="6ZdR30bdKC0" role="3cqZAp">
+                    <node concept="3clFbS" id="6ZdR30bdKC1" role="3clFbx">
+                      <node concept="3clFbF" id="6ZdR30bdKC2" role="3cqZAp">
+                        <node concept="d57v9" id="6ZdR30bdKC3" role="3clFbG">
+                          <node concept="Xl_RD" id="6ZdR30bdKC4" role="37vLTx">
+                            <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_X" />
+                          </node>
+                          <node concept="37vLTw" id="6ZdR30bdKC5" role="37vLTJ">
+                            <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="6ZdR30bdKC6" role="3clFbw">
+                      <node concept="2OqwBi" id="6ZdR30bdKC7" role="2Oq$k0">
+                        <node concept="1PxgMI" id="6ZdR30bdKC8" role="2Oq$k0">
+                          <node concept="chp4Y" id="6ZdR30bdKC9" role="3oSUPX">
+                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          </node>
+                          <node concept="2OqwBi" id="6ZdR30bdKCa" role="1m5AlR">
+                            <node concept="30H73N" id="6ZdR30bdKCb" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="6ZdR30bdKCc" role="2OqNvi">
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="6ZdR30bdKCd" role="2OqNvi">
+                          <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                        </node>
+                      </node>
+                      <node concept="21noJN" id="6ZdR30bdKCe" role="2OqNvi">
+                        <node concept="21nZrQ" id="6ZdR30bdKCf" role="21noJM">
+                          <ref role="21nZrZ" to="s9ob:2S6lVSS$lvJ" resolve="X_Decreasing" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eNFk2" id="6ZdR30bdKCg" role="3eNLev">
+                      <node concept="3clFbS" id="6ZdR30bdKCh" role="3eOfB_">
+                        <node concept="3clFbF" id="6ZdR30bdKCi" role="3cqZAp">
+                          <node concept="d57v9" id="6ZdR30bdKCj" role="3clFbG">
+                            <node concept="Xl_RD" id="6ZdR30bdKCk" role="37vLTx">
+                              <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_Y" />
+                            </node>
+                            <node concept="37vLTw" id="6ZdR30bdKCl" role="37vLTJ">
+                              <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="6ZdR30bdKCm" role="3eO9$A">
+                        <node concept="2OqwBi" id="6ZdR30bdKCn" role="2Oq$k0">
+                          <node concept="1PxgMI" id="6ZdR30bdKCo" role="2Oq$k0">
+                            <node concept="chp4Y" id="6ZdR30bdKCp" role="3oSUPX">
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            </node>
+                            <node concept="2OqwBi" id="6ZdR30bdKCq" role="1m5AlR">
+                              <node concept="30H73N" id="6ZdR30bdKCr" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="6ZdR30bdKCs" role="2OqNvi">
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6ZdR30bdKCt" role="2OqNvi">
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="6ZdR30bdKCu" role="2OqNvi">
+                          <node concept="21nZrQ" id="6ZdR30bdKCv" role="21noJM">
+                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvQ" resolve="Y_Decreasing" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eNFk2" id="6ZdR30bdKCw" role="3eNLev">
+                      <node concept="2OqwBi" id="6ZdR30bdKCx" role="3eO9$A">
+                        <node concept="2OqwBi" id="6ZdR30bdKCy" role="2Oq$k0">
+                          <node concept="1PxgMI" id="6ZdR30bdKCz" role="2Oq$k0">
+                            <node concept="chp4Y" id="6ZdR30bdKC$" role="3oSUPX">
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            </node>
+                            <node concept="2OqwBi" id="6ZdR30bdKC_" role="1m5AlR">
+                              <node concept="30H73N" id="6ZdR30bdKCA" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="6ZdR30bdKCB" role="2OqNvi">
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6ZdR30bdKCC" role="2OqNvi">
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="6ZdR30bdKCD" role="2OqNvi">
+                          <node concept="21nZrQ" id="6ZdR30bdKCE" role="21noJM">
+                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lw1" resolve="Z_Decreasing" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="6ZdR30bdKCF" role="3eOfB_">
+                        <node concept="3clFbF" id="6ZdR30bdKCG" role="3cqZAp">
+                          <node concept="d57v9" id="6ZdR30bdKCH" role="3clFbG">
+                            <node concept="Xl_RD" id="6ZdR30bdKCI" role="37vLTx">
+                              <property role="Xl_RC" value="GRADIENT_DIRECTION_DEC_Z" />
+                            </node>
+                            <node concept="37vLTw" id="6ZdR30bdKCJ" role="37vLTJ">
+                              <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eNFk2" id="6ZdR30bdKCK" role="3eNLev">
+                      <node concept="3clFbS" id="6ZdR30bdKCL" role="3eOfB_">
+                        <node concept="3clFbF" id="6ZdR30bdKCM" role="3cqZAp">
+                          <node concept="d57v9" id="6ZdR30bdKCN" role="3clFbG">
+                            <node concept="Xl_RD" id="6ZdR30bdKCO" role="37vLTx">
+                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_X" />
+                            </node>
+                            <node concept="37vLTw" id="6ZdR30bdKCP" role="37vLTJ">
+                              <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="6ZdR30bdKCQ" role="3eO9$A">
+                        <node concept="2OqwBi" id="6ZdR30bdKCR" role="2Oq$k0">
+                          <node concept="1PxgMI" id="6ZdR30bdKCS" role="2Oq$k0">
+                            <node concept="chp4Y" id="6ZdR30bdKCT" role="3oSUPX">
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            </node>
+                            <node concept="2OqwBi" id="6ZdR30bdKCU" role="1m5AlR">
+                              <node concept="30H73N" id="6ZdR30bdKCV" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="6ZdR30bdKCW" role="2OqNvi">
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6ZdR30bdKCX" role="2OqNvi">
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="6ZdR30bdKCY" role="2OqNvi">
+                          <node concept="21nZrQ" id="6ZdR30bdKCZ" role="21noJM">
+                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvr" resolve="X_Increasing" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eNFk2" id="6ZdR30bdKD0" role="3eNLev">
+                      <node concept="3clFbS" id="6ZdR30bdKD1" role="3eOfB_">
+                        <node concept="3clFbF" id="6ZdR30bdKD2" role="3cqZAp">
+                          <node concept="d57v9" id="6ZdR30bdKD3" role="3clFbG">
+                            <node concept="Xl_RD" id="6ZdR30bdKD4" role="37vLTx">
+                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_Y" />
+                            </node>
+                            <node concept="37vLTw" id="6ZdR30bdKD5" role="37vLTJ">
+                              <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="6ZdR30bdKD6" role="3eO9$A">
+                        <node concept="2OqwBi" id="6ZdR30bdKD7" role="2Oq$k0">
+                          <node concept="1PxgMI" id="6ZdR30bdKD8" role="2Oq$k0">
+                            <node concept="chp4Y" id="6ZdR30bdKD9" role="3oSUPX">
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            </node>
+                            <node concept="2OqwBi" id="6ZdR30bdKDa" role="1m5AlR">
+                              <node concept="30H73N" id="6ZdR30bdKDb" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="6ZdR30bdKDc" role="2OqNvi">
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6ZdR30bdKDd" role="2OqNvi">
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="6ZdR30bdKDe" role="2OqNvi">
+                          <node concept="21nZrQ" id="6ZdR30bdKDf" role="21noJM">
+                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvM" resolve="Y_Increasing" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3eNFk2" id="6ZdR30bdKDg" role="3eNLev">
+                      <node concept="3clFbS" id="6ZdR30bdKDh" role="3eOfB_">
+                        <node concept="3clFbF" id="6ZdR30bdKDi" role="3cqZAp">
+                          <node concept="d57v9" id="6ZdR30bdKDj" role="3clFbG">
+                            <node concept="Xl_RD" id="6ZdR30bdKDk" role="37vLTx">
+                              <property role="Xl_RC" value="GRADIENT_DIRECTION_INC_Z" />
+                            </node>
+                            <node concept="37vLTw" id="6ZdR30bdKDl" role="37vLTJ">
+                              <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="6ZdR30bdKDm" role="3eO9$A">
+                        <node concept="2OqwBi" id="6ZdR30bdKDn" role="2Oq$k0">
+                          <node concept="1PxgMI" id="6ZdR30bdKDo" role="2Oq$k0">
+                            <node concept="chp4Y" id="6ZdR30bdKDp" role="3oSUPX">
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            </node>
+                            <node concept="2OqwBi" id="6ZdR30bdKDq" role="1m5AlR">
+                              <node concept="30H73N" id="6ZdR30bdKDr" role="2Oq$k0" />
+                              <node concept="3TrEf2" id="6ZdR30bdKDs" role="2OqNvi">
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="6ZdR30bdKDt" role="2OqNvi">
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="6ZdR30bdKDu" role="2OqNvi">
+                          <node concept="21nZrQ" id="6ZdR30bdKDv" role="21noJM">
+                            <ref role="21nZrZ" to="s9ob:2S6lVSS$lvV" resolve="Z_Increasing" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3cpWs6" id="6ZdR30bdKDw" role="3cqZAp">
+                    <node concept="37vLTw" id="6ZdR30bdKDx" role="3cqZAk">
+                      <ref role="3cqZAo" node="6ZdR30bdKBX" resolve="direction" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="6ZdR30bdJbj" role="356sEH">
             <property role="TrG5h" value=", " />
           </node>
           <node concept="356sEF" id="4KNMtF8OmNz" role="356sEH">
@@ -3226,6 +3226,34 @@
           <node concept="356sEF" id="4KNMtF8P_0_" role="356sEH">
             <property role="TrG5h" value="&quot;," />
           </node>
+          <node concept="356sEF" id="6ZdR30bdU7J" role="356sEH">
+            <property role="TrG5h" value=", &amp;(" />
+          </node>
+          <node concept="356sEF" id="6ZdR30bdU7K" role="356sEH">
+            <property role="TrG5h" value="GRADIENT_NAME" />
+            <node concept="17Uvod" id="6ZdR30bdU7L" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="6ZdR30bdU7M" role="3zH0cK">
+                <node concept="3clFbS" id="6ZdR30bdU7N" role="2VODD2">
+                  <node concept="3clFbF" id="6ZdR30bdU7O" role="3cqZAp">
+                    <node concept="2OqwBi" id="6ZdR30bdU7P" role="3clFbG">
+                      <node concept="30H73N" id="6ZdR30bdU7Q" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="6ZdR30bdU7R" role="2OqNvi">
+                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="6ZdR30bdU7S" role="356sEH">
+            <property role="TrG5h" value="_point" />
+          </node>
+          <node concept="356sEF" id="6ZdR30bdU7T" role="356sEH">
+            <property role="TrG5h" value="), " />
+          </node>
           <node concept="356sEF" id="4KNMtF8P_0A" role="356sEH">
             <property role="TrG5h" value=" " />
           </node>
@@ -3263,32 +3291,10 @@
             </node>
           </node>
           <node concept="356sEF" id="4KNMtF8P_0V" role="356sEH">
-            <property role="TrG5h" value=", &amp;(" />
-          </node>
-          <node concept="356sEF" id="4KNMtF8P_0W" role="356sEH">
-            <property role="TrG5h" value="GRADIENT_NAME" />
-            <node concept="17Uvod" id="6B5I$h9$uzt" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="6B5I$h9$uzu" role="3zH0cK">
-                <node concept="3clFbS" id="6B5I$h9$uzv" role="2VODD2">
-                  <node concept="3clFbF" id="6B5I$h9$uzR" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9$uLo" role="3clFbG">
-                      <node concept="30H73N" id="6B5I$h9$uzQ" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="6B5I$h9$v2c" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="356sEF" id="6B5I$h9$tAM" role="356sEH">
-            <property role="TrG5h" value="_point" />
+            <property role="TrG5h" value=", " />
           </node>
           <node concept="356sEF" id="4KNMtF8P_0X" role="356sEH">
-            <property role="TrG5h" value="), " />
+            <property role="TrG5h" value=" " />
           </node>
           <node concept="356sEF" id="4KNMtF8P_0Y" role="356sEH">
             <property role="TrG5h" value="GRADIENT_RADIUS" />
