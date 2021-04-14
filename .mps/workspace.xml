@@ -44,46 +44,7 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/6" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/Progress/count.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_World.cpp.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/constructors.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Protein.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/space.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.o" beforeDir="false" />
-    </list>
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -1240,13 +1201,6 @@
       <option name="presentableId" value="Default" />
       <updated>1602777653679</updated>
     </task>
-    <task id="LOCAL-00016" summary="Testing changing world boundaries">
-      <created>1615225292625</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1615225292625</updated>
-    </task>
     <task id="LOCAL-00017" summary="Implemented auto-updating world boundary functionality.">
       <created>1615474723693</created>
       <option name="number" value="00017" />
@@ -1583,7 +1537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618333065321</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Removed gradient shape enum from generated create_gradient calls">
+      <created>1618411194282</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1618411194282</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -3211,7 +3172,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Set virtual packages for species, reactions and parameters" />
     <MESSAGE value="Implemented relations management for parameters" />
     <MESSAGE value="Tested parameter relations management. Added checks for cyclical references and self-references. Fixed generator for cell types to use height and width functions. Fixed cylindrical tissue generator to correctly define cells along circumference. Currently debugging grid calculation." />
     <MESSAGE value="Added workaround for world not finding grid behaviours." />
@@ -3236,6 +3196,7 @@
     <MESSAGE value="Changed generator to use new rectangular dimension functions" />
     <MESSAGE value="Generator uses correct cylinder radius function" />
     <MESSAGE value="Added semi-colons to generated gradient functions." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added semi-colons to generated gradient functions." />
+    <MESSAGE value="Removed gradient shape enum from generated create_gradient calls" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed gradient shape enum from generated create_gradient calls" />
   </component>
 </project>
