@@ -336,24 +336,17 @@ void Gradient::apply_gradient_to_cuboid() {
 
 Gradient::Gradient(World_Container *container,
                    int gradient_type,
-                   int gradient_shape,
                    string protein,
                    Coordinates *source_position,
                    float source_starting_amount,
                    Coordinates *sink_position) {
-
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;
-    this->m_gradient_shape = gradient_shape;
     this->m_protein_name = protein;
     this->m_source_position = source_position;
     this->m_starting_amount = source_starting_amount;
     this->m_sink_position = sink_position;
-
-    this->x_varying = false;
-    this->y_varying = false;
-    this->z_varying = false;
 }
 
 /*****************************************************************************************
@@ -364,8 +357,7 @@ Gradient::Gradient(World_Container *container,
 
 Gradient::Gradient(World_Container *container,
 				   int gradient_type,
-				   int gradient_shape,
-				   string protein,
+				   string protein_name,
 				   Coordinates *centre_position,
 				   float source_starting_amount,
 				   int height,
@@ -375,13 +367,31 @@ Gradient::Gradient(World_Container *container,
 	this->m_parent_container = container;
 	this->m_parent_world = container->m_world;
 	this->m_gradient_type = gradient_type;
-	this->m_gradient_shape = gradient_shape;
-	this->m_protein_name = protein;
+	this->m_protein_name = protein_name;
+	this->m_cuboidal_height = height;
+	this->m_cuboidal_width = width;
+	this->m_cuboidal_depth = depth;
+	this->m_starting_amount = source_starting_amount;
+	this->m_centre_position = centre_position;
+}
 
-	this->cuboidal_height = height;
-	this->cuboidal_width = width;
-	this->cuboidal_depth = width;
+/*****************************************************************************************
+*  Name:		Gradient()
+*  Description: Gradient constructor. Used with point gradients.
+*  Returns:		void
+******************************************************************************************/
 
+Gradient::Gradient(World_Container *container,
+				   int gradient_type,
+				   string protein_name,
+				   Coordinates *centre_position,
+				   int source_starting_amount,
+				   int sphere_radius) {
+	this->m_parent_container = container;
+	this->m_parent_world = container->m_world;
+	this->m_gradient_type = gradient_type;
+	this->m_protein_name = protein_name;
+	this->m_spherical_radius = sphere_radius;
 	this->m_starting_amount = source_starting_amount;
 	this->m_centre_position = centre_position;
 }
