@@ -101,8 +101,8 @@ public:
 			 string protein,
 			 Coordinates *centre_position,
 			 float starting_amount,
-			 int height,
 			 int width,
+			 int height,
 			 int depth);
 
 	//Constructor for spherical gradients.
