@@ -190,63 +190,54 @@ void Gradient::determine_directionality() {
     }
 }
 
+
+
 /*****************************************************************************************
-*  Name:		apply_gradient_to_sphere
+*  Name:		apply_gradient_to_cuboid
 *  Description: Applies a protein gradient around a point source, in the shape of a sphere
 *               until a distance determined by the sink location has been reached.
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::apply_gradient_to_sphere() {
-    float x_start, x_end, y_start, y_end, z_start, z_end;
-    // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
-    float radius = m_centre_position[0].x - (float) m_spherical_radius;
-    float dist_from_centre;
-    Env *ep;
+void Gradient::apply_gradient_to_cuboid() {
+	float x_start = m_centre_position->x - ((float) m_cuboidal_height / 2);
+	float x_end = m_centre_position->x + ((float) m_cuboidal_height / 2);
+	float y_start = m_centre_position->y - ((float) m_cuboidal_width / 2);
+	float y_end = m_centre_position->y + ((float) m_cuboidal_width / 2);
+	float z_start = m_centre_position->y - ((float) m_cuboidal_depth / 2);
+	float z_end = m_centre_position->y + ((float) m_cuboidal_depth / 2);;
+	Env *ep;
 
-    // Define a bounding box that contains the sphere, centred around the source position.
+	// Define a bounding box that contains the cuboidal gradient, centred around the centre position.
 
-    x_start = m_centre_position[0].x - radius;
-    x_end = m_centre_position[0].x + radius;
-    y_start = m_centre_position[0].y - radius;
-    y_end = m_centre_position[0].y + radius;
-    z_start = m_centre_position[0].z - radius;
-    z_end = m_centre_position[0].z + radius;
+	// Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
-    // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
-
-    for (int x = x_start; x < x_end; x++) {
-        for (int y = y_start; y < y_end; y++) {
-            for (int z = z_start; z < z_end; z++) {
-            	if (x >= 0 && y >= 0 && z >= 0) {
+	for (int x = x_start; x < x_end; x++) {
+		for (int y = y_start; y < y_end; y++) {
+			for (int z = z_start; z < z_end; z++) {
+				if (x >= 0 && y >= 0 && z >= 0) {
 					if (x < m_parent_world->gridXDimensions &&
 						y < m_parent_world->gridYDimensions &&
 						z < m_parent_world->gridZDimensions) {
 						if (m_parent_world->grid[x][y][z].type == E) {
 							ep = m_parent_world->grid[x][y][z].Eid;
 							if (ep != nullptr) {
-								dist_from_centre = sqrt(
-										((m_centre_position->x - x) * (m_centre_position->x - x)) +
-										((m_centre_position->y - y) * (m_centre_position->y - y)) +
-										((m_centre_position->z - z) * (m_centre_position->z - z)));
-								if (dist_from_centre <= radius) {
-									if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-										calc_linear_env_VEGF(ep);
-									}
-									if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-										calc_exp_env_VEGF(ep);
-									}
-									if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-										calc_constant_env_VEGF(ep);
-									}
+								if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
+									calc_linear_env_VEGF(ep);
+								}
+								if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
+									calc_exp_env_VEGF(ep);
+								}
+								if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
+									calc_constant_env_VEGF(ep);
 								}
 							}
 						}
 					}
 				}
-            }
-        }
-    }
+			}
+		}
+	}
 }
 
 /*****************************************************************************************
@@ -322,6 +313,65 @@ void Gradient::apply_gradient_to_sinkandsource() {
             }
         }
     }
+}
+
+/*****************************************************************************************
+*  Name:		apply_gradient_to_sphere
+*  Description: Applies a protein gradient around a point source, in the shape of a sphere
+*               until a distance determined by the sink location has been reached.
+*  Returns:		void
+******************************************************************************************/
+
+void Gradient::apply_gradient_to_sphere() {
+	float x_start, x_end, y_start, y_end, z_start, z_end;
+	// Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
+	float radius = m_centre_position->x - (float) m_spherical_radius;
+	float dist_from_centre;
+	Env *ep;
+
+	// Define a bounding box that contains the sphere, centred around the source position.
+
+	x_start = m_centre_position->x - radius;
+	x_end = m_centre_position->x + radius;
+	y_start = m_centre_position->y - radius;
+	y_end = m_centre_position->y + radius;
+	z_start = m_centre_position->y - radius;
+	z_end = m_centre_position->y + radius;
+
+	// Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
+
+	for (int x = x_start; x < x_end; x++) {
+		for (int y = y_start; y < y_end; y++) {
+			for (int z = z_start; z < z_end; z++) {
+				if (x >= 0 && y >= 0 && z >= 0) {
+					if (x < m_parent_world->gridXDimensions &&
+						y < m_parent_world->gridYDimensions &&
+						z < m_parent_world->gridZDimensions) {
+						if (m_parent_world->grid[x][y][z].type == E) {
+							ep = m_parent_world->grid[x][y][z].Eid;
+							if (ep != nullptr) {
+								dist_from_centre = sqrt(
+										((m_centre_position->x - x) * (m_centre_position->x - x)) +
+										((m_centre_position->y - y) * (m_centre_position->y - y)) +
+										((m_centre_position->z - z) * (m_centre_position->z - z)));
+								if (dist_from_centre <= radius) {
+									if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
+										calc_linear_env_VEGF(ep);
+									}
+									if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
+										calc_exp_env_VEGF(ep);
+									}
+									if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
+										calc_constant_env_VEGF(ep);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 /*****************************************************************************************
