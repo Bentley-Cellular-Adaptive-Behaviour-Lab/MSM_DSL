@@ -20,7 +20,7 @@
 ******************************************************************************************/
 
 void Gradient::calc_constant_env_VEGF(Env* ep) {
-	float starting_protein_level = float(m_source_starting_amount);
+	float starting_protein_level = m_starting_amount;
     if (ep->blood == 0.0f) {
         ep->VEGF += starting_protein_level;
     }
@@ -35,7 +35,7 @@ void Gradient::calc_constant_env_VEGF(Env* ep) {
 
 void Gradient::calc_linear_env_VEGF(Env* ep) {
     float weight = 1.00f;
-    float starting_protein_level = float(m_source_starting_amount);
+    float starting_protein_level = m_starting_amount;
 
     vector<float> ep_distances = calculate_dist_from_source(ep);
 
@@ -70,7 +70,7 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 
 void Gradient::calc_exp_env_VEGF(Env* ep) {
     float weight = 1.00f;
-	float starting_protein_level = float(m_source_starting_amount);
+	float starting_protein_level = m_starting_amount;
 
     vector<float> ep_distances = calculate_dist_from_source(ep);
 
@@ -330,7 +330,7 @@ void Gradient::apply_gradient_to_cuboid() {
 
 /*****************************************************************************************
 *  Name:		Gradient()
-*  Description: Gradient constructor.
+*  Description: Gradient constructor. Used with sink and source gradients
 *  Returns:		void
 ******************************************************************************************/
 
@@ -339,21 +339,51 @@ Gradient::Gradient(World_Container *container,
                    int gradient_shape,
                    string protein,
                    Coordinates *source_position,
-                   int source_starting_amount,
+                   float source_starting_amount,
                    Coordinates *sink_position) {
 
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;
     this->m_gradient_shape = gradient_shape;
-    this->m_protein = protein;
+    this->m_protein_name = protein;
     this->m_source_position = source_position;
-    this->m_source_starting_amount = source_starting_amount;
+    this->m_starting_amount = source_starting_amount;
     this->m_sink_position = sink_position;
 
     this->x_varying = false;
     this->y_varying = false;
     this->z_varying = false;
+}
+
+/*****************************************************************************************
+*  Name:		Gradient()
+*  Description: Gradient constructor. Used with cuboidal gradients
+*  Returns:		void
+******************************************************************************************/
+
+Gradient::Gradient(World_Container *container,
+				   int gradient_type,
+				   int gradient_shape,
+				   string protein,
+				   Coordinates *centre_position,
+				   float source_starting_amount,
+				   int height,
+				   int width,
+				   int depth) {
+
+	this->m_parent_container = container;
+	this->m_parent_world = container->m_world;
+	this->m_gradient_type = gradient_type;
+	this->m_gradient_shape = gradient_shape;
+	this->m_protein_name = protein;
+
+	this->cuboidal_height = height;
+	this->cuboidal_width = width;
+	this->cuboidal_depth = width;
+
+	this->m_starting_amount = source_starting_amount;
+	this->m_centre_position = centre_position;
 }
 
 //********************************************************************************************************************//
@@ -547,15 +577,15 @@ Substrate::Substrate(World_Container *container, Shape *substrate_shape, Coordin
 [[deprecated("Create gradient functions split into overloaded versions.")]]
 void World_Container::create_gradient(int gradient_type,
                                            int gradient_shape,
-                                           string protein,
+                                           string protein_name,
                                            Coordinates *source_position,
-                                           int source_starting_amount,
+                                           float source_starting_amount,
                                            Coordinates *sink_position) {
-    std::cout << "Creating gradient. Protein: " << protein << ".\n";
+    std::cout << "Creating gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
 									  gradient_type,
 									  gradient_shape,
-									  protein,
+									  protein_name,
 									  source_position,
 									  source_starting_amount,
 									  sink_position);
@@ -581,7 +611,7 @@ void World_Container::create_gradient(int gradient_type,
 *  Returns:		void
 ******************************************************************************************/
 void World_Container::create_gradient(int gradient_type,
-									  string protein,
+									  string protein_name,
 									  Coordinates *source_position,
 									  int source_starting_amount,
 									  Coordinates *sink_position) {
