@@ -560,10 +560,10 @@ void World_Container::create_gradient(int gradient_type,
 									  source_starting_amount,
 									  sink_position);
     new_gradient->determine_source_to_sink_dists();
-    if (gradient_shape == GRADIENT_SHAPE_CUBOID) {
+    if (gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
         new_gradient->determine_directionality();
         new_gradient->apply_gradient_to_cuboid();
-    } else if (gradient_shape == GRADIENT_SHAPE_SPHERE) {
+    } else if (gradient_shape == GRADIENT_SHAPE_POINT) {
         new_gradient->x_varying = true;
         new_gradient->y_varying = true;
         new_gradient->z_varying = true;
