@@ -57,16 +57,29 @@ class Gradient {
 public:
     int m_gradient_type;
     int m_gradient_shape;
-    string m_protein_name;
-    Coordinates *m_source_position;
-    Coordinates *m_sink_position;
-    vector<float> m_source_to_sink_distances;
-    float m_source_starting_amount;
+    string m_protein_name; // TODO: CHANGE TO USE SPECIES OBJECTS
+    float m_starting_amount;
+	Coordinates *m_centre_position; // Central position for cuboidal and spherical gradients
 
-    // Booleans to check whether the gradient changes along the relevant axis - used with sink and source gradients.
+    // Booleans to check whether the gradient changes along the relevant axis.
     bool x_varying = false;
     bool y_varying = false;
     bool z_varying = false;
+
+	// Dimensions for cuboidal gradients - if not cuboidal, set to -1 (these must always be positive integers otherwise)
+    int cuboidal_height = -1;
+	int cuboidal_width = -1;
+	int cuboidal_depth = -1;
+
+	// Radius for spherical gradients - if not spherical, set to -1 (these must always be positive integers otherwise)
+	int spherical_radius = -1;
+
+	// Coordinates for sink and source gradients.
+	Coordinates *m_source_position;
+	Coordinates *m_sink_position;
+
+	//Distance from source to sink along each axis.
+	vector<float> m_source_to_sink_distances;
 
     World_Container *m_parent_container;
     World *m_parent_world;
@@ -77,7 +90,7 @@ public:
              int gradient_shape,
              string protein,
              Coordinates *source,
-             int source_starting_amount,
+             float source_starting_amount,
              Coordinates *sink);
 
 	//Constructor for cuboidal gradients.
@@ -85,9 +98,19 @@ public:
 			 int gradient_type,
 			 int gradient_shape,
 			 string protein,
-			 Coordinates *source,
+			 Coordinates *centre,
+			 float source_starting_amount,
+			 int height,
+			 int width,
+			 int depth);
+
+	//Constructor for spherical gradients.
+	Gradient(World_Container *container,
+			 int gradient_type,
+			 string protein_name,
+			 Coordinates *centre,
 			 int source_starting_amount,
-			 Coordinates *sink);
+			 int sphere_radius);
 
     vector<float> calculate_dist_from_source(Env* ep);
 
@@ -122,13 +145,13 @@ public:
 						 int gradient_shape,
 						 string protein,
 						 Coordinates *source_position,
-						 int source_starting_amount,
+						 float source_starting_amount,
 						 Coordinates *sink_position);
 
     void create_gradient(int gradient_type,
                               string protein,
                               Coordinates *source_position,
-                              int source_starting_amount,
+                              float source_starting_amount,
                               Coordinates *sink_position);
 
     void create_gradient(int gradient_type,
