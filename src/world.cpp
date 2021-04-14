@@ -789,7 +789,7 @@ void World_Container::create_gradient(int gradient_type,
 									  sink_position);
 	new_gradient->determine_source_to_sink_dists();
 	new_gradient->determine_directionality();
-	new_gradient->apply_gradient_to_cuboid();
+	new_gradient->apply_gradient_to_sinkandsource();
 	std::cout << "Gradient created." <<  endl;
 	store_gradient(new_gradient);
 }
