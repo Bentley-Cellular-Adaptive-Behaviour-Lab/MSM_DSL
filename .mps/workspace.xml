@@ -44,7 +44,10 @@
     </option>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="" />
+    <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -637,43 +640,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -684,16 +651,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -725,19 +682,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemId" value="WorldSetup.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
+              <option name="myItemId" value="WorldSetup" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -747,11 +700,37 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationSettings" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -779,11 +758,41 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -804,14 +813,8 @@
               <option name="myItemId" value="SimulationSettings" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
