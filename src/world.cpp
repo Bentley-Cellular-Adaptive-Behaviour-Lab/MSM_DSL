@@ -260,7 +260,7 @@ void Gradient::apply_gradient_to_sphere() {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::apply_gradient_to_cuboid() {
+void Gradient::apply_gradient_to_sinkandsource() {
     int x_start, x_end, y_start, y_end, z_start, z_end;
     Env *ep;
 
