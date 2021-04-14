@@ -347,6 +347,7 @@ Gradient::Gradient(World_Container *container,
     this->m_source_position = source_position;
     this->m_starting_amount = source_starting_amount;
     this->m_sink_position = sink_position;
+    this->m_gradient_shape = GRADIENT_SHAPE_SINKANDSOURCE;
 }
 
 /*****************************************************************************************
@@ -373,6 +374,7 @@ Gradient::Gradient(World_Container *container,
 	this->m_cuboidal_depth = depth;
 	this->m_starting_amount = source_starting_amount;
 	this->m_centre_position = centre_position;
+	this->m_gradient_shape = GRADIENT_SHAPE_CUBOIDAL;
 }
 
 /*****************************************************************************************
@@ -385,7 +387,7 @@ Gradient::Gradient(World_Container *container,
 				   int gradient_type,
 				   string protein_name,
 				   Coordinates *centre_position,
-				   int source_starting_amount,
+				   float source_starting_amount,
 				   int sphere_radius) {
 	this->m_parent_container = container;
 	this->m_parent_world = container->m_world;
@@ -394,6 +396,7 @@ Gradient::Gradient(World_Container *container,
 	this->m_spherical_radius = sphere_radius;
 	this->m_starting_amount = source_starting_amount;
 	this->m_centre_position = centre_position;
+	this->m_gradient_shape = GRADIENT_SHAPE_POINT;
 }
 
 //********************************************************************************************************************//
@@ -594,7 +597,6 @@ void World_Container::create_gradient(int gradient_type,
     std::cout << "Creating gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
 									  gradient_type,
-									  gradient_shape,
 									  protein_name,
 									  source_position,
 									  source_starting_amount,
@@ -625,11 +627,10 @@ void World_Container::create_gradient(int gradient_type,
 									  Coordinates *source_position,
 									  int source_starting_amount,
 									  Coordinates *sink_position) {
-	std::cout << "Creating sink and source gradient. Protein: " << protein << ".\n";
+	std::cout << "Creating sink and source gradient. Protein: " << protein_name << ".\n";
 	auto *new_gradient = new Gradient(this,
 									  gradient_type,
-									  GRADIENT_SHAPE_SINKANDSOURCE,
-									  protein,
+									  protein_name,
 									  source_position,
 									  source_starting_amount,
 									  sink_position);

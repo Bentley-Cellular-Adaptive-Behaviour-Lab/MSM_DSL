@@ -110,7 +110,7 @@ public:
 			 int gradient_type,
 			 string protein_name,
 			 Coordinates *centre_position,
-			 int source_starting_amount,
+			 float source_starting_amount,
 			 int sphere_radius);
 
     vector<float> calculate_dist_from_source(Env* ep);
