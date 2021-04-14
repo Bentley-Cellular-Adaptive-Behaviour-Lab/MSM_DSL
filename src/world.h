@@ -123,6 +123,7 @@ public:
     void determine_source_to_sink_dists();
 
     void apply_gradient_to_sphere();
+	void apply_gradient_to_sinkandsource();
     void apply_gradient_to_cuboid();
 };
 
