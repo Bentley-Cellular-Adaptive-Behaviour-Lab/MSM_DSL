@@ -573,8 +573,34 @@ void World_Container::create_gradient(int gradient_type,
     store_gradient(new_gradient);
 }
 
+/*****************************************************************************************
+*  Name:		create_gradient()
+*  Description: Creates a gradient object, determines its directionality and applies it to
+*               environment agents in the world, before storing it in the world container.
+*               Used with sink and source gradients.
+*  Returns:		void
+******************************************************************************************/
 void World_Container::create_gradient(int gradient_type,
-									  int gradient_shape,
+									  string protein,
+									  Coordinates *source_position,
+									  int source_starting_amount,
+									  Coordinates *sink_position) {
+	std::cout << "Creating sink and source gradient. Protein: " << protein << ".\n";
+	auto *new_gradient = new Gradient(this,
+									  gradient_type,
+									  GRADIENT_SHAPE_SINKANDSOURCE,
+									  protein,
+									  source_position,
+									  source_starting_amount,
+									  sink_position);
+	new_gradient->determine_source_to_sink_dists();
+	new_gradient->determine_directionality();
+	new_gradient->apply_gradient_to_cuboid();
+	std::cout << "Gradient created." <<  endl;
+	store_gradient(new_gradient);
+}
+
+void World_Container::create_gradient(int gradient_type,
 									  string protein_name,
 									  float starting_strength,
 									  int gradient_direction,
