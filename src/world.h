@@ -149,11 +149,11 @@ public:
 						 float source_starting_amount,
 						 Coordinates *sink_position);
 
-    void create_gradient(int gradient_type,
-                              string protein,
-                              Coordinates *source_position,
-                              float source_starting_amount,
-                              Coordinates *sink_position);
+	void create_gradient(int gradient_type,
+					  	 string protein_name,
+					  	 Coordinates *source_position,
+					  	 int source_starting_amount,
+					  	 Coordinates *sink_position);
 
     void create_gradient(int gradient_type,
 						 string protein_name,
