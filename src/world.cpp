@@ -199,23 +199,19 @@ void Gradient::determine_directionality() {
 
 void Gradient::apply_gradient_to_sphere() {
     float x_start, x_end, y_start, y_end, z_start, z_end;
-    // Determine the radius of the sphere by using Pythagoras' theorem on the difference between the source and sink
-    // location.
-    float radius = sqrt(
-			((m_source_position->x - m_sink_position->x) * (m_source_position->x - m_sink_position->x)) +
-			((m_source_position->y - m_sink_position->y) * (m_source_position->y - m_sink_position->y)) +
-			((m_source_position->z - m_sink_position->z) * (m_source_position->z - m_sink_position->z)));
-    float dist_from_source;
+    // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
+    float radius = m_centre_position[0].x - (float) m_spherical_radius;
+    float dist_from_centre;
     Env *ep;
 
     // Define a bounding box that contains the sphere, centred around the source position.
 
-    x_start = m_source_position[0].x - radius;
-    x_end = m_source_position[0].x + radius;
-    y_start = m_source_position[0].y - radius;
-    y_end = m_source_position[0].y + radius;
-    z_start = m_source_position[0].z - radius;
-    z_end = m_source_position[0].z + radius;
+    x_start = m_centre_position[0].x - radius;
+    x_end = m_centre_position[0].x + radius;
+    y_start = m_centre_position[0].y - radius;
+    y_end = m_centre_position[0].y + radius;
+    z_start = m_centre_position[0].z - radius;
+    z_end = m_centre_position[0].z + radius;
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
@@ -229,11 +225,11 @@ void Gradient::apply_gradient_to_sphere() {
 						if (m_parent_world->grid[x][y][z].type == E) {
 							ep = m_parent_world->grid[x][y][z].Eid;
 							if (ep != nullptr) {
-								dist_from_source = sqrt(
-										((m_source_position->x - x) * (m_source_position->x - x)) +
-										((m_source_position->y - y) * (m_source_position->y - y)) +
-										((m_source_position->z - z) * (m_source_position->z - z)));
-								if (dist_from_source <= radius) {
+								dist_from_centre = sqrt(
+										((m_centre_position->x - x) * (m_centre_position->x - x)) +
+										((m_centre_position->y - y) * (m_centre_position->y - y)) +
+										((m_centre_position->z - z) * (m_centre_position->z - z)));
+								if (dist_from_centre <= radius) {
 									if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
 										calc_linear_env_VEGF(ep);
 									}
@@ -254,8 +250,8 @@ void Gradient::apply_gradient_to_sphere() {
 }
 
 /*****************************************************************************************
-*  Name:		apply_gradient_to_cuboid
-*  Description: Applies a protein gradient in a cuboidal shape to the environment
+*  Name:		apply_gradient_to_sinkandsource
+*  Description: Applies a sink and source gradient to the environment
 *               until a distance determined by the sink location has been reached.
 *  Returns:		void
 ******************************************************************************************/
