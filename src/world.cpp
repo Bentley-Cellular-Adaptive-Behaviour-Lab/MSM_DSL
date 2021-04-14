@@ -539,12 +539,12 @@ Substrate::Substrate(World_Container *container, Shape *substrate_shape, Coordin
 //********************************************************************************************************************//
 
 /*****************************************************************************************
-*  Name:		create_gradient()
+*  Name:		create_gradient() - deprecated
 *  Description: Creates a gradient object, determines its directionality and applies it to
 *               environment agents in the world, before storing it in the world container.
 *  Returns:		void
 ******************************************************************************************/
-
+[[deprecated("Create gradient functions split into overloaded versions.")]]
 void World_Container::create_gradient(int gradient_type,
                                            int gradient_shape,
                                            string protein,
