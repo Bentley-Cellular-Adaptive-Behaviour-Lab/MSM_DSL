@@ -62,8 +62,16 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 	}
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
+		if (ep->blood == 0.0f) {
 
+		}
     }
+
+	if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
+		if (ep->blood == 0.0f) {
+
+		}
+	}
 }
 
 /*****************************************************************************************
@@ -149,9 +157,17 @@ vector<float> Gradient::calculate_dist_from_source(Env *ep) {
     vector<float> vector;
     float x_dist, y_dist, z_dist;
 
-    x_dist = float(ep->Ex) - this->m_source_position->x;
-    y_dist = float(ep->Ey) - this->m_source_position->y;
-    z_dist = float(ep->Ez) - this->m_source_position->z;;
+    if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE) {
+		x_dist = float(ep->Ex) - this->m_source_position->x;
+		y_dist = float(ep->Ey) - this->m_source_position->y;
+		z_dist = float(ep->Ez) - this->m_source_position->z;;
+    }
+
+	if (m_gradient_shape == GRADIENT_SHAPE_POINT) {
+		x_dist = float(ep->Ex) - this->m_centre_position->x;
+		y_dist = float(ep->Ey) - this->m_centre_position->y;
+		z_dist = float(ep->Ez) - this->m_centre_position->z;;
+	}
 
     // Check that distances are positive numbers, then push back to the vector.
     if (x_dist < 0) {
