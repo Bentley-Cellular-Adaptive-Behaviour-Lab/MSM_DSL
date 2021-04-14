@@ -307,10 +307,10 @@ void Gradient::determine_directionality() {
 ******************************************************************************************/
 
 void Gradient::apply_gradient_to_cuboid() {
-	float x_start = m_centre_position->x - ((float) m_cuboidal_height / 2);
-	float x_end = m_centre_position->x + ((float) m_cuboidal_height / 2);
-	float y_start = m_centre_position->y - ((float) m_cuboidal_width / 2);
-	float y_end = m_centre_position->y + ((float) m_cuboidal_width / 2);
+	float x_start = m_centre_position->x - ((float) m_cuboidal_width / 2);
+	float x_end = m_centre_position->x + ((float) m_cuboidal_width / 2);
+	float y_start = m_centre_position->y - ((float) m_cuboidal_height / 2);
+	float y_end = m_centre_position->y + ((float) m_cuboidal_height / 2);
 	float z_start = m_centre_position->y - ((float) m_cuboidal_depth / 2);
 	float z_end = m_centre_position->y + ((float) m_cuboidal_depth / 2);;
 	Env *ep;
