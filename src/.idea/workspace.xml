@@ -11,7 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Implemented apply_gradient_to_cuboid function">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Changed calc_dist_from_source to check which gradient shape is being applied">
       <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,7 @@
       <workItem from="1618305670458" duration="184000" />
       <workItem from="1618305941908" duration="3939000" />
       <workItem from="1618392336956" duration="1209000" />
-      <workItem from="1618394055761" duration="9911000" />
+      <workItem from="1618394055761" duration="11224000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -235,7 +235,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618414114214</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Separating out calc_linear_env_vegf functionality">
+      <created>1618415001224</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1618415001224</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Changed calc_dist_from_source to check which gradient shape is being applied">
+      <created>1618415293278</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1618415293278</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +291,9 @@
     <MESSAGE value="Renamed cuboid gradient to new sink and source declaration.." />
     <MESSAGE value="Changed apply_gradient_to_sphere to use centre position" />
     <MESSAGE value="Implemented apply_gradient_to_cuboid function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented apply_gradient_to_cuboid function" />
+    <MESSAGE value="Separating out calc_linear_env_vegf functionality" />
+    <MESSAGE value="Changed calc_dist_from_source to check which gradient shape is being applied" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed calc_dist_from_source to check which gradient shape is being applied" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -37,9 +37,9 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
     float weight = 1.00f;
     float starting_protein_level = m_starting_amount;
 
-    if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE) {
-		vector<float> ep_distances = calculate_dist_from_source(ep);
+    if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
 		if (ep->blood == 0.0f) {
+			vector<float> ep_distances = calculate_dist_from_source(ep);
 			// Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
 			if (x_varying) {
 				if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
@@ -63,15 +63,50 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
 		if (ep->blood == 0.0f) {
-
+			if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
+				// Check how far along the x axis from the upper x bound the env agent is and set weight according to
+				// that value as a percentage.
+				float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
+				weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
+			if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Y) {
+				// Check how far along the y axis from the upper y bound the env agent is and set weight according to
+				// that value as a percentage.
+				float y_dist = (m_centre_position->y + m_cuboidal_height / 2) - ep->Ey;
+				weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
+			if (m_gradient_direction == GRADIENT_DIRECTION_DEC_Z) {
+				// Check how far along the z axis from the upper z bound the env agent is and set weight according to
+				// that value as a percentage.
+				float z_dist = (m_centre_position->z + m_cuboidal_depth / 2) - ep->Ez;
+				weight = 1 - (z_dist / m_cuboidal_depth); // When fully traversed, z_dist = cuboidal depth, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
+			if (m_gradient_direction == GRADIENT_DIRECTION_INC_X) {
+				// Check how far along the x axis from the lower x bound the env agent is and set weight according to
+				// that value as a percentage.
+				float x_dist = ep->Ex - (m_centre_position->x - m_cuboidal_width / 2);
+				weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
+			if (m_gradient_direction == GRADIENT_DIRECTION_INC_Y) {
+				// Check how far along the y axis from the lower y bound the env agent is and set weight according to
+				// that value as a percentage.
+				float y_dist = ep->Ey - (m_centre_position->y - m_cuboidal_height / 2);
+				weight = 1 - (y_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
+			if (m_gradient_direction == GRADIENT_DIRECTION_INC_Z) {
+				// Check how far along the y axis from the lower z bound the env agent is and set weight according to
+				// that value as a percentage.
+				float z_dist = ep->Ez - (m_centre_position->z - m_cuboidal_depth / 2);
+				weight = 1 - (z_dist / m_cuboidal_height); // When fully traversed, y_dist = cuboidal height, so set weight to zero.
+				ep->VEGF += weight * starting_protein_level;
+			}
 		}
     }
-
-	if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
-		if (ep->blood == 0.0f) {
-
-		}
-	}
 }
 
 /*****************************************************************************************
@@ -154,7 +189,9 @@ void Gradient::determine_source_to_sink_dists() {
 ******************************************************************************************/
 
 vector<float> Gradient::calculate_dist_from_source(Env *ep) {
-    vector<float> vector;
+	assert(m_gradient_shape != GRADIENT_SHAPE_CUBOIDAL);
+
+	vector<float> vector;
     float x_dist, y_dist, z_dist;
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE) {
