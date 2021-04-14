@@ -514,16 +514,16 @@ Gradient::Gradient(World_Container *container,
 				   string protein_name,
 				   Coordinates *centre_position,
 				   float source_starting_amount,
-				   int height,
 				   int width,
+				   int height,
 				   int depth) {
 
 	this->m_parent_container = container;
 	this->m_parent_world = container->m_world;
 	this->m_gradient_type = gradient_type;
 	this->m_protein_name = protein_name;
-	this->m_cuboidal_height = height;
 	this->m_cuboidal_width = width;
+	this->m_cuboidal_height = height;
 	this->m_cuboidal_depth = depth;
 	this->m_starting_amount = source_starting_amount;
 	this->m_centre_position = centre_position;
