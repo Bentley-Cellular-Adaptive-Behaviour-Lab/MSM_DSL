@@ -61,18 +61,18 @@ public:
     float m_starting_amount;
 	Coordinates *m_centre_position; // Central position for cuboidal and spherical gradients
 
-    // Booleans to check whether the gradient changes along the relevant axis.
+    // Booleans to check whether the gradient changes along the relevant axis - used by sink and source gradients.
     bool x_varying = false;
     bool y_varying = false;
     bool z_varying = false;
 
 	// Dimensions for cuboidal gradients - if not cuboidal, set to -1 (these must always be positive integers otherwise)
-    int cuboidal_height = -1;
-	int cuboidal_width = -1;
-	int cuboidal_depth = -1;
+    int m_cuboidal_height = -1;
+	int m_cuboidal_width = -1;
+	int m_cuboidal_depth = -1;
 
 	// Radius for spherical gradients - if not spherical, set to -1 (these must always be positive integers otherwise)
-	int spherical_radius = -1;
+	int m_spherical_radius = -1;
 
 	// Coordinates for sink and source gradients.
 	Coordinates *m_source_position;
@@ -81,24 +81,25 @@ public:
 	//Distance from source to sink along each axis.
 	vector<float> m_source_to_sink_distances;
 
+	// Enum for gradient direction, used by cuboidal gradients.
+	int m_gradient_direction = -1;
+
     World_Container *m_parent_container;
     World *m_parent_world;
 
     //Constructor for sink and source gradients.
     Gradient(World_Container *container,
              int gradient_type,
-             int gradient_shape,
              string protein,
-             Coordinates *source,
+             Coordinates *source_position,
              float source_starting_amount,
-             Coordinates *sink);
+             Coordinates *sink_position);
 
 	//Constructor for cuboidal gradients.
 	Gradient(World_Container *container,
 			 int gradient_type,
-			 int gradient_shape,
 			 string protein,
-			 Coordinates *centre,
+			 Coordinates *centre_position,
 			 float source_starting_amount,
 			 int height,
 			 int width,
@@ -108,7 +109,7 @@ public:
 	Gradient(World_Container *container,
 			 int gradient_type,
 			 string protein_name,
-			 Coordinates *centre,
+			 Coordinates *centre_position,
 			 int source_starting_amount,
 			 int sphere_radius);
 
