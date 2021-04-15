@@ -195,39 +195,53 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
 
 /*****************************************************************************************
 *  Name:		determine_source_to_sink_dists
-*  Description: Determines the distance between a gradient's source and sink, and stores it
-*               within the gradient object.
+*  Description: Determines the distance between a gradient's source and sink (or outer bounds),
+*  				and stores it within the gradient object. Should only be used with source and sink/point
+*               gradients.
 *  Returns:		void
 ******************************************************************************************/
 
 void Gradient::determine_source_to_sink_dists() {
-    float x_dist, y_dist, z_dist;
+	float x_dist, y_dist, z_dist;
+	assert(m_gradient_shape != GRADIENT_SHAPE_CUBOIDAL); // Check the gradient shape is not cuboidal.
+	assert(m_gradient_shape != -1); // Check that gradient shape is defined.
 
-    x_dist = this->m_sink_position->x - this->m_source_position->x;
-    y_dist = this->m_sink_position->y - this->m_source_position->y;
-    z_dist = this->m_sink_position->z - this->m_source_position->z;;
+	if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE) {
+		x_dist = this->m_sink_position->x - this->m_source_position->x;
+		y_dist = this->m_sink_position->y - this->m_source_position->y;
+		z_dist = this->m_sink_position->z - this->m_source_position->z;
 
-    // Check that distances are positive numbers, then push back to the vector.
-    if (x_dist < 0) {
-        x_dist = -(x_dist);
-        m_source_to_sink_distances.push_back(x_dist);
-    } else {
-        m_source_to_sink_distances.push_back(x_dist);
-    }
+		// Check that distances are positive numbers, then push back to the vector.
+		if (x_dist < 0) {
+			x_dist = - (x_dist);
+			m_source_to_sink_distances.push_back(x_dist);
+		} else {
+			m_source_to_sink_distances.push_back(x_dist);
+		}
 
-    if (y_dist < 0) {
-        y_dist = -(y_dist);
-        m_source_to_sink_distances.push_back(y_dist);
-    } else {
-        m_source_to_sink_distances.push_back(y_dist);
-    }
+		if (y_dist < 0) {
+			y_dist = - (y_dist);
+			m_source_to_sink_distances.push_back(y_dist);
+		} else {
+			m_source_to_sink_distances.push_back(y_dist);
+		}
 
-    if (z_dist < 0) {
-        z_dist = -(z_dist);
-        m_source_to_sink_distances.push_back(z_dist);
-    } else {
-        m_source_to_sink_distances.push_back(z_dist);
-    }
+		if (z_dist < 0) {
+			z_dist = - (z_dist);
+			m_source_to_sink_distances.push_back(z_dist);
+		} else {
+			m_source_to_sink_distances.push_back(z_dist);
+		}
+	}
+	if (GRADIENT_SHAPE_POINT) {
+		x_dist = m_spherical_radius;
+		y_dist = m_spherical_radius;
+		z_dist = m_spherical_radius;
+
+		m_source_to_sink_distances.push_back(x_dist);
+		m_source_to_sink_distances.push_back(y_dist);
+		m_source_to_sink_distances.push_back(z_dist);
+	}
 }
 
 /*****************************************************************************************
@@ -837,6 +851,7 @@ void World_Container::create_gradient(int gradient_type,
 	new_gradient->x_varying = true;
 	new_gradient->y_varying = true;
 	new_gradient->z_varying = true;
+	new_gradient->determine_source_to_sink_dists();
 	new_gradient->apply_gradient_to_sphere();
 	std::cout << "Gradient created." <<  endl;
 	store_gradient(new_gradient);
