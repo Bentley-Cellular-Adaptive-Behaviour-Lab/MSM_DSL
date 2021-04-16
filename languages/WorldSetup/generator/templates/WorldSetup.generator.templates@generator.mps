@@ -2282,56 +2282,20 @@
           <node concept="356sEF" id="4KNMtF8NzhO" role="356sEH">
             <property role="TrG5h" value="&quot;," />
           </node>
-          <node concept="356sEF" id="4KNMtF8Nden" role="356sEH">
-            <property role="TrG5h" value=" " />
+          <node concept="356sEF" id="6ZdR30be9ma" role="356sEH">
+            <property role="TrG5h" value=" &amp;(" />
           </node>
-          <node concept="356sEF" id="4KNMtF8Ndeo" role="356sEH">
-            <property role="TrG5h" value="GRADIENT_STARTING_STRENGTH" />
-            <node concept="17Uvod" id="4KNMtF8Ndep" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="4KNMtF8Ndeq" role="3zH0cK">
-                <node concept="3clFbS" id="4KNMtF8Nder" role="2VODD2">
-                  <node concept="3clFbF" id="2GjRzF11ujI" role="3cqZAp">
-                    <node concept="2YIFZM" id="2GjRzF11ujJ" role="3clFbG">
-                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
-                      <node concept="2OqwBi" id="3fk35jmD$8Y" role="37wK5m">
-                        <node concept="2OqwBi" id="3fk35jmD$8Z" role="2Oq$k0">
-                          <node concept="2OqwBi" id="3fk35jmD$90" role="2Oq$k0">
-                            <node concept="30H73N" id="3fk35jmD$91" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="3fk35jmD$92" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="3fk35jmD$93" role="2OqNvi">
-                            <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
-                          </node>
-                        </node>
-                        <node concept="2qgKlT" id="3fk35jmD$94" role="2OqNvi">
-                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="356sEF" id="4KNMtF8Os75" role="356sEH">
-            <property role="TrG5h" value=", &amp;(" />
-          </node>
-          <node concept="356sEF" id="6B5I$h9z_Pj" role="356sEH">
+          <node concept="356sEF" id="6ZdR30be9mb" role="356sEH">
             <property role="TrG5h" value="GRADIENT_NAME" />
-            <node concept="17Uvod" id="6B5I$h9$Kwi" role="lGtFl">
+            <node concept="17Uvod" id="6ZdR30be9mc" role="lGtFl">
               <property role="2qtEX9" value="name" />
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="6B5I$h9$Kwj" role="3zH0cK">
-                <node concept="3clFbS" id="6B5I$h9$Kwk" role="2VODD2">
-                  <node concept="3clFbF" id="6B5I$h9$K$T" role="3cqZAp">
-                    <node concept="2OqwBi" id="6B5I$h9$KMq" role="3clFbG">
-                      <node concept="30H73N" id="6B5I$h9$K$S" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="6B5I$h9$L3e" role="2OqNvi">
+              <node concept="3zFVjK" id="6ZdR30be9md" role="3zH0cK">
+                <node concept="3clFbS" id="6ZdR30be9me" role="2VODD2">
+                  <node concept="3clFbF" id="6ZdR30be9mf" role="3cqZAp">
+                    <node concept="2OqwBi" id="6ZdR30be9mg" role="3clFbG">
+                      <node concept="30H73N" id="6ZdR30be9mh" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="6ZdR30be9mi" role="2OqNvi">
                         <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                       </node>
                     </node>
@@ -2340,8 +2304,44 @@
               </node>
             </node>
           </node>
-          <node concept="356sEF" id="6B5I$h9z$Na" role="356sEH">
+          <node concept="356sEF" id="6ZdR30be9mj" role="356sEH">
             <property role="TrG5h" value="_centre)" />
+          </node>
+          <node concept="356sEF" id="4KNMtF8Os75" role="356sEH">
+            <property role="TrG5h" value=", " />
+          </node>
+          <node concept="356sEF" id="785ahjdZ0WZ" role="356sEH">
+            <property role="TrG5h" value="GRADIENT_SOURCE_STRENGTH" />
+            <node concept="17Uvod" id="785ahjdZ1V3" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="785ahjdZ1V4" role="3zH0cK">
+                <node concept="3clFbS" id="785ahjdZ1V5" role="2VODD2">
+                  <node concept="3clFbF" id="785ahjdZ24m" role="3cqZAp">
+                    <node concept="2YIFZM" id="785ahjdZ24n" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="785ahjdZ24o" role="37wK5m">
+                        <node concept="2OqwBi" id="785ahjdZ24p" role="2Oq$k0">
+                          <node concept="2OqwBi" id="785ahjdZ24q" role="2Oq$k0">
+                            <node concept="30H73N" id="785ahjdZ24r" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="785ahjdZ24s" role="2OqNvi">
+                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="785ahjdZ24t" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                          </node>
+                        </node>
+                        <node concept="2qgKlT" id="785ahjdZ24u" role="2OqNvi">
+                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="356sEF" id="4KNMtF8OnQK" role="356sEH">
             <property role="TrG5h" value=", " />
@@ -3227,7 +3227,7 @@
             <property role="TrG5h" value="&quot;," />
           </node>
           <node concept="356sEF" id="6ZdR30bdU7J" role="356sEH">
-            <property role="TrG5h" value=", &amp;(" />
+            <property role="TrG5h" value=" &amp;(" />
           </node>
           <node concept="356sEF" id="6ZdR30bdU7K" role="356sEH">
             <property role="TrG5h" value="GRADIENT_NAME" />

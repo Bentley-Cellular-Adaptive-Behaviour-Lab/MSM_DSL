@@ -37,7 +37,7 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
     }
 
     // Is this cuboidal substrate extending out of the upper Z boundary of the world? 
-    if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) > SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
+    if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(thisTriangular) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(thisTriangular, "Substrate upper Z extends out of world. Z gridpoint value: " + (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(thisTriangular) + "Z gridpoint boundary: " + (SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)), "r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem)", "1178415553714255976", null, errorTarget);

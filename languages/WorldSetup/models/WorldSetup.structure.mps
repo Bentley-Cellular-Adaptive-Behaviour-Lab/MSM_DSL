@@ -392,13 +392,6 @@
     <property role="R4oN_" value="Exponentially varying gradient." />
     <property role="34LRSv" value="Exponential" />
     <ref role="1TJDcQ" node="2zgk2Od0CFw" resolve="Gradient_Type" />
-    <node concept="1TJgyj" id="4KNMtF8tLoz" role="1TKVEi">
-      <property role="IQ2ns" value="5490954312198067747" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Exponent" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="4KNMtF8xgjM" resolve="Float_Declaration" />
-    </node>
   </node>
   <node concept="1TIwiD" id="2zgk2Od0CIy">
     <property role="EcuMT" value="2940938711094954914" />

@@ -241,7 +241,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("WorldSetup.structure.Gradient_Type", 0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x28d0502d0d028ae0L);
     b.origin("r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)/2940938711094954856");
     b.version(2);
-    b.aggregate("Exponent", 0x4c33c9dac8771623L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x4c33c9dac88504f2L).optional(false).ordered(true).multiple(false).origin("5490954312198067747").done();
     b.alias("Exponential");
     return b.create();
   }
