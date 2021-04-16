@@ -45,68 +45,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/dsl_Species.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/springAgent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/constructors.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/src/springAgent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.o" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -663,94 +621,12 @@
               <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tests" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSMTests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMTests/models/MSMTests.tests@tests.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Substrates" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -786,7 +662,53 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Substrates" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -814,7 +736,47 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -835,28 +797,8 @@
               <option name="myItemId" value="MSMTests" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemId" value="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMTests/models/MSMTests.tests@tests.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -884,7 +826,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
+              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -911,14 +853,38 @@
               <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <SELECTED>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>

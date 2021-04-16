@@ -1019,7 +1019,6 @@ void World::set_focal_adhesion(MemAgent *memp) {
 ******************************************************************************************/
 
 float World::get_sign(Env *ep, std::tuple<float, float> p2, std::tuple<float, float> p3) {
-	//return (p1.x - p3.x) * (p2.y - p3.y) - (p2.x - p3.x) * (p1.y - p3.y);
 	return (ep->Ex - std::get<0>(p3))
 		 * (std::get<1>(p2) - std::get<1>(p3))
 		 - (std::get<0>(p2) - std::get<0>(p3))
