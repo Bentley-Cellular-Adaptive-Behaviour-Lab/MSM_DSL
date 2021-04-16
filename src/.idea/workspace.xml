@@ -11,63 +11,18 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Amended source dist calculation to work for spherical and source/sink gradients.">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Changed calc_dist_from_source to check which gradient shape is being applied">
       <change beforePath="$PROJECT_DIR$/../.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/springAgent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/creation.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ScreenRecording.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/springAgent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.o" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,6 +34,11 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="78b941f93c58cb4aea4376a73840ef7bc6caeb84" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -409,11 +369,6 @@
           <url>file://$PROJECT_DIR$/Tissue.cpp</url>
           <line>317</line>
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/world.cpp</url>
-          <line>143</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
