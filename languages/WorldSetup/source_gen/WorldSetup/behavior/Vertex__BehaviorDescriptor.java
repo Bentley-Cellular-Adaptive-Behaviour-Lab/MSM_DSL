@@ -72,7 +72,7 @@ public final class Vertex__BehaviorDescriptor extends BaseBHDescriptor {
     } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(grid, PROPS.Scaling$mTyg), 0x51fc4d939a305e4aL)) {
       scale = ((float) 1.0);
     }
-    return (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.X_Coord$$NNM), ((float) scale));
+    return (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Y_Coord$$OhO), ((float) scale));
   }
 
   /*package*/ Vertex__BehaviorDescriptor() {
