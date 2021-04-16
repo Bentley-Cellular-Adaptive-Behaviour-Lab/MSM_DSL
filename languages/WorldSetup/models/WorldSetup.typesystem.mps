@@ -1693,8 +1693,8 @@
               <node concept="37vLTw" id="11q$FfsVmt3" role="2Oq$k0">
                 <ref role="3cqZAo" node="1r0uutBJs1R" resolve="grid" />
               </node>
-              <node concept="3TrcHB" id="11q$FfsVmGQ" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+              <node concept="3TrcHB" id="3VXYM333sjM" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
               </node>
             </node>
           </node>
@@ -1702,8 +1702,8 @@
             <node concept="1YBJjd" id="1r0uutBNs8w" role="2Oq$k0">
               <ref role="1YBMHb" node="4JVq81FtFyz" resolve="thisTriangular" />
             </node>
-            <node concept="2qgKlT" id="11q$FfsVlBC" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:11q$FfsSUmC" resolve="get_prism_lowerz_gridpoint" />
+            <node concept="2qgKlT" id="3VXYM32XXnv" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:11q$FfsSLP4" resolve="get_prism_upperz_gridpoint" />
             </node>
           </node>
         </node>

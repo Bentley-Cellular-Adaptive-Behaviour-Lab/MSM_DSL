@@ -872,7 +872,7 @@
       <node id="5475084672767015072" at="50,0,53,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="5475084672767015072" at="53,0,56,0" concept="4" trace="overrides#()Z" />
       <node id="1178415553714250155" at="32,190,36,7" concept="0" />
-      <node id="1178415553714255976" at="40,253,44,7" concept="0" />
+      <node id="1178415553714255976" at="40,247,44,7" concept="0" />
       <node id="1639444299147759385" at="31,88,37,5" concept="3" />
       <node id="1639444299147759433" at="39,86,45,5" concept="3" />
       <node id="5475084672767015072" at="26,0,47,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -895,7 +895,7 @@
       </scope>
       <scope id="5475084672767015072" at="53,0,56,0" />
       <scope id="1639444299147759386" at="32,190,36,7" />
-      <scope id="1639444299147759434" at="40,253,44,7" />
+      <scope id="1639444299147759434" at="40,247,44,7" />
       <scope id="5475084672767015073" at="26,127,45,5">
         <var name="grid" id="1639444299147755639" />
       </scope>

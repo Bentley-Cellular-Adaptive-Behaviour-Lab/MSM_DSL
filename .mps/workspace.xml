@@ -6,19 +6,19 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701508999" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541728382621" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701508999" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -45,8 +45,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/classes_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/models/WorldSetup.typesystem.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen.caches/WorldSetup/typesystem/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/checkTriangularSubstrateBoundaries_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldSetup/source_gen/WorldSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/analysis.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/creation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/springAgent.dir/dsl_Tissue.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/springAgent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/constructors.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/src/springAgent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +128,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="64b57185-596a-4354-b082-5a851b8a4333/r:91396afe-b37a-43b2-9a20-e109df79c9fe(TempModule64b57185-596a-4354-b082-5a851b8a4333/ConsoleModel_112174735967163)">
+            <model ref="8ee16aac-65c5-4df9-b29c-6434f07f9efc/r:a4bf0ec8-c1d7-4b19-b551-275927603653(TempModule8ee16aac-65c5-4df9-b29c-6434f07f9efc/ConsoleModel_142883253963129)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -100,146 +160,146 @@
                   <concept id="473081947980701568" name="jetbrains.mps.console.base.structure.HelpCommand" flags="ng" index="1PAEo6" />
                 </language>
               </registry>
-              <node concept="aymSD" id="6ZdR30bdeC$">
-                <node concept="3balQm" id="6ZdR30bdeC_" role="aymYE">
-                  <node concept="2Clz$F" id="6ZdR30bdeCA" role="18xWvz">
-                    <node concept="1PAEo6" id="6ZdR30bdeCB" role="2Clzx4" />
+              <node concept="aymSD" id="14cWnRS_0B_">
+                <node concept="3balQm" id="14cWnRS_0BA" role="aymYE">
+                  <node concept="2Clz$F" id="14cWnRS_0BB" role="18xWvz">
+                    <node concept="1PAEo6" id="14cWnRS_0BC" role="2Clzx4" />
                   </node>
-                  <node concept="ZBF_j" id="6ZdR30bdeCC" role="18xWvz">
-                    <node concept="Zy5XD" id="6ZdR30bdeCD" role="Zy5mW">
+                  <node concept="ZBF_j" id="14cWnRS_0BD" role="18xWvz">
+                    <node concept="Zy5XD" id="14cWnRS_0BE" role="Zy5mW">
                       <property role="Zy5T0" value="Constructions available in console:" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCE" role="Zy5mW" />
-                    <node concept="Zy5Tx" id="6ZdR30bdeCF" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCG" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BF" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="14cWnRS_0BG" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BH" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCH" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCI" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BI" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BJ" role="Zy5mW">
                       <property role="Zy5T0" value="{ &lt;statements&gt; }   execute a statement list" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCJ" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCK" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BK" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BL" role="Zy5mW">
                       <property role="Zy5T0" value="&lt;expression&gt;       evaluate an expression and print its result" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCL" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCM" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BM" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BN" role="Zy5mW">
                       <property role="Zy5T0" value="?                  display this help or a help page for a specific command" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCN" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCO" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BO" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BP" role="Zy5mW">
                       <property role="Zy5T0" value="#print             print into the console window" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCP" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCQ" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BQ" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BR" role="Zy5mW">
                       <property role="Zy5T0" value="#project           the current project" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCR" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCS" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BS" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BT" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCT" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCU" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BU" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BV" role="Zy5mW">
                       <property role="Zy5T0" value="#showBrokenRefs    show broken references" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCV" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCW" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BW" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BX" role="Zy5mW">
                       <property role="Zy5T0" value="#showGenPlan       show the generation plan" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCX" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeCY" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0BY" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0BZ" role="Zy5mW">
                       <property role="Zy5T0" value="#stat              display useful statistics" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeCZ" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD0" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C0" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C1" role="Zy5mW">
                       <property role="Zy5T0" value="#callAction        call an IDE action with custom parameters" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD1" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD2" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C2" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C3" role="Zy5mW">
                       <property role="Zy5T0" value="#clean             clean files *.generated" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD3" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD4" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C4" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C5" role="Zy5mW">
                       <property role="Zy5T0" value="#make              make models" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD5" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD6" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C6" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C7" role="Zy5mW">
                       <property role="Zy5T0" value="#removeGenSources  delete the source_gen, source_gen.caches and classes_gen directories" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD7" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD8" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C8" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C9" role="Zy5mW">
                       <property role="Zy5T0" value="#show              show sequence of nodes/references/models/modules in the Usages View panel" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD9" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDa" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Ca" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cb" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDb" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDc" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cc" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cd" role="Zy5mW">
                       <property role="Zy5T0" value="#reloadClasses     reload classes of all modules" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDd" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDe" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Ce" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cf" role="Zy5mW">
                       <property role="Zy5T0" value="#consoleModel      return a model, in which the console commands as well as its history are stored" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDf" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDg" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cg" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Ch" role="Zy5mW">
                       <property role="Zy5T0" value="#internalMode      access the IDE internal mode variable" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDh" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDi" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Ci" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cj" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDj" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDk" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Ck" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cl" role="Zy5mW">
                       <property role="Zy5T0" value="#exec              execute a script" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDl" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDm" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cm" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cn" role="Zy5mW">
                       <property role="Zy5T0" value="refactor           apply a function to manually selected nodes" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDn" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDo" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Co" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cp" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDp" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDq" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cq" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cr" role="Zy5mW">
                       <property role="Zy5T0" value="ofAspect           filter models by their aspect" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDr" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDs" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cs" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Ct" role="Zy5mW">
                       <property role="Zy5T0" value="                   " />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDt" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDu" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cu" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cv" role="Zy5mW">
                       <property role="Zy5T0" value="#instances         instances of a concept in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDv" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDw" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cw" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cx" role="Zy5mW">
                       <property role="Zy5T0" value="#models            all models in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDx" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDy" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0Cy" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0Cz" role="Zy5mW">
                       <property role="Zy5T0" value="#modules           all modules in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDz" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeD$" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0C$" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0C_" role="Zy5mW">
                       <property role="Zy5T0" value="#nodes             all nodes in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeD_" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDA" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0CA" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0CB" role="Zy5mW">
                       <property role="Zy5T0" value="#references        all references in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDB" role="Zy5mW" />
-                    <node concept="Zy5XD" id="6ZdR30bdeDC" role="Zy5mW">
+                    <node concept="Zy5Tx" id="14cWnRS_0CC" role="Zy5mW" />
+                    <node concept="Zy5XD" id="14cWnRS_0CD" role="Zy5mW">
                       <property role="Zy5T0" value="#usages            direct references to a node in scope" />
                     </node>
-                    <node concept="Zy5Tx" id="6ZdR30bdeDD" role="Zy5mW" />
+                    <node concept="Zy5Tx" id="14cWnRS_0CE" role="Zy5mW" />
                   </node>
                 </node>
-                <node concept="2Clz$F" id="6ZdR30bdeDE" role="aymYO" />
-                <node concept="2_V_lH" id="6ZdR30bdeDF" role="1PhJh3">
-                  <ref role="2_V_lI" node="6ZdR30bdeDE" resolve="CommandHolder" />
+                <node concept="2Clz$F" id="14cWnRS_0CF" role="aymYO" />
+                <node concept="2_V_lH" id="14cWnRS_0CG" role="1PhJh3">
+                  <ref role="2_V_lI" node="14cWnRS_0CF" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -592,34 +652,18 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="languages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -633,6 +677,68 @@
               <option name="myItemId" value="WorldSetup.generator" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMTests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/solutions/MSMTests/models/MSMTests.tests@tests.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Substrates" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -643,14 +749,8 @@
               <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -686,11 +786,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup" />
+              <option name="myItemId" value="r:ac2b9fac-3bf9-494e-8c49-b2bd8239392c(WorldSetup.typesystem) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -711,8 +807,14 @@
               <option name="myItemId" value="WorldSetup" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -722,15 +824,77 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
+              <option name="myItemId" value="MSMTests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WorldSetup.generator" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldSetup.behavior) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/models/WorldSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Substrates" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -752,98 +916,38 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationSettings" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:454031ae-2322-4574-ad04-ae2662e864f9(SimulationSettings.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <SELECTED>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup.generator" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WorldSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator) in IdeaFile[path: /Users/meadt/MPSProjects/MSM_DSL/languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="232636909712209638" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </SELECTED>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="languages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
       <pane id="CustomProjectView_org.iets3.core.plugin.plugin.SpecExplorer">
@@ -1204,13 +1308,6 @@
       <option name="presentableId" value="Default" />
       <updated>1602777653679</updated>
     </task>
-    <task id="LOCAL-00017" summary="Implemented auto-updating world boundary functionality.">
-      <created>1615474723693</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1615474723693</updated>
-    </task>
     <task id="LOCAL-00018" summary="Created new species language. Preparing to refactor.">
       <created>1616495998804</created>
       <option name="number" value="00018" />
@@ -1547,7 +1644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618411194282</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Swapped generator arguments around to match declaration in source files.">
+      <created>1618420565537</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1618420565537</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -3175,7 +3279,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented relations management for parameters" />
     <MESSAGE value="Tested parameter relations management. Added checks for cyclical references and self-references. Fixed generator for cell types to use height and width functions. Fixed cylindrical tissue generator to correctly define cells along circumference. Currently debugging grid calculation." />
     <MESSAGE value="Added workaround for world not finding grid behaviours." />
     <MESSAGE value="Added tissue container functions to get the grid's negative space value." />
@@ -3200,6 +3303,7 @@
     <MESSAGE value="Generator uses correct cylinder radius function" />
     <MESSAGE value="Added semi-colons to generated gradient functions." />
     <MESSAGE value="Removed gradient shape enum from generated create_gradient calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed gradient shape enum from generated create_gradient calls" />
+    <MESSAGE value="Swapped generator arguments around to match declaration in source files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Swapped generator arguments around to match declaration in source files." />
   </component>
 </project>
