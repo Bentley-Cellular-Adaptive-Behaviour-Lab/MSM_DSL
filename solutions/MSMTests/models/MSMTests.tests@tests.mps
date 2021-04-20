@@ -17,11 +17,22 @@
   </languages>
   <imports>
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" />
+    <import index="282v" ref="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test">
       <concept id="2325284917965760583" name="jetbrains.mps.lang.test.structure.BeforeTestsMethod" flags="ig" index="0EjCn" />
+      <concept id="1215507671101" name="jetbrains.mps.lang.test.structure.NodeErrorCheckOperation" flags="ng" index="1TM$A">
+        <child id="8489045168660938517" name="errorRef" index="3lydEf" />
+      </concept>
+      <concept id="1215603922101" name="jetbrains.mps.lang.test.structure.NodeOperationsContainer" flags="ng" index="7CXmI">
+        <child id="1215604436604" name="nodeOperations" index="7EUXB" />
+      </concept>
+      <concept id="7691029917083872157" name="jetbrains.mps.lang.test.structure.IRuleReference" flags="ng" index="2u4UPC">
+        <reference id="8333855927540250453" name="declaration" index="39XzEq" />
+      </concept>
+      <concept id="4531408400484511853" name="jetbrains.mps.lang.test.structure.ReportErrorStatementReference" flags="ng" index="2PYRI3" />
       <concept id="5097124989038916362" name="jetbrains.mps.lang.test.structure.TestInfo" flags="ng" index="2XOHcx">
         <property id="5097124989038916363" name="projectPath" index="2XOHcw" />
       </concept>
@@ -124,6 +135,10 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="4222318806802425298" name="jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation" flags="ng" index="15s5l7">
+        <property id="8575328350543493365" name="message" index="huDt6" />
+        <property id="2423417345669755629" name="filter" index="1eyWvh" />
       </concept>
     </language>
     <language id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="Units">
@@ -471,6 +486,348 @@
   <node concept="1lH9Xt" id="3eqdKU_pdJa">
     <property role="TrG5h" value="test_TissuesObjectOverlap" />
     <property role="3GE5qa" value="" />
+    <node concept="1qefOq" id="3$cyYKqu3no" role="1SKRRt">
+      <node concept="1yko06" id="3$cyYKqu3ns" role="1qenE9">
+        <property role="TrG5h" value="World_TissuesObjectOverlap" />
+        <ref role="3_H_MC" node="3$cyYKqu3pT" resolve="Tissues_TissuesObjectOverlap" />
+        <node concept="1yko03" id="3$cyYKqu3nt" role="1yko01">
+          <node concept="2_hQR_" id="3$cyYKqu3nu" role="3bEhY_">
+            <node concept="2_n9WQ" id="3$cyYKqu3nv" role="2_hQRE">
+              <node concept="30bXRB" id="3$cyYKqu3oR" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="3$cyYKqu3pk" role="2_hQ4V" />
+          </node>
+          <node concept="2_kiwO" id="3$cyYKqu3ny" role="2nU_yc">
+            <node concept="30bXRB" id="3$cyYKqu3nX" role="2_kiwP">
+              <property role="30bXRw" value="1.0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="3$cyYKqu3pG" role="1SKRRt">
+      <node concept="15s5l7" id="3$cyYKqub0t" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue lower Y boundaries extend out of the world. Tissue lower Y: -230&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584173131]&quot;;" />
+        <property role="huDt6" value="Error: Tissue lower Y boundaries extend out of the world. Tissue lower Y: -230" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu43T" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue upper Z boundaries extend out of the world. Tissue upper Z: 6&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584178688]&quot;;" />
+        <property role="huDt6" value="Error: Tissue upper Z boundaries extend out of the world. Tissue upper Z: 6" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu43y" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue upper Y boundaries extend out of the world. Tissue upper Y: 206&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584176644]&quot;;" />
+        <property role="huDt6" value="Error: Tissue upper Y boundaries extend out of the world. Tissue upper Y: 206" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3ZM" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue upper X boundaries extend out of the world. Tissue upper X:  50&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584169022]&quot;;" />
+        <property role="huDt6" value="Error: Tissue upper X boundaries extend out of the world. Tissue upper X:  50" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3ZD" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue lower Z boundaries extend out of the world. Tissue lower Z: -6&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584178776]&quot;;" />
+        <property role="huDt6" value="Error: Tissue lower Z boundaries extend out of the world. Tissue lower Z: -6" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3Zx" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Tissue lower X boundaries extend out of the world. Tissue lower X: -50&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/1557408071584173043]&quot;;" />
+        <property role="huDt6" value="Error: Tissue lower X boundaries extend out of the world. Tissue lower X: -50" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$s" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell upper Y boundaries extend out of the world. Cell upper Y: 10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594803384]&quot;;" />
+        <property role="huDt6" value="Error: Cell upper Y boundaries extend out of the world. Cell upper Y: 10" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$m" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell upper Y boundaries extend out of the world. Cell upper Y: 10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594803384]&quot;;" />
+        <property role="huDt6" value="Error: Cell upper Y boundaries extend out of the world. Cell upper Y: 10" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$h" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell upper X boundaries extend out of the world. Cell upper X: 10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594797553]&quot;;" />
+        <property role="huDt6" value="Error: Cell upper X boundaries extend out of the world. Cell upper X: 10" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$d" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell lower Y boundaries extend out of the world. Cell lower Y: -10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594773341]&quot;;" />
+        <property role="huDt6" value="Error: Cell lower Y boundaries extend out of the world. Cell lower Y: -10" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$a" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell lower Y boundaries extend out of the world. Cell lower Y: -10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594773341]&quot;;" />
+        <property role="huDt6" value="Error: Cell lower Y boundaries extend out of the world. Cell lower Y: -10" />
+      </node>
+      <node concept="15s5l7" id="3$cyYKqu3$8" role="lGtFl">
+        <property role="1eyWvh" value="FLAVOUR_ISSUE_KIND=&quot;typesystem (typesystem)&quot;;FLAVOUR_MESSAGE=&quot;Error: Cell lower X boundaries extend out of the world. Cell lower X: -10&quot;;FLAVOUR_RULE_ID=&quot;[r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)/3967240825594755604]&quot;;" />
+        <property role="huDt6" value="Error: Cell lower X boundaries extend out of the world. Cell lower X: -10" />
+      </node>
+      <node concept="3ZP1sW" id="3$cyYKqu3pT" role="1qenE9">
+        <property role="TrG5h" value="Tissues_TissuesObjectOverlap" />
+        <ref role="2ppKUs" node="3$cyYKqu3ns" resolve="World_TissuesObjectOverlap" />
+        <node concept="3ZP1sZ" id="3$cyYKqu3Pv" role="3ZP1sP">
+          <property role="TrG5h" value="Vessel1" />
+          <ref role="1v2cpI" node="3$cyYKqu3sk" resolve="Vessel" />
+          <node concept="3ZP1sY" id="3$cyYKqu3Pw" role="3ZPHa7">
+            <node concept="2_hQR_" id="3$cyYKqu3Px" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKqu3Py" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3R5" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3RD" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3P_" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKqu3PA" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3Sc" role="2_n9WR">
+                  <property role="30bXRw" value="100" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3SK" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3PD" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKqu3PE" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3Th" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3Tj" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqu44h" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqu44i" role="7EUXB">
+              <node concept="2PYRI3" id="3$cyYKqu44G" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJAi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3ZP1sZ" id="3$cyYKqu3TM" role="3ZP1sP">
+          <property role="TrG5h" value="Vessel2" />
+          <ref role="1v2cpI" node="3$cyYKqu3sk" resolve="Vessel" />
+          <node concept="3ZP1sY" id="3$cyYKqu3TN" role="3ZPHa7">
+            <node concept="2_hQR_" id="3$cyYKqu3TO" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKqu3TP" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3Wi" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3WQ" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3TS" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKqu3TT" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3Xp" role="2_n9WR">
+                  <property role="30bXRw" value="100" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3XX" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3TW" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKqu3TX" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3Yu" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3YW" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqu44I" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqu44J" role="7EUXB">
+              <node concept="7CXmI" id="3$cyYKqu459" role="lGtFl" />
+              <node concept="2PYRI3" id="3$cyYKqu45e" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJAi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3ZP1sZ" id="3$cyYKqu45o" role="3ZP1sP">
+          <property role="TrG5h" value="Monolayer1" />
+          <ref role="1v2cpI" node="3$cyYKqu3ul" resolve="Monolayer" />
+          <node concept="3ZP1sY" id="3$cyYKqu45p" role="3ZPHa7">
+            <node concept="2_hQR_" id="3$cyYKqu45q" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKqu45r" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu48R" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu49r" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu45u" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKqu45v" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu49Y" role="2_n9WR">
+                  <property role="30bXRw" value="-100" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu4as" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu45y" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKqu45z" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu4bv" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu4bR" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqub0E" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqub0F" role="7EUXB">
+              <node concept="2PYRI3" id="3$cyYKqub0Z" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJAi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3ZP1sZ" id="3$cyYKquaTy" role="3ZP1sP">
+          <property role="TrG5h" value="Monolayer2" />
+          <ref role="1v2cpI" node="3$cyYKqu3ul" resolve="Monolayer" />
+          <node concept="3ZP1sY" id="3$cyYKquaTz" role="3ZPHa7">
+            <node concept="2_hQR_" id="3$cyYKquaT$" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKquaT_" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKquaW_" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKquaX1" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKquaTC" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKquaTD" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKquaXH" role="2_n9WR">
+                  <property role="30bXRw" value="-100" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKquaY9" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKquaTG" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKquaTH" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKquaY$" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKquaYA" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqub11" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqub12" role="7EUXB">
+              <node concept="2PYRI3" id="3$cyYKqub1m" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJAi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3ZP1sL" id="3$cyYKqu3uy" role="3ZP1sR">
+          <property role="TrG5h" value="Endo1" />
+          <ref role="1apGob" node="3$cyYKqu3ql" resolve="Endothelial" />
+          <node concept="3ZP1sY" id="3$cyYKqu3uz" role="3ZPHbL">
+            <node concept="2_hQR_" id="3$cyYKqu3u$" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKqu3u_" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3vK" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3wg" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3uC" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKqu3uD" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3wJ" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3x9" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3uG" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKqu3uH" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3xC" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3y0" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqu3M6" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqu3M7" role="7EUXB">
+              <node concept="2PYRI3" id="3$cyYKqu3Ml" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJaN" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3ZP1sL" id="3$cyYKqu3_d" role="3ZP1sR">
+          <property role="TrG5h" value="Endo2" />
+          <ref role="1apGob" node="3$cyYKqu3ql" resolve="Endothelial" />
+          <node concept="3ZP1sY" id="3$cyYKqu3_e" role="3ZPHbL">
+            <node concept="2_hQR_" id="3$cyYKqu3_f" role="2IF2Ql">
+              <node concept="2_n9WQ" id="3$cyYKqu3_g" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3_h" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3_i" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3_j" role="2IF2Qn">
+              <node concept="2_n9WQ" id="3$cyYKqu3_k" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3_l" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3_m" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3_n" role="2IF2Qq">
+              <node concept="2_n9WQ" id="3$cyYKqu3_o" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3_p" role="2_n9WR">
+                  <property role="30bXRw" value="0" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3_q" role="2_hQ4V" />
+            </node>
+          </node>
+          <node concept="7CXmI" id="3$cyYKqu3CX" role="lGtFl">
+            <node concept="1TM$A" id="3$cyYKqu3CY" role="7EUXB">
+              <node concept="2PYRI3" id="3$cyYKqu3Mn" role="3lydEf">
+                <ref role="39XzEq" to="282v:3$QBVvWAJaN" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="1apGoc" id="3$cyYKqu3sk" role="1v2izi">
+          <property role="TrG5h" value="Vessel" />
+          <ref role="1apGrN" node="3$cyYKqu3ql" resolve="Endothelial" />
+          <node concept="3ZP1sC" id="3$cyYKqu3so" role="1v2cpK">
+            <property role="3ZP1sG" value="5" />
+            <node concept="2_hQR_" id="3$cyYKqu3sq" role="3ob6kl">
+              <node concept="2_n9WQ" id="3$cyYKqu3ss" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3tT" role="2_n9WR">
+                  <property role="30bXRw" value="3" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3tn" role="2_hQ4V" />
+            </node>
+          </node>
+        </node>
+        <node concept="1apGoc" id="3$cyYKqu3ul" role="1v2izi">
+          <property role="TrG5h" value="Monolayer" />
+          <ref role="1apGrN" node="3$cyYKqu3ql" resolve="Endothelial" />
+          <node concept="3ZP1s_" id="3$cyYKqu3uv" role="1v2cpK">
+            <property role="3ZP1sB" value="3" />
+            <property role="3ZP1sp" value="3" />
+          </node>
+        </node>
+        <node concept="3ZP1sM" id="3$cyYKqu3ql" role="1v2izm">
+          <property role="TrG5h" value="Endothelial" />
+          <node concept="3ZP1s$" id="3$cyYKqu3qp" role="3ZP1s2">
+            <node concept="2_hQR_" id="3$cyYKqu3qr" role="2IF2Qc">
+              <node concept="2_n9WQ" id="3$cyYKqu3qt" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3rB" role="2_n9WR">
+                  <property role="30bXRw" value="10" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3rX" role="2_hQ4V" />
+            </node>
+            <node concept="2_hQR_" id="3$cyYKqu3qz" role="2IF2Qe">
+              <node concept="2_n9WQ" id="3$cyYKqu3q_" role="2_hQRE">
+                <node concept="30bXRB" id="3$cyYKqu3r4" role="2_n9WR">
+                  <property role="30bXRw" value="10" />
+                </node>
+              </node>
+              <node concept="2_hRrN" id="3$cyYKqu3r6" role="2_hQ4V" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node concept="1lH9Xt" id="3eqdKU_pdJk">
     <property role="TrG5h" value="test_TissuesObjectBoundaries" />
