@@ -308,7 +308,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object propertyMacro_GetValue_1_58(final PropertyMacroContext _context) {
     int negYSpace = SPropertyOperations.getInteger(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.World_Container$fW), LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO);
     int Y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
-    return String.valueOf(Y - negYSpace);
+    return String.valueOf(Y + negYSpace);
   }
   public static Object propertyMacro_GetValue_1_59(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);

@@ -97,30 +97,64 @@
   </root>
   <root nodeRef="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)/599220133721283101">
     <file name="test_TissueProperties_Test.java">
-      <node id="599220133721283101" at="22,39,23,25" concept="7" />
-      <node id="599220133721283606" at="27,61,28,52" concept="1" />
-      <node id="599220133721283101" at="33,52,34,19" concept="7" />
-      <node id="599220133721283142" at="37,63,38,40" concept="1" />
-      <node id="599220133721283279" at="38,40,39,40" concept="1" />
-      <node id="599220133721283264" at="39,40,40,40" concept="1" />
-      <node id="599220133721283101" at="17,0,19,0" concept="5" trace="ourParamCache" />
-      <node id="599220133721283101" at="19,0,21,0" concept="2" trace="myWithCommandRule" />
-      <node id="599220133721283101" at="22,0,25,0" concept="0" trace="test_TissueProperties_Test#()V" />
-      <node id="599220133721283101" at="33,0,36,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
-      <node id="599220133721283606" at="26,0,30,0" concept="3" trace="test_test_VesselCellNumber#()V" />
-      <node id="599220133721283606" at="37,0,42,0" concept="3" trace="test_test_VesselCellNumber#()V" />
-      <scope id="599220133721283101" at="22,39,23,25" />
-      <scope id="599220133721283606" at="27,61,28,52" />
-      <scope id="599220133721283101" at="33,52,34,19" />
-      <scope id="599220133721283101" at="22,0,25,0" />
-      <scope id="599220133721283101" at="33,0,36,0">
+      <node id="599220133721283101" at="31,39,32,25" concept="7" />
+      <node id="599220133721283606" at="36,61,37,52" concept="1" />
+      <node id="4110814406054917386" at="40,66,41,57" concept="1" />
+      <node id="4110814406054917415" at="44,68,45,59" concept="1" />
+      <node id="599220133721283101" at="50,52,51,19" concept="7" />
+      <node id="599220133721283142" at="54,63,55,40" concept="1" />
+      <node id="599220133721283279" at="55,40,56,40" concept="1" />
+      <node id="599220133721283264" at="56,40,57,40" concept="1" />
+      <node id="4110814406054917681" at="57,40,58,306" concept="1" />
+      <node id="4110814406054917700" at="58,306,59,306" concept="1" />
+      <node id="4110814406054917989" at="59,306,60,306" concept="1" />
+      <node id="599220133721283142" at="62,68,63,40" concept="1" />
+      <node id="599220133721283279" at="63,40,64,40" concept="1" />
+      <node id="599220133721283264" at="64,40,65,40" concept="1" />
+      <node id="4110814406054928673" at="65,40,66,324" concept="1" />
+      <node id="4110814406054930796" at="66,324,67,324" concept="1" />
+      <node id="4110814406054931497" at="67,324,68,324" concept="1" />
+      <node id="599220133721283142" at="70,70,71,40" concept="1" />
+      <node id="599220133721283279" at="71,40,72,40" concept="1" />
+      <node id="599220133721283264" at="72,40,73,40" concept="1" />
+      <node id="4110814406054932770" at="73,40,74,325" concept="1" />
+      <node id="4110814406054932781" at="74,325,75,325" concept="1" />
+      <node id="4110814406054932792" at="75,325,76,325" concept="1" />
+      <node id="599220133721283101" at="83,0,84,0" concept="5" trace="tissue_type$$cvw" />
+      <node id="599220133721283101" at="84,0,85,0" concept="5" trace="arrangement$aAuk" />
+      <node id="599220133721283101" at="88,0,89,0" concept="5" trace="Arrangement_Cylindrical$Bh" />
+      <node id="599220133721283101" at="26,0,28,0" concept="5" trace="ourParamCache" />
+      <node id="599220133721283101" at="28,0,30,0" concept="2" trace="myWithCommandRule" />
+      <node id="599220133721283101" at="31,0,34,0" concept="0" trace="test_TissueProperties_Test#()V" />
+      <node id="599220133721283101" at="50,0,53,0" concept="0" trace="TestBody#(Ljetbrains/mps/lang/test/runtime/TransformationTest;)V" />
+      <node id="599220133721283606" at="35,0,39,0" concept="3" trace="test_test_VesselCellNumber#()V" />
+      <node id="4110814406054917386" at="39,0,43,0" concept="3" trace="test_test_VesselGridpointLength#()V" />
+      <node id="4110814406054917415" at="43,0,47,0" concept="3" trace="test_test_VesselCellCircumference#()V" />
+      <node id="599220133721283606" at="54,0,62,0" concept="3" trace="test_test_VesselCellNumber#()V" />
+      <node id="4110814406054917386" at="62,0,70,0" concept="3" trace="test_test_VesselGridpointLength#()V" />
+      <node id="4110814406054917415" at="70,0,78,0" concept="3" trace="test_test_VesselCellCircumference#()V" />
+      <scope id="599220133721283101" at="31,39,32,25" />
+      <scope id="599220133721283606" at="36,61,37,52" />
+      <scope id="4110814406054917386" at="40,66,41,57" />
+      <scope id="4110814406054917415" at="44,68,45,59" />
+      <scope id="599220133721283101" at="50,52,51,19" />
+      <scope id="599220133721283101" at="31,0,34,0" />
+      <scope id="599220133721283101" at="50,0,53,0">
         <var name="owner" id="599220133721283101" />
       </scope>
-      <scope id="599220133721283606" at="37,63,40,40" />
-      <scope id="599220133721283606" at="26,0,30,0" />
-      <scope id="599220133721283606" at="37,0,42,0" />
-      <unit id="599220133721283101" at="31,0,45,0" name="MSMTests.tests.test_TissueProperties_Test$TestBody" />
-      <unit id="599220133721283101" at="15,0,46,0" name="MSMTests.tests.test_TissueProperties_Test" />
+      <scope id="599220133721283606" at="35,0,39,0" />
+      <scope id="4110814406054917386" at="39,0,43,0" />
+      <scope id="4110814406054917415" at="43,0,47,0" />
+      <scope id="599220133721283606" at="54,63,60,306" />
+      <scope id="4110814406054917386" at="62,68,68,324" />
+      <scope id="4110814406054917415" at="70,70,76,325" />
+      <scope id="599220133721283606" at="54,0,62,0" />
+      <scope id="4110814406054917386" at="62,0,70,0" />
+      <scope id="4110814406054917415" at="70,0,78,0" />
+      <unit id="599220133721283101" at="87,0,90,0" name="MSMTests.tests.test_TissueProperties_Test$CONCEPTS" />
+      <unit id="599220133721283101" at="82,0,86,0" name="MSMTests.tests.test_TissueProperties_Test$LINKS" />
+      <unit id="599220133721283101" at="48,0,81,0" name="MSMTests.tests.test_TissueProperties_Test$TestBody" />
+      <unit id="599220133721283101" at="24,0,91,0" name="MSMTests.tests.test_TissueProperties_Test" />
     </file>
   </root>
   <root nodeRef="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests)/6063914916284980855">
