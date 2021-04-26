@@ -37,14 +37,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test$TestBody.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test$TestBody.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen.caches/MSMTests/tests/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_TissuesObjectOverlap_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/test_TissuesObjectOverlap_Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/source_gen/MSMTests/tests/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +59,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="3fd4aad1-cca2-4544-b891-a15e660e41a3/r:65fc5a7b-b2a2-40c3-b18c-64eecb2f40d3(TempModule3fd4aad1-cca2-4544-b891-a15e660e41a3/ConsoleModel_355242428663100)">
+            <model ref="de91d848-6c96-4cc3-8f19-eb22cf170ce8/r:e010f767-c25b-4f6b-92ba-474f3b7c2ec5(TempModulede91d848-6c96-4cc3-8f19-eb22cf170ce8/ConsoleModel_888795880059200)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -86,11 +79,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="3$cyYKqtvs2">
-                <node concept="3balQm" id="3$cyYKqtvs3" role="aymYE" />
-                <node concept="2Clz$F" id="3$cyYKqtvs4" role="aymYO" />
-                <node concept="2_V_lH" id="3$cyYKqtvs5" role="1PhJh3">
-                  <ref role="2_V_lI" node="3$cyYKqtvs4" resolve="CommandHolder" />
+              <node concept="aymSD" id="63T52Ig_UwV">
+                <node concept="3balQm" id="63T52Ig_UwW" role="aymYE" />
+                <node concept="2Clz$F" id="63T52Ig_UwX" role="aymYO" />
+                <node concept="2_V_lH" id="63T52Ig_UwY" role="1PhJh3">
+                  <ref role="2_V_lI" node="63T52Ig_UwX" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -443,17 +436,11 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+      <pane id="FileSystem">
+        <subPane>
           <expand>
             <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="languages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="" type="" />
             </path>
           </expand>
           <select />
@@ -461,52 +448,6 @@
       </pane>
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMTests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -534,6 +475,38 @@
               <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Species" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
@@ -546,10 +519,6 @@
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -573,7 +542,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -586,32 +555,8 @@
               <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMTests" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMTests/models/MSMTests.tests@tests.mps]" />
+              <option name="myItemId" value="r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/TissueSetup/models/TissueSetup.typesystem.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -621,29 +566,35 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="c57535e2-aa86-44ba-a3f3-9317718a570a" />
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSMTests" />
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:60ea73b4-b49e-4115-8d0d-09697412701d(MSMTests.tests@tests) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMTests/models/MSMTests.tests@tests.mps]" />
+              <option name="myItemId" value="6987638474184067720" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem">
-        <subPane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
             <path>
-              <item name="" type="" />
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="languages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -1027,20 +978,20 @@
     </configuration>
     <list>
       <item itemvalue="JUnit Tests.test_CellNumbers_Test" />
+      <item itemvalue="JUnit Tests.test_TissueProperties_Test" />
       <item itemvalue="JUnit Tests.test_TissuesObjectBoundaries_Test" />
+      <item itemvalue="JUnit Tests.test_TissuesObjectOverlap_Test" />
       <item itemvalue="JUnit Tests.test_cellNumber_Test" />
       <item itemvalue="Java Application.MakeAndRun" />
       <item itemvalue="MPS.Debug" />
       <item itemvalue="MPS.Testing" />
-      <item itemvalue="JUnit Tests.test_TissueProperties_Test" />
-      <item itemvalue="JUnit Tests.test_TissuesObjectOverlap_Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit Tests.test_TissuesObjectOverlap_Test" />
-        <item itemvalue="JUnit Tests.test_TissueProperties_Test" />
         <item itemvalue="JUnit Tests.test_cellNumber_Test" />
+        <item itemvalue="JUnit Tests.test_TissuesObjectOverlap_Test" />
         <item itemvalue="JUnit Tests.test_TissuesObjectBoundaries_Test" />
+        <item itemvalue="JUnit Tests.test_TissueProperties_Test" />
         <item itemvalue="JUnit Tests.test_CellNumbers_Test" />
       </list>
     </recent_temporary>
@@ -1056,13 +1007,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1602777653679</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Including all unversioned files. Just in case.">
-      <created>1616774670693</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1616774670693</updated>
     </task>
     <task id="LOCAL-00021" summary="Added a warning when a reaction uses a rate that doesn't reference any species.">
       <created>1617008779024</created>
@@ -1400,7 +1344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618915368549</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Added tests to check object overlap.">
+      <created>1618923088301</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1618923088301</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -3028,7 +2979,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added tissue container functions to get the grid's negative space value." />
     <MESSAGE value="Updated cell position generation to factor in negative grid space." />
     <MESSAGE value="Removed extraneous newline from tissue generator" />
     <MESSAGE value="Changed world.cpp generator to take into account negative grid space when placing objects." />
@@ -3053,6 +3003,7 @@
     <MESSAGE value="Swapped generator arguments around to match declaration in source files." />
     <MESSAGE value="Changed Y-vertex getter to return the correct value (was returning X-value)." />
     <MESSAGE value="Added two tests to check vessel properties are correct." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added two tests to check vessel properties are correct." />
+    <MESSAGE value="Added tests to check object overlap." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added tests to check object overlap." />
   </component>
 </project>
