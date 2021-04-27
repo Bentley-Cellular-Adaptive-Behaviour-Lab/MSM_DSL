@@ -187,6 +187,7 @@
     <classNode dependClassName="SpeciesSetup.behavior.Parameter__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesSetup.behavior.Reaction_Term__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesSetup.behavior.Species__BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
