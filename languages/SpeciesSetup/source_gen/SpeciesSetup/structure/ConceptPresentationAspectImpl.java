@@ -30,6 +30,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_ReversibleReaction;
   private ConceptPresentation props_Species;
   private ConceptPresentation props_SpeciesContainer;
+  private ConceptPresentation props_SpeciesContainerHeader;
   private ConceptPresentation props_SpeciesDefinitionComponent;
   private ConceptPresentation props_SpeciesExpression;
   private ConceptPresentation props_SpeciesPowerExpression;
@@ -186,6 +187,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_SpeciesContainer = cpb.create();
         }
         return props_SpeciesContainer;
+      case LanguageConceptSwitch.SpeciesContainerHeader:
+        if (props_SpeciesContainerHeader == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByName();
+          props_SpeciesContainerHeader = cpb.create();
+        }
+        return props_SpeciesContainerHeader;
       case LanguageConceptSwitch.SpeciesDefinitionComponent:
         if (props_SpeciesDefinitionComponent == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

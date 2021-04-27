@@ -162,6 +162,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SProperty" />
     <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
   </dependency>
+  <dependency className="SpeciesSetup.textGen.SpeciesContainerHeader_TextGen">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.text.impl.TextGenSupport" />
+    <classNode dependClassName="jetbrains.mps.text.rt.TextGenContext" />
+    <classNode extendsClassName="jetbrains.mps.text.rt.TextGenDescriptorBase" />
+  </dependency>
   <dependency className="SpeciesSetup.textGen.SpeciesContainer_TextGen">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -242,6 +248,7 @@
     <classNode dependClassName="SpeciesSetup.textGen.RateFunctionsComponent_TextGen" />
     <classNode dependClassName="SpeciesSetup.textGen.Reaction_Reference_TextGen" />
     <classNode dependClassName="SpeciesSetup.textGen.ReversibleReaction_TextGen" />
+    <classNode dependClassName="SpeciesSetup.textGen.SpeciesContainerHeader_TextGen" />
     <classNode dependClassName="SpeciesSetup.textGen.SpeciesContainer_TextGen" />
     <classNode dependClassName="SpeciesSetup.textGen.SpeciesDefinitionComponent_TextGen" />
     <classNode dependClassName="SpeciesSetup.textGen.SpeciesExpression_TextGen" />

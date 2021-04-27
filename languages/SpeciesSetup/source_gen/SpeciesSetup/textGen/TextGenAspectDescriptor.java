@@ -53,6 +53,8 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new Species_TextGen();
       case LanguageConceptSwitch.SpeciesContainer:
         return new SpeciesContainer_TextGen();
+      case LanguageConceptSwitch.SpeciesContainerHeader:
+        return new SpeciesContainerHeader_TextGen();
       case LanguageConceptSwitch.SpeciesDefinitionComponent:
         return new SpeciesDefinitionComponent_TextGen();
       case LanguageConceptSwitch.SpeciesExpression:
@@ -76,16 +78,29 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
         continue;
       }
+      if (root.getConcept().equals(CONCEPTS.SpeciesContainerHeader$go)) {
+        String fname = getFileName_SpeciesContainerHeader(root);
+        String ext = getFileExtension_SpeciesContainerHeader(root);
+        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
+        continue;
+      }
     }
   }
   private static String getFileName_SpeciesContainer(SNode node) {
     return "dsl_Species";
   }
+  private static String getFileName_SpeciesContainerHeader(SNode node) {
+    return node.getName();
+  }
   private static String getFileExtension_SpeciesContainer(SNode node) {
     return "cpp";
+  }
+  private static String getFileExtension_SpeciesContainerHeader(SNode node) {
+    return ".h";
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
+    /*package*/ static final SConcept SpeciesContainerHeader$go = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, "SpeciesSetup.structure.SpeciesContainerHeader");
   }
 }

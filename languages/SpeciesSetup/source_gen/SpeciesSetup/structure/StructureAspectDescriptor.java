@@ -37,6 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReversibleReaction = createDescriptorForReversibleReaction();
   /*package*/ final ConceptDescriptor myConceptSpecies = createDescriptorForSpecies();
   /*package*/ final ConceptDescriptor myConceptSpeciesContainer = createDescriptorForSpeciesContainer();
+  /*package*/ final ConceptDescriptor myConceptSpeciesContainerHeader = createDescriptorForSpeciesContainerHeader();
   /*package*/ final ConceptDescriptor myConceptSpeciesDefinitionComponent = createDescriptorForSpeciesDefinitionComponent();
   /*package*/ final ConceptDescriptor myConceptSpeciesExpression = createDescriptorForSpeciesExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesPowerExpression = createDescriptorForSpeciesPowerExpression();
@@ -64,7 +65,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptODEDefinitions, myConceptODEStateComponent, myConceptODESystemComponent, myConceptParameter, myConceptParameterDefinitionComponent, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptRateDefinition, myConceptRateFunctionsComponent, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesDefinitionComponent, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptTextGenComponent, myConceptUpregulates);
+    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptODEDefinitions, myConceptODEStateComponent, myConceptODESystemComponent, myConceptParameter, myConceptParameterDefinitionComponent, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptRateDefinition, myConceptRateFunctionsComponent, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesDefinitionComponent, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptTextGenComponent, myConceptUpregulates);
   }
 
   @Override
@@ -113,6 +114,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSpecies;
       case LanguageConceptSwitch.SpeciesContainer:
         return myConceptSpeciesContainer;
+      case LanguageConceptSwitch.SpeciesContainerHeader:
+        return myConceptSpeciesContainerHeader;
       case LanguageConceptSwitch.SpeciesDefinitionComponent:
         return myConceptSpeciesDefinitionComponent;
       case LanguageConceptSwitch.SpeciesExpression:
@@ -344,6 +347,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("ODEStates", 0x2039193afae65eccL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2dL).optional(false).ordered(true).multiple(false).origin("2321914823994400460").done();
     b.aggregate("ODESystem", 0x2039193afafc5a6fL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2eL).optional(false).ordered(true).multiple(false).origin("2321914823995841135").done();
     b.aggregate("RateFunctions", 0x2039193afb119ea4L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae65ecbL).optional(false).ordered(true).multiple(false).origin("2321914823997234852").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSpeciesContainerHeader() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "SpeciesContainerHeader", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL);
+    b.class_(false, false, true);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/4236022032101770045");
+    b.version(2);
+    b.associate("target", 0x3ac95f9844313214L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL).optional(false).origin("4236022032102404628").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesDefinitionComponent() {
