@@ -30,12 +30,13 @@ public final class LanguageConceptSwitch {
   public static final int ReversibleReaction = 18;
   public static final int Species = 19;
   public static final int SpeciesContainer = 20;
-  public static final int SpeciesDefinitionComponent = 21;
-  public static final int SpeciesExpression = 22;
-  public static final int SpeciesPowerExpression = 23;
-  public static final int SpeciesReference = 24;
-  public static final int TextGenComponent = 25;
-  public static final int Upregulates = 26;
+  public static final int SpeciesContainerHeader = 21;
+  public static final int SpeciesDefinitionComponent = 22;
+  public static final int SpeciesExpression = 23;
+  public static final int SpeciesPowerExpression = 24;
+  public static final int SpeciesReference = 25;
+  public static final int TextGenComponent = 26;
+  public static final int Upregulates = 27;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL);
@@ -60,6 +61,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x2b6159d0ceecfae2L, ReversibleReaction);
     builder.put(0x2b6159d0ceecf4efL, Species);
     builder.put(0x2b6159d0ceecf4ebL, SpeciesContainer);
+    builder.put(0x3ac95f984427833dL, SpeciesContainerHeader);
     builder.put(0x2039193afb23e4efL, SpeciesDefinitionComponent);
     builder.put(0x10098a905c97eb32L, SpeciesExpression);
     builder.put(0x665d03af89891f10L, SpeciesPowerExpression);

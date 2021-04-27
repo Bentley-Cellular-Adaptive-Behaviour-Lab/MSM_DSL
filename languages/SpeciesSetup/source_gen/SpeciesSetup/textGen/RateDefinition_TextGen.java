@@ -179,9 +179,10 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
             tgs.append(", ");
           }
         }
+        // End the function and start a new line. 
+        tgs.append(");\n");
       }
     }
-    //  
   }
 
   private static final class CONCEPTS {

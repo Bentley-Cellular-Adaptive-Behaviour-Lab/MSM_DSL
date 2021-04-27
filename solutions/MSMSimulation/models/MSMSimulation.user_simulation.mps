@@ -689,6 +689,9 @@
       <node concept="DdDr8" id="20T6jFVavfo" role="3_z4RZ">
         <ref role="DdDrb" node="5jwDGo4A5gP" resolve="VEGF_VEGFRBinding" />
       </node>
+      <node concept="3rtiFT" id="cJYjfa3wAc" role="3rqWia">
+        <ref role="3rtiFY" node="20T6jFUStlH" resolve="VEGFSensing" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="5jwDGo4A4CI" role="3_zqUg">
       <property role="TrG5h" value="VEGFR2" />
@@ -703,8 +706,11 @@
         </node>
         <node concept="3bpmH1" id="5jwDGo4A4FL" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FA" role="3_z4RZ">
+      <node concept="DdDr8" id="cJYjfa3wA3" role="3_z4RZ">
         <ref role="DdDrb" node="5jwDGo4A5gP" resolve="VEGF_VEGFRBinding" />
+      </node>
+      <node concept="3rtiFT" id="cJYjfa3wAa" role="3rqWia">
+        <ref role="3rtiFY" node="20T6jFUI18A" resolve="VEGFR2Inhibition" />
       </node>
     </node>
     <node concept="3_zqOZ" id="5jwDGo4A4CO" role="3_zqUg">
@@ -722,8 +728,11 @@
       <node concept="DdDr8" id="20T6jFVavfu" role="3_z4RZ">
         <ref role="DdDrb" node="20T6jFV9VSg" resolve="Dll4Expression" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FB" role="3_z4Rx">
+      <node concept="DdDr8" id="cJYjfa3wA4" role="3_z4Rx">
         <ref role="DdDrb" node="5jwDGo4A5gP" resolve="VEGF_VEGFRBinding" />
+      </node>
+      <node concept="3rtiFT" id="cJYjfa3wAb" role="3rtiFW">
+        <ref role="3rtiFY" node="20T6jFUStlH" resolve="VEGFSensing" />
       </node>
     </node>
     <node concept="3_zqOZ" id="5jwDGo4A4CW" role="3_zqUg">
@@ -741,7 +750,7 @@
       <node concept="DdDr8" id="20T6jFVavfr" role="3_z4RZ">
         <ref role="DdDrb" node="5jwDGo4A5kd" resolve="Dll_NotchBinding" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FE" role="3_z4Rx">
+      <node concept="DdDr8" id="cJYjfa3wA7" role="3_z4Rx">
         <ref role="DdDrb" node="20T6jFV9VSg" resolve="Dll4Expression" />
       </node>
     </node>
@@ -758,7 +767,7 @@
         </node>
         <node concept="3bpmH1" id="5jwDGo4A4IO" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FC" role="3_z4RZ">
+      <node concept="DdDr8" id="cJYjfa3wA5" role="3_z4RZ">
         <ref role="DdDrb" node="5jwDGo4A5kd" resolve="Dll_NotchBinding" />
       </node>
     </node>
@@ -777,7 +786,7 @@
       <node concept="DdDr8" id="20T6jFVavfw" role="3_z4RZ">
         <ref role="DdDrb" node="20T6jFV9VUK" resolve="NotchDll4Cleavage" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FD" role="3_z4Rx">
+      <node concept="DdDr8" id="cJYjfa3wA6" role="3_z4Rx">
         <ref role="DdDrb" node="5jwDGo4A5kd" resolve="Dll_NotchBinding" />
       </node>
     </node>
@@ -794,8 +803,11 @@
         </node>
         <node concept="3bpmH1" id="5jwDGo4A4KU" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="20T6jFVd0FF" role="3_z4Rx">
+      <node concept="DdDr8" id="cJYjfa3wA8" role="3_z4Rx">
         <ref role="DdDrb" node="20T6jFV9VUK" resolve="NotchDll4Cleavage" />
+      </node>
+      <node concept="3rtiFT" id="cJYjfa3wAd" role="3rtiFW">
+        <ref role="3rtiFY" node="20T6jFUStJZ" resolve="HERegulation" />
       </node>
     </node>
     <node concept="3_zqOZ" id="5jwDGo4A4DK" role="3_zqUg">
@@ -809,6 +821,12 @@
           </node>
         </node>
         <node concept="3bpmH1" id="5jwDGo4A4LX" role="3lUA2W" />
+      </node>
+      <node concept="3rtiFT" id="cJYjfa3wA9" role="3rtiFW">
+        <ref role="3rtiFY" node="20T6jFUI18A" resolve="VEGFR2Inhibition" />
+      </node>
+      <node concept="3rtiFT" id="cJYjfa3wAe" role="3rqWia">
+        <ref role="3rtiFY" node="20T6jFUStJZ" resolve="HERegulation" />
       </node>
     </node>
     <node concept="37mRI7" id="3Jxztv1AiDU" role="lGtFl">
@@ -1491,18 +1509,6 @@
       </node>
       <node concept="3rtiFT" id="57uwMUqALKr" role="3rtiFW">
         <ref role="3rtiFY" node="20T6jFVn4rx" resolve="Modifier" />
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="20T6jFVn4qj" role="3_zqUg">
-      <property role="TrG5h" value="B" />
-      <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
-      <node concept="3bpmHq" id="20T6jFVn4qs" role="1tJpXo">
-        <node concept="3bpmH0" id="20T6jFVn4qu" role="3lUA2Y">
-          <node concept="30bXRB" id="20T6jFVn4qG" role="3lUA52">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="3bpmH1" id="20T6jFVn4r8" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="57uwMUqALKv" role="3_zqUg">
