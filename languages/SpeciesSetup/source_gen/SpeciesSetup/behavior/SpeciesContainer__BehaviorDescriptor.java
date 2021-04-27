@@ -38,8 +38,9 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<Void> updateModifiers_id20T6jFVk_r2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateModifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVk_r2").build();
   public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6UEPGYOxbAr").build();
   public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> topologicalSort_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("topologicalSort").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesReactions_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesReactions_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SLinkOperations.setTarget(__thisNode__, LINKS.ODEStates$e3uZ, SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2dL, "SpeciesSetup.structure.ODEStateComponent")));
@@ -152,6 +153,29 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return filteredList;
   }
+  /*package*/ static List<SNode> topologicalSort_idcJYjfa5zz7(@NotNull SNode __thisNode__, List<SNode> exprList) {
+    // Must take a parameter list as an argument. In other instances, this throws an error. 
+    // Check the first entry to see if it is a parameter. 
+    List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
+    try {
+      assert (SNodeOperations.isInstanceOf(ListSequence.fromList(exprList).first(), CONCEPTS.ParameterExpression$CA));
+      // We already know which expressions are used by which, and there should be no cyclic relationships (ensured by typesystem). 
+      for (SNode expr : ListSequence.fromList(exprList)) {
+        if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.UsedBy$$TT5)).count() == 0) {
+          // Expressions that aren't used by any other can be added straight in. 
+          ListSequence.fromList(sortedList).addElement(expr);
+        } else {
+          for (SNode usedBy : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
+          }
+        }
+      }
+    } catch (Exception e) {
+      System.out.println("Error: Failed topological sort using parameter expressions.");
+      System.out.println(e.getMessage());
+    }
+    // Return the sorted list. 
+    return sortedList;
+  }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
   }
@@ -183,6 +207,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         return null;
       case 5:
         return (T) ((List<SNode>) filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]));
+      case 6:
+        return (T) ((List<SNode>) topologicalSort_idcJYjfa5zz7(node, (List<SNode>) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -223,6 +249,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
     /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
+    /*package*/ static final SContainmentLink UsedBy$$TT5 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4dec22c1L, "UsedBy");
+    /*package*/ static final SContainmentLink Uses$iEoe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4decbff8L, "Uses");
   }
 
   private static final class CONCEPTS {

@@ -44,10 +44,8 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
       // Next, add in the arguments to the function definition. 
       // Get all of the unique species and parameters involved in the reaction. 
       List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16));
-
       ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16))));
-
-      List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(SNodeOperations.as(SNodeOperations.getParent(ctx.getPrimaryInput()), CONCEPTS.SpeciesContainer$Ig), exprList);
+      List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
 
       int count = 0;
       for (SNode expr : ListSequence.fromList(filteredList)) {
