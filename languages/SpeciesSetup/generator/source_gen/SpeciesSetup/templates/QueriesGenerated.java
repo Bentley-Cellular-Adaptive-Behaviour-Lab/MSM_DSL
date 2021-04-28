@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import java.util.HashMap;
@@ -45,11 +47,20 @@ public class QueriesGenerated extends QueryProviderBase {
       SNodeOperations.deleteNode(header);
     }
   }
+  public static void mappingScript_CodeBlock_3(final MappingScriptContext _context) {
+    List<SNode> speciesContainers = SModelOperations.roots(_context.getModel(), CONCEPTS.SpeciesContainer$Ig);
+    for (SNode container : ListSequence.fromList(speciesContainers)) {
+      SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(container);
+      SpeciesContainer__BehaviorDescriptor.updateModifiers_id20T6jFVk_r2.invoke(container);
+      SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(container);
+    }
+  }
   private final Map<String, ScriptCodeBlock> mscbMethods = new HashMap<String, ScriptCodeBlock>();
   {
     int i = 0;
     mscbMethods.put("4236022032101766639", new SCB(i++));
     mscbMethods.put("4236022032102854592", new SCB(i++));
+    mscbMethods.put("925612692503953895", new SCB(i++));
   }
   @Override
   @NotNull
@@ -70,6 +81,9 @@ public class QueriesGenerated extends QueryProviderBase {
           return;
         case 1:
           QueriesGenerated.mappingScript_CodeBlock_2(ctx);
+          return;
+        case 2:
+          QueriesGenerated.mappingScript_CodeBlock_3(ctx);
           return;
         default:
           throw new GenerationFailureException(String.format("There's no code block with method index %d ", methodKey));

@@ -47,7 +47,7 @@ public final class updateEverything_Intention extends AbstractIntentionDescripto
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
-      SpeciesContainer__BehaviorDescriptor.updateSpeciesReactions_idJ83UdHo8mt.invoke(node);
+      SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(node);
       SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(node);
       SpeciesContainer__BehaviorDescriptor.updateModifiers_id20T6jFVk_r2.invoke(node);
     }
