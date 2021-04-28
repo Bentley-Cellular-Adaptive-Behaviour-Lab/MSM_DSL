@@ -33,6 +33,7 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
       ListSequence.fromList(paramList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SNodeOperations.as(parameter, CONCEPTS.Parameter$La), LINKS.Expression$Wv16))));
     }
 
+    // Get unique params, then sort them based on their usages in order to prevent parameters being defined after they're needed. 
     List<SNode> filteredParamList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, paramList);
 
     for (SNode param : ListSequence.fromList(filteredParamList)) {
