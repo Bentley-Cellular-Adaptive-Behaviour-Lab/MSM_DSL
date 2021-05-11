@@ -159,32 +159,46 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     // Check the first entry to see if it is a parameter. 
     List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
 
-    // Get a count of all the items in the list, and use that to determine when we're finished. 
-    // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list. 
-    int count = ListSequence.fromList(exprList).count();
+    try {
+      // We already know which expressions are used by which, and there should be no cyclic relationships (ensured by typesystem). 
+      // Get a count of all the items in the list, and use that to determine when we're finished. 
+      // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list. 
+      int count = ListSequence.fromList(exprList).count();
 
-    for (SNode expr : ListSequence.fromList(exprList)) {
-      if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe)).count() == 0) {
-        // Expressions that aren't used by any other can be added straight in. 
-        ListSequence.fromList(sortedList).addElement(expr);
-        count -= 1;
-      } else {
-        // Check that all used parameters are already in the sortedList 
-        boolean allParamsFound = true;
-        for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
-          if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
-            allParamsFound = false;
+      while (count > 0) {
+        for (SNode expr : ListSequence.fromList(exprList)) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe)).count() == 0) {
+            // Expressions that aren't used by any other can be added straight in. 
+            if (!(ListSequence.fromList(sortedList).contains(expr))) {
+              ListSequence.fromList(sortedList).addElement(expr);
+              count -= 1;
+            }
+          } else {
+            // Check that all used parameters are already in the sortedList 
+            boolean allParamsFound = true;
+            for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
+              if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
+                allParamsFound = false;
+                break;
+              }
+            }
+            if (allParamsFound) {
+              if (!(ListSequence.fromList(sortedList).contains(expr))) {
+                ListSequence.fromList(sortedList).addElement(expr);
+                count -= 1;
+              }
+            }
+          }
+          // We've reached the end of the expression list, so break the for loop early. 
+          if (count == 0) {
             break;
           }
         }
-        if (allParamsFound) {
-          ListSequence.fromList(sortedList).addElement(expr);
-          count -= 1;
-        }
       }
-      if (count == 0) {
-        break;
-      }
+
+    } catch (Exception e) {
+      System.out.println("Error: Failed topological sort using parameter expressions.");
+      System.out.println(e.getMessage());
     }
 
     // Return the sorted list. 
