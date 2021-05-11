@@ -11,16 +11,16 @@ GRN_ODE::ODE_system(const ode_state_type &x, ode_state_type &dxdt, double t) {
 // Parameter Definitions //
  	double ConstantA = calc_ConstantA_rate();
 	double ConstantC = calc_ConstantC_rate();
-	double ConstantD = calc_ConstantD_rate(ConstantB);
+	double ConstantC = calc_ConstantC_rate();
+	double ConstantA = calc_ConstantA_rate();
 	double ConstantB = calc_ConstantB_rate(ConstantC, ConstantA);
 // Rate Definitions //
 	double rate_Rate1 = calc_Rate1_rate(ConstantA, ConstantC);
-	double rate_Rate2 = calc_Rate2_rate(ConstantD);
 // ODE Definitions //
 	dxdt[0] = -rate_Rate1*1; // Rate of change for species SortA
-	dxdt[1] = +rate_Rate2*1; // Rate of change for species SortB
+	dxdt[1] = 0; // Rate of change for species SortB
 	dxdt[2] = -rate_Rate1*1; // Rate of change for species SortC
-	dxdt[3] = -rate_Rate2*1 +rate_Rate1*1; // Rate of change for species SortD
+	dxdt[3] = +rate_Rate1*1; // Rate of change for species SortD
 }
 
 // Parameter Functions //

@@ -34,9 +34,9 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
     }
 
     // Get unique params, then sort them based on their usages in order to prevent parameters being defined after they're needed. 
-    List<SNode> filteredParamList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, paramList);
+    List<SNode> sortedList = SpeciesContainer__BehaviorDescriptor.topologicalSort_idcJYjfa5zz7.invoke(container, paramList);
 
-    for (SNode param : ListSequence.fromList(filteredParamList)) {
+    for (SNode param : ListSequence.fromList(sortedList)) {
       tgs.append("\tdouble ");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL));
       tgs.append(" = calc_");
