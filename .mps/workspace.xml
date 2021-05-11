@@ -6,19 +6,19 @@
   <component name="BreakpointManager">
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607701289460" />
+        <option name="myCreationTime" value="1607703991803" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
     <breakpoint kind="JAVA_LINE_BREAKPOINT">
       <JavaBreakpointInfo>
-        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/3007881541729397976" />
+        <option name="location" value="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587441380" />
         <option name="mySuspendPolicy" value="2" />
         <option name="myIsLogMessage" value="false" />
-        <option name="myCreationTime" value="1607703991803" />
+        <option name="myCreationTime" value="1607701289460" />
         <option name="myIsEnabled" value="true" />
       </JavaBreakpointInfo>
     </breakpoint>
@@ -36,52 +36,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ebed13cb-a99a-4187-ae87-d3642a32b9bd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.listeners.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/ModelListenersDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/ODETesting_header..h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/SortTesting_header..h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Venkatraman_header..h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$LINKS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$PROPS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/intentions/updateEverything_Intention$IntentionImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/intentions/updateEverything_Intention$IntentionImplementation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen$PROPS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/TextGenAspectDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/TextGenAspectDescriptor$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/textGen/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/classes_gen/SpeciesSetup/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/classes_gen/SpeciesSetup/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/classes_gen/SpeciesSetup/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/classes_gen/SpeciesSetup/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen/SpeciesSetup/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.templates@generator.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.listeners.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.listeners.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/listeners/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/textGen/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/textGen/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/textGen/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/textGen/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/updateEverything_Intention.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/intentions/updateEverything_Intention.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/ModelListenersDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/ModelListenersDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/listeners/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/ParameterDefinitionComponent_TextGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/TextGenAspectDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/aspectcps-descriptorclasses.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/textGen/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/dsl_Species.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/ODETesting_header..h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Venkatraman_header..h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/SortTesting.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +92,7 @@
         <TabState>
           <option name="title" value="Console" />
           <tab>
-            <model ref="2ab06b4b-5785-4bd5-9afa-936d6f4c4c30/r:6afa6032-bf0d-463c-9484-5fd1336bb1a0(TempModule2ab06b4b-5785-4bd5-9afa-936d6f4c4c30/ConsoleModel_9053294919900)">
+            <model ref="e9525dc5-d715-4211-a8f4-84e6ae9a69a8/r:aba6f40e-128f-47e3-98b8-2910cf3ea1a6(TempModulee9525dc5-d715-4211-a8f4-84e6ae9a69a8/ConsoleModel_47624789490300)">
               <persistence version="9" />
               <languages>
                 <devkit ref="70d3d6da-af63-483d-a75f-9c8acf8de332(jetbrains.mps.console.devkit)" />
@@ -123,11 +112,11 @@
                   <concept id="757553790980850366" name="jetbrains.mps.console.base.structure.History" flags="ng" index="3balQm" />
                 </language>
               </registry>
-              <node concept="aymSD" id="NorXrS6d9E">
-                <node concept="3balQm" id="NorXrS6d9F" role="aymYE" />
-                <node concept="2Clz$F" id="NorXrS6d9G" role="aymYO" />
-                <node concept="2_V_lH" id="NorXrS6d9H" role="1PhJh3">
-                  <ref role="2_V_lI" node="NorXrS6d9G" resolve="CommandHolder" />
+              <node concept="aymSD" id="4IOe3iZm_g1">
+                <node concept="3balQm" id="4IOe3iZm_g2" role="aymYE" />
+                <node concept="2Clz$F" id="4IOe3iZm_g3" role="aymYO" />
+                <node concept="2_V_lH" id="4IOe3iZm_g4" role="1PhJh3">
+                  <ref role="2_V_lI" node="4IOe3iZm_g3" resolve="CommandHolder" />
                 </node>
               </node>
             </model>
@@ -152,7 +141,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev-irene-version" />
+        <entry key="$PROJECT_DIR$" value="UpdateProteins" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -480,16 +469,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -501,6 +480,16 @@
               <item name="MSM_DSL" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="C:\Users\Tom\MPSProjects\MSM_DSL" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="languages" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="FileSystem">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="" />
             </path>
           </expand>
           <select />
@@ -521,6 +510,10 @@
               <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -532,7 +525,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e7b8419-3c44-4e03-9b6b-be1d63c5dba1(SpeciesSetup.intentions) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.intentions.mps]" />
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TextGenComponents" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -543,6 +540,86 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Species" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parameters" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -574,154 +651,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Species" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:c21903a5-c782-48de-9c63-041fedd1b59b(SpeciesSetup.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/generator/templates/SpeciesSetup.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:16328b40-52c8-4e87-ac39-18b554bff87d(SpeciesSetup.listeners) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.listeners.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesSetup" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.structure.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Processes" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -729,8 +658,22 @@
               <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.textGen.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Species" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -740,15 +683,15 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" />
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:16328b40-52c8-4e87-ac39-18b554bff87d(SpeciesSetup.listeners) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesSetup/models/SpeciesSetup.listeners.mps]" />
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="925612692504270447" />
+              <option name="myItemId" value="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -1162,13 +1105,6 @@
       <option name="presentableId" value="Default" />
       <updated>1602777653679</updated>
     </task>
-    <task id="LOCAL-00025" summary="Added function for reversible reactions to check whether their reverse rate contains their species.">
-      <created>1617010090937</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1617010090937</updated>
-    </task>
     <task id="LOCAL-00026" summary="Changed species finding functions to use species nodes as arguments, as opposed to species expressions.">
       <created>1617010285857</created>
       <option name="number" value="00026" />
@@ -1505,7 +1441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619541467272</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Multiple files generated for species lang. Updating the lang with listeners to get updating occuring.">
+      <created>1619621096370</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1619621096370</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -2699,7 +2642,7 @@
         <query>
           <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
           <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
-            <node ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29" title="copy(Path,Path,CopyOption...):Path" />
+            <node ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919" title="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" />
           </holder>
         </query>
         <usage_view>
@@ -2715,21 +2658,21 @@
                 <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="JDK" excluded="false" isresult="false" results_section="false" module_ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="false" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="java.nio.file@java_stub" excluded="false" isresult="false" results_section="false">
+                    <child caption="SpeciesSetup.behavior" excluded="false" isresult="false" results_section="false">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="Files" info="" excluded="false" isresult="false" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files" isRoot="true">
+                      <child caption="SpeciesContainer_Behavior" info="" excluded="false" isresult="false" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/848945724345845136" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="copy(Path,Path,CopyOption...):Path" info="(role: member in: Files)" excluded="false" isresult="true" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29">
+                        <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: method in: SpeciesContainer_Behavior)" excluded="false" isresult="true" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="target" />
                         </child>
                       </child>
-                      <model uid="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
+                      <model uid="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" />
                     </child>
                   </child>
                 </child>
@@ -2740,50 +2683,50 @@
                 <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                             <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
                 <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                             <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
@@ -2804,7 +2747,7 @@
         <query>
           <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
           <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
-            <node ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29" title="copy(Path,Path,CopyOption...):Path" />
+            <node ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919" title="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" />
           </holder>
         </query>
         <usage_view>
@@ -2820,21 +2763,21 @@
                 <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="JDK" excluded="false" isresult="false" results_section="false" module_ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="false" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="java.nio.file@java_stub" excluded="false" isresult="false" results_section="false">
+                    <child caption="SpeciesSetup.behavior" excluded="false" isresult="false" results_section="false">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="Files" info="" excluded="false" isresult="false" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files" isRoot="true">
+                      <child caption="SpeciesContainer_Behavior" info="" excluded="false" isresult="false" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/848945724345845136" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="copy(Path,Path,CopyOption...):Path" info="(role: member in: Files)" excluded="false" isresult="true" results_section="false" nodePtr="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)/~Files.copy%28java.nio.file.Path,java.nio.file.Path,java.nio.file.CopyOption...%29">
+                        <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: method in: SpeciesContainer_Behavior)" excluded="false" isresult="true" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="target" />
                         </child>
                       </child>
-                      <model uid="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
+                      <model uid="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" />
                     </child>
                   </child>
                 </child>
@@ -2845,50 +2788,50 @@
                 <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                             <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
                 <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="WorldSetup.generator" excluded="false" isresult="false" results_section="true" module_ref="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldSetup.generator)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="WorldSetup.generator.templates@generator" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="RunMake" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100875138" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="main(string[]):void" info="(role: member in: RunMake)" excluded="false" isresult="false" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7304740539100881729">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="Files.copy(Path,Path,CopyOption...):Path" info="(role: expression in: ExpressionStatement)" excluded="false" isresult="true" results_section="true" nodePtr="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)/7072338314310319948">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                             <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <model uid="r:bee1e67c-5bee-4abd-95aa-d518882fa924(WorldSetup.generator.templates@generator)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
@@ -2909,7 +2852,7 @@
         <query>
           <scope scope_class="jetbrains.mps.ide.findusages.model.scopes.ProjectScope" />
           <holder holder_class="jetbrains.mps.ide.findusages.model.holders.NodeHolder">
-            <node ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/4052263675729498659" title="get_distance_in_gridpoints(long):BigDecimal" />
+            <node ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919" title="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" />
           </holder>
         </query>
         <usage_view>
@@ -2925,21 +2868,21 @@
                 <child caption="Searched nodes" excluded="false" isresult="false" results_section="false" category="Searched nodes" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="Units" excluded="false" isresult="false" results_section="false" module_ref="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(Units)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="false" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="Units.behavior" excluded="false" isresult="false" results_section="false">
+                    <child caption="SpeciesSetup.behavior" excluded="false" isresult="false" results_section="false">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="Distance_Behavior" info="" excluded="false" isresult="false" results_section="false" nodePtr="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/3416854989769261030" isRoot="true">
+                      <child caption="SpeciesContainer_Behavior" info="" excluded="false" isresult="false" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/848945724345845136" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: method in: Distance_Behavior)" excluded="false" isresult="true" results_section="false" nodePtr="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)/4052263675729498659">
+                        <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: method in: SpeciesContainer_Behavior)" excluded="false" isresult="true" results_section="false" nodePtr="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)/229676106848286919">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="target" />
                         </child>
                       </child>
-                      <model uid="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(Units.behavior)" />
+                      <model uid="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" />
                     </child>
                   </child>
                 </child>
@@ -2950,162 +2893,50 @@
                 <child caption="Node Usages" excluded="false" isresult="false" results_section="true" category="Node Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="TissueSetup" excluded="false" isresult="false" results_section="true" module_ref="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="TissueSetup.behavior" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="Arrangement_Cylindrical_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896026259" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="calculate_total_ablumenal_steps():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124654383">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675729408956">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730150654">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587361570">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="width_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149721099">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149724100">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="calculate_cross_section_cells():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124847984">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="height_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736485">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736501">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
+                            <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <child caption="Arrangement_Flat_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896073485" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587402979">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="width_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730322385">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730326391">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="get_total_height_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587427485">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="height_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339189">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339205">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                      </child>
-                      <model uid="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
                 <child caption="Exact Method Usages" excluded="false" isresult="false" results_section="true" category="Exact Method Usages" category_kind="Category">
                   <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.CategoryNodeData" />
                   <role name="category:Category" />
-                  <child caption="TissueSetup" excluded="false" isresult="false" results_section="true" module_ref="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)">
+                  <child caption="SpeciesSetup" excluded="false" isresult="false" results_section="true" module_ref="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)">
                     <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData" />
                     <role name="module" />
-                    <child caption="TissueSetup.behavior" excluded="false" isresult="false" results_section="true">
+                    <child caption="SpeciesSetup.textGen" excluded="false" isresult="false" results_section="true">
                       <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData" />
                       <role name="model" />
-                      <child caption="Arrangement_Cylindrical_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896026259" isRoot="true">
+                      <child caption="ParameterDefinitionComponent_TextGen" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/2321914823998832486" isRoot="true">
                         <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                         <role name="root" />
-                        <child caption="calculate_total_ablumenal_steps():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124654383">
+                        <child caption="sortedList" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552148">
                           <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
                           <role name="root to target" />
-                          <child caption="decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675729408956">
+                          <child caption="topologicalSort(list&lt;node&lt;Expression&gt;&gt;):list&lt;node&lt;Expression&gt;&gt;" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)/7463358872623552153">
                             <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730150654">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587361570">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="width_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149721099">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149724100">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="calculate_cross_section_cells():int" info="(role: method in: Arrangement_Cylindrical_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5766458033124847984">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="height_decimal_value" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736485">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/1639444299149736501">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
+                            <role name="target" />
                           </child>
                         </child>
                       </child>
-                      <child caption="Arrangement_Flat_Behavior" info="" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/5354143780896073485" isRoot="true">
-                        <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                        <role name="root" />
-                        <child caption="get_total_width_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587402979">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="width_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730322385">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730326391">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                        <child caption="get_total_height_gridpoints():int" info="(role: method in: Arrangement_Flat_Behavior)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/2132970487587427485">
-                          <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                          <role name="root to target" />
-                          <child caption="height_gridpoints" info="(role: localVariableDeclaration in: &lt;type&gt; &lt;var&gt;;)" excluded="false" isresult="false" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339189">
-                            <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                            <role name="root to target" />
-                            <child caption="get_distance_in_gridpoints(long):BigDecimal" info="(role: operation in: DotExpression)" excluded="false" isresult="true" results_section="true" nodePtr="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)/4052263675730339205">
-                              <instance qcn="jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData" />
-                              <role name="target" />
-                            </child>
-                          </child>
-                        </child>
-                      </child>
-                      <model uid="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" />
+                      <model uid="r:cd91273d-afb2-4b0a-bb47-22dc8a7e2ca3(SpeciesSetup.textGen)" />
                     </child>
                   </child>
                 </child>
@@ -3133,7 +2964,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added checks to ensure that names in the species container are unique." />
     <MESSAGE value="Updated parameter and species getters to correctly return objects when the expression has no children. Also added asserts for when the expression is null." />
     <MESSAGE value="Adding new modifiers to species setup languange." />
     <MESSAGE value="Fixed graphical diagram to account for modifiers." />
@@ -3158,6 +2988,7 @@
     <MESSAGE value="Fixed generation of upregulation processes. Currently testing how to get header files generated" />
     <MESSAGE value="Fixed parameter generation not adding arguments" />
     <MESSAGE value="Implemented sorting algorithm for parameters." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented sorting algorithm for parameters." />
+    <MESSAGE value="Multiple files generated for species lang. Updating the lang with listeners to get updating occuring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Multiple files generated for species lang. Updating the lang with listeners to get updating occuring." />
   </component>
 </project>

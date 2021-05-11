@@ -159,35 +159,34 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     // Check the first entry to see if it is a parameter. 
     List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
 
-    // Copy over the information to a new list. 
-    List<SNode> copiedList = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(copiedList).addSequence(ListSequence.fromList(exprList));
+    // Get a count of all the items in the list, and use that to determine when we're finished. 
+    // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list. 
+    int count = ListSequence.fromList(exprList).count();
 
-    while (ListSequence.fromList(copiedList).isNotEmpty()) {
-      for (SNode expr : ListSequence.fromList(copiedList)) {
-        if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.UsedBy$$TT5)).count() == 0) {
-          // Expressions that aren't used by any other can be added straight in, and removed from the current list. 
-          ListSequence.fromList(sortedList).addElement(expr);
-          ListSequence.fromList(copiedList).removeElement(expr);
-        } else {
-          // Check that all used parameters are already in the sortedList 
-          boolean allParamsFound = true;
-          for (SNode usedByRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.UsedBy$$TT5))) {
-            if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usedByRef, LINKS.target$9wsE), sortedList)))) {
-              allParamsFound = false;
-              break;
-            }
-          }
-          if (allParamsFound) {
-            ListSequence.fromList(sortedList).addElement(expr);
-            ListSequence.fromList(copiedList).removeElement(expr);
+    for (SNode expr : ListSequence.fromList(exprList)) {
+      if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe)).count() == 0) {
+        // Expressions that aren't used by any other can be added straight in. 
+        ListSequence.fromList(sortedList).addElement(expr);
+        count -= 1;
+      } else {
+        // Check that all used parameters are already in the sortedList 
+        boolean allParamsFound = true;
+        for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
+          if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
+            allParamsFound = false;
+            break;
           }
         }
+        if (allParamsFound) {
+          ListSequence.fromList(sortedList).addElement(expr);
+          count -= 1;
+        }
+      }
+      if (count == 0) {
+        break;
       }
     }
 
-    // Set the copied list reference to null - get it noticed by the garbage collector. 
-    copiedList = null;
     // Return the sorted list. 
     return sortedList;
   }
@@ -276,7 +275,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
     /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
-    /*package*/ static final SContainmentLink UsedBy$$TT5 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4dec22c1L, "UsedBy");
+    /*package*/ static final SContainmentLink Uses$iEoe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4decbff8L, "Uses");
     /*package*/ static final SReferenceLink target$9wsE = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL, 0x65d0f96c4dec199eL, "target");
   }
 
