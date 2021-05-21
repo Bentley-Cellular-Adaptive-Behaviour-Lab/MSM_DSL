@@ -18,7 +18,7 @@ public class SpeciesDefinitionComponent_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     SNode container = SNodeOperations.getNodeAncestor(ctx.getPrimaryInput(), CONCEPTS.SpeciesContainer$Ig, false, false);
-    // Define the levels of each species - so that they can be used throughout this function. 
+    // Define the levels of each species - so that they can be used throughout this function.
     tgs.append("// Species Definitions //\n");
     for (SNode species : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Species$hnnc))) {
       tgs.append("\tdouble ");

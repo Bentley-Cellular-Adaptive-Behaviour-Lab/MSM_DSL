@@ -10,7 +10,6 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -32,14 +31,14 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
 
-  public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Void> updateSpeciesRelations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateSpeciesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("J83UdHo8mt").build();
-  public static final SMethod<Void> updateModifiers_id20T6jFVk_r2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateModifiers").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVk_r2").build();
-  public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6UEPGYOxbAr").build();
-  public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> topologicalSort_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("topologicalSort").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<Boolean> listContainsParameter_id6ujblCxXxzJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("listContainsParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ujblCxXxzJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getExprSpecies_idJ83UdHe8mr = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("J83UdHe8mr").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getExprParameters_id3eqdKU_qMQ$ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getExprParameters").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3eqdKU_qMQ$").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> updateSpeciesRelations_idJ83UdHo8mt = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateSpeciesRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("J83UdHo8mt").build();
+  public static final SMethod<Void> updateModifiers_id20T6jFVk_r2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateModifiers").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("20T6jFVk_r2").build();
+  public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6UEPGYOxbAr").build();
+  public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> topologicalSort_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("topologicalSort").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> listContainsParameter_id6ujblCxXxzJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("listContainsParameter").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ujblCxXxzJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ);
 
@@ -50,7 +49,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   /*package*/ static List<SNode> getExprSpecies_idJ83UdHe8mr(@NotNull SNode __thisNode__, SNode expr) {
-    // Gets all species in an expression, including sub-expressions 
+    // Gets all species in an expression, including sub-expressions
     List<SNode> speciesList = ListSequence.fromList(new ArrayList<SNode>());
     if (ListSequence.fromList(SNodeOperations.getChildren(expr)).count() > 0) {
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
@@ -68,7 +67,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     return speciesList;
   }
   /*package*/ static List<SNode> getExprParameters_id3eqdKU_qMQ$(@NotNull SNode __thisNode__, SNode expr) {
-    // Gets all parameters in an expression, including sub-expressions. 
+    // Gets all parameters in an expression, including sub-expressions.
     List<SNode> parameterList = ListSequence.fromList(new ArrayList<SNode>());
     if (ListSequence.fromList(SNodeOperations.getChildren(expr)).count() > 0) {
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
@@ -114,7 +113,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Parameters$hoyh))) {
       Parameter__BehaviorDescriptor.updateUsesRelations_id6ngYmLdX6q5.invoke(parameter);
     }
-    // Iterate over the same list twice, because "usedBy" relations check the "uses" relations during their updating.  
+    // Iterate over the same list twice, because "usedBy" relations check the "uses" relations during their updating. 
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Parameters$hoyh))) {
       Parameter__BehaviorDescriptor.updateUsedByRelations_id6ngYmLdX8Ap.invoke(parameter);
     }
@@ -155,26 +154,26 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     return filteredList;
   }
   /*package*/ static List<SNode> topologicalSort_idcJYjfa5zz7(@NotNull SNode __thisNode__, List<SNode> exprList) {
-    // Must take a parameter list as an argument. In other instances, this throws an error. 
-    // Check the first entry to see if it is a parameter. 
+    // Must take a parameter list as an argument. In other instances, this throws an error.
+    // Check the first entry to see if it is a parameter.
     List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
 
     try {
-      // We already know which expressions are used by which, and there should be no cyclic relationships (ensured by typesystem). 
-      // Get a count of all the items in the list, and use that to determine when we're finished. 
-      // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list. 
+      // We already know which expressions are used by which, and there should be no cyclic relationships (ensured by typesystem).
+      // Get a count of all the items in the list, and use that to determine when we're finished.
+      // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list.
       int count = ListSequence.fromList(exprList).count();
 
       while (count > 0) {
         for (SNode expr : ListSequence.fromList(exprList)) {
           if (ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe)).count() == 0) {
-            // Expressions that aren't used by any other can be added straight in. 
+            // Expressions that aren't used by any other can be added straight in.
             if (!(ListSequence.fromList(sortedList).contains(expr))) {
               ListSequence.fromList(sortedList).addElement(expr);
               count -= 1;
             }
           } else {
-            // Check that all used parameters are already in the sortedList 
+            // Check that all used parameters are already in the sortedList
             boolean allParamsFound = true;
             for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
               if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
@@ -189,7 +188,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
               }
             }
           }
-          // We've reached the end of the expression list, so break the for loop early. 
+          // We've reached the end of the expression list, so break the for loop early.
           if (count == 0) {
             break;
           }
@@ -201,7 +200,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       System.out.println(e.getMessage());
     }
 
-    // Return the sorted list. 
+    // Return the sorted list.
     return sortedList;
   }
   /*package*/ static boolean listContainsParameter_id6ujblCxXxzJ(@NotNull SNode __thisNode__, SNode targetParam, List<SNode> exprList) {

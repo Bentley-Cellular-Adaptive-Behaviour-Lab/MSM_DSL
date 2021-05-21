@@ -11,7 +11,7 @@ import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
-import junit.framework.Assert;
+import org.junit.Assert;
 import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -75,7 +75,6 @@ public class test_TissueProperties_Test extends BaseTransformationTest {
       Assert.assertEquals(1, (int) Arrangement_Cylindrical__BehaviorDescriptor.calculate_cross_section_cells_id506$KtOAF5K.invoke(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(getNodeById("599220133721284107"), LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)));
       Assert.assertEquals(1, (int) Arrangement_Cylindrical__BehaviorDescriptor.calculate_cross_section_cells_id506$KtOAF5K.invoke(SNodeOperations.as(SLinkOperations.getTarget(SLinkOperations.getTarget(getNodeById("599220133721296554"), LINKS.tissue_type$$cvw), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)));
     }
-
 
   }
 

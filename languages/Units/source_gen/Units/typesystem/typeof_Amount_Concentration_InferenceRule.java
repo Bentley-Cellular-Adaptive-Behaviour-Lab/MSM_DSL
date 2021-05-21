@@ -19,7 +19,7 @@ public class typeof_Amount_Concentration_InferenceRule extends AbstractInference
   public typeof_Amount_Concentration_InferenceRule() {
   }
   public void applyRule(final SNode concentration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces amount concentrations to be real numbers. 
+    // Forces amount concentrations to be real numbers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(concentration, LINKS.value$X0Sw), LINKS.expr$WZts);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960439218", 0, null);

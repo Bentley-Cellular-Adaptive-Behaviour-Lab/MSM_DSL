@@ -24,12 +24,12 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
   public checkCuboidSubstrateBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisCuboid, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the boundaries of the substrate do not extend out of the world. 
-    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong. 
+    // Check that the boundaries of the substrate do not extend out of the world.
+    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong.
 
     SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisCuboid, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
 
-    // Is this cuboidal substrate extending out of the lower X boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower X boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_idfEhJG2FNKm.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -37,7 +37,7 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper X boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper X boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_upperx_gridpoints_idfEhJG2FM6P.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -45,7 +45,7 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this cuboidal substrate extending out of the lower Y boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower Y boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowery_gridpoints_idfEhJG2FRr_.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -53,7 +53,7 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper Y boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper Y boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_uppery_gridpoints_idfEhJG2FPnU.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -61,7 +61,7 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this cuboidal substrate extending out of the lower Z boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower Z boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_idfEhJG2FVXW.invoke(thisCuboid) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -69,7 +69,7 @@ public class checkCuboidSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper Z boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper Z boundary of the world?
     if ((int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_upperz_gridpoints_idfEhJG2FTBo.invoke(thisCuboid) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

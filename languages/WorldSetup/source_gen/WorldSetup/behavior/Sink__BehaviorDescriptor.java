@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,15 +24,15 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Sink__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007eL, "WorldSetup.structure.Sink");
 
-  public static final SMethod<String> get_sink_x_string_id2OHr9yL68kM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_x_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL68kM").build();
-  public static final SMethod<String> get_sink_y_string_id2OHr9yL68kW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_y_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL68kW").build();
-  public static final SMethod<String> get_sink_z_string_id11q$FfsWVZM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_z_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsWVZM").build();
-  public static final SMethod<BigDecimal> get_sink_x_decimal_id1r0uutBEyFS = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_x_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEyFS").build();
-  public static final SMethod<BigDecimal> get_sink_y_decimal_id1r0uutBEyG8 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_y_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEyG8").build();
-  public static final SMethod<BigDecimal> get_sink_z_decimal_id1r0uutBEyGo = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_z_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEyGo").build();
-  public static final SMethod<Integer> get_sink_x_gridpoint_id57Wjpeqq3Rq = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_x_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq3Rq").build();
-  public static final SMethod<Integer> get_sink_y_gridpoint_id57Wjpeqq4vM = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_y_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq4vM").build();
-  public static final SMethod<Integer> get_sink_z_gridpoint_id57Wjpeqq56O = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_z_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq56O").build();
+  public static final SMethod<String> get_sink_x_string_id2OHr9yL68kM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_x_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL68kM").build();
+  public static final SMethod<String> get_sink_y_string_id2OHr9yL68kW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_y_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL68kW").build();
+  public static final SMethod<String> get_sink_z_string_id11q$FfsWVZM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_z_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsWVZM").build();
+  public static final SMethod<BigDecimal> get_sink_x_decimal_id1r0uutBEyFS = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_x_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEyFS").build();
+  public static final SMethod<BigDecimal> get_sink_y_decimal_id1r0uutBEyG8 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_y_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEyG8").build();
+  public static final SMethod<BigDecimal> get_sink_z_decimal_id1r0uutBEyGo = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_sink_z_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEyGo").build();
+  public static final SMethod<Integer> get_sink_x_gridpoint_id57Wjpeqq3Rq = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_x_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq3Rq").build();
+  public static final SMethod<Integer> get_sink_y_gridpoint_id57Wjpeqq4vM = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_y_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq4vM").build();
+  public static final SMethod<Integer> get_sink_z_gridpoint_id57Wjpeqq56O = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_sink_z_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq56O").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_sink_x_string_id2OHr9yL68kM, get_sink_y_string_id2OHr9yL68kW, get_sink_z_string_id11q$FfsWVZM, get_sink_x_decimal_id1r0uutBEyFS, get_sink_y_decimal_id1r0uutBEyG8, get_sink_z_decimal_id1r0uutBEyGo, get_sink_x_gridpoint_id57Wjpeqq3Rq, get_sink_y_gridpoint_id57Wjpeqq4vM, get_sink_z_gridpoint_id57Wjpeqq56O);
 

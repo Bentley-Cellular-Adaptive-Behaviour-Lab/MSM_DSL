@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -30,14 +29,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, "SpeciesSetup.structure.Parameter");
 
-  public static final SMethod<Void> updateUsesRelations_id6ngYmLdX6q5 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateUsesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ngYmLdX6q5").build();
-  public static final SMethod<Void> updateUsedByRelations_id6ngYmLdX8Ap = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateUsedByRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ngYmLdX8Ap").build();
-  public static final SMethod<Void> cleanUsesRelations_idufje78iyUN = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanUsesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("ufje78iyUN").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<Void> addUsesRelations_idufje78jt14 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addUsesRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("ufje78jt14").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getUsedByParameters_idufje78j_RO = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getUsedByParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("ufje78j_RO").build();
-  public static final SMethod<Void> cleanUsedByRelations_idufje78jolS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanUsedByRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("ufje78jolS").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<Void> addUsedByRelations_idufje78k1g2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addUsedByRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("ufje78k1g2").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getParameters_id6ngYmLdVkMJ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ngYmLdVkMJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> updateUsesRelations_id6ngYmLdX6q5 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateUsesRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ngYmLdX6q5").build();
+  public static final SMethod<Void> updateUsedByRelations_id6ngYmLdX8Ap = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateUsedByRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ngYmLdX8Ap").build();
+  public static final SMethod<Void> cleanUsesRelations_idufje78iyUN = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanUsesRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78iyUN").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Void> addUsesRelations_idufje78jt14 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addUsesRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78jt14").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getUsedByParameters_idufje78j_RO = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getUsedByParameters").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78j_RO").build();
+  public static final SMethod<Void> cleanUsedByRelations_idufje78jolS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanUsedByRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78jolS").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Void> addUsedByRelations_idufje78k1g2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addUsedByRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78k1g2").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getParameters_id6ngYmLdVkMJ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ngYmLdVkMJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateUsesRelations_id6ngYmLdX6q5, updateUsedByRelations_id6ngYmLdX8Ap, cleanUsesRelations_idufje78iyUN, addUsesRelations_idufje78jt14, getUsedByParameters_idufje78j_RO, cleanUsedByRelations_idufje78jolS, addUsedByRelations_idufje78k1g2, getParameters_id6ngYmLdVkMJ);
 
@@ -45,23 +44,23 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void updateUsesRelations_id6ngYmLdX6q5(@NotNull SNode __thisNode__) {
-    // Get the current list of parameters used in this parameter's expression. 
+    // Get the current list of parameters used in this parameter's expression.
     List<SNode> usesParameters = Parameter__BehaviorDescriptor.getParameters_id6ngYmLdVkMJ.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.Expression$Wv16));
 
-    // Remove outdated references. 
+    // Remove outdated references.
     Parameter__BehaviorDescriptor.cleanUsesRelations_idufje78iyUN.invoke(__thisNode__, usesParameters);
 
-    // Add new, unique references. 
+    // Add new, unique references.
     Parameter__BehaviorDescriptor.addUsesRelations_idufje78jt14.invoke(__thisNode__, usesParameters);
   }
   /*package*/ static void updateUsedByRelations_id6ngYmLdX8Ap(@NotNull SNode __thisNode__) {
-    // Get the current list of parameters that use this parameter. 
+    // Get the current list of parameters that use this parameter.
     List<SNode> usedByParameters = Parameter__BehaviorDescriptor.getUsedByParameters_idufje78j_RO.invoke(__thisNode__);
 
-    // Remove outdated references. 
+    // Remove outdated references.
     Parameter__BehaviorDescriptor.cleanUsedByRelations_idufje78jolS.invoke(__thisNode__, usedByParameters);
 
-    // Add new, unique references. 
+    // Add new, unique references.
     Parameter__BehaviorDescriptor.addUsedByRelations_idufje78k1g2.invoke(__thisNode__, usedByParameters);
   }
   /*package*/ static void cleanUsesRelations_idufje78iyUN(@NotNull SNode __thisNode__, List<SNode> usesParameters) {
@@ -87,10 +86,10 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
   /*package*/ static List<SNode> getUsedByParameters_idufje78j_RO(@NotNull SNode __thisNode__) {
-    // Check over all parameters in the same species container, return any that use this parameter. 
+    // Check over all parameters in the same species container, return any that use this parameter.
     List<SNode> usedByParameters = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode currentParam : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig), LINKS.Parameters$hoyh))) {
-      // Go over the list of used parameters, these should already have been updated - so no need to call the parameter search function again. 
+      // Go over the list of used parameters, these should already have been updated - so no need to call the parameter search function again.
       for (SNode ref : ListSequence.fromList(SLinkOperations.getChildren(currentParam, LINKS.Uses$iEoe))) {
         if (Objects.equals(SLinkOperations.getTarget(ref, LINKS.target$9wsE), __thisNode__)) {
           ListSequence.fromList(usedByParameters).addElement(currentParam);
@@ -122,11 +121,11 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
   /*package*/ static List<SNode> getParameters_id6ngYmLdVkMJ(@NotNull SNode __thisNode__, SNode expr) {
-    // Gets a unique list of parameters from an expression. 
+    // Gets a unique list of parameters from an expression.
     assert (expr != null);
     List<SNode> foundParameters = ListSequence.fromList(new ArrayList<SNode>());
     if (ListSequence.fromList(SNodeOperations.getChildren(expr)).count() > 0) {
-      // Expression has children - so check over them for parameter expressions. 
+      // Expression has children - so check over them for parameter expressions.
       for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(expr))) {
         if (SNodeOperations.isInstanceOf(child, CONCEPTS.ParameterExpression$CA) && !(ListSequence.fromList(foundParameters).contains(SLinkOperations.getTarget(SNodeOperations.as(child, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh)))) {
           ListSequence.fromList(foundParameters).addElement(SLinkOperations.getTarget(SNodeOperations.as(child, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh));
@@ -135,7 +134,7 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
         }
       }
     } else {
-      // Expression has no children - therefore it has a size of one, so just check if it's a parameter expression. 
+      // Expression has no children - therefore it has a size of one, so just check if it's a parameter expression.
       if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA) && !(ListSequence.fromList(foundParameters).contains(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh)))) {
         ListSequence.fromList(foundParameters).addElement(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh));
       }

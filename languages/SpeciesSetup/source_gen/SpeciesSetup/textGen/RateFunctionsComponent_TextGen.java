@@ -40,7 +40,7 @@ public class RateFunctionsComponent_TextGen extends TextGenDescriptorBase {
           tgs.append("double ");
           tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
         }
-        // Check if we've reached the end of the list of species, if not, add a comma for the next argument. 
+        // Check if we've reached the end of the list of species, if not, add a comma for the next argument.
         if (count < ListSequence.fromList(filteredList).count()) {
           tgs.append(", ");
         }

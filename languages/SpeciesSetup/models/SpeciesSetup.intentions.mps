@@ -69,7 +69,7 @@
           <node concept="2OqwBi" id="20T6jFVm1$E" role="3clFbG">
             <node concept="2Sf5sV" id="20T6jFVm1rR" role="2Oq$k0" />
             <node concept="2qgKlT" id="20T6jFVm1O6" role="2OqNvi">
-              <ref role="37wK5l" to="f3yh:J83UdHo8mt" resolve="updateSpeciesReactions" />
+              <ref role="37wK5l" to="f3yh:J83UdHo8mt" resolve="updateSpeciesRelations" />
             </node>
           </node>
         </node>

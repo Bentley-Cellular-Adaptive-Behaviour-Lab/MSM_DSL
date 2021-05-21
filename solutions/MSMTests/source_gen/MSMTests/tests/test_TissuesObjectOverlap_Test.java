@@ -59,7 +59,6 @@ public class test_TissuesObjectOverlap_Test extends BaseTransformationTest {
       super(owner);
     }
 
-
     public void test_NodeTissueOverlapsWithAnotherCheck4110814406055051538() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055050591");
       SNode operation = getRealNodeById("4110814406055051538");

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -23,12 +22,12 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Gradient_Shape_SinkAndSource__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2e0657be386ef3ceL, "WorldSetup.structure.Gradient_Shape_SinkAndSource");
 
-  public static final SMethod<String> get_sourcex_string_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcex_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6aJ5").build();
-  public static final SMethod<String> get_sourcey_string_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcey_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6cfy").build();
-  public static final SMethod<String> get_sourcez_string_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcez_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6deA").build();
-  public static final SMethod<String> get_sinkx_string_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkx_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6e46").build();
-  public static final SMethod<String> get_sinky_string_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinky_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6eOG").build();
-  public static final SMethod<String> get_sinkz_string_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkz_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6fPc").build();
+  public static final SMethod<String> get_sourcex_string_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcex_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6aJ5").build();
+  public static final SMethod<String> get_sourcey_string_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcey_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6cfy").build();
+  public static final SMethod<String> get_sourcez_string_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sourcez_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6deA").build();
+  public static final SMethod<String> get_sinkx_string_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkx_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6e46").build();
+  public static final SMethod<String> get_sinky_string_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinky_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6eOG").build();
+  public static final SMethod<String> get_sinkz_string_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sinkz_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6fPc").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_sourcex_string_id2OHr9yL6aJ5, get_sourcey_string_id2OHr9yL6cfy, get_sourcez_string_id2OHr9yL6deA, get_sinkx_string_id2OHr9yL6e46, get_sinky_string_id2OHr9yL6eOG, get_sinkz_string_id2OHr9yL6fPc);
 

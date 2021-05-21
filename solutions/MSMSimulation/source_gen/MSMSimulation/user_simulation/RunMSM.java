@@ -26,7 +26,7 @@ public class RunMSM {
     System.out.println("The current directory is: " + root_string);
     System.out.println("Transferring auto-generated files from: " + output_string);
 
-    // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder. 
+    // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder.
     switch (utils.getOS()) {
       case WINDOWS:
         old_tissue_path = Paths.get(output_string + "\\" + "Tissues" + ".cpp");
@@ -61,7 +61,7 @@ public class RunMSM {
 
     utils.delete_cpp_files_in_dir(output_string);
 
-    // Attempt to build the MSM using the settings defined in the parent node. 
+    // Attempt to build the MSM using the settings defined in the parent node.
     try {
       System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "true" + " " + "no_analysis" + " " + "10000" + " " + "4");
       ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "true", "no_analysis", "10000", "4");
@@ -83,7 +83,7 @@ public class RunMSM {
       System.out.println("Build completed successfully.");
     }
 
-    // Attempt to run the MSM with required arguments. 
+    // Attempt to run the MSM with required arguments.
     try {
       ProcessBuilder pb = new ProcessBuilder("./springAgent", "1", "0.9", "0.04", "2", "2", "15", "1", "2", "-1", "-1", "1");
       pb.redirectErrorStream(true);

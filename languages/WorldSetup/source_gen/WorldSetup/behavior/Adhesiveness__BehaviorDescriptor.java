@@ -9,7 +9,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -26,7 +25,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Adhesiveness__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x2f6b1b828a3a33b6L, "WorldSetup.structure.Adhesiveness");
 
-  public static final SMethod<BigDecimal> get_adhesiveness_value_decimal_id1r0uutBGt3g = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_adhesiveness_value_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBGt3g").build();
+  public static final SMethod<BigDecimal> get_adhesiveness_value_decimal_id1r0uutBGt3g = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_adhesiveness_value_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBGt3g").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_adhesiveness_value_decimal_id1r0uutBGt3g);
 

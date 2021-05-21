@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -34,23 +33,23 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, "WorldSetup.structure.World_Container");
 
-  public static final SMethod<Void> updateGrid_id11q$FfsT8bU = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateGrid").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsT8bU").build();
-  public static final SMethod<Integer> get_buffer_gridpoint_size_id3fk35jmuJOF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmuJOF").build();
-  public static final SMethod<Integer> calc_worldX_gridpoint_size_id57Wjpeqm20n = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldX_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm20n").build();
-  public static final SMethod<Integer> calc_worldY_gridpoint_size_id57Wjpeqm20N = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldY_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm20N").build();
-  public static final SMethod<Integer> calc_worldZ_gridpoint_size_id57Wjpeqm21r = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldZ_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm21r").build();
-  public static final SMethod<Integer> get_worldX_gridpoint_size_id57Wjpeqm21V = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldX_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm21V").build();
-  public static final SMethod<Integer> get_worldY_gridpoint_size_id57Wjpeqm22f = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldY_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm22f").build();
-  public static final SMethod<Integer> get_worldZ_gridpoint_size_id57Wjpeqm22B = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldZ_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm22B").build();
-  public static final SMethod<Integer> get_NegXSpace_size_id11q$FfsTzRH = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegXSpace_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsTzRH").build();
-  public static final SMethod<Integer> get_NegYSpace_size_id11q$FfsTzRR = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegYSpace_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsTzRR").build();
-  public static final SMethod<Integer> get_NegZSpace_size_id11q$FfsTzS1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegZSpace_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsTzS1").build();
-  public static final SMethod<Integer> find_lowestX_gridpoint_id57Wjpeqm233 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestX_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm233").build();
-  public static final SMethod<Integer> find_lowestY_gridpoint_id57Wjpeqm23A = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestY_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm23A").build();
-  public static final SMethod<Integer> find_lowestZ_gridpoint_id57Wjpeqm24a = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestZ_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24a").build();
-  public static final SMethod<Integer> find_highestX_gridpoint_id57Wjpeqm24M = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestX_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24M").build();
-  public static final SMethod<Integer> find_highestY_gridpoint_id57Wjpeqm24Q = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestY_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24Q").build();
-  public static final SMethod<Integer> find_highestZ_gridpoint_id57Wjpeqm24U = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestZ_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqm24U").build();
+  public static final SMethod<Void> updateGrid_id11q$FfsT8bU = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateGrid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsT8bU").build();
+  public static final SMethod<Integer> get_buffer_gridpoint_size_id3fk35jmuJOF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmuJOF").build();
+  public static final SMethod<Integer> calc_worldX_gridpoint_size_id57Wjpeqm20n = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldX_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm20n").build();
+  public static final SMethod<Integer> calc_worldY_gridpoint_size_id57Wjpeqm20N = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldY_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm20N").build();
+  public static final SMethod<Integer> calc_worldZ_gridpoint_size_id57Wjpeqm21r = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calc_worldZ_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm21r").build();
+  public static final SMethod<Integer> get_worldX_gridpoint_size_id57Wjpeqm21V = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldX_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm21V").build();
+  public static final SMethod<Integer> get_worldY_gridpoint_size_id57Wjpeqm22f = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldY_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm22f").build();
+  public static final SMethod<Integer> get_worldZ_gridpoint_size_id57Wjpeqm22B = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_worldZ_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm22B").build();
+  public static final SMethod<Integer> get_NegXSpace_size_id11q$FfsTzRH = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegXSpace_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsTzRH").build();
+  public static final SMethod<Integer> get_NegYSpace_size_id11q$FfsTzRR = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegYSpace_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsTzRR").build();
+  public static final SMethod<Integer> get_NegZSpace_size_id11q$FfsTzS1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_NegZSpace_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsTzS1").build();
+  public static final SMethod<Integer> find_lowestX_gridpoint_id57Wjpeqm233 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestX_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm233").build();
+  public static final SMethod<Integer> find_lowestY_gridpoint_id57Wjpeqm23A = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestY_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm23A").build();
+  public static final SMethod<Integer> find_lowestZ_gridpoint_id57Wjpeqm24a = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_lowestZ_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm24a").build();
+  public static final SMethod<Integer> find_highestX_gridpoint_id57Wjpeqm24M = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestX_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm24M").build();
+  public static final SMethod<Integer> find_highestY_gridpoint_id57Wjpeqm24Q = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestY_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm24Q").build();
+  public static final SMethod<Integer> find_highestZ_gridpoint_id57Wjpeqm24U = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("find_highestZ_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqm24U").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateGrid_id11q$FfsT8bU, get_buffer_gridpoint_size_id3fk35jmuJOF, calc_worldX_gridpoint_size_id57Wjpeqm20n, calc_worldY_gridpoint_size_id57Wjpeqm20N, calc_worldZ_gridpoint_size_id57Wjpeqm21r, get_worldX_gridpoint_size_id57Wjpeqm21V, get_worldY_gridpoint_size_id57Wjpeqm22f, get_worldZ_gridpoint_size_id57Wjpeqm22B, get_NegXSpace_size_id11q$FfsTzRH, get_NegYSpace_size_id11q$FfsTzRR, get_NegZSpace_size_id11q$FfsTzS1, find_lowestX_gridpoint_id57Wjpeqm233, find_lowestY_gridpoint_id57Wjpeqm23A, find_lowestZ_gridpoint_id57Wjpeqm24a, find_highestX_gridpoint_id57Wjpeqm24M, find_highestY_gridpoint_id57Wjpeqm24Q, find_highestZ_gridpoint_id57Wjpeqm24U);
 
@@ -58,7 +57,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   /*package*/ static void updateGrid_id11q$FfsT8bU(@NotNull SNode __thisNode__) {
-    // Checks all objects in the simulation and adjusts the border and negative space values according to the object locations. 
+    // Checks all objects in the simulation and adjusts the border and negative space values according to the object locations.
     int x_size = ((int) World_Container__BehaviorDescriptor.calc_worldX_gridpoint_size_id57Wjpeqm20n.invoke(__thisNode__));
     int y_size = ((int) World_Container__BehaviorDescriptor.calc_worldY_gridpoint_size_id57Wjpeqm20N.invoke(__thisNode__));
     int z_size = ((int) World_Container__BehaviorDescriptor.calc_worldZ_gridpoint_size_id57Wjpeqm21r.invoke(__thisNode__));
@@ -68,7 +67,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Z_Size$5SV, z_size);
   }
   /*package*/ static int get_buffer_gridpoint_size_id3fk35jmuJOF(@NotNull SNode __thisNode__) {
-    // Workaround for MPS' bullshit generation not finding grid behaviours - delete when Jetbrains get their act together. 
+    // Workaround for MPS' bullshit generation not finding grid behaviours - delete when Jetbrains get their act together.
     float scale = 0;
     if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
       scale = ((float) 0.5);
@@ -80,21 +79,21 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static int calc_worldX_gridpoint_size_id57Wjpeqm20n(@NotNull SNode __thisNode__) {
     int lowest_x = ((int) World_Container__BehaviorDescriptor.find_lowestX_gridpoint_id57Wjpeqm233.invoke(__thisNode__));
     int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
-    // Take the opportunity to update the negative space value while we're here. 
+    // Take the opportunity to update the negative space value while we're here.
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_X_Space$kMcp, lowest_x - buffer);
     return (((int) World_Container__BehaviorDescriptor.find_highestX_gridpoint_id57Wjpeqm24M.invoke(__thisNode__)) - lowest_x) + (buffer * 2);
   }
   /*package*/ static int calc_worldY_gridpoint_size_id57Wjpeqm20N(@NotNull SNode __thisNode__) {
     int lowest_y = ((int) World_Container__BehaviorDescriptor.find_lowestY_gridpoint_id57Wjpeqm23A.invoke(__thisNode__));
     int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
-    // Take the opportunity to update the negative space value while we're here. 
+    // Take the opportunity to update the negative space value while we're here.
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Y_Space$kSxO, lowest_y - buffer);
     return (((int) World_Container__BehaviorDescriptor.find_highestY_gridpoint_id57Wjpeqm24Q.invoke(__thisNode__)) - lowest_y) + (buffer * 2);
   }
   /*package*/ static int calc_worldZ_gridpoint_size_id57Wjpeqm21r(@NotNull SNode __thisNode__) {
     int lowest_z = ((int) World_Container__BehaviorDescriptor.find_lowestZ_gridpoint_id57Wjpeqm24a.invoke(__thisNode__));
     int buffer = ((int) World_Container__BehaviorDescriptor.get_buffer_gridpoint_size_id3fk35jmuJOF.invoke(__thisNode__));
-    // Take the opportunity to update the negative space value while we're here. 
+    // Take the opportunity to update the negative space value while we're here.
     SPropertyOperations.assign(SLinkOperations.getTarget(__thisNode__, LINKS.grid$mgtJ), PROPS.Neg_Z_Space$kZ6g, lowest_z - buffer);
     return (((int) World_Container__BehaviorDescriptor.find_highestZ_gridpoint_id57Wjpeqm24U.invoke(__thisNode__)) - lowest_z) + (buffer * 2);
   }
@@ -121,9 +120,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int lowest_X = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the lowest X point of the cell is the lowest found so far, set it to the new lowest. 
+      //  If the lowest X point of the cell is the lowest found so far, set it to the new lowest.
       int cell_lowest_x = (int) Cell__BehaviorDescriptor.get_cell_lowerx_gridpoint_id57WjpeqmNIV.invoke(cell);
       if (cell_lowest_x < lowest_X) {
         lowest_X = cell_lowest_x;
@@ -131,40 +130,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the lowest X point of the tissue is the lowest found so far, set it to the new lowest. 
+      //  If the lowest X point of the tissue is the lowest found so far, set it to the new lowest.
       int tissue_lowest_x = (int) Tissue__BehaviorDescriptor.get_tissue_lowerx_gridpoint_id57Wjpeqov5H.invoke(tissue);
       if (tissue_lowest_x < lowest_X) {
         lowest_X = tissue_lowest_x;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the X values of the cuboidal gradient - if lower than the lowest X, set it as the newest lowest X. 
+        //  Check the X values of the cuboidal gradient - if lower than the lowest X, set it as the newest lowest X.
         int lowest_gradient_cuboidal_x = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_id57WjpeqpMzK.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (lowest_gradient_cuboidal_x < lowest_X) {
           lowest_X = lowest_gradient_cuboidal_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the X values of the spherical gradient - if lower than the lowest X, set it as the newest lowest X. 
+        //  Check the X values of the spherical gradient - if lower than the lowest X, set it as the newest lowest X.
         int lowest_point_x = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerx_gridpoint_id3V40ltqZX_8.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (lowest_point_x < lowest_X) {
           lowest_X = lowest_point_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed lower along the X-axis. 
+        // Determine whether the sink or the source are placed lower along the X-axis.
         int sink_X = (int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_X = (int) Source__BehaviorDescriptor.get_source_x_gridpoint_id57Wjpeqq5HN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a lower X, check whether we can set it to be the lowest X. 
+        // If the sink has a lower X, check whether we can set it to be the lowest X.
         if (sink_X < source_X) {
           if (sink_X < lowest_X) {
             lowest_X = sink_X;
           }
         } else {
-          // Otherwise, the source X is lower than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source X is lower than (or equal to) the sink, so just use the source value.
           if (source_X < lowest_X) {
             lowest_X = source_X;
           }
@@ -172,17 +171,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the X values of the cuboidal substrate - if lower than the lowest X, set it as the newest lowest X. 
+        //  Check the X values of the cuboidal substrate - if lower than the lowest X, set it as the newest lowest X.
         int lowest_substrate_cuboidal_x = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowerx_gridpoints_idfEhJG2FNKm.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (lowest_substrate_cuboidal_x < lowest_X) {
           lowest_X = lowest_substrate_cuboidal_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the smallest one - then check against the lowest X. 
+        //  Check all the vertices of the triangular substrate and get the smallest one - then check against the lowest X.
         int vertex1_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
         int vertex2_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
         int vertex3_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
@@ -193,7 +192,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the lowest X for all objects found in the simulation world. 
+    // Return the lowest X for all objects found in the simulation world.
     return lowest_X;
   }
   /*package*/ static int find_lowestY_gridpoint_id57Wjpeqm23A(@NotNull SNode __thisNode__) {
@@ -201,9 +200,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int lowest_Y = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the lowest Y point of the cell is the lowest found so far, set it to the new lowest. 
+      //  If the lowest Y point of the cell is the lowest found so far, set it to the new lowest.
       int cell_lowest_y = (int) Cell__BehaviorDescriptor.get_cell_lowery_gridpoint_id57WjpeqmZqc.invoke(cell);
       if (cell_lowest_y < lowest_Y) {
         lowest_Y = cell_lowest_y;
@@ -211,40 +210,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the lowest Y point of the tissue is the lowest found so far, set it to the new lowest. 
+      //  If the lowest Y point of the tissue is the lowest found so far, set it to the new lowest.
       int tissue_lowest_y = (int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(tissue);
       if (tissue_lowest_y < lowest_Y) {
         lowest_Y = tissue_lowest_y;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the X values of the cuboidal gradient - if lower than the lowest Y, set it as the newest lowest Y. 
+        //  Check the X values of the cuboidal gradient - if lower than the lowest Y, set it as the newest lowest Y.
         int lowest_gradient_cuboidal_y = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowery_gridpoints_id57WjpeqpPoL.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (lowest_gradient_cuboidal_y < lowest_Y) {
           lowest_Y = lowest_gradient_cuboidal_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the X values of the spherical gradient - if lower than the lowest Y, set it as the newest lowest Y. 
+        //  Check the X values of the spherical gradient - if lower than the lowest Y, set it as the newest lowest Y.
         int lowest_point_y = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowery_gridpoint_id3V40ltqZXKj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (lowest_point_y < lowest_Y) {
           lowest_Y = lowest_point_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed lower along the Y-axis. 
+        // Determine whether the sink or the source are placed lower along the Y-axis.
         int sink_Y = (int) Sink__BehaviorDescriptor.get_sink_y_gridpoint_id57Wjpeqq4vM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_Y = (int) Source__BehaviorDescriptor.get_source_y_gridpoint_id57Wjpeqq5I1.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a lower Y, check whether we can set it to be the lowest Y. 
+        // If the sink has a lower Y, check whether we can set it to be the lowest Y.
         if (sink_Y < source_Y) {
           if (sink_Y < lowest_Y) {
             lowest_Y = sink_Y;
           }
         } else {
-          // Otherwise, the source Y is lower than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source Y is lower than (or equal to) the sink, so just use the source value.
           if (source_Y < lowest_Y) {
             lowest_Y = source_Y;
           }
@@ -252,17 +251,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the Y values of the cuboidal substrate - if lower than the lowest Y, set it as the newest lowest X. 
+        //  Check the Y values of the cuboidal substrate - if lower than the lowest Y, set it as the newest lowest X.
         int lowest_substrate_cuboidal_y = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowery_gridpoints_idfEhJG2FRr_.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (lowest_substrate_cuboidal_y < lowest_Y) {
           lowest_Y = lowest_substrate_cuboidal_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the smallest one - then check against the lowest Y. 
+        //  Check all the vertices of the triangular substrate and get the smallest one - then check against the lowest Y.
         int vertex1_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
         int vertex2_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
         int vertex3_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
@@ -273,7 +272,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the lowest Y found for all objects in the simulation world. 
+    // Return the lowest Y found for all objects in the simulation world.
     return lowest_Y;
   }
   /*package*/ static int find_lowestZ_gridpoint_id57Wjpeqm24a(@NotNull SNode __thisNode__) {
@@ -281,9 +280,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int lowest_Z = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the lowest Z point of the cell is the lowest found so far, set it to be the new lowest. 
+      //  If the lowest Z point of the cell is the lowest found so far, set it to be the new lowest.
       int cell_z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(cell, LINKS.position$L2Mv));
       if (cell_z < lowest_Z) {
         lowest_Z = cell_z;
@@ -291,40 +290,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the lowest Z point of the tissue is the lowest found so far, set it to be the new lowest. 
+      //  If the lowest Z point of the tissue is the lowest found so far, set it to be the new lowest.
       int tissue_lowest_z = (int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(tissue);
       if (tissue_lowest_z < lowest_Z) {
         lowest_Z = tissue_lowest_z;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the Z values of the cuboidal gradient - if lower than the lowest Z, set it as the new lowest Z. 
+        //  Check the Z values of the cuboidal gradient - if lower than the lowest Z, set it as the new lowest Z.
         int lowest_gradient_cuboidal_z = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_id57WjpeqpSJw.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (lowest_gradient_cuboidal_z < lowest_Z) {
           lowest_Z = lowest_gradient_cuboidal_z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the Z values of the spherical gradient - if higher than the lowest Z, set it as the new lowest Z. 
+        //  Check the Z values of the spherical gradient - if higher than the lowest Z, set it as the new lowest Z.
         int lowest_point_z = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerz_gridpoint_id3V40ltqZYtk.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (lowest_point_z < lowest_Z) {
           lowest_Z = lowest_point_z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed lower along the Z-axis. 
+        // Determine whether the sink or the source are placed lower along the Z-axis.
         int sink_Z = (int) Sink__BehaviorDescriptor.get_sink_z_gridpoint_id57Wjpeqq56O.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_Z = (int) Source__BehaviorDescriptor.get_source_z_gridpoint_id57Wjpeqq5If.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a lower Z, check whether we can set it to be the lowest Z. 
+        // If the sink has a lower Z, check whether we can set it to be the lowest Z.
         if (sink_Z < source_Z) {
           if (sink_Z < lowest_Z) {
             lowest_Z = sink_Z;
           }
         } else {
-          // Otherwise, the source Z is lower than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source Z is lower than (or equal to) the sink, so just use the source value.
           if (source_Z < lowest_Z) {
             lowest_Z = source_Z;
           }
@@ -332,17 +331,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the Z values of the cuboidal substrate - if lower than the highest Z, set it as the newest lowest Z. 
+        //  Check the Z values of the cuboidal substrate - if lower than the highest Z, set it as the newest lowest Z.
         int lowest_substrate_cuboidal_Z = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_lowerz_gridpoints_idfEhJG2FVXW.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (lowest_substrate_cuboidal_Z < lowest_Z) {
           lowest_Z = lowest_substrate_cuboidal_Z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest Z. 
+        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest Z.
         int lowest_substrate_prism_z = (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
 
         if (lowest_substrate_prism_z < lowest_Z) {
@@ -350,7 +349,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the highest Z found for all objects in the simulation world. 
+    // Return the highest Z found for all objects in the simulation world.
     return lowest_Z;
   }
   /*package*/ static int find_highestX_gridpoint_id57Wjpeqm24M(@NotNull SNode __thisNode__) {
@@ -358,9 +357,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int highest_X = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the highest X point of the cell is the highest found so far, set it to be the new highest. 
+      //  If the highest X point of the cell is the highest found so far, set it to be the new highest.
       int cell_highest_x = (int) Cell__BehaviorDescriptor.get_cell_upperx_gridpoint_id57Wjpeqnkzu.invoke(cell);
       if (cell_highest_x > highest_X) {
         highest_X = cell_highest_x;
@@ -368,40 +367,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the highest X point of the tissue is the highest found so far, set it to be the new highest. 
+      //  If the highest X point of the tissue is the highest found so far, set it to be the new highest.
       int tissue_highest_x = (int) Tissue__BehaviorDescriptor.get_tissue_upperx_gridpoint_id57WjpeqnMK6.invoke(tissue);
       if (tissue_highest_x > highest_X) {
         highest_X = tissue_highest_x;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the X values of the cuboidal gradient - if higher than the highest X, set it as the newest highest X. 
+        //  Check the X values of the cuboidal gradient - if higher than the highest X, set it as the newest highest X.
         int highest_gradient_cuboidal_x = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperx_gridpoints_id57WjpeqpIsP.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (highest_gradient_cuboidal_x > highest_X) {
           highest_X = highest_gradient_cuboidal_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the X values of the spherical gradient - if higher than the highest X, set it as the newest highest X. 
+        //  Check the X values of the spherical gradient - if higher than the highest X, set it as the newest highest X.
         int highest_point_x = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperx_gridpoint_id3V40ltqZZ20.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (highest_point_x > highest_X) {
           highest_X = highest_point_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed higher along the X-axis. 
+        // Determine whether the sink or the source are placed higher along the X-axis.
         int sink_X = (int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_X = (int) Source__BehaviorDescriptor.get_source_x_gridpoint_id57Wjpeqq5HN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a higher X, check whether we can set it to be the highest X. 
+        // If the sink has a higher X, check whether we can set it to be the highest X.
         if (sink_X > source_X) {
           if (sink_X > highest_X) {
             highest_X = sink_X;
           }
         } else {
-          // Otherwise, the source X is higher than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source X is higher than (or equal to) the sink, so just use the source value.
           if (source_X > highest_X) {
             highest_X = source_X;
           }
@@ -409,17 +408,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the X values of the cuboidal substrate - if higher than the highest X, set it as the newest highest X. 
+        //  Check the X values of the cuboidal substrate - if higher than the highest X, set it as the newest highest X.
         int highest_substrate_cuboidal_x = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_upperx_gridpoints_idfEhJG2FM6P.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (highest_substrate_cuboidal_x > highest_X) {
           highest_X = highest_substrate_cuboidal_x;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest X. 
+        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest X.
         int vertex1_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
         int vertex2_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
         int vertex3_x = (int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
@@ -430,7 +429,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the highest X found for all objects in the simulation world. 
+    // Return the highest X found for all objects in the simulation world.
     return highest_X;
   }
   /*package*/ static int find_highestY_gridpoint_id57Wjpeqm24Q(@NotNull SNode __thisNode__) {
@@ -438,9 +437,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int highest_Y = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the highest Y point of the cell is the highest found so far, set it to be the new highest. 
+      //  If the highest Y point of the cell is the highest found so far, set it to be the new highest.
       int cell_highest_y = (int) Cell__BehaviorDescriptor.get_cell_uppery_gridpoint_id57WjpeqnoVB.invoke(cell);
       if (cell_highest_y > highest_Y) {
         highest_Y = cell_highest_y;
@@ -448,40 +447,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the highest Y point of the tissue is the highest found so far, set it to be the new highest. 
+      //  If the highest Y point of the tissue is the highest found so far, set it to be the new highest.
       int tissue_highest_y = (int) Tissue__BehaviorDescriptor.get_tissue_uppery_gridpoint_id57Wjpeqo8L3.invoke(tissue);
       if (tissue_highest_y > highest_Y) {
         highest_Y = tissue_highest_y;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the Y values of the cuboidal gradient - if higher than the highest Y, set it as the newest highest Y. 
+        //  Check the Y values of the cuboidal gradient - if higher than the highest Y, set it as the newest highest Y.
         int highest_gradient_cuboidal_y = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_uppery_gridpoints_id57WjpeqpNHo.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (highest_gradient_cuboidal_y > highest_Y) {
           highest_Y = highest_gradient_cuboidal_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the Y values of the spherical gradient - if higher than the highest X, set it as the newest highest Y. 
+        //  Check the Y values of the spherical gradient - if higher than the highest X, set it as the newest highest Y.
         int highest_point_y = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_uppery_gridpoint_id3V40ltqZZ24.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (highest_point_y > highest_Y) {
           highest_Y = highest_point_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed higher along the Y-axis. 
+        // Determine whether the sink or the source are placed higher along the Y-axis.
         int sink_Y = (int) Sink__BehaviorDescriptor.get_sink_y_gridpoint_id57Wjpeqq4vM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_Y = (int) Source__BehaviorDescriptor.get_source_y_gridpoint_id57Wjpeqq5I1.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a higher Y, check whether we can set it to be the highest Y. 
+        // If the sink has a higher Y, check whether we can set it to be the highest Y.
         if (sink_Y > source_Y) {
           if (sink_Y > highest_Y) {
             highest_Y = sink_Y;
           }
         } else {
-          // Otherwise, the source Y is higher than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source Y is higher than (or equal to) the sink, so just use the source value.
           if (source_Y > highest_Y) {
             highest_Y = source_Y;
           }
@@ -489,17 +488,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the Y values of the cuboidal substrate - if higher than the highest Y, set it as the newest highest Y. 
+        //  Check the Y values of the cuboidal substrate - if higher than the highest Y, set it as the newest highest Y.
         int highest_substrate_cuboidal_y = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_uppery_gridpoints_idfEhJG2FPnU.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (highest_substrate_cuboidal_y > highest_Y) {
           highest_Y = highest_substrate_cuboidal_y;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest X. 
+        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest X.
         int vertex1_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_1$UwXl));
         int vertex2_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_2$UBKM));
         int vertex3_y = (int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL), LINKS.Vertex_3$UCtP));
@@ -510,7 +509,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the highest Y found for all objects in the simulation world. 
+    // Return the highest Y found for all objects in the simulation world.
     return highest_Y;
   }
   /*package*/ static int find_highestZ_gridpoint_id57Wjpeqm24U(@NotNull SNode __thisNode__) {
@@ -518,9 +517,9 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
 
     int highest_Z = 0;
 
-    // Check all cells. 
+    // Check all cells.
     for (SNode cell : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.cells$psWW))) {
-      //  If the highest Z point of the cell is the highest found so far, set it to be the new highest. 
+      //  If the highest Z point of the cell is the highest found so far, set it to be the new highest.
       int cell_z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(cell, LINKS.position$L2Mv));
       if (cell_z > highest_Z) {
         highest_Z = cell_z;
@@ -528,40 +527,40 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode tissue : ListSequence.fromList(SLinkOperations.getChildren(tissue_container, LINKS.tissues$psuU))) {
-      //  If the highest Z point of the tissue is the highest found so far, set it to be the new highest. 
+      //  If the highest Z point of the tissue is the highest found so far, set it to be the new highest.
       int tissue_highest_z = (int) Tissue__BehaviorDescriptor.get_tissue_upperz_gridpoint_id57WjpeqopM_.invoke(tissue);
       if (tissue_highest_z > highest_Z) {
         highest_Z = tissue_highest_z;
       }
     }
 
-    // This loop is quite unwieldy - clean it up when you get a chance. 
-    // Check all gradients. 
+    // This loop is quite unwieldy - clean it up when you get a chance.
+    // Check all gradients.
     for (SNode gradient : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.gradients$mn2b))) {
-      //  Check the gradient type and call the relevant gridpoint retrieval function. 
+      //  Check the gradient type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m)) {
-        //  Check the Z values of the cuboidal gradient - if higher than the highest Z, set it as the newest highest Z. 
+        //  Check the Z values of the cuboidal gradient - if higher than the highest Z, set it as the newest highest Z.
         int highest_gradient_cuboidal_z = (int) Gradient_Shape_Cuboidal__BehaviorDescriptor.get_cuboid_upperz_gridpoints_id11q$FfsSAUS.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Cuboidal$1m));
         if (highest_gradient_cuboidal_z > highest_Z) {
           highest_Z = highest_gradient_cuboidal_z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx)) {
-        //  Check the Z values of the spherical gradient - if higher than the highest Z, set it as the newest highest Z. 
+        //  Check the Z values of the spherical gradient - if higher than the highest Z, set it as the newest highest Z.
         int highest_point_z = (int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperz_gridpoint_id3V40ltqZZ28.invoke(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_Point$wx));
         if (highest_point_z > highest_Z) {
           highest_Z = highest_point_z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS)) {
-        // Determine whether the sink or the source are placed higher along the Z-axis. 
+        // Determine whether the sink or the source are placed higher along the Z-axis.
         int sink_Z = (int) Sink__BehaviorDescriptor.get_sink_z_gridpoint_id57Wjpeqq56O.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc));
         int source_Z = (int) Source__BehaviorDescriptor.get_source_z_gridpoint_id57Wjpeqq5If.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(gradient, LINKS.Gradient_Shape$PxJO), CONCEPTS.Gradient_Shape_SinkAndSource$zS), LINKS.SinkAndSource$aCJG), LINKS.Source$59pe));
-        // If the sink has a higher Z, check whether we can set it to be the highest Z. 
+        // If the sink has a higher Z, check whether we can set it to be the highest Z.
         if (sink_Z > source_Z) {
           if (sink_Z > highest_Z) {
             highest_Z = sink_Z;
           }
         } else {
-          // Otherwise, the source Z is higher than (or equal to) the sink, so just use the source value. 
+          // Otherwise, the source Z is higher than (or equal to) the sink, so just use the source value.
           if (source_Z > highest_Z) {
             highest_Z = source_Z;
           }
@@ -569,17 +568,17 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
       }
     }
 
-    // Check all substrates 
+    // Check all substrates
     for (SNode substrate : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.substrates$mnJe))) {
-      //  Check the substrate type and call the relevant gridpoint retrieval function. 
+      //  Check the substrate type and call the relevant gridpoint retrieval function.
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK)) {
-        //  Check the Z values of the cuboidal substrate - if higher than the highest Z, set it as the newest highest Z. 
+        //  Check the Z values of the cuboidal substrate - if higher than the highest Z, set it as the newest highest Z.
         int highest_substrate_cuboidal_Z = (int) Substrate_Shape_Cuboid__BehaviorDescriptor.get_cuboid_upperz_gridpoints_idfEhJG2FTBo.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Cuboid$DK));
         if (highest_substrate_cuboidal_Z > highest_Z) {
           highest_Z = highest_substrate_cuboidal_Z;
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL)) {
-        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest Z. 
+        //  Check all the vertices of the triangular substrate and get the largest one - then check against the highest Z.
         int highest_substrate_prism_z = (int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(SNodeOperations.cast(SLinkOperations.getTarget(substrate, LINKS.shape$pmbr), CONCEPTS.Substrate_Shape_Triangular$zL));
 
         if (highest_substrate_prism_z > highest_Z) {
@@ -587,7 +586,7 @@ public final class World_Container__BehaviorDescriptor extends BaseBHDescriptor 
         }
       }
     }
-    // Return the highest Z found for all objects in the simulation world. 
+    // Return the highest Z found for all objects in the simulation world.
     return highest_Z;
   }
 

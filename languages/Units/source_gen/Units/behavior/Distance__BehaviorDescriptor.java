@@ -9,7 +9,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -29,11 +28,11 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L, "Units.structure.Distance");
 
-  public static final SMethod<BigDecimal> convert_from_to_id2XF6SaadVZL = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2XF6SaadVZL").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Integer> get_unit_val_id2XF6SaadYiG = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_unit_val").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2XF6SaadYiG").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Integer> get_distance_in_gridpoints_id3wWy5vw4P8z = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_distance_in_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw4P8z").build(SMethodBuilder.createJavaParameter(Float.TYPE, ""));
-  public static final SMethod<BigDecimal> get_distance_value_decimal_id3wWy5vw4PXg = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_distance_value_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw4PXg").build();
-  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9Ysql = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9Ysql").build();
+  public static final SMethod<BigDecimal> convert_from_to_id2XF6SaadVZL = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_from_to").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2XF6SaadVZL").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_unit_val_id2XF6SaadYiG = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_unit_val").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2XF6SaadYiG").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_distance_in_gridpoints_id3wWy5vw4P8z = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_distance_in_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3wWy5vw4P8z").build(SMethodBuilder.createJavaParameter(Float.TYPE, ""));
+  public static final SMethod<BigDecimal> get_distance_value_decimal_id3wWy5vw4PXg = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_distance_value_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3wWy5vw4PXg").build();
+  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9Ysql = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9Ysql").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(convert_from_to_id2XF6SaadVZL, get_unit_val_id2XF6SaadYiG, get_distance_in_gridpoints_id3wWy5vw4P8z, get_distance_value_decimal_id3wWy5vw4PXg, is_less_than_zero_id7Eknud9Ysql);
 
@@ -47,14 +46,14 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
 
     int conversion_steps = unit_2_val - unit_1_val;
 
-    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case. 
+    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case.
     if (conversion_steps > 0) {
-      // Converting is going up in units, so divide the current value by 1000 for each conversion step. 
+      // Converting is going up in units, so divide the current value by 1000 for each conversion step.
       for (int i = 0; i < conversion_steps; i++) {
         target_value = target_value.divide(BigDecimal.valueOf(1000));
       }
     } else if (conversion_steps < 0) {
-      // Converting is going down in units, so multiply the current value by 1000 for each conversion step. 
+      // Converting is going down in units, so multiply the current value by 1000 for each conversion step.
       for (int i = 0; i < -conversion_steps; i++) {
         target_value = target_value.multiply(BigDecimal.valueOf(1000));
       }
@@ -73,8 +72,8 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
     return val;
   }
   /*package*/ static int get_distance_in_gridpoints_id3wWy5vw4P8z(@NotNull SNode __thisNode__, float scaling) {
-    // target_units are the units that were used to define the gridpoint scaling (i.e. dist between gridpoints equals xyz target_units) - for the moment, this will always be either 1.0 or 0.5 microns. 
-    // scaling is the defined unit distance between two gridpoints. 
+    // target_units are the units that were used to define the gridpoint scaling (i.e. dist between gridpoints equals xyz target_units) - for the moment, this will always be either 1.0 or 0.5 microns.
+    // scaling is the defined unit distance between two gridpoints.
     SNode target_unit = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d71L, "Units.structure.Micrometre"));
     int gridpoint_value = Distance__BehaviorDescriptor.convert_from_to_id2XF6SaadVZL.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.units$DnBC), target_unit).divide(BigDecimal.valueOf(scaling)).intValue();
     SNodeOperations.deleteNode(target_unit);
@@ -91,7 +90,7 @@ public final class Distance__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean is_less_than_zero_id7Eknud9Ysql(@NotNull SNode __thisNode__) {
     BigDecimal value = Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(__thisNode__);
-    // Is the value less than zero? 
+    // Is the value less than zero?
     if (value.compareTo(BigDecimal.valueOf(0)) == -1) {
       return true;
     }

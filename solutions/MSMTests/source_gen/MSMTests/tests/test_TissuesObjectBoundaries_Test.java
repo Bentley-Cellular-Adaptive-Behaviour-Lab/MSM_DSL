@@ -11,7 +11,7 @@ import jetbrains.mps.lang.test.runtime.RunWithCommand;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
-import junit.framework.Assert;
+import org.junit.Assert;
 import TissueSetup.behavior.Cell__BehaviorDescriptor;
 import TissueSetup.behavior.Tissue__BehaviorDescriptor;
 
@@ -81,7 +81,6 @@ public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {
       Assert.assertEquals(-212, (int) Tissue__BehaviorDescriptor.get_tissue_lowery_gridpoint_id57WjpeqoyKx.invoke(getNodeById("583075595211780836")));
       Assert.assertEquals(-212, (int) Tissue__BehaviorDescriptor.get_tissue_lowerz_gridpoint_id57WjpeqoAXQ.invoke(getNodeById("583075595211780836")));
     }
-
 
   }
 }

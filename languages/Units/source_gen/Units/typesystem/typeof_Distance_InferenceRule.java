@@ -19,7 +19,7 @@ public class typeof_Distance_InferenceRule extends AbstractInferenceRule_Runtime
   public typeof_Distance_InferenceRule() {
   }
   public void applyRule(final SNode distance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces distances to be real numbers. 
+    // Forces distances to be real numbers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(distance, LINKS.value$SBs3), LINKS.expr$fJhI);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "5497703887388107921", 0, null);

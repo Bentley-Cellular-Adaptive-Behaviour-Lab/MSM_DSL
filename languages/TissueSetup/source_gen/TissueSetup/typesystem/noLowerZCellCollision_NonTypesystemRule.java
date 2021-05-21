@@ -22,7 +22,7 @@ public class noLowerZCellCollision_NonTypesystemRule extends AbstractNonTypesyst
   public noLowerZCellCollision_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds. 
+    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds.
     if ((boolean) Cell__BehaviorDescriptor.check_lowerz_world_boundary_id3$QBVvWCOcR.invoke(cell)) {
       int z_position = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(cell, LINKS.position$L2Mv));
       {

@@ -9,7 +9,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -27,10 +26,10 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Amount__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5abL, "Units.structure.Amount");
 
-  public static final SMethod<BigDecimal> convert_from_to_id7Eknud9YBnj = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9YBnj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Integer> get_unit_val_id7Eknud9YBpe = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_unit_val").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9YBpe").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<BigDecimal> get_amount_value_decimal_id7Eknud9YBqP = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_amount_value_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9YBqP").build();
-  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9YBr3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9YBr3").build();
+  public static final SMethod<BigDecimal> convert_from_to_id7Eknud9YBnj = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_from_to").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9YBnj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_unit_val_id7Eknud9YBpe = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_unit_val").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9YBpe").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<BigDecimal> get_amount_value_decimal_id7Eknud9YBqP = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_amount_value_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9YBqP").build();
+  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9YBr3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9YBr3").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(convert_from_to_id7Eknud9YBnj, get_unit_val_id7Eknud9YBpe, get_amount_value_decimal_id7Eknud9YBqP, is_less_than_zero_id7Eknud9YBr3);
 
@@ -44,14 +43,14 @@ public final class Amount__BehaviorDescriptor extends BaseBHDescriptor {
 
     int conversion_steps = target_unit_val - current_unit_val;
 
-    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case. 
+    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case.
     if (conversion_steps > 0) {
-      // Converting is going up in units, so divide the current value by 1000 for each conversion step. 
+      // Converting is going up in units, so divide the current value by 1000 for each conversion step.
       for (int i = 0; i < conversion_steps; i++) {
         target_value = target_value.divide(BigDecimal.valueOf(1000));
       }
     } else if (conversion_steps < 0) {
-      // Converting is going down in units, so multiply the current value by 1000 for each conversion step. 
+      // Converting is going down in units, so multiply the current value by 1000 for each conversion step.
       for (int i = 0; i < -conversion_steps; i++) {
         target_value = target_value.multiply(BigDecimal.valueOf(1000));
       }
@@ -76,7 +75,7 @@ public final class Amount__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static boolean is_less_than_zero_id7Eknud9YBr3(@NotNull SNode __thisNode__) {
     BigDecimal value = Amount__BehaviorDescriptor.get_amount_value_decimal_id7Eknud9YBqP.invoke(__thisNode__);
-    // Is the value less than zero? 
+    // Is the value less than zero?
     if (value.compareTo(BigDecimal.valueOf(0)) == -1) {
       return true;
     }

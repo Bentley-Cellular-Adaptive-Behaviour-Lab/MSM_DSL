@@ -26,7 +26,7 @@ public class duplicateGradientName_NonTypesystemRule extends AbstractNonTypesyst
   public duplicateGradientName_NonTypesystemRule() {
   }
   public void applyRule(final SNode gradient, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that no other gradient has the same name as this one. 
+    // Check that no other gradient has the same name as this one.
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(gradient), CONCEPTS.World_Container$fW), LINKS.gradients$mn2b)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Objects.equals(SPropertyOperations.getString(it, PROPS.name$MnvL), SPropertyOperations.getString(gradient, PROPS.name$MnvL)) && !(Objects.equals(it, gradient));

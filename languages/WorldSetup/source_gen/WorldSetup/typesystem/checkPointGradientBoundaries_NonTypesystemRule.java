@@ -24,12 +24,12 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
   public checkPointGradientBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisPoint, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the triangular substrate does not extend out of the world. 
-    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong. 
+    // Check that the triangular substrate does not extend out of the world.
+    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong.
 
     SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisPoint, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
 
-    // Is this cuboidal substrate extending out of the lower X boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower X boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerx_gridpoint_id3V40ltqZX_8.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -37,7 +37,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper X boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper X boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperx_gridpoint_id3V40ltqZZ20.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -45,7 +45,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    // Is this cuboidal substrate extending out of the lower Y boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower Y boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowery_gridpoint_id3V40ltqZXKj.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -53,7 +53,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper Y boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper Y boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_uppery_gridpoint_id3V40ltqZZ24.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -61,7 +61,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    // Is this cuboidal substrate extending out of the lower Z boundary of the world? 
+    // Is this cuboidal substrate extending out of the lower Z boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_lowerz_gridpoint_id3V40ltqZYtk.invoke(thisPoint) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -69,7 +69,7 @@ public class checkPointGradientBoundaries_NonTypesystemRule extends AbstractNonT
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper Z boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper Z boundary of the world?
     if ((int) Gradient_Shape_Point__BehaviorDescriptor.get_point_upperz_gridpoint_id3V40ltqZZ28.invoke(thisPoint) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

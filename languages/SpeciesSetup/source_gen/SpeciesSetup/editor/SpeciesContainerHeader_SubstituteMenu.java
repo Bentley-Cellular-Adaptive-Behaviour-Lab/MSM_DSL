@@ -49,7 +49,7 @@ public class SpeciesContainerHeader_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_ReferenceScope_ynzz5f_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_ynzz5f_a() {
-      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051
       super((SAbstractConcept) CONCEPTS.SpeciesContainerHeader$go, LINKS.target$JA2H);
     }
     @NotNull

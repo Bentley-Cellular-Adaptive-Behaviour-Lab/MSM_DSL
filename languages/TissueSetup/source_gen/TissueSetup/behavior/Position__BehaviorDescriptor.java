@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,15 +30,15 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, "TissueSetup.structure.Position");
 
-  public static final SMethod<String> get_position_xcoord_string_id4DdJmqSGafn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_xcoord_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGafn").build();
-  public static final SMethod<String> get_position_ycoord_string_id4DdJmqSGaIc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_ycoord_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGaIc").build();
-  public static final SMethod<String> get_position_zcoord_string_id4DdJmqSGdUQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_zcoord_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGdUQ").build();
-  public static final SMethod<BigDecimal> get_position_xcoord_decimal_id5yIQRIor6fe = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_xcoord_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5yIQRIor6fe").build();
-  public static final SMethod<BigDecimal> get_position_ycoord_decimal_id1r0uutBEDZt = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_ycoord_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEDZt").build();
-  public static final SMethod<BigDecimal> get_position_zcoord_decimal_id1r0uutBEEFm = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_zcoord_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEEFm").build();
-  public static final SMethod<Integer> get_position_X_gridpoint_id57WjpeqnuX1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_X_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqnuX1").build();
-  public static final SMethod<Integer> get_position_Y_gridpoint_id57WjpeqnDsZ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_Y_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqnDsZ").build();
-  public static final SMethod<Integer> get_position_Z_gridpoint_id57WjpeqnGbT = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_Z_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57WjpeqnGbT").build();
+  public static final SMethod<String> get_position_xcoord_string_id4DdJmqSGafn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_xcoord_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGafn").build();
+  public static final SMethod<String> get_position_ycoord_string_id4DdJmqSGaIc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_ycoord_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGaIc").build();
+  public static final SMethod<String> get_position_zcoord_string_id4DdJmqSGdUQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_position_zcoord_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGdUQ").build();
+  public static final SMethod<BigDecimal> get_position_xcoord_decimal_id5yIQRIor6fe = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_xcoord_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5yIQRIor6fe").build();
+  public static final SMethod<BigDecimal> get_position_ycoord_decimal_id1r0uutBEDZt = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_ycoord_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEDZt").build();
+  public static final SMethod<BigDecimal> get_position_zcoord_decimal_id1r0uutBEEFm = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_position_zcoord_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEEFm").build();
+  public static final SMethod<Integer> get_position_X_gridpoint_id57WjpeqnuX1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_X_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57WjpeqnuX1").build();
+  public static final SMethod<Integer> get_position_Y_gridpoint_id57WjpeqnDsZ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_Y_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57WjpeqnDsZ").build();
+  public static final SMethod<Integer> get_position_Z_gridpoint_id57WjpeqnGbT = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_position_Z_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57WjpeqnGbT").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_position_xcoord_string_id4DdJmqSGafn, get_position_ycoord_string_id4DdJmqSGaIc, get_position_zcoord_string_id4DdJmqSGdUQ, get_position_xcoord_decimal_id5yIQRIor6fe, get_position_ycoord_decimal_id1r0uutBEDZt, get_position_zcoord_decimal_id1r0uutBEEFm, get_position_X_gridpoint_id57WjpeqnuX1, get_position_Y_gridpoint_id57WjpeqnDsZ, get_position_Z_gridpoint_id57WjpeqnGbT);
 
@@ -67,10 +66,10 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static int get_position_X_gridpoint_id57WjpeqnuX1(@NotNull SNode __thisNode__) {
     SNode grid;
     if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
-      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      // Here we are getting the position of a cell or tissue, so get the tissue container.
       grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
     } else {
-      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      // Otherwise, we're working with something that is placed in the world, so get the world container.
       grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
     }
     float scale = 0;
@@ -86,10 +85,10 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static int get_position_Y_gridpoint_id57WjpeqnDsZ(@NotNull SNode __thisNode__) {
     SNode grid;
     if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
-      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      // Here we are getting the position of a cell or tissue, so get the tissue container.
       grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
     } else {
-      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      // Otherwise, we're working with something that is placed in the world, so get the world container.
       grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
     }
     float scale = 0;
@@ -105,10 +104,10 @@ public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static int get_position_Z_gridpoint_id57WjpeqnGbT(@NotNull SNode __thisNode__) {
     SNode grid;
     if ((SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false) != null)) {
-      // Here we are getting the position of a cell or tissue, so get the tissue container. 
+      // Here we are getting the position of a cell or tissue, so get the tissue container.
       grid = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Tissue_And_Cell_Container$ni, false, false), LINKS.World_Container$fGL6), LINKS.grid$mgtJ);
     } else {
-      // Otherwise, we're working with something that is placed in the world, so get the world container. 
+      // Otherwise, we're working with something that is placed in the world, so get the world container.
       grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
     }
     float scale = 0;

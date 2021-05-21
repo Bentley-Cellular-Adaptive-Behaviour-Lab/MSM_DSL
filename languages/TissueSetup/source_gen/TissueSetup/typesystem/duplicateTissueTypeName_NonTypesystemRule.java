@@ -26,7 +26,7 @@ public class duplicateTissueTypeName_NonTypesystemRule extends AbstractNonTypesy
   public duplicateTissueTypeName_NonTypesystemRule() {
   }
   public void applyRule(final SNode tissue_type, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that no other tissue type has the same name as this one. 
+    // Check that no other tissue type has the same name as this one.
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(tissue_type), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.tissue_types$$ucF)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Objects.equals(SPropertyOperations.getString(it, PROPS.name$MnvL), SPropertyOperations.getString(tissue_type, PROPS.name$MnvL)) && !(Objects.equals(it, tissue_type));

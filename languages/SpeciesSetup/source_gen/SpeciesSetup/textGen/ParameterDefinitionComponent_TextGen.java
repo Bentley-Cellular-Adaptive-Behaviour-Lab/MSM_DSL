@@ -25,15 +25,15 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
     final TextGenSupport tgs = new TextGenSupport(ctx);
     SNode container = SNodeOperations.getNodeAncestor(ctx.getPrimaryInput(), CONCEPTS.SpeciesContainer$Ig, false, false);
     tgs.append("// Parameter Definitions //\n ");
-    // First define parameters for reactions and species. 
-    // Get all of the unique species and parameters involved in the reactions. 
+    // First define parameters for reactions and species.
+    // Get all of the unique species and parameters involved in the reactions.
     List<SNode> paramList = ListSequence.fromList(new ArrayList<SNode>());
 
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Parameters$hoyh))) {
       ListSequence.fromList(paramList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SNodeOperations.as(parameter, CONCEPTS.Parameter$La), LINKS.Expression$Wv16))));
     }
 
-    // Get unique params, then sort them based on their usages in order to prevent parameters being defined after they're needed. 
+    // Get unique params, then sort them based on their usages in order to prevent parameters being defined after they're needed.
     List<SNode> filteredParamList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, paramList);
     List<SNode> sortedList = SpeciesContainer__BehaviorDescriptor.topologicalSort_idcJYjfa5zz7.invoke(container, filteredParamList);
 
@@ -43,8 +43,8 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
       tgs.append(" = calc_");
       tgs.append(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL));
       tgs.append("_rate(");
-      // Next, add in the arguments to the function definition. 
-      // Get all of the unique species and parameters involved in the reaction. 
+      // Next, add in the arguments to the function definition.
+      // Get all of the unique species and parameters involved in the reaction.
       List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16));
       ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(param, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16))));
       List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
@@ -58,12 +58,12 @@ public class ParameterDefinitionComponent_TextGen extends TextGenDescriptorBase 
         if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
           tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
         }
-        // Check if we've reached the end of the list, if not, add a comma for the next argument. 
+        // Check if we've reached the end of the list, if not, add a comma for the next argument.
         if (count < ListSequence.fromList(filteredList).count()) {
           tgs.append(", ");
         }
       }
-      // End the function and start a new line. 
+      // End the function and start a new line.
       tgs.append(");\n");
     }
   }

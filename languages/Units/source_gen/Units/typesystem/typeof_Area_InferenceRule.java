@@ -19,7 +19,7 @@ public class typeof_Area_InferenceRule extends AbstractInferenceRule_Runtime imp
   public typeof_Area_InferenceRule() {
   }
   public void applyRule(final SNode area, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces areas to be integers. 
+    // Forces areas to be integers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(area, LINKS.value$WXRI), LINKS.expr$5vb2);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960418814", 0, null);

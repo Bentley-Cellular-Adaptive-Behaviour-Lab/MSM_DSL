@@ -459,7 +459,7 @@
       </scope>
     </file>
     <file name="duplicateCellTypeName_NonTypesystemRule.java">
-      <node id="2380230844048921084" at="28,122,29,69" concept="8" />
+      <node id="2380230844048921084" at="28,122,29,68" concept="8" />
       <node id="325017853400072116" at="31,39,32,177" concept="7" />
       <node id="325017853400082937" at="35,7,36,66" concept="6" />
       <node id="325017853400082937" at="36,66,37,290" concept="6" />
@@ -476,7 +476,7 @@
       <node id="325017853399707816" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="325017853399707816" at="47,0,50,0" concept="5" trace="overrides#()Z" />
       <node id="325017853400082937" at="34,9,38,7" concept="0" />
-      <node id="325017853400051820" at="29,69,39,5" concept="4" />
+      <node id="325017853400051820" at="29,68,39,5" concept="4" />
       <node id="325017853399707816" at="28,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="325017853399707816" at="26,52,26,52" />
       <scope id="325017853400071885" at="31,39,32,177" />
@@ -520,7 +520,7 @@
       </scope>
     </file>
     <file name="duplicateTissueTypeName_NonTypesystemRule.java">
-      <node id="2380230844048923095" at="28,124,29,70" concept="8" />
+      <node id="2380230844048923095" at="28,124,29,69" concept="8" />
       <node id="325017853400223040" at="31,39,32,181" concept="7" />
       <node id="325017853400237057" at="35,7,36,66" concept="6" />
       <node id="325017853400237057" at="36,66,37,294" concept="6" />
@@ -537,7 +537,7 @@
       <node id="325017853399777185" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="325017853399777185" at="47,0,50,0" concept="5" trace="overrides#()Z" />
       <node id="325017853400237057" at="34,9,38,7" concept="0" />
-      <node id="325017853400203799" at="29,70,39,5" concept="4" />
+      <node id="325017853400203799" at="29,69,39,5" concept="4" />
       <node id="325017853399777185" at="28,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="325017853399777185" at="26,54,26,54" />
       <scope id="325017853400222809" at="31,39,32,181" />
@@ -581,7 +581,7 @@
       </scope>
     </file>
     <file name="duplicateTissueName_NonTypesystemRule.java">
-      <node id="2380230844048922098" at="28,119,29,66" concept="8" />
+      <node id="2380230844048922098" at="28,119,29,65" concept="8" />
       <node id="325017853400184938" at="31,39,32,171" concept="7" />
       <node id="325017853400197653" at="35,7,36,66" concept="6" />
       <node id="325017853400197653" at="36,66,37,284" concept="6" />
@@ -598,7 +598,7 @@
       <node id="325017853399806563" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="325017853399806563" at="47,0,50,0" concept="5" trace="overrides#()Z" />
       <node id="325017853400197653" at="34,9,38,7" concept="0" />
-      <node id="325017853400166934" at="29,66,39,5" concept="4" />
+      <node id="325017853400166934" at="29,65,39,5" concept="4" />
       <node id="325017853399806563" at="28,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="325017853399806563" at="26,50,26,50" />
       <scope id="325017853400184528" at="31,39,32,171" />
@@ -642,7 +642,7 @@
       </scope>
     </file>
     <file name="duplicateCellName_NonTypesystemRule.java">
-      <node id="2380230844048920070" at="28,117,29,76" concept="8" />
+      <node id="2380230844048920070" at="28,117,29,75" concept="8" />
       <node id="325017853400152575" at="31,39,32,167" concept="7" />
       <node id="325017853400161415" at="35,7,36,66" concept="6" />
       <node id="325017853400161415" at="36,66,37,279" concept="6" />
@@ -659,7 +659,7 @@
       <node id="325017853399832185" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="325017853399832185" at="47,0,50,0" concept="5" trace="overrides#()Z" />
       <node id="325017853400161415" at="34,9,38,7" concept="0" />
-      <node id="325017853400133370" at="29,76,39,5" concept="4" />
+      <node id="325017853400133370" at="29,75,39,5" concept="4" />
       <node id="325017853399832185" at="28,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="325017853399832185" at="26,48,26,48" />
       <scope id="325017853400152344" at="31,39,32,167" />
@@ -703,7 +703,7 @@
       </scope>
     </file>
     <file name="noLowerXCellCollision_NonTypesystemRule.java">
-      <node id="3967240825594755555" at="21,117,22,122" concept="8" />
+      <node id="3967240825594755555" at="21,117,22,121" concept="8" />
       <node id="3967240825594768617" at="23,100,24,104" concept="6" />
       <node id="3967240825594755604" at="25,7,26,66" concept="6" />
       <node id="3967240825594755604" at="26,66,27,273" concept="6" />
@@ -716,7 +716,7 @@
       <node id="3967240825594755553" at="34,0,37,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="3967240825594755553" at="37,0,40,0" concept="5" trace="overrides#()Z" />
       <node id="3967240825594755604" at="24,104,28,7" concept="0" />
-      <node id="3967240825594755602" at="22,122,29,5" concept="4" />
+      <node id="3967240825594755602" at="22,121,29,5" concept="4" />
       <node id="3967240825594755553" at="21,0,31,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3967240825594755553" at="19,52,19,52" />
       <scope id="3967240825594755553" at="31,50,32,28" />
@@ -755,7 +755,7 @@
       </scope>
     </file>
     <file name="noLowerYCellCollision_NonTypesystemRule.java">
-      <node id="3967240825594762463" at="21,117,22,122" concept="8" />
+      <node id="3967240825594762463" at="21,117,22,121" concept="8" />
       <node id="3967240825594773335" at="23,100,24,104" concept="6" />
       <node id="3967240825594773341" at="25,7,26,66" concept="6" />
       <node id="3967240825594773341" at="26,66,27,273" concept="6" />
@@ -768,7 +768,7 @@
       <node id="3967240825594762461" at="34,0,37,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="3967240825594762461" at="37,0,40,0" concept="5" trace="overrides#()Z" />
       <node id="3967240825594773341" at="24,104,28,7" concept="0" />
-      <node id="3967240825594762519" at="22,122,29,5" concept="4" />
+      <node id="3967240825594762519" at="22,121,29,5" concept="4" />
       <node id="3967240825594762461" at="21,0,31,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3967240825594762461" at="19,52,19,52" />
       <scope id="3967240825594762461" at="31,50,32,28" />
@@ -807,7 +807,7 @@
       </scope>
     </file>
     <file name="noLowerZCellCollision_NonTypesystemRule.java">
-      <node id="3967240825594762824" at="24,117,25,122" concept="8" />
+      <node id="3967240825594762824" at="24,117,25,121" concept="8" />
       <node id="3967240825594779605" at="26,100,27,158" concept="6" />
       <node id="3967240825594779611" at="28,7,29,66" concept="6" />
       <node id="3967240825594779611" at="29,66,30,264" concept="6" />
@@ -821,7 +821,7 @@
       <node id="3967240825594762822" at="37,0,40,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="3967240825594762822" at="40,0,43,0" concept="5" trace="overrides#()Z" />
       <node id="3967240825594779611" at="27,158,31,7" concept="0" />
-      <node id="3967240825594762898" at="25,122,32,5" concept="4" />
+      <node id="3967240825594762898" at="25,121,32,5" concept="4" />
       <node id="3967240825594762822" at="24,0,34,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3967240825594762822" at="22,52,22,52" />
       <scope id="3967240825594762822" at="34,50,35,28" />
@@ -861,7 +861,7 @@
       </scope>
     </file>
     <file name="noUpperXCellCollision_NonTypesystemRule.java">
-      <node id="3967240825594763446" at="21,117,22,122" concept="8" />
+      <node id="3967240825594763446" at="21,117,22,121" concept="8" />
       <node id="3967240825594797547" at="23,100,24,104" concept="6" />
       <node id="3967240825594797553" at="25,7,26,66" concept="6" />
       <node id="3967240825594797553" at="26,66,27,273" concept="6" />
@@ -874,7 +874,7 @@
       <node id="3967240825594763444" at="34,0,37,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="3967240825594763444" at="37,0,40,0" concept="5" trace="overrides#()Z" />
       <node id="3967240825594797553" at="24,104,28,7" concept="0" />
-      <node id="3967240825594763477" at="22,122,29,5" concept="4" />
+      <node id="3967240825594763477" at="22,121,29,5" concept="4" />
       <node id="3967240825594763444" at="21,0,31,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3967240825594763444" at="19,52,19,52" />
       <scope id="3967240825594763444" at="31,50,32,28" />
@@ -964,7 +964,7 @@
       </scope>
     </file>
     <file name="noUpperZCellCollision_NonTypesystemRule.java">
-      <node id="3967240825594764520" at="24,117,25,122" concept="8" />
+      <node id="3967240825594764520" at="24,117,25,121" concept="8" />
       <node id="3967240825594808104" at="26,100,27,158" concept="6" />
       <node id="3967240825594808112" at="28,7,29,66" concept="6" />
       <node id="3967240825594808112" at="29,66,30,264" concept="6" />
@@ -978,7 +978,7 @@
       <node id="3967240825594764518" at="37,0,40,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="3967240825594764518" at="40,0,43,0" concept="5" trace="overrides#()Z" />
       <node id="3967240825594808112" at="27,158,31,7" concept="0" />
-      <node id="3967240825594764594" at="25,122,32,5" concept="4" />
+      <node id="3967240825594764594" at="25,121,32,5" concept="4" />
       <node id="3967240825594764518" at="24,0,34,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="3967240825594764518" at="22,52,22,52" />
       <scope id="3967240825594764518" at="34,50,35,28" />
@@ -1018,7 +1018,7 @@
       </scope>
     </file>
     <file name="noCellTissueCollision_NonTypesystemRule.java">
-      <node id="2380230844048923801" at="21,117,22,122" concept="8" />
+      <node id="2380230844048923801" at="21,117,22,121" concept="8" />
       <node id="4122658121470112435" at="24,7,25,66" concept="6" />
       <node id="4122658121470112435" at="25,66,26,303" concept="6" />
       <node id="4122658121470110903" at="30,50,31,28" concept="7" />
@@ -1030,7 +1030,7 @@
       <node id="4122658121470110903" at="33,0,36,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4122658121470110903" at="36,0,39,0" concept="5" trace="overrides#()Z" />
       <node id="4122658121470112435" at="23,96,27,7" concept="0" />
-      <node id="4122658121470110915" at="22,122,28,5" concept="4" />
+      <node id="4122658121470110915" at="22,121,28,5" concept="4" />
       <node id="4122658121470110903" at="21,0,30,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4122658121470110903" at="19,52,19,52" />
       <scope id="4122658121470110903" at="30,50,31,28" />
@@ -1067,7 +1067,7 @@
       </scope>
     </file>
     <file name="noTissueObjectCollision_NonTypesystemRule.java">
-      <node id="2380230844048926622" at="21,119,22,124" concept="8" />
+      <node id="2380230844048926622" at="21,119,22,123" concept="8" />
       <node id="4122658121470114194" at="24,7,25,66" concept="6" />
       <node id="4122658121470114194" at="25,66,26,302" concept="6" />
       <node id="4122658121470112692" at="30,50,31,30" concept="7" />
@@ -1079,7 +1079,7 @@
       <node id="4122658121470112692" at="33,0,36,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="4122658121470112692" at="36,0,39,0" concept="5" trace="overrides#()Z" />
       <node id="4122658121470114194" at="23,100,27,7" concept="0" />
-      <node id="4122658121470112704" at="22,124,28,5" concept="4" />
+      <node id="4122658121470112704" at="22,123,28,5" concept="4" />
       <node id="4122658121470112692" at="21,0,30,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="4122658121470112692" at="19,54,19,54" />
       <scope id="4122658121470112692" at="30,50,31,30" />
@@ -1116,8 +1116,8 @@
       </scope>
     </file>
     <file name="noObjectCollisionsInContainer_NonTypesystemRule.java">
-      <node id="2380230844048924668" at="21,122,22,120" concept="8" />
-      <node id="2380230844048925527" at="22,120,23,14" concept="8" />
+      <node id="2380230844048924668" at="21,122,22,119" concept="8" />
+      <node id="2380230844048925527" at="22,119,23,13" concept="8" />
       <node id="7299877976789734942" at="25,7,26,66" concept="6" />
       <node id="7299877976789734942" at="26,66,27,231" concept="6" />
       <node id="7299877976789619039" at="31,50,32,49" concept="7" />
@@ -1129,7 +1129,7 @@
       <node id="7299877976789619039" at="34,0,37,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="7299877976789619039" at="37,0,40,0" concept="5" trace="overrides#()Z" />
       <node id="7299877976789734942" at="24,114,28,7" concept="0" />
-      <node id="7299877976789733528" at="23,14,29,5" concept="4" />
+      <node id="7299877976789733528" at="23,13,29,5" concept="4" />
       <node id="7299877976789619039" at="21,0,31,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="7299877976789619039" at="19,60,19,60" />
       <scope id="7299877976789619039" at="31,50,32,49" />
