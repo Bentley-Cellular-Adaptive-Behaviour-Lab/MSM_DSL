@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -29,8 +28,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, "SpeciesSetup.structure.Reaction_Term");
 
-  public static final SMethod<Void> create_relation_id1Ch7j$N9XgT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("create_relation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Ch7j$N9XgT").build();
-  public static final SMethod<Boolean> isRelationPresent_id1Ch7j$NgJ_b = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isRelationPresent").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Ch7j$NgJ_b").build();
+  public static final SMethod<Void> create_relation_id1Ch7j$N9XgT = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("create_relation").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1Ch7j$N9XgT").build();
+  public static final SMethod<Boolean> isRelationPresent_id1Ch7j$NgJ_b = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isRelationPresent").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1Ch7j$NgJ_b").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(create_relation_id1Ch7j$N9XgT, isRelationPresent_id1Ch7j$NgJ_b);
 
@@ -38,13 +37,13 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void create_relation_id1Ch7j$N9XgT(@NotNull SNode __thisNode__) {
-    // Creates a reaction reference node and associates it with the relevant species, but only if it doesn't already exist. 
+    // Creates a reaction reference node and associates it with the relevant species, but only if it doesn't already exist.
     if ((SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde) != null) && !(((boolean) Reaction_Term__BehaviorDescriptor.isRelationPresent_id1Ch7j$NgJ_b.invoke(__thisNode__)))) {
       SNode newReactionRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, "SpeciesSetup.structure.Reaction_Reference"));
       SLinkOperations.setTarget(newReactionRef, LINKS.ReactionReference$PJYZ, SNodeOperations.getNodeAncestor(__thisNode__, CONCEPTS.Reaction$JH, false, false));
 
-      // If this is found on the left-hand side of the equation, then let the species know it is a reactant. 
-      // Otherwise, it is a product. 
+      // If this is found on the left-hand side of the equation, then let the species know it is a reactant.
+      // Otherwise, it is a product.
       try {
         if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9)).contains(__thisNode__)) {
           ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsInProcess$_Wy1)).addElement(newReactionRef);
@@ -52,7 +51,7 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
           ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOfProcess$_X03)).addElement(newReactionRef);
         }
       } catch (NullPointerException ex) {
-        // Species was not found, so throw an exception. 
+        // Species was not found, so throw an exception.
         System.err.println("Exception - attempted to assign a reaction to a species which no longer existed : ");
         ex.printStackTrace();
         throw ex;
@@ -60,17 +59,17 @@ public final class Reaction_Term__BehaviorDescriptor extends BaseBHDescriptor {
     }
   }
   /*package*/ static boolean isRelationPresent_id1Ch7j$NgJ_b(@NotNull SNode __thisNode__) {
-    // Is this reaction terms on the left or right side of the reaction? 
+    // Is this reaction terms on the left or right side of the reaction?
     boolean isRelationPresent = false;
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH), LINKS.Reactant_Terms$Wnv9)).contains(__thisNode__)) {
-      // This is a reactant term, then check over the species reactant relations.   
+      // This is a reactant term, then check over the species reactant relations.  
       for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ReactsInProcess$_Wy1))) {
         if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;
         }
       }
     } else {
-      // This is a product term, then check over the species product relations. 
+      // This is a product term, then check over the species product relations.
       for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Species_Ref$Wnde), LINKS.ProductOfProcess$_X03))) {
         if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.ReactionReference$PJYZ), SNodeOperations.cast(SNodeOperations.getParent(__thisNode__), CONCEPTS.Reaction$JH))) {
           isRelationPresent = true;

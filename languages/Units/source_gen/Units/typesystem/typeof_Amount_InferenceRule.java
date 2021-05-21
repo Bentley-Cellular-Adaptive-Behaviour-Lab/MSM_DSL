@@ -19,7 +19,7 @@ public class typeof_Amount_InferenceRule extends AbstractInferenceRule_Runtime i
   public typeof_Amount_InferenceRule() {
   }
   public void applyRule(final SNode amount, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces amounts (which are always expressed in moles) to be real numbers. 
+    // Forces amounts (which are always expressed in moles) to be real numbers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(amount, LINKS.value$WLFS), LINKS.expr$l_ge);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960421924", 0, null);

@@ -21,20 +21,20 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
   public void generateText(final TextGenContext ctx) {
     final TextGenSupport tgs = new TextGenSupport(ctx);
     SNode container = SNodeOperations.getNodeAncestor(ctx.getPrimaryInput(), CONCEPTS.SpeciesContainer$Ig, false, false);
-    // Create definitions for each reaction, modifier and production/degradation rate. 
+    // Create definitions for each reaction, modifier and production/degradation rate.
     tgs.append("// Rate Definitions //\n");
     for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
-      // Unfortunately, this bit gets quite messy, so I've decided to over-comment rather than under-comment here. 
-      // We need to include different rate templates depending on whether the reaction is reversible or not. 
+      // Unfortunately, this bit gets quite messy, so I've decided to over-comment rather than under-comment here.
+      // We need to include different rate templates depending on whether the reaction is reversible or not.
       if (SNodeOperations.isInstanceOf(process, CONCEPTS.IrreversibleReaction$ja)) {
-        // Define the rate and write the first part of the reaction function call. 
+        // Define the rate and write the first part of the reaction function call.
         tgs.append("\tdouble rate_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
         tgs.append(" = calc_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
         tgs.append("_rate(");
-        // Next, add in the arguments to the function definition. 
-        // Get all of the unique species and parameters involved in the reaction. 
+        // Next, add in the arguments to the function definition.
+        // Get all of the unique species and parameters involved in the reaction.
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16));
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), LINKS.Expression$Wv16))));
         List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
@@ -48,23 +48,23 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
-          // Check if we've reached the end of the list, if not, add a comma for the next argument. 
+          // Check if we've reached the end of the list, if not, add a comma for the next argument.
           if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
-        // End the function and start a new line. 
+        // End the function and start a new line.
         tgs.append(");\n");
       } else if (SNodeOperations.isInstanceOf(process, CONCEPTS.ReversibleReaction$fi)) {
-        // Define the forward rate and write the first part of the reaction function call. 
+        // Define the forward rate and write the first part of the reaction function call.
         tgs.append("\tdouble rate_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
         tgs.append(" = calc_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
         tgs.append("_rate(");
 
-        // Next, add in the arguments to the function definition. 
-        // Get all of the unique species involved and parameters in the forward reaction. 
+        // Next, add in the arguments to the function definition.
+        // Get all of the unique species involved and parameters in the forward reaction.
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16));
 
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), LINKS.Expression$Wv16))));
@@ -80,15 +80,15 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
-          // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument. 
+          // Check if we've reached the end of the list of species in the reaction, if not, add a comma for the next argument.
           if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
-        // End the function and start a new line. 
+        // End the function and start a new line.
         tgs.append(");\n");
 
-        // Now, do the same for the reverse rate. 
+        // Now, do the same for the reverse rate.
         tgs.append("\tdouble rate_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
         tgs.append(" = calc_");
@@ -113,18 +113,18 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
             tgs.append(", ");
           }
         }
-        // End the function and start a new line. 
+        // End the function and start a new line.
         tgs.append(");\n");
       } else if (SNodeOperations.isInstanceOf(process, CONCEPTS.Inhibits$am)) {
-        // Define the inhibition rate and write the first part of the inhibition function call. 
+        // Define the inhibition rate and write the first part of the inhibition function call.
         tgs.append("\tdouble rate_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM));
         tgs.append(" = calc_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM));
         tgs.append("_rate(");
 
-        // Next, add in the arguments to the function definition. 
-        // Get all of the unique species and parameters involved in the inhibition process. 
+        // Next, add in the arguments to the function definition.
+        // Get all of the unique species and parameters involved in the inhibition process.
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM), LINKS.Expression$Wv16));
 
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM), LINKS.Expression$Wv16))));
@@ -140,23 +140,23 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
-          // Check if we've reached the end of the list of species in the inhibition process, if not, add a comma for the next argument. 
+          // Check if we've reached the end of the list of species in the inhibition process, if not, add a comma for the next argument.
           if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
-        // End the function and start a new line. 
+        // End the function and start a new line.
         tgs.append(");\n");
       } else if (SNodeOperations.isInstanceOf(process, CONCEPTS.Upregulates$aP)) {
-        // Define the regulation rate and write the first part of the regulation function call. 
+        // Define the regulation rate and write the first part of the regulation function call.
         tgs.append("\tdouble rate_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Modifier$ZNcM));
         tgs.append(" = calc_");
         tgs.appendNode(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Modifier$ZNcM));
         tgs.append("_rate(");
 
-        // Next, add in the arguments to the function definition. 
-        // Get all of the unique species and parameters involved in the upregulation process. 
+        // Next, add in the arguments to the function definition.
+        // Get all of the unique species and parameters involved in the upregulation process.
         List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Modifier$ZNcM), LINKS.Expression$Wv16));
 
         ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Modifier$ZNcM), LINKS.Expression$Wv16))));
@@ -172,12 +172,12 @@ public class RateDefinition_TextGen extends TextGenDescriptorBase {
           if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
             tgs.appendNode(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
           }
-          // Check if we've reached the end of the list of species in the inhibition process, if not, add a comma for the next argument. 
+          // Check if we've reached the end of the list of species in the inhibition process, if not, add a comma for the next argument.
           if (count < ListSequence.fromList(filteredList).count()) {
             tgs.append(", ");
           }
         }
-        // End the function and start a new line. 
+        // End the function and start a new line.
         tgs.append(");\n");
       }
     }

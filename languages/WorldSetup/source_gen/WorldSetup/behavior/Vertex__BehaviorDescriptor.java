@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -30,12 +29,12 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Vertex__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f63L, "WorldSetup.structure.Vertex");
 
-  public static final SMethod<String> get_vertex_xcoord_string_id1r0uutBHkNS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_xcoord_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBHkNS").build();
-  public static final SMethod<BigDecimal> get_vertex_xcoord_decimal_id1r0uutBHkO6 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_vertex_xcoord_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBHkO6").build();
-  public static final SMethod<Integer> get_vertex_xcoord_gridpoint_id3V40ltr1arY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_xcoord_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3V40ltr1arY").build();
-  public static final SMethod<String> get_vertex_ycoord_string_id1r0uutBHmwl = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_ycoord_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBHmwl").build();
-  public static final SMethod<BigDecimal> get_vertex_ycoord_decimal_id1r0uutBHmwz = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_vertex_ycoord_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBHmwz").build();
-  public static final SMethod<Integer> get_vertex_ycoord_gridpoint_id3V40ltr1cTa = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_ycoord_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3V40ltr1cTa").build();
+  public static final SMethod<String> get_vertex_xcoord_string_id1r0uutBHkNS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_xcoord_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBHkNS").build();
+  public static final SMethod<BigDecimal> get_vertex_xcoord_decimal_id1r0uutBHkO6 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_vertex_xcoord_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBHkO6").build();
+  public static final SMethod<Integer> get_vertex_xcoord_gridpoint_id3V40ltr1arY = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_xcoord_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3V40ltr1arY").build();
+  public static final SMethod<String> get_vertex_ycoord_string_id1r0uutBHmwl = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_ycoord_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBHmwl").build();
+  public static final SMethod<BigDecimal> get_vertex_ycoord_decimal_id1r0uutBHmwz = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_vertex_ycoord_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBHmwz").build();
+  public static final SMethod<Integer> get_vertex_ycoord_gridpoint_id3V40ltr1cTa = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_vertex_ycoord_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3V40ltr1cTa").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_xcoord_string_id1r0uutBHkNS, get_vertex_xcoord_decimal_id1r0uutBHkO6, get_vertex_xcoord_gridpoint_id3V40ltr1arY, get_vertex_ycoord_string_id1r0uutBHmwl, get_vertex_ycoord_decimal_id1r0uutBHmwz, get_vertex_ycoord_gridpoint_id3V40ltr1cTa);
 

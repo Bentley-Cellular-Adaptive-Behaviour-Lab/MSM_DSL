@@ -11,9 +11,8 @@ GRN_ODE::ODE_system(const ode_state_type &x, ode_state_type &dxdt, double t) {
 // Parameter Definitions //
  	double ConstantA = calc_ConstantA_rate();
 	double ConstantC = calc_ConstantC_rate();
-	double ConstantC = calc_ConstantC_rate();
-	double ConstantA = calc_ConstantA_rate();
 	double ConstantB = calc_ConstantB_rate(ConstantC, ConstantA);
+	double ConstantD = calc_ConstantD_rate(ConstantB);
 // Rate Definitions //
 	double rate_Rate1 = calc_Rate1_rate(ConstantA, ConstantC);
 // ODE Definitions //

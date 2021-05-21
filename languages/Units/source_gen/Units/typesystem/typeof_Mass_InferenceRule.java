@@ -19,7 +19,7 @@ public class typeof_Mass_InferenceRule extends AbstractInferenceRule_Runtime imp
   public typeof_Mass_InferenceRule() {
   }
   public void applyRule(final SNode mass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces mass values to be real numbers. 
+    // Forces mass values to be real numbers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(mass, LINKS.value$Xq0C), LINKS.expr$5age);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960420806", 0, null);

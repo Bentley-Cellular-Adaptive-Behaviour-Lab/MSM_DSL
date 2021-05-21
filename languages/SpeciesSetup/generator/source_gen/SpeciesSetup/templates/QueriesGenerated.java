@@ -31,7 +31,7 @@ public class QueriesGenerated extends QueryProviderBase {
     super(1);
   }
   public static void mappingScript_CodeBlock_1(final MappingScriptContext _context) {
-    // Creates species header nodes for each species container in the model. 
+    // Creates species header nodes for each species container in the model.
     List<SNode> containers = SModelOperations.nodes(_context.getModel(), CONCEPTS.SpeciesContainer$Ig);
     for (SNode container : containers) {
       SNode speciesHeader = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, "SpeciesSetup.structure.SpeciesContainerHeader"));

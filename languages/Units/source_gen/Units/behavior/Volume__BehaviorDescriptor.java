@@ -9,7 +9,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -28,14 +27,14 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Volume__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5cbL, "Units.structure.Volume");
 
-  public static final SMethod<BigDecimal> convert_litre_from_to_id7Eknud9Z8l_ = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_litre_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9Z8l_").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Integer> get_litre_unit_val_id7Eknud9Z8nI = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_litre_unit_val").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9Z8nI").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<BigDecimal> convert_metre_from_to_id7Eknuda14Mw = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_metre_from_to").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknuda14Mw").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Integer> get_metre_unit_val_id7Eknuda14OD = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_metre_unit_val").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknuda14OD").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<BigDecimal> get_volume_value_decimal_id7Eknud9Z8oy = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_volume_value_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9Z8oy").build();
-  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9Z8oK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknud9Z8oK").build();
-  public static final SMethod<BigDecimal> get_litre_volume_id7Eknuda0tmW = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_litre_volume").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknuda0tmW").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<BigDecimal> get_metre_volume_id7Eknuda0wLR = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_metre_volume").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7Eknuda0wLR").build();
+  public static final SMethod<BigDecimal> convert_litre_from_to_id7Eknud9Z8l_ = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_litre_from_to").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9Z8l_").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_litre_unit_val_id7Eknud9Z8nI = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_litre_unit_val").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9Z8nI").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<BigDecimal> convert_metre_from_to_id7Eknuda14Mw = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("convert_metre_from_to").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknuda14Mw").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Integer> get_metre_unit_val_id7Eknuda14OD = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_metre_unit_val").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknuda14OD").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<BigDecimal> get_volume_value_decimal_id7Eknud9Z8oy = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_volume_value_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9Z8oy").build();
+  public static final SMethod<Boolean> is_less_than_zero_id7Eknud9Z8oK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("is_less_than_zero").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknud9Z8oK").build();
+  public static final SMethod<BigDecimal> get_litre_volume_id7Eknuda0tmW = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_litre_volume").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknuda0tmW").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<BigDecimal> get_metre_volume_id7Eknuda0wLR = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_metre_volume").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("7Eknuda0wLR").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(convert_litre_from_to_id7Eknud9Z8l_, get_litre_unit_val_id7Eknud9Z8nI, convert_metre_from_to_id7Eknuda14Mw, get_metre_unit_val_id7Eknuda14OD, get_volume_value_decimal_id7Eknud9Z8oy, is_less_than_zero_id7Eknud9Z8oK, get_litre_volume_id7Eknuda0tmW, get_metre_volume_id7Eknuda0wLR);
 
@@ -49,14 +48,14 @@ public final class Volume__BehaviorDescriptor extends BaseBHDescriptor {
 
     int conversion_steps = target_unit_val - current_unit_val;
 
-    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case. 
+    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case.
     if (conversion_steps > 0) {
-      // Converting is going up in units, so divide the current value by 1,000,000,000 for each conversion step. 
+      // Converting is going up in units, so divide the current value by 1,000,000,000 for each conversion step.
       for (int i = 0; i < conversion_steps; i++) {
         target_value = target_value.divide(BigDecimal.valueOf(1000000000));
       }
     } else if (conversion_steps < 0) {
-      // Converting is going down in units, so multiply the current value by 1,000,000,000 for each conversion step. 
+      // Converting is going down in units, so multiply the current value by 1,000,000,000 for each conversion step.
       for (int i = 0; i < -conversion_steps; i++) {
         target_value = target_value.multiply(BigDecimal.valueOf(1000000000));
       }
@@ -83,14 +82,14 @@ public final class Volume__BehaviorDescriptor extends BaseBHDescriptor {
 
     int conversion_steps = target_unit_val - current_unit_val;
 
-    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case. 
+    // When conversion steps is zero, no change is needed. This shouldn't be called in that instance, but just in case.
     if (conversion_steps > 0) {
-      // Converting is going up in units, so divide the current value by 1,000,000,000 for each conversion step. 
+      // Converting is going up in units, so divide the current value by 1,000,000,000 for each conversion step.
       for (int i = 0; i < conversion_steps; i++) {
         target_value = target_value.divide(BigDecimal.valueOf(1000000000));
       }
     } else if (conversion_steps < 0) {
-      // Converting is going down in units, so multiply the current value by 1,000,000,000 for each conversion step. 
+      // Converting is going down in units, so multiply the current value by 1,000,000,000 for each conversion step.
       for (int i = 0; i < -conversion_steps; i++) {
         target_value = target_value.divide(BigDecimal.valueOf(1000000000));
       }
@@ -127,12 +126,12 @@ public final class Volume__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static BigDecimal get_litre_volume_id7Eknuda0tmW(@NotNull SNode __thisNode__, SNode unit) {
-    // 1 cubic metre = 1000 litres 
+    // 1 cubic metre = 1000 litres
     BigDecimal value = Volume__BehaviorDescriptor.get_volume_value_decimal_id7Eknud9Z8oy.invoke(__thisNode__);
     return value.multiply(BigDecimal.valueOf(1000));
   }
   /*package*/ static BigDecimal get_metre_volume_id7Eknuda0wLR(@NotNull SNode __thisNode__) {
-    // 1 cubic metre = 1000 litres 
+    // 1 cubic metre = 1000 litres
     BigDecimal value = Volume__BehaviorDescriptor.get_volume_value_decimal_id7Eknud9Z8oy.invoke(__thisNode__);
     return value.multiply(BigDecimal.valueOf(1000));
   }

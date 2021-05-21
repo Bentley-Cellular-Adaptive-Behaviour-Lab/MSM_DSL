@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -27,7 +26,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Modifier__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
 
-  public static final SMethod<Void> createRelations_id20T6jFVkE_s = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("createRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVkE_s").build();
+  public static final SMethod<Void> createRelations_id20T6jFVkE_s = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("createRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("20T6jFVkE_s").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(createRelations_id20T6jFVkE_s);
 
@@ -37,7 +36,7 @@ public final class Modifier__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static void createRelations_id20T6jFVkE_s(@NotNull SNode __thisNode__) {
     boolean isAlreadyPresent = false;
     for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Source$9HG6), LINKS.ModifiesProcess$UMOC))) {
-      // Check all modifies relations for the source species, if not found, then add a new reference. 
+      // Check all modifies relations for the source species, if not found, then add a new reference.
       if (Objects.equals(SLinkOperations.getTarget(relation, LINKS.target$hsJa), __thisNode__)) {
         isAlreadyPresent = true;
       }
@@ -49,7 +48,7 @@ public final class Modifier__BehaviorDescriptor extends BaseBHDescriptor {
     }
     isAlreadyPresent = false;
     for (SNode relation : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(__thisNode__, LINKS.Target$9C3I), LINKS.ModifiedByProcess$uVT0))) {
-      // Check all modified by relations for the target species, if not found, then add a new reference. 
+      // Check all modified by relations for the target species, if not found, then add a new reference.
       if (Objects.equals(SLinkOperations.getTarget(relation, LINKS.target$hsJa), __thisNode__)) {
         isAlreadyPresent = true;
       }

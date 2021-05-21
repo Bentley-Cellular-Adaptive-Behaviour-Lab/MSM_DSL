@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -24,8 +23,8 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Substrate__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
 
-  public static final SMethod<String> get_adhesiveness_string_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81Fh9KI").build();
-  public static final SMethod<BigDecimal> get_adhesiveness_decimal_id1r0uutBGvvQ = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_adhesiveness_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBGvvQ").build();
+  public static final SMethod<String> get_adhesiveness_string_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4JVq81Fh9KI").build();
+  public static final SMethod<BigDecimal> get_adhesiveness_decimal_id1r0uutBGvvQ = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_adhesiveness_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBGvvQ").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_adhesiveness_string_id4JVq81Fh9KI, get_adhesiveness_decimal_id1r0uutBGvvQ);
 

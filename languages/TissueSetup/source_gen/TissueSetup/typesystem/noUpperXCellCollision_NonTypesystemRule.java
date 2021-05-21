@@ -19,7 +19,7 @@ public class noUpperXCellCollision_NonTypesystemRule extends AbstractNonTypesyst
   public noUpperXCellCollision_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds. 
+    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds.
     if ((boolean) Cell__BehaviorDescriptor.check_upperx_world_boundary_id3$QBVvWCJog.invoke(cell)) {
       int upper_x = (int) Cell__BehaviorDescriptor.get_cell_upperx_gridpoint_id57Wjpeqnkzu.invoke(cell);
       {

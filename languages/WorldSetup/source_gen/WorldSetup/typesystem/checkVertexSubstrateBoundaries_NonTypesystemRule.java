@@ -24,12 +24,12 @@ public class checkVertexSubstrateBoundaries_NonTypesystemRule extends AbstractNo
   public checkVertexSubstrateBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode vertex, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the triangular prism vertices do not extend out of the world. 
-    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong. 
+    // Check that the triangular prism vertices do not extend out of the world.
+    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong.
 
     SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(vertex, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
 
-    // Is this triangular substrate extending out of the lower X boundary of the world? 
+    // Is this triangular substrate extending out of the lower X boundary of the world?
     if ((int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(vertex) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -37,7 +37,7 @@ public class checkVertexSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this triangular substrate extending out of the upper X boundary of the world? 
+    // Is this triangular substrate extending out of the upper X boundary of the world?
     if ((int) Vertex__BehaviorDescriptor.get_vertex_xcoord_gridpoint_id3V40ltr1arY.invoke(vertex) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -45,7 +45,7 @@ public class checkVertexSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this triangular substrate extending out of the lower Y boundary of the world? 
+    // Is this triangular substrate extending out of the lower Y boundary of the world?
     if ((int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(vertex) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -53,7 +53,7 @@ public class checkVertexSubstrateBoundaries_NonTypesystemRule extends AbstractNo
       }
     }
 
-    // Is this triangular substrate extending out of the upper X boundary of the world? 
+    // Is this triangular substrate extending out of the upper X boundary of the world?
     if ((int) Vertex__BehaviorDescriptor.get_vertex_ycoord_gridpoint_id3V40ltr1cTa.invoke(vertex) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

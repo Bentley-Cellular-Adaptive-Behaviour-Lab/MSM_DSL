@@ -25,12 +25,12 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
   public checkSinkAndSourceGradientBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisSinkAndSource, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the triangular substrate does not extend out of the world. 
-    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong. 
+    // Check that the triangular substrate does not extend out of the world.
+    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong.
 
     SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisSinkAndSource, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
 
-    // Is the sink extending out of the lower X boundary of the world? 
+    // Is the sink extending out of the lower X boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -38,7 +38,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the lower X boundary of the world? 
+    // Is the source extending out of the lower X boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_x_gridpoint_id57Wjpeqq5HN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) < SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -46,7 +46,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the sink extending out of the upper X boundary of the world? 
+    // Is the sink extending out of the upper X boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_x_gridpoint_id57Wjpeqq3Rq.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -54,7 +54,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the upper X boundary of the world? 
+    // Is the source extending out of the upper X boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_x_gridpoint_id57Wjpeqq5HN.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) > SPropertyOperations.getInteger(grid, PROPS.X_Size$4fO) + SPropertyOperations.getInteger(grid, PROPS.Neg_X_Space$kMcp)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -62,7 +62,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the sink extending out of the lower Y boundary of the world? 
+    // Is the sink extending out of the lower Y boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_y_gridpoint_id57Wjpeqq4vM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -70,7 +70,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the lower Y boundary of the world? 
+    // Is the source extending out of the lower Y boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_y_gridpoint_id57Wjpeqq5I1.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -78,7 +78,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the sink extending out of the upper Y boundary of the world? 
+    // Is the sink extending out of the upper Y boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_y_gridpoint_id57Wjpeqq4vM.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -86,7 +86,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the upper Y boundary of the world? 
+    // Is the source extending out of the upper Y boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_y_gridpoint_id57Wjpeqq5I1.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -94,7 +94,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the sink extending out of the lower Z boundary of the world? 
+    // Is the sink extending out of the lower Z boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_z_gridpoint_id57Wjpeqq56O.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -102,7 +102,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the lower Z boundary of the world? 
+    // Is the source extending out of the lower Z boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_z_gridpoint_id57Wjpeqq5If.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -110,7 +110,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the sink extending out of the upper Z boundary of the world? 
+    // Is the sink extending out of the upper Z boundary of the world?
     if ((int) Sink__BehaviorDescriptor.get_sink_z_gridpoint_id57Wjpeqq56O.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Sink$58Vc)) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -118,7 +118,7 @@ public class checkSinkAndSourceGradientBoundaries_NonTypesystemRule extends Abst
       }
     }
 
-    // Is the source extending out of the upper Z boundary of the world? 
+    // Is the source extending out of the upper Z boundary of the world?
     if ((int) Source__BehaviorDescriptor.get_source_z_gridpoint_id57Wjpeqq5If.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(thisSinkAndSource, LINKS.SinkAndSource$aCJG), LINKS.Source$59pe)) > SPropertyOperations.getInteger(grid, PROPS.Y_Size$4WR) + SPropertyOperations.getInteger(grid, PROPS.Neg_Y_Space$kSxO)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

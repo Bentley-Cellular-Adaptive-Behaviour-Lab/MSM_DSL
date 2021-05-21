@@ -12,7 +12,7 @@ import org.junit.Test;
 import org.junit.BeforeClass;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
-import junit.framework.Assert;
+import org.junit.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -72,7 +72,6 @@ public class test_CellNumber_Test extends BaseTransformationTest {
       addNodeById("1950475930617038128");
       Assert.assertEquals(36, (int) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_int_id6yORN46v92v.invoke(getNodeById("1950475930617038127")));
     }
-
 
   }
 

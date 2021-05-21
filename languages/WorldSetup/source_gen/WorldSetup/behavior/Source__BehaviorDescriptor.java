@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -25,15 +24,15 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Source__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007dL, "WorldSetup.structure.Source");
 
-  public static final SMethod<String> get_source_x_string_id1r0uutBEy5V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_x_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEy5V").build();
-  public static final SMethod<String> get_source_y_string_id1r0uutBEy6b = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_y_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEy6b").build();
-  public static final SMethod<String> get_source_z_string_id1r0uutBEy6r = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_z_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBEy6r").build();
-  public static final SMethod<BigDecimal> get_source_x_decimal_id1r0uutBGq8y = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_x_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBGq8y").build();
-  public static final SMethod<BigDecimal> get_source_y_decimal_id1r0uutBGq8K = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_y_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBGq8K").build();
-  public static final SMethod<BigDecimal> get_source_z_decimal_id1r0uutBGq8Y = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_z_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBGq8Y").build();
-  public static final SMethod<Integer> get_source_x_gridpoint_id57Wjpeqq5HN = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_x_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq5HN").build();
-  public static final SMethod<Integer> get_source_y_gridpoint_id57Wjpeqq5I1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_y_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq5I1").build();
-  public static final SMethod<Integer> get_source_z_gridpoint_id57Wjpeqq5If = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_z_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqq5If").build();
+  public static final SMethod<String> get_source_x_string_id1r0uutBEy5V = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_x_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEy5V").build();
+  public static final SMethod<String> get_source_y_string_id1r0uutBEy6b = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_y_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEy6b").build();
+  public static final SMethod<String> get_source_z_string_id1r0uutBEy6r = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_z_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBEy6r").build();
+  public static final SMethod<BigDecimal> get_source_x_decimal_id1r0uutBGq8y = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_x_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBGq8y").build();
+  public static final SMethod<BigDecimal> get_source_y_decimal_id1r0uutBGq8K = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_y_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBGq8K").build();
+  public static final SMethod<BigDecimal> get_source_z_decimal_id1r0uutBGq8Y = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_source_z_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBGq8Y").build();
+  public static final SMethod<Integer> get_source_x_gridpoint_id57Wjpeqq5HN = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_x_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq5HN").build();
+  public static final SMethod<Integer> get_source_y_gridpoint_id57Wjpeqq5I1 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_y_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq5I1").build();
+  public static final SMethod<Integer> get_source_z_gridpoint_id57Wjpeqq5If = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_source_z_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqq5If").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_source_x_string_id1r0uutBEy5V, get_source_y_string_id1r0uutBEy6b, get_source_z_string_id1r0uutBEy6r, get_source_x_decimal_id1r0uutBGq8y, get_source_y_decimal_id1r0uutBGq8K, get_source_z_decimal_id1r0uutBGq8Y, get_source_x_gridpoint_id57Wjpeqq5HN, get_source_y_gridpoint_id57Wjpeqq5I1, get_source_z_gridpoint_id57Wjpeqq5If);
 

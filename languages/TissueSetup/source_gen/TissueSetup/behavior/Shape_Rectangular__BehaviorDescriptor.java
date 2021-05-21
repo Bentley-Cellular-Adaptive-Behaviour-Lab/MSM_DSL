@@ -9,7 +9,6 @@ import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.math.BigDecimal;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -31,12 +30,12 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Shape_Rectangular__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
 
-  public static final SMethod<BigDecimal> get_rectangular_width_decimal_id2VHjcBpE516 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_width_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VHjcBpE516").build();
-  public static final SMethod<String> get_rectangular_width_string_id1r0uutBQrtQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_width_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBQrtQ").build();
-  public static final SMethod<Integer> get_rectangular_width_gridpoints_id2siCC6BFJkZ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_rectangular_width_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2siCC6BFJkZ").build();
-  public static final SMethod<BigDecimal> get_rectangular_height_decimal_id2VHjcBpE1B3 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_height_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VHjcBpE1B3").build();
-  public static final SMethod<String> get_rectangular_height_string_id1r0uutBQos0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_height_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBQos0").build();
-  public static final SMethod<Integer> get_rectangular_height_gridpoints_id2siCC6BFTh5 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_rectangular_height_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2siCC6BFTh5").build();
+  public static final SMethod<BigDecimal> get_rectangular_width_decimal_id2VHjcBpE516 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_width_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2VHjcBpE516").build();
+  public static final SMethod<String> get_rectangular_width_string_id1r0uutBQrtQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_width_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBQrtQ").build();
+  public static final SMethod<Integer> get_rectangular_width_gridpoints_id2siCC6BFJkZ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_rectangular_width_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2siCC6BFJkZ").build();
+  public static final SMethod<BigDecimal> get_rectangular_height_decimal_id2VHjcBpE1B3 = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_rectangular_height_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2VHjcBpE1B3").build();
+  public static final SMethod<String> get_rectangular_height_string_id1r0uutBQos0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_rectangular_height_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBQos0").build();
+  public static final SMethod<Integer> get_rectangular_height_gridpoints_id2siCC6BFTh5 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_rectangular_height_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2siCC6BFTh5").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_rectangular_width_decimal_id2VHjcBpE516, get_rectangular_width_string_id1r0uutBQrtQ, get_rectangular_width_gridpoints_id2siCC6BFJkZ, get_rectangular_height_decimal_id2VHjcBpE1B3, get_rectangular_height_string_id1r0uutBQos0, get_rectangular_height_gridpoints_id2siCC6BFTh5);
 

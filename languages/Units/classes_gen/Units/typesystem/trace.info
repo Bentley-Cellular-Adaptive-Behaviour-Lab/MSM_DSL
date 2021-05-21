@@ -24,7 +24,7 @@
       </scope>
     </file>
     <file name="typeof_Distance_InferenceRule.java">
-      <node id="4052263675730054184" at="21,121,22,44" concept="7" />
+      <node id="4052263675730054184" at="21,121,22,43" concept="7" />
       <node id="5497703887388107921" at="23,5,24,139" concept="5" />
       <node id="5497703887388107921" at="24,139,25,182" concept="5" />
       <node id="5497703887388107921" at="25,182,26,270" concept="2" />
@@ -38,7 +38,7 @@
       <node id="5497703887388106787" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="5497703887388106787" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="5497703887388106787" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="5497703887388107921" at="22,44,27,5" concept="0" />
+      <node id="5497703887388107921" at="22,43,27,5" concept="0" />
       <node id="5497703887388106787" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="5497703887388106787" at="19,42,19,42" />
       <scope id="5497703887388106787" at="29,50,30,32" />
@@ -75,7 +75,7 @@
       </scope>
     </file>
     <file name="typeof_Area_InferenceRule.java">
-      <node id="8832787999960418807" at="21,117,22,36" concept="7" />
+      <node id="8832787999960418807" at="21,117,22,35" concept="7" />
       <node id="8832787999960418814" at="23,5,24,135" concept="5" />
       <node id="8832787999960418814" at="24,135,25,182" concept="5" />
       <node id="8832787999960418814" at="25,182,26,270" concept="2" />
@@ -89,7 +89,7 @@
       <node id="8832787999960418805" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960418805" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960418805" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960418814" at="22,36,27,5" concept="0" />
+      <node id="8832787999960418814" at="22,35,27,5" concept="0" />
       <node id="8832787999960418805" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960418805" at="19,38,19,38" />
       <scope id="8832787999960418805" at="29,50,30,28" />
@@ -126,7 +126,7 @@
       </scope>
     </file>
     <file name="typeof_Volume_InferenceRule.java">
-      <node id="8832787999960419638" at="21,119,22,36" concept="7" />
+      <node id="8832787999960419638" at="21,119,22,35" concept="7" />
       <node id="8832787999960419645" at="23,5,24,137" concept="5" />
       <node id="8832787999960419645" at="24,137,25,182" concept="5" />
       <node id="8832787999960419645" at="25,182,26,270" concept="2" />
@@ -140,7 +140,7 @@
       <node id="8832787999960419636" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960419636" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960419636" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960419645" at="22,36,27,5" concept="0" />
+      <node id="8832787999960419645" at="22,35,27,5" concept="0" />
       <node id="8832787999960419636" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960419636" at="19,40,19,40" />
       <scope id="8832787999960419636" at="29,50,30,30" />
@@ -177,7 +177,7 @@
       </scope>
     </file>
     <file name="typeof_Mass_InferenceRule.java">
-      <node id="8832787999960420799" at="21,117,22,46" concept="7" />
+      <node id="8832787999960420799" at="21,117,22,45" concept="7" />
       <node id="8832787999960420806" at="23,5,24,135" concept="5" />
       <node id="8832787999960420806" at="24,135,25,182" concept="5" />
       <node id="8832787999960420806" at="25,182,26,270" concept="2" />
@@ -191,7 +191,7 @@
       <node id="8832787999960420797" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960420797" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960420797" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960420806" at="22,46,27,5" concept="0" />
+      <node id="8832787999960420806" at="22,45,27,5" concept="0" />
       <node id="8832787999960420797" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960420797" at="19,38,19,38" />
       <scope id="8832787999960420797" at="29,50,30,28" />
@@ -228,7 +228,7 @@
       </scope>
     </file>
     <file name="typeof_Amount_InferenceRule.java">
-      <node id="8832787999960421917" at="21,119,22,80" concept="7" />
+      <node id="8832787999960421917" at="21,119,22,79" concept="7" />
       <node id="8832787999960421924" at="23,5,24,137" concept="5" />
       <node id="8832787999960421924" at="24,137,25,182" concept="5" />
       <node id="8832787999960421924" at="25,182,26,270" concept="2" />
@@ -242,7 +242,7 @@
       <node id="8832787999960421915" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960421915" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960421915" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960421924" at="22,80,27,5" concept="0" />
+      <node id="8832787999960421924" at="22,79,27,5" concept="0" />
       <node id="8832787999960421915" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960421915" at="19,40,19,40" />
       <scope id="8832787999960421915" at="29,50,30,29" />
@@ -279,7 +279,7 @@
       </scope>
     </file>
     <file name="typeof_Mass_Concentration_InferenceRule.java">
-      <node id="8832787999960423280" at="21,126,22,54" concept="7" />
+      <node id="8832787999960423280" at="21,126,22,53" concept="7" />
       <node id="8832787999960423291" at="23,5,24,144" concept="5" />
       <node id="8832787999960423291" at="24,144,25,182" concept="5" />
       <node id="8832787999960423291" at="25,182,26,270" concept="2" />
@@ -293,7 +293,7 @@
       <node id="8832787999960423278" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960423278" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960423278" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960423291" at="22,54,27,5" concept="0" />
+      <node id="8832787999960423291" at="22,53,27,5" concept="0" />
       <node id="8832787999960423278" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960423278" at="19,52,19,52" />
       <scope id="8832787999960423278" at="29,50,30,42" />
@@ -330,7 +330,7 @@
       </scope>
     </file>
     <file name="typeof_Amount_Concentration_InferenceRule.java">
-      <node id="8832787999960439209" at="21,126,22,56" concept="7" />
+      <node id="8832787999960439209" at="21,126,22,55" concept="7" />
       <node id="8832787999960439218" at="23,5,24,144" concept="5" />
       <node id="8832787999960439218" at="24,144,25,182" concept="5" />
       <node id="8832787999960439218" at="25,182,26,270" concept="2" />
@@ -344,7 +344,7 @@
       <node id="8832787999960439207" at="29,0,32,0" concept="4" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8832787999960439207" at="32,0,35,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8832787999960439207" at="35,0,38,0" concept="4" trace="overrides#()Z" />
-      <node id="8832787999960439218" at="22,56,27,5" concept="0" />
+      <node id="8832787999960439218" at="22,55,27,5" concept="0" />
       <node id="8832787999960439207" at="21,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8832787999960439207" at="19,54,19,54" />
       <scope id="8832787999960439207" at="29,50,30,44" />

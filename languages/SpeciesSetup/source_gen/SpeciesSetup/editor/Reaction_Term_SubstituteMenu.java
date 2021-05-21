@@ -49,7 +49,7 @@ public class Reaction_Term_SubstituteMenu extends SubstituteMenuBase {
   public class SMP_ReferenceScope_u9qtyj_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_u9qtyj_a() {
-      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051
       super((SAbstractConcept) CONCEPTS.Reaction_Term$VO, LINKS.Species_Ref$Wnde);
     }
     @NotNull

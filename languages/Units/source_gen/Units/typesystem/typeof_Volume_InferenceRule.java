@@ -19,7 +19,7 @@ public class typeof_Volume_InferenceRule extends AbstractInferenceRule_Runtime i
   public typeof_Volume_InferenceRule() {
   }
   public void applyRule(final SNode volume, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces volumes to be floats. 
+    // Forces volumes to be floats.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(volume, LINKS.value$XroM), LINKS.expr$5hxe);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960419645", 0, null);

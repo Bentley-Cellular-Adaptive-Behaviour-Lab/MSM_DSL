@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -30,9 +29,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
 
-  public static final SMethod<Void> cleanReactionRelations_id1Ch7j$Nakak = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanReactionRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1Ch7j$Nakak").build();
-  public static final SMethod<Void> cleanModifierRelations_id20T6jFVkZPx = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanModifierRelations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("20T6jFVkZPx").build();
-  public static final SMethod<Float> getConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getConcentrationValue").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fk35jmCFN3").build();
+  public static final SMethod<Void> cleanReactionRelations_id1Ch7j$Nakak = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanReactionRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1Ch7j$Nakak").build();
+  public static final SMethod<Void> cleanModifierRelations_id20T6jFVkZPx = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanModifierRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("20T6jFVkZPx").build();
+  public static final SMethod<Float> getConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmCFN3").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getConcentrationValue_id3fk35jmCFN3);
 
@@ -40,15 +39,15 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static void cleanReactionRelations_id1Ch7j$Nakak(@NotNull SNode __thisNode__) {
-    // Clean reactions that have been deleted. 
-    // Clean references where this species is no longer being used as a reactant, or it has been duplicated. 
+    // Clean reactions that have been deleted.
+    // Clean references where this species is no longer being used as a reactant, or it has been duplicated.
     for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ReactsInProcess$_Wy1))) {
       if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
-        // Reaction has been deleted, so remove this reference. 
+        // Reaction has been deleted, so remove this reference.
         SNodeOperations.deleteNode(reaction_ref);
       } else {
         for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
-          // Otherwise, check to see if the species is being used even once as a reactant, keep the reference if so. 
+          // Otherwise, check to see if the species is being used even once as a reactant, keep the reference if so.
           boolean isReactant = false;
           if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), __thisNode__)) {
             isReactant = true;
@@ -61,14 +60,14 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         }
       }
     }
-    // Clean references where this species is no longer a product. 
+    // Clean references where this species is no longer a product.
     for (SNode reaction_ref : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.ProductOfProcess$_X03))) {
       if ((SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ) == null)) {
-        // Reaction has been deleted, so remove this reference. 
+        // Reaction has been deleted, so remove this reference.
         SNodeOperations.deleteNode(reaction_ref);
       } else {
         for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(reaction_ref, LINKS.ReactionReference$PJYZ), LINKS.Reactant_Terms$Wnv9))) {
-          // Otherwise, check to see if the species is being used even once as a product, keep the reference if so. 
+          // Otherwise, check to see if the species is being used even once as a product, keep the reference if so.
           boolean isProduct = false;
           if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), __thisNode__)) {
             isProduct = true;

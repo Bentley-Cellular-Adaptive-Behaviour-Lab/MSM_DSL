@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -27,13 +26,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, "WorldSetup.structure.Grid");
 
-  public static final SMethod<Integer> get_grid_xsize_gridpoint_id3wWy5vw1wze = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_xsize_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw1wze").build();
-  public static final SMethod<String> get_grid_xsize_string_id1r0uutBIBrP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_xsize_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1r0uutBIBrP").build();
-  public static final SMethod<Integer> get_grid_ysize_gridpoint_idfEhJG2GbNr = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_ysize_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("fEhJG2GbNr").build();
-  public static final SMethod<String> get_grid_ysize_string_idfEhJG2GbNB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_ysize_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("fEhJG2GbNB").build();
-  public static final SMethod<Integer> get_grid_zsize_gridpoint_idfEhJG2GdAF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_zsize_gridpoint").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("fEhJG2GdAF").build();
-  public static final SMethod<String> get_grid_zsize_string_idfEhJG2GdAR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_zsize_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("fEhJG2GdAR").build();
-  public static final SMethod<Integer> get_buffer_gridpoint_size_id11q$FfsTmr2 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("11q$FfsTmr2").build();
+  public static final SMethod<Integer> get_grid_xsize_gridpoint_id3wWy5vw1wze = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_xsize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3wWy5vw1wze").build();
+  public static final SMethod<String> get_grid_xsize_string_id1r0uutBIBrP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_xsize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBIBrP").build();
+  public static final SMethod<Integer> get_grid_ysize_gridpoint_idfEhJG2GbNr = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_ysize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GbNr").build();
+  public static final SMethod<String> get_grid_ysize_string_idfEhJG2GbNB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_ysize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GbNB").build();
+  public static final SMethod<Integer> get_grid_zsize_gridpoint_idfEhJG2GdAF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_zsize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GdAF").build();
+  public static final SMethod<String> get_grid_zsize_string_idfEhJG2GdAR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_zsize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GdAR").build();
+  public static final SMethod<Integer> get_buffer_gridpoint_size_id11q$FfsTmr2 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsTmr2").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_grid_xsize_gridpoint_id3wWy5vw1wze, get_grid_xsize_string_id1r0uutBIBrP, get_grid_ysize_gridpoint_idfEhJG2GbNr, get_grid_ysize_string_idfEhJG2GbNB, get_grid_zsize_gridpoint_idfEhJG2GdAF, get_grid_zsize_string_idfEhJG2GdAR, get_buffer_gridpoint_size_id11q$FfsTmr2);
 

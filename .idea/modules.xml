@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.iml" filepath="$PROJECT_DIR$/solutions/MSM.interpreter/MSM.interpreter.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/MSM_DSL.iml" filepath="$PROJECT_DIR$/.idea/MSM_DSL.iml" />
       <module fileurl="file://$PROJECT_DIR$/solutions/MSM_DSL.interpreter/MSM_DSL.interpreter.iml" filepath="$PROJECT_DIR$/solutions/MSM_DSL.interpreter/MSM_DSL.interpreter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MSM_DSL2.iml" filepath="$PROJECT_DIR$/.idea/MSM_DSL2.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/ODE/ODE.iml" filepath="$PROJECT_DIR$/languages/ODE/ODE.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.iml" filepath="$PROJECT_DIR$/languages/ProteinSetup/ProteinSetup.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.iml" filepath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.iml" />

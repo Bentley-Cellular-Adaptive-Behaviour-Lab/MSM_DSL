@@ -49,7 +49,7 @@ public class Tissue_And_Cell_Container_SubstituteMenu extends SubstituteMenuBase
   public class SMP_ReferenceScope_56nd21_a extends ReferenceScopeSubstituteMenuPart {
 
     public SMP_ReferenceScope_56nd21_a() {
-      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051 
+      // that cast is needed for prevent the users from https://youtrack.jetbrains.com/issue/MPS-29051
       super((SAbstractConcept) CONCEPTS.Tissue_And_Cell_Container$ni, LINKS.World_Container$fGL6);
     }
     @NotNull

@@ -19,7 +19,7 @@ public class typeof_Mass_Concentration_InferenceRule extends AbstractInferenceRu
   public typeof_Mass_Concentration_InferenceRule() {
   }
   public void applyRule(final SNode concentration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Forces mass concentrations to be real numbers. 
+    // Forces mass concentrations to be real numbers.
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SLinkOperations.getTarget(concentration, LINKS.value$XeHW), LINKS.expr$WZts);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:bae71dfe-8677-4e04-ac6e-73e2082bf09f(Units.typesystem)", "8832787999960423291", 0, null);

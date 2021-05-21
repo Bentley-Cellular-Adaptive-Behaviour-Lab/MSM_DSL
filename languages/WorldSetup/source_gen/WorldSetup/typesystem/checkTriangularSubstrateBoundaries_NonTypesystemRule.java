@@ -24,11 +24,11 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
   public checkTriangularSubstrateBoundaries_NonTypesystemRule() {
   }
   public void applyRule(final SNode thisTriangular, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the triangular substrate does not extend out of the world. 
-    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong. 
+    // Check that the triangular substrate does not extend out of the world.
+    // Given the world boundaries are updated and the addition of a buffer zone, these should never be used in normal instances, but are being kept for debugging purposes in case something goes horribly wrong.
 
     SNode grid = SLinkOperations.getTarget(SNodeOperations.getNodeAncestor(thisTriangular, CONCEPTS.World_Container$fW, false, false), LINKS.grid$mgtJ);
-    // Is this triangular substrate extending out of the lower Z boundary of the world? 
+    // Is this triangular substrate extending out of the lower Z boundary of the world?
     if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_lowerz_gridpoint_id11q$FfsSUmC.invoke(thisTriangular) < SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
@@ -36,7 +36,7 @@ public class checkTriangularSubstrateBoundaries_NonTypesystemRule extends Abstra
       }
     }
 
-    // Is this cuboidal substrate extending out of the upper Z boundary of the world? 
+    // Is this cuboidal substrate extending out of the upper Z boundary of the world?
     if ((int) Substrate_Shape_Triangular__BehaviorDescriptor.get_prism_upperz_gridpoint_id11q$FfsSLP4.invoke(thisTriangular) > SPropertyOperations.getInteger(grid, PROPS.Z_Size$5SV) + SPropertyOperations.getInteger(grid, PROPS.Neg_Z_Space$kZ6g)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

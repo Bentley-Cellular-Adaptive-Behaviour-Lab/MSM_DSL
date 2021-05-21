@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,13 +30,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Arrangement_Flat__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
 
-  public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaOR").build();
-  public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaRd").build();
-  public static final SMethod<Integer> get_total_width_gridpoints_id1QpPlI52vjz = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52vjz").build();
-  public static final SMethod<BigDecimal> get_total_width_decimal_id2xqP3eG1DSS = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_width_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG1DSS").build();
-  public static final SMethod<Integer> get_total_height_gridpoints_id1QpPlI52_it = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_height_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52_it").build();
-  public static final SMethod<BigDecimal> get_total_height_decimal_id2xqP3eG1Kzh = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_height_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG1Kzh").build();
-  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
+  public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaOR").build();
+  public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaRd").build();
+  public static final SMethod<Integer> get_total_width_gridpoints_id1QpPlI52vjz = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI52vjz").build();
+  public static final SMethod<BigDecimal> get_total_width_decimal_id2xqP3eG1DSS = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_width_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2xqP3eG1DSS").build();
+  public static final SMethod<Integer> get_total_height_gridpoints_id1QpPlI52_it = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_height_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI52_it").build();
+  public static final SMethod<BigDecimal> get_total_height_decimal_id2xqP3eG1Kzh = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_height_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2xqP3eG1Kzh").build();
+  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4XZPqyVOpH$").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd, get_total_width_gridpoints_id1QpPlI52vjz, get_total_width_decimal_id2xqP3eG1DSS, get_total_height_gridpoints_id1QpPlI52_it, get_total_height_decimal_id2xqP3eG1Kzh, get_total_cell_number_id4XZPqyVOpH$);
 

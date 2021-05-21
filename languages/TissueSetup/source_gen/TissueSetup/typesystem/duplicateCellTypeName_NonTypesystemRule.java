@@ -26,7 +26,7 @@ public class duplicateCellTypeName_NonTypesystemRule extends AbstractNonTypesyst
   public duplicateCellTypeName_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell_type, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Checks that no other cell type has the same name as this one. 
+    // Checks that no other cell type has the same name as this one.
     if (ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(SNodeOperations.getParent(cell_type), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.cell_types$$$44)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return Objects.equals(SPropertyOperations.getString(it, PROPS.name$MnvL), SPropertyOperations.getString(cell_type, PROPS.name$MnvL)) && !(Objects.equals(it, cell_type));

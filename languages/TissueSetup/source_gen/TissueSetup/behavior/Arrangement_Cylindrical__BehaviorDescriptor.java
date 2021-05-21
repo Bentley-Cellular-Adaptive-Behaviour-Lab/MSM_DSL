@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.math.BigDecimal;
 import java.util.List;
@@ -31,16 +30,16 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public final class Arrangement_Cylindrical__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
 
-  public static final SMethod<String> get_cross_section_cells_id2VHjcBpEg27 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_cross_section_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2VHjcBpEg27").build();
-  public static final SMethod<String> get_length_in_cells_id4DdJmqSFaKv = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_length_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaKv").build();
-  public static final SMethod<String> get_radius_string_id4DdJmqSFkkm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_radius_string").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFkkm").build();
-  public static final SMethod<BigDecimal> get_radius_decimal_id3wWy5vw4lLO = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_radius_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wWy5vw4lLO").build();
-  public static final SMethod<Integer> get_radius_gridpoints_id57Wjpeqocpj = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_radius_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57Wjpeqocpj").build();
-  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
-  public static final SMethod<Integer> calculate_total_ablumenal_steps_id506$KtO_VOJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_total_ablumenal_steps").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("506$KtO_VOJ").build();
-  public static final SMethod<Integer> get_total_width_gridpoints_id1QpPlI52lcy = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_gridpoints").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI52lcy").build();
-  public static final SMethod<BigDecimal> get_total_width_decimal_id2xqP3eG1lgv = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_width_decimal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xqP3eG1lgv").build();
-  public static final SMethod<Integer> calculate_cross_section_cells_id506$KtOAF5K = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_cross_section_cells").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("506$KtOAF5K").build();
+  public static final SMethod<String> get_cross_section_cells_id2VHjcBpEg27 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_cross_section_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2VHjcBpEg27").build();
+  public static final SMethod<String> get_length_in_cells_id4DdJmqSFaKv = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_length_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaKv").build();
+  public static final SMethod<String> get_radius_string_id4DdJmqSFkkm = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_radius_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFkkm").build();
+  public static final SMethod<BigDecimal> get_radius_decimal_id3wWy5vw4lLO = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_radius_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3wWy5vw4lLO").build();
+  public static final SMethod<Integer> get_radius_gridpoints_id57Wjpeqocpj = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_radius_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57Wjpeqocpj").build();
+  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4XZPqyVOpH$").build();
+  public static final SMethod<Integer> calculate_total_ablumenal_steps_id506$KtO_VOJ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_total_ablumenal_steps").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("506$KtO_VOJ").build();
+  public static final SMethod<Integer> get_total_width_gridpoints_id1QpPlI52lcy = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_width_gridpoints").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI52lcy").build();
+  public static final SMethod<BigDecimal> get_total_width_decimal_id2xqP3eG1lgv = new SMethodBuilder<BigDecimal>(new SJavaCompoundTypeImpl(BigDecimal.class)).name("get_total_width_decimal").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2xqP3eG1lgv").build();
+  public static final SMethod<Integer> calculate_cross_section_cells_id506$KtOAF5K = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("calculate_cross_section_cells").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("506$KtOAF5K").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id2VHjcBpEg27, get_length_in_cells_id4DdJmqSFaKv, get_radius_string_id4DdJmqSFkkm, get_radius_decimal_id3wWy5vw4lLO, get_radius_gridpoints_id57Wjpeqocpj, get_total_cell_number_id4XZPqyVOpH$, calculate_total_ablumenal_steps_id506$KtO_VOJ, get_total_width_gridpoints_id1QpPlI52lcy, get_total_width_decimal_id2xqP3eG1lgv, calculate_cross_section_cells_id506$KtOAF5K);
 
