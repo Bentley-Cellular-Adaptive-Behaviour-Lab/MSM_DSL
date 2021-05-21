@@ -673,6 +673,16 @@ Cell_Type::Cell_Type(Tissue_Container *tissue_container, string name, Shape *sha
     m_shape = shape;
 }
 
+/*****************************************************************************************
+*  Name:		add_protein
+*  Description: Adds protein to the cell type.
+*  Returns:		void
+******************************************************************************************/
+
+void Cell_Type::add_protein(protein *new_protein) {
+    this->proteins.push_back(new_protein);
+}
+
 //********************************************************************************************************************//
 
 // Cell
