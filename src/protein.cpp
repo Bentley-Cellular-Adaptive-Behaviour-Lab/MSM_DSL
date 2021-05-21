@@ -3,3 +3,17 @@
 //
 
 #include "protein.h"
+
+protein::protein(std::string name, float initial_level, bool checks_neighbour) {
+    this->name = name;
+    this->level = initial_level;
+    this->checks_neighbour = checks_neighbour;
+}
+
+float protein::get_level() {
+    return this->level;
+}
+
+void protein::set_level(float new_level) {
+    this->level = new_level;
+}

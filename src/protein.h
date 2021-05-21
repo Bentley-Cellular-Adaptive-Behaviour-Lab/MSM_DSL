@@ -7,7 +7,14 @@
 
 
 class protein {
-
+private:
+    std::string name;
+    float level;
+public:
+    bool checks_neighbour;
+    float get_level();
+    float set_level();
+    protein(std::string name, float initial_level, bool checks_neighbour);
 };
 
 
