@@ -4,6 +4,7 @@
 #include <vector>
 #include "objects.h"
 #include "space.h"
+#include "protein.h"
 
 
 #ifndef MEMAGENTSPRINGMODEL_DSL_TISSUE_H
@@ -23,7 +24,10 @@ public:
     Shape *m_shape;
 	Tissue_Container *m_tissue_container;
 
+	vector<protein*> proteins;
+
     Cell_Type(Tissue_Container *tissue_container, string name, Shape *shape);
+    void add_protein(protein* protein);
 };
 
 class Cell {
