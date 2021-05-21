@@ -58,7 +58,6 @@ class Gradient {
 public:
     int m_gradient_type;
     int m_gradient_shape;
-    float m_starting_amount;
 	Coordinates *m_centre_position; // Central position for cuboidal and spherical gradients
     protein *m_protein;
 
