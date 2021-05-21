@@ -2303,3 +2303,19 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 
 }
+
+/*****************************************************************************************
+*  Name:		add_cell_proteins
+*  Description: Checks against the proteins that a cell owns and adds them all to this memAgent.
+*               Should be used with newly created memAgents.
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::add_cell_proteins() {
+    //TODO: Have filopodia types prevent certain proteins from being allocated.
+    //TODO: Have protein totals be updated after all memAgents have been created.
+
+    for (protein *current_protein : this->Cell->m_cell_type->owned_proteins) {
+        this->owned_proteins.push_back(current_protein);
+    }
+}
