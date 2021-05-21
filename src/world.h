@@ -57,7 +57,7 @@ public:
 class Gradient {
 public:
     int m_gradient_type;
-    int m_gradient_shape; // TODO: CHANGE TO USE SPECIES OBJECTS
+    int m_gradient_shape;
     float m_starting_amount;
 	Coordinates *m_centre_position; // Central position for cuboidal and spherical gradients
     protein *m_protein;
@@ -91,7 +91,7 @@ public:
     //Constructor for sink and source gradients.
     Gradient(World_Container *container,
              int gradient_type,
-             string protein,
+             protein *protein,
              Coordinates *source_position,
              float starting_amount,
              Coordinates *sink_position);
@@ -99,7 +99,7 @@ public:
 	//Constructor for cuboidal gradients.
 	Gradient(World_Container *container,
 			 int gradient_type,
-			 string protein,
+             protein *protein,
 			 Coordinates *centre_position,
 			 float starting_amount,
 			 int width,
@@ -109,7 +109,7 @@ public:
 	//Constructor for spherical gradients.
 	Gradient(World_Container *container,
 			 int gradient_type,
-			 string protein_name,
+             protein *protein,
 			 Coordinates *centre_position,
 			 float starting_amount,
 			 int sphere_radius);
