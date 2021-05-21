@@ -7,6 +7,7 @@
 
 #include "objects.h"
 #include "space.h"
+#include "protein.h"
 
 class World_Container;
 
@@ -56,10 +57,10 @@ public:
 class Gradient {
 public:
     int m_gradient_type;
-    int m_gradient_shape;
-    string m_protein_name; // TODO: CHANGE TO USE SPECIES OBJECTS
+    int m_gradient_shape; // TODO: CHANGE TO USE SPECIES OBJECTS
     float m_starting_amount;
 	Coordinates *m_centre_position; // Central position for cuboidal and spherical gradients
+    protein *m_protein;
 
     // Booleans to check whether the gradient changes along the relevant axis - used by sink and source gradients.
     bool x_varying = false;
