@@ -13,6 +13,27 @@
 //********************************************************************************************************************//
 
 /*****************************************************************************************
+*  Name:		add_env_protein
+*  Description: Adds a protein to an environment agent. If that protein is already there,
+*               instead increase the amount by the calculated amount as determined by the
+*               gradient.
+*  Returns:		void
+******************************************************************************************/
+
+void Gradient::add_env_protein(Env *ep, float calc_level) {
+    bool protein_found;
+    for (auto protein : ep->owned_proteins) {
+        if (protein->get_name() == this->m_protein->get_name()) {
+            protein_found = true;
+            protein->set_level(protein->get_level() + calc_level);
+        }
+    }
+    if (!protein_found) {
+        ep->owned_proteins.push_back(new protein(m_protein->get_name(), calc_level, false));
+    }
+}
+
+/*****************************************************************************************
 *  Name:		calc_constant_env_VEGF
 *  Description: Sets an environment agent's level of VEGF according to a constant gradient,
 *               applied on top of any existing gradients.

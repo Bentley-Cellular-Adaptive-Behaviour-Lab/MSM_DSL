@@ -5,7 +5,7 @@
 #ifndef SPRINGAGENT_ENVIRONMENT_H
 #define SPRINGAGENT_ENVIRONMENT_H
 
-#include "Protein.h"
+#include "protein.h"
 
 class Env {
 public:
@@ -38,7 +38,7 @@ public:
 	float adhesiveness;
 
 	// List of proteins found at this location.
-	vector<Protein*> owned_proteins;
+	vector<protein*> owned_proteins;
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H
