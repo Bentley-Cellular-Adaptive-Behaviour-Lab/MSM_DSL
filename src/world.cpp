@@ -20,7 +20,7 @@
 ******************************************************************************************/
 
 void Gradient::calc_constant_env_VEGF(Env* ep) {
-	float starting_protein_level = m_starting_amount;
+	float starting_protein_level = this->m_protein->get_level();
     if (ep->blood == 0.0f) {
         ep->VEGF += starting_protein_level;
     }
@@ -35,7 +35,7 @@ void Gradient::calc_constant_env_VEGF(Env* ep) {
 
 void Gradient::calc_linear_env_VEGF(Env* ep) {
     float weight = 1.00f;
-    float starting_protein_level = m_starting_amount;
+    float starting_protein_level = this->m_protein->get_level();
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
 		if (ep->blood == 0.0f) {
@@ -118,7 +118,7 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 
 void Gradient::calc_exp_env_VEGF(Env* ep) {
     float weight = 1.00f;
-	float starting_protein_level = m_starting_amount;
+	float starting_protein_level = this->m_protein->get_level();
 
 	if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
 		vector<float> ep_distances = calculate_dist_from_source(ep);
