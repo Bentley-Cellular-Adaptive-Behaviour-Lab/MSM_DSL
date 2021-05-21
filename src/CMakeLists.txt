@@ -24,6 +24,8 @@ add_executable(springAgent
         main.cpp
         memAgents.cpp
         objects.h
+        protein.cpp
+        protein.h
         ScreenRecording.cpp
         ScreenRecording.h
         space.cpp
