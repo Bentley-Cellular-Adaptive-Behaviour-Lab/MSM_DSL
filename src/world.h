@@ -114,6 +114,12 @@ public:
 
     void add_env_protein(Env *ep, float calc_level);
 
+    //Generic functions for creating new protein gradients.
+    void calc_constant_env_protein(Env* ep);
+    void calc_exp_env_protein(Env* ep);
+    void calc_linear_env_protein(Env* ep);
+
+    //Legacy functions for creating VEGF gradients.
     void calc_linear_env_VEGF(Env* ep);
     void calc_exp_env_VEGF(Env* ep);
     void calc_constant_env_VEGF(Env* ep);
