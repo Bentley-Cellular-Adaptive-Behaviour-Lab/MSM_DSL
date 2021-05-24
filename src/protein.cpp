@@ -14,10 +14,12 @@ float protein::get_level() {
     return this->level;
 }
 
-void protein::set_level(float new_level) {
+float protein::set_level(float new_level)  {
     this->level = new_level;
 }
 
 std::string protein::get_name() {
     return this->name;
 }
+
+
