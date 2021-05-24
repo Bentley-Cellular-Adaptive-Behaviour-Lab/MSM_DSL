@@ -1,39 +1,43 @@
 cmake_minimum_required(VERSION 3.16)
-project(springAgent)
+project(src/springAgent)
 
 set(CMAKE_CXX_STANDARD 14)
 
-include_directories(.)
+include_directories(src)
 
-add_executable(springAgent
-        analysis.cpp
-        constructors.cpp
-        CPM_module.cpp
-        creation.cpp
-        creation.h
-        display.cpp
-        display.h
-        dsl_Tissue.cpp
-        dsl_World.cpp
-        EC.cpp
-        ECmesh.cpp
-        ECmesh.h
-        environment.cpp
-        geometry_functions.cpp
-        Grid.cpp
-        main.cpp
-        memAgents.cpp
-        objects.h
-        protein.cpp
-        protein.h
-        ScreenRecording.cpp
-        ScreenRecording.h
-        space.cpp
-        space.h
-        Tissue.cpp
-        Tissue.h
-        world.cpp
-        world.h)
+set (Sources src/analysis.cpp
+        src/constructors.cpp
+        src/CPM_module.cpp
+        src/creation.cpp
+        src/display.cpp
+        src/dsl_Tissue.cpp
+        src/dsl_World.cpp
+        src/EC.cpp
+        src/ECmesh.cpp
+        src/environment.cpp
+        src/geometry_functions.cpp
+        src/Grid.cpp
+        src/main.cpp
+        src/memAgents.cpp
+        src/protein.cpp
+        src/ScreenRecording.cpp
+        src/space.cpp
+        src/Tissue.cpp
+        src/world.cpp)
+
+set (Headers src/creation.h
+        src/display.h
+        src/EC.cpp
+        src/EC.h
+        src/ECmesh.h
+        src/objects.h
+        src/protein.h
+        src/ScreenRecording.h
+        src/space.h
+        src/Tissue.h
+        src/world.h)
+
+add_executable(springAgent  ${Sources} ${Headers})
 
 find_package(OpenGL)
 find_package(GLUT)
@@ -70,4 +74,4 @@ ENDIF(GLUI_INCLUDES AND GLUI_LIBRARY)
 #ENDIF(GLUI_FOUND)
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS}  )
-target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )
+target_link_libraries(src/springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )
