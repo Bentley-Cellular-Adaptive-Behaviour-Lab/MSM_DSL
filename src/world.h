@@ -92,7 +92,6 @@ public:
              int gradient_type,
              protein *protein,
              Coordinates *source_position,
-             float starting_amount,
              Coordinates *sink_position);
 
 	//Constructor for cuboidal gradients.
@@ -100,7 +99,6 @@ public:
 			 int gradient_type,
              protein *protein,
 			 Coordinates *centre_position,
-			 float starting_amount,
 			 int width,
 			 int height,
 			 int depth);
@@ -110,10 +108,11 @@ public:
 			 int gradient_type,
              protein *protein,
 			 Coordinates *centre_position,
-			 float starting_amount,
 			 int sphere_radius);
 
     vector<float> calculate_dist_from_source(Env* ep);
+
+    void add_env_protein(Env *ep, float calc_level);
 
     void calc_linear_env_VEGF(Env* ep);
     void calc_exp_env_VEGF(Env* ep);
@@ -151,24 +150,21 @@ public:
 						 Coordinates *sink_position);
 
 	void create_gradient(int gradient_type,
-						 string protein,
+						 protein *protein,
 						 Coordinates *source_position,
-						 float source_starting_amount,
 						 Coordinates *sink_position);
 
 	void create_gradient(int gradient_type,
-						 string protein,
+						 protein *protein,
 						 Coordinates *centre_position,
-						 float starting_amount,
 						 int gradient_direction,
 						 int height,
 						 int width,
 						 int depth);
 
     void create_gradient(int gradient_type,
-						 string protein_name,
+						 protein *protein,
 						 Coordinates *centre_position,
-						 float starting_amount,
 						 int sphere_radius);
 
     void store_substrate(Substrate *gradient);

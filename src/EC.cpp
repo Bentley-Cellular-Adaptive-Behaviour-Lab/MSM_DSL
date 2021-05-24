@@ -503,3 +503,15 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     
 }
 //------------------------------------------------------------------------------------------------
+
+/*****************************************************************************************
+*  Name:		distribute_proteins
+*  Description: Iterates over all cell proteins, counts the number of agents in the cell agent
+*               and distributes them out evenly
+*  Returns:		void
+******************************************************************************************/
+
+void EC::distribute_proteins() {
+    int count = 0;
+    for (auto protein : this->m_cell_type)
+}

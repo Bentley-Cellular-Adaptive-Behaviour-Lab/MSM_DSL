@@ -1,8 +1,5 @@
 C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7142.21\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL\src
 -- Could NOT find GLUT (missing: GLUT_glut_LIBRARY GLUT_INCLUDE_DIR) 
-CMake Error at CMakeLists.txt:69 (MESSAGE):
-  Could not find GLUI
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/Users/Tom/MPSProjects/MSM_DSL/src/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Tom/MPSProjects/MSM_DSL/src/cmake-build-debug

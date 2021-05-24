@@ -2315,7 +2315,21 @@ void MemAgent::add_cell_proteins() {
     //TODO: Have filopodia types prevent certain proteins from being allocated.
     //TODO: Have protein totals be updated after all memAgents have been created.
 
-    for (protein *current_protein : this->Cell->m_cell_type->owned_proteins) {
-        this->owned_proteins.push_back(current_protein);
+    for (auto current_protein : this->Cell->m_cell_type->owned_proteins) {
+        // Create new protein
+        protein *new_protein = new protein(current_protein->name, 0.0, false);
+        this->owned_proteins.push_back(new_protein);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		~MemAgent
+*  Description: Destructor for memagents.
+*  Returns:		void
+******************************************************************************************/
+
+MemAgent::~MemAgent(void) {
+    for (auto protein : this->owned_proteins) {
+        delete protein;
     }
 }
