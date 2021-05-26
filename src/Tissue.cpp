@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <cmath>
-#include <utility>
 #include <vector>
 #include <string>
 #include <cassert>
@@ -12,8 +11,8 @@
 #include "Tissue.h"
 #include "objects.h"
 #include "space.h"
-#include "world.h"
 #include "memAgents.h"
+#include "EC.h"
 
 //********************************************************************************************************************//
 

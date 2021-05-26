@@ -1,14 +1,15 @@
 //
 // Created by Thomas Mead on 30/09/2020.
 //
-#include <vector>
-#include "objects.h"
-#include "space.h"
-#include "protein.h"
 
 
 #ifndef MEMAGENTSPRINGMODEL_DSL_TISSUE_H
 #define MEMAGENTSPRINGMODEL_DSL_TISSUE_H
+
+#include <vector>
+#include "objects.h"
+#include "space.h"
+#include "protein.h"
 
 class Tissue_Container;
 

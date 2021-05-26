@@ -74,4 +74,4 @@ ENDIF(GLUI_INCLUDES AND GLUI_LIBRARY)
 #ENDIF(GLUI_FOUND)
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS}  )
-target_link_libraries(src/springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )
+target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )

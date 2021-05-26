@@ -1,9 +1,6 @@
 #include <iostream>
-#include <iomanip>
-#include <fstream>
 #include <vector>
 #include "objects.h"
-#include <string.h>
 #include <time.h>
 #include <algorithm>
 #include <math.h>

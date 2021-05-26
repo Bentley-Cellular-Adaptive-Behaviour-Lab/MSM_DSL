@@ -1,8 +1,6 @@
-#include <iostream>
-#include <vector>
+
 #include "objects.h"
 #include <math.h>
-#include <cstdlib>
 #include "environment.h"
 
 //---------------------------------------------------------------

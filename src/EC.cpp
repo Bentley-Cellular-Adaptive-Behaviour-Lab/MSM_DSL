@@ -1,14 +1,9 @@
 
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <string.h>
 #include "objects.h"
-#include <math.h>
-#include <functional>
-#include <numeric>
-#include <iterator>
 #include "memAgents.h"
+#include "EC.h"
 
 using namespace std;
 
@@ -504,6 +499,65 @@ void EC::characterizeActNotchBoundaries(int which, int other){
 }
 //------------------------------------------------------------------------------------------------
 
+EC::EC(World*  world){
+
+	worldP = world;
+
+
+	mutant = false;
+
+	filCONST = FIL_VARY; //LTK link add user config value link here
+
+	//wt values FLTK link
+	VEGFRnorm = VEGFRNORM;
+	Vsink =VsinkNorm;
+
+	if(VR2_HET==true){
+		VEGFRnorm = VEGFRNORM*0.5;
+	}
+	if(VR1_HET==true) Vsink = Vsink*0.5;
+
+	//add in for Dll4 HET/KO..
+
+	VEGFRtot=VEGFRnorm;
+	Dll4tot=0.0f;
+	Notchtot=0.0f;
+	activeNotchtot=0.0f;
+	stableVEGFR=VEGFRnorm;
+	base_of_longest_fil= NULL;
+	length_of_longest_fil = 0;
+	newJunction = 0;
+
+	actinUsed=0;
+
+	//check this bit works when switching between setup versions
+	// if(user_defined_fils_spacing == true) fixed_filopodia_spacing = 0; //FLTK link up needed here to config GUI!
+	// else{
+	//     if((CELL_SETUP==1)&&((ENV_SETUP==1)||(ENV_SETUP==4))) fixed_filopodia_spacing=1;//4;
+	//     else
+	//     fixed_filopodia_spacing=1;
+	// }
+
+	int i;
+	for(i=0;i<actNot_VEGFR_delay;i++){
+		NotchDelayArray.push_back(0.0f);
+	}
+	for(i=0;i<actNot_VEGFR_lasts;i++){
+		NotchLastsArray.push_back(0.0f);
+	}
+	for(i=0;i<VEGFR_dll4_delay;i++){
+		VEGFRDelayArray.push_back(0.0f);
+	}
+	for(i=0;i<VEGFR_dll4_lasts;i++){
+		VEGFRlastsArray.push_back(0.0f);
+	}
+
+
+
+	VonNeighs = 0;
+
+}
+
 /*****************************************************************************************
 *  Name:		distribute_proteins
 *  Description: Iterates over all cell proteins, counts the number of agents in the cell agent
@@ -511,7 +565,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::distribute_proteins() {
-    int count = 0;
-    for (auto protein : this->m_cell_type)
-}
+//void EC::distribute_proteins() {
+//    int count = 0;
+//    for (auto protein : this->m_cell_type)
+//}

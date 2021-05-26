@@ -1,14 +1,10 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
 #include <math.h>
-#include <iomanip>
 #include "objects.h"
 #include <random>
-#include "memAgents.h"
 #include "environment.h"
 
-//#include "ODEs.h"
 
 using namespace std;
 typedef Location** ppLocation;
@@ -98,133 +94,7 @@ Env::Env(World* WorldP){
         Astro = false;
         OldAstro = false;
 }
-//-------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------
-MemAgent::MemAgent(EC* belongsTo, World* world){
 
-	int i;
-	diffAd_replaced_cell = NULL;
-	diffAd_replaced_med = NULL;
-     
-        MEDIUM = false;
-        mediumNeighs = 0;
-	labelled = false;
-        labelledBlindended = false;
-        labelled2=false;
-	mesh3SpringsOnly=false;
-	Cell = belongsTo;
-        created = 0;
-	FA = false;
-	FIL=NONE;
-	
-	worldP=world;
-	retracted = false;
-	junction = false;
-	neighs=0;
-	node = true;
-	filTokens =0;
-	Force[0]=0;
-	Force[1]=0;
-	Force[2]=0;
-	SumVEGF=0;
-	MneighCount=0;
-	deleteFlag=false;
-	VRinactiveCounter=0;
-	filTipTimer=0;
-	plusSite=NULL;
-	minusSite=NULL;
-	filPos = 0;
-	springJunction=false;
-	filNeigh=NULL;
-	FATimer=0;
-	activeNotch = 0.0f;
-	Dll4=0.0f;
-	VEGFR = 0.0f;
-	VEGFRactive=0.0f;
-	
-	surgeSpringConst=false;
-	veilAdvancing = false;
-	vonNeu=false;
-        assessed=false;
-        addedJunctionList=false;
-        
-
-	
-	for(i=0;i<meshNeighs+NEIGHSMAX;i++){
-		neigh[i]=NULL;
-		SpringNeigh[i]=NULL;
-		
-	}
-	SpringBelong=NULL;
-
-
-
-}//-----------------------------------------------------------------------------
-
-MemAgent::~MemAgent(void){
-
-	EnvNeighs.clear();
-}
-
-//-----------------------------------------------------------------------------
-EC::EC(World*  world){
-
-	worldP = world;
-       
-
-        mutant = false;
-        
-        filCONST = FIL_VARY; //LTK link add user config value link here
-     
-        //wt values FLTK link
-        VEGFRnorm = VEGFRNORM;
-        Vsink =VsinkNorm;
-        
-        if(VR2_HET==true){
-                VEGFRnorm = VEGFRNORM*0.5;
-        }
-        if(VR1_HET==true) Vsink = Vsink*0.5;
-        
-        //add in for Dll4 HET/KO..
-        
-	VEGFRtot=VEGFRnorm;
-	Dll4tot=0.0f;
-	Notchtot=0.0f;
-	activeNotchtot=0.0f;
-	stableVEGFR=VEGFRnorm;
-	base_of_longest_fil= NULL;
-	length_of_longest_fil = 0;
-        newJunction = 0;
-        
-        actinUsed=0;
-	
-        //check this bit works when switching between setup versions
-       // if(user_defined_fils_spacing == true) fixed_filopodia_spacing = 0; //FLTK link up needed here to config GUI! 
-       // else{
-       //     if((CELL_SETUP==1)&&((ENV_SETUP==1)||(ENV_SETUP==4))) fixed_filopodia_spacing=1;//4;
-       //     else 
-       //     fixed_filopodia_spacing=1;
-       // }
-    
-	int i;
-	for(i=0;i<actNot_VEGFR_delay;i++){
-		NotchDelayArray.push_back(0.0f);
-	}
-	for(i=0;i<actNot_VEGFR_lasts;i++){
-		NotchLastsArray.push_back(0.0f);
-	}
-	for(i=0;i<VEGFR_dll4_delay;i++){
-		VEGFRDelayArray.push_back(0.0f);
-	}
-	for(i=0;i<VEGFR_dll4_lasts;i++){
-		VEGFRlastsArray.push_back(0.0f);
-	}		
-
-
-      
-        VonNeighs = 0;
-	
-}//-----------------------------------------------------------------------------
 //-------------------------------------------------------------------------------
 //World::World(void){
 

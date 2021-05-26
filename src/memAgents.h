@@ -2,10 +2,10 @@
 // Created by Thomas Mead on 22/01/2021.
 //
 
-#include "Protein.h"
-
 #ifndef SPRINGAGENT_MEMAGENTS_H
 #define SPRINGAGENT_MEMAGENTS_H
+
+#include "protein.h"
 
 class MemAgent {
 public:
