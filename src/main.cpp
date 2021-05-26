@@ -9,6 +9,7 @@
 #include "Tissue.h"
 #include "world.h"
 #include "memAgents.h"
+#include "EC.h"
 
 #if GRAPHICS
 #include "display.h"

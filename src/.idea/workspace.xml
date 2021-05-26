@@ -11,32 +11,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Added X_Offset to vessel position determination.">
-      <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Tidied up includes. Removed duplicate EC class in objects.h">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/EC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ECmesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ScreenRecording.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ScreenRecording.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/display.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/display.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry_functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry_functions.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/protein.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618486748482</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Tidied up includes. Removed duplicate EC class in objects.h">
+      <created>1622025160280</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1622025160280</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,7 +343,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commented out printing of XMAX etc. during world creation." />
     <MESSAGE value="Changed find_nearest_triangle_node to use gridXdimensions." />
     <MESSAGE value="Updated create_gradient to use new gradient shape enum" />
     <MESSAGE value="Deprecated create_gradient function." />
@@ -384,14 +367,15 @@
     <MESSAGE value="sink and source creation function now calls the correct application function" />
     <MESSAGE value="Added an assert to check that env agents are within the world when creating a gradient." />
     <MESSAGE value="Amended source dist calculation to work for spherical and source/sink gradients." />
-    <option name="LAST_COMMIT_MESSAGE" value="Amended source dist calculation to work for spherical and source/sink gradients." />
+    <MESSAGE value="Tidied up includes. Removed duplicate EC class in objects.h" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tidied up includes. Removed duplicate EC class in objects.h" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Tissue.cpp</url>
-          <line>315</line>
+          <line>316</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
