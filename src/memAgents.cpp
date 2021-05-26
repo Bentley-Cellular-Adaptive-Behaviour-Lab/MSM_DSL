@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include <string.h>
 #include "objects.h"
 #include <math.h>
 #include "memAgents.h"
 #include "environment.h"
+#include "EC.h"
 
 using namespace std;
 
@@ -2304,6 +2304,74 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 }
 
+MemAgent::MemAgent(EC* belongsTo, World* world){
+
+	int i;
+	diffAd_replaced_cell = NULL;
+	diffAd_replaced_med = NULL;
+
+	MEDIUM = false;
+	mediumNeighs = 0;
+	labelled = false;
+	labelledBlindended = false;
+	labelled2=false;
+	mesh3SpringsOnly=false;
+	Cell = belongsTo;
+	created = 0;
+	FA = false;
+	FIL=NONE;
+
+	worldP=world;
+	retracted = false;
+	junction = false;
+	neighs=0;
+	node = true;
+	filTokens =0;
+	Force[0]=0;
+	Force[1]=0;
+	Force[2]=0;
+	SumVEGF=0;
+	MneighCount=0;
+	deleteFlag=false;
+	VRinactiveCounter=0;
+	filTipTimer=0;
+	plusSite=NULL;
+	minusSite=NULL;
+	filPos = 0;
+	springJunction=false;
+	filNeigh=NULL;
+	FATimer=0;
+	activeNotch = 0.0f;
+	Dll4=0.0f;
+	VEGFR = 0.0f;
+	VEGFRactive=0.0f;
+
+	surgeSpringConst=false;
+	veilAdvancing = false;
+	vonNeu=false;
+	assessed=false;
+	addedJunctionList=false;
+
+
+
+	for(i=0;i<meshNeighs+NEIGHSMAX;i++){
+		neigh[i]=NULL;
+		SpringNeigh[i]=NULL;
+
+	}
+	SpringBelong=NULL;
+
+
+
+}//-----------------------------------------------------------------------------
+
+MemAgent::~MemAgent(void){
+	for (auto protein : this->owned_proteins) {
+		delete protein;
+	}
+	EnvNeighs.clear();
+}
+
 /*****************************************************************************************
 *  Name:		add_cell_proteins
 *  Description: Checks against the proteins that a cell owns and adds them all to this memAgent.
@@ -2315,21 +2383,9 @@ void MemAgent::add_cell_proteins() {
     //TODO: Have filopodia types prevent certain proteins from being allocated.
     //TODO: Have protein totals be updated after all memAgents have been created.
 
-    for (auto current_protein : this->Cell->m_cell_type->owned_proteins) {
+    for (auto current_protein : this->Cell->m_cell_type->proteins) {
         // Create new protein
-        protein *new_protein = new protein(current_protein->name, 0.0, false);
+        auto *new_protein = new protein(current_protein->get_name(), 0.0, false);
         this->owned_proteins.push_back(new_protein);
-    }
-}
-
-/*****************************************************************************************
-*  Name:		~MemAgent
-*  Description: Destructor for memagents.
-*  Returns:		void
-******************************************************************************************/
-
-MemAgent::~MemAgent(void) {
-    for (auto protein : this->owned_proteins) {
-        delete protein;
     }
 }

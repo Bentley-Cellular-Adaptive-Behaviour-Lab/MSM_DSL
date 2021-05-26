@@ -6,6 +6,7 @@
 #include "ScreenRecording.h"
 #include "objects.h"
 #include "memAgents.h"
+#include "EC.h"
 
 // J Switch for os type
 

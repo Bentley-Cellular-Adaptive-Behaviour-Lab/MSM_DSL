@@ -1,10 +1,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
-#include <string.h>
 #include "objects.h"
 #include <math.h>
 #include "memAgents.h"
+#include "EC.h"
 #include "environment.h"
 
 

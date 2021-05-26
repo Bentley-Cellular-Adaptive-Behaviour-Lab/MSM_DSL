@@ -1,9 +1,7 @@
 
-
 #include <math.h>
 #include <iomanip>
 #include "objects.h"
-#include <fstream>
 #include "memAgents.h"
 #include "environment.h"
 

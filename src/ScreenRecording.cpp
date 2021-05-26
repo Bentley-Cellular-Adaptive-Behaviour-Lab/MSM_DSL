@@ -1,6 +1,7 @@
+#if GRAPHICS
+
 #include "ScreenRecording.h"
 #include <iostream>
-#if GRAPHICS
 #include "display.h"
 
 #ifdef __linux__

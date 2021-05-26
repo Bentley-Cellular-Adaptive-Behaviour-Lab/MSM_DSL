@@ -1,13 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
-#include <string.h>
 #include "objects.h"
 #include <math.h>
-#include <functional>
 #include <numeric>
 #include <iterator>
 #include "memAgents.h"
+#include "EC.h"
 
 using namespace std;
 

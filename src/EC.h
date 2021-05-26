@@ -2,10 +2,11 @@
 // Created by Thomas Mead on 02/02/2021.
 //
 
-#include "Tissue.h"
-
 #ifndef SPRINGAGENT_EC_H
 #define SPRINGAGENT_EC_H
+
+#include "Tissue.h"
+
 class EC {
 public:
 	World* worldP;
@@ -100,9 +101,6 @@ public:
 
 	std::vector<std::array<int, 3>> filopodiaExtensions;
 	std::vector<std::array<int, 3>> filopodiaRetractions;
-
-	// Stores proteins assigned to a cell - used by memAgents belonging to that cell when being created.
-	std::vector<Protein_Cell*> owned_proteins;
 
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;

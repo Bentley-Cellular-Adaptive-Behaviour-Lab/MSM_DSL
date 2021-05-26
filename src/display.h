@@ -1,7 +1,6 @@
 #ifndef DISPLAY_H_
 #define DISPLAY_H_
 
-//#include "objects.h"
 #include <string>
 void displayGlui(int* argc, char** argv);
 

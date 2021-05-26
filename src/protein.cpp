@@ -22,4 +22,6 @@ std::string protein::get_name() {
     return this->name;
 }
 
+protein::~protein() = default;
+
 
