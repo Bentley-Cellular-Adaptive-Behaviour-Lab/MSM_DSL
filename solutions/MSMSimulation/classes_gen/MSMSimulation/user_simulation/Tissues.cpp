@@ -21,6 +21,6 @@ void Tissue_Container::tissue_set_up() {
     // Cell Creation //
 
     // Tissue Creation //
-    Monolayer_Pos = Coordinates(20, 20, 0);
+    Monolayer_Pos = Coordinates(40, 40, 0);
     create_tissue("Monolayer", Mono_Type, &(Monolayer_Pos));
 }

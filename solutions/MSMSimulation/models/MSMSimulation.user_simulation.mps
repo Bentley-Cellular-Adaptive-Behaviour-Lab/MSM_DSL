@@ -21,6 +21,12 @@
       <concept id="3416854989769421750" name="WorldSetup.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
+      <concept id="5893570766194507600" name="WorldSetup.structure.Substrate_Shape_Cuboid" flags="ng" index="2Sr5gM">
+        <child id="2483842479244859575" name="Centre" index="f4z$$" />
+        <child id="4052263675728681439" name="Width" index="3oe_68" />
+        <child id="4052263675728681446" name="Depth" index="3oe_6L" />
+        <child id="4052263675728681442" name="Height" index="3oe_6P" />
+      </concept>
       <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
         <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
         <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
@@ -35,6 +41,11 @@
         <reference id="5490954312196474384" name="Desired_Species_Container" index="24rgZa" />
         <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
         <child id="8343650468779203044" name="grid" index="1yko01" />
+        <child id="8343650468779203054" name="substrates" index="1yko0b" />
+      </concept>
+      <concept id="8343650468779203058" name="WorldSetup.structure.Substrate" flags="ng" index="1yko0n">
+        <child id="5893570766194507605" name="shape" index="2Sr5gR" />
+        <child id="4052263675728673910" name="Adhesiveness" index="3oezgx" />
       </concept>
     </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
@@ -262,8 +273,8 @@
         </node>
         <node concept="2_hQR_" id="5P5dWvvdD1x" role="2IF2Qq">
           <node concept="2_n9WQ" id="5P5dWvvdD1y" role="2_hQRE">
-            <node concept="30bXRB" id="5P5dWvvdD78" role="2_n9WR">
-              <property role="30bXRw" value="0" />
+            <node concept="30bXRB" id="7iSlhFZVbKx" role="2_n9WR">
+              <property role="30bXRw" value="-10" />
             </node>
           </node>
           <node concept="2_hRrN" id="5P5dWvvdD7w" role="2_hQ4V" />
@@ -275,16 +286,76 @@
     <property role="TrG5h" value="World" />
     <ref role="24rgZa" node="cJYjfa66Xm" resolve="SortTesting" />
     <ref role="3_H_MC" node="5gBmBO5mHPf" resolve="Tissues" />
+    <node concept="1yko0n" id="7iSlhFZVbwB" role="1yko0b">
+      <property role="TrG5h" value="Substrate" />
+      <node concept="2_kiwO" id="7iSlhFZVbwD" role="3oezgx">
+        <node concept="30bXRB" id="7iSlhFZVbJc" role="2_kiwP">
+          <property role="30bXRw" value="1.0" />
+        </node>
+      </node>
+      <node concept="2Sr5gM" id="7iSlhFZVbzy" role="2Sr5gR">
+        <node concept="3ZP1sY" id="7iSlhFZVbz$" role="f4z$$">
+          <node concept="2_hQR_" id="7iSlhFZVbzA" role="2IF2Ql">
+            <node concept="2_n9WQ" id="7iSlhFZVbzC" role="2_hQRE">
+              <node concept="30bXRB" id="7iSlhFZVbBI" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="7iSlhFZVb_R" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="7iSlhFZVbzI" role="2IF2Qn">
+            <node concept="2_n9WQ" id="7iSlhFZVbzK" role="2_hQRE">
+              <node concept="30bXRB" id="7iSlhFZVbCi" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="7iSlhFZVbAE" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="7iSlhFZVbzQ" role="2IF2Qq">
+            <node concept="2_n9WQ" id="7iSlhFZVbzS" role="2_hQRE">
+              <node concept="30bXRB" id="7iSlhFZVbB5" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="7iSlhFZVbCC" role="2_hQ4V" />
+          </node>
+        </node>
+        <node concept="2_hQR_" id="7iSlhFZVbzY" role="3oe_68">
+          <node concept="2_n9WQ" id="7iSlhFZVb$0" role="2_hQRE">
+            <node concept="30bXRB" id="7iSlhFZVbFC" role="2_n9WR">
+              <property role="30bXRw" value="40" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="7iSlhFZVbD_" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="7iSlhFZVb$6" role="3oe_6P">
+          <node concept="2_n9WQ" id="7iSlhFZVb$8" role="2_hQRE">
+            <node concept="30bXRB" id="7iSlhFZVbGS" role="2_n9WR">
+              <property role="30bXRw" value="40" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="7iSlhFZVbHo" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="7iSlhFZVb$e" role="3oe_6L">
+          <node concept="2_n9WQ" id="7iSlhFZVb$g" role="2_hQRE">
+            <node concept="30bXRB" id="7iSlhFZVbHX" role="2_n9WR">
+              <property role="30bXRw" value="20" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="7iSlhFZVbI_" role="2_hQ4V" />
+        </node>
+      </node>
+    </node>
     <node concept="1yko03" id="3fk35jmuDw3" role="1yko01">
-      <property role="3cJDZq" value="-20" />
-      <property role="3cJDZs" value="-20" />
-      <property role="3cJDZ5" value="0" />
-      <property role="3bD6N$" value="40" />
-      <property role="3bD6ND" value="40" />
-      <property role="3bD6NH" value="0" />
+      <property role="3cJDZq" value="-40" />
+      <property role="3cJDZs" value="-40" />
+      <property role="3cJDZ5" value="-20" />
+      <property role="3bD6N$" value="80" />
+      <property role="3bD6ND" value="80" />
+      <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="3fk35jmuDw4" role="3bEhY_">
         <node concept="2_n9WQ" id="3fk35jmuDw5" role="2_hQRE">
-          <node concept="30bXRB" id="785ahjebYBU" role="2_n9WR">
+          <node concept="30bXRB" id="7iSlhFZVcRF" role="2_n9WR">
             <property role="30bXRw" value="0" />
           </node>
         </node>

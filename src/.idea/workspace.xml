@@ -11,39 +11,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Tidying up includes">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Amended makefile to include protein class">
+      <change afterPath="$PROJECT_DIR$/springAgent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.o" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.o" beforeDir="false" afterPath="$PROJECT_DIR$/EC.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ECmesh.o" beforeDir="false" afterPath="$PROJECT_DIR$/ECmesh.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.o" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/creation.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.o" beforeDir="false" afterPath="$PROJECT_DIR$/display.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dsl_World.o" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.o" beforeDir="false" afterPath="$PROJECT_DIR$/environment.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry_functions.o" beforeDir="false" afterPath="$PROJECT_DIR$/geometry_functions.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.o" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/space.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space.o" beforeDir="false" afterPath="$PROJECT_DIR$/space.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/world.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.o" beforeDir="false" afterPath="$PROJECT_DIR$/world.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +65,6 @@
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -115,7 +92,8 @@
       <workItem from="1618392336956" duration="1209000" />
       <workItem from="1618394055761" duration="15593000" />
       <workItem from="1618479407906" duration="6408000" />
-      <workItem from="1622109559143" duration="3173000" />
+      <workItem from="1622109559143" duration="3433000" />
+      <workItem from="1622114778321" duration="2068000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -362,7 +340,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622111244787</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Amended makefile to include protein class">
+      <created>1622113454889</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1622113454889</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +366,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated create_gradient to use new gradient shape enum" />
     <MESSAGE value="Deprecated create_gradient function." />
     <MESSAGE value="Removing gradient shape arguments from create_gradient functions (as shapes are now known based on the type of function called)" />
     <MESSAGE value="Changed gradient starting amounts to be floats." />
@@ -406,7 +390,8 @@
     <MESSAGE value="Amended source dist calculation to work for spherical and source/sink gradients." />
     <MESSAGE value="Tidied up includes. Removed duplicate EC class in objects.h" />
     <MESSAGE value="Tidying up includes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tidying up includes" />
+    <MESSAGE value="Amended makefile to include protein class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amended makefile to include protein class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
