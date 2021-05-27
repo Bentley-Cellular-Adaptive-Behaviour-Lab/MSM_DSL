@@ -1,6 +1,5 @@
 #include <math.h>
 #include <iomanip>
-#include "objects.h"
 #include "memAgents.h"
 #include "environment.h"
 #include "EC.h"

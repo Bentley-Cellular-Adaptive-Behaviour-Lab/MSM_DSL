@@ -7,7 +7,6 @@
 #define MEMAGENTSPRINGMODEL_DSL_TISSUE_H
 
 #include <vector>
-#include "objects.h"
 #include "space.h"
 #include "protein.h"
 

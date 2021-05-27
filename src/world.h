@@ -5,7 +5,6 @@
 #ifndef MEMAGENTSPRINGMODEL_DSL_WORLD_H
 #define MEMAGENTSPRINGMODEL_DSL_WORLD_H
 
-#include "objects.h"
 #include "space.h"
 #include "protein.h"
 
