@@ -30,6 +30,7 @@ set (Headers src/creation.h
         src/EC.cpp
         src/EC.h
         src/ECmesh.h
+        src/memAgents.h
         src/objects.h
         src/protein.h
         src/ScreenRecording.h
@@ -37,33 +38,33 @@ set (Headers src/creation.h
         src/Tissue.h
         src/world.h)
 
-add_executable(springAgent  ${Sources} ${Headers})
+add_executable(springAgent ${Sources} ${Headers})
 
 find_package(OpenGL)
-find_package(GLUT)
+#find_package(GLUT)
 
 # Source: https://apps.man.poznan.pl/trac/gpu_mri_3d/browser/trunk/CMake/FindGLUI.cmake
-FIND_LIBRARY (GLUI_LIBRARY NAMES glui
-        PATHS
-        ENV LD_LIBRARY_PATH
-        ENV LIBRARY_PATH
-        /usr/lib64
-        /usr/lib
-        /usr/local/lib64
-        /usr/local/lib
-        /opt/local/lib
-        )
-
-FIND_PATH (GLUI_INCLUDES GL/glui.h
-        ENV CPATH
-        /usr/include
-        /usr/local/include
-        /opt/local/include
-        )
-
-IF(GLUI_INCLUDES AND GLUI_LIBRARY)
-    SET(GLUI_FOUND TRUE)
-ENDIF(GLUI_INCLUDES AND GLUI_LIBRARY)
+#FIND_LIBRARY (GLUI_LIBRARY NAMES glui
+#        PATHS
+#        ENV LD_LIBRARY_PATH
+#        ENV LIBRARY_PATH
+#        /usr/lib64
+#        /usr/lib
+#        /usr/local/lib64
+#        /usr/local/lib
+#        /opt/local/lib
+#        )
+#
+#FIND_PATH (GLUI_INCLUDES GL/glui.h
+#        ENV CPATH
+#        /usr/include
+#        /usr/local/include
+#        /opt/local/include
+#        )
+#
+#IF(GLUI_INCLUDES AND GLUI_LIBRARY)
+#    SET(GLUI_FOUND TRUE)
+#ENDIF(GLUI_INCLUDES AND GLUI_LIBRARY)
 #
 #IF(GLUI_FOUND)
 #    IF(NOT GLUI_FIND_QUIETLY)

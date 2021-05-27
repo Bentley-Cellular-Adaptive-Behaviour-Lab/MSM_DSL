@@ -102,6 +102,9 @@ public:
 	std::vector<std::array<int, 3>> filopodiaExtensions;
 	std::vector<std::array<int, 3>> filopodiaRetractions;
 
+    void distribute_proteins();
+    void calculate_cell_protein_levels();
+
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;
 };

@@ -116,6 +116,9 @@ public:
 	vector<protein*> owned_proteins;
 
 	void add_cell_proteins();
+	bool has_protein(string query_name);
+	void update_protein_level(string protein_name, float new_level);
+    float get_protein_level(string protein_name);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H
