@@ -1,12 +1,10 @@
 #include <iostream>
 #include <vector>
-#include "objects.h"
 #include <time.h>
 #include <algorithm>
 #include <math.h>
 #include <chrono>
 
-#include "Tissue.h"
 #include "world.h"
 #include "memAgents.h"
 #include "EC.h"

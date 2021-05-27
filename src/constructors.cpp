@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
-#include "objects.h"
 #include <random>
 #include "environment.h"
 

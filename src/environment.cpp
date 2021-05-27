@@ -1,5 +1,4 @@
 
-#include "objects.h"
 #include <math.h>
 #include "environment.h"
 

@@ -9,8 +9,6 @@
 #include <cassert>
 
 #include "Tissue.h"
-#include "objects.h"
-#include "space.h"
 #include "memAgents.h"
 #include "EC.h"
 

@@ -5,6 +5,7 @@
 #ifndef SPRINGAGENT_MEMAGENTS_H
 #define SPRINGAGENT_MEMAGENTS_H
 
+#include "objects.h"
 #include "protein.h"
 
 class MemAgent {
