@@ -6,6 +6,7 @@
 #include "memAgents.h"
 #include "environment.h"
 #include "EC.h"
+#include "assert.h"
 
 using namespace std;
 
@@ -2387,5 +2388,47 @@ void MemAgent::add_cell_proteins() {
         // Create new protein
         auto *new_protein = new protein(current_protein->get_name(), 0.0, false);
         this->owned_proteins.push_back(new_protein);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		has_protein
+*  Description: Checks against the proteins that a memAgent has this protein in vector.
+*               If protein has the same name, then return true.
+*  Returns:		boolean
+******************************************************************************************/
+
+bool MemAgent::has_protein(string query_name) {
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == query_name) {
+            return true;
+        }
+    }
+    return false;
+}
+
+/*****************************************************************************************
+*  Name:		update_protein_level
+*  Description: Updates the level of a protein owned by this memAgent.
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::update_protein_level(string protein_name, float new_level) {
+    // This assert should always pass, as we're checking this in the distribute proteins function.
+   assert(this->has_protein(protein_name));
+   for (auto protein : this->owned_proteins) {
+       if (protein->get_name() == protein_name) {
+           protein->set_level(new_level);
+       }
+   }
+}
+
+float MemAgent::get_protein_level(string protein_name) {
+    // This assert should always pass, as we're checking this in the calculate cell protein totals function.
+    assert(this->has_protein(protein_name));
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == protein_name) {
+            return protein->get_level();
+        }
     }
 }
