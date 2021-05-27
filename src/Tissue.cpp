@@ -1780,34 +1780,17 @@ void Tissue_Monolayer::create_monolayer() {
         store_cell_agent(ecp);
     }
 
-//    for (int i = 0; i < m_cell_number; i++) {
-//
-//        if ( I == m_width_in_cells) {
-//            I = 0;
-//            j++;
-//        }
-//
-//        k = j % 2;
-//        tissue_create_2D_square_cell(i,
-//        							(int)(start_pos_X + (cell_width / 2.0f) + (I * cell_width)),
-//        							(int)(start_pos_Y + (cell_height / 2.0f) + (j * cell_height)),
-//									 (int)this->m_position->get_z_coord());
-//        I++;
-//    }
-
 	int start_pos_X = this->m_position->get_x_coord() - ((this->m_width_in_cells * cell_width) / 2);
 	int start_pos_Y = this->m_position->get_y_coord() - ((this->m_height_in_cells * cell_height) / 2);
 
-	int current_pos_X = start_pos_X;
-	int current_pos_Y = start_pos_Y;
-
 	int count = 0;
+	int current_pos_Y = start_pos_Y;
 	for (int i = 0; i < this->m_height_in_cells; i++) {
+		int current_pos_X = start_pos_X;
 		for (int j = 0; j < this->m_width_in_cells; j++) {
-			tissue_create_2D_square_cell(count,
-        							(int) (current_pos_X + (cell_width / 2.0f)),
-        							(int) (current_pos_Y + (cell_height / 2.0f)),
-        							(int) this->m_position->get_z_coord());
+			int centre_X = (int) (current_pos_X + (cell_width / 2.0f));
+			int centre_Y = (int) (current_pos_Y + (cell_height / 2.0f));
+			tissue_create_2D_square_cell(count, centre_X, centre_Y,(int) this->m_position->get_z_coord());
 			count++;
 			current_pos_X += cell_width;
 		}
