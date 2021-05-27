@@ -6,6 +6,7 @@
 #define SPRINGAGENT_ENVIRONMENT_H
 
 #include "protein.h"
+#include "objects.h"
 
 class Env {
 public:
@@ -38,7 +39,7 @@ public:
 	float adhesiveness;
 
 	// List of proteins found at this location.
-	vector<protein*> owned_proteins;
+	std::vector<protein*> owned_proteins;
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H
