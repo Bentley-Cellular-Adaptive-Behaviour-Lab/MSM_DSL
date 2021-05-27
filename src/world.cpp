@@ -3,10 +3,10 @@
 //
 
 #include <assert.h>
-#include "objects.h"
 #include "world.h"
 #include "memAgents.h"
 #include "environment.h"
+
 //********************************************************************************************************************//
 
 // Gradient
