@@ -1706,7 +1706,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
         }
 
 
-        if (worldP->insideWorld(m, n, p) == true) {
+        if (worldP->insideWorld(m, n, p)) {
             worldP->neigh[x].Mids = worldP->grid[m][n][p].Mids;
             worldP->neigh[x].Eid = worldP->grid[m][n][p].Eid;
 
@@ -2430,7 +2430,8 @@ void MemAgent::update_protein_level(string protein_name, float new_level) {
 ******************************************************************************************/
 
 float MemAgent::get_protein_level(string protein_name) {
-    // This assert should always pass, as we're checking this in the calculate cell protein totals function.
+    // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
+    // This is also used during ODE running and so has the potential to fail.
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
@@ -2439,19 +2440,141 @@ float MemAgent::get_protein_level(string protein_name) {
     }
 }
 
-//TODO: FUNCTION TO RUN CELL TYPE ODE AND UPDATE MEMAGENT LEVELS.
-
 /*****************************************************************************************
-*  Name:		run_local_ODEs
-*  Description: Run the ODE system corresponding to this cell type
-*  Returns:		void
+*  Name:		get_environment_level
+*  Description: Returns the level of a protein in the nearby environment.
+*  Returns:		float
 ******************************************************************************************/
 
-void MemAgent::run_local_ODES() {
+float MemAgent::get_environment_level(string protein_name) {
+    Env *ep;
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
 
-    for (auto protein : this->owned_proteins) {
+    float protein_level = 0;
 
+    for (int x = 0; x < 26; x++) {
+        // Same layer.
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        }
+        // Layer below.
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        }
+        // Layer above.
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
+        // If the environment agent at these coordinates is inside the world, and has the relevant protein,
+        // increase the count by the level at those coordinates.
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].type == E) {
+                ep = worldP->grid[m][n][p].Eid;
+                if (ep->has_protein(protein_name)) {
+                    protein_level+= ep->get_protein_level(protein_name);
+                }
+            }
+        }
     }
 }
-
-//TODO: FUNCTION TO RUN CELL TYPE ODE AND UPDATE MEMAGENT LEVELS.

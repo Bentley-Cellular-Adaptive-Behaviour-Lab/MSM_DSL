@@ -40,6 +40,11 @@ public:
 
 	// List of proteins found at this location.
 	std::vector<protein*> owned_proteins;
+
+	// Returns true if this environment agent has a protein.
+
+	bool has_protein(string protein_name);
+    float get_protein_level(string protein_name);
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H

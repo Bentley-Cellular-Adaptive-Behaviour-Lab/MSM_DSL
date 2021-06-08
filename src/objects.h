@@ -701,6 +701,7 @@ public:
 				  std::tuple<float, float> point_2);
 
 	World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
+
 };
 ///----------------------------------------
 
