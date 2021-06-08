@@ -19,6 +19,7 @@ set (Sources src/analysis.cpp
         src/Grid.cpp
         src/main.cpp
         src/memAgents.cpp
+        src/ODE.cpp
         src/protein.cpp
         src/ScreenRecording.cpp
         src/space.cpp
@@ -31,6 +32,7 @@ set (Headers src/creation.h
         src/EC.h
         src/ECmesh.h
         src/memAgents.h
+        src/ODE.h
         src/objects.h
         src/protein.h
         src/ScreenRecording.h

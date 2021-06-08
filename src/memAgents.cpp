@@ -2423,6 +2423,12 @@ void MemAgent::update_protein_level(string protein_name, float new_level) {
    }
 }
 
+/*****************************************************************************************
+*  Name:		get_protein_level
+*  Description: Returns the level of a protein owned by this memAgent.
+*  Returns:		float
+******************************************************************************************/
+
 float MemAgent::get_protein_level(string protein_name) {
     // This assert should always pass, as we're checking this in the calculate cell protein totals function.
     assert(this->has_protein(protein_name));
@@ -2432,3 +2438,20 @@ float MemAgent::get_protein_level(string protein_name) {
         }
     }
 }
+
+//TODO: FUNCTION TO RUN CELL TYPE ODE AND UPDATE MEMAGENT LEVELS.
+
+/*****************************************************************************************
+*  Name:		run_local_ODEs
+*  Description: Run the ODE system corresponding to this cell type
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::run_local_ODES() {
+
+    for (auto protein : this->owned_proteins) {
+
+    }
+}
+
+//TODO: FUNCTION TO RUN CELL TYPE ODE AND UPDATE MEMAGENT LEVELS.
