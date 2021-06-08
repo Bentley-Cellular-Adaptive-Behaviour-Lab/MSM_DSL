@@ -118,8 +118,10 @@ public:
 	void add_cell_proteins();
 	bool has_protein(string query_name);
 	void update_protein_level(string protein_name, float new_level);
-    float get_protein_level(string protein_name);
-    float get_environment_level(string protein_name);
+    float get_memAgent_protein_level(string protein_name);
+    float get_environment_protein_level(string protein_name);
+    float get_local_protein_level(string protein_name);
+    float get_adjacent_protein_level(string protein_name);
     void run_local_ODES();
 };
 
