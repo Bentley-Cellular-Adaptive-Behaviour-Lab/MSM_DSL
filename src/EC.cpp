@@ -651,8 +651,11 @@ void EC::calculate_cell_protein_levels() {
         protein_counts.push_back(0);
     }
 
+    //TODO: ADD A CALL TO THE FUNCTION THAT RUNS THE ODES AT EACH MEMAGENT.
+
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
+        // RUN MEMAGENT ODE FUNCTION.
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {

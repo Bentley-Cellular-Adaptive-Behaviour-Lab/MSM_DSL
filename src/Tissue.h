@@ -20,6 +20,7 @@ enum cell_configurations{
 
 class Cell_Type {
 public:
+    //TODO: ADD ODE SYSTEM TO CELL TYPE
     string m_name;
     Shape *m_shape;
 	Tissue_Container *m_tissue_container;
