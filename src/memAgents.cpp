@@ -2429,7 +2429,7 @@ void MemAgent::update_protein_level(string protein_name, float new_level) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_protein_level(string protein_name) {
+float MemAgent::get_memAgent_protein_level(string protein_name) {
     // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
     // This is also used during ODE running and so has the potential to fail.
     assert(this->has_protein(protein_name));
@@ -2446,7 +2446,7 @@ float MemAgent::get_protein_level(string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_environment_level(string protein_name) {
+float MemAgent::get_environment_protein_level(string protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
@@ -2577,4 +2577,287 @@ float MemAgent::get_environment_level(string protein_name) {
             }
         }
     }
+
+    return protein_level;
+}
+
+/*****************************************************************************************
+*  Name:		get_local_protein_level
+*  Description: Returns the level of a protein in nearby memAgents belonging to this cell.
+*  Returns:		float
+******************************************************************************************/
+
+float MemAgent::get_local_protein_level(string protein_name) {
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
+
+    float protein_level = 0;
+
+    for (int x = 0; x < 26; x++) {
+        // Same layer.
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        }
+            // Layer below.
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        }
+            // Layer above.
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
+        // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
+        // increase the count by the level at those coordinates.
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].type == M) {
+                for (auto memAgent : worldP->grid[m][n][p].Mids) {
+                    if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
+                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                    }
+                }
+            }
+        }
+    }
+    return protein_level;
+}
+
+/*****************************************************************************************
+*  Name:		get_adjacent_protein_level
+*  Description: Returns the level of a protein in nearby memAgents belonging to adjacent cells.
+*  Returns:		float
+******************************************************************************************/
+
+float MemAgent::get_adjacent_protein_level(string protein_name) {
+    Env *ep;
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
+
+    float protein_level = 0;
+
+    for (int x = 0; x < 26; x++) {
+        // Same layer.
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        }
+            // Layer below.
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        }
+            // Layer above.
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
+        // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
+        // increase the count by the level at those coordinates.
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].type == M) {
+                for (auto memAgent : worldP->grid[m][n][p].Mids) {
+                    if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                    }
+                }
+            }
+        }
+    }
+    return protein_level;
 }
