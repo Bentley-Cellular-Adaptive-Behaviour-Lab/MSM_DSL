@@ -514,3 +514,45 @@ int J;
 */
 //-------------------------------------------------------------------------
 
+/*****************************************************************************************
+*  Name:		has_protein
+*  Description: Returns true if an environment agent has a given protein - returns false if not.
+*  Returns:		bool
+******************************************************************************************/
+
+bool Env::has_protein(string protein_name) {
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == protein_name) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+/*****************************************************************************************
+*  Name:		get_protein_level
+*  Description: Returns true if an environment agent has a given protein - returns false if not.
+*  Returns:		float
+******************************************************************************************/
+
+float Env::get_protein_level(string protein_name) {
+    try {
+        bool protein_found = false;
+        for (auto protein : this->owned_proteins) {
+            if (protein->get_name() == protein_name) {
+                protein_found = true;
+                return protein->get_level();
+            }
+        }
+        if (!protein_found) {
+            throw std::invalid_argument(protein_name);
+        }
+    } catch (std::invalid_argument) {
+        cerr << "Attempted to get the level of a protein at an environment agent which did not possess it." << endl;
+        cerr << "PROTEIN NAME: " << protein_name << endl;
+        cerr << "ENV LOCATION X:" << this->Ex << endl;
+        cerr << "ENV LOCATION Y:" << this->Ey << endl;
+        cerr << "ENV LOCATION Z:" << this->Ez << endl;
+    }
+}
