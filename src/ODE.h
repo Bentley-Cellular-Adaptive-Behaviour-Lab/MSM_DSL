@@ -25,7 +25,7 @@ private:
 public:
     cellType1_ODEs();
     void run_ODE(MemAgent* memAgent);
-    void ODE_system(const cellType1_ode_states &x, cellType1_ode_states &dxdt, double t);
+    static void ODE_system(const cellType1_ode_states &x, cellType1_ode_states &dxdt, double t);
 };
 
 static double calc_k1_rate(double A);

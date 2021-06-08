@@ -659,7 +659,7 @@ void EC::calculate_cell_protein_levels() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = nodeAgent->get_protein_level(current_protein->get_name());
+                float current_protein_level = nodeAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
         }
@@ -669,7 +669,7 @@ void EC::calculate_cell_protein_levels() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (surfaceAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = surfaceAgent->get_protein_level(current_protein->get_name());
+                float current_protein_level = surfaceAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
         }
@@ -679,7 +679,7 @@ void EC::calculate_cell_protein_levels() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (surfaceAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = surfaceAgent->get_protein_level(current_protein->get_name());
+                float current_protein_level = surfaceAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
         }
