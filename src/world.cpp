@@ -540,10 +540,13 @@ void Gradient::apply_gradient_to_cuboid() {
 	for (int x = x_start; x < x_end; x++) {
 		for (int y = y_start; y < y_end; y++) {
 			for (int z = z_start; z < z_end; z++) {
-				assert(x >= 0 && y >= 0 && z >= 0);
-				assert(x < m_parent_world->gridXDimensions &&
-					   y < m_parent_world->gridYDimensions &&
-					   z < m_parent_world->gridZDimensions);
+				assert(x >= 0);
+                assert(y >= 0);
+                assert(z >= 0);
+				assert(x < m_parent_world->gridXDimensions);
+                assert(y < m_parent_world->gridYDimensions);
+                assert(z < m_parent_world->gridZDimensions);
+
 				if (m_parent_world->grid[x][y][z].type == E) {
 					ep = m_parent_world->grid[x][y][z].Eid;
 					if (ep != nullptr) {
@@ -734,6 +737,7 @@ Gradient::Gradient(World_Container *container,
 	this->m_parent_container = container;
 	this->m_parent_world = container->m_world;
 	this->m_gradient_type = gradient_type;
+	this->m_protein = protein;
 	this->m_cuboidal_width = width;
 	this->m_cuboidal_height = height;
 	this->m_cuboidal_depth = depth;
