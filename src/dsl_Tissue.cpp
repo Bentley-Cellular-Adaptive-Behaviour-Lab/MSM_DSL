@@ -1,5 +1,6 @@
 
 #include "Tissue.h"
+#include "protein.h"
 void Tissue_Container::tissue_set_up() {
     // Created using: Tissues //
 
@@ -7,20 +8,23 @@ void Tissue_Container::tissue_set_up() {
     Cell_Type *Endo_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Flat *Mono_Type;
+    Tissue_Type_Cylindrical *Vessel_Type;
 
     // Coordinate Declarations //
-    Coordinates Monolayer_Pos;
+    Coordinates Vessel1_Pos;
 
-    // Cell Type Creation //
+    // Cell Type Creation //a
     Endo_Type = define_cell_type("Endo", CELL_SHAPE_SQUARE, 20, 20);
 
+    // Protein Assignment //
+    Endo_Type->add_protein(new protein("A",200,false));
+
     // Tissue Type Creation //
-    Mono_Type = define_tissue_type("Mono", Endo_Type, CELL_CONFIGURATION_FLAT, 2, 2);
+    Vessel_Type = define_tissue_type("Vessel", Endo_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 1, 6);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Monolayer_Pos = Coordinates(40, 40, 0);
-    create_tissue("Monolayer", Mono_Type, &(Monolayer_Pos));
+    Vessel1_Pos = Coordinates(20, 20, 20);
+    create_tissue("Vessel1", Vessel_Type, &(Vessel1_Pos));
 }

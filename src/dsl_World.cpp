@@ -6,7 +6,7 @@ void World_Container::world_setup() {
     World *world;
 
     Shape_Cuboid *Substrate_shape;
-    Coordinates Substrate_centre;
+    Coordinates Gradient_centre;
 
     // WORLD CREATION
 
@@ -20,7 +20,8 @@ void World_Container::world_setup() {
 
     // SUBSTRATE CREATION
 
-    Substrate_shape = new Shape_Cuboid(SUBSTRATE_SHAPE_CUBOIDAL, 40, 40, 20);
-    Substrate_centre = Coordinates(40, 40, 20);
-    create_substrate(Substrate_shape, &(Substrate_centre), NO_DIRECTION, 1.0);
+    Gradient_centre = Coordinates(40, 40, 20);
+    create_gradient(GRADIENT_TYPE_CONSTANT, new protein("B",10,"false"), &(Gradient_centre), GRADIENT_DIRECTION_DEC_X, 20, 20, 20);
+
+
 }
