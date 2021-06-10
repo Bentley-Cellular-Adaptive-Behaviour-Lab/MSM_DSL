@@ -357,6 +357,12 @@ void World::creationTimestep(int movie)
     	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
     cout << "memInit" << memINIT << endl;
 
+    if (DSL_TESTING) {
+        cout << "Allocating proteins to cells." << endl;
+        for (int j = 0; j < (int) ECagents.size(); j++)
+            ECagents[j]->distribute_proteins();
+    }
+
     //create environment
 //    createEnvironment();
 
@@ -610,9 +616,13 @@ void World::updateECagents(void) {
             ECagents[j]->store_cell_COM(); //to see cell movement, monitor its centre of mass
 
 
-        ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update
+        ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-        ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks 
+        // TOM
+        if (DSL_TESTING)
+            ECagents[j]->calculate_cell_protein_levels();
+        else
+            ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
 
         ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to get to nucleus+transcription) to calculate gene expression changes
 

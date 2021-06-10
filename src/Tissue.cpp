@@ -1518,6 +1518,8 @@ void Tissue_Vessel::create_vessel() {
         // Creates new cell agent and returns a pointer to it.
         EC * ecp = new EC((World*) m_world);
 
+        ecp->set_cell_type(this->m_tissue_type->m_cell_type);
+
         // Put the address into the world vector Ecells
         m_world->ECagents.push_back(ecp);
 
@@ -1772,6 +1774,8 @@ void Tissue_Monolayer::create_monolayer() {
     for (int i = 0; i < m_cell_number; i++) {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
         EC *ecp = new EC( this->m_world);
+
+        ecp->set_cell_type(this->m_tissue_type->m_cell_type);
 
         //put the address into the vector Ecells
         m_world->ECagents.push_back(ecp);

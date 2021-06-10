@@ -104,6 +104,7 @@ public:
 
     void distribute_proteins();
     void calculate_cell_protein_levels();
+    void set_cell_type(Cell_Type *cell_type);
 
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;

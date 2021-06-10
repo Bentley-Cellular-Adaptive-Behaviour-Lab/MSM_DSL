@@ -690,3 +690,14 @@ void EC::calculate_cell_protein_levels() {
         this->m_cell_type->proteins[i]->set_level(protein_counts[i]);
     }
 }
+
+/*****************************************************************************************
+*  Name:		set_cell_type
+*  Description: Sets the cell type of a cell agent.
+*  Returns:		void
+******************************************************************************************/
+
+void EC::set_cell_type(Cell_Type *cell_type) {
+    this->m_cell_type = cell_type;
+}
+
