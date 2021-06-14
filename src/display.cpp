@@ -148,8 +148,6 @@ bool   gp;					// G Pressed? ( New )
 //GLuint fogfilter= 0;					// Which Fog To Use
 GLfloat fogColor[4]= {1.0f, 1.0f, 1.0f, 1.0f};		// Fog Color
 
-using namespace std;
-
 
 //-----------------------------------------------------------
 void myGlutIdle( void ) {
@@ -652,8 +650,8 @@ void World::viewMesh(void) {
     int i, j,k;
     MemAgent * mp;
     float red, green, blue;
-    vector<Coordinates> coords;
-    vector <MemAgent*> triangleNodes;
+	std::vector<Coordinates> coords;
+	std::vector <MemAgent*> triangleNodes;
 	Coordinates one;
     Coordinates two;
     Coordinates three;
@@ -919,8 +917,8 @@ void World:: viewMesh_diagramSpheres(void){
     int i, j,k;
     MemAgent * mp;
     float red, green, blue;
-    vector<Coordinates> coords;
-     vector <MemAgent*> triangleNodes;
+	std::vector<Coordinates> coords;
+	std::vector <MemAgent*> triangleNodes;
 	Coordinates one;
     Coordinates two;
     Coordinates three;
@@ -1501,7 +1499,7 @@ void testGridAgents(void){
                 z = (((x-x1)/PN[0])*PN[2])+z1;
                 array[(int)x][(int)y][(int)z]=1;
                 x+=steps;
-                cout<<"x2>x1 ";
+				std::cout<<"x2>x1 ";
             }while((int)x!=(int)x2);
             
         }
@@ -1513,7 +1511,7 @@ void testGridAgents(void){
                 z = (((x-x1)/PN[0])*PN[2])+z1;
                 array[(int)x][(int)y][(int)z]=1;
                 x-=steps;
-                cout<<"x2<x1 ";
+				std::cout<<"x2<x1 ";
             }while((int)x!=(int)x2);
         }
         
@@ -1526,7 +1524,7 @@ void testGridAgents(void){
                 z = (((y-y1)/PN[1])*PN[2])+z1;
                 array[(int)x][(int)y][(int)z]=1;
                 y+=steps;
-                cout<<"y2>y1 ";
+				std::cout<<"y2>y1 ";
             }while((int)x!=(int)x2);
         }
         else if(y2<y1-steps){
@@ -1538,7 +1536,7 @@ void testGridAgents(void){
                 z = (((y-y1)/PN[1])*PN[2])+z1;
                 array[(int)x][(int)y][(int)z]=1;
                 y-=steps;
-                cout<<"y2<y1 ";
+				std::cout<<"y2<y1 ";
                 
             }while((int)x!=(int)x2);
         }
@@ -1551,7 +1549,7 @@ void testGridAgents(void){
                 y = (((z-z1)/PN[2])*PN[1])+y1;
                 array[(int)x][(int)y][(int)z]=1;
                 z+=steps;
-                cout<<"z2>z1 ";
+				std::cout<<"z2>z1 ";
                 
             }while((int)x!=(int)x2);
         }
@@ -1564,7 +1562,7 @@ void testGridAgents(void){
                 y = (((z-z1)/PN[2])*PN[1])+y1;
                 array[(int)x][(int)y][(int)z]=1;
                 z-=steps;
-                cout<<"z2<z1 ";
+				std::cout<<"z2<z1 ";
                 
                 
             }while((int)x!=(int)x2);
@@ -1677,7 +1675,7 @@ void screenRecording()
         case NotRecording:
             break;
         case Recording:
-            ScreenRecording::screenDump(string("movie/" + to_string(frameNumber) + ".tga").c_str());
+            ScreenRecording::screenDump(std::string("movie/" + std::to_string(frameNumber) + ".tga").c_str());
             frameNumber++;
             break;
         case SaveRecording:

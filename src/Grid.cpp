@@ -4,12 +4,11 @@
 #include "memAgents.h"
 #include "environment.h"
 
-using namespace std;
 //---------------------------------------------------------------------------------------------
 
 void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 
-    vector<MemAgent*>::iterator T;
+	std::vector<MemAgent*>::iterator T;
     int upto;
     int flagthere = 0;
     int j;
@@ -30,7 +29,7 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
         } while ((flagthere == 0) && (j < upto));
 
         if (flagthere == 0) {
-            cout << "ohhh..." << endl;
+			std::cout << "ohhh..." << std::endl;
         }
         /*if((grid[(int)memp->Mx][(int)memp->My][(int)memp->Mz].Fids.size()==0)&&(grid[(int)memp->Mx][(int)memp->My][(int)memp->Mz].type!=AS)){
          * grid[(int)memp->Mx][(int)memp->My][(int)memp->Mz].type = E;
@@ -52,10 +51,10 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
             }
             j++;
         } while ((flagthere == 0) && (j < upto));
-        if (flagthere == 0) cout << "not found agent in that grid site..." << endl;
+        if (flagthere == 0) std::cout << "not found agent in that grid site..." << std::endl;
         if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids.size() == 0) {
             //grid[(int)memp->Mx][(int)memp->My][(int)memp->Mz].type = E;
-            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Eid != NULL) cout << "already got an env agent in deleteOldGridRef " << memp->junction << endl;
+            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Eid != NULL) std::cout << "already got an env agent in deleteOldGridRef " << memp->junction << std::endl;
             createNewEnvAgent((int) memp->Mx, (int) memp->My, (int) memp->Mz);
 
         }
@@ -63,8 +62,8 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 
     //error message
     if (flagthere == 0) {
-        cout << "AAcant find the memAgent in that grid site" << endl;
-        cout.flush();
+		std::cout << "AAcant find the memAgent in that grid site" << std::endl;
+		std::cout.flush();
     }
 }
 

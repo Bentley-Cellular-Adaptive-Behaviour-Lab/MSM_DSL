@@ -7,8 +7,6 @@
 #include "memAgents.h"
 #include "EC.h"
 
-using namespace std;
-
 int countbell = 0;
 //-------------------------------------------------------------------------------------------------------------
 //base has reached a stalk joint, remove stalk node and reconnect base to next node
@@ -19,9 +17,9 @@ void EC::removeStalkNode(Spring *STP) {
     Spring* nextNodeSpring1;
     Spring*baseNodeSpring1;
     int flag, flag1;
-    vector<Spring*>::iterator Q;
-    vector<MemAgent*>::iterator L;
-    vector<MemAgent*>::iterator T;
+	std::vector<Spring*>::iterator Q;
+	std::vector<MemAgent*>::iterator L;
+	std::vector<MemAgent*>::iterator T;
     MemAgent * stalkNode;
     MemAgent * baseNode;
     MemAgent * nextNode;
@@ -62,8 +60,8 @@ void EC::removeStalkNode(Spring *STP) {
 
     } while ((i < (int) stalkNode->Cell->nodeAgents.size()) && (flag == 0));
     if (flag == 0) {
-        cout << "cant find stalk node.." << endl;
-        cout.flush();
+		std::cout << "cant find stalk node.." << std::endl;
+		std::cout.flush();
     }
 
     //create new springs
@@ -109,8 +107,8 @@ void EC::removeStalkNode(Spring *STP) {
         i++;
     } while ((i < upto) && (flag1 == 0));
     if (flag1 == 0) {
-        cout << "BBcant find the memagent in that grid site" << endl;
-        cout.flush();
+		std::cout << "BBcant find the memagent in that grid site" << std::endl;
+		std::cout.flush();
     }
 
     //deletions
@@ -134,8 +132,8 @@ void EC::newNodes(void) {
     MemAgent* memp;
     float XA;
     int startN, half;
-    vector<MemAgent*>::iterator D;
-    vector<Spring*>::iterator S;
+	std::vector<MemAgent*>::iterator D;
+	std::vector<Spring*>::iterator S;
     int upto = (int) Springs.size();
     int count=0;
 	
@@ -193,7 +191,7 @@ void EC::newNodes(void) {
 
             	memp = new MemAgent(this, worldP);
             	//cout<<"newNode:"<<memp<<endl<<endl;
-            	if ((Coord.x < 0) || (Coord.x >= this->worldP->gridXDimensions)) cout << "bug " << Coord.x;
+            	if ((Coord.x < 0) || (Coord.x >= this->worldP->gridXDimensions)) std::cout << "bug " << Coord.x;
 
 
             	memp->Mx = Coord.x;
@@ -748,7 +746,7 @@ void EC::createSpringAgent(int x, int y, int z, Spring* stp) {
 void EC::removeSpringAgents(void) {
 
     int i, k, uptoS;
-    vector<Spring*>::iterator T;
+	std::vector<Spring*>::iterator T;
 
     int uptoL = Springs.size();
 
@@ -919,12 +917,12 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
 
     //-------------------------------------------------------------------------------------------------------------
 
-    vector <MemAgent*> MemAgent::three_erTriangleFix(void) {
+std::vector <MemAgent*> MemAgent::three_erTriangleFix(void) {
 
         MemAgent* nodeA;
         MemAgent* nodeB;
         bool missingHor, missingRight;
-        vector <MemAgent*> answer;
+	std::vector <MemAgent*> answer;
         int i, j;
         //if node has only 3 springs coming from it, due to insertion of a new row in recruit nodes, cell growth,
         //it means a surface triangle will be missing
@@ -1004,11 +1002,11 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
     }
     //-------------------------------------------------------------------------------------------------------------
 
-    vector <MemAgent*> MemAgent::getTriangle(bool up) {
+std::vector <MemAgent*> MemAgent::getTriangle(bool up) {
 
         MemAgent* checkPoint;
         MemAgent* diagPoint;
-        vector <MemAgent*> triangle;
+		std::vector <MemAgent*> triangle;
         int i, j;
         //divide up squares between four nodes into two triangles so as to cover the surface with agents.
         //notes in soph's nice book pg.
@@ -1086,7 +1084,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
 
     //-------------------------------------------------------------------------------------------------------------
 
-    bool World::test_triange_Pos_change(vector<MemAgent*> triangle) {
+    bool World::test_triange_Pos_change(std::vector<MemAgent*> triangle) {
 
         //int version = 0;
 
@@ -1107,7 +1105,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
 
     //-------------------------------------------------------------------------------------------------------------
 
-    bool MemAgent::VoxTriag_sizeTest(vector <Coordinates> nodes) {
+    bool MemAgent::VoxTriag_sizeTest(std::vector <Coordinates> nodes) {
 
         bool allow;
         float dist1, dist2, dist3;
@@ -1200,7 +1198,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
 
         int i, j, k;
 
-        vector<Coordinates> Coords;
+		std::vector<Coordinates> Coords;
         Coordinates current;
         bool up = true;
         bool down = false;
@@ -1422,7 +1420,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
     //-------------------------------------------------------------------------------------------------------------
     //-------------------------------------------------------------------------------------------------------------
 
-    void World::voxeliseTriangle(vector<Coordinates> Coords, vector<MemAgent*> triangleNodes, EC* cell, int up) {
+    void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAgent*> triangleNodes, EC* cell, int up) {
 
         int* range;
         int X, Y, Z;
@@ -1640,8 +1638,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
         }
     }
     //-------------------------------------------------------------------------------------------------------------
-
-    void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, vector <MemAgent*> triangleNodes, int up) {
+    void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std::vector <MemAgent*> triangleNodes, int up) {
 
         float PN[3];
         float P[3];
@@ -1805,7 +1802,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
     }
     //-------------------------------------------------------------------------------------------------------------
 
-    void World::createSurfaceAgent(int X, int Y, int Z, EC* cell, vector<MemAgent*> triangleNodes, int up) {
+    void World::createSurfaceAgent(int X, int Y, int Z, EC* cell, std::vector<MemAgent*> triangleNodes, int up) {
 
 
         int i = 0;
@@ -1844,7 +1841,7 @@ MemAgent* MemAgent::findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Ri
             memp->triangle.push_back(triangleNodes[1]);
             memp->triangle.push_back(triangleNodes[2]);
 
-            if((triangleNodes[0]->neighs>100)||(triangleNodes[1]->neighs>100)||(triangleNodes[2]->neighs>100)) cout<<"aha! in ECmesh old prob.."<<endl;
+            if((triangleNodes[0]->neighs>100)||(triangleNodes[1]->neighs>100)||(triangleNodes[2]->neighs>100)) std::cout<<"aha! in ECmesh old prob.."<<std::endl;
 
             //if(memp->triangle.size()==0) cout<<"ohhhhhhhh"<<endl;
             //cout<<"c "<<endl;

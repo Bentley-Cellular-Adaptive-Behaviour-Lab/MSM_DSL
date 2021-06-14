@@ -8,8 +8,6 @@
 #include "EC.h"
 #include "assert.h"
 
-using namespace std;
-
 float steps = 0.5f;
 
 int right1 = 0;
@@ -97,7 +95,7 @@ float MemAgent::FilLength(int type) {
     MemAgent* Mcurrent;
     float length = 0.0f;
 
-    vector <MemAgent*> stored;
+	std::vector <MemAgent*> stored;
 
     if (type == BASE) Mcurrent = plusSite;
 
@@ -179,13 +177,13 @@ bool MemAgent::filRetract(void) {
     float B, D;
     int FLAG = 0;
 
-    vector<Spring*>::iterator Q;
-    vector<MemAgent*>::iterator L;
+	std::vector<Spring*>::iterator Q;
+	std::vector<MemAgent*>::iterator L;
     Spring* neighStp;
     int XA;
     float length;
     MemAgent* memp;
-    vector<MemAgent*>::iterator T;
+	std::vector<MemAgent*>::iterator T;
 
     ///release this memAgents adhesion (FIL=TIP for this node) 
     FA = false;
@@ -306,8 +304,8 @@ bool MemAgent::filRetract(void) {
 
         } while ((i < (int) Cell->Springs.size()) && (flag == 0));
         if (flag == 0) {
-            cout << "filRetract: hasnt found spring in list" << endl;
-            cout.flush();
+			std::cout << "filRetract: hasnt found spring in list" << std::endl;
+			std::cout.flush();
         }
 
         //remove the tip node from cells list
@@ -323,8 +321,8 @@ bool MemAgent::filRetract(void) {
             i++;
         } while ((i < (int) Cell->nodeAgents.size()) && (flag == 0));
         if (flag == 0) {
-            cout << "filRetract: hasnt found in node list" << endl;
-            cout.flush();
+			std::cout << "filRetract: hasnt found in node list" << std::endl;
+			std::cout.flush();
         }
 
         //need to go through and remove springAgents from grid, though really shouldnt have any as its less than 1 distance. just to be sure...-------------------
@@ -349,8 +347,8 @@ bool MemAgent::filRetract(void) {
                         k++;
                     } while ((k < (int) memp->Cell->springAgents.size()) && (flag == 0));
                     if (flag == 0) {
-                        cout << "deleting spring agent in main: hasnt found in list" << endl;
-                        cout.flush();
+						std::cout << "deleting spring agent in main: hasnt found in list" << std::endl;
+						std::cout.flush();
                     }
                     delete memp;
                 }
@@ -393,7 +391,7 @@ MemAgent* MemAgent::find_nearest_triangle_node(void) {
     if ((dist1 <= dist2) && (dist1 <= dist3)) nearest = triangle[0];
     else if ((dist2 <= dist1) && (dist2 <= dist3))nearest = triangle[1];
     else if ((dist3 <= dist2) && (dist3 <= dist1))nearest = triangle[2];
-    else cout << "cant find a nearest triangle node!" << endl;
+    else std::cout << "cant find a nearest triangle node!" << std::endl;
 
     return (nearest);
 
@@ -474,7 +472,7 @@ void MemAgent::ActinFlow(void) {
         //pass tokens up filopodia towards tipnode
         if ((FIL == STALK) || (FIL == BASE)) {
             if (plusSite == NULL) {
-                cout<<"no plusSite_BUG DETECTED in memAgents.cpp line 429"; cout.flush(); ///!WORTH BUG TESTING! if this shows up then plusSite is not labelling correctly 
+				std::cout<<"no plusSite_BUG DETECTED in memAgents.cpp line 429"; std::cout.flush(); ///!WORTH BUG TESTING! if this shows up then plusSite is not labelling correctly
             } else {
 
                 plusSite->filTokens += filTokens;
@@ -992,7 +990,7 @@ void MemAgent::anastomosis(MemAgent* other) {
                     other->springJunction = true;
                     worldP->store_new_fusion_events(node1->Cell, other->Cell);
 
-                    cout << "creating new spring " << node1 << " " << other << " " << " " << SpringNeigh[neighs] << endl;
+					std::cout << "creating new spring " << node1 << " " << other << " " << " " << SpringNeigh[neighs] << std::endl;
                     node1->neighs++;
                     other->neighs++;
 
@@ -1042,10 +1040,10 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
     int i, j, k;
     int flagA = 0;
     int flag = 0;
-    vector<EC*> cellNeighs;
-    vector<float> smallestDist;
-    vector<MemAgent*> nearestNode;
-    vector <EC*> CellsConnected;
+	std::vector<EC*> cellNeighs;
+	std::vector<float> smallestDist;
+	std::vector<MemAgent*> nearestNode;
+	std::vector <EC*> CellsConnected;
     float distance;
     int pos;
     int flag2 = 0;
@@ -1325,7 +1323,7 @@ void MemAgent::triggeredAnastSurge(MemAgent* junctionedAgent) {
 
                     Cell->createSpringTokenObject(current, Jcurrent, current->neighs);
                     Jcurrent->Cell->createSpringTokenObject(Jcurrent, current, Jcurrent->neighs);
-                    cout << "creating new surge spring " << current << " " << Jcurrent << " " << " " << endl;
+					std::cout << "creating new surge spring " << current << " " << Jcurrent << " " << " " << std::endl;
 
                     current->neighs++;
                     Jcurrent->neighs++;
@@ -1948,11 +1946,11 @@ Env * MemAgent::findHighestConc(void){
 }
 
 void World::displayStats(void) {
-    cout << "Dir right: " << 100 * ((float) right2 / ((float) count3));
-    cout << "Dir left: " << 100 * ((float) left2 / ((float) count3));
-    cout << "right: " << 100 * ((float) right1 / ((float) count3));
-    cout << " middle: " << 100 * ((float) middle / ((float) count3));
-    cout << " left: " << 100 * ((float) left1 / ((float) count3)) << endl;
+	std::cout << "Dir right: " << 100 * ((float) right2 / ((float) count3));
+	std::cout << "Dir left: " << 100 * ((float) left2 / ((float) count3));
+	std::cout << "right: " << 100 * ((float) right1 / ((float) count3));
+	std::cout << " middle: " << 100 * ((float) middle / ((float) count3));
+	std::cout << " left: " << 100 * ((float) left1 / ((float) count3)) << std::endl;
 
 }
 
@@ -2110,7 +2108,7 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 
     if(((node==false)&&((triangle[0]->neighs>500)||(triangle[1]->neighs>500)||(triangle[2]->neighs>500)))||((tocheck->node==false)&&((tocheck->triangle[0]->neighs>500)||(tocheck->triangle[1]->neighs>5000)||(tocheck->triangle[2]->neighs>5000)))){
-        cout<<"hmmm"<<this<<" "<<tocheck<<endl;
+		std::cout<<"hmmm"<<this<<" "<<tocheck<<std::endl;
         flagDont = true;
     }
 
@@ -2398,7 +2396,7 @@ void MemAgent::add_cell_proteins() {
 *  Returns:		boolean
 ******************************************************************************************/
 
-bool MemAgent::has_protein(string query_name) {
+bool MemAgent::has_protein(std::string query_name) {
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == query_name) {
             return true;
@@ -2413,7 +2411,7 @@ bool MemAgent::has_protein(string query_name) {
 *  Returns:		boolean
 ******************************************************************************************/
 
-void MemAgent::set_protein_level(string protein_name, float new_level) {
+void MemAgent::set_protein_level(std::string protein_name, float new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
@@ -2428,7 +2426,7 @@ void MemAgent::set_protein_level(string protein_name, float new_level) {
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::update_protein_level(string protein_name, float new_level) {
+void MemAgent::update_protein_level(std::string protein_name, float new_level) {
     // This assert should always pass, as we're checking this in the distribute proteins function.
    assert(this->has_protein(protein_name));
    for (auto protein : this->owned_proteins) {
@@ -2444,7 +2442,7 @@ void MemAgent::update_protein_level(string protein_name, float new_level) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_memAgent_protein_level(string protein_name) {
+float MemAgent::get_memAgent_protein_level(std::string protein_name) {
     // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
     // This is also used during ODE running and so has the potential to fail.
     assert(this->has_protein(protein_name));
@@ -2461,7 +2459,7 @@ float MemAgent::get_memAgent_protein_level(string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_environment_protein_level(string protein_name) {
+float MemAgent::get_environment_protein_level(std::string protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
@@ -2602,7 +2600,7 @@ float MemAgent::get_environment_protein_level(string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_local_protein_level(string protein_name) {
+float MemAgent::get_local_protein_level(std::string protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
@@ -2742,7 +2740,7 @@ float MemAgent::get_local_protein_level(string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_adjacent_protein_level(string protein_name) {
+float MemAgent::get_adjacent_protein_level(std::string protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;

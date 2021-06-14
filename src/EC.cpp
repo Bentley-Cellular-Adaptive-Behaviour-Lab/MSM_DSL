@@ -203,7 +203,7 @@ void EC::VEGFRDelay(void){
     
     int i;
     actVEGFRcurrent=0.0f;
-    vector<float>::iterator T=VEGFRDelayArray.begin();
+	std::vector<float>::iterator T=VEGFRDelayArray.begin();
     
     VEGFRDelayArray.push_back(activeVEGFRtot);
     
@@ -379,7 +379,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     for(i=0;i<worldP->cellNeighbourhoods[which].size();i++){
         junctionSizes.push_back(0);
     }
-    vector <EC*> neighbours;
+	std::vector <EC*> neighbours;
     //hypothesis - why equal boundaries no offset fails more than equal boundaries offset - offset one is fighting on more fronts - or bigger fronts so has distributed its dll4 thinner all over as it were - so is essentially using less to inhibit the ones more likely to become tips - facing the vegf. We know that turing down dll4 helps the pattern to stabilise in high vegf...
 
     //group agents into which boundary they are in, with which cell,
@@ -460,7 +460,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                                             }
                                         }
                                     }
-                                    if(flag==0) cout<<"new neighbour somehow?!"<<endl;
+                                    if(flag==0) std::cout<<"new neighbour somehow?!"<<std::endl;
                                     }
                                     //----------------------------------------------------------------------
                                     //just find against a specific neighbour cell
@@ -487,10 +487,10 @@ void EC::characterizeActNotchBoundaries(int which, int other){
     }
     
     for(i=0;i<worldP->cellNeighbourhoods[which].size();i++){
-        cout<<junctionSizes[i]<<" ";
+		std::cout<<junctionSizes[i]<<" ";
         sum+=junctionSizes[i];
     }
-    cout<<endl;
+	std::cout<<std::endl;
     //cout<<"total: "<<sum<<"actual total(sum can be more tho as some agents are on two boundaries):"<<sumJunction<<endl;
     
 }
@@ -564,7 +564,7 @@ EC::EC(World*  world){
 
 void EC::distribute_proteins() {
     // Create a vector containing the number of all memAgents that have a particular protein.
-    vector<int> protein_counts;
+	std::vector<int> protein_counts;
     for (int i = 0; i <this->m_cell_type->proteins.size(); i++) {
         protein_counts.push_back(0);
     }
@@ -600,7 +600,7 @@ void EC::distribute_proteins() {
     }
 
     // Once counts have been determined, calculate the amount of each protein per memAgent.
-    vector<int> protein_totals_per_memAgent;
+	std::vector<int> protein_totals_per_memAgent;
 
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
         float current_protein_level = this->m_cell_type->proteins[i]->get_level();

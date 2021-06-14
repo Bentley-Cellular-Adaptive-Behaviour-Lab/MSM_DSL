@@ -4,6 +4,7 @@ project(src/springAgent)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(src)
+include_directories(libraries)
 
 set (Sources src/analysis.cpp
         src/constructors.cpp
@@ -77,5 +78,5 @@ find_package(Boost)
 #    MESSAGE(FATAL_ERROR "Could not find GLUI")
 #ENDIF(GLUI_FOUND)
 
-include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS}  )
+include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )

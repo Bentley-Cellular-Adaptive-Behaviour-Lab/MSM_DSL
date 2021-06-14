@@ -28,7 +28,6 @@ namespace py = pybind11;
 
 
 ///------------------------------------
-using namespace std;
 
 class Hysteresis;
 class MemAgent;
@@ -62,7 +61,7 @@ class ODEs;
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
 
-extern ofstream RUNSfile;
+extern std::ofstream RUNSfile;
 ///analysis/quantification
 #define SigRange 15.0f*(VEGFRnorm/100.0f) ///percentage of total VEGFR poss, within this range we say the cell is stable.
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.
@@ -200,12 +199,12 @@ extern float M2_lambda;
 #define JunctionSpringLength 0.5f
 
 #define NEW_RAND_MAX 32767
-extern mt19937 g;
-extern uniform_real_distribution<double> dist;
+extern std::mt19937 g;
+extern std::uniform_real_distribution<double> dist;
 int new_rand();
 
-void create_statistics_file(string statisticsFilename);
-void write_to_statistics_file(string statisticsFilename, string line);
+void create_statistics_file(std::string statisticsFilename);
+void write_to_statistics_file(std::string statisticsFilename, std::string line);
 std::time_t get_current_time();
 std::string format_time_string(std::time_t time, bool start);
 
@@ -310,11 +309,11 @@ public:
     int stabilityTimer_latest;
     bool direction; //increasing (true) or decreasing (false) dll4 increment
 
-    vector <float> storeDll4;
-    vector <float> storeTimes;
+	std::vector <float> storeDll4;
+	std::vector <float> storeTimes;
 
    Hysteresis(void);
-   bool evaluate_hysteresis(ofstream& fileTo);
+   bool evaluate_hysteresis(std::ofstream& fileTo);
 
 };
 
@@ -343,9 +342,9 @@ public:
 
     EC* Cell;
     bool retracted;
-    vector <Contact*> contactList;
+	std::vector <Contact*> contactList;
 
-    vector <Filopodia*> checkForContact(void);
+	std::vector <Filopodia*> checkForContact(void);
     Filopodia* findFil(MemAgent* mp);
 
     Filopodia(World* WorldP);
@@ -365,7 +364,7 @@ public:
     MemAgent* diffAd_replaced;
     int mediumNeighs;
     void checkNeighs();
-    vector <MemAgent*> DiffAd_neighs;
+	std::vector <MemAgent*> DiffAd_neighs;
 
     MedAgent(World* WorldP);
 
@@ -524,7 +523,7 @@ public:
     ///grid
     Location*** grid;
     Location neigh[NEIGH];
-    ofstream dataFile; ///runtime file to write to while developing
+	std::ofstream dataFile; ///runtime file to write to while developing
     bool insideWorld(int i, int j, int k); ///checks if a given location is inside the world, incase tryingot move an agent outside grid dimensions
     void setFilLocation(int x, int y, int z, MemAgent * ident); ///add filopodia memAGent to the grid reference at a given location
     void deleteOldGridRef(MemAgent*, bool fil); ///moving a filopodia agent requires deleting its identifier from a location
@@ -542,7 +541,7 @@ public:
     std::vector <int> fusedCells_times;
     std::vector <Contact*> contacts;
     std::vector <Filopodia*> filopodia;
-    std::vector <vector <EC*> > cellNeighbourhoods;
+    std::vector <std::vector <EC*> > cellNeighbourhoods;
 
 
     ///exposed to python via pybind
@@ -618,43 +617,43 @@ public:
     float equation_of_line_through_two_points_given_Coord(float x1, float y1, float x2, float y2, float A, int which);
     float calcCurvature(Coordinates One, Coordinates Two, Coordinates Three);
     void calcCurves(void);
-    vector <Coordinates> initialisePoints(void);
+	std::vector <Coordinates> initialisePoints(void);
     void gridTriangle(Coordinates one, Coordinates two, Coordinates checkPoint);
     void trianglePlaneTest(void);
-    float* equation_of_plane_through_three_points(vector<Coordinates> pts);
-    bool check_point_on_plane(vector <float> coeffs, Coordinates point);
-    bool check_point_within_triangle(Coordinates* point, vector<Coordinates> triangle);
+    float* equation_of_plane_through_three_points(std::vector<Coordinates> pts);
+    bool check_point_on_plane(std::vector <float> coeffs, Coordinates point);
+    bool check_point_within_triangle(Coordinates* point, std::vector<Coordinates> triangle);
     bool check_point_same_side_of_line(Coordinates* point, Coordinates* order, bool hyp);
     float round_decimalPlaces(float myValue, float PRECISION);
     Coordinates* crossProduct(Coordinates* one, Coordinates* two);
     float dotProduct(Coordinates* first, Coordinates* second);
     float absVal(Coordinates vec);
-    int* findRange(vector<Coordinates> coords);
-    float calc_z_given_equ_plane(float X, float Y, vector <float> coeffs);
+    int* findRange(std::vector<Coordinates> coords);
+    float calc_z_given_equ_plane(float X, float Y, std::vector <float> coeffs);
     Coordinates* pt_of_intersection_plane_line(Coordinates pt_one, Coordinates pt_two, float* plane_coeffs);
     float find_denom(Coordinates one, Coordinates two, float* coeffs);
     void test_plane_line_intersect(void);
-    bool trianglePlane_cubeDiagonals_intersect_test(vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex);
+    bool trianglePlane_cubeDiagonals_intersect_test(std::vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex);
     bool check_point_within_cube(Coordinates* point, float x, float y, float z);
     Coordinates* get_cube_vertices(float x, float y, float z);
-    vector <Coordinates> initialise_test_triangle(void);
-    bool triangleLines_cubeFacePlane_intersect_test(vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex);
+	std::vector <Coordinates> initialise_test_triangle(void);
+    bool triangleLines_cubeFacePlane_intersect_test(std::vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex);
     void voxelisation(void);
     bool check_point_in_line(Coordinates* point, Coordinates start, Coordinates fin);
-    bool voxelise(vector<Coordinates> triangle, float x, float y, float z);
-    void voxeliseTriangle(vector<Coordinates> Coords, vector<MemAgent*> triangleNodes, EC* cell, int up);
+    bool voxelise(std::vector<Coordinates> triangle, float x, float y, float z);
+    void voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAgent*> triangleNodes, EC* cell, int up);
     Coordinates* calcNormal(Coordinates one, Coordinates two, Coordinates three);
 //#ifdef GRAPHICS
     void store_normals(void);
 //#endif
     Coordinates calc_point_on_line_through_external_point_giving_perpendicular_line(Coordinates C, Coordinates S, Coordinates En);
-    vector <Coordinates> store_cube_normals;
+	std::vector <Coordinates> store_cube_normals;
     Coordinates findMidPoint(float x1, float y1, float z1, float x2, float y2, float z2, float Length);
-    vector <float> equation_of_line_through_two_points(float x1, float y1, float x2, float y2);
-    bool test_triange_Pos_change(vector<MemAgent*>triangle);
+	std::vector <float> equation_of_line_through_two_points(float x1, float y1, float x2, float y2);
+    bool test_triange_Pos_change(std::vector<MemAgent*>triangle);
     int round(float f);
-    void createSurfaceAgent(int X, int Y, int Z, EC* cell, vector<MemAgent*> triangleNodes, int up);
-    void gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, vector <MemAgent*> triangleNodes, int up);
+    void createSurfaceAgent(int X, int Y, int Z, EC* cell, std::vector<MemAgent*> triangleNodes, int up);
+    void gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std::vector <MemAgent*> triangleNodes, int up);
     float get_perp_distance_from_point_to_line(Coordinates P1, Coordinates P2, MemAgent* mp);
 
     ///visualisation functions
@@ -669,19 +668,19 @@ public:
 
 
     ///analysis/quantification
-    void evaluate_shuffling(ofstream& fileTo);
-    void printScores(ofstream& fileTo);
+    void evaluate_shuffling(std::ofstream& fileTo);
+    void printScores(std::ofstream& fileTo);
     void evaluateSandP();
     void filopodia_contacts_Test(void);
-    void printContactsInfo(ofstream& fileTo);
+    void printContactsInfo(std::ofstream& fileTo);
     void calcEnvVEGFlevel(void);
     void getCellNeighbours(void);
     void collect_Filopodia_Data(void);
-    void evaluate_final_offset_patt(ofstream& fileTo);
-    void evaluation(ofstream& fileTo);
+    void evaluate_final_offset_patt(std::ofstream& fileTo);
+    void evaluation(std::ofstream& fileTo);
     void setInitialVEGF(void); ///set VEGF gradient
     void store_new_fusion_events(EC* cell1, EC* cell2);
-    void output_cell_protlevels(ofstream& fileTo);
+    void output_cell_protlevels(std::ofstream& fileTo);
 
 
     ///destructors
