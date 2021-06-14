@@ -78,7 +78,7 @@ public:
 	Coordinates *m_sink_position;
 
 	//Distance from source to sink along each axis.
-	vector<float> m_source_to_sink_distances;
+	std::vector<float> m_source_to_sink_distances;
 
 	// Enum for gradient direction, used by cuboidal gradients.
 	int m_gradient_direction = -1;
@@ -109,7 +109,7 @@ public:
 			 Coordinates *centre_position,
 			 int sphere_radius);
 
-    vector<float> calculate_dist_from_source(Env* ep);
+	std::vector<float> calculate_dist_from_source(Env* ep);
 
     void add_env_protein(Env *ep, float calc_level);
 
@@ -134,8 +134,8 @@ public:
 class World_Container {
 public:
     World *m_world;
-    vector<Substrate*> m_substrates;
-    vector<Gradient*> m_gradients;
+	std::vector<Substrate*> m_substrates;
+	std::vector<Gradient*> m_gradients;
 
     void world_setup();
 
@@ -149,7 +149,7 @@ public:
     [[deprecated("Use overloaded functions specific to each gradient type.")]]
 	void create_gradient(int gradient_type,
 						 int gradient_shape,
-						 string protein,
+						 std::string protein,
 						 Coordinates *source_position,
 						 float source_starting_amount,
 						 Coordinates *sink_position);

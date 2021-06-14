@@ -30,13 +30,11 @@
 
 #endif
 #endif
-
-using namespace std;
 //using std::random_shuffle;
 
 //general
 World* WORLDpointer;
-ofstream RUNSfile;
+std::ofstream RUNSfile;
 int memINIT;
 char fname[200];
 float actinMax = 512;
@@ -84,8 +82,8 @@ int GRADIENT = STEADY;
 float randFilExtend = -1;
 float RAND_FILRETRACT_CHANCE = -1;
 long long seed = -1;
-mt19937 g;
-uniform_real_distribution<double> dist = uniform_real_distribution<double>(0, NEW_RAND_MAX);
+std::mt19937 g;
+std::uniform_real_distribution<double> dist = std::uniform_real_distribution<double>(0, NEW_RAND_MAX);
 
 //------------------------------------------------------------------------------
 //#define BAHTI_ANALYSIS true
@@ -125,7 +123,7 @@ void readArgs(int argc, char * argv[]) {
                 EPSILON = 0;
             RAND_FILRETRACT_CHANCE = atof(argv[10]);
             if (argc > 11)
-                seed = stoll(argv[11]);
+                seed = std::stoll(argv[11]);
         }
         VEGFconc = VconcST;
     }
@@ -136,9 +134,9 @@ void checkArgValues(int argc, char * argv[])
 
 }
 
-void print_exit( string message )
+void print_exit( std::string message )
 {
-    cout << message;
+	std::cout << message;
     exit(1);
 }
 
@@ -181,24 +179,24 @@ int main(int argc, char * argv[]) {
 	create_statistics_file(statistics_file_buffer);
 
 	std::time_t start_time = get_current_time();
-	string start_time_string = format_time_string(start_time, true);
+	std::string start_time_string = format_time_string(start_time, true);
 	write_to_statistics_file(statistics_file_buffer, start_time_string);
 
-	cout << "Current time: " << std::ctime(&start_time);
-    cout << "ECPACK: " << ECpack << endl;
-    cout << "GRAPHICS: " << GRAPHICS << endl;
-    cout << "bahti analysis: " << BAHTI_ANALYSIS << " @@ time to pattern analysis: " << ANALYSIS_TIME_TO_PATTERN << " @@  hysteresis analysis: " << ANALYSIS_HYSTERESIS << endl;
+	std::cout << "Current time: " << std::ctime(&start_time);
+	std::cout << "ECPACK: " << ECpack << std::endl;
+	std::cout << "GRAPHICS: " << GRAPHICS << std::endl;
+	std::cout << "bahti analysis: " << BAHTI_ANALYSIS << " @@ time to pattern analysis: " << ANALYSIS_TIME_TO_PATTERN << " @@  hysteresis analysis: " << ANALYSIS_HYSTERESIS << std::endl;
     //TODO: read args and create world
-    cout << "ECELLS: " << ECELLS << endl;
-    cout << "Epsilon: " << EPSILON << endl;
-    cout << "VconcST: " << VconcST << endl;
-    cout << "gradient: " << GRADIENT << endl;
-    cout << "FIL_VARY (filconstnorm): " << FIL_VARY << endl;
-    cout << "FILTIPMAX: " << FILTIPMAX << endl;
-    cout << "tokenStrength: " << tokenStrength << endl;
-	cout << "FIL_SPACING: " << FIL_SPACING << endl;
-	cout << "randFilExtension: " << randFilExtend << endl;
-	cout << "RAND_FILRETRACT_CHANCE: " << RAND_FILRETRACT_CHANCE<< endl;
+	std::cout << "ECELLS: " << ECELLS << std::endl;
+	std::cout << "Epsilon: " << EPSILON << std::endl;
+	std::cout << "VconcST: " << VconcST << std::endl;
+	std::cout << "gradient: " << GRADIENT << std::endl;
+	std::cout << "FIL_VARY (filconstnorm): " << FIL_VARY << std::endl;
+	std::cout << "FILTIPMAX: " << FILTIPMAX << std::endl;
+	std::cout << "tokenStrength: " << tokenStrength << std::endl;
+	std::cout << "FIL_SPACING: " << FIL_SPACING << std::endl;
+	std::cout << "randFilExtension: " << randFilExtend << std::endl;
+	std::cout << "RAND_FILRETRACT_CHANCE: " << RAND_FILRETRACT_CHANCE<< std::endl;
     //---------------------------------------------------------------
 
     char outfilename[500];
@@ -206,24 +204,24 @@ int main(int argc, char * argv[]) {
     //TODO update these file names with variable vals
     //do print statement as well
     if (ANALYSIS_HYSTERESIS) {
-        cout << "running bistability analysis" << endl;
+		std::cout << "running bistability analysis" << std::endl;
         sprintf(outfilename, "analysis_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt", double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING, randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
     }
     else if (ANALYSIS_TIME_TO_PATTERN) {
-        cout << "running time to pattern analysis" << endl;
+		std::cout << "running time to pattern analysis" << std::endl;
         sprintf(outfilename, "time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt", double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING, randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
     }
     else {
-        cout << "analysis must either be ANALYSIS_HYSTERESIS or ANALYSIS_TIME_TO_PATTERN.. aborting run";
+		std::cout << "analysis must either be ANALYSIS_HYSTERESIS or ANALYSIS_TIME_TO_PATTERN.. aborting run";
         sprintf(outfilename, "testforpybind");
         //exit(1);
     }
 
-    cout << "output file name: " << outfilename << endl;
+	std::cout << "output file name: " << outfilename << std::endl;
 
     RUNSfile.open(outfilename);
 
-	cout << "Creating world..." << "\n";
+	std::cout << "Creating world..." << "\n";
 
 //    World* world = new World();
 //    WORLDpointer = world;
@@ -232,7 +230,7 @@ int main(int argc, char * argv[]) {
 	world = w_container->get_world();
 	WORLDpointer = world;
 
-	cout << "World created." << "\n";
+	std::cout << "World created." << "\n";
 
     diffAd = new CPM_module(world);
 
@@ -247,11 +245,11 @@ int main(int argc, char * argv[]) {
 	std::time_t end_time = get_current_time();
 	std::cout << "End time: " << std::ctime(&end_time) << std::endl;
 
-	string end_time_string = format_time_string(end_time, false);
+	std::string end_time_string = format_time_string(end_time, false);
 	write_to_statistics_file(statistics_file_buffer, end_time_string);
 
 	long elapsed_time = end_time - start_time;
-	string elapsed_time_string = "Elapsed time, " + to_string(elapsed_time);
+	std::string elapsed_time_string = "Elapsed time, " + std::to_string(elapsed_time);
 	write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
 
 #endif
@@ -264,7 +262,7 @@ void World::runSimulation()
 {
     while (timeStep <= MAXtime)
     {
-        if (timeStep % 50 == 0) cout << "timestep " << timeStep << ".. " << MAXtime - timeStep << " left" << endl;
+        if (timeStep % 50 == 0) std::cout << "timestep " << timeStep << ".. " << MAXtime - timeStep << " left" << std::endl;
         simulateTimestep();
 
         if (ANALYSIS_HYSTERESIS)
@@ -275,20 +273,20 @@ void World::runSimulation()
         if(MEM_LEAK_OCCURRING)
         {
             timeStep = MAXtime;
-            RUNSfile<<"MEMORY LEAKED!!!...quit run"<< endl;
-            cout << "MEMORY LEAKED!!!...quit run" << endl;
+            RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
+			std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
             MEM_LEAK_OCCURRING = false;
         }
 
         if (timeStep == MAXtime)
-            RUNSfile << endl << endl;
+            RUNSfile << std::endl << std::endl;
 //        if (timeStep ==3)
 //        {
 //            getGridSiteData();
 //        }
 //        printScores(RUNSfile, RUNSfile2, RUNSfile3);
     }
-    cout << "end of run simulation" << endl;
+	std::cout << "end of run simulation" << std::endl;
 }
 
 void World::simulateTimestep()
@@ -299,7 +297,7 @@ void World::simulateTimestep()
     //could just call creation timestep func from here.. and have timesteps start from zero instead of -1
     if (timeStep == 0)
     {
-        cout << "Creation timestep... initialising everything" << endl;
+		std::cout << "Creation timestep... initialising everything" << std::endl;
         creationTimestep(movie);
     }
     else
@@ -355,10 +353,10 @@ void World::creationTimestep(int movie)
     /** set the memInit value if needed for watching cell growth and tip cell quantification **/
     if (ECagents.size() < 0)
     	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
-    cout << "memInit" << memINIT << endl;
+	std::cout << "memInit" << memINIT << std::endl;
 
     if (DSL_TESTING) {
-        cout << "Allocating cell proteins to memagents." << endl;
+		std::cout << "Allocating cell proteins to memagents." << std::endl;
         for (int j = 0; j < (int) ECagents.size(); j++)
             ECagents[j]->distribute_proteins();
     }
@@ -427,7 +425,7 @@ void World::creationTimestep(int movie)
         output_cell_protlevels(dataFile);
 
     system("mkdir movie; rm -vf movie/*");
-    cout << "Creation complete" << endl;
+	std::cout << "Creation complete" << std::endl;
 }
 
 void World::hysteresisAnalysis()
@@ -441,7 +439,7 @@ void World::hysteresisAnalysis()
     if (!continue_hysteresis)
     {
          timeStep = MAXtime+1;
-         RUNSfile<<endl<<endl;
+         RUNSfile<<std::endl<<std::endl;
      }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------
@@ -865,7 +863,7 @@ bool World::delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp) {
     int k = 0;
     int flag = 0;
     bool deleted = false;
-    vector<MemAgent*>::iterator L;
+	std::vector<MemAgent*>::iterator L;
 
     if ((memp->node == false) && (memp->deleteFlag == true)) {
 
@@ -883,8 +881,8 @@ bool World::delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp) {
             k++;
         } while ((k < (int) memp->Cell->springAgents.size()) && (flag == 0));
         if (flag == 0) {
-            cout << "deleting spring agent in main: hasnt found in list" << endl;
-            cout.flush();
+			std::cout << "deleting spring agent in main: hasnt found in list" << std::endl;
+			std::cout.flush();
         }
         delete memp;
     }
@@ -922,13 +920,13 @@ int new_rand() {
     return (int)dist(g);
 }
 
-void create_statistics_file(string statisticsFilename) {
-	ofstream statisticsFile(statisticsFilename);
+void create_statistics_file(std::string statisticsFilename) {
+	std::ofstream statisticsFile(statisticsFilename);
 	statisticsFile.close();
 }
 
-void write_to_statistics_file(string statisticsFilename, string line) {
-	ofstream statisticsFile;
+void write_to_statistics_file(std::string statisticsFilename, std::string line) {
+	std::ofstream statisticsFile;
 	statisticsFile.open(statisticsFilename, std::ios_base::app);
 	if (statisticsFile.is_open()) {
 		statisticsFile << line;
@@ -944,7 +942,7 @@ std::time_t get_current_time() {
 
 std::string format_time_string(std::time_t time, bool start) {
 	// N.B. Function should be called at start and end of simulation only, for logging purposes.
-	string time_entry, time_string;
+	std::string time_entry, time_string;
 
 	if (start) {
 		time_entry = "Start time,";

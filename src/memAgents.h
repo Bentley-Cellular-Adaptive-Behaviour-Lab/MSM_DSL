@@ -79,15 +79,15 @@ public:
 	std::vector <MemAgent*> surfaceAgentsUP;
 	std::vector <MemAgent*> surfaceAgentsDOWN;
 	std::vector <MemAgent*> surfaceAgents3mesher;
-	vector <MemAgent*> getTriangle(bool up);
-	vector <MemAgent*> three_erTriangleFix(void); ///remove possibly, for a removed function
+	std::vector <MemAgent*> getTriangle(bool up);
+	std::vector <MemAgent*> three_erTriangleFix(void); ///remove possibly, for a removed function
 	MemAgent* findConnectedNode(bool Hor1, bool Right1, bool Hor2, bool Right2, int distance);
 	Spring* SpringNeigh[meshNeighs + NEIGHSMAX];
 	MemAgent* neigh[meshNeighs + NEIGHSMAX];
 	MemAgent* find_nearest_triangle_node(void);
 	void gridSurfaceAgents(void);
 	void store_previous_triangle_pos(void);
-	bool VoxTriag_sizeTest(vector <Coordinates> nodes);
+	bool VoxTriag_sizeTest(std::vector <Coordinates> nodes);
 	void connectJunctions(bool alsoNormalSprings); ///used to create monolayer connected mesh
 	bool meshConnected(MemAgent* tocheck); ///used to check if two neghbours in space are actually neighbours in the mesh (for rearrangement so that overlapping folder membrane couldnt try to make copyflips via springs that dotn exist)
 
@@ -113,16 +113,16 @@ public:
 	MemAgent(EC* belongsTo, World* world); ///constructor
 	~MemAgent(void); ///destructor
 
-	vector<protein*> owned_proteins;
+	std::vector<protein*> owned_proteins;
 
 	void add_cell_proteins();
-	bool has_protein(string query_name);
-	void update_protein_level(string protein_name, float new_level);
-    float get_memAgent_protein_level(string protein_name);
-    float get_environment_protein_level(string protein_name);
-    float get_local_protein_level(string protein_name);
-    float get_adjacent_protein_level(string protein_name);
-    void set_protein_level(string protein_name, float new_level);
+	bool has_protein(std::string query_name);
+	void update_protein_level(std::string protein_name, float new_level);
+    float get_memAgent_protein_level(std::string protein_name);
+    float get_environment_protein_level(std::string protein_name);
+    float get_local_protein_level(std::string protein_name);
+    float get_adjacent_protein_level(std::string protein_name);
+    void set_protein_level(std::string protein_name, float new_level);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

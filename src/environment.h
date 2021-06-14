@@ -43,8 +43,8 @@ public:
 
 	// Returns true if this environment agent has a protein.
 
-	bool has_protein(string protein_name);
-    float get_protein_level(string protein_name);
+	bool has_protein(std::string protein_name);
+    float get_protein_level(std::string protein_name);
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H

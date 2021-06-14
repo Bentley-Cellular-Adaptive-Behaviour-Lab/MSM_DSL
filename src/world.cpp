@@ -2,11 +2,15 @@
 // Created by Tom on 12/11/2020.
 //
 
+#include <boost/array.hpp>
+#include <boost/numeric/odeint.hpp>
+
 #include <assert.h>
 #include "world.h"
 #include "memAgents.h"
 #include "environment.h"
 #include "protein.h"
+#include "ODE.h"
 
 //********************************************************************************************************************//
 
@@ -62,7 +66,7 @@ void Gradient::calc_linear_env_protein(Env* ep) {
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
         if (ep->blood == 0.0f) {
-            vector<float> ep_distances = calculate_dist_from_source(ep);
+			std::vector<float> ep_distances = calculate_dist_from_source(ep);
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
             if (x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
@@ -144,7 +148,7 @@ void Gradient::calc_exp_env_protein(Env* ep) {
     float starting_protein_level = this->m_protein->get_level();
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
-        vector<float> ep_distances = calculate_dist_from_source(ep);
+		std::vector<float> ep_distances = calculate_dist_from_source(ep);
 
         if (ep->blood == 0.0f) {
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
@@ -243,7 +247,7 @@ void Gradient::calc_linear_env_VEGF(Env* ep) {
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
 		if (ep->blood == 0.0f) {
-			vector<float> ep_distances = calculate_dist_from_source(ep);
+			std::vector<float> ep_distances = calculate_dist_from_source(ep);
 			// Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
 			if (x_varying) {
 				if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
@@ -325,7 +329,7 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
 	float starting_protein_level = this->m_protein->get_level();
 
 	if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
-		vector<float> ep_distances = calculate_dist_from_source(ep);
+		std::vector<float> ep_distances = calculate_dist_from_source(ep);
 
 		if (ep->blood == 0.0f) {
 			// Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
@@ -455,10 +459,10 @@ void Gradient::determine_source_to_sink_dists() {
 *  Returns:		std::vector<float>
 ******************************************************************************************/
 
-vector<float> Gradient::calculate_dist_from_source(Env *ep) {
+std::vector<float> Gradient::calculate_dist_from_source(Env *ep) {
 	assert(m_gradient_shape != GRADIENT_SHAPE_CUBOIDAL);
 
-	vector<float> vector;
+	std::vector<float> vector;
     float x_dist, y_dist, z_dist;
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE) {
@@ -1001,7 +1005,7 @@ void World_Container::create_gradient(int gradient_type,
 	new_gradient->determine_source_to_sink_dists();
 	new_gradient->determine_directionality();
 	new_gradient->apply_gradient_to_sinkandsource();
-	std::cout << "Gradient created." <<  endl;
+	std::cout << "Gradient created." <<  std::endl;
 	store_gradient(new_gradient);
 }
 
@@ -1029,7 +1033,7 @@ void World_Container::create_gradient(int gradient_type,
 									  depth);
 	new_gradient->m_gradient_direction = gradient_direction;
 	new_gradient->apply_gradient_to_cuboid();
-	std::cout << "Gradient created." <<  endl;
+	std::cout << "Gradient created." <<  std::endl;
 	store_gradient(new_gradient);
 }
 
@@ -1048,7 +1052,7 @@ void World_Container::create_gradient(int gradient_type,
 	new_gradient->z_varying = true;
 	new_gradient->determine_source_to_sink_dists();
 	new_gradient->apply_gradient_to_sphere();
-	std::cout << "Gradient created." <<  endl;
+	std::cout << "Gradient created." <<  std::endl;
 	store_gradient(new_gradient);
 }
 
@@ -1075,7 +1079,7 @@ void World_Container::create_substrate(Shape *substrate_shape,
 	if (new_substrate->m_substrate_shape->get_shape_type() == SUBSTRATE_SHAPE_TRIANGULAR) {
 		new_substrate->apply_substrate_to_triangular_prism();
 	}
-	std::cout << "Substrate created." <<  endl;
+	std::cout << "Substrate created." <<  std::endl;
 	store_substrate(new_substrate);
 }
 
@@ -1160,7 +1164,7 @@ void World::create_new_environment(float base_permittivity) {
 void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 
 	if (grid[x][y][z].Eid!=NULL) {
-		cout<<"Attempted to assign an environment agent twice."<<endl;
+		std::cout<<"Attempted to assign an environment agent twice."<<std::endl;
 	}
 
 	Env * ep = new Env((World*) this);

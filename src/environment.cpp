@@ -520,7 +520,7 @@ int J;
 *  Returns:		bool
 ******************************************************************************************/
 
-bool Env::has_protein(string protein_name) {
+bool Env::has_protein(std::string protein_name) {
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
             return true;
@@ -536,7 +536,7 @@ bool Env::has_protein(string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float Env::get_protein_level(string protein_name) {
+float Env::get_protein_level(std::string protein_name) {
     try {
         bool protein_found = false;
         for (auto protein : this->owned_proteins) {
@@ -549,10 +549,10 @@ float Env::get_protein_level(string protein_name) {
             throw std::invalid_argument(protein_name);
         }
     } catch (std::invalid_argument) {
-        cerr << "Attempted to get the level of a protein at an environment agent which did not possess it." << endl;
-        cerr << "PROTEIN NAME: " << protein_name << endl;
-        cerr << "ENV LOCATION X:" << this->Ex << endl;
-        cerr << "ENV LOCATION Y:" << this->Ey << endl;
-        cerr << "ENV LOCATION Z:" << this->Ez << endl;
+		std::cerr << "Attempted to get the level of a protein at an environment agent which did not possess it." << std::endl;
+		std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
+		std::cerr << "ENV LOCATION X:" << this->Ex << std::endl;
+		std::cerr << "ENV LOCATION Y:" << this->Ey << std::endl;
+		std::cerr << "ENV LOCATION Z:" << this->Ez << std::endl;
     }
 }

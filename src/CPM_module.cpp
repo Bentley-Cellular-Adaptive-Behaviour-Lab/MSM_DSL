@@ -12,7 +12,7 @@
 #include "memAgents.h"
 #include "EC.h"
 
-vector <MemAgent*> deleteList;
+std::vector <MemAgent*> deleteList;
 
 //----------------------------------------------------------------------------------
 
@@ -28,9 +28,7 @@ void CPM_module::run_CPM(void) {
     MedAgent* replacer_med;
     MedAgent* replaced_med;
     int f;
-
-int steps;
-
+    int steps;
 
     int MCS_STEPS = MCS;//10*(16*ECELLS);//400; how Glazier and Graner set it...
 
@@ -500,10 +498,10 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
     int flag = 0;
     int i = 0;
     int m;
-    vector<MemAgent*>::iterator L;
-    vector<MemAgent*>::iterator Q;
-    vector<MemAgent*>::iterator L2;
-    vector<MedAgent*>::iterator T;
+	std::vector<MemAgent*>::iterator L;
+	std::vector<MemAgent*>::iterator Q;
+	std::vector<MemAgent*>::iterator L2;
+	std::vector<MedAgent*>::iterator T;
     float X, Y, Z;
     if(replaced_mem!=NULL){
     X = replaced_mem->Mx;
@@ -534,7 +532,7 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
         i++;
 
     } while ((i < (int) replaced_mem->Cell->nodeAgents.size()) && (flag == 0));
-    if(flag==0) cout<<"hasnt found node in list to remove"<<endl;
+    if(flag==0) std::cout<<"hasnt found node in list to remove"<<std::endl;
 
     /*i=0;
     flag=0;
@@ -628,7 +626,7 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
     }
     else{
 
-        cout<<"replacing with med"<<endl;
+		std::cout<<"replacing with med"<<std::endl;
         //create new agent in same pos, belonging to other cell..
     medp = new MedAgent( worldP);
     //cout<<"newNode:"<<memp<<endl<<endl;
@@ -663,10 +661,10 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 	int i,j,k,m;
 	
 	//list of agents connected to is the replaced mems neigh] array
-	vector <bool>  horizontals;
-    vector <bool>  rights;
-	vector <Spring*>::iterator S;
-        vector <Spring*>::iterator IT;
+	std::vector <bool>  horizontals;
+	std::vector <bool>  rights;
+	std::vector <Spring*>::iterator S;
+	std::vector <Spring*>::iterator IT;
 	int flag;
 	
 	//cout<<"starting..."<<replaced_mem<<" "<<replacer_mem<<" "<<replacer_med<<endl;
@@ -705,12 +703,12 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 					flag=1;
                                         IT = worldP->ECagents[k]->Springs.begin();
                                         worldP->ECagents[k]->Springs.erase(IT+m);
-					cout<<"yes you rock!!!"<<endl;
+					std::cout<<"yes you rock!!!"<<std::endl;
 				}
                             }
 
-			
-                            cout<<"cant find in list "<<replaced_mem->SpringNeigh[i]<<" "<<i<<" "<<replaced_mem->neighs<<" "<<replaced_mem->SpringNeigh[i]->filopodia<<" "<<replaced_mem->SpringNeigh[i]->Junction<<endl;
+
+							std::cout<<"cant find in list "<<replaced_mem->SpringNeigh[i]<<" "<<i<<" "<<replaced_mem->neighs<<" "<<replaced_mem->SpringNeigh[i]->filopodia<<" "<<replaced_mem->SpringNeigh[i]->Junction<<std::endl;
                             int kate = 0;
                         }
 		
@@ -756,7 +754,7 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 		
 	}
         else{
-            cout<<"arrrg! shouldnt be in here!"<<endl;
+        	std::cout<<"arrrg! shouldnt be in here!"<<std::endl;
 	//TO DO delete springs from neighs if replacing with medium...
 
             //need to also delete any springs from neigh to replaced mem, no longer needed
@@ -1765,9 +1763,9 @@ void CPM_module::update_displaced_surfaceAgents(MemAgent* replaced_mem, MemAgent
     Coordinates first;
     Coordinates second;
     Coordinates third;
-    vector<Coordinates> Coords;
+	std::vector<Coordinates> Coords;
 
-    vector <MemAgent*> m6triagDels;
+	std::vector <MemAgent*> m6triagDels;
 
     //int flag;
 
@@ -2383,7 +2381,7 @@ bool CPM_module::move_fil_base(MemAgent* mp){
     for(i=0;i<mp->neighs;i++){
         if((mp->neigh[i]->FIL==TIP)||(mp->neigh[i]->FIL==STALK)) pos = i;
     }
-    if(pos==-1) cout<<"cant find fil?"<<endl;
+    if(pos==-1) std::cout<<"cant find fil?"<<std::endl;
     //will always move fil to a left hand neigh - so should randomise this...
     for(i=0;i<mp->neighs;i++){
         if(flag==0){

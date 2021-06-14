@@ -25,7 +25,7 @@
 *  Returns:		*Cell_Type
 ******************************************************************************************/
 
-Cell_Type *Tissue_Container::define_cell_type(string name, int cell_shape_type, int height, int width) {
+Cell_Type *Tissue_Container::define_cell_type(std::string name, int cell_shape_type, int height, int width) {
     Cell_Type *cell_type;
     Shape_Square *square_pointer;
     try {
@@ -52,7 +52,7 @@ Cell_Type *Tissue_Container::define_cell_type(string name, int cell_shape_type, 
 *  Returns:		*Tissue_Type_Cylindrical
 ******************************************************************************************/
 
-Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(string name,
+Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(std::string name,
                                                               Cell_Type *cell_type,
                                                               int tissue_configuration,
                                                               int cross_section_cells,
@@ -89,7 +89,7 @@ Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(string name,
 *  Returns:		*Tissue_Type_Flat
 ******************************************************************************************/
 
-Tissue_Type_Flat *Tissue_Container::define_tissue_type(string name,
+Tissue_Type_Flat *Tissue_Container::define_tissue_type(std::string name,
                                                        Cell_Type *cell_type,
                                                        int tissue_configuration,
                                                        int height_in_cells,
@@ -124,7 +124,7 @@ Tissue_Type_Flat *Tissue_Container::define_tissue_type(string name,
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_cell(string name, Cell_Type *cell_type, Coordinates *position) {
+void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coordinates *position) {
     Cell *cell;
     try {
         assert(cell_type != NULL);
@@ -171,7 +171,7 @@ void Tissue_Container::create_cell(string name, Cell_Type *cell_type, Coordinate
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_tissue(string name, Tissue_Type_Cylindrical *tissue_type, Coordinates *position) {
+void Tissue_Container::create_tissue(std::string name, Tissue_Type_Cylindrical *tissue_type, Coordinates *position) {
     Tissue_Vessel *tissue;
     try {
         assert(tissue_type != nullptr);
@@ -198,7 +198,7 @@ void Tissue_Container::create_tissue(string name, Tissue_Type_Cylindrical *tissu
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_tissue(string name, Tissue_Type_Flat *tissue_type, Coordinates *position) {
+void Tissue_Container::create_tissue(std::string name, Tissue_Type_Flat *tissue_type, Coordinates *position) {
     Tissue_Monolayer *tissue;
     try {
         assert(tissue_type != nullptr);
@@ -663,7 +663,7 @@ Tissue_Container::Tissue_Container(World *world): m_world(world) {
 
 // Constructor //
 
-Cell_Type::Cell_Type(Tissue_Container *tissue_container, string name, Shape *shape) {
+Cell_Type::Cell_Type(Tissue_Container *tissue_container, std::string name, Shape *shape) {
     assert(shape != nullptr);
     m_tissue_container = tissue_container;
     m_name = name;
@@ -735,7 +735,7 @@ bool Cell::check_boundaries() {
 void Cell::determine_boundaries() {
     float x_coord_1, x_coord_2, y_coord_1, y_coord_2;
     Coordinates cell_end_1, cell_end_2;
-    vector<Coordinates> boundary_coords;
+	std::vector<Coordinates> boundary_coords;
 
     float cell_width = float(m_cell_type->m_shape->get_width());
     float cell_height = float(m_cell_type->m_shape->get_height());
@@ -758,7 +758,7 @@ void Cell::determine_boundaries() {
 // Constructor //
 
 Cell::Cell(Tissue_Container *tissue_container,
-           string name,
+		   std::string name,
            World *world,
            Coordinates *position,
            Cell_Type *cell_type) {
@@ -787,7 +787,7 @@ Cell::Cell(Tissue_Container *tissue_container,
 *  Returns:		string
 ******************************************************************************************/
 
-string Tissue_Type::get_name() {
+std::string Tissue_Type::get_name() {
     return std::string();
 }
 
@@ -804,7 +804,7 @@ int Tissue_Type::get_tissue_configuration() {
 // Constructor //
 
 Tissue_Type::Tissue_Type(Tissue_Container *tissue_container,
-                         string name,
+						 std::string name,
                          Cell_Type *cell_type,
                          int tissue_configuration) {
     assert(cell_type != nullptr);
@@ -823,7 +823,7 @@ Tissue_Type::Tissue_Type(Tissue_Container *tissue_container,
 *  Returns:		string
 ******************************************************************************************/
 
-string Tissue_Type_Cylindrical::get_name() {
+std::string Tissue_Type_Cylindrical::get_name() {
     return this->m_name;
 }
 
@@ -870,7 +870,7 @@ int Tissue_Type_Cylindrical::get_total_radius() {
 // Constructor //
 
 Tissue_Type_Cylindrical::Tissue_Type_Cylindrical(Tissue_Container *tissue_container,
-                                                 string name,
+												 std::string name,
                                                  Cell_Type *cell_type,
                                                  int tissue_configuration,
                                                  int cylinder_cells_per_cross_section,
@@ -905,7 +905,7 @@ Tissue_Type_Cylindrical::Tissue_Type_Cylindrical(Tissue_Container *tissue_contai
 *  Returns:		string
 ******************************************************************************************/
 
-string Tissue_Type_Flat::get_name() {
+std::string Tissue_Type_Flat::get_name() {
     return this->m_name;
 }
 
@@ -942,7 +942,7 @@ int Tissue_Type_Flat::get_width_in_cells() {
 // Constructor //
 
 Tissue_Type_Flat::Tissue_Type_Flat(Tissue_Container *tissue_container,
-                                   string name,
+								   std::string name,
                                    Cell_Type *cell_type,
                                    int tissue_configuration,
                                    int flat_height_in_cells,
@@ -979,7 +979,7 @@ Tissue_Type_Flat::Tissue_Type_Flat(Tissue_Container *tissue_container,
 *  Returns:		string
 ******************************************************************************************/
 
-string Tissue::get_name() {
+std::string Tissue::get_name() {
     return this->m_name;
 }
 
@@ -1011,7 +1011,7 @@ Tissue_Type* Tissue::get_tissue_type() {
 *  Returns:		string
 ******************************************************************************************/
 
-void Tissue::set_name(string name) {
+void Tissue::set_name(std::string name) {
     this->m_name = name;
 }
 
@@ -1071,7 +1071,7 @@ void Tissue::determine_boundaries() {
 Tissue::Tissue( Tissue_Container *tissue_container,
                 World *world,
                 Coordinates *position,
-                string name,
+				std::string name,
                 Tissue_Type *tissue_type )
 		        : m_tissue_container(tissue_container),
 		          m_world(world),
@@ -1447,7 +1447,7 @@ bool Tissue_Vessel::check_boundaries() {
 void Tissue_Vessel::determine_boundaries() {
     float x_coord_1, x_coord_2;
     Coordinates vessel_end_1, vessel_end_2;
-    vector<Coordinates> boundary_coords;
+	std::vector<Coordinates> boundary_coords;
 
     x_coord_1 = m_position->get_x_coord() - (float(m_vessel_length)/2.0f);
     vessel_end_1 = Coordinates(x_coord_1, m_position->get_y_coord(), m_position->get_z_coord());
@@ -1465,7 +1465,7 @@ void Tissue_Vessel::determine_boundaries() {
 Tissue_Vessel::Tissue_Vessel(  Tissue_Container *tissue_container,
                                World *world,
                                Coordinates *position,
-                               string name,
+							   std::string name,
                                Tissue_Type_Cylindrical *tissue_type)
         : Tissue( tissue_container,
                   world,
@@ -1485,7 +1485,7 @@ Tissue_Vessel::Tissue_Vessel(  Tissue_Container *tissue_container,
             set_vessel_interior_radius(tissue_type->get_total_radius() - 2 );
             set_vessel_centre_y_coord(position->get_y_coord());
             set_vessel_centre_z_coord(position->get_z_coord());
-            std::cout << "Tissue: Vessel created successfully!" << endl;
+            std::cout << "Tissue: Vessel created successfully!" << std::endl;
 
         } else {
             throw 7;
@@ -1999,7 +1999,7 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
 void Tissue_Monolayer::determine_boundaries() {
 	float x_coord_1, x_coord_2, y_coord_1, y_coord_2;
 	Coordinates monolayer_end_1, monolayer_end_2;
-	vector<Coordinates> boundary_coords;
+	std::vector<Coordinates> boundary_coords;
 
 	auto cell_width = float(m_tissue_type->m_cell_type->m_shape->get_width());
 	auto cell_height = float(m_tissue_type->m_cell_type->m_shape->get_height());
@@ -2024,7 +2024,7 @@ void Tissue_Monolayer::determine_boundaries() {
 Tissue_Monolayer::Tissue_Monolayer( Tissue_Container *tissue_container,
                                     World *world,
                                     Coordinates *position,
-                                    string name,
+									std::string name,
                                     Tissue_Type_Flat *tissue_type)
         : Tissue(tissue_container,
                  world,

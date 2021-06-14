@@ -27,7 +27,7 @@ public:
 	int fixed_filopodia_spacing;
 
 	///Analysis and quantification
-	vector <int> junctionSizes; ///used in characterize notch boundaries for PLoS CB uneven junctions study
+	std::vector <int> junctionSizes; ///used in characterize notch boundaries for PLoS CB uneven junctions study
 	MemAgent* base_of_longest_fil;
 	int length_of_longest_fil;
 	float stableVEGFR; ///relates to calcStability();

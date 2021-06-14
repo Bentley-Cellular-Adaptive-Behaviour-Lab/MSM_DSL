@@ -21,7 +21,7 @@ enum cell_configurations{
 
 class Cell_Type {
 public:
-    string m_name;
+	std::string m_name;
     Shape *m_shape;
 	Tissue_Container *m_tissue_container;
 
@@ -29,7 +29,7 @@ public:
 
 	ODE *ode_system;
 
-    Cell_Type(Tissue_Container *tissue_container, string name, Shape *shape);
+    Cell_Type(Tissue_Container *tissue_container, std::string name, Shape *shape);
     void add_protein(protein* protein);
     void set_ODE_system(ODE *ode_system);
 };
@@ -41,10 +41,10 @@ public:
 	std::vector<Coordinates> m_boundaries;
 	Tissue_Container *m_tissue_container;
 
-    string m_name;
+	std::string m_name;
     Cell_Type *m_cell_type;
 
-    Cell(Tissue_Container *tissue_container, string name, World *world, Coordinates *position, Cell_Type *cell_type);
+    Cell(Tissue_Container *tissue_container, std::string name, World *world, Coordinates *position, Cell_Type *cell_type);
 
     bool check_boundaries();
 	void determine_boundaries();
@@ -52,15 +52,15 @@ public:
 
 class Tissue_Type {
 public:
-    string m_name;
+	std::string m_name;
     int m_tissue_configuration;
     Cell_Type *m_cell_type;
 	Tissue_Container *m_tissue_container;
 
-    virtual string get_name();
+    virtual std::string get_name();
     virtual int get_tissue_configuration();
 
-    Tissue_Type(Tissue_Container *tissue_container, string name, Cell_Type *cell_type, int tissue_configuration);
+    Tissue_Type(Tissue_Container *tissue_container, std::string name, Cell_Type *cell_type, int tissue_configuration);
 };
 
 class Tissue_Type_Cylindrical : public Tissue_Type {
@@ -69,13 +69,13 @@ public:
     int m_cylinder_cells_per_cross_section;
     int m_cylinder_total_radius;
 
-    string get_name() override;
+	std::string get_name() override;
     int get_tissue_configuration() override;
     int get_length_in_cells();
     int get_cells_per_cross_section();
     int get_total_radius();
     Tissue_Type_Cylindrical(Tissue_Container *tissue_container,
-    						string name,
+							std::string name,
                             Cell_Type *cell_type,
                             int tissue_configuration,
                             int cylinder_cells_per_cross_section,
@@ -89,13 +89,13 @@ public:
     int m_flat_width_in_cells;
 
     Tissue_Type_Flat(Tissue_Container *tissue_container,
-    				 string name,
+					 std::string name,
                      Cell_Type *cell_type,
                      int tissue_configuration,
                      int flat_height_in_cells,
                      int flat_width_in_cells);
 
-	string get_name();
+	std::string get_name();
 	int get_tissue_configuration();
 	int get_height_in_cells();
 	int get_width_in_cells();
@@ -109,7 +109,7 @@ public:
     Coordinates *m_position;
 	std::vector<Coordinates> m_boundaries;
 
-    string m_name;
+	std::string m_name;
     Tissue_Type *m_tissue_type;
 
     int m_cell_number;
@@ -118,13 +118,13 @@ public:
 	// Getters //
 
 	virtual int get_n_cells();
-	string get_name();
+	std::string get_name();
 	Tissue_Type* get_tissue_type();
 
 	// Setters //
 
 	void set_n_cells(int n_cells);
-	void set_name(string name);
+	void set_name(std::string name);
 	void set_tissue_type(Tissue_Type *tissue_type);
 	void set_tissue_container(Tissue_Container *tissue_container);
 
@@ -134,7 +134,7 @@ public:
 	Tissue(Tissue_Container *tissue_container,
 			World *world,
 			Coordinates *position,
-			string name,
+		   std::string name,
 			Tissue_Type *tissue_type);
 
 	// Tissue setup functions //
@@ -189,7 +189,7 @@ public:
     Tissue_Vessel( Tissue_Container *tissue_container,
     		       World *world,
                    Coordinates *position,
-                   string name,
+				   std::string name,
                    Tissue_Type_Cylindrical *tissue_type);
 
     void create_vessel();
@@ -210,7 +210,7 @@ public:
     Tissue_Monolayer(Tissue_Container *tissue_container,
                     World *world,
     				Coordinates *position,
-    				string name,
+					 std::string name,
     				Tissue_Type_Flat *tissue_type);
 
     void create_monolayer();
@@ -237,10 +237,10 @@ public:
 
     void tissue_set_up();
 
-    Cell_Type *define_cell_type(string name, int cell_shape_type, int height, int width);
+    Cell_Type *define_cell_type(std::string name, int cell_shape_type, int height, int width);
 
     // Defines a cylindrical configuration.
-    Tissue_Type_Cylindrical *define_tissue_type(string name,
+    Tissue_Type_Cylindrical *define_tissue_type(std::string name,
                                     Cell_Type *cell_type,
                                     int tissue_configuration,
                                     int cross_section_cells,
@@ -248,21 +248,21 @@ public:
                                     int total_radius);
 
     // Defines a flat configuration.
-    Tissue_Type_Flat *define_tissue_type(string name,
+    Tissue_Type_Flat *define_tissue_type(std::string name,
                                          Cell_Type *cell_type,
                                          int tissue_configuration,
                                          int height_in_cells,
                                          int width_in_cells);
 
-    void create_cell(string name,
+    void create_cell(std::string name,
                      Cell_Type *cell_type,
                      Coordinates *position);
 
-    void create_tissue(string name,
+    void create_tissue(std::string name,
                        Tissue_Type_Cylindrical *tissue_type,
                        Coordinates *position);
 
-    void create_tissue(string name,
+    void create_tissue(std::string name,
                        Tissue_Type_Flat *tissue_type,
                        Coordinates *position);
 

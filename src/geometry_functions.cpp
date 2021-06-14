@@ -3,8 +3,6 @@
 #include "objects.h"
 #include "memAgents.h"
 
-using namespace std;
-
 // ---------------------------------------------------------------
 
 int World::round(float f) {
@@ -105,7 +103,7 @@ float World::absVal(Coordinates vec){
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-float World::calc_z_given_equ_plane(float X, float Y, vector <float> coeffs){
+float World::calc_z_given_equ_plane(float X, float Y, std::vector <float> coeffs){
 
     float Z;
     Z = (-(coeffs[0]*X)-(coeffs[1]*Y)-(coeffs[3]))/coeffs[2];
@@ -139,10 +137,10 @@ float World::equation_of_line_through_two_points_given_Coord(float x1, float y1,
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
 //find equation of line through two points output the gradient
-vector <float> World::equation_of_line_through_two_points(float x1, float y1, float x2, float y2) {
+std::vector <float> World::equation_of_line_through_two_points(float x1, float y1, float x2, float y2) {
 
     float m, c;
-    vector <float> ans;
+	std::vector <float> ans;
     int flag=0;
 
     if((x2-x1)!=0){
@@ -256,16 +254,16 @@ float World:: calcCurvature(Coordinates One, Coordinates Two, Coordinates Three)
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-vector <Coordinates> World::initialisePoints(void){
+std::vector <Coordinates> World::initialisePoints(void){
 
-    ifstream points;
+	std::ifstream points;
     points.open("points.txt");
     float in;
     //char curvename[7];
     //Coord curvename;
     Coordinates currentCurve;
     int counter=0;
-    vector <Coordinates> curves;
+	std::vector <Coordinates> curves;
 
     do{
         points >> in;
@@ -298,26 +296,26 @@ vector <Coordinates> World::initialisePoints(void){
 //---------------------------------------------------------------------------------------------
 void World::calcCurves(void){
 
-    vector <Coordinates> curves;
+	std::vector <Coordinates> curves;
     int i;
     float curvature;
     curves = initialisePoints();
 
     for(i=0;i<(int)curves.size();i++){
-        cout<<curves[i].x<<" "<<curves[i].y<<" "<<endl;
+		std::cout<<curves[i].x<<" "<<curves[i].y<<" "<<std::endl;
 
     }
 
-    cout<<endl;
+	std::cout<<std::endl;
     for(i=0;i<(float)curves.size()/3.0;i++){
         curvature = calcCurvature(curves[0 +(i*3)], curves[1+(i*3)], curves[2+(i*3)]);
-        cout<<"curvature: "<<curvature<<endl;
+		std::cout<<"curvature: "<<curvature<<std::endl;
     }
 
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-float* World::equation_of_plane_through_three_points(vector<Coordinates> pts){
+float* World::equation_of_plane_through_three_points(std::vector<Coordinates> pts){
 
     float A, B, C, D, D1, D2, D3;
     float* coeffs = new float[4];
@@ -346,7 +344,7 @@ float* World::equation_of_plane_through_three_points(vector<Coordinates> pts){
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-bool World::check_point_on_plane(vector <float> coeffs, Coordinates point){
+bool World::check_point_on_plane(std::vector <float> coeffs, Coordinates point){
 
     if((coeffs[0]*point.x)+(coeffs[1]*point.y)+(coeffs[2]*point.z)+(coeffs[3])==0) return(true);
     else return(false);
@@ -411,7 +409,7 @@ bool World::check_point_same_side_of_line(Coordinates* point, Coordinates* order
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-bool World::check_point_within_triangle(Coordinates* point, vector<Coordinates> triangle){
+bool World::check_point_within_triangle(Coordinates* point, std::vector<Coordinates> triangle){
 
     //if its the hypotenuse of the triange, the one line that isnt actually a spring, but the divider of the 4 way mesh into
     //two triangles, then need to test for points on that line aswell as within the triangle.
@@ -453,7 +451,7 @@ bool World::check_point_within_triangle(Coordinates* point, vector<Coordinates> 
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-int* World::findRange(vector <Coordinates> coords){
+int* World::findRange(std::vector <Coordinates> coords){
 
     int smallest, largest;
     int* range = new int[6];
@@ -728,7 +726,7 @@ bool World::check_point_within_cube(Coordinates* point, float x, float y, float 
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-bool World::trianglePlane_cubeDiagonals_intersect_test(vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex){
+bool World::trianglePlane_cubeDiagonals_intersect_test(std::vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex){
 
     int i=0;
     bool intersect = false;
@@ -862,7 +860,7 @@ void World::voxelisation(void){
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-bool World::voxelise(vector <Coordinates> triangle, float x, float y, float z){
+bool World::voxelise(std::vector <Coordinates> triangle, float x, float y, float z){
 
     bool intersect=false;
 
@@ -898,9 +896,9 @@ bool World::voxelise(vector <Coordinates> triangle, float x, float y, float z){
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
-vector <Coordinates> World::initialise_test_triangle(void){
+std::vector <Coordinates> World::initialise_test_triangle(void){
 
-    vector <Coordinates> triangle;
+	std::vector <Coordinates> triangle;
     Coordinates one;
     Coordinates two;
     Coordinates three;
@@ -971,10 +969,10 @@ bool World::check_point_in_line(Coordinates* point, Coordinates start, Coordinat
     else return(false);
 }
 //---------------------------------------------------------------------------------------------
-bool World::triangleLines_cubeFacePlane_intersect_test(vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex){
+bool World::triangleLines_cubeFacePlane_intersect_test(std::vector<Coordinates> triangle, float x, float y, float z, Coordinates* cube_vertex){
 
     Coordinates* point;
-    vector<Coordinates> points;
+	std::vector<Coordinates> points;
 
     float* coeffs1;
 
@@ -1070,7 +1068,7 @@ bool World::triangleLines_cubeFacePlane_intersect_test(vector<Coordinates> trian
 //----------------------------------------------------------------------------------------------------------
 Coordinates World::calc_point_on_line_through_external_point_giving_perpendicular_line(Coordinates C, Coordinates S, Coordinates En){
 
-    vector <float> ans;
+	std::vector <float> ans;
     Coordinates D;
     //line SE, point D is on line SE and gives a perpendicular line through external point C
 
@@ -1093,7 +1091,7 @@ Coordinates World::calc_point_on_line_through_external_point_giving_perpendicula
 
         }
         else{
-          cout<<"oh it appears you can get a reverse equation of line when m isnt 0"<<endl;
+			std::cout<<"oh it appears you can get a reverse equation of line when m isnt 0"<<std::endl;
         }
     }
     else{

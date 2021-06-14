@@ -4,7 +4,6 @@
 #include <random>
 #include "environment.h"
 
-using namespace std;
 typedef Location** ppLocation;
 typedef Location* pLocation;
 
@@ -152,11 +151,11 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     else if (s > 0)
     {
         seed = s;
-        g = mt19937(seed);
+        g = std::mt19937(seed);
     }
     else
     {
-        g = mt19937(rdtsc());
+        g = std::mt19937(rdtsc());
     }
 
     EPSILON = epsilon;
@@ -171,14 +170,14 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
 
     //this->yBaseline = yBaseline;
 
-    cout << "world fil const: " << to_string(FIL_VARY) << endl;
-    cout << "world fil tip max: " << to_string(FILTIPMAX) << endl;
-    cout << "world token str: " << to_string(tokenStrength) << endl;
+	std::cout << "world fil const: " << std::to_string(FIL_VARY) << std::endl;
+	std::cout << "world fil tip max: " << std::to_string(FILTIPMAX) << std::endl;
+	std::cout << "world token str: " << std::to_string(tokenStrength) << std::endl;
 
     if (randFilExtend >= 0 && randFilExtend <= 1)
         EPSILON = 0;
 
-    cout << "Creating world..." << endl;
+	std::cout << "Creating world..." << std::endl;
 
     //    char outfilename[21];
     //    char outfilename2[21];
@@ -220,31 +219,31 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     #endif
 
     scale_ProtLevels_to_CellSize();
-    cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << endl;
-    cout << "World created!" << endl;
+	std::cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << std::endl;
+	std::cout << "World created!" << std::endl;
     //run simulateTimestep once to perform creation timestep
     simulateTimestep();
 
-    cout << "Creation timestep complete." << endl;
+	std::cout << "Creation timestep complete." << std::endl;
 }
 
 World::World()
 {
-    cout << "Creating world..." << endl;
+	std::cout << "Creating world..." << std::endl;
     if (TESTING == true)
     {
         srand(100);
     }
     else if (seed > 0)
     {
-        cout << "seeding with value: " << seed << endl;
-        g = mt19937(seed);
+		std::cout << "seeding with value: " << seed << std::endl;
+        g = std::mt19937(seed);
         //srand(seed);
     }
     else
     {
         //srand(rdtsc());
-        g = mt19937(rdtsc());
+        g = std::mt19937(rdtsc());
     }
 
     //    char outfilename[21];
@@ -267,7 +266,7 @@ World::World()
     gridYDimensions = yMAX;
     gridZDimensions = zMAX;
 
-    cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << endl;
+	std::cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << std::endl;
 
     int i, j;
     grid = new ppLocation[xMAX];
@@ -285,12 +284,12 @@ World::World()
     #endif
 
     scale_ProtLevels_to_CellSize();
-    cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << endl;
-    cout << "World created!" << endl;
+	std::cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << std::endl;
+	std::cout << "World created!" << std::endl;
     //run simulateTimestep once to perform creation timestep
     simulateTimestep();
 
-    cout << "Creation timestep complete." << endl;
+	std::cout << "Creation timestep complete." << std::endl;
 }
 
 World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity)
@@ -298,10 +297,10 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     if (TESTING) {
         srand(100);
     } else if (seed > 0) {
-        cout << "seeding with value: " << seed << endl;
-        g = mt19937(seed);
+		std::cout << "seeding with value: " << seed << std::endl;
+        g = std::mt19937(seed);
     } else {
-        g = mt19937(rdtsc());
+        g = std::mt19937(rdtsc());
     }
 
     Pause = 0;
@@ -311,9 +310,9 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     gridYDimensions = grid_yMax;
     gridZDimensions = grid_zMax;
 
-    cout << "xMax: " << gridXDimensions << "\n"
-         << "yMax: " << gridYDimensions << "\n"
-         << "zMax: " << gridZDimensions << "\n";
+	std::cout << "xMax: " << gridXDimensions << "\n"
+	<< "yMax: " << gridYDimensions << "\n"
+	<< "zMax: " << gridZDimensions << "\n";
 
     int i, j;
     grid = new ppLocation[gridXDimensions];
@@ -332,20 +331,20 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
 
     scale_ProtLevels_to_CellSize();
 
-    cout << "Grid size - X: " << gridXDimensions << "\n"
+	std::cout << "Grid size - X: " << gridXDimensions << "\n"
          << "Y: " << gridYDimensions << "\n"
          << "Z: " << gridZDimensions << "\n";
 
-	cout << "Placing environment agents..." << "\n";
+	std::cout << "Placing environment agents..." << "\n";
     create_new_environment(base_permittivity);
-	cout << "Environment created." << "\n";
+	std::cout << "Environment created." << "\n";
 
-    cout << "Setting up ODE systems..." << "\n";
+	std::cout << "Setting up ODE systems..." << "\n";
 
-    cout << "World created!" << "\n";
+	std::cout << "World created!" << "\n";
     simulateTimestep();
 
-    cout << "Creation timestep complete." << endl;
+	std::cout << "Creation timestep complete." << std::endl;
 }
 
 //-----------------------------------------------------------------------------

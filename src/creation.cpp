@@ -7,8 +7,6 @@
 #include "EC.h"
 #include "environment.h"
 
-
-using namespace std;
 float storedOffset;
 //-------------------------------------------------------------------------
 void World::label_env_exposed_von_neu_agents(void){
@@ -211,7 +209,7 @@ void World::createHexagonCell(int cell, int centreX, int centreY){
      I=0;
     MemAgent* memp;
 
-    cout<<(int)(centreX-(float)ECwidth/2.0f)+2<<" "<<(int)(centreX+(float)ECwidth/2.0f)-2-1<<endl;
+	std::cout<<(int)(centreX-(float)ECwidth/2.0f)+2<<" "<<(int)(centreX+(float)ECwidth/2.0f)-2-1<<std::endl;
 
     for(i=(int)(centreX-(float)ECwidth/2.0f);i<(int)(centreX+(float)ECwidth/2.0f)-1;i++){
         for(j=(int)(centreY-(float)ECwidth/2.0f);j<(int)(centreY+(float)ECwidth/2.0f);j++){
@@ -220,7 +218,7 @@ void World::createHexagonCell(int cell, int centreX, int centreY){
             else if((I==1)||(I==5)) J=1;
             else J=0;
 
-            if(I==3)cout<<j<<" "<<J<<" "<<I<<(int)(centreX-(float)ECwidth/2.0f)+J<<" "<<(int)(centreX+(float)ECwidth/2.0f)-J-1<<endl;
+            if(I==3)std::cout<<j<<" "<<J<<" "<<I<<(int)(centreX-(float)ECwidth/2.0f)+J<<" "<<(int)(centreX+(float)ECwidth/2.0f)-J-1<<std::endl;
             if((j>=(int)(centreY-(float)ECwidth/2.0f)+J)&&(j<(int)(centreY+(float)ECwidth/2.0f)-J)){
             //    cout<<i<<" "<<J<<" "<<I<<endl;
             memp = new MemAgent(ECagents[cell], (World*) this);
@@ -239,7 +237,7 @@ void World::createHexagonCell(int cell, int centreX, int centreY){
             
         }
         I++;
-        cout<<I<<endl;
+		std::cout<<I<<std::endl;
     }
 
     //connect mesh
@@ -541,7 +539,7 @@ void World::create_3D_round_cell(void){
     MemAgent* memp;
     int centreX = (int)((float)xMAX/2.0f);
     int centreY = 10;//(int)((float)yMAX/2.0f);
-    cout<<centreX<<" "<<centreY<<endl;
+	std::cout<<centreX<<" "<<centreY<<std::endl;
     
     for(i=(int)(centreX-(float)ECwidth/2.0f);i<=(int)(centreX+(float)ECwidth/2.0f);i++){
         for(j=(int)(centreY-(float)ECwidth/2.0f);j<=(int)(centreY+(float)ECwidth/2.0f);j++){
@@ -988,7 +986,7 @@ void World::connectMesh(void){
             }
 
             if(flag4!=1){
-                cout<<"cell: "<<i<<"cirPos "<<mp->circlePos<<" x "<<(int)mp->Mx<<endl;
+				std::cout<<"cell: "<<i<<"cirPos "<<mp->circlePos<<" x "<<(int)mp->Mx<<std::endl;
             }
         }
     }
@@ -1003,7 +1001,7 @@ void World::createNewEnvAgent(int x, int y, int z){
 
 
         if(grid[x][y][z].Eid!=NULL){
-            cout<<"already got an env agent in createNew"<<endl;
+			std::cout<<"already got an env agent in createNew"<<std::endl;
         }
         Env * ep = new Env((World*) this);
         
@@ -1741,9 +1739,9 @@ void World::createNewEnvAgent(int x, int y, int z){
         int MEMS=2;
         MemAgent* memp;
         EC* ecp;
-        
-        cout<<"creating..."<<endl;
-        cout.flush();
+
+	std::cout<<"creating..."<<std::endl;
+	std::cout.flush();
         
         //create EC agents-----------------------
         for(i=0;i<2;i++){
@@ -1755,8 +1753,8 @@ void World::createNewEnvAgent(int x, int y, int z){
             ECagents.push_back(ecp);
         }
         //---------------------------------------
-        cout<<"created cells"<<endl;
-        cout.flush();
+	std::cout<<"created cells"<<std::endl;
+	std::cout.flush();
         //---------------------------------------
         //create nodeagents
         for(i=0;i<MEMS;i++){
@@ -1767,7 +1765,7 @@ void World::createNewEnvAgent(int x, int y, int z){
             
             for(j=0;j<MEMS;j++){
                 memp = new MemAgent(ecp, (World*) this);
-                cout<<memp<<endl;
+				std::cout<<memp<<std::endl;
                 
                 memp->Mx = i+(i*10);
                 memp->My = j+(j*10);
@@ -1783,8 +1781,8 @@ void World::createNewEnvAgent(int x, int y, int z){
             }
         }
         //---------------------------------------
-        cout<<"created nodes"<<endl;
-        cout.flush();
+	std::cout<<"created nodes"<<std::endl;
+	std::cout.flush();
         
         //---------------------------------------
         //connect mesh
@@ -1799,9 +1797,9 @@ void World::createNewEnvAgent(int x, int y, int z){
         
         ECagents[1]->nodeAgents[0]->neigh[1] = ECagents[0]->nodeAgents[0];
         ECagents[1]->nodeAgents[1]->neigh[1] = ECagents[0]->nodeAgents[1];
-        
-        cout<<"connected springs"<<endl;
-        cout.flush();
+
+	std::cout<<"connected springs"<<std::endl;
+	std::cout.flush();
         //after connecting, create the springToken objects.
         ECagents[0]->createSpringTokenObject(ECagents[0]->nodeAgents[0], ECagents[0]->nodeAgents[0]->neigh[0], 0);
         ECagents[0]->createSpringTokenObject(ECagents[0]->nodeAgents[0], ECagents[0]->nodeAgents[0]->neigh[1], 1);
@@ -1812,9 +1810,9 @@ void World::createNewEnvAgent(int x, int y, int z){
         ECagents[1]->createSpringTokenObject(ECagents[1]->nodeAgents[0], ECagents[1]->nodeAgents[0]->neigh[1], 1);
         ECagents[1]->createSpringTokenObject(ECagents[1]->nodeAgents[1], ECagents[1]->nodeAgents[1]->neigh[0], 0);
         ECagents[1]->createSpringTokenObject(ECagents[1]->nodeAgents[1], ECagents[1]->nodeAgents[1]->neigh[1], 1);
-        
-        cout<<"created spring objects"<<endl;
-        cout.flush();
+
+	std::cout<<"created spring objects"<<std::endl;
+	std::cout.flush();
         /*for(i=0;i<2;i++){
          * for(j=0;j<2;j++){
          * for(k=0;k<2;k++){
@@ -2101,9 +2099,9 @@ void World::createNewEnvAgent(int x, int y, int z){
         float width =12;
         int drop = 1;
         int dropSpacer = 20;
-        vector <float> equ1;
-        vector <float> equ2;
-        vector <float> equ3;
+	std::vector <float> equ1;
+	std::vector <float> equ2;
+	std::vector <float> equ3;
         int i, j, in;
         float x, x2;
         

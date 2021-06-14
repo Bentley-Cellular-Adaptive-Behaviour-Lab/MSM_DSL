@@ -4,16 +4,14 @@
 #include "environment.h"
 #include "EC.h"
 
-using namespace std;
-
 bool found_sp = false;
-vector <int> current_order;
-vector <int> shuffles;
-vector <int> headShuffles_COM;
-vector <int> orderFar;
-vector <int> orderNear;
-vector <int> stored_Far;
-vector <int> stored_Near;
+std::vector <int> current_order;
+std::vector <int> shuffles;
+std::vector <int> headShuffles_COM;
+std::vector <int> orderFar;
+std::vector <int> orderNear;
+std::vector <int> stored_Far;
+std::vector <int> stored_Near;
 int oldHeadNode;
 int overtakeTime = 1;
 int frequencyHeads[ECELLS] = {0};
@@ -166,7 +164,7 @@ std::vector< std::vector<float> > World::getGridSiteData()
 
 std::vector< std::vector< std::vector < std::array<int,2> > > > World::getGridMapOfFilopodiaMovement()
  {
-    vector < vector < vector < array<int, 2> > > > retval(xMAX, vector < vector < array<int, 2> > >(yMAX, vector < array<int, 2> >(zMAX, {0,0})));
+    std::vector < std::vector < std::vector < std::array<int, 2> > > > retval(xMAX, std::vector < std::vector < std::array<int, 2> > >(yMAX, std::vector < std::array<int, 2> >(zMAX, {0,0})));
 
     int totalExtenstions = 0;
     int totalRetractions = 0;
@@ -198,7 +196,7 @@ std::vector< std::vector< std::vector<float> > > World::getFilopodiaBaseLocation
 
     if (this->timeStep == 800)
     {
-        cout << "stop";
+        std::cout << "stop";
     }
 
     for (Filopodia* filopodia : this->filopodia)
@@ -233,7 +231,7 @@ std::vector< std::vector< std::vector<float> > > World::getFilopodiaBaseLocation
                 }
             }
             else {
-                cout << "filopodia base is null what is going on ?????";
+                std::cout << "filopodia base is null what is going on ?????";
             }
         }
     }
@@ -255,7 +253,7 @@ void World::simulateTimestep(std::vector< std::vector<float> > cellIncrements)
 
 
 //---------------------------------------------------------------------------------------------
-bool Hysteresis::evaluate_hysteresis(ofstream& fileTo) {
+bool Hysteresis::evaluate_hysteresis(std::ofstream& fileTo) {
 
     
     int i;
@@ -280,7 +278,7 @@ bool Hysteresis::evaluate_hysteresis(ofstream& fileTo) {
     if((stabilityTimer_latest>=CELL_STABLE)||(stabilityTimer_overall>=bio_time_window)){
     //cell is deemed stable, so output results 
         
-        cout<<"Stabilised! "<<Cell->Dll4tot<<"\t"<<stabilityTimer_overall<<endl;
+        std::cout<<"Stabilised! "<<Cell->Dll4tot<<"\t"<<stabilityTimer_overall<<std::endl;
         //cout<<"stable! "<<Current_Dll4_incremented_level<<endl;
         storeDll4.push_back(Cell->Dll4tot);
         storeTimes.push_back(stabilityTimer_overall);
@@ -294,7 +292,7 @@ bool Hysteresis::evaluate_hysteresis(ofstream& fileTo) {
         else 
             Current_Dll4_incremented_level+=HYST_INCREMENT;
         
-        cout<<"hysteresis Dext = "<<Current_Dll4_incremented_level<<endl;
+        std::cout<<"hysteresis Dext = "<<Current_Dll4_incremented_level<<std::endl;
        
         
         //clear timers for next round.
@@ -307,11 +305,11 @@ bool Hysteresis::evaluate_hysteresis(ofstream& fileTo) {
              //write data to file
              for(i=0;i<HYST_INCREMENT_MAX/HYST_INCREMENT;i++){
                  
-             fileTo<<(i*HYST_INCREMENT)<<"\t"<<storeDll4[i]<<"\t"<<storeTimes[i]<<"\t"<<storeDll4[storeDll4.size()-1-i]<<"\t"<<storeTimes[storeDll4.size()-1-i]<<endl;
+             fileTo<<(i*HYST_INCREMENT)<<"\t"<<storeDll4[i]<<"\t"<<storeTimes[i]<<"\t"<<storeDll4[storeDll4.size()-1-i]<<"\t"<<storeTimes[storeDll4.size()-1-i]<<std::endl;
              }
              
-             fileTo<<endl;
-             fileTo<<storeDll4[HYST_INCREMENT_MAX/HYST_INCREMENT]<<"\t"<<storeTimes[HYST_INCREMENT_MAX/HYST_INCREMENT]<<endl;
+             fileTo<<std::endl;
+             fileTo<<storeDll4[HYST_INCREMENT_MAX/HYST_INCREMENT]<<"\t"<<storeTimes[HYST_INCREMENT_MAX/HYST_INCREMENT]<<std::endl;
              
              
              direction=true;
@@ -327,11 +325,7 @@ bool Hysteresis::evaluate_hysteresis(ofstream& fileTo) {
 
 
 
-void World::printScores(ofstream& fileTo) {
-
-
-
-
+void World::printScores(std::ofstream& fileTo) {
 
     int i, j, k;
     int sumNewJunction = 0;
@@ -354,7 +348,7 @@ void World::printScores(ofstream& fileTo) {
         fileTo << ECagents[c]->VEGFRtot << "\t";
     }
 
-    fileTo << endl;
+    fileTo << std::endl;
     /*	count=0;
             flag=0;
             ecp=ECagents[c];
@@ -421,7 +415,7 @@ void World::getCellNeighbours(void) {
     EC* ecp;
     MemAgent* np;
 
-    vector <EC*> neighbours;
+    std::vector <EC*> neighbours;
 
     if (cellNeighbourhoods.size() != 0) {
         for (r = 0; r < ECagents.size(); r++) {
@@ -642,7 +636,7 @@ void World::evaluateSandP()
         patternHistory = 0;
 
     if (patternHistory == 150) {
-        cout << "patterned!" << endl;
+        std::cout << "patterned!" << std::endl;
         patterned = true;
         RUNSfile << timeStep;
         timeStep = MAXtime;
@@ -771,9 +765,9 @@ void World::filopodia_contacts_Test(void) {
     int i, j, k;
     Filopodia* fp;
     Filopodia* fpCurr;
-    vector <Filopodia*> current_contacts;
-    vector <Contact*> copy_previous_contacts;
-    vector<Contact*>::iterator T;
+    std::vector <Filopodia*> current_contacts;
+	std::vector <Contact*> copy_previous_contacts;
+	std::vector<Contact*>::iterator T;
     Contact* cp;
     bool found = false;
     //every time step go through all current non-retracted filopodia,
@@ -860,10 +854,10 @@ void World::filopodia_contacts_Test(void) {
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
 
-vector <Filopodia*> Filopodia::checkForContact(void) {
+std::vector <Filopodia*> Filopodia::checkForContact(void) {
 
     int i, j, k;
-    vector <Filopodia*> filsContacted;
+	std::vector <Filopodia*> filsContacted;
     MemAgent* Mcurrent;
     Filopodia* fil;
     int count = 0;
@@ -927,16 +921,16 @@ Filopodia* Filopodia::findFil(MemAgent* mp) {
 
         } while ((Mcurrent != NULL) && (flag == 0));
     } else {
-        cout << "oh dear, think this is the base already, or no minus site  - in findFil" << endl;
+		std::cout << "oh dear, think this is the base already, or no minus site  - in findFil" << std::endl;
     }
     //cout<<"cell in findFil: "<<Mcurrent->Cell<<endl;
-    if (Mcurrent == NULL) cout << "not finding fil base" << endl;
+    if (Mcurrent == NULL) std::cout << "not finding fil base" << std::endl;
     return (Mcurrent->base_fil_belong);
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
 
-void World::printContactsInfo(ofstream& fileTo) {
+void World::printContactsInfo(std::ofstream& fileTo) {
 
     int i, j;
     int count = 0;
@@ -970,7 +964,7 @@ void World::printContactsInfo(ofstream& fileTo) {
      *
      * }*/
 
-    cout << "printing!" << endl;
+	std::cout << "printing!" << std::endl;
     int sum = 0;
     float mean;
     float stdev = 0;
@@ -1044,7 +1038,7 @@ void World::printContactsInfo(ofstream& fileTo) {
 
 
 
-        fileTo << fusedCells_times[0] - earliest << "\t" << fusedCells_times[0] - latest << endl;
+        fileTo << fusedCells_times[0] - earliest << "\t" << fusedCells_times[0] - latest << std::endl;
     }
 
 }
@@ -1088,17 +1082,17 @@ void World::collect_Filopodia_Data(void) {
         }
     }
 
-    cout << "fils: " << filopodia.size() << "average fil lifetime = " << (float) sum / (float) filopodia.size() << endl;
-    cout << count1 << "\t" << count2 << "\t" << count3 << "\t" << count4 << "\t" << count5 << "\t" << count6 << "\t" << count7 << "\t" << endl;
-    dataFile << "fils: " << filopodia.size() << "average fil lifetime = " << (float) sum / (float) filopodia.size() << endl;
-    dataFile << count1 << "\t" << count2 << "\t" << count3 << "\t" << count4 << "\t" << count5 << "\t" << count6 << "\t" << count7 << "\t" << endl;
+	std::cout << "fils: " << filopodia.size() << "average fil lifetime = " << (float) sum / (float) filopodia.size() << std::endl;
+	std::cout << count1 << "\t" << count2 << "\t" << count3 << "\t" << count4 << "\t" << count5 << "\t" << count6 << "\t" << count7 << "\t" << std::endl;
+    dataFile << "fils: " << filopodia.size() << "average fil lifetime = " << (float) sum / (float) filopodia.size() << std::endl;
+    dataFile << count1 << "\t" << count2 << "\t" << count3 << "\t" << count4 << "\t" << count5 << "\t" << count6 << "\t" << count7 << "\t" << std::endl;
 }
 
 //---------------------------------------------------------------------------------------
 
 //---------------------------------------------------------------------------------------
 
-void World::evaluate_final_offset_patt(ofstream& fileTo) {
+void World::evaluate_final_offset_patt(std::ofstream& fileTo) {
 
     int Xsum = 0;
     int uptoC = ECagents.size();
@@ -1176,7 +1170,7 @@ void World::evaluate_final_offset_patt(ofstream& fileTo) {
         if (ecp->tipCellTest() == true) fileTo << c << "\t";
 
     }
-    fileTo << endl;
+    fileTo << std::endl;
     //---------------------------------------------------------------------------------------------
 
 }
@@ -1185,7 +1179,7 @@ void World::evaluate_final_offset_patt(ofstream& fileTo) {
 
 //---------------------------------------------------------------------------------------------
 
-void World::evaluation(ofstream& fileTo) {
+void World::evaluation(std::ofstream& fileTo) {
 
     int Xsum = 0;
     int uptoC = ECagents.size();
@@ -1287,8 +1281,8 @@ void World::evaluation(ofstream& fileTo) {
     else fileTo << "-1\t";
 
     fileTo << adjacent << "\t" << mutSprouts << "\t" << mutTips << "\t";
-    if (((mutSprouts > 0) || (mutTips > 0)) && ((sprout > 0) || (stuntedTipCount > 0))) fileTo << ((float) (mutSprouts + mutTips) / (float) (sprout + stuntedTipCount))*100 << endl;
-    else fileTo << "-1" << endl;
+    if (((mutSprouts > 0) || (mutTips > 0)) && ((sprout > 0) || (stuntedTipCount > 0))) fileTo << ((float) (mutSprouts + mutTips) / (float) (sprout + stuntedTipCount))*100 << std::endl;
+    else fileTo << "-1" << std::endl;
 
 
 }
@@ -1325,12 +1319,12 @@ void World::calcEnvVEGFlevel(void) {
         }
     }
 
-    cout << "VEGF total " << sum << "\t" <<count<<"gridded membrane" << countM << endl;
+	std::cout << "VEGF total " << sum << "\t" <<count<<"gridded membrane" << countM << std::endl;
 
 }
 //---------------------------------------------------------------------------------------------------------
 
-void World::output_cell_protlevels(ofstream& fileTo){
+void World::output_cell_protlevels(std::ofstream& fileTo){
 
     
     
@@ -1352,17 +1346,17 @@ filTokSum+=ecp->nodeAgents[j]->filTokens;
         }*/
     
         if(timeStep==0){
-                cout<<"CEll: "<<i<<" VEGFRnorm: "<<ecp->VEGFRnorm<<" Vsink: "<<ecp->Vsink<<endl;
+			std::cout<<"CEll: "<<i<<" VEGFRnorm: "<<ecp->VEGFRnorm<<" Vsink: "<<ecp->Vsink<<std::endl;
         }
         else{
-                cout<<timeStep<<" CEll: "<<i<<" actinUsed "<<ecp->actinUsed<<" fiToks "<<filTokSum<<" Dll4tot:"<<ecp->Dll4tot<<" activeVR2 "<<ecp->activeVEGFRtot<<" VEGFRnorm: "<<ecp->VEGFRnorm<<" Vsink: "<<ecp->Vsink<<endl; 
+			std::cout<<timeStep<<" CEll: "<<i<<" actinUsed "<<ecp->actinUsed<<" fiToks "<<filTokSum<<" Dll4tot:"<<ecp->Dll4tot<<" activeVR2 "<<ecp->activeVEGFRtot<<" VEGFRnorm: "<<ecp->VEGFRnorm<<" Vsink: "<<ecp->Vsink<<std::endl;
         }
         
         //fileTo<<ecp->Dll4tot<<"\t"<<ecp->activeVEGFRtot<<"\t";
         
     }
-    
-         cout<<endl; 
+
+	std::cout<<std::endl;
          //fileTo<<endl;
 
 }
@@ -1457,7 +1451,9 @@ Coordinates EC::calcCOM_toroidal(void){
             //cout<<"right"<<endl;
             toroidal = 2;
         }
-        else{cout<<"wierd, cell seems to be stretched accross the whole x axis! oh dear..."<<endl;}
+        else {
+        	std::cout<<"wierd, cell seems to be stretched accross the whole x axis! oh dear..."<< std::endl;
+        }
     }
     else{
         toroidal=0;
