@@ -2408,6 +2408,21 @@ bool MemAgent::has_protein(string query_name) {
 }
 
 /*****************************************************************************************
+*  Name:		set_protein_level
+*  Description: Sets the level of a protein, if that memAgent possesses that protein.
+*  Returns:		boolean
+******************************************************************************************/
+
+void MemAgent::set_protein_level(string protein_name, float new_level) {
+    assert(this->has_protein(protein_name));
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == protein_name) {
+            protein->set_level(new_level);
+        }
+    }
+}
+
+/*****************************************************************************************
 *  Name:		update_protein_level
 *  Description: Updates the level of a protein owned by this memAgent.
 *  Returns:		void

@@ -43,6 +43,7 @@ set (Headers src/creation.h
 add_executable(springAgent ${Sources} ${Headers})
 
 find_package(OpenGL)
+find_package(Boost)
 #find_package(GLUT)
 
 # Source: https://apps.man.poznan.pl/trac/gpu_mri_3d/browser/trunk/CMake/FindGLUI.cmake

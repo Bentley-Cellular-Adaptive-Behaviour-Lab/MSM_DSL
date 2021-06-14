@@ -11,6 +11,7 @@
 #include "protein.h"
 
 class Tissue_Container;
+class ODE;
 
 enum cell_configurations{
 	CELL_CONFIGURATION_CYLINDRICAL,
@@ -20,22 +21,24 @@ enum cell_configurations{
 
 class Cell_Type {
 public:
-    //TODO: ADD ODE SYSTEM TO CELL TYPE
     string m_name;
     Shape *m_shape;
 	Tissue_Container *m_tissue_container;
 
-	vector<protein*> proteins;
+	std::vector<protein*> proteins;
+
+	ODE *ode_system;
 
     Cell_Type(Tissue_Container *tissue_container, string name, Shape *shape);
     void add_protein(protein* protein);
+    void set_ODE_system(ODE *ode_system);
 };
 
 class Cell {
 public:
     World *m_world;
     Coordinates *m_position;
-	vector<Coordinates> m_boundaries;
+	std::vector<Coordinates> m_boundaries;
 	Tissue_Container *m_tissue_container;
 
     string m_name;
@@ -104,13 +107,13 @@ public:
 	Tissue_Container *m_tissue_container;
 	World *m_world;
     Coordinates *m_position;
-	vector<Coordinates> m_boundaries;
+	std::vector<Coordinates> m_boundaries;
 
     string m_name;
     Tissue_Type *m_tissue_type;
 
     int m_cell_number;
-    vector<EC*> m_cell_agents;
+    std::vector<EC*> m_cell_agents;
 
 	// Getters //
 
@@ -221,12 +224,12 @@ public:
 class Tissue_Container {
 public:
 
-    vector <Tissue_Type*> tissue_types;
-    vector <Cell_Type*> cell_types;
-    vector <Tissue*> tissues;
-    vector <Cell*> cells;
+    std::vector <Tissue_Type*> tissue_types;
+    std::vector <Cell_Type*> cell_types;
+    std::vector <Tissue*> tissues;
+    std::vector <Cell*> cells;
 
-    vector <EC*> m_single_cell_agents;
+    std::vector <EC*> m_single_cell_agents;
 
     World *m_world;
 

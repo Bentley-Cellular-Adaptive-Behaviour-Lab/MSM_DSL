@@ -122,7 +122,7 @@ public:
     float get_environment_protein_level(string protein_name);
     float get_local_protein_level(string protein_name);
     float get_adjacent_protein_level(string protein_name);
-    void run_local_ODES();
+    void set_protein_level(string protein_name, float new_level);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

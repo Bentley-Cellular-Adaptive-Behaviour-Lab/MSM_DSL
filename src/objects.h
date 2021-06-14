@@ -41,6 +41,7 @@ class Contact;
 class Filopodia;
 class CPM_module;
 class Env;
+class ODEs;
 
 //#define GRAPHICS true
 ///main switches and settings
@@ -702,6 +703,7 @@ public:
 
 	World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
 
+	ODEs *odes;
 };
 ///----------------------------------------
 
