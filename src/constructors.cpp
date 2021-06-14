@@ -4,7 +4,6 @@
 #include <random>
 #include "environment.h"
 
-
 using namespace std;
 typedef Location** ppLocation;
 typedef Location* pLocation;
@@ -14,6 +13,8 @@ unsigned long long rdtsc(){
     __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
     return ((unsigned long long)hi << 32) | lo;
 }
+
+class ODEs;
 
 CPM_module::CPM_module(World* WorldP){
 
@@ -338,6 +339,8 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
 	cout << "Placing environment agents..." << "\n";
     create_new_environment(base_permittivity);
 	cout << "Environment created." << "\n";
+
+    cout << "Setting up ODE systems..." << "\n";
 
     cout << "World created!" << "\n";
     simulateTimestep();

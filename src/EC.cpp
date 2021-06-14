@@ -4,8 +4,6 @@
 #include "memAgents.h"
 #include "EC.h"
 
-using namespace std;
-
 bool EC::tipCellTest(void){
     
     //as the original tip cell test said there had to be 1.2x initmemagents no. which here is 740 which gives 148 left over to be involved in filopodia..
@@ -174,7 +172,7 @@ void EC::allocateProts(void){
 void EC::NotchDelay(void){
     
     int i;
-    vector<float>::iterator T=NotchDelayArray.begin();
+    std::vector<float>::iterator T=NotchDelayArray.begin();
     actNotCurrent=0.0f;
     
     //add new activeNotch value to delay array
@@ -237,7 +235,7 @@ void EC::GRN(void){
     if(VEGFRtot<VEGFRmin) VEGFRtot=VEGFRmin;
    
     if(ANALYSIS_HYSTERESIS==true){
-        if((this!=worldP->ECagents[0])&&(this!=worldP->ECagents[ECELLS-1]))
+        if((this != worldP->ECagents[0])&&(this!=worldP->ECagents[ECELLS-1]))
             Dll4tot+=(actVEGFRcurrent*delta);
         else{
         //for the fixed cells at the ends of the row, fix Dll4tot at current increment.
@@ -646,7 +644,7 @@ void EC::distribute_proteins() {
 ******************************************************************************************/
 
 void EC::calculate_cell_protein_levels() {
-    vector<int> protein_counts;
+    std::vector<int> protein_counts;
     for (auto protein : this->m_cell_type->proteins) {
         protein_counts.push_back(0);
     }
@@ -655,10 +653,11 @@ void EC::calculate_cell_protein_levels() {
 
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
-        // RUN MEMAGENT ODE FUNCTION.
+        //Attempt to run ODEs at this memagent.
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
+                //Determine the amount for the current protein at this memAgent and update the total for that
                 float current_protein_level = nodeAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
@@ -666,6 +665,7 @@ void EC::calculate_cell_protein_levels() {
     }
 
     for (auto surfaceAgent : this->surfaceAgents) {
+        //Attempt to run ODEs at this memagent.
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (surfaceAgent->has_protein(current_protein->get_name())) {
@@ -675,11 +675,12 @@ void EC::calculate_cell_protein_levels() {
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
+    for (auto springAgent : this->surfaceAgents) {
+        //Attempt to run ODEs at this memagent.
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
-            if (surfaceAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = surfaceAgent->get_memAgent_protein_level(current_protein->get_name());
+            if (springAgent->has_protein(current_protein->get_name())) {
+                float current_protein_level = springAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
         }

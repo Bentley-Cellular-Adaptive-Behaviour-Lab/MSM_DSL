@@ -358,7 +358,7 @@ void World::creationTimestep(int movie)
     cout << "memInit" << memINIT << endl;
 
     if (DSL_TESTING) {
-        cout << "Allocating proteins to cells." << endl;
+        cout << "Allocating cell proteins to memagents." << endl;
         for (int j = 0; j < (int) ECagents.size(); j++)
             ECagents[j]->distribute_proteins();
     }
@@ -619,8 +619,10 @@ void World::updateECagents(void) {
         ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
         // TOM
-        if (DSL_TESTING)
+        if (DSL_TESTING) {
+            // Determine the total level of protein across all memAgents, then distribute these proteins out to the memagents evenly.
             ECagents[j]->calculate_cell_protein_levels();
+        }
         else
             ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
 
@@ -654,7 +656,11 @@ void World::updateECagents(void) {
     for (j = 0; j < (int) ECagents.size(); j++) {
 
         //distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
-        ECagents[j]->allocateProts();
+        if (DSL_TESTING) {
+            ECagents[j]->distribute_proteins();
+        } else {
+            ECagents[j]->allocateProts();
+        }
 
         //use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
         if (ANALYSIS_JTB_SP_PATTERN == true)
