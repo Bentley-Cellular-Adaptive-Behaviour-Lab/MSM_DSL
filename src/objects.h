@@ -703,6 +703,8 @@ public:
 	World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
 
 	ODEs *odes;
+	void setup_ODEs();
+    void run_ODEs(std::string cell_type_name, MemAgent *memAgent);
 };
 ///----------------------------------------
 
