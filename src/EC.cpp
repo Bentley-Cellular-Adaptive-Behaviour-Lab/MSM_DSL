@@ -556,6 +556,76 @@ EC::EC(World*  world){
 }
 
 /*****************************************************************************************
+*  Name:		set_initial_proteins
+*  Description: Iterates over all cell proteins and allocates those proteins to all agents,
+ *              assuming no filopodia exist yet.
+*  Returns:		void
+******************************************************************************************/
+
+void EC::set_initial_proteins() {
+    // Create a vector containing the number of all memAgents that have a particular protein.
+    std::vector<int> protein_counts;
+    for (int i = 0; i <this->m_cell_type->proteins.size(); i++) {
+        protein_counts.push_back(0);
+    }
+
+    // Go over all the memAgents - if they use any protein that the cell has, increase the relevant count by one.
+    // TODO: We need to iterate over agents twice, because we don't know the count beforehand. Find a better way to do this.
+    // TODO: Have some sort of filter preventing proteins being allocated to filopodia, thus adjusting the count.
+    for (auto nodeAgent : this->nodeAgents) {
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein_counts[i]++;
+        }
+    }
+
+    for (auto surfaceAgent : this->surfaceAgents) {
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein_counts[i]++;
+        }
+    }
+
+    for (auto springAgent : this->springAgents) {
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein_counts[i]++;
+        }
+    }
+
+    // Once counts have been determined, calculate the amount of each protein per memAgent.
+    std::vector<float> protein_totals_per_memAgent;
+
+    for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+        float current_protein_level = this->m_cell_type->proteins[i]->get_level();
+        float total_per_agent = current_protein_level / protein_counts[i];
+        protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
+    }
+
+    // Now, create proteins for each memAgent and set the level at each agent to be equal to the calculated amount.
+    for (auto nodeAgent : this->nodeAgents) {
+        nodeAgent->add_cell_proteins();
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein *current_protein = this->m_cell_type->proteins[i];
+            nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+        }
+    }
+
+    for (auto surfaceAgent : this->surfaceAgents) {
+        surfaceAgent->add_cell_proteins();
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein *current_protein = this->m_cell_type->proteins[i];
+            surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+        }
+    }
+
+    for (auto springAgent : this->springAgents) {
+        springAgent->add_cell_proteins();
+        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+            protein *current_protein = this->m_cell_type->proteins[i];
+            springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+        }
+    }
+}
+
+/*****************************************************************************************
 *  Name:		distribute_proteins
 *  Description: Iterates over all cell proteins, counts the number of agents in the cell agent
 *               and distributes them out evenly
@@ -654,6 +724,7 @@ void EC::calculate_cell_protein_levels() {
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
         //Attempt to run ODEs at this memagent.
+        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
