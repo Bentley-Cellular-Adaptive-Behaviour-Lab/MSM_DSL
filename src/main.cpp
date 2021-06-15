@@ -322,26 +322,28 @@ void World::simulateTimestep()
 
 void World::creationTimestep(int movie)
 {
-//    if (MACROS > 0)
-//        createMacrophages();
-//
-//    //TOM:Commented out to test cell set up language. Assuming cell setup value is set to 1.
-//
-//    /** create EC cells spring mesh and memAgents within continuous space **/
-//    if ((CELL_SETUP == 2) || (CELL_SETUP == 1)) {
-//        //blind ended sprout (NCB and rearrangement)
-//        //vessel setup (JTB and PLoS)
-//        createECagents(Junct_arrange);
-//        connectMesh();
-//    }
-//    else if (CELL_SETUP == 3)
-//    {
-//        createMonolayer();
-//    }
-//    else if (CELL_SETUP == 4)
-//    {
-//        create_3D_round_cell();
-//    }
+    if (!DSL_TESTING) {
+        if (MACROS > 0)
+            createMacrophages();
+
+        //TOM:Commented out to test cell set up language. Assuming cell setup value is set to 1.
+
+        /** create EC cells spring mesh and memAgents within continuous space **/
+        if ((CELL_SETUP == 2) || (CELL_SETUP == 1)) {
+            //blind ended sprout (NCB and rearrangement)
+            //vessel setup (JTB and PLoS)
+            createECagents(Junct_arrange);
+            connectMesh();
+        }
+        else if (CELL_SETUP == 3)
+        {
+            createMonolayer();
+        }
+        else if (CELL_SETUP == 4)
+        {
+            create_3D_round_cell();
+        }
+    }
 
 	auto *tissue_container = new Tissue_Container(this);
 	tissue_container->tissue_set_up();
@@ -354,12 +356,6 @@ void World::creationTimestep(int movie)
     if (ECagents.size() < 0)
     	memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
 	std::cout << "memInit" << memINIT << std::endl;
-
-    if (DSL_TESTING) {
-		std::cout << "Allocating cell proteins to memagents." << std::endl;
-        for (int j = 0; j < (int) ECagents.size(); j++)
-            ECagents[j]->distribute_proteins();
-    }
 
     //create environment
 //    createEnvironment();
@@ -400,8 +396,19 @@ void World::creationTimestep(int movie)
 //    setInitialVEGF();
 
     //divide out cells overall levels of proteins to their memAgents once created
-    for (int j = 0; j < (int) ECagents.size(); j++)
-        ECagents[j]->allocateProts();
+    if (!DSL_TESTING) {
+        for (int j = 0; j < (int) ECagents.size(); j++)
+            ECagents[j]->allocateProts();
+    }
+
+    if (DSL_TESTING) {
+        std::cout << "Allocating cell proteins to memagents." << std::endl;
+        for (int j = 0; j < (int) ECagents.size(); j++) {
+            // TODO: TOM - This is the old version that distributes things like VEGF -> this is eventually going to be removed.
+            ECagents[j]->allocateProts();
+            ECagents[j]->set_initial_proteins();
+        }
+    }
 
     //define exposed membrane agents as those with a face adjacent to env not vertex (von neu neighbours)
     //only these are flagged to do receptor interactions (required to give matching behaviour when scaling grid)
@@ -657,6 +664,7 @@ void World::updateECagents(void) {
         if (DSL_TESTING) {
             ECagents[j]->distribute_proteins();
         } else {
+            //distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
             ECagents[j]->allocateProts();
         }
 
