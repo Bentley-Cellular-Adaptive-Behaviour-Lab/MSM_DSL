@@ -9,7 +9,6 @@
 #include "world.h"
 #include "memAgents.h"
 #include "environment.h"
-#include "protein.h"
 #include "ODE.h"
 
 //********************************************************************************************************************//
@@ -555,13 +554,13 @@ void Gradient::apply_gradient_to_cuboid() {
 					ep = m_parent_world->grid[x][y][z].Eid;
 					if (ep != nullptr) {
 						if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-							calc_linear_env_VEGF(ep);
+                            calc_linear_env_protein(ep);
 						}
 						if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-							calc_exp_env_VEGF(ep);
+							calc_exp_env_protein(ep);
 						}
 						if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-							calc_constant_env_VEGF(ep);
+							calc_constant_env_protein(ep);
 						}
 					}
 				}
@@ -630,13 +629,13 @@ void Gradient::apply_gradient_to_sinkandsource() {
                     ep = m_parent_world->grid[i][j][k].Eid;
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            calc_linear_env_VEGF(ep);
+                            calc_linear_env_protein(ep);
                         }
                         if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                            calc_exp_env_VEGF(ep);
+                            calc_exp_env_protein(ep);
                         }
                         if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                            calc_constant_env_VEGF(ep);
+                            calc_constant_env_protein(ep);
                         }
                     }
                 }
@@ -1245,4 +1244,13 @@ bool World::is_within_triangle(Env *ep, std::tuple<float, float> v1, std::tuple<
 	has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
 
 	return !(has_neg && has_pos);
+}
+
+void World::setup_ODEs() {
+    ODEs *new_odes = new ODEs();
+    this->odes = new_odes;
+}
+
+void World::run_ODEs(std::string cell_type_name, MemAgent *memAgent) {
+    this->odes->check_ODEs(cell_type_name, memAgent);
 }
