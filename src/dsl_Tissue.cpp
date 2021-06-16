@@ -5,7 +5,7 @@ void Tissue_Container::tissue_set_up() {
     // Created using: Tissues //
 
     // Cell Type Declarations //
-    Cell_Type *Endo_Type;
+    Cell_Type *cellType1_Type;
 
     // Tissue Type Declarations //
     Tissue_Type_Cylindrical *Vessel_Type;
@@ -14,13 +14,13 @@ void Tissue_Container::tissue_set_up() {
     Coordinates Vessel1_Pos;
 
     // Cell Type Creation //a
-    Endo_Type = define_cell_type("Endo", CELL_SHAPE_SQUARE, 20, 20);
+    cellType1_Type = define_cell_type("cellType1", CELL_SHAPE_SQUARE, 20, 20);
 
     // Protein Assignment //
-    Endo_Type->add_protein(new protein("A",200,false));
+    cellType1_Type->add_protein(new protein("A",200,false));
 
     // Tissue Type Creation //
-    Vessel_Type = define_tissue_type("Vessel", Endo_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 1, 6);
+    Vessel_Type = define_tissue_type("Vessel", cellType1_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 1, 6);
 
     // Cell Creation //
 
