@@ -11,62 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Commit before checkout">
-      <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/includes_CXX.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/linklibs.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/src/springAgent.cbp" afterDir="false" />
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Removed usage of std namespace and included &quot;ODE.h&quot;/boost libraries in world.cpp.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/EC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ECmesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/ODE.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/display.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/environment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry_functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry_functions.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/world.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +88,7 @@
       <workItem from="1622109559143" duration="3433000" />
       <workItem from="1622114778321" duration="2068000" />
       <workItem from="1623335886951" duration="1733000" />
-      <workItem from="1623677601031" duration="5999000" />
+      <workItem from="1623677601031" duration="7032000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -396,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622113454889</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Removed usage of std namespace and included &quot;ODE.h&quot;/boost libraries in world.cpp.">
+      <created>1623684283217</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1623684283217</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +368,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deprecated create_gradient function." />
     <MESSAGE value="Removing gradient shape arguments from create_gradient functions (as shapes are now known based on the type of function called)" />
     <MESSAGE value="Changed gradient starting amounts to be floats." />
     <MESSAGE value="Refactored gradient class to allow differentiation of gradient types." />
@@ -440,7 +392,8 @@
     <MESSAGE value="Tidied up includes. Removed duplicate EC class in objects.h" />
     <MESSAGE value="Tidying up includes" />
     <MESSAGE value="Amended makefile to include protein class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Amended makefile to include protein class" />
+    <MESSAGE value="Removed usage of std namespace and included &quot;ODE.h&quot;/boost libraries in world.cpp." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed usage of std namespace and included &quot;ODE.h&quot;/boost libraries in world.cpp." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
