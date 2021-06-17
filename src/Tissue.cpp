@@ -1780,6 +1780,11 @@ void Tissue_Monolayer::create_monolayer() {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
         EC *ecp = new EC( this->m_world);
 
+        //TODO: Have run number logging use a variable.
+
+        // Create a logger for protein levels.
+        ecp->logger = new cell_logger(1, ecp);
+
         ecp->set_cell_type(this->m_tissue_type->m_cell_type);
 
         //put the address into the vector Ecells
