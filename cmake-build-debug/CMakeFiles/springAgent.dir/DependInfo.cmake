@@ -19,6 +19,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl_World.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj"
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/environment.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.obj"
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/geometry_functions.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj"
+  "C:/Users/Tom/MPSProjects/MSM_DSL/src/logger.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.obj"
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/main.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj"
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/memAgents.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj"
   "C:/Users/Tom/MPSProjects/MSM_DSL/src/protein.cpp" "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/CMakeFiles/springAgent.dir/src/protein.cpp.obj"

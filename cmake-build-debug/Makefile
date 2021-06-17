@@ -546,6 +546,33 @@ src/geometry_functions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/geometry_functions.cpp.s
 .PHONY : src/geometry_functions.cpp.s
 
+src/logger.obj: src/logger.cpp.obj
+
+.PHONY : src/logger.obj
+
+# target to build an object file
+src/logger.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.obj
+.PHONY : src/logger.cpp.obj
+
+src/logger.i: src/logger.cpp.i
+
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -735,6 +762,9 @@ help:
 	@echo ... src/geometry_functions.obj
 	@echo ... src/geometry_functions.i
 	@echo ... src/geometry_functions.s
+	@echo ... src/logger.obj
+	@echo ... src/logger.i
+	@echo ... src/logger.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
