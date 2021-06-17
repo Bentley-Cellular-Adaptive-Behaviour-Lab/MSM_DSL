@@ -108,6 +108,7 @@ public:
     void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
+    bool has_protein(std::string protein_name);
 
     cell_logger *logger;
 
