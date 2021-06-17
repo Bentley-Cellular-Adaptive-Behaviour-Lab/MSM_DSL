@@ -11,6 +11,7 @@
 #include "Tissue.h"
 #include "memAgents.h"
 #include "EC.h"
+#include "logger.h"
 
 //********************************************************************************************************************//
 
@@ -135,6 +136,10 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
             cell->determine_boundaries();
             store_cell(cell);
             EC *ecp = new EC((World*) m_world);
+            //TODO: Have run number logging use a variable.
+
+            // Create a logger for protein levels.
+            ecp->logger = new cell_logger(1, ecp);
 
 			//Add the cell to list of tissue container's known cell agents.
             m_world->ECagents.push_back(ecp);
