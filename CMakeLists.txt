@@ -18,6 +18,7 @@ set (Sources src/analysis.cpp
         src/environment.cpp
         src/geometry_functions.cpp
         src/Grid.cpp
+        src/logger.cpp
         src/main.cpp
         src/memAgents.cpp
         src/ODE.cpp
@@ -33,6 +34,7 @@ set (Headers src/creation.h
         src/EC.h
         src/ECmesh.h
         src/memAgents.h
+        src/logger.h
         src/ODE.h
         src/objects.h
         src/protein.h

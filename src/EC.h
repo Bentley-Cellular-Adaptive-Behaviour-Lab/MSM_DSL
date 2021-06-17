@@ -7,6 +7,8 @@
 
 #include "Tissue.h"
 
+class cell_logger;
+
 class EC {
 public:
 	World* worldP;
@@ -107,7 +109,13 @@ public:
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
 
+    cell_logger *logger;
+
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;
+
+	//Used for logging purposes.
+	int cell_number;
+
 };
 #endif //SPRINGAGENT_EC_H

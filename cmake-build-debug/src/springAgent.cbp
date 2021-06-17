@@ -155,6 +155,12 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/geometry_functions.cpp">
 			<Option target="springAgent"/>
 		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/logger.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/logger.h">
+			<Option target="springAgent"/>
+		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/main.cpp">
 			<Option target="springAgent"/>
 		</Unit>

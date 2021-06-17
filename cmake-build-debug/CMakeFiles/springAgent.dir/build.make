@@ -243,10 +243,24 @@ CMakeFiles/springAgent.dir/src/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/Grid.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\Grid.cpp -o CMakeFiles\springAgent.dir\src\Grid.cpp.s
 
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: CMakeFiles/springAgent.dir/flags.make
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/springAgent.dir/src/logger.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\logger.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\logger.cpp
+
+CMakeFiles/springAgent.dir/src/logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/logger.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\logger.cpp > CMakeFiles\springAgent.dir\src\logger.cpp.i
+
+CMakeFiles/springAgent.dir/src/logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/logger.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\logger.cpp -o CMakeFiles\springAgent.dir\src\logger.cpp.s
+
 CMakeFiles/springAgent.dir/src/main.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/main.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/springAgent.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/springAgent.dir/src/main.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\main.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\main.cpp
 
 CMakeFiles/springAgent.dir/src/main.cpp.i: cmake_force
@@ -260,7 +274,7 @@ CMakeFiles/springAgent.dir/src/main.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/memAgents.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/memAgents.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/memAgents.cpp.obj: ../src/memAgents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/springAgent.dir/src/memAgents.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/springAgent.dir/src/memAgents.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\memAgents.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\memAgents.cpp
 
 CMakeFiles/springAgent.dir/src/memAgents.cpp.i: cmake_force
@@ -274,7 +288,7 @@ CMakeFiles/springAgent.dir/src/memAgents.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/ODE.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/ODE.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/ODE.cpp.obj: ../src/ODE.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/springAgent.dir/src/ODE.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/springAgent.dir/src/ODE.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\ODE.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\ODE.cpp
 
 CMakeFiles/springAgent.dir/src/ODE.cpp.i: cmake_force
@@ -288,7 +302,7 @@ CMakeFiles/springAgent.dir/src/ODE.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/protein.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/protein.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/protein.cpp.obj: ../src/protein.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/springAgent.dir/src/protein.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/springAgent.dir/src/protein.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\protein.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\protein.cpp
 
 CMakeFiles/springAgent.dir/src/protein.cpp.i: cmake_force
@@ -302,7 +316,7 @@ CMakeFiles/springAgent.dir/src/protein.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj: ../src/ScreenRecording.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\ScreenRecording.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\ScreenRecording.cpp
 
 CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.i: cmake_force
@@ -316,7 +330,7 @@ CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/space.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/space.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/space.cpp.obj: ../src/space.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/springAgent.dir/src/space.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/springAgent.dir/src/space.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\space.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\space.cpp
 
 CMakeFiles/springAgent.dir/src/space.cpp.i: cmake_force
@@ -330,7 +344,7 @@ CMakeFiles/springAgent.dir/src/space.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/Tissue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/springAgent.dir/src/Tissue.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/springAgent.dir/src/Tissue.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\Tissue.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\Tissue.cpp
 
 CMakeFiles/springAgent.dir/src/Tissue.cpp.i: cmake_force
@@ -344,7 +358,7 @@ CMakeFiles/springAgent.dir/src/Tissue.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/world.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/world.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/world.cpp.obj: ../src/world.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/springAgent.dir/src/world.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/springAgent.dir/src/world.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\world.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\world.cpp
 
 CMakeFiles/springAgent.dir/src/world.cpp.i: cmake_force
@@ -369,6 +383,7 @@ springAgent_OBJECTS = \
 "CMakeFiles/springAgent.dir/src/environment.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/Grid.cpp.obj" \
+"CMakeFiles/springAgent.dir/src/logger.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/main.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/ODE.cpp.obj" \
@@ -393,6 +408,7 @@ springAgent.exe: CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/environment.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/Grid.cpp.obj
+springAgent.exe: CMakeFiles/springAgent.dir/src/logger.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/main.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/memAgents.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/ODE.cpp.obj
@@ -405,7 +421,7 @@ springAgent.exe: CMakeFiles/springAgent.dir/build.make
 springAgent.exe: CMakeFiles/springAgent.dir/linklibs.rsp
 springAgent.exe: CMakeFiles/springAgent.dir/objects1.rsp
 springAgent.exe: CMakeFiles/springAgent.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable springAgent.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable springAgent.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\springAgent.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

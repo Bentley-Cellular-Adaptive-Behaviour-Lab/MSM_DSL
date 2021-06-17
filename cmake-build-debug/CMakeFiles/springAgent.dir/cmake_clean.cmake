@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj"
   "CMakeFiles/springAgent.dir/src/environment.cpp.obj"
   "CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj"
+  "CMakeFiles/springAgent.dir/src/logger.cpp.obj"
   "CMakeFiles/springAgent.dir/src/main.cpp.obj"
   "CMakeFiles/springAgent.dir/src/memAgents.cpp.obj"
   "CMakeFiles/springAgent.dir/src/protein.cpp.obj"
