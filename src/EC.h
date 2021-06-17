@@ -115,6 +115,12 @@ public:
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;
 
+    //Stores cell if this agent belongs to a cell.
+	Cell *m_cell;
+
+    //Stores tissue if this agent belongs to a cell
+    Tissue *m_tissue;
+
 	//Used for logging purposes.
 	int cell_number;
 

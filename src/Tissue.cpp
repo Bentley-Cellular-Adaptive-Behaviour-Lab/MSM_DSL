@@ -1521,7 +1521,7 @@ void Tissue_Vessel::create_vessel() {
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
-        EC * ecp = new EC((World*) m_world);
+        EC *ecp = new EC((World*) m_world);
 
         ecp->set_cell_type(this->m_tissue_type->m_cell_type);
 
@@ -1530,6 +1530,10 @@ void Tissue_Vessel::create_vessel() {
 
         // Add this agent to the relevant tissue.
         store_cell_agent(ecp);
+        // Create a logger for protein levels.
+        ecp->logger = new cell_logger(1, ecp);
+        //Add the cell to list of tissue container's known cell agents.
+        m_world->ECagents.push_back(ecp);
 
         // Set the cell agents' VEGFR level to 0.
 		this->m_cell_agents[i]->VEGFRtot = 0;
@@ -1786,6 +1790,8 @@ void Tissue_Monolayer::create_monolayer() {
         ecp->logger = new cell_logger(1, ecp);
 
         ecp->set_cell_type(this->m_tissue_type->m_cell_type);
+
+        ecp->m_tissue = this;
 
         //put the address into the vector Ecells
         m_world->ECagents.push_back(ecp);

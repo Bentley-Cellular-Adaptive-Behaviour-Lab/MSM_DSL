@@ -30,6 +30,8 @@
 
 #endif
 #endif
+
+#include "logger.h"
 //using std::random_shuffle;
 
 //general
@@ -635,6 +637,7 @@ void World::updateECagents(void) {
 
         ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
 
+        ECagents[j]->logger->write_to_file();
     }
 
 //cout<<endl;
