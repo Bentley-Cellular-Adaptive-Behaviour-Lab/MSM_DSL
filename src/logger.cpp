@@ -5,12 +5,14 @@
 #include <chrono>
 
 #include "logger.h"
+#include "protein.h"
 #include "EC.h"
+#include <filesystem>
 
 cell_logger::cell_logger(int run_number, EC *ec) {
     add_EC(ec);
     create_filename(run_number, "output");
-    create_results_file(this->output_filename);
+    create_results_file();
 }
 
 void cell_logger::add_EC(EC *ec) {
@@ -38,22 +40,55 @@ void cell_logger::create_filename(int run_number, std::string output_directory) 
             cell_name + "_" +
             cell_number + "_" +
             timeString + "_" +
-            std::to_string(run_number);
+            std::to_string(run_number) +
+            ".csv";
 }
 
-void cell_logger::create_results_file(std::string filename) {
-    std::ofstream outfile (filename);
-}
-
-void cell_logger::export_protein_levels(std::string filename) {
-    std::ifstream file(filename);
+void cell_logger::create_results_file() {
+    std::fstream outfile (this->output_filename);
+    std::vector<protein*> cell_proteins = this->ec->m_cell_type->proteins;
     try {
-        if ( file.is_open() ) {
-
+        if ( outfile.is_open() ) {
+            outfile << "Timestep,";
+            for (auto current_protein : cell_proteins) {
+                for (auto protein : cell_proteins) {
+                    std::string protein_name = protein->get_name();
+                    outfile << protein_name << "_level,";
+                }
+            }
+            outfile << "\n";
         } else {
-            throw std::invalid_argument("Incorrect filename - file " + filename + "does not exist.");
+            throw std::invalid_argument("Incorrect filename - file " + this->output_filename + "does not exist.");
         }
     } catch (const std::invalid_argument& ia) {
         std::cerr << ia.what() << std::endl;
     }
+    outfile.close();
 }
+
+void cell_logger::write_to_file() {
+    std::fstream file(this->output_filename);
+    try {
+        if ( file.is_open() ) {
+            add_timestep(file);
+            export_protein_levels(file);
+        } else {
+            throw std::invalid_argument("Incorrect filename - file " + this->output_filename + "does not exist.");
+        }
+    } catch (const std::invalid_argument& ia) {
+        std::cerr << ia.what() << std::endl;
+    }
+    file.close();
+}
+
+void cell_logger::add_timestep(std::fstream &file) {
+    file << this->ec->worldP->timeStep << ",";
+}
+
+void cell_logger::export_protein_levels(std::fstream &file) {
+    std::vector<protein*> cell_proteins = this->ec->m_cell_type->proteins;
+    for (auto current_protein : cell_proteins) {
+        file << current_protein->get_name();
+    }
+}
+
