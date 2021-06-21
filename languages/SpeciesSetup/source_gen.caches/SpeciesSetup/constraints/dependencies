@@ -7,6 +7,7 @@
     <classNode dependClassName="SpeciesSetup.constraints.Process_Constraints" />
     <classNode dependClassName="SpeciesSetup.constraints.Reaction_Constraints" />
     <classNode dependClassName="SpeciesSetup.constraints.ReversibleReaction_Constraints" />
+    <classNode dependClassName="SpeciesSetup.constraints.SpeciesContainer_Constraints" />
     <classNode dependClassName="SpeciesSetup.constraints.Upregulates_Constraints" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
@@ -111,6 +112,11 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
+  <dependency className="SpeciesSetup.constraints.SpeciesContainer_Constraints">
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
   <dependency className="SpeciesSetup.constraints.Upregulates_Constraints">

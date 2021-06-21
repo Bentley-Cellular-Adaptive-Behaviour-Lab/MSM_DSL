@@ -22,6 +22,7 @@
     <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueSetup.behavior)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -72,6 +73,9 @@
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
       <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="5564765827938091039" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="ig" index="3dgokm" />
+      <concept id="1163200368514" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler" flags="in" index="3k9gUc" />
+      <concept id="1163200647017" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode" flags="nn" index="3kakTB" />
+      <concept id="1163202640154" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_newReferentNode" flags="nn" index="3khVwk" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
@@ -80,14 +84,21 @@
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
+        <child id="1163203787401" name="referentSetHandler" index="3kmjI7" />
         <child id="1148687345559" name="searchScopeFactory" index="1N6uqs" />
       </concept>
       <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
+        <child id="1140725362529" name="linkTarget" index="2oxUTC" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
+      </concept>
     </language>
   </registry>
   <node concept="1M2fIO" id="4dDC3GsoDj_">
@@ -319,6 +330,35 @@
         </node>
       </node>
     </node>
+  </node>
+  <node concept="1M2fIO" id="6Y2UmXTGqrL">
+    <ref role="1M2myG" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    <node concept="1N5Pfh" id="6Y2UmXTGqsa" role="1Mr941">
+      <ref role="1N5Vy1" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+      <node concept="3k9gUc" id="6Y2UmXTGqsY" role="3kmjI7">
+        <node concept="3clFbS" id="6Y2UmXTGqsZ" role="2VODD2">
+          <node concept="3clFbF" id="6JBqwuekJrn" role="3cqZAp">
+            <node concept="2OqwBi" id="6Y2UmXTGr5Y" role="3clFbG">
+              <node concept="2OqwBi" id="6JBqwuekJ_9" role="2Oq$k0">
+                <node concept="3khVwk" id="6JBqwuekJrm" role="2Oq$k0" />
+                <node concept="3TrEf2" id="6Y2UmXTGqW_" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6Y2UmXTDkR$" resolve="Tissue_Container" />
+                </node>
+              </node>
+              <node concept="2oxUTD" id="6Y2UmXTGrj4" role="2OqNvi">
+                <node concept="3kakTB" id="6Y2UmXTGrmd" role="2oxUTC" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="6Y2UmXTHQtp">
+    <ref role="1M2myG" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+  </node>
+  <node concept="1M2fIO" id="6Y2UmXTHQxY">
+    <ref role="1M2myG" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
   </node>
 </model>
 

@@ -341,6 +341,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540203");
     b.version(2);
     b.property("UsingSpeciesInRates", 0x54e0a6c6049f7a5aL).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049f7a4fL)).origin("6116071663380429402").done();
+    b.associate("Tissue_Container", 0x6f82e96f79a54de4L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L).optional(false).origin("8035241350173904356").done();
     b.aggregate("Species", 0x2b6159d0ceecf740L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(true).ordered(true).multiple(true).origin("3125878369731540800").done();
     b.aggregate("Processes", 0x2b6159d0ceecf742L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L).optional(true).ordered(true).multiple(true).origin("3125878369731540802").done();
     b.aggregate("Parameters", 0x2b6159d0ceecf745L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).ordered(true).multiple(true).origin("3125878369731540805").done();

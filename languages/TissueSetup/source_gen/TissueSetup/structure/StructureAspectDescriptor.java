@@ -188,6 +188,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)/6249017959271690117");
     b.version(2);
     b.associate("World_Container", 0x1d99d55b84fedbc7L).target(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L).optional(false).origin("2132970487586675655").done();
+    b.associate("Species_Container", 0x6f82e96f79abed1cL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL).optional(false).origin("8035241350174338332").done();
     b.aggregate("tissue_types", 0x4369a03b1c6088e9L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL).optional(true).ordered(true).multiple(true).origin("4857589848835393769").done();
     b.aggregate("cell_types", 0x4369a03b1c6088edL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL).optional(true).ordered(true).multiple(true).origin("4857589848835393773").done();
     b.aggregate("tissues", 0x56b8f8b9a96cef8cL).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L).optional(true).ordered(true).multiple(true).origin("6249017959271690124").done();
