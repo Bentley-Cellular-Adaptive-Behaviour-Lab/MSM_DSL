@@ -434,6 +434,23 @@
         <node concept="2iRfu4" id="2Hxmt3eVgJN" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="2Hxmt3eVgLf" role="3EZMnx" />
+      <node concept="3F0ifn" id="5ns1KRzfcOr" role="3EZMnx" />
+      <node concept="3EZMnI" id="5ns1KRzfcQ8" role="3EZMnx">
+        <node concept="VPM3Z" id="5ns1KRzfcQa" role="3F10Kt" />
+        <node concept="3F0ifn" id="5ns1KRzfcR7" role="3EZMnx">
+          <property role="3F0ifm" value="Using Tissue Set-up:" />
+        </node>
+        <node concept="1iCGBv" id="5ns1KRzfcRd" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:6Y2UmXTDkR$" resolve="Tissue_Container" />
+          <node concept="1sVBvm" id="5ns1KRzfcRf" role="1sWHZn">
+            <node concept="3F0A7n" id="5ns1KRzfcRq" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="5ns1KRzfcQd" role="2iSdaV" />
+      </node>
       <node concept="2iRkQZ" id="2Hxmt3eVgJc" role="2iSdaV" />
     </node>
   </node>

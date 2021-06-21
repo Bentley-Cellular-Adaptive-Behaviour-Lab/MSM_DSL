@@ -98,7 +98,7 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     return "cpp";
   }
   private static String getFileExtension_SpeciesContainerHeader(SNode node) {
-    return ".h";
+    return "h";
   }
 
   private static final class CONCEPTS {
