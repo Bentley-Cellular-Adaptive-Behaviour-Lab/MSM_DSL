@@ -44,6 +44,7 @@ CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj: ../src/display.h
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/EC.h
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/Tissue.cpp
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/Tissue.h
+CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/logger.h
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/memAgents.h
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/objects.h
 CMakeFiles/springAgent.dir/src/Tissue.cpp.obj: ../src/protein.h
@@ -105,9 +106,19 @@ CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj: ../src/memAgents.h
 CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj: ../src/objects.h
 CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj: ../src/protein.h
 
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/EC.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/Tissue.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/logger.cpp
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/logger.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/objects.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/protein.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/space.h
+CMakeFiles/springAgent.dir/src/logger.cpp.obj: ../src/utils.h
+
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/EC.h
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/Tissue.h
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/display.h
+CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/logger.h
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/main.cpp
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/memAgents.h
 CMakeFiles/springAgent.dir/src/main.cpp.obj: ../src/objects.h
@@ -130,6 +141,9 @@ CMakeFiles/springAgent.dir/src/protein.cpp.obj: ../src/protein.h
 CMakeFiles/springAgent.dir/src/space.cpp.obj: ../src/objects.h
 CMakeFiles/springAgent.dir/src/space.cpp.obj: ../src/space.cpp
 CMakeFiles/springAgent.dir/src/space.cpp.obj: ../src/space.h
+
+CMakeFiles/springAgent.dir/src/utils.cpp.obj: ../src/utils.cpp
+CMakeFiles/springAgent.dir/src/utils.cpp.obj: ../src/utils.h
 
 CMakeFiles/springAgent.dir/src/world.cpp.obj: ../src/ODE.h
 CMakeFiles/springAgent.dir/src/world.cpp.obj: ../src/environment.h

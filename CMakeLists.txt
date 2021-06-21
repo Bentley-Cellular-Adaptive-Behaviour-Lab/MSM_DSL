@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(src/springAgent)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 include_directories(src)
 include_directories(libraries)
@@ -26,6 +26,7 @@ set (Sources src/analysis.cpp
         src/ScreenRecording.cpp
         src/space.cpp
         src/Tissue.cpp
+        src/utils.cpp
         src/world.cpp)
 
 set (Headers src/creation.h
@@ -41,6 +42,7 @@ set (Headers src/creation.h
         src/ScreenRecording.h
         src/space.h
         src/Tissue.h
+        src/utils.h
         src/world.h)
 
 add_executable(springAgent ${Sources} ${Headers})

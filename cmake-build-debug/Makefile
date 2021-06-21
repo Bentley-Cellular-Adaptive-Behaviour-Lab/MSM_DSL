@@ -681,6 +681,33 @@ src/space.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/space.cpp.s
 .PHONY : src/space.cpp.s
 
+src/utils.obj: src/utils.cpp.obj
+
+.PHONY : src/utils.obj
+
+# target to build an object file
+src/utils.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.obj
+.PHONY : src/utils.cpp.obj
+
+src/utils.i: src/utils.cpp.i
+
+.PHONY : src/utils.i
+
+# target to preprocess a source file
+src/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.i
+.PHONY : src/utils.cpp.i
+
+src/utils.s: src/utils.cpp.s
+
+.PHONY : src/utils.s
+
+# target to generate assembly for a file
+src/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.s
+.PHONY : src/utils.cpp.s
+
 src/world.obj: src/world.cpp.obj
 
 .PHONY : src/world.obj
@@ -777,6 +804,9 @@ help:
 	@echo ... src/space.obj
 	@echo ... src/space.i
 	@echo ... src/space.s
+	@echo ... src/utils.obj
+	@echo ... src/utils.i
+	@echo ... src/utils.s
 	@echo ... src/world.obj
 	@echo ... src/world.i
 	@echo ... src/world.s

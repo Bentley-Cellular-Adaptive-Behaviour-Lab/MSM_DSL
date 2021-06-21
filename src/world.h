@@ -174,6 +174,7 @@ public:
 
     void store_substrate(Substrate *gradient);
     void store_gradient(Gradient *gradient);
+    std::string get_time_string();
 
     World *get_world();
 };

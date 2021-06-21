@@ -17,10 +17,12 @@ class cell_logger : public logger {
 private:
     EC *ec;
     std::string output_filename;
+    std::string initial_time;
 public:
 
-    cell_logger(int run_number, EC *ec);
+    cell_logger(int run_number, std::string initial_time, EC *ec);
     void add_EC(EC *ec);
+    void set_initial_time(std::string time_string);
     void create_filename(int run_number, std::string output_directory);
     void create_results_file();
     void write_to_file();
