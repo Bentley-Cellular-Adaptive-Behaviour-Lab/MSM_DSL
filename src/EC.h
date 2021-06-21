@@ -7,6 +7,13 @@
 
 #include "Tissue.h"
 
+enum BELONGS_TO {
+    BELONGS_TO_SINGLECELL,
+    BELONGS_TO_CYLINDER,
+    BELONGS_TO_FLAT,
+    N_BELONGS_TO
+};
+
 class cell_logger;
 
 class EC {
@@ -120,6 +127,9 @@ public:
 
     //Stores tissue if this agent belongs to a cell
     Tissue *m_tissue;
+
+    // Enum to track which object an agent belongs to.
+    int belongs_to = -1;
 
 	//Used for logging purposes.
 	int cell_number;
