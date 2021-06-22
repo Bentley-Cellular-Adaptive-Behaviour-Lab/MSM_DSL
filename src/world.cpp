@@ -1254,3 +1254,17 @@ void World::setup_ODEs() {
 void World::run_ODEs(std::string cell_type_name, MemAgent *memAgent) {
     this->odes->check_ODEs(cell_type_name, memAgent);
 }
+
+std::string World::get_time_string() {
+    std::time_t currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+    tm *ltm = localtime(&currentTime);
+    std::stringstream timeStream;
+    timeStream <<
+               ltm->tm_hour << ":" <<
+               ltm->tm_min << ":" <<
+               ltm->tm_sec << "_" <<
+               ltm->tm_mday << ":" <<
+               ltm->tm_mon << ":" <<
+               ltm->tm_year;
+    return timeStream.str();
+}

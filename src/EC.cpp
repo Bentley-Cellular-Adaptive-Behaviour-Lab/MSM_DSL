@@ -773,3 +773,11 @@ void EC::set_cell_type(Cell_Type *cell_type) {
     this->m_cell_type = cell_type;
 }
 
+bool EC::has_protein(std::string protein_name) {
+    for (auto protein : this->m_cell_type->proteins) {
+        if (protein->get_name() == protein_name) {
+            return true;
+        }
+    }
+    return false;
+}

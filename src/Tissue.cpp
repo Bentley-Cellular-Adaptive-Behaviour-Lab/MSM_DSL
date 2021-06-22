@@ -11,6 +11,7 @@
 #include "Tissue.h"
 #include "memAgents.h"
 #include "EC.h"
+#include "logger.h"
 
 //********************************************************************************************************************//
 
@@ -135,9 +136,17 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
             cell->determine_boundaries();
             store_cell(cell);
             EC *ecp = new EC((World*) m_world);
+            //TODO: Have run number logging use a variable.
 
-			//Add the cell to list of tissue container's known cell agents.
+            // Create a logger for protein levels.
+            ecp->logger = new cell_logger(1, m_world->time, ecp);
+
+            ecp->belongs_to = BELONGS_TO_SINGLECELL;
+
+			//Add the cell to list of the world's known cell agents.
             m_world->ECagents.push_back(ecp);
+
+            ecp->cell_number = m_world->ECagents.size();
 
 			//Add the cell to list of tissue container's known cell agents.
 			this->m_single_cell_agents.push_back(ecp);
@@ -1516,7 +1525,7 @@ void Tissue_Vessel::create_vessel() {
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
-        EC * ecp = new EC((World*) m_world);
+        EC *ecp = new EC((World*) m_world);
 
         ecp->set_cell_type(this->m_tissue_type->m_cell_type);
 
@@ -1525,6 +1534,15 @@ void Tissue_Vessel::create_vessel() {
 
         // Add this agent to the relevant tissue.
         store_cell_agent(ecp);
+        // Create a logger for protein levels.
+        ecp->logger = new cell_logger(1, m_world->time, ecp);
+
+        ecp->belongs_to = BELONGS_TO_CYLINDER;
+
+        //Add the cell to list of tissue container's known cell agents.
+        m_world->ECagents.push_back(ecp);
+
+        ecp->cell_number = i;
 
         // Set the cell agents' VEGFR level to 0.
 		this->m_cell_agents[i]->VEGFRtot = 0;
@@ -1775,7 +1793,18 @@ void Tissue_Monolayer::create_monolayer() {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
         EC *ecp = new EC( this->m_world);
 
+        //TODO: Have run number logging use a variable.
+
+        // Create a logger for protein levels.
+        ecp->logger = new cell_logger(1, m_world->time, ecp);
+
+        ecp->belongs_to = BELONGS_TO_FLAT;
+
         ecp->set_cell_type(this->m_tissue_type->m_cell_type);
+
+        ecp->m_tissue = this;
+
+        ecp->cell_number = i;
 
         //put the address into the vector Ecells
         m_world->ECagents.push_back(ecp);
