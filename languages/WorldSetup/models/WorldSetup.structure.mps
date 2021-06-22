@@ -74,12 +74,6 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
     </node>
-    <node concept="1TJgyj" id="4KNMtF8nGog" role="1TKVEi">
-      <property role="IQ2ns" value="5490954312196474384" />
-      <property role="20kJfa" value="Desired_Species_Container" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
-    </node>
     <node concept="1TJgyj" id="7faAukhALB$" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779203044" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

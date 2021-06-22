@@ -180,6 +180,23 @@
         <node concept="2iRfu4" id="2B5sNxPvCim" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="2B5sNxPvCgN" role="3EZMnx" />
+      <node concept="3F0ifn" id="6Y2UmXTEYPF" role="3EZMnx" />
+      <node concept="3EZMnI" id="6Y2UmXTEYRC" role="3EZMnx">
+        <node concept="VPM3Z" id="6Y2UmXTEYRE" role="3F10Kt" />
+        <node concept="3F0ifn" id="6Y2UmXTEYRG" role="3EZMnx">
+          <property role="3F0ifm" value="Choose desired species container:" />
+        </node>
+        <node concept="1iCGBv" id="6Y2UmXTEYTa" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+          <node concept="1sVBvm" id="6Y2UmXTEYTc" role="1sWHZn">
+            <node concept="3F0A7n" id="6Y2UmXTEYTn" role="2wV5jI">
+              <property role="1Intyy" value="true" />
+              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="6Y2UmXTEYRH" role="2iSdaV" />
+      </node>
       <node concept="2iRkQZ" id="5qSYbADreZi" role="2iSdaV" />
     </node>
   </node>

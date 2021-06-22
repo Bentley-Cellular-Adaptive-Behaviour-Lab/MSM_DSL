@@ -10,7 +10,9 @@
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(Units.structure)" />
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
     <import index="l80j" ref="r:9e71c0de-f9ab-4b67-96cc-7d9c857513f6(org.iets3.analysis.base.structure)" implicit="true" />
   </imports>
   <registry>
@@ -118,6 +120,12 @@
       <property role="IQ2nx" value="6116071663380429402" />
       <property role="TrG5h" value="UsingSpeciesInRates" />
       <ref role="AX2Wp" node="5jwDGo4BRDf" resolve="UseSpeciesInRate" />
+    </node>
+    <node concept="1TJgyj" id="6Y2UmXTDkR$" role="1TKVEi">
+      <property role="IQ2ns" value="8035241350173904356" />
+      <property role="20kJfa" value="Tissue_Container" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjI">

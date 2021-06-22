@@ -7,6 +7,15 @@
 
 #include "Tissue.h"
 
+enum BELONGS_TO {
+    BELONGS_TO_SINGLECELL,
+    BELONGS_TO_CYLINDER,
+    BELONGS_TO_FLAT,
+    N_BELONGS_TO
+};
+
+class cell_logger;
+
 class EC {
 public:
 	World* worldP;
@@ -106,8 +115,24 @@ public:
     void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
+    bool has_protein(std::string protein_name);
+
+    cell_logger *logger;
 
 	//Stores cell type, needed for adding proteins later.
 	Cell_Type *m_cell_type;
+
+    //Stores cell if this agent belongs to a cell.
+	Cell *m_cell;
+
+    //Stores tissue if this agent belongs to a cell
+    Tissue *m_tissue;
+
+    // Enum to track which object an agent belongs to.
+    int belongs_to = -1;
+
+	//Used for logging purposes.
+	int cell_number;
+
 };
 #endif //SPRINGAGENT_EC_H

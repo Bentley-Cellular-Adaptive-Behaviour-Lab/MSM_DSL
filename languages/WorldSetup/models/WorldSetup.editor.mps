@@ -192,37 +192,6 @@
         <node concept="2iRfu4" id="2B5sNxPuZiS" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="4KNMtF8nGpf" role="3EZMnx" />
-      <node concept="3EZMnI" id="4KNMtF8nGr4" role="3EZMnx">
-        <node concept="VPM3Z" id="4KNMtF8nGr5" role="3F10Kt" />
-        <node concept="3EZMnI" id="4KNMtF8nGr6" role="3EZMnx">
-          <node concept="2iR$Sn" id="4KNMtF8nGr7" role="2iSdaV" />
-          <node concept="1v6uyg" id="4KNMtF8nGr8" role="3EZMnx">
-            <property role="2oejA6" value="true" />
-            <node concept="3F0ifn" id="4KNMtF8nGr9" role="wsdo6">
-              <property role="3F0ifm" value="Choose which proteins can be used for this world." />
-            </node>
-            <node concept="3F0ifn" id="4KNMtF8nGra" role="1j7Clw">
-              <property role="3F0ifm" value="Desired species set-up:" />
-              <node concept="VQ3r3" id="4KNMtF8nGrb" role="3F10Kt">
-                <property role="2USNnj" value="gtbM8PH/underlined" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1iCGBv" id="4KNMtF8nGrc" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8nGog" resolve="Desired_Species_Container" />
-          <node concept="1sVBvm" id="4KNMtF8nGrd" role="1sWHZn">
-            <node concept="3F0A7n" id="4KNMtF8nGre" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="VechU" id="4KNMtF8nGrf" role="3F10Kt">
-                <property role="Vb096" value="fLwANPt/cyan" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2iRfu4" id="4KNMtF8nGrg" role="2iSdaV" />
-      </node>
       <node concept="2iRkQZ" id="4JVq81Fmyqm" role="2iSdaV" />
     </node>
   </node>

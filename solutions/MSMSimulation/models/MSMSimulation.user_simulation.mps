@@ -45,7 +45,6 @@
         <child id="5907682107548062262" name="Buffer" index="3bEhY_" />
       </concept>
       <concept id="8343650468779203043" name="WorldSetup.structure.World_Container" flags="ng" index="1yko06">
-        <reference id="5490954312196474384" name="Desired_Species_Container" index="24rgZa" />
         <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
         <child id="8343650468779203044" name="grid" index="1yko01" />
         <child id="8343650468779203051" name="gradients" index="1yko0e" />
@@ -93,6 +92,7 @@
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
       <concept id="3125878369731540203" name="SpeciesSetup.structure.SpeciesContainer" flags="ng" index="3_zqOV">
+        <reference id="8035241350173904356" name="Tissue_Container" index="m9Uib" />
         <child id="2321914823995841135" name="ODESystem" index="3qLkdl" />
         <child id="2321914823994400460" name="ODEStates" index="3qROvQ" />
         <child id="2321914823997234852" name="RateFunctions" index="3ra8uu" />
@@ -184,9 +184,11 @@
         <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
+        <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
+        <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
@@ -212,6 +214,7 @@
   <node concept="3ZP1sW" id="5gBmBO5mHPf">
     <property role="TrG5h" value="Tissues" />
     <ref role="2ppKUs" node="3fk35jmuDw2" resolve="World" />
+    <ref role="maghN" node="cJYjfa66Xm" resolve="SortTesting" />
     <node concept="3ZP1sZ" id="3XinthJDod2" role="3ZP1sP">
       <property role="TrG5h" value="Vessel1" />
       <ref role="1v2cpI" node="3XinthJDob7" resolve="Vessel" />
@@ -277,11 +280,16 @@
           <node concept="2_hRrN" id="3XinthJDo9Z" role="2_hQ4V" />
         </node>
       </node>
+      <node concept="1csUcq" id="6Y2UmXTz2SV" role="3FWu3_">
+        <ref role="1csUcr" node="cJYjfa66Xu" resolve="SpeciesA" />
+      </node>
+      <node concept="1csUcq" id="6Y2UmXTz2T8" role="3FWu3_">
+        <ref role="1csUcr" node="cJYjfa66Xy" resolve="SpeciesB" />
+      </node>
     </node>
   </node>
   <node concept="1yko06" id="3fk35jmuDw2">
     <property role="TrG5h" value="World" />
-    <ref role="24rgZa" node="cJYjfa66Xm" resolve="SortTesting" />
     <ref role="3_H_MC" node="5gBmBO5mHPf" resolve="Tissues" />
     <node concept="1yko02" id="3XinthJDmbR" role="1yko0e">
       <property role="TrG5h" value="Gradient" />
@@ -368,6 +376,7 @@
   <node concept="3_zqOV" id="cJYjfa66Xm">
     <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="SortTesting" />
+    <ref role="m9Uib" node="5gBmBO5mHPf" resolve="Tissues" />
     <node concept="3_zqOx" id="cJYjfa672t" role="3_zqUl">
       <property role="TrG5h" value="Rate1" />
       <node concept="30bXRB" id="6GDTEkVO_tM" role="3_zqNk">
@@ -400,7 +409,7 @@
         </node>
         <node concept="3bpmH1" id="cJYjfa66Z_" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="6GDTEkVO_tO" role="3_z4Rx">
+      <node concept="DdDr8" id="6Y2UmXTyZ7R" role="3_z4Rx">
         <ref role="DdDrb" node="cJYjfa7aRL" resolve="Reaction1" />
       </node>
     </node>
