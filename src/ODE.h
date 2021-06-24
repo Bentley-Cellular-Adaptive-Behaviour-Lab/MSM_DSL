@@ -7,6 +7,7 @@
 
 #include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
+
 #include "memAgents.h"
 
 namespace odeint = boost::numeric::odeint;

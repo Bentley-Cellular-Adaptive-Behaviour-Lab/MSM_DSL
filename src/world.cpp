@@ -26,7 +26,8 @@
 ******************************************************************************************/
 
 void Gradient::add_env_protein(Env *ep, float calc_level) {
-    bool protein_found;
+    bool protein_found = false;
+
     for (auto protein : ep->owned_proteins) {
         if (protein->get_name() == this->m_protein->get_name()) {
             protein_found = true;
@@ -532,8 +533,8 @@ void Gradient::apply_gradient_to_cuboid() {
 	float x_end = m_centre_position->x + ((float) m_cuboidal_width / 2);
 	float y_start = m_centre_position->y - ((float) m_cuboidal_height / 2);
 	float y_end = m_centre_position->y + ((float) m_cuboidal_height / 2);
-	float z_start = m_centre_position->y - ((float) m_cuboidal_depth / 2);
-	float z_end = m_centre_position->y + ((float) m_cuboidal_depth / 2);;
+	float z_start = m_centre_position->z - ((float) m_cuboidal_depth / 2);
+	float z_end = m_centre_position->z + ((float) m_cuboidal_depth / 2);;
 	Env *ep;
 
 	// Define a bounding box that contains the cuboidal gradient, centred around the centre position.
@@ -546,9 +547,9 @@ void Gradient::apply_gradient_to_cuboid() {
 				assert(x >= 0);
                 assert(y >= 0);
                 assert(z >= 0);
-				assert(x < m_parent_world->gridXDimensions);
-                assert(y < m_parent_world->gridYDimensions);
-                assert(z < m_parent_world->gridZDimensions);
+				assert(x <= m_parent_world->gridXDimensions);
+                assert(y <= m_parent_world->gridYDimensions);
+                assert(z <= m_parent_world->gridZDimensions);
 
 				if (m_parent_world->grid[x][y][z].type == E) {
 					ep = m_parent_world->grid[x][y][z].Eid;

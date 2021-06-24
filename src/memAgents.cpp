@@ -2584,6 +2584,9 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == E) {
                 ep = worldP->grid[m][n][p].Eid;
+                if (ep->owned_proteins.size()) {
+                	int i = 0;
+                }
                 if (ep->has_protein(protein_name)) {
                     protein_level+= ep->get_protein_level(protein_name);
                 }

@@ -1519,9 +1519,7 @@ Tissue_Vessel::Tissue_Vessel(  Tissue_Container *tissue_container,
 ******************************************************************************************/
 
 void Tissue_Vessel::create_vessel() {
-
     for (int i = 0; i < m_cell_number ; i++) {
-
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
@@ -1538,9 +1536,6 @@ void Tissue_Vessel::create_vessel() {
         ecp->logger = new cell_logger(1, m_world->time, ecp);
 
         ecp->belongs_to = BELONGS_TO_CYLINDER;
-
-        //Add the cell to list of tissue container's known cell agents.
-        m_world->ECagents.push_back(ecp);
 
         ecp->cell_number = i;
 
