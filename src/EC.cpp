@@ -714,7 +714,7 @@ void EC::distribute_proteins() {
 ******************************************************************************************/
 
 void EC::calculate_cell_protein_levels() {
-    std::vector<int> protein_counts;
+    std::vector<float> protein_counts;
     for (auto protein : this->m_cell_type->proteins) {
         protein_counts.push_back(0);
     }
@@ -780,4 +780,20 @@ bool EC::has_protein(std::string protein_name) {
         }
     }
     return false;
+}
+
+/*****************************************************************************************
+*  Name:		print_protein_levels
+*  Description: Prints protein totals of a cell
+*  Returns:		void
+******************************************************************************************/
+
+void EC::print_protein_levels(int timestep_interval) {
+	if (this->worldP->timeStep % timestep_interval == 0) {
+		for (auto protein : this->m_cell_type->proteins) {
+			std::cout << "Protein: " << protein->get_name()
+					  << " Level at timestep " << this->worldP->timeStep
+					  << ": " << protein->get_level() << std::endl;
+		}
+	}
 }

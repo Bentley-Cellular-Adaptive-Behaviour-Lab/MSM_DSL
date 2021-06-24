@@ -340,6 +340,7 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
 	std::cout << "Environment created." << "\n";
 
 	std::cout << "Setting up ODE systems..." << "\n";
+	this->setup_ODEs();
 
 	std::cout << "World created!" << "\n";
     simulateTimestep();

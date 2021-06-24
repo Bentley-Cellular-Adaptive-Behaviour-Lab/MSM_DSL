@@ -116,6 +116,7 @@ public:
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
     bool has_protein(std::string protein_name);
+    void print_protein_levels(int timestep_interval);
 
     cell_logger *logger;
 

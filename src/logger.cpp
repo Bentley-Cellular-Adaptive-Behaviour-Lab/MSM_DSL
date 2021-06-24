@@ -2,12 +2,11 @@
 // Created by Tom on 16/06/2021.
 //
 
-#include <filesystem>
+#include <boost/filesystem.hpp>
 
 #include "logger.h"
 #include "protein.h"
 #include "EC.h"
-#include "utils.h"
 
 cell_logger::cell_logger(int run_number, std::string initial_time, EC *ec) {
     add_EC(ec);
@@ -25,76 +24,76 @@ void cell_logger::set_initial_time(std::string time_string) {
 }
 
 void cell_logger::create_filename(int run_number, std::string output_directory) {
-    std::string tissue_name = this->ec->m_tissue->m_name;
-    std::string cell_name = this->ec->m_cell->m_name;
-    std::string cell_number = std::to_string(this->ec->cell_number);
-
-    std::filesystem::path current_dir = std::filesystem::current_path();
-    std::string dir_string = current_dir.string();
-
-#ifdef __linux__
-    output_directory += "/";
-    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-            this->output_filename = output_directory +
-                    "simulationTime_" + this->initial_time + "/"
-                    "results_" +
-                    cell_name + "_" +
-                    "run_" + std::to_string(run_number) +
-                    ".csv";
-    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-        this->output_filename = output_directory +
-                                "results_" +
-                                "tissue_" + tissue_name + "_" +
-                                "cell_number_" + cell_number + "_" +
-                                "run_" + std::to_string(run_number) +
-                                ".csv";
-    }
-#endif
-
-#ifdef __APPLE__
-    output_directory += "/";
-    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-            this->output_filename = output_directory +
-                    "simulationTime_" + this->initial_time + "/"
-                    "results_" +
-                    cell_name + "_" +
-                    "run_" + std::to_string(run_number) +
-                    ".csv";
-    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-        this->output_filename = output_directory +
-                                "results_" +
-                                "tissue_" + tissue_name + "_" +
-                                "cell_number_" + cell_number + "_" +
-                                "run_" + std::to_string(run_number) +
-                                ".csv";
-    }
-#endif
-
-#ifdef _WIN32
-    // Determine filename based on OS.
-
-    std::vector<std::string> split_dir = split(dir_string, '\\');
-
-    // Remove the last element of the path, which corresponds to this directory, then reconstruct the string to "move up" a directory.
-    split_dir.pop_back();
-
-    output_directory += "\\";
-    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-            this->output_filename = output_directory +
-                    "simulationTime_" + this->initial_time + "\\"
-                    "results_" +
-                    cell_name + "_" +
-                    "run_" + std::to_string(run_number) +
-                    ".csv";
-    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-        this->output_filename = output_directory +
-                                "results_" +
-                                "tissue_" + tissue_name + "_" +
-                                "cell_number_" + cell_number + "_" +
-                                "run_" + std::to_string(run_number) +
-                                ".csv";
-    }
-#endif
+//    std::string tissue_name = this->ec->m_tissue->m_name;
+//    std::string cell_name = this->ec->m_cell->m_name;
+//    std::string cell_number = std::to_string(this->ec->cell_number);
+//
+//    boost::filesystem::path current_dir = boost::filesystem::detail::current_path();
+//    std::string dir_string = current_dir.string();
+//
+//#ifdef __linux__
+//    output_directory += "/";
+//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
+//            this->output_filename = output_directory +
+//                    "simulationTime_" + this->initial_time + "/"
+//                    "results_" +
+//                    cell_name + "_" +
+//                    "run_" + std::to_string(run_number) +
+//                    ".csv";
+//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
+//        this->output_filename = output_directory +
+//                                "results_" +
+//                                "tissue_" + tissue_name + "_" +
+//                                "cell_number_" + cell_number + "_" +
+//                                "run_" + std::to_string(run_number) +
+//                                ".csv";
+//    }
+//#endif
+//
+//#ifdef __APPLE__
+//    output_directory += "/";
+//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
+//            this->output_filename = output_directory +
+//                    "simulationTime_" + this->initial_time + "/"
+//                    "results_" +
+//                    cell_name + "_" +
+//                    "run_" + std::to_string(run_number) +
+//                    ".csv";
+//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
+//        this->output_filename = output_directory +
+//                                "results_" +
+//                                "tissue_" + tissue_name + "_" +
+//                                "cell_number_" + cell_number + "_" +
+//                                "run_" + std::to_string(run_number) +
+//                                ".csv";
+//    }
+//#endif
+//
+//#ifdef _WIN32
+//    // Determine filename based on OS.
+//
+//    std::vector<std::string> split_dir = split(dir_string, '\\');
+//
+//    // Remove the last element of the path, which corresponds to this directory, then reconstruct the string to "move up" a directory.
+//    split_dir.pop_back();
+//
+//    output_directory += "\\";
+//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
+//            this->output_filename = output_directory +
+//                    "simulationTime_" + this->initial_time + "\\"
+//                    "results_" +
+//                    cell_name + "_" +
+//                    "run_" + std::to_string(run_number) +
+//                    ".csv";
+//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
+//        this->output_filename = output_directory +
+//                                "results_" +
+//                                "tissue_" + tissue_name + "_" +
+//                                "cell_number_" + cell_number + "_" +
+//                                "run_" + std::to_string(run_number) +
+//                                ".csv";
+//    }
+//#endif
 }
 
 void cell_logger::create_results_file() {

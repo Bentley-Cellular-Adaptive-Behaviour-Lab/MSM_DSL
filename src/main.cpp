@@ -264,7 +264,7 @@ void World::runSimulation()
 {
     while (timeStep <= MAXtime)
     {
-        if (timeStep % 50 == 0) std::cout << "timestep " << timeStep << ".. " << MAXtime - timeStep << " left" << std::endl;
+//        if (timeStep % 50 == 0) std::cout << "timestep " << timeStep << ".. " << MAXtime - timeStep << " left" << std::endl;
         simulateTimestep();
 
         if (ANALYSIS_HYSTERESIS)
@@ -309,6 +309,7 @@ void World::simulateTimestep()
         {
             ec->filopodiaExtensions.clear();
             ec->filopodiaRetractions.clear();
+            ec->print_protein_levels(1);
         }
 
         updateMemAgents();
@@ -637,7 +638,8 @@ void World::updateECagents(void) {
 
         ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
 
-        ECagents[j]->logger->write_to_file();
+        //TODO: Add this back in.
+//        ECagents[j]->logger->write_to_file();
     }
 
 //cout<<endl;
@@ -646,23 +648,17 @@ void World::updateECagents(void) {
 
         // clear all spring agents from previous time step - all springs have been adjusted so need new arrangement of spring agents
         ECagents[j]->removeSpringAgents();
-
     }
 
-
     for (j = 0; j < (int) ECagents.size(); j++) {
-
         //voxellise new spring and surface positions of mesh
         ECagents[j]->gridAgents();
 
         //faster way to do it for debugging versions, but not correct to use in main simulations!!!
         if (on_the_fly_surface_agents == true) ECagents[j]->remove_DoubledUp_SurfaceAgents();
-
     }
 
-
     for (j = 0; j < (int) ECagents.size(); j++) {
-
         //distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
         if (DSL_TESTING) {
             ECagents[j]->distribute_proteins();
@@ -670,15 +666,10 @@ void World::updateECagents(void) {
             //distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
             ECagents[j]->allocateProts();
         }
-
         //use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
         if (ANALYSIS_JTB_SP_PATTERN == true)
             ECagents[j]->calcStability();
-
-
-
     }
-
 }
 
 
