@@ -2,7 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
+      <config projectName="src/springAgent" targetName="gmock_main" />
+      <config projectName="src/springAgent" targetName="gtest" />
+      <config projectName="src/springAgent" targetName="gtest_main" />
       <config projectName="src/springAgent" targetName="springAgent" />
+      <config projectName="src/springAgent" targetName="gmock" />
     </generated>
   </component>
   <component name="CMakeSettings">
@@ -13,8 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Adding in unit tests to C++ library.">
       <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +123,7 @@
       <workItem from="1623677601031" duration="7612000" />
       <workItem from="1624352104994" duration="11598000" />
       <workItem from="1624373564563" duration="4396000" />
-      <workItem from="1624525497062" duration="2910000" />
+      <workItem from="1624525497062" duration="3417000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -402,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624614740239</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Adding in unit tests to C++ library.">
+      <created>1624614881695</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1624614881695</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
