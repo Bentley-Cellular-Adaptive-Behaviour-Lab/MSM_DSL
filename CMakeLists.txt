@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(src)
 include_directories(libraries)
+
 include(FetchContent)
 FetchContent_Declare(
         googletest
@@ -56,6 +57,10 @@ find_package(OpenGL)
 find_package(Boost)
 #find_package(GLUT)
 
+if (WIN32)
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+endif (WIN32)
+
 # Source: https://apps.man.poznan.pl/trac/gpu_mri_3d/browser/trunk/CMake/FindGLUI.cmake
 #FIND_LIBRARY (GLUI_LIBRARY NAMES glui
 #        PATHS
@@ -86,6 +91,8 @@ find_package(Boost)
 #ELSE(GLUI_FOUND)
 #    MESSAGE(FATAL_ERROR "Could not find GLUI")
 #ENDIF(GLUI_FOUND)
+
+FetchContent_MakeAvailable(googletest)
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
 target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )
