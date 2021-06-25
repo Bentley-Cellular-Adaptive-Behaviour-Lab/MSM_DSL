@@ -746,7 +746,7 @@ void EC::calculate_cell_protein_levels() {
         }
     }
 
-    for (auto springAgent : this->surfaceAgents) {
+    for (auto springAgent : this->springAgents) {
         //Attempt to run ODEs at this memagent.
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
