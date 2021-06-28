@@ -1,66 +1,146 @@
 cmake_minimum_required(VERSION 3.16)
-project(src/springAgent)
-
 set(CMAKE_CXX_STANDARD 17)
-
 include_directories(src)
 include_directories(libraries)
 
-#include(FetchContent)
-#FetchContent_Declare(
-#        googletest
-#        URL https://github.com/google/googletest/archive/355d57d90d9744c41ac7c99f1e960778f1c63040.zip
-#)
+# Read in argument to determine whether to create a test executable or not.
+# 0 = no testing
+# 1 = automated testing (runs pre-defined tests on Github)
+# 2 = user defined (runs tests created from user model)
 
-set (Sources src/analysis.cpp
-        src/constructors.cpp
-        src/CPM_module.cpp
-        src/creation.cpp
-        src/display.cpp
-        src/dsl_Tissue.cpp
-        src/dsl_World.cpp
-        src/EC.cpp
-        src/ECmesh.cpp
-        src/environment.cpp
-        src/geometry_functions.cpp
-        src/Grid.cpp
-        src/logger.cpp
-        src/main.cpp
-        src/memAgents.cpp
-        src/ODE.cpp
-        src/protein.cpp
-        src/ScreenRecording.cpp
-        src/space.cpp
-        src/Tissue.cpp
-        src/utils.cpp
-        src/world.cpp)
+# TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
+# TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set (Headers src/creation.h
-        src/display.h
-        src/EC.cpp
-        src/EC.h
-        src/ECmesh.h
-        src/memAgents.h
-        src/logger.h
-        src/ODE.h
-        src/objects.h
-        src/protein.h
-        src/ScreenRecording.h
-        src/space.h
-        src/Tissue.h
-        src/utils.h
-        src/world.h)
+set(TEST_TYPE 1)
 
-#add_executable(springAgent ${Sources} ${Headers} tests/test_setup.cpp)
-add_executable(springAgent ${Sources} ${Headers})
+message("TEST_TYPE = ${TEST_TYPE}")
+if(TEST_TYPE EQUAL 0)
+    message("Testing: None")
 
-find_package(OpenGL)
-find_package(Boost)
+    project(src/springAgent)
+
+    set (Sources src/analysis.cpp
+            src/constructors.cpp
+            src/CPM_module.cpp
+            src/creation.cpp
+            src/display.cpp
+            src/dsl_Tissue.cpp
+            src/dsl_World.cpp
+            src/EC.cpp
+            src/ECmesh.cpp
+            src/environment.cpp
+            src/geometry_functions.cpp
+            src/Grid.cpp
+            src/logger.cpp
+            src/main.cpp
+            src/memAgents.cpp
+            src/ODE.cpp
+            src/protein.cpp
+            src/ScreenRecording.cpp
+            src/space.cpp
+            src/Tissue.cpp
+            src/utils.cpp
+            src/world.cpp)
+
+    set (Headers src/creation.h
+            src/display.h
+            src/EC.cpp
+            src/EC.h
+            src/ECmesh.h
+            src/memAgents.h
+            src/logger.h
+            src/ODE.h
+            src/objects.h
+            src/protein.h
+            src/ScreenRecording.h
+            src/space.h
+            src/Tissue.h
+            src/utils.h
+            src/world.h)
+
+    add_executable(springAgent ${Sources} ${Headers})
+
+    find_package(OpenGL)
+    find_package(Boost)
+
+    include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
+
+    target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
+elseif(TEST_TYPE EQUAL 1)
+    message("Testing: Automated")
+
+    # Get Google Test library
+    include(FetchContent)
+    FetchContent_Declare(
+            googletest
+            URL https://github.com/google/googletest/archive/355d57d90d9744c41ac7c99f1e960778f1c63040.zip
+    )
+
+    if (WIN32)
+        set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    endif (WIN32)
+
+    FetchContent_MakeAvailable(googletest)
+
+    project(tests/automated/autoSpringAgent)
+
+    set (Sources tests/automated/main.cpp
+                 tests/automated/test_setup.cpp)
+    set (Headers)
+
+    add_executable(autoSpringAgent ${Sources} ${Headers})
+
+    find_package(OpenGL)
+    find_package(Boost)
+
+    include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
+    include(GoogleTest)
+
+    target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
+
+    enable_testing()
+
+    gtest_discover_tests(autoSpringAgent)
+elseif(TEST_TYPE EQUAL 2)
+    message("Testing: User model")
+
+    # Get Google Test library
+    include(FetchContent)
+    FetchContent_Declare(
+            googletest
+            URL https://github.com/google/googletest/archive/355d57d90d9744c41ac7c99f1e960778f1c63040.zip
+    )
+
+    if (WIN32)
+        set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    endif (WIN32)
+
+    FetchContent_MakeAvailable(googletest)
+
+    project(tests/user/userSpringAgent)
+
+    set (Sources tests/user/main.cpp
+                 tests/user/test_setup.cpp)
+    set (Headers)
+
+    add_executable(userSpringAgent ${Sources} ${Headers})
+
+    find_package(OpenGL)
+    find_package(Boost)
+
+    include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
+    include(GoogleTest)
+
+    target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
+
+    enable_testing()
+
+    gtest_discover_tests(userSpringAgent)
+else()
+    message("Unknown testing configuration. Stopping.")
+endif()
+
 #find_package(GLUT)
-#
-#if (WIN32)
-#    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-#endif (WIN32)
 
 # Source: https://apps.man.poznan.pl/trac/gpu_mri_3d/browser/trunk/CMake/FindGLUI.cmake
 #FIND_LIBRARY (GLUI_LIBRARY NAMES glui
@@ -92,14 +172,3 @@ find_package(Boost)
 #ELSE(GLUI_FOUND)
 #    MESSAGE(FATAL_ERROR "Could not find GLUI")
 #ENDIF(GLUI_FOUND)
-
-#FetchContent_MakeAvailable(googletest)
-
-#enable_testing()
-
-include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
-#target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} gtest_main )
-target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
-
-#include(GoogleTest)
-#gtest_discover_tests(springAgent)
