@@ -1,5 +1,0 @@
-if(EXISTS "/Users/meadt/MPSProjects/MSM_DSL/googletest/cmake-build-debug/googletest[1]_tests.cmake")
-  include("/Users/meadt/MPSProjects/MSM_DSL/googletest/cmake-build-debug/googletest[1]_tests.cmake")
-else()
-  add_test(googletest_NOT_BUILT googletest_NOT_BUILT)
-endif()
