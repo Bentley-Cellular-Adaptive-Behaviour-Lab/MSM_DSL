@@ -84,9 +84,16 @@ elseif(TEST_TYPE EQUAL 1)
 
     project(tests/automated/autoSpringAgent)
 
-    set (Sources tests/automated/main.cpp
-                 tests/automated/test_setup.cpp)
-    set (Headers)
+    set (Sources tests/automated/test_setup.cpp
+                 tests/automated/test_ODE.cpp
+                 tests/automated/helper_ODE.cpp
+                 tests/automated/generated/dsl_Tissue.cpp
+                 tests/automated/generated/dsl_World.cpp)
+
+    set (Headers src/objects.h
+                 src/world.h
+                 tests/automated/helper_ODE.h
+                 tests/automated/generated/ODE.h)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
 
@@ -96,7 +103,7 @@ elseif(TEST_TYPE EQUAL 1)
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
-    target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
+    target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
 
     enable_testing()
 
@@ -119,8 +126,7 @@ elseif(TEST_TYPE EQUAL 2)
 
     project(tests/user/userSpringAgent)
 
-    set (Sources tests/user/main.cpp
-                 tests/user/test_setup.cpp)
+    set (Sources tests/user/test_setup.cpp)
     set (Headers)
 
     add_executable(userSpringAgent ${Sources} ${Headers})
@@ -131,7 +137,7 @@ elseif(TEST_TYPE EQUAL 2)
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
-    target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
+    target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
 
     enable_testing()
 
