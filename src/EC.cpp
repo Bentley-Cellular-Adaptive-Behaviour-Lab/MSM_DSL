@@ -438,7 +438,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                     //-------------------------------
                     
                     if(worldP->insideWorld(m, n, p)==true){
-                        if(worldP->grid[m][n][p].type==M){
+                        if(worldP->grid[m][n][p].type == const_M){
                             for(y=0;y<(int)worldP->grid[m][n][p].Mids.size();y++){
                                 flag=0;
                                 if(worldP->grid[m][n][p].Mids[y]->Cell!=this){

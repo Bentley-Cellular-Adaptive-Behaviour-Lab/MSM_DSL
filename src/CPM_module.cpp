@@ -1125,7 +1125,7 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
         if (n < 0) n = yMAX - 1;*/
 
         if(worldP->insideWorld(m,n,p)==true){
-        if (worldP->grid[m][n][p].type == M) {
+        if (worldP->grid[m][n][p].type == const_M) {
             //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
             for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
                 if ((worldP->grid[m][n][p].Mids[zed]->FIL != TIP) && (worldP->grid[m][n][p].Mids[zed]->FIL != STALK)) {
@@ -1418,7 +1418,7 @@ void MedAgent::checkNeighs(void) {
             //-----------NEW BIT!
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
-            if (worldP->grid[m][n][p].type == M) {
+            if (worldP->grid[m][n][p].type == const_M) {
                 if (diffAd_replaced == NULL) {
 
                     for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
@@ -1468,7 +1468,7 @@ void CPM_module::createMedium(void) {
 
     for (i = 0; i < xMAX; i++) {
         for (j = 0; j < yMAX; j++) {
-            if (worldP->grid[i][j][0].type != M) {
+            if (worldP->grid[i][j][0].type != const_M) {
                 worldP->grid[i][j][0].type = MED;
                 medp = new MedAgent(worldP);
                 medp->Mx = (float) i;

@@ -1196,7 +1196,7 @@ void World::viewGrid(void){
                 
                 //if(grid[i][j][k].Eid!=NULL)
                         //if(junctionView==1)DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, 0.1, 0.1, 1.0, 0.6, L);
-                               if(grid[i][j][k].type==E){
+                               if(grid[i][j][k].type==const_E){
 
                         if(viewInsideEnv==1){
                             if(grid[i][j][k].Eid->inside==true){
@@ -1263,7 +1263,7 @@ void World::viewGrid(void){
                 //........................................................................................................................................................................
                 //........................................................................................................................................................................
                 //membrane
-                if(grid[i][j][k].type==M){
+                if(grid[i][j][k].type==const_M){
                     /*tester
                      * int LER;
                      * int fleg=0;
@@ -1379,7 +1379,7 @@ void World::viewGrid(void){
                             DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.1, L);
                         }
                     }
-                    if(grid[i][j][k].type==E){
+                    if(grid[i][j][k].type==const_E){
 
                         //if(grid[i][j][k].Eid->inside==true){
                         //    red=0.2f; green = 0.57f; blue =0.3;

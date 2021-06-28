@@ -46,7 +46,7 @@ void MemAgent::NotchResponse(void) {
     int flag = 0;
 
     do {
-        if (worldP->neigh[i].type == M) {
+        if (worldP->neigh[i].type == const_M) {
 
             for (j = 0; j < (int) worldP->neigh[i].Mids.size(); j++) {
 
@@ -523,7 +523,7 @@ void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) {
                 if (flag == 0) {
 
                     if (worldP->insideWorld(i, j, k) == true) {
-                        if (worldP->grid[i][j][k].type == M) {
+                        if (worldP->grid[i][j][k].type == const_M) {
                             for (m = 0; m < worldP->grid[i][j][k].Mids.size(); m++) {
                                 if (flag2 == 0) {
                                     if ((worldP->grid[i][j][k].Mids[m]->FIL != NONE) && (worldP->grid[i][j][k].Mids[m]->Cell == Cell)) {
@@ -601,10 +601,10 @@ bool MemAgent::checkNeighsVonForEnv(void) {
         		m = this->worldP->gridXDimensions - 1;
         }
         if (worldP->insideWorld(m, n, p) == true) {
-            if (worldP->grid[m][n][p].type == E) {
+            if (worldP->grid[m][n][p].type == const_E) {
                 
                 flag = 1;
-            } else if ((worldP->grid[m][n][p].type == E)&&(worldP->grid[m][n][p].Eid->Astro==true)) {
+            } else if ((worldP->grid[m][n][p].type == const_E)&&(worldP->grid[m][n][p].Eid->Astro==true)) {
                 flag = 1;
             }
         }
@@ -866,7 +866,7 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
         //--------------------------------------------------------------------------------------------------------------------------
         //non filopodia agents change grid state to M
         if ((FIL == BASE) || (FIL == NONE)) {
-            if ((worldP->grid[newMx][newMy][newMz].type == M) || (worldP->grid[newMx][newMy][newMz].type == E) || (worldP->grid[newMx][newMy][newMz].type == BLOOD)) {
+            if ((worldP->grid[newMx][newMy][newMz].type == const_M) || (worldP->grid[newMx][newMy][newMz].type == const_E) || (worldP->grid[newMx][newMy][newMz].type == BLOOD)) {
 
                 worldP->deleteOldGridRef(this, false);
 
@@ -1185,7 +1185,7 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
             //-------------------------------
 
             if (worldP->insideWorld(m, n, p)) {
-                if (worldP->grid[m][n][p].type == M) {
+                if (worldP->grid[m][n][p].type == const_M) {
                     for (y = 0; y < (int) worldP->grid[m][n][p].Mids.size(); y++) {
 
 
@@ -1711,12 +1711,12 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
             worldP->neigh[x].type = worldP->grid[m][n][p].type;
             worldP->neigh[x].Fids = worldP->grid[m][n][p].Fids;
 
-            if (worldP->neigh[x].type == M) {
+            if (worldP->neigh[x].type == const_M) {
                 MneighCount++;
             }
 
 
-            else if (worldP->neigh[x].type == E) {
+            else if (worldP->neigh[x].type == const_E) {
                 Eagent = worldP->neigh[x].Eid;
                 SumVEGF += Eagent->VEGF;
                 EnvNeighs.push_back(Eagent);
@@ -1732,7 +1732,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
             if (called_fron_differentialAdhesion == true) {
-                if (worldP->grid[m][n][p].type == M) {
+                if (worldP->grid[m][n][p].type == const_M) {
                     if (diffAd_replaced_cell != NULL) {
                         for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
                             if ((worldP->grid[m][n][p].Mids[zed]->FIL != TIP) && (worldP->grid[m][n][p].Mids[zed]->FIL != STALK)) {
@@ -2582,7 +2582,7 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
         // If the environment agent at these coordinates is inside the world, and has the relevant protein,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == E) {
+            if (worldP->grid[m][n][p].type == const_E) {
                 ep = worldP->grid[m][n][p].Eid;
                 if (ep->owned_proteins.size()) {
                 	int i = 0;
@@ -2725,7 +2725,7 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == M) {
+            if (worldP->grid[m][n][p].type == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
@@ -2866,7 +2866,7 @@ float MemAgent::get_adjacent_protein_level(std::string protein_name) {
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == M) {
+            if (worldP->grid[m][n][p].type == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);

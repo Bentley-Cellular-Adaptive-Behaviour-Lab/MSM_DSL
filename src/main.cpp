@@ -722,7 +722,7 @@ void World::destroyWorld(void) {
     for (i = 0; i < gridXDimensions; i++) {
         for (j = 0; j < gridYDimensions; j++) {
             for (k = 0; k < gridZDimensions; k++) {
-                if (grid[i][j][k].type == E) {
+                if (grid[i][j][k].type == const_E) {
                     if (grid[i][j][k].Eid != NULL)
                         delete grid[i][j][k].Eid;
                 }

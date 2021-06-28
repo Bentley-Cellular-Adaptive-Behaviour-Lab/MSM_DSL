@@ -72,7 +72,7 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 void World::setMLocation(int x, int y, int z, MemAgent * ident) {
 
     grid[x][y][z].Mids.push_back(ident);
-    grid[x][y][z].type = M;
+    grid[x][y][z].type = const_M;
     delete grid[x][y][z].Eid;
     grid[x][y][z].Eid = NULL;
 }
@@ -220,12 +220,12 @@ int World::checkForAstro(int i, int j, int k) {
 
         if (insideWorld(m, n, p) == true) {
 
-            if ((grid[m][n][p].type == E) && (grid[m][n][p].Eid->Astro == true)) {
+            if ((grid[m][n][p].type == const_E) && (grid[m][n][p].Eid->Astro == true)) {
                 flag = 1;
                 //cout<<"astro"<<endl;
             } else if (p == 0) {
                 //may have a fil there even though it strictly speaking should have astro there - so do replace with the check only flag on so it doesnt actually replace
-                if ((grid[m][n][p].type == E) && (grid[m][n][p].Eid->OldAstro == true)) flag = 1;
+                if ((grid[m][n][p].type == const_E) && (grid[m][n][p].Eid->OldAstro == true)) flag = 1;
             }
         }
         //-------------------------------
@@ -366,9 +366,9 @@ int Env::checkForEnv(void) {
         if (m < 0) m = xMAX - 1;
         //-------------------------------
 
-        if (worldP->insideWorld(m, n, p) == true) {
+        if (worldP->insideWorld(m, n, p)) {
 
-            if ((worldP->grid[m][n][p].type == E) && (worldP->grid[m][n][p].Eid->VEGF > 0.0f)) {
+            if ((worldP->grid[m][n][p].type == const_E) && (worldP->grid[m][n][p].Eid->VEGF > 0.0f)) {
                 flag = 1;
             }
         }

@@ -551,7 +551,7 @@ void Gradient::apply_gradient_to_cuboid() {
                 assert(y <= m_parent_world->gridYDimensions);
                 assert(z <= m_parent_world->gridZDimensions);
 
-				if (m_parent_world->grid[x][y][z].type == E) {
+				if (m_parent_world->grid[x][y][z].type == const_E) {
 					ep = m_parent_world->grid[x][y][z].Eid;
 					if (ep != nullptr) {
 						if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
@@ -626,7 +626,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
     for (int i = x_start; i < x_end; i++) {
         for (int j = y_start; j < y_end; j++) {
             for (int k = z_start; k < z_end; k++) {
-                if (m_parent_world->grid[i][j][k].type == E) {
+                if (m_parent_world->grid[i][j][k].type == const_E) {
                     ep = m_parent_world->grid[i][j][k].Eid;
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
@@ -677,7 +677,7 @@ void Gradient::apply_gradient_to_sphere() {
 					if (x < m_parent_world->gridXDimensions &&
 						y < m_parent_world->gridYDimensions &&
 						z < m_parent_world->gridZDimensions) {
-						if (m_parent_world->grid[x][y][z].type == E) {
+						if (m_parent_world->grid[x][y][z].type == const_E) {
 							ep = m_parent_world->grid[x][y][z].Eid;
 							if (ep != nullptr) {
 								dist_from_centre = sqrt(
@@ -823,7 +823,7 @@ void Substrate::apply_substrate_to_cuboid() {
 	for (int i = x_start; i < x_end; i++) {
 		for (int j = y_start; j < y_end; j++) {
 			for (int k = z_start; k < z_end; k++) {
-				if (m_parent_world->grid[i][j][k].type==E) {
+				if (m_parent_world->grid[i][j][k].type == const_E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
 					ep->adhesiveness = m_adhesiveness;
 				}
@@ -918,7 +918,7 @@ void Substrate::apply_substrate_to_triangular_prism() {
 	for (int k = z_start; k < z_end; k++) {
 		for (int i = x_start; i < x_end; i++) {
 			for (int j = y_start; j <y_end; j++) {
-				if (m_parent_world->grid[i][j][k].type == E) {
+				if (m_parent_world->grid[i][j][k].type == const_E) {
 					ep = m_parent_world->grid[i][j][k].Eid;
 					if (m_parent_world->is_within_triangle(ep, vertex_1, vertex_2, vertex_3)) {
 						ep->adhesiveness = m_adhesiveness;
@@ -1146,7 +1146,7 @@ void World::create_new_environment(float base_permittivity) {
     for (int x = 0; x < gridXDimensions; x++) {
         for (int y = 0; y < gridYDimensions; y++) {
             for (int z = 0; z < gridZDimensions; z++) {
-                if ((grid[x][y][z].type == E) && (grid[x][y][z].Eid == NULL)) {
+                if ((grid[x][y][z].type == const_E) && (grid[x][y][z].Eid == NULL)) {
                     create_env_agent(x, y, z, base_permittivity);
                 }
             }
@@ -1176,7 +1176,7 @@ void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 	ep->adhesiveness = base_permittivity;
 
 	grid[x][y][z].Eid=ep;
-	grid[x][y][z].type=E;
+	grid[x][y][z].type = const_E;
 
 	ep->calcInside();
 }
@@ -1196,7 +1196,7 @@ void World::set_focal_adhesion(MemAgent *memp) {
 	World *worldP = memp->worldP;
 	Location *target = &(worldP->grid[memp_x][memp_y][memp_z]);
 
-	if (target->type == E) {
+	if (target->type == const_E) {
 		Env *target_ep = worldP->grid[memp_x][memp_y][memp_z].Eid;
 		float chance = (float) new_rand() / (float) NEW_RAND_MAX;
 		// Check against the adhesiveness of the target environment location.

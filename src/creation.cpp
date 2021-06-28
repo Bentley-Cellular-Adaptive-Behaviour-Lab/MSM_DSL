@@ -137,7 +137,7 @@ void MemAgent::connectJunctions(bool alsoNormalSprings){
         	n = this->worldP->gridXDimensions - 1;
 
         if(worldP->insideWorld(m, n, p)){
-            if(worldP->grid[m][n][p].type==M){
+            if(worldP->grid[m][n][p].type == const_M){
                 for(s=0;s<worldP->grid[m][n][p].Mids.size();s++) {
                     if(worldP->grid[m][n][p].Mids[s]->Cell!=Cell) {
                         neigh[neighs]=worldP->grid[m][n][p].Mids[s];
@@ -326,21 +326,20 @@ void World::connectMonolayer(void){
         N=0;
 
 
-        if(insideWorld(mp->Mx-1, mp->My, mp->Mz)==true){
-        if(grid[(int)mp->Mx-1][(int)mp->My][0].type==M){
-            for(kelp=0;kelp<grid[(int)mp->Mx-1][(int)mp->My][0].Mids.size();kelp++){
-
-                nmp = grid[(int)mp->Mx-1][(int)mp->My][0].Mids[kelp];
-                if(mp->Cell==nmp->Cell){
-                mp->neigh[N]=nmp;
-                ECagents[e]->createSpringTokenObject(mp, nmp, N);
-                mp->SpringNeigh[N]->horizontal = true;
-                mp->SpringNeigh[N]->right = false;
-                N++;
-                mp->neighs++;
-                }
-            }
-        }
+        if(insideWorld(mp->Mx-1, mp->My, mp->Mz)){
+			if(grid[(int)mp->Mx-1][(int)mp->My][0].type == const_M){
+				for(kelp=0;kelp<grid[(int)mp->Mx-1][(int)mp->My][0].Mids.size();kelp++) {
+					nmp = grid[(int)mp->Mx-1][(int)mp->My][0].Mids[kelp];
+					if(mp->Cell==nmp->Cell){
+						mp->neigh[N]=nmp;
+						ECagents[e]->createSpringTokenObject(mp, nmp, N);
+						mp->SpringNeigh[N]->horizontal = true;
+						mp->SpringNeigh[N]->right = false;
+						N++;
+						mp->neighs++;
+					}
+				}
+			}
         }
         /*else{
         
@@ -359,69 +358,66 @@ void World::connectMonolayer(void){
             }
         }
         }*/
-        if(insideWorld(mp->Mx+1, mp->My, mp->Mz)==true){
-        if(grid[(int)mp->Mx+1][(int)mp->My][0].type==M){
-            for(kelp=0;kelp<grid[(int)mp->Mx+1][(int)mp->My][0].Mids.size();kelp++){
-
-            nmp = grid[(int)mp->Mx+1][(int)mp->My][0].Mids[kelp];
-            if(mp->Cell==nmp->Cell){
-            mp->neigh[N]=nmp;
-            ECagents[e]->createSpringTokenObject(mp, nmp, N);
-            mp->SpringNeigh[N]->horizontal = true;
-            mp->SpringNeigh[N]->right = true;
-            N++;
-            mp->neighs++;
-            }
-            }
+        if(insideWorld(mp->Mx+1, mp->My, mp->Mz)){
+			if(grid[(int)mp->Mx+1][(int)mp->My][0].type == const_M){
+				for(kelp=0;kelp<grid[(int)mp->Mx+1][(int)mp->My][0].Mids.size();kelp++){
+					nmp = grid[(int)mp->Mx+1][(int)mp->My][0].Mids[kelp];
+					if(mp->Cell==nmp->Cell){
+						mp->neigh[N]=nmp;
+						ECagents[e]->createSpringTokenObject(mp, nmp, N);
+						mp->SpringNeigh[N]->horizontal = true;
+						mp->SpringNeigh[N]->right = true;
+						N++;
+						mp->neighs++;
+					}
+				}
+			}
         }
+        if((insideWorld(mp->Mx, mp->My-1, mp->Mz))){
+			if(grid[(int)mp->Mx][(int)mp->My-1][0].type == const_M){
+				for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My-1][0].Mids.size();kelp++){
+					nmp = grid[(int)mp->Mx][(int)mp->My-1][0].Mids[kelp];
+					if(mp->Cell==nmp->Cell){
+						mp->neigh[N]=nmp;
+						ECagents[e]->createSpringTokenObject(mp, nmp, N);
+						mp->SpringNeigh[N]->horizontal = false;
+						mp->SpringNeigh[N]->right = true;
+						N++;
+						mp->neighs++;
+					}
+				}
+        	}
         }
-        if((insideWorld(mp->Mx, mp->My-1, mp->Mz)==true)){
-        if(grid[(int)mp->Mx][(int)mp->My-1][0].type==M){
-            for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My-1][0].Mids.size();kelp++){
-            nmp = grid[(int)mp->Mx][(int)mp->My-1][0].Mids[kelp];
-            if(mp->Cell==nmp->Cell){
-            mp->neigh[N]=nmp;
-            ECagents[e]->createSpringTokenObject(mp, nmp, N);
-            mp->SpringNeigh[N]->horizontal = false;
-            mp->SpringNeigh[N]->right = true;
-            N++;
-            mp->neighs++;
-            }
+        if((insideWorld(mp->Mx, mp->My+1, mp->Mz))) {
+			if(grid[(int)mp->Mx][(int)mp->My+1][0].type == const_M) {
+				for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My+1][0].Mids.size();kelp++){
+					nmp = grid[(int)mp->Mx][(int)mp->My+1][0].Mids[kelp];
+					if(mp->Cell==nmp->Cell) {
+						mp->neigh[N]=nmp;
+						ECagents[e]->createSpringTokenObject(mp, nmp, N);
+						mp->SpringNeigh[N]->horizontal = false;
+						mp->SpringNeigh[N]->right = false;
+						N++;
+						mp->neighs++;
+					}
+            	}
+        	}
         }
-        }
-        }
-        if((insideWorld(mp->Mx, mp->My+1, mp->Mz)==true)){
-        if(grid[(int)mp->Mx][(int)mp->My+1][0].type==M){
-            for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My+1][0].Mids.size();kelp++){
-            nmp = grid[(int)mp->Mx][(int)mp->My+1][0].Mids[kelp];
-            if(mp->Cell==nmp->Cell){
-            mp->neigh[N]=nmp;
-            ECagents[e]->createSpringTokenObject(mp, nmp, N);
-            mp->SpringNeigh[N]->horizontal = false;
-            mp->SpringNeigh[N]->right = false;
-            N++;
-            mp->neighs++;
-            }
-            }
-        }
-        }
-        if(insideWorld(mp->Mx, mp->My, mp->Mz)==true){
+        if(insideWorld(mp->Mx, mp->My, mp->Mz)){
         //if(grid[(int)mp->Mx][(int)mp->My][1].type==M){
-            for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My][0].Mids.size();kelp++){
-
+            for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My][0].Mids.size();kelp++) {
                 nmp = grid[(int)mp->Mx][(int)mp->My][0].Mids[kelp];
                 if(mp->Cell!=nmp->Cell){
-                mp->neigh[N]=nmp;
-                ECagents[e]->createSpringTokenObject(mp, nmp, N);
-                mp->SpringNeigh[N]->horizontal = true;
-                mp->SpringNeigh[N]->right = false;
-                N++;
-                mp->neighs++;
-                }
-            }
-        
-        }
-    }
+					mp->neigh[N]=nmp;
+					ECagents[e]->createSpringTokenObject(mp, nmp, N);
+					mp->SpringNeigh[N]->horizontal = true;
+					mp->SpringNeigh[N]->right = false;
+					N++;
+					mp->neighs++;
+                	}
+            	}
+        	}
+    	}
     }
 }
 //-----------------------------------------------------------------------------------
@@ -582,7 +578,7 @@ void World::create_3D_round_cell(void){
         mp = ECagents[0]->nodeAgents[i];
         N=0;
         
-        if(grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].type==M){
+        if(grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].type == const_M){
             
             nmp = grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].Mids[0];
             mp->neigh[N]=nmp;
@@ -592,7 +588,7 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].type==M){
+        if(grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].type == const_M) {
             nmp = grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].Mids[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
@@ -601,7 +597,7 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].type==M){
+        if(grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].type == const_M) {
             nmp = grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].Mids[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
@@ -610,7 +606,7 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].type==M){
+        if(grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].type == const_M){
             nmp = grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].Mids[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
@@ -619,7 +615,7 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].type==M){
+        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].type == const_M){
             nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].Mids[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
@@ -629,7 +625,7 @@ void World::create_3D_round_cell(void){
             mp->neighs++;
         }
         
-        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].type==M){
+        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].type == const_M){
             nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].Mids[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
@@ -726,7 +722,7 @@ void World::createBlood(void){
                     //create blood in vessel
                     if(distTest2D(J, K, vesselCentreY, vesselCentreZ, vesselRadius-1)==true){
                         //if (grid[j+depth][k+Y][l+Z].Eid!=NULL){
-                        if(grid[i][J][K].type==E){
+                        if(grid[i][J][K].type == const_E){
                         grid[i][J][K].Eid->blood=1.0f;
                         //grid[i][J][K].Vid=vp
                         //grid[i][J][K].type = BLOOD;
@@ -1005,9 +1001,11 @@ void World::createNewEnvAgent(int x, int y, int z){
         }
         Env * ep = new Env((World*) this);
         
-        ep->Ex=x; ep->Ey=y;ep->Ez=z;
-        grid[x][y][z].Eid=ep;
-        grid[x][y][z].type=E;
+        ep->Ex = x;
+        ep->Ey = y;
+        ep->Ez = z;
+        grid[x][y][z].Eid = ep;
+        grid[x][y][z].type = const_E;
         
         //if((timeStep>0)&&(y<vesselRadius*2+gap)) replaceBlood(x, y, z);
         
@@ -1068,7 +1066,7 @@ void World::createNewEnvAgent(int x, int y, int z){
                         for(m=0;m<2*Cradius;m++){
                             if(getDist(centreX, centreY, 0, centreX-Cradius+k, centreY-Cradius+m, 0)<Cradius){
                                 if(insideWorld(centreX-Cradius+k, centreY-Cradius+m, 0)==true)
-                                    grid[centreX-Cradius+k][centreY-Cradius+m][0].type=E;
+                                    grid[centreX-Cradius+k][centreY-Cradius+m][0].type = const_E;
                             }
                         }
                     }
@@ -1636,7 +1634,7 @@ void World::createNewEnvAgent(int x, int y, int z){
         for(i=0;i<xMAX;i++)
             for(j=0;j<yMAX;j++){
                 for(k=0;k<zMAX;k++){
-                    if((grid[i][j][k].type==E)&&(grid[i][j][k].Eid==NULL)){
+                    if((grid[i][j][k].type == const_E)&&(grid[i][j][k].Eid==NULL)){
                         createNewEnvAgent(i, j, k);
                         //ep=grid[i][j][k].Eid;
                         
@@ -1669,7 +1667,7 @@ void World::createNewEnvAgent(int x, int y, int z){
             for(j=0;j<yMAX;j++){
                 for(k=0;k<zMAX;k++){
                     
-                    if((grid[i][j][k].type==E)&&(grid[i][j][k].Eid!=NULL)) {
+                    if((grid[i][j][k].type == const_E)&&(grid[i][j][k].Eid!=NULL)) {
                         
                         ep = grid[i][j][k].Eid;
                         calcEnvAgentVEGF(ep);
@@ -2081,7 +2079,7 @@ void World::createNewEnvAgent(int x, int y, int z){
                     //accum+=CD[m];
                 }
                 
-                if((checkForAstro(i, j, 1)==1)&&(grid[i][j][1].type==E)){
+                if((checkForAstro(i, j, 1)==1)&&(grid[i][j][1].type == const_E)){
                     grid[i][j][1].Eid->VEGF=accum*VconcST;
                 }
             }
