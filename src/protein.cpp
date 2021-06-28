@@ -10,7 +10,7 @@ protein::protein(std::string name, float initial_level, bool checks_neighbour) {
     this->checks_neighbour = checks_neighbour;
 }
 
-float protein::get_level() {
+float protein::get_level() const {
     return this->level;
 }
 

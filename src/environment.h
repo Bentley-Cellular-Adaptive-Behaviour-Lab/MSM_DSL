@@ -26,14 +26,14 @@ public:
 	bool OldAstro;
 
 
-	int checkForAstro(void);
+	int checkForAstro();
 
-	int checkForEnv(void);
+	int checkForEnv();
 
 	Env(World *WorldP);
 
 	///check if the env agent is inside the vessel
-	void calcInside(void);
+	void calcInside();
 
 	// Determines the ability of filopodia to form focal adhesions
 	float adhesiveness;

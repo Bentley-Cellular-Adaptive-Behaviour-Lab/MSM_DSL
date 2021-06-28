@@ -77,8 +77,8 @@ Location::Location(void){
  	
  	
  	Eid=NULL;
- 	type=E;
-        oldType = E;
+ 	type = const_E;
+ 	oldType = const_E;
 }
 
 //-------------------------------------------------------------------------------

@@ -16,15 +16,15 @@ Coordinates::Coordinates(int x, int y, int z) {
     this->z = float(z);
 }
 
-float Coordinates::get_x_coord() {
+float Coordinates::get_x_coord() const {
     return this->x;
 }
 
-float Coordinates::get_y_coord() {
+float Coordinates::get_y_coord() const {
     return this->y;
 }
 
-float Coordinates::get_z_coord() {
+float Coordinates::get_z_coord() const {
     return this->z;
 }
 
@@ -38,7 +38,7 @@ Shape::Shape(int shape_type) {
     this->m_shape_type = shape_type;
 }
 
-int Shape::get_shape_type() {
+int Shape::get_shape_type() const {
     return this->m_shape_type;
 }
 
@@ -76,7 +76,7 @@ int Shape_Cuboid::get_width() {
 	return this->m_width;
 }
 
-int Shape_Cuboid::get_depth() {
+int Shape_Cuboid::get_depth() const {
 	return this->m_depth;
 }
 

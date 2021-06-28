@@ -1475,7 +1475,7 @@ std::vector <MemAgent*> MemAgent::getTriangle(bool up) {
 
                         //-------------------------------------------------------
                         //for on-the fly-- if another memagent there already , from same cell, then double up - flag as doubled up and remove after...
-                        if (grid[X][Y][Z].type == M) {
+                        if (grid[X][Y][Z].type == const_M) {
                             i = 0;
                             flag = 0;
 
@@ -1807,7 +1807,7 @@ std::vector <MemAgent*> MemAgent::getTriangle(bool up) {
 
         int i = 0;
         bool allow = true;
-        if (grid[X][Y][Z].type == M) {
+        if (grid[X][Y][Z].type == const_M) {
             do {
                 if (grid[X][Y][Z].Mids[i]->Cell == cell) {
                     allow = false;
@@ -1818,7 +1818,7 @@ std::vector <MemAgent*> MemAgent::getTriangle(bool up) {
         }
 
         if (allow == true) {
-            if (grid[X][Y][Z].type == E) {
+            if (grid[X][Y][Z].type == const_E) {
                 delete grid[X][Y][Z].Eid;
                 grid[X][Y][Z].Eid = NULL;
             }

@@ -84,13 +84,45 @@ elseif(TEST_TYPE EQUAL 1)
 
     project(tests/automated/autoSpringAgent)
 
-    set (Sources tests/automated/test_setup.cpp
+    set (Sources src/analysis.cpp
+                 src/constructors.cpp
+                 src/CPM_module.cpp
+                 src/creation.cpp
+                 src/display.cpp
+                 src/EC.cpp
+                 src/ECmesh.cpp
+                 src/environment.cpp
+                 src/geometry_functions.cpp
+                 src/Grid.cpp
+                 src/logger.cpp
+                 src/memAgents.cpp
+                 src/ODE.cpp
+                 src/protein.cpp
+                 src/ScreenRecording.cpp
+                 src/space.cpp
+                 src/Tissue.cpp
+                 src/utils.cpp
+                 src/world.cpp
+                 tests/automated/test_setup.cpp
                  tests/automated/test_ODE.cpp
                  tests/automated/helper_ODE.cpp
                  tests/automated/generated/dsl_Tissue.cpp
                  tests/automated/generated/dsl_World.cpp)
 
-    set (Headers src/objects.h
+    set (Headers src/creation.h
+                 src/display.h
+                 src/EC.cpp
+                 src/EC.h
+                 src/ECmesh.h
+                 src/memAgents.h
+                 src/logger.h
+                 src/ODE.h
+                 src/objects.h
+                 src/protein.h
+                 src/ScreenRecording.h
+                 src/space.h
+                 src/Tissue.h
+                 src/utils.h
                  src/world.h
                  tests/automated/helper_ODE.h
                  tests/automated/generated/ODE.h)

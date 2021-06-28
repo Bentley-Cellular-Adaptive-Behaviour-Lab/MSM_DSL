@@ -38,7 +38,7 @@ protected:
 public:
     virtual int get_height();
     virtual int get_width();
-    int get_shape_type();
+    int get_shape_type() const;
     explicit Shape(int shape_type);
 };
 
@@ -61,7 +61,7 @@ public:
 	Shape_Cuboid(int shape_type, int height, int width, int depth);
 	int get_height() override;
 	int get_width() override;
-	int get_depth();
+	int get_depth() const;
 };
 
 class Shape_Triangular_Prism : public Shape {

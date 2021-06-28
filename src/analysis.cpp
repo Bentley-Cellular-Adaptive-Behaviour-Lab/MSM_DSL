@@ -79,7 +79,7 @@ std::vector< std::vector<float> > World::getGridSiteData()
                 float activeVegfrTotal = 0;
                 float dll4Total = 0;
 
-                if (grid[x][y][z].type == E)
+                if (grid[x][y][z].type == const_E)
                 {
                     gridSiteValues.push_back(0); //for environment type
                     gridSiteValues.push_back(grid[x][y][z].Fids.size());
@@ -111,7 +111,7 @@ std::vector< std::vector<float> > World::getGridSiteData()
                         gridSiteValues.push_back(dll4Total);
                     }
                 }
-                else if (grid[x][y][z].type == M)
+                else if (grid[x][y][z].type == const_M)
                 {
                     gridSiteValues.push_back(1); // for membrane type
                     gridSiteValues.push_back(grid[x][y][z].Fids.size() + grid[x][y][z].Mids.size());
@@ -567,7 +567,7 @@ void World::getCellNeighbours(void) {
                     //-------------------------------
 
                     if (insideWorld(m, n, p) == true) {
-                        if (grid[m][n][p].type == M) {
+                        if (grid[m][n][p].type == const_M) {
                             for (y = 0; y < (int) grid[m][n][p].Mids.size(); y++) {
                                 if (grid[m][n][p].Mids[y]->Cell != ecp) {
                                     for (t = 0; t < neighbours.size(); t++) {
@@ -1308,11 +1308,11 @@ void World::calcEnvVEGFlevel(void) {
     for (i = 0; i < this->gridXDimensions; i++) {
         for (j = 0; j < this->gridYDimensions; j++) {
             for (k = 0; k < this->gridZDimensions; k++) {
-                if ((grid[i][j][k].type == E) && (grid[i][j][k].Eid->VEGF > 0.0f)) {
+                if ((grid[i][j][k].type == const_E) && (grid[i][j][k].Eid->VEGF > 0.0f)) {
                     sum += grid[i][j][k].Eid->VEGF;
                     count++;
                 }
-                if ((grid[i][j][k].type == M) && (grid[i][j][k].Mids.size() >= 1)) {
+                if ((grid[i][j][k].type == const_M) && (grid[i][j][k].Mids.size() >= 1)) {
                     countM++;
                 }
             }

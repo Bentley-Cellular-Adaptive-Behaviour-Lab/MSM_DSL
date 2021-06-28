@@ -13,7 +13,7 @@ private:
     float level;
 public:
     bool checks_neighbour;
-    float get_level();
+    [[nodiscard]] float get_level() const;
     float set_level(float new_level);
     std::string get_name();
     protein(std::string name, float initial_level, bool checks_neighbour);
