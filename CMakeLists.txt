@@ -6,11 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(src)
 include_directories(libraries)
 
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        URL https://github.com/google/googletest/archive/355d57d90d9744c41ac7c99f1e960778f1c63040.zip
-)
+#include(FetchContent)
+#FetchContent_Declare(
+#        googletest
+#        URL https://github.com/google/googletest/archive/355d57d90d9744c41ac7c99f1e960778f1c63040.zip
+#)
 
 set (Sources src/analysis.cpp
         src/constructors.cpp
@@ -51,15 +51,16 @@ set (Headers src/creation.h
         src/utils.h
         src/world.h)
 
+#add_executable(springAgent ${Sources} ${Headers} tests/test_setup.cpp)
 add_executable(springAgent ${Sources} ${Headers})
 
 find_package(OpenGL)
 find_package(Boost)
 #find_package(GLUT)
-
-if (WIN32)
-    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-endif (WIN32)
+#
+#if (WIN32)
+#    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+#endif (WIN32)
 
 # Source: https://apps.man.poznan.pl/trac/gpu_mri_3d/browser/trunk/CMake/FindGLUI.cmake
 #FIND_LIBRARY (GLUI_LIBRARY NAMES glui
@@ -92,7 +93,13 @@ endif (WIN32)
 #    MESSAGE(FATAL_ERROR "Could not find GLUI")
 #ENDIF(GLUI_FOUND)
 
-FetchContent_MakeAvailable(googletest)
+#FetchContent_MakeAvailable(googletest)
+
+#enable_testing()
 
 include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} )
-target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY}  )
+#target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} gtest_main )
+target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
+
+#include(GoogleTest)
+#gtest_discover_tests(springAgent)

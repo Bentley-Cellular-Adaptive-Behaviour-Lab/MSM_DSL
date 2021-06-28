@@ -15,7 +15,7 @@ import java.nio.file.Files;
 public class RunMSM {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
+    String output_string = "/Users/meadt/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
 
     Path old_tissue_path;
     Path old_world_path;
@@ -63,8 +63,8 @@ public class RunMSM {
 
     // Attempt to build the MSM using the settings defined in the parent node.
     try {
-      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "true" + " " + "no_analysis" + " " + "10000" + " " + "1");
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "true", "no_analysis", "10000", "1");
+      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "true" + " " + "no_analysis" + " " + "10000" + " " + "35");
+      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "true", "no_analysis", "10000", "35");
       pb.redirectErrorStream(true);
       pb.directory(new File("src"));
       Process p = pb.start();

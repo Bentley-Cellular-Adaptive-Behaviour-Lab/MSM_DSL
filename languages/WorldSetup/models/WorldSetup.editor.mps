@@ -997,8 +997,8 @@
         <node concept="1iCGBv" id="3seu8bO3Ke8" role="3EZMnx">
           <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
           <node concept="1sVBvm" id="3seu8bO3Kea" role="1sWHZn">
-            <node concept="3F0ifn" id="3seu8bO3Kej" role="2wV5jI">
-              <property role="3F0ifm" value="Sink" />
+            <node concept="3F1sOY" id="6WFtrLblFGA" role="2wV5jI">
+              <ref role="1NtTu8" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
             </node>
           </node>
         </node>
