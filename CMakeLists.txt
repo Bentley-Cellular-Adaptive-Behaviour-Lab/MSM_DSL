@@ -65,7 +65,7 @@ if(TEST_TYPE EQUAL 0)
 
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
 
-    target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
+    target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS})
 elseif(TEST_TYPE EQUAL 1)
     message("Testing: Automated")
 
@@ -96,7 +96,7 @@ elseif(TEST_TYPE EQUAL 1)
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
-    target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
+    target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
 
     enable_testing()
 
@@ -131,7 +131,7 @@ elseif(TEST_TYPE EQUAL 2)
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
-    target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
+    target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest)
 
     enable_testing()
 
