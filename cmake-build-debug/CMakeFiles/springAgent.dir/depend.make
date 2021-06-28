@@ -2656,7 +2656,6 @@ CMakeFiles/springAgent.dir/src/logger.cpp.o: ../src/space.h
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/EC.h
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/Tissue.h
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/display.h
-CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/logger.h
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/memAgents.h
 CMakeFiles/springAgent.dir/src/main.cpp.o: ../src/objects.h

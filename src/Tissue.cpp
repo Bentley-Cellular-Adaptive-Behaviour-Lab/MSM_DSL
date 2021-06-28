@@ -1791,7 +1791,7 @@ void Tissue_Monolayer::create_monolayer() {
         //TODO: Have run number logging use a variable.
 
         // Create a logger for protein levels.
-        ecp->logger = new cell_logger(1, m_world->time, ecp);
+//        ecp->logger = new cell_logger(1, m_world->time, ecp);
 
         ecp->belongs_to = BELONGS_TO_FLAT;
 

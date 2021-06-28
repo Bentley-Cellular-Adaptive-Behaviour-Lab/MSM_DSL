@@ -1,4 +1,4 @@
-OBJS = main.o analysis.o Grid.o CPM_module.o constructors.o memAgents.o creation.o geometry_functions.o EC.o ECmesh.o environment.o Tissue.o dsl_Tissue.o dsl_World.o space.o world.o protein.o
+OBJS = main.o analysis.o Grid.o CPM_module.o constructors.o memAgents.o creation.o geometry_functions.o EC.o ECmesh.o environment.o Tissue.o dsl_Tissue.o dsl_World.o space.o world.o protein.o logger.o ODE.o
 
 CC = g++
 TARGET = springAgent
@@ -19,6 +19,9 @@ ifeq ($(CAMP), true)
 PYBIND_INC := -fPIC -I../include/python2.7 -I../lib/python2.7/site-packages/pybind11/include
 else
 PYBIND_INC := -undefined dynamic_lookup -I/System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7 -I/pybind11/pybind11
+endif
+ifeq ($(UNAME), Darwin)
+	LIBS := -L/usr/local/Cellar/boost/1.76.0 -lboost
 endif
 # -Wno-deprecated -O3 -Wall -shared -std=c++11 -fPIC -I/camp/home/vuurenk/pybind_sims/include/python2.7 -I/camp/home/vuurenk/pybind_sims/lib/python2.7/site-packages/pybind11/include 
 # CCFLAGS = -g -Wno-deprecated -DGRAPHICS -std=c++11 
