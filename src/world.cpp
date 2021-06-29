@@ -10,6 +10,7 @@
 #include "memAgents.h"
 #include "environment.h"
 #include "ODE.h"
+#include "EC.h"
 
 //********************************************************************************************************************//
 
@@ -1332,8 +1333,10 @@ void World::runSimulation()
 *  Returns:		void
 ******************************************************************************************/
 
-void World::creationTimestep(int movie)
-{
+void World::creationTimestep(int movie) {
+	CPM_module* diffAd = new CPM_module(this);;
+	int Junct_arrange = UNEQUAL_NEIGHS;
+
 	if (!DSL_TESTING) {
 		if (MACROS > 0)
 			createMacrophages();
@@ -1453,8 +1456,8 @@ void World::creationTimestep(int movie)
 *  Returns:		void
 ******************************************************************************************/
 
-void World::hysteresisAnalysis()
-{
+void World::hysteresisAnalysis() {
+	bool continue_hysteresis;
 	if (timeStep == 1)
 	{
 		ECagents[1]->hyst.stableDll4 = ECagents[1]->Dll4tot;
@@ -1794,6 +1797,7 @@ void World::destroyWorld() {
 ******************************************************************************************/
 
 void World::movieMaking(int movie) {
+	char fname[200];
 	// TODO: Change imageMagick to something better.
 	//movie making
 	if (movie == 1)system("rm -vf movie/*");
@@ -1849,16 +1853,6 @@ void World::scale_ProtLevels_to_CellSize() {
 		VEGFRmin = 689.0f;
 	}
 }
-
-/**
- *
- * @param memp
- * @return bool flag deleted
- *
- * in filretract() spring agents are scheduled and flagged for deletion if the filopodia spring they belong to has been retracted back
- *
- * this function actually deletes them from memory
- */
 
 /*****************************************************************************************
 *  Name:		delete_if_spring_agent_on_a_retracted_fil (CORE MSM)
