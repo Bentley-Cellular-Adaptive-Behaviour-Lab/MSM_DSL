@@ -38,7 +38,6 @@
 World* WORLDpointer;
 std::ofstream RUNSfile;
 int memINIT;
-char fname[200];
 float actinMax = 512;
 
 //GRN Signalling pathways
@@ -50,7 +49,6 @@ float VEGFRNORM; //total of receptors it will maintain if all else is equal - di
 float VEGFRmin;
 
 //junctional offset simulations as in PLoS CB 2009
-int Junct_arrange = UNEQUAL_NEIGHS;
 float CellPosOffset;
 
 //ENVIRONMENT SETUP
@@ -63,7 +61,6 @@ float VconcST = 0.04;
 float VconcSTMACRO = 0.15f; // Macrophage point source for PLoS CB 2009
 
 //rearrangement CPM module
-CPM_module* diffAd;
 int MCS = 8000;
 float M1_neta = 200.0f; //M1 differential adhesion neta parameter value (used to be called NUMERATOR and set to double this amount in previous code) to determine diffferential adhesion , or =0 for  all weakly adhesive, =5000 for all strongly adhesive 
 float M2_lambda = 200.0f;
@@ -72,7 +69,7 @@ float M2_lambda = 200.0f;
 bool MEM_LEAK_OCCURRING = false; //core removal
 
 //hysteresis related
-bool continue_hysteresis;
+
 float dll4_SIG = 7.0f;
 float FIL_VARY = 2;
 float EPSILON = 0.9;
@@ -234,8 +231,6 @@ int main(int argc, char * argv[]) {
 
 	std::cout << "World created." << "\n";
 
-    diffAd = new CPM_module(world);
-
 #if GRAPHICS
     //main display function - simulating the model is called within here
     displayGlui(&argc, argv);
@@ -257,5 +252,3 @@ int main(int argc, char * argv[]) {
 #endif
     RUNSfile.close();
 }
-
-
