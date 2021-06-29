@@ -1,6 +1,7 @@
 
 #include <math.h>
 #include "environment.h"
+#include "utils.h"
 
 //---------------------------------------------------------------
 void World::updateEnvironment(void){

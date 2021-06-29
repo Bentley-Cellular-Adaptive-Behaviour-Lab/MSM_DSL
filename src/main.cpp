@@ -8,6 +8,7 @@
 #include "world.h"
 #include "memAgents.h"
 #include "EC.h"
+#include "utils.h"
 
 #if GRAPHICS
 #include "display.h"
@@ -915,10 +916,6 @@ void World::store_normals(void){
     //back face y+L for all
 
     store_cube_normals.push_back(cross);
-}
-//---------------------------------------------------------------------------------------------------------
-int new_rand() {
-    return (int)dist(g);
 }
 
 void create_statistics_file(std::string statisticsFilename) {

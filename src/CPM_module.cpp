@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "memAgents.h"
 #include "EC.h"
+#include "utils.h"
 
 std::vector <MemAgent*> deleteList;
 

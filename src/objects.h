@@ -26,6 +26,8 @@ namespace py = pybind11;
 #include <random>
 #include <algorithm>
 
+#include "utils.h"
+
 
 ///------------------------------------
 
