@@ -1,12 +1,15 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-#include "objects.h"
+#include <cassert>
 #include <math.h>
+
+#include "objects.h"
 #include "memAgents.h"
 #include "environment.h"
 #include "EC.h"
-#include "assert.h"
+#include "utils.h"
+
 
 float steps = 0.5f;
 

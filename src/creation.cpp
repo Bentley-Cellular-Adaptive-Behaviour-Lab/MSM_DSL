@@ -6,6 +6,7 @@
 #include "memAgents.h"
 #include "EC.h"
 #include "environment.h"
+#include "utils.h"
 
 float storedOffset;
 //-------------------------------------------------------------------------
