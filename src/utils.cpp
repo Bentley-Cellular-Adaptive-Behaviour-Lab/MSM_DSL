@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <iterator>
+#include "objects.h"
 
 #include "utils.h"
 
@@ -48,3 +49,6 @@ static std::string ReconstructPath(const std::string &s) {
     return result;
 }
 
+int new_rand() {
+	return (int)dist(g);
+}
