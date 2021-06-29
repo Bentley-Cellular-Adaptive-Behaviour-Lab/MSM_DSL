@@ -258,38 +258,4 @@ int main(int argc, char * argv[]) {
     RUNSfile.close();
 }
 
-void create_statistics_file(std::string statisticsFilename) {
-	std::ofstream statisticsFile(statisticsFilename);
-	statisticsFile.close();
-}
 
-void write_to_statistics_file(std::string statisticsFilename, std::string line) {
-	std::ofstream statisticsFile;
-	statisticsFile.open(statisticsFilename, std::ios_base::app);
-	if (statisticsFile.is_open()) {
-		statisticsFile << line;
-	}
-	statisticsFile.close();
-}
-
-std::time_t get_current_time() {
-	auto time = std::chrono::system_clock::now();
-	std::time_t current_time = std::chrono::system_clock::to_time_t(time);
-	return current_time;
-}
-
-std::string format_time_string(std::time_t time, bool start) {
-	// N.B. Function should be called at start and end of simulation only, for logging purposes.
-	std::string time_entry, time_string;
-
-	if (start) {
-		time_entry = "Start time,";
-	} else {
-		time_entry = "End time,";
-	}
-
-	time_string = std::ctime(&time);
-	time_entry = time_entry + time_string;
-
-	return time_entry;
-}
