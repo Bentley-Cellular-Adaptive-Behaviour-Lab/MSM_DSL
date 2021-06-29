@@ -709,6 +709,8 @@ public:
     void run_ODEs(std::string cell_type_name, MemAgent *memAgent);
     std::string get_time_string();
     std::string time = get_time_string();
+
+    CPM_module *diffAd;
 };
 ///----------------------------------------
 
