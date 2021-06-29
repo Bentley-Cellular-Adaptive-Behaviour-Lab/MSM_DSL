@@ -1461,20 +1461,22 @@ void World::simulateTimestep() {
 		std::cout << "Creation timestep... initialising everything" << std::endl;
 		creationTimestep(movie);
 	}
-	else
-	{
-
-		for (EC* ec : ECagents)
-		{
+	else {
+		std::cout << "Current timestep: "<< this->timeStep << std::endl;
+//		std::cout << "Updating filopodia." << std::endl;
+		for (EC* ec : ECagents) {
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
 			ec->print_protein_levels(1);
 		}
-
+//		std::cout << "Updating memAgents." << std::endl;
 		updateMemAgents();
-		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT)
+		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
+		}
+//		std::cout << "Updating EC agents." << std::endl;
 		updateECagents();
+//		std::cout << "Updating environment." << std::endl;
 		updateEnvironment();
 
 		//movieMaking(movie);
