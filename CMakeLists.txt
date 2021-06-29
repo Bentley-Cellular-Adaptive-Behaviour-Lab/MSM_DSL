@@ -63,9 +63,13 @@ if(TEST_TYPE EQUAL 0)
     find_package(OpenGL)
     find_package(Boost)
 
+    if(Boost_FOUND)
+        message("Boost found.")
+    endif()
+
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
 
-    target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS})
+    target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_LIBRARIES})
 elseif(TEST_TYPE EQUAL 1)
     message("Testing: Automated")
 

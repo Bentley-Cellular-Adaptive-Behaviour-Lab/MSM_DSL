@@ -1,10 +1,8 @@
 #include "world.h"
 
 void World_Container::world_setup() {
-    // Created using: World // 
-
+    // Created using: World //
     World *world;
-
 
     // WORLD CREATION
 
@@ -12,9 +10,6 @@ void World_Container::world_setup() {
     m_world = world;
 
     // GRADIENT CREATION
-
-
-
 
     // SUBSTRATE CREATION
 
