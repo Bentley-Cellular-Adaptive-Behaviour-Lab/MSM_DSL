@@ -1335,6 +1335,7 @@ void World::runSimulation()
 
 void World::creationTimestep(int movie) {
 	CPM_module* diffAd = new CPM_module(this);;
+	this->diffAd = diffAd;
 	int Junct_arrange = UNEQUAL_NEIGHS;
 
 	if (!DSL_TESTING) {
@@ -1448,6 +1449,37 @@ void World::creationTimestep(int movie) {
 
 	system("mkdir movie; rm -vf movie/*");
 	std::cout << "Creation complete" << std::endl;
+}
+
+void World::simulateTimestep() {
+	int movie = 0;
+	timeStep++;
+	//TODO: maybe move this out of simulate timestep? bit misleading that its in here
+	//could just call creation timestep func from here.. and have timesteps start from zero instead of -1
+	if (timeStep == 0)
+	{
+		std::cout << "Creation timestep... initialising everything" << std::endl;
+		creationTimestep(movie);
+	}
+	else
+	{
+
+		for (EC* ec : ECagents)
+		{
+			ec->filopodiaExtensions.clear();
+			ec->filopodiaRetractions.clear();
+			ec->print_protein_levels(1);
+		}
+
+		updateMemAgents();
+		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT)
+			this->diffAd->run_CPM();
+		updateECagents();
+		updateEnvironment();
+
+		//movieMaking(movie);
+		//movieMaking(movie);
+	}
 }
 
 /*****************************************************************************************
