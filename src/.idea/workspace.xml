@@ -15,46 +15,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Expanded on ODE tests. Commiting before refactoring global variables.">
-      <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Refactoring code to allow for unit testing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ECmesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/display.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/environment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/protein.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/space.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space.h" beforeDir="false" afterPath="$PROJECT_DIR$/space.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/utils.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +157,7 @@
       <workItem from="1624373564563" duration="4396000" />
       <workItem from="1624525497062" duration="6356000" />
       <workItem from="1624624947262" duration="3152000" />
-      <workItem from="1624870802102" duration="20318000" />
+      <workItem from="1624870802102" duration="20921000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new CMAKE file to project. Adding all of these files to versioning for now - will sort out later.">
       <created>1618236987935</created>
@@ -518,7 +481,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624891608985</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Refactoring code to allow for unit testing">
+      <created>1624899223797</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1624899223797</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +507,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added declaration for new sink and source gradient function." />
     <MESSAGE value="Implemented new create gradient function for cuboidal gradients." />
     <MESSAGE value="Declared new sink and source gradient application function." />
     <MESSAGE value="Renamed cuboid gradient to new sink and source declaration.." />
@@ -562,6 +531,7 @@
     <MESSAGE value="commit before unit testing implementation" />
     <MESSAGE value="Split build into three sets depending on test configuration." />
     <MESSAGE value="Expanded on ODE tests. Commiting before refactoring global variables." />
-    <option name="LAST_COMMIT_MESSAGE" value="Expanded on ODE tests. Commiting before refactoring global variables." />
+    <MESSAGE value="Refactoring code to allow for unit testing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring code to allow for unit testing" />
   </component>
 </project>

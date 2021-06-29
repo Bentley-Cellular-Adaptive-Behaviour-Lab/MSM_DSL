@@ -201,7 +201,7 @@ extern float M2_lambda;
 #define NEW_RAND_MAX 32767
 extern std::mt19937 g;
 extern std::uniform_real_distribution<double> dist;
-int new_rand();
+
 
 void create_statistics_file(std::string statisticsFilename);
 void write_to_statistics_file(std::string statisticsFilename, std::string line);
