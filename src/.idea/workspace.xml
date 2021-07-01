@@ -2,7 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="src/springAgent" targetName="springAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -11,14 +15,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Now building after refactor">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Refactored. Now moving back to implementing unit tests.">
       <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/test_setup.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,14 +85,26 @@
       <recent name="$PROJECT_DIR$/../tests/automated" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.springAgent">
-    <configuration name="HelloTest.BasicAssertions" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="HelloTest" TEST_METHOD="BasicAssertions" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="Google Test.ODEMemAgentTest.memAgentTest">
+    <configuration name="HelloTest.BasicAssertions" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="HelloTest" TEST_METHOD="BasicAssertions" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_ODE.ODEConstantRate" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="test_ODE" TEST_METHOD="ODEConstantRate" TEST_MODE="SUITE_TEST">
+    <configuration name="ODEMemAgentTest.environmentCheckTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="ODEMemAgentTest" TEST_METHOD="environmentCheckTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ODEMemAgentTest.memAgentTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="ODEMemAgentTest" TEST_METHOD="memAgentTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_ODE.ODEConstantRate" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="test_ODE" TEST_METHOD="ODEConstantRate" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -87,7 +115,22 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -98,19 +141,21 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="CMake Application.springAgent" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="Google Test.HelloTest.BasicAssertions" />
       <item itemvalue="Google Test.test_ODE.ODEConstantRate" />
+      <item itemvalue="Google Test.ODEMemAgentTest.environmentCheckTest" />
+      <item itemvalue="Google Test.ODEMemAgentTest.memAgentTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.ODEMemAgentTest.memAgentTest" />
+        <item itemvalue="Google Test.ODEMemAgentTest.environmentCheckTest" />
         <item itemvalue="Google Test.HelloTest.BasicAssertions" />
         <item itemvalue="Google Test.test_ODE.ODEConstantRate" />
       </list>
@@ -141,14 +186,9 @@
       <workItem from="1624525497062" duration="6356000" />
       <workItem from="1624624947262" duration="3152000" />
       <workItem from="1624870802102" duration="27424000" />
-      <workItem from="1624977318417" duration="837000" />
-    </task>
-    <task id="LOCAL-00004" summary="Changed characterizeActNotchBoundaries to use gridXDimensions">
-      <created>1618312081936</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1618312081936</updated>
+      <workItem from="1624977318417" duration="7535000" />
+      <workItem from="1625065702188" duration="5378000" />
+      <workItem from="1625132138393" duration="5562000" />
     </task>
     <task id="LOCAL-00005" summary="Changed checkNeighs to use gridXDimensions.">
       <created>1618312304339</created>
@@ -486,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624966350341</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Refactored. Now moving back to implementing unit tests.">
+      <created>1624979612379</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1624979612380</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +552,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Separating out calc_linear_env_vegf functionality" />
     <MESSAGE value="Changed calc_dist_from_source to check which gradient shape is being applied" />
     <MESSAGE value="Cuboidal gradients now calculate weights based on a single axis." />
     <MESSAGE value="Apply gradient to cuboid uses the correct dimensions (swapped height and width)" />
@@ -530,6 +576,7 @@
     <MESSAGE value="Moved world functions in main to world.cpp" />
     <MESSAGE value="Moved time string functions in main to utils.cpp" />
     <MESSAGE value="Now building after refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now building after refactor" />
+    <MESSAGE value="Refactored. Now moving back to implementing unit tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored. Now moving back to implementing unit tests." />
   </component>
 </project>
