@@ -40,7 +40,7 @@ int EC::calcVonNeighs(void){
     int count=0;
     for(i=0;i<(int)nodeAgents.size();i++){
         nodeAgents[i]->vonNeu=false;
-        if(nodeAgents[i]->checkNeighsVonForEnv()==true){
+        if(nodeAgents[i]->checkNeighsVonForEnv()){
             count++;
             nodeAgents[i]->vonNeu=true;
             //nodeAgents[i]->labelled = true;
@@ -49,7 +49,7 @@ int EC::calcVonNeighs(void){
     
     for(i=0;i<(int)surfaceAgents.size();i++){
         surfaceAgents[i]->vonNeu=false;
-        if(surfaceAgents[i]->checkNeighsVonForEnv()==true){
+        if(surfaceAgents[i]->checkNeighsVonForEnv()){
             count++;
             surfaceAgents[i]->vonNeu=true;
             //surfaceAgents[i]->labelled = true;
@@ -70,24 +70,26 @@ void EC::allocateProts(void){
     calcVonNeighs();
     div=VonNeighs;//nodeAgents.size()+springAgents.size()+surfaceAgents.size();
 
-    
-
     //count how many agents are at the junction-----------------------------------------------
-    for(i=0;i<(int)nodeAgents.size();i++){
+    for(i = 0; i < (int)nodeAgents.size(); i++){
         nodeAgents[i]->assessed=false;
         nodeAgents[i]->JunctionTest(true);
-        if(nodeAgents[i]->junction==true) divJunction++;
-        
+        if(nodeAgents[i]->junction)
+        	divJunction++;
     }
+
     for(i=0;i<(int)springAgents.size();i++){
         springAgents[i]->assessed=false;
         springAgents[i]->JunctionTest( true);
-        if(springAgents[i]->junction==true) divJunction++;
+        if(springAgents[i]->junction)
+        	divJunction++;
     }
+
     for(i=0;i<(int)surfaceAgents.size();i++){
         surfaceAgents[i]->assessed=false;
         surfaceAgents[i]->JunctionTest( true);
-        if(surfaceAgents[i]->junction==true) divJunction++;
+        if(surfaceAgents[i]->junction)
+        	divJunction++;
         
     }
     
@@ -100,71 +102,52 @@ void EC::allocateProts(void){
     //-----------------------------------------------------------------------------------------------------
     //set membrane prot levels for each cell----------------------------------------------------
     
-    for(j=0;j<(int)nodeAgents.size();j++){
+    for(j = 0; j < (int)nodeAgents.size(); j++) {
+        if(nodeAgents[j]->vonNeu) {
+			nodeAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
+        }
         
-        
-        
-        
-        if(nodeAgents[j]->vonNeu==true) nodeAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
-        
-        if(nodeAgents[j]->junction==true){
-            
+        if(nodeAgents[j]->junction){
             nodeAgents[j]->Notch1=(float)NotchNorm/(float)divJunction;
             nodeAgents[j]->Dll4=(float)Dll4tot/(float)divJunction;
-            
-        }
-        else{
+        } else {
             nodeAgents[j]->Notch1=0.0f;
             nodeAgents[j]->Dll4=0.0f;
         }
     }
-    for(j=0;j<(int)springAgents.size();j++){
-        
-        
-        
-        
+    for(j=0; j < (int)springAgents.size(); j++){
         springAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
         
         //clustered VR-2 to filopodia
         //if(springAgents[j-nodeAgents.size()]->FIL!=NONE) springAgents[j-nodeAgents.size()]->VEGFR=(float)(VEGFRtot*alpha)/(float)div;
         //else springAgents[j-nodeAgents.size()]->VEGFR=(float)left/(float)MnotFilTot;
         
-        if(springAgents[j]->junction==true){
+        if(springAgents[j]->junction) {
             springAgents[j]->Notch1=(float)NotchNorm/(float)divJunction;
             springAgents[j]->Dll4=(float)Dll4tot/(float)divJunction;
-            
-        }
-        else{
+        } else {
             springAgents[j]->Notch1=0.0f;
             springAgents[j]->Dll4=0.0f;
         }
-        
-        
     }
     for(j=0;j<(int)surfaceAgents.size();j++){
-        
-        
-        
-        
-        if(surfaceAgents[j]->vonNeu==true)surfaceAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
+        if(surfaceAgents[j]->vonNeu) {
+			surfaceAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
+        }
         
         //clustered VR-2 to filopodia
         //if(springAgents[j-nodeAgents.size()]->FIL!=NONE) springAgents[j-nodeAgents.size()]->VEGFR=(float)(VEGFRtot*alpha)/(float)div;
         //else springAgents[j-nodeAgents.size()]->VEGFR=(float)left/(float)MnotFilTot;
         
-        if(surfaceAgents[j]->junction==true){
-            surfaceAgents[j]->Notch1=(float)NotchNorm/(float)divJunction;
-            surfaceAgents[j]->Dll4=(float)Dll4tot/(float)divJunction;
+        if(surfaceAgents[j]->junction){
+            surfaceAgents[j]->Notch1 = (float)NotchNorm / (float)divJunction;
+            surfaceAgents[j]->Dll4 = (float)Dll4tot / (float)divJunction;
             
-        }
-        else{
+        } else {
             surfaceAgents[j]->Notch1=0.0f;
             surfaceAgents[j]->Dll4=0.0f;
         }
-        
     }
-    
-    
     //--------------------------------------------------------------------------------------------------
 }
 //-------------------------------------------------------------------------------------------------------------
@@ -228,8 +211,6 @@ void EC::VEGFRDelay(void){
 void EC::GRN(void){
     
     //down-reg VEGFR2 via notch
-    
-  
     VEGFRtot=(VEGFRnorm)-(actNotCurrent*sigma); //VEGFRnorm is now a EC specific param and scaled at config if mutant
 
     if(VEGFRtot<VEGFRmin) VEGFRtot=VEGFRmin;

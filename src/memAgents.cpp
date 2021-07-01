@@ -50,9 +50,7 @@ void MemAgent::NotchResponse(void) {
 
     do {
         if (worldP->neigh[i].type == const_M) {
-
             for (j = 0; j < (int) worldP->neigh[i].Mids.size(); j++) {
-
                 if (flag == 0) {
                     if (worldP->neigh[i].Mids[j]->Cell != Cell) {
                         //if more than number of notch receptors  only take amount needed to activate notches
