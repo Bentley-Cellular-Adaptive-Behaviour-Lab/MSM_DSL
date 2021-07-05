@@ -19,24 +19,24 @@ namespace odeint = boost::numeric::odeint;
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
 // Runs for a single timestep.
 TEST(test_ODE, ODEConstantRate) {
-	test_ode_states current_states;
-	test_ode_states new_states;
-	odeint::runge_kutta4<test_ode_states> stepper;
+	basic_ode_states current_states;
+	basic_ode_states new_states;
+	odeint::runge_kutta4<basic_ode_states> stepper;
 
-	current_states[0] = 100;
-	current_states[1] = 0;
+	current_states[0] = 100.0f;
+	current_states[1] = 0.0f;
 
 	stepper.do_step(constantODE_system, current_states, 0.0, new_states, 1);
 
-	EXPECT_EQ(round(new_states[0]), 95);
-	EXPECT_EQ(round(new_states[1]), 5);
+	EXPECT_EQ(new_states[0], 95.0f);
+	EXPECT_EQ(new_states[1], 5.0f);
 }
 
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
 // Runs for multiple timesteps.
 TEST(test_ODE, multi_ODEConstantRate) {
-	test_ode_states ode_states;
-	odeint::runge_kutta4<test_ode_states> stepper;
+	basic_ode_states ode_states;
+	odeint::runge_kutta4<basic_ode_states> stepper;
 
 	ode_states[0] = 100;
 	ode_states[1] = 0;
@@ -52,9 +52,9 @@ TEST(test_ODE, multi_ODEConstantRate) {
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
 // Runs for a single timestep.
 TEST(test_ODE, ODELinearRate) {
-	test_ode_states current_states;
-	test_ode_states new_states;
-	odeint::runge_kutta4<test_ode_states> stepper;
+	basic_ode_states current_states;
+	basic_ode_states new_states;
+	odeint::runge_kutta4<basic_ode_states> stepper;
 
 	current_states[0] = 100;
 	current_states[1] = 0;
@@ -64,15 +64,37 @@ TEST(test_ODE, ODELinearRate) {
 	EXPECT_EQ(round(new_states[1]), 10);
 }
 
-TEST_F(ODEMemAgentTest, environmentCheckTest) {
+TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
 	EXPECT_EQ(round(memAgent1->get_environment_protein_level("B")), 26);
 	EXPECT_EQ(round(memAgent2->get_environment_protein_level("B")), 25);
 	EXPECT_EQ(round(memAgent3->get_environment_protein_level("B")), 25);
 
 }
 
-TEST_F(ODEMemAgentTest, memAgentTest) {
+TEST_F(BasicODEMemAgentTest, memAgentTest) {
 	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("A")), 270);
 	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 260);
 	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 260);
+}
+
+TEST_F(CrossCellODEMemAgentTest, cellODETest) {
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("A")), 1);
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 1);
+
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 11);
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 1);
+
+	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 11);
+	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 1);
+}
+
+TEST_F(CrossCellODEMemAgentTest, junctionODETest) {
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("C")), 11);
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("D")), 1);
+
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("C")), 11);
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("D")), 1);
+
+	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("C")), 1);
+	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("D")), 1);
 }

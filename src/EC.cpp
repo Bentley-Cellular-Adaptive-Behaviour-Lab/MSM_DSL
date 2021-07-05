@@ -778,3 +778,24 @@ void EC::print_protein_levels(int timestep_interval) {
 		}
 	}
 }
+
+/*****************************************************************************************
+*  Name:		add_to_neighbour_list
+*  Description: If a queried cell is not already included in this cell's list of neighbours,
+*  				then add it. This should only be called when a cell is attempting to form
+*  				junction agents.
+*  Returns:		void
+******************************************************************************************/
+
+void EC::add_to_neighbour_list(EC* query_ec) {
+	bool cell_found = false;
+	for (auto current_ec : this->neigh_cells) {
+		if (current_ec != query_ec) {
+			cell_found = true;
+		}
+	}
+	// Cell not found in neighbour list, so add it.
+	if (!cell_found) {
+		this->neigh_cells.push_back(query_ec);
+	}
+}

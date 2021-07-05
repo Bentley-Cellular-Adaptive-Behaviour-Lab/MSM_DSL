@@ -1062,7 +1062,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
     if ((FIL == NONE) || (FIL == BASE)) {
         //same layer
         for (x = 0; x < 27; x++) {
-
             if (x == 0) {
                 m = i + 1;
                 n = j - 1;
@@ -1178,26 +1177,30 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
             //-------------------------------
             //toroidal only X
-            if (m >= xMAX) m = 0;
-            if (m < 0) m = xMAX - 1;
-            if (n >= yMAX) n = 0;
-            if (n < 0) n = yMAX - 1;
+            if (m >= xMAX) {
+				m = 0;
+            }
+            if (m < 0) {
+				m = xMAX - 1;
+            }
+            if (n >= yMAX) {
+				n = 0;
+            }
+            if (n < 0) {
+				n = yMAX - 1;
+            }
 
             //-------------------------------
 
             if (worldP->insideWorld(m, n, p)) {
                 if (worldP->grid[m][n][p].type == const_M) {
                     for (y = 0; y < (int) worldP->grid[m][n][p].Mids.size(); y++) {
-
-
+                    	// Check if the adjacent memAgent belongs to a different cell and is not currently in a filopodia.
                         if ((worldP->grid[m][n][p].Mids[y]->Cell != Cell) && (worldP->grid[m][n][p].Mids[y]->FIL != STALK) && (worldP->grid[m][n][p].Mids[y]->FIL != TIP)) {
-
                             junction = true;
                             flagA = 1;
+
                             worldP->grid[m][n][p].Mids[y]->junction = true;
-
-
-
                             if (worldP->timeStep == 0) {
 
                             }
@@ -1256,12 +1259,7 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
         }
     }*/
     }
-
-
     //-------------------------------------------------------------------------------------------------------------
-
-
-
 }
 //-------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------
@@ -2725,6 +2723,7 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
         }
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
         // increase the count by the level at those coordinates.
+
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
@@ -2738,14 +2737,16 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
     return protein_level;
 }
 
+
+
 /*****************************************************************************************
-*  Name:		get_adjacent_protein_level
+*  Name:		get_junction_protein_level
 *  Description: Returns the level of a protein in nearby memAgents belonging to adjacent cells.
+*  				This is done only if the memAgents are defined as belonging to the junction.
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_adjacent_protein_level(std::string protein_name) {
-    Env *ep;
+float MemAgent::get_junction_protein_level(std::string protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
@@ -2866,15 +2867,173 @@ float MemAgent::get_adjacent_protein_level(std::string protein_name) {
         }
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
         // increase the count by the level at those coordinates.
+
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
-                    if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
-                    }
+                	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
+                	if (memAgent->junction) {
+						if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+							protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+						}
+                	}
                 }
             }
         }
     }
     return protein_level;
+}
+
+/*****************************************************************************************
+*  Name:		distribute_calculated_proteins
+*  Description: Takes in a given protein level, counts the number of memAgents that own
+*				that protein then set the new level to that divided by the amount.
+*				Can either distribute proteins to the same memagents from the same cell or to
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell) {
+	int m, n, p;
+	int i = (int) Mx;
+	int j = (int) My;
+	int k = (int) Mz;
+
+	std::vector<MemAgent*> relevant_memAgents;
+
+	for (int x = 0; x < 26; x++) {
+		// Same layer.
+		if (x == 0) {
+			m = i + 1;
+			n = j - 1;
+			p = k;
+		} else if (x == 1) {
+			m = i + 1;
+			n = j;
+			p = k;
+		} else if (x == 2) {
+			m = i + 1;
+			n = j + 1;
+			p = k;
+		} else if (x == 3) {
+			m = i;
+			n = j - 1;
+			p = k;
+		} else if (x == 4) {
+			m = i;
+			n = j + 1;
+			p = k;
+		} else if (x == 5) {
+			m = i - 1;
+			n = j - 1;
+			p = k;
+		} else if (x == 6) {
+			m = i - 1;
+			n = j;
+			p = k;
+		} else if (x == 7) {
+			m = i - 1;
+			n = j + 1;
+			p = k;
+		}
+			// Layer below.
+		else if (x == 8) {
+			m = i + 1;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 9) {
+			m = i + 1;
+			n = j;
+			p = k - 1;
+		} else if (x == 10) {
+			m = i + 1;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 11) {
+			m = i;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 12) {
+			m = i;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 13) {
+			m = i - 1;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 14) {
+			m = i - 1;
+			n = j;
+			p = k - 1;
+		} else if (x == 15) {
+			m = i - 1;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 16) {
+			m = i;
+			n = j;
+			p = k - 1;
+		}
+			// Layer above.
+		else if (x == 17) {
+			m = i + 1;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 18) {
+			m = i + 1;
+			n = j;
+			p = k + 1;
+		} else if (x == 19) {
+			m = i + 1;
+			n = j + 1;
+			p = k + 1;
+		} else if (x == 20) {
+			m = i;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 21) {
+			m = i;
+			n = j + 1;
+			p = k + 1;
+		} else if (x == 22) {
+			m = i - 1;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 23) {
+			m = i - 1;
+			n = j;
+			p = k + 1;
+		} else if (x == 24) {
+			m = i - 1;
+			n = j + 1;
+			p = k + 1;
+		} else {
+			m = i;
+			n = j;
+			p = k + 1;
+		}
+		if (worldP->insideWorld(m, n, p)) {
+			if (worldP->grid[m][n][p].type == const_M) {
+				for (auto memAgent : worldP->grid[m][n][p].Mids) {
+					if (affects_this_cell) {
+						// Check for memAgents in this cell that have the protein.
+						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
+							relevant_memAgents.push_back(memAgent);
+						}
+					} else if (!affects_this_cell) {
+						// Check for memAgents in neighbouring junctions that have the protein.
+						if (memAgent->junction) {
+							if (memAgent->has_protein(protein_name) && this->Cell != memAgent->Cell) {
+								relevant_memAgents.push_back(memAgent);
+							}
+						}
+					}
+				}
+			}
+		}
+		int divisor = relevant_memAgents.size();
+		float new_amount = total_protein_level / (float) divisor;
+		for (auto memAgent : relevant_memAgents) {
+			memAgent->set_protein_level(protein_name, new_amount);
+		}
+	}
 }

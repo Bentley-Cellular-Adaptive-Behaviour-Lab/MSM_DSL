@@ -7,13 +7,14 @@
 
 #include <gtest/gtest.h>
 
-typedef boost::array<double, 2> test_ode_states;
+typedef boost::array<float, 2> basic_ode_states;
+typedef boost::array<float, 4> crosscell_ode_states;
 
 class World;
 class World_Container;
 class MemAgent;
 
-class ODEMemAgentTest : public ::testing::Test {
+class BasicODEMemAgentTest : public ::testing::Test {
 protected:
 	void SetUp() override;
 	void TearDown() override;
@@ -31,10 +32,34 @@ public:
 	void setupEnvironment();
 	void runODE(MemAgent *memAgent);
 
-	static void memAgentODE_system(const test_ode_states &x, test_ode_states &dxdt, double t);
+	static void BasicMemAgentODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
 };
 
-void constantODE_system(const test_ode_states &x, test_ode_states &dxdt, double t);
-void linearODE_system(const test_ode_states &x, test_ode_states &dxdt, double t);
+class CrossCellODEMemAgentTest : public ::testing::Test {
+protected:
+	void SetUp() override;
+	void TearDown() override;
+public:
+	World *world;
+	World_Container *worldContainer;
+
+	MemAgent *memAgent1;
+	MemAgent *memAgent2;
+	MemAgent *memAgent3;
+
+	void addWorld(World *crossCellWorld);
+	void addWorldContainer(World_Container *crossCellWorldContainer);
+	void createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world);
+	void setupEnvironment();
+	static void runODE(MemAgent *memAgent);
+
+	static void CrossCellODE_system(const crosscell_ode_states &x, crosscell_ode_states &dxdt, double t);
+	void setupAgentProteins() const;
+
+	void printMemAgentProteinLevels(int timestep) const;
+};
+
+void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
+void linearODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_ODE_H
