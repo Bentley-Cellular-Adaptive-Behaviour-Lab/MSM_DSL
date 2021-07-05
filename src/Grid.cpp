@@ -81,7 +81,6 @@ void World::setMLocation(int x, int y, int z, MemAgent * ident) {
 
 void World::setFilLocation(int x, int y, int z, MemAgent * ident) {
 
-
     grid[x][y][z].Fids.push_back(ident);
 }
 //------------------------------------------------------------

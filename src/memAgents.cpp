@@ -2870,6 +2870,7 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == const_M) {
+            	// Iterates over list of standard memAgents.
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
                 	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
                 	if (memAgent->junction) {
@@ -3030,6 +3031,7 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 				}
 			}
 		}
+		// Divide out the protein evenly to all surrounding memAgents.
 		int divisor = relevant_memAgents.size();
 		float new_amount = total_protein_level / (float) divisor;
 		for (auto memAgent : relevant_memAgents) {
