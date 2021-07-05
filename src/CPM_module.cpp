@@ -45,14 +45,10 @@ void CPM_module::run_CPM(void) {
 
     //cout<<"starting"<<endl;
     if (worldP->timeStep == 0) {
-
         //createMedium();
         Temp = 10;
         calc_Cell_areas();
-
-
     } else{
-
         //if (worldP->timeStep > 200) Temp = 15;
         //if(worldP->timeStep>600) Temp = 10;
         for (steps = 0; steps < MCS_STEPS; steps++) {
@@ -77,14 +73,12 @@ void CPM_module::run_CPM(void) {
             //add medium agents to all agents list..
 
             upto = worldP->JunctionAgents.size();
-               flag = 0;
+            flag = 0;
             replaced_med = NULL;
             replaced_mem = NULL;
             replacer_mem = NULL;
             replacer_med = NULL;
             do {
-
-
                 //chose = rand() % upto;
                 chose = new_rand() % upto;
 /*upto = worldP->ALLmemAgents.size();// + mediumAgents.size();
@@ -166,54 +160,47 @@ void CPM_module::run_CPM(void) {
                     //so it can be replaced - this allows the final stage of overtaking to occur!!
                     
 
-                    if(((worldP->JunctionAgents[chose]->FIL==BASE)||(worldP->JunctionAgents[chose]->FIL==NONE))){
-                        
-
-                        count=0;
-                        flag2=0;
-                        for(k=0;k<worldP->JunctionAgents[chose]->neighs;k++){
+                    if (((worldP->JunctionAgents[chose]->FIL==BASE) || (worldP->JunctionAgents[chose]->FIL==NONE))){
+                        count = 0;
+                        flag2 = 0;
+                        for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++){
                             //cout<<worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction<<endl;
                             //cout<<worldP->JunctionAgents[chose]->FIL<<" "<<worldP->JunctionAgents[chose]->neigh[k]<<" "<<worldP->JunctionAgents[chose]->SpringNeigh[k]<<endl;
-                            if(worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL)
-                            if(worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction==true){ count++; flag2=1;}
+                            if (worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL)
+                            if (worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+                            	count++;
+                            	flag2=1;
+                            }
                             //else count++;
                         }
-                        if(flag2==1){
-                        if(count!=1)
-                        //choseReplacer = rand()%count;
-                        choseReplacer = new_rand()%count;
-                        else choseReplacer=1;
+                        if (flag2 == 1) {
+                        	if (count != 1) {
+								//choseReplacer = rand()%count;
+								choseReplacer = new_rand()%count;
+                        	} else {
+								choseReplacer=1;
+                        	}
                             
-                        count=1;
-                        for(k=0;k<worldP->JunctionAgents[chose]->neighs;k++){
-                          
-                                if(worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL){
-                                if(worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction==true){
-                                if(count==choseReplacer){
-                                replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
-                                replaced_mem = worldP->JunctionAgents[chose];
-                                    pos = chose;
-                                    flag=1;
-                                }
-                                else count++;
-                            }
-                                }
-                            
-                           
-                        }
-
-					
-                               
-                            
+                        	count = 1;
+                        	for (k = 0; k < worldP->JunctionAgents[chose]->neighs; k++) {
+                        		if(worldP->JunctionAgents[chose]->SpringNeigh[k]!=NULL) {
+                                	if(worldP->JunctionAgents[chose]->SpringNeigh[k]->Junction) {
+                                		if(count==choseReplacer){
+                                			replacer_mem = worldP->JunctionAgents[chose]->neigh[k];
+                                			replaced_mem = worldP->JunctionAgents[chose];
+                                    		pos = chose;
+                                    		flag=1;
+                                		} else {
+                                			count++;
+                                		}
+                                	}
+                        		}
+                        	}
                         }
                     }
-                    
-
-                    
-
             } while (flag == 0);
 
-            if(flag==1){
+            if (flag ==1 ) {
             //for(i=0;i<upto;i++) worldP->ALLmemAgents[i]->checkNeighs();
                 //cout<<"*";
             changeH = calc_local_change(replacer_mem, replaced_mem, replacer_med, replaced_med);
@@ -234,58 +221,53 @@ void CPM_module::run_CPM(void) {
             //calc probability of accepting change - compare to old H
             accept = calcProb(changeH);
 
-            if(worldP->timeStep>100){
-            if(biased_mig_diffAd==true){
-
-
-                biasAccept = check_gradient(replaced_mem, replacer_mem);
-                if(biasAccept==true){ 
-                    
-                    //float prob = (float)rand()/(float)RAND_MAX;
-                    float prob = (float)new_rand()/(float)RAND_MAX;
-                    if(prob<BIAS_DIFFAD_CHANCE)
-                    accept = true;
-                }
-
-                //cout<<"biased"<<endl;
-                
+            if (worldP->timeStep > 100) {
+				if (biased_mig_diffAd == true) {
+					biasAccept = check_gradient(replaced_mem, replacer_mem);
+					if (biasAccept) {
+						//float prob = (float)rand()/(float)RAND_MAX;
+						float prob = (float)new_rand() / (float)RAND_MAX;
+						if (prob < BIAS_DIFFAD_CHANCE) {
+							accept = true;
+						}
+					}
+					//cout<<"biased"<<endl;
+				}
             }
-            }
-			
 
-            
             //cout<<"calcPorb"<<endl;
             //if accept, replace, and replace springs(can do without springs for now? just gridded agent version..)
-            if (accept == true) {
+            if (accept) {
                 //actually replace
                 //cout << "replacing" << endl;
                  //cout<<"replace "<<replacer_mem<<" "<<replaced_mem<<" "<<replacer_med<<" "<<replaced_med<<endl;
-
                 if(worldP->JunctionAgents[chose]->FIL==BASE){
                     //cout<<"_";
                         moved = move_fil_base(worldP->JunctionAgents[chose]);
-                    }
-                else moved = true;
+                } else {
+                	moved = true;
+                }
 
-                if(moved==true){
+                if (moved) {
                     // cout<<"-";
                     replace_agent(replacer_mem, replaced_mem, replacer_med, replaced_med, pos);
+                } else {
+                	if (replaced_med != NULL) {
+                		replaced_med->diffAd_replaced = NULL;
+                	}
+					if (replaced_mem != NULL) {
+						replaced_mem->diffAd_replaced_cell = NULL;
+						replaced_mem->diffAd_replaced_med = NULL;
+					}
                 }
-                else{
-
-                    if (replaced_med != NULL)replaced_med->diffAd_replaced = NULL;
-                if (replaced_mem != NULL) {
-                    replaced_mem->diffAd_replaced_cell = NULL;
-                    replaced_mem->diffAd_replaced_med = NULL;
-                }
-                }
-
                 //WORLDpointer->Pause=true;
                 //cout<<"replaced"<<endl;
                 //Hamiltonian = new_Hamiltonian;
             } else {
                 //cout<<"not replacing!"<<endl;
-                if (replaced_med != NULL)replaced_med->diffAd_replaced = NULL;
+                if (replaced_med != NULL) {
+                	replaced_med->diffAd_replaced = NULL;
+                }
                 if (replaced_mem != NULL) {
                     replaced_mem->diffAd_replaced_cell = NULL;
                     replaced_mem->diffAd_replaced_med = NULL;
@@ -293,10 +275,8 @@ void CPM_module::run_CPM(void) {
                 //cout<<"not replaced"<<endl;
                 //replaced->labelled = false;
             }
+            }
         }
-        
-        
-    }
     }
 
     //counld do this only every few timesteps..
@@ -421,7 +401,7 @@ void CPM_module::calc_area_sum(void) {
     for (i = 0; i < worldP->ECagents.size(); i++) {
         Q = 0; //rand()%(ECwidth*2);
         ecp = worldP->ECagents[i];
-        area_sum += (((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ecp->ideal_Cell_area - ((float) ECwidth / 2.0f) + Q))*((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ideal_Area - ((float) ECwidth / 2.0f) + Q)));
+        area_sum += ( ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ecp->ideal_Cell_area - ((float) ECwidth / 2.0f) + Q))*((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ideal_Area - ((float) ECwidth / 2.0f) + Q)));
 
     }
 
@@ -438,9 +418,7 @@ void CPM_module::calc_Cell_areas(void) {
         //Q = rand() % (var);
         Q = new_rand() % (var);
         worldP->ECagents[i]->ideal_Cell_area = ideal_Area;// - ((float) var / 2.0f) + Q;
-
     }
-
 }
 
 //----------------------------------------------------------------------------------
@@ -449,14 +427,10 @@ void CPM_module::calc_Cell_areas(void) {
 float CPM_module::Hamiltonian_change(void) {
 
     float change;
-
     new_Hamiltonian = J_sum + area_sum;
-
-
     change = new_Hamiltonian - Hamiltonian;
 
     //cout << Hamiltonian << " " << new_Hamiltonian << " " << change << endl;
-
     // cout<<"Ham = "<<new_Hamiltonian<<" "<<change<<endl;
 
     return (change);
@@ -471,21 +445,24 @@ bool CPM_module::calcProb(float change) {
     float prob;
     bool accept;
 
-    if (change < 0) accept = true;
-    else if (change == 0) {
-        if (chose < 0.5) accept = true;
-        else accept = false;
+    if (change < 0) {
+    	accept = true;
+    } else if (change == 0) {
+        if (chose < 0.5) {
+			accept = true;
+        } else {
+        	accept = false;
+        }
     } else {
         prob = exp(-change / (float) Temp);
         //cout<<"exp: "<<prob<<endl;
         if (chose < prob) {
             accept = true;
-
-        } else accept = false;
+        } else {
+			accept = false;
+        }
     }
     //else accept = false;
-
-
     return (accept);
 }
 
@@ -494,8 +471,6 @@ bool CPM_module::calcProb(float change) {
 
 void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, MedAgent* replacer_med, MedAgent* replaced_med, int pos) {
 
-    
-    
     int flag = 0;
     int i = 0;
     int m;

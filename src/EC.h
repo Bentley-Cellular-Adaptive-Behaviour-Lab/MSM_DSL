@@ -132,8 +132,12 @@ public:
     // Enum to track which object an agent belongs to.
     int belongs_to = -1;
 
-	//Used for logging purposes.
+	// Used for logging purposes.
 	int cell_number;
 
+	// Tracks which cells are neighbouring this one i.e. have formed junctions.
+	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
+	std::vector<EC*> neigh_cells;
+	void add_to_neighbour_list(EC *query_ec);
 };
 #endif //SPRINGAGENT_EC_H
