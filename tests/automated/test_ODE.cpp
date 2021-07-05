@@ -98,3 +98,11 @@ TEST_F(CrossCellODEMemAgentTest, junctionODETest) {
 	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("C")), 1);
 	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("D")), 1);
 }
+
+TEST_F(MultiNeighbourODEMemAgentTest, cellODETest) {
+
+}
+
+TEST_F(MultiNeighbourODEMemAgentTest, junctionODETest) {
+
+}

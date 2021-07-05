@@ -15,14 +15,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Implemented new tests for memAgent ODEs.">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Completed junction test for ODES">
       <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/EC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" afterDir="false" />
@@ -76,7 +73,7 @@
       <recent name="$PROJECT_DIR$/../tests/automated" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.CrossCellODEMemAgentTest.junctionODETest">
+  <component name="RunManager" selected="Google Test.MultiNeighbourODEMemAgentTest.cellODETest">
     <configuration name="BasicODEMemAgentTest.environmentCheckTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicODEMemAgentTest" TEST_METHOD="environmentCheckTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -101,7 +98,7 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test_ODE.ODEConstantRate" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="test_ODE" TEST_METHOD="ODEConstantRate" TEST_MODE="SUITE_TEST">
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -144,19 +141,19 @@
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="Google Test.test_ODE.ODEConstantRate" />
       <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellTest" />
       <item itemvalue="Google Test.BasicODEMemAgentTest.environmentCheckTest" />
       <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellODETest" />
       <item itemvalue="Google Test.CrossCellODEMemAgentTest.junctionODETest" />
+      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
         <item itemvalue="Google Test.CrossCellODEMemAgentTest.junctionODETest" />
         <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellODETest" />
         <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellTest" />
         <item itemvalue="Google Test.BasicODEMemAgentTest.environmentCheckTest" />
-        <item itemvalue="Google Test.test_ODE.ODEConstantRate" />
       </list>
     </recent_temporary>
   </component>
@@ -189,14 +186,7 @@
       <workItem from="1625065702188" duration="5378000" />
       <workItem from="1625132138393" duration="12197000" />
       <workItem from="1625217403622" duration="17901000" />
-      <workItem from="1625476357208" duration="3872000" />
-    </task>
-    <task id="LOCAL-00006" summary="Changed testSpringLength to use gridXDimensions.">
-      <created>1618312585536</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1618312585536</updated>
+      <workItem from="1625476357208" duration="15969000" />
     </task>
     <task id="LOCAL-00007" summary="Changed toroidalTest to use gridXDimensions.">
       <created>1618312617456</created>
@@ -534,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625147983808</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Completed junction test for ODES">
+      <created>1625480428580</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1625480428581</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -553,7 +550,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Cuboidal gradients now calculate weights based on a single axis." />
     <MESSAGE value="Apply gradient to cuboid uses the correct dimensions (swapped height and width)" />
     <MESSAGE value="Swapped width and height arguments for cuboidal gradient constructore" />
     <MESSAGE value="Removed old functions for determining whether an env agent is within a square." />
@@ -578,6 +574,7 @@
     <MESSAGE value="Now building after refactor" />
     <MESSAGE value="Refactored. Now moving back to implementing unit tests." />
     <MESSAGE value="Implemented new tests for memAgent ODEs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented new tests for memAgent ODEs." />
+    <MESSAGE value="Completed junction test for ODES" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed junction test for ODES" />
   </component>
 </project>

@@ -9,6 +9,7 @@
 
 typedef boost::array<float, 2> basic_ode_states;
 typedef boost::array<float, 4> crosscell_ode_states;
+typedef boost::array<float, 4> multiagent_ode_states;
 
 class World;
 class World_Container;
@@ -54,6 +55,39 @@ public:
 	static void runODE(MemAgent *memAgent);
 
 	static void CrossCellODE_system(const crosscell_ode_states &x, crosscell_ode_states &dxdt, double t);
+	void setupAgentProteins() const;
+
+	void printMemAgentProteinLevels(int timestep) const;
+};
+
+class MultiNeighbourODEMemAgentTest : public ::testing::Test {
+protected:
+	void SetUp() override;
+	void TearDown() override;
+public:
+	World *world;
+	World_Container *worldContainer;
+
+	// Scenario 1.
+
+	MemAgent *memAgent1;
+	MemAgent *memAgent2;
+	MemAgent *memAgent3;
+
+	// Scenario 2
+
+	MemAgent *memAgent4;
+	MemAgent *memAgent5;
+	MemAgent *memAgent6;
+	MemAgent *memAgent7;
+
+	void addWorld(World *multiNeighbourWorld);
+	void addWorldContainer(World_Container *multiNeighbourWorldContainer);
+	void createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world);
+	void setupEnvironment();
+	static void runODE(MemAgent *memAgent);
+
+	static void MultiAgentODE_system(const multiagent_ode_states &x, multiagent_ode_states &dxdt, double t);
 	void setupAgentProteins() const;
 
 	void printMemAgentProteinLevels(int timestep) const;
