@@ -2383,7 +2383,7 @@ void MemAgent::add_cell_proteins() {
 
     for (auto current_protein : this->Cell->m_cell_type->proteins) {
         // Create new protein
-        auto *new_protein = new protein(current_protein->get_name(), 0.0, false);
+        auto *new_protein = new protein(current_protein->get_name(), 0.0, false, current_protein->get_min(), current_protein->get_max());
         this->owned_proteins.push_back(new_protein);
     }
 }
@@ -2414,6 +2414,11 @@ void MemAgent::set_protein_level(std::string protein_name, float new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
+        	if (new_level < protein->get_min()) {
+        		protein->set_level(protein->get_min());
+        	} else if (new_level > protein->get_max()) {
+				protein->set_level(protein->get_max());
+        	}
             protein->set_level(new_level);
         }
     }
