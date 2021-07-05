@@ -50,9 +50,9 @@ void BasicODEMemAgentTest::SetUp() {
 	setupEnvironment();
 
 	// Add proteins to memAgents.
-	memAgent1->owned_proteins.push_back(new protein("A", 10, false));
-	memAgent2->owned_proteins.push_back(new protein("A", 10, false));
-	memAgent3->owned_proteins.push_back(new protein("A", 10, false));
+	memAgent1->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
 
 	for (int i = 0; i < 10; i++) {
 		runODE(memAgent1);
@@ -103,7 +103,7 @@ void BasicODEMemAgentTest::setupEnvironment() {
 		for (int y = 0; y < world->gridYDimensions; y++) {
 			for (int z = 0; z < world->gridYDimensions; z++) {
 				if (world->grid[x][y][z].type == const_E) {
-					auto proteinB = new protein("B", 1, false);
+					auto proteinB = new protein("B", 1, false, 0, 100);
 					ep = world->grid[x][y][z].Eid;
 					ep->owned_proteins.push_back(proteinB);
 				}
@@ -247,21 +247,21 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 }
 
 void CrossCellODEMemAgentTest::setupAgentProteins() const {
-	memAgent1->owned_proteins.push_back(new protein("A", 1, false));
-	memAgent2->owned_proteins.push_back(new protein("A", 1, false));
-	memAgent3->owned_proteins.push_back(new protein("A", 1, false));
+	memAgent1->owned_proteins.push_back(new protein("A", 1, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("A", 1, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("A", 1, false, 0,100));
 
-	memAgent1->owned_proteins.push_back(new protein("B", 1, false));
-	memAgent2->owned_proteins.push_back(new protein("B", 1, false));
-	memAgent3->owned_proteins.push_back(new protein("B", 1, false));
+	memAgent1->owned_proteins.push_back(new protein("B", 1, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("B", 1, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("B", 1, false, 0, 100));
 
-	memAgent1->owned_proteins.push_back(new protein("C", 1, false));
-	memAgent2->owned_proteins.push_back(new protein("C", 1, false));
-	memAgent3->owned_proteins.push_back(new protein("C", 1, false));
+	memAgent1->owned_proteins.push_back(new protein("C", 1, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("C", 1, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("C", 1, false, 0, 100));
 
-	memAgent1->owned_proteins.push_back(new protein("D", 1, false));
-	memAgent2->owned_proteins.push_back(new protein("D", 1, false));
-	memAgent3->owned_proteins.push_back(new protein("D", 1, false));
+	memAgent1->owned_proteins.push_back(new protein("D", 1, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("D", 1, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("D", 1, false, 0, 100));
 }
 
 void CrossCellODEMemAgentTest::setupEnvironment() {
@@ -496,39 +496,39 @@ void MultiNeighbourODEMemAgentTest::MultiAgentODE_system(const multiagent_ode_st
 
 void MultiNeighbourODEMemAgentTest::setupAgentProteins() const {
 	// Scenario 1
-	memAgent1->owned_proteins.push_back(new protein("A", 10, false));
-	memAgent2->owned_proteins.push_back(new protein("A", 10, false));
-	memAgent3->owned_proteins.push_back(new protein("A", 10, false));
-	memAgent1->owned_proteins.push_back(new protein("B", 10, false));
-	memAgent2->owned_proteins.push_back(new protein("B", 10, false));
-	memAgent3->owned_proteins.push_back(new protein("B", 10, false));
+	memAgent1->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("A", 10, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("B", 10, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("B", 10, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("B", 10, false, 0, 100));
 
 	// Scenario 2
-	memAgent4->owned_proteins.push_back(new protein("C", 10, false));
-	memAgent5->owned_proteins.push_back(new protein("C", 10, false));
-	memAgent6->owned_proteins.push_back(new protein("C", 10, false));
-	memAgent7->owned_proteins.push_back(new protein("C", 10, false));
-	memAgent4->owned_proteins.push_back(new protein("D", 10, false));
-	memAgent5->owned_proteins.push_back(new protein("D", 10, false));
-	memAgent6->owned_proteins.push_back(new protein("D", 10, false));
-	memAgent7->owned_proteins.push_back(new protein("D", 10, false));
+	memAgent4->owned_proteins.push_back(new protein("C", 10, false, 0, 100));
+	memAgent5->owned_proteins.push_back(new protein("C", 10, false, 0, 100));
+	memAgent6->owned_proteins.push_back(new protein("C", 10, false, 0, 100));
+	memAgent7->owned_proteins.push_back(new protein("C", 10, false, 0, 100));
+	memAgent4->owned_proteins.push_back(new protein("D", 10, false, 0, 100));
+	memAgent5->owned_proteins.push_back(new protein("D", 10, false, 0, 100));
+	memAgent6->owned_proteins.push_back(new protein("D", 10, false, 0, 100));
+	memAgent7->owned_proteins.push_back(new protein("D", 10, false, 0, 100));
 
 	// Set everything else to 0.
-	memAgent1->owned_proteins.push_back(new protein("C", 0, false));
-	memAgent2->owned_proteins.push_back(new protein("C", 0, false));
-	memAgent3->owned_proteins.push_back(new protein("C", 0, false));
-	memAgent1->owned_proteins.push_back(new protein("D", 0, false));
-	memAgent2->owned_proteins.push_back(new protein("D", 0, false));
-	memAgent3->owned_proteins.push_back(new protein("D", 0, false));
+	memAgent1->owned_proteins.push_back(new protein("C", 0, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("C", 0, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("C", 0, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("D", 0, false, 0, 100));
+	memAgent2->owned_proteins.push_back(new protein("D", 0, false, 0, 100));
+	memAgent3->owned_proteins.push_back(new protein("D", 0, false, 0, 100));
 
-	memAgent4->owned_proteins.push_back(new protein("A", 0, false));
-	memAgent5->owned_proteins.push_back(new protein("A", 0, false));
-	memAgent6->owned_proteins.push_back(new protein("A", 0, false));
-	memAgent7->owned_proteins.push_back(new protein("A", 0, false));
-	memAgent4->owned_proteins.push_back(new protein("B", 0, false));
-	memAgent5->owned_proteins.push_back(new protein("B", 0, false));
-	memAgent6->owned_proteins.push_back(new protein("B", 0, false));
-	memAgent7->owned_proteins.push_back(new protein("B", 0, false));
+	memAgent4->owned_proteins.push_back(new protein("A", 0, false, 0, 100));
+	memAgent5->owned_proteins.push_back(new protein("A", 0, false, 0, 100));
+	memAgent6->owned_proteins.push_back(new protein("A", 0, false, 0, 100));
+	memAgent7->owned_proteins.push_back(new protein("A", 0, false, 0, 100));
+	memAgent4->owned_proteins.push_back(new protein("B", 0, false, 0, 100));
+	memAgent5->owned_proteins.push_back(new protein("B", 0, false, 0, 100));
+	memAgent6->owned_proteins.push_back(new protein("B", 0, false, 0, 100));
+	memAgent7->owned_proteins.push_back(new protein("B", 0, false, 0, 100));
 }
 
 void MultiNeighbourODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {

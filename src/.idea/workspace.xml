@@ -15,14 +15,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Completed junction test for ODES">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Working on distribution ODEs - seems to be working but must check stepper being used.">
       <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/protein.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,31 +75,36 @@
     </key>
   </component>
   <component name="RunManager" selected="Google Test.MultiNeighbourODEMemAgentTest.cellODETest">
-    <configuration name="BasicODEMemAgentTest.environmentCheckTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicODEMemAgentTest" TEST_METHOD="environmentCheckTest" TEST_MODE="SUITE_TEST">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicODEMemAgentTest.environmentCheckTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicODEMemAgentTest" TEST_METHOD="environmentCheckTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="CrossCellODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.cellTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellTest" TEST_MODE="SUITE_TEST">
+    <configuration name="CrossCellODEMemAgentTest.cellTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.junctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="junctionODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="CrossCellODEMemAgentTest.junctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="junctionODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -186,14 +192,7 @@
       <workItem from="1625065702188" duration="5378000" />
       <workItem from="1625132138393" duration="12197000" />
       <workItem from="1625217403622" duration="17901000" />
-      <workItem from="1625476357208" duration="15969000" />
-    </task>
-    <task id="LOCAL-00007" summary="Changed toroidalTest to use gridXDimensions.">
-      <created>1618312617456</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1618312617456</updated>
+      <workItem from="1625476357208" duration="18701000" />
     </task>
     <task id="LOCAL-00008" summary="Commented out printing of XMAX etc. during world creation.">
       <created>1618312763531</created>
@@ -531,7 +530,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625480428581</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Working on distribution ODEs - seems to be working but must check stepper being used.">
+      <created>1625500219414</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1625500219414</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,7 +556,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Apply gradient to cuboid uses the correct dimensions (swapped height and width)" />
     <MESSAGE value="Swapped width and height arguments for cuboidal gradient constructore" />
     <MESSAGE value="Removed old functions for determining whether an env agent is within a square." />
     <MESSAGE value="sink and source creation function now calls the correct application function" />
@@ -575,6 +580,7 @@
     <MESSAGE value="Refactored. Now moving back to implementing unit tests." />
     <MESSAGE value="Implemented new tests for memAgent ODEs." />
     <MESSAGE value="Completed junction test for ODES" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed junction test for ODES" />
+    <MESSAGE value="Working on distribution ODEs - seems to be working but must check stepper being used." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on distribution ODEs - seems to be working but must check stepper being used." />
   </component>
 </project>

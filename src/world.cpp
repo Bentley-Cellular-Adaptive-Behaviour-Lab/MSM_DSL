@@ -36,7 +36,7 @@ void Gradient::add_env_protein(Env *ep, float calc_level) {
         }
     }
     if (!protein_found) {
-        ep->owned_proteins.push_back(new protein(m_protein->get_name(), calc_level, false));
+        ep->owned_proteins.push_back(new protein(m_protein->get_name(), calc_level, false, m_protein->get_min(), m_protein->get_max()));
     }
 }
 

@@ -11,12 +11,16 @@ class protein {
 private:
     std::string name;
     float level;
+    float min;
+    float max;
 public:
     bool checks_neighbour;
-    [[nodiscard]] float get_level() const;
+    float get_level();
     float set_level(float new_level);
+    [[nodiscard]] float get_min() const;
+    [[nodiscard]] float get_max() const;
     std::string get_name();
-    protein(std::string name, float initial_level, bool checks_neighbour);
+    protein(std::string name, float initial_level, bool checks_neighbour, float min, float max);
     ~protein();
 };
 
