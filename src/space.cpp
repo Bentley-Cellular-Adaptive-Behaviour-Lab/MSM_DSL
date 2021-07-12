@@ -62,7 +62,7 @@ int Shape_Square::get_height() {
     return this->m_height;
 }
 
-Shape_Cuboid::Shape_Cuboid(int shape_type, int height, int width, int depth) : Shape(shape_type) {
+Shape_Cuboid::Shape_Cuboid(int shape_type, int width, int height, int depth) : Shape(shape_type) {
 	this->m_height = height;
 	this->m_width = width;
 	this->m_depth = depth;

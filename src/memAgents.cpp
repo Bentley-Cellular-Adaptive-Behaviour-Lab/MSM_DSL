@@ -651,16 +651,16 @@ void MemAgent::VEGFRresponse(void) {
 
     //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
     if (FILOPODIA == true){
-
-    //***** RANDFIL here
-    if(randFilExtend >= 0 && randFilExtend <= 1)
-      Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
-    else
-      Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+    	//***** RANDFIL here
+    	if (randFilExtend >= 0 && randFilExtend <= 1) {
+			Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
+		} else {
+			Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+		}
         //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
-    }
-    else Prob = 0;
-
+    } else {
+		Prob = 0;
+	}
 
     //chance = (float) rand() / (float) RAND_MAX;
     chance = (float) new_rand() / (float) NEW_RAND_MAX;
@@ -672,8 +672,8 @@ void MemAgent::VEGFRresponse(void) {
 
         filTokens++;
 
-        
-        if (FIL == NONE) tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
+        if (FIL == NONE)
+        	tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
 
         if (oldVersion == true) {
             if (FIL == STALK) {
@@ -686,7 +686,8 @@ void MemAgent::VEGFRresponse(void) {
         //--------------------------------------------------------------------------------------------
         //filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
-            if (deleteFlag == false) moved = extendFil();
+            if (deleteFlag == false)
+            	moved = extendFil();
         }
         //--------------------------------------------------------------------------------------------
 
@@ -695,7 +696,8 @@ void MemAgent::VEGFRresponse(void) {
 
     } else VRinactiveCounter++;
 
-    if (moved == false) filTipTimer++;
+    if (moved == false)
+    	filTipTimer++;
     else filTipTimer = 0;
 
 
@@ -2383,7 +2385,7 @@ void MemAgent::add_cell_proteins() {
 
     for (auto current_protein : this->Cell->m_cell_type->proteins) {
         // Create new protein
-        auto *new_protein = new protein(current_protein->get_name(), 0.0, false, current_protein->get_min(), current_protein->get_max());
+        auto *new_protein = new protein(current_protein->get_name(), current_protein->get_location(), 0.0, false, current_protein->get_min(), current_protein->get_max());
         this->owned_proteins.push_back(new_protein);
     }
 }
@@ -2449,11 +2451,12 @@ void MemAgent::update_protein_level(std::string protein_name, float new_level) {
 float MemAgent::get_memAgent_protein_level(std::string protein_name) {
     // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
     // This is also used during ODE running and so has the potential to fail.
-    assert(this->has_protein(protein_name));
-    for (auto protein : this->owned_proteins) {
-        if (protein->get_name() == protein_name) {
-            return protein->get_level();
-        }
+    if (this->has_protein(protein_name)) {
+		for (auto protein : this->owned_proteins) {
+			if (protein->get_name() == protein_name) {
+				return protein->get_level();
+			}
+		}
     }
 }
 
@@ -2588,16 +2591,12 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == const_E) {
                 ep = worldP->grid[m][n][p].Eid;
-                if (ep->owned_proteins.size()) {
-                	int i = 0;
-                }
                 if (ep->has_protein(protein_name)) {
                     protein_level+= ep->get_protein_level(protein_name);
                 }
             }
         }
     }
-
     return protein_level;
 }
 
@@ -2729,6 +2728,8 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
         // increase the count by the level at those coordinates.
 
+        // Also handles transfer of proteins along filopodia.
+
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].type == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].Mids) {
@@ -2736,13 +2737,159 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
                     }
                 }
+            } else if (worldP->grid[m][n][p].type == const_E) {
+				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+					if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
+						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+					}
+				}
             }
         }
     }
     return protein_level;
 }
 
+/*****************************************************************************************
+*  Name:		get_filopodia_protein_level
+*  Description: Returns the level of a protein in nearby memAgents belonging to filopodia,
+ *  			in other cells.
+*  Returns:		float
+******************************************************************************************/
 
+float MemAgent::get_filopodia_protein_level(std::string protein_name) {
+	int m, n, p;
+	int i = (int) Mx;
+	int j = (int) My;
+	int k = (int) Mz;
+
+	float protein_level = 0;
+
+	for (int x = 0; x < 26; x++) {
+		// Same layer.
+		if (x == 0) {
+			m = i + 1;
+			n = j - 1;
+			p = k;
+		} else if (x == 1) {
+			m = i + 1;
+			n = j;
+			p = k;
+		} else if (x == 2) {
+			m = i + 1;
+			n = j + 1;
+			p = k;
+		} else if (x == 3) {
+			m = i;
+			n = j - 1;
+			p = k;
+		} else if (x == 4) {
+			m = i;
+			n = j + 1;
+			p = k;
+		} else if (x == 5) {
+			m = i - 1;
+			n = j - 1;
+			p = k;
+		} else if (x == 6) {
+			m = i - 1;
+			n = j;
+			p = k;
+		} else if (x == 7) {
+			m = i - 1;
+			n = j + 1;
+			p = k;
+		}
+			// Layer below.
+		else if (x == 8) {
+			m = i + 1;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 9) {
+			m = i + 1;
+			n = j;
+			p = k - 1;
+		} else if (x == 10) {
+			m = i + 1;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 11) {
+			m = i;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 12) {
+			m = i;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 13) {
+			m = i - 1;
+			n = j - 1;
+			p = k - 1;
+		} else if (x == 14) {
+			m = i - 1;
+			n = j;
+			p = k - 1;
+		} else if (x == 15) {
+			m = i - 1;
+			n = j + 1;
+			p = k - 1;
+		} else if (x == 16) {
+			m = i;
+			n = j;
+			p = k - 1;
+		}
+			// Layer above.
+		else if (x == 17) {
+			m = i + 1;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 18) {
+			m = i + 1;
+			n = j;
+			p = k + 1;
+		} else if (x == 19) {
+			m = i + 1;
+			n = j + 1;
+			p = k + 1;
+		} else if (x == 20) {
+			m = i;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 21) {
+			m = i;
+			n = j + 1;
+			p = k + 1;
+		} else if (x == 22) {
+			m = i - 1;
+			n = j - 1;
+			p = k + 1;
+		} else if (x == 23) {
+			m = i - 1;
+			n = j;
+			p = k + 1;
+		} else if (x == 24) {
+			m = i - 1;
+			n = j + 1;
+			p = k + 1;
+		} else {
+			m = i;
+			n = j;
+			p = k + 1;
+		}
+		// If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
+		// increase the count by the level at those coordinates.
+
+		if (worldP->insideWorld(m, n, p)) {
+			if (worldP->grid[m][n][p].type == const_E) {
+				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+					}
+				}
+			}
+		}
+	}
+	return protein_level;
+}
 
 /*****************************************************************************************
 *  Name:		get_junction_protein_level
@@ -2891,6 +3038,14 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 }
 
 /*****************************************************************************************
+*  Name:		get_filopodia_protein_level
+*  Description: Takes in a given protein level, counts the number of memAgents that own
+*				that protein then set the new level to that divided by the amount.
+*				Can either distribute proteins to the same memagents from the same cell or to
+*  Returns:		void
+******************************************************************************************/
+
+/*****************************************************************************************
 *  Name:		distribute_calculated_proteins
 *  Description: Takes in a given protein level, counts the number of memAgents that own
 *				that protein then set the new level to that divided by the amount.
@@ -3017,6 +3172,7 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			n = j;
 			p = k + 1;
 		}
+		// TODO: Tidy up these statements!
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].type == const_M) {
 				for (auto memAgent : worldP->grid[m][n][p].Mids) {
@@ -3031,6 +3187,22 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 							if (memAgent->has_protein(protein_name) && this->Cell != memAgent->Cell) {
 								relevant_memAgents.push_back(memAgent);
 							}
+						}
+					}
+				}
+			} else if (worldP->grid[m][n][p].type == const_E) {
+				// Check for memAgents in filopodia.
+				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+					if (affects_this_cell) {
+						// Check for memAgents in this cell that have the protein and are in a filopodia.
+						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell && this->FIL != NONE) {
+							relevant_memAgents.push_back(memAgent);
+						}
+					} else if (!affects_this_cell) {
+						// TODO: DOUBLE-CHECK THIS.
+						// Check for memAgents in neighbouring cells that have the protein.
+						if (memAgent->has_protein(protein_name) && this->Cell != memAgent->Cell && this->FIL != NONE) {
+							relevant_memAgents.push_back(memAgent);
 						}
 					}
 				}

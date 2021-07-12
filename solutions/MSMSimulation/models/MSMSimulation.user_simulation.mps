@@ -21,6 +21,19 @@
       <concept id="3416854989769421750" name="WorldSetup.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
+      <concept id="2940938711095972806" name="WorldSetup.structure.Gradient_Shape_Cuboidal" flags="ng" index="_K$fF">
+        <property id="3316434650109401212" name="Gradient_Direction" index="m_KZ2" />
+        <child id="3316434650107147296" name="Centre" index="mqaeu" />
+        <child id="3416854989769302018" name="Width" index="2_kRI0" />
+        <child id="3416854989769302021" name="Height" index="2_kRI7" />
+        <child id="3416854989769302025" name="Depth" index="2_kRIb" />
+      </concept>
+      <concept id="2940938711094954740" name="WorldSetup.structure.Gradient_Type_Linear" flags="ng" index="_OHFp" />
+      <concept id="8343650468779203047" name="WorldSetup.structure.Gradient" flags="ng" index="1yko02">
+        <child id="1155607132032667046" name="SpeciesReference" index="1cJCsQ" />
+        <child id="731720456867910319" name="Gradient_Type" index="3Sm0lf" />
+        <child id="731720456867910321" name="Gradient_Shape" index="3Sm0lh" />
+      </concept>
       <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
         <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
         <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
@@ -34,13 +47,7 @@
       <concept id="8343650468779203043" name="WorldSetup.structure.World_Container" flags="ng" index="1yko06">
         <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
         <child id="8343650468779203044" name="grid" index="1yko01" />
-      </concept>
-    </language>
-    <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
-      <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
-      <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
-        <child id="5115872837156576280" name="right" index="30dEs_" />
-        <child id="5115872837156576278" name="left" index="30dEsF" />
+        <child id="8343650468779203051" name="gradients" index="1yko0e" />
       </concept>
     </language>
     <language id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes">
@@ -56,14 +63,8 @@
       </concept>
     </language>
     <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
-      <concept id="1878314651098778609" name="SpeciesSetup.structure.Reaction_Reference" flags="ng" index="DdDr8">
-        <reference id="1878314651098778610" name="ReactionReference" index="DdDrb" />
-      </concept>
       <concept id="1155607132028676490" name="SpeciesSetup.structure.SpeciesReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="Species" index="1csUcr" />
-      </concept>
-      <concept id="1155607132030626610" name="SpeciesSetup.structure.SpeciesExpression" flags="ng" index="1cBA6y">
-        <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
       <concept id="2321914823994367022" name="SpeciesSetup.structure.ODESystemComponent" flags="ng" index="3qRckk">
         <child id="2321914823999563964" name="RateDefintions" index="3r3366" />
@@ -77,41 +78,19 @@
       <concept id="2321914823998967773" name="SpeciesSetup.structure.ODEDefinitions" flags="ng" index="3r5hrB" />
       <concept id="2321914823998432495" name="SpeciesSetup.structure.SpeciesDefinitionComponent" flags="ng" index="3r6JRl" />
       <concept id="2321914823997987337" name="SpeciesSetup.structure.ParameterDefinitionComponent" flags="ng" index="3r90cN" />
-      <concept id="3125878369731541738" name="SpeciesSetup.structure.IrreversibleReaction" flags="ng" index="3_zqcU">
-        <reference id="7376055817164471386" name="Rate" index="3JPVZP" />
-      </concept>
-      <concept id="3125878369731540209" name="SpeciesSetup.structure.Parameter" flags="ng" index="3_zqOx">
-        <child id="3125878369731540228" name="Expression" index="3_zqNk" />
-      </concept>
-      <concept id="3125878369731540210" name="SpeciesSetup.structure.Reaction_Term" flags="ng" index="3_zqOy">
-        <property id="3125878369731540211" name="Stoichiometry" index="3_zqOz" />
-        <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
-      </concept>
       <concept id="3125878369731540203" name="SpeciesSetup.structure.SpeciesContainer" flags="ng" index="3_zqOV">
         <reference id="8035241350173904356" name="Tissue_Container" index="m9Uib" />
         <child id="2321914823995841135" name="ODESystem" index="3qLkdl" />
         <child id="2321914823994400460" name="ODEStates" index="3qROvQ" />
         <child id="2321914823997234852" name="RateFunctions" index="3ra8uu" />
         <child id="3125878369731540800" name="Species" index="3_zqUg" />
-        <child id="3125878369731540802" name="Processes" index="3_zqUi" />
-        <child id="3125878369731540805" name="Parameters" index="3_zqUl" />
-      </concept>
-      <concept id="3125878369731540206" name="SpeciesSetup.structure.Reaction" flags="ng" index="3_zqOY">
-        <child id="3125878369731540217" name="Reactant_Terms" index="3_zqOD" />
-        <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesSetup.structure.Species" flags="ng" index="3_zqOZ">
         <property id="3125878369731567265" name="Location" index="3_z0tL" />
         <child id="3989375547139458228" name="Starting_Concentration" index="1tJpXo" />
-        <child id="3125878369731548209" name="ProductOfProcess" index="3_z4Rx" />
-        <child id="3125878369731548207" name="ReactsInProcess" index="3_z4RZ" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
-        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -128,42 +107,10 @@
       <concept id="829681453102462370" name="Units.structure.Concentration_Expression" flags="ng" index="3bpmH0">
         <child id="7070710508215227644" name="expr" index="3lUA52" />
       </concept>
-      <concept id="829681453102462371" name="Units.structure.Molar" flags="ng" index="3bpmH1" />
+      <concept id="829681453102462372" name="Units.structure.Micromolar" flags="ng" index="3bpmH6" />
       <concept id="829681453102462392" name="Units.structure.Amount_Concentration" flags="ng" index="3bpmHq">
         <child id="7070710508215227650" name="units" index="3lUA2W" />
         <child id="7070710508215227648" name="value" index="3lUA2Y" />
-      </concept>
-    </language>
-    <language id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout">
-      <concept id="6720495385597071406" name="de.itemis.mps.editor.diagram.layout.structure.Layout_Box" flags="ng" index="gqqVs">
-        <property id="6720495385597071504" name="bounds_height" index="gqqTy" />
-        <property id="6720495385597071502" name="bounds_y" index="gqqTW" />
-        <property id="6720495385597071503" name="bounds_width" index="gqqTX" />
-        <property id="6720495385597071501" name="bounds_x" index="gqqTZ" />
-        <property id="4583510071007917016" name="transform" index="TgtnS" />
-      </concept>
-      <concept id="2319506556913310852" name="de.itemis.mps.editor.diagram.layout.structure.Layout_Connection" flags="ng" index="2VclpC">
-        <child id="2319506556913311101" name="anchors" index="2Vcluh" />
-        <child id="4767615435799372763" name="labels" index="3ul5Gx" />
-      </concept>
-      <concept id="2319506556913310727" name="de.itemis.mps.editor.diagram.layout.structure.Point" flags="ng" index="2VclrF">
-        <property id="2319506556913310861" name="x" index="2Vclpx" />
-        <property id="2319506556913310863" name="y" index="2Vclpz" />
-      </concept>
-      <concept id="8963411245960991886" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMap" flags="ng" index="37mRI7">
-        <child id="8963411245960991904" name="entries" index="37mRID" />
-      </concept>
-      <concept id="8963411245960991903" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMapEntry" flags="ng" index="37mRIm">
-        <property id="8963411245960998400" name="key" index="37mO49" />
-        <child id="8963411245960998404" name="value" index="37mO4d" />
-      </concept>
-      <concept id="4767615435799372731" name="de.itemis.mps.editor.diagram.layout.structure.Layout_EdgeLabel" flags="ng" index="3ul5H1">
-        <property id="4767615435799372759" name="type" index="3ul5GH" />
-        <child id="4767615435799372761" name="position" index="3ul5Gz" />
-      </concept>
-      <concept id="3253043142928125505" name="de.itemis.mps.editor.diagram.layout.structure.RelativePosition" flags="ng" index="3wpmZ1">
-        <child id="3253043142928125557" name="referencePoint" index="3wpmZP" />
-        <child id="3253043142928125559" name="offset" index="3wpmZR" />
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
@@ -180,7 +127,6 @@
         <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
-        <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
@@ -201,452 +147,189 @@
       </concept>
     </language>
   </registry>
-  <node concept="3_EN3m" id="5gBmBO5mHPd">
+  <node concept="3_EN3m" id="6VIN$acjKxw">
     <property role="TrG5h" value="Settings" />
     <property role="3_Ed86" value="10000" />
     <property role="3_Ed83" value="6JBqwuek81o/Graphics_On" />
-    <ref role="3_EdRy" node="3fk35jmuDw2" resolve="World" />
+    <ref role="3_EdRy" node="6VIN$acjK$T" resolve="NewWorld" />
   </node>
-  <node concept="3ZP1sW" id="5gBmBO5mHPf">
-    <property role="TrG5h" value="Tissues" />
-    <ref role="2ppKUs" node="3fk35jmuDw2" resolve="World" />
-    <ref role="maghN" node="cJYjfa66Xm" resolve="SortTesting" />
-    <node concept="1apGoc" id="6WFtrLblC85" role="1v2izi">
+  <node concept="1yko06" id="6VIN$acjK$T">
+    <property role="TrG5h" value="NewWorld" />
+    <ref role="3_H_MC" node="6VIN$acjL8I" resolve="NewTissues" />
+    <node concept="1yko02" id="6VIN$acjKEq" role="1yko0e">
+      <property role="TrG5h" value="NewGradient" />
+      <node concept="_OHFp" id="6VIN$acjL1r" role="3Sm0lf" />
+      <node concept="_K$fF" id="6VIN$acjKH4" role="3Sm0lh">
+        <property role="m_KZ2" value="2S6lVSS$lvQ/Y_Decreasing" />
+        <node concept="3ZP1sY" id="6VIN$acjKH6" role="mqaeu">
+          <node concept="2_hQR_" id="6VIN$acjKH8" role="2IF2Ql">
+            <node concept="2_n9WQ" id="6VIN$acjKHa" role="2_hQRE">
+              <node concept="30bXRB" id="6VIN$acjKJm" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="6VIN$acjKKf" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="6VIN$acjKHg" role="2IF2Qn">
+            <node concept="2_n9WQ" id="6VIN$acjKHi" role="2_hQRE">
+              <node concept="30bXRB" id="39Wpe6r51ho" role="2_n9WR">
+                <property role="30bXRw" value="25" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="6VIN$acjKLY" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="6VIN$acjKHo" role="2IF2Qq">
+            <node concept="2_n9WQ" id="6VIN$acjKHq" role="2_hQRE">
+              <node concept="30bXRB" id="6VIN$acjKMO" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="6VIN$acjKN_" role="2_hQ4V" />
+          </node>
+        </node>
+        <node concept="2_hQR_" id="6VIN$acjKHw" role="2_kRI0">
+          <node concept="2_n9WQ" id="6VIN$acjKHy" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjKRN" role="2_n9WR">
+              <property role="30bXRw" value="50" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjKXc" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="6VIN$acjKHC" role="2_kRI7">
+          <node concept="2_n9WQ" id="6VIN$acjKHE" role="2_hQRE">
+            <node concept="30bXRB" id="39Wpe6r51kg" role="2_n9WR">
+              <property role="30bXRw" value="50" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjKQ7" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="6VIN$acjKHK" role="2_kRIb">
+          <node concept="2_n9WQ" id="6VIN$acjKHM" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjKW7" role="2_n9WR">
+              <property role="30bXRw" value="20" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjKYg" role="2_hQ4V" />
+        </node>
+      </node>
+      <node concept="1csUcq" id="6VIN$acjLBc" role="1cJCsQ">
+        <ref role="1csUcr" node="6VIN$acjL3d" resolve="VEGF" />
+      </node>
+    </node>
+    <node concept="1yko03" id="6VIN$acjK$U" role="1yko01">
+      <property role="3cJDZq" value="-60" />
+      <property role="3cJDZs" value="-16" />
+      <property role="3cJDZ5" value="-30" />
+      <property role="3bD6N$" value="120" />
+      <property role="3bD6ND" value="126" />
+      <property role="3bD6NH" value="60" />
+      <node concept="2_hQR_" id="6VIN$acjK$V" role="3bEhY_">
+        <node concept="2_n9WQ" id="6VIN$acjK$W" role="2_hQRE">
+          <node concept="30bXRB" id="6VIN$acjKCJ" role="2_n9WR">
+            <property role="30bXRw" value="5" />
+          </node>
+        </node>
+        <node concept="2_hRrN" id="6VIN$acjKDc" role="2_hQ4V" />
+      </node>
+      <node concept="2_kiwO" id="6VIN$acjK$Z" role="2nU_yc">
+        <node concept="30bXRB" id="6VIN$acjKBO" role="2_kiwP">
+          <property role="30bXRw" value="1.0" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3_zqOV" id="6VIN$acjL2f">
+    <property role="TrG5h" value="Species" />
+    <ref role="m9Uib" node="6VIN$acjL8I" resolve="NewTissues" />
+    <node concept="3_zqOZ" id="6VIN$acjL3d" role="3_zqUg">
+      <property role="TrG5h" value="VEGF" />
+      <property role="3_z0tL" value="2Hxmt3eVjAC/LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+      <node concept="3bpmHq" id="6VIN$acjL4X" role="1tJpXo">
+        <node concept="3bpmH0" id="6VIN$acjL4Z" role="3lUA2Y">
+          <node concept="30bXRB" id="39Wpe6rkyXo" role="3lUA52">
+            <property role="30bXRw" value="4" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="39Wpe6rgG$7" role="3lUA2W" />
+      </node>
+    </node>
+    <node concept="3qRckn" id="6VIN$acjL2g" role="3qROvQ" />
+    <node concept="3qRckk" id="6VIN$acjL2h" role="3qLkdl">
+      <node concept="3r6JRl" id="6VIN$acjL2i" role="3r6JRa" />
+      <node concept="3r90cN" id="6VIN$acjL2j" role="3r6DIJ" />
+      <node concept="3r5f3G" id="6VIN$acjL2k" role="3r3366" />
+      <node concept="3r5hrB" id="6VIN$acjL2l" role="3r58a4" />
+    </node>
+    <node concept="3qROvL" id="6VIN$acjL2m" role="3ra8uu" />
+  </node>
+  <node concept="3ZP1sW" id="6VIN$acjL8I">
+    <property role="TrG5h" value="NewTissues" />
+    <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
+    <ref role="maghN" node="6VIN$acjL2f" resolve="Species" />
+    <node concept="3ZP1sZ" id="6VIN$acjLqU" role="3ZP1sP">
       <property role="TrG5h" value="Vessel" />
-      <ref role="1apGrN" node="7$_Q_ckN3IM" resolve="Endothelial" />
-      <node concept="3ZP1sC" id="6WFtrLblCag" role="1v2cpK">
+      <ref role="1v2cpI" node="6VIN$acjLip" resolve="VesselType" />
+      <node concept="3ZP1sY" id="6VIN$acjLqV" role="3ZPHa7">
+        <node concept="2_hQR_" id="6VIN$acjLqW" role="2IF2Ql">
+          <node concept="2_n9WQ" id="6VIN$acjLqX" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjLtT" role="2_n9WR">
+              <property role="30bXRw" value="0" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjLuK" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="6VIN$acjLr0" role="2IF2Qn">
+          <node concept="2_n9WQ" id="6VIN$acjLr1" role="2_hQRE">
+            <node concept="30bXRB" id="39Wpe6rowuI" role="2_n9WR">
+              <property role="30bXRw" value="5" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjLwc" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="6VIN$acjLr4" role="2IF2Qq">
+          <node concept="2_n9WQ" id="6VIN$acjLr5" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjLx2" role="2_n9WR">
+              <property role="30bXRw" value="0" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="6VIN$acjLxN" role="2_hQ4V" />
+        </node>
+      </node>
+    </node>
+    <node concept="1apGoc" id="6VIN$acjLip" role="1v2izi">
+      <property role="TrG5h" value="VesselType" />
+      <ref role="1apGrN" node="6VIN$acjLaQ" resolve="EndoType" />
+      <node concept="3ZP1sC" id="6VIN$acjLnW" role="1v2cpK">
         <property role="3ZP1sG" value="5" />
-        <node concept="2_hQR_" id="6WFtrLblCai" role="3ob6kl">
-          <node concept="2_n9WQ" id="6WFtrLblCak" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLblCcD" role="2_n9WR">
-              <property role="30bXRw" value="6" />
+        <node concept="2_hQR_" id="6VIN$acjLnY" role="3ob6kl">
+          <node concept="2_n9WQ" id="6VIN$acjLo0" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjLph" role="2_n9WR">
+              <property role="30bXRw" value="3" />
             </node>
           </node>
-          <node concept="2_hRrN" id="6WFtrLblCd5" role="2_hQ4V" />
+          <node concept="2_hRrN" id="6VIN$acjLq8" role="2_hQ4V" />
         </node>
       </node>
     </node>
-    <node concept="3ZP1sZ" id="6WFtrLaQrmH" role="3ZP1sP">
-      <property role="TrG5h" value="Monolayer1" />
-      <ref role="1v2cpI" node="6WFtrLblC85" resolve="Vessel" />
-      <node concept="3ZP1sY" id="6WFtrLaQrmI" role="3ZPHa7">
-        <node concept="2_hQR_" id="6WFtrLaQrmJ" role="2IF2Ql">
-          <node concept="2_n9WQ" id="6WFtrLaQrmK" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLaQrnD" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6WFtrLaQroz" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="6WFtrLaQrmN" role="2IF2Qn">
-          <node concept="2_n9WQ" id="6WFtrLaQrmO" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLaQrp4" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6WFtrLaQrpy" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="6WFtrLaQrmR" role="2IF2Qq">
-          <node concept="2_n9WQ" id="6WFtrLaQrmS" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLaQrq5" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6WFtrLaQrqt" role="2_hQ4V" />
-        </node>
-      </node>
-    </node>
-    <node concept="3ZP1sM" id="7$_Q_ckN3IM" role="1v2izm">
-      <property role="TrG5h" value="Endothelial" />
-      <node concept="1csUcq" id="7$_Q_ckN3KZ" role="3FWu3_">
-        <ref role="1csUcr" node="cJYjfa66Xu" resolve="SpeciesA" />
-      </node>
-      <node concept="3ZP1s$" id="7$_Q_ckN3IS" role="3ZP1s2">
-        <node concept="2_hQR_" id="7$_Q_ckN3IU" role="2IF2Qc">
-          <node concept="2_n9WQ" id="7$_Q_ckN3IW" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLaYZwO" role="2_n9WR">
+    <node concept="3ZP1sM" id="6VIN$acjLaQ" role="1v2izm">
+      <property role="TrG5h" value="EndoType" />
+      <node concept="3ZP1s$" id="6VIN$acjLd1" role="3ZP1s2">
+        <node concept="2_hQR_" id="6VIN$acjLd3" role="2IF2Qc">
+          <node concept="2_n9WQ" id="6VIN$acjLd5" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjLfe" role="2_n9WR">
               <property role="30bXRw" value="5" />
             </node>
           </node>
-          <node concept="2_hRrN" id="7$_Q_ckN3Ky" role="2_hQ4V" />
+          <node concept="2_hRrN" id="6VIN$acjLfZ" role="2_hQ4V" />
         </node>
-        <node concept="2_hQR_" id="7$_Q_ckN3J2" role="2IF2Qe">
-          <node concept="2_n9WQ" id="7$_Q_ckN3J4" role="2_hQRE">
-            <node concept="30bXRB" id="6WFtrLaYZvg" role="2_n9WR">
+        <node concept="2_hQR_" id="6VIN$acjLdb" role="2IF2Qe">
+          <node concept="2_n9WQ" id="6VIN$acjLdd" role="2_hQRE">
+            <node concept="30bXRB" id="6VIN$acjLe7" role="2_n9WR">
               <property role="30bXRw" value="5" />
             </node>
           </node>
-          <node concept="2_hRrN" id="7$_Q_ckN3J_" role="2_hQ4V" />
+          <node concept="2_hRrN" id="6VIN$acjLgL" role="2_hQ4V" />
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1yko06" id="3fk35jmuDw2">
-    <property role="TrG5h" value="World" />
-    <ref role="3_H_MC" node="5gBmBO5mHPf" resolve="Tissues" />
-    <node concept="1yko03" id="3fk35jmuDw3" role="1yko01">
-      <property role="3cJDZq" value="-45" />
-      <property role="3cJDZs" value="-32" />
-      <property role="3cJDZ5" value="-32" />
-      <property role="3bD6N$" value="90" />
-      <property role="3bD6ND" value="64" />
-      <property role="3bD6NH" value="64" />
-      <node concept="2_hQR_" id="3fk35jmuDw4" role="3bEhY_">
-        <node concept="2_n9WQ" id="3fk35jmuDw5" role="2_hQRE">
-          <node concept="30bXRB" id="6WFtrLbaoz2" role="2_n9WR">
-            <property role="30bXRw" value="10" />
-          </node>
-        </node>
-        <node concept="2_hRrN" id="3fk35jmuDxp" role="2_hQ4V" />
-      </node>
-      <node concept="2_kiwO" id="3fk35jmuDw8" role="2nU_yc">
-        <node concept="30bXRB" id="785ahjebUPp" role="2_kiwP">
-          <property role="30bXRw" value="0.0" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3_zqOV" id="cJYjfa66Xm">
-    <property role="3GE5qa" value="Species" />
-    <property role="TrG5h" value="SortTesting" />
-    <ref role="m9Uib" node="5gBmBO5mHPf" resolve="Tissues" />
-    <node concept="3_zqOx" id="cJYjfa672t" role="3_zqUl">
-      <property role="TrG5h" value="Rate1" />
-      <node concept="30dDTi" id="7$_Q_ckN6Ib" role="3_zqNk">
-        <node concept="30bXRB" id="7$_Q_ckN6Ir" role="30dEs_">
-          <property role="30bXRw" value="0.001" />
-        </node>
-        <node concept="1cBA6y" id="7$_Q_ckN6HX" role="30dEsF">
-          <ref role="1cBA6z" node="cJYjfa66Xu" resolve="SpeciesA" />
-        </node>
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="cJYjfa66Xu" role="3_zqUg">
-      <property role="TrG5h" value="SpeciesA" />
-      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
-      <node concept="3bpmHq" id="cJYjfa66XK" role="1tJpXo">
-        <node concept="3bpmH0" id="cJYjfa66XM" role="3lUA2Y">
-          <node concept="30bXRB" id="cJYjfa66Y6" role="3lUA52">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="3bpmH1" id="cJYjfa66Yy" role="3lUA2W" />
-      </node>
-      <node concept="DdDr8" id="cJYjfa7aTo" role="3_z4RZ">
-        <ref role="DdDrb" node="cJYjfa7aRL" resolve="Reaction1" />
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="cJYjfa66Xy" role="3_zqUg">
-      <property role="TrG5h" value="SpeciesB" />
-      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
-      <node concept="3bpmHq" id="cJYjfa66YT" role="1tJpXo">
-        <node concept="3bpmH0" id="cJYjfa66YV" role="3lUA2Y">
-          <node concept="30bXRB" id="cJYjfa66Zf" role="3lUA52">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="3bpmH1" id="cJYjfa66Z_" role="3lUA2W" />
-      </node>
-      <node concept="DdDr8" id="7$_Q_ckN6If" role="3_z4Rx">
-        <ref role="DdDrb" node="cJYjfa7aRL" resolve="Reaction1" />
-      </node>
-    </node>
-    <node concept="3qRckn" id="cJYjfa66Xn" role="3qROvQ" />
-    <node concept="3qRckk" id="cJYjfa66Xo" role="3qLkdl">
-      <node concept="3r6JRl" id="cJYjfa66Xp" role="3r6JRa" />
-      <node concept="3r90cN" id="cJYjfa66Xq" role="3r6DIJ" />
-      <node concept="3r5f3G" id="cJYjfa66Xr" role="3r3366" />
-      <node concept="3r5hrB" id="cJYjfa66Xs" role="3r58a4" />
-    </node>
-    <node concept="3qROvL" id="cJYjfa66Xt" role="3ra8uu" />
-    <node concept="37mRI7" id="cJYjfa673f" role="lGtFl">
-      <node concept="37mRIm" id="cJYjfa673g" role="37mRID">
-        <property role="37mO49" value="SortA" />
-        <node concept="gqqVs" id="cJYjfa673e" role="37mO4d">
-          <property role="gqqTZ" value="290.0" />
-          <property role="gqqTW" value="12.000100000000003" />
-          <property role="gqqTX" value="258.0" />
-          <property role="gqqTy" value="90.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673i" role="37mRID">
-        <property role="37mO49" value="SortB" />
-        <node concept="gqqVs" id="cJYjfa673h" role="37mO4d">
-          <property role="gqqTZ" value="12.0" />
-          <property role="gqqTW" value="592.0008934570312" />
-          <property role="gqqTX" value="258.0" />
-          <property role="gqqTy" value="90.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673k" role="37mRID">
-        <property role="37mO49" value="SortC" />
-        <node concept="gqqVs" id="cJYjfa673j" role="37mO4d">
-          <property role="gqqTZ" value="12.000000000000028" />
-          <property role="gqqTW" value="12.000100000000003" />
-          <property role="gqqTX" value="258.0" />
-          <property role="gqqTy" value="90.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673m" role="37mRID">
-        <property role="37mO49" value="SortD" />
-        <node concept="gqqVs" id="cJYjfa673l" role="37mO4d">
-          <property role="gqqTZ" value="12.000000000000014" />
-          <property role="gqqTW" value="312.0004967285156" />
-          <property role="gqqTX" value="258.0" />
-          <property role="gqqTy" value="90.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673o" role="37mRID">
-        <property role="37mO49" value="Interaction1" />
-        <node concept="2VclpC" id="cJYjfa673n" role="37mO4d">
-          <node concept="2VclrF" id="cJYjfa673p" role="2Vcluh">
-            <property role="2Vclpx" value="420.00005" />
-            <property role="2Vclpz" value="162.0001983642578" />
-          </node>
-          <node concept="2VclrF" id="cJYjfa673q" role="2Vcluh">
-            <property role="2Vclpx" value="142.00005" />
-            <property role="2Vclpz" value="162.0001983642578" />
-          </node>
-          <node concept="3ul5H1" id="cJYjfa673r" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa673s" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa673t" role="3wpmZR">
-                <property role="2Vclpx" value="431.00005" />
-                <property role="2Vclpz" value="122.00019836425781" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa673u" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673w" role="37mRID">
-        <property role="37mO49" value="Interaction2" />
-        <node concept="2VclpC" id="cJYjfa673v" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa673x" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa673y" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa673z" role="3wpmZR">
-                <property role="2Vclpx" value="108.00005000000002" />
-                <property role="2Vclpz" value="122.00019836425781" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa673$" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa673A" role="37mRID">
-        <property role="37mO49" value="Interaction3" />
-        <node concept="2VclpC" id="cJYjfa673_" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa673B" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa673C" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa673D" role="3wpmZR">
-                <property role="2Vclpx" value="108.00005" />
-                <property role="2Vclpz" value="292.0003967285156" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa673E" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aTz" role="37mRID">
-        <property role="37mO49" value="Reaction1" />
-        <node concept="gqqVs" id="cJYjfa7aTy" role="37mO4d">
-          <property role="gqqTZ" value="60.0" />
-          <property role="gqqTW" value="167.00029836425782" />
-          <property role="gqqTX" value="138.0" />
-          <property role="gqqTy" value="73.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aT_" role="37mRID">
-        <property role="37mO49" value="Reaction2" />
-        <node concept="gqqVs" id="cJYjfa7aT$" role="37mO4d">
-          <property role="gqqTZ" value="72.0" />
-          <property role="gqqTW" value="462.0007103515625" />
-          <property role="gqqTX" value="138.0" />
-          <property role="gqqTy" value="70.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aTB" role="37mRID">
-        <property role="37mO49" value="SortA_Reaction1_reactantRelation" />
-        <node concept="2VclpC" id="cJYjfa7aTA" role="37mO4d">
-          <node concept="2VclrF" id="cJYjfa7aTC" role="2Vcluh">
-            <property role="2Vclpx" value="420.00005" />
-            <property role="2Vclpz" value="162.0001983642578" />
-          </node>
-          <node concept="2VclrF" id="cJYjfa7aTD" role="2Vcluh">
-            <property role="2Vclpx" value="142.00005" />
-            <property role="2Vclpz" value="162.0001983642578" />
-          </node>
-          <node concept="3ul5H1" id="cJYjfa7aTE" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa7aTF" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa7aTG" role="3wpmZR">
-                <property role="2Vclpx" value="431.00005" />
-                <property role="2Vclpz" value="122.00019836425781" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa7aTH" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aTJ" role="37mRID">
-        <property role="37mO49" value="SortC_Reaction1_reactantRelation" />
-        <node concept="2VclpC" id="cJYjfa7aTI" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa7aTK" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa7aTL" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa7aTM" role="3wpmZR">
-                <property role="2Vclpx" value="124.00005000000002" />
-                <property role="2Vclpz" value="122.00019836425781" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa7aTN" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aTP" role="37mRID">
-        <property role="37mO49" value="SortD_Reaction2_reactantRelation" />
-        <node concept="2VclpC" id="cJYjfa7aTO" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa7aTQ" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa7aTR" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa7aTS" role="3wpmZR">
-                <property role="2Vclpx" value="124.00005" />
-                <property role="2Vclpz" value="422.0006103515625" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa7aTT" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aTV" role="37mRID">
-        <property role="37mO49" value="Reaction1_SortD_productRelation" />
-        <node concept="2VclpC" id="cJYjfa7aTU" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa7aTW" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa7aTX" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa7aTY" role="3wpmZR">
-                <property role="2Vclpx" value="124.00005000000002" />
-                <property role="2Vclpz" value="272.0003967285156" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa7aTZ" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="cJYjfa7aU1" role="37mRID">
-        <property role="37mO49" value="Reaction2_SortB_productRelation" />
-        <node concept="2VclpC" id="cJYjfa7aU0" role="37mO4d">
-          <node concept="3ul5H1" id="cJYjfa7aU2" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="cJYjfa7aU3" role="3ul5Gz">
-              <node concept="2VclrF" id="cJYjfa7aU4" role="3wpmZR">
-                <property role="2Vclpx" value="124.00005" />
-                <property role="2Vclpz" value="552.0007934570312" />
-              </node>
-              <node concept="2VclrF" id="cJYjfa7aU5" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="6GDTEkVO_p9" role="37mRID">
-        <property role="37mO49" value="SpeciesA" />
-        <node concept="gqqVs" id="6GDTEkVO_p8" role="37mO4d">
-          <property role="gqqTZ" value="12.0" />
-          <property role="gqqTW" value="12.000100000000003" />
-          <property role="gqqTX" value="234.0" />
-          <property role="gqqTy" value="94.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="6GDTEkVO_pb" role="37mRID">
-        <property role="37mO49" value="SpeciesB" />
-        <node concept="gqqVs" id="6GDTEkVO_pa" role="37mO4d">
-          <property role="gqqTZ" value="12.0" />
-          <property role="gqqTW" value="301.0004967285156" />
-          <property role="gqqTX" value="234.0" />
-          <property role="gqqTy" value="94.0" />
-          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
-        </node>
-      </node>
-      <node concept="37mRIm" id="6GDTEkVO_pd" role="37mRID">
-        <property role="37mO49" value="SpeciesA_Reaction1_reactantRelation" />
-        <node concept="2VclpC" id="6GDTEkVO_pc" role="37mO4d">
-          <node concept="3ul5H1" id="6GDTEkVO_pe" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="6GDTEkVO_pf" role="3ul5Gz">
-              <node concept="2VclrF" id="6GDTEkVO_pg" role="3wpmZR">
-                <property role="2Vclpx" value="112.00005" />
-                <property role="2Vclpz" value="126.00019836425781" />
-              </node>
-              <node concept="2VclrF" id="6GDTEkVO_ph" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37mRIm" id="6GDTEkVO_pj" role="37mRID">
-        <property role="37mO49" value="Reaction1_SpeciesB_productRelation" />
-        <node concept="2VclpC" id="6GDTEkVO_pi" role="37mO4d">
-          <node concept="3ul5H1" id="6GDTEkVO_pk" role="3ul5Gx">
-            <property role="3ul5GH" value="label" />
-            <node concept="3wpmZ1" id="6GDTEkVO_pl" role="3ul5Gz">
-              <node concept="2VclrF" id="6GDTEkVO_pm" role="3wpmZR">
-                <property role="2Vclpx" value="112.00005" />
-                <property role="2Vclpz" value="260.0003967285156" />
-              </node>
-              <node concept="2VclrF" id="6GDTEkVO_pn" role="3wpmZP">
-                <property role="2Vclpx" value="0.0" />
-                <property role="2Vclpz" value="0.0" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3_zqcU" id="cJYjfa7aRL" role="3_zqUi">
-      <property role="TrG5h" value="Reaction1" />
-      <ref role="3JPVZP" node="cJYjfa672t" resolve="Rate1" />
-      <node concept="3_zqOy" id="cJYjfa7aSm" role="3_zqOD">
-        <property role="3_zqOz" value="1" />
-        <ref role="3_zqOB" node="cJYjfa66Xu" resolve="SpeciesA" />
-      </node>
-      <node concept="3_zqOy" id="cJYjfa7aSM" role="3_zqOF">
-        <property role="3_zqOz" value="1" />
-        <ref role="3_zqOB" node="cJYjfa66Xy" resolve="SpeciesB" />
       </node>
     </node>
   </node>

@@ -41,6 +41,8 @@ public:
 	std::vector<Coordinates> m_boundaries;
 	Tissue_Container *m_tissue_container;
 
+	EC* cell_agent;
+
 	std::string m_name;
     Cell_Type *m_cell_type;
 

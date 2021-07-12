@@ -123,6 +123,7 @@ public:
     float get_local_protein_level(std::string protein_name);
     float get_junction_protein_level(std::string protein_name);
     void set_protein_level(std::string protein_name, float new_level);
+    float get_filopodia_protein_level(std::string protein_name);
 
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell);
 };

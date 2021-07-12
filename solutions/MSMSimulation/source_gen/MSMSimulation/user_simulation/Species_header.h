@@ -12,5 +12,4 @@ public:
 	ODEs();
 	void check_ODEs(std::string cell_type_name, MemAgent *memAgent);
 };
-static double calc_Rate1_rate();
 //SRC_SPRINGAGENT_ODE_H

@@ -61,36 +61,38 @@ int EC::calcVonNeighs(void){
 }
 
 //----------------------------------------------------------------------------------------------------------------------------------------------
-void EC::allocateProts(void){
+void EC::allocateProts(void) {
     
     int i, j, div;
     int divJunction=0;
     int count=0;
     
     calcVonNeighs();
-    div=VonNeighs;//nodeAgents.size()+springAgents.size()+surfaceAgents.size();
+    div = VonNeighs;//nodeAgents.size()+springAgents.size()+surfaceAgents.size();
 
     //count how many agents are at the junction-----------------------------------------------
-    for(i = 0; i < (int)nodeAgents.size(); i++){
+    for (i = 0; i < nodeAgents.size(); i++) {
         nodeAgents[i]->assessed=false;
         nodeAgents[i]->JunctionTest(true);
-        if(nodeAgents[i]->junction)
-        	divJunction++;
+        if(nodeAgents[i]->junction) {
+			divJunction++;
+		}
     }
 
-    for(i=0;i<(int)springAgents.size();i++){
+    for (i = 0; i < springAgents.size(); i++){
         springAgents[i]->assessed=false;
         springAgents[i]->JunctionTest( true);
-        if(springAgents[i]->junction)
-        	divJunction++;
+        if(springAgents[i]->junction) {
+			divJunction++;
+		}
     }
 
-    for(i=0;i<(int)surfaceAgents.size();i++){
+    for (i = 0; i < surfaceAgents.size(); i++) {
         surfaceAgents[i]->assessed=false;
         surfaceAgents[i]->JunctionTest( true);
-        if(surfaceAgents[i]->junction)
-        	divJunction++;
-        
+        if (surfaceAgents[i]->junction) {
+			divJunction++;
+		}
     }
     
     
@@ -102,47 +104,47 @@ void EC::allocateProts(void){
     //-----------------------------------------------------------------------------------------------------
     //set membrane prot levels for each cell----------------------------------------------------
     
-    for(j = 0; j < (int)nodeAgents.size(); j++) {
-        if(nodeAgents[j]->vonNeu) {
-			nodeAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
+    for (j = 0; j < nodeAgents.size(); j++) {
+        if (nodeAgents[j]->vonNeu) {
+			nodeAgents[j]->VEGFR = (float)VEGFRtot / (float)div;
         }
         
-        if(nodeAgents[j]->junction){
-            nodeAgents[j]->Notch1=(float)NotchNorm/(float)divJunction;
-            nodeAgents[j]->Dll4=(float)Dll4tot/(float)divJunction;
+        if (nodeAgents[j]->junction) {
+            nodeAgents[j]->Notch1 = (float)NotchNorm / (float)divJunction;
+            nodeAgents[j]->Dll4 = (float)Dll4tot / (float)divJunction;
         } else {
-            nodeAgents[j]->Notch1=0.0f;
-            nodeAgents[j]->Dll4=0.0f;
+            nodeAgents[j]->Notch1 = 0.0f;
+            nodeAgents[j]->Dll4 = 0.0f;
         }
     }
-    for(j=0; j < (int)springAgents.size(); j++){
+
+    for (j = 0; j < springAgents.size(); j++) {
         springAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
-        
         //clustered VR-2 to filopodia
         //if(springAgents[j-nodeAgents.size()]->FIL!=NONE) springAgents[j-nodeAgents.size()]->VEGFR=(float)(VEGFRtot*alpha)/(float)div;
         //else springAgents[j-nodeAgents.size()]->VEGFR=(float)left/(float)MnotFilTot;
         
-        if(springAgents[j]->junction) {
-            springAgents[j]->Notch1=(float)NotchNorm/(float)divJunction;
-            springAgents[j]->Dll4=(float)Dll4tot/(float)divJunction;
+        if (springAgents[j]->junction) {
+            springAgents[j]->Notch1 = (float)NotchNorm / (float)divJunction;
+            springAgents[j]->Dll4 = (float)Dll4tot / (float)divJunction;
         } else {
-            springAgents[j]->Notch1=0.0f;
-            springAgents[j]->Dll4=0.0f;
+            springAgents[j]->Notch1 = 0.0f;
+            springAgents[j]->Dll4 = 0.0f;
         }
     }
-    for(j=0;j<(int)surfaceAgents.size();j++){
-        if(surfaceAgents[j]->vonNeu) {
-			surfaceAgents[j]->VEGFR=(float)VEGFRtot/(float)div;
+
+    for (j = 0; j < surfaceAgents.size(); j++) {
+        if (surfaceAgents[j]->vonNeu) {
+			surfaceAgents[j]->VEGFR = (float)VEGFRtot / (float)div;
         }
         
         //clustered VR-2 to filopodia
         //if(springAgents[j-nodeAgents.size()]->FIL!=NONE) springAgents[j-nodeAgents.size()]->VEGFR=(float)(VEGFRtot*alpha)/(float)div;
         //else springAgents[j-nodeAgents.size()]->VEGFR=(float)left/(float)MnotFilTot;
         
-        if(surfaceAgents[j]->junction){
+        if (surfaceAgents[j]->junction) {
             surfaceAgents[j]->Notch1 = (float)NotchNorm / (float)divJunction;
             surfaceAgents[j]->Dll4 = (float)Dll4tot / (float)divJunction;
-            
         } else {
             surfaceAgents[j]->Notch1=0.0f;
             surfaceAgents[j]->Dll4=0.0f;
@@ -555,21 +557,30 @@ void EC::set_initial_proteins() {
     // TODO: Have some sort of filter preventing proteins being allocated to filopodia, thus adjusting the count.
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein_counts[i]++;
+        	// IF THE PROTEIN IS A JUNCTION PROTEIN, ONLY ADD IT TO JUNCTION AGENTS.
+        	if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+				protein_counts[i]++;
+        	}
+			// OTHERWISE, CHECK THAT IT IS EITHER A CELL OR MEMBRANE PROTEIN AND THAT THE AGENT IS NOT A JUNCTION AGENT.
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
+            		|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+				protein_counts[i]++;
+            }
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein_counts[i]++;
-        }
-    }
-
-    for (auto springAgent : this->springAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein_counts[i]++;
-        }
-    }
+    // TODO: CHECK THAT WE'RE ONLY DISTRIBUTING PROTEINS TO NODE AGENTS.
+//    for (auto surfaceAgent : this->surfaceAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein_counts[i]++;
+//        }
+//    }
+//
+//    for (auto springAgent : this->springAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein_counts[i]++;
+//        }
+//    }
 
     // Once counts have been determined, calculate the amount of each protein per memAgent.
     std::vector<float> protein_totals_per_memAgent;
@@ -584,26 +595,33 @@ void EC::set_initial_proteins() {
     for (auto nodeAgent : this->nodeAgents) {
         nodeAgent->add_cell_proteins();
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+				protein *current_protein = this->m_cell_type->proteins[i];
+				nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+			}
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
+				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+				protein *current_protein = this->m_cell_type->proteins[i];
+				nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+			}
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
-        surfaceAgent->add_cell_proteins();
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-        }
-    }
-
-    for (auto springAgent : this->springAgents) {
-        springAgent->add_cell_proteins();
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-        }
-    }
+//    for (auto surfaceAgent : this->surfaceAgents) {
+//        surfaceAgent->add_cell_proteins();
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+//        }
+//    }
+//
+//    for (auto springAgent : this->springAgents) {
+//        springAgent->add_cell_proteins();
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+//        }
+//    }
 }
 
 /*****************************************************************************************
@@ -626,29 +644,38 @@ void EC::distribute_proteins() {
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
-            if (nodeAgent->has_protein(current_protein->get_name())) {
-                protein_counts[i]++;
-            }
+			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+				if (nodeAgent->has_protein(current_protein->get_name())) {
+					protein_counts[i]++;
+				}
+
+			}
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
+				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+				if (nodeAgent->has_protein(current_protein->get_name())) {
+					protein_counts[i]++;
+				}
+			}
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (surfaceAgent->has_protein(current_protein->get_name())) {
-                protein_counts[i]++;
-            }
-        }
-    }
+//    for (auto surfaceAgent : this->surfaceAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (surfaceAgent->has_protein(current_protein->get_name())) {
+//                protein_counts[i]++;
+//            }
+//        }
+//    }
 
-    for (auto springAgent : this->springAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (springAgent->has_protein(current_protein->get_name())) {
-                protein_counts[i]++;
-            }
-        }
-    }
+//    for (auto springAgent : this->springAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (springAgent->has_protein(current_protein->get_name())) {
+//                protein_counts[i]++;
+//            }
+//        }
+//    }
 
     // Once counts have been determined, calculate the amount of each protein per memAgent.
 	std::vector<int> protein_totals_per_memAgent;
@@ -662,29 +689,37 @@ void EC::distribute_proteins() {
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
-            if (nodeAgent->has_protein(current_protein->get_name())) {
-                nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-            }
+			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+				if (nodeAgent->has_protein(current_protein->get_name())) {
+					nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+				}
+			}
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
+				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+				if (nodeAgent->has_protein(current_protein->get_name())) {
+					nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+				}
+			}
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (surfaceAgent->has_protein(current_protein->get_name())) {
-                surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-            }
-        }
-    }
-
-    for (auto springAgent : this->springAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (springAgent->has_protein(current_protein->get_name())) {
-                springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-            }
-        }
-    }
+//    for (auto surfaceAgent : this->surfaceAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (surfaceAgent->has_protein(current_protein->get_name())) {
+//                surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+//            }
+//        }
+//    }
+//
+//    for (auto springAgent : this->springAgents) {
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (springAgent->has_protein(current_protein->get_name())) {
+//                springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+//            }
+//        }
+//    }
 }
 
 /*****************************************************************************************
@@ -754,6 +789,12 @@ void EC::set_cell_type(Cell_Type *cell_type) {
     this->m_cell_type = cell_type;
 }
 
+/*****************************************************************************************
+*  Name:		has_protein
+*  Description: Returns true if the protein is owned by the cell.
+*  Returns:		bool
+******************************************************************************************/
+
 bool EC::has_protein(std::string protein_name) {
     for (auto protein : this->m_cell_type->proteins) {
         if (protein->get_name() == protein_name) {
@@ -797,5 +838,23 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 	// Cell not found in neighbour list, so add it.
 	if (!cell_found) {
 		this->neigh_cells.push_back(query_ec);
+	}
+}
+
+/*****************************************************************************************
+*  Name:		get_cell_protein_level
+*  Description: If a cell possesses a protein, then return the amount that cell has of that protein.
+*  Returns:		float
+******************************************************************************************/
+
+float EC::get_cell_protein_level(std::string protein_name) {
+	// This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
+	// This is also used during ODE running and so has the potential to fail.
+	if (this->has_protein(protein_name)) {
+		for (auto protein : this->m_cell_type->proteins) {
+			if (protein->get_name() == protein_name) {
+				return protein->get_level();
+			}
+		}
 	}
 }

@@ -2,11 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
+      <config projectName="src/springAgent" targetName="springAgent" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,15 +11,105 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Working on distribution ODEs - seems to be working but must check stepper being used.">
+    <list default="true" id="c51e8330-d371-4ed6-9994-0498ec952094" name="Default Changelist" comment="Added min and max checking when setting protein levels.">
+      <change afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/utils.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/classes_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen.caches/WorldSetup/generator/templates/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/source_gen/WorldSetup/generator/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../languages/WorldSetup/generator/templates/WorldSetup.generator.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/Tissues.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/World.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/SortTesting_header.h" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Species_header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/../solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPM_module.o" beforeDir="false" afterPath="$PROJECT_DIR$/CPM_module.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/EC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EC.o" beforeDir="false" afterPath="$PROJECT_DIR$/EC.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ECmesh.o" beforeDir="false" afterPath="$PROJECT_DIR$/ECmesh.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Grid.o" beforeDir="false" afterPath="$PROJECT_DIR$/Grid.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/Tissue.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis.o" beforeDir="false" afterPath="$PROJECT_DIR$/analysis.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/constructors.o" beforeDir="false" afterPath="$PROJECT_DIR$/constructors.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/creation.o" beforeDir="false" afterPath="$PROJECT_DIR$/creation.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/display.o" beforeDir="false" afterPath="$PROJECT_DIR$/display.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_Tissue.o" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_Tissue.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dsl_World.o" beforeDir="false" afterPath="$PROJECT_DIR$/dsl_World.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.o" beforeDir="false" afterPath="$PROJECT_DIR$/environment.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry_functions.o" beforeDir="false" afterPath="$PROJECT_DIR$/geometry_functions.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.o" beforeDir="false" afterPath="$PROJECT_DIR$/main.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memAgents.o" beforeDir="false" afterPath="$PROJECT_DIR$/memAgents.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/objects.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/protein.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/space.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/space.o" beforeDir="false" afterPath="$PROJECT_DIR$/space.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springAgent" beforeDir="false" afterPath="$PROJECT_DIR$/springAgent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/world.o" beforeDir="false" afterPath="$PROJECT_DIR$/world.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/helper_ODE.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../tests/automated/test_ODE.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +147,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../tests/user" />
@@ -74,37 +161,32 @@
       <recent name="$PROJECT_DIR$/../tests/automated" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.MultiNeighbourODEMemAgentTest.cellODETest">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicODEMemAgentTest.environmentCheckTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicODEMemAgentTest" TEST_METHOD="environmentCheckTest" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake Application.springAgent">
+    <configuration name="BasicCellDistributionTest.basicDistroTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="basicDistroTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="BasicCellDistributionTest.postDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="postDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.cellTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="cellTest" TEST_MODE="SUITE_TEST">
+    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CrossCellODEMemAgentTest.junctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CrossCellODEMemAgentTest" TEST_METHOD="junctionODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="BasicODEMemAgentTest.memAgentTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicODEMemAgentTest" TEST_METHOD="memAgentTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -115,22 +197,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="1 0.9 0.04 2 2 15 1 2 -1 -1 1" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -142,24 +209,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CMake Application.springAgent" />
       <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellTest" />
-      <item itemvalue="Google Test.BasicODEMemAgentTest.environmentCheckTest" />
-      <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellODETest" />
-      <item itemvalue="Google Test.CrossCellODEMemAgentTest.junctionODETest" />
       <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.basicDistroTest" />
+      <item itemvalue="Google Test.BasicODEMemAgentTest.memAgentTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.postDistributionTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Google Test.BasicCellDistributionTest.postDistributionTest" />
+        <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
+        <item itemvalue="Google Test.BasicCellDistributionTest.basicDistroTest" />
         <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
-        <item itemvalue="Google Test.CrossCellODEMemAgentTest.junctionODETest" />
-        <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellODETest" />
-        <item itemvalue="Google Test.CrossCellODEMemAgentTest.cellTest" />
-        <item itemvalue="Google Test.BasicODEMemAgentTest.environmentCheckTest" />
+        <item itemvalue="Google Test.BasicODEMemAgentTest.memAgentTest" />
       </list>
     </recent_temporary>
   </component>
@@ -192,14 +256,13 @@
       <workItem from="1625065702188" duration="5378000" />
       <workItem from="1625132138393" duration="12197000" />
       <workItem from="1625217403622" duration="17901000" />
-      <workItem from="1625476357208" duration="18701000" />
-    </task>
-    <task id="LOCAL-00008" summary="Commented out printing of XMAX etc. during world creation.">
-      <created>1618312763531</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1618312763531</updated>
+      <workItem from="1625476357208" duration="37384000" />
+      <workItem from="1625651185162" duration="17364000" />
+      <workItem from="1625750040840" duration="2370000" />
+      <workItem from="1625758468616" duration="6280000" />
+      <workItem from="1626080780795" duration="2409000" />
+      <workItem from="1626083744147" duration="705000" />
+      <workItem from="1626087288534" duration="11918000" />
     </task>
     <task id="LOCAL-00009" summary="Changed find_nearest_triangle_node to use gridXdimensions.">
       <created>1618313051262</created>
@@ -537,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625500219414</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Added min and max checking when setting protein levels.">
+      <created>1625502905864</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1625502905864</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +626,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Swapped width and height arguments for cuboidal gradient constructore" />
     <MESSAGE value="Removed old functions for determining whether an env agent is within a square." />
     <MESSAGE value="sink and source creation function now calls the correct application function" />
     <MESSAGE value="Added an assert to check that env agents are within the world when creating a gradient." />
@@ -581,6 +650,18 @@
     <MESSAGE value="Implemented new tests for memAgent ODEs." />
     <MESSAGE value="Completed junction test for ODES" />
     <MESSAGE value="Working on distribution ODEs - seems to be working but must check stepper being used." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working on distribution ODEs - seems to be working but must check stepper being used." />
+    <MESSAGE value="Added min and max checking when setting protein levels." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added min and max checking when setting protein levels." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/memAgents.cpp</url>
+          <line>1409</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

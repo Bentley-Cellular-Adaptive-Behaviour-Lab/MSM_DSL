@@ -139,7 +139,7 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
             //TODO: Have run number logging use a variable.
 
             // Create a logger for protein levels.
-            ecp->logger = new cell_logger(1, m_world->time, ecp);
+//            ecp->logger = new cell_logger(1, m_world->time, ecp);
 
             ecp->belongs_to = BELONGS_TO_SINGLECELL;
 
@@ -151,6 +151,11 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
 			//Add the cell to list of tissue container's known cell agents.
 			this->m_single_cell_agents.push_back(ecp);
 
+			//Assign the cell agent to the cell object.
+			cell->cell_agent = ecp;
+			ecp->m_cell = cell;
+			ecp->m_cell_type = cell->m_cell_type;
+
             check_position(cell);
 
             create_2d_square_cell(m_single_cell_agents.size(),
@@ -161,8 +166,6 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
                                   cell->m_cell_type->m_shape->get_height());
 
             connect_2d_square_cell(m_single_cell_agents.size());
-
-            store_cell(cell);
         } else {
             throw 4;
         }
@@ -1533,7 +1536,7 @@ void Tissue_Vessel::create_vessel() {
         // Add this agent to the relevant tissue.
         store_cell_agent(ecp);
         // Create a logger for protein levels.
-        ecp->logger = new cell_logger(1, m_world->time, ecp);
+//        ecp->logger = new cell_logger(1, m_world->time, ecp);
 
         ecp->belongs_to = BELONGS_TO_CYLINDER;
 
@@ -1605,6 +1608,8 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
         thetaStart -= 2 * Pi;
     }
 
+    int lowerXboundary = this->m_boundaries[0].x;
+
     X = (float)j; // X-Coordinate is not currently set, will need to think about this when changing the periodic boundary.
     Y = (float)m_vessel_centre_y_coord;
     Z = (float)m_vessel_centre_z_coord;
@@ -1617,11 +1622,11 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
         l = (float)m_vessel_total_radius * sin(theta);
 
     //If within vessel, but not lumen, create a memAgent.
-        if (m_world->insideWorld(j+depth, k+Y, l+Z)) {
+        if (m_world->insideWorld(j + depth + (float)lowerXboundary, k+Y, l+Z)) {
 
             memp = new MemAgent(ecp, this->m_world);
 
-            memp->Mx = (float)j+(float)depth;
+            memp->Mx = (float)j + (float)depth + (float)lowerXboundary;
             memp->My = k+Y;
             memp->FA = true;
             //---------------------------------------
@@ -1647,7 +1652,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
 
             ecp->nodeAgents.push_back(memp);
 
-            m_world->setMLocation(int(j+depth), int(k+Y), int(l+Z), memp);
+            m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), memp);
 
             memp->JunctionTest( true);
         }

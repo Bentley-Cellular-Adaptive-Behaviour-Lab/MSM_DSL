@@ -4,8 +4,9 @@
 
 #include "protein.h"
 
-protein::protein(std::string name, float initial_level, bool checks_neighbour, float min, float max) {
+protein::protein(std::string name, int protein_location, float initial_level, bool checks_neighbour, float min, float max) {
     this->name = name;
+	this->protein_location = protein_location;
     this->level = initial_level;
     this->checks_neighbour = checks_neighbour;
     this->min = min;
@@ -16,9 +17,8 @@ float protein::get_level() const {
     return this->level;
 }
 
-float protein::set_level(float new_level)  {
+void protein::set_level(float new_level)  {
     this->level = new_level;
-    return new_level;
 }
 
 std::string protein::get_name() {
@@ -31,6 +31,10 @@ float protein::get_min() const {
 
 float protein::get_max() const {
 	return this->max;
+}
+
+int protein::get_location() const {
+	return this->protein_location;
 }
 
 protein::~protein() = default;

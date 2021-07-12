@@ -1,6 +1,7 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/meadt/MPSProjects/MSM_DSL
-TEST_TYPE = 1
-Testing: Automated
+TEST_TYPE = 0
+Testing: None
+Boost found.
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /Users/meadt/MPSProjects/MSM_DSL/cmake-build-debug

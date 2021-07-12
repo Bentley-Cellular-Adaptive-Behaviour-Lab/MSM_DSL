@@ -1,26 +1,26 @@
 
 #include "Tissue.h"
 void Tissue_Container::tissue_set_up() {
-    // Created using: Tissues //
+    // Created using: NewTissues //
 
     // Cell Type Declarations //
-    Cell_Type *Endothelial_Type;
+    Cell_Type *EndoType_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Cylindrical *Vessel_Type;
+    Tissue_Type_Cylindrical *VesselType_Type;
 
     // Coordinate Declarations //
-    Coordinates Monolayer1_Pos;
+    Coordinates Vessel_Pos;
 
     // Cell Type Creation //
-    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 10, 10);
+    EndoType_Type = define_cell_type("EndoType", CELL_SHAPE_SQUARE, 10, 10);
 
     // Tissue Type Creation //
-    Vessel_Type = define_tissue_type("Vessel", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 10, 3);
+    VesselType_Type = define_tissue_type("VesselType", EndoType_Type, CELL_CONFIGURATION_CYLINDRICAL, 3, 5, 6);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Monolayer1_Pos = Coordinates(45, 32, 32);
-    create_tissue("Monolayer1", Vessel_Type, &(Monolayer1_Pos));
+    Vessel_Pos = Coordinates(60, 26, 30);
+    create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
 }
