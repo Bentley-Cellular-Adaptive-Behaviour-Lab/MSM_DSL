@@ -1,4 +1,4 @@
-OBJS = main.o analysis.o Grid.o CPM_module.o constructors.o memAgents.o creation.o geometry_functions.o EC.o ECmesh.o environment.o Tissue.o dsl_Tissue.o dsl_World.o space.o world.o protein.o logger.o ODE.o
+OBJS = main.o analysis.o Grid.o CPM_module.o constructors.o memAgents.o creation.o geometry_functions.o EC.o ECmesh.o environment.o Tissue.o dsl_Tissue.o dsl_World.o space.o world.o protein.o logger.o ODE.o utils.o
 
 CC = g++
 TARGET = springAgent

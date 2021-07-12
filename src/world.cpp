@@ -28,7 +28,6 @@
 
 void Gradient::add_env_protein(Env *ep, float calc_level) {
     bool protein_found = false;
-
     for (auto protein : ep->owned_proteins) {
         if (protein->get_name() == this->m_protein->get_name()) {
             protein_found = true;
@@ -36,7 +35,8 @@ void Gradient::add_env_protein(Env *ep, float calc_level) {
         }
     }
     if (!protein_found) {
-        ep->owned_proteins.push_back(new protein(m_protein->get_name(), calc_level, false, m_protein->get_min(), m_protein->get_max()));
+    	assert(m_protein->get_location() == PROTEIN_LOCATION_ENVIRONMENT);
+        ep->owned_proteins.push_back(new protein(m_protein->get_name(), m_protein->get_location(), calc_level, false, m_protein->get_min(), m_protein->get_max()));
     }
 }
 
@@ -556,13 +556,25 @@ void Gradient::apply_gradient_to_cuboid() {
 					ep = m_parent_world->grid[x][y][z].Eid;
 					if (ep != nullptr) {
 						if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            calc_linear_env_protein(ep);
+							if (PROTEIN_TESTING) {
+								calc_linear_env_protein(ep);
+							} else {
+								calc_linear_env_VEGF(ep);
+							}
 						}
 						if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-							calc_exp_env_protein(ep);
+							if (PROTEIN_TESTING) {
+								calc_exp_env_protein(ep);
+							} else {
+								calc_exp_env_VEGF(ep);
+							}
 						}
 						if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-							calc_constant_env_protein(ep);
+							if (PROTEIN_TESTING) {
+								calc_constant_env_protein(ep);
+							} else {
+								calc_constant_env_VEGF(ep);
+							}
 						}
 					}
 				}
@@ -631,13 +643,25 @@ void Gradient::apply_gradient_to_sinkandsource() {
                     ep = m_parent_world->grid[i][j][k].Eid;
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            calc_linear_env_protein(ep);
+                        	if (PROTEIN_TESTING) {
+								calc_linear_env_protein(ep);
+                        	} else {
+                        		calc_linear_env_VEGF(ep);
+                        	}
                         }
                         if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                            calc_exp_env_protein(ep);
+							if (PROTEIN_TESTING) {
+								calc_exp_env_protein(ep);
+							} else {
+								calc_exp_env_VEGF(ep);
+							}
                         }
                         if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                            calc_constant_env_protein(ep);
+							if (PROTEIN_TESTING) {
+								calc_constant_env_protein(ep);
+							} else {
+								calc_constant_env_VEGF(ep);
+							}
                         }
                     }
                 }
@@ -687,13 +711,25 @@ void Gradient::apply_gradient_to_sphere() {
 										((m_centre_position->z - z) * (m_centre_position->z - z)));
 								if (dist_from_centre <= radius) {
 									if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-										calc_linear_env_VEGF(ep);
+										if (PROTEIN_TESTING) {
+											calc_linear_env_protein(ep);
+										} else {
+											calc_linear_env_VEGF(ep);
+										}
 									}
 									if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-										calc_exp_env_VEGF(ep);
+										if (PROTEIN_TESTING) {
+											calc_exp_env_protein(ep);
+										} else {
+											calc_exp_env_VEGF(ep);
+										}
 									}
 									if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-										calc_constant_env_VEGF(ep);
+										if (PROTEIN_TESTING) {
+											calc_constant_env_protein(ep);
+										} else {
+											calc_constant_env_VEGF(ep);
+										}
 									}
 								}
 							}
@@ -1300,7 +1336,9 @@ void World::runSimulation()
 {
 	while (timeStep <= MAXtime)
 	{
-//        if (timeStep % 50 == 0) std::cout << "timestep " << timeStep << ".. " << MAXtime - timeStep << " left" << std::endl;
+        if (timeStep % 50 == 0) {
+			std::cout << "Current timestep: " << timeStep << " - " << MAXtime - timeStep << " steps left." << std::endl;
+		}
 		simulateTimestep();
 
 		if (ANALYSIS_HYSTERESIS)
@@ -1412,12 +1450,12 @@ void World::creationTimestep(int movie) {
 //    setInitialVEGF();
 
 	//divide out cells overall levels of proteins to their memAgents once created
-	if (!DSL_TESTING) {
+	if (!PROTEIN_TESTING) {
 		for (int j = 0; j < (int) ECagents.size(); j++)
 			ECagents[j]->allocateProts();
 	}
 
-	if (DSL_TESTING) {
+	if (PROTEIN_TESTING) {
 		std::cout << "Allocating cell proteins to memagents." << std::endl;
 		for (int j = 0; j < (int) ECagents.size(); j++) {
 			// TODO: TOM - This is the old version that distributes things like VEGF -> this is eventually going to be removed.
@@ -1460,27 +1498,21 @@ void World::simulateTimestep() {
 	{
 		std::cout << "Creation timestep... initialising everything" << std::endl;
 		creationTimestep(movie);
-	}
-	else {
-		std::cout << "Current timestep: "<< this->timeStep << std::endl;
-//		std::cout << "Updating filopodia." << std::endl;
+	} else {
 		for (EC* ec : ECagents) {
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
+			if (DSL_TESTING) {
+				ec->print_protein_levels(1);
+			}
 			ec->print_protein_levels(1);
 		}
-//		std::cout << "Updating memAgents." << std::endl;
 		updateMemAgents();
 		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
 		}
-//		std::cout << "Updating EC agents." << std::endl;
 		updateECagents();
-//		std::cout << "Updating environment." << std::endl;
 		updateEnvironment();
-
-		//movieMaking(movie);
-		//movieMaking(movie);
 	}
 }
 
@@ -1595,10 +1627,7 @@ void World::updateMemAgents() {
 				//------------------------------------
 				//retract fils if inactive------------
 				if ( ((RAND_FILRETRACT_CHANCE==-1)&&(memp->filTipTimer > FILTIPMAX)) || ((RAND_FILRETRACT_CHANCE>-1) &&(randomChance < RAND_FILRETRACT_CHANCE)) ) {
-
-
-					if (memp->filRetract() == true) {
-
+					if (memp->filRetract()) {
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);
 
@@ -1620,8 +1649,7 @@ void World::updateMemAgents() {
 					if (memp->vonNeu) {
 						memp->VEGFRresponse();
 					}
-				}
-				else if(!ANALYSIS_HYSTERESIS){
+				} else if(!ANALYSIS_HYSTERESIS){
 					if (memp->vonNeu) {
 						memp->VEGFRresponse();
 					}
@@ -1675,7 +1703,7 @@ void World::updateECagents() {
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
 		// TOM
-		if (DSL_TESTING) {
+		if (PROTEIN_TESTING) {
 			// Determine the total level of protein across all memAgents, then distribute these proteins out to the memagents evenly.
 			ECagents[j]->calculate_cell_protein_levels();
 		}
@@ -1708,7 +1736,7 @@ void World::updateECagents() {
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
 		//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
-		if (DSL_TESTING) {
+		if (PROTEIN_TESTING) {
 			ECagents[j]->distribute_proteins();
 		} else {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
@@ -1902,7 +1930,7 @@ bool World::delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp) {
 	bool deleted = false;
 	std::vector<MemAgent*>::iterator L;
 
-	if ((memp->node == false) && (memp->deleteFlag == true)) {
+	if ((!memp->node) && (memp->deleteFlag)) {
 
 		deleted = true;
 		//remove the tip node from cells list

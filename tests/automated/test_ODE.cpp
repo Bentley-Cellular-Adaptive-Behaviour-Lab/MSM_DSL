@@ -13,6 +13,8 @@
 #include <cmath>
 #include "helper_ODE.h"
 #include "memAgents.h"
+#include "Tissue.h"
+#include "EC.h"
 
 namespace odeint = boost::numeric::odeint;
 
@@ -99,10 +101,43 @@ TEST_F(CrossCellODEMemAgentTest, junctionODETest) {
 	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("D")), 1);
 }
 
+// Tests that memAgents are able to check multiple neighbours.
+// Runs an ODE in two memAgents with have either 2 (memAgent2) or 3 (memAgent7) neighbours, for a single timestep.
+// TODO: Revisit this test, asynchronous updating of memAgents.
 TEST_F(MultiNeighbourODEMemAgentTest, cellODETest) {
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 20);
+	EXPECT_EQ(round(memAgent7->get_memAgent_protein_level("C")), 25);
 
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 5);
+	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 5);
+	EXPECT_EQ(round(memAgent4->get_memAgent_protein_level("D")), 5);
+	EXPECT_EQ(round(memAgent5->get_memAgent_protein_level("D")), 5);
+	EXPECT_EQ(round(memAgent6->get_memAgent_protein_level("D")), 5);
 }
 
-TEST_F(MultiNeighbourODEMemAgentTest, junctionODETest) {
+TEST_F(BasicFilODEMemAgentTest, basicFilTest) {
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 26);
+	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("C")), 26);
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 26);
+	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("C")), 26);
+}
 
+TEST_F(BasicCellDistributionTest, preDistributionTest) {
+	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 1000);
+	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 40);
+}
+
+TEST_F(BasicCellDistributionTest, postDistributionTest) {
+	for (int i = 0; i < 10; i++) {
+		if (i != 0) {
+			this->cell->cell_agent->distribute_proteins();
+		}
+		for (auto memAgent : this->cell->cell_agent->nodeAgents) {
+			runODE(memAgent);
+		}
+		this->cell->cell_agent->calculate_cell_protein_levels();
+		this->printCellProteinLevels(i+1);
+	}
+	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
+	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
 }
