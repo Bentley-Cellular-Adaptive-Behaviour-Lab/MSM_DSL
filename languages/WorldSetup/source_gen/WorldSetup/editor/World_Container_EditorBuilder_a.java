@@ -19,7 +19,8 @@ import jetbrains.mps.openapi.editor.menus.transformation.SPropertyInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -54,6 +55,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfoSmartReferenceDecorator;
 import jetbrains.mps.nodeEditor.cellMenu.SReferenceSubstituteInfo;
 import jetbrains.mps.lang.core.behavior.LinkAttribute__BehaviorDescriptor;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -106,6 +108,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "World Set-up Name :");
     editorCell.setCellId("Constant_qumq7g_a0a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -118,7 +124,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setDefaultText("<no name>");
       editorCell.setCellId("property_name");
       Style style = new StyleImpl();
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.green));
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(6076508)));
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
       editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
@@ -140,6 +149,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qumq7g_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -174,6 +187,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setCellId("Constant_qumq7g_a1c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -214,6 +229,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.grid$mgtJ);
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -236,6 +255,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qumq7g_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -270,6 +293,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setCellId("Constant_qumq7g_a1e0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -357,6 +382,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_5() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qumq7g_f0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -391,6 +420,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setCellId("Constant_qumq7g_a1g0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -478,6 +509,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_7() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qumq7g_h0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -513,6 +548,8 @@ import org.jetbrains.mps.openapi.language.SConcept;
     editorCell.setCellId("Constant_qumq7g_a0a8a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.UNDERLINED, true);
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
@@ -590,7 +627,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
         editorCell.setDefaultText("<no name>");
         editorCell.setCellId("property_name1");
         Style style = new StyleImpl();
-        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
+        style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
+        style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+        style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+        style.set(StyleAttributes.FONT_SIZE, 16);
         editorCell.getStyle().putAll(style);
         editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
         setCellContext(editorCell);
@@ -613,6 +653,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_9() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
     editorCell.setCellId("Constant_qumq7g_j0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -10,6 +10,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -48,12 +51,15 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createRefNode_0());
     editorCell.addEditorCell(createConstant_1());
     editorCell.addEditorCell(createRefNode_1());
-    editorCell.addEditorCell(createConstant_2());
     return editorCell;
   }
   private EditorCell createConstant_0() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{ X-coord :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "- X:");
     editorCell.setCellId("Constant_gblnas_a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -93,6 +99,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.X_Coord$$NNM);
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -113,8 +123,12 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     }
   }
   private EditorCell createConstant_1() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ", Y-coord :");
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "- Y:");
     editorCell.setCellId("Constant_gblnas_c0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -154,6 +168,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.Y_Coord$$OhO);
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {
@@ -172,12 +190,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     protected String getNoTargetText() {
       return "<no Y_Coord>";
     }
-  }
-  private EditorCell createConstant_2() {
-    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "}");
-    editorCell.setCellId("Constant_gblnas_e0");
-    editorCell.setDefaultText("");
-    return editorCell;
   }
 
   private static final class LINKS {

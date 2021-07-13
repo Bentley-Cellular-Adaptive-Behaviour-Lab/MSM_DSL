@@ -11,6 +11,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
@@ -69,6 +72,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setReferenceCell(true);
       editorCell.setSRole(LINKS.value$SBs3);
     }
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 16);
+    editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
@@ -140,6 +147,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
         if (editorCell.getSRole() == null) {
           editorCell.setSRole(LINKS.expr$fJhI);
         }
+        Style style = new StyleImpl();
+        style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+        style.set(StyleAttributes.FONT_SIZE, 16);
+        editorCell.getStyle().putAll(style);
       }
       @Override
       protected EditorCell createEmptyCell() {
@@ -196,6 +207,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
       if (editorCell.getSRole() == null) {
         editorCell.setSRole(LINKS.units$DnBC);
       }
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
+      editorCell.getStyle().putAll(style);
     }
     @Override
     protected EditorCell createEmptyCell() {

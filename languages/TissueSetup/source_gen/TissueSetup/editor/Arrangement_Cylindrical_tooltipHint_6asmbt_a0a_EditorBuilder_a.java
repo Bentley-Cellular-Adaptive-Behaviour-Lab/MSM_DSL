@@ -87,9 +87,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
     try {
       final SProperty property = PROPS.cylinder_cross_section_cells$pzjl;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
       editorCell.setDefaultText("<no cylinder_cross_section_cells>");
       editorCell.setCellId("property_cylinder_cross_section_cells");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 12);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -110,6 +114,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cells will be generated along the circumference.");
     editorCell.setCellId("Constant_hlmfkj_b0a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 12);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -128,9 +136,13 @@ import org.jetbrains.mps.openapi.language.SConcept;
     try {
       final SProperty property = PROPS.cylinder_total_cells$o_jT;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
       editorCell.setDefaultText("<no cylinder_total_cells>");
       editorCell.setCellId("property_cylinder_total_cells");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 12);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -151,6 +163,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_1() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "cells will be created in total.");
     editorCell.setCellId("Constant_hlmfkj_b1a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 12);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -168,6 +184,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_2() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "The vessel will be ");
     editorCell.setCellId("Constant_hlmfkj_a2a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 12);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -176,9 +196,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
     try {
       final SProperty property = PROPS.cylinder_total_length_int$Xfju;
       getCellFactory().setPropertyInfo(new SPropertyInfo(myNode, property));
-      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, false, false), myNode);
+      EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new SPropertyAccessor(myNode, property, true, false), myNode);
       editorCell.setDefaultText("<no cylinder_total_length_int>");
       editorCell.setCellId("property_cylinder_total_length_int");
+      Style style = new StyleImpl();
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 12);
+      style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+      style.set(StyleAttributes.FONT_SIZE, 16);
+      editorCell.getStyle().putAll(style);
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
       Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
@@ -199,6 +225,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
   private EditorCell createConstant_3() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, " grid points long.");
     editorCell.setCellId("Constant_hlmfkj_c2a0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_FAMILY, "Calibri");
+    style.set(StyleAttributes.FONT_SIZE, 12);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

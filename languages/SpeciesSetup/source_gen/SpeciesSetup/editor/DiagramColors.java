@@ -6,8 +6,8 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class DiagramColors {
-  public static final Color SpeciesBackgroundColor = Color.decode("#bb2167");
-  public static final Color ReactionBackgroundColor = Color.decode("#08415d");
+  public static final Color SpeciesBackgroundColor = Color.decode("#ff1688");
+  public static final Color ReactionBackgroundColor = Color.decode("#597dff");
   public static final Color TextColor = Color.WHITE;
   public static final Color ObjectBorderColour = Color.BLACK;
 
