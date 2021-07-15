@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>org.iets3.req.os</id>
+  <name>org.iets3.req.os</name>
+  <version>2020.3.4758.09957a6</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>de.slisson.mps.tables</depends>
+  <depends>com.mbeddr.doc</depends>
+  <depends>org.iets3.core.os</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

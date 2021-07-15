@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.debugger.testing">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.test-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.test-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.test.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.test.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.util-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.test.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.core.debug.util-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/debugger.testing/languages/com.mbeddr.debugger.testing/com.mbeddr.debugger-testing.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.ext.units">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units.interpreter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units.interpreter-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.units/languages/com.mbeddr.ext.units/com.mbeddr.ext.units.runtime.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

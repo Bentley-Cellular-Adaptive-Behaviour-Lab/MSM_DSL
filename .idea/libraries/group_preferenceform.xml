@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.preferenceform">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.preferenceform/com.mbeddr.mpsutil.preferenceform.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.preferenceform/com.mbeddr.mpsutil.preferenceform.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.preferenceform/com.mbeddr.mpsutil.preferenceform.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.preferenceform/com.mbeddr.mpsutil.preferenceform-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.preferenceform/com.mbeddr.mpsutil.preferenceform-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

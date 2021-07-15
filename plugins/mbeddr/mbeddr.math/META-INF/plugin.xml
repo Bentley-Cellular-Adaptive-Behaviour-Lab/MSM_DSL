@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.ext.math</id>
+  <name>com.mbeddr.ext.math</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.core</depends>
+  <depends>com.mbeddr.debugger</depends>
+  <depends>de.itemis.mps.editor.math</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="de.slisson.mps.hacks">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.reflection-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.hacks.editor.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.hacks.xmodelgen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.reflection.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.reflection-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.hacks.xmodelgen-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.reflection.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.hacks.xmodelgen-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.hacks.editor-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.slisson.mps.hacks/languages/de.slisson.mps.hacks/de.slisson.mps.reflection.runtime-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

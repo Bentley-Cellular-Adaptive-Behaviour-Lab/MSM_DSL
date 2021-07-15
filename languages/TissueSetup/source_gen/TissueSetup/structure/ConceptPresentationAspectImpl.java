@@ -10,13 +10,14 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_Arrangement;
+  private ConceptPresentation props_Arrangement_Cylindrical;
+  private ConceptPresentation props_Arrangement_Flat;
   private ConceptPresentation props_Cell;
   private ConceptPresentation props_Cell_Type;
-  private ConceptPresentation props_Cylindrical;
-  private ConceptPresentation props_Flat;
+  private ConceptPresentation props_Cell_Type_Reference;
   private ConceptPresentation props_Position;
-  private ConceptPresentation props_Rectangular;
   private ConceptPresentation props_Shape;
+  private ConceptPresentation props_Shape_Rectangular;
   private ConceptPresentation props_Tissue;
   private ConceptPresentation props_Tissue_And_Cell_Container;
   private ConceptPresentation props_Tissue_Type;
@@ -33,6 +34,22 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Arrangement = cpb.create();
         }
         return props_Arrangement;
+      case LanguageConceptSwitch.Arrangement_Cylindrical:
+        if (props_Arrangement_Cylindrical == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a hollow, 2D cylindrical tissue and related attributes.");
+          cpb.rawPresentation("Cylindrical");
+          props_Arrangement_Cylindrical = cpb.create();
+        }
+        return props_Arrangement_Cylindrical;
+      case LanguageConceptSwitch.Arrangement_Flat:
+        if (props_Arrangement_Flat == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Concept for describing a flat (2D), rectangular tissue and related attributes.");
+          cpb.rawPresentation("Flat");
+          props_Arrangement_Flat = cpb.create();
+        }
+        return props_Arrangement_Flat;
       case LanguageConceptSwitch.Cell:
         if (props_Cell == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -49,22 +66,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Cell_Type = cpb.create();
         }
         return props_Cell_Type;
-      case LanguageConceptSwitch.Cylindrical:
-        if (props_Cylindrical == null) {
+      case LanguageConceptSwitch.Cell_Type_Reference:
+        if (props_Cell_Type_Reference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Concept for describing a hollow, 2D cylindrical tissue and related attributes.");
-          cpb.rawPresentation("Cylindrical");
-          props_Cylindrical = cpb.create();
+          cpb.presentationByReference(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L, 0x18c0ec6efa1eac4eL, "Cell_Type_Reference", "", "");
+          props_Cell_Type_Reference = cpb.create();
         }
-        return props_Cylindrical;
-      case LanguageConceptSwitch.Flat:
-        if (props_Flat == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Concept for describing a flat (2D), rectangular tissue and related attributes.");
-          cpb.rawPresentation("Flat");
-          props_Flat = cpb.create();
-        }
-        return props_Flat;
+        return props_Cell_Type_Reference;
       case LanguageConceptSwitch.Position:
         if (props_Position == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -73,14 +81,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Position = cpb.create();
         }
         return props_Position;
-      case LanguageConceptSwitch.Rectangular:
-        if (props_Rectangular == null) {
-          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.shortDesc("Square cell shape type.");
-          cpb.rawPresentation("Rectangular");
-          props_Rectangular = cpb.create();
-        }
-        return props_Rectangular;
       case LanguageConceptSwitch.Shape:
         if (props_Shape == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -88,6 +88,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Shape = cpb.create();
         }
         return props_Shape;
+      case LanguageConceptSwitch.Shape_Rectangular:
+        if (props_Shape_Rectangular == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Square cell shape type.");
+          cpb.rawPresentation("Rectangular");
+          props_Shape_Rectangular = cpb.create();
+        }
+        return props_Shape_Rectangular;
       case LanguageConceptSwitch.Tissue:
         if (props_Tissue == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

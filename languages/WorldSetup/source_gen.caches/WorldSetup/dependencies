@@ -4,6 +4,7 @@
     <classNode dependClassName="WorldSetup.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="WorldSetup.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="WorldSetup.editor.EditorAspectDescriptorImpl" />
+    <classNode dependClassName="WorldSetup.intentions.IntentionsDescriptor" />
     <classNode dependClassName="WorldSetup.structure.ConceptPresentationAspectImpl" />
     <classNode dependClassName="WorldSetup.structure.StructureAspectDescriptor" />
     <classNode dependClassName="WorldSetup.typesystem.TypesystemDescriptor" />
@@ -13,6 +14,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.openapi.intentions.IntentionAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageExtensions" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />

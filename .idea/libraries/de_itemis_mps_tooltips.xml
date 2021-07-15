@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="de.itemis.mps.tooltips">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.tooltips/languages/de.itemis.mps.tooltips/de.itemis.mps.tooltips.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.tooltips/languages/de.itemis.mps.tooltips/de.itemis.mps.tooltips-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.tooltips/languages/de.itemis.mps.tooltips/de.itemis.mps.tooltips-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.tooltips/languages/de.itemis.mps.tooltips/de.itemis.mps.tooltips.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.tooltips/languages/de.itemis.mps.tooltips/de.itemis.mps.tooltips.runtime-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

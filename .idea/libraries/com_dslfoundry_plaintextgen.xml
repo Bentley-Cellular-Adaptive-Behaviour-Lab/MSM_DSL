@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="com.dslfoundry.plaintextgen">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextflow.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextflow-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextflow-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.dslfoundry.plaintextgen/languages/com.dslfoundry.plaintextgen/com.dslfoundry.plaintextgen-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

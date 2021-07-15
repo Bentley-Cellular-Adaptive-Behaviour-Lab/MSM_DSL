@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="de.q60.mps.libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/languages/de.q60.mps.libs/de.q60.mps.libs-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/languages/de.q60.mps.libs/de.q60.mps.libs.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

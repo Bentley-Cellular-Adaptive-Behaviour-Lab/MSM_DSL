@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="com.opencsv">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/com.opencsv/com.opencsv.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

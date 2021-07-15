@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="iets3.comp.os">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.req-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.core-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.req-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.core.interpreter-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.req.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.core.interpreter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.comp.os/languages/iets3.comp.os/org.iets3.components.plugin-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

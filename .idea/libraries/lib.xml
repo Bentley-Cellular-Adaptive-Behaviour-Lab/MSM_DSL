@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/lib/vavr-0.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/lib/commons-collections4-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/lib/trove4j-3.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.60.mps.libs/lib/guava-27.1-jre.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

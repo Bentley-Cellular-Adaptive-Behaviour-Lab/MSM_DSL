@@ -1,0 +1,68 @@
+<component name="libraryTable">
+  <library name="de.q60.shadowmodels">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.debugview.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.debugview-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.text-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces.genplan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.editor-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.transformation-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.genplan-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.afterPF-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.util-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.incremental-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.afterPF.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.runtimelang-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.desugar-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.afterPF-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.typesystem-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.modelcheck.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.incremental.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.transformation-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.util-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.repository-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.repository.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.runtimelang.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.text-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.explorer-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.polymorphicfunctions-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.runtimelang-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.polymorphicfunctions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.desugar-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.repository-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.modelcheck.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.explorer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.transformation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.util-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.incremental.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.genplan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.polymorphicfunctions.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.incremental.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.editor.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.typesystem-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.logging.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.incremental-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.explorer.impl-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.text.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.logging.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.devkit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces.genplan-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.target.editor-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.desugar.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.polymorphicfunctions.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.polymorphicfunctions-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.virtualinterfaces.devkit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.explorer.impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels/languages/de.q60.shadowmodels/de.q60.mps.shadowmodels.gen.typesystem.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

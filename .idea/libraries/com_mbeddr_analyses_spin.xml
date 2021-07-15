@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.analyses.spin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.testing-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.testing-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c.patterns-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.promela.patterns.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.pluginSolution-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.promela.patterns-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.promela-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.testing.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.promela.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.rt-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c.patterns.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c.patterns-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.c-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.documentation-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.documentation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.promela.patterns-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spin/languages/com.mbeddr.analyses.spin/com.mbeddr.analyses.spin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

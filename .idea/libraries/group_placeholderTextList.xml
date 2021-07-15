@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.placeholderTextList">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.placeholderTextList/languages/group.placeholderTextList/com.mbeddr.mpsutil.placeholderTextList.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.placeholderTextList/languages/group.placeholderTextList/com.mbeddr.mpsutil.placeholderTextList-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.placeholderTextList/languages/group.placeholderTextList/com.mbeddr.mpsutil.placeholderTextList.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.placeholderTextList/languages/group.placeholderTextList/com.mbeddr.mpsutil.placeholderTextList-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.placeholderTextList/languages/group.placeholderTextList/com.mbeddr.mpsutil.placeholderTextList.runtime.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

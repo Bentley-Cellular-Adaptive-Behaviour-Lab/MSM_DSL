@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="functionaljava_1.8-4.8-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.core.expr.genjava/lib/functionaljava_1.8-4.8-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

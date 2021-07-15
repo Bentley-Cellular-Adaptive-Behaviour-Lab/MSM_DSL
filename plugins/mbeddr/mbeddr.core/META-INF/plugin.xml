@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.core</id>
+  <name>com.mbeddr.core</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
+  <depends>jetbrains.mps.core</depends>
+  <depends>de.slisson.mps.hacks</depends>
+  <depends>de.slisson.mps.conditionalEditor</depends>
+  <depends>com.mbeddr.mpsutil</depends>
+  <depends>com.mbeddr.spawner</depends>
+  <depends>com.mbeddr.debugger</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>jetbrains.mps.debugger.java</depends>
+  <depends>jetbrains.mps.execution.languages</depends>
+  <depends>com.mbeddr.mpsutil.smodule</depends>
+  <depends>jetbrains.mps.ide.make</depends>
+  <depends>com.mbeddr.mpsutil.dataflow</depends>
+  <depends>de.itemis.mps.grammarcells</depends>
+  <depends>com.mbeddr.mpsutil.compare</depends>
+  <depends>com.mbeddr.doc</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

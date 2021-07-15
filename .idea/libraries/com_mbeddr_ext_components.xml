@@ -1,0 +1,34 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.ext.components">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.concurrency-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.gen_nomw-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.pluginSolution-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.embedded-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.compositecomponents-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.embedded.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.mock-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.test-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.embedded-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.units-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.mock.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.test-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.units-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.mock-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.test.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.compositecomponents.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.concurrency-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.concurrency.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.compositecomponents-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.gen_nomw.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.gen_nomw-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.components/languages/com.mbeddr.ext.components/com.mbeddr.ext.components.units.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

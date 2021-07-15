@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="group.projectview.vcs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.vcs/languages/group.projectview.vcs/com.mbeddr.mpsutil.projectview.vcs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.vcs/languages/group.projectview.vcs/com.mbeddr.mpsutil.projectview.vcs-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

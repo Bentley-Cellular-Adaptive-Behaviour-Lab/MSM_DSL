@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.elk.alg.mrtree-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.elk.alg.common-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/jgraphx.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.elk.alg.layered-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.elk.core-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.elk.graph-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.emf.ecore.xmi-2.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.emf.common-2.12.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.editor.diagram/lib/org.eclipse.emf.ecore-2.12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
