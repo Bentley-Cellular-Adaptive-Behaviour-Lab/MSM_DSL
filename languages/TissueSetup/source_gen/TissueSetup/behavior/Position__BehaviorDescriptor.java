@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -23,9 +22,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Position__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L, "TissueSetup.structure.Position");
 
-  public static final SMethod<String> get_x_coord_id4DdJmqSGafn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_x_coord").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGafn").build();
-  public static final SMethod<String> get_y_coord_id4DdJmqSGaIc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_y_coord").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGaIc").build();
-  public static final SMethod<String> get_z_coord_id4DdJmqSGdUQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_z_coord").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSGdUQ").build();
+  public static final SMethod<String> get_x_coord_id4DdJmqSGafn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_x_coord").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGafn").build();
+  public static final SMethod<String> get_y_coord_id4DdJmqSGaIc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_y_coord").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGaIc").build();
+  public static final SMethod<String> get_z_coord_id4DdJmqSGdUQ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_z_coord").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSGdUQ").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_x_coord_id4DdJmqSGafn, get_y_coord_id4DdJmqSGaIc, get_z_coord_id4DdJmqSGdUQ);
 

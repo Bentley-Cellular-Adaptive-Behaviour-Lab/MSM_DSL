@@ -25,7 +25,7 @@
       </scope>
     </file>
     <file name="duplicateGradientName_NonTypesystemRule.java">
-      <node id="2380230844049002225" at="28,121,29,67" concept="7" />
+      <node id="2380230844049002225" at="28,121,29,66" concept="7" />
       <node id="5475084672766706282" at="31,39,32,175" concept="6" />
       <node id="5475084672766699630" at="35,7,36,66" concept="5" />
       <node id="5475084672766699630" at="36,66,37,288" concept="5" />
@@ -42,7 +42,7 @@
       <node id="5475084672766665781" at="44,0,47,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="5475084672766665781" at="47,0,50,0" concept="4" trace="overrides#()Z" />
       <node id="5475084672766699630" at="34,9,38,7" concept="0" />
-      <node id="5475084672766667995" at="29,67,39,5" concept="3" />
+      <node id="5475084672766667995" at="29,66,39,5" concept="3" />
       <node id="5475084672766665781" at="28,0,41,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="5475084672766665781" at="26,52,26,52" />
       <scope id="5475084672766706281" at="31,39,32,175" />
@@ -86,7 +86,7 @@
       </scope>
     </file>
     <file name="duplicateSubstrateName_NonTypesystemRule.java">
-      <node id="2380230844049003270" at="28,122,29,68" concept="7" />
+      <node id="2380230844049003270" at="28,122,29,67" concept="7" />
       <node id="5475084672766731466" at="31,39,32,177" concept="6" />
       <node id="5475084672766741188" at="35,7,36,66" concept="5" />
       <node id="5475084672766741188" at="36,66,37,289" concept="5" />
@@ -103,7 +103,7 @@
       <node id="5475084672766712072" at="44,0,47,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="5475084672766712072" at="47,0,50,0" concept="4" trace="overrides#()Z" />
       <node id="5475084672766741188" at="34,9,38,7" concept="0" />
-      <node id="5475084672766712084" at="29,68,39,5" concept="3" />
+      <node id="5475084672766712084" at="29,67,39,5" concept="3" />
       <node id="5475084672766712072" at="28,0,41,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="5475084672766712072" at="26,53,26,53" />
       <scope id="5475084672766731318" at="31,39,32,177" />
@@ -147,8 +147,8 @@
       </scope>
     </file>
     <file name="checkCuboidBoundaries_NonTypesystemRule.java">
-      <node id="2380230844049000360" at="26,123,27,83" concept="7" />
-      <node id="5475084672766926100" at="27,83,28,240" concept="5" />
+      <node id="2380230844049000360" at="26,123,27,82" concept="7" />
+      <node id="5475084672766926100" at="27,82,28,240" concept="5" />
       <node id="5475084672766937929" at="28,240,29,240" concept="5" />
       <node id="5475084672766938497" at="29,240,30,240" concept="5" />
       <node id="5475084672766940542" at="30,240,31,0" concept="8" />
@@ -238,8 +238,8 @@
       </scope>
     </file>
     <file name="checkTriangularBoundaries_NonTypesystemRule.java">
-      <node id="2380230844049001797" at="26,127,27,90" concept="7" />
-      <node id="5475084672767022215" at="27,90,28,244" concept="5" />
+      <node id="2380230844049001797" at="26,127,27,89" concept="7" />
+      <node id="5475084672767022215" at="27,89,28,244" concept="5" />
       <node id="5475084672767022780" at="28,244,29,0" concept="8" />
       <node id="5475084672767015110" at="31,7,32,66" concept="5" />
       <node id="5475084672767015110" at="32,66,33,393" concept="5" />

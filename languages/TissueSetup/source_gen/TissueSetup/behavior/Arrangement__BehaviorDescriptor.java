@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -21,12 +20,12 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 public final class Arrangement__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8aL, "TissueSetup.structure.Arrangement");
 
-  public static final SMethod<String> get_cross_section_cells_id4DdJmqSF9YK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_cross_section_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSF9YK").build();
-  public static final SMethod<String> get_length_in_cells_id4DdJmqSFaKv = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_length_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaKv").build();
-  public static final SMethod<String> get_total_radius_id4DdJmqSFaMT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_total_radius").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaMT").build();
-  public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaOR").build();
-  public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSFaRd").build();
-  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4XZPqyVOpH$").build();
+  public static final SMethod<String> get_cross_section_cells_id4DdJmqSF9YK = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_cross_section_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSF9YK").build();
+  public static final SMethod<String> get_length_in_cells_id4DdJmqSFaKv = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_length_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaKv").build();
+  public static final SMethod<String> get_total_radius_id4DdJmqSFaMT = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_total_radius").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaMT").build();
+  public static final SMethod<String> get_height_in_cells_id4DdJmqSFaOR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaOR").build();
+  public static final SMethod<String> get_width_in_cells_id4DdJmqSFaRd = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width_in_cells").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSFaRd").build();
+  public static final SMethod<Integer> get_total_cell_number_id4XZPqyVOpH$ = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_total_cell_number").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4XZPqyVOpH$").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_cross_section_cells_id4DdJmqSF9YK, get_length_in_cells_id4DdJmqSFaKv, get_total_radius_id4DdJmqSFaMT, get_height_in_cells_id4DdJmqSFaOR, get_width_in_cells_id4DdJmqSFaRd, get_total_cell_number_id4XZPqyVOpH$);
 

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -23,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Substrate__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19f2L, "WorldSetup.structure.Substrate");
 
-  public static final SMethod<String> get_adhesiveness_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81Fh9KI").build();
+  public static final SMethod<String> get_adhesiveness_id4JVq81Fh9KI = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_adhesiveness").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4JVq81Fh9KI").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_adhesiveness_id4JVq81Fh9KI);
 

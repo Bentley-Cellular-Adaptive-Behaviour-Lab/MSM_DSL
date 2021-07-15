@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="990507d3-3527-4c54-bfe9-0ca3c9c6247a" name="com.dslfoundry.plaintextgen" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="3" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="4" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
@@ -578,7 +578,7 @@
                               </node>
                               <node concept="1mIQ4w" id="4DdJmqSEj7$" role="2OqNvi">
                                 <node concept="chp4Y" id="4DdJmqSEjk0" role="cj9EA">
-                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Square" />
+                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Rectangular" />
                                 </node>
                               </node>
                             </node>

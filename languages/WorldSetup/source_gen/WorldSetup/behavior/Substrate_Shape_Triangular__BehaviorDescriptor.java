@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -25,13 +24,13 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Substrate_Shape_Triangular__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x51ca2b62e9a67f4fL, "WorldSetup.structure.Substrate_Shape_Triangular");
 
-  public static final SMethod<String> get_vertex_1_X_id57aaQbDEkks = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEkks").build();
-  public static final SMethod<String> get_vertex_1_Y_id57aaQbDElMG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDElMG").build();
-  public static final SMethod<String> get_vertex_2_X_id57aaQbDElaX = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDElaX").build();
-  public static final SMethod<String> get_vertex_2_Y_id57aaQbDEofO = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEofO").build();
-  public static final SMethod<String> get_vertex_3_X_id57aaQbDEloa = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_X").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDEloa").build();
-  public static final SMethod<String> get_vertex_3_Y_id57aaQbDErqj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_Y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("57aaQbDErqj").build();
-  public static final SMethod<String> get_depth_id4JVq81FgwNn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4JVq81FgwNn").build();
+  public static final SMethod<String> get_vertex_1_X_id57aaQbDEkks = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_X").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDEkks").build();
+  public static final SMethod<String> get_vertex_1_Y_id57aaQbDElMG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_1_Y").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDElMG").build();
+  public static final SMethod<String> get_vertex_2_X_id57aaQbDElaX = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_X").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDElaX").build();
+  public static final SMethod<String> get_vertex_2_Y_id57aaQbDEofO = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_2_Y").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDEofO").build();
+  public static final SMethod<String> get_vertex_3_X_id57aaQbDEloa = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_X").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDEloa").build();
+  public static final SMethod<String> get_vertex_3_Y_id57aaQbDErqj = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_vertex_3_Y").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("57aaQbDErqj").build();
+  public static final SMethod<String> get_depth_id4JVq81FgwNn = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_depth").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4JVq81FgwNn").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_vertex_1_X_id57aaQbDEkks, get_vertex_1_Y_id57aaQbDElMG, get_vertex_2_X_id57aaQbDElaX, get_vertex_2_Y_id57aaQbDEofO, get_vertex_3_X_id57aaQbDEloa, get_vertex_3_Y_id57aaQbDErqj, get_depth_id4JVq81FgwNn);
 

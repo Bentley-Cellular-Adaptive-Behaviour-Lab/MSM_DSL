@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -23,13 +22,13 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Gradient__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e7L, "WorldSetup.structure.Gradient");
 
-  public static final SMethod<String> get_source_X_position_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6aJ5").build();
-  public static final SMethod<String> get_source_Y_position_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6cfy").build();
-  public static final SMethod<String> get_source_Z_position_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6deA").build();
-  public static final SMethod<String> get_sink_X_position_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6e46").build();
-  public static final SMethod<String> get_sink_Y_position_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6eOG").build();
-  public static final SMethod<String> get_sink_Z_position_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL6fPc").build();
-  public static final SMethod<String> get_source_strength_id2OHr9yL8Zf7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_strength").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL8Zf7").build();
+  public static final SMethod<String> get_source_X_position_id2OHr9yL6aJ5 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_X_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6aJ5").build();
+  public static final SMethod<String> get_source_Y_position_id2OHr9yL6cfy = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Y_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6cfy").build();
+  public static final SMethod<String> get_source_Z_position_id2OHr9yL6deA = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_Z_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6deA").build();
+  public static final SMethod<String> get_sink_X_position_id2OHr9yL6e46 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_X_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6e46").build();
+  public static final SMethod<String> get_sink_Y_position_id2OHr9yL6eOG = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Y_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6eOG").build();
+  public static final SMethod<String> get_sink_Z_position_id2OHr9yL6fPc = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_sink_Z_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL6fPc").build();
+  public static final SMethod<String> get_source_strength_id2OHr9yL8Zf7 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_source_strength").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL8Zf7").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_source_X_position_id2OHr9yL6aJ5, get_source_Y_position_id2OHr9yL6cfy, get_source_Z_position_id2OHr9yL6deA, get_sink_X_position_id2OHr9yL6e46, get_sink_Y_position_id2OHr9yL6eOG, get_sink_Z_position_id2OHr9yL6fPc, get_source_strength_id2OHr9yL8Zf7);
 
