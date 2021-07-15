@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="99,0,102,0" name="SpeciesSetup.templates.QueriesGenerated$PROPS" />
+      <unit at="103,0,106,0" name="SpeciesSetup.templates.QueriesGenerated$LINKS" />
+      <unit at="94,0,98,0" name="SpeciesSetup.templates.QueriesGenerated$CONCEPTS" />
+      <unit at="71,0,93,0" name="SpeciesSetup.templates.QueriesGenerated$SCB" />
+      <unit at="28,0,107,0" name="SpeciesSetup.templates.QueriesGenerated" />
+    </file>
+  </root>
+  <root nodeRef="r:c21903a5-c782-48de-9c63-041fedd1b59b(SpeciesSetup.templates@generator)/4236022032101766639">
+    <file name="QueriesGenerated.java">
+      <node id="4236022032102853569" at="33,85,34,76" concept="4" />
+      <node id="4236022032102842124" at="34,76,35,103" concept="2" />
+      <node id="4236022032102849597" at="36,40,37,204" concept="2" />
+      <node id="4236022032103184016" at="37,204,38,90" concept="2" />
+      <node id="4236022032103188645" at="38,90,39,71" concept="0" />
+      <node id="4236022032102849737" at="39,71,40,77" concept="0" />
+      <node id="4236022032102852268" at="40,77,41,71" concept="0" />
+      <node id="4236022032101766639" at="60,14,61,57" concept="0" />
+      <node id="4236022032101766639" at="79,15,80,58" concept="0" />
+      <node id="4236022032101766639" at="80,58,81,17" concept="3" />
+      <node id="4236022032102843842" at="35,103,42,5" concept="1" />
+      <node id="4236022032101766640" at="33,0,44,0" concept="5" trace="mappingScript_CodeBlock_1#(Ljetbrains/mps/generator/template/MappingScriptContext;)V" />
+      <scope id="4236022032101766639" at="79,15,81,17" />
+      <scope id="4236022032102843844" at="36,40,41,71">
+        <var name="name" id="4236022032103184019" />
+        <var name="speciesHeader" id="4236022032102849598" />
+      </scope>
+      <scope id="4236022032102843842" at="35,103,42,5">
+        <var name="container" id="4236022032102843845" />
+      </scope>
+      <scope id="4236022032101766641" at="33,85,42,5">
+        <var name="containers" id="4236022032102842127" />
+      </scope>
+      <scope id="4236022032101766640" at="33,0,44,0">
+        <var name="_context" id="4236022032101766640" />
+      </scope>
+    </file>
+  </root>
+  <root nodeRef="r:c21903a5-c782-48de-9c63-041fedd1b59b(SpeciesSetup.templates@generator)/4236022032102854592">
+    <file name="QueriesGenerated.java">
+      <node id="4236022032102868995" at="44,85,45,106" concept="2" />
+      <node id="4236022032102874716" at="46,34,47,41" concept="0" />
+      <node id="4236022032102854592" at="61,57,62,57" concept="0" />
+      <node id="4236022032102854592" at="82,15,83,58" concept="0" />
+      <node id="4236022032102854592" at="83,58,84,17" concept="3" />
+      <node id="4236022032102855006" at="45,106,48,5" concept="1" />
+      <node id="4236022032102854593" at="44,0,50,0" concept="5" trace="mappingScript_CodeBlock_2#(Ljetbrains/mps/generator/template/MappingScriptContext;)V" />
+      <scope id="4236022032102855009" at="46,34,47,41" />
+      <scope id="4236022032102854592" at="82,15,84,17" />
+      <scope id="4236022032102855006" at="45,106,48,5">
+        <var name="header" id="4236022032102855007" />
+      </scope>
+      <scope id="4236022032102854594" at="44,85,48,5">
+        <var name="headers" id="4236022032102868996" />
+      </scope>
+      <scope id="4236022032102854593" at="44,0,50,0">
+        <var name="_context" id="4236022032102854593" />
+      </scope>
+    </file>
+  </root>
+  <root nodeRef="r:c21903a5-c782-48de-9c63-041fedd1b59b(SpeciesSetup.templates@generator)/925612692503953895">
+    <file name="QueriesGenerated.java">
+      <node id="925612692503956196" at="50,85,51,110" concept="2" />
+      <node id="925612692503960852" at="52,70,53,97" concept="0" />
+      <node id="925612692503957520" at="53,97,54,91" concept="0" />
+      <node id="925612692503959223" at="54,91,55,100" concept="0" />
+      <node id="925612692503953895" at="62,57,63,56" concept="0" />
+      <node id="925612692503953895" at="85,15,86,58" concept="0" />
+      <node id="925612692503953895" at="86,58,87,17" concept="3" />
+      <node id="925612692503957383" at="51,110,56,5" concept="1" />
+      <node id="925612692503953896" at="50,0,58,0" concept="5" trace="mappingScript_CodeBlock_3#(Ljetbrains/mps/generator/template/MappingScriptContext;)V" />
+      <scope id="925612692503953895" at="85,15,87,17" />
+      <scope id="925612692503957389" at="52,70,55,100" />
+      <scope id="925612692503957383" at="51,110,56,5">
+        <var name="container" id="925612692503957385" />
+      </scope>
+      <scope id="925612692503953897" at="50,85,56,5">
+        <var name="speciesContainers" id="925612692503956199" />
+      </scope>
+      <scope id="925612692503953896" at="50,0,58,0">
+        <var name="_context" id="925612692503953896" />
+      </scope>
+    </file>
+  </root>
+</debug-info>
+

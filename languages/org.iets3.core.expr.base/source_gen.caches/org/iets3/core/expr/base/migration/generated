@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product version="3" modelHash="-czd7cuurrfkg8rmdfsi00em1c7pknxk">
+  <files names="MigrateIfHelper.java:MigrationDescriptor.java:MigrationScript_1.java:makeBangOpUnary.java:migrateIfs.java" />
+</product>
+

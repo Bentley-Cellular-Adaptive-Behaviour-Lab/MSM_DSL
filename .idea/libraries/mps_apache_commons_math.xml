@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mps-apache-commons-math">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-apache-commons/languages/mps-apache-commons-math/org.apache.commons-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mps-apache-commons/languages/mps-apache-commons-math/org.apache.commons.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

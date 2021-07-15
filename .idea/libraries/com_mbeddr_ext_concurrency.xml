@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.ext.concurrency">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.pthreads.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.plainC-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.plainC.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.pthreads-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.pthreads-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency/com.mbeddr.ext.concurrency.plainC-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

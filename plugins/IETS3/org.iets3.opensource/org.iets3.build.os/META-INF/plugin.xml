@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>org.iets3.build.os</id>
+  <name>org.iets3.build.os</name>
+  <version>2020.3.4758.09957a6</version>
+  <depends>jetbrains.mps.core</depends>
+  <depends>jetbrains.mps.build</depends>
+  <depends>com.mbeddr.platform</depends>
+  <depends>de.itemis.mps.extensions.build</depends>
+  <depends>com.mbeddr.platform.build</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

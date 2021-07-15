@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="de.q60.shadowmodels.examples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.statemachine.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.entities-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.input-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.input.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.statemachine-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.statemachine-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.entities.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.blext-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.entities-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.blext.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.q60.shadowmodels.examples/languages/de.q60.shadowmodels.examples/de.q60.mps.shadowmodels.examples.blext-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

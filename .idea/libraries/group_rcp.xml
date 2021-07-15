@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="group.rcp">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.rcp/com.mbeddr.mpsutil.rcp-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.rcp/com.mbeddr.mpsutil.rcp-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.rcp/com.mbeddr.mpsutil.rcp.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.rcp/com.mbeddr.mpsutil.rcp.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.rcp/com.mbeddr.mpsutil.rcp.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

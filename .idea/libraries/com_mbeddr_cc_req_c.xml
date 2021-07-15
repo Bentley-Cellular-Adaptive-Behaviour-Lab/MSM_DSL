@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.cc.req.c">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c2doc-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c.interpreter.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.scenarios.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.doc.expressions-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.scenario2doc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.scenarios-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.doc.expressions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c.interpreter-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.scenario2doc-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.scenario2doc-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c2doc-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c2doc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.cc.requirements.c-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req.c/languages/com.mbeddr.cc.req.c/com.mbeddr.doc.expressions-generator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

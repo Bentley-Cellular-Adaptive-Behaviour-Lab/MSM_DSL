@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="com.mbeddr.analyses.fm">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.sat4j/languages/com.mbeddr.analyses.sat4j.devkit/com.mbeddr.analyses.fm.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

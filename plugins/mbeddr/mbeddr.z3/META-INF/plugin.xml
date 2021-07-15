@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+  <id>com.mbeddr.analyses.z3</id>
+  <name>com.mbeddr.analyses.z3</name>
+  <version>2020.3-2020.3.22717.f714161</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
+  <depends>jetbrains.mps.core</depends>
+  <depends>com.mbeddr.analyses.base</depends>
+  <depends>com.mbeddr.analyses.cbmc</depends>
+  <depends>com.mbeddr.doc</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages" />
+  </extensions>
+</idea-plugin>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="group.jung">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.jung/languages/group.jung/com.mbeddr.mpsutil.jung.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.jung/languages/group.jung/com.mbeddr.mpsutil.jung-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.jung/languages/group.jung/com.mbeddr.mpsutil.jung.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.jung/languages/group.jung/com.mbeddr.mpsutil.jung.pluginSolution-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

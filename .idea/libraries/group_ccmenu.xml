@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="group.ccmenu">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget.baseLanguage.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget.runtime.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.runtime-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget.baseLanguage-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.mpsutil/languages/group.ccmenu/com.mbeddr.mpsutil.ccmenu.reftarget.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

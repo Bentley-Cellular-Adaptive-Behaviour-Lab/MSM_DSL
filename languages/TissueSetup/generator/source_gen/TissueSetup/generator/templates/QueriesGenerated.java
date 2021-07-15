@@ -6,15 +6,17 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import TissueSetup.behavior.Shape__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import TissueSetup.behavior.Shape_Rectangular__BehaviorDescriptor;
 import TissueSetup.behavior.Arrangement__BehaviorDescriptor;
+import TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor;
+import TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor;
 import TissueSetup.behavior.Position__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.SourceNodesQuery;
 import java.util.HashMap;
@@ -58,84 +60,110 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_height_id4DdJmqSEQ4i.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$q0mn));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
-    return (String) Shape__BehaviorDescriptor.get_width_id4DdJmqSEQ4q.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.shape$q0mn));
+    String height = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
+      height += Integer.toString((int) Shape_Rectangular__BehaviorDescriptor.get_rectangular_height_gridpoints_id2siCC6BFTh5.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)));
+    }
+    return height;
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    String width = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)) {
+      width += Integer.toString((int) Shape_Rectangular__BehaviorDescriptor.get_rectangular_width_gridpoints_id2siCC6BFJkZ.invoke(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r)));
+    }
+    return width;
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$E3tO), PROPS.name$MnvL);
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_cross_section_cells_id4DdJmqSF9YK.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$E3tO), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_length_in_cells_id4DdJmqSFaKv.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh), PROPS.cylinder_cross_section_cells$pzjl));
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_total_radius_id4DdJmqSFaMT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return (String) Arrangement__BehaviorDescriptor.get_length_in_cells_id4DdJmqSFaKv.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return Integer.toString((int) Arrangement_Cylindrical__BehaviorDescriptor.get_radius_gridpoints_id57Wjpeqocpj.invoke(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh)));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$E3tO), PROPS.name$MnvL);
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_18(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_height_in_cells_id4DdJmqSFaOR.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$E3tO), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_19(final PropertyMacroContext _context) {
-    return (String) Arrangement__BehaviorDescriptor.get_width_in_cells_id4DdJmqSFaRd.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
+    return (String) Arrangement__BehaviorDescriptor.get_height_in_cells_id4DdJmqSFaOR.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
   }
   public static Object propertyMacro_GetValue_1_20(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return (String) Arrangement__BehaviorDescriptor.get_width_in_cells_id4DdJmqSFaRd.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.arrangement$aAuk));
   }
   public static Object propertyMacro_GetValue_1_21(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_22(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    int negXSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridXNegSize_id3fk35jmzURR.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(X - negXSpace);
   }
   public static Object propertyMacro_GetValue_1_23(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    int negYSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridYNegSize_id3fk35jmzUS3.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(Y - negYSpace);
   }
   public static Object propertyMacro_GetValue_1_24(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    int negZSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridZNegSize_id3fk35jmzUSf.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$L2Mv));
+    return String.valueOf(Z - negZSpace);
   }
   public static Object propertyMacro_GetValue_1_25(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$3r_d), PROPS.name$MnvL);
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_26(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.cell_type$3r_d), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_27(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_28(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_x_coord_id4DdJmqSGafn.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
-  }
-  public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_y_coord_id4DdJmqSGaIc.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
-  }
-  public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
-    return (String) Position__BehaviorDescriptor.get_z_coord_id4DdJmqSGdUQ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
-  }
-  public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
+  public static Object propertyMacro_GetValue_1_29(final PropertyMacroContext _context) {
+    int negXSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridXNegSize_id3fk35jmzURR.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int X = (int) Position__BehaviorDescriptor.get_position_X_gridpoint_id57WjpeqnuX1.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(X - negXSpace);
+  }
+  public static Object propertyMacro_GetValue_1_30(final PropertyMacroContext _context) {
+    int negYSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridYNegSize_id3fk35jmzUS3.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Y = (int) Position__BehaviorDescriptor.get_position_Y_gridpoint_id57WjpeqnDsZ.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(Y - negYSpace);
+  }
+  public static Object propertyMacro_GetValue_1_31(final PropertyMacroContext _context) {
+    int negZSpace = (int) Tissue_And_Cell_Container__BehaviorDescriptor.getGridZNegSize_id3fk35jmzUSf.invoke(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni));
+    int Z = (int) Position__BehaviorDescriptor.get_position_Z_gridpoint_id57WjpeqnGbT.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.position$KVlR));
+    return String.valueOf(Z - negZSpace);
+  }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.tissue_type$$cvw), PROPS.name$MnvL);
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_33(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.tissue_type$$cvw), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_34(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_1_35(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
   }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
@@ -144,14 +172,14 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_1(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_2(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Flat$W);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W);
       }
     });
   }
@@ -164,21 +192,21 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Iterable<SNode> sourceNodesQuery_1_5(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.cell_types$$$44)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.shape$q0mn), CONCEPTS.Rectangular$1r);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.Shape$q0mn), CONCEPTS.Shape_Rectangular$1r);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_6(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Cylindrical$Bh);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Cylindrical$Bh);
       }
     });
   }
   public static Iterable<SNode> sourceNodesQuery_1_7(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), LINKS.tissue_types$$ucF)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Flat$W);
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, LINKS.arrangement$aAuk), CONCEPTS.Arrangement_Flat$W);
       }
     });
   }
@@ -244,6 +272,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
   {
     int i = 0;
+    pvqMethods.put("7775299862363966763", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NAME"));
     pvqMethods.put("5354143780895585585", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
     pvqMethods.put("5354143780895595252", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_TYPE_NAME"));
     pvqMethods.put("8822005132367488446", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_TYPE_NAME"));
@@ -278,6 +307,7 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("5354143780896340589", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_NAME"));
     pvqMethods.put("5354143780896351959", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_TYPE_NAME"));
     pvqMethods.put("5354143780896358987", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_NAME"));
+    pvqMethods.put("7775299862363941084", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "dsl_Tissue"));
   }
   @NotNull
   @Override
@@ -362,6 +392,10 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_32(ctx);
         case 33:
           return QueriesGenerated.propertyMacro_GetValue_1_33(ctx);
+        case 34:
+          return QueriesGenerated.propertyMacro_GetValue_1_34(ctx);
+        case 35:
+          return QueriesGenerated.propertyMacro_GetValue_1_35(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -370,10 +404,11 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
   }
 
   private static final class LINKS {
-    /*package*/ static final SContainmentLink shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "shape");
+    /*package*/ static final SContainmentLink Shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "Shape");
     /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
     /*package*/ static final SContainmentLink arrangement$aAuk = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x4369a03b1c61664bL, "arrangement");
     /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");
@@ -387,8 +422,9 @@ public class QueriesGenerated extends QueryProviderBase {
   }
 
   private static final class CONCEPTS {
-    /*package*/ static final SConcept Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Cylindrical");
-    /*package*/ static final SConcept Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Flat");
-    /*package*/ static final SConcept Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Rectangular");
+    /*package*/ static final SConcept Shape_Rectangular$1r = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL, "TissueSetup.structure.Shape_Rectangular");
+    /*package*/ static final SConcept Arrangement_Cylindrical$Bh = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, "TissueSetup.structure.Arrangement_Cylindrical");
+    /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
+    /*package*/ static final SConcept Arrangement_Flat$W = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL, "TissueSetup.structure.Arrangement_Flat");
   }
 }

@@ -14,34 +14,57 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import Units.behavior.Distance__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, "WorldSetup.structure.Grid");
 
-  public static final SMethod<String> get_X_size_id2OHr9yL5TjS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5TjS").build();
-  public static final SMethod<String> get_Y_size_id2OHr9yL5W4_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5W4_").build();
-  public static final SMethod<String> get_Z_size_id2OHr9yL5X16 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5X16").build();
+  public static final SMethod<Integer> get_grid_xsize_gridpoint_id3wWy5vw1wze = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_xsize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3wWy5vw1wze").build();
+  public static final SMethod<String> get_grid_xsize_string_id1r0uutBIBrP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_xsize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1r0uutBIBrP").build();
+  public static final SMethod<Integer> get_grid_ysize_gridpoint_idfEhJG2GbNr = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_ysize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GbNr").build();
+  public static final SMethod<String> get_grid_ysize_string_idfEhJG2GbNB = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_ysize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GbNB").build();
+  public static final SMethod<Integer> get_grid_zsize_gridpoint_idfEhJG2GdAF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_grid_zsize_gridpoint").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GdAF").build();
+  public static final SMethod<String> get_grid_zsize_string_idfEhJG2GdAR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_grid_zsize_string").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("fEhJG2GdAR").build();
+  public static final SMethod<Integer> get_buffer_gridpoint_size_id11q$FfsTmr2 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("get_buffer_gridpoint_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("11q$FfsTmr2").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_X_size_id2OHr9yL5TjS, get_Y_size_id2OHr9yL5W4_, get_Z_size_id2OHr9yL5X16);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_grid_xsize_gridpoint_id3wWy5vw1wze, get_grid_xsize_string_id1r0uutBIBrP, get_grid_ysize_gridpoint_idfEhJG2GbNr, get_grid_ysize_string_idfEhJG2GbNB, get_grid_zsize_gridpoint_idfEhJG2GdAF, get_grid_zsize_string_idfEhJG2GdAR, get_buffer_gridpoint_size_id11q$FfsTmr2);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static String get_X_size_id2OHr9yL5TjS(@NotNull SNode __thisNode__) {
-    String size = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.X_Size$PwQq));
-    return size;
+  /*package*/ static int get_grid_xsize_gridpoint_id3wWy5vw1wze(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.X_Size$4fO);
   }
-  /*package*/ static String get_Y_size_id2OHr9yL5W4_(@NotNull SNode __thisNode__) {
-    String size = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.Y_Size$Pxks));
-    return size;
+  /*package*/ static String get_grid_xsize_string_id1r0uutBIBrP(@NotNull SNode __thisNode__) {
+    return String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.X_Size$4fO));
   }
-  /*package*/ static String get_Z_size_id2OHr9yL5X16(@NotNull SNode __thisNode__) {
-    String size = String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.Z_Size$PAWO));
-    return size;
+  /*package*/ static int get_grid_ysize_gridpoint_idfEhJG2GbNr(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.Y_Size$4WR);
+  }
+  /*package*/ static String get_grid_ysize_string_idfEhJG2GbNB(@NotNull SNode __thisNode__) {
+    return String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.Y_Size$4WR));
+  }
+  /*package*/ static int get_grid_zsize_gridpoint_idfEhJG2GdAF(@NotNull SNode __thisNode__) {
+    return SPropertyOperations.getInteger(__thisNode__, PROPS.Z_Size$5SV);
+  }
+  /*package*/ static String get_grid_zsize_string_idfEhJG2GdAR(@NotNull SNode __thisNode__) {
+    return String.valueOf(SPropertyOperations.getInteger(__thisNode__, PROPS.Z_Size$5SV));
+  }
+  /*package*/ static int get_buffer_gridpoint_size_id11q$FfsTmr2(@NotNull SNode __thisNode__) {
+    float scale = 0;
+    if (SEnumOperations.isMember(SPropertyOperations.getEnum(__thisNode__, PROPS.Scaling$mTyg), 0x51fc4d939a305e48L)) {
+      scale = ((float) 0.5);
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(__thisNode__, PROPS.Scaling$mTyg), 0x51fc4d939a305e4aL)) {
+      scale = ((float) 1.0);
+    }
+    return (int) Distance__BehaviorDescriptor.get_distance_in_gridpoints_id3wWy5vw4P8z.invoke(SLinkOperations.getTarget(__thisNode__, LINKS.Buffer$9SPv), ((float) scale));
   }
 
   /*package*/ Grid__BehaviorDescriptor() {
@@ -60,11 +83,19 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((String) get_X_size_id2OHr9yL5TjS(node));
+        return (T) ((Integer) get_grid_xsize_gridpoint_id3wWy5vw1wze(node));
       case 1:
-        return (T) ((String) get_Y_size_id2OHr9yL5W4_(node));
+        return (T) ((String) get_grid_xsize_string_id1r0uutBIBrP(node));
       case 2:
-        return (T) ((String) get_Z_size_id2OHr9yL5X16(node));
+        return (T) ((Integer) get_grid_ysize_gridpoint_idfEhJG2GbNr(node));
+      case 3:
+        return (T) ((String) get_grid_ysize_string_idfEhJG2GbNB(node));
+      case 4:
+        return (T) ((Integer) get_grid_zsize_gridpoint_idfEhJG2GdAF(node));
+      case 5:
+        return (T) ((String) get_grid_zsize_string_idfEhJG2GdAR(node));
+      case 6:
+        return (T) ((Integer) get_buffer_gridpoint_size_id11q$FfsTmr2(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -95,8 +126,13 @@ public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   private static final class PROPS {
-    /*package*/ static final SProperty X_Size$PwQq = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d41L, "X_Size");
-    /*package*/ static final SProperty Y_Size$Pxks = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d43L, "Y_Size");
-    /*package*/ static final SProperty Z_Size$PAWO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x73ca99e5119b1d46L, "Z_Size");
+    /*package*/ static final SProperty X_Size$4fO = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a582177L, "X_Size");
+    /*package*/ static final SProperty Y_Size$4WR = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217aL, "Y_Size");
+    /*package*/ static final SProperty Z_Size$5SV = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a58217eL, "Z_Size");
+    /*package*/ static final SProperty Scaling$mTyg = MetaAdapterFactory.getProperty(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a306dc0L, "Scaling");
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink Buffer$9SPv = MetaAdapterFactory.getContainmentLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, 0x51fc4d939a555236L, "Buffer");
   }
 }

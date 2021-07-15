@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="group.ui-support">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.conceptdiagram-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.conceptdiagram.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.dependenciesdiagram-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.genericactions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.nodediff-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.dependenciesdiagram.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.uniquenames-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.print.pluginSolution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.nodediff.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.conceptdiagram-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.genericactions-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.uniquenames.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.dependenciesdiagram-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.uniquenames-generator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/com.mbeddr.mpsutil.uisupport/languages/group.ui-support/com.mbeddr.mpsutil.print.pluginSolution-src.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

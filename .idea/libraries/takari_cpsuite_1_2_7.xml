@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="takari-cpsuite-1.2.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/plugins/IETS3/org.iets3.opensource/org.iets3.build.os/lib/takari-cpsuite-1.2.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
