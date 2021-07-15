@@ -10,9 +10,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.tooltips.runtime.LazyTooltipCellEvaluator;
-import jetbrains.mps.lang.editor.tooltips.runtime.TooltipTimingProperties;
-import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.lang.editor.tooltips.runtime.TooltipWrapper;
+import jetbrains.mps.lang.editor.tooltips.runtime.TooltipTimingProperties;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -24,7 +23,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.nodeEditor.cellMenu.SPropertySubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -63,22 +61,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
     return editorCell;
   }
   private EditorCell createTooltip_0(final EditorContext editorContext, final SNode node) {
-
     LazyTooltipCellEvaluator tooltip = new LazyTooltipCellEvaluator(editorContext, node, "TissueSetup.editor.GeneratedHints.tooltipHint_4rlqih_a0", true);
     EditorCell visibleCell = createCollection_1();
 
-    TooltipTimingProperties timing = new TooltipTimingProperties() {
-      @Override
-      public int getShortDelayBeforeShow() {
-        return Registry.intValue("ide.tooltip.initialDelay");
-      }
-
-      @Override
-      public int getShowImmediatelyPeriod() {
-        return Registry.intValue("ide.tooltip.reshowDelay");
-      }
-    };
-    TooltipWrapper editorCell = new TooltipWrapper(editorContext, node, visibleCell, tooltip, timing);
+    TooltipWrapper editorCell = new TooltipWrapper(editorContext, node, visibleCell, tooltip, TooltipTimingProperties.DEFAULT);
     editorCell.setCellId("Tooltip_4rlqih_a0");
     return editorCell;
   }
@@ -114,7 +100,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setCellId("property_flat_height_in_cells");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
-      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), CONCEPTS.PropertyAttribute$Gb);
+      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
       Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);
@@ -145,7 +131,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
       editorCell.setCellId("property_flat_width_in_cells");
       editorCell.setSubstituteInfo(new SPropertySubstituteInfo(editorCell, property));
       setCellContext(editorCell);
-      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(AttributeOperations.getAttributeList(myNode, new IAttributeDescriptor.AllAttributes()), CONCEPTS.PropertyAttribute$Gb);
+      Iterable<SNode> propertyAttributes = SNodeOperations.ofConcept(new IAttributeDescriptor.AllAttributes().list(myNode), CONCEPTS.PropertyAttribute$Gb);
       Iterable<SNode> currentPropertyAttributes = Sequence.fromIterable(propertyAttributes).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return Objects.equals(PropertyAttribute__BehaviorDescriptor.getProperty_id1avfQ4BBzOo.invoke(it), property);

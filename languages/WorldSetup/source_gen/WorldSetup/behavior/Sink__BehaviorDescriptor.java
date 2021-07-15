@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -24,9 +23,9 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 public final class Sink__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x33a7e096d09007eL, "WorldSetup.structure.Sink");
 
-  public static final SMethod<String> get_X_position_id2OHr9yL68kM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL68kM").build();
-  public static final SMethod<String> get_Y_position_id2OHr9yL68kW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL68kW").build();
-  public static final SMethod<String> get_Z_position_id2OHr9yL68l6 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_position").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL68l6").build();
+  public static final SMethod<String> get_X_position_id2OHr9yL68kM = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL68kM").build();
+  public static final SMethod<String> get_Y_position_id2OHr9yL68kW = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL68kW").build();
+  public static final SMethod<String> get_Z_position_id2OHr9yL68l6 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_position").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL68l6").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_X_position_id2OHr9yL68kM, get_Y_position_id2OHr9yL68kW, get_Z_position_id2OHr9yL68l6);
 

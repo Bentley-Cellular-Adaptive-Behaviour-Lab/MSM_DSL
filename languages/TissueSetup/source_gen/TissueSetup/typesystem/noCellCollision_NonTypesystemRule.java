@@ -19,7 +19,7 @@ public class noCellCollision_NonTypesystemRule extends AbstractNonTypesystemRule
   public noCellCollision_NonTypesystemRule() {
   }
   public void applyRule(final SNode cell, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds. 
+    // Check that the cell does not overlap with any other objects in the simulation, nor extend out of the world bounds.
     if ((boolean) Cell__BehaviorDescriptor.check_object_boundaries_id1QpPlI51TK3.invoke(cell)) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();

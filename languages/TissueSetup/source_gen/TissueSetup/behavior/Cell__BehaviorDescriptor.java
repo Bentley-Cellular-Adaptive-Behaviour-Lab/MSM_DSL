@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -30,16 +29,16 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Cell__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, "TissueSetup.structure.Cell");
 
-  public static final SMethod<Boolean> check_object_boundaries_id1QpPlI51TK3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_object_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI51TK3").build();
-  public static final SMethod<Boolean> check_upper_x_world_boundaries_id3$QBVvWCJog = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCJog").build();
-  public static final SMethod<Boolean> check_lower_x_world_boundaries_id3$QBVvWCTDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_x_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCTDn").build();
-  public static final SMethod<Boolean> check_upper_y_world_boundaries_id3$QBVvWCLp9 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCLp9").build();
-  public static final SMethod<Boolean> check_lower_y_world_boundaries_id3$QBVvWCYG5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_y_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCYG5").build();
-  public static final SMethod<Boolean> check_z_world_boundaries_id3$QBVvWCOcR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_z_world_boundaries").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3$QBVvWCOcR").build();
-  public static final SMethod<Integer> get_lower_x_id1QpPlI524fx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524fx").build();
-  public static final SMethod<Integer> get_lower_y_id1QpPlI524ju = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524ju").build();
-  public static final SMethod<Integer> getupper_x_id1QpPlI524rF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("getupper_x").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524rF").build();
-  public static final SMethod<Integer> get_upper_y_id1QpPlI524zL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_y").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1QpPlI524zL").build();
+  public static final SMethod<Boolean> check_object_boundaries_id1QpPlI51TK3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_object_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI51TK3").build();
+  public static final SMethod<Boolean> check_upper_x_world_boundaries_id3$QBVvWCJog = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_x_world_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3$QBVvWCJog").build();
+  public static final SMethod<Boolean> check_lower_x_world_boundaries_id3$QBVvWCTDn = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_x_world_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3$QBVvWCTDn").build();
+  public static final SMethod<Boolean> check_upper_y_world_boundaries_id3$QBVvWCLp9 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_upper_y_world_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3$QBVvWCLp9").build();
+  public static final SMethod<Boolean> check_lower_y_world_boundaries_id3$QBVvWCYG5 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_lower_y_world_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3$QBVvWCYG5").build();
+  public static final SMethod<Boolean> check_z_world_boundaries_id3$QBVvWCOcR = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("check_z_world_boundaries").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3$QBVvWCOcR").build();
+  public static final SMethod<Integer> get_lower_x_id1QpPlI524fx = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_x").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI524fx").build();
+  public static final SMethod<Integer> get_lower_y_id1QpPlI524ju = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_lower_y").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI524ju").build();
+  public static final SMethod<Integer> getupper_x_id1QpPlI524rF = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("getupper_x").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI524rF").build();
+  public static final SMethod<Integer> get_upper_y_id1QpPlI524zL = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.class)).name("get_upper_y").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1QpPlI524zL").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(check_object_boundaries_id1QpPlI51TK3, check_upper_x_world_boundaries_id3$QBVvWCJog, check_lower_x_world_boundaries_id3$QBVvWCTDn, check_upper_y_world_boundaries_id3$QBVvWCLp9, check_lower_y_world_boundaries_id3$QBVvWCYG5, check_z_world_boundaries_id3$QBVvWCOcR, get_lower_x_id1QpPlI524fx, get_lower_y_id1QpPlI524ju, getupper_x_id1QpPlI524rF, get_upper_y_id1QpPlI524zL);
 

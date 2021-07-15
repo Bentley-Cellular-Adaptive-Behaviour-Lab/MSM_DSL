@@ -21,7 +21,7 @@ public class MakeAndRun {
     Path new_tissue_path;
     Path new_world_path;
 
-    // Determine DSL-generated file paths based on operating system. 
+    // Determine DSL-generated file paths based on operating system.
     switch (utils.getOS()) {
       case WINDOWS:
         old_tissue_path = Paths.get(output_string + "\\dsl_Tissue.cpp");
@@ -65,7 +65,7 @@ public class MakeAndRun {
 
     try {
       ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent", "--analysis==\"time_to_pattern\"");
-      pb.redirectErrorStream();
+      pb.redirectErrorStream(true);
       Process p = pb.start();
       InputStream input_stream = p.getInputStream();
       BufferedReader reader = new BufferedReader(new InputStreamReader(input_stream));

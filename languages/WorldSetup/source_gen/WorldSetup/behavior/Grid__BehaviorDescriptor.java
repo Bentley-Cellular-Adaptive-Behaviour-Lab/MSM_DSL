@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -23,9 +22,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 public final class Grid__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e6L, "WorldSetup.structure.Grid");
 
-  public static final SMethod<String> get_X_size_id2OHr9yL5TjS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL5TjS").build();
-  public static final SMethod<String> get_Y_size_id2OHr9yL5W4_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL5W4_").build();
-  public static final SMethod<String> get_Z_size_id2OHr9yL5X16 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_size").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2OHr9yL5X16").build();
+  public static final SMethod<String> get_X_size_id2OHr9yL5TjS = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_X_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5TjS").build();
+  public static final SMethod<String> get_Y_size_id2OHr9yL5W4_ = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Y_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5W4_").build();
+  public static final SMethod<String> get_Z_size_id2OHr9yL5X16 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_Z_size").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2OHr9yL5X16").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_X_size_id2OHr9yL5TjS, get_Y_size_id2OHr9yL5W4_, get_Z_size_id2OHr9yL5X16);
 

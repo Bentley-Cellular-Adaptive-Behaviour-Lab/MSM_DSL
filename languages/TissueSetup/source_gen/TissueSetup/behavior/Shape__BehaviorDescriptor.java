@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
-import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
@@ -21,8 +20,8 @@ import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 public final class Shape__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef89L, "TissueSetup.structure.Shape");
 
-  public static final SMethod<String> get_height_id4DdJmqSEQ4i = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSEQ4i").build();
-  public static final SMethod<String> get_width_id4DdJmqSEQ4q = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4DdJmqSEQ4q").build();
+  public static final SMethod<String> get_height_id4DdJmqSEQ4i = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_height").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSEQ4i").build();
+  public static final SMethod<String> get_width_id4DdJmqSEQ4q = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("get_width").modifiers(8, AccessPrivileges.PUBLIC).concept(CONCEPT).id("4DdJmqSEQ4q").build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(get_height_id4DdJmqSEQ4i, get_width_id4DdJmqSEQ4q);
 
