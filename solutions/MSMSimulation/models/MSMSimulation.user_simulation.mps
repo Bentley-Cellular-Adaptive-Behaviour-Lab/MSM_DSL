@@ -197,37 +197,14 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
-      <concept id="8255194269358657919" name="TissueSetup.structure.Tissue_Type" flags="ng" index="1apGoc">
-        <reference id="8255194269358657920" name="cell_type" index="1apGrN" />
-        <child id="4857589848835450443" name="arrangement" index="1v2cpK" />
-      </concept>
-      <concept id="6249017959271690141" name="TissueSetup.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
-        <child id="5171349398070263660" name="Width" index="2IF2Qc" />
-        <child id="5171349398070263662" name="Height" index="2IF2Qe" />
-      </concept>
-      <concept id="6249017959271690129" name="TissueSetup.structure.Arrangement_Cylindrical" flags="ng" index="3ZP1sC">
-        <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
-        <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
-      </concept>
-      <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
-        <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
-        <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
-      </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
-        <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
-        <child id="4857589848835393773" name="cell_types" index="1v2izm" />
-        <child id="6249017959271690124" name="tissues" index="3ZP1sP" />
       </concept>
       <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
         <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
         <child id="5171349398070263671" name="Y_Coord" index="2IF2Qn" />
         <child id="5171349398070263674" name="Z_Coord" index="2IF2Qq" />
-      </concept>
-      <concept id="6249017959271690118" name="TissueSetup.structure.Tissue" flags="ng" index="3ZP1sZ">
-        <reference id="4857589848835450453" name="tissue_type" index="1v2cpI" />
-        <child id="6249017959271770686" name="position" index="3ZPHa7" />
       </concept>
     </language>
   </registry>
@@ -740,78 +717,6 @@
     <property role="TrG5h" value="NewTissues" />
     <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
     <ref role="maghN" node="6VIN$acjL2f" resolve="Species" />
-    <node concept="3ZP1sZ" id="6VIN$acjLqU" role="3ZP1sP">
-      <property role="TrG5h" value="Vessel" />
-      <ref role="1v2cpI" node="6VIN$acjLip" resolve="VesselType" />
-      <node concept="3ZP1sY" id="6VIN$acjLqV" role="3ZPHa7">
-        <node concept="2_hQR_" id="6VIN$acjLqW" role="2IF2Ql">
-          <node concept="2_n9WQ" id="6VIN$acjLqX" role="2_hQRE">
-            <node concept="30bXRB" id="6VIN$acjLtT" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLuK" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="6VIN$acjLr0" role="2IF2Qn">
-          <node concept="2_n9WQ" id="6VIN$acjLr1" role="2_hQRE">
-            <node concept="30bXRB" id="39Wpe6rowuI" role="2_n9WR">
-              <property role="30bXRw" value="5" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLwc" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="6VIN$acjLr4" role="2IF2Qq">
-          <node concept="2_n9WQ" id="6VIN$acjLr5" role="2_hQRE">
-            <node concept="30bXRB" id="6VIN$acjLx2" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLxN" role="2_hQ4V" />
-        </node>
-      </node>
-    </node>
-    <node concept="1apGoc" id="6VIN$acjLip" role="1v2izi">
-      <property role="TrG5h" value="VesselType" />
-      <ref role="1apGrN" node="6VIN$acjLaQ" resolve="EndoType" />
-      <node concept="3ZP1sC" id="6VIN$acjLnW" role="1v2cpK">
-        <property role="3ZP1sG" value="5" />
-        <node concept="2_hQR_" id="6VIN$acjLnY" role="3ob6kl">
-          <node concept="2_n9WQ" id="6VIN$acjLo0" role="2_hQRE">
-            <node concept="30bXRB" id="6VIN$acjLph" role="2_n9WR">
-              <property role="30bXRw" value="3" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLq8" role="2_hQ4V" />
-        </node>
-      </node>
-    </node>
-    <node concept="3ZP1sM" id="6VIN$acjLaQ" role="1v2izm">
-      <property role="TrG5h" value="EndoType" />
-      <node concept="3ZP1s$" id="6VIN$acjLd1" role="3ZP1s2">
-        <node concept="2_hQR_" id="6VIN$acjLd3" role="2IF2Qc">
-          <node concept="2_n9WQ" id="6VIN$acjLd5" role="2_hQRE">
-            <node concept="30bXRB" id="6VIN$acjLfe" role="2_n9WR">
-              <property role="30bXRw" value="5" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLfZ" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="6VIN$acjLdb" role="2IF2Qe">
-          <node concept="2_n9WQ" id="6VIN$acjLdd" role="2_hQRE">
-            <node concept="30bXRB" id="6VIN$acjLe7" role="2_n9WR">
-              <property role="30bXRw" value="5" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="6VIN$acjLgL" role="2_hQ4V" />
-        </node>
-      </node>
-      <node concept="1csUcq" id="2FvyIAlKhPt" role="3FWu3_">
-        <ref role="1csUcr" node="59YMCK01YI6" resolve="VEGFR2" />
-      </node>
-      <node concept="1csUcq" id="2FvyIAlKhPP" role="3FWu3_">
-        <ref role="1csUcr" node="59YMCK01YK0" resolve="VEGF_VEGFR2" />
-      </node>
-    </node>
   </node>
 </model>
 

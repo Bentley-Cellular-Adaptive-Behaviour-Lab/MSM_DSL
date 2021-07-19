@@ -8,12 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.text.rt.TextGenDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.text.rt.TextGenModelOutline;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public class TextGenAspectDescriptor extends TextGenAspectBase {
   private final LanguageConceptSwitch myIndex = new LanguageConceptSwitch();
@@ -53,10 +47,6 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
         return new ReversibleReaction_TextGen();
       case LanguageConceptSwitch.Species:
         return new Species_TextGen();
-      case LanguageConceptSwitch.SpeciesContainer:
-        return new SpeciesContainer_TextGen();
-      case LanguageConceptSwitch.SpeciesContainerHeader:
-        return new SpeciesContainerHeader_TextGen();
       case LanguageConceptSwitch.SpeciesDefinitionComponent:
         return new SpeciesDefinitionComponent_TextGen();
       case LanguageConceptSwitch.SpeciesExpression:
@@ -71,42 +61,4 @@ public class TextGenAspectDescriptor extends TextGenAspectBase {
     return null;
   }
 
-  @Override
-  public void breakdownToUnits(@NotNull TextGenModelOutline outline) {
-    for (SNode root : outline.getModel().getRootNodes()) {
-      if (root.getConcept().equals(CONCEPTS.SpeciesContainer$Ig)) {
-        String fname = getFileName_SpeciesContainer(root);
-        String ext = getFileExtension_SpeciesContainer(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
-        continue;
-      }
-      if (root.getConcept().equals(CONCEPTS.SpeciesContainerHeader$go)) {
-        String fname = getFileName_SpeciesContainerHeader(root);
-        String ext = getFileExtension_SpeciesContainerHeader(root);
-        outline.registerTextUnit((ext == null ? fname : (fname + '.' + ext)), root);
-        continue;
-      }
-    }
-  }
-  private static String getFileName_SpeciesContainer(SNode node) {
-    return SPropertyOperations.getString(node, PROPS.name$MnvL);
-  }
-  private static String getFileName_SpeciesContainerHeader(SNode node) {
-    return node.getName();
-  }
-  private static String getFileExtension_SpeciesContainer(SNode node) {
-    return "cpp";
-  }
-  private static String getFileExtension_SpeciesContainerHeader(SNode node) {
-    return "h";
-  }
-
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
-    /*package*/ static final SConcept SpeciesContainerHeader$go = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, "SpeciesSetup.structure.SpeciesContainerHeader");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
-  }
 }
