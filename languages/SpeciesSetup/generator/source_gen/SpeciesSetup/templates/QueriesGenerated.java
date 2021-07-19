@@ -4,31 +4,469 @@ package SpeciesSetup.templates;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.impl.query.QueryProviderBase;
-import jetbrains.mps.generator.template.MappingScriptContext;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Objects;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import java.util.Collections;
+import java.util.List;
 import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
+import java.util.ArrayList;
+import jetbrains.mps.generator.template.MappingScriptContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.generator.template.TemplateVarContext;
 import java.util.Map;
 import jetbrains.mps.generator.impl.query.ScriptCodeBlock;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.impl.query.QueryKey;
 import jetbrains.mps.generator.impl.GenerationFailureException;
-import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.generator.impl.query.SourceNodesQuery;
+import java.util.Collection;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.generator.impl.query.PropertyValueQuery;
 import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.generator.impl.query.IfMacroCondition;
+import jetbrains.mps.generator.impl.query.VariableValueQuery;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
   public QueriesGenerated() {
     super(1);
+  }
+  public static Object propertyMacro_GetValue_4_0(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_1(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_2(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_3(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_4(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_5(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_6(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_7(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_8(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_9(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_10(final PropertyMacroContext _context) {
+    String argString = "";
+    if (SNodeOperations.isInstanceOf(_context.getNode(), CONCEPTS.SpeciesExpression$Vm)) {
+      argString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getNode(), CONCEPTS.ParameterExpression$CA)) {
+      argString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
+    }
+    return argString;
+  }
+  public static Object propertyMacro_GetValue_4_11(final PropertyMacroContext _context) {
+    String argString = "";
+    // Check if we've reached the end of the list, if not, add a comma for the next argument.
+    if (SNodeOperations.getIndexInParent(_context.getNode()) < ((Integer) _context.getVariable("var:argLength"))) {
+      argString += ",";
+    }
+    return argString;
+  }
+  public static Object propertyMacro_GetValue_4_12(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_13(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_14(final PropertyMacroContext _context) {
+    String argString = "";
+    if (SNodeOperations.isInstanceOf(_context.getNode(), CONCEPTS.SpeciesExpression$Vm)) {
+      argString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL);
+    }
+    if (SNodeOperations.isInstanceOf(_context.getNode(), CONCEPTS.ParameterExpression$CA)) {
+      argString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
+    }
+    return argString;
+  }
+  public static Object propertyMacro_GetValue_4_15(final PropertyMacroContext _context) {
+    String argString = "";
+    // Check if we've reached the end of the list, if not, add a comma for the next argument.
+    if (SNodeOperations.getIndexInParent(_context.getNode()) < ((Integer) _context.getVariable("var:argLength"))) {
+      argString += ",";
+    }
+    return argString;
+  }
+  public static Object propertyMacro_GetValue_4_16(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_17(final PropertyMacroContext _context) {
+    String zeroString = "";
+    if (Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1)).count(), 0) && Objects.equals(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ProductOfProcess$_X03)).count(), 0) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.Degradation_Term$Cd2S) == null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.Production_Term$Cs3S) == null) && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiedByProcess$uVT0)).isEmpty()) {
+      zeroString += "0";
+    }
+    return zeroString;
+  }
+  public static Object propertyMacro_GetValue_4_18(final PropertyMacroContext _context) {
+    String prodString = "";
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.Production_Term$Cs3S) != null)) {
+      prodString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL) + "_prod";
+    }
+    return prodString;
+  }
+  public static Object propertyMacro_GetValue_4_19(final PropertyMacroContext _context) {
+    String reactantString = "";
+    SNode reaction = SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.Reaction_Reference$_p), LINKS.ReactionReference$PJYZ);
+    if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
+      reactantString += "-rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+    }
+    if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
+      reactantString += "-rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+      reactantString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+    }
+    return reactantString;
+  }
+  public static Object propertyMacro_GetValue_4_20(final PropertyMacroContext _context) {
+    String degString = "";
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.Degradation_Term$Cd2S) != null)) {
+      degString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL) + "_deg";
+    }
+    return degString;
+  }
+  public static Object propertyMacro_GetValue_4_21(final PropertyMacroContext _context) {
+    String productString = "";
+    SNode reaction = SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.Reaction_Reference$_p), LINKS.ReactionReference$PJYZ);
+    if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
+      productString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+    }
+    if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
+      productString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+      productString += "_rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL);
+      for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+        if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
+        }
+      }
+    }
+    return productString;
+  }
+  public static Object propertyMacro_GetValue_4_22(final PropertyMacroContext _context) {
+    String argString = "";
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ModifierReference$8K), LINKS.target$hsJa), CONCEPTS.Inhibits$am)) {
+      argString += "-rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ModifierReference$8K), LINKS.target$hsJa), PROPS.name$MnvL);
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ModifierReference$8K), LINKS.target$hsJa), CONCEPTS.Upregulates$aP)) {
+      argString += "+rate_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ModifierReference$8K), LINKS.target$hsJa), PROPS.name$MnvL);
+    }
+    return argString;
+  }
+  public static Object propertyMacro_GetValue_4_23(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_24(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_25(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_26(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_27(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_28(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_29(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_30(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_31(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_32(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_33(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_34(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_35(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+
+  }
+  public static Object propertyMacro_GetValue_4_36(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_37(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_38(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_4_39(final PropertyMacroContext _context) {
+    if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L)) {
+      return "true";
+    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3235L)) {
+      return "false";
+    } else {
+      return "VALUE_NOT_FOUND";
+    }
+  }
+  public static Object propertyMacro_GetValue_4_40(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_4_41(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_0(final PropertyMacroContext _context) {
+    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+  }
+  public static Object propertyMacro_GetValue_5_1(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_2(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_3(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_4(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_5(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_6(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_7(final PropertyMacroContext _context) {
+    return "double " + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.target$9wsE), PROPS.name$MnvL);
+  }
+  public static Object propertyMacro_GetValue_5_8(final PropertyMacroContext _context) {
+    if (SNodeOperations.getIndexInParent(_context.getNode()) < ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Parameter$La), LINKS.Uses$iEoe)).count() - 1) {
+      return ", ";
+    } else {
+      return "";
+    }
+  }
+  public static Object propertyMacro_GetValue_5_9(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
+  }
+  public static boolean ifMacro_Condition_4_0(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ProductOfProcess$_X03).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiedByProcess$uVT0).size() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  public static boolean ifMacro_Condition_4_1(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiesProcess$UMOC).size() > 0) {
+      if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s), 0x2b6159d0ceed39a8L)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  public static boolean ifMacro_Condition_4_2(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiesProcess$UMOC).size() > 0) {
+      if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s), 0x2b6159d0ceed39a9L) || SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s), 0x2b6159d0ceed39acL)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  public static boolean ifMacro_Condition_4_3(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiesProcess$UMOC).size() > 0) {
+      if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s), 0x2b6159d0ceed39b0L)) {
+        return true;
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
+  }
+  public static boolean ifMacro_Condition_4_4(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ProductOfProcess$_X03).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiedByProcess$uVT0).size() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  public static boolean ifMacro_Condition_4_5(final IfMacroContext _context) {
+    if (SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1).size() > 0 || SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiesProcess$UMOC).size() > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_0(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Tissue_Container$Ds8T), LINKS.cell_types$$$44);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_1(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Owned_Species$sIXq);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_2(final SourceSubstituteMacroNodesContext _context) {
+    // Get all of the unique species and parameters involved in the reaction.
+    Iterable<SNode> filteredSequence = Sequence.fromIterable(Collections.<SNode>emptyList());
+    SNode container = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16));
+    ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16))));
+    List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
+    return Sequence.fromIterable(filteredSequence).concat(ListSequence.fromList(filteredList));
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_3(final SourceSubstituteMacroNodesContext _context) {
+    // Get all of the unique species and parameters involved in all reactions.
+    Iterable<SNode> sortedSequence = Sequence.fromIterable(Collections.<SNode>emptyList());
+    List<SNode> paramList = ListSequence.fromList(new ArrayList<SNode>());
+    SNode container = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    for (SNode parameter : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Parameters$hoyh))) {
+      ListSequence.fromList(paramList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SNodeOperations.as(parameter, CONCEPTS.Parameter$La), LINKS.Expression$Wv16))));
+    }
+    // Get unique params, then sort them based on their usages in order to prevent parameters being defined after they're needed.
+    List<SNode> filteredParamList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, paramList);
+    List<SNode> sortedList = SpeciesContainer__BehaviorDescriptor.topologicalSort_idcJYjfa5zz7.invoke(container, filteredParamList);
+    return Sequence.fromIterable(sortedSequence).concat(ListSequence.fromList(sortedList));
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_4(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> filteredSequence = Sequence.fromIterable(Collections.<SNode>emptyList());
+    SNode container = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16));
+    ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16))));
+    List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
+    Sequence.fromIterable(filteredSequence).concat(ListSequence.fromList(filteredList));
+    return filteredSequence;
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_5(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> parameters = Sequence.fromIterable(Collections.<SNode>emptyList());
+    List<SNode> paramList = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ), LINKS.Processes$hnPe))) {
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.IrreversibleReaction$ja)) {
+        ListSequence.fromList(paramList).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh));
+      }
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.ReversibleReaction$fi)) {
+        ListSequence.fromList(paramList).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM));
+        ListSequence.fromList(paramList).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr));
+      }
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Inhibits$am)) {
+        ListSequence.fromList(paramList).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM));
+      }
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Upregulates$aP)) {
+        ListSequence.fromList(paramList).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Modifier$ZNcM));
+      }
+    }
+    Sequence.fromIterable(parameters).concat(ListSequence.fromList(paramList));
+    return Sequence.fromIterable(parameters).distinct();
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_6(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> reactantProcesses = Sequence.fromIterable(Collections.<SNode>emptyList());
+    Sequence.fromIterable(reactantProcesses).concat(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ReactsInProcess$_Wy1)));
+    return reactantProcesses;
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_7(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> sourceProcesses = Sequence.fromIterable(Collections.<SNode>emptyList());
+    Sequence.fromIterable(sourceProcesses).concat(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ProductOfProcess$_X03)));
+    return Sequence.fromIterable(sourceProcesses).distinct();
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_8(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> modifierProcesses = Sequence.fromIterable(Collections.<SNode>emptyList());
+    Sequence.fromIterable(modifierProcesses).concat(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), LINKS.ModifiedByProcess$uVT0)));
+    return Sequence.fromIterable(modifierProcesses).distinct();
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_9(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Owned_Species$sIXq);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_10(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Owned_Species$sIXq);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_11(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Owned_Species$sIXq);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_12(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Tissue_Container$Ds8T), LINKS.cell_types$$$44);
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_13(final SourceSubstituteMacroNodesContext _context) {
+    Iterable<SNode> filteredSequence = Sequence.fromIterable(Collections.<SNode>emptyList());
+    SNode container = SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.SpeciesContainer$Ig);
+    List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16));
+    ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16))));
+    List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
+    Sequence.fromIterable(filteredSequence).concat(ListSequence.fromList(filteredList));
+    return filteredSequence;
+  }
+  public static Iterable<SNode> sourceNodesQuery_4_14(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Parameters$hoyh);
+  }
+  public static Iterable<SNode> sourceNodesQuery_5_0(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.target$JA2H), LINKS.Tissue_Container$Ds8T), LINKS.cell_types$$$44);
+  }
+  public static Iterable<SNode> sourceNodesQuery_5_1(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.target$JA2H), LINKS.Tissue_Container$Ds8T), LINKS.cell_types$$$44);
+  }
+  public static Iterable<SNode> sourceNodesQuery_5_2(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(_context.getNode(), LINKS.Uses$iEoe);
+  }
+  public static Iterable<SNode> sourceNodesQuery_5_3(final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.target$JA2H), LINKS.Parameters$hoyh);
   }
   public static void mappingScript_CodeBlock_1(final MappingScriptContext _context) {
     // Creates species header nodes for each species container in the model.
@@ -54,6 +492,20 @@ public class QueriesGenerated extends QueryProviderBase {
       SpeciesContainer__BehaviorDescriptor.updateModifiers_id20T6jFVk_r2.invoke(container);
       SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(container);
     }
+  }
+  public static Object varMacro_Value_4_0(final TemplateVarContext _context) {
+    SNode container = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16));
+    ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Expression$Wv16))));
+    List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
+    return ListSequence.fromList(filteredList).count();
+  }
+  public static Object varMacro_Value_4_1(final TemplateVarContext _context) {
+    SNode container = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> exprList = SpeciesContainer__BehaviorDescriptor.getExprSpecies_idJ83UdHe8mr.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16));
+    ListSequence.fromList(exprList).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getExprParameters_id3eqdKU_qMQ$.invoke(container, SLinkOperations.getTarget(_context.getNode(), LINKS.Expression$Wv16))));
+    List<SNode> filteredList = SpeciesContainer__BehaviorDescriptor.filterExpressionList_id3eqdKU_H9WR.invoke(container, exprList);
+    return ListSequence.fromList(filteredList).count();
   }
   private final Map<String, ScriptCodeBlock> mscbMethods = new HashMap<String, ScriptCodeBlock>();
   {
@@ -90,17 +542,386 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-
-  private static final class CONCEPTS {
-    /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
-    /*package*/ static final SConcept SpeciesContainerHeader$go = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, "SpeciesSetup.structure.SpeciesContainerHeader");
+  private final Map<String, SourceNodesQuery> snsqMethods = new HashMap<String, SourceNodesQuery>();
+  {
+    int i = 0;
+    snsqMethods.put("2487902665577648510", new SNsQ(i++));
+    snsqMethods.put("5555094191714771498", new SNsQ(i++));
+    snsqMethods.put("5555094191715044929", new SNsQ(i++));
+    snsqMethods.put("5555094191714878604", new SNsQ(i++));
+    snsqMethods.put("5555094191717123306", new SNsQ(i++));
+    snsqMethods.put("5555094191714879819", new SNsQ(i++));
+    snsqMethods.put("5555094191715294216", new SNsQ(i++));
+    snsqMethods.put("5555094191715881952", new SNsQ(i++));
+    snsqMethods.put("5555094191719189706", new SNsQ(i++));
+    snsqMethods.put("5555094191714880322", new SNsQ(i++));
+    snsqMethods.put("2487902665578188332", new SNsQ(i++));
+    snsqMethods.put("2487902665578198305", new SNsQ(i++));
+    snsqMethods.put("2487902665577935475", new SNsQ(i++));
+    snsqMethods.put("859737174091911993", new SNsQ(i++));
+    snsqMethods.put("859737174091908358", new SNsQ(i++));
+    snsqMethods.put("2487902665578411341", new SNsQ(i++));
+    snsqMethods.put("2487902665578549368", new SNsQ(i++));
+    snsqMethods.put("2487902665578585850", new SNsQ(i++));
+    snsqMethods.put("2487902665578576299", new SNsQ(i++));
+  }
+  @NotNull
+  @Override
+  public SourceNodesQuery getSourceNodesQuery(@NotNull QueryKey identity) {
+    SourceNodesQuery query = identity.forFunctionNode(snsqMethods);
+    return (query != null ? query : super.getSourceNodesQuery(identity));
+  }
+  private static class SNsQ implements SourceNodesQuery {
+    private final int methodKey;
+    public SNsQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @NotNull
+    public Collection<SNode> evaluate(@NotNull SourceSubstituteMacroNodesContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_0(ctx));
+        case 1:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_1(ctx));
+        case 2:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_2(ctx));
+        case 3:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_3(ctx));
+        case 4:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_4(ctx));
+        case 5:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_5(ctx));
+        case 6:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_6(ctx));
+        case 7:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_7(ctx));
+        case 8:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_8(ctx));
+        case 9:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_9(ctx));
+        case 10:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_10(ctx));
+        case 11:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_11(ctx));
+        case 12:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_12(ctx));
+        case 13:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_13(ctx));
+        case 14:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_4_14(ctx));
+        case 15:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5_0(ctx));
+        case 16:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5_1(ctx));
+        case 17:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5_2(ctx));
+        case 18:
+          return IterableUtil.asCollection(QueriesGenerated.sourceNodesQuery_5_3(ctx));
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
+  {
+    int i = 0;
+    pvqMethods.put("2487902665577644310", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "NAME"));
+    pvqMethods.put("2487902665577924287", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665577930108", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665577941165", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665577958406", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665577962364", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("5555094191714772392", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SPECIES_NAME"));
+    pvqMethods.put("5555094191714778538", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("5555094191715024561", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PARAMETER_NAME"));
+    pvqMethods.put("5555094191715039927", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PARAMETER_NAME"));
+    pvqMethods.put("5555094191716962425", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ARGS"));
+    pvqMethods.put("5555094191716865090", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ","));
+    pvqMethods.put("5555094191715105509", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RATE_NAME"));
+    pvqMethods.put("5555094191717119654", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "RATE_NAME"));
+    pvqMethods.put("5555094191718616774", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ARGS"));
+    pvqMethods.put("5555094191717205456", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ","));
+    pvqMethods.put("5555094191715178672", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("5555094191718700952", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "0"));
+    pvqMethods.put("5555094191715187753", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PRODUCTION_TERM"));
+    pvqMethods.put("5555094191715299933", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "REACTANT_TERMS"));
+    pvqMethods.put("5555094191715290961", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "DEGRADATION_TERM"));
+    pvqMethods.put("5555094191715884289", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PRODUCT_TERMS"));
+    pvqMethods.put("5555094191719192973", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MODIFIER_TERMS"));
+    pvqMethods.put("4966106853964501523", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578447944", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578509131", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578456468", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578461226", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578489071", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SPECIES_NAME"));
+    pvqMethods.put("2487902665578476415", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578493885", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SPECIES_NAME"));
+    pvqMethods.put("2487902665578477217", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578495706", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SPECIES_NAME"));
+    pvqMethods.put("2487902665578480893", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578500118", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SPECIES_NAME"));
+    pvqMethods.put("2487902665578029027", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
+    pvqMethods.put("2487902665578042162", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578035474", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
+    pvqMethods.put("2487902665578049264", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
+    pvqMethods.put("2487902665578053290", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "AFFECTS_THIS_CELL"));
+    pvqMethods.put("859737174091913404", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PARAMETER_NAME"));
+    pvqMethods.put("2487902665577459731", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "dsl_species"));
+    pvqMethods.put("2487902665578423280", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "SIZE"));
+    pvqMethods.put("2487902665578430692", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578549327", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578549336", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578549345", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578549358", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
+    pvqMethods.put("2487902665578582831", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PARAMETER_NAME"));
+    pvqMethods.put("2487902665578587805", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ARGS"));
+    pvqMethods.put("2487902665578597054", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), ","));
+    pvqMethods.put("4966106853964098047", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "dsl_species"));
+  }
+  @NotNull
+  @Override
+  public PropertyValueQuery getPropertyValueQuery(@NotNull QueryKey identity) {
+    PropertyValueQuery query = identity.forTemplateNode(pvqMethods);
+    return (query != null ? query : super.getPropertyValueQuery(identity));
+  }
+  private static class PVQ extends PropertyValueQuery.Base {
+    private final int methodKey;
+    /*package*/ PVQ(int methodKey, SProperty property, String templateValue) {
+      super(property, templateValue);
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public Object evaluate(@NotNull PropertyMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.propertyMacro_GetValue_4_0(ctx);
+        case 1:
+          return QueriesGenerated.propertyMacro_GetValue_4_1(ctx);
+        case 2:
+          return QueriesGenerated.propertyMacro_GetValue_4_2(ctx);
+        case 3:
+          return QueriesGenerated.propertyMacro_GetValue_4_3(ctx);
+        case 4:
+          return QueriesGenerated.propertyMacro_GetValue_4_4(ctx);
+        case 5:
+          return QueriesGenerated.propertyMacro_GetValue_4_5(ctx);
+        case 6:
+          return QueriesGenerated.propertyMacro_GetValue_4_6(ctx);
+        case 7:
+          return QueriesGenerated.propertyMacro_GetValue_4_7(ctx);
+        case 8:
+          return QueriesGenerated.propertyMacro_GetValue_4_8(ctx);
+        case 9:
+          return QueriesGenerated.propertyMacro_GetValue_4_9(ctx);
+        case 10:
+          return QueriesGenerated.propertyMacro_GetValue_4_10(ctx);
+        case 11:
+          return QueriesGenerated.propertyMacro_GetValue_4_11(ctx);
+        case 12:
+          return QueriesGenerated.propertyMacro_GetValue_4_12(ctx);
+        case 13:
+          return QueriesGenerated.propertyMacro_GetValue_4_13(ctx);
+        case 14:
+          return QueriesGenerated.propertyMacro_GetValue_4_14(ctx);
+        case 15:
+          return QueriesGenerated.propertyMacro_GetValue_4_15(ctx);
+        case 16:
+          return QueriesGenerated.propertyMacro_GetValue_4_16(ctx);
+        case 17:
+          return QueriesGenerated.propertyMacro_GetValue_4_17(ctx);
+        case 18:
+          return QueriesGenerated.propertyMacro_GetValue_4_18(ctx);
+        case 19:
+          return QueriesGenerated.propertyMacro_GetValue_4_19(ctx);
+        case 20:
+          return QueriesGenerated.propertyMacro_GetValue_4_20(ctx);
+        case 21:
+          return QueriesGenerated.propertyMacro_GetValue_4_21(ctx);
+        case 22:
+          return QueriesGenerated.propertyMacro_GetValue_4_22(ctx);
+        case 23:
+          return QueriesGenerated.propertyMacro_GetValue_4_23(ctx);
+        case 24:
+          return QueriesGenerated.propertyMacro_GetValue_4_24(ctx);
+        case 25:
+          return QueriesGenerated.propertyMacro_GetValue_4_25(ctx);
+        case 26:
+          return QueriesGenerated.propertyMacro_GetValue_4_26(ctx);
+        case 27:
+          return QueriesGenerated.propertyMacro_GetValue_4_27(ctx);
+        case 28:
+          return QueriesGenerated.propertyMacro_GetValue_4_28(ctx);
+        case 29:
+          return QueriesGenerated.propertyMacro_GetValue_4_29(ctx);
+        case 30:
+          return QueriesGenerated.propertyMacro_GetValue_4_30(ctx);
+        case 31:
+          return QueriesGenerated.propertyMacro_GetValue_4_31(ctx);
+        case 32:
+          return QueriesGenerated.propertyMacro_GetValue_4_32(ctx);
+        case 33:
+          return QueriesGenerated.propertyMacro_GetValue_4_33(ctx);
+        case 34:
+          return QueriesGenerated.propertyMacro_GetValue_4_34(ctx);
+        case 35:
+          return QueriesGenerated.propertyMacro_GetValue_4_35(ctx);
+        case 36:
+          return QueriesGenerated.propertyMacro_GetValue_4_36(ctx);
+        case 37:
+          return QueriesGenerated.propertyMacro_GetValue_4_37(ctx);
+        case 38:
+          return QueriesGenerated.propertyMacro_GetValue_4_38(ctx);
+        case 39:
+          return QueriesGenerated.propertyMacro_GetValue_4_39(ctx);
+        case 40:
+          return QueriesGenerated.propertyMacro_GetValue_4_40(ctx);
+        case 41:
+          return QueriesGenerated.propertyMacro_GetValue_4_41(ctx);
+        case 42:
+          return QueriesGenerated.propertyMacro_GetValue_5_0(ctx);
+        case 43:
+          return QueriesGenerated.propertyMacro_GetValue_5_1(ctx);
+        case 44:
+          return QueriesGenerated.propertyMacro_GetValue_5_2(ctx);
+        case 45:
+          return QueriesGenerated.propertyMacro_GetValue_5_3(ctx);
+        case 46:
+          return QueriesGenerated.propertyMacro_GetValue_5_4(ctx);
+        case 47:
+          return QueriesGenerated.propertyMacro_GetValue_5_5(ctx);
+        case 48:
+          return QueriesGenerated.propertyMacro_GetValue_5_6(ctx);
+        case 49:
+          return QueriesGenerated.propertyMacro_GetValue_5_7(ctx);
+        case 50:
+          return QueriesGenerated.propertyMacro_GetValue_5_8(ctx);
+        case 51:
+          return QueriesGenerated.propertyMacro_GetValue_5_9(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, IfMacroCondition> imcMethods = new HashMap<String, IfMacroCondition>();
+  {
+    int i = 0;
+    imcMethods.put("2487902665578317330", new IfMC(i++));
+    imcMethods.put("2487902665578318158", new IfMC(i++));
+    imcMethods.put("2487902665578322456", new IfMC(i++));
+    imcMethods.put("2487902665578323155", new IfMC(i++));
+    imcMethods.put("2487902665578245336", new IfMC(i++));
+    imcMethods.put("2487902665578306760", new IfMC(i++));
+  }
+  @NotNull
+  @Override
+  public IfMacroCondition getIfMacroCondition(@NotNull QueryKey identity) {
+    IfMacroCondition query = identity.forTemplateNode(imcMethods);
+    return (query != null ? query : super.getIfMacroCondition(identity));
+  }
+  private static class IfMC implements IfMacroCondition {
+    private final int methodKey;
+    public IfMC(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Override
+    public boolean check(@NotNull IfMacroContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.ifMacro_Condition_4_0(ctx);
+        case 1:
+          return QueriesGenerated.ifMacro_Condition_4_1(ctx);
+        case 2:
+          return QueriesGenerated.ifMacro_Condition_4_2(ctx);
+        case 3:
+          return QueriesGenerated.ifMacro_Condition_4_3(ctx);
+        case 4:
+          return QueriesGenerated.ifMacro_Condition_4_4(ctx);
+        case 5:
+          return QueriesGenerated.ifMacro_Condition_4_5(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
+  }
+  private final Map<String, VariableValueQuery> vvqMethods = new HashMap<String, VariableValueQuery>();
+  {
+    vvqMethods.put("5555094191716865388", new VVQ(0));
+    vvqMethods.put("5555094191717205324", new VVQ(1));
+  }
+  @NotNull
+  @Override
+  public VariableValueQuery getVariableValueQuery(@NotNull QueryKey queryKey) {
+    VariableValueQuery query = queryKey.forTemplateNode(vvqMethods);
+    return (query != null ? query : super.getVariableValueQuery(queryKey));
+  }
+  private static class VVQ implements VariableValueQuery {
+    private final int methodKey;
+    /*package*/ VVQ(int methodKey) {
+      this.methodKey = methodKey;
+    }
+    @Nullable
+    public Object evaluate(@NotNull TemplateVarContext ctx) throws GenerationFailureException {
+      switch (methodKey) {
+        case 0:
+          return QueriesGenerated.varMacro_Value_4_0(ctx);
+        case 1:
+          return QueriesGenerated.varMacro_Value_4_1(ctx);
+        default:
+          throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
+      }
+    }
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty Stoichiometry$Wmha = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f3L, "Stoichiometry");
+    /*package*/ static final SProperty UsesValue$4P_Q = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x54e0e23243ed3238L, "UsesValue");
+    /*package*/ static final SProperty Location$Gx$s = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed5ea1L, "Location");
   }
 
   private static final class LINKS {
+    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
+    /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
+    /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
+    /*package*/ static final SContainmentLink ModifiedByProcess$uVT0 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2039193afb52ddb0L, "ModifiedByProcess");
+    /*package*/ static final SContainmentLink ReactsInProcess$_Wy1 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed142fL, "ReactsInProcess");
+    /*package*/ static final SContainmentLink ProductOfProcess$_X03 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed1431L, "ProductOfProcess");
+    /*package*/ static final SReferenceLink Degradation_Term$Cd2S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af8984818bL, "Degradation_Term");
+    /*package*/ static final SReferenceLink Production_Term$Cs3S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af898481a1L, "Production_Term");
+    /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
+    /*package*/ static final SReferenceLink Rate$Otxh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, 0x665d03af898abc5aL, "Rate");
+    /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
+    /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
+    /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
+    /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");
+    /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
+    /*package*/ static final SReferenceLink target$hsJa = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, 0x2039193afb4c33c4L, "target");
+    /*package*/ static final SReferenceLink target$9wsE = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL, 0x65d0f96c4dec199eL, "target");
+    /*package*/ static final SContainmentLink Uses$iEoe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4decbff8L, "Uses");
+    /*package*/ static final SContainmentLink ModifiesProcess$UMOC = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2039193afb4c33c6L, "ModifiesProcess");
+    /*package*/ static final SReferenceLink Tissue_Container$Ds8T = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x6f82e96f79a54de4L, "Tissue_Container");
+    /*package*/ static final SContainmentLink cell_types$$$44 = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x4369a03b1c6088edL, "cell_types");
+    /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
+    /*package*/ static final SReferenceLink Species_Container$u7EZ = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x6f82e96f79abed1cL, "Species_Container");
+    /*package*/ static final SContainmentLink Expression$Wv16 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x2b6159d0ceecf504L, "Expression");
+    /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
+    /*package*/ static final SReferenceLink Modifier$ZNcM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c604985a9cL, "Modifier");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
     /*package*/ static final SReferenceLink target$JA2H = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, 0x3ac95f9844313214L, "target");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
+    /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
+    /*package*/ static final SConcept Reaction_Reference$_p = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, "SpeciesSetup.structure.Reaction_Reference");
+    /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");
+    /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
+    /*package*/ static final SConcept ModifierReference$8K = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L, "SpeciesSetup.structure.ModifierReference");
+    /*package*/ static final SConcept Inhibits$am = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL, "SpeciesSetup.structure.Inhibits");
+    /*package*/ static final SConcept Upregulates$aP = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL, "SpeciesSetup.structure.Upregulates");
+    /*package*/ static final SConcept Parameter$La = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, "SpeciesSetup.structure.Parameter");
+    /*package*/ static final SConcept Tissue_And_Cell_Container$ni = MetaAdapterFactory.getConcept(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, "TissueSetup.structure.Tissue_And_Cell_Container");
+    /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
+    /*package*/ static final SConcept SpeciesContainerHeader$go = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x3ac95f984427833dL, "SpeciesSetup.structure.SpeciesContainerHeader");
   }
 }

@@ -135,7 +135,7 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(process, LINKS.target$hsJa), CONCEPTS.Inhibits$am)) {
           tgs.append(" -rate_");
           tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(process, LINKS.target$hsJa), LINKS.Modifier$ZNcM));
-        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(process, LINKS.target$hsJa), CONCEPTS.Inhibits$am)) {
+        } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(process, LINKS.target$hsJa), CONCEPTS.Upregulates$aP)) {
           tgs.append(" +rate_");
           tgs.appendNode(SLinkOperations.getTarget(SLinkOperations.getTarget(process, LINKS.target$hsJa), LINKS.Modifier$ZNcM));
         }
@@ -172,6 +172,7 @@ public class ODEDefinitions_TextGen extends TextGenDescriptorBase {
     /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");
     /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
     /*package*/ static final SConcept Inhibits$am = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL, "SpeciesSetup.structure.Inhibits");
+    /*package*/ static final SConcept Upregulates$aP = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL, "SpeciesSetup.structure.Upregulates");
   }
 
   private static final class LINKS {
