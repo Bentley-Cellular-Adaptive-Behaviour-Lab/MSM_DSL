@@ -20,17 +20,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
   /*package*/ final ConceptDescriptor myConceptModifier = createDescriptorForModifier();
   /*package*/ final ConceptDescriptor myConceptModifierReference = createDescriptorForModifierReference();
-  /*package*/ final ConceptDescriptor myConceptODEDefinitions = createDescriptorForODEDefinitions();
-  /*package*/ final ConceptDescriptor myConceptODEStateComponent = createDescriptorForODEStateComponent();
-  /*package*/ final ConceptDescriptor myConceptODESystemComponent = createDescriptorForODESystemComponent();
   /*package*/ final ConceptDescriptor myConceptParameter = createDescriptorForParameter();
-  /*package*/ final ConceptDescriptor myConceptParameterDefinitionComponent = createDescriptorForParameterDefinitionComponent();
   /*package*/ final ConceptDescriptor myConceptParameterExpression = createDescriptorForParameterExpression();
   /*package*/ final ConceptDescriptor myConceptParameterReference = createDescriptorForParameterReference();
   /*package*/ final ConceptDescriptor myConceptProcess = createDescriptorForProcess();
   /*package*/ final ConceptDescriptor myConceptRate = createDescriptorForRate();
-  /*package*/ final ConceptDescriptor myConceptRateDefinition = createDescriptorForRateDefinition();
-  /*package*/ final ConceptDescriptor myConceptRateFunctionsComponent = createDescriptorForRateFunctionsComponent();
   /*package*/ final ConceptDescriptor myConceptReaction = createDescriptorForReaction();
   /*package*/ final ConceptDescriptor myConceptReaction_Reference = createDescriptorForReaction_Reference();
   /*package*/ final ConceptDescriptor myConceptReaction_Term = createDescriptorForReaction_Term();
@@ -38,11 +32,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptSpecies = createDescriptorForSpecies();
   /*package*/ final ConceptDescriptor myConceptSpeciesContainer = createDescriptorForSpeciesContainer();
   /*package*/ final ConceptDescriptor myConceptSpeciesContainerHeader = createDescriptorForSpeciesContainerHeader();
-  /*package*/ final ConceptDescriptor myConceptSpeciesDefinitionComponent = createDescriptorForSpeciesDefinitionComponent();
   /*package*/ final ConceptDescriptor myConceptSpeciesExpression = createDescriptorForSpeciesExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesPowerExpression = createDescriptorForSpeciesPowerExpression();
   /*package*/ final ConceptDescriptor myConceptSpeciesReference = createDescriptorForSpeciesReference();
-  /*package*/ final ConceptDescriptor myConceptTextGenComponent = createDescriptorForTextGenComponent();
   /*package*/ final ConceptDescriptor myConceptUpregulates = createDescriptorForUpregulates();
   /*package*/ final EnumerationDescriptor myEnumerationNeighbourValues = new EnumerationDescriptor_NeighbourValues();
   /*package*/ final EnumerationDescriptor myEnumerationSpeciesLocation = new EnumerationDescriptor_SpeciesLocation();
@@ -65,7 +57,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptODEDefinitions, myConceptODEStateComponent, myConceptODESystemComponent, myConceptParameter, myConceptParameterDefinitionComponent, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptRateDefinition, myConceptRateFunctionsComponent, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesDefinitionComponent, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptTextGenComponent, myConceptUpregulates);
+    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
   }
 
   @Override
@@ -80,16 +72,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptModifier;
       case LanguageConceptSwitch.ModifierReference:
         return myConceptModifierReference;
-      case LanguageConceptSwitch.ODEDefinitions:
-        return myConceptODEDefinitions;
-      case LanguageConceptSwitch.ODEStateComponent:
-        return myConceptODEStateComponent;
-      case LanguageConceptSwitch.ODESystemComponent:
-        return myConceptODESystemComponent;
       case LanguageConceptSwitch.Parameter:
         return myConceptParameter;
-      case LanguageConceptSwitch.ParameterDefinitionComponent:
-        return myConceptParameterDefinitionComponent;
       case LanguageConceptSwitch.ParameterExpression:
         return myConceptParameterExpression;
       case LanguageConceptSwitch.ParameterReference:
@@ -98,10 +82,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptProcess;
       case LanguageConceptSwitch.Rate:
         return myConceptRate;
-      case LanguageConceptSwitch.RateDefinition:
-        return myConceptRateDefinition;
-      case LanguageConceptSwitch.RateFunctionsComponent:
-        return myConceptRateFunctionsComponent;
       case LanguageConceptSwitch.Reaction:
         return myConceptReaction;
       case LanguageConceptSwitch.Reaction_Reference:
@@ -116,16 +96,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptSpeciesContainer;
       case LanguageConceptSwitch.SpeciesContainerHeader:
         return myConceptSpeciesContainerHeader;
-      case LanguageConceptSwitch.SpeciesDefinitionComponent:
-        return myConceptSpeciesDefinitionComponent;
       case LanguageConceptSwitch.SpeciesExpression:
         return myConceptSpeciesExpression;
       case LanguageConceptSwitch.SpeciesPowerExpression:
         return myConceptSpeciesPowerExpression;
       case LanguageConceptSwitch.SpeciesReference:
         return myConceptSpeciesReference;
-      case LanguageConceptSwitch.TextGenComponent:
-        return myConceptTextGenComponent;
       case LanguageConceptSwitch.Upregulates:
         return myConceptUpregulates;
       default:
@@ -182,34 +158,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("target", 0x2039193afb4c33c4L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L).optional(false).origin("2321914824001074116").done();
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForODEDefinitions() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ODEDefinitions", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb2c0fddL);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823998967773");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForODEStateComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ODEStateComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2dL);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823994367021");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForODESystemComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ODESystemComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2eL);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823994367022");
-    b.version(2);
-    b.aggregate("SpeciesDefinitions", 0x2039193afb23e4f0L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb23e4efL).optional(false).ordered(true).multiple(false).origin("2321914823998432496").done();
-    b.aggregate("ParameterDefinitions", 0x2039193afb238295L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb1d1a09L).optional(false).ordered(true).multiple(false).origin("2321914823998407317").done();
-    b.aggregate("RateDefintions", 0x2039193afb3528bcL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb2de9d6L).optional(false).ordered(true).multiple(false).origin("2321914823999563964").done();
-    b.aggregate("ODEDefinitions", 0x2039193afb2d9bbeL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb2c0fddL).optional(false).ordered(true).multiple(false).origin("2321914823999069118").done();
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForParameter() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Parameter", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L);
     b.class_(false, false, false);
@@ -219,14 +167,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Expression", 0x2b6159d0ceecf504L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("3125878369731540228").done();
     b.aggregate("UsedBy", 0x65d0f96c4dec22c1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL).optional(true).ordered(true).multiple(true).origin("7336638036545643201").done();
     b.aggregate("Uses", 0x65d0f96c4decbff8L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL).optional(true).ordered(true).multiple(true).origin("7336638036545683448").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForParameterDefinitionComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ParameterDefinitionComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb1d1a09L);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823997987337");
-    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameterExpression() {
@@ -260,22 +200,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540208");
     b.version(2);
     b.aggregate("Parameter", 0x2b6159d0ceecf73aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).ordered(true).multiple(false).origin("3125878369731540794").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRateDefinition() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "RateDefinition", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb2de9d6L);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823999089110");
-    b.version(2);
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForRateFunctionsComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "RateFunctionsComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae65ecbL);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823994400459");
-    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReaction() {
@@ -345,9 +269,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("Species", 0x2b6159d0ceecf740L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(true).ordered(true).multiple(true).origin("3125878369731540800").done();
     b.aggregate("Processes", 0x2b6159d0ceecf742L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L).optional(true).ordered(true).multiple(true).origin("3125878369731540802").done();
     b.aggregate("Parameters", 0x2b6159d0ceecf745L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).ordered(true).multiple(true).origin("3125878369731540805").done();
-    b.aggregate("ODEStates", 0x2039193afae65eccL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2dL).optional(false).ordered(true).multiple(false).origin("2321914823994400460").done();
-    b.aggregate("ODESystem", 0x2039193afafc5a6fL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dc2eL).optional(false).ordered(true).multiple(false).origin("2321914823995841135").done();
-    b.aggregate("RateFunctions", 0x2039193afb119ea4L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae65ecbL).optional(false).ordered(true).multiple(false).origin("2321914823997234852").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesContainerHeader() {
@@ -357,14 +278,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/4236022032101770045");
     b.version(2);
     b.associate("target", 0x3ac95f9844313214L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL).optional(false).origin("4236022032102404628").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForSpeciesDefinitionComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "SpeciesDefinitionComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb23e4efL);
-    b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823998432495");
-    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesExpression() {
@@ -392,13 +305,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/1155607132028676490");
     b.version(2);
     b.associate("Species", 0x10098a905c7a298bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("1155607132028676491").done();
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForTextGenComponent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "TextGenComponent", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afae5dbf6L);
-    b.class_(false, false, false);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914823994366966");
-    b.version(2);
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUpregulates() {

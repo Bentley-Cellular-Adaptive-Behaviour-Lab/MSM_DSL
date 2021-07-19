@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="-arx8rxp4xkzymym7wu32nab37qf99lk">
-  <files names="Inhibits_TextGen.java:IrreversibleReaction_TextGen.java:Modifier_TextGen.java:ODEDefinitions_TextGen.java:ODEStateComponent_TextGen.java:ODESystemComponent_TextGen.java:ParameterDefinitionComponent_TextGen.java:ParameterExpression_TextGen.java:Parameter_TextGen.java:RateDefinition_TextGen.java:RateFunctionsComponent_TextGen.java:Reaction_Reference_TextGen.java:ReversibleReaction_TextGen.java:SpeciesDefinitionComponent_TextGen.java:SpeciesExpression_TextGen.java:SpeciesPowerExpression_TextGen.java:SpeciesReference_TextGen.java:Species_TextGen.java:TextGenAspectDescriptor.java:Upregulates_TextGen.java" />
-</product>
-
