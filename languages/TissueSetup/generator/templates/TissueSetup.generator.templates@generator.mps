@@ -171,6 +171,10 @@
       <ref role="30HIoZ" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
       <ref role="3lhOvi" node="4DdJmqSDt1W" resolve="dsl_Tissue" />
     </node>
+    <node concept="3lhOvk" id="3B3PvvBK_PE" role="3lj3bC">
+      <ref role="30HIoZ" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+      <ref role="3lhOvi" node="3B3PvvBK_PH" resolve="map_Tissue_And_Cell_Container" />
+    </node>
   </node>
   <node concept="356sEV" id="4DdJmqSDt1W">
     <property role="TrG5h" value="dsl_Tissue" />
@@ -743,7 +747,7 @@
                               </node>
                               <node concept="1mIQ4w" id="4DdJmqSEj7$" role="2OqNvi">
                                 <node concept="chp4Y" id="4DdJmqSEjk0" role="cj9EA">
-                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Rectangular" />
+                                  <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
                                 </node>
                               </node>
                             </node>
@@ -1834,6 +1838,21 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="356sEV" id="3B3PvvBK_PH">
+    <property role="TrG5h" value="map_Tissue_And_Cell_Container" />
+    <property role="3Le9LX" value=".txt" />
+    <node concept="356WMU" id="3B3PvvBK_PI" role="356KY_">
+      <node concept="356sEK" id="3B3PvvBK_Qb" role="383Ya9">
+        <node concept="356sEF" id="3B3PvvBK_Qc" role="356sEH">
+          <property role="TrG5h" value="// THIS IS A TEXT FILE." />
+        </node>
+        <node concept="2EixSi" id="3B3PvvBK_Qd" role="2EinRH" />
+      </node>
+    </node>
+    <node concept="n94m4" id="3B3PvvBK_PJ" role="lGtFl">
+      <ref role="n9lRv" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
     </node>
   </node>
 </model>
