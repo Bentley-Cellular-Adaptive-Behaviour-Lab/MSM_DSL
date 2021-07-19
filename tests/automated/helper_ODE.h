@@ -155,9 +155,9 @@ public:
 	void addWorld(World *cellJunctionWorld);
 	void addWorldContainer(World_Container *cellJunctionWorldContainer);
 	void setupEnvironment();
-	void setupCell();
+	void setupCells();
 	static void runODE(MemAgent *memAgent);
-	static void basicCellDistribution_system(const cellJunction_ode_states &x, cellJunction_ode_states &dxdt, double t);
+	static void cellJunction_system(const cellJunction_ode_states &x, cellJunction_ode_states &dxdt, double t);
 
 	void printCellProteinLevels(int timestep) const;
 };
