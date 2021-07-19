@@ -773,7 +773,7 @@ void BasicCellDistributionTest::printCellProteinLevels(int timestep) const {
 *				- Also checks that junctional proteins are only distributed to junction memAgents.
 *
 *	  			ODE: 1A (from adjacent cell) + 1B (this cell) -> 1AB every timestep.
- *	  			ODE: 1AB (this cell) -> 1C (this cell) every timestep.
+*	  			ODE: 1AB (this cell) -> 1C (this cell) every timestep.
 *
 *  Returns:		void
 ******************************************************************************************/
@@ -783,5 +783,43 @@ void CellJunctionTest::SetUp() {
 
 void CellJunctionTest::TearDown() {
 
+}
+
+void CellJunctionTest::addWorld(World *cellJunctionWorld) {
+	this->world = cellJunctionWorld;
+}
+
+void CellJunctionTest::addWorldContainer(World_Container *cellJunctionWorldContainer) {
+	this->worldContainer = cellJunctionWorldContainer;
+}
+
+void CellJunctionTest::setupEnvironment() {
+
+}
+
+void CellJunctionTest::setupCells() {
+
+}
+
+void CellJunctionTest::runODE(MemAgent *memAgent) {
+
+}
+/*
+ * ODE: 1A (from adjacent cell) + 1B (this cell) -> 1AB every timestep.
+ * ODE: 1AB (this cell) -> 1C (this cell) every timestep.
+*/
+
+void CellJunctionTest::cellJunction_system(const cellJunction_ode_states &x,
+										   cellJunction_ode_states &dxdt,
+										   double t) {
+	double A = x[0];
+	double B = x[1];
+	double AB = x[2];
+	double C = x[3];
+
+	dxdt[0] = -x[0]; 	// Rate of change for species A
+	dxdt[1] = -x[1];	// Rate of change for species B
+	dxdt[2] = +(x[0] + x[2]) -;	// Rate of change for species AB
+	dxdt[3] = +1;	// Rate of change for species C
 }
 
