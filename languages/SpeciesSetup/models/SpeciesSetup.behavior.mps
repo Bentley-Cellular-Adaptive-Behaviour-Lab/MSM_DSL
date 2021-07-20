@@ -3494,7 +3494,6 @@
     <node concept="13i0hz" id="5Cso5p4sluh" role="13h7CS">
       <property role="TrG5h" value="inhibitionIsValid" />
       <node concept="3Tm1VV" id="5Cso5p4slui" role="1B3o_S" />
-      <node concept="10P_77" id="5Cso5p4smrj" role="3clF45" />
       <node concept="3clFbS" id="5Cso5p4sluk" role="3clF47">
         <node concept="3cpWs8" id="5Cso5p4sF73" role="3cqZAp">
           <node concept="3cpWsn" id="5Cso5p4sF74" role="3cpWs9">
@@ -4140,6 +4139,7 @@
           <ref role="ehGHo" to="w3cn:5jwDGo4BeZW" resolve="Inhibits" />
         </node>
       </node>
+      <node concept="10P_77" id="$XkBXNfqU9" role="3clF45" />
     </node>
     <node concept="13i0hz" id="5Cso5p4sX5X" role="13h7CS">
       <property role="TrG5h" value="upregulationIsValid" />

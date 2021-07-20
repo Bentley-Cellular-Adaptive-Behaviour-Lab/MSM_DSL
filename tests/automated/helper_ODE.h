@@ -150,7 +150,7 @@ public:
 	World *world;
 	World_Container *worldContainer;
 	Tissue_Container *tissueContainer;
-	Tissue_Monolayer *tissueMonolauer;
+	Tissue_Monolayer *tissueMonolayer;
 
 	void addWorld(World *cellJunctionWorld);
 	void addWorldContainer(World_Container *cellJunctionWorldContainer);
