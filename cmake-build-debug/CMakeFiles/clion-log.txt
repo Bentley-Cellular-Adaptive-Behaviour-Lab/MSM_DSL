@@ -1,0 +1,7 @@
+C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7628.27\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL
+TEST_TYPE = 1
+Testing: Automated
+-- Found Python: C:/Users/Tom/anaconda3/python.exe (found version "3.8.3") found components: Interpreter 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
