@@ -15,7 +15,7 @@ import java.nio.file.Files;
 public class RunMSM {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
+    String output_string = "/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
 
     Path old_tissue_path;
     Path old_world_path;

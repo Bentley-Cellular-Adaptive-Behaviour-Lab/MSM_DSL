@@ -19,6 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Objects;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -38,8 +39,12 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> topologicalSort_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("topologicalSort").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> listContainsParameter_id6ujblCxXxzJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("listContainsParameter").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ujblCxXxzJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> inhibitionIsValid_id5Cso5p4sluh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("inhibitionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4sluh").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> upregulationIsValid_id5Cso5p4sX5X = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("upregulationIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4sX5X").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> irreversibleReactionIsValid_id5Cso5p4t3d0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("irreversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4t3d0").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> reversibleReactionIsValid_id5Cso5p4tyaj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("reversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4tyaj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -209,6 +214,151 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return false;
   }
+  /*package*/ static boolean inhibitionIsValid_id5Cso5p4sluh(@NotNull SNode __thisNode__, SNode inhibitsReaction) {
+    boolean inhibitionIsValid = true;
+    try {
+      // Reactant is an environment protein.
+      if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
+        // Reactant is an environment protein - check that it isn't interacting with an environment, cellular or junction protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) || SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR")) || SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          inhibitionIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
+        // Reactant is a membrane protein - check that it isn't interacting with a junction protein. 
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          inhibitionIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
+        // Reactant is a cellular protein - check that it isn't interacting with an environment protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          inhibitionIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+        // Reactant is a junction protein - check that it isn't interacting with an environment or membrane protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(inhibitsReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          inhibitionIsValid = false;
+        }
+      } else {
+        IllegalArgumentException exception = new IllegalArgumentException();
+        throw exception;
+      }
+    } catch (IllegalArgumentException exception) {
+      System.out.println("Error - inhibition validity check called on node with no location.");
+      exception.printStackTrace();
+    }
+    return inhibitionIsValid;
+  }
+  /*package*/ static boolean upregulationIsValid_id5Cso5p4sX5X(@NotNull SNode __thisNode__, SNode upregulatesReaction) {
+    boolean upregulatesIsValid = true;
+    try {
+      if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
+        // Reactant is an environment protein - check that it isn't interacting with an environment, cellular or junction protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) || SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR")) || SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          upregulatesIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
+        // Reactant is a membrane protein - check that it isn't interacting with a junction protein. 
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          upregulatesIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
+        // Reactant is a cellular protein - check that it isn't interacting with an environment protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          upregulatesIsValid = false;
+        }
+      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+        // Reactant is a junction protein - check that it isn't interacting with an environment or membrane protein.
+        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulatesReaction, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+          upregulatesIsValid = false;
+        }
+      } else {
+        IllegalArgumentException exception = new IllegalArgumentException();
+        throw exception;
+      }
+    } catch (IllegalArgumentException exception) {
+      System.out.println("Error - validity regulation check called on node with no location.");
+      exception.printStackTrace();
+    }
+    return upregulatesIsValid;
+  }
+  /*package*/ static boolean irreversibleReactionIsValid_id5Cso5p4t3d0(@NotNull SNode __thisNode__, SNode irreversibleReaction) {
+    boolean irreversibleReactionIsValid = true;
+    try {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(irreversibleReaction, LINKS.Reactant_Terms$Wnv9))) {
+        SNode reactantSpecies = SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde);
+        for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(irreversibleReaction, LINKS.Reactant_Terms$Wnv9))) {
+          SNode productSpecies = SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde);
+          if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
+            // Reactant is an environment protein - check if it is interacting with an environment, cellular or junction protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) || SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR")) || SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              irreversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
+            // Reactant is a membrane protein - check if it is interacting with a junction protein. 
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              irreversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
+            // Reactant is a cellular protein - check if it is interacting with an environment protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              irreversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+            // Reactant is a junction protein - check if it is interacting with an environment or membrane protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              irreversibleReactionIsValid = false;
+            }
+          } else {
+            IllegalArgumentException exception = new IllegalArgumentException();
+            throw exception;
+          }
+        }
+      }
+    } catch (IllegalArgumentException exception) {
+      System.out.println("Error - validity regulation check called on node with no location.");
+      exception.printStackTrace();
+    }
+    return irreversibleReactionIsValid;
+  }
+  /*package*/ static boolean reversibleReactionIsValid_id5Cso5p4tyaj(@NotNull SNode __thisNode__, SNode reversibleReaction) {
+    boolean reversibleReactionIsValid = true;
+    try {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(reversibleReaction, LINKS.Reactant_Terms$Wnv9))) {
+        SNode reactantSpecies = SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde);
+        for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(reversibleReaction, LINKS.Reactant_Terms$Wnv9))) {
+          SNode productSpecies = SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde);
+          if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
+            // Reactant is an environment protein - check if it is interacting with an environment, cellular or junction protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) || SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR")) || SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              reversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
+            // Reactant is a membrane protein - check if it is interacting with a junction protein. 
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              reversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
+            // Reactant is a cellular protein - check if it is interacting with an environment protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              reversibleReactionIsValid = false;
+            }
+          } else if (SPropertyOperations.getEnum(reactantSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+            // Reactant is a junction protein - check if it is interacting with an environment or membrane protein.
+            if (SPropertyOperations.getEnum(productSpecies, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+              reversibleReactionIsValid = false;
+            }
+          } else {
+            IllegalArgumentException exception = new IllegalArgumentException();
+            throw exception;
+          }
+        }
+      }
+    } catch (IllegalArgumentException exception) {
+      System.out.println("Error - validity regulation check called on node with no location.");
+      exception.printStackTrace();
+    }
+    return reversibleReactionIsValid;
+  }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
   }
@@ -244,6 +394,14 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((List<SNode>) topologicalSort_idcJYjfa5zz7(node, (List<SNode>) parameters[0]));
       case 7:
         return (T) ((Boolean) listContainsParameter_id6ujblCxXxzJ(node, (SNode) parameters[0], (List<SNode>) parameters[1]));
+      case 8:
+        return (T) ((Boolean) inhibitionIsValid_id5Cso5p4sluh(node, (SNode) parameters[0]));
+      case 9:
+        return (T) ((Boolean) upregulationIsValid_id5Cso5p4sX5X(node, (SNode) parameters[0]));
+      case 10:
+        return (T) ((Boolean) irreversibleReactionIsValid_id5Cso5p4t3d0(node, (SNode) parameters[0]));
+      case 11:
+        return (T) ((Boolean) reversibleReactionIsValid_id5Cso5p4tyaj(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -291,9 +449,13 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
     /*package*/ static final SContainmentLink Uses$iEoe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4decbff8L, "Uses");
     /*package*/ static final SReferenceLink target$9wsE = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x65d0f96c4dec199dL, 0x65d0f96c4dec199eL, "target");
+    /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
+    /*package*/ static final SReferenceLink Source$9HG6 = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06dL, "Source");
+    /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
   }
 
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty Location$Gx$s = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed5ea1L, "Location");
   }
 }
