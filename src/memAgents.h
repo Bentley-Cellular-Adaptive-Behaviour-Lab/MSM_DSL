@@ -125,7 +125,7 @@ public:
     void set_protein_level(std::string protein_name, float new_level);
     float get_filopodia_protein_level(std::string protein_name);
 
-	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell);
+	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool is_junction_protein);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

@@ -1203,19 +1203,12 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                             flagA = 1;
 
                             worldP->grid[m][n][p].Mids[y]->junction = true;
-                            if (worldP->timeStep == 0) {
-
-                            }
-
                             if (worldP->timeStep > 0) {
-
-                                //-------------------------------------------------------------------------------------------------------------
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells
                                 if(StoreInJunctionList!=true){
                                     if(ANASTOMOSIS==true)
                                 anastomosis(worldP->grid[m][n][p].Mids[y]);
                                 }
-                                //-------------------------------------------------------------------------------------------------------------
                             }
                         }
                     }
@@ -1224,7 +1217,9 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
         }
     }
 
-    if (flagA == 0) junction = false;
+    if (flagA == 0) {
+		junction = false;
+    }
     //StoreInJunctionList=false;
     if ((StoreInJunctionList) && (node) && (FIL == NONE)) {//&&(previousJunction!=junction)){
         //vector<MemAgent*>::iterator L;
@@ -1261,7 +1256,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
         }
     }*/
     }
-    //-------------------------------------------------------------------------------------------------------------
 }
 //-------------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------------
@@ -3053,13 +3047,15 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell) {
+void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool is_junction_protein) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
 	int k = (int) Mz;
 
 	std::vector<MemAgent*> relevant_memAgents;
+
+	int protein_location;
 
 	for (int x = 0; x < 26; x++) {
 		// Same layer.
@@ -3179,7 +3175,11 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
-							relevant_memAgents.push_back(memAgent);
+							if (memAgent->junction && is_junction_protein) {
+								relevant_memAgents.push_back(memAgent);
+							} else if (!memAgent->junction && !is_junction_protein) {
+								relevant_memAgents.push_back(memAgent);
+							}
 						}
 					} else if (!affects_this_cell) {
 						// Check for memAgents in neighbouring junctions that have the protein.
