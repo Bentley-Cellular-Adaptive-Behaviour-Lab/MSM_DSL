@@ -642,13 +642,15 @@ void EC::distribute_proteins() {
     // TODO: We need to iterate over agents twice, because we don't know the count beforehand. Find a better way to do this.
     // TODO: Have some sort of filter preventing proteins being allocated to filopodia, thus adjusting the count.
     for (auto nodeAgent : this->nodeAgents) {
+    	if (nodeAgent->junction) {
+    		int i =0;
+    	}
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					protein_counts[i]++;
 				}
-
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
 				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
@@ -687,6 +689,9 @@ void EC::distribute_proteins() {
 
     // Now, set the memAgents level to be equal to the calculated amount.
     for (auto nodeAgent : this->nodeAgents) {
+		if (nodeAgent->junction) {
+			int i =0;
+		}
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {

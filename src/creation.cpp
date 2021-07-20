@@ -89,17 +89,19 @@ void World::createMonolayer(void){
 }
 //-----------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------
-void MemAgent::connectJunctions(bool alsoNormalSprings){
-	int x=0;
-    int flag=0;
-    int m, n, p,s;
-    float sumV=0;
+void MemAgent::connectJunctions(bool alsoNormalSprings) {
+	// Tom: This appears to only be used for 2D cells level with the Z-plane.
+	int x = 0;
+    int flag = 0;
+    int m, n, p, s;
+    float sumV = 0;
 
-    int i, j, k;
-    i=Mx; j=My; k=Mz;
+    int i = (int)Mx;
+    int j = (int)My;
+    int k = (int)Mz;
 
     //same layer
-    for(x=0;x<6;x++) {
+    for(x = 0; x < 6; x++) {
         if(x==0) {
             m=i;
             n=j+1;
@@ -128,38 +130,45 @@ void MemAgent::connectJunctions(bool alsoNormalSprings){
 
         //-------------------------------
         //toroidal only X
-        if (m >= this->worldP->gridXDimensions)
-        	m = 0;
-        if (m < 0)
-        	m = this->worldP->gridXDimensions - 1;
-        if (n >= this->worldP->gridYDimensions)
-        	n = 0;
-        if (n < 0)
-        	n = this->worldP->gridXDimensions - 1;
+        if (m >= this->worldP->gridXDimensions) {
+			m = 0;
+        }
 
-        if(worldP->insideWorld(m, n, p)){
-            if(worldP->grid[m][n][p].type == const_M){
-                for(s=0;s<worldP->grid[m][n][p].Mids.size();s++) {
-                    if(worldP->grid[m][n][p].Mids[s]->Cell!=Cell) {
-                        neigh[neighs]=worldP->grid[m][n][p].Mids[s];
+        if (m < 0) {
+			m = this->worldP->gridXDimensions - 1;
+        }
+
+        if (n >= this->worldP->gridYDimensions) {
+			n = 0;
+        }
+
+        if (n < 0) {
+			n = this->worldP->gridXDimensions - 1;
+        }
+
+        if (worldP->insideWorld(m, n, p)){
+            if (worldP->grid[m][n][p].type == const_M) {
+                for (s = 0; s < worldP->grid[m][n][p].Mids.size();s++) {
+                    if (worldP->grid[m][n][p].Mids[s]->Cell!=Cell) {
+                    	neigh[neighs] = worldP->grid[m][n][p].Mids[s];
                         Cell->createSpringTokenObject(this, worldP->grid[m][n][p].Mids[s], neighs);
 
-                        if(x==0) {
+                        if (x == 0) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = false;
                             Cell->Springs[Cell->Springs.size()-1]->right = false;
-                        } else if(x==1) {
+                        } else if (x == 1) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = false;
                             Cell->Springs[Cell->Springs.size()-1]->right = true;
-                        } else if(x==2) {
+                        } else if (x == 2) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = true;
                             Cell->Springs[Cell->Springs.size()-1]->right = true;
-                        } else if(x==3) {
+                        } else if (x == 3) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = false;
                             Cell->Springs[Cell->Springs.size()-1]->right = false;
-                        } else if(x==4) {
+                        } else if (x == 4) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = false;
                             Cell->Springs[Cell->Springs.size()-1]->right = false;
-                        } else if(x==5) {
+                        } else if ( x== 5) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = true;
                             Cell->Springs[Cell->Springs.size()-1]->right = false;
                         }
@@ -168,26 +177,26 @@ void MemAgent::connectJunctions(bool alsoNormalSprings){
                 }
 
                 if (alsoNormalSprings) {
-                    if(worldP->grid[m][n][p].Mids[s]->Cell==Cell) {
+                    if (worldP->grid[m][n][p].Mids[s]->Cell==Cell) {
                         neigh[neighs]=worldP->grid[m][n][p].Mids[s];
                         Cell->createSpringTokenObject(this, worldP->grid[m][n][p].Mids[s] , neighs);
 
-                        if(x==0) {
+                        if(x == 0) {
                             SpringNeigh[neighs]->horizontal = false;
                             SpringNeigh[neighs]->right = false;
-                        } else if(x==1) {
+                        } else if (x == 1) {
                             SpringNeigh[neighs]->horizontal = false;
                             SpringNeigh[neighs]->right = true;
-                        } else if(x==2) {
+                        } else if (x == 2) {
                             SpringNeigh[neighs]->horizontal = true;
                             SpringNeigh[neighs]->right = true;
-                        } else if(x==3) {
+                        } else if(x == 3) {
                             SpringNeigh[neighs]->horizontal = true;
                             SpringNeigh[neighs]->right = false;
-                        } else if(x==4) {
+                        } else if (x == 4) {
                             SpringNeigh[neighs]->horizontal = false;
                             SpringNeigh[neighs]->right = false;
-                        } else if(x==5) {
+                        } else if (x == 5) {
                             SpringNeigh[neighs]->horizontal =true;
                             SpringNeigh[neighs]->right = false;
                         }
@@ -1679,56 +1688,55 @@ void World::createNewEnvAgent(int x, int y, int z){
 
     }
 //-------------------------------------------------------------------------------------------------------------
-    void EC::createSpringTokenObject(MemAgent* start, MemAgent* end, int neigh){
+void EC::createSpringTokenObject(MemAgent* start, MemAgent* end, int neigh){
         
-        int flag=0;
-        int i;
-        Spring* stp;
-        int flag2=0;
-        int flag3=0;
+	int flag=0;
+	int i;
+	Spring* stp;
+	int flag2=0;
+	int flag3=0;
         
-        stp= new Spring();
+	stp= new Spring();
         
-        stp->start = start;
-        stp->end = end;
+	stp->start = start;
+	stp->end = end;
         
-        if((start->FIL==BASE)&&(end->FIL==TIP)) flag=1;
-        
-        else if((start->FIL==BASE)&&(end->FIL==STALK))flag=1;
-        
-        else if((start->FIL==STALK)||(end->FIL==STALK))flag=1;
-        
-        if(flag==1) stp->filopodia=true;
-        
-        //set nodeagents to know this is the spring object they belong to
-        
-        start->SpringNeigh[neigh]=stp;
-        
-        
-        Springs.push_back(stp);
-        
-        if(start->Cell!=end->Cell){
-            stp->Junction=true;
-            stp->filopodia=false;
-            flag=0;
-            /*i=0;
-            //add start and end to junction agent list if not already in there..
-            if(worldP->JunctionAgents.size()>0){
-            do{
-                if(worldP->JunctionAgents[i]==start) flag2=1;
-                if(worldP->JunctionAgents[i]==end) flag3=1;
-                if((flag2==1)&&(flag3==1)) flag-1;
-                i++;
+	if ((start->FIL==BASE)&&(end->FIL==TIP)) {
+		flag=1;
+	} else if((start->FIL==BASE)&&(end->FIL==STALK)) {
+		flag=1;
+	} else if((start->FIL==STALK)||(end->FIL==STALK)) {
+		flag=1;
+	}
 
-            }while((flag==0)&&(i<worldP->JunctionAgents.size()));
+	if (flag==1) {
+		stp->filopodia=true;
+	}
+        
+	//set nodeagents to know this is the spring object they belong to
+	start->SpringNeigh[neigh]=stp;
+        
+	Springs.push_back(stp);
+        
+	if(start->Cell!=end->Cell){
+		stp->Junction=true;
+		stp->filopodia=false;
+		flag=0;
+		/*i=0;
+		//add start and end to junction agent list if not already in there..
+		if(worldP->JunctionAgents.size()>0){
+		do{
+		if(worldP->JunctionAgents[i]==start) flag2=1;
+		if(worldP->JunctionAgents[i]==end) flag3=1;
+		if((flag2==1)&&(flag3==1)) flag-1;
+		i++;
+		}while((flag==0)&&(i<worldP->JunctionAgents.size()));
 
-            if(flag2==0) worldP->JunctionAgents.push_back(start);
-            if(flag3==0) worldP->JunctionAgents.push_back(end);
-            }*/
-        }
-        
-        
-    }
+		if(flag2==0) worldP->JunctionAgents.push_back(start);
+		if(flag3==0) worldP->JunctionAgents.push_back(end);
+		}*/
+	}
+}
 //-------------------------------------------------------------------------------------------------------------
     
 //-------------------------------------------------------------------------
