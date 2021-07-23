@@ -2,11 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
+      <config projectName="src/springAgent" targetName="springAgent" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,13 +11,286 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Testing spring allocation for flat tissues.">
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_inhibitsValidity_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_irreversibleValidity_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_reversibleValidity_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_upregulatesValidity_NonTypesystemRule.java" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Pre-merge commit">
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/generated" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/Generator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/trace.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/templates/SpeciesSetup.generator01.templates@generator.mps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Species.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Species_header.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_00__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_00__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_04__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_04__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_51_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_51__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Arrangement_Constraints$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Arrangement_Constraints$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Arrangement_Constraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Arrangement__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/BehaviorAspectDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/BehaviorAspectDescriptor1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cell_SubstituteMenu$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cell_SubstituteMenu$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cell_SubstituteMenu$SMP_ReferenceScope_ixzu8b_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cell_SubstituteMenu$SMP_Subconcepts_ixzu8b_b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cell_SubstituteMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/ConceptPresentationAspectImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/ConceptPresentationAspectImpl1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/ConstraintsAspectDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/ConstraintsAspectDescriptor1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical_Constraints$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical_Constraints$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical_Constraints$Cylinder_cross_section_cells_Property.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical_Constraints$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical_Constraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Cylindrical__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/EditorAspectDescriptorImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/EnumerationDescriptor_Gradient_Shapes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/EnumerationDescriptor_Gradient_Types.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Flat_Constraints$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Flat_Constraints$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Flat_Constraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Flat__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Flat__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Generator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Generator1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Gradient__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Gradient__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Grid__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Grid__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Language.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Language1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/LanguageConceptSwitch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/LanguageConceptSwitch1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Position__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Position__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$CONCEPTS1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$LINKS1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$PROPS1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$PVQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$PVQ1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$SNsQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated$SNsQ1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/QueriesGenerated1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Shape_Constraints$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Shape_Constraints$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Shape_Constraints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Shape__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Sink__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Sink__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Source__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Source__BehaviorDescriptor$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Source__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/StructureAspectDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/StructureAspectDescriptor1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_Editor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_a2c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$cell_typesListHandler_hccigz_c1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$cellsListHandler_hccigz_c2a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$cellsListHandler_hccigz_c3a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$cellsListHandler_hccigz_c4a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$tissue_typesListHandler_hccigz_a2c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$tissue_typesListHandler_hccigz_c1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$tissuesListHandler_hccigz_c1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$tissuesListHandler_hccigz_c3a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a$tissuesListHandler_hccigz_c4a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container_EditorBuilder_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container__BehaviorDescriptor$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_And_Cell_Container__BehaviorDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_SubstituteMenu$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_SubstituteMenu$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_SubstituteMenu$SMP_ReferenceScope_n67dg9_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_SubstituteMenu$SMP_Subconcepts_n67dg9_b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_SubstituteMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_Type_SubstituteMenu$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_Type_SubstituteMenu$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_Type_SubstituteMenu$SMP_ReferenceScope_ei6fr6_a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_Type_SubstituteMenu$SMP_Subconcepts_ei6fr6_b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/Tissue_Type_SubstituteMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/TypesystemDescriptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/TypesystemDescriptor1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellName_NonTypesystemRule$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellName_NonTypesystemRule$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellName_NonTypesystemRule$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellName_NonTypesystemRule$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellName_NonTypesystemRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellTypeName_NonTypesystemRule$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellTypeName_NonTypesystemRule$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellTypeName_NonTypesystemRule$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellTypeName_NonTypesystemRule$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateCellTypeName_NonTypesystemRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueName_NonTypesystemRule$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueName_NonTypesystemRule$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueName_NonTypesystemRule$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueName_NonTypesystemRule$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueName_NonTypesystemRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueTypeName_NonTypesystemRule$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueTypeName_NonTypesystemRule$CONCEPTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueTypeName_NonTypesystemRule$LINKS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueTypeName_NonTypesystemRule$PROPS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/duplicateTissueTypeName_NonTypesystemRule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Merge_at_15_07_2021_10_56__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_19_07_2021__21_44__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_19_07_2021__21_44__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.17.5/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/includes_CXX.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/CPM_module.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/CPM_module.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/EC.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/EC.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ECmesh.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ECmesh.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/Grid.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/Grid.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ODE.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ODE.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ScreenRecording.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/ScreenRecording.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/Tissue.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/Tissue.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/analysis.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/analysis.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/constructors.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/constructors.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/creation.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/creation.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/display.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/display.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/environment.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/environment.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/geometry_functions.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/geometry_functions.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/logger.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/logger.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/memAgents.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/memAgents.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/protein.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/protein.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/space.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/space.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/utils.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/utils.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/world.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/world.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_Tissue.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_Tissue.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_World.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_World.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/helper_ODE.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-subbuild/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-subbuild/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$LINKS.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor$PROPS.class" afterDir="false" />
@@ -29,41 +298,59 @@
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/TypesystemDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/TypesystemDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/LanguageConceptSwitch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/source_gen.caches/SpeciesSetup/templates/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/generator/templates/SpeciesSetup.templates@generator.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/SpeciesContainer__BehaviorDescriptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/LanguageConceptSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueParameterNames_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueReactionNames_NonTypesystemRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_uniqueSpeciesNames_NonTypesystemRule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewTissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewTissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/map_Tissue_And_Cell_Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/map_Tissue_And_Cell_Container.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/map_Tissue_And_Cell_Container.txt" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/map_Tissue_And_Cell_Container.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_World.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +360,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -113,81 +399,61 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL" />
     </key>
   </component>
-  <component name="RunManager" selected="Google Test.CellJunctionTest.crossJunctionODETest">
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="Remote JVM Debug.DebugMPS">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicCellDistributionTest.postDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="postDistributionTest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="autoSpringAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicCellDistributionTest.postDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="postDistributionTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="DebugMPS" type="Remote">
@@ -204,27 +470,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.autoSpringAgent" />
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
-      <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
-      <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
-      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
-      <item itemvalue="Google Test.BasicCellDistributionTest.postDistributionTest" />
-      <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
+      <item itemvalue="Remote JVM Debug.DebugMPS" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
-        <item itemvalue="Google Test.BasicCellDistributionTest.postDistributionTest" />
-        <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
-        <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
-        <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -607,17 +854,37 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/objects.h</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java</url>
+          <line>481</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/memAgents.cpp</url>
-          <line>3212</line>
-          <option name="timeStamp" value="32" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java</url>
+          <line>235</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.class</url>
+          <line>234</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Parameter__BehaviorDescriptor.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="jetbrains.mps.smodel.SNode" memberName="myConcept" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

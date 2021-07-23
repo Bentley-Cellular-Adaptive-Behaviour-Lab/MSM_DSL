@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private ConceptPresentation props_IndexBin;
   private ConceptPresentation props_Inhibits;
   private ConceptPresentation props_IrreversibleReaction;
   private ConceptPresentation props_Modifier;
@@ -35,6 +36,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.IndexBin:
+        if (props_IndexBin == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Stores the index of an expression when constructing function arguments during text generation.");
+          cpb.rawPresentation("IndexBin");
+          props_IndexBin = cpb.create();
+        }
+        return props_IndexBin;
       case LanguageConceptSwitch.Inhibits:
         if (props_Inhibits == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
