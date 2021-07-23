@@ -5514,21 +5514,6 @@
       </node>
     </node>
   </node>
-  <node concept="356sEV" id="3B3PvvByQzR">
-    <property role="TrG5h" value="test" />
-    <property role="3Le9LX" value=".txt" />
-    <node concept="356WMU" id="3B3PvvByQzS" role="356KY_">
-      <node concept="356sEK" id="3B3PvvByQ$j" role="383Ya9">
-        <node concept="356sEF" id="3B3PvvByQ$k" role="356sEH">
-          <property role="TrG5h" value="// This is a file." />
-        </node>
-        <node concept="2EixSi" id="3B3PvvByQ$l" role="2EinRH" />
-      </node>
-    </node>
-    <node concept="n94m4" id="3B3PvvByQzT" role="lGtFl">
-      <ref role="n9lRv" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
-    </node>
-  </node>
   <node concept="bUwia" id="3B3PvvByQ$L">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="3B3PvvBJr4Z" role="3lj3bC">

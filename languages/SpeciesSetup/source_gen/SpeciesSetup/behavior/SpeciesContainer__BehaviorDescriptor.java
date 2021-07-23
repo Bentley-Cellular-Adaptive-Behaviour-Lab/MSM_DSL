@@ -43,8 +43,9 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<Boolean> upregulationIsValid_id5Cso5p4sX5X = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("upregulationIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4sX5X").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> irreversibleReactionIsValid_id5Cso5p4t3d0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("irreversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4t3d0").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> reversibleReactionIsValid_id5Cso5p4tyaj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("reversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4tyaj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> fixName_id1IP6pj5_cgV = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("fixName").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5_cgV").build(SMethodBuilder.createJavaParameter(String.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -359,6 +360,13 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return reversibleReactionIsValid;
   }
+  /*package*/ static String fixName_id1IP6pj5_cgV(@NotNull SNode __thisNode__, String name) {
+    // Changes names to not have spaces or hyphens. Directly accesses the name and changes it.
+    String newName = name;
+    newName.replaceAll("\\s", "_");
+    newName.replaceAll("-", "_");
+    return newName;
+  }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
   }
@@ -402,6 +410,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((Boolean) irreversibleReactionIsValid_id5Cso5p4t3d0(node, (SNode) parameters[0]));
       case 11:
         return (T) ((Boolean) reversibleReactionIsValid_id5Cso5p4tyaj(node, (SNode) parameters[0]));
+      case 12:
+        return (T) ((String) fixName_id1IP6pj5_cgV(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

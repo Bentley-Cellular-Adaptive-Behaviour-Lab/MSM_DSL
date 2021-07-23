@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptIndexBin = createDescriptorForIndexBin();
   /*package*/ final ConceptDescriptor myConceptInhibits = createDescriptorForInhibits();
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
   /*package*/ final ConceptDescriptor myConceptModifier = createDescriptorForModifier();
@@ -57,13 +58,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
+    return Arrays.asList(myConceptIndexBin, myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
+      case LanguageConceptSwitch.IndexBin:
+        return myConceptIndexBin;
       case LanguageConceptSwitch.Inhibits:
         return myConceptInhibits;
       case LanguageConceptSwitch.IrreversibleReaction:
@@ -118,6 +121,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForIndexBin() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "IndexBin", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL);
+    b.class_(false, false, false);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/8015826073202176829");
+    b.version(2);
+    b.property("binIndex", 0x6f3def580a87b38cL).type(PrimitiveTypeId.INTEGER).origin("8015826073202176908").done();
+    b.aggregate("Expression", 0x6f3def580a87b386L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("8015826073202176902").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForInhibits() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Inhibits", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL);
     b.class_(false, false, false);

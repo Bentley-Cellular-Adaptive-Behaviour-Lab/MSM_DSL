@@ -33,6 +33,22 @@ public class check_uniqueReactionNames_NonTypesystemRule extends AbstractNonType
           }
         }
       }
+      for (SNode currentSpecies : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Species$hnnc))) {
+        if (Objects.equals(SPropertyOperations.getString(currentSpecies, PROPS.name$MnvL), SPropertyOperations.getString(Process, PROPS.name$MnvL))) {
+          {
+            final MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(Process, "Process names must be unique.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "8015826073199965026", null, errorTarget);
+          }
+        }
+      }
+      for (SNode currentParameter : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Parameters$hoyh))) {
+        if (Objects.equals(SPropertyOperations.getString(currentParameter, PROPS.name$MnvL), SPropertyOperations.getString(Process, PROPS.name$MnvL))) {
+          {
+            final MessageTarget errorTarget = new NodeMessageTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(Process, "Process names must be unique.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "8015826073199970672", null, errorTarget);
+          }
+        }
+      }
     }
   }
   public SAbstractConcept getApplicableConcept() {
@@ -51,6 +67,8 @@ public class check_uniqueReactionNames_NonTypesystemRule extends AbstractNonType
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
+    /*package*/ static final SContainmentLink Species$hnnc = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf740L, "Species");
+    /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
   }
 
   private static final class CONCEPTS {

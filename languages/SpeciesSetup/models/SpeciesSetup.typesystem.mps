@@ -1336,6 +1336,96 @@
               </node>
             </node>
           </node>
+          <node concept="2Gpval" id="6WXVPwapFs$" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwapFs_" role="2Gsz3X">
+              <property role="TrG5h" value="querySpecies" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwapFsA" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwapFsB" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9C$$_" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapFYG" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwapFsD" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwapFsE" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwapFsJ" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwapFsK" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwapFsL" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9C$$Y" resolve="currentParam" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapFsM" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwapFsN" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwapFsO" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwapFs_" resolve="querySpecies" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapFsP" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwapFsQ" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwapFsR" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwapFsS" role="2MkJ7o">
+                      <property role="Xl_RC" value="Parameter names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwapFsT" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9C$$Y" resolve="currentParam" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Gpval" id="6WXVPwapGo4" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwapGo5" role="2Gsz3X">
+              <property role="TrG5h" value="queryProcess" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwapGo6" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwapGo7" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9C$$_" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapGFv" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwapGo9" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwapGoa" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwapGob" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwapGoc" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwapGod" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9C$$Y" resolve="currentParam" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapGoe" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwapGof" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwapGog" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwapGo5" resolve="queryProcess" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapGoh" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwapGoi" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwapGoj" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwapGok" role="2MkJ7o">
+                      <property role="Xl_RC" value="Parameter names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwapGol" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9C$$Y" resolve="currentParam" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -1416,6 +1506,96 @@
               </node>
             </node>
           </node>
+          <node concept="2Gpval" id="6WXVPwapvdf" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwapvdg" role="2Gsz3X">
+              <property role="TrG5h" value="currentSpecies" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwapvdh" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwapvdi" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9DRVu" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapvr6" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwapvdk" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwapvdl" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwapvdq" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwapvdr" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwapvds" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwapvdg" resolve="currentSpecies" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapvdt" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwapvdu" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwapvdv" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapvdw" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwapvdx" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwapvdy" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwapvdz" role="2MkJ7o">
+                      <property role="Xl_RC" value="Process names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwapvd$" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Gpval" id="6WXVPwapw2A" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwapw2C" role="2Gsz3X">
+              <property role="TrG5h" value="currentParameter" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwapwer" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwapw3G" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9DRVu" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapwyu" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwapw2G" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwapw_B" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwapw_C" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwapw_D" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwapwKu" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwapw2C" resolve="currentParameter" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapw_F" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwapw_G" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwapw_H" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapw_I" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwapw_J" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwapw_K" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwapw_L" role="2MkJ7o">
+                      <property role="Xl_RC" value="Process names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwapw_M" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9DS2p" resolve="Process" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -1489,6 +1669,96 @@
                       <property role="Xl_RC" value="Species names must be unique." />
                     </node>
                     <node concept="2GrUjf" id="6YT8FA9DSWY" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9DSW$" resolve="currentSpecies" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Gpval" id="6WXVPwaptEz" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwaptE$" role="2Gsz3X">
+              <property role="TrG5h" value="currentProcess" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwaptE_" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwaptEA" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9DSWZ" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapufv" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwaptEC" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwaptED" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwaptEI" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwaptEJ" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwaptEK" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9DSW$" resolve="currentSpecies" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwaptEL" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwaptEM" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwaptEN" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwaptE$" resolve="currentProcess" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwaptEO" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwaptEP" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwaptEQ" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwaptER" role="2MkJ7o">
+                      <property role="Xl_RC" value="Species names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwaptES" role="1urrMF">
+                      <ref role="2Gs0qQ" node="6YT8FA9DSW$" resolve="currentSpecies" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2Gpval" id="6WXVPwapuOX" role="3cqZAp">
+            <node concept="2GrKxI" id="6WXVPwapuOY" role="2Gsz3X">
+              <property role="TrG5h" value="currentParameter" />
+            </node>
+            <node concept="2OqwBi" id="6WXVPwapuOZ" role="2GsD0m">
+              <node concept="1YBJjd" id="6WXVPwapuP0" role="2Oq$k0">
+                <ref role="1YBMHb" node="6YT8FA9DSWZ" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="6WXVPwapuY0" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6WXVPwapuP2" role="2LFqv$">
+              <node concept="3clFbJ" id="6WXVPwapuP3" role="3cqZAp">
+                <node concept="17R0WA" id="6WXVPwapuP4" role="3clFbw">
+                  <node concept="2OqwBi" id="6WXVPwapuP5" role="3uHU7B">
+                    <node concept="2GrUjf" id="6WXVPwapuP6" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6YT8FA9DSW$" resolve="currentSpecies" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapuP7" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                  <node concept="2OqwBi" id="6WXVPwapuP8" role="3uHU7w">
+                    <node concept="2GrUjf" id="6WXVPwapuP9" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="6WXVPwapuOY" resolve="currentParameter" />
+                    </node>
+                    <node concept="3TrcHB" id="6WXVPwapuPa" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbS" id="6WXVPwapuPb" role="3clFbx">
+                  <node concept="2MkqsV" id="6WXVPwapuPc" role="3cqZAp">
+                    <node concept="Xl_RD" id="6WXVPwapuPd" role="2MkJ7o">
+                      <property role="Xl_RC" value="Species names must be unique." />
+                    </node>
+                    <node concept="2GrUjf" id="6WXVPwapuPe" role="1urrMF">
                       <ref role="2Gs0qQ" node="6YT8FA9DSW$" resolve="currentSpecies" />
                     </node>
                   </node>

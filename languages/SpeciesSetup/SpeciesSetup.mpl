@@ -12,27 +12,26 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="SpeciesSetup" uuid="30c07ff8-463e-443e-b9e5-cea0cecdc059">
+    <generator alias="plaintextgen_generator" namespace="SpeciesSetup.generator01" uuid="93848004-9140-4cf7-9c0b-3541bf12fc88" generatorOutputPath="${module}/plaintextgen_generator/source_gen">
       <models>
-        <modelRoot contentPath="${module}/generator" type="default">
+        <modelRoot contentPath="${module}/plaintextgen_generator" type="default">
           <sourceRoot location="templates" />
         </modelRoot>
       </models>
       <facets>
         <facet type="java">
-          <classes generated="true" path="${module}/generator/classes_gen" />
+          <classes generated="true" path="${module}/plaintextgen_generator/classes_gen" />
         </facet>
       </facets>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">f93d1dbe-bfd1-42dd-932a-f375fa6f5373(com.mbeddr.core.make)</dependency>
-        <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)</dependency>
         <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
         <dependency reexport="false">cfaa4966-b7d5-4b69-b66a-309a6e1a7290(org.iets3.core.expr.base)</dependency>
         <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)</dependency>
+        <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)</dependency>
+        <dependency reexport="false">ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)</dependency>
       </dependencies>
       <languageVersions>
-        <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueSetup" version="0" />
         <language slang="l:990507d3-3527-4c54-bfe9-0ca3c9c6247a:com.dslfoundry.plaintextgen" version="0" />
         <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
         <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
@@ -62,12 +61,11 @@
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesSetup)" version="0" />
-        <module reference="30c07ff8-463e-443e-b9e5-cea0cecdc059(SpeciesSetup)" version="0" />
+        <module reference="93848004-9140-4cf7-9c0b-3541bf12fc88(SpeciesSetup.generator01)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" version="0" />
         <module reference="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" version="0" />
         <module reference="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
-        <module reference="f93d1dbe-bfd1-42dd-932a-f375fa6f5373(com.mbeddr.core.make)" version="2" />
         <module reference="63e0e566-5131-447e-90e3-12ea330e1a00(com.mbeddr.mpsutil.blutil)" version="0" />
         <module reference="360a4e25-e902-4667-a0a6-0e971c4f3177(com.mbeddr.mpsutil.blutil.rt)" version="0" />
         <module reference="d3a0fd26-445a-466c-900e-10444ddfed52(com.mbeddr.mpsutil.filepicker)" version="0" />
@@ -116,6 +114,7 @@
     <dependency reexport="false">dbe08fb5-334d-4b64-86a0-622406fa0e87(org.iets3.core.expr.base.runtime)</dependency>
     <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)</dependency>
     <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)</dependency>
+    <dependency reexport="false">6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:d4280a54-f6df-4383-aa41-d1b2bffa7eb1:com.mbeddr.core.base" version="5" />
@@ -216,6 +215,7 @@
     <module reference="dbe08fb5-334d-4b64-86a0-622406fa0e87(org.iets3.core.expr.base.runtime)" version="0" />
     <module reference="9464fa06-5ab9-409b-9274-64ab29588457(org.iets3.core.expr.lambda)" version="0" />
     <module reference="6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0(org.iets3.core.expr.math)" version="0" />
+    <module reference="6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)" version="1" />
   </dependencyVersions>
   <extendedLanguages>
     <extendedLanguage>6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0(org.iets3.core.expr.math)</extendedLanguage>

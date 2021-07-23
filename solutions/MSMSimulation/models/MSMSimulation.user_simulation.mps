@@ -47,13 +47,6 @@
         <child id="4052263675728673910" name="Adhesiveness" index="3oezgx" />
       </concept>
     </language>
-    <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
-      <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
-      <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
-        <child id="5115872837156576280" name="right" index="30dEs_" />
-        <child id="5115872837156576278" name="left" index="30dEsF" />
-      </concept>
-    </language>
     <language id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes">
       <concept id="5115872837157054170" name="org.iets3.core.expr.simpleTypes.structure.NumberLiteral" flags="ng" index="30bXRB">
         <property id="5115872837157054173" name="value" index="30bXRw" />
@@ -67,6 +60,9 @@
       </concept>
     </language>
     <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
+      <concept id="1155607132028676490" name="SpeciesSetup.structure.SpeciesReference" flags="ng" index="1csUcq">
+        <reference id="1155607132028676491" name="Species" index="1csUcr" />
+      </concept>
       <concept id="1155607132030626610" name="SpeciesSetup.structure.SpeciesExpression" flags="ng" index="1cBA6y">
         <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
@@ -100,16 +96,25 @@
       <concept id="829681453102462370" name="Units.structure.Concentration_Expression" flags="ng" index="3bpmH0">
         <child id="7070710508215227644" name="expr" index="3lUA52" />
       </concept>
-      <concept id="829681453102462371" name="Units.structure.Molar" flags="ng" index="3bpmH1" />
+      <concept id="829681453102462372" name="Units.structure.Micromolar" flags="ng" index="3bpmH6" />
       <concept id="829681453102462392" name="Units.structure.Amount_Concentration" flags="ng" index="3bpmHq">
         <child id="7070710508215227650" name="units" index="3lUA2W" />
         <child id="7070710508215227648" name="value" index="3lUA2Y" />
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
+      <concept id="6249017959271690141" name="TissueSetup.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
+        <child id="5171349398070263660" name="Width" index="2IF2Qc" />
+        <child id="5171349398070263662" name="Height" index="2IF2Qe" />
+      </concept>
+      <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
+        <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
+        <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
+      </concept>
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
+        <child id="4857589848835393773" name="cell_types" index="1v2izm" />
       </concept>
       <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
         <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
@@ -212,79 +217,63 @@
   <node concept="3ZP1sW" id="6VIN$acjL8I">
     <property role="TrG5h" value="NewTissues" />
     <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
-    <ref role="maghN" node="3B3PvvBNB3j" resolve="Species" />
+    <ref role="maghN" node="3LeNXFhOKni" resolve="Species" />
+    <node concept="3ZP1sM" id="3hjy$RKi6jl" role="1v2izm">
+      <property role="TrG5h" value="CellType1" />
+      <node concept="3ZP1s$" id="3hjy$RKi6jp" role="3ZP1s2">
+        <node concept="2_hQR_" id="3hjy$RKi6jr" role="2IF2Qc">
+          <node concept="2_n9WQ" id="3hjy$RKi6jt" role="2_hQRE">
+            <node concept="30bXRB" id="3hjy$RKi6kB" role="2_n9WR">
+              <property role="30bXRw" value="10" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="3hjy$RKi6kD" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="3hjy$RKi6jz" role="2IF2Qe">
+          <node concept="2_n9WQ" id="3hjy$RKi6j_" role="2_hQRE">
+            <node concept="30bXRB" id="3hjy$RKi6k4" role="2_n9WR">
+              <property role="30bXRw" value="10" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="3hjy$RKi6k6" role="2_hQ4V" />
+        </node>
+      </node>
+      <node concept="1csUcq" id="3LeNXFhOKpZ" role="3FWu3_">
+        <ref role="1csUcr" node="3LeNXFhOKnF" resolve="A" />
+      </node>
+    </node>
   </node>
-  <node concept="3_zqOV" id="3B3PvvBNB3j">
+  <node concept="3_zqOV" id="3LeNXFhOKni">
     <property role="TrG5h" value="Species" />
     <ref role="m9Uib" node="6VIN$acjL8I" resolve="NewTissues" />
-    <node concept="3_zqOx" id="$XkBXNllx_" role="3_zqUl">
-      <property role="TrG5h" value="Rate1" />
-      <node concept="30dDTi" id="$XkBXNllyW" role="3_zqNk">
-        <node concept="1cBA6y" id="$XkBXNllz$" role="30dEs_">
-          <ref role="1cBA6z" node="$XkBXNjah2" resolve="ENVIRONMENT_PROTEIN" />
-        </node>
-        <node concept="30bXRB" id="$XkBXNllxH" role="30dEsF">
-          <property role="30bXRw" value="1.0" />
-        </node>
+    <node concept="3_zqOx" id="3LeNXFhOKLU" role="3_zqUl">
+      <property role="TrG5h" value="Param1" />
+      <node concept="1cBA6y" id="3LeNXFhOL9I" role="3_zqNk">
+        <ref role="1cBA6z" node="3LeNXFhOKnF" resolve="A" />
       </node>
     </node>
-    <node concept="3_zqOx" id="$XkBXNllxX" role="3_zqUl">
-      <property role="TrG5h" value="Rate2" />
-      <node concept="30dDTi" id="$XkBXNllzZ" role="3_zqNk">
-        <node concept="1cBA6y" id="$XkBXNll$K" role="30dEs_">
-          <ref role="1cBA6z" node="$XkBXNjcwR" resolve="MEMBRANE_PROTEIN" />
-        </node>
-        <node concept="30bXRB" id="$XkBXNlly7" role="30dEsF">
-          <property role="30bXRw" value="1.0" />
-        </node>
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="$XkBXNjah2" role="3_zqUg">
-      <property role="TrG5h" value="ENVIRONMENT_PROTEIN" />
-      <property role="3_z0tL" value="2Hxmt3eVjAC/LOCATION_EXTRACELLULAR_ENVIRONMENT" />
-      <node concept="3bpmHq" id="$XkBXNjahu" role="1tJpXo">
-        <node concept="3bpmH0" id="$XkBXNjahw" role="3lUA2Y">
-          <node concept="30bXRB" id="$XkBXNjcw0" role="3lUA52">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="3bpmH1" id="$XkBXNjcw2" role="3lUA2W" />
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="$XkBXNjcwR" role="3_zqUg">
-      <property role="TrG5h" value="MEMBRANE_PROTEIN" />
-      <property role="3_z0tL" value="2Hxmt3eVjAD/LOCATION_MEMBRANE" />
-      <node concept="3bpmHq" id="$XkBXNjcx0" role="1tJpXo">
-        <node concept="3bpmH0" id="$XkBXNjcx2" role="3lUA2Y">
-          <node concept="30bXRB" id="$XkBXNjcxm" role="3lUA52">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="3bpmH1" id="$XkBXNjcxG" role="3lUA2W" />
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="$XkBXNjcy3" role="3_zqUg">
-      <property role="TrG5h" value="INTERIOR_PROTEIN" />
+    <node concept="3_zqOZ" id="3LeNXFhOKnF" role="3_zqUg">
+      <property role="TrG5h" value="A" />
       <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
-      <node concept="3bpmHq" id="$XkBXNjcyh" role="1tJpXo">
-        <node concept="3bpmH0" id="$XkBXNjcyj" role="3lUA2Y">
-          <node concept="30bXRB" id="$XkBXNjcyB" role="3lUA52">
-            <property role="30bXRw" value="1" />
+      <node concept="3bpmHq" id="3LeNXFhOKnJ" role="1tJpXo">
+        <node concept="3bpmH0" id="3LeNXFhOKnL" role="3lUA2Y">
+          <node concept="30bXRB" id="3LeNXFhOKo5" role="3lUA52">
+            <property role="30bXRw" value="0" />
           </node>
         </node>
-        <node concept="3bpmH1" id="$XkBXNjcz3" role="3lUA2W" />
+        <node concept="3bpmH6" id="3LeNXFhOKox" role="3lUA2W" />
       </node>
     </node>
-    <node concept="3_zqOZ" id="$XkBXNjczq" role="3_zqUg">
-      <property role="TrG5h" value="JUNCTION_PROTEIN" />
-      <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
-      <node concept="3bpmHq" id="$XkBXNjczH" role="1tJpXo">
-        <node concept="3bpmH0" id="$XkBXNjczJ" role="3lUA2Y">
-          <node concept="30bXRB" id="$XkBXNjc$3" role="3lUA52">
-            <property role="30bXRw" value="1" />
+    <node concept="3_zqOZ" id="3LeNXFhOKKC" role="3_zqUg">
+      <property role="TrG5h" value="B" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="3LeNXFhOKKL" role="1tJpXo">
+        <node concept="3bpmH0" id="3LeNXFhOKKN" role="3lUA2Y">
+          <node concept="30bXRB" id="3LeNXFhOKL7" role="3lUA52">
+            <property role="30bXRw" value="0" />
           </node>
         </node>
-        <node concept="3bpmH1" id="$XkBXNjc$p" role="3lUA2W" />
+        <node concept="3bpmH6" id="3LeNXFhOKLz" role="3lUA2W" />
       </node>
     </node>
   </node>

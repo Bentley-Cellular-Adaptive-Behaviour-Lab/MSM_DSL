@@ -19,12 +19,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Objects;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, "SpeciesSetup.structure.Parameter");
@@ -37,8 +39,12 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Void> cleanUsedByRelations_idufje78jolS = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanUsedByRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78jolS").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Void> addUsedByRelations_idufje78k1g2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("addUsedByRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("ufje78k1g2").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getParameters_id6ngYmLdVkMJ = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ngYmLdVkMJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<String> constructExpressionString_id1IP6pj5tqCR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("constructExpressionString").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5tqCR").build();
+  public static final SMethod<String> getString_id1IP6pj5t$0C = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getString").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5t$0C").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getArgumentNodes_id3hjy$RKsTtM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getArgumentNodes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3hjy$RKsTtM").build();
+  public static final SMethod<List<SNode>> findArgumentNodes_id3hjy$RKsV7x = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findArgumentNodes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3hjy$RKsV7x").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateUsesRelations_id6ngYmLdX6q5, updateUsedByRelations_id6ngYmLdX8Ap, cleanUsesRelations_idufje78iyUN, addUsesRelations_idufje78jt14, getUsedByParameters_idufje78j_RO, cleanUsedByRelations_idufje78jolS, addUsedByRelations_idufje78k1g2, getParameters_id6ngYmLdVkMJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateUsesRelations_id6ngYmLdX6q5, updateUsedByRelations_id6ngYmLdX8Ap, cleanUsesRelations_idufje78iyUN, addUsesRelations_idufje78jt14, getUsedByParameters_idufje78j_RO, cleanUsedByRelations_idufje78jolS, addUsedByRelations_idufje78k1g2, getParameters_id6ngYmLdVkMJ, constructExpressionString_id1IP6pj5tqCR, getString_id1IP6pj5t$0C, getArgumentNodes_id3hjy$RKsTtM, findArgumentNodes_id3hjy$RKsV7x);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -141,6 +147,70 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return foundParameters;
   }
+  /*package*/ static String constructExpressionString_id1IP6pj5tqCR(@NotNull SNode __thisNode__) {
+    // Creates a string that corresponds to all the elements in an expression.
+    String expressionString = "";
+    expressionString += Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.Expression$Wv16));
+    return expressionString;
+  }
+  /*package*/ static String getString_id1IP6pj5t$0C(@NotNull SNode __thisNode__, SNode expr) {
+    // Go over all the supported expressions and return a string straight away if the expression is a parameter or number.
+    // Otherwise, access the more complicated expressions and recreate the relevant string.
+    assert (expr != null);
+    String resultString = "";
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+      resultString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), PROPS.name$MnvL);
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+      resultString += SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a), PROPS.name$MnvL);
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.NumberLiteral$wE)) {
+      resultString += SPropertyOperations.getString(SNodeOperations.as(expr, CONCEPTS.NumberLiteral$wE), PROPS.value$iWTK);
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.MulExpression$iC)) {
+      resultString += Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.MulExpression$iC), LINKS.left$zxUa)) + "*" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.MulExpression$iC), LINKS.right$zBjx));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.PlusExpression$mx)) {
+      resultString += Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.PlusExpression$mx), LINKS.left$zxUa)) + "+" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.PlusExpression$mx), LINKS.right$zBjx));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.MinusExpression$6z)) {
+      resultString += Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.MinusExpression$6z), LINKS.left$zxUa)) + "-" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.MinusExpression$6z), LINKS.right$zBjx));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.DivExpression$us)) {
+      resultString += Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.DivExpression$us), LINKS.left$zxUa)) + "/" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.DivExpression$us), LINKS.right$zBjx));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParensExpression$Tv)) {
+      resultString += "(" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParensExpression$Tv), LINKS.expr$m8gJ)) + ")";
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesPowerExpression$_A)) {
+      resultString += "Math.pow(" + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.expr$HIpj)) + "," + Parameter__BehaviorDescriptor.getString_id1IP6pj5t$0C.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.exponent$uVP8)) + ")";
+    }
+    return resultString;
+  }
+  /*package*/ static List<SNode> getArgumentNodes_id3hjy$RKsTtM(@NotNull SNode __thisNode__) {
+    // Returns a list of all parameters and species that a parameter expression uses.
+    List<SNode> argumentNodes = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.Expression$Wv16))));
+    return argumentNodes;
+  }
+  /*package*/ static List<SNode> findArgumentNodes_id3hjy$RKsV7x(@NotNull SNode __thisNode__, SNode expr) {
+    List<SNode> argumentNodes = ListSequence.fromList(new ArrayList<SNode>());
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
+      ListSequence.fromList(argumentNodes).addElement(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
+      ListSequence.fromList(argumentNodes).addElement(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesPowerExpression$_A)) {
+      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.expr$HIpj))));
+      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.exponent$uVP8))));
+    }
+    if (SNodeOperations.isInstanceOf(expr, CONCEPTS.BinaryExpression$j$)) {
+      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.left$zxUa))));
+      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.right$zBjx))));
+    }
+    return argumentNodes;
+  }
 
   /*package*/ Parameter__BehaviorDescriptor() {
   }
@@ -179,6 +249,14 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
         return null;
       case 7:
         return (T) ((List<SNode>) getParameters_id6ngYmLdVkMJ(node, (SNode) parameters[0]));
+      case 8:
+        return (T) ((String) constructExpressionString_id1IP6pj5tqCR(node));
+      case 9:
+        return (T) ((String) getString_id1IP6pj5t$0C(node, (SNode) parameters[0]));
+      case 10:
+        return (T) ((List<SNode>) getArgumentNodes_id3hjy$RKsTtM(node));
+      case 11:
+        return (T) ((List<SNode>) findArgumentNodes_id3hjy$RKsV7x(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -215,11 +293,31 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SContainmentLink Parameters$hoyh = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf745L, "Parameters");
     /*package*/ static final SContainmentLink UsedBy$$TT5 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, 0x65d0f96c4dec22c1L, "UsedBy");
     /*package*/ static final SReferenceLink Parameter$bXmh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, 0x54e0e23243e71cb1L, "Parameter");
+    /*package*/ static final SReferenceLink Species$uQ2a = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, 0x10098a905c97eb33L, "Species");
+    /*package*/ static final SContainmentLink left$zxUa = MetaAdapterFactory.getContainmentLink(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86c99c15L, 0x46ff3b3d86c99c16L, "left");
+    /*package*/ static final SContainmentLink right$zBjx = MetaAdapterFactory.getContainmentLink(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86c99c15L, 0x46ff3b3d86c99c18L, "right");
+    /*package*/ static final SContainmentLink expr$m8gJ = MetaAdapterFactory.getContainmentLink(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86d2f11fL, 0x46ff3b3d86d2f172L, "expr");
+    /*package*/ static final SContainmentLink expr$HIpj = MetaAdapterFactory.getContainmentLink(0x6fadc44e69c24a4aL, 0x9d167ebf5f8d3ba0L, 0x449e19d04e9c6144L, 0x449e19d04e9cdee2L, "expr");
+    /*package*/ static final SContainmentLink exponent$uVP8 = MetaAdapterFactory.getContainmentLink(0x6fadc44e69c24a4aL, 0x9d167ebf5f8d3ba0L, 0x449e19d04e9c6144L, 0x46c15b39e5605f2fL, "exponent");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
     /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
     /*package*/ static final SConcept Expression$D_ = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L, "org.iets3.core.expr.base.structure.Expression");
+    /*package*/ static final SConcept SpeciesExpression$Vm = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c97eb32L, "SpeciesSetup.structure.SpeciesExpression");
+    /*package*/ static final SConcept NumberLiteral$wE = MetaAdapterFactory.getConcept(0x6b277d9ad52d416fL, 0xa2091919bd737f50L, 0x46ff3b3d86d0e6daL, "org.iets3.core.expr.simpleTypes.structure.NumberLiteral");
+    /*package*/ static final SConcept MulExpression$iC = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86c9a56fL, "org.iets3.core.expr.base.structure.MulExpression");
+    /*package*/ static final SConcept PlusExpression$mx = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86c9a4f2L, "org.iets3.core.expr.base.structure.PlusExpression");
+    /*package*/ static final SConcept MinusExpression$6z = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86cac5a5L, "org.iets3.core.expr.base.structure.MinusExpression");
+    /*package*/ static final SConcept DivExpression$us = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86cac63bL, "org.iets3.core.expr.base.structure.DivExpression");
+    /*package*/ static final SConcept ParensExpression$Tv = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86d2f11fL, "org.iets3.core.expr.base.structure.ParensExpression");
+    /*package*/ static final SConcept SpeciesPowerExpression$_A = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af89891f10L, "SpeciesSetup.structure.SpeciesPowerExpression");
+    /*package*/ static final SConcept BinaryExpression$j$ = MetaAdapterFactory.getConcept(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x46ff3b3d86c99c15L, "org.iets3.core.expr.base.structure.BinaryExpression");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
+    /*package*/ static final SProperty value$iWTK = MetaAdapterFactory.getProperty(0x6b277d9ad52d416fL, 0xa2091919bd737f50L, 0x46ff3b3d86d0e6daL, 0x46ff3b3d86d0e6ddL, "value");
   }
 }
