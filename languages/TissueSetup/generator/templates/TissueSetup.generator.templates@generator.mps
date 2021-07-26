@@ -98,6 +98,7 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
+        <property id="1177959072138" name="keepSourceRoot" index="13Pg2o" />
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
@@ -199,6 +200,7 @@
   <node concept="bUwia" id="4DdJmqSDqUX">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="4DdJmqSDqUY" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
       <ref role="3lhOvi" node="4DdJmqSDt1W" resolve="dsl_Tissue" />
     </node>

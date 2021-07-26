@@ -102,6 +102,7 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
+        <property id="1177959072138" name="keepSourceRoot" index="13Pg2o" />
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
@@ -190,6 +191,7 @@
   <node concept="bUwia" id="7faAukhALBg">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="cUvw_H2Bgk" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="s9ob:7faAukhALBz" resolve="World_Container" />
       <ref role="3lhOvi" node="cUvw_H2BrA" resolve="dsl_World" />
     </node>
@@ -1088,7 +1090,7 @@
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6VIN$acoVyu" role="2OqNvi">
-                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getConcentrationValue" />
+                          <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getStartConcentrationValue" />
                         </node>
                       </node>
                     </node>

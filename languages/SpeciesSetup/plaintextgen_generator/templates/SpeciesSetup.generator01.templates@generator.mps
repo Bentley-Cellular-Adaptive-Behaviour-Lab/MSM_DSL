@@ -139,6 +139,7 @@
         <child id="1167756362303" name="propertyValueFunction" index="3zH0cK" />
       </concept>
       <concept id="1167514355419" name="jetbrains.mps.lang.generator.structure.Root_MappingRule" flags="lg" index="3lhOvk">
+        <property id="1177959072138" name="keepSourceRoot" index="13Pg2o" />
         <reference id="1167514355421" name="template" index="3lhOvi" />
       </concept>
       <concept id="1195499912406" name="jetbrains.mps.lang.generator.structure.MappingScript" flags="lg" index="1pmfR0">
@@ -316,10 +317,12 @@
       <ref role="1puQsG" node="3F9nTx49RnJ" resolve="createSpeciesHeaderNodes" />
     </node>
     <node concept="3lhOvk" id="3LeNXFhY9vh" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="w3cn:3F9nTx49ScX" resolve="SpeciesContainerHeader" />
       <ref role="3lhOvi" node="2a6N$FTyZ4c" resolve="dsl_species" />
     </node>
     <node concept="3lhOvk" id="1YlZ7ZvaTC" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
       <ref role="3lhOvi" node="2a6N$FTvonK" resolve="dsl_species" />
     </node>
