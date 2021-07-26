@@ -354,6 +354,23 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="6jTyBaBuH46" role="3cqZAp">
+          <node concept="3cpWsn" id="6jTyBaBuH47" role="3cpWs9">
+            <property role="TrG5h" value="old_speciesSource_path" />
+            <node concept="3uibUv" id="6jTyBaBuH48" role="1tU5fm">
+              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6jTyBaBvBm_" role="3cqZAp">
+          <node concept="3cpWsn" id="6jTyBaBvBmA" role="3cpWs9">
+            <property role="TrG5h" value="old_speciesHeader_path" />
+            <node concept="3uibUv" id="6jTyBaBvBmB" role="1tU5fm">
+              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6jTyBaBuGT4" role="3cqZAp" />
         <node concept="3cpWs8" id="GHHs3TCWhj" role="3cqZAp">
           <node concept="3cpWsn" id="GHHs3TCWhk" role="3cpWs9">
             <property role="TrG5h" value="new_tissue_path" />
@@ -370,7 +387,23 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="5IVvCEUQc64" role="3cqZAp" />
+        <node concept="3cpWs8" id="6jTyBaBuSEY" role="3cqZAp">
+          <node concept="3cpWsn" id="6jTyBaBuSEZ" role="3cpWs9">
+            <property role="TrG5h" value="new_speciesSource_path" />
+            <node concept="3uibUv" id="6jTyBaBuSF0" role="1tU5fm">
+              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="6jTyBaBwfFq" role="3cqZAp">
+          <node concept="3cpWsn" id="6jTyBaBwfFr" role="3cpWs9">
+            <property role="TrG5h" value="new_speciesHeader_path" />
+            <node concept="3uibUv" id="6jTyBaBwfFs" role="1tU5fm">
+              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="6jTyBaBwfvn" role="3cqZAp" />
         <node concept="3clFbF" id="6Z$0llxVgD4" role="3cqZAp">
           <node concept="2OqwBi" id="6Z$0llxVje0" role="3clFbG">
             <node concept="10M0yZ" id="6Z$0llxVikX" role="2Oq$k0">
@@ -636,6 +669,136 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6jTyBaBv45E" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBv45F" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBvlo8" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBv45H" role="37vLTx">
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <node concept="3cpWs3" id="6jTyBaBv45I" role="37wK5m">
+                      <node concept="3cpWs3" id="6jTyBaBv45J" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBv45K" role="3uHU7B">
+                          <node concept="37vLTw" id="6jTyBaBv45L" role="3uHU7B">
+                            <ref role="3cqZAo" node="GHHs3Ttua5" resolve="output_string" />
+                          </node>
+                          <node concept="Xl_RD" id="6jTyBaBv45M" role="3uHU7w">
+                            <property role="Xl_RC" value="\\" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBv45N" role="3uHU7w">
+                          <property role="Xl_RC" value="dsl_species" />
+                          <node concept="17Uvod" id="6jTyBaBv45O" role="lGtFl">
+                            <property role="2qtEX9" value="value" />
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <node concept="3zFVjK" id="6jTyBaBv45P" role="3zH0cK">
+                              <node concept="3clFbS" id="6jTyBaBv45Q" role="2VODD2">
+                                <node concept="3clFbF" id="6jTyBaBv45R" role="3cqZAp">
+                                  <node concept="2OqwBi" id="6jTyBaBvec7" role="3clFbG">
+                                    <node concept="2OqwBi" id="6jTyBaBv45S" role="2Oq$k0">
+                                      <node concept="2OqwBi" id="6jTyBaBv45T" role="2Oq$k0">
+                                        <node concept="2OqwBi" id="6jTyBaBv45U" role="2Oq$k0">
+                                          <node concept="1PxgMI" id="6jTyBaBv45V" role="2Oq$k0">
+                                            <node concept="chp4Y" id="6jTyBaBv45W" role="3oSUPX">
+                                              <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                            </node>
+                                            <node concept="30H73N" id="6jTyBaBv45X" role="1m5AlR" />
+                                          </node>
+                                          <node concept="3TrEf2" id="6jTyBaBv45Y" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
+                                          </node>
+                                        </node>
+                                        <node concept="3TrEf2" id="6jTyBaBv45Z" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrEf2" id="6jTyBaBvbfl" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="6jTyBaBvfsE" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6jTyBaBv461" role="3uHU7w">
+                        <property role="Xl_RC" value=".cpp" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBvrIr" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBvrIs" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBvOpk" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBvrIu" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBvrIv" role="37wK5m">
+                      <node concept="3cpWs3" id="6jTyBaBvrIw" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBvrIx" role="3uHU7B">
+                          <node concept="37vLTw" id="6jTyBaBvrIy" role="3uHU7B">
+                            <ref role="3cqZAo" node="GHHs3Ttua5" resolve="output_string" />
+                          </node>
+                          <node concept="Xl_RD" id="6jTyBaBvrIz" role="3uHU7w">
+                            <property role="Xl_RC" value="\\" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBvrI$" role="3uHU7w">
+                          <property role="Xl_RC" value="dsl_species" />
+                          <node concept="17Uvod" id="6jTyBaBvrI_" role="lGtFl">
+                            <property role="2qtEX9" value="value" />
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <node concept="3zFVjK" id="6jTyBaBvrIA" role="3zH0cK">
+                              <node concept="3clFbS" id="6jTyBaBvrIB" role="2VODD2">
+                                <node concept="3clFbF" id="6jTyBaBvrIC" role="3cqZAp">
+                                  <node concept="2OqwBi" id="6jTyBaBvrID" role="3clFbG">
+                                    <node concept="2OqwBi" id="6jTyBaBvrIE" role="2Oq$k0">
+                                      <node concept="2OqwBi" id="6jTyBaBvrIF" role="2Oq$k0">
+                                        <node concept="2OqwBi" id="6jTyBaBvrIG" role="2Oq$k0">
+                                          <node concept="1PxgMI" id="6jTyBaBvrIH" role="2Oq$k0">
+                                            <node concept="chp4Y" id="6jTyBaBvrII" role="3oSUPX">
+                                              <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                            </node>
+                                            <node concept="30H73N" id="6jTyBaBvrIJ" role="1m5AlR" />
+                                          </node>
+                                          <node concept="3TrEf2" id="6jTyBaBvrIK" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
+                                          </node>
+                                        </node>
+                                        <node concept="3TrEf2" id="6jTyBaBvrIL" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrEf2" id="6jTyBaBvrIM" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="6jTyBaBvrIN" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6jTyBaBvrIO" role="3uHU7w">
+                        <property role="Xl_RC" value=".h" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbH" id="GHHs3TD5hS" role="3cqZAp" />
               <node concept="3clFbF" id="GHHs3TD5Yv" role="3cqZAp">
                 <node concept="37vLTI" id="GHHs3TDp7Y" role="3clFbG">
@@ -672,6 +835,44 @@
                   </node>
                   <node concept="37vLTw" id="GHHs3TDt0D" role="37vLTJ">
                     <ref role="3cqZAo" node="GHHs3TCYP4" resolve="new_world_path" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBwcFx" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBwqd0" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBwcFv" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBwxeU" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBwxeV" role="37wK5m">
+                      <node concept="Xl_RD" id="6jTyBaBwxeW" role="3uHU7w">
+                        <property role="Xl_RC" value="\\src\\ODE.cpp" />
+                      </node>
+                      <node concept="37vLTw" id="6jTyBaBwxeX" role="3uHU7B">
+                        <ref role="3cqZAo" node="GHHs3TuJ$F" resolve="root_string" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBwG$B" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBwG$C" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBwMlY" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBwG$E" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBwG$F" role="37wK5m">
+                      <node concept="Xl_RD" id="6jTyBaBwG$G" role="3uHU7w">
+                        <property role="Xl_RC" value="\\src\\ODE.h" />
+                      </node>
+                      <node concept="37vLTw" id="6jTyBaBwG$H" role="3uHU7B">
+                        <ref role="3cqZAo" node="GHHs3TuJ$F" resolve="root_string" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -734,7 +935,65 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="6Z$0llxYFht" role="3cqZAp" />
+              <node concept="3clFbF" id="6jTyBaBwQrv" role="3cqZAp">
+                <node concept="2OqwBi" id="6jTyBaBwQrw" role="3clFbG">
+                  <node concept="10M0yZ" id="6jTyBaBwQrx" role="2Oq$k0">
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  </node>
+                  <node concept="liA8E" id="6jTyBaBwQry" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                    <node concept="3cpWs3" id="6jTyBaBwQrz" role="37wK5m">
+                      <node concept="37vLTw" id="6jTyBaBx0u4" role="3uHU7w">
+                        <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                      </node>
+                      <node concept="3cpWs3" id="6jTyBaBwQr_" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBwQrA" role="3uHU7B">
+                          <node concept="Xl_RD" id="6jTyBaBwQrB" role="3uHU7B">
+                            <property role="Xl_RC" value="Copying species source file " />
+                          </node>
+                          <node concept="37vLTw" id="6jTyBaBwXED" role="3uHU7w">
+                            <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBwQrD" role="3uHU7w">
+                          <property role="Xl_RC" value=" to " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBx3rS" role="3cqZAp">
+                <node concept="2OqwBi" id="6jTyBaBx3rT" role="3clFbG">
+                  <node concept="10M0yZ" id="6jTyBaBx3rU" role="2Oq$k0">
+                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                  </node>
+                  <node concept="liA8E" id="6jTyBaBx3rV" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                    <node concept="3cpWs3" id="6jTyBaBx3rW" role="37wK5m">
+                      <node concept="37vLTw" id="6jTyBaBx9XB" role="3uHU7w">
+                        <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                      </node>
+                      <node concept="3cpWs3" id="6jTyBaBx3rY" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBx3rZ" role="3uHU7B">
+                          <node concept="Xl_RD" id="6jTyBaBx3s0" role="3uHU7B">
+                            <property role="Xl_RC" value="Copying species header file " />
+                          </node>
+                          <node concept="37vLTw" id="6jTyBaBxbIs" role="3uHU7w">
+                            <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBx3s2" role="3uHU7w">
+                          <property role="Xl_RC" value=" to " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBx3p7" role="3cqZAp" />
               <node concept="3clFbF" id="GHHs3T$Nmw" role="3cqZAp">
                 <node concept="2YIFZM" id="6JBqwuelSgz" role="3clFbG">
                   <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
@@ -767,6 +1026,39 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6jTyBaBxjZr" role="3cqZAp">
+                <node concept="2YIFZM" id="6jTyBaBxjZs" role="3clFbG">
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunMSM.utils" />
+                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                  <node concept="37vLTw" id="6jTyBaBxmNS" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                  </node>
+                  <node concept="37vLTw" id="6jTyBaBxpDs" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                  </node>
+                  <node concept="Rm8GO" id="6jTyBaBxjZv" role="37wK5m">
+                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBxs_a" role="3cqZAp">
+                <node concept="2YIFZM" id="6jTyBaBxs_b" role="3clFbG">
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunMSM.utils" />
+                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                  <node concept="37vLTw" id="6jTyBaBxxgA" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                  </node>
+                  <node concept="37vLTw" id="6jTyBaBx$6z" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                  </node>
+                  <node concept="Rm8GO" id="6jTyBaBxs_e" role="37wK5m">
+                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBxiY0" role="3cqZAp" />
               <node concept="3zACq4" id="GHHs3T$ljp" role="3cqZAp" />
               <node concept="3clFbH" id="GHHs3T$NJ8" role="3cqZAp" />
             </node>
@@ -901,7 +1193,137 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="GHHs3TDzgV" role="3cqZAp" />
+              <node concept="3clFbF" id="6jTyBaBxASN" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBxASO" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBxASP" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBxASQ" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBxASR" role="37wK5m">
+                      <node concept="3cpWs3" id="6jTyBaBxASS" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBxAST" role="3uHU7B">
+                          <node concept="37vLTw" id="6jTyBaBxASU" role="3uHU7B">
+                            <ref role="3cqZAo" node="GHHs3Ttua5" resolve="output_string" />
+                          </node>
+                          <node concept="Xl_RD" id="6jTyBaBxASV" role="3uHU7w">
+                            <property role="Xl_RC" value="/" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBxASW" role="3uHU7w">
+                          <property role="Xl_RC" value="dsl_species" />
+                          <node concept="17Uvod" id="6jTyBaBxASX" role="lGtFl">
+                            <property role="2qtEX9" value="value" />
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <node concept="3zFVjK" id="6jTyBaBxASY" role="3zH0cK">
+                              <node concept="3clFbS" id="6jTyBaBxASZ" role="2VODD2">
+                                <node concept="3clFbF" id="6jTyBaBxAT0" role="3cqZAp">
+                                  <node concept="2OqwBi" id="6jTyBaBxAT1" role="3clFbG">
+                                    <node concept="2OqwBi" id="6jTyBaBxAT2" role="2Oq$k0">
+                                      <node concept="2OqwBi" id="6jTyBaBxAT3" role="2Oq$k0">
+                                        <node concept="2OqwBi" id="6jTyBaBxAT4" role="2Oq$k0">
+                                          <node concept="1PxgMI" id="6jTyBaBxAT5" role="2Oq$k0">
+                                            <node concept="chp4Y" id="6jTyBaBxAT6" role="3oSUPX">
+                                              <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                            </node>
+                                            <node concept="30H73N" id="6jTyBaBxAT7" role="1m5AlR" />
+                                          </node>
+                                          <node concept="3TrEf2" id="6jTyBaBxAT8" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
+                                          </node>
+                                        </node>
+                                        <node concept="3TrEf2" id="6jTyBaBxAT9" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrEf2" id="6jTyBaBxATa" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="6jTyBaBxATb" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6jTyBaBxATc" role="3uHU7w">
+                        <property role="Xl_RC" value=".cpp" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBxATd" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBxATe" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBxATf" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBxATg" role="37vLTx">
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <node concept="3cpWs3" id="6jTyBaBxATh" role="37wK5m">
+                      <node concept="3cpWs3" id="6jTyBaBxATi" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBxATj" role="3uHU7B">
+                          <node concept="37vLTw" id="6jTyBaBxATk" role="3uHU7B">
+                            <ref role="3cqZAo" node="GHHs3Ttua5" resolve="output_string" />
+                          </node>
+                          <node concept="Xl_RD" id="6jTyBaBxATl" role="3uHU7w">
+                            <property role="Xl_RC" value="/" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBxATm" role="3uHU7w">
+                          <property role="Xl_RC" value="dsl_species" />
+                          <node concept="17Uvod" id="6jTyBaBxATn" role="lGtFl">
+                            <property role="2qtEX9" value="value" />
+                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+                            <node concept="3zFVjK" id="6jTyBaBxATo" role="3zH0cK">
+                              <node concept="3clFbS" id="6jTyBaBxATp" role="2VODD2">
+                                <node concept="3clFbF" id="6jTyBaBxATq" role="3cqZAp">
+                                  <node concept="2OqwBi" id="6jTyBaBxATr" role="3clFbG">
+                                    <node concept="2OqwBi" id="6jTyBaBxATs" role="2Oq$k0">
+                                      <node concept="2OqwBi" id="6jTyBaBxATt" role="2Oq$k0">
+                                        <node concept="2OqwBi" id="6jTyBaBxATu" role="2Oq$k0">
+                                          <node concept="1PxgMI" id="6jTyBaBxATv" role="2Oq$k0">
+                                            <node concept="chp4Y" id="6jTyBaBxATw" role="3oSUPX">
+                                              <ref role="cht4Q" to="the3:6JBqwuej5Fh" resolve="Settings_Container" />
+                                            </node>
+                                            <node concept="30H73N" id="6jTyBaBxATx" role="1m5AlR" />
+                                          </node>
+                                          <node concept="3TrEf2" id="6jTyBaBxATy" role="2OqNvi">
+                                            <ref role="3Tt5mk" to="the3:6JBqwuejVv_" resolve="Desired_World_Setup" />
+                                          </node>
+                                        </node>
+                                        <node concept="3TrEf2" id="6jTyBaBxATz" role="2OqNvi">
+                                          <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+                                        </node>
+                                      </node>
+                                      <node concept="3TrEf2" id="6jTyBaBxAT$" role="2OqNvi">
+                                        <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+                                      </node>
+                                    </node>
+                                    <node concept="3TrcHB" id="6jTyBaBxAT_" role="2OqNvi">
+                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="Xl_RD" id="6jTyBaBxATA" role="3uHU7w">
+                        <property role="Xl_RC" value=".h" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBxARh" role="3cqZAp" />
               <node concept="3clFbF" id="GHHs3TDzgW" role="3cqZAp">
                 <node concept="37vLTI" id="GHHs3TDzgX" role="3clFbG">
                   <node concept="2YIFZM" id="GHHs3TDzgY" role="37vLTx">
@@ -940,7 +1362,45 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="6Z$0llxYIHQ" role="3cqZAp" />
+              <node concept="3clFbF" id="6jTyBaBxPX2" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBxPX3" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBxPX4" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBxPX5" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBxPX6" role="37wK5m">
+                      <node concept="Xl_RD" id="6jTyBaBxPX7" role="3uHU7w">
+                        <property role="Xl_RC" value="/src/ODE.cpp" />
+                      </node>
+                      <node concept="37vLTw" id="6jTyBaBxPX8" role="3uHU7B">
+                        <ref role="3cqZAo" node="GHHs3TuJ$F" resolve="root_string" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBxPX9" role="3cqZAp">
+                <node concept="37vLTI" id="6jTyBaBxPXa" role="3clFbG">
+                  <node concept="37vLTw" id="6jTyBaBxPXb" role="37vLTJ">
+                    <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                  </node>
+                  <node concept="2YIFZM" id="6jTyBaBxPXc" role="37vLTx">
+                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
+                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
+                    <node concept="3cpWs3" id="6jTyBaBxPXd" role="37wK5m">
+                      <node concept="Xl_RD" id="6jTyBaBxPXe" role="3uHU7w">
+                        <property role="Xl_RC" value="/src/ODE.h" />
+                      </node>
+                      <node concept="37vLTw" id="6jTyBaBxPXf" role="3uHU7B">
+                        <ref role="3cqZAo" node="GHHs3TuJ$F" resolve="root_string" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBxPUG" role="3cqZAp" />
               <node concept="3clFbF" id="6Z$0llxYJeQ" role="3cqZAp">
                 <node concept="2OqwBi" id="6Z$0llxYJeR" role="3clFbG">
                   <node concept="10M0yZ" id="6Z$0llxYJeS" role="2Oq$k0">
@@ -999,7 +1459,65 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="6Z$0llxYIJ1" role="3cqZAp" />
+              <node concept="3clFbF" id="6jTyBaBy6T_" role="3cqZAp">
+                <node concept="2OqwBi" id="6jTyBaBy6TA" role="3clFbG">
+                  <node concept="10M0yZ" id="6jTyBaBy6TB" role="2Oq$k0">
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  </node>
+                  <node concept="liA8E" id="6jTyBaBy6TC" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                    <node concept="3cpWs3" id="6jTyBaBy6TD" role="37wK5m">
+                      <node concept="37vLTw" id="6jTyBaBy6TE" role="3uHU7w">
+                        <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                      </node>
+                      <node concept="3cpWs3" id="6jTyBaBy6TF" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBy6TG" role="3uHU7B">
+                          <node concept="Xl_RD" id="6jTyBaBy6TH" role="3uHU7B">
+                            <property role="Xl_RC" value="Copying species source file " />
+                          </node>
+                          <node concept="37vLTw" id="6jTyBaBy6TI" role="3uHU7w">
+                            <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBy6TJ" role="3uHU7w">
+                          <property role="Xl_RC" value=" to " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBy6TN" role="3cqZAp">
+                <node concept="2OqwBi" id="6jTyBaBy6TO" role="3clFbG">
+                  <node concept="10M0yZ" id="6jTyBaBy6TP" role="2Oq$k0">
+                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
+                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
+                  </node>
+                  <node concept="liA8E" id="6jTyBaBy6TQ" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
+                    <node concept="3cpWs3" id="6jTyBaBy6TR" role="37wK5m">
+                      <node concept="37vLTw" id="6jTyBaBy6TS" role="3uHU7w">
+                        <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                      </node>
+                      <node concept="3cpWs3" id="6jTyBaBy6TT" role="3uHU7B">
+                        <node concept="3cpWs3" id="6jTyBaBy6TU" role="3uHU7B">
+                          <node concept="Xl_RD" id="6jTyBaBy6TV" role="3uHU7B">
+                            <property role="Xl_RC" value="Copying species header file " />
+                          </node>
+                          <node concept="37vLTw" id="6jTyBaBy6TW" role="3uHU7w">
+                            <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                          </node>
+                        </node>
+                        <node concept="Xl_RD" id="6jTyBaBy6TX" role="3uHU7w">
+                          <property role="Xl_RC" value=" to " />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBy6R1" role="3cqZAp" />
               <node concept="3clFbF" id="GHHs3TDzhc" role="3cqZAp">
                 <node concept="2YIFZM" id="GHHs3TDzhd" role="3clFbG">
                   <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunMSM.utils" />
@@ -1032,6 +1550,39 @@
                   </node>
                 </node>
               </node>
+              <node concept="3clFbF" id="6jTyBaBydRc" role="3cqZAp">
+                <node concept="2YIFZM" id="6jTyBaBydRd" role="3clFbG">
+                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunMSM.utils" />
+                  <node concept="37vLTw" id="6jTyBaBydRe" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBuH47" resolve="old_speciesSource_path" />
+                  </node>
+                  <node concept="37vLTw" id="6jTyBaBydRf" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBuSEZ" resolve="new_speciesSource_path" />
+                  </node>
+                  <node concept="Rm8GO" id="6jTyBaBydRg" role="37wK5m">
+                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbF" id="6jTyBaBydRh" role="3cqZAp">
+                <node concept="2YIFZM" id="6jTyBaBydRi" role="3clFbG">
+                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunMSM.utils" />
+                  <node concept="37vLTw" id="6jTyBaBydRj" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBvBmA" resolve="old_speciesHeader_path" />
+                  </node>
+                  <node concept="37vLTw" id="6jTyBaBydRk" role="37wK5m">
+                    <ref role="3cqZAo" node="6jTyBaBwfFr" resolve="new_speciesHeader_path" />
+                  </node>
+                  <node concept="Rm8GO" id="6jTyBaBydRl" role="37wK5m">
+                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
+                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbH" id="6jTyBaBycVP" role="3cqZAp" />
               <node concept="3zACq4" id="GHHs3Tw2oT" role="3cqZAp" />
             </node>
           </node>
