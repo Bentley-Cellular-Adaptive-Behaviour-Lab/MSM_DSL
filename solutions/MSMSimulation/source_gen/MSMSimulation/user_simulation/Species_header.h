@@ -8,7 +8,7 @@ class MemAgent;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 1> CellType1_ode_states;
+typedef boost::array<double, 2> CellType1_ode_states;
 
 class ODEs {
 public:
@@ -17,3 +17,6 @@ public:
   	static void CellType1_system(const CellType1_ode_states &x, CellType1_ode_states &dxdt, double t);
   	void CellType1_run_ODEs(MemAgent *memAgent);
 }
+
+static double calc_Param2_rate(double Param1);
+static double calc_Param1_rate();

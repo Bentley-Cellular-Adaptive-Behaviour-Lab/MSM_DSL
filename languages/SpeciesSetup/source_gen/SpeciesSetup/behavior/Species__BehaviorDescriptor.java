@@ -31,9 +31,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
 
   public static final SMethod<Void> cleanReactionRelations_id1Ch7j$Nakak = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanReactionRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1Ch7j$Nakak").build();
   public static final SMethod<Void> cleanModifierRelations_id20T6jFVkZPx = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("cleanModifierRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("20T6jFVkZPx").build();
-  public static final SMethod<Float> getConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmCFN3").build();
+  public static final SMethod<Float> getStartConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getStartConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmCFN3").build();
+  public static final SMethod<Float> getMinConcentrationValue_id1VQO6m$d9Os = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMinConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$d9Os").build();
+  public static final SMethod<Float> getMaxConcentrationValue_id1VQO6m$daTe = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMaxConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$daTe").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getConcentrationValue_id3fk35jmCFN3);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -93,11 +95,25 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
   }
-  /*package*/ static float getConcentrationValue_id3fk35jmCFN3(@NotNull SNode __thisNode__) {
+  /*package*/ static float getStartConcentrationValue_id3fk35jmCFN3(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Amount_Concentration$r2)) {
       return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Amount_Concentration$r2)).floatValue();
     } else {
       return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Starting_Concentration$a3uk), CONCEPTS.Mass_Concentration$qz)).floatValue();
+    }
+  }
+  /*package*/ static float getMinConcentrationValue_id1VQO6m$d9Os(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Min_Concentration$RVCW), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Min_Concentration$RVCW), CONCEPTS.Amount_Concentration$r2)).floatValue();
+    } else {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Min_Concentration$RVCW), CONCEPTS.Mass_Concentration$qz)).floatValue();
+    }
+  }
+  /*package*/ static float getMaxConcentrationValue_id1VQO6m$daTe(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.Max_Concentration$S2Fq), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Max_Concentration$S2Fq), CONCEPTS.Amount_Concentration$r2)).floatValue();
+    } else {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Max_Concentration$S2Fq), CONCEPTS.Mass_Concentration$qz)).floatValue();
     }
   }
 
@@ -123,7 +139,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         cleanModifierRelations_id20T6jFVkZPx(node);
         return null;
       case 2:
-        return (T) ((Float) getConcentrationValue_id3fk35jmCFN3(node));
+        return (T) ((Float) getStartConcentrationValue_id3fk35jmCFN3(node));
+      case 3:
+        return (T) ((Float) getMinConcentrationValue_id1VQO6m$d9Os(node));
+      case 4:
+        return (T) ((Float) getMaxConcentrationValue_id1VQO6m$daTe(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -165,6 +185,8 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
     /*package*/ static final SContainmentLink ModifiedByProcess$uVT0 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2039193afb52ddb0L, "ModifiedByProcess");
     /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
+    /*package*/ static final SContainmentLink Min_Concentration$RVCW = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a427933bL, "Min_Concentration");
+    /*package*/ static final SContainmentLink Max_Concentration$S2Fq = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a4279344L, "Max_Concentration");
   }
 
   private static final class CONCEPTS {

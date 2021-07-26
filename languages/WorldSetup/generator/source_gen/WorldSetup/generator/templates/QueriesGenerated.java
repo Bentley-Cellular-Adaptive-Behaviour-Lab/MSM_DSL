@@ -109,7 +109,7 @@ public class QueriesGenerated extends QueryProviderBase {
     }
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return String.valueOf((float) Species__BehaviorDescriptor.getConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka)));
+    return String.valueOf((float) Species__BehaviorDescriptor.getStartConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), LINKS.SpeciesReference$1HMH), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
     return "false";

@@ -5006,5 +5006,265 @@
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfFy" resolve="ReversibleReaction" />
     </node>
   </node>
+  <node concept="18kY7G" id="1VQO6m$eSjJ">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_StartingConc" />
+    <node concept="3clFbS" id="1VQO6m$eSjK" role="18ibNy">
+      <node concept="3clFbJ" id="1VQO6m$eSkm" role="3cqZAp">
+        <node concept="3clFbS" id="1VQO6m$eSko" role="3clFbx">
+          <node concept="2MkqsV" id="1VQO6m$eTPJ" role="3cqZAp">
+            <node concept="Xl_RD" id="1VQO6m$eTPY" role="2MkJ7o">
+              <property role="Xl_RC" value="Starting concentration cannot be less than zero." />
+            </node>
+            <node concept="2OqwBi" id="1VQO6m$eU0g" role="1urrMF">
+              <node concept="1YBJjd" id="1VQO6m$eTQZ" role="2Oq$k0">
+                <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="1VQO6m$eUrL" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="1VQO6m$eTCv" role="3clFbw">
+          <node concept="3cmrfG" id="1VQO6m$eTD1" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="1VQO6m$eSx2" role="3uHU7B">
+            <node concept="1YBJjd" id="1VQO6m$eSk_" role="2Oq$k0">
+              <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="1VQO6m$eT3G" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="1VQO6m$eUDZ" role="3cqZAp">
+        <node concept="3clFbS" id="1VQO6m$eUE1" role="3clFbx">
+          <node concept="2MkqsV" id="1VQO6m$eWeP" role="3cqZAp">
+            <node concept="Xl_RD" id="1VQO6m$eWeQ" role="2MkJ7o">
+              <property role="Xl_RC" value="Starting concentration cannot be less than minimum concentration." />
+            </node>
+            <node concept="2OqwBi" id="1VQO6m$eWeR" role="1urrMF">
+              <node concept="1YBJjd" id="1VQO6m$eWeS" role="2Oq$k0">
+                <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="1VQO6m$eWeT" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="1VQO6m$eVm4" role="3clFbw">
+          <node concept="2OqwBi" id="1VQO6m$eW1Y" role="3uHU7w">
+            <node concept="1YBJjd" id="1VQO6m$eVIv" role="2Oq$k0">
+              <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="1VQO6m$eWdx" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$d9Os" resolve="getMinConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1VQO6m$eUJZ" role="3uHU7B">
+            <node concept="1YBJjd" id="1VQO6m$eUH9" role="2Oq$k0">
+              <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="1VQO6m$eUMx" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="1VQO6m$eWza" role="3cqZAp">
+        <node concept="3clFbS" id="1VQO6m$eWzb" role="3clFbx">
+          <node concept="2MkqsV" id="1VQO6m$eWzc" role="3cqZAp">
+            <node concept="Xl_RD" id="1VQO6m$eWzd" role="2MkJ7o">
+              <property role="Xl_RC" value="Starting concentration cannot be greater than maximum concentration." />
+            </node>
+            <node concept="2OqwBi" id="1VQO6m$eWze" role="1urrMF">
+              <node concept="1YBJjd" id="1VQO6m$eWzf" role="2Oq$k0">
+                <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="1VQO6m$eWzg" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOSWO" id="1VQO6m$eWT2" role="3clFbw">
+          <node concept="2OqwBi" id="1VQO6m$eWzl" role="3uHU7B">
+            <node concept="1YBJjd" id="1VQO6m$eWzm" role="2Oq$k0">
+              <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="1VQO6m$eWzn" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getStartConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="1VQO6m$eWzi" role="3uHU7w">
+            <node concept="1YBJjd" id="1VQO6m$eWzj" role="2Oq$k0">
+              <ref role="1YBMHb" node="1VQO6m$eSka" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="1VQO6m$eX7C" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$daTe" resolve="getMaxConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1VQO6m$eSka" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="15xQgrjuYkE">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_MinConc" />
+    <node concept="3clFbS" id="15xQgrjuYkF" role="18ibNy">
+      <node concept="3clFbJ" id="15xQgrjuYkG" role="3cqZAp">
+        <node concept="3clFbS" id="15xQgrjuYkH" role="3clFbx">
+          <node concept="2MkqsV" id="15xQgrjuYkI" role="3cqZAp">
+            <node concept="Xl_RD" id="15xQgrjuYkJ" role="2MkJ7o">
+              <property role="Xl_RC" value="Minimum concentration cannot be less than zero." />
+            </node>
+            <node concept="2OqwBi" id="15xQgrjuYkK" role="1urrMF">
+              <node concept="1YBJjd" id="15xQgrjuYkL" role="2Oq$k0">
+                <ref role="1YBMHb" node="15xQgrjuYlk" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="15xQgrjv4FF" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="15xQgrjuYkN" role="3clFbw">
+          <node concept="3cmrfG" id="15xQgrjuYkO" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="15xQgrjuYkP" role="3uHU7B">
+            <node concept="1YBJjd" id="15xQgrjuYkQ" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjuYlk" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjuZ7a" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$d9Os" resolve="getMinConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="15xQgrjuYkS" role="3cqZAp">
+        <node concept="3clFbS" id="15xQgrjuYkT" role="3clFbx">
+          <node concept="2MkqsV" id="15xQgrjuYkU" role="3cqZAp">
+            <node concept="Xl_RD" id="15xQgrjuYkV" role="2MkJ7o">
+              <property role="Xl_RC" value="Minimum concentration cannot be greater than maximum concentration." />
+            </node>
+            <node concept="2OqwBi" id="15xQgrjuYkW" role="1urrMF">
+              <node concept="1YBJjd" id="15xQgrjuYkX" role="2Oq$k0">
+                <ref role="1YBMHb" node="15xQgrjuYlk" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="15xQgrjv4Kp" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOSWO" id="15xQgrjv4p7" role="3clFbw">
+          <node concept="2OqwBi" id="15xQgrjuYl3" role="3uHU7B">
+            <node concept="1YBJjd" id="15xQgrjuYl4" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjuYlk" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjuYl5" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3fk35jmCFN3" resolve="getStartConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="15xQgrjuYl0" role="3uHU7w">
+            <node concept="1YBJjd" id="15xQgrjuYl1" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjuYlk" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjv4E8" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$daTe" resolve="getMaxConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="15xQgrjuYlk" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="15xQgrjv52O">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_MaxConc" />
+    <node concept="3clFbS" id="15xQgrjv52P" role="18ibNy">
+      <node concept="3clFbJ" id="15xQgrjv52Q" role="3cqZAp">
+        <node concept="3clFbS" id="15xQgrjv52R" role="3clFbx">
+          <node concept="2MkqsV" id="15xQgrjv52S" role="3cqZAp">
+            <node concept="Xl_RD" id="15xQgrjv52T" role="2MkJ7o">
+              <property role="Xl_RC" value="Minimum concentration cannot be less than zero." />
+            </node>
+            <node concept="2OqwBi" id="15xQgrjv52U" role="1urrMF">
+              <node concept="1YBJjd" id="15xQgrjv52V" role="2Oq$k0">
+                <ref role="1YBMHb" node="15xQgrjv53g" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="15xQgrjv6us" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="15xQgrjv52X" role="3clFbw">
+          <node concept="3cmrfG" id="15xQgrjv52Y" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="15xQgrjv52Z" role="3uHU7B">
+            <node concept="1YBJjd" id="15xQgrjv530" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjv53g" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjv6yM" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$daTe" resolve="getMaxConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="15xQgrjv532" role="3cqZAp">
+        <node concept="3clFbS" id="15xQgrjv533" role="3clFbx">
+          <node concept="2MkqsV" id="15xQgrjv534" role="3cqZAp">
+            <node concept="Xl_RD" id="15xQgrjv535" role="2MkJ7o">
+              <property role="Xl_RC" value="Maximum concentration cannot be less than maximum concentration." />
+            </node>
+            <node concept="2OqwBi" id="15xQgrjv536" role="1urrMF">
+              <node concept="1YBJjd" id="15xQgrjv537" role="2Oq$k0">
+                <ref role="1YBMHb" node="15xQgrjv53g" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="15xQgrjv6Rc" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="15xQgrjv5Z2" role="3clFbw">
+          <node concept="2OqwBi" id="15xQgrjv53a" role="3uHU7B">
+            <node concept="1YBJjd" id="15xQgrjv53b" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjv53g" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjv5Yv" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$daTe" resolve="getMaxConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="15xQgrjv53d" role="3uHU7w">
+            <node concept="1YBJjd" id="15xQgrjv53e" role="2Oq$k0">
+              <ref role="1YBMHb" node="15xQgrjv53g" resolve="species" />
+            </node>
+            <node concept="2qgKlT" id="15xQgrjv6kr" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:1VQO6m$d9Os" resolve="getMinConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="15xQgrjv53g" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
 </model>
 

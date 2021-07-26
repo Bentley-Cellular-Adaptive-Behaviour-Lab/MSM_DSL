@@ -37,15 +37,17 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<Void> updateModifiers_id20T6jFVk_r2 = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateModifiers").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("20T6jFVk_r2").build();
   public static final SMethod<Void> updateParameterRelations_id6UEPGYOxbAr = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("updateParameterRelations").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6UEPGYOxbAr").build();
   public static final SMethod<List<SNode>> filterExpressionList_id3eqdKU_H9WR = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("filterExpressionList").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3eqdKU_H9WR").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> topologicalSort_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("topologicalSort").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<Boolean> listContainsParameter_id6ujblCxXxzJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("listContainsParameter").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ujblCxXxzJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> sortParamExpressions_idcJYjfa5zz7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("sortParamExpressions").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("cJYjfa5zz7").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> sortParams_id1MpPQ9imxeo = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("sortParams").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1MpPQ9imxeo").build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> exprListContainsParameter_id6ujblCxXxzJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("exprListContainsParameter").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6ujblCxXxzJ").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> listContainsParameter_id1MpPQ9iAjkj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("listContainsParameter").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1MpPQ9iAjkj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> inhibitionIsValid_id5Cso5p4sluh = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("inhibitionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4sluh").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> upregulationIsValid_id5Cso5p4sX5X = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("upregulationIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4sX5X").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> irreversibleReactionIsValid_id5Cso5p4t3d0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("irreversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4t3d0").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> reversibleReactionIsValid_id5Cso5p4tyaj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("reversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4tyaj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<String> fixName_id1IP6pj5_cgV = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("fixName").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5_cgV").build(SMethodBuilder.createJavaParameter(String.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, topologicalSort_idcJYjfa5zz7, listContainsParameter_id6ujblCxXxzJ, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, sortParamExpressions_idcJYjfa5zz7, sortParams_id1MpPQ9imxeo, exprListContainsParameter_id6ujblCxXxzJ, listContainsParameter_id1MpPQ9iAjkj, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -155,11 +157,15 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     }
     return filteredList;
   }
-  /*package*/ static List<SNode> topologicalSort_idcJYjfa5zz7(@NotNull SNode __thisNode__, List<SNode> exprList) {
-    // Must take a parameter list as an argument. In other instances, this throws an error.
-    // Check the first entry to see if it is a parameter.
-    List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
+  /*package*/ static List<SNode> sortParamExpressions_idcJYjfa5zz7(@NotNull SNode __thisNode__, List<SNode> exprList) {
+    // Must take an expression list as an argument. In other instances, this throws an error.
+    // Check each entry to see if it is an expression.
 
+    for (SNode queryExpr : ListSequence.fromList(exprList)) {
+      assert (SNodeOperations.isInstanceOf(queryExpr, CONCEPTS.ParameterExpression$CA));
+    }
+
+    List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
     try {
       // We already know which expressions are used by which, and there should be no cyclic relationships (ensured by typesystem).
       // Get a count of all the items in the list, and use that to determine when we're finished.
@@ -178,7 +184,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
             // Check that all used parameters are already in the sortedList
             boolean allParamsFound = true;
             for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), LINKS.Uses$iEoe))) {
-              if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
+              if (!(((boolean) SpeciesContainer__BehaviorDescriptor.exprListContainsParameter_id6ujblCxXxzJ.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
                 allParamsFound = false;
                 break;
               }
@@ -205,12 +211,66 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     // Return the sorted list.
     return sortedList;
   }
-  /*package*/ static boolean listContainsParameter_id6ujblCxXxzJ(@NotNull SNode __thisNode__, SNode targetParam, List<SNode> exprList) {
+  /*package*/ static List<SNode> sortParams_id1MpPQ9imxeo(@NotNull SNode __thisNode__, List<SNode> paramList) {
+    // Must take a parameter list as an argument. In other instances, this throws an error.
+    List<SNode> sortedList = ListSequence.fromList(new ArrayList<SNode>());
+    try {
+      // We already know which parameters are used by which, and there should be no cyclic relationships (ensured by typesystem).
+      // Get a count of all the items in the list, and use that to determine when we're finished.
+      // In a perfect world, I'd be iterating over a separate list and removing objects from that - alas, we do not live in a perfect world, and MPS doesn't let me remove objects from a list.
+      int count = ListSequence.fromList(paramList).count();
+      while (count > 0) {
+        for (SNode param : ListSequence.fromList(paramList)) {
+          if (ListSequence.fromList(SLinkOperations.getChildren(param, LINKS.Uses$iEoe)).count() == 0) {
+            // Expressions that don't use any other or are used by any other can be added straight in.
+            if (!(ListSequence.fromList(sortedList).contains(param))) {
+              ListSequence.fromList(sortedList).addElement(param);
+              count -= 1;
+            }
+          } else {
+            // Check that all used parameters are already in the sortedList
+            boolean allParamsFound = true;
+            for (SNode usesRef : ListSequence.fromList(SLinkOperations.getChildren(param, LINKS.Uses$iEoe))) {
+              if (!(((boolean) SpeciesContainer__BehaviorDescriptor.listContainsParameter_id1MpPQ9iAjkj.invoke(__thisNode__, SLinkOperations.getTarget(usesRef, LINKS.target$9wsE), sortedList)))) {
+                allParamsFound = false;
+                break;
+              }
+            }
+            if (allParamsFound) {
+              if (!(ListSequence.fromList(sortedList).contains(param))) {
+                ListSequence.fromList(sortedList).addElement(param);
+                count -= 1;
+              }
+            }
+          }
+          // We've reached the end of the expression list, so break the for loop early.
+          if (count == 0) {
+            break;
+          }
+        }
+      }
+    } catch (Exception e) {
+      System.out.println("Error: Failed topological sort using parameter expressions.");
+      System.out.println(e.getMessage());
+    }
+
+    // Return the sorted list.
+    return sortedList;
+  }
+  /*package*/ static boolean exprListContainsParameter_id6ujblCxXxzJ(@NotNull SNode __thisNode__, SNode targetParam, List<SNode> exprList) {
     for (SNode expr : ListSequence.fromList(exprList)) {
       if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
         if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh), targetParam)) {
           return true;
         }
+      }
+    }
+    return false;
+  }
+  /*package*/ static boolean listContainsParameter_id1MpPQ9iAjkj(@NotNull SNode __thisNode__, SNode targetParam, List<SNode> paramList) {
+    for (SNode queryParam : ListSequence.fromList(paramList)) {
+      if (Objects.equals(queryParam, targetParam)) {
+        return true;
       }
     }
     return false;
@@ -399,18 +459,22 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
       case 5:
         return (T) ((List<SNode>) filterExpressionList_id3eqdKU_H9WR(node, (List<SNode>) parameters[0]));
       case 6:
-        return (T) ((List<SNode>) topologicalSort_idcJYjfa5zz7(node, (List<SNode>) parameters[0]));
+        return (T) ((List<SNode>) sortParamExpressions_idcJYjfa5zz7(node, (List<SNode>) parameters[0]));
       case 7:
-        return (T) ((Boolean) listContainsParameter_id6ujblCxXxzJ(node, (SNode) parameters[0], (List<SNode>) parameters[1]));
+        return (T) ((List<SNode>) sortParams_id1MpPQ9imxeo(node, (List<SNode>) parameters[0]));
       case 8:
-        return (T) ((Boolean) inhibitionIsValid_id5Cso5p4sluh(node, (SNode) parameters[0]));
+        return (T) ((Boolean) exprListContainsParameter_id6ujblCxXxzJ(node, (SNode) parameters[0], (List<SNode>) parameters[1]));
       case 9:
-        return (T) ((Boolean) upregulationIsValid_id5Cso5p4sX5X(node, (SNode) parameters[0]));
+        return (T) ((Boolean) listContainsParameter_id1MpPQ9iAjkj(node, (SNode) parameters[0], (List<SNode>) parameters[1]));
       case 10:
-        return (T) ((Boolean) irreversibleReactionIsValid_id5Cso5p4t3d0(node, (SNode) parameters[0]));
+        return (T) ((Boolean) inhibitionIsValid_id5Cso5p4sluh(node, (SNode) parameters[0]));
       case 11:
-        return (T) ((Boolean) reversibleReactionIsValid_id5Cso5p4tyaj(node, (SNode) parameters[0]));
+        return (T) ((Boolean) upregulationIsValid_id5Cso5p4sX5X(node, (SNode) parameters[0]));
       case 12:
+        return (T) ((Boolean) irreversibleReactionIsValid_id5Cso5p4t3d0(node, (SNode) parameters[0]));
+      case 13:
+        return (T) ((Boolean) reversibleReactionIsValid_id5Cso5p4tyaj(node, (SNode) parameters[0]));
+      case 14:
         return (T) ((String) fixName_id1IP6pj5_cgV(node, (String) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
