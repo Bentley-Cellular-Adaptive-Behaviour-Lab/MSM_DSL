@@ -127,7 +127,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/8015826073202176829");
     b.version(2);
     b.property("binIndex", 0x6f3def580a87b38cL).type(PrimitiveTypeId.INTEGER).origin("8015826073202176908").done();
-    b.aggregate("Expression", 0x6f3def580a87b386L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("8015826073202176902").done();
+    b.associate("target", 0x3c4ecfdad1ead071L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).origin("4345639229190754417").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForInhibits() {
@@ -264,6 +264,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.associate("Degradation_Term", 0x665d03af8984818bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063115").done();
     b.associate("Production_Term", 0x665d03af898481a1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063137").done();
     b.aggregate("Starting_Concentration", 0x375d1bec6ae084b4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("3989375547139458228").done();
+    b.aggregate("Min_Concentration", 0x1ef6d065a427933bL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("2231199800372990779").done();
+    b.aggregate("Max_Concentration", 0x1ef6d065a4279344L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("2231199800372990788").done();
     b.aggregate("ReactsInProcess", 0x2b6159d0ceed142fL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548207").done();
     b.aggregate("ProductOfProcess", 0x2b6159d0ceed1431L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548209").done();
     b.aggregate("ModifiesProcess", 0x2039193afb4c33c6L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(true).ordered(true).multiple(true).origin("2321914824001074118").done();

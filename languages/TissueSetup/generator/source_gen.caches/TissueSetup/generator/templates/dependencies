@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="TissueSetup.generator.templates.QueriesGenerated">
+    <classNode dependClassName="SpeciesSetup.behavior.Species__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Arrangement__BehaviorDescriptor" />
     <classNode dependClassName="TissueSetup.behavior.Position__BehaviorDescriptor" />
@@ -23,6 +24,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

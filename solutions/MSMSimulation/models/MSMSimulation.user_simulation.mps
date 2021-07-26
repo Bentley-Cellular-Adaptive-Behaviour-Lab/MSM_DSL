@@ -60,13 +60,15 @@
       </concept>
     </language>
     <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
+      <concept id="7336638036545640861" name="SpeciesSetup.structure.ParameterReference" flags="ng" index="Cfe3L">
+        <reference id="7336638036545640862" name="target" index="Cfe3M" />
+      </concept>
       <concept id="1155607132028676490" name="SpeciesSetup.structure.SpeciesReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="Species" index="1csUcr" />
       </concept>
-      <concept id="1155607132030626610" name="SpeciesSetup.structure.SpeciesExpression" flags="ng" index="1cBA6y">
-        <reference id="1155607132030626611" name="Species" index="1cBA6z" />
-      </concept>
       <concept id="3125878369731540209" name="SpeciesSetup.structure.Parameter" flags="ng" index="3_zqOx">
+        <child id="7336638036545683448" name="Uses" index="Cf4qk" />
+        <child id="7336638036545643201" name="UsedBy" index="CfdIH" />
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
       </concept>
       <concept id="3125878369731540203" name="SpeciesSetup.structure.SpeciesContainer" flags="ng" index="3_zqOV">
@@ -76,7 +78,12 @@
       </concept>
       <concept id="3125878369731540207" name="SpeciesSetup.structure.Species" flags="ng" index="3_zqOZ">
         <property id="3125878369731567265" name="Location" index="3_z0tL" />
+        <child id="2231199800372990788" name="Max_Concentration" index="2UOkcx" />
+        <child id="2231199800372990779" name="Min_Concentration" index="2UOkdu" />
         <child id="3989375547139458228" name="Starting_Concentration" index="1tJpXo" />
+      </concept>
+      <concept id="7376055817164471393" name="SpeciesSetup.structure.ParameterExpression" flags="ng" index="3JPVZe">
+        <reference id="6116136999484595377" name="Parameter" index="n1ZU3" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -241,15 +248,30 @@
       <node concept="1csUcq" id="3LeNXFhOKpZ" role="3FWu3_">
         <ref role="1csUcr" node="3LeNXFhOKnF" resolve="A" />
       </node>
+      <node concept="1csUcq" id="1MpPQ9iBQvs" role="3FWu3_">
+        <ref role="1csUcr" node="3LeNXFhOKKC" resolve="B" />
+      </node>
     </node>
   </node>
   <node concept="3_zqOV" id="3LeNXFhOKni">
     <property role="TrG5h" value="Species" />
     <ref role="m9Uib" node="6VIN$acjL8I" resolve="NewTissues" />
-    <node concept="3_zqOx" id="3LeNXFhOKLU" role="3_zqUl">
+    <node concept="3_zqOx" id="3LeNXFi6jZt" role="3_zqUl">
+      <property role="TrG5h" value="Param2" />
+      <node concept="3JPVZe" id="3LeNXFi6jZJ" role="3_zqNk">
+        <ref role="n1ZU3" node="3LeNXFi6jZ2" resolve="Param1" />
+      </node>
+      <node concept="Cfe3L" id="3LeNXFi6jZL" role="Cf4qk">
+        <ref role="Cfe3M" node="3LeNXFi6jZ2" resolve="Param1" />
+      </node>
+    </node>
+    <node concept="3_zqOx" id="3LeNXFi6jZ2" role="3_zqUl">
       <property role="TrG5h" value="Param1" />
-      <node concept="1cBA6y" id="3LeNXFhOL9I" role="3_zqNk">
-        <ref role="1cBA6z" node="3LeNXFhOKnF" resolve="A" />
+      <node concept="30bXRB" id="3LeNXFi6jZc" role="3_zqNk">
+        <property role="30bXRw" value="1.0" />
+      </node>
+      <node concept="Cfe3L" id="3LeNXFi6jZM" role="CfdIH">
+        <ref role="Cfe3M" node="3LeNXFi6jZt" resolve="Param2" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3LeNXFhOKnF" role="3_zqUg">
@@ -263,6 +285,22 @@
         </node>
         <node concept="3bpmH6" id="3LeNXFhOKox" role="3lUA2W" />
       </node>
+      <node concept="3bpmHq" id="1VQO6m$c$a8" role="2UOkdu">
+        <node concept="3bpmH0" id="1VQO6m$c$a9" role="3lUA2Y">
+          <node concept="30bXRB" id="1VQO6m$c$aq" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1VQO6m$c$b8" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="1VQO6m$c$bv" role="2UOkcx">
+        <node concept="3bpmH0" id="1VQO6m$c$bw" role="3lUA2Y">
+          <node concept="30bXRB" id="1VQO6m$c$bL" role="3lUA52">
+            <property role="30bXRw" value="100" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1VQO6m$c$cd" role="3lUA2W" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="3LeNXFhOKKC" role="3_zqUg">
       <property role="TrG5h" value="B" />
@@ -274,6 +312,22 @@
           </node>
         </node>
         <node concept="3bpmH6" id="3LeNXFhOKLz" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="1VQO6m$c$c$" role="2UOkdu">
+        <node concept="3bpmH0" id="1VQO6m$c$c_" role="3lUA2Y">
+          <node concept="30bXRB" id="1VQO6m$c$cQ" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1VQO6m$c$di" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="1VQO6m$c$dD" role="2UOkcx">
+        <node concept="3bpmH0" id="1VQO6m$c$dE" role="3lUA2Y">
+          <node concept="30bXRB" id="1VQO6m$c$ez" role="3lUA52">
+            <property role="30bXRw" value="100" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1VQO6m$c$eT" role="3lUA2W" />
       </node>
     </node>
   </node>

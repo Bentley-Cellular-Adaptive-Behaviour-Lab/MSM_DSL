@@ -42,7 +42,7 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> constructExpressionString_id1IP6pj5tqCR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("constructExpressionString").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5tqCR").build();
   public static final SMethod<String> getString_id1IP6pj5t$0C = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getString").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5t$0C").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getArgumentNodes_id3hjy$RKsTtM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getArgumentNodes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3hjy$RKsTtM").build();
-  public static final SMethod<List<SNode>> findArgumentNodes_id3hjy$RKsV7x = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("findArgumentNodes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3hjy$RKsV7x").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Void> findArgumentNodes_id3hjy$RKsV7x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("findArgumentNodes").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3hjy$RKsV7x").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(updateUsesRelations_id6ngYmLdX6q5, updateUsedByRelations_id6ngYmLdX8Ap, cleanUsesRelations_idufje78iyUN, addUsesRelations_idufje78jt14, getUsedByParameters_idufje78j_RO, cleanUsedByRelations_idufje78jolS, addUsedByRelations_idufje78k1g2, getParameters_id6ngYmLdVkMJ, constructExpressionString_id1IP6pj5tqCR, getString_id1IP6pj5t$0C, getArgumentNodes_id3hjy$RKsTtM, findArgumentNodes_id3hjy$RKsV7x);
 
@@ -190,26 +190,52 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static List<SNode> getArgumentNodes_id3hjy$RKsTtM(@NotNull SNode __thisNode__) {
     // Returns a list of all parameters and species that a parameter expression uses.
     List<SNode> argumentNodes = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.Expression$Wv16))));
+    Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(__thisNode__, LINKS.Expression$Wv16), argumentNodes);
     return argumentNodes;
   }
-  /*package*/ static List<SNode> findArgumentNodes_id3hjy$RKsV7x(@NotNull SNode __thisNode__, SNode expr) {
-    List<SNode> argumentNodes = ListSequence.fromList(new ArrayList<SNode>());
+  /*package*/ static void findArgumentNodes_id3hjy$RKsV7x(@NotNull SNode __thisNode__, SNode expr, List<SNode> argumentList) {
+    // Add the species expression if its parameter isn't already in the list.
     if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesExpression$Vm)) {
-      ListSequence.fromList(argumentNodes).addElement(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+      SNode querySpecies = SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a);
+      boolean speciesFound = false;
+      for (SNode argument : ListSequence.fromList(argumentList)) {
+        if (SNodeOperations.isInstanceOf(argument, CONCEPTS.SpeciesExpression$Vm)) {
+          SNode currentSpecies = SLinkOperations.getTarget(SNodeOperations.as(argument, CONCEPTS.SpeciesExpression$Vm), LINKS.Species$uQ2a);
+          if (Objects.equals(currentSpecies, querySpecies)) {
+            speciesFound = true;
+          }
+        }
+      }
+      if (!(speciesFound)) {
+        ListSequence.fromList(argumentList).addElement(SNodeOperations.as(expr, CONCEPTS.SpeciesExpression$Vm));
+      }
     }
+    // Add the parameter expression if its parameter isn't already in the list.
     if (SNodeOperations.isInstanceOf(expr, CONCEPTS.ParameterExpression$CA)) {
-      ListSequence.fromList(argumentNodes).addElement(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+      SNode queryParameter = SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh);
+      boolean paramFound = false;
+      for (SNode argument : ListSequence.fromList(argumentList)) {
+        if (SNodeOperations.isInstanceOf(argument, CONCEPTS.ParameterExpression$CA)) {
+          SNode currentParam = SLinkOperations.getTarget(SNodeOperations.as(argument, CONCEPTS.ParameterExpression$CA), LINKS.Parameter$bXmh);
+          if (Objects.equals(currentParam, queryParameter)) {
+            paramFound = true;
+          }
+        }
+      }
+      if (!(paramFound)) {
+        ListSequence.fromList(argumentList).addElement(SNodeOperations.as(expr, CONCEPTS.ParameterExpression$CA));
+      }
     }
+    // Step into power expression to get argument(s).
     if (SNodeOperations.isInstanceOf(expr, CONCEPTS.SpeciesPowerExpression$_A)) {
-      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.expr$HIpj))));
-      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.exponent$uVP8))));
+      Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.expr$HIpj), argumentList);
+      Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.SpeciesPowerExpression$_A), LINKS.exponent$uVP8), argumentList);
     }
+    // Step into binary expression to get argument(s).
     if (SNodeOperations.isInstanceOf(expr, CONCEPTS.BinaryExpression$j$)) {
-      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.left$zxUa))));
-      ListSequence.fromList(argumentNodes).addSequence(ListSequence.fromList(Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.right$zBjx))));
+      Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.left$zxUa), argumentList);
+      Parameter__BehaviorDescriptor.findArgumentNodes_id3hjy$RKsV7x.invoke(__thisNode__, SLinkOperations.getTarget(SNodeOperations.as(expr, CONCEPTS.BinaryExpression$j$), LINKS.right$zBjx), argumentList);
     }
-    return argumentNodes;
   }
 
   /*package*/ Parameter__BehaviorDescriptor() {
@@ -256,7 +282,8 @@ public final class Parameter__BehaviorDescriptor extends BaseBHDescriptor {
       case 10:
         return (T) ((List<SNode>) getArgumentNodes_id3hjy$RKsTtM(node));
       case 11:
-        return (T) ((List<SNode>) findArgumentNodes_id3hjy$RKsV7x(node, (SNode) parameters[0]));
+        findArgumentNodes_id3hjy$RKsV7x(node, (SNode) parameters[0], (List<SNode>) parameters[1]);
+        return null;
       default:
         throw new BHMethodNotFoundException(this, method);
     }

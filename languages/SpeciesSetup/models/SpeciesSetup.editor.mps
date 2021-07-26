@@ -661,7 +661,7 @@
         <node concept="VPM3Z" id="2Hxmt3eVq$t" role="3F10Kt" />
         <node concept="3XFhqQ" id="2Hxmt3eVq$u" role="3EZMnx" />
         <node concept="3F0ifn" id="2Hxmt3eVq$v" role="3EZMnx">
-          <property role="3F0ifm" value="Concentration :" />
+          <property role="3F0ifm" value="Start Concentration :" />
           <node concept="2biZxu" id="2FvyIAlCS8U" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -679,6 +679,41 @@
           </node>
         </node>
         <node concept="2iRfu4" id="2Hxmt3eVq$x" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="1VQO6m$9TeR" role="3EZMnx">
+        <node concept="VPM3Z" id="1VQO6m$9TeS" role="3F10Kt" />
+        <node concept="3XFhqQ" id="1VQO6m$9TeT" role="3EZMnx" />
+        <node concept="3F0ifn" id="1VQO6m$9TeU" role="3EZMnx">
+          <property role="3F0ifm" value="Min - Max Concentrations :" />
+          <node concept="2biZxu" id="1VQO6m$9TeV" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1VQO6m$9TeW" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1VQO6m$9TeX" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+          <node concept="2biZxu" id="1VQO6m$9TeY" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1VQO6m$9TeZ" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="1VQO6m$9ThX" role="3EZMnx">
+          <property role="3F0ifm" value="-" />
+          <node concept="2biZxu" id="1VQO6m$9Ti7" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1VQO6m$9Ti8" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1VQO6m$9YFa" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+        </node>
+        <node concept="2iRfu4" id="1VQO6m$9Tf0" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="6pt0UY9wRaZ" role="3EZMnx">
         <node concept="VPM3Z" id="6pt0UY9wRb0" role="3F10Kt" />

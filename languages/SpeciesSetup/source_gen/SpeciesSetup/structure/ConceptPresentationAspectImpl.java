@@ -40,7 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_IndexBin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Stores the index of an expression when constructing function arguments during text generation.");
-          cpb.rawPresentation("IndexBin");
+          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL, 0x3c4ecfdad1ead071L, "target", "", "");
           props_IndexBin = cpb.create();
         }
         return props_IndexBin;
