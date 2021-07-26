@@ -319,7 +319,10 @@
       <ref role="30HIoZ" to="w3cn:3F9nTx49ScX" resolve="SpeciesContainerHeader" />
       <ref role="3lhOvi" node="2a6N$FTyZ4c" resolve="dsl_species" />
     </node>
-    <node concept="3lhOvk" id="1YlZ7ZvaTC" role="3lj3bC" />
+    <node concept="3lhOvk" id="1YlZ7ZvaTC" role="3lj3bC">
+      <ref role="30HIoZ" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="3lhOvi" node="2a6N$FTvonK" resolve="dsl_species" />
+    </node>
   </node>
   <node concept="356sEV" id="2a6N$FTvonK">
     <property role="TrG5h" value="dsl_species" />
@@ -631,7 +634,7 @@
               <node concept="3clFbS" id="4OnEbKQZE8F" role="2VODD2">
                 <node concept="3clFbF" id="4OnEbKQZE8L" role="3cqZAp">
                   <node concept="2OqwBi" id="4OnEbKQZE8G" role="3clFbG">
-                    <node concept="3Tsc0h" id="1YlZ7ZxSYd" role="2OqNvi">
+                    <node concept="3Tsc0h" id="4OnEbKQZE8J" role="2OqNvi">
                       <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
                     </node>
                     <node concept="30H73N" id="4OnEbKQZE8K" role="2Oq$k0" />
@@ -4108,27 +4111,6 @@
                     <node concept="30H73N" id="3LeNXFhNhyf" role="2Oq$k0" />
                     <node concept="3Tsc0h" id="3LeNXFhNjab" role="2OqNvi">
                       <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2Gpval" id="3LeNXFhNjyC" role="3cqZAp">
-                <node concept="2GrKxI" id="3LeNXFhNjyE" role="2Gsz3X">
-                  <property role="TrG5h" value="param" />
-                </node>
-                <node concept="37vLTw" id="3LeNXFhNmOB" role="2GsD0m">
-                  <ref role="3cqZAo" node="3LeNXFhNdD1" resolve="params" />
-                </node>
-                <node concept="3clFbS" id="3LeNXFhNjyI" role="2LFqv$">
-                  <node concept="3cpWs8" id="3LeNXFhNnKe" role="3cqZAp">
-                    <node concept="3cpWsn" id="3LeNXFhNnKh" role="3cpWs9">
-                      <property role="TrG5h" value="test" />
-                      <node concept="3Tqbb2" id="3LeNXFhNnKd" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
-                      </node>
-                      <node concept="2GrUjf" id="3LeNXFhNpGx" role="33vP2m">
-                        <ref role="2Gs0qQ" node="3LeNXFhNjyE" resolve="param" />
-                      </node>
                     </node>
                   </node>
                 </node>
