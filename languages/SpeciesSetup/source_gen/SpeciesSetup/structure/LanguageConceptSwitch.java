@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
-  public static final int IndexBin = 0;
+  public static final int ExpressionBin = 0;
   public static final int Inhibits = 1;
   public static final int IrreversibleReaction = 2;
   public static final int Modifier = 3;
@@ -24,16 +24,17 @@ public final class LanguageConceptSwitch {
   public static final int Reaction_Term = 12;
   public static final int ReversibleReaction = 13;
   public static final int Species = 14;
-  public static final int SpeciesContainer = 15;
-  public static final int SpeciesContainerHeader = 16;
-  public static final int SpeciesExpression = 17;
-  public static final int SpeciesPowerExpression = 18;
-  public static final int SpeciesReference = 19;
-  public static final int Upregulates = 20;
+  public static final int SpeciesBin = 15;
+  public static final int SpeciesContainer = 16;
+  public static final int SpeciesContainerHeader = 17;
+  public static final int SpeciesExpression = 18;
+  public static final int SpeciesPowerExpression = 19;
+  public static final int SpeciesReference = 20;
+  public static final int Upregulates = 21;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL);
-    builder.put(0x6f3def580a87b33dL, IndexBin);
+    builder.put(0x6f3def580a87b33dL, ExpressionBin);
     builder.put(0x54e0a6c6049ceffcL, Inhibits);
     builder.put(0x2b6159d0ceecfaeaL, IrreversibleReaction);
     builder.put(0x54e0a6c604985928L, Modifier);
@@ -48,6 +49,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x2b6159d0ceecf4f2L, Reaction_Term);
     builder.put(0x2b6159d0ceecfae2L, ReversibleReaction);
     builder.put(0x2b6159d0ceecf4efL, Species);
+    builder.put(0x34479ff5091e5406L, SpeciesBin);
     builder.put(0x2b6159d0ceecf4ebL, SpeciesContainer);
     builder.put(0x3ac95f984427833dL, SpeciesContainerHeader);
     builder.put(0x10098a905c97eb32L, SpeciesExpression);

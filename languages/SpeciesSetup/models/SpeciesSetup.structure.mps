@@ -511,7 +511,7 @@
   </node>
   <node concept="1TIwiD" id="6WXVPwaxVcX">
     <property role="EcuMT" value="8015826073202176829" />
-    <property role="TrG5h" value="IndexBin" />
+    <property role="TrG5h" value="ExpressionBin" />
     <property role="R4oN_" value="Stores the index of an expression when constructing function arguments during text generation." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="6WXVPwaxVec" role="1TKVEl">
@@ -524,6 +524,23 @@
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3h7BZk97_g6">
+    <property role="EcuMT" value="3767155488087495686" />
+    <property role="TrG5h" value="SpeciesBin" />
+    <property role="R4oN_" value="Stores the index of a species when constructing function arguments during text generation." />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3h7BZk97_g7" role="1TKVEl">
+      <property role="IQ2nx" value="3767155488087495687" />
+      <property role="TrG5h" value="binIndex" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
+      <property role="IQ2ns" value="3767155488087495688" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
   </node>
 </model>

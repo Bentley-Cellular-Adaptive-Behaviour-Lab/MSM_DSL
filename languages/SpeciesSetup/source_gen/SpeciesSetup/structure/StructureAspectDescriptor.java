@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.adapter.ids.PrimitiveTypeId;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  /*package*/ final ConceptDescriptor myConceptIndexBin = createDescriptorForIndexBin();
+  /*package*/ final ConceptDescriptor myConceptExpressionBin = createDescriptorForExpressionBin();
   /*package*/ final ConceptDescriptor myConceptInhibits = createDescriptorForInhibits();
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
   /*package*/ final ConceptDescriptor myConceptModifier = createDescriptorForModifier();
@@ -31,6 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReaction_Term = createDescriptorForReaction_Term();
   /*package*/ final ConceptDescriptor myConceptReversibleReaction = createDescriptorForReversibleReaction();
   /*package*/ final ConceptDescriptor myConceptSpecies = createDescriptorForSpecies();
+  /*package*/ final ConceptDescriptor myConceptSpeciesBin = createDescriptorForSpeciesBin();
   /*package*/ final ConceptDescriptor myConceptSpeciesContainer = createDescriptorForSpeciesContainer();
   /*package*/ final ConceptDescriptor myConceptSpeciesContainerHeader = createDescriptorForSpeciesContainerHeader();
   /*package*/ final ConceptDescriptor myConceptSpeciesExpression = createDescriptorForSpeciesExpression();
@@ -58,15 +59,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptIndexBin, myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
+    return Arrays.asList(myConceptExpressionBin, myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesBin, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myIndexSwitch.index(id)) {
-      case LanguageConceptSwitch.IndexBin:
-        return myConceptIndexBin;
+      case LanguageConceptSwitch.ExpressionBin:
+        return myConceptExpressionBin;
       case LanguageConceptSwitch.Inhibits:
         return myConceptInhibits;
       case LanguageConceptSwitch.IrreversibleReaction:
@@ -95,6 +96,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptReversibleReaction;
       case LanguageConceptSwitch.Species:
         return myConceptSpecies;
+      case LanguageConceptSwitch.SpeciesBin:
+        return myConceptSpeciesBin;
       case LanguageConceptSwitch.SpeciesContainer:
         return myConceptSpeciesContainer;
       case LanguageConceptSwitch.SpeciesContainerHeader:
@@ -121,8 +124,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myIndexSwitch.index(c);
   }
 
-  private static ConceptDescriptor createDescriptorForIndexBin() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "IndexBin", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL);
+  private static ConceptDescriptor createDescriptorForExpressionBin() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ExpressionBin", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL);
     b.class_(false, false, false);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/8015826073202176829");
     b.version(2);
@@ -270,6 +273,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("ProductOfProcess", 0x2b6159d0ceed1431L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L).optional(true).ordered(true).multiple(true).origin("3125878369731548209").done();
     b.aggregate("ModifiesProcess", 0x2039193afb4c33c6L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(true).ordered(true).multiple(true).origin("2321914824001074118").done();
     b.aggregate("ModifiedByProcess", 0x2039193afb52ddb0L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L).optional(true).ordered(true).multiple(true).origin("2321914824001510832").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForSpeciesBin() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "SpeciesBin", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L);
+    b.class_(false, false, false);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3767155488087495686");
+    b.version(2);
+    b.property("binIndex", 0x34479ff5091e5407L).type(PrimitiveTypeId.INTEGER).origin("3767155488087495687").done();
+    b.associate("target", 0x34479ff5091e5408L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3767155488087495688").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesContainer() {

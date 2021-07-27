@@ -9,7 +9,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private ConceptPresentation props_IndexBin;
+  private ConceptPresentation props_ExpressionBin;
   private ConceptPresentation props_Inhibits;
   private ConceptPresentation props_IrreversibleReaction;
   private ConceptPresentation props_Modifier;
@@ -24,6 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Reaction_Term;
   private ConceptPresentation props_ReversibleReaction;
   private ConceptPresentation props_Species;
+  private ConceptPresentation props_SpeciesBin;
   private ConceptPresentation props_SpeciesContainer;
   private ConceptPresentation props_SpeciesContainerHeader;
   private ConceptPresentation props_SpeciesExpression;
@@ -36,14 +37,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
-      case LanguageConceptSwitch.IndexBin:
-        if (props_IndexBin == null) {
+      case LanguageConceptSwitch.ExpressionBin:
+        if (props_ExpressionBin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Stores the index of an expression when constructing function arguments during text generation.");
           cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL, 0x3c4ecfdad1ead071L, "target", "", "");
-          props_IndexBin = cpb.create();
+          props_ExpressionBin = cpb.create();
         }
-        return props_IndexBin;
+        return props_ExpressionBin;
       case LanguageConceptSwitch.Inhibits:
         if (props_Inhibits == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
@@ -139,6 +140,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Species = cpb.create();
         }
         return props_Species;
+      case LanguageConceptSwitch.SpeciesBin:
+        if (props_SpeciesBin == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.shortDesc("Stores the index of a species when constructing function arguments during text generation.");
+          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x34479ff5091e5408L, "target", "", "");
+          props_SpeciesBin = cpb.create();
+        }
+        return props_SpeciesBin;
       case LanguageConceptSwitch.SpeciesContainer:
         if (props_SpeciesContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
