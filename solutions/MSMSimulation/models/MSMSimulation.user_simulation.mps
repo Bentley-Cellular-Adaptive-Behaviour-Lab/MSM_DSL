@@ -21,12 +21,6 @@
       <concept id="3416854989769421750" name="WorldSetup.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
-      <concept id="5893570766194507600" name="WorldSetup.structure.Substrate_Shape_Cuboid" flags="ng" index="2Sr5gM">
-        <child id="2483842479244859575" name="Centre" index="f4z$$" />
-        <child id="4052263675728681439" name="Width" index="3oe_68" />
-        <child id="4052263675728681446" name="Depth" index="3oe_6L" />
-        <child id="4052263675728681442" name="Height" index="3oe_6P" />
-      </concept>
       <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
         <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
         <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
@@ -40,11 +34,6 @@
       <concept id="8343650468779203043" name="WorldSetup.structure.World_Container" flags="ng" index="1yko06">
         <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
         <child id="8343650468779203044" name="grid" index="1yko01" />
-        <child id="8343650468779203054" name="substrates" index="1yko0b" />
-      </concept>
-      <concept id="8343650468779203058" name="WorldSetup.structure.Substrate" flags="ng" index="1yko0n">
-        <child id="5893570766194507605" name="shape" index="2Sr5gR" />
-        <child id="4052263675728673910" name="Adhesiveness" index="3oezgx" />
       </concept>
     </language>
     <language id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes">
@@ -110,9 +99,17 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
+      <concept id="8255194269358657919" name="TissueSetup.structure.Tissue_Type" flags="ng" index="1apGoc">
+        <reference id="8255194269358657920" name="cell_type" index="1apGrN" />
+        <child id="4857589848835450443" name="arrangement" index="1v2cpK" />
+      </concept>
       <concept id="6249017959271690141" name="TissueSetup.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="Width" index="2IF2Qc" />
         <child id="5171349398070263662" name="Height" index="2IF2Qe" />
+      </concept>
+      <concept id="6249017959271690140" name="TissueSetup.structure.Arrangement_Flat" flags="ng" index="3ZP1s_">
+        <property id="6249017959271690144" name="flat_width_in_cells" index="3ZP1sp" />
+        <property id="6249017959271690142" name="flat_height_in_cells" index="3ZP1sB" />
       </concept>
       <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
@@ -121,12 +118,18 @@
       <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
+        <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
+        <child id="6249017959271690124" name="tissues" index="3ZP1sP" />
       </concept>
       <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
         <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
         <child id="5171349398070263671" name="Y_Coord" index="2IF2Qn" />
         <child id="5171349398070263674" name="Z_Coord" index="2IF2Qq" />
+      </concept>
+      <concept id="6249017959271690118" name="TissueSetup.structure.Tissue" flags="ng" index="3ZP1sZ">
+        <reference id="4857589848835450453" name="tissue_type" index="1v2cpI" />
+        <child id="6249017959271770686" name="position" index="3ZPHa7" />
       </concept>
     </language>
   </registry>
@@ -139,77 +142,17 @@
   <node concept="1yko06" id="6VIN$acjK$T">
     <property role="TrG5h" value="NewWorld" />
     <ref role="3_H_MC" node="6VIN$acjL8I" resolve="NewTissues" />
-    <node concept="1yko0n" id="59YMCJZXBXp" role="1yko0b">
-      <property role="TrG5h" value="Substrate" />
-      <node concept="2Sr5gM" id="59YMCJZXBXN" role="2Sr5gR">
-        <node concept="3ZP1sY" id="59YMCJZXBXP" role="f4z$$">
-          <node concept="2_hQR_" id="59YMCJZXBXR" role="2IF2Ql">
-            <node concept="2_n9WQ" id="59YMCJZXBXT" role="2_hQRE">
-              <node concept="30bXRB" id="59YMCJZXBZE" role="2_n9WR">
-                <property role="30bXRw" value="0" />
-              </node>
-            </node>
-            <node concept="2_hRrN" id="59YMCJZXBZG" role="2_hQ4V" />
-          </node>
-          <node concept="2_hQR_" id="59YMCJZXBXZ" role="2IF2Qn">
-            <node concept="2_n9WQ" id="59YMCJZXBY1" role="2_hQRE">
-              <node concept="30bXRB" id="59YMCJZXBZN" role="2_n9WR">
-                <property role="30bXRw" value="0" />
-              </node>
-            </node>
-            <node concept="2_hRrN" id="59YMCJZXC0L" role="2_hQ4V" />
-          </node>
-          <node concept="2_hQR_" id="59YMCJZXBY7" role="2IF2Qq">
-            <node concept="2_n9WQ" id="59YMCJZXBY9" role="2_hQRE">
-              <node concept="30bXRB" id="59YMCJZXC1c" role="2_n9WR">
-                <property role="30bXRw" value="0" />
-              </node>
-            </node>
-            <node concept="2_hRrN" id="59YMCJZXC1y" role="2_hQ4V" />
-          </node>
-        </node>
-        <node concept="2_hQR_" id="59YMCJZXBYf" role="3oe_68">
-          <node concept="2_n9WQ" id="59YMCJZXBYh" role="2_hQRE">
-            <node concept="30bXRB" id="59YMCJZXC1X" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="59YMCJZXC2p" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="59YMCJZXBYn" role="3oe_6P">
-          <node concept="2_n9WQ" id="59YMCJZXBYp" role="2_hQRE">
-            <node concept="30bXRB" id="59YMCJZXC2U" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="59YMCJZXC3q" role="2_hQ4V" />
-        </node>
-        <node concept="2_hQR_" id="59YMCJZXBYv" role="3oe_6L">
-          <node concept="2_n9WQ" id="59YMCJZXBYx" role="2_hQRE">
-            <node concept="30bXRB" id="59YMCJZXC45" role="2_n9WR">
-              <property role="30bXRw" value="0" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="59YMCJZXC4B" role="2_hQ4V" />
-        </node>
-      </node>
-      <node concept="2_kiwO" id="59YMCJZXBXr" role="3oezgx">
-        <node concept="30bXRB" id="59YMCJZXC5e" role="2_kiwP">
-          <property role="30bXRw" value="1.0" />
-        </node>
-      </node>
-    </node>
     <node concept="1yko03" id="6VIN$acjK$U" role="1yko01">
-      <property role="3cJDZq" value="-60" />
-      <property role="3cJDZs" value="-16" />
-      <property role="3cJDZ5" value="-30" />
-      <property role="3bD6N$" value="120" />
-      <property role="3bD6ND" value="126" />
-      <property role="3bD6NH" value="60" />
+      <property role="3cJDZq" value="-30" />
+      <property role="3cJDZs" value="-40" />
+      <property role="3cJDZ5" value="-20" />
+      <property role="3bD6N$" value="60" />
+      <property role="3bD6ND" value="80" />
+      <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="6VIN$acjK$V" role="3bEhY_">
         <node concept="2_n9WQ" id="6VIN$acjK$W" role="2_hQRE">
-          <node concept="30bXRB" id="6VIN$acjKCJ" role="2_n9WR">
-            <property role="30bXRw" value="5" />
+          <node concept="30bXRB" id="3UCb0CyGhK5" role="2_n9WR">
+            <property role="30bXRw" value="10" />
           </node>
         </node>
         <node concept="2_hRrN" id="6VIN$acjKDc" role="2_hQ4V" />
@@ -225,6 +168,44 @@
     <property role="TrG5h" value="NewTissues" />
     <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
     <ref role="maghN" node="3LeNXFhOKni" resolve="Species" />
+    <node concept="3ZP1sZ" id="3UCb0CyGhCc" role="3ZP1sP">
+      <property role="TrG5h" value="TIssue1" />
+      <ref role="1v2cpI" node="3UCb0CyGhC5" resolve="TissueType1" />
+      <node concept="3ZP1sY" id="3UCb0CyGhCd" role="3ZPHa7">
+        <node concept="2_hQR_" id="3UCb0CyGhCe" role="2IF2Ql">
+          <node concept="2_n9WQ" id="3UCb0CyGhCf" role="2_hQRE">
+            <node concept="30bXRB" id="3UCb0CyGhDw" role="2_n9WR">
+              <property role="30bXRw" value="0" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="3UCb0CyGhE0" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="3UCb0CyGhCi" role="2IF2Qn">
+          <node concept="2_n9WQ" id="3UCb0CyGhCj" role="2_hQRE">
+            <node concept="30bXRB" id="3UCb0CyGhEv" role="2_n9WR">
+              <property role="30bXRw" value="0" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="3UCb0CyGhEV" role="2_hQ4V" />
+        </node>
+        <node concept="2_hQR_" id="3UCb0CyGhCm" role="2IF2Qq">
+          <node concept="2_n9WQ" id="3UCb0CyGhCn" role="2_hQRE">
+            <node concept="30bXRB" id="3UCb0CyGhFs" role="2_n9WR">
+              <property role="30bXRw" value="0" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="3UCb0CyGhFU" role="2_hQ4V" />
+        </node>
+      </node>
+    </node>
+    <node concept="1apGoc" id="3UCb0CyGhC5" role="1v2izi">
+      <property role="TrG5h" value="TissueType1" />
+      <ref role="1apGrN" node="3hjy$RKi6jl" resolve="CellType1" />
+      <node concept="3ZP1s_" id="3UCb0CyGhC9" role="1v2cpK">
+        <property role="3ZP1sB" value="2" />
+        <property role="3ZP1sp" value="1" />
+      </node>
+    </node>
     <node concept="3ZP1sM" id="3hjy$RKi6jl" role="1v2izm">
       <property role="TrG5h" value="CellType1" />
       <node concept="3ZP1s$" id="3hjy$RKi6jp" role="3ZP1s2">
