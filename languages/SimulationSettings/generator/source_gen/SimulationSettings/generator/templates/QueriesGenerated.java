@@ -43,57 +43,69 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_4(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_5(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_6(final PropertyMacroContext _context) {
-    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_7(final PropertyMacroContext _context) {
-    SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
-    if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
-      return "true";
-    } else {
-      return "false";
-    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_8(final PropertyMacroContext _context) {
-    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
-    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
-      return "bistability";
-    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
-      return "time_to_pattern";
-    } else {
-      return "no_analysis";
-    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_9(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
+    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+  }
+  public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
     SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
     if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
       return "true";
     } else {
       return "false";
-    }
-  }
-  public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
-    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
-      return "bistability";
-    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
-      return "time_to_pattern";
-    } else {
-      return "no_analysis";
     }
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
+    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
+      return "bistability";
+    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
+      return "time_to_pattern";
+    } else {
+      return "no_analysis";
+    }
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+  }
+  public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
+    SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
+    if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
+      return "true";
+    } else {
+      return "false";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
+    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
+    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
+      return "bistability";
+    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
+      return "time_to_pattern";
+    } else {
+      return "no_analysis";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+  }
+  public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
     return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
   }
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
@@ -103,8 +115,12 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("8062570699126829861", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "WORLD"));
     pvqMethods.put("7775299862364366067", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_Tissue"));
     pvqMethods.put("7775299862364430403", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
+    pvqMethods.put("7275998898034590068", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
+    pvqMethods.put("7275998898034686885", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
     pvqMethods.put("7775299862364484749", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_Tissue"));
     pvqMethods.put("7775299862364492214", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
+    pvqMethods.put("7275998898035256893", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
+    pvqMethods.put("7275998898035256919", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
     pvqMethods.put("7544900677407600347", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "CELL_NUMBER"));
     pvqMethods.put("4273082238226175546", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "GRAPHICS"));
     pvqMethods.put("4273082238227277503", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "ANALYSIS"));
@@ -157,6 +173,14 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_12(ctx);
         case 13:
           return QueriesGenerated.propertyMacro_GetValue_1_13(ctx);
+        case 14:
+          return QueriesGenerated.propertyMacro_GetValue_1_14(ctx);
+        case 15:
+          return QueriesGenerated.propertyMacro_GetValue_1_15(ctx);
+        case 16:
+          return QueriesGenerated.propertyMacro_GetValue_1_16(ctx);
+        case 17:
+          return QueriesGenerated.propertyMacro_GetValue_1_17(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -170,6 +194,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class LINKS {
     /*package*/ static final SReferenceLink Desired_World_Setup$CE85 = MetaAdapterFactory.getReferenceLink(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4c5ad1L, 0x6be76a078e4fb7e5L, "Desired_World_Setup");
     /*package*/ static final SReferenceLink Desired_Tissue_Container$Tkkc = MetaAdapterFactory.getReferenceLink(0x276cd304748c4d5dL, 0xaad04b34e2a42cedL, 0x73ca99e5119b19e3L, 0x6be76a078e5136afL, "Desired_Tissue_Container");
+    /*package*/ static final SReferenceLink Species_Container$u7EZ = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L, 0x6f82e96f79abed1cL, "Species_Container");
   }
 
   private static final class PROPS {

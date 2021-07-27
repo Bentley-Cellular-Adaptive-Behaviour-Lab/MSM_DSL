@@ -828,7 +828,7 @@
             </node>
           </node>
           <node concept="356sEF" id="1VQO6m$cE7m" role="356sEH">
-            <property role="TrG5h" value="_Type-&gt;add_protein(new protein(" />
+            <property role="TrG5h" value="_Type-&gt;add_protein(new protein(&quot;" />
           </node>
           <node concept="356sEF" id="1VQO6m$cEgB" role="356sEH">
             <property role="TrG5h" value="PROTEIN_NAME" />
@@ -855,7 +855,7 @@
             </node>
           </node>
           <node concept="356sEF" id="1VQO6m$cEgC" role="356sEH">
-            <property role="TrG5h" value=", " />
+            <property role="TrG5h" value="&quot;, " />
           </node>
           <node concept="356sEF" id="1VQO6m$cEpV" role="356sEH">
             <property role="TrG5h" value="PROTEIN_LOCATION" />
