@@ -15,14 +15,14 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/5351203823916750322:jetbrains.mps.baseLanguage.structure.TryUniversalStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,92,0" name="SpeciesSetup.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,94,0" name="SpeciesSetup.editor.EditorAspectDescriptorImpl" />
     </file>
-    <file name="IndexBin_SubstituteMenu.java">
-      <unit at="90,0,93,0" name="SpeciesSetup.editor.IndexBin_SubstituteMenu$CONCEPTS" />
-      <unit at="94,0,97,0" name="SpeciesSetup.editor.IndexBin_SubstituteMenu$LINKS" />
-      <unit at="49,0,68,0" name="SpeciesSetup.editor.IndexBin_SubstituteMenu$SMP_ReferenceScope_bepsdd_a" />
-      <unit at="68,0,89,0" name="SpeciesSetup.editor.IndexBin_SubstituteMenu$SMP_Subconcepts_bepsdd_b" />
-      <unit at="26,0,98,0" name="SpeciesSetup.editor.IndexBin_SubstituteMenu" />
+    <file name="ExpressionBin_SubstituteMenu.java">
+      <unit at="90,0,93,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu$CONCEPTS" />
+      <unit at="94,0,97,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu$LINKS" />
+      <unit at="49,0,68,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu$SMP_ReferenceScope_91jep0_a" />
+      <unit at="68,0,89,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu$SMP_Subconcepts_91jep0_b" />
+      <unit at="26,0,98,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu" />
     </file>
     <file name="ModifierReference_SubstituteMenu.java">
       <unit at="90,0,93,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu$CONCEPTS" />
@@ -58,6 +58,13 @@
       <unit at="49,0,68,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu$SMP_ReferenceScope_u9qtyj_a" />
       <unit at="68,0,89,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu$SMP_Subconcepts_u9qtyj_b" />
       <unit at="26,0,98,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu" />
+    </file>
+    <file name="SpeciesBin_SubstituteMenu.java">
+      <unit at="90,0,93,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu$CONCEPTS" />
+      <unit at="94,0,97,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu$LINKS" />
+      <unit at="49,0,68,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu$SMP_ReferenceScope_zd5592_a" />
+      <unit at="68,0,89,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu$SMP_Subconcepts_zd5592_b" />
+      <unit at="26,0,98,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu" />
     </file>
     <file name="SpeciesContainerHeader_SubstituteMenu.java">
       <unit at="90,0,93,0" name="SpeciesSetup.editor.SpeciesContainerHeader_SubstituteMenu$CONCEPTS" />
