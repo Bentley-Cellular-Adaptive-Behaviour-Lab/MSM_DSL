@@ -46,8 +46,12 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<Boolean> irreversibleReactionIsValid_id5Cso5p4t3d0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("irreversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4t3d0").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> reversibleReactionIsValid_id5Cso5p4tyaj = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("reversibleReactionIsValid").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5Cso5p4tyaj").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<String> fixName_id1IP6pj5_cgV = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("fixName").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1IP6pj5_cgV").build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<List<SNode>> getSystemSpecies_id2AP3$9HzARu = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getSystemSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9HzARu").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getPotentialProcesses_id2AP3$9HzIup = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getPotentialProcesses").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9HzIup").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> speciesInvolvedInReaction_id2AP3$9HzFVa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("speciesInvolvedInReaction").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9HzFVa").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getProcessSpecies_id2AP3$9H$1yb = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getProcessSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9H$1yb").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, sortParamExpressions_idcJYjfa5zz7, sortParams_id1MpPQ9imxeo, exprListContainsParameter_id6ujblCxXxzJ, listContainsParameter_id1MpPQ9iAjkj, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, sortParamExpressions_idcJYjfa5zz7, sortParams_id1MpPQ9imxeo, exprListContainsParameter_id6ujblCxXxzJ, listContainsParameter_id1MpPQ9iAjkj, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV, getSystemSpecies_id2AP3$9HzARu, getPotentialProcesses_id2AP3$9HzIup, speciesInvolvedInReaction_id2AP3$9HzFVa, getProcessSpecies_id2AP3$9H$1yb);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -427,6 +431,111 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     newName.replaceAll("-", "_");
     return newName;
   }
+  /*package*/ static List<SNode> getSystemSpecies_id2AP3$9HzARu(@NotNull SNode __thisNode__, SNode cellType) {
+    // Gets all of the species involved in the system processes that a cell type could take part in.
+    List<SNode> systemSpecies = ListSequence.fromList(new ArrayList<SNode>());
+    List<SNode> potentialProcesses = ListSequence.fromList(new ArrayList<SNode>());
+    potentialProcesses = SpeciesContainer__BehaviorDescriptor.getPotentialProcesses_id2AP3$9HzIup.invoke(__thisNode__, cellType);
+    for (SNode process : ListSequence.fromList(potentialProcesses)) {
+      ListSequence.fromList(systemSpecies).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getProcessSpecies_id2AP3$9H$1yb.invoke(__thisNode__, process)));
+    }
+    return systemSpecies;
+  }
+  /*package*/ static List<SNode> getPotentialProcesses_id2AP3$9HzIup(@NotNull SNode __thisNode__, SNode cellType) {
+    // Gets a list of all the system processes that a cell type could take part in.
+    List<SNode> potentialProcesses = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode typeSpecies : ListSequence.fromList(SLinkOperations.getChildren(cellType, LINKS.Owned_Species$sIXq))) {
+      for (SNode queryProcess : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
+        if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInReaction_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.Species$26Ka), queryProcess))) {
+          ListSequence.fromList(potentialProcesses).addElement(queryProcess);
+        }
+      }
+    }
+    return potentialProcesses;
+  }
+  /*package*/ static boolean speciesInvolvedInReaction_id2AP3$9HzFVa(@NotNull SNode __thisNode__, SNode species, SNode process) {
+    // Checks whether a species is involved in a reaction.
+    boolean speciesInvolved = false;
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.IrreversibleReaction$ja)) {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Reactant_Terms$Wnv9))) {
+        if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde), species)) {
+          speciesInvolved = true;
+        }
+      }
+      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Product_Terms$WnXb))) {
+        if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde), species)) {
+          speciesInvolved = true;
+        }
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.ReversibleReaction$fi)) {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.Reactant_Terms$Wnv9))) {
+        if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde), species)) {
+          speciesInvolved = true;
+        }
+      }
+      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.Product_Terms$WnXb))) {
+        if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde), species)) {
+          speciesInvolved = true;
+        }
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.Inhibits$am)) {
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Source$9HG6), species)) {
+        speciesInvolved = true;
+      }
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Target$9C3I), species)) {
+        speciesInvolved = true;
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.Upregulates$aP)) {
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Source$9HG6), species)) {
+        speciesInvolved = true;
+      }
+      if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Target$9C3I), species)) {
+        speciesInvolved = true;
+      }
+    }
+    return speciesInvolved;
+  }
+  /*package*/ static List<SNode> getProcessSpecies_id2AP3$9H$1yb(@NotNull SNode __thisNode__, SNode process) {
+    // Gets a list of all the species involved in a particular reaction.
+    List<SNode> processSpecies = ListSequence.fromList(new ArrayList<SNode>());
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.IrreversibleReaction$ja)) {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Reactant_Terms$Wnv9))) {
+        ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde));
+      }
+      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.IrreversibleReaction$ja), LINKS.Product_Terms$WnXb))) {
+        ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde));
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.ReversibleReaction$fi)) {
+      for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.Reactant_Terms$Wnv9))) {
+        ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde));
+      }
+      for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(process, CONCEPTS.ReversibleReaction$fi), LINKS.Product_Terms$WnXb))) {
+        ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde));
+      }
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.Inhibits$am)) {
+      ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Source$9HG6));
+      ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Inhibits$am), LINKS.Target$9C3I));
+    }
+
+    if (SNodeOperations.isInstanceOf(process, CONCEPTS.Upregulates$aP)) {
+      ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Source$9HG6));
+      ListSequence.fromList(processSpecies).addElement(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Upregulates$aP), LINKS.Target$9C3I));
+    }
+
+    return processSpecies;
+  }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
   }
@@ -476,6 +585,14 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((Boolean) reversibleReactionIsValid_id5Cso5p4tyaj(node, (SNode) parameters[0]));
       case 14:
         return (T) ((String) fixName_id1IP6pj5_cgV(node, (String) parameters[0]));
+      case 15:
+        return (T) ((List<SNode>) getSystemSpecies_id2AP3$9HzARu(node, (SNode) parameters[0]));
+      case 16:
+        return (T) ((List<SNode>) getPotentialProcesses_id2AP3$9HzIup(node, (SNode) parameters[0]));
+      case 17:
+        return (T) ((Boolean) speciesInvolvedInReaction_id2AP3$9HzFVa(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 18:
+        return (T) ((List<SNode>) getProcessSpecies_id2AP3$9H$1yb(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -511,6 +628,10 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SConcept ParameterExpression$CA = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x665d03af898abc61L, "SpeciesSetup.structure.ParameterExpression");
     /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
     /*package*/ static final SConcept Modifier$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
+    /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");
+    /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
+    /*package*/ static final SConcept Inhibits$am = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL, "SpeciesSetup.structure.Inhibits");
+    /*package*/ static final SConcept Upregulates$aP = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL, "SpeciesSetup.structure.Upregulates");
   }
 
   private static final class LINKS {
@@ -526,6 +647,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
     /*package*/ static final SReferenceLink Source$9HG6 = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06dL, "Source");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
+    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
+    /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 
   private static final class PROPS {
