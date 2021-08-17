@@ -1337,7 +1337,7 @@ void World::runSimulation()
 	while (timeStep <= MAXtime)
 	{
         if (timeStep % 50 == 0) {
-			std::cout << "Current timestep: " << timeStep << " - " << MAXtime - timeStep << " steps left." << std::endl;
+//			std::cout << "Current timestep: " << timeStep << " - " << MAXtime - timeStep << " steps left." << std::endl;
 		}
 		simulateTimestep();
 
@@ -1459,7 +1459,7 @@ void World::creationTimestep(int movie) {
 		std::cout << "Allocating cell proteins to memagents." << std::endl;
 		for (int j = 0; j < (int) ECagents.size(); j++) {
 			// TODO: TOM - This is the old version that distributes things like VEGF -> this is eventually going to be removed.
-			ECagents[j]->allocateProts();
+//			ECagents[j]->allocateProts();
 			ECagents[j]->set_initial_proteins();
 		}
 	}
@@ -1500,12 +1500,12 @@ void World::simulateTimestep() {
 		creationTimestep(movie);
 	} else {
 		for (EC* ec : ECagents) {
+		    ec->print_memAgent_protein_levels(1);
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
-			if (DSL_TESTING) {
-				ec->print_protein_levels(1);
-			}
-			ec->print_protein_levels(1);
+//			if (DSL_TESTING) {
+//				ec->print_protein_levels(50);
+//			}
 		}
 		updateMemAgents();
 		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
@@ -1704,7 +1704,7 @@ void World::updateECagents() {
 
 		// TOM
 		if (PROTEIN_TESTING) {
-			// Determine the total level of protein across all memAgents, then distribute these proteins out to the memagents evenly.
+			// Determine the total level of protein across all memAgents, then report this back to the cell.
 			ECagents[j]->calculate_cell_protein_levels();
 		}
 		else {

@@ -23,9 +23,9 @@ void ODEs::CellType1_system(const CellType1_ode_states &x, CellType1_ode_states 
     double Param1 = calc_Param1_rate();
     double Param2 = calc_Param2_rate(Param1);
     // ODE Definitions //
-    dxdt[-1] = -Param1*1;
-    dxdt[-1] = -Param2*1+Param1*1;
-    dxdt[-1] = +Param2*1;
+    dxdt[0] = -1;
+    dxdt[1] = +1;
+    dxdt[2] = +Param2*1;
 }
 
 void ODEs::CellType1_run_ODEs(MemAgent *memAgent) {
@@ -37,7 +37,7 @@ void ODEs::CellType1_run_ODEs(MemAgent *memAgent) {
     current_states[1] = memAgent->get_local_protein_level("B");
     current_states[2] = memAgent->get_local_protein_level("C");
 
-    stepper.do_step(CellType1_system, current_states, 0.0, 1);
+    stepper.do_step(CellType1_system, current_states, 0.0, new_states, 1);
 
     memAgent->distribute_calculated_proteins("A", new_states[0], true, false);
     memAgent->distribute_calculated_proteins("B", new_states[1], true, false);
@@ -52,8 +52,8 @@ void ODEs::CellType2_system(const CellType2_ode_states &x, CellType2_ode_states 
     // Parameter Definitions //
     double Param3 = calc_Param3_rate();
     // ODE Definitions //
-    dxdt[-1] = -Param3*1;
-    dxdt[-1] = +Param3*1;
+    dxdt[0] = -Param3*1;
+    dxdt[1] = +Param3*1;
 }
 
 void ODEs::CellType2_run_ODEs(MemAgent *memAgent) {
@@ -64,7 +64,7 @@ void ODEs::CellType2_run_ODEs(MemAgent *memAgent) {
     current_states[0] = memAgent->get_local_protein_level("D");
     current_states[1] = memAgent->get_local_protein_level("E");
 
-    stepper.do_step(CellType2_system, current_states, 0.0, 1);
+    stepper.do_step(CellType2_system, current_states, 0.0, new_states, 1);
 
     memAgent->distribute_calculated_proteins("D", new_states[0], true, false);
     memAgent->distribute_calculated_proteins("E", new_states[1], true, false);

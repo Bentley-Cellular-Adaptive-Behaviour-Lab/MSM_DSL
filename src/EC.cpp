@@ -642,24 +642,22 @@ void EC::distribute_proteins() {
     // TODO: We need to iterate over agents twice, because we don't know the count beforehand. Find a better way to do this.
     // TODO: Have some sort of filter preventing proteins being allocated to filopodia, thus adjusting the count.
     for (auto nodeAgent : this->nodeAgents) {
-    	if (nodeAgent->junction) {
-    		int i =0;
-    	}
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
+            auto current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					protein_counts[i]++;
 				}
 			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
-				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE)
+				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					protein_counts[i]++;
 				}
 			}
         }
     }
+
 
 //    for (auto surfaceAgent : this->surfaceAgents) {
 //        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
@@ -689,9 +687,6 @@ void EC::distribute_proteins() {
 
     // Now, set the memAgents level to be equal to the calculated amount.
     for (auto nodeAgent : this->nodeAgents) {
-		if (nodeAgent->junction) {
-			int i =0;
-		}
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
@@ -742,10 +737,16 @@ void EC::calculate_cell_protein_levels() {
 
     //TODO: ADD A CALL TO THE FUNCTION THAT RUNS THE ODES AT EACH MEMAGENT.
 
+
+    for (auto nodeAgent : this->nodeAgents) {
+        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
+    }
+
+
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
         //Attempt to run ODEs at this memagent.
-        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
+//        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
@@ -756,27 +757,28 @@ void EC::calculate_cell_protein_levels() {
         }
     }
 
-    for (auto surfaceAgent : this->surfaceAgents) {
-        //Attempt to run ODEs at this memagent.
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (surfaceAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = surfaceAgent->get_memAgent_protein_level(current_protein->get_name());
-                protein_counts[i] += current_protein_level;
-            }
-        }
-    }
 
-    for (auto springAgent : this->springAgents) {
-        //Attempt to run ODEs at this memagent.
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            protein *current_protein = this->m_cell_type->proteins[i];
-            if (springAgent->has_protein(current_protein->get_name())) {
-                float current_protein_level = springAgent->get_memAgent_protein_level(current_protein->get_name());
-                protein_counts[i] += current_protein_level;
-            }
-        }
-    }
+//    for (auto surfaceAgent : this->surfaceAgents) {
+//        //Attempt to run ODEs at this memagent.
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (surfaceAgent->has_protein(current_protein->get_name())) {
+//                float current_protein_level = surfaceAgent->get_memAgent_protein_level(current_protein->get_name());
+//                protein_counts[i] += current_protein_level;
+//            }
+//        }
+//    }
+//
+//    for (auto springAgent : this->springAgents) {
+//        //Attempt to run ODEs at this memagent.
+//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+//            protein *current_protein = this->m_cell_type->proteins[i];
+//            if (springAgent->has_protein(current_protein->get_name())) {
+//                float current_protein_level = springAgent->get_memAgent_protein_level(current_protein->get_name());
+//                protein_counts[i] += current_protein_level;
+//            }
+//        }
+//    }
 
     // Now, set the protein levels for the cell.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
@@ -823,6 +825,32 @@ void EC::print_protein_levels(int timestep_interval) {
 					  << ": " << protein->get_level() << std::endl;
 		}
 	}
+}
+
+/*****************************************************************************************
+*  Name:		print_memAgent_levels
+*  Description: Prints protein totals of a cell
+*  Returns:		void
+******************************************************************************************/
+
+void EC::print_memAgent_protein_levels(int timestep_interval) {
+    if (this->worldP->timeStep % timestep_interval == 0) {
+        std::cout << this->worldP->timeStep << ",";
+        for (auto *memAgent : this->nodeAgents) {
+            for (auto protein : this->m_cell_type->proteins) {
+                if (protein->get_name() == "A") {
+                    std::cout << memAgent->get_memAgent_protein_level("A") << ",";
+                }
+            }
+        }
+        std::cout << "\n";
+
+//        for (auto protein : this->m_cell_type->proteins) {
+//            std::cout << "Protein: " << protein->get_name()
+//                      << " Level at timestep " << this->worldP->timeStep
+//                      << ": " << protein->get_level() << std::endl;
+//        }
+    }
 }
 
 /*****************************************************************************************
