@@ -637,7 +637,7 @@
       <ref role="3JPVZN" node="6Zu6_HK$zKi" resolve="VEGF_VEGFR_REVERSE" />
       <node concept="3_zqOy" id="6Zu6_HK$zKq" role="3_zqOF">
         <property role="3_zqOz" value="1" />
-        <ref role="3_zqOB" node="6Zu6_HK$zj0" resolve="VEGFR" />
+        <ref role="3_zqOB" node="6Zu6_HK$z$3" resolve="VEGF_VEGFR" />
       </node>
       <node concept="3_zqOy" id="6Zu6_HK$zJF" role="3_zqOD">
         <property role="3_zqOz" value="1" />
@@ -738,10 +738,7 @@
       <node concept="3rtiFT" id="6Zu6_HK$zXj" role="3rqWia">
         <ref role="3rtiFY" node="6Zu6_HK$zTh" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HK$$0U" role="3_z4RZ">
-        <ref role="DdDrb" node="6Zu6_HK$zJC" resolve="VEGF_VEGFR_BINDING" />
-      </node>
-      <node concept="DdDr8" id="6Zu6_HK$$0V" role="3_z4Rx">
+      <node concept="DdDr8" id="6Zu6_HK$Vjq" role="3_z4RZ">
         <ref role="DdDrb" node="6Zu6_HK$zJC" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -774,6 +771,9 @@
       </node>
       <node concept="3rtiFT" id="6Zu6_HK$zLX" role="3rtiFW">
         <ref role="3rtiFY" node="6Zu6_HK$zLk" resolve="NOTCH_UPREGULATION" />
+      </node>
+      <node concept="DdDr8" id="6Zu6_HK$Vjr" role="3_z4Rx">
+        <ref role="DdDrb" node="6Zu6_HK$zJC" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="6Zu6_HK$znK" role="3_zqUg">
@@ -838,7 +838,7 @@
         </node>
         <node concept="3bpmH6" id="6Zu6_HK$zyW" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HK$$0W" role="3_z4RZ">
+      <node concept="DdDr8" id="6Zu6_HK$Vjs" role="3_z4RZ">
         <ref role="DdDrb" node="6Zu6_HK$zNZ" resolve="NOTCH_DLL4_BINDING" />
       </node>
     </node>
@@ -873,7 +873,7 @@
       <node concept="3rtiFT" id="6Zu6_HK$zWf" role="3rtiFW">
         <ref role="3rtiFY" node="6Zu6_HK$zTh" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HK$$0X" role="3_z4Rx">
+      <node concept="DdDr8" id="6Zu6_HK$Vjt" role="3_z4Rx">
         <ref role="DdDrb" node="6Zu6_HK$zNZ" resolve="NOTCH_DLL4_BINDING" />
       </node>
     </node>

@@ -2723,7 +2723,7 @@
                             </node>
                             <node concept="3cpWs3" id="6WXVPwao8uw" role="3uHU7B">
                               <node concept="Xl_RD" id="6WXVPwao8ux" role="3uHU7B">
-                                <property role="Xl_RC" value="_" />
+                                <property role="Xl_RC" value="-" />
                               </node>
                               <node concept="2OqwBi" id="6WXVPwao8uy" role="3uHU7w">
                                 <node concept="2OqwBi" id="6WXVPwao8uz" role="2Oq$k0">
