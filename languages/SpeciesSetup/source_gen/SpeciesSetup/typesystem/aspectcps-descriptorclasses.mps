@@ -7446,7 +7446,7 @@
                                               <node concept="3cpWs3" id="zr" role="3uHU7B">
                                                 <uo k="s:originTrace" v="n:665779027268623153" />
                                                 <node concept="Xl_RD" id="zt" role="3uHU7B">
-                                                  <property role="Xl_RC" value="HERE!Environment proteins cannot interact with protein " />
+                                                  <property role="Xl_RC" value="Environment proteins cannot interact with protein " />
                                                   <uo k="s:originTrace" v="n:665779027268623154" />
                                                 </node>
                                                 <node concept="2OqwBi" id="zu" role="3uHU7w">

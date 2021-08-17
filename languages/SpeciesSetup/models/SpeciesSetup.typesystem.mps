@@ -4360,7 +4360,7 @@
                                 <node concept="3cpWs3" id="$XkBXNg5GK" role="3uHU7B">
                                   <node concept="3cpWs3" id="$XkBXNg5GL" role="3uHU7B">
                                     <node concept="Xl_RD" id="$XkBXNg5GM" role="3uHU7B">
-                                      <property role="Xl_RC" value="HERE!Environment proteins cannot interact with protein " />
+                                      <property role="Xl_RC" value="Environment proteins cannot interact with protein " />
                                     </node>
                                     <node concept="2OqwBi" id="$XkBXNg5GN" role="3uHU7w">
                                       <node concept="2OqwBi" id="$XkBXNg5GO" role="2Oq$k0">
