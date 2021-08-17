@@ -94,7 +94,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return resultString;
   }
   public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    return String.valueOf(SNodeOperations.getIndexInParent(_context.getNode()));
+    return String.valueOf(SPropertyOperations.getInteger(_context.getNode(), PROPS.binIndex$nKRa));
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
     String zeroString = "";

@@ -199,7 +199,6 @@
       <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
         <reference id="4705942098322467736" name="decl" index="21nZrZ" />
       </concept>
-      <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -1748,7 +1747,9 @@
                       <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                       <node concept="2OqwBi" id="4OnEbKR1fld" role="37wK5m">
                         <node concept="30H73N" id="4OnEbKR1fle" role="2Oq$k0" />
-                        <node concept="2bSWHS" id="4OnEbKR1flf" role="2OqNvi" />
+                        <node concept="3TrcHB" id="32ydAaHTNIr" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:3h7BZk97_g7" resolve="binIndex" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -3836,7 +3837,7 @@
             </node>
           </node>
           <node concept="356sEF" id="3hjy$RKom0o" role="356sEH">
-            <property role="TrG5h" value="_system, current_states, 0.0, 1);" />
+            <property role="TrG5h" value="_system, current_states, 0.0, new_states, 1);" />
           </node>
           <node concept="2EixSi" id="2a6N$FTxtzS" role="2EinRH" />
         </node>

@@ -118,6 +118,7 @@ public:
     bool has_protein(std::string protein_name);
     float get_cell_protein_level(std::string protein_name);
     void print_protein_levels(int timestep_interval);
+    void print_memAgent_protein_levels(int timestep_interval);
 
     cell_logger *logger;
 

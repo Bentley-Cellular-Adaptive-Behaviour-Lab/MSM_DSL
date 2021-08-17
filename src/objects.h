@@ -58,11 +58,11 @@ class ODEs;
 #define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
 #define GRAPHICS false
 #define ECpack 15
-#define MAXtime 100000 ///2000 ///480 for fil lifetime
+#define MAXtime 10 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
-#define PROTEIN_TESTING false
+#define PROTEIN_TESTING true
 
 extern std::ofstream RUNSfile;
 ///analysis/quantification

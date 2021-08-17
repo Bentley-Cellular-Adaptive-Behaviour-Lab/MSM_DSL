@@ -3175,11 +3175,12 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
-							if (memAgent->junction && is_junction_protein) {
-								relevant_memAgents.push_back(memAgent);
-							} else if (!memAgent->junction && !is_junction_protein) {
-								relevant_memAgents.push_back(memAgent);
-							}
+//							if (memAgent->junction && is_junction_protein) {
+//								relevant_memAgents.push_back(memAgent);
+//							} else if (!memAgent->junction && !is_junction_protein) {
+//								relevant_memAgents.push_back(memAgent);
+//							}
+                            relevant_memAgents.push_back(memAgent);
 						}
 					} else if (!affects_this_cell) {
 						// Check for memAgents in neighbouring junctions that have the protein.
@@ -3208,11 +3209,11 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 				}
 			}
 		}
-		// Divide out the protein evenly to all surrounding memAgents.
-		int divisor = relevant_memAgents.size();
-		float new_amount = total_protein_level / (float) divisor;
-		for (auto memAgent : relevant_memAgents) {
-			memAgent->set_protein_level(protein_name, new_amount);
-		}
 	}
+    // Divide out the protein evenly to all surrounding memAgents.
+    int divisor = relevant_memAgents.size();
+    float new_amount = total_protein_level / (float) divisor;
+    for (auto memAgent : relevant_memAgents) {
+        memAgent->set_protein_level(protein_name, new_amount);
+    }
 }
