@@ -12,25 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Staging changes before rebase">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$IfMC.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$IfMC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SCB.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SCB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$VVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$VVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/templates/SpeciesSetup.generator01.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/templates/SpeciesSetup.generator01.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +25,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -84,17 +69,7 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote JVM Debug.DebugMPS">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="CMake Application.springAgent">
     <configuration name="BasicCellDistributionTest.postDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="postDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -136,6 +111,11 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DebugMPS" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -150,7 +130,13 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Remote JVM Debug.DebugMPS" />
+      <item itemvalue="CMake Application.springAgent" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.postDistributionTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
+      <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
+      <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
+      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -207,6 +193,7 @@
       <workItem from="1627557056522" duration="13514000" />
       <workItem from="1629115299693" duration="15000" />
       <workItem from="1629119399062" duration="1922000" />
+      <workItem from="1629279982817" duration="1000" />
     </task>
     <task id="LOCAL-00001" summary="Removed old protein files.">
       <created>1621607035051</created>
