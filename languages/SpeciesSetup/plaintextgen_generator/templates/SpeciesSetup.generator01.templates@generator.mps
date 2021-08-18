@@ -4242,6 +4242,26 @@
       <node concept="356sEK" id="2a6N$FTxo6_" role="383Ya9">
         <node concept="2EixSi" id="2a6N$FTxo6B" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="4cEU8AvnefI" role="383Ya9">
+        <node concept="356sEF" id="4cEU8AvnefJ" role="356sEH">
+          <property role="TrG5h" value="void ODEs::CELL_TYPE_NAME_speciesRegulation(EC *ec) {" />
+        </node>
+        <node concept="2EixSi" id="4cEU8AvnefK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4cEU8Avnyjv" role="383Ya9">
+        <node concept="373pV1" id="4cEU8AvnG4s" role="356sEH" />
+        <node concept="356sEF" id="4cEU8AvnG4v" role="356sEH" />
+        <node concept="2EixSi" id="4cEU8Avnyjx" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4cEU8AvnnX1" role="383Ya9">
+        <node concept="356sEF" id="4cEU8AvnnX2" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
+        <node concept="2EixSi" id="4cEU8AvnnX3" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4cEU8AvnG4y" role="383Ya9">
+        <node concept="2EixSi" id="4cEU8AvnG4$" role="2EinRH" />
+      </node>
       <node concept="356WMU" id="1IP6pj5tgUM" role="383Ya9">
         <node concept="356sEK" id="1IP6pj5sfbe" role="383Ya9">
           <node concept="356sEF" id="1IP6pj5sfbf" role="356sEH">
@@ -4829,6 +4849,15 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="356sEK" id="4cEU8AvnPWO" role="383Ya9">
+        <node concept="2EixSi" id="4cEU8AvnPWQ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4cEU8Avo0a$" role="383Ya9">
+        <node concept="356sEF" id="4cEU8Avo0a_" role="356sEH">
+          <property role="TrG5h" value="O" />
+        </node>
+        <node concept="2EixSi" id="4cEU8Avo0aA" role="2EinRH" />
       </node>
     </node>
     <node concept="n94m4" id="2a6N$FTvonM" role="lGtFl">
