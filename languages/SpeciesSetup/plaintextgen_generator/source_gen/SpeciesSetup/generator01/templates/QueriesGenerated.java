@@ -20,8 +20,6 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import java.util.Collections;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateVarContext;
@@ -164,7 +162,7 @@ public class QueriesGenerated extends QueryProviderBase {
           productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
-      productString += "_" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
+      productString += "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
           productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
@@ -399,9 +397,14 @@ public class QueriesGenerated extends QueryProviderBase {
     return productRefs;
   }
   public static Iterable<SNode> sourceNodesQuery_1_6(final SourceSubstituteMacroNodesContext _context) {
-    Iterable<SNode> modifierProcesses = Sequence.fromIterable(Collections.<SNode>emptyList());
-    Sequence.fromIterable(modifierProcesses).concat(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b), LINKS.ModifiedByProcess$uVT0)));
-    return Sequence.fromIterable(modifierProcesses).distinct();
+    List<SNode> modifierRefs = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(modifierRefs).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b), LINKS.ModifiedByProcess$uVT0)));
+    SNode species = SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b);
+    for (SNode modRef : ListSequence.fromList(modifierRefs)) {
+      SNode modifierRef = modRef;
+    }
+    return modifierRefs;
+
   }
   public static Iterable<SNode> sourceNodesQuery_1_7(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> relevantSpecies = ListSequence.fromList(new ArrayList<SNode>());
