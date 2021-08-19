@@ -117,6 +117,7 @@ public:
     void set_cell_type(Cell_Type *cell_type);
     bool has_protein(std::string protein_name);
     float get_cell_protein_level(std::string protein_name);
+    void set_cell_protein_level(std::string protein_name, float new_level);
     void print_protein_levels(int timestep_interval);
     void print_memAgent_protein_levels(int timestep_interval);
 

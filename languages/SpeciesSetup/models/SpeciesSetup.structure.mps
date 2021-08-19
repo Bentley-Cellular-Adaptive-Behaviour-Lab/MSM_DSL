@@ -179,14 +179,14 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="ModifiesProcess" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="20T6jFVj3f3" resolve="ModifierReference" />
+      <ref role="20lvS9" node="20T6jFVj3f3" resolve="RegulationReference" />
     </node>
     <node concept="1TJgyj" id="20T6jFVkHQK" role="1TKVEi">
       <property role="IQ2ns" value="2321914824001510832" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="ModifiedByProcess" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="20T6jFVj3f3" resolve="ModifierReference" />
+      <ref role="20lvS9" node="20T6jFVj3f3" resolve="RegulationReference" />
     </node>
     <node concept="1TJgyi" id="2Hxmt3eVlUx" role="1TKVEl">
       <property role="IQ2nx" value="3125878369731567265" />
@@ -415,10 +415,10 @@
   </node>
   <node concept="1TIwiD" id="5jwDGo4A5$C">
     <property role="EcuMT" value="6116071663379962152" />
-    <property role="TrG5h" value="Modifier" />
-    <property role="34LRSv" value="Modifier" />
+    <property role="TrG5h" value="Regulation" />
     <property role="3GE5qa" value="Processes" />
     <property role="R5$K7" value="true" />
+    <property role="34LRSv" value="Regulation" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
     <node concept="1TJgyj" id="5jwDGo4A5Es" role="1TKVEi">
       <property role="IQ2ns" value="6116071663379962524" />
@@ -447,14 +447,14 @@
     <property role="TrG5h" value="Inhibits" />
     <property role="3GE5qa" value="Processes" />
     <property role="34LRSv" value="Inhibition" />
-    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Modifier" />
+    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Regulation" />
   </node>
   <node concept="1TIwiD" id="5jwDGo4BeZX">
     <property role="EcuMT" value="6116071663380262909" />
     <property role="TrG5h" value="Upregulates" />
     <property role="3GE5qa" value="Processes" />
     <property role="34LRSv" value="Upregulation" />
-    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Modifier" />
+    <ref role="1TJDcQ" node="5jwDGo4A5$C" resolve="Regulation" />
   </node>
   <node concept="1TIwiD" id="5jwDGo4Bf0N">
     <property role="EcuMT" value="6116071663380262963" />
@@ -485,13 +485,13 @@
   <node concept="1TIwiD" id="20T6jFVj3f3">
     <property role="EcuMT" value="2321914824001074115" />
     <property role="3GE5qa" value="Processes" />
-    <property role="TrG5h" value="ModifierReference" />
+    <property role="TrG5h" value="RegulationReference" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="20T6jFVj3f4" role="1TKVEi">
       <property role="IQ2ns" value="2321914824001074116" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5jwDGo4A5$C" resolve="Modifier" />
+      <ref role="20lvS9" node="5jwDGo4A5$C" resolve="Regulation" />
     </node>
   </node>
   <node concept="1TIwiD" id="3F9nTx49ScX">

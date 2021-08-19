@@ -89,7 +89,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Modifier$l6, LINKS.Modifier$ZNcM) {
+    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Regulation$l6, LINKS.Modifier$ZNcM) {
       @Override
       public void referenceAdded(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -97,7 +97,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Modifier$l6, LINKS.Modifier$ZNcM) {
+    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Regulation$l6, LINKS.Modifier$ZNcM) {
       @Override
       public void referenceRemoved(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -105,7 +105,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Modifier$l6, LINKS.Source$9HG6) {
+    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Regulation$l6, LINKS.Source$9HG6) {
       @Override
       public void referenceAdded(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -113,7 +113,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Modifier$l6, LINKS.Source$9HG6) {
+    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Regulation$l6, LINKS.Source$9HG6) {
       @Override
       public void referenceRemoved(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -121,7 +121,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Modifier$l6, LINKS.Target$9C3I) {
+    ListSequence.fromList(listeners).addElement(new ReferenceAddedListener(CONCEPTS.Regulation$l6, LINKS.Target$9C3I) {
       @Override
       public void referenceAdded(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -129,7 +129,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
         SpeciesContainer__BehaviorDescriptor.updateParameterRelations_id6UEPGYOxbAr.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
       }
     });
-    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Modifier$l6, LINKS.Target$9C3I) {
+    ListSequence.fromList(listeners).addElement(new ReferenceRemovedListener(CONCEPTS.Regulation$l6, LINKS.Target$9C3I) {
       @Override
       public void referenceRemoved(final SNode instance, final SNode target, SReferenceLink role) {
         SpeciesContainer__BehaviorDescriptor.updateSpeciesRelations_idJ83UdHo8mt.invoke(SNodeOperations.as(SNodeOperations.getParent(instance), CONCEPTS.SpeciesContainer$Ig));
@@ -243,7 +243,7 @@ public class ModelListenersDescriptor implements IModelListenersDescriptor {
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
     /*package*/ static final SConcept Species$Kc = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
     /*package*/ static final SConcept Parameter$La = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L, "SpeciesSetup.structure.Parameter");
-    /*package*/ static final SConcept Modifier$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
+    /*package*/ static final SConcept Regulation$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Regulation");
     /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesSetup.structure.Reaction");
     /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
     /*package*/ static final SConcept IrreversibleReaction$ja = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, "SpeciesSetup.structure.IrreversibleReaction");

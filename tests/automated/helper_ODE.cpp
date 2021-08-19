@@ -897,3 +897,23 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 	}
 }
 
+/*****************************************************************************************
+*  Name:		NotchPathwayTest::SetUp()
+*  Description: - Creates a vessel consisting of two cells, and updates an ODE system based
+*                 on the Notch-Dll4 pathway.
+*               - Relies on gene regulation occurring within each cell, and junctional proteins
+*                 acting across the junction.
+*
+*	  			Reaction: 1 VEGF (environment) + 1 VEGFR (membrane) -> 1 VEGF_VEGFR every timestep.
+*	  			Regulation: 1 VEGF_VEGFR (membrane) -> 1.5 Notch (junction) every timestep.
+ *	  			Reaction: 1 Notch (junction) + 1Dll4 (junction) -> 1Notch_Dll4 every timestep.
+ *	  			Regulation: 1 Notch_Dll4 (environment) -> 0.5 VEGF_VEGFR every timestep.
+*
+*  Returns:		void
+******************************************************************************************/
+
+void NotchPathwayTest::SetUp() {
+    auto w_container = new World_Container();
+    addWorldContainer(w_container);
+
+}

@@ -5,23 +5,28 @@
 #include <boost/numeric/odeint.hpp>
 
 class MemAgent;
+class EC;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 3> CellType1_ode_states;
-typedef boost::array<double, 2> CellType2_ode_states;
+typedef boost::array<double, 6> Endothelial_memAgent_ode_states;
+typedef boost::array<double, 4> Endothelial_cell_ode_states;
 
 class ODEs {
 public:
     ODEs();
-    void check_ODEs(std::string cell_type_name, MemAgent *memAgent);
-    static void CellType1_system(const CellType1_ode_states &x, CellType1_ode_states &dxdt, double t);
-    static void CellType2_system(const CellType2_ode_states &x, CellType2_ode_states &dxdt, double t);
-    void CellType1_run_ODEs(MemAgent *memAgent);
-    void CellType2_run_ODEs(MemAgent *memAgent);
+    void check_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent);
+    void check_cell_ODEs(EC *ec);
+    static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
+    void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
+    static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
+    void Endothelial_run_cell_ODEs(EC *ec);
 };
 
-static double calc_Param2_rate(double Param1);
-static double calc_Param1_rate();
-static double calc_Param3_rate();
+static double calc_VEGF_VEGFR_FORWARD_rate();
+static double calc_VEGF_VEGFR_REVERSE_rate();
+static double calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR);
+static double calc_NOTCH_DLL4_FORWARD_rate();
+static double calc_NOTCH_DLL4_REVERSE_rate();
+static double calc_VEGFR_INHIBITION_MOD_rate();
 #endif /*SRC_SPRINGAGENT_ODE_H*/

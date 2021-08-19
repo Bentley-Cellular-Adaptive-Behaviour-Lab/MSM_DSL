@@ -2151,7 +2151,7 @@
       </node>
       <node concept="2M4Efz" id="5jwDGo4CqxF" role="aCds2">
         <node concept="3Tqbb2" id="5jwDGo4CqOJ" role="2M4AHM">
-          <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+          <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
         </node>
         <node concept="37q72E" id="5jwDGo4CqxJ" role="2M4AHN">
           <node concept="3clFbS" id="5jwDGo4CqxL" role="2VODD2">
@@ -2160,13 +2160,13 @@
                 <property role="TrG5h" value="modifiers" />
                 <node concept="_YKpA" id="20T6jFUHoxQ" role="1tU5fm">
                   <node concept="3Tqbb2" id="20T6jFUHoyF" role="_ZDj9">
-                    <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+                    <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
                   </node>
                 </node>
                 <node concept="2ShNRf" id="20T6jFUHoN6" role="33vP2m">
                   <node concept="Tc6Ow" id="20T6jFUHqGF" role="2ShVmc">
                     <node concept="3Tqbb2" id="20T6jFUHr1r" role="HW$YZ">
-                      <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+                      <ref role="ehGHo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
                     </node>
                   </node>
                 </node>
@@ -2193,7 +2193,7 @@
                           </node>
                           <node concept="1mIQ4w" id="20T6jFUHrih" role="2OqNvi">
                             <node concept="chp4Y" id="20T6jFUHskk" role="cj9EA">
-                              <ref role="cht4Q" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+                              <ref role="cht4Q" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
                             </node>
                           </node>
                         </node>
@@ -2216,7 +2216,7 @@
                       <node concept="1PxgMI" id="20T6jFUHyvh" role="25WWJ7">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="20T6jFUHyHC" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+                          <ref role="cht4Q" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
                         </node>
                         <node concept="2GrUjf" id="20T6jFUHy7Q" role="1m5AlR">
                           <ref role="2Gs0qQ" node="20T6jFUHri6" resolve="modifier" />

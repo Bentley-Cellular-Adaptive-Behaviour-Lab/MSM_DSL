@@ -33,14 +33,6 @@ public class check_upregulatesValidity_NonTypesystemRule extends AbstractNonType
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(upregulates, "Environment proteins cannot interact with protein " + SPropertyOperations.getString(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.name$MnvL) + ". Check " + SPropertyOperations.getString(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.name$MnvL) + "'s location is not the environment, the cell interior or cell junction.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "665779027268539420", null, errorTarget);
           }
         }
-      } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulates, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
-        // Reactant is a membrane protein - check that it isn't interacting with a junction protein. 
-        if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
-          {
-            final MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(upregulates, "Membrane proteins cannot interact with protein " + SPropertyOperations.getString(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.name$MnvL) + ". Check " + SPropertyOperations.getString(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.name$MnvL) + "'s location is not the cell junction.", "r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesSetup.typesystem)", "665779027268539505", null, errorTarget);
-          }
-        }
       } else if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulates, LINKS.Source$9HG6), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
         // Reactant is a cellular protein - check that it isn't interacting with an environment protein.
         if (SPropertyOperations.getEnum(SLinkOperations.getTarget(upregulates, LINKS.Target$9C3I), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {

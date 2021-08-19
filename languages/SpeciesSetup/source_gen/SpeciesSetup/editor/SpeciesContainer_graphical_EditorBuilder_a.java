@@ -438,10 +438,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
                             List<SNode> modifiers = ListSequence.fromList(new ArrayList<SNode>());
                             for (SNode modifier : ListSequence.fromList(SLinkOperations.getChildren(node, LINKS.Processes$hnPe)).where(new IWhereFilter<SNode>() {
                               public boolean accept(SNode it) {
-                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Modifier$l6);
+                                return SNodeOperations.isInstanceOf(it, CONCEPTS.Regulation$l6);
                               }
                             })) {
-                              ListSequence.fromList(modifiers).addElement(SNodeOperations.as(modifier, CONCEPTS.Modifier$l6));
+                              ListSequence.fromList(modifiers).addElement(SNodeOperations.as(modifier, CONCEPTS.Regulation$l6));
                             }
                             return modifiers;
                           }
@@ -1507,7 +1507,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
     /*package*/ static final SConcept ReversibleReaction$fi = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, "SpeciesSetup.structure.ReversibleReaction");
     /*package*/ static final SConcept Inhibits$am = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL, "SpeciesSetup.structure.Inhibits");
     /*package*/ static final SConcept Upregulates$aP = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL, "SpeciesSetup.structure.Upregulates");
-    /*package*/ static final SConcept Modifier$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Modifier");
+    /*package*/ static final SConcept Regulation$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Regulation");
     /*package*/ static final SConcept PropertyAttribute$Gb = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da56L, "jetbrains.mps.lang.core.structure.PropertyAttribute");
     /*package*/ static final SConcept LinkAttribute$v_ = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da51L, "jetbrains.mps.lang.core.structure.LinkAttribute");
   }

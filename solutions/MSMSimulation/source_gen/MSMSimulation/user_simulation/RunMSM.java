@@ -15,7 +15,7 @@ import java.nio.file.Files;
 public class RunMSM {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
+    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
 
     Path old_tissue_path;
     Path old_world_path;
@@ -34,10 +34,10 @@ public class RunMSM {
     // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder.
     switch (utils.getOS()) {
       case WINDOWS:
-        old_tissue_path = Paths.get(output_string + "\\" + "NewTissues" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "\\" + "Example1_Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "\\" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "\\" + "Species" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "\\" + "Species" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "\\" + "Example1_Species" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "\\" + "Example1_Species" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "\\src\\dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "\\src\\dsl_World.cpp");
@@ -59,10 +59,10 @@ public class RunMSM {
       case LINUX:
 
       case MAC:
-        old_tissue_path = Paths.get(output_string + "/" + "NewTissues" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "/" + "Species" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "/" + "Species" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "/" + "Example1_Species" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "Example1_Species" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
         new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");

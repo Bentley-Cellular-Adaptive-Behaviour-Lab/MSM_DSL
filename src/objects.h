@@ -707,7 +707,7 @@ public:
 
 	ODEs *odes;
 	void setup_ODEs();
-    void run_ODEs(std::string cell_type_name, MemAgent *memAgent);
+    void run_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent);
     std::string get_time_string();
     std::string time = get_time_string();
 

@@ -24,13 +24,6 @@
       <unit at="68,0,89,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu$SMP_Subconcepts_91jep0_b" />
       <unit at="26,0,98,0" name="SpeciesSetup.editor.ExpressionBin_SubstituteMenu" />
     </file>
-    <file name="ModifierReference_SubstituteMenu.java">
-      <unit at="90,0,93,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu$CONCEPTS" />
-      <unit at="94,0,97,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu$LINKS" />
-      <unit at="49,0,68,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu$SMP_ReferenceScope_quq4wy_a" />
-      <unit at="68,0,89,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu$SMP_Subconcepts_quq4wy_b" />
-      <unit at="26,0,98,0" name="SpeciesSetup.editor.ModifierReference_SubstituteMenu" />
-    </file>
     <file name="ParameterExpression_SubstituteMenu.java">
       <unit at="90,0,93,0" name="SpeciesSetup.editor.ParameterExpression_SubstituteMenu$CONCEPTS" />
       <unit at="94,0,97,0" name="SpeciesSetup.editor.ParameterExpression_SubstituteMenu$LINKS" />
@@ -58,6 +51,13 @@
       <unit at="49,0,68,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu$SMP_ReferenceScope_u9qtyj_a" />
       <unit at="68,0,89,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu$SMP_Subconcepts_u9qtyj_b" />
       <unit at="26,0,98,0" name="SpeciesSetup.editor.Reaction_Term_SubstituteMenu" />
+    </file>
+    <file name="RegulationReference_SubstituteMenu.java">
+      <unit at="90,0,93,0" name="SpeciesSetup.editor.RegulationReference_SubstituteMenu$CONCEPTS" />
+      <unit at="94,0,97,0" name="SpeciesSetup.editor.RegulationReference_SubstituteMenu$LINKS" />
+      <unit at="49,0,68,0" name="SpeciesSetup.editor.RegulationReference_SubstituteMenu$SMP_ReferenceScope_7j29u3_a" />
+      <unit at="68,0,89,0" name="SpeciesSetup.editor.RegulationReference_SubstituteMenu$SMP_Subconcepts_7j29u3_b" />
+      <unit at="26,0,98,0" name="SpeciesSetup.editor.RegulationReference_SubstituteMenu" />
     </file>
     <file name="SpeciesBin_SubstituteMenu.java">
       <unit at="90,0,93,0" name="SpeciesSetup.editor.SpeciesBin_SubstituteMenu$CONCEPTS" />
@@ -4259,8 +4259,8 @@
       <node id="3125878369732013906" at="430,0,431,0" concept="9" />
       <node id="3125878369732013906" at="431,0,432,53" concept="2" />
       <node id="2321914823991199864" at="437,58,438,98" concept="7" />
-      <node id="2321914823991211150" at="440,63,441,94" concept="8" />
-      <node id="2321914823991217235" at="443,33,444,126" concept="2" />
+      <node id="2321914823991211150" at="440,63,441,96" concept="8" />
+      <node id="2321914823991217235" at="443,33,444,128" concept="2" />
       <node id="2321914823991210913" at="445,29,446,45" concept="8" />
       <node id="6116071663380572267" at="450,47,451,103" concept="7" />
       <node id="6116071663380572267" at="451,103,452,142" concept="7" />
@@ -4821,7 +4821,7 @@
       <node id="3125878369731869948" at="1507,0,1508,0" concept="10" trace="ReversibleReaction$fi" />
       <node id="3125878369731869948" at="1508,0,1509,0" concept="10" trace="Inhibits$am" />
       <node id="3125878369731869948" at="1509,0,1510,0" concept="10" trace="Upregulates$aP" />
-      <node id="3125878369731869948" at="1510,0,1511,0" concept="10" trace="Modifier$l6" />
+      <node id="3125878369731869948" at="1510,0,1511,0" concept="10" trace="Regulation$l6" />
       <node id="3125878369731869948" at="1511,0,1512,0" concept="10" trace="PropertyAttribute$Gb" />
       <node id="3125878369731869948" at="1512,0,1513,0" concept="10" trace="LinkAttribute$v_" />
       <node id="3125878369731869948" at="91,0,93,0" concept="3" trace="myNode" />
@@ -5164,8 +5164,8 @@
       <scope id="3125878369732013906" at="413,61,414,50" />
       <scope id="3125878369732013906" at="417,66,418,51" />
       <scope id="3125878369732013906" at="424,57,425,57" />
-      <scope id="2321914823991211149" at="440,63,441,94" />
-      <scope id="2321914823991211157" at="443,33,444,126" />
+      <scope id="2321914823991211149" at="440,63,441,96" />
+      <scope id="2321914823991211157" at="443,33,444,128" />
       <scope id="6116071663380572267" at="456,54,457,68" />
       <scope id="6116071663380968534" at="462,61,463,149" />
       <scope id="6116071663380975166" at="466,61,467,152" />

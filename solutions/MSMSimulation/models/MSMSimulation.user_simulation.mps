@@ -47,6 +47,14 @@
         <child id="4052263675728673910" name="Adhesiveness" index="3oezgx" />
       </concept>
     </language>
+    <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
+      <concept id="5115872837156652603" name="org.iets3.core.expr.base.structure.DivExpression" flags="ng" index="30dvO6" />
+      <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
+      <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
+        <child id="5115872837156576280" name="right" index="30dEs_" />
+        <child id="5115872837156576278" name="left" index="30dEsF" />
+      </concept>
+    </language>
     <language id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes">
       <concept id="5115872837157054170" name="org.iets3.core.expr.simpleTypes.structure.NumberLiteral" flags="ng" index="30bXRB">
         <property id="5115872837157054173" name="value" index="30bXRw" />
@@ -69,14 +77,17 @@
       <concept id="1155607132028676490" name="SpeciesSetup.structure.SpeciesReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="Species" index="1csUcr" />
       </concept>
-      <concept id="6116071663379962152" name="SpeciesSetup.structure.Modifier" flags="ng" index="1gufZI">
+      <concept id="1155607132030626610" name="SpeciesSetup.structure.SpeciesExpression" flags="ng" index="1cBA6y">
+        <reference id="1155607132030626611" name="Species" index="1cBA6z" />
+      </concept>
+      <concept id="6116071663379962152" name="SpeciesSetup.structure.Regulation" flags="ng" index="1gufZI">
         <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
         <reference id="6116071663380263018" name="Target" index="1gv5qG" />
       </concept>
       <concept id="6116071663380262908" name="SpeciesSetup.structure.Inhibits" flags="ng" index="1gv4$U" />
       <concept id="6116071663380262909" name="SpeciesSetup.structure.Upregulates" flags="ng" index="1gv4$V" />
-      <concept id="2321914824001074115" name="SpeciesSetup.structure.ModifierReference" flags="ng" index="3rtiFT">
+      <concept id="2321914824001074115" name="SpeciesSetup.structure.RegulationReference" flags="ng" index="3rtiFT">
         <reference id="2321914824001074116" name="target" index="3rtiFY" />
       </concept>
       <concept id="3125878369731541730" name="SpeciesSetup.structure.ReversibleReaction" flags="ng" index="3_zqcM">
@@ -287,12 +298,12 @@
       </node>
     </node>
     <node concept="1yko03" id="6VIN$acjK$U" role="1yko01">
-      <property role="3cJDZq" value="-20" />
-      <property role="3cJDZs" value="-30" />
-      <property role="3cJDZ5" value="-10" />
-      <property role="3bD6N$" value="40" />
-      <property role="3bD6ND" value="60" />
-      <property role="3bD6NH" value="20" />
+      <property role="3cJDZq" value="-30" />
+      <property role="3cJDZs" value="-16" />
+      <property role="3cJDZ5" value="-16" />
+      <property role="3bD6N$" value="60" />
+      <property role="3bD6ND" value="32" />
+      <property role="3bD6NH" value="32" />
       <node concept="2_hQR_" id="6VIN$acjK$V" role="3bEhY_">
         <node concept="2_n9WQ" id="6VIN$acjK$W" role="2_hQRE">
           <node concept="30bXRB" id="6VIN$acjKCJ" role="2_n9WR">
@@ -644,8 +655,18 @@
     </node>
     <node concept="3_zqOx" id="6Zu6_HK$zM8" role="3_zqUl">
       <property role="TrG5h" value="NOTCH_UPREGULATION_MOD" />
-      <node concept="30bXRB" id="6Zu6_HK$$0d" role="3_zqNk">
-        <property role="30bXRw" value="2.0" />
+      <node concept="30dDTi" id="4cEU8AvC8UB" role="3_zqNk">
+        <node concept="30dvO6" id="4cEU8AvC8UC" role="30dEsF">
+          <node concept="1cBA6y" id="4cEU8AvC8SH" role="30dEsF">
+            <ref role="1cBA6z" node="6Zu6_HK$zj0" resolve="VEGFR" />
+          </node>
+          <node concept="1cBA6y" id="4cEU8AvC8U7" role="30dEs_">
+            <ref role="1cBA6z" node="6Zu6_HK$z$3" resolve="VEGF_VEGFR" />
+          </node>
+        </node>
+        <node concept="30bXRB" id="4cEU8AvC8V2" role="30dEs_">
+          <property role="30bXRw" value="2.0" />
+        </node>
       </node>
     </node>
     <node concept="3_zqOx" id="6Zu6_HK$zPm" role="3_zqUl">
@@ -773,13 +794,13 @@
       <node concept="3rtiFT" id="6Zu6_HK$zXj" role="3rqWia">
         <ref role="3rtiFY" node="6Zu6_HK$zTh" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HKBhoU" role="3_z4RZ">
+      <node concept="DdDr8" id="4cEU8AvC8UH" role="3_z4RZ">
         <ref role="DdDrb" node="6Zu6_HK$zJC" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="6Zu6_HK$z$3" role="3_zqUg">
       <property role="TrG5h" value="VEGF_VEGFR" />
-      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <property role="3_z0tL" value="2Hxmt3eVjAD/LOCATION_MEMBRANE" />
       <node concept="3bpmHq" id="6Zu6_HK$z$Z" role="1tJpXo">
         <node concept="3bpmH0" id="6Zu6_HK$z_1" role="3lUA2Y">
           <node concept="30bXRB" id="6Zu6_HK$z_l" role="3lUA52">
@@ -807,7 +828,7 @@
       <node concept="3rtiFT" id="6Zu6_HK$zLX" role="3rtiFW">
         <ref role="3rtiFY" node="6Zu6_HK$zLk" resolve="NOTCH_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HKBhoV" role="3_z4Rx">
+      <node concept="DdDr8" id="4cEU8AvC8UI" role="3_z4Rx">
         <ref role="DdDrb" node="6Zu6_HK$zJC" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -873,13 +894,13 @@
         </node>
         <node concept="3bpmH6" id="6Zu6_HK$zyW" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HKBhoW" role="3_z4RZ">
+      <node concept="DdDr8" id="4cEU8AvC8UJ" role="3_z4RZ">
         <ref role="DdDrb" node="6Zu6_HK$zNZ" resolve="NOTCH_DLL4_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="6Zu6_HK$zDa" role="3_zqUg">
       <property role="TrG5h" value="NOTCH_DLL4" />
-      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
       <property role="n3t0a" value="5jwSz93Vj8P/NeighbourValue" />
       <node concept="3bpmHq" id="6Zu6_HK$zEF" role="1tJpXo">
         <node concept="3bpmH0" id="6Zu6_HK$zEH" role="3lUA2Y">
@@ -908,7 +929,7 @@
       <node concept="3rtiFT" id="6Zu6_HK$zWf" role="3rtiFW">
         <ref role="3rtiFY" node="6Zu6_HK$zTh" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="6Zu6_HKBhoX" role="3_z4Rx">
+      <node concept="DdDr8" id="4cEU8AvC8UK" role="3_z4Rx">
         <ref role="DdDrb" node="6Zu6_HK$zNZ" resolve="NOTCH_DLL4_BINDING" />
       </node>
     </node>

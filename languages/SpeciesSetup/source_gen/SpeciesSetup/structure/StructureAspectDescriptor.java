@@ -19,8 +19,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExpressionBin = createDescriptorForExpressionBin();
   /*package*/ final ConceptDescriptor myConceptInhibits = createDescriptorForInhibits();
   /*package*/ final ConceptDescriptor myConceptIrreversibleReaction = createDescriptorForIrreversibleReaction();
-  /*package*/ final ConceptDescriptor myConceptModifier = createDescriptorForModifier();
-  /*package*/ final ConceptDescriptor myConceptModifierReference = createDescriptorForModifierReference();
   /*package*/ final ConceptDescriptor myConceptParameter = createDescriptorForParameter();
   /*package*/ final ConceptDescriptor myConceptParameterExpression = createDescriptorForParameterExpression();
   /*package*/ final ConceptDescriptor myConceptParameterReference = createDescriptorForParameterReference();
@@ -29,6 +27,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptReaction = createDescriptorForReaction();
   /*package*/ final ConceptDescriptor myConceptReaction_Reference = createDescriptorForReaction_Reference();
   /*package*/ final ConceptDescriptor myConceptReaction_Term = createDescriptorForReaction_Term();
+  /*package*/ final ConceptDescriptor myConceptRegulation = createDescriptorForRegulation();
+  /*package*/ final ConceptDescriptor myConceptRegulationReference = createDescriptorForRegulationReference();
   /*package*/ final ConceptDescriptor myConceptReversibleReaction = createDescriptorForReversibleReaction();
   /*package*/ final ConceptDescriptor myConceptSpecies = createDescriptorForSpecies();
   /*package*/ final ConceptDescriptor myConceptSpeciesBin = createDescriptorForSpeciesBin();
@@ -59,7 +59,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptExpressionBin, myConceptInhibits, myConceptIrreversibleReaction, myConceptModifier, myConceptModifierReference, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesBin, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
+    return Arrays.asList(myConceptExpressionBin, myConceptInhibits, myConceptIrreversibleReaction, myConceptParameter, myConceptParameterExpression, myConceptParameterReference, myConceptProcess, myConceptRate, myConceptReaction, myConceptReaction_Reference, myConceptReaction_Term, myConceptRegulation, myConceptRegulationReference, myConceptReversibleReaction, myConceptSpecies, myConceptSpeciesBin, myConceptSpeciesContainer, myConceptSpeciesContainerHeader, myConceptSpeciesExpression, myConceptSpeciesPowerExpression, myConceptSpeciesReference, myConceptUpregulates);
   }
 
   @Override
@@ -72,10 +72,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptInhibits;
       case LanguageConceptSwitch.IrreversibleReaction:
         return myConceptIrreversibleReaction;
-      case LanguageConceptSwitch.Modifier:
-        return myConceptModifier;
-      case LanguageConceptSwitch.ModifierReference:
-        return myConceptModifierReference;
       case LanguageConceptSwitch.Parameter:
         return myConceptParameter;
       case LanguageConceptSwitch.ParameterExpression:
@@ -92,6 +88,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptReaction_Reference;
       case LanguageConceptSwitch.Reaction_Term:
         return myConceptReaction_Term;
+      case LanguageConceptSwitch.Regulation:
+        return myConceptRegulation;
+      case LanguageConceptSwitch.RegulationReference:
+        return myConceptRegulationReference;
       case LanguageConceptSwitch.ReversibleReaction:
         return myConceptReversibleReaction;
       case LanguageConceptSwitch.Species:
@@ -136,7 +136,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForInhibits() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Inhibits", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffcL);
     b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.super_("SpeciesSetup.structure.Regulation", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663380262908");
     b.version(2);
     b.alias("Inhibition");
@@ -150,27 +150,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.associate("Rate", 0x665d03af898abc5aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("7376055817164471386").done();
     b.alias("Irreversible Reaction");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForModifier() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
-    b.class_(false, true, false);
-    b.super_("SpeciesSetup.structure.Process", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L);
-    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663379962152");
-    b.version(2);
-    b.associate("Modifier", 0x54e0a6c604985a9cL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116071663379962524").done();
-    b.associate("Source", 0x54e0a6c6049cf06dL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263021").done();
-    b.associate("Target", 0x54e0a6c6049cf06aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263018").done();
-    b.alias("Modifier");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForModifierReference() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "ModifierReference", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L);
-    b.class_(false, false, false);
-    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914824001074115");
-    b.version(2);
-    b.associate("target", 0x2039193afb4c33c4L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L).optional(false).origin("2321914824001074116").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForParameter() {
@@ -243,6 +222,27 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.version(2);
     b.property("Stoichiometry", 0x2b6159d0ceecf4f3L).type(PrimitiveTypeId.INTEGER).origin("3125878369731540211").done();
     b.associate("Species_Ref", 0x2b6159d0ceecf4f7L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3125878369731540215").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRegulation() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Regulation", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.class_(false, true, false);
+    b.super_("SpeciesSetup.structure.Process", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663379962152");
+    b.version(2);
+    b.associate("Modifier", 0x54e0a6c604985a9cL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116071663379962524").done();
+    b.associate("Source", 0x54e0a6c6049cf06dL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263021").done();
+    b.associate("Target", 0x54e0a6c6049cf06aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263018").done();
+    b.alias("Regulation");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForRegulationReference() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "RegulationReference", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2039193afb4c33c3L);
+    b.class_(false, false, false);
+    b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/2321914824001074115");
+    b.version(2);
+    b.associate("target", 0x2039193afb4c33c4L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L).optional(false).origin("2321914824001074116").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReversibleReaction() {
@@ -336,7 +336,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForUpregulates() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("SpeciesSetup", "Upregulates", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049ceffdL);
     b.class_(false, false, false);
-    b.super_("SpeciesSetup.structure.Modifier", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
+    b.super_("SpeciesSetup.structure.Regulation", 0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663380262909");
     b.version(2);
     b.alias("Upregulation");

@@ -735,13 +735,9 @@ void EC::calculate_cell_protein_levels() {
         protein_counts.push_back(0);
     }
 
-    //TODO: ADD A CALL TO THE FUNCTION THAT RUNS THE ODES AT EACH MEMAGENT.
-
-
     for (auto nodeAgent : this->nodeAgents) {
-        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
+        this->worldP->run_memAgent_ODEs(this->m_cell_type->m_name, nodeAgent);
     }
-
 
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
@@ -881,8 +877,7 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 ******************************************************************************************/
 
 float EC::get_cell_protein_level(std::string protein_name) {
-	// This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
-	// This is also used during ODE running and so has the potential to fail.
+
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {
@@ -890,4 +885,30 @@ float EC::get_cell_protein_level(std::string protein_name) {
 			}
 		}
 	}
+}
+
+/*****************************************************************************************
+*  Name:		set_cell_protein_level
+*  Description: If a cell possesses a protein, then set the amount that cell has of that protein.
+*  Returns:		float
+******************************************************************************************/
+
+void EC::set_cell_protein_level(std::string protein_name, float new_level) {
+    // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
+    // This is also used during ODE running and so has the potential to fail.
+    try {
+        if (this->has_protein(protein_name)) {
+            for (auto protein : this->m_cell_type->proteins) {
+                if (protein->get_name() == protein_name) {
+                    protein->set_level(new_level);
+                }
+            }
+        } else {
+            throw std::invalid_argument(protein_name);
+        }
+    } catch (std::invalid_argument) {
+        std::cerr << "Attempted to get the level of a protein at a cell which did not possess it." << std::endl;
+        std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
+        exit(1);
+    }
 }
