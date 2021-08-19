@@ -1296,13 +1296,13 @@ void World::setup_ODEs() {
 }
 
 /*****************************************************************************************
-*  Name:		run_ODEs
-*  Description: Runs the ODEs for a given memAgent
+*  Name:		run_memAgent_ODEs
+*  Description: Runs ODEs for a given memAgent
 *  Returns:		void
 ******************************************************************************************/
 
-void World::run_ODEs(std::string cell_type_name, MemAgent *memAgent) {
-    this->odes->check_ODEs(cell_type_name, memAgent);
+void World::run_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {
+    this->odes->check_memAgent_ODEs(cell_type_name, memAgent);
 }
 
 /*****************************************************************************************
@@ -1706,6 +1706,8 @@ void World::updateECagents() {
 		if (PROTEIN_TESTING) {
 			// Determine the total level of protein across all memAgents, then report this back to the cell.
 			ECagents[j]->calculate_cell_protein_levels();
+			// Do gene regulation based on the calculated levels of proteins.
+			this->odes->check_cell_ODEs(ECagents[j]);
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks

@@ -83,7 +83,7 @@
   </node>
   <node concept="1M2fIO" id="5jwDGo4A5$F">
     <property role="3GE5qa" value="Processes" />
-    <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     <node concept="9S07l" id="5jwDGo4A5$G" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4A5$H" role="2VODD2">
         <node concept="3cpWs6" id="5jwDGo4A5CA" role="3cqZAp">

@@ -555,5 +555,6 @@ float Env::get_protein_level(std::string protein_name) {
 		std::cerr << "ENV LOCATION X:" << this->Ex << std::endl;
 		std::cerr << "ENV LOCATION Y:" << this->Ey << std::endl;
 		std::cerr << "ENV LOCATION Z:" << this->Ez << std::endl;
+        exit(1);
     }
 }

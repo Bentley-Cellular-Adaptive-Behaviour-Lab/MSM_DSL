@@ -19,6 +19,7 @@ class World_Container;
 class MemAgent;
 class Tissue_Container;
 class Tissue_Monolayer;
+class Tissue_Vessel;
 class Cell;
 
 class BasicODEMemAgentTest : public ::testing::Test {
@@ -160,6 +161,18 @@ public:
 	static void cellJunction_system(const cellJunction_ode_states &x, cellJunction_ode_states &dxdt, double t);
 
 	void printCellProteinLevels(int timestep) const;
+};
+
+class NotchPathwayTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    World *world;
+    World_Container *worldContainer;
+    Tissue_Container *tissueContainer;
+    Tissue_Vessel *tissueVessel;
+    void addWorld(World *basicCellDistributionWorld);
 };
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);

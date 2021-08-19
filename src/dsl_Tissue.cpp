@@ -1,32 +1,31 @@
 
 #include "Tissue.h"
 void Tissue_Container::tissue_set_up() {
-    // Created using: NewTissues //
+    // Created using: Example1_Tissues //
 
     // Cell Type Declarations //
-    Cell_Type *CellType1_Type;
-    Cell_Type *CellType2_Type;
+    Cell_Type *Endothelial_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Flat *TissueType1_Type;
+    Tissue_Type_Cylindrical *Vessel_Type;
 
     // Coordinate Declarations //
-    Coordinates Tissue1_Pos;
+    Coordinates Vessel_Pos;
 
 
-    CellType1_Type = define_cell_type("CellType1", CELL_SHAPE_SQUARE, 5, 5);
-    CellType2_Type = define_cell_type("CellType2", CELL_SHAPE_SQUARE, 5, 5);
-    CellType1_Type->add_protein(new protein("A", PROTEIN_LOCATION_CELL, 500.0, true, 0.0, 1000.0));
-    CellType1_Type->add_protein(new protein("B", PROTEIN_LOCATION_CELL, 500.0, true, 0.0, 1000.0));
-    CellType2_Type->add_protein(new protein("D", PROTEIN_LOCATION_CELL, 0.0, true, 0.0, 100.0));
-    CellType2_Type->add_protein(new protein("E", PROTEIN_LOCATION_CELL, 0.0, true, 0.0, 100.0));
+    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
+    Endothelial_Type->add_protein(new protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, true, 0.0, 100.0));
+    Endothelial_Type->add_protein(new protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, true, 0.0, 100.0));
+    Endothelial_Type->add_protein(new protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, false, 0.0, 100.0));
+    Endothelial_Type->add_protein(new protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, true, 0.0, 100.0));
+    Endothelial_Type->add_protein(new protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, false, 0.0, 100.0));
 
     // Tissue Type Creation //
-    TissueType1_Type = define_tissue_type("TissueType1", CellType1_Type, CELL_CONFIGURATION_FLAT, 2, 1);
+    Vessel_Type = define_tissue_type("Vessel", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Tissue1_Pos = Coordinates(20, 30, 10);
-    create_tissue("Tissue1", TissueType1_Type, &(Tissue1_Pos));
+    Vessel_Pos = Coordinates(20, 30, 10);
+    create_tissue("Vessel", Vessel_Type, &(Vessel_Pos));
 }

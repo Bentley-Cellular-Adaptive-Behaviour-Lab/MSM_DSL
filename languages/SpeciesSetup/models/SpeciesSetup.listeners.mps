@@ -489,7 +489,7 @@
     </node>
   </node>
   <node concept="jA7cl" id="NorXrSjPpJ">
-    <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Modifier" />
+    <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     <node concept="3v3Etx" id="NorXrSjPqE" role="j$A37">
       <ref role="j_u2Y" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
       <node concept="3clFbS" id="NorXrSjPqF" role="2VODD2">

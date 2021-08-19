@@ -1,83 +1,107 @@
 #include "ODE.h"
 #include "memAgents.h"
+#include "EC.h"
 
-// Created using: Species //
+// Created using: Example1_Species //
 ODEs::ODEs() {
 }
 
-void ODEs::check_ODEs(std::string cell_type_name, MemAgent *memAgent) {
-    if (cell_type_name == "CellType1") {
-        CellType1_run_ODEs(memAgent);
-    }
-    if (cell_type_name == "CellType2") {
-        CellType2_run_ODEs(memAgent);
+void ODEs::check_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {
+    if (cell_type_name == "Endothelial") {
+        Endothelial_run_memAgent_ODEs(memAgent);
     }
 }
 
-void ODEs::CellType1_system(const CellType1_ode_states &x, CellType1_ode_states &dxdt, double t) {
-    // Species Definition //
-    double A = x[0];
-    double B = x[1];
-    double C = x[2];
-    // Parameter Definitions //
-    double Param1 = calc_Param1_rate();
-    double Param2 = calc_Param2_rate(Param1);
-    // ODE Definitions //
-    dxdt[0] = -1;
-    dxdt[1] = +1;
-    dxdt[2] = +Param2*1;
+void ODEs::check_cell_ODEs(EC *ec) {
+    if (ec->m_cell_type->m_name == "Endothelial") {
+        Endothelial_run_cell_ODEs(ec);
+    }
+}
+void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
+    double VEGF = x[0];
+    double VEGFR = x[1];
+    double VEGF_VEGFR = x[2];
+    double NOTCH = x[3];
+    double DLL4 = x[4];
+    double NOTCH_DLL4 = x[5];
+    double VEGF_VEGFR_FORWARD = calc_VEGF_VEGFR_FORWARD_rate();
+    double VEGF_VEGFR_REVERSE = calc_VEGF_VEGFR_REVERSE_rate();
+    double NOTCH_DLL4_FORWARD = calc_NOTCH_DLL4_FORWARD_rate();
+    double NOTCH_DLL4_REVERSE = calc_NOTCH_DLL4_REVERSE_rate();
+    dxdt[0] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
+    dxdt[1] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
+    dxdt[2] = +VEGF_VEGFR_FORWARD*1-VEGF_VEGFR_REVERSE*1;
+    dxdt[3] = -NOTCH_DLL4_FORWARD*1+NOTCH_DLL4_REVERSE*1;
+    dxdt[4] = -NOTCH_DLL4_FORWARD*1+NOTCH_DLL4_REVERSE*1;
+    dxdt[5] = +NOTCH_DLL4_FORWARD*1-NOTCH_DLL4_REVERSE*1;
 }
 
-void ODEs::CellType1_run_ODEs(MemAgent *memAgent) {
-    CellType1_ode_states current_states;
-    CellType1_ode_states new_states;
-    odeint::euler<CellType1_ode_states> stepper;
+void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
+    Endothelial_memAgent_ode_states current_states;
+    Endothelial_memAgent_ode_states new_states;
+    odeint::euler<Endothelial_memAgent_ode_states> stepper;
 
-    current_states[0] = memAgent->get_local_protein_level("A");
-    current_states[1] = memAgent->get_local_protein_level("B");
-    current_states[2] = memAgent->get_local_protein_level("C");
+    current_states[0] = memAgent->get_environment_protein_level("VEGF");
+    current_states[1] = memAgent->get_local_protein_level("VEGFR");
+    current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
+    current_states[3] = memAgent->get_junction_protein_level("NOTCH");
+    current_states[4] = memAgent->get_junction_protein_level("DLL4");
+    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4");
 
-    stepper.do_step(CellType1_system, current_states, 0.0, new_states, 1);
+    stepper.do_step(Endothelial_memAgent_system, current_states, 0.0, new_states, 1);
 
-    memAgent->distribute_calculated_proteins("A", new_states[0], true, false);
-    memAgent->distribute_calculated_proteins("B", new_states[1], true, false);
-    memAgent->distribute_calculated_proteins("C", new_states[2], true, false);
-
+    memAgent->distribute_calculated_proteins("VEGF", new_states[0], true, false);
+    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
+    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], false, true);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], true, true);
+    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
 }
 
-void ODEs::CellType2_system(const CellType2_ode_states &x, CellType2_ode_states &dxdt, double t) {
-    // Species Definition //
-    double D = x[0];
-    double E = x[1];
-    // Parameter Definitions //
-    double Param3 = calc_Param3_rate();
-    // ODE Definitions //
-    dxdt[0] = -Param3*1;
-    dxdt[1] = +Param3*1;
+void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
+    double NOTCH_DLL4 = x[0];
+    double VEGFR = x[1];
+    double VEGF_VEGFR = x[2];
+    double NOTCH = x[3];
+    double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate();
+    double NOTCH_UPREGULATION_MOD = calc_NOTCH_UPREGULATION_MOD_rate(VEGFR, VEGF_VEGFR);
+    dxdt[0] = 0;
+    dxdt[1] = -VEGFR_INHIBITION_MOD;
+    dxdt[2] = 0;
+    dxdt[3] = +NOTCH_UPREGULATION_MOD;
 }
 
-void ODEs::CellType2_run_ODEs(MemAgent *memAgent) {
-    CellType2_ode_states current_states;
-    CellType2_ode_states new_states;
-    odeint::euler<CellType2_ode_states> stepper;
+void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
+    Endothelial_cell_ode_states current_states;
+    Endothelial_cell_ode_states new_states;
+    odeint::euler<Endothelial_cell_ode_states> stepper;
 
-    current_states[0] = memAgent->get_local_protein_level("D");
-    current_states[1] = memAgent->get_local_protein_level("E");
+    current_states[0] = ec->get_cell_protein_level("NOTCH_DLL4");
+    current_states[1] = ec->get_cell_protein_level("VEGFR");
+    current_states[2] = ec->get_cell_protein_level("VEGF_VEGFR");
+    current_states[3] = ec->get_cell_protein_level("NOTCH");
 
-    stepper.do_step(CellType2_system, current_states, 0.0, new_states, 1);
+    stepper.do_step(Endothelial_cell_system, current_states, 0.0, new_states, 1);
 
-    memAgent->distribute_calculated_proteins("D", new_states[0], true, false);
-    memAgent->distribute_calculated_proteins("E", new_states[1], true, false);
-
+    ec->set_cell_protein_level("VEGFR", new_states[1]);
+    ec->set_cell_protein_level("NOTCH", new_states[3]);
 }
 
-
-static double calc_Param2_rate(double Param1) {
-    return Param1;
+static double calc_VEGF_VEGFR_FORWARD_rate() {
+    return 1.8;
 }
-static double calc_Param1_rate() {
-    return 1.0;
+static double calc_VEGF_VEGFR_REVERSE_rate() {
+    return 0.2;
 }
-static double calc_Param3_rate() {
-    return 2.0;
+static double calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR) {
+    return VEGFR/VEGF_VEGFR*2.0;
+}
+static double calc_NOTCH_DLL4_FORWARD_rate() {
+    return 1.8;
+}
+static double calc_NOTCH_DLL4_REVERSE_rate() {
+    return 0.2;
+}
+static double calc_VEGFR_INHIBITION_MOD_rate() {
+    return 0.5;
 }

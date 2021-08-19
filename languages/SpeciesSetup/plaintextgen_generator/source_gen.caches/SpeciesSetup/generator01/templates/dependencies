@@ -2,6 +2,8 @@
 <dependenciesRoot>
   <dependency className="SpeciesSetup.generator01.templates.QueriesGenerated">
     <classNode dependClassName="SpeciesSetup.behavior.Parameter__BehaviorDescriptor" />
+    <classNode dependClassName="SpeciesSetup.behavior.Reaction__BehaviorDescriptor" />
+    <classNode dependClassName="SpeciesSetup.behavior.Regulation__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

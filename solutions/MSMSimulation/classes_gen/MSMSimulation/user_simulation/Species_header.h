@@ -8,8 +8,10 @@ class MemAgent;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 2> CellType1_ode_states;
-typedef boost::array<double, 2> CellType2_ode_states;
+typedef boost::array<double, 3> CellType1_memAgent_ode_states;
+typedef boost::array<double, 2> CellType2_memAgent_ode_states;
+typedef boost::array<double, 3> CellType1_cell_ode_states;
+typedef boost::array<double, 2> CellType2_cell_ode_states;
 
 class ODEs {
 public:

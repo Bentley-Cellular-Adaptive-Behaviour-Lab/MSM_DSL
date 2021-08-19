@@ -2052,11 +2052,14 @@ CMakeFiles/springAgent.dir/src/ODE.cpp.obj: \
  ../libraries/boost/winapi/get_current_thread.hpp \
  ../libraries/boost/winapi/get_current_thread_id.hpp \
  ../libraries/boost/winapi/thread.hpp \
+ ../src/EC.h \
  ../src/ODE.cpp \
  ../src/ODE.h \
+ ../src/Tissue.h \
  ../src/memAgents.h \
  ../src/objects.h \
  ../src/protein.h \
+ ../src/space.h \
  ../src/utils.h
 CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj: \
  ../src/ScreenRecording.cpp \

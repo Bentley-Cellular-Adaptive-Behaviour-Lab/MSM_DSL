@@ -13,12 +13,13 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor mySpeciesContainer__BehaviorDescriptor = new SpeciesContainer__BehaviorDescriptor();
+  private final BHDescriptor myReaction__BehaviorDescriptor = new Reaction__BehaviorDescriptor();
   private final BHDescriptor mySpecies__BehaviorDescriptor = new Species__BehaviorDescriptor();
   private final BHDescriptor myParameter__BehaviorDescriptor = new Parameter__BehaviorDescriptor();
   private final BHDescriptor myReaction_Term__BehaviorDescriptor = new Reaction_Term__BehaviorDescriptor();
   private final BHDescriptor myReversibleReaction__BehaviorDescriptor = new ReversibleReaction__BehaviorDescriptor();
   private final BHDescriptor myIrreversibleReaction__BehaviorDescriptor = new IrreversibleReaction__BehaviorDescriptor();
-  private final BHDescriptor myModifier__BehaviorDescriptor = new Modifier__BehaviorDescriptor();
+  private final BHDescriptor myRegulation__BehaviorDescriptor = new Regulation__BehaviorDescriptor();
 
   public BehaviorAspectDescriptor() {
   }
@@ -30,20 +31,22 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myIrreversibleReaction__BehaviorDescriptor;
       case 1:
-        return myModifier__BehaviorDescriptor;
-      case 2:
         return myParameter__BehaviorDescriptor;
+      case 2:
+        return myReaction__BehaviorDescriptor;
       case 3:
         return myReaction_Term__BehaviorDescriptor;
       case 4:
-        return myReversibleReaction__BehaviorDescriptor;
+        return myRegulation__BehaviorDescriptor;
       case 5:
-        return mySpecies__BehaviorDescriptor;
+        return myReversibleReaction__BehaviorDescriptor;
       case 6:
+        return mySpecies__BehaviorDescriptor;
+      case 7:
         return mySpeciesContainer__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL), MetaIdFactory.conceptId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL)).seal();
 }
