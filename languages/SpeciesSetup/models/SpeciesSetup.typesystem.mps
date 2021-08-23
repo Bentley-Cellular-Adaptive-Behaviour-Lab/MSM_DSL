@@ -176,6 +176,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -220,6 +221,7 @@
       <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
         <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
+      <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
     </language>
   </registry>
   <node concept="18kY7G" id="2Hxmt3eYkCd">
@@ -4916,6 +4918,158 @@
     <node concept="1YaCAy" id="15xQgrjv53g" role="1YuTPh">
       <property role="TrG5h" value="species" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="xhYrIU86oV">
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="check_ReactionHasProducts" />
+    <node concept="3clFbS" id="xhYrIU86oW" role="18ibNy">
+      <node concept="3clFbJ" id="xhYrIU8c8H" role="3cqZAp">
+        <node concept="3clFbS" id="xhYrIU8c8I" role="3clFbx">
+          <node concept="2MkqsV" id="xhYrIU8c8J" role="3cqZAp">
+            <node concept="Xl_RD" id="xhYrIU8c8K" role="2MkJ7o">
+              <property role="Xl_RC" value="Reactions must have at least one product." />
+            </node>
+            <node concept="1YBJjd" id="xhYrIU8c8L" role="1urrMF">
+              <ref role="1YBMHb" node="xhYrIU86pm" resolve="reaction" />
+            </node>
+          </node>
+        </node>
+        <node concept="17R0WA" id="xhYrIU8c8M" role="3clFbw">
+          <node concept="3cmrfG" id="xhYrIU8c8N" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="xhYrIU8c8O" role="3uHU7B">
+            <node concept="2OqwBi" id="xhYrIU8c8P" role="2Oq$k0">
+              <node concept="1YBJjd" id="xhYrIU8c8Q" role="2Oq$k0">
+                <ref role="1YBMHb" node="xhYrIU86pm" resolve="reaction" />
+              </node>
+              <node concept="3Tsc0h" id="xhYrIU8c8R" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVfjV" resolve="Product_Terms" />
+              </node>
+            </node>
+            <node concept="34oBXx" id="xhYrIU8c8S" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xhYrIU86pm" role="1YuTPh">
+      <property role="TrG5h" value="reaction" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="xhYrIU86pv">
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="check_ReactionHasReactants" />
+    <node concept="3clFbS" id="xhYrIU86pw" role="18ibNy">
+      <node concept="3clFbJ" id="xhYrIU86q4" role="3cqZAp">
+        <node concept="3clFbS" id="xhYrIU86q6" role="3clFbx">
+          <node concept="2MkqsV" id="xhYrIU8c66" role="3cqZAp">
+            <node concept="Xl_RD" id="xhYrIU8c6l" role="2MkJ7o">
+              <property role="Xl_RC" value="Reactions must have at least one reactant." />
+            </node>
+            <node concept="1YBJjd" id="xhYrIU8c8l" role="1urrMF">
+              <ref role="1YBMHb" node="xhYrIU86px" resolve="reaction" />
+            </node>
+          </node>
+        </node>
+        <node concept="17R0WA" id="xhYrIU8c3F" role="3clFbw">
+          <node concept="3cmrfG" id="xhYrIU8c4Z" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="xhYrIU88rS" role="3uHU7B">
+            <node concept="2OqwBi" id="xhYrIU86_X" role="2Oq$k0">
+              <node concept="1YBJjd" id="xhYrIU86qj" role="2Oq$k0">
+                <ref role="1YBMHb" node="xhYrIU86px" resolve="reaction" />
+              </node>
+              <node concept="3Tsc0h" id="xhYrIU86MQ" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVfjT" resolve="Reactant_Terms" />
+              </node>
+            </node>
+            <node concept="34oBXx" id="xhYrIU89Ln" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xhYrIU86px" role="1YuTPh">
+      <property role="TrG5h" value="reaction" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjI" resolve="Reaction" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="xhYrIU9tzn">
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="check_RegulationHasSource" />
+    <node concept="3clFbS" id="xhYrIU9tzo" role="18ibNy">
+      <node concept="3clFbJ" id="xhYrIU9tzV" role="3cqZAp">
+        <node concept="2OqwBi" id="xhYrIU9uaa" role="3clFbw">
+          <node concept="2OqwBi" id="xhYrIU9tJL" role="2Oq$k0">
+            <node concept="1YBJjd" id="xhYrIU9t$7" role="2Oq$k0">
+              <ref role="1YBMHb" node="xhYrIU9tzM" resolve="regulation" />
+            </node>
+            <node concept="3TrEf2" id="xhYrIU9tWE" role="2OqNvi">
+              <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1H" resolve="Source" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="xhYrIU9urr" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="xhYrIU9tzX" role="3clFbx">
+          <node concept="2MkqsV" id="xhYrIU9uxT" role="3cqZAp">
+            <node concept="2OqwBi" id="xhYrIU9v6A" role="1urrMF">
+              <node concept="1YBJjd" id="xhYrIU9u$I" role="2Oq$k0">
+                <ref role="1YBMHb" node="xhYrIU9tzM" resolve="regulation" />
+              </node>
+              <node concept="3TrEf2" id="xhYrIU9vxN" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1H" resolve="Source" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="xhYrIU9uHX" role="2MkJ7o">
+              <property role="Xl_RC" value="Regulation interactions must have a source species." />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xhYrIU9tzM" role="1YuTPh">
+      <property role="TrG5h" value="regulation" />
+      <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="xhYrIU9vCE">
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="check_RegulationHasTarget" />
+    <node concept="3clFbS" id="xhYrIU9vCF" role="18ibNy">
+      <node concept="3clFbJ" id="xhYrIU9vDA" role="3cqZAp">
+        <node concept="2OqwBi" id="xhYrIU9wgw" role="3clFbw">
+          <node concept="2OqwBi" id="xhYrIU9vPs" role="2Oq$k0">
+            <node concept="1YBJjd" id="xhYrIU9vDM" role="2Oq$k0">
+              <ref role="1YBMHb" node="xhYrIU9vD5" resolve="regulation" />
+            </node>
+            <node concept="3TrEf2" id="xhYrIU9w2l" role="2OqNvi">
+              <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1E" resolve="Target" />
+            </node>
+          </node>
+          <node concept="3w_OXm" id="xhYrIU9wv7" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="xhYrIU9vDC" role="3clFbx">
+          <node concept="2MkqsV" id="xhYrIU9w_5" role="3cqZAp">
+            <node concept="2OqwBi" id="xhYrIU9w_6" role="1urrMF">
+              <node concept="1YBJjd" id="xhYrIU9w_7" role="2Oq$k0">
+                <ref role="1YBMHb" node="xhYrIU9vD5" resolve="regulation" />
+              </node>
+              <node concept="3TrEf2" id="xhYrIU9wQY" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1E" resolve="Target" />
+              </node>
+            </node>
+            <node concept="Xl_RD" id="xhYrIU9w_9" role="2MkJ7o">
+              <property role="Xl_RC" value="Regulation interactions must have a target species." />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="xhYrIU9vD5" role="1YuTPh">
+      <property role="TrG5h" value="regulation" />
+      <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     </node>
   </node>
 </model>

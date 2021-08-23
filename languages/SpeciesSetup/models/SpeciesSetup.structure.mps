@@ -95,11 +95,6 @@
     <node concept="PrWs8" id="109yD1swrWZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyi" id="5jwDGo4BRDq" role="1TKVEl">
-      <property role="IQ2nx" value="6116071663380429402" />
-      <property role="TrG5h" value="UsingSpeciesInRates" />
-      <ref role="AX2Wp" node="5jwDGo4BRDf" resolve="UseSpeciesInRate" />
-    </node>
     <node concept="1TJgyj" id="6Y2UmXTDkR$" role="1TKVEi">
       <property role="IQ2ns" value="8035241350173904356" />
       <property role="20kJfa" value="Tissue_Container" />
@@ -192,11 +187,6 @@
       <property role="IQ2nx" value="3125878369731567265" />
       <property role="TrG5h" value="Location" />
       <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
-    </node>
-    <node concept="1TJgyi" id="5jwSz93Vj8S" role="1TKVEl">
-      <property role="IQ2nx" value="6116136999484994104" />
-      <property role="TrG5h" value="UsesValue" />
-      <ref role="AX2Wp" node="5jwSz93Vj8N" resolve="NeighbourValues" />
     </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
@@ -471,22 +461,6 @@
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
   </node>
-  <node concept="25R3W" id="5jwDGo4BRDf">
-    <property role="3F6X1D" value="6116071663380429391" />
-    <property role="TrG5h" value="UseSpeciesInRate" />
-    <property role="3GE5qa" value="Species" />
-    <ref role="1H5jkz" node="5jwDGo4BRDg" resolve="Yes" />
-    <node concept="25R33" id="5jwDGo4BRDg" role="25R1y">
-      <property role="3tVfz5" value="6116071663380429392" />
-      <property role="TrG5h" value="Yes" />
-      <property role="1L1pqM" value="Yes" />
-    </node>
-    <node concept="25R33" id="5jwDGo4BRDh" role="25R1y">
-      <property role="3tVfz5" value="6116071663380429393" />
-      <property role="TrG5h" value="No" />
-      <property role="1L1pqM" value="No" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="20T6jFVj3f3">
     <property role="EcuMT" value="2321914824001074115" />
     <property role="3GE5qa" value="Processes" />
@@ -540,6 +514,16 @@
       <property role="IQ2nx" value="3767155488087495687" />
       <property role="TrG5h" value="binIndex" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="xhYrITVX8D" role="1TKVEl">
+      <property role="IQ2nx" value="599534810090689065" />
+      <property role="TrG5h" value="targetUsesNeighbourValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="xhYrITX1su" role="1TKVEl">
+      <property role="IQ2nx" value="599534810090968862" />
+      <property role="TrG5h" value="targetUsesCellValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
       <property role="IQ2ns" value="3767155488087495688" />

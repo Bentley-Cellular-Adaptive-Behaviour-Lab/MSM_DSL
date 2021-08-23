@@ -728,7 +728,7 @@
         <node concept="VPM3Z" id="6pt0UY9wRb0" role="3F10Kt" />
         <node concept="3XFhqQ" id="6pt0UY9wRb1" role="3EZMnx" />
         <node concept="3F0ifn" id="6pt0UY9wRb2" role="3EZMnx">
-          <property role="3F0ifm" value="Production :" />
+          <property role="3F0ifm" value="Production Rate:" />
           <node concept="2biZxu" id="2FvyIAlCS8Y" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -763,7 +763,7 @@
         <node concept="VPM3Z" id="6pt0UY9wRbO" role="3F10Kt" />
         <node concept="3XFhqQ" id="6pt0UY9wRbP" role="3EZMnx" />
         <node concept="3F0ifn" id="6pt0UY9wRbQ" role="3EZMnx">
-          <property role="3F0ifm" value="Degradation :" />
+          <property role="3F0ifm" value="Degradation Rate:" />
           <node concept="2biZxu" id="2FvyIAlCS92" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -794,43 +794,7 @@
         </node>
         <node concept="2iRfu4" id="6pt0UY9wRbS" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="5jwSz93VTJc" role="3EZMnx">
-        <node concept="VPM3Z" id="5jwSz93VTJe" role="3F10Kt" />
-        <node concept="3XFhqQ" id="5jwSz93VTJV" role="3EZMnx" />
-        <node concept="3F0ifn" id="5jwSz93VTK1" role="3EZMnx">
-          <property role="3F0ifm" value="Uses :" />
-          <node concept="2biZxu" id="2FvyIAlCS96" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlCS97" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="5jwSz93VTK9" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:5jwSz93Vj8S" resolve="UsesValue" />
-          <node concept="VechU" id="5jwSz93VTKe" role="3F10Kt">
-            <property role="Vb096" value="fLwANPu/blue" />
-          </node>
-          <node concept="Vb9p2" id="59YMCJZYkBA" role="3F10Kt">
-            <property role="Vbekb" value="g1_k_vY/BOLD" />
-          </node>
-          <node concept="2biZxu" id="2FvyIAlCS9A" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlCS9B" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="2iRfu4" id="5jwSz93VTJh" role="2iSdaV" />
-      </node>
-      <node concept="3F0ifn" id="2Hxmt3eVq_h" role="3EZMnx">
-        <node concept="2biZxu" id="2FvyIAlHaCu" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
-        </node>
-        <node concept="VSNWy" id="2FvyIAlHaCv" role="3F10Kt">
-          <property role="1lJzqX" value="16" />
-        </node>
-      </node>
+      <node concept="3F0ifn" id="xhYrIU6uVJ" role="3EZMnx" />
       <node concept="2iRkQZ" id="2Hxmt3eVhfg" role="2iSdaV" />
     </node>
   </node>
@@ -887,7 +851,7 @@
         </node>
       </node>
       <node concept="3F0ifn" id="4dvrVnANx3A" role="3EZMnx">
-        <property role="3F0ifm" value="&lt;-N" />
+        <property role="3F0ifm" value="&lt;-C" />
         <node concept="pkWqt" id="4dvrVnANx3T" role="pqm2j">
           <node concept="3clFbS" id="4dvrVnANx3U" role="2VODD2">
             <node concept="3clFbF" id="4dvrVnANx3Z" role="3cqZAp">

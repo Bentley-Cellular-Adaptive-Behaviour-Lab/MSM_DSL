@@ -11,6 +11,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
       </concept>
@@ -135,7 +136,7 @@
       <node concept="3clFbS" id="4dvrVnANxDS" role="2VODD2">
         <node concept="3clFbF" id="4dvrVnANxJc" role="3cqZAp">
           <node concept="Xl_RD" id="4dvrVnANxJb" role="3clFbG">
-            <property role="Xl_RC" value="Species Checks Neighbour?" />
+            <property role="Xl_RC" value="Check adjacent cell?" />
           </node>
         </node>
       </node>
@@ -192,24 +193,47 @@
     <node concept="2SaL7w" id="4dvrVnANy1Z" role="2ZfVeh">
       <node concept="3clFbS" id="4dvrVnANy20" role="2VODD2">
         <node concept="3clFbJ" id="4dvrVnANy5Y" role="3cqZAp">
-          <node concept="17R0WA" id="4dvrVnANzuq" role="3clFbw">
-            <node concept="2OqwBi" id="4dvrVnAN$1J" role="3uHU7w">
-              <node concept="1XH99k" id="4dvrVnANzAJ" role="2Oq$k0">
-                <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
-              </node>
-              <node concept="2ViDtV" id="4dvrVnAN$iM" role="2OqNvi">
-                <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
-              </node>
-            </node>
-            <node concept="2OqwBi" id="4dvrVnANyEf" role="3uHU7B">
-              <node concept="2OqwBi" id="4dvrVnANyjE" role="2Oq$k0">
-                <node concept="2Sf5sV" id="4dvrVnANy6t" role="2Oq$k0" />
-                <node concept="3TrEf2" id="4dvrVnANysR" role="2OqNvi">
-                  <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfjR" resolve="Species_Ref" />
+          <node concept="22lmx$" id="xhYrIUl2Rp" role="3clFbw">
+            <node concept="17R0WA" id="xhYrIUl4m_" role="3uHU7w">
+              <node concept="2OqwBi" id="xhYrIUl3_A" role="3uHU7B">
+                <node concept="2OqwBi" id="xhYrIUl376" role="2Oq$k0">
+                  <node concept="2Sf5sV" id="xhYrIUl2T9" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="xhYrIUl3pa" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfjR" resolve="Species_Ref" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="xhYrIUl3N_" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
                 </node>
               </node>
-              <node concept="3TrcHB" id="4dvrVnANz0g" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+              <node concept="2OqwBi" id="xhYrIUl4oY" role="3uHU7w">
+                <node concept="1XH99k" id="xhYrIUl4oZ" role="2Oq$k0">
+                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                </node>
+                <node concept="2ViDtV" id="xhYrIUl4p0" role="2OqNvi">
+                  <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
+                </node>
+              </node>
+            </node>
+            <node concept="17R0WA" id="4dvrVnANzuq" role="3uHU7B">
+              <node concept="2OqwBi" id="4dvrVnANyEf" role="3uHU7B">
+                <node concept="2OqwBi" id="4dvrVnANyjE" role="2Oq$k0">
+                  <node concept="2Sf5sV" id="4dvrVnANy6t" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="4dvrVnANysR" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfjR" resolve="Species_Ref" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="4dvrVnANz0g" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4dvrVnAN$1J" role="3uHU7w">
+                <node concept="1XH99k" id="4dvrVnANzAJ" role="2Oq$k0">
+                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                </node>
+                <node concept="2ViDtV" id="4dvrVnAN$iM" role="2OqNvi">
+                  <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
+                </node>
               </node>
             </node>
           </node>
