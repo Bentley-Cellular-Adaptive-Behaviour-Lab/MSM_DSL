@@ -899,7 +899,7 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 
 /*****************************************************************************************
 *  Name:		NotchPathwayTest::SetUp()
-*  Description: - Creates a vessel consisting of two cells, and updates an ODE system based
+*  Description: - Creates a monolayer consisting of two cells, and updates an ODE system based
 *                 on the Notch-Dll4 pathway.
 *               - Relies on gene regulation occurring within each cell, and junctional proteins
 *                 acting across the junction.
@@ -913,7 +913,117 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 ******************************************************************************************/
 
 void NotchPathwayTest::SetUp() {
+    //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
     addWorldContainer(w_container);
+    addWorld(w_container->get_world());
+    // Adds VEGF to the environment.
+    setupEnvironment();
+    setupCells();
+}
+
+void NotchPathwayTest::addWorld(World *notchPathwayWorld) {
+    this->world = notchPathwayWorld;
+}
+void NotchPathwayTest::addWorldContainer(World_Container *notchPathwayWorldContainer) {
+    this->worldContainer = notchPathwayWorldContainer;
+}
+void NotchPathwayTest::setupEnvironment() {
+    Env *ep;
+    for (int x = 0; x < world->gridXDimensions; x++) {
+        for (int y = 0; y < world->gridYDimensions; y++) {
+            for (int z = 0; z < world->gridYDimensions; z++) {
+                if (world->grid[x][y][z].type == const_E) {
+                    auto proteinB = new protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 100, false, 0, 1000);
+                    ep = world->grid[x][y][z].Eid;
+                    ep->owned_proteins.push_back(proteinB);
+                }
+            }
+        }
+    }
+}
+void NotchPathwayTest::setupCells() {
+    // Actually sets up a tissue monolayer
+    this->tissueContainer = new Tissue_Container(this->world);
+
+    // Create a new cell type for our cell, with a total of 25 memAgents.
+    auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
+    auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
+
+    basicCellType->add_protein(new protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 100, false, 0, 10000));
+    basicCellType->add_protein(new protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 100, false, 0, 10000));
+    basicCellType->add_protein(new protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 100, false, 0, 10000));
+    basicCellType->add_protein(new protein("DLL4", PROTEIN_LOCATION_JUNCTION, 100, true, 0, 10000));
+    basicCellType->add_protein(new protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 100, true, 0, 10000));
+
+    auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
+    // Create the tissue using the defined tissue container.
+    this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
+    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
+
+    // Force add the proteins to the memAgents and check whether they're at a junction.
+    // TODO: ASK KATIE ABOUT WHETHER MEMAGENTS ARE DEFINED AS JUNCTIONAL OR NOT.
+    for (auto cell : this->tissueMonolayer->m_cell_agents) {
+        for (auto memAgent : cell->nodeAgents) {
+            memAgent->add_cell_proteins();
+            memAgent->JunctionTest(true);
+        }
+    }
+}
+void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
+    notch_memAgent_ode_states current_states;
+    notch_memAgent_ode_states new_states;
+    odeint::euler<notch_memAgent_ode_states> stepper;
+
+    current_states[0] = memAgent->get_environment_protein_level("VEGF");
+    current_states[1] = memAgent->get_local_protein_level("VEGFR");
+    current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
+    current_states[3] = memAgent->get_junction_protein_level("NOTCH");
+    current_states[4] = memAgent->get_junction_protein_level("DLL4");
+    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4");
+
+    stepper.do_step(NotchPathway_memAgent_system, current_states, 0.0, new_states, 1);
+
+    memAgent->distribute_calculated_proteins("VEGF", new_states[0], true, false);
+    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
+    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], false, true);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], true, true);
+    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
+}
+void NotchPathwayTest::run_Cell_ODE(EC *ec) {
+
+}
+void NotchPathwayTest::NotchPathway_memAgent_system(const notch_memAgent_ode_states &x, notch_memAgent_ode_states &dxdt, double t) {
+    double VEGF = x[0];
+    double VEGFR = x[1];
+    double VEGF_VEGFR = x[2];
+    double NOTCH = x[3];
+    double DLL4 = x[4];
+    double NOTCH_DLL4 = x[5];
+    double VEGF_VEGFR_FORWARD = VEGF * VEGFR * 0.1;
+    double VEGF_VEGFR_REVERSE = VEGF_VEGFR * 0.001;
+    double NOTCH_DLL4_FORWARD = NOTCH * DLL4 * 0.1;
+    double NOTCH_DLL4_REVERSE = NOTCH_DLL4 * 0.001;
+    dxdt[0] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
+    dxdt[1] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
+    dxdt[2] = +VEGF_VEGFR_FORWARD*1-VEGF_VEGFR_REVERSE*1;
+    dxdt[3] = -NOTCH_DLL4_FORWARD*1+NOTCH_DLL4_REVERSE*1;
+    dxdt[4] = -NOTCH_DLL4_FORWARD*1+NOTCH_DLL4_REVERSE*1;
+    dxdt[5] = +NOTCH_DLL4_FORWARD*1-NOTCH_DLL4_REVERSE*1;
+}
+void NotchPathwayTest::NotchPathway_cell_system(const notch_cell_ode_states &x, notch_cell_ode_states &dxdt, double t) {
+    double NOTCH_DLL4 = x[0];
+    double VEGFR = x[1];
+    double VEGF_VEGFR = x[2];
+    double NOTCH = x[3];
+    double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate();
+    double NOTCH_UPREGULATION_MOD = calc_NOTCH_UPREGULATION_MOD_rate(VEGFR, VEGF_VEGFR);
+    dxdt[0] = 0;
+    dxdt[1] = -VEGFR_INHIBITION_MOD;
+    dxdt[2] = 0;
+    dxdt[3] = +NOTCH_UPREGULATION_MOD;
+}
+void NotchPathwayTest::printCellProteinLevels(int timestep) const {
 
 }
