@@ -53,8 +53,8 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
     memAgent->distribute_calculated_proteins("VEGF", new_states[0], true, false);
     memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
     memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
-    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], false, true);
-    memAgent->distribute_calculated_proteins("DLL4", new_states[4], true, true);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true);
     memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
 }
 
@@ -62,7 +62,7 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     double NOTCH_DLL4 = x[0];
     double VEGFR = x[1];
     double VEGF_VEGFR = x[2];
-    double NOTCH = x[3];
+    double DLL4 = x[3];
     double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate();
     double NOTCH_UPREGULATION_MOD = calc_NOTCH_UPREGULATION_MOD_rate(VEGFR, VEGF_VEGFR);
     dxdt[0] = 0;
@@ -79,12 +79,12 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
     current_states[0] = ec->get_cell_protein_level("NOTCH_DLL4");
     current_states[1] = ec->get_cell_protein_level("VEGFR");
     current_states[2] = ec->get_cell_protein_level("VEGF_VEGFR");
-    current_states[3] = ec->get_cell_protein_level("NOTCH");
+    current_states[3] = ec->get_cell_protein_level("DLL4");
 
     stepper.do_step(Endothelial_cell_system, current_states, 0.0, new_states, 1);
 
     ec->set_cell_protein_level("VEGFR", new_states[1]);
-    ec->set_cell_protein_level("NOTCH", new_states[3]);
+    ec->set_cell_protein_level("DLL4", new_states[3]);
 }
 
 static double calc_VEGF_VEGFR_FORWARD_rate() {

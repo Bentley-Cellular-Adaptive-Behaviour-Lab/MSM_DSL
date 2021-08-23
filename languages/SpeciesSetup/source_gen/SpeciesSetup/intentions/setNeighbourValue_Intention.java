@@ -38,7 +38,7 @@ public final class setNeighbourValue_Intention extends AbstractIntentionDescript
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (Objects.equals(SPropertyOperations.getEnum(SLinkOperations.getTarget(node, LINKS.Species_Ref$Wnde), PROPS.Location$Gx$s), SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+    if (Objects.equals(SPropertyOperations.getEnum(SLinkOperations.getTarget(node, LINKS.Species_Ref$Wnde), PROPS.Location$Gx$s), SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION")) || Objects.equals(SPropertyOperations.getEnum(SLinkOperations.getTarget(node, LINKS.Species_Ref$Wnde), PROPS.Location$Gx$s), SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
       return true;
     } else {
       return false;
@@ -59,7 +59,7 @@ public final class setNeighbourValue_Intention extends AbstractIntentionDescript
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Species Checks Neighbour?";
+      return "Check adjacent cell?";
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {

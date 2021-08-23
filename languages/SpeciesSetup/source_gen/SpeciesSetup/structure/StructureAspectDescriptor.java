@@ -40,7 +40,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptUpregulates = createDescriptorForUpregulates();
   /*package*/ final EnumerationDescriptor myEnumerationNeighbourValues = new EnumerationDescriptor_NeighbourValues();
   /*package*/ final EnumerationDescriptor myEnumerationSpeciesLocation = new EnumerationDescriptor_SpeciesLocation();
-  /*package*/ final EnumerationDescriptor myEnumerationUseSpeciesInRate = new EnumerationDescriptor_UseSpeciesInRate();
   private final LanguageConceptSwitch myIndexSwitch;
 
   public StructureAspectDescriptor() {
@@ -117,7 +116,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<DataTypeDescriptor> getDataTypeDescriptors() {
-    return Arrays.asList(myEnumerationNeighbourValues, myEnumerationSpeciesLocation, myEnumerationUseSpeciesInRate);
+    return Arrays.asList(myEnumerationNeighbourValues, myEnumerationSpeciesLocation);
   }
 
   /*package*/ int internalIndex(SAbstractConcept c) {
@@ -264,7 +263,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540207");
     b.version(2);
     b.property("Location", 0x2b6159d0ceed5ea1L).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L)).origin("3125878369731567265").done();
-    b.property("UsesValue", 0x54e0e23243ed3238L).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0e23243ed3233L)).origin("6116136999484994104").done();
     b.associate("Degradation_Term", 0x665d03af8984818bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063115").done();
     b.associate("Production_Term", 0x665d03af898481a1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063137").done();
     b.aggregate("Starting_Concentration", 0x375d1bec6ae084b4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("3989375547139458228").done();
@@ -282,6 +280,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3767155488087495686");
     b.version(2);
     b.property("binIndex", 0x34479ff5091e5407L).type(PrimitiveTypeId.INTEGER).origin("3767155488087495687").done();
+    b.property("targetUsesNeighbourValue", 0x851f9bbb9efd229L).type(PrimitiveTypeId.BOOLEAN).origin("599534810090689065").done();
+    b.property("targetUsesCellValue", 0x851f9bbb9f4171eL).type(PrimitiveTypeId.BOOLEAN).origin("599534810090968862").done();
     b.associate("target", 0x34479ff5091e5408L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3767155488087495688").done();
     return b.create();
   }
@@ -291,7 +291,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540203");
     b.version(2);
-    b.property("UsingSpeciesInRates", 0x54e0a6c6049f7a5aL).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049f7a4fL)).origin("6116071663380429402").done();
     b.associate("Tissue_Container", 0x6f82e96f79a54de4L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L).optional(false).origin("8035241350173904356").done();
     b.aggregate("Species", 0x2b6159d0ceecf740L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(true).ordered(true).multiple(true).origin("3125878369731540800").done();
     b.aggregate("Processes", 0x2b6159d0ceecf742L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c6049cf033L).optional(true).ordered(true).multiple(true).origin("3125878369731540802").done();

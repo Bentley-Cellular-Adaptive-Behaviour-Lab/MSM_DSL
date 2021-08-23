@@ -3039,6 +3039,8 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
+// TODO: This function!
+
 /*****************************************************************************************
 *  Name:		distribute_calculated_proteins
 *  Description: Takes in a given protein level, counts the number of memAgents that own
@@ -3047,7 +3049,7 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool is_junction_protein) {
+void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
@@ -3091,8 +3093,7 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			m = i - 1;
 			n = j + 1;
 			p = k;
-		}
-			// Layer below.
+		} // Layer below.
 		else if (x == 8) {
 			m = i + 1;
 			n = j - 1;
@@ -3129,8 +3130,7 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			m = i;
 			n = j;
 			p = k - 1;
-		}
-			// Layer above.
+		} // Layer above.
 		else if (x == 17) {
 			m = i + 1;
 			n = j - 1;
@@ -3175,14 +3175,10 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
-//							if (memAgent->junction && is_junction_protein) {
-//								relevant_memAgents.push_back(memAgent);
-//							} else if (!memAgent->junction && !is_junction_protein) {
-//								relevant_memAgents.push_back(memAgent);
-//							}
                             relevant_memAgents.push_back(memAgent);
 						}
-					} else if (!affects_this_cell) {
+					}
+					if (affects_neighbour_cell) {
 						// Check for memAgents in neighbouring junctions that have the protein.
 						if (memAgent->junction) {
 							if (memAgent->has_protein(protein_name) && this->Cell != memAgent->Cell) {
@@ -3199,8 +3195,8 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell && this->FIL != NONE) {
 							relevant_memAgents.push_back(memAgent);
 						}
-					} else if (!affects_this_cell) {
-						// TODO: DOUBLE-CHECK THIS.
+					}
+					if (affects_neighbour_cell) {
 						// Check for memAgents in neighbouring cells that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell != memAgent->Cell && this->FIL != NONE) {
 							relevant_memAgents.push_back(memAgent);

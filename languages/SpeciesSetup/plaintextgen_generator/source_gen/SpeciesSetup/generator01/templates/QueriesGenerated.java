@@ -12,15 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import java.util.Objects;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import SpeciesSetup.behavior.SpeciesContainer__BehaviorDescriptor;
 import SpeciesSetup.behavior.Parameter__BehaviorDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import SpeciesSetup.behavior.Reaction__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import SpeciesSetup.behavior.Regulation__BehaviorDescriptor;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -219,16 +219,14 @@ public class QueriesGenerated extends QueryProviderBase {
     return String.valueOf(SPropertyOperations.getInteger(_context.getNode(), PROPS.binIndex$nKRa));
   }
   public static Object propertyMacro_GetValue_1_32(final PropertyMacroContext _context) {
-    if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L)) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), PROPS.targetUsesCellValue$6tnC)) {
       return "true";
-    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3235L)) {
-      return "false";
     } else {
-      return "VALUE_NOT_FOUND";
+      return "false";
     }
   }
   public static Object propertyMacro_GetValue_1_33(final PropertyMacroContext _context) {
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$nL6b), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesSetup.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), PROPS.targetUsesNeighbourValue$xIQB)) {
       return "true";
     } else {
       return "false";
@@ -566,14 +564,32 @@ public class QueriesGenerated extends QueryProviderBase {
     // Create an object which tracks the needed index for each species, if it is involved in a reaction the cell type participates in.
     int count = 0;
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
+      boolean participatesInReaction = false;
+      boolean usesCellValue = false;
+      boolean usesNeighbourValue = false;
+      // Check over the reactions, if the species uses the cell or neighbour value even once, then set these to true.
+      // Then, if it is used even once in a reaction, create a species bin and update the uses values for that bin accordingly.
+      // N.B. Checking of uses values only occurs here - in other cases, we don't care about them.
       for (SNode reaction : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialReactions_id6Hz4f3DkFjb.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesSetup.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.target$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This boolean is only ever going to be set to true from false - same with the uses booleans.
+          participatesInReaction = true;
+          if ((boolean) Reaction__BehaviorDescriptor.termsUseCellValue_idxhYrIU0BAr.invoke(reaction, species)) {
+            usesCellValue = true;
+          }
+          if ((boolean) Reaction__BehaviorDescriptor.termsUseNeighbourValue_idxhYrIU13P$.invoke(reaction, species)) {
+            usesNeighbourValue = true;
+          }
         }
+      }
+      if (participatesInReaction) {
+        SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesSetup.structure.SpeciesBin"));
+        SLinkOperations.setTarget(newBin, LINKS.target$nL6b, species);
+        SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+        SPropertyOperations.assign(newBin, PROPS.targetUsesCellValue$6tnC, usesCellValue);
+        SPropertyOperations.assign(newBin, PROPS.targetUsesNeighbourValue$xIQB, usesNeighbourValue);
+        ListSequence.fromList(bins).addElement(newBin);
+        count++;
       }
     }
     return bins;
@@ -1010,8 +1026,8 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("3770509380389265907", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
     pvqMethods.put("3770509380388381712", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
     pvqMethods.put("3770509380388381723", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INDEX"));
-    pvqMethods.put("3770509380388381733", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "AFFECTS_THIS_CELL"));
-    pvqMethods.put("3767155488089679159", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "IS_JUNCTION_PROTEIN"));
+    pvqMethods.put("3770509380388381733", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "USES_CELL_VALUE"));
+    pvqMethods.put("599534810091351821", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "USES_NEIGHBOUR_VALUE"));
     pvqMethods.put("4839936427346720851", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
     pvqMethods.put("4839936427346724459", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
     pvqMethods.put("4839936427346728337", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
@@ -1290,7 +1306,8 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SProperty binIndex$nKRa = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x34479ff5091e5407L, "binIndex");
     /*package*/ static final SProperty binIndex$LsIb = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x6f3def580a87b33dL, 0x6f3def580a87b38cL, "binIndex");
     /*package*/ static final SProperty Stoichiometry$Wmha = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f3L, "Stoichiometry");
-    /*package*/ static final SProperty UsesValue$4P_Q = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x54e0e23243ed3238L, "UsesValue");
+    /*package*/ static final SProperty targetUsesCellValue$6tnC = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x851f9bbb9f4171eL, "targetUsesCellValue");
+    /*package*/ static final SProperty targetUsesNeighbourValue$xIQB = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x851f9bbb9efd229L, "targetUsesNeighbourValue");
     /*package*/ static final SProperty Location$Gx$s = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed5ea1L, "Location");
   }
 
