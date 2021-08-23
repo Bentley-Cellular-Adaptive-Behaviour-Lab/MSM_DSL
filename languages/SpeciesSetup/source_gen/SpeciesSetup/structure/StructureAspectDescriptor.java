@@ -221,6 +221,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540210");
     b.version(2);
     b.property("Stoichiometry", 0x2b6159d0ceecf4f3L).type(PrimitiveTypeId.INTEGER).origin("3125878369731540211").done();
+    b.property("UsesNeighbourValue", 0x2c1a564c7a3af7b1L).type(PrimitiveTypeId.BOOLEAN).origin("3177947373531494321").done();
     b.associate("Species_Ref", 0x2b6159d0ceecf4f7L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3125878369731540215").done();
     return b.create();
   }

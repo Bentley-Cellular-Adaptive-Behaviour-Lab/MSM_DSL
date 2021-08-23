@@ -13,14 +13,16 @@ typedef boost::array<float, 4> multiAgent_ode_states;
 typedef boost::array<float, 3> basicFil_ode_states;
 typedef boost::array<float, 1> basicDistribution_ode_states;
 typedef boost::array<float, 4> cellJunction_ode_states;
+typedef boost::array<float, 6> notch_memAgent_ode_states;
+typedef boost::array<float, 4> notch_cell_ode_states;
 
 class World;
 class World_Container;
 class MemAgent;
 class Tissue_Container;
 class Tissue_Monolayer;
-class Tissue_Vessel;
 class Cell;
+class EC;
 
 class BasicODEMemAgentTest : public ::testing::Test {
 protected:
@@ -171,8 +173,18 @@ public:
     World *world;
     World_Container *worldContainer;
     Tissue_Container *tissueContainer;
-    Tissue_Vessel *tissueVessel;
+    Tissue_Monolayer *tissueMonolayer;
     void addWorld(World *basicCellDistributionWorld);
+    void addWorldContainer(World_Container *cellJunctionWorldContainer);
+    void setupEnvironment();
+    void setupCells();
+    static void run_memAgent_ODE(MemAgent *memAgent);
+    static void run_Cell_ODE(EC *ec);
+    static void NotchPathway_memAgent_system(const notch_memAgent_ode_states &x, notch_memAgent_ode_states &dxdt, double t);
+    static void NotchPathway_cell_system(const notch_cell_ode_states &x, notch_cell_ode_states &dxdt, double t);
+
+    void printCellProteinLevels(int timestep) const;
+
 };
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);

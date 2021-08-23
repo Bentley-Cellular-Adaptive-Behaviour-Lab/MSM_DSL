@@ -262,6 +262,11 @@
       <property role="TrG5h" value="Stoichiometry" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="2Kql$LUeJuL" role="1TKVEl">
+      <property role="IQ2nx" value="3177947373531494321" />
+      <property role="TrG5h" value="UsesNeighbourValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="2Hxmt3eVfjR" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540215" />
       <property role="20kJfa" value="Species_Ref" />

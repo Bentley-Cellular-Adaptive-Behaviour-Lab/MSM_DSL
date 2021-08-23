@@ -2321,56 +2321,28 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="22lmx$" id="$XkBXNg4pd" role="3clFbw">
-                    <node concept="2OqwBi" id="5Cso5p4sW5d" role="3uHU7B">
-                      <node concept="2OqwBi" id="5Cso5p4sW5e" role="2Oq$k0">
-                        <node concept="2OqwBi" id="5Cso5p4sW5f" role="2Oq$k0">
-                          <node concept="1YBJjd" id="$XkBXNfyvv" role="2Oq$k0">
-                            <ref role="1YBMHb" node="$XkBXNfs3C" resolve="inhibits" />
-                          </node>
-                          <node concept="3TrEf2" id="5Cso5p4sW5h" role="2OqNvi">
-                            <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1E" resolve="Target" />
-                          </node>
+                  <node concept="2OqwBi" id="5Cso5p4sW5d" role="3clFbw">
+                    <node concept="2OqwBi" id="5Cso5p4sW5e" role="2Oq$k0">
+                      <node concept="2OqwBi" id="5Cso5p4sW5f" role="2Oq$k0">
+                        <node concept="1YBJjd" id="$XkBXNfyvv" role="2Oq$k0">
+                          <ref role="1YBMHb" node="$XkBXNfs3C" resolve="inhibits" />
                         </node>
-                        <node concept="3TrcHB" id="5Cso5p4sW5i" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                        <node concept="3TrEf2" id="5Cso5p4sW5h" role="2OqNvi">
+                          <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1E" resolve="Target" />
                         </node>
                       </node>
-                      <node concept="liA8E" id="5Cso5p4sW5j" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-                        <node concept="2OqwBi" id="5Cso5p4sW5k" role="37wK5m">
-                          <node concept="1XH99k" id="5Cso5p4sW5l" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
-                          </node>
-                          <node concept="2ViDtV" id="$XkBXNfJxX" role="2OqNvi">
-                            <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
-                          </node>
-                        </node>
+                      <node concept="3TrcHB" id="5Cso5p4sW5i" role="2OqNvi">
+                        <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="$XkBXNg4OD" role="3uHU7w">
-                      <node concept="2OqwBi" id="$XkBXNg4OE" role="2Oq$k0">
-                        <node concept="2OqwBi" id="$XkBXNg4OF" role="2Oq$k0">
-                          <node concept="1YBJjd" id="$XkBXNg4OG" role="2Oq$k0">
-                            <ref role="1YBMHb" node="$XkBXNfs3C" resolve="inhibits" />
-                          </node>
-                          <node concept="3TrEf2" id="$XkBXNg4OH" role="2OqNvi">
-                            <ref role="3Tt5mk" to="w3cn:5jwDGo4Bf1E" resolve="Target" />
-                          </node>
+                    <node concept="liA8E" id="5Cso5p4sW5j" role="2OqNvi">
+                      <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
+                      <node concept="2OqwBi" id="5Cso5p4sW5k" role="37wK5m">
+                        <node concept="1XH99k" id="5Cso5p4sW5l" role="2Oq$k0">
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
                         </node>
-                        <node concept="3TrcHB" id="$XkBXNg4OI" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
-                        </node>
-                      </node>
-                      <node concept="liA8E" id="$XkBXNg4OJ" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
-                        <node concept="2OqwBi" id="$XkBXNg4OK" role="37wK5m">
-                          <node concept="1XH99k" id="$XkBXNg4OL" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
-                          </node>
-                          <node concept="2ViDtV" id="$XkBXNg53J" role="2OqNvi">
-                            <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
-                          </node>
+                        <node concept="2ViDtV" id="$XkBXNfJxX" role="2OqNvi">
+                          <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
                         </node>
                       </node>
                     </node>
