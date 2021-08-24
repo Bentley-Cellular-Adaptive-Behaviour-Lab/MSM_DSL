@@ -913,3 +913,13 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
         exit(1);
     }
 }
+
+/*****************************************************************************************
+*  Name:		cycle_protein_levels
+*  Description: Removes the first entry of the levels vector
+*  Returns:		float
+******************************************************************************************/
+
+void EC::cycle_protein_levels() {
+
+}

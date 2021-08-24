@@ -6,7 +6,7 @@
 #define SPRINGAGENT_PROTEIN_H
 
 #include <string>
-#include <vector>
+#include <deque>
 
 enum PROTEIN_LOCATION {
 	PROTEIN_LOCATION_ENVIRONMENT,
@@ -28,7 +28,7 @@ private:
     float env_level = -1;
 public:
     // Tracks the level of a protein across multiple timesteps.
-    std::vector<float> cell_levels;
+    std::deque<float> cell_levels;
     float get_cell_level(int timestep) const;
     void set_cell_level(float new_level, int timestep_delay);
     float get_memAgent_level() const;

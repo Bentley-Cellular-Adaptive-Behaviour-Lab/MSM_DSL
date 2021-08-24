@@ -142,5 +142,6 @@ public:
 	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
 	std::vector<EC*> neigh_cells;
 	void add_to_neighbour_list(EC *query_ec);
+	void cycle_protein_levels();
 };
 #endif //SPRINGAGENT_EC_H
