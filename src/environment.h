@@ -45,6 +45,7 @@ public:
 
 	bool has_protein(std::string protein_name);
     float get_protein_level(std::string protein_name);
+    void set_protein_level(std::string protein_name, float new_level);
 };
 
 #endif //SPRINGAGENT_ENVIRONMENT_H

@@ -2402,7 +2402,7 @@ bool MemAgent::has_protein(std::string query_name) {
 
 /*****************************************************************************************
 *  Name:		set_protein_level
-*  Description: Sets the level of a protein, if that memAgent possesses that protein.
+*  Description: Sets the level of a protein for this timestep, if that memAgent possesses that protein.
 *  Returns:		boolean
 ******************************************************************************************/
 
@@ -2411,29 +2411,13 @@ void MemAgent::set_protein_level(std::string protein_name, float new_level) {
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
         	if (new_level < protein->get_min()) {
-        		protein->set_level(protein->get_min());
+        		protein->set_memAgent_level(protein->get_min());
         	} else if (new_level > protein->get_max()) {
-				protein->set_level(protein->get_max());
+				protein->set_memAgent_level(protein->get_max());
         	}
-            protein->set_level(new_level);
+            protein->set_memAgent_level(new_level);
         }
     }
-}
-
-/*****************************************************************************************
-*  Name:		update_protein_level
-*  Description: Updates the level of a protein owned by this memAgent.
-*  Returns:		void
-******************************************************************************************/
-
-void MemAgent::update_protein_level(std::string protein_name, float new_level) {
-    // This assert should always pass, as we're checking this in the distribute proteins function.
-   assert(this->has_protein(protein_name));
-   for (auto protein : this->owned_proteins) {
-       if (protein->get_name() == protein_name) {
-           protein->set_level(new_level);
-       }
-   }
 }
 
 /*****************************************************************************************
@@ -2448,7 +2432,7 @@ float MemAgent::get_memAgent_protein_level(std::string protein_name) {
     if (this->has_protein(protein_name)) {
 		for (auto protein : this->owned_proteins) {
 			if (protein->get_name() == protein_name) {
-				return protein->get_level();
+				return protein->get_memAgent_level();
 			}
 		}
     }
