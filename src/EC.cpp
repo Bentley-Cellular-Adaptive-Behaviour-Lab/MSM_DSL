@@ -916,10 +916,17 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
 
 /*****************************************************************************************
 *  Name:		cycle_protein_levels
-*  Description: Removes the first entry of the levels vector
+*  Description: Removes the first entry of the levels deque and adds a new entry for the latest timestep.
+*               Called after all protein updating functions have happened in preparation for the next
+*               timestep.
 *  Returns:		float
 ******************************************************************************************/
 
 void EC::cycle_protein_levels() {
-
+    for (auto *protein : this->m_cell_type->proteins) {
+        // Remove first element of the container - i.e. the current timestep.
+        protein->cell_levels.pop_front();
+        // Add a float that will eventually be updated by ODEs.
+        protein->cell_levels.push_back(-1);
+    }
 }

@@ -1744,6 +1744,11 @@ void World::updateECagents() {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 			ECagents[j]->allocateProts();
 		}
+
+		if (PROTEIN_TESTING) {
+		    // Updates the protein levels container for each protein.
+		    ECagents[j]->cycle_protein_levels();
+		}
 		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (ANALYSIS_JTB_SP_PATTERN == true)
 			ECagents[j]->calcStability();
