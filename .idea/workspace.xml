@@ -2,7 +2,11 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="src/springAgent" targetName="springAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -11,42 +15,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Implementing test for notch signalling pathway">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Updating tests after changing protein levels">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/constructors.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/constructors.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/protein.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/protein.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/environment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/protein.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +226,7 @@
       <workItem from="1629391560629" duration="165000" />
       <workItem from="1629474805756" duration="5212000" />
       <workItem from="1629720696875" duration="12901000" />
-      <workItem from="1629795286163" duration="617000" />
+      <workItem from="1629795286163" duration="1500000" />
     </task>
     <task id="LOCAL-00001" summary="Removed old protein files.">
       <created>1621607035051</created>
@@ -576,7 +550,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629391484533</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Updating tests after changing protein levels">
+      <created>1629797043886</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1629797043886</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +576,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing addition of gradient and cell containing new proteins." />
     <MESSAGE value="Changed tissue creation to assign the cell type to cell agents." />
     <MESSAGE value="Testing Boost library bug" />
     <MESSAGE value="Renamed endothelial cell variables in dsl_tissue example." />
@@ -620,7 +600,8 @@
     <MESSAGE value="Staging changes before rebase" />
     <MESSAGE value="Implementing new regulation functions." />
     <MESSAGE value="Implementing test for notch signalling pathway" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing test for notch signalling pathway" />
+    <MESSAGE value="Updating tests after changing protein levels" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating tests after changing protein levels" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

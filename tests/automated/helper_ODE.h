@@ -184,7 +184,8 @@ public:
     static void NotchPathway_cell_system(const notch_cell_ode_states &x, notch_cell_ode_states &dxdt, double t);
 
     void printCellProteinLevels(int timestep) const;
-
+    static double calc_VEGFR_INHIBITION_MOD_rate();
+    static double calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR);
 };
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);

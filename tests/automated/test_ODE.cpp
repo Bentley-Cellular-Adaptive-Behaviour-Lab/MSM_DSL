@@ -123,7 +123,7 @@ TEST_F(BasicFilODEMemAgentTest, basicFilTest) {
 }
 
 TEST_F(BasicCellDistributionTest, preDistributionTest) {
-	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 1000);
+	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 1000);
 	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 40);
 }
 
@@ -138,7 +138,7 @@ TEST_F(BasicCellDistributionTest, postDistributionTest) {
 		this->cell->cell_agent->calculate_cell_protein_levels();
 		this->printCellProteinLevels(i+1);
 	}
-	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
+	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 750);
 	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
 }
 
