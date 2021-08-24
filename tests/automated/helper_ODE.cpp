@@ -51,9 +51,9 @@ void BasicODEMemAgentTest::SetUp() {
 	setupEnvironment();
 
 	// Add proteins to memAgents.
-	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
+	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
+	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
 
 	for (int i = 0; i < 10; i++) {
 		runODE(memAgent1);
@@ -104,7 +104,7 @@ void BasicODEMemAgentTest::setupEnvironment() {
 		for (int y = 0; y < world->gridYDimensions; y++) {
 			for (int z = 0; z < world->gridYDimensions; z++) {
 				if (world->grid[x][y][z].type == const_E) {
-					auto proteinB = new protein("B", PROTEIN_LOCATION_ENVIRONMENT, 1, false, 0, 100);
+					auto proteinB = new protein("B", PROTEIN_LOCATION_ENVIRONMENT,1,0,100);
 					ep = world->grid[x][y][z].Eid;
 					ep->owned_proteins.push_back(proteinB);
 				}
@@ -249,21 +249,21 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 }
 
 void CrossCellODEMemAgentTest::setupAgentProteins() const {
-	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, false, 0,100));
+	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100,1));
 
-	memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent3->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
 
-	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
 
-	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
 }
 
 void CrossCellODEMemAgentTest::setupEnvironment() {
