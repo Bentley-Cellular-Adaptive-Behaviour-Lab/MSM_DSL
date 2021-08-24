@@ -104,19 +104,13 @@ public class QueriesGenerated extends QueryProviderBase {
     return String.valueOf((float) Species__BehaviorDescriptor.getStartConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
-    if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3234L)) {
-      return "true";
-    } else if (SEnumOperations.isMember(SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.UsesValue$4P_Q), 0x54e0e23243ed3235L)) {
-      return "false";
-    } else {
-      return "VALUE_NOT_FOUND";
-    }
-  }
-  public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
     return String.valueOf((float) Species__BehaviorDescriptor.getMinConcentrationValue_id1VQO6m$d9Os.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
   }
-  public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
     return String.valueOf((float) Species__BehaviorDescriptor.getMaxConcentrationValue_id1VQO6m$daTe.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
+  }
+  public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
+    return String.valueOf((int) Species__BehaviorDescriptor.getMaxTranscriptionDelay_id6UPd1r3aEsj.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -340,9 +334,9 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("2231199800373726377", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_NAME"));
     pvqMethods.put("2231199800373744772", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "PROTEIN_LOCATION"));
     pvqMethods.put("2231199800373780241", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "INITIAL_LEVEL"));
-    pvqMethods.put("2231199800374157075", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CHECKS_NEIGHBOUR"));
     pvqMethods.put("2231199800374159098", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MIN"));
     pvqMethods.put("2231199800374165893", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MAX"));
+    pvqMethods.put("7977339587324974681", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "MAX_TRANSCRIPTION_DELAY"));
     pvqMethods.put("5354143780895996046", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_TYPE_NAME"));
     pvqMethods.put("5354143780895999337", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "TISSUE_TYPE_NAME"));
     pvqMethods.put("5354143780896005576", new PVQ(i++, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "CELL_TYPE_NAME"));
@@ -480,7 +474,6 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty Location$Gx$s = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed5ea1L, "Location");
-    /*package*/ static final SProperty UsesValue$4P_Q = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x54e0e23243ed3238L, "UsesValue");
     /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
   }
 

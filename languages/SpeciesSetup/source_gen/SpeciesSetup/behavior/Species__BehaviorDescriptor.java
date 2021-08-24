@@ -19,12 +19,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Objects;
 import Units.behavior.Amount_Concentration__BehaviorDescriptor;
 import Units.behavior.Mass_Concentration__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
@@ -34,8 +36,9 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Float> getStartConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getStartConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmCFN3").build();
   public static final SMethod<Float> getMinConcentrationValue_id1VQO6m$d9Os = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMinConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$d9Os").build();
   public static final SMethod<Float> getMaxConcentrationValue_id1VQO6m$daTe = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMaxConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$daTe").build();
+  public static final SMethod<Integer> getMaxTranscriptionDelay_id6UPd1r3aEsj = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMaxTranscriptionDelay").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6UPd1r3aEsj").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -116,6 +119,23 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
       return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.Max_Concentration$S2Fq), CONCEPTS.Mass_Concentration$qz)).floatValue();
     }
   }
+  /*package*/ static int getMaxTranscriptionDelay_id6UPd1r3aEsj(@NotNull SNode __thisNode__) {
+    // Checks over all regulation interactions that affect this species.
+    // 1 is the default here i.e. the next timestep.
+    int max_transcription_delay = 1;
+    // Check over all processes that this species participates in.
+    // TODO: Tidy this up.
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig), LINKS.Processes$hnPe))) {
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Regulation$l6)) {
+        if (Objects.equals(SLinkOperations.getTarget(SNodeOperations.as(process, CONCEPTS.Regulation$l6), LINKS.Target$9C3I), __thisNode__)) {
+          if (SPropertyOperations.getInteger(SNodeOperations.as(process, CONCEPTS.Regulation$l6), PROPS.TranscriptionDelay$L0UN) > max_transcription_delay) {
+            max_transcription_delay = SPropertyOperations.getInteger(SNodeOperations.as(process, CONCEPTS.Regulation$l6), PROPS.TranscriptionDelay$L0UN);
+          }
+        }
+      }
+    }
+    return max_transcription_delay;
+  }
 
   /*package*/ Species__BehaviorDescriptor() {
   }
@@ -144,6 +164,8 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Float) getMinConcentrationValue_id1VQO6m$d9Os(node));
       case 4:
         return (T) ((Float) getMaxConcentrationValue_id1VQO6m$daTe(node));
+      case 5:
+        return (T) ((Integer) getMaxTranscriptionDelay_id6UPd1r3aEsj(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -187,10 +209,17 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SContainmentLink Starting_Concentration$a3uk = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x375d1bec6ae084b4L, "Starting_Concentration");
     /*package*/ static final SContainmentLink Min_Concentration$RVCW = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a427933bL, "Min_Concentration");
     /*package*/ static final SContainmentLink Max_Concentration$S2Fq = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a4279344L, "Max_Concentration");
+    /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
   }
 
   private static final class CONCEPTS {
     /*package*/ static final SConcept Amount_Concentration$r2 = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L, "Units.structure.Amount_Concentration");
     /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "Units.structure.Mass_Concentration");
+    /*package*/ static final SConcept Regulation$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Regulation");
+    /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
+  }
+
+  private static final class PROPS {
+    /*package*/ static final SProperty TranscriptionDelay$L0UN = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x6eb53416c32b34fbL, "TranscriptionDelay");
   }
 }
