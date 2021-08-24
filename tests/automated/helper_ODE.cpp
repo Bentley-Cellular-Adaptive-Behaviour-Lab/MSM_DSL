@@ -761,7 +761,7 @@ void BasicCellDistributionTest::printCellProteinLevels(int timestep) const {
 	// Only one cell in this setup.
 	auto cell = this->cell;
 	for (auto protein : cell->m_cell_type->proteins) {
-		std::cout << protein->get_name() << "," << protein->get_level() << ",";
+		std::cout << protein->get_name() << "," << protein->get_memAgent_level() << ",";
 	}
 	std::cout << timestep << "\n";
 }
@@ -891,7 +891,7 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 	for (auto cell : tissue->m_cell_agents) {
 		std::cout << cell->cell_number << ",";
 		for (auto protein : cell->m_cell_type->proteins) {
-			std::cout << protein->get_level() << ",";
+			std::cout << protein->get_memAgent_level() << ",";
 		}
 		std::cout << timestep << "\n";
 	}
@@ -920,6 +920,10 @@ void NotchPathwayTest::SetUp() {
     // Adds VEGF to the environment.
     setupEnvironment();
     setupCells();
+}
+
+void NotchPathwayTest::TearDown() {
+
 }
 
 void NotchPathwayTest::addWorld(World *notchPathwayWorld) {
@@ -1026,4 +1030,11 @@ void NotchPathwayTest::NotchPathway_cell_system(const notch_cell_ode_states &x, 
 }
 void NotchPathwayTest::printCellProteinLevels(int timestep) const {
 
+}
+double NotchPathwayTest::calc_VEGFR_INHIBITION_MOD_rate() {
+    return 10;
+}
+
+double NotchPathwayTest::calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR) {
+    return VEGFR/VEGF_VEGFR * 1.2;
 }
