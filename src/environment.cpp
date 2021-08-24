@@ -543,7 +543,7 @@ float Env::get_protein_level(std::string protein_name) {
         for (auto protein : this->owned_proteins) {
             if (protein->get_name() == protein_name) {
                 protein_found = true;
-                return protein->get_level();
+                return protein->get_env_level();
             }
         }
         if (!protein_found) {
@@ -555,6 +555,34 @@ float Env::get_protein_level(std::string protein_name) {
 		std::cerr << "ENV LOCATION X:" << this->Ex << std::endl;
 		std::cerr << "ENV LOCATION Y:" << this->Ey << std::endl;
 		std::cerr << "ENV LOCATION Z:" << this->Ez << std::endl;
+        exit(1);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		get_protein_level
+*  Description: Returns true if an environment agent has a given protein - returns false if not.
+*  Returns:		float
+******************************************************************************************/
+
+void Env::set_protein_level(std::string protein_name, float new_level) {
+    try {
+        bool protein_found = false;
+        for (auto protein : this->owned_proteins) {
+            if (protein->get_name() == protein_name) {
+                protein_found = true;
+                protein->set_env_level(new_level);
+            }
+        }
+        if (!protein_found) {
+            throw std::invalid_argument(protein_name);
+        }
+    } catch (std::invalid_argument) {
+        std::cerr << "Attempted to get the level of a protein at an environment agent which did not possess it." << std::endl;
+        std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
+        std::cerr << "ENV LOCATION X:" << this->Ex << std::endl;
+        std::cerr << "ENV LOCATION Y:" << this->Ey << std::endl;
+        std::cerr << "ENV LOCATION Z:" << this->Ez << std::endl;
         exit(1);
     }
 }

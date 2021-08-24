@@ -586,7 +586,8 @@ void EC::set_initial_proteins() {
     std::vector<float> protein_totals_per_memAgent;
 
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        float current_protein_level = this->m_cell_type->proteins[i]->get_level();
+        // Get the level at this timestep.
+        float current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
         float total_per_agent = current_protein_level / protein_counts[i];
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
@@ -597,12 +598,12 @@ void EC::set_initial_proteins() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				protein *current_protein = this->m_cell_type->proteins[i];
-				nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
 				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				protein *current_protein = this->m_cell_type->proteins[i];
-				nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
         }
     }
@@ -681,7 +682,7 @@ void EC::distribute_proteins() {
 	std::vector<int> protein_totals_per_memAgent;
 
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        float current_protein_level = this->m_cell_type->proteins[i]->get_level();
+        float current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
 
@@ -691,13 +692,13 @@ void EC::distribute_proteins() {
             protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
-					nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
 				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
-					nodeAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
         }
@@ -725,7 +726,7 @@ void EC::distribute_proteins() {
 /*****************************************************************************************
 *  Name:		calculate_cell_protein_levels
 *  Description: Calculates the protein levels across all memAgents and passes the total to
-*               the cell.
+*               the cell. Runs memAgent ODEs and reports these values back to the cell.
 *  Returns:		void
 ******************************************************************************************/
 
@@ -746,7 +747,7 @@ void EC::calculate_cell_protein_levels() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
-                //Determine the amount for the current protein at this memAgent and update the total for that
+                // Determine the amount for the current protein at this memAgent and update the total for that.
                 float current_protein_level = nodeAgent->get_memAgent_protein_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
@@ -776,9 +777,9 @@ void EC::calculate_cell_protein_levels() {
 //        }
 //    }
 
-    // Now, set the protein levels for the cell.
+    // Now, set the protein levels for the cell at this current timestep.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        this->m_cell_type->proteins[i]->set_level(protein_counts[i]);
+        this->m_cell_type->proteins[i]->set_cell_level(protein_counts[i],0);
     }
 }
 
@@ -808,17 +809,17 @@ bool EC::has_protein(std::string protein_name) {
 }
 
 /*****************************************************************************************
-*  Name:		print_protein_levels
-*  Description: Prints protein totals of a cell
+*  Name:		print_current_protein_levels
+*  Description: Prints protein totals of a cell at this timestep.
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::print_protein_levels(int timestep_interval) {
+void EC::print_current_protein_levels(int timestep_interval) {
 	if (this->worldP->timeStep % timestep_interval == 0) {
 		for (auto protein : this->m_cell_type->proteins) {
 			std::cout << "Protein: " << protein->get_name()
 					  << " Level at timestep " << this->worldP->timeStep
-					  << ": " << protein->get_level() << std::endl;
+					  << ": " << protein->get_cell_level(0) << std::endl;
 		}
 	}
 }
@@ -876,12 +877,12 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 *  Returns:		float
 ******************************************************************************************/
 
-float EC::get_cell_protein_level(std::string protein_name) {
+float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
 
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {
-				return protein->get_level();
+				return protein->get_cell_level(timestep_value);
 			}
 		}
 	}
@@ -893,14 +894,14 @@ float EC::get_cell_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-void EC::set_cell_protein_level(std::string protein_name, float new_level) {
+void EC::set_cell_protein_level(std::string protein_name, float new_level, int timestep_value) {
     // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
     // This is also used during ODE running and so has the potential to fail.
     try {
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
                 if (protein->get_name() == protein_name) {
-                    protein->set_level(new_level);
+                    protein->set_cell_level(new_level, timestep_value);
                 }
             }
         } else {

@@ -64,15 +64,29 @@ CMAKE_BINARY_DIR = C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-.PHONY : rebuild_cache/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -83,6 +97,47 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\ctest.exe --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.4746.93\bin\cmake\win\bin\cmake.exe -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -116,24 +171,76 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named springAgent
+# Target rules for targets named autoSpringAgent
 
 # Build rule for target.
-springAgent: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 springAgent
-.PHONY : springAgent
+autoSpringAgent: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 autoSpringAgent
+.PHONY : autoSpringAgent
 
 # fast build rule for target.
-springAgent/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/build
-.PHONY : springAgent/fast
+autoSpringAgent/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/build
+.PHONY : autoSpringAgent/fast
+
+#=============================================================================
+# Target rules for targets named gmock_main
+
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock_main.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googlemock\CMakeFiles\gmock.dir\build.make _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
 
 src/CPM_module.obj: src/CPM_module.cpp.obj
 .PHONY : src/CPM_module.obj
 
 # target to build an object file
 src/CPM_module.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/CPM_module.cpp.obj
 .PHONY : src/CPM_module.cpp.obj
 
 src/CPM_module.i: src/CPM_module.cpp.i
@@ -141,7 +248,7 @@ src/CPM_module.i: src/CPM_module.cpp.i
 
 # target to preprocess a source file
 src/CPM_module.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/CPM_module.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/CPM_module.cpp.i
 .PHONY : src/CPM_module.cpp.i
 
 src/CPM_module.s: src/CPM_module.cpp.s
@@ -149,7 +256,7 @@ src/CPM_module.s: src/CPM_module.cpp.s
 
 # target to generate assembly for a file
 src/CPM_module.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/CPM_module.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/CPM_module.cpp.s
 .PHONY : src/CPM_module.cpp.s
 
 src/EC.obj: src/EC.cpp.obj
@@ -157,7 +264,7 @@ src/EC.obj: src/EC.cpp.obj
 
 # target to build an object file
 src/EC.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/EC.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/EC.cpp.obj
 .PHONY : src/EC.cpp.obj
 
 src/EC.i: src/EC.cpp.i
@@ -165,7 +272,7 @@ src/EC.i: src/EC.cpp.i
 
 # target to preprocess a source file
 src/EC.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/EC.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/EC.cpp.i
 .PHONY : src/EC.cpp.i
 
 src/EC.s: src/EC.cpp.s
@@ -173,7 +280,7 @@ src/EC.s: src/EC.cpp.s
 
 # target to generate assembly for a file
 src/EC.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/EC.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/EC.cpp.s
 .PHONY : src/EC.cpp.s
 
 src/ECmesh.obj: src/ECmesh.cpp.obj
@@ -181,7 +288,7 @@ src/ECmesh.obj: src/ECmesh.cpp.obj
 
 # target to build an object file
 src/ECmesh.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ECmesh.cpp.obj
 .PHONY : src/ECmesh.cpp.obj
 
 src/ECmesh.i: src/ECmesh.cpp.i
@@ -189,7 +296,7 @@ src/ECmesh.i: src/ECmesh.cpp.i
 
 # target to preprocess a source file
 src/ECmesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ECmesh.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ECmesh.cpp.i
 .PHONY : src/ECmesh.cpp.i
 
 src/ECmesh.s: src/ECmesh.cpp.s
@@ -197,7 +304,7 @@ src/ECmesh.s: src/ECmesh.cpp.s
 
 # target to generate assembly for a file
 src/ECmesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ECmesh.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ECmesh.cpp.s
 .PHONY : src/ECmesh.cpp.s
 
 src/Grid.obj: src/Grid.cpp.obj
@@ -205,7 +312,7 @@ src/Grid.obj: src/Grid.cpp.obj
 
 # target to build an object file
 src/Grid.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Grid.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Grid.cpp.obj
 .PHONY : src/Grid.cpp.obj
 
 src/Grid.i: src/Grid.cpp.i
@@ -213,7 +320,7 @@ src/Grid.i: src/Grid.cpp.i
 
 # target to preprocess a source file
 src/Grid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Grid.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Grid.cpp.i
 .PHONY : src/Grid.cpp.i
 
 src/Grid.s: src/Grid.cpp.s
@@ -221,7 +328,7 @@ src/Grid.s: src/Grid.cpp.s
 
 # target to generate assembly for a file
 src/Grid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Grid.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Grid.cpp.s
 .PHONY : src/Grid.cpp.s
 
 src/ODE.obj: src/ODE.cpp.obj
@@ -229,7 +336,7 @@ src/ODE.obj: src/ODE.cpp.obj
 
 # target to build an object file
 src/ODE.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ODE.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ODE.cpp.obj
 .PHONY : src/ODE.cpp.obj
 
 src/ODE.i: src/ODE.cpp.i
@@ -237,7 +344,7 @@ src/ODE.i: src/ODE.cpp.i
 
 # target to preprocess a source file
 src/ODE.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ODE.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ODE.cpp.i
 .PHONY : src/ODE.cpp.i
 
 src/ODE.s: src/ODE.cpp.s
@@ -245,7 +352,7 @@ src/ODE.s: src/ODE.cpp.s
 
 # target to generate assembly for a file
 src/ODE.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ODE.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ODE.cpp.s
 .PHONY : src/ODE.cpp.s
 
 src/ScreenRecording.obj: src/ScreenRecording.cpp.obj
@@ -253,7 +360,7 @@ src/ScreenRecording.obj: src/ScreenRecording.cpp.obj
 
 # target to build an object file
 src/ScreenRecording.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ScreenRecording.cpp.obj
 .PHONY : src/ScreenRecording.cpp.obj
 
 src/ScreenRecording.i: src/ScreenRecording.cpp.i
@@ -261,7 +368,7 @@ src/ScreenRecording.i: src/ScreenRecording.cpp.i
 
 # target to preprocess a source file
 src/ScreenRecording.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ScreenRecording.cpp.i
 .PHONY : src/ScreenRecording.cpp.i
 
 src/ScreenRecording.s: src/ScreenRecording.cpp.s
@@ -269,7 +376,7 @@ src/ScreenRecording.s: src/ScreenRecording.cpp.s
 
 # target to generate assembly for a file
 src/ScreenRecording.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/ScreenRecording.cpp.s
 .PHONY : src/ScreenRecording.cpp.s
 
 src/Tissue.obj: src/Tissue.cpp.obj
@@ -277,7 +384,7 @@ src/Tissue.obj: src/Tissue.cpp.obj
 
 # target to build an object file
 src/Tissue.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Tissue.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Tissue.cpp.obj
 .PHONY : src/Tissue.cpp.obj
 
 src/Tissue.i: src/Tissue.cpp.i
@@ -285,7 +392,7 @@ src/Tissue.i: src/Tissue.cpp.i
 
 # target to preprocess a source file
 src/Tissue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Tissue.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Tissue.cpp.i
 .PHONY : src/Tissue.cpp.i
 
 src/Tissue.s: src/Tissue.cpp.s
@@ -293,7 +400,7 @@ src/Tissue.s: src/Tissue.cpp.s
 
 # target to generate assembly for a file
 src/Tissue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/Tissue.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/Tissue.cpp.s
 .PHONY : src/Tissue.cpp.s
 
 src/analysis.obj: src/analysis.cpp.obj
@@ -301,7 +408,7 @@ src/analysis.obj: src/analysis.cpp.obj
 
 # target to build an object file
 src/analysis.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/analysis.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/analysis.cpp.obj
 .PHONY : src/analysis.cpp.obj
 
 src/analysis.i: src/analysis.cpp.i
@@ -309,7 +416,7 @@ src/analysis.i: src/analysis.cpp.i
 
 # target to preprocess a source file
 src/analysis.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/analysis.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/analysis.cpp.i
 .PHONY : src/analysis.cpp.i
 
 src/analysis.s: src/analysis.cpp.s
@@ -317,7 +424,7 @@ src/analysis.s: src/analysis.cpp.s
 
 # target to generate assembly for a file
 src/analysis.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/analysis.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/analysis.cpp.s
 .PHONY : src/analysis.cpp.s
 
 src/constructors.obj: src/constructors.cpp.obj
@@ -325,7 +432,7 @@ src/constructors.obj: src/constructors.cpp.obj
 
 # target to build an object file
 src/constructors.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/constructors.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/constructors.cpp.obj
 .PHONY : src/constructors.cpp.obj
 
 src/constructors.i: src/constructors.cpp.i
@@ -333,7 +440,7 @@ src/constructors.i: src/constructors.cpp.i
 
 # target to preprocess a source file
 src/constructors.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/constructors.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/constructors.cpp.i
 .PHONY : src/constructors.cpp.i
 
 src/constructors.s: src/constructors.cpp.s
@@ -341,7 +448,7 @@ src/constructors.s: src/constructors.cpp.s
 
 # target to generate assembly for a file
 src/constructors.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/constructors.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/constructors.cpp.s
 .PHONY : src/constructors.cpp.s
 
 src/creation.obj: src/creation.cpp.obj
@@ -349,7 +456,7 @@ src/creation.obj: src/creation.cpp.obj
 
 # target to build an object file
 src/creation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/creation.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/creation.cpp.obj
 .PHONY : src/creation.cpp.obj
 
 src/creation.i: src/creation.cpp.i
@@ -357,7 +464,7 @@ src/creation.i: src/creation.cpp.i
 
 # target to preprocess a source file
 src/creation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/creation.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/creation.cpp.i
 .PHONY : src/creation.cpp.i
 
 src/creation.s: src/creation.cpp.s
@@ -365,7 +472,7 @@ src/creation.s: src/creation.cpp.s
 
 # target to generate assembly for a file
 src/creation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/creation.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/creation.cpp.s
 .PHONY : src/creation.cpp.s
 
 src/display.obj: src/display.cpp.obj
@@ -373,7 +480,7 @@ src/display.obj: src/display.cpp.obj
 
 # target to build an object file
 src/display.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/display.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/display.cpp.obj
 .PHONY : src/display.cpp.obj
 
 src/display.i: src/display.cpp.i
@@ -381,7 +488,7 @@ src/display.i: src/display.cpp.i
 
 # target to preprocess a source file
 src/display.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/display.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/display.cpp.i
 .PHONY : src/display.cpp.i
 
 src/display.s: src/display.cpp.s
@@ -389,63 +496,15 @@ src/display.s: src/display.cpp.s
 
 # target to generate assembly for a file
 src/display.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/display.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/display.cpp.s
 .PHONY : src/display.cpp.s
-
-src/dsl_Tissue.obj: src/dsl_Tissue.cpp.obj
-.PHONY : src/dsl_Tissue.obj
-
-# target to build an object file
-src/dsl_Tissue.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.obj
-.PHONY : src/dsl_Tissue.cpp.obj
-
-src/dsl_Tissue.i: src/dsl_Tissue.cpp.i
-.PHONY : src/dsl_Tissue.i
-
-# target to preprocess a source file
-src/dsl_Tissue.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.i
-.PHONY : src/dsl_Tissue.cpp.i
-
-src/dsl_Tissue.s: src/dsl_Tissue.cpp.s
-.PHONY : src/dsl_Tissue.s
-
-# target to generate assembly for a file
-src/dsl_Tissue.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.s
-.PHONY : src/dsl_Tissue.cpp.s
-
-src/dsl_World.obj: src/dsl_World.cpp.obj
-.PHONY : src/dsl_World.obj
-
-# target to build an object file
-src/dsl_World.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj
-.PHONY : src/dsl_World.cpp.obj
-
-src/dsl_World.i: src/dsl_World.cpp.i
-.PHONY : src/dsl_World.i
-
-# target to preprocess a source file
-src/dsl_World.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_World.cpp.i
-.PHONY : src/dsl_World.cpp.i
-
-src/dsl_World.s: src/dsl_World.cpp.s
-.PHONY : src/dsl_World.s
-
-# target to generate assembly for a file
-src/dsl_World.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl_World.cpp.s
-.PHONY : src/dsl_World.cpp.s
 
 src/environment.obj: src/environment.cpp.obj
 .PHONY : src/environment.obj
 
 # target to build an object file
 src/environment.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/environment.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/environment.cpp.obj
 .PHONY : src/environment.cpp.obj
 
 src/environment.i: src/environment.cpp.i
@@ -453,7 +512,7 @@ src/environment.i: src/environment.cpp.i
 
 # target to preprocess a source file
 src/environment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/environment.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/environment.cpp.i
 .PHONY : src/environment.cpp.i
 
 src/environment.s: src/environment.cpp.s
@@ -461,7 +520,7 @@ src/environment.s: src/environment.cpp.s
 
 # target to generate assembly for a file
 src/environment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/environment.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/environment.cpp.s
 .PHONY : src/environment.cpp.s
 
 src/geometry_functions.obj: src/geometry_functions.cpp.obj
@@ -469,7 +528,7 @@ src/geometry_functions.obj: src/geometry_functions.cpp.obj
 
 # target to build an object file
 src/geometry_functions.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/geometry_functions.cpp.obj
 .PHONY : src/geometry_functions.cpp.obj
 
 src/geometry_functions.i: src/geometry_functions.cpp.i
@@ -477,7 +536,7 @@ src/geometry_functions.i: src/geometry_functions.cpp.i
 
 # target to preprocess a source file
 src/geometry_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/geometry_functions.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/geometry_functions.cpp.i
 .PHONY : src/geometry_functions.cpp.i
 
 src/geometry_functions.s: src/geometry_functions.cpp.s
@@ -485,7 +544,7 @@ src/geometry_functions.s: src/geometry_functions.cpp.s
 
 # target to generate assembly for a file
 src/geometry_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/geometry_functions.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/geometry_functions.cpp.s
 .PHONY : src/geometry_functions.cpp.s
 
 src/logger.obj: src/logger.cpp.obj
@@ -493,7 +552,7 @@ src/logger.obj: src/logger.cpp.obj
 
 # target to build an object file
 src/logger.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/logger.cpp.obj
 .PHONY : src/logger.cpp.obj
 
 src/logger.i: src/logger.cpp.i
@@ -501,7 +560,7 @@ src/logger.i: src/logger.cpp.i
 
 # target to preprocess a source file
 src/logger.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/logger.cpp.i
 .PHONY : src/logger.cpp.i
 
 src/logger.s: src/logger.cpp.s
@@ -509,39 +568,15 @@ src/logger.s: src/logger.cpp.s
 
 # target to generate assembly for a file
 src/logger.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/logger.cpp.s
 .PHONY : src/logger.cpp.s
-
-src/main.obj: src/main.cpp.obj
-.PHONY : src/main.obj
-
-# target to build an object file
-src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/main.cpp.obj
-.PHONY : src/main.cpp.obj
-
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
-
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
 
 src/memAgents.obj: src/memAgents.cpp.obj
 .PHONY : src/memAgents.obj
 
 # target to build an object file
 src/memAgents.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/memAgents.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/memAgents.cpp.obj
 .PHONY : src/memAgents.cpp.obj
 
 src/memAgents.i: src/memAgents.cpp.i
@@ -549,7 +584,7 @@ src/memAgents.i: src/memAgents.cpp.i
 
 # target to preprocess a source file
 src/memAgents.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/memAgents.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/memAgents.cpp.i
 .PHONY : src/memAgents.cpp.i
 
 src/memAgents.s: src/memAgents.cpp.s
@@ -557,7 +592,7 @@ src/memAgents.s: src/memAgents.cpp.s
 
 # target to generate assembly for a file
 src/memAgents.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/memAgents.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/memAgents.cpp.s
 .PHONY : src/memAgents.cpp.s
 
 src/protein.obj: src/protein.cpp.obj
@@ -565,7 +600,7 @@ src/protein.obj: src/protein.cpp.obj
 
 # target to build an object file
 src/protein.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/protein.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/protein.cpp.obj
 .PHONY : src/protein.cpp.obj
 
 src/protein.i: src/protein.cpp.i
@@ -573,7 +608,7 @@ src/protein.i: src/protein.cpp.i
 
 # target to preprocess a source file
 src/protein.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/protein.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/protein.cpp.i
 .PHONY : src/protein.cpp.i
 
 src/protein.s: src/protein.cpp.s
@@ -581,7 +616,7 @@ src/protein.s: src/protein.cpp.s
 
 # target to generate assembly for a file
 src/protein.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/protein.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/protein.cpp.s
 .PHONY : src/protein.cpp.s
 
 src/space.obj: src/space.cpp.obj
@@ -589,7 +624,7 @@ src/space.obj: src/space.cpp.obj
 
 # target to build an object file
 src/space.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/space.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/space.cpp.obj
 .PHONY : src/space.cpp.obj
 
 src/space.i: src/space.cpp.i
@@ -597,7 +632,7 @@ src/space.i: src/space.cpp.i
 
 # target to preprocess a source file
 src/space.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/space.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/space.cpp.i
 .PHONY : src/space.cpp.i
 
 src/space.s: src/space.cpp.s
@@ -605,7 +640,7 @@ src/space.s: src/space.cpp.s
 
 # target to generate assembly for a file
 src/space.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/space.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/space.cpp.s
 .PHONY : src/space.cpp.s
 
 src/utils.obj: src/utils.cpp.obj
@@ -613,7 +648,7 @@ src/utils.obj: src/utils.cpp.obj
 
 # target to build an object file
 src/utils.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/utils.cpp.obj
 .PHONY : src/utils.cpp.obj
 
 src/utils.i: src/utils.cpp.i
@@ -621,7 +656,7 @@ src/utils.i: src/utils.cpp.i
 
 # target to preprocess a source file
 src/utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/utils.cpp.i
 .PHONY : src/utils.cpp.i
 
 src/utils.s: src/utils.cpp.s
@@ -629,7 +664,7 @@ src/utils.s: src/utils.cpp.s
 
 # target to generate assembly for a file
 src/utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
 src/world.obj: src/world.cpp.obj
@@ -637,7 +672,7 @@ src/world.obj: src/world.cpp.obj
 
 # target to build an object file
 src/world.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/world.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/world.cpp.obj
 .PHONY : src/world.cpp.obj
 
 src/world.i: src/world.cpp.i
@@ -645,7 +680,7 @@ src/world.i: src/world.cpp.i
 
 # target to preprocess a source file
 src/world.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/world.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/world.cpp.i
 .PHONY : src/world.cpp.i
 
 src/world.s: src/world.cpp.s
@@ -653,8 +688,128 @@ src/world.s: src/world.cpp.s
 
 # target to generate assembly for a file
 src/world.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/world.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/world.cpp.s
 .PHONY : src/world.cpp.s
+
+tests/automated/generated/dsl_Tissue.obj: tests/automated/generated/dsl_Tissue.cpp.obj
+.PHONY : tests/automated/generated/dsl_Tissue.obj
+
+# target to build an object file
+tests/automated/generated/dsl_Tissue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_Tissue.cpp.obj
+.PHONY : tests/automated/generated/dsl_Tissue.cpp.obj
+
+tests/automated/generated/dsl_Tissue.i: tests/automated/generated/dsl_Tissue.cpp.i
+.PHONY : tests/automated/generated/dsl_Tissue.i
+
+# target to preprocess a source file
+tests/automated/generated/dsl_Tissue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_Tissue.cpp.i
+.PHONY : tests/automated/generated/dsl_Tissue.cpp.i
+
+tests/automated/generated/dsl_Tissue.s: tests/automated/generated/dsl_Tissue.cpp.s
+.PHONY : tests/automated/generated/dsl_Tissue.s
+
+# target to generate assembly for a file
+tests/automated/generated/dsl_Tissue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_Tissue.cpp.s
+.PHONY : tests/automated/generated/dsl_Tissue.cpp.s
+
+tests/automated/generated/dsl_World.obj: tests/automated/generated/dsl_World.cpp.obj
+.PHONY : tests/automated/generated/dsl_World.obj
+
+# target to build an object file
+tests/automated/generated/dsl_World.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_World.cpp.obj
+.PHONY : tests/automated/generated/dsl_World.cpp.obj
+
+tests/automated/generated/dsl_World.i: tests/automated/generated/dsl_World.cpp.i
+.PHONY : tests/automated/generated/dsl_World.i
+
+# target to preprocess a source file
+tests/automated/generated/dsl_World.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_World.cpp.i
+.PHONY : tests/automated/generated/dsl_World.cpp.i
+
+tests/automated/generated/dsl_World.s: tests/automated/generated/dsl_World.cpp.s
+.PHONY : tests/automated/generated/dsl_World.s
+
+# target to generate assembly for a file
+tests/automated/generated/dsl_World.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/generated/dsl_World.cpp.s
+.PHONY : tests/automated/generated/dsl_World.cpp.s
+
+tests/automated/helper_ODE.obj: tests/automated/helper_ODE.cpp.obj
+.PHONY : tests/automated/helper_ODE.obj
+
+# target to build an object file
+tests/automated/helper_ODE.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/helper_ODE.cpp.obj
+.PHONY : tests/automated/helper_ODE.cpp.obj
+
+tests/automated/helper_ODE.i: tests/automated/helper_ODE.cpp.i
+.PHONY : tests/automated/helper_ODE.i
+
+# target to preprocess a source file
+tests/automated/helper_ODE.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/helper_ODE.cpp.i
+.PHONY : tests/automated/helper_ODE.cpp.i
+
+tests/automated/helper_ODE.s: tests/automated/helper_ODE.cpp.s
+.PHONY : tests/automated/helper_ODE.s
+
+# target to generate assembly for a file
+tests/automated/helper_ODE.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/helper_ODE.cpp.s
+.PHONY : tests/automated/helper_ODE.cpp.s
+
+tests/automated/test_ODE.obj: tests/automated/test_ODE.cpp.obj
+.PHONY : tests/automated/test_ODE.obj
+
+# target to build an object file
+tests/automated/test_ODE.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.obj
+.PHONY : tests/automated/test_ODE.cpp.obj
+
+tests/automated/test_ODE.i: tests/automated/test_ODE.cpp.i
+.PHONY : tests/automated/test_ODE.i
+
+# target to preprocess a source file
+tests/automated/test_ODE.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.i
+.PHONY : tests/automated/test_ODE.cpp.i
+
+tests/automated/test_ODE.s: tests/automated/test_ODE.cpp.s
+.PHONY : tests/automated/test_ODE.s
+
+# target to generate assembly for a file
+tests/automated/test_ODE.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.s
+.PHONY : tests/automated/test_ODE.cpp.s
+
+tests/automated/test_setup.obj: tests/automated/test_setup.cpp.obj
+.PHONY : tests/automated/test_setup.obj
+
+# target to build an object file
+tests/automated/test_setup.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.obj
+.PHONY : tests/automated/test_setup.cpp.obj
+
+tests/automated/test_setup.i: tests/automated/test_setup.cpp.i
+.PHONY : tests/automated/test_setup.i
+
+# target to preprocess a source file
+tests/automated/test_setup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.i
+.PHONY : tests/automated/test_setup.cpp.i
+
+tests/automated/test_setup.s: tests/automated/test_setup.cpp.s
+.PHONY : tests/automated/test_setup.s
+
+# target to generate assembly for a file
+tests/automated/test_setup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.s
+.PHONY : tests/automated/test_setup.cpp.s
 
 # Help Target
 help:
@@ -663,8 +818,17 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... edit_cache
+	@echo ... install
+	@echo ... install/local
+	@echo ... install/strip
+	@echo ... list_install_components
 	@echo ... rebuild_cache
-	@echo ... springAgent
+	@echo ... test
+	@echo ... autoSpringAgent
+	@echo ... gmock
+	@echo ... gmock_main
+	@echo ... gtest
+	@echo ... gtest_main
 	@echo ... src/CPM_module.obj
 	@echo ... src/CPM_module.i
 	@echo ... src/CPM_module.s
@@ -698,12 +862,6 @@ help:
 	@echo ... src/display.obj
 	@echo ... src/display.i
 	@echo ... src/display.s
-	@echo ... src/dsl_Tissue.obj
-	@echo ... src/dsl_Tissue.i
-	@echo ... src/dsl_Tissue.s
-	@echo ... src/dsl_World.obj
-	@echo ... src/dsl_World.i
-	@echo ... src/dsl_World.s
 	@echo ... src/environment.obj
 	@echo ... src/environment.i
 	@echo ... src/environment.s
@@ -713,9 +871,6 @@ help:
 	@echo ... src/logger.obj
 	@echo ... src/logger.i
 	@echo ... src/logger.s
-	@echo ... src/main.obj
-	@echo ... src/main.i
-	@echo ... src/main.s
 	@echo ... src/memAgents.obj
 	@echo ... src/memAgents.i
 	@echo ... src/memAgents.s
@@ -731,6 +886,21 @@ help:
 	@echo ... src/world.obj
 	@echo ... src/world.i
 	@echo ... src/world.s
+	@echo ... tests/automated/generated/dsl_Tissue.obj
+	@echo ... tests/automated/generated/dsl_Tissue.i
+	@echo ... tests/automated/generated/dsl_Tissue.s
+	@echo ... tests/automated/generated/dsl_World.obj
+	@echo ... tests/automated/generated/dsl_World.i
+	@echo ... tests/automated/generated/dsl_World.s
+	@echo ... tests/automated/helper_ODE.obj
+	@echo ... tests/automated/helper_ODE.i
+	@echo ... tests/automated/helper_ODE.s
+	@echo ... tests/automated/test_ODE.obj
+	@echo ... tests/automated/test_ODE.i
+	@echo ... tests/automated/test_ODE.s
+	@echo ... tests/automated/test_setup.obj
+	@echo ... tests/automated/test_setup.i
+	@echo ... tests/automated/test_setup.s
 .PHONY : help
 
 
