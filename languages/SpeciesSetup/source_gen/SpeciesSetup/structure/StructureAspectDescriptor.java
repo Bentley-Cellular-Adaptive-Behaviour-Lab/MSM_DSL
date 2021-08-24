@@ -231,6 +231,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/6116071663379962152");
     b.version(2);
+    b.property("TranscriptionDelay", 0x6eb53416c32b34fbL).type(PrimitiveTypeId.INTEGER).origin("7977339587325015291").done();
     b.associate("Modifier", 0x54e0a6c604985a9cL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(false).origin("6116071663379962524").done();
     b.associate("Source", 0x54e0a6c6049cf06dL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263021").done();
     b.associate("Target", 0x54e0a6c6049cf06aL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("6116071663380263018").done();

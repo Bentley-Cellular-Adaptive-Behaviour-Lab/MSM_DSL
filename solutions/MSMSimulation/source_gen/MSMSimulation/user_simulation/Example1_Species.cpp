@@ -54,8 +54,8 @@ void ODEs::check_cell_ODEs(EC *ec) {
   	memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
   	memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
   	memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false);
-  	memAgent->distribute_calculated_proteins("DLL4", new_states[4], true, false);
-  	memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], true, false);
+  	memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true);
+  	memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
   }
 
   void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {

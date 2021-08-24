@@ -415,6 +415,11 @@
     <property role="R5$K7" value="true" />
     <property role="34LRSv" value="Regulation" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
+    <node concept="1TJgyi" id="6UPd1r3aNjV" role="1TKVEl">
+      <property role="IQ2nx" value="7977339587325015291" />
+      <property role="TrG5h" value="TranscriptionDelay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="5jwDGo4A5Es" role="1TKVEi">
       <property role="IQ2ns" value="6116071663379962524" />
       <property role="20kJfa" value="Modifier" />

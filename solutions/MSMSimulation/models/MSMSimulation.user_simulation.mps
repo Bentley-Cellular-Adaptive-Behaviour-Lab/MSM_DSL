@@ -78,6 +78,7 @@
         <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
       <concept id="6116071663379962152" name="SpeciesSetup.structure.Regulation" flags="ng" index="1gufZI">
+        <property id="7977339587325015291" name="TranscriptionDelay" index="2HBw3H" />
         <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
         <reference id="6116071663380263018" name="Target" index="1gv5qG" />
@@ -287,6 +288,7 @@
     </node>
     <node concept="1gv4$V" id="6Zu6_HK$zLk" role="3_zqUi">
       <property role="TrG5h" value="NOTCH_UPREGULATION" />
+      <property role="2HBw3H" value="1" />
       <ref role="1gv5qF" node="6Zu6_HK$z$3" resolve="VEGF_VEGFR" />
       <ref role="1gufLq" node="6Zu6_HK$zM8" resolve="NOTCH_UPREGULATION_MOD" />
       <ref role="1gv5qG" node="6Zu6_HK$zup" resolve="DLL4" />
@@ -312,6 +314,7 @@
     </node>
     <node concept="1gv4$U" id="6Zu6_HK$zTh" role="3_zqUi">
       <property role="TrG5h" value="VEGFR_INHIBITION" />
+      <property role="2HBw3H" value="2" />
       <ref role="1gufLq" node="6Zu6_HK$zSo" resolve="VEGFR_INHIBITION_MOD" />
       <ref role="1gv5qG" node="6Zu6_HK$zj0" resolve="VEGFR" />
       <ref role="1gv5qF" node="xhYrIU82pV" resolve="NOTCH_DLL4" />
