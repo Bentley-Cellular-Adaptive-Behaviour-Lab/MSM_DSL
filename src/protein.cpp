@@ -14,7 +14,7 @@ protein::protein(std::string name, int protein_location, float initial_level, fl
     this->max = max;
 
     // Set up levels vector by filling it with zeros for each timestep, then add the initial level to the end of the vector.
-    for (int i = 0; i < max_transcription_delay; i++) {
+    for (int i = 0; i <= max_transcription_delay; i++) {
         this->cell_levels.push_back(initial_level);
     }
 }

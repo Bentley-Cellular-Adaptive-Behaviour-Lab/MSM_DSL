@@ -51,9 +51,12 @@ void BasicODEMemAgentTest::SetUp() {
 	setupEnvironment();
 
 	// Add proteins to memAgents.
-	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
-	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
-	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 100));
+	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent1->owned_proteins[0]->set_memAgent_level(10);
+	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent2->owned_proteins[0]->set_memAgent_level(10);
+	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent3->owned_proteins[0]->set_memAgent_level(10);
 
 	for (int i = 0; i < 10; i++) {
 		runODE(memAgent1);
@@ -250,20 +253,32 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 
 void CrossCellODEMemAgentTest::setupAgentProteins() const {
 	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent1->owned_proteins[0]->set_memAgent_level(1);
 	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent2->owned_proteins[0]->set_memAgent_level(1);
 	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100,1));
+	memAgent3->owned_proteins[0]->set_memAgent_level(1);
 
 	memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent1->owned_proteins[1]->set_memAgent_level(1);
 	memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent2->owned_proteins[1]->set_memAgent_level(1);
 	memAgent3->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
+	memAgent3->owned_proteins[1]->set_memAgent_level(1);
 
 	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins[2]->set_memAgent_level(1);
+	memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent2->owned_proteins[2]->set_memAgent_level(1);
+	memAgent3->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent3->owned_proteins[2]->set_memAgent_level(1);
 
 	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent1->owned_proteins[3]->set_memAgent_level(1);
+	memAgent2->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent2->owned_proteins[3]->set_memAgent_level(1);
+	memAgent3->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+	memAgent3->owned_proteins[3]->set_memAgent_level(1);
 }
 
 void CrossCellODEMemAgentTest::setupEnvironment() {
@@ -493,39 +508,71 @@ void MultiNeighbourODEMemAgentTest::MultiAgentODE_system(const multiAgent_ode_st
 
 void MultiNeighbourODEMemAgentTest::setupAgentProteins() const {
 	// Scenario 1
-	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent1->owned_proteins[0]->set_memAgent_level(10);
+	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent2->owned_proteins[0]->set_memAgent_level(10);
+	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent3->owned_proteins[0]->set_memAgent_level(10);
+
+	memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent1->owned_proteins[1]->set_memAgent_level(10);
+	memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent2->owned_proteins[1]->set_memAgent_level(10);
+	memAgent3->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent3->owned_proteins[1]->set_memAgent_level(10);
 
 	// Scenario 2
-	memAgent4->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent5->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent6->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent7->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent4->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent5->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent6->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
-	memAgent7->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, false, 0, 100));
+	memAgent4->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent4->owned_proteins[0]->set_memAgent_level(10);
+	memAgent5->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent5->owned_proteins[0]->set_memAgent_level(10);
+	memAgent6->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent6->owned_proteins[0]->set_memAgent_level(10);
+	memAgent7->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent7->owned_proteins[0]->set_memAgent_level(10);
+
+	memAgent4->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent4->owned_proteins[1]->set_memAgent_level(10);
+	memAgent5->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent5->owned_proteins[1]->set_memAgent_level(10);
+	memAgent6->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent6->owned_proteins[1]->set_memAgent_level(10);
+	memAgent7->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
+	memAgent7->owned_proteins[1]->set_memAgent_level(10);
 
 	// Set everything else to 0.
-	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
-	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
-	memAgent2->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
-	memAgent3->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent1->owned_proteins[2]->set_memAgent_level(0);
+	memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent2->owned_proteins[2]->set_memAgent_level(0);
+	memAgent3->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent3->owned_proteins[2]->set_memAgent_level(0);
 
-	memAgent4->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent5->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent6->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent7->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent4->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent5->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent6->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
-	memAgent7->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, false, 0, 100));
+	memAgent1->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent1->owned_proteins[3]->set_memAgent_level(0);
+	memAgent2->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent2->owned_proteins[3]->set_memAgent_level(0);
+	memAgent3->owned_proteins.push_back(new protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+	memAgent3->owned_proteins[3]->set_memAgent_level(0);
+
+	memAgent4->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent4->owned_proteins[2]->set_memAgent_level(0);
+	memAgent5->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent5->owned_proteins[2]->set_memAgent_level(0);
+	memAgent6->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent6->owned_proteins[2]->set_memAgent_level(0);
+	memAgent7->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent7->owned_proteins[2]->set_memAgent_level(0);
+
+	memAgent4->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent4->owned_proteins[3]->set_memAgent_level(0);
+	memAgent5->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent5->owned_proteins[3]->set_memAgent_level(0);
+	memAgent6->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent6->owned_proteins[3]->set_memAgent_level(0);
+	memAgent7->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
+	memAgent7->owned_proteins[3]->set_memAgent_level(0);
 }
 
 void MultiNeighbourODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
@@ -640,7 +687,7 @@ void BasicFilODEMemAgentTest::setupEnvironment() {
 		for (int y = 0; y < world->gridYDimensions; y++) {
 			for (int z = 0; z < world->gridYDimensions; z++) {
 				if (world->grid[x][y][z].type == const_E) {
-					auto proteinA = new protein("A", PROTEIN_LOCATION_ENVIRONMENT, 1, false, 0, 100);
+					auto proteinA = new protein("A", PROTEIN_LOCATION_ENVIRONMENT, 1, 0, 100);
 					ep = world->grid[x][y][z].Eid;
 					ep->owned_proteins.push_back(proteinA);
 				}
@@ -674,11 +721,15 @@ void BasicFilODEMemAgentTest::basicFilODE_system(const basicFil_ode_states &x, b
 }
 
 void BasicFilODEMemAgentTest::setupAgentProteins() const {
-	this->memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_MEMBRANE, 0, false, 0, 100));
-	this->memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_MEMBRANE, 0, false, 0, 100));
+	this->memAgent1->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
+	this->memAgent1->owned_proteins[0]->set_memAgent_level(0);
+	this->memAgent1->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
+	this->memAgent1->owned_proteins[1]->set_memAgent_level(0);
 
-	this->memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_MEMBRANE, 0, false, 0, 100));
-	this->memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_MEMBRANE, 0, false, 0, 100));
+	this->memAgent2->owned_proteins.push_back(new protein("B", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
+	this->memAgent2->owned_proteins[0]->set_memAgent_level(0);
+	this->memAgent2->owned_proteins.push_back(new protein("C", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
+	this->memAgent2->owned_proteins[0]->set_memAgent_level(0);
 }
 
 void BasicFilODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
@@ -734,7 +785,7 @@ void BasicCellDistributionTest::setupCell() {
 	// Create a new cell type for our cell, with a total of 25 memAgents.
 	auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
 	auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
-	basicCellType->add_protein(new protein("A", PROTEIN_LOCATION_CELL, 1000, false, 0, 10000));
+	basicCellType->add_protein(new protein("A", PROTEIN_LOCATION_CELL, 1000, 0, 10000, 1));
 
 	// Create the cell using the defined tissue container.
 	tissueContainer->create_cell("BasicCell", basicCellType, new Coordinates(25, 25, 25));
@@ -824,10 +875,10 @@ void CellJunctionTest::setupCells() {
 	auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
 	auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
 
-	basicCellType->add_protein(new protein("A", PROTEIN_LOCATION_JUNCTION, 1000, false, 0, 10000));
-	basicCellType->add_protein(new protein("B", PROTEIN_LOCATION_JUNCTION, 1000, false, 0, 10000));
-	basicCellType->add_protein(new protein("AB", PROTEIN_LOCATION_CELL, 0, false, 0, 10000));
-	basicCellType->add_protein(new protein("C", PROTEIN_LOCATION_CELL, 0, false, 0, 10000));
+	basicCellType->add_protein(new protein("A", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
+	basicCellType->add_protein(new protein("B", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
+	basicCellType->add_protein(new protein("AB", PROTEIN_LOCATION_CELL, 0, 0, 10000, 1));
+	basicCellType->add_protein(new protein("C", PROTEIN_LOCATION_CELL, 0, 0, 10000, 1));
 
 	auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
 	// Create the tissue using the defined tissue container.

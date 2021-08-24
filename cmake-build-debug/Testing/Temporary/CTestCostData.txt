@@ -1,22 +1,14 @@
-test_ODE.ODEConstantRate 6 0.00103345
-test_ODE.multi_ODEConstantRate 6 0.00125338
-test_ODE.ODELinearRate 6 0.0009072
-BasicODEMemAgentTest.environmentCheckTest 5 0.0451446
-BasicODEMemAgentTest.memAgentTest 3 0
-CrossCellODEMemAgentTest.cellODETest 3 0
-CrossCellODEMemAgentTest.junctionODETest 3 0
-MultiNeighbourODEMemAgentTest.cellODETest 3 0
-BasicFilODEMemAgentTest.basicFilTest 3 0
-BasicCellDistributionTest.preDistributionTest 3 0
-BasicCellDistributionTest.postDistributionTest 3 0
-CellJunctionTest.crossJunctionODETest 3 0
-HelloTest.CheckGoogleTest 6 0.000951517
+test_ODE.ODEConstantRate 9 0.000701256
+test_ODE.multi_ODEConstantRate 9 0.000826167
+test_ODE.ODELinearRate 9 0.000594844
+BasicODEMemAgentTest.environmentCheckTest 8 0.0334921
+BasicODEMemAgentTest.memAgentTest 6 0.045416
+CrossCellODEMemAgentTest.cellODETest 6 0.0349861
+CrossCellODEMemAgentTest.junctionODETest 6 0.0291187
+MultiNeighbourODEMemAgentTest.cellODETest 6 0.0313981
+BasicFilODEMemAgentTest.basicFilTest 4 0.0743876
+BasicCellDistributionTest.preDistributionTest 5 0.037136
+BasicCellDistributionTest.postDistributionTest 5 0.043167
+CellJunctionTest.crossJunctionODETest 5 0.0450877
+HelloTest.CheckGoogleTest 9 0.000734589
 ---
-BasicODEMemAgentTest.memAgentTest
-CrossCellODEMemAgentTest.cellODETest
-CrossCellODEMemAgentTest.junctionODETest
-MultiNeighbourODEMemAgentTest.cellODETest
-BasicFilODEMemAgentTest.basicFilTest
-BasicCellDistributionTest.preDistributionTest
-BasicCellDistributionTest.postDistributionTest
-CellJunctionTest.crossJunctionODETest
