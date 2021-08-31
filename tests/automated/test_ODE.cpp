@@ -160,3 +160,87 @@ TEST_F(CellJunctionTest, crossJunctionODETest) {
 //	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
 //	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
 }
+
+TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
+    std::cout << "Timestep,A,B,C,D,\n";
+    std::cout << 0 << ",";
+    printProteinLevels(this->tissueMonolayer->m_cell_agents[0]);
+    for (int i = 1; i <= 6; i++) {
+        std::cout << i << ",";
+        runCellODEs(this->tissueMonolayer->m_cell_agents[0]);
+        printProteinLevels(this->tissueMonolayer->m_cell_agents[0]);
+        // Do tests before cycling protein levels.
+
+        if (i == 1) {
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("A", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("B", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("C", 0), 0);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("D", 0), 0);
+        }
+
+        if (i == 2) {
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("A", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("B", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("C", 0), 150);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("D", 0), 0);
+        }
+
+        if (i == 3) {
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("A", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("B", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("C", 0), 300);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("D", 0), 0);
+        }
+
+        // Do something sneaky, and change the level of A, then check the level of C on the next timestep.
+        if (i == 4) {
+            this->tissueMonolayer->m_cell_agents[0]->set_cell_protein_level("A", 200, 1);
+        }
+
+        if (i == 5) {
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("A", 0), 200);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("B", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("C", 0), 600);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("D", 0), 0);
+        }
+
+        // After 5 timesteps have happened, we expect to see D's value change.
+        if (i == 6) {
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("A", 0), 200);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("B", 0), 100);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("C", 0), 900);
+            EXPECT_EQ(this->tissueMonolayer->m_cell_agents[0]->get_cell_protein_level("D", 0), 150);
+        }
+
+        this->tissueMonolayer->m_cell_agents[0]->cycle_protein_levels();
+    }
+}
+
+TEST_F(NotchPathwayTest, NotchPathwayTest) {
+    printCellProteinLevels(0);
+    for (int i = 1; i < 10; i++) {
+
+        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+            ec->distribute_proteins();
+        }
+
+        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+            for (auto *nodeAgent : ec->nodeAgents) {
+                run_memAgent_ODE(nodeAgent);
+            }
+        }
+
+        // Calculate the new cell levels.
+        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+            ec->calculate_cell_protein_levels();
+        }
+
+        // Run ODEs on the new cell levels.
+        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+            run_Cell_ODE(ec);
+        }
+
+        // Now print the new levels.
+        printCellProteinLevels(i);
+    }
+}

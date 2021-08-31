@@ -794,6 +794,32 @@
         </node>
         <node concept="2iRfu4" id="6pt0UY9wRbS" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="5$qoOFydujn" role="3EZMnx">
+        <node concept="VPM3Z" id="5$qoOFydujo" role="3F10Kt" />
+        <node concept="3XFhqQ" id="5$qoOFydujp" role="3EZMnx" />
+        <node concept="3F0ifn" id="5$qoOFydujq" role="3EZMnx">
+          <property role="3F0ifm" value="Transcription Delay:" />
+          <node concept="2biZxu" id="5$qoOFydujr" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5$qoOFydujs" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="5$qoOFydumE" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+          <node concept="2biZxu" id="5$qoOFydunT" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5$qoOFydunU" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+          <node concept="VechU" id="5$qoOFydunV" role="3F10Kt">
+            <property role="Vb096" value="g1_qVrt/darkMagenta" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="5$qoOFyduj$" role="2iSdaV" />
+      </node>
       <node concept="3F0ifn" id="xhYrIU6uVJ" role="3EZMnx" />
       <node concept="2iRkQZ" id="2Hxmt3eVhfg" role="2iSdaV" />
     </node>
@@ -3084,36 +3110,6 @@
             </node>
           </node>
         </node>
-        <node concept="3F0ifn" id="6UPd1r3aSOt" role="3EZMnx">
-          <property role="3F0ifm" value="&lt;- Delay:" />
-          <node concept="2biZxu" id="6UPd1r3aSOu" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aSOv" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="6UPd1r3aSOw" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:6UPd1r3aNjV" resolve="TranscriptionDelay" />
-          <node concept="2biZxu" id="6UPd1r3aSOx" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aSOy" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-          <node concept="VechU" id="6UPd1r3aSOz" role="3F10Kt">
-            <property role="Vb096" value="g1_qVrt/darkMagenta" />
-          </node>
-        </node>
-        <node concept="3F0ifn" id="6UPd1r3aSO$" role="3EZMnx">
-          <property role="3F0ifm" value=" timesteps." />
-          <node concept="2biZxu" id="6UPd1r3aSO_" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aSOA" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
       </node>
       <node concept="3F0ifn" id="2FvyIAlIpP3" role="3EZMnx">
         <node concept="2biZxu" id="2FvyIAlIpPM" role="3F10Kt">
@@ -3254,36 +3250,6 @@
                 <property role="1lJzqX" value="16" />
               </node>
             </node>
-          </node>
-        </node>
-        <node concept="3F0ifn" id="6UPd1r3aNlO" role="3EZMnx">
-          <property role="3F0ifm" value="&lt;- Delay:" />
-          <node concept="2biZxu" id="6UPd1r3aNnW" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aNnX" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="6UPd1r3aNne" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:6UPd1r3aNjV" resolve="TranscriptionDelay" />
-          <node concept="2biZxu" id="6UPd1r3aNo0" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aNo1" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-          <node concept="VechU" id="2FvyIAlKhUC" role="3F10Kt">
-            <property role="Vb096" value="g1_qVrt/darkMagenta" />
-          </node>
-        </node>
-        <node concept="3F0ifn" id="6UPd1r3aSMx" role="3EZMnx">
-          <property role="3F0ifm" value=" timesteps." />
-          <node concept="2biZxu" id="6UPd1r3aSNl" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6UPd1r3aSNm" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
           </node>
         </node>
       </node>

@@ -12,6 +12,7 @@ protein::protein(std::string name, int protein_location, float initial_level, fl
 	this->protein_location = protein_location;
     this->min = min;
     this->max = max;
+    this->transcription_delay = max_transcription_delay;
 
     // Set up levels vector by filling it with zeros for each timestep, then add the initial level to the end of the vector.
     for (int i = 0; i <= max_transcription_delay; i++) {
@@ -70,6 +71,10 @@ float protein::get_env_level() const {
 
 void protein::set_env_level(float new_level) {
     this->env_level = new_level;
+}
+
+int protein::get_transcription_delay() const {
+    return this->transcription_delay;
 }
 
 protein::~protein() = default;

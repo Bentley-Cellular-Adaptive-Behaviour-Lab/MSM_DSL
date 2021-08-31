@@ -6840,7 +6840,43 @@
             </node>
           </node>
           <node concept="356sEF" id="4cEU8AvxTrA" role="356sEH">
-            <property role="TrG5h" value="&quot;);" />
+            <property role="TrG5h" value="&quot;, " />
+          </node>
+          <node concept="356sEF" id="yQY4YiDbcn" role="356sEH">
+            <property role="TrG5h" value="TRANSCRIPTION_DELAY" />
+            <node concept="17Uvod" id="yQY4YiDdmm" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="yQY4YiDdmn" role="3zH0cK">
+                <node concept="3clFbS" id="yQY4YiDdmo" role="2VODD2">
+                  <node concept="3clFbF" id="yQY4YiDdvA" role="3cqZAp">
+                    <node concept="2YIFZM" id="yQY4YiDdvB" role="3clFbG">
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                      <node concept="3cpWsd" id="yQY4YiDfHA" role="37wK5m">
+                        <node concept="3cmrfG" id="yQY4YiDfHE" role="3uHU7w">
+                          <property role="3cmrfH" value="1" />
+                        </node>
+                        <node concept="2OqwBi" id="yQY4YiDdvC" role="3uHU7B">
+                          <node concept="2OqwBi" id="yQY4YiDdvD" role="2Oq$k0">
+                            <node concept="30H73N" id="yQY4YiDdvE" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="yQY4YiDdvF" role="2OqNvi">
+                              <ref role="3Tt5mk" to="w3cn:3h7BZk97_g8" resolve="target" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="yQY4YiDdvG" role="2OqNvi">
+                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="yQY4YiDbco" role="356sEH">
+            <property role="TrG5h" value=");" />
           </node>
           <node concept="2EixSi" id="4cEU8AvqHcV" role="2EinRH" />
           <node concept="1WS0z7" id="4cEU8AvxPe5" role="lGtFl">
@@ -7251,7 +7287,38 @@
             </node>
           </node>
           <node concept="356sEF" id="4cEU8AvxUPl" role="356sEH">
-            <property role="TrG5h" value="]);" />
+            <property role="TrG5h" value="], " />
+          </node>
+          <node concept="356sEF" id="5$qoOFygcau" role="356sEH">
+            <property role="TrG5h" value="TRANSCRIPTION_DELAY" />
+            <node concept="17Uvod" id="5$qoOFygey$" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="5$qoOFygey_" role="3zH0cK">
+                <node concept="3clFbS" id="5$qoOFygeyA" role="2VODD2">
+                  <node concept="3clFbF" id="5$qoOFygW30" role="3cqZAp">
+                    <node concept="2YIFZM" id="5$qoOFygWV_" role="3clFbG">
+                      <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                      <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                      <node concept="2OqwBi" id="5$qoOFygXrR" role="37wK5m">
+                        <node concept="2OqwBi" id="5$qoOFygXrS" role="2Oq$k0">
+                          <node concept="30H73N" id="5$qoOFygXrT" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="5$qoOFygXrU" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:3h7BZk97_g8" resolve="target" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="5$qoOFygXrV" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="5$qoOFygcav" role="356sEH">
+            <property role="TrG5h" value=");" />
           </node>
           <node concept="2EixSi" id="4cEU8Avsudi" role="2EinRH" />
           <node concept="1WS0z7" id="4cEU8AvxXTH" role="lGtFl">

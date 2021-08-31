@@ -188,6 +188,11 @@
       <property role="TrG5h" value="Location" />
       <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
     </node>
+    <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
+      <property role="IQ2nx" value="6420553392043975787" />
+      <property role="TrG5h" value="Transcription_Delay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
       <property role="20kJfa" value="Degradation_Term" />

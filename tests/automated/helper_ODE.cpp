@@ -51,11 +51,11 @@ void BasicODEMemAgentTest::SetUp() {
 	setupEnvironment();
 
 	// Add proteins to memAgents.
-	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent1->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
 	memAgent1->owned_proteins[0]->set_memAgent_level(10);
-	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent2->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
 	memAgent2->owned_proteins[0]->set_memAgent_level(10);
-	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
+	memAgent3->owned_proteins.push_back(new protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
 	memAgent3->owned_proteins[0]->set_memAgent_level(10);
 
 	for (int i = 0; i < 10; i++) {
@@ -967,10 +967,21 @@ void NotchPathwayTest::SetUp() {
     //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
     addWorldContainer(w_container);
+    worldContainer->world_setup();
     addWorld(w_container->get_world());
     // Adds VEGF to the environment.
     setupEnvironment();
     setupCells();
+
+    std::cout << "Timestep,";
+    int count = 1;
+    for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+        for (auto *protein : ec->m_cell_type->proteins) {
+            std::cout << protein->get_name() << "_" << count << ",";
+        }
+        count++;
+    }
+    std::cout << "\n";
 }
 
 void NotchPathwayTest::TearDown() {
@@ -989,7 +1000,7 @@ void NotchPathwayTest::setupEnvironment() {
         for (int y = 0; y < world->gridYDimensions; y++) {
             for (int z = 0; z < world->gridYDimensions; z++) {
                 if (world->grid[x][y][z].type == const_E) {
-                    auto proteinB = new protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 100, false, 0, 1000);
+                    auto proteinB = new protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.04, 0, 100);
                     ep = world->grid[x][y][z].Eid;
                     ep->owned_proteins.push_back(proteinB);
                 }
@@ -1005,11 +1016,11 @@ void NotchPathwayTest::setupCells() {
     auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
     auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
 
-    basicCellType->add_protein(new protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 100, false, 0, 10000));
-    basicCellType->add_protein(new protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 100, false, 0, 10000));
-    basicCellType->add_protein(new protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 100, false, 0, 10000));
-    basicCellType->add_protein(new protein("DLL4", PROTEIN_LOCATION_JUNCTION, 100, true, 0, 10000));
-    basicCellType->add_protein(new protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 100, true, 0, 10000));
+    basicCellType->add_protein(new protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000, 0, 10000, 1));
+    basicCellType->add_protein(new protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000, 0, 10000, 1));
+    basicCellType->add_protein(new protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
+    basicCellType->add_protein(new protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
+    basicCellType->add_protein(new protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
 
     auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
     // Create the tissue using the defined tissue container.
@@ -1039,16 +1050,30 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
 
     stepper.do_step(NotchPathway_memAgent_system, current_states, 0.0, new_states, 1);
 
-    memAgent->distribute_calculated_proteins("VEGF", new_states[0], true, false);
     memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
     memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
-    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], false, true);
-    memAgent->distribute_calculated_proteins("DLL4", new_states[4], true, true);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true);
     memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
 }
-void NotchPathwayTest::run_Cell_ODE(EC *ec) {
 
+void NotchPathwayTest::run_Cell_ODE(EC *ec) {
+    notch_cell_ode_states current_states;
+    notch_cell_ode_states new_states;
+
+    odeint::euler<notch_cell_ode_states> stepper;
+
+    current_states[0] = ec->get_cell_protein_level("NOTCH_DLL4",0);
+    current_states[1] = ec->get_cell_protein_level("VEGFR",0);
+    current_states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+    current_states[3] = ec->get_cell_protein_level("NOTCH", 0);
+
+    stepper.do_step(NotchPathway_cell_system, current_states, 0.0, new_states, 1);
+
+    ec->set_cell_protein_level("VEGFR", new_states[1],1);
+    ec->set_cell_protein_level("NOTCH", new_states[3],1);
 }
+
 void NotchPathwayTest::NotchPathway_memAgent_system(const notch_memAgent_ode_states &x, notch_memAgent_ode_states &dxdt, double t) {
     double VEGF = x[0];
     double VEGFR = x[1];
@@ -1056,10 +1081,12 @@ void NotchPathwayTest::NotchPathway_memAgent_system(const notch_memAgent_ode_sta
     double NOTCH = x[3];
     double DLL4 = x[4];
     double NOTCH_DLL4 = x[5];
+
     double VEGF_VEGFR_FORWARD = VEGF * VEGFR * 0.1;
     double VEGF_VEGFR_REVERSE = VEGF_VEGFR * 0.001;
     double NOTCH_DLL4_FORWARD = NOTCH * DLL4 * 0.1;
     double NOTCH_DLL4_REVERSE = NOTCH_DLL4 * 0.001;
+
     dxdt[0] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
     dxdt[1] = -VEGF_VEGFR_FORWARD*1+VEGF_VEGFR_REVERSE*1;
     dxdt[2] = +VEGF_VEGFR_FORWARD*1-VEGF_VEGFR_REVERSE*1;
@@ -1072,7 +1099,7 @@ void NotchPathwayTest::NotchPathway_cell_system(const notch_cell_ode_states &x, 
     double VEGFR = x[1];
     double VEGF_VEGFR = x[2];
     double NOTCH = x[3];
-    double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate();
+    double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate(NOTCH_DLL4);
     double NOTCH_UPREGULATION_MOD = calc_NOTCH_UPREGULATION_MOD_rate(VEGFR, VEGF_VEGFR);
     dxdt[0] = 0;
     dxdt[1] = -VEGFR_INHIBITION_MOD;
@@ -1080,12 +1107,121 @@ void NotchPathwayTest::NotchPathway_cell_system(const notch_cell_ode_states &x, 
     dxdt[3] = +NOTCH_UPREGULATION_MOD;
 }
 void NotchPathwayTest::printCellProteinLevels(int timestep) const {
-
+    std::cout << timestep << ",";
+    int count = 1;
+    for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+        for (auto *protein : ec->m_cell_type->proteins) {
+            std::cout << protein->get_cell_level(0) << ",";
+        }
+        count++;
+    }
+    std::cout << "\n";
 }
-double NotchPathwayTest::calc_VEGFR_INHIBITION_MOD_rate() {
-    return 10;
+
+double NotchPathwayTest::calc_VEGFR_INHIBITION_MOD_rate(double NOTCH_DLL4) {
+    return 0.01 * NOTCH_DLL4;
 }
 
 double NotchPathwayTest::calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR) {
-    return VEGFR/VEGF_VEGFR * 1.2;
+    return VEGFR/VEGF_VEGFR;
+}
+
+/*****************************************************************************************
+*  Name:		TranscriptionDelayTest::SetUp()
+*  Description: - Runs two simple ODEs on a cell, then updates the levels for those particular timestep.
+*               - Then cycles the protein level container to update the levels properly.
+*
+*	  			ODE 1: 1A -> 1B (One TimeStep)
+*	  			ODE 2: 1C -> 1D (Five Timesteps from now.)
+*
+*  Returns:		void
+******************************************************************************************/
+
+void TranscriptionDelayTest::SetUp() {
+    //Creates a 50 by 50 world with an adhesiveness value of 1.0.
+    auto w_container = new World_Container();
+    addWorldContainer(w_container);
+    worldContainer->world_setup();
+    addWorld(w_container->get_world());
+    setupCell();
+    for (auto cell : tissueMonolayer->m_cell_agents) {
+        cell->distribute_proteins();
+    }
+}
+
+void TranscriptionDelayTest::TearDown() {
+
+}
+
+void TranscriptionDelayTest::addWorldContainer(World_Container *worldContainer) {
+    this->worldContainer = worldContainer;
+}
+
+
+void TranscriptionDelayTest::addWorld(World *world) {
+    this->world = world;
+}
+
+void TranscriptionDelayTest::setupCell() {
+    // Creates a tissue monolayer with only one cell.
+    this->tissueContainer = new Tissue_Container(this->world);
+    // Create a new Cell Type that holds some dummy values - these aren't used at any point.
+    auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
+    auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
+    basicCellType->add_protein(new protein("A", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0,1));
+    basicCellType->add_protein(new protein("B", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0,1));
+    basicCellType->add_protein(new protein("C", PROTEIN_LOCATION_CELL, 0.0, 0.0, 100.0,1));
+    basicCellType->add_protein(new protein("D", PROTEIN_LOCATION_CELL, 0.0, 0.0, 100.0,5));
+
+    auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 1);
+    // Create the tissue using the defined tissue container.
+    this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
+    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
+
+    // Force add the proteins to the memAgents and check whether they're at a junction.
+    // TODO: ASK KATIE ABOUT WHETHER MEMAGENTS ARE DEFINED AS JUNCTIONAL OR NOT.
+    for (auto cell : this->tissueMonolayer->m_cell_agents) {
+        for (auto memAgent : cell->nodeAgents) {
+            memAgent->add_cell_proteins();
+            memAgent->JunctionTest(true);
+        }
+    }
+}
+
+void TranscriptionDelayTest::runCellODEs(EC *ec) {
+    TranscriptionDelayTest_ode_states current_states;
+    TranscriptionDelayTest_ode_states new_states;
+
+    odeint::euler<TranscriptionDelayTest_ode_states> stepper;
+
+    // Get levels for this timestep for source proteins.
+    // Use future levels for target proteins.
+    current_states[0] = ec->get_cell_protein_level("A",0);
+    current_states[1] = ec->get_cell_protein_level("B",0);
+    current_states[2] = ec->get_cell_protein_level("C", 0);
+    current_states[3] = ec->get_cell_protein_level("D", 4);
+
+    stepper.do_step(TranscriptionDelayTest_system, current_states, 0.0, new_states, 1);
+
+    ec->set_cell_protein_level("C", new_states[2],1);
+    ec->set_cell_protein_level("D", new_states[3],5);
+}
+
+void TranscriptionDelayTest::TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t) {
+    double A = x[0];
+    double B = x[1];
+    double C = x[2];
+    double D = x[3];
+
+    dxdt[0] = 0;
+    dxdt[1] = 0;
+    dxdt[2] = A * 1.5;
+    dxdt[3] = B * 1.5;
+}
+
+void TranscriptionDelayTest::printProteinLevels(EC *ec) {
+    for (auto protein : ec->m_cell_type->proteins) {
+        std::cout << protein->get_cell_level(0) << ",";
+    }
+    std::cout << "\n";
 }

@@ -2378,8 +2378,8 @@ void MemAgent::add_cell_proteins() {
     //TODO: Have protein totals be updated after all memAgents have been created.
 
     for (auto current_protein : this->Cell->m_cell_type->proteins) {
-        // Create new protein
-        auto *new_protein = new protein(current_protein->get_name(), current_protein->get_location(), 0.0, false, current_protein->get_min(), current_protein->get_max());
+        // Create new protein - set transcription delay to minus 1 as this isn't being used.
+        auto *new_protein = new protein(current_protein->get_name(), current_protein->get_location(), 0.0, current_protein->get_min(), current_protein->get_max(), current_protein->get_transcription_delay());
         this->owned_proteins.push_back(new_protein);
     }
 }
@@ -2414,8 +2414,9 @@ void MemAgent::set_protein_level(std::string protein_name, float new_level) {
         		protein->set_memAgent_level(protein->get_min());
         	} else if (new_level > protein->get_max()) {
 				protein->set_memAgent_level(protein->get_max());
-        	}
-            protein->set_memAgent_level(new_level);
+        	} else {
+                protein->set_memAgent_level(new_level);
+            }
         }
     }
 }
@@ -3153,6 +3154,12 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			p = k + 1;
 		}
 		// TODO: Tidy up these statements!
+
+        // TODO: TESTING - REMOVE
+        if (m == 19 && n == 26 && p == 25) {
+            int x = 0;
+        }
+
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].type == const_M) {
 				for (auto memAgent : worldP->grid[m][n][p].Mids) {

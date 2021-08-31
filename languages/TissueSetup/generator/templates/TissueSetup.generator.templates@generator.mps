@@ -1133,8 +1133,8 @@
                             <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
                           </node>
                         </node>
-                        <node concept="2qgKlT" id="6UPd1r3foFK" role="2OqNvi">
-                          <ref role="37wK5l" to="f3yh:6UPd1r3aEsj" resolve="getMaxTranscriptionDelay" />
+                        <node concept="3TrcHB" id="5$qoOFygaFi" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
                         </node>
                       </node>
                     </node>

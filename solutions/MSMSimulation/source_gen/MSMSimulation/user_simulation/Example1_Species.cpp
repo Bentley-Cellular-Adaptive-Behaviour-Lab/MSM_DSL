@@ -76,15 +76,15 @@ void ODEs::check_cell_ODEs(EC *ec) {
   	Endothelial_cell_ode_states new_states;
   	odeint::euler<Endothelial_cell_ode_states> stepper;
 
-  	current_states[0] = ec->get_cell_protein_level("NOTCH_DLL4");
-  	current_states[1] = ec->get_cell_protein_level("VEGFR");
-  	current_states[2] = ec->get_cell_protein_level("VEGF_VEGFR");
-  	current_states[3] = ec->get_cell_protein_level("DLL4");
+  	current_states[0] = ec->get_cell_protein_level("NOTCH_DLL4", 0);
+  	current_states[1] = ec->get_cell_protein_level("VEGFR", 0);
+  	current_states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+  	current_states[3] = ec->get_cell_protein_level("DLL4", 0);
 
   	stepper.do_step(Endothelial_cell_system, current_states, 0.0, new_states, 1);
 
-  	ec->set_cell_protein_level("VEGFR", new_states[1]);
-  	ec->set_cell_protein_level("DLL4", new_states[3]);
+  	ec->set_cell_protein_level("VEGFR", new_states[1], 1);
+  	ec->set_cell_protein_level("DLL4", new_states[3], 1);
   }
 
 static double calc_VEGF_VEGFR_FORWARD_rate() {

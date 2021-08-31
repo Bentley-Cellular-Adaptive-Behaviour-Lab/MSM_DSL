@@ -5072,5 +5072,75 @@
       <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     </node>
   </node>
+  <node concept="18kY7G" id="5$qoOFydXas">
+    <property role="3GE5qa" value="Processes" />
+    <property role="TrG5h" value="check_TranscriptionDelay" />
+    <node concept="3clFbS" id="5$qoOFydXat" role="18ibNy">
+      <node concept="3clFbJ" id="5$qoOFydXbo" role="3cqZAp">
+        <node concept="3eOVzh" id="5$qoOFydYEP" role="3clFbw">
+          <node concept="3cmrfG" id="5$qoOFydYHH" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="2OqwBi" id="5$qoOFydXne" role="3uHU7B">
+            <node concept="1YBJjd" id="5$qoOFydXb$" role="2Oq$k0">
+              <ref role="1YBMHb" node="5$qoOFydXbf" resolve="regulation" />
+            </node>
+            <node concept="3TrcHB" id="5$qoOFydX$7" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:6UPd1r3aNjV" resolve="TranscriptionDelay" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="5$qoOFydXbq" role="3clFbx">
+          <node concept="2MkqsV" id="5$qoOFydYIa" role="3cqZAp">
+            <node concept="Xl_RD" id="5$qoOFydYIm" role="2MkJ7o">
+              <property role="Xl_RC" value="Transcription delays must be greater than zero" />
+            </node>
+            <node concept="1YBJjd" id="5$qoOFydYKd" role="1urrMF">
+              <ref role="1YBMHb" node="5$qoOFydXbf" resolve="regulation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5$qoOFydXbf" role="1YuTPh">
+      <property role="TrG5h" value="regulation" />
+      <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="5$qoOFydYLz">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_SpeciesTranscriptionDelay" />
+    <node concept="3clFbS" id="5$qoOFydYL$" role="18ibNy">
+      <node concept="3clFbJ" id="5$qoOFydYM7" role="3cqZAp">
+        <node concept="3eOVzh" id="5$qoOFye09Z" role="3clFbw">
+          <node concept="3cmrfG" id="5$qoOFye0co" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="2OqwBi" id="5$qoOFydYWQ" role="3uHU7B">
+            <node concept="1YBJjd" id="5$qoOFydYMj" role="2Oq$k0">
+              <ref role="1YBMHb" node="5$qoOFydYLY" resolve="species" />
+            </node>
+            <node concept="3TrcHB" id="5$qoOFydZ7x" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="5$qoOFydYM9" role="3clFbx">
+          <node concept="2MkqsV" id="5$qoOFye0cP" role="3cqZAp">
+            <node concept="Xl_RD" id="5$qoOFye0d1" role="2MkJ7o">
+              <property role="Xl_RC" value="Transcription delays must be greater than zero." />
+            </node>
+            <node concept="1YBJjd" id="5$qoOFye0eS" role="1urrMF">
+              <ref role="1YBMHb" node="5$qoOFydYLY" resolve="species" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5$qoOFydYLY" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
 </model>
 
