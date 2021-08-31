@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Objects;
 import Units.behavior.Amount_Concentration__BehaviorDescriptor;
 import Units.behavior.Mass_Concentration__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SProperty;
 
 public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, "SpeciesSetup.structure.Species");
@@ -41,6 +41,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
+    SPropertyOperations.assign(__thisNode__, PROPS.Transcription_Delay$D$oz, 1);
   }
 
   /*package*/ static void cleanReactionRelations_id1Ch7j$Nakak(@NotNull SNode __thisNode__) {
@@ -195,6 +196,11 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     return CONCEPT;
   }
 
+  private static final class PROPS {
+    /*package*/ static final SProperty Transcription_Delay$D$oz = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x591a634ae235e46bL, "Transcription_Delay");
+    /*package*/ static final SProperty TranscriptionDelay$L0UN = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x6eb53416c32b34fbL, "TranscriptionDelay");
+  }
+
   private static final class LINKS {
     /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
@@ -217,9 +223,5 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "Units.structure.Mass_Concentration");
     /*package*/ static final SConcept Regulation$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesSetup.structure.Regulation");
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesSetup.structure.SpeciesContainer");
-  }
-
-  private static final class PROPS {
-    /*package*/ static final SProperty TranscriptionDelay$L0UN = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x6eb53416c32b34fbL, "TranscriptionDelay");
   }
 }

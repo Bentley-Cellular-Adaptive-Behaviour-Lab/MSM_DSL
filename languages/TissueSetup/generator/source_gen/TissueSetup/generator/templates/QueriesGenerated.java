@@ -110,7 +110,7 @@ public class QueriesGenerated extends QueryProviderBase {
     return String.valueOf((float) Species__BehaviorDescriptor.getMaxConcentrationValue_id1VQO6m$daTe.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
-    return String.valueOf((int) Species__BehaviorDescriptor.getMaxTranscriptionDelay_id6UPd1r3aEsj.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Transcription_Delay$D$oz));
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -474,6 +474,7 @@ public class QueriesGenerated extends QueryProviderBase {
   private static final class PROPS {
     /*package*/ static final SProperty name$MnvL = MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name");
     /*package*/ static final SProperty Location$Gx$s = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x2b6159d0ceed5ea1L, "Location");
+    /*package*/ static final SProperty Transcription_Delay$D$oz = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x591a634ae235e46bL, "Transcription_Delay");
     /*package*/ static final SProperty cylinder_cross_section_cells$pzjl = MetaAdapterFactory.getProperty(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L, 0x56b8f8b9a96cef93L, "cylinder_cross_section_cells");
   }
 

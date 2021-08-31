@@ -264,6 +264,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)/3125878369731540207");
     b.version(2);
     b.property("Location", 0x2b6159d0ceed5ea1L).type(MetaIdFactory.dataTypeId(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L)).origin("3125878369731567265").done();
+    b.property("Transcription_Delay", 0x591a634ae235e46bL).type(PrimitiveTypeId.INTEGER).origin("6420553392043975787").done();
     b.associate("Degradation_Term", 0x665d03af8984818bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063115").done();
     b.associate("Production_Term", 0x665d03af898481a1L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f1L).optional(true).origin("7376055817164063137").done();
     b.aggregate("Starting_Concentration", 0x375d1bec6ae084b4L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("3989375547139458228").done();

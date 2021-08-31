@@ -15,6 +15,7 @@ typedef boost::array<float, 1> basicDistribution_ode_states;
 typedef boost::array<float, 4> cellJunction_ode_states;
 typedef boost::array<float, 6> notch_memAgent_ode_states;
 typedef boost::array<float, 4> notch_cell_ode_states;
+typedef boost::array<float, 4> TranscriptionDelayTest_ode_states;
 
 class World;
 class World_Container;
@@ -184,8 +185,26 @@ public:
     static void NotchPathway_cell_system(const notch_cell_ode_states &x, notch_cell_ode_states &dxdt, double t);
 
     void printCellProteinLevels(int timestep) const;
-    static double calc_VEGFR_INHIBITION_MOD_rate();
+    static double calc_VEGFR_INHIBITION_MOD_rate(double NOTCH_DLL4);
     static double calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double VEGF_VEGFR);
+};
+
+class TranscriptionDelayTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    World *world;
+    World_Container *worldContainer;
+    Tissue_Container *tissueContainer;
+    Tissue_Monolayer *tissueMonolayer;
+
+    void addWorldContainer(World_Container *w_container);
+    void addWorld(World *world);
+    void setupCell();
+    void runCellODEs(EC *ec);
+    void printProteinLevels(EC *ec);
+    static void TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t);
 };
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);

@@ -736,9 +736,6 @@ void EC::calculate_cell_protein_levels() {
         protein_counts.push_back(0);
     }
 
-    for (auto nodeAgent : this->nodeAgents) {
-        this->worldP->run_memAgent_ODEs(this->m_cell_type->m_name, nodeAgent);
-    }
 
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
@@ -924,9 +921,13 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
 
 void EC::cycle_protein_levels() {
     for (auto *protein : this->m_cell_type->proteins) {
+        //TODO: Get this to use a value set by the protein eventually.
+        // This does work with both the species and regulation delays though.
+        int size = protein->cell_levels.size();
+        float newProteinValue = protein->cell_levels[size - 1];
         // Remove first element of the container - i.e. the current timestep.
         protein->cell_levels.pop_front();
-        // Add a float that will eventually be updated by ODEs.
-        protein->cell_levels.push_back(-1);
+        // Add a float that will eventually be updated by ODEs - use the latest value in the container.
+        protein->cell_levels.push_back(newProteinValue);
     }
 }

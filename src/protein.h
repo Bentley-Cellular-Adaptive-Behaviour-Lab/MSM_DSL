@@ -26,6 +26,7 @@ private:
     float memAgent_level = -1;
     // If this protein is at an environment agent, use this value.
     float env_level = -1;
+    int transcription_delay;
 public:
     // Tracks the level of a protein across multiple timesteps.
     std::deque<float> cell_levels;
@@ -36,6 +37,7 @@ public:
     float get_env_level() const;
     void set_env_level(float new_level);
     int get_location() const;
+    int get_transcription_delay() const;
     [[nodiscard]] float get_min() const;
     [[nodiscard]] float get_max() const;
     std::string get_name();
