@@ -1,6 +1,6 @@
-#include "ODE.h"
-#include "memAgents.h"
-#include "EC.h"
+#include "generated/dsl_species_gen.h"
+#include "core/memAgents.h"
+#include "core/EC.h"
 
 // Created using: Example1_Species //
 ODEs::ODEs() {

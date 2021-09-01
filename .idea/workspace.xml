@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="CPP_DSL" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
-      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
+      <config projectName="src/springAgent" targetName="springAgent" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,166 +15,160 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Tests now working! 🎉">
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Species_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_SpeciesTranscriptionDelay_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/check_TranscriptionDelay_NonTypesystemRule.java" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Linker errors after refactoring.">
+      <change afterPath="$PROJECT_DIR$/src/core/CPM_module.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/contact.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/contact.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/coordinates.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/coordinates.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/filopodia.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/filopodia.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/hysteresis.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/hysteresis.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/location.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/location.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/macrophage.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/macrophage.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/medAgent.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/medAgent.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/spring.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/spring.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/vessel.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/vessel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cell.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cell.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueType.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueType.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/gradient.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/substrate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/constructors.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/display.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/protein.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/utils.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$6$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$6$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$Inline_Builder2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$5$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$5$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Inline_Builder1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Max_ConcentrationSingleRoleHandler_nkm0p4_e3a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Max_ConcentrationSingleRoleHandler_nkm0p4_e3a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Min_ConcentrationSingleRoleHandler_nkm0p4_c3a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Min_ConcentrationSingleRoleHandler_nkm0p4_c3a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Starting_ConcentrationSingleRoleHandler_nkm0p4_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a$Starting_ConcentrationSingleRoleHandler_nkm0p4_c2a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Species_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$4$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$4$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$6$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$6$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder0$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder0$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder2$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder2$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder2.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$Inline_Builder2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/StructureAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/TypesystemDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/TypesystemDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$IfMC.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$IfMC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SCB.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SCB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$VVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated$VVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/classes_gen/SpeciesSetup/generator01/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen.caches/SpeciesSetup/generator01/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/source_gen/SpeciesSetup/generator01/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/templates/SpeciesSetup.generator01.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/plaintextgen_generator/templates/SpeciesSetup.generator01.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Regulation__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Regulation__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/Species__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Regulation_Constraints.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/Regulation_Constraints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Inhibits_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Species_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/Upregulates_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/classes_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen.caches/TissueSetup/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/source_gen/TissueSetup/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueSetup/generator/templates/TissueSetup.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueSetup/generator/templates/TissueSetup.generator.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_World.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CPM_module.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CPM_module.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EC.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ECmesh.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ECmesh.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ECmesh.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Grid.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScreenRecording-c6ce3102.o.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tissue.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/analysis.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/analysis.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/constructors.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constructors.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/creation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/creation.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/creation.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/display.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/display.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl_World.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/environment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/environment.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/environment.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometry_functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/geometry_functions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometry_functions.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/memAgents.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/shape.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/space.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/shape.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/space.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/springAgent" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/statistics_time_to_pattern_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/testforpybind" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/time_to_pattern_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_setup.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,6 +196,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="NamedScopeManager">
+    <scope name="CPP_DSL" pattern="file[MSM_DSL]:src/core//*||file[MSM_DSL]:src/dsl//*" />
+  </component>
   <component name="ProjectId" id="1pzAh6E6l5664C8Z231BnkCHNV5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -218,6 +215,7 @@
     <property name="cmake.loaded.for.project" value="true" />
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
@@ -225,50 +223,39 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL" />
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\core" />
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils" />
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\species" />
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world" />
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CTest Application.All CTest">
-    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CMake Application.springAgent">
+    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
+    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -304,10 +291,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CMake Application.springAgent" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
       <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
@@ -386,14 +370,11 @@
       <workItem from="1629898973873" duration="4634000" />
       <workItem from="1630057574551" duration="7512000" />
       <workItem from="1630066997504" duration="7580000" />
-      <workItem from="1630401665262" duration="1000" />
-    </task>
-    <task id="LOCAL-00003" summary="Implemented basic protein class">
-      <created>1621608453260</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1621608453260</updated>
+      <workItem from="1630401665262" duration="11146000" />
+      <workItem from="1630420872890" duration="11769000" />
+      <workItem from="1630487584922" duration="16497000" />
+      <workItem from="1630508048302" duration="162000" />
+      <workItem from="1630508282184" duration="8891000" />
     </task>
     <task id="LOCAL-00004" summary="Declared function to add proteins to cell types">
       <created>1621608733574</created>
@@ -731,7 +712,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629809099460</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Implemented test for Notch-Dll4 example. Now refactoring code to be better organised.">
+      <created>1630401719836</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1630401719836</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -750,8 +738,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved old tissue setup to new if statement. Added call to protein set up function during creation timestep." />
-    <MESSAGE value="Added declarations for ode setup to world class." />
     <MESSAGE value="Added functions for ode setup to world class." />
     <MESSAGE value="Moved steppers to ODE running function." />
     <MESSAGE value="Created logger class" />
@@ -775,7 +761,9 @@
     <MESSAGE value="Fixing tests after refactoring." />
     <MESSAGE value="Changed levels vector to deque" />
     <MESSAGE value="Tests now working! " />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests now working! " />
+    <MESSAGE value="Implemented test for Notch-Dll4 example. Now refactoring code to be better organised." />
+    <MESSAGE value="Linker errors after refactoring." />
+    <option name="LAST_COMMIT_MESSAGE" value="Linker errors after refactoring." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
