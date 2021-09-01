@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "objects.h"
+#include "core/objects.h"
 
 // Declare/define extern variables.
 std::ofstream RUNSfile;

@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 1)
+set(TEST_TYPE 0)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -19,44 +19,65 @@ if(TEST_TYPE EQUAL 0)
 
     project(src/springAgent)
 
-    set (Sources src/analysis.cpp
-            src/constructors.cpp
-            src/CPM_module.cpp
-            src/creation.cpp
-            src/display.cpp
-            src/dsl_Tissue.cpp
-            src/dsl_World.cpp
-            src/EC.cpp
-            src/ECmesh.cpp
-            src/environment.cpp
-            src/geometry_functions.cpp
-            src/Grid.cpp
-            src/logger.cpp
-            src/main.cpp
-            src/memAgents.cpp
-            src/ODE.cpp
-            src/protein.cpp
-            src/ScreenRecording.cpp
-            src/space.cpp
-            src/Tissue.cpp
-            src/utils.cpp
-            src/world.cpp)
+    set (Sources src/core/analysis.cpp
+            src/core/constructors.cpp
+            src/core/contact.cpp
+            src/core/coordinates.cpp
+            src/core/CPM_module.cpp
+            src/core/creation.cpp
+            src/core/display.cpp
+            src/core/EC.cpp
+            src/core/ECmesh.cpp
+            src/core/environment.cpp
+            src/core/filopodia.cpp
+            src/core/geometry_functions.cpp
+            src/core/Grid.cpp
+            src/core/hysteresis.cpp
+            src/core/location.cpp
+            src/core/macrophage.cpp
+            src/core/main.cpp
+            src/core/medAgent.cpp
+            src/core/memAgents.cpp
+            src/core/ScreenRecording.cpp
+            src/core/spring.cpp
+            src/core/vessel.cpp
+            src/core/world.cpp
+            src/dsl/utils/shape.cpp
+            src/dsl/species/protein.cpp
+            src/dsl/tissue/cell.cpp
+            src/dsl/tissue/cellType.cpp
+            src/dsl/tissue/tissue.cpp
+            src/dsl/tissue/tissueContainer.cpp
+            src/dsl/tissue/tissueType.cpp
+            src/dsl/utils/logger.cpp
+            src/dsl/utils/utils.cpp
+            src/generated/dsl_species_gen.cpp
+            src/generated/dsl_tissue_gen.cpp
+            src/generated/dsl_world_gen.cpp)
 
-    set (Headers src/creation.h
-            src/display.h
-            src/EC.cpp
-            src/EC.h
-            src/ECmesh.h
-            src/memAgents.h
-            src/logger.h
-            src/ODE.h
-            src/objects.h
-            src/protein.h
-            src/ScreenRecording.h
-            src/space.h
-            src/Tissue.h
-            src/utils.h
-            src/world.h)
+    set (Headers src/core/contact.h
+            src/core/coordinates.h
+            src/core/CPM_module.h
+            src/core/creation.h
+            src/core/display.h
+            src/core/EC.cpp
+            src/core/EC.h
+            src/core/environment.h
+            src/core/filopodia.h
+            src/core/macrophage.h
+            src/core/medAgent.h
+            src/core/memAgents.h
+            src/core/objects.h
+            src/core/ScreenRecording.h
+            src/core/spring.h
+            src/core/vessel.h
+            src/core/world.h
+            src/dsl/utils/logger.h
+            src/generated/dsl_species_gen.h
+            src/dsl/species/protein.h
+            src/dsl/utils/shape.h
+            src/dsl/tissue/tissue.h
+            src/dsl/utils/utils.h)
 
     add_executable(springAgent ${Sources} ${Headers})
 
@@ -88,48 +109,47 @@ elseif(TEST_TYPE EQUAL 1)
 
     project(tests/automated/autoSpringAgent)
 
-    set (Sources src/analysis.cpp
-                 src/constructors.cpp
-                 src/CPM_module.cpp
-                 src/creation.cpp
-                 src/display.cpp
-                 src/EC.cpp
-                 src/ECmesh.cpp
-                 src/environment.cpp
-                 src/geometry_functions.cpp
-                 src/Grid.cpp
-                 src/logger.cpp
-                 src/memAgents.cpp
-                 src/ODE.cpp
-                 src/protein.cpp
-                 src/ScreenRecording.cpp
-                 src/space.cpp
-                 src/Tissue.cpp
-                 src/utils.cpp
-                 src/world.cpp
-                 tests/automated/test_setup.cpp
-                 tests/automated/test_ODE.cpp
-                 tests/automated/helper_ODE.cpp
-                 tests/automated/generated/dsl_Tissue.cpp
-                 tests/automated/generated/dsl_World.cpp)
+    set (Sources src/core/analysis.cpp
+            src/core/constructors.cpp
+            src/core/CPM_module.cpp
+            src/core/creation.cpp
+            src/core/display.cpp
+            src/core/EC.cpp
+            src/core/ECmesh.cpp
+            src/core/environment.cpp
+            src/core/geometry_functions.cpp
+            src/core/Grid.cpp
+            src/dsl/utils/logger.cpp
+            src/core/memAgents.cpp
+            src/generated/dsl_species_gen.cpp
+            src/dsl/species/protein.cpp
+            src/core/ScreenRecording.cpp
+            src/dsl/utils/shape.cpp
+            src/dsl/tissue/tissue.cpp
+            src/dsl/utils/utils.cpp
+            src/core/world.cpp
+            tests/automated/test_setup.cpp
+            tests/automated/test_ODE.cpp
+            tests/automated/helper_ODE.cpp
+            tests/automated/generated/dsl_Tissue.cpp
+            tests/automated/generated/dsl_World.cpp)
 
-    set (Headers src/creation.h
-                 src/display.h
-                 src/EC.cpp
-                 src/EC.h
-                 src/ECmesh.h
-                 src/memAgents.h
-                 src/logger.h
-                 src/ODE.h
-                 src/objects.h
-                 src/protein.h
-                 src/ScreenRecording.h
-                 src/space.h
-                 src/Tissue.h
-                 src/utils.h
-                 src/world.h
-                 tests/automated/helper_ODE.h
-                 tests/automated/generated/ODE.h)
+    set (Headers src/core/creation.h
+            src/core/display.h
+            src/core/EC.cpp
+            src/core/EC.h
+            src/core/memAgents.h
+            src/dsl/utils/logger.h
+            src/generated/dsl_species_gen.h
+            src/core/objects.h
+            src/dsl/species/protein.h
+            src/core/ScreenRecording.h
+            src/dsl/utils/shape.h
+            src/dsl/tissue/tissue.h
+            src/dsl/utils/utils.h
+            src/core/world.h
+            tests/automated/helper_ODE.h
+            tests/automated/generated/ODE.h)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
 

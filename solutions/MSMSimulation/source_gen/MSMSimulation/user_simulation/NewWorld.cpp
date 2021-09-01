@@ -1,5 +1,5 @@
-#include "world.h"
-#include "protein.h"
+#include "core/world.h"
+#include "dsl/species/protein.h"
 
 void World_Container::world_setup() {
     // Created using: NewWorld // 
