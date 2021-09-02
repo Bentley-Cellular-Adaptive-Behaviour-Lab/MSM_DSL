@@ -34,9 +34,6 @@ unsigned long long rdtsc(){
 int patternHistory = 0;
 bool patterned = false;
 
-std::mt19937 g;
-std::uniform_real_distribution<double> dist = std::uniform_real_distribution<double>(0, NEW_RAND_MAX);
-
 //World::World(void){
 
 //    Pause = 0;
@@ -6492,4 +6489,24 @@ void World::displayStats(void) {
     std::cout << "right: " << 100 * ((float) right1 / ((float) count3));
     std::cout << " middle: " << 100 * ((float) middle / ((float) count3));
     std::cout << " left: " << 100 * ((float) left1 / ((float) count3)) << std::endl;
+}
+int World::new_rand() {
+    return (int)dist(g);
+}
+
+template <class _RandomAccessIterator>
+void World::new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last ) {
+    if (first != last)
+        for (_RandomAccessIterator i = first + 1; i != last; ++i)
+        {
+            // XXX rand() % N is not uniformly distributed
+            _RandomAccessIterator j = first + new_rand() % ((i - first) + 1);
+            if (i != j)
+                std::iter_swap(i, j);
+        }
+}
+
+void World::shuffleEnvAgents(std::vector<Env*> envAgents) {
+    // Hacky way to get the shuffle function working.
+    new_random_shuffle(envAgents.begin(),envAgents.end());
 }

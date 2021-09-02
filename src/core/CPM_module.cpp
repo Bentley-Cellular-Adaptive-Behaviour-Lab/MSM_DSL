@@ -90,7 +90,7 @@ void CPM_module::run_CPM(void) {
             replacer_med = NULL;
             do {
                 //chose = rand() % upto;
-                chose = new_rand() % upto;
+                chose = worldP->new_rand() % upto;
 /*upto = worldP->ALLmemAgents.size();// + mediumAgents.size();
 
             flag = 0;
@@ -186,7 +186,7 @@ void CPM_module::run_CPM(void) {
                         if (flag2 == 1) {
                         	if (count != 1) {
 								//choseReplacer = rand()%count;
-								choseReplacer = new_rand()%count;
+								choseReplacer = worldP->new_rand()%count;
                         	} else {
 								choseReplacer=1;
                         	}
@@ -236,7 +236,7 @@ void CPM_module::run_CPM(void) {
 					biasAccept = check_gradient(replaced_mem, replacer_mem);
 					if (biasAccept) {
 						//float prob = (float)rand()/(float)RAND_MAX;
-						float prob = (float)new_rand() / (float)RAND_MAX;
+						float prob = (float)worldP->new_rand() / (float)RAND_MAX;
 						if (prob < BIAS_DIFFAD_CHANCE) {
 							accept = true;
 						}
@@ -426,7 +426,7 @@ void CPM_module::calc_Cell_areas(void) {
 
     for (i = 0; i < ECELLS; i++) {
         //Q = rand() % (var);
-        Q = new_rand() % (var);
+        Q = worldP->new_rand() % (var);
         worldP->ECagents[i]->ideal_Cell_area = ideal_Area;// - ((float) var / 2.0f) + Q;
     }
 }
@@ -451,7 +451,7 @@ float CPM_module::Hamiltonian_change(void) {
 bool CPM_module::calcProb(float change) {
 
     //float chose = (float) rand() / (float) RAND_MAX;
-    float chose = (float) new_rand() / (float) NEW_RAND_MAX;
+    float chose = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
     float prob;
     bool accept;
 
@@ -1482,7 +1482,7 @@ bool CPM_module::check_gradient(MemAgent* replaced_mem, MemAgent* replacer_mem) 
 
     //make inversely proportional too active notch level...
     //float chance = rand() / (float) RAND_MAX;
-    float chance = new_rand() / (float) NEW_RAND_MAX;
+    float chance = worldP->new_rand() / (float) NEW_RAND_MAX;
     float prob;
 
     //old version - but not inline with findings in Lars paper...
@@ -2308,7 +2308,7 @@ void CPM_module::clearUpSmallSeparatedBitsOfCells(void) {
             if (countFil == 0) {
                 count = 0;
                 //choseReplacer = rand() % countS;
-                choseReplacer = new_rand() % countS;
+                choseReplacer = worldP->new_rand() % countS;
                 for (r = 0; r < worldP->JunctionAgents[j]->neighs; r++) {
 
 
