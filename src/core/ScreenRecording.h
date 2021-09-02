@@ -1,8 +1,6 @@
 #ifndef SCREENRECORDING_H
 #define SCREENRECORDING_H
 
-#include "string"
-#include "math.h"
 
 #ifdef __APPLE__
 

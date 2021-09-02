@@ -65,38 +65,10 @@ include CMakeFiles/springAgent.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/springAgent.dir/flags.make
 
-CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj: ../src/core/analysis.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\analysis.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\analysis.cpp
-
-CMakeFiles/springAgent.dir/src/core/analysis.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/analysis.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\analysis.cpp > CMakeFiles\springAgent.dir\src\core\analysis.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/analysis.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/analysis.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\analysis.cpp -o CMakeFiles\springAgent.dir\src\core\analysis.cpp.s
-
-CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj: ../src/core/constructors.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\constructors.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\constructors.cpp
-
-CMakeFiles/springAgent.dir/src/core/constructors.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/constructors.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\constructors.cpp > CMakeFiles\springAgent.dir\src\core\constructors.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/constructors.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/constructors.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\constructors.cpp -o CMakeFiles\springAgent.dir\src\core\constructors.cpp.s
-
 CMakeFiles/springAgent.dir/src/core/contact.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/contact.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/contact.cpp.obj: ../src/core/contact.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/springAgent.dir/src/core/contact.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/springAgent.dir/src/core/contact.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\contact.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\contact.cpp
 
 CMakeFiles/springAgent.dir/src/core/contact.cpp.i: cmake_force
@@ -110,7 +82,7 @@ CMakeFiles/springAgent.dir/src/core/contact.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj: ../src/core/coordinates.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\coordinates.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\coordinates.cpp
 
 CMakeFiles/springAgent.dir/src/core/coordinates.cpp.i: cmake_force
@@ -124,7 +96,7 @@ CMakeFiles/springAgent.dir/src/core/coordinates.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj: ../src/core/CPM_module.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\CPM_module.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\CPM_module.cpp
 
 CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.i: cmake_force
@@ -135,24 +107,10 @@ CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\CPM_module.cpp -o CMakeFiles\springAgent.dir\src\core\CPM_module.cpp.s
 
-CMakeFiles/springAgent.dir/src/core/creation.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/creation.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/creation.cpp.obj: ../src/core/creation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/springAgent.dir/src/core/creation.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\creation.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\creation.cpp
-
-CMakeFiles/springAgent.dir/src/core/creation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/creation.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\creation.cpp > CMakeFiles\springAgent.dir\src\core\creation.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/creation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/creation.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\creation.cpp -o CMakeFiles\springAgent.dir\src\core\creation.cpp.s
-
 CMakeFiles/springAgent.dir/src/core/display.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/display.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/display.cpp.obj: ../src/core/display.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/springAgent.dir/src/core/display.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/springAgent.dir/src/core/display.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\display.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\display.cpp
 
 CMakeFiles/springAgent.dir/src/core/display.cpp.i: cmake_force
@@ -166,7 +124,7 @@ CMakeFiles/springAgent.dir/src/core/display.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/EC.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/EC.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/EC.cpp.obj: ../src/core/EC.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/springAgent.dir/src/core/EC.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/springAgent.dir/src/core/EC.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\EC.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\EC.cpp
 
 CMakeFiles/springAgent.dir/src/core/EC.cpp.i: cmake_force
@@ -177,24 +135,10 @@ CMakeFiles/springAgent.dir/src/core/EC.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/EC.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\EC.cpp -o CMakeFiles\springAgent.dir\src\core\EC.cpp.s
 
-CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj: ../src/core/ECmesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\ECmesh.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\ECmesh.cpp
-
-CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\ECmesh.cpp > CMakeFiles\springAgent.dir\src\core\ECmesh.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\ECmesh.cpp -o CMakeFiles\springAgent.dir\src\core\ECmesh.cpp.s
-
 CMakeFiles/springAgent.dir/src/core/environment.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/environment.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/environment.cpp.obj: ../src/core/environment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/springAgent.dir/src/core/environment.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/springAgent.dir/src/core/environment.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\environment.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\environment.cpp
 
 CMakeFiles/springAgent.dir/src/core/environment.cpp.i: cmake_force
@@ -208,7 +152,7 @@ CMakeFiles/springAgent.dir/src/core/environment.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj: ../src/core/filopodia.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\filopodia.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\filopodia.cpp
 
 CMakeFiles/springAgent.dir/src/core/filopodia.cpp.i: cmake_force
@@ -219,38 +163,10 @@ CMakeFiles/springAgent.dir/src/core/filopodia.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/filopodia.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\filopodia.cpp -o CMakeFiles\springAgent.dir\src\core\filopodia.cpp.s
 
-CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj: ../src/core/geometry_functions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\geometry_functions.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\geometry_functions.cpp
-
-CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\geometry_functions.cpp > CMakeFiles\springAgent.dir\src\core\geometry_functions.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\geometry_functions.cpp -o CMakeFiles\springAgent.dir\src\core\geometry_functions.cpp.s
-
-CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj: ../src/core/Grid.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\Grid.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\Grid.cpp
-
-CMakeFiles/springAgent.dir/src/core/Grid.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/core/Grid.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\core\Grid.cpp > CMakeFiles\springAgent.dir\src\core\Grid.cpp.i
-
-CMakeFiles/springAgent.dir/src/core/Grid.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/Grid.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\Grid.cpp -o CMakeFiles\springAgent.dir\src\core\Grid.cpp.s
-
 CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj: ../src/core/hysteresis.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\hysteresis.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\hysteresis.cpp
 
 CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.i: cmake_force
@@ -264,7 +180,7 @@ CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/location.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/location.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/location.cpp.obj: ../src/core/location.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/springAgent.dir/src/core/location.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/springAgent.dir/src/core/location.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\location.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\location.cpp
 
 CMakeFiles/springAgent.dir/src/core/location.cpp.i: cmake_force
@@ -278,7 +194,7 @@ CMakeFiles/springAgent.dir/src/core/location.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj: ../src/core/macrophage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\macrophage.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\macrophage.cpp
 
 CMakeFiles/springAgent.dir/src/core/macrophage.cpp.i: cmake_force
@@ -292,7 +208,7 @@ CMakeFiles/springAgent.dir/src/core/macrophage.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/main.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/main.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/main.cpp.obj: ../src/core/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/springAgent.dir/src/core/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/springAgent.dir/src/core/main.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\main.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\main.cpp
 
 CMakeFiles/springAgent.dir/src/core/main.cpp.i: cmake_force
@@ -306,7 +222,7 @@ CMakeFiles/springAgent.dir/src/core/main.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/medAgent.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/medAgent.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/medAgent.cpp.obj: ../src/core/medAgent.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/springAgent.dir/src/core/medAgent.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/springAgent.dir/src/core/medAgent.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\medAgent.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\medAgent.cpp
 
 CMakeFiles/springAgent.dir/src/core/medAgent.cpp.i: cmake_force
@@ -320,7 +236,7 @@ CMakeFiles/springAgent.dir/src/core/medAgent.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/memAgents.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/memAgents.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/memAgents.cpp.obj: ../src/core/memAgents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/springAgent.dir/src/core/memAgents.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/springAgent.dir/src/core/memAgents.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\memAgents.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\memAgents.cpp
 
 CMakeFiles/springAgent.dir/src/core/memAgents.cpp.i: cmake_force
@@ -334,7 +250,7 @@ CMakeFiles/springAgent.dir/src/core/memAgents.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj: ../src/core/ScreenRecording.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\ScreenRecording.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\ScreenRecording.cpp
 
 CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.i: cmake_force
@@ -348,7 +264,7 @@ CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/spring.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/spring.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/spring.cpp.obj: ../src/core/spring.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/springAgent.dir/src/core/spring.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/springAgent.dir/src/core/spring.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\spring.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\spring.cpp
 
 CMakeFiles/springAgent.dir/src/core/spring.cpp.i: cmake_force
@@ -362,7 +278,7 @@ CMakeFiles/springAgent.dir/src/core/spring.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj: ../src/core/vessel.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\vessel.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\vessel.cpp
 
 CMakeFiles/springAgent.dir/src/core/vessel.cpp.i: cmake_force
@@ -376,7 +292,7 @@ CMakeFiles/springAgent.dir/src/core/vessel.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/core/world.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/core/world.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/core/world.cpp.obj: ../src/core/world.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/springAgent.dir/src/core/world.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/springAgent.dir/src/core/world.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\core\world.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\core\world.cpp
 
 CMakeFiles/springAgent.dir/src/core/world.cpp.i: cmake_force
@@ -387,24 +303,10 @@ CMakeFiles/springAgent.dir/src/core/world.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/core/world.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\core\world.cpp -o CMakeFiles\springAgent.dir\src\core\world.cpp.s
 
-CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: CMakeFiles/springAgent.dir/flags.make
-CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
-CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: ../src/dsl/utils/shape.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp
-
-CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp > CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.i
-
-CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp -o CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.s
-
 CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj: ../src/dsl/species/protein.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\species\protein.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\species\protein.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.i: cmake_force
@@ -418,7 +320,7 @@ CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj: ../src/dsl/tissue/cell.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\tissue\cell.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue\cell.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.i: cmake_force
@@ -432,7 +334,7 @@ CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj: ../src/dsl/tissue/cellType.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\tissue\cellType.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue\cellType.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.i: cmake_force
@@ -446,7 +348,7 @@ CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj: ../src/dsl/tissue/tissue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\tissue\tissue.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue\tissue.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.i: cmake_force
@@ -460,7 +362,7 @@ CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj: ../src/dsl/tissue/tissueContainer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\tissue\tissueContainer.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue\tissueContainer.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.i: cmake_force
@@ -474,7 +376,7 @@ CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj: ../src/dsl/tissue/tissueType.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\tissue\tissueType.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue\tissueType.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.i: cmake_force
@@ -488,7 +390,7 @@ CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj: ../src/dsl/utils/logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\utils\logger.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\logger.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.i: cmake_force
@@ -499,10 +401,24 @@ CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\logger.cpp -o CMakeFiles\springAgent.dir\src\dsl\utils\logger.cpp.s
 
+CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: CMakeFiles/springAgent.dir/flags.make
+CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
+CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj: ../src/dsl/utils/shape.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp
+
+CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp > CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.i
+
+CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\shape.cpp -o CMakeFiles\springAgent.dir\src\dsl\utils\shape.cpp.s
+
 CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj: ../src/dsl/utils/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\utils\utils.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\utils.cpp
 
 CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.i: cmake_force
@@ -513,10 +429,52 @@ CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils\utils.cpp -o CMakeFiles\springAgent.dir\src\dsl\utils\utils.cpp.s
 
+CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj: CMakeFiles/springAgent.dir/flags.make
+CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
+CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj: ../src/dsl/world/gradient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\world\gradient.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\gradient.cpp
+
+CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\gradient.cpp > CMakeFiles\springAgent.dir\src\dsl\world\gradient.cpp.i
+
+CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\gradient.cpp -o CMakeFiles\springAgent.dir\src\dsl\world\gradient.cpp.s
+
+CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj: CMakeFiles/springAgent.dir/flags.make
+CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
+CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj: ../src/dsl/world/substrate.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\world\substrate.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\substrate.cpp
+
+CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\substrate.cpp > CMakeFiles\springAgent.dir\src\dsl\world\substrate.cpp.i
+
+CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\substrate.cpp -o CMakeFiles\springAgent.dir\src\dsl\world\substrate.cpp.s
+
+CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj: CMakeFiles/springAgent.dir/flags.make
+CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
+CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj: ../src/dsl/world/worldContainer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\dsl\world\worldContainer.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\worldContainer.cpp
+
+CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\worldContainer.cpp > CMakeFiles\springAgent.dir\src\dsl\world\worldContainer.cpp.i
+
+CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world\worldContainer.cpp -o CMakeFiles\springAgent.dir\src\dsl\world\worldContainer.cpp.s
+
 CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj: ../src/generated/dsl_species_gen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\generated\dsl_species_gen.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\generated\dsl_species_gen.cpp
 
 CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.i: cmake_force
@@ -530,7 +488,7 @@ CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj: ../src/generated/dsl_tissue_gen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\generated\dsl_tissue_gen.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\generated\dsl_tissue_gen.cpp
 
 CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.i: cmake_force
@@ -544,7 +502,7 @@ CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.s: cmake_force
 CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj: CMakeFiles/springAgent.dir/flags.make
 CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj: CMakeFiles/springAgent.dir/includes_CXX.rsp
 CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj: ../src/generated/dsl_world_gen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\springAgent.dir\src\generated\dsl_world_gen.cpp.obj -c C:\Users\Tom\MPSProjects\MSM_DSL\src\generated\dsl_world_gen.cpp
 
 CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.i: cmake_force
@@ -557,19 +515,13 @@ CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.s: cmake_force
 
 # Object files for target springAgent
 springAgent_OBJECTS = \
-"CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/contact.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/core/creation.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/display.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/EC.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/environment.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/location.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj" \
@@ -580,7 +532,6 @@ springAgent_OBJECTS = \
 "CMakeFiles/springAgent.dir/src/core/spring.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/core/world.cpp.obj" \
-"CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj" \
@@ -588,7 +539,11 @@ springAgent_OBJECTS = \
 "CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj" \
+"CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj" \
+"CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj" \
+"CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj" \
+"CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj" \
 "CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj"
@@ -596,19 +551,13 @@ springAgent_OBJECTS = \
 # External object files for target springAgent
 springAgent_EXTERNAL_OBJECTS =
 
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/contact.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/coordinates.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/creation.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/display.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/EC.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/environment.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/filopodia.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/location.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj
@@ -619,7 +568,6 @@ springAgent.exe: CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/spring.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/vessel.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/core/world.cpp.obj
-springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.obj
@@ -627,7 +575,11 @@ springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.obj
+springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.obj
+springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj
+springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj
+springAgent.exe: CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.obj
 springAgent.exe: CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.obj
@@ -635,7 +587,7 @@ springAgent.exe: CMakeFiles/springAgent.dir/build.make
 springAgent.exe: CMakeFiles/springAgent.dir/linklibs.rsp
 springAgent.exe: CMakeFiles/springAgent.dir/objects1.rsp
 springAgent.exe: CMakeFiles/springAgent.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable springAgent.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Linking CXX executable springAgent.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\springAgent.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

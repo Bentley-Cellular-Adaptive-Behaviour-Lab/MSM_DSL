@@ -16,48 +16,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Linker errors after refactoring.">
-      <change afterPath="$PROJECT_DIR$/src/core/CPM_module.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/contact.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/contact.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/coordinates.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/coordinates.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/filopodia.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/filopodia.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/hysteresis.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/hysteresis.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/location.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/location.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/macrophage.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/macrophage.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/medAgent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/medAgent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/spring.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/spring.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/vessel.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/vessel.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cell.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cell.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueType.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueType.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/gradient.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/substrate.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" afterDir="false" />
@@ -65,110 +26,42 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/CPM_module.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/EC.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ECmesh.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Grid.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ODE.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/ScreenRecording.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/Tissue.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/analysis.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/constructors.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/creation.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/display.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_Tissue.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl_World.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/environment.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/geometry_functions.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/logger.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/memAgents.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/protein.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/space.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/utils.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/world.cpp.obj" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/springAgent.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/Tissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSM/classes_gen/MSM/user_simulation/World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/Solution/classes_gen/Solution/test/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPM_module.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ECmesh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ECmesh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ECmesh.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ECmesh.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/Grid.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenRecording-c6ce3102.o.tmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tissue.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/analysis.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/analysis.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constructors.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/constructors.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constructors.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/creation.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/creation.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/creation.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/display.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/display.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_Tissue.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl_World.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/environment.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometry_functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/geometry_functions.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometry_functions.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/space.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/shape.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/space.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/shape.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/space.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/springAgent" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/statistics_time_to_pattern_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testforpybind" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/time_to_pattern_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_setup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CPM_module.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ECmesh.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/Grid.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ScreenRecording.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ScreenRecording.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/ScreenRecording.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/analysis.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/constructors.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/creation.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/creation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/display.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/geometry_functions.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/hysteresis.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/hysteresis.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissue.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissueType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueType.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/world/gradient.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/gradient.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/world/worldContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +146,11 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
@@ -374,14 +272,9 @@
       <workItem from="1630420872890" duration="11769000" />
       <workItem from="1630487584922" duration="16497000" />
       <workItem from="1630508048302" duration="162000" />
-      <workItem from="1630508282184" duration="8891000" />
-    </task>
-    <task id="LOCAL-00004" summary="Declared function to add proteins to cell types">
-      <created>1621608733574</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1621608733574</updated>
+      <workItem from="1630508282184" duration="8933000" />
+      <workItem from="1630571869816" duration="12341000" />
+      <workItem from="1630591786897" duration="595000" />
     </task>
     <task id="LOCAL-00005" summary="Implemented function to add proteins to cell types">
       <created>1621608960068</created>
@@ -719,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630401719836</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Linker errors after refactoring.">
+      <created>1630517380597</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1630517380598</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -766,6 +666,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Linker errors after refactoring." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/ScreenRecording.h</url>
+          <line>6</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/main.cpp</url>
+          <line>7</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="jetbrains.mps.smodel.SNode" memberName="myConcept" />

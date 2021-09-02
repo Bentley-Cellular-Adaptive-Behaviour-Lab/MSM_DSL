@@ -176,54 +176,6 @@ src/core/EC.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/EC.cpp.s
 .PHONY : src/core/EC.cpp.s
 
-src/core/ECmesh.obj: src/core/ECmesh.cpp.obj
-.PHONY : src/core/ECmesh.obj
-
-# target to build an object file
-src/core/ECmesh.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.obj
-.PHONY : src/core/ECmesh.cpp.obj
-
-src/core/ECmesh.i: src/core/ECmesh.cpp.i
-.PHONY : src/core/ECmesh.i
-
-# target to preprocess a source file
-src/core/ECmesh.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.i
-.PHONY : src/core/ECmesh.cpp.i
-
-src/core/ECmesh.s: src/core/ECmesh.cpp.s
-.PHONY : src/core/ECmesh.s
-
-# target to generate assembly for a file
-src/core/ECmesh.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/ECmesh.cpp.s
-.PHONY : src/core/ECmesh.cpp.s
-
-src/core/Grid.obj: src/core/Grid.cpp.obj
-.PHONY : src/core/Grid.obj
-
-# target to build an object file
-src/core/Grid.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/Grid.cpp.obj
-.PHONY : src/core/Grid.cpp.obj
-
-src/core/Grid.i: src/core/Grid.cpp.i
-.PHONY : src/core/Grid.i
-
-# target to preprocess a source file
-src/core/Grid.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/Grid.cpp.i
-.PHONY : src/core/Grid.cpp.i
-
-src/core/Grid.s: src/core/Grid.cpp.s
-.PHONY : src/core/Grid.s
-
-# target to generate assembly for a file
-src/core/Grid.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/Grid.cpp.s
-.PHONY : src/core/Grid.cpp.s
-
 src/core/ScreenRecording.obj: src/core/ScreenRecording.cpp.obj
 .PHONY : src/core/ScreenRecording.obj
 
@@ -247,54 +199,6 @@ src/core/ScreenRecording.s: src/core/ScreenRecording.cpp.s
 src/core/ScreenRecording.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.s
 .PHONY : src/core/ScreenRecording.cpp.s
-
-src/core/analysis.obj: src/core/analysis.cpp.obj
-.PHONY : src/core/analysis.obj
-
-# target to build an object file
-src/core/analysis.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/analysis.cpp.obj
-.PHONY : src/core/analysis.cpp.obj
-
-src/core/analysis.i: src/core/analysis.cpp.i
-.PHONY : src/core/analysis.i
-
-# target to preprocess a source file
-src/core/analysis.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/analysis.cpp.i
-.PHONY : src/core/analysis.cpp.i
-
-src/core/analysis.s: src/core/analysis.cpp.s
-.PHONY : src/core/analysis.s
-
-# target to generate assembly for a file
-src/core/analysis.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/analysis.cpp.s
-.PHONY : src/core/analysis.cpp.s
-
-src/core/constructors.obj: src/core/constructors.cpp.obj
-.PHONY : src/core/constructors.obj
-
-# target to build an object file
-src/core/constructors.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/constructors.cpp.obj
-.PHONY : src/core/constructors.cpp.obj
-
-src/core/constructors.i: src/core/constructors.cpp.i
-.PHONY : src/core/constructors.i
-
-# target to preprocess a source file
-src/core/constructors.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/constructors.cpp.i
-.PHONY : src/core/constructors.cpp.i
-
-src/core/constructors.s: src/core/constructors.cpp.s
-.PHONY : src/core/constructors.s
-
-# target to generate assembly for a file
-src/core/constructors.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/constructors.cpp.s
-.PHONY : src/core/constructors.cpp.s
 
 src/core/contact.obj: src/core/contact.cpp.obj
 .PHONY : src/core/contact.obj
@@ -343,30 +247,6 @@ src/core/coordinates.s: src/core/coordinates.cpp.s
 src/core/coordinates.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/coordinates.cpp.s
 .PHONY : src/core/coordinates.cpp.s
-
-src/core/creation.obj: src/core/creation.cpp.obj
-.PHONY : src/core/creation.obj
-
-# target to build an object file
-src/core/creation.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/creation.cpp.obj
-.PHONY : src/core/creation.cpp.obj
-
-src/core/creation.i: src/core/creation.cpp.i
-.PHONY : src/core/creation.i
-
-# target to preprocess a source file
-src/core/creation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/creation.cpp.i
-.PHONY : src/core/creation.cpp.i
-
-src/core/creation.s: src/core/creation.cpp.s
-.PHONY : src/core/creation.s
-
-# target to generate assembly for a file
-src/core/creation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/creation.cpp.s
-.PHONY : src/core/creation.cpp.s
 
 src/core/display.obj: src/core/display.cpp.obj
 .PHONY : src/core/display.obj
@@ -439,30 +319,6 @@ src/core/filopodia.s: src/core/filopodia.cpp.s
 src/core/filopodia.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/filopodia.cpp.s
 .PHONY : src/core/filopodia.cpp.s
-
-src/core/geometry_functions.obj: src/core/geometry_functions.cpp.obj
-.PHONY : src/core/geometry_functions.obj
-
-# target to build an object file
-src/core/geometry_functions.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.obj
-.PHONY : src/core/geometry_functions.cpp.obj
-
-src/core/geometry_functions.i: src/core/geometry_functions.cpp.i
-.PHONY : src/core/geometry_functions.i
-
-# target to preprocess a source file
-src/core/geometry_functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.i
-.PHONY : src/core/geometry_functions.cpp.i
-
-src/core/geometry_functions.s: src/core/geometry_functions.cpp.s
-.PHONY : src/core/geometry_functions.s
-
-# target to generate assembly for a file
-src/core/geometry_functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/geometry_functions.cpp.s
-.PHONY : src/core/geometry_functions.cpp.s
 
 src/core/hysteresis.obj: src/core/hysteresis.cpp.obj
 .PHONY : src/core/hysteresis.obj
@@ -896,6 +752,78 @@ src/dsl/utils/utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.s
 .PHONY : src/dsl/utils/utils.cpp.s
 
+src/dsl/world/gradient.obj: src/dsl/world/gradient.cpp.obj
+.PHONY : src/dsl/world/gradient.obj
+
+# target to build an object file
+src/dsl/world/gradient.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.obj
+.PHONY : src/dsl/world/gradient.cpp.obj
+
+src/dsl/world/gradient.i: src/dsl/world/gradient.cpp.i
+.PHONY : src/dsl/world/gradient.i
+
+# target to preprocess a source file
+src/dsl/world/gradient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.i
+.PHONY : src/dsl/world/gradient.cpp.i
+
+src/dsl/world/gradient.s: src/dsl/world/gradient.cpp.s
+.PHONY : src/dsl/world/gradient.s
+
+# target to generate assembly for a file
+src/dsl/world/gradient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.s
+.PHONY : src/dsl/world/gradient.cpp.s
+
+src/dsl/world/substrate.obj: src/dsl/world/substrate.cpp.obj
+.PHONY : src/dsl/world/substrate.obj
+
+# target to build an object file
+src/dsl/world/substrate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.obj
+.PHONY : src/dsl/world/substrate.cpp.obj
+
+src/dsl/world/substrate.i: src/dsl/world/substrate.cpp.i
+.PHONY : src/dsl/world/substrate.i
+
+# target to preprocess a source file
+src/dsl/world/substrate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.i
+.PHONY : src/dsl/world/substrate.cpp.i
+
+src/dsl/world/substrate.s: src/dsl/world/substrate.cpp.s
+.PHONY : src/dsl/world/substrate.s
+
+# target to generate assembly for a file
+src/dsl/world/substrate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.s
+.PHONY : src/dsl/world/substrate.cpp.s
+
+src/dsl/world/worldContainer.obj: src/dsl/world/worldContainer.cpp.obj
+.PHONY : src/dsl/world/worldContainer.obj
+
+# target to build an object file
+src/dsl/world/worldContainer.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.obj
+.PHONY : src/dsl/world/worldContainer.cpp.obj
+
+src/dsl/world/worldContainer.i: src/dsl/world/worldContainer.cpp.i
+.PHONY : src/dsl/world/worldContainer.i
+
+# target to preprocess a source file
+src/dsl/world/worldContainer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.i
+.PHONY : src/dsl/world/worldContainer.cpp.i
+
+src/dsl/world/worldContainer.s: src/dsl/world/worldContainer.cpp.s
+.PHONY : src/dsl/world/worldContainer.s
+
+# target to generate assembly for a file
+src/dsl/world/worldContainer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.s
+.PHONY : src/dsl/world/worldContainer.cpp.s
+
 src/generated/dsl_species_gen.obj: src/generated/dsl_species_gen.cpp.obj
 .PHONY : src/generated/dsl_species_gen.obj
 
@@ -983,30 +911,15 @@ help:
 	@echo ... src/core/EC.obj
 	@echo ... src/core/EC.i
 	@echo ... src/core/EC.s
-	@echo ... src/core/ECmesh.obj
-	@echo ... src/core/ECmesh.i
-	@echo ... src/core/ECmesh.s
-	@echo ... src/core/Grid.obj
-	@echo ... src/core/Grid.i
-	@echo ... src/core/Grid.s
 	@echo ... src/core/ScreenRecording.obj
 	@echo ... src/core/ScreenRecording.i
 	@echo ... src/core/ScreenRecording.s
-	@echo ... src/core/analysis.obj
-	@echo ... src/core/analysis.i
-	@echo ... src/core/analysis.s
-	@echo ... src/core/constructors.obj
-	@echo ... src/core/constructors.i
-	@echo ... src/core/constructors.s
 	@echo ... src/core/contact.obj
 	@echo ... src/core/contact.i
 	@echo ... src/core/contact.s
 	@echo ... src/core/coordinates.obj
 	@echo ... src/core/coordinates.i
 	@echo ... src/core/coordinates.s
-	@echo ... src/core/creation.obj
-	@echo ... src/core/creation.i
-	@echo ... src/core/creation.s
 	@echo ... src/core/display.obj
 	@echo ... src/core/display.i
 	@echo ... src/core/display.s
@@ -1016,9 +929,6 @@ help:
 	@echo ... src/core/filopodia.obj
 	@echo ... src/core/filopodia.i
 	@echo ... src/core/filopodia.s
-	@echo ... src/core/geometry_functions.obj
-	@echo ... src/core/geometry_functions.i
-	@echo ... src/core/geometry_functions.s
 	@echo ... src/core/hysteresis.obj
 	@echo ... src/core/hysteresis.i
 	@echo ... src/core/hysteresis.s
@@ -1073,6 +983,15 @@ help:
 	@echo ... src/dsl/utils/utils.obj
 	@echo ... src/dsl/utils/utils.i
 	@echo ... src/dsl/utils/utils.s
+	@echo ... src/dsl/world/gradient.obj
+	@echo ... src/dsl/world/gradient.i
+	@echo ... src/dsl/world/gradient.s
+	@echo ... src/dsl/world/substrate.obj
+	@echo ... src/dsl/world/substrate.i
+	@echo ... src/dsl/world/substrate.s
+	@echo ... src/dsl/world/worldContainer.obj
+	@echo ... src/dsl/world/worldContainer.i
+	@echo ... src/dsl/world/worldContainer.s
 	@echo ... src/generated/dsl_species_gen.obj
 	@echo ... src/generated/dsl_species_gen.i
 	@echo ... src/generated/dsl_species_gen.s

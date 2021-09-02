@@ -5,8 +5,8 @@
 #ifndef SRC_SPRINGAGENT_CELLTYPE_H
 #define SRC_SPRINGAGENT_CELLTYPE_H
 
-#include <string>
 #include <vector>
+#include <string>
 
 class ODE;
 class Protein;

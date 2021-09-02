@@ -1,5 +1,4 @@
 #include <cassert>
-#include <math.h>
 
 #include "coordinates.h"
 #include "EC.h"

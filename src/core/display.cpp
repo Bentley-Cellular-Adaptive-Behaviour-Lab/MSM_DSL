@@ -1,12 +1,17 @@
 
 #if GRAPHICS
 
+#include "coordinates.h"
 #include "display.h"
-#include "environment.h"
-#include "ScreenRecording.h"
-#include "objects.h"
-#include "memAgents.h"
 #include "EC.h"
+#include "environment.h"
+#include "location.h"
+#include "memAgents.h"
+#include "macrophage.h"
+#include "objects.h"
+#include "ScreenRecording.h"
+#include "spring.h"
+#include "world.h"
 
 // J Switch for os type
 
@@ -515,30 +520,30 @@ void World::viewWorld(void){
     if((MACROS>0)){
     //macro1_pos[0] = macrophages[0]->coords.x; macro1_pos[1] = macrophages[0]->coords.y; macro1_pos[2] = macrophages[0]->coords.z;
         DrawCube(macro1_pos[0]-recentreX, macro1_pos[1]-recentreY, macro1_pos[2]-recentreZ, 1.0, 1.0, 1.0, 1, 1);
-        macrophages[0]->coords.x=macro1_pos[0];
-        macrophages[0]->coords.y=macro1_pos[1];
-        macrophages[0]->coords.z=macro1_pos[2];
+        macrophages[0]->coords->x=macro1_pos[0];
+        macrophages[0]->coords->y=macro1_pos[1];
+        macrophages[0]->coords->z=macro1_pos[2];
     }
         
     
     
     if(MACROS>1){
         DrawCube(macro2_pos[0]-recentreX, macro2_pos[1]-recentreY, macro2_pos[2]-recentreZ, 1.0, 1.0, 1.0, 1, 1);
-        macrophages[1]->coords.x=macro2_pos[0];
-        macrophages[1]->coords.y=macro2_pos[1];
-        macrophages[1]->coords.z=macro2_pos[2];
+        macrophages[1]->coords->x=macro2_pos[0];
+        macrophages[1]->coords->y=macro2_pos[1];
+        macrophages[1]->coords->z=macro2_pos[2];
     }
     if(MACROS>2){
         DrawCube(macro3_pos[0]-recentreX, macro3_pos[1]-recentreY, macro3_pos[2]-recentreZ, 1.0, 1.0, 1.0, 1, 1);
-        macrophages[2]->coords.x=macro3_pos[0];
-        macrophages[2]->coords.y=macro3_pos[1];
-        macrophages[2]->coords.z=macro3_pos[2];
+        macrophages[2]->coords->x=macro3_pos[0];
+        macrophages[2]->coords->y=macro3_pos[1];
+        macrophages[2]->coords->z=macro3_pos[2];
     }
     if(MACROS>3){
         DrawCube(macro4_pos[0]-recentreX, macro4_pos[1]-recentreY, macro4_pos[2]-recentreZ, 1.0, 1.0, 1.0, 1, 1);
-        macrophages[3]->coords.x=macro4_pos[0];
-        macrophages[3]->coords.y=macro4_pos[1];
-        macrophages[3]->coords.z=macro4_pos[2];
+        macrophages[3]->coords->x=macro4_pos[0];
+        macrophages[3]->coords->y=macro4_pos[1];
+        macrophages[3]->coords->z=macro4_pos[2];
     }
     
 }
@@ -1740,13 +1745,13 @@ void display(void) {
     }
     if(MACROS==2){
     if(WORLDpointer->timeStep==0){
-        macro1_pos[0] = WORLDpointer->macrophages[0]->coords.x;
-        macro1_pos[1] = WORLDpointer->macrophages[0]->coords.y;
-        macro1_pos[2] = WORLDpointer->macrophages[0]->coords.z;
+        macro1_pos[0] = WORLDpointer->macrophages[0]->coords->x;
+        macro1_pos[1] = WORLDpointer->macrophages[0]->coords->y;
+        macro1_pos[2] = WORLDpointer->macrophages[0]->coords->z;
         
-        macro2_pos[0] = WORLDpointer->macrophages[1]->coords.x;
-        macro2_pos[1] = WORLDpointer->macrophages[1]->coords.y;
-        macro2_pos[2] = WORLDpointer->macrophages[1]->coords.z;
+        macro2_pos[0] = WORLDpointer->macrophages[1]->coords->x;
+        macro2_pos[1] = WORLDpointer->macrophages[1]->coords->y;
+        macro2_pos[2] = WORLDpointer->macrophages[1]->coords->z;
     }
     }
    // glui->sync_live();

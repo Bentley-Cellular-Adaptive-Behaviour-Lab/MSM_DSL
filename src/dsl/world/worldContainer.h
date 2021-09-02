@@ -5,10 +5,15 @@
 #ifndef SRC_SPRINGAGENT_WORLDCONTAINER_H
 #define SRC_SPRINGAGENT_WORLDCONTAINER_H
 
-class Shape;
+#include <string>
+#include <vector>
+
+class Coordinates;
 class Gradient;
-class Substrate;
 class Protein;
+class Shape;
+class Substrate;
+class World;
 
 class World_Container {
 public:

@@ -2,10 +2,6 @@
 // Created by Tom on 12/11/2020.
 //
 
-#include <boost/array.hpp>
-#include <boost/numeric/odeint.hpp>
-#include <assert.h>
-#include <iostream>
 #include <random>
 
 #include "CPM_module.h"

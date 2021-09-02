@@ -98,22 +98,10 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/EC.h">
 			<Option target="springAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ECmesh.cpp">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/Grid.cpp">
-			<Option target="springAgent"/>
-		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ScreenRecording.cpp">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ScreenRecording.h">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/analysis.cpp">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/constructors.cpp">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/contact.cpp">
@@ -126,12 +114,6 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/coordinates.h">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/creation.cpp">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/creation.h">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/display.cpp">
@@ -150,9 +132,6 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/filopodia.h">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/geometry_functions.cpp">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/hysteresis.cpp">
@@ -261,6 +240,24 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/utils.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/worldContainer.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/worldContainer.h">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_species_gen.cpp">

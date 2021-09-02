@@ -1,8 +1,16 @@
 //
 // Created by Tom on 31/08/2021.
 //
+#include <iostream>
 
+#include "core/world.h"
+
+#include "gradient.h"
+#include "substrate.h"
 #include "worldContainer.h"
+
+#include "dsl/species/protein.h"
+#include "dsl/utils/shape.h"
 
 //********************************************************************************************************************//
 
@@ -52,7 +60,7 @@
 *  Returns:		void
 ******************************************************************************************/
 void World_Container::create_gradient(int gradient_type,
-                                      protein *protein,
+                                      Protein *protein,
                                       Coordinates *source_position,
                                       Coordinates *sink_position) {
     std::cout << "Creating sink and source gradient. Protein: " << protein->get_name() << ".\n";
@@ -76,7 +84,7 @@ void World_Container::create_gradient(int gradient_type,
 *  Returns:		void
 ******************************************************************************************/
 void World_Container::create_gradient(int gradient_type,
-                                      protein *protein,
+                                      Protein *protein,
                                       Coordinates *centre_position,
                                       int gradient_direction,
                                       int height,
@@ -97,7 +105,7 @@ void World_Container::create_gradient(int gradient_type,
 }
 
 void World_Container::create_gradient(int gradient_type,
-                                      protein *protein,
+                                      Protein *protein,
                                       Coordinates *centre_position,
                                       int sphere_radius) {
     std::cout << "Creating spherical, point-source gradient. Protein: " << protein->get_name() << ".\n";

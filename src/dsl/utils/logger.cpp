@@ -2,14 +2,11 @@
 // Created by Tom on 16/06/2021.
 //
 
-#include <boost/filesystem.hpp>
-#include <iostream>
-
 #include "logger.h"
 
 #include "core/EC.h"
-#include "core/objects.h"
 #include "core/world.h"
+
 #include "dsl/species/protein.h"
 #include "dsl/tissue/cellType.h"
 

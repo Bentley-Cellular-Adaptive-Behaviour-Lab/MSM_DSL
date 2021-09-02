@@ -2,22 +2,12 @@
 #ifndef OBJECTS_H_
 #define OBJECTS_H_
 
-/**
- * \file objects.h
- *
- * \author Katie Bentley
- * \date 2006
- *
- * Development ongoing
- */
-
 #if BAHTI_ANALYSIS
 #include <pybind11/pybind11.h>
 #include <pybind11/numpy.h>
 #include <pybind11/stl.h>
 namespace py = pybind11;
 #endif
-
 
 #include <fstream>
 
