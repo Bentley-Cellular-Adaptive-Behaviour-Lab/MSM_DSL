@@ -8,9 +8,11 @@
 #include <array>
 #include <iostream>
 #include <fstream>
+#include <random>
 #include <vector>
 
 #define NEIGH 26
+#define NEW_RAND_MAX 32767
 
 class CPM_module;
 class Coordinates;
@@ -220,6 +222,16 @@ public:
     std::string time = get_time_string();
 
     CPM_module *diffAd;
+
+    /// Random number generation.
+
+    std::mt19937 g;
+    std::uniform_real_distribution<double> dist = std::uniform_real_distribution<double>(0, NEW_RAND_MAX);
+
+    int new_rand();
+    template <class _RandomAccessIterator>
+    void new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last );
+    void shuffleEnvAgents(std::vector<Env*> envAgents);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

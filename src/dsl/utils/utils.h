@@ -18,10 +18,7 @@ static void split(const std::string &s, char delim, Out result);
 static std::vector<std::string> split(const std::string &s, char delim);
 static std::string ReconstructPath(const std::string &s);
 
-int new_rand();
 
-template <class _RandomAccessIterator>
-void new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last );
 
 void create_statistics_file(std::string statisticsFilename);
 void write_to_statistics_file(std::string statisticsFilename, std::string line);

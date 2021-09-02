@@ -82,18 +82,4 @@ std::string format_time_string(std::time_t time, bool start) {
 	return time_entry;
 }
 
-int new_rand() {
-    return (int)dist(g);
-}
 
-template <class _RandomAccessIterator>
-void new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last ) {
-    if (first != last)
-        for (_RandomAccessIterator i = first + 1; i != last; ++i)
-        {
-            // XXX rand() % N is not uniformly distributed
-            _RandomAccessIterator j = first + new_rand() % ((i - first) + 1);
-            if (i != j)
-                std::iter_swap(i, j);
-        }
-}

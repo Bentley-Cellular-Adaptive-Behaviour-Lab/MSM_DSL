@@ -173,8 +173,6 @@ extern float M2_lambda;
 #define springLength 1.0f
 #define JunctionSpringLength 0.5f
 
-#define NEW_RAND_MAX 32767
-
 
 /////analysis/quantification
 //#define SigRange 15.0f*(VEGFRnorm/100.0f) ///percentage of total VEGFR poss, within this range we say the cell is stable.
