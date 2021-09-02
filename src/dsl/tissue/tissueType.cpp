@@ -2,13 +2,12 @@
 // Created by Tom on 31/08/2021.
 //
 
-#include <assert.h>
+#include <cassert>
 #include <iostream>
 #include <string>
 
 #include "cellType.h"
 #include "tissue.h"
-#include "tissueContainer.h"
 #include "tissueType.h"
 
 // General //

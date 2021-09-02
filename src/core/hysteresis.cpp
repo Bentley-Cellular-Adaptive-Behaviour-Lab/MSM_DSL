@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <fstream>
 
 #include "EC.h"
 #include "hysteresis.h"

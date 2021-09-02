@@ -7,8 +7,6 @@
  *
  */
 
-#include <math.h>
-
 #include "CPM_module.h"
 #include "coordinates.h"
 #include "EC.h"

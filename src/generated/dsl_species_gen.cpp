@@ -5,7 +5,6 @@
 
 #include "dsl_species_gen.h"
 
-
 // Created using: Example1_Species //
 ODEs::ODEs() {
 }

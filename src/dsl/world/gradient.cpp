@@ -2,7 +2,19 @@
 // Created by Tom on 31/08/2021.
 //
 
+#include <cassert>
+#include <cmath>
+
 #include "gradient.h"
+
+#include "core/coordinates.h"
+#include "core/environment.h"
+#include "core/location.h"
+#include "core/objects.h"
+#include "core/world.h"
+
+#include "dsl/species/protein.h"
+#include "dsl/world/worldContainer.h"
 
 /*****************************************************************************************
 *  Name:		add_env_protein
@@ -735,7 +747,7 @@ void Gradient::apply_gradient_to_sphere() {
 
 Gradient::Gradient(World_Container *container,
                    int gradient_type,
-                   protein *protein,
+                   Protein *protein,
                    Coordinates *source_position,
                    Coordinates *sink_position) {
     this->m_parent_container = container;
@@ -755,7 +767,7 @@ Gradient::Gradient(World_Container *container,
 
 Gradient::Gradient(World_Container *container,
                    int gradient_type,
-                   protein *protein,
+                   Protein *protein,
                    Coordinates *centre_position,
                    int width,
                    int height,
@@ -780,7 +792,7 @@ Gradient::Gradient(World_Container *container,
 
 Gradient::Gradient(World_Container *container,
                    int gradient_type,
-                   protein *protein,
+                   Protein *protein,
                    Coordinates *centre_position,
                    int sphere_radius) {
     this->m_parent_container = container;

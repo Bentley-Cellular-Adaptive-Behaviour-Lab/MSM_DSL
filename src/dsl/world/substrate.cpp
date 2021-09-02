@@ -2,7 +2,18 @@
 // Created by Tom on 31/08/2021.
 //
 
+#include <cassert>
+
 #include "substrate.h"
+
+#include "core/coordinates.h"
+#include "core/environment.h"
+#include "core/location.h"
+#include "core/objects.h"
+#include "core/world.h"
+
+#include "dsl/utils/shape.h"
+#include "dsl/world/worldContainer.h"
 
 /*****************************************************************************************
 *  Name:		apply_substrate_to_cuboid

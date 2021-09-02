@@ -1,6 +1,3 @@
-#include <chrono>
-#include <random>
-
 #include "objects.h"
 #include "world.h"
 

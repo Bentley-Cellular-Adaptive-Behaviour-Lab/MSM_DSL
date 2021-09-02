@@ -24,7 +24,6 @@ enum cell_configurations{
 
 class Tissue {
 public:
-
 	Tissue_Container *m_tissue_container;
 	World *m_world;
     Coordinates *m_position;

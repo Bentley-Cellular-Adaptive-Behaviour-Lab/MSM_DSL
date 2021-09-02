@@ -2,8 +2,8 @@
 // Created by Tom on 31/08/2021.
 //
 
-#include <assert.h>
-#include <math.h>
+#include <cassert>
+#include <cmath>
 
 #include "cell.h"
 #include "cellType.h"

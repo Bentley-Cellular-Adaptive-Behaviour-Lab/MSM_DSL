@@ -19,19 +19,14 @@ if(TEST_TYPE EQUAL 0)
 
     project(src/springAgent)
 
-    set (Sources src/core/analysis.cpp
-            src/core/constructors.cpp
+    set (Sources
             src/core/contact.cpp
             src/core/coordinates.cpp
             src/core/CPM_module.cpp
-            src/core/creation.cpp
             src/core/display.cpp
             src/core/EC.cpp
-            src/core/ECmesh.cpp
             src/core/environment.cpp
             src/core/filopodia.cpp
-            src/core/geometry_functions.cpp
-            src/core/Grid.cpp
             src/core/hysteresis.cpp
             src/core/location.cpp
             src/core/macrophage.cpp
@@ -42,7 +37,6 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
-            src/dsl/utils/shape.cpp
             src/dsl/species/protein.cpp
             src/dsl/tissue/cell.cpp
             src/dsl/tissue/cellType.cpp
@@ -50,7 +44,11 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/tissue/tissueContainer.cpp
             src/dsl/tissue/tissueType.cpp
             src/dsl/utils/logger.cpp
+            src/dsl/utils/shape.cpp
             src/dsl/utils/utils.cpp
+            src/dsl/world/gradient.cpp
+            src/dsl/world/substrate.cpp
+            src/dsl/world/worldContainer.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_tissue_gen.cpp
             src/generated/dsl_world_gen.cpp)
@@ -58,12 +56,13 @@ if(TEST_TYPE EQUAL 0)
     set (Headers src/core/contact.h
             src/core/coordinates.h
             src/core/CPM_module.h
-            src/core/creation.h
             src/core/display.h
             src/core/EC.cpp
             src/core/EC.h
             src/core/environment.h
             src/core/filopodia.h
+            src/core/hysteresis.h
+            src/core/location.h
             src/core/macrophage.h
             src/core/medAgent.h
             src/core/memAgents.h
@@ -72,12 +71,19 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
-            src/dsl/utils/logger.h
-            src/generated/dsl_species_gen.h
             src/dsl/species/protein.h
-            src/dsl/utils/shape.h
+            src/dsl/tissue/cell.h
+            src/dsl/tissue/cellType.h
             src/dsl/tissue/tissue.h
-            src/dsl/utils/utils.h)
+            src/dsl/tissue/tissueContainer.h
+            src/dsl/tissue/tissueType.h
+            src/dsl/utils/logger.h
+            src/dsl/utils/shape.h
+            src/dsl/utils/utils.h
+            src/dsl/world/gradient.h
+            src/dsl/world/substrate.h
+            src/dsl/world/worldContainer.h
+            src/generated/dsl_species_gen.h)
 
     add_executable(springAgent ${Sources} ${Headers})
 
@@ -109,16 +115,11 @@ elseif(TEST_TYPE EQUAL 1)
 
     project(tests/automated/autoSpringAgent)
 
-    set (Sources src/core/analysis.cpp
-            src/core/constructors.cpp
+    set (Sources
             src/core/CPM_module.cpp
-            src/core/creation.cpp
             src/core/display.cpp
             src/core/EC.cpp
-            src/core/ECmesh.cpp
             src/core/environment.cpp
-            src/core/geometry_functions.cpp
-            src/core/Grid.cpp
             src/dsl/utils/logger.cpp
             src/core/memAgents.cpp
             src/generated/dsl_species_gen.cpp
@@ -134,7 +135,7 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/generated/dsl_Tissue.cpp
             tests/automated/generated/dsl_World.cpp)
 
-    set (Headers src/core/creation.h
+    set (Headers
             src/core/display.h
             src/core/EC.cpp
             src/core/EC.h

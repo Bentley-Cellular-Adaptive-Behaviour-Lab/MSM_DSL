@@ -1,9 +1,7 @@
 #include "core/coordinates.h"
-#include "core/world.h"
 
 #include "dsl/utils/shape.h"
 
-#include "dsl/species/protein.h"
 #include "dsl/world/substrate.h"
 #include "dsl/world/worldContainer.h"
 
