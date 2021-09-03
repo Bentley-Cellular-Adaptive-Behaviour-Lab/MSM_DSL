@@ -10,6 +10,39 @@
 #include "dsl/species/protein.h"
 #include "dsl/tissue/cellType.h"
 
+world_logger::world_logger(World* world, const char *hysteresisFileName) {
+    setWorld(world);
+    setHysteresisFileName(hysteresisFileName);
+}
+
+World* world_logger::getWorld() {
+    return this->m_world;
+}
+
+void world_logger::setWorld(World* world) {
+    this->m_world = world;
+}
+
+const char* world_logger::getHysteresisFileName() {
+    return this->m_hysteresisFileName;
+}
+
+void world_logger::setHysteresisFileName(const char *hysteresisFileName) {
+    this->m_hysteresisFileName = hysteresisFileName;
+}
+
+std::ofstream& world_logger::getHysteresisFile() {
+    return this->m_hysteresisFile;
+}
+
+void world_logger::openHysteresisFile() {
+    this->m_hysteresisFile.open(this->getHysteresisFileName());
+}
+
+void world_logger::closeHysteresisFile() {
+    this->m_hysteresisFile.close();
+}
+
 cell_logger::cell_logger(int run_number, std::string initial_time, EC *ec) {
     add_EC(ec);
     create_filename(run_number, "results");

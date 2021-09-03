@@ -15,24 +15,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Building!">
-      <change afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.h" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Creating world logger and moving old runsfile capabilities to that.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testforpybind" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/testforpybind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/ODE.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_tissue_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_world_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_setup.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/utils/logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,14 +242,7 @@
       <workItem from="1630508282184" duration="8933000" />
       <workItem from="1630571869816" duration="12341000" />
       <workItem from="1630591786897" duration="6473000" />
-      <workItem from="1630658939816" duration="1222000" />
-    </task>
-    <task id="LOCAL-00007" summary="Changed gradient class to proteins objects.">
-      <created>1621609507700</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1621609507700</updated>
+      <workItem from="1630658939816" duration="9540000" />
     </task>
     <task id="LOCAL-00008" summary="Changed VEGF gradient functions to use starting value of protein. Removed m_starting amount from gradient class.">
       <created>1621609656942</created>
@@ -592,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630595479457</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Creating world logger and moving old runsfile capabilities to that.">
+      <created>1630660191592</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1630660191592</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -611,7 +606,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created logger class" />
     <MESSAGE value="Filled out logger class with functions, and added it as a member to ECs." />
     <MESSAGE value="Added call to logger creation during tissue setup" />
     <MESSAGE value="Implemented file writing functions for logger" />
@@ -636,7 +630,8 @@
     <MESSAGE value="Linker errors after refactoring." />
     <MESSAGE value="Still getting linker error with random functions. Moving these function to be part of the world class." />
     <MESSAGE value="Building!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Building!" />
+    <MESSAGE value="Creating world logger and moving old runsfile capabilities to that." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating world logger and moving old runsfile capabilities to that." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -645,16 +640,6 @@
           <url>file://$PROJECT_DIR$/src/core/ScreenRecording.h</url>
           <line>6</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/core/main.cpp</url>
-          <line>134</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/core/main.cpp</url>
-          <line>7</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

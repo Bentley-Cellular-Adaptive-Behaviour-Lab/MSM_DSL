@@ -2262,7 +2262,6 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 }
 
 MemAgent::MemAgent(EC* belongsTo, World* world){
-
 	int i;
 	diffAd_replaced_cell = NULL;
 	diffAd_replaced_med = NULL;
@@ -2309,24 +2308,21 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 	assessed=false;
 	addedJunctionList=false;
 
-
-
 	for(i=0;i<meshNeighs+NEIGHSMAX;i++){
 		neigh[i]=NULL;
 		SpringNeigh[i]=NULL;
 
 	}
 	SpringBelong=NULL;
-
-
-
-}//-----------------------------------------------------------------------------
+    this->previous = new Coordinates();
+}
 
 MemAgent::~MemAgent(void){
 	for (auto protein : this->owned_proteins) {
 		delete protein;
 	}
 	EnvNeighs.clear();
+    delete this->previous;
 }
 
 /*****************************************************************************************
