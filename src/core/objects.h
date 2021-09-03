@@ -36,7 +36,7 @@ class World;
 #define DSL_TESTING true
 #define PROTEIN_TESTING true
 
-extern std::ofstream RUNSfile;
+//extern std::ofstream RUNSfile;
 ///analysis/quantification
 #define SigRange 15.0f*(VEGFRnorm/100.0f) ///percentage of total VEGFR poss, within this range we say the cell is stable.
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.

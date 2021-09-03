@@ -19,6 +19,7 @@
 #include "world.h"
 
 #include "dsl/tissue/tissueContainer.h"
+#include "dsl/utils/logger.h"
 #include "dsl/utils/utils.h"
 #include "generated/dsl_species_gen.h"
 
@@ -33,6 +34,8 @@ unsigned long long rdtsc(){
 
 int patternHistory = 0;
 bool patterned = false;
+
+#define hysteresisFileName "hysteresisFileTest.txt"
 
 //World::World(void){
 
@@ -118,16 +121,6 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
 
     std::cout << "Creating world..." << std::endl;
 
-    //    char outfilename[21];
-    //    char outfilename2[21];
-    //    char outfilename3[21];
-
-    //    sprintf(outfilename, "Vsink%1.3f_tipcells.txt", Vsink);
-    //    sprintf(outfilename2, "Vsink%1.3f_VRoverTH.txt", Vsink);
-    //    sprintf(outfilename3, "Vsink%1.3f_Avescores.txt", Vsink);
-    //    RUNSfile.open(outfilename);
-    //    RUNSfile2.open(outfilename2);
-    //    RUNSfile3.open(outfilename3);
     Pause = 0;
     timeStep = -1;
     dataFile.open("actions.txt");
@@ -192,9 +185,7 @@ World::World()
     //    sprintf(outfilename, "Vsink%1.3f_tipcells.txt", Vsink);
     //    sprintf(outfilename2, "Vsink%1.3f_VRoverTH.txt", Vsink);
     //    sprintf(outfilename3, "Vsink%1.3f_Avescores.txt", Vsink);
-    //    RUNSfile.open(outfilename);
-    //    RUNSfile2.open(outfilename2);
-    //    RUNSfile3.open(outfilename3);
+
     Pause = 0;
     timeStep = -1;
     dataFile.open("actions.txt");
@@ -241,6 +232,8 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     } else {
         g = std::mt19937(rdtsc());
     }
+
+    createLogger();
 
     Pause = 0;
     timeStep = -1;
@@ -889,12 +882,15 @@ void World::evaluateSandP() {
     if (patternHistory == 150) {
         std::cout << "patterned!" << std::endl;
         patterned = true;
-        RUNSfile << timeStep;
+//        RUNSfile << timeStep;
+        getWorldLogger()->getHysteresisFile() << timeStep;
         timeStep = MAXtime;
     }
 
-    if (timeStep == MAXtime - 1 && !patterned)
-        RUNSfile << "-1";
+    if (timeStep == MAXtime - 1 && !patterned) {
+        //RUNSfile << "-1";
+        getWorldLogger()->getHysteresisFile() << -1;
+    }
 }
 
 void World::getCellNeighbours(void) {
@@ -1547,13 +1543,15 @@ void World::runSimulation()
 		if(MEM_LEAK_OCCURRING)
 		{
 			timeStep = MAXtime;
-			RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
+//			RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
+            getWorldLogger()->getHysteresisFile() << "MEMORY LEAKED!!!...quit run" << std::endl;
 			std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
 			MEM_LEAK_OCCURRING = false;
 		}
 
 		if (timeStep == MAXtime)
-			RUNSfile << std::endl << std::endl;
+            getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
+            //RUNSFILE << std::endl << std::endl;
 //        if (timeStep ==3)
 //        {
 //            getGridSiteData();
@@ -1727,11 +1725,13 @@ void World::hysteresisAnalysis() {
 		ECagents[1]->hyst->stableDll4 = ECagents[1]->Dll4tot;
 		ECagents[1]->hyst->stableActin = ECagents[1]->actinUsed;
 	}
-	continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(RUNSfile);
+    //continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(RUNSFILE);
+	continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(getWorldLogger()->getHysteresisFile());
 	if (!continue_hysteresis)
 	{
 		timeStep = MAXtime+1;
-		RUNSfile<<std::endl<<std::endl;
+        //RUNSFILE<<std::endl<<std::endl;
+        getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
 	}
 }
 
@@ -6510,3 +6510,16 @@ void World::shuffleEnvAgents(std::vector<Env*> envAgents) {
     // Hacky way to get the shuffle function working.
     new_random_shuffle(envAgents.begin(),envAgents.end());
 }
+
+void World::createLogger() {
+    setWorldLogger(new world_logger(this, hysteresisFileName));
+}
+
+world_logger* World::getWorldLogger() {
+    return this->m_worldLogger;
+}
+
+void World::setWorldLogger(world_logger *logger) {
+    this->m_worldLogger = logger;
+}
+

@@ -1,8 +1,10 @@
 #include "objects.h"
 #include "world.h"
 
-#include "dsl/world/worldContainer.h"
+#include "dsl/utils/logger.h"
 #include "dsl/utils/utils.h"
+#include "dsl/world/worldContainer.h"
+
 
 #if GRAPHICS
 #include "display.h"
@@ -28,7 +30,7 @@
 
 //general
 World* WORLDpointer;
-std::ofstream RUNSfile;
+//std::ofstream RUNSfile;
 int memINIT;
 float actinMax = 512;
 
@@ -209,16 +211,19 @@ int main(int argc, char * argv[]) {
 
 	std::cout << "output file name: " << outfilename << std::endl;
 
-    RUNSfile.open(outfilename);
+//    RUNSfile.open(outfilename);
 
 	std::cout << "Creating world..." << "\n";
 
 //    World* world = new World();
 //    WORLDpointer = world;
 
+
 	w_container->world_setup();
 	world = w_container->get_world();
 	WORLDpointer = world;
+
+    world->getWorldLogger()->openHysteresisFile();
 
 	std::cout << "World created." << "\n";
 
@@ -241,5 +246,6 @@ int main(int argc, char * argv[]) {
 	write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
 
 #endif
-    RUNSfile.close();
+    world->getWorldLogger()->closeHysteresisFile();
+//    RUNSfile.close();
 }

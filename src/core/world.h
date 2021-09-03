@@ -24,8 +24,11 @@ class Filopodia;
 class Macrophage;
 class MemAgent;
 class ODEs;
+class world_logger;
 
 class World {
+private:
+    world_logger *m_worldLogger;
 public:
 
     ///general
@@ -231,7 +234,15 @@ public:
     int new_rand();
     template <class _RandomAccessIterator>
     void new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last );
+
+    //Hacky way to avoid linker errors.
     void shuffleEnvAgents(std::vector<Env*> envAgents);
+
+    /// World info logger.
+
+    void createLogger();
+    world_logger* getWorldLogger();
+    void setWorldLogger(world_logger *logger);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
