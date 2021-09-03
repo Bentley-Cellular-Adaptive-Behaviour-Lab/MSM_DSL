@@ -15,18 +15,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Still getting linker error with random functions. Moving these function to be part of the world class.">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Building!">
+      <change afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/utils/utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/utils/utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/utils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/testforpybind" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/testforpybind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/ODE.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_Tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_tissue_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_World.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_world_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_setup.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,12 +78,13 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/automated/generated" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\tests\automated\generated" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -89,6 +96,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.springAgent">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -111,11 +123,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
@@ -239,14 +246,8 @@
       <workItem from="1630508048302" duration="162000" />
       <workItem from="1630508282184" duration="8933000" />
       <workItem from="1630571869816" duration="12341000" />
-      <workItem from="1630591786897" duration="2811000" />
-    </task>
-    <task id="LOCAL-00006" summary="Changed gradient class to proteins objects.">
-      <created>1621609453985</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1621609453985</updated>
+      <workItem from="1630591786897" duration="6473000" />
+      <workItem from="1630658939816" duration="1222000" />
     </task>
     <task id="LOCAL-00007" summary="Changed gradient class to proteins objects.">
       <created>1621609507700</created>
@@ -584,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630592737581</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Building!">
+      <created>1630595479457</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1630595479457</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +611,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Moved steppers to ODE running function." />
     <MESSAGE value="Created logger class" />
     <MESSAGE value="Filled out logger class with functions, and added it as a member to ECs." />
     <MESSAGE value="Added call to logger creation during tissue setup" />
@@ -628,7 +635,8 @@
     <MESSAGE value="Implemented test for Notch-Dll4 example. Now refactoring code to be better organised." />
     <MESSAGE value="Linker errors after refactoring." />
     <MESSAGE value="Still getting linker error with random functions. Moving these function to be part of the world class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Still getting linker error with random functions. Moving these function to be part of the world class." />
+    <MESSAGE value="Building!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Building!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,8 +648,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/core/main.cpp</url>
+          <line>134</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/main.cpp</url>
           <line>7</line>
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
