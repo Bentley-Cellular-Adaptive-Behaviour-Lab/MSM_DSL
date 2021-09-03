@@ -371,19 +371,13 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/CPM_module.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/CPM_module.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/EC.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/EC.h">
-			<Option target="autoSpringAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ECmesh.cpp">
-			<Option target="autoSpringAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ECmesh.h">
-			<Option target="autoSpringAgent"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/Grid.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ScreenRecording.cpp">
@@ -392,16 +386,16 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/ScreenRecording.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/analysis.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/contact.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/constructors.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/contact.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/creation.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/coordinates.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/creation.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/coordinates.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/display.cpp">
@@ -416,7 +410,37 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/environment.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/geometry_functions.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/filopodia.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/filopodia.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/hysteresis.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/hysteresis.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/location.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/location.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/macrophage.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/macrophage.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/main.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/medAgent.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/medAgent.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/memAgents.cpp">
@@ -428,55 +452,106 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/objects.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/space.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/spring.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/space.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/spring.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/Tissue.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/vessel.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/Tissue.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/vessel.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/logger.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/world.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/logger.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/world.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/protein.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/species/protein.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/protein.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/species/protein.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/cell.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/cell.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/cellType.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/cellType.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/ODE.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissue.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/ODE.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissue.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/ODE.h">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueContainer.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_Tissue.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueContainer.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_World.cpp">
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueType.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueType.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/logger.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/logger.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/shape.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/shape.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/utils.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/utils/utils.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/worldContainer.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/worldContainer.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_species_gen.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_species_gen.h">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_tissue_gen.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/generated/dsl_world_gen.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/helper_ODE.cpp">

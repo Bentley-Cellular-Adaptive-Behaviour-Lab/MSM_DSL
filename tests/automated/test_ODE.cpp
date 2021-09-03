@@ -4,17 +4,18 @@
 
 #include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
+#include <cmath>
 
-// Core MSM includes
+#include "core/EC.h"
+#include "core/memAgents.h"
 #include "core/objects.h"
 #include "core/world.h"
 
-// Test suite includes
-#include <cmath>
 #include "helper_ODE.h"
-#include "core/memAgents.h"
+
+#include "dsl/tissue/cell.h"
 #include "dsl/tissue/tissue.h"
-#include "core/EC.h"
+
 
 namespace odeint = boost::numeric::odeint;
 
