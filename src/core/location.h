@@ -11,25 +11,43 @@ class Env;
 class MedAgent;
 class MemAgent;
 
+/// The grid is made up of location objects, which then house the types of agents located there.
 class Location {
-    ///the grid is made up of location objects which then house the types of agents located there
-public:
+    /// Type is either M (membrane), E (environment but can contain filopodia) or blood (inside vessel).
+    int m_type;
+    /// Buffer type.
+    int m_oldType;
+
+    MedAgent* med;
+    Env * Eid;
+
     ///cell body memAgent identifiers
     std::vector <MemAgent *> Mids;
     ///filopodia memAgent identifiers
     std::vector <MemAgent *> Fids;
-    ///environment agent identifier
-    Env * Eid;
+public:
+    Location();
 
-    ///type is either M (membrane), E (Environment but can contain filopodia) or Blood (inside vessel label)
-    int type;
-    ///buffer type
-    int oldType;
+    std::vector<MemAgent*>& getMids();
+    std::vector<MemAgent*>& getFids();
 
-    ///testing CPM with medium around the cells
-    MedAgent* med;
+    void setMids(std::vector<MemAgent*>& mids);
+    void setFids(std::vector<MemAgent*>& fids);
 
-    Location(void);
+    void addMemAgent(MemAgent* memAgent);
+    void addFilAgent(MemAgent* memAgent);
+
+    void setType(int type);
+    void setOldType(int type);
+
+    int getType();
+    int getOldType();
+
+    void setEid(Env *eid);
+    Env* getEid();
+
+    void setMed(MedAgent *med);
+    MedAgent* getMed();
 };
 
 #endif //SRC_SPRINGAGENT_LOCATION_H

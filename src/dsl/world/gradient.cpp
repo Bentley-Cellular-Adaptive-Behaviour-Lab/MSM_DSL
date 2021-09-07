@@ -550,8 +550,8 @@ void Gradient::apply_gradient_to_cuboid() {
                 assert(y <= m_parent_world->gridYDimensions);
                 assert(z <= m_parent_world->gridZDimensions);
 
-                if (m_parent_world->grid[x][y][z].type == const_E) {
-                    ep = m_parent_world->grid[x][y][z].Eid;
+                if (m_parent_world->grid[x][y][z].getType() == const_E) {
+                    ep = m_parent_world->grid[x][y][z].getEid();
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
                             if (PROTEIN_TESTING) {
@@ -637,8 +637,8 @@ void Gradient::apply_gradient_to_sinkandsource() {
     for (int i = x_start; i < x_end; i++) {
         for (int j = y_start; j < y_end; j++) {
             for (int k = z_start; k < z_end; k++) {
-                if (m_parent_world->grid[i][j][k].type == const_E) {
-                    ep = m_parent_world->grid[i][j][k].Eid;
+                if (m_parent_world->grid[i][j][k].getType() == const_E) {
+                    ep = m_parent_world->grid[i][j][k].getEid();
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
                             if (PROTEIN_TESTING) {
@@ -700,8 +700,8 @@ void Gradient::apply_gradient_to_sphere() {
                     if (x < m_parent_world->gridXDimensions &&
                         y < m_parent_world->gridYDimensions &&
                         z < m_parent_world->gridZDimensions) {
-                        if (m_parent_world->grid[x][y][z].type == const_E) {
-                            ep = m_parent_world->grid[x][y][z].Eid;
+                        if (m_parent_world->grid[x][y][z].getType() == const_E) {
+                            ep = m_parent_world->grid[x][y][z].getEid();
                             if (ep != nullptr) {
                                 dist_from_centre = sqrt(
                                         ((m_centre_position->x - x) * (m_centre_position->x - x)) +

@@ -683,9 +683,10 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
             //---------------------------------------
             memp->Mz = l+Z;
 
-            memp->previous->x = memp->Mx;
-            memp->previous->y = memp->My;
-            memp->previous->z = memp->Mz;
+            memp->setPreviousX(memp->Mx);
+            memp->setPreviousY(memp->My);
+            memp->setPreviousZ(memp->Mz);
+
 
             memp->circlePos=(int)(J+circlePosStartAb);
 
@@ -966,9 +967,9 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
             N = 0;
 
             if (m_world->insideWorld(mp->Mx-1, mp->My, mp->Mz)) {
-                if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].type == const_M) {
-                    for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].Mids.size(); kelp++) {
-                        nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].Mids[kelp];
+                if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getType() == const_M) {
+                    for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getMids().size(); kelp++) {
+                        nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getMids()[kelp];
 
                         if(mp->Cell == nmp->Cell) {
                             mp->neigh[N] = nmp;
@@ -982,9 +983,9 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
                 }
             }
             if (m_world->insideWorld(mp->Mx+1, mp->My, mp->Mz)) {
-                if (m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].type == const_M) {
-                    for(kelp=0;kelp<m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].Mids.size();kelp++) {
-                        nmp = m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].Mids[kelp];
+                if (m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].getType() == const_M) {
+                    for(kelp=0;kelp<m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].getMids().size();kelp++) {
+                        nmp = m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].getMids()[kelp];
                         if(mp->Cell == nmp->Cell) {
                             mp->neigh[N] = nmp;
                             m_cell_agents[e]->createSpringTokenObject(mp, nmp, N);
@@ -997,9 +998,9 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
                 }
             }
             if ((m_world->insideWorld(mp->Mx, mp->My-1, mp->Mz))) {
-                if (m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].type == const_M) {
-                    for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].Mids.size(); kelp++) {
-                        nmp = m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].Mids[kelp];
+                if (m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].getType() == const_M) {
+                    for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].getMids().size(); kelp++) {
+                        nmp = m_world->grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].getMids()[kelp];
                         if (mp->Cell == nmp->Cell) {
                             mp->neigh[N] = nmp;
                             m_cell_agents[e]->createSpringTokenObject(mp, nmp, N);
@@ -1012,9 +1013,9 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
                 }
             }
             if (m_world->insideWorld(mp->Mx, mp->My + 1, mp->Mz)) {
-                if (m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].type == const_M) {
-                    for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].Mids.size(); kelp++) {
-                        nmp = m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].Mids[kelp];
+                if (m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].getType() == const_M) {
+                    for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].getMids().size(); kelp++) {
+                        nmp = m_world->grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].getMids()[kelp];
                         if (mp->Cell == nmp->Cell) {
                             mp->neigh[N]=nmp;
                             m_cell_agents[e]->createSpringTokenObject(mp, nmp, N);
@@ -1027,8 +1028,8 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
                 }
             }
             if(m_world->insideWorld(mp->Mx, mp->My, mp->Mz)){
-                for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz].Mids.size(); kelp++) {
-                    nmp = m_world->grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz].Mids[kelp];
+                for(kelp = 0; kelp < m_world->grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz].getMids().size(); kelp++) {
+                    nmp = m_world->grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz].getMids()[kelp];
                     if (mp->Cell != nmp->Cell) {
                         mp->neigh[N]=nmp;
                         m_cell_agents[e]->createSpringTokenObject(mp, nmp, N);

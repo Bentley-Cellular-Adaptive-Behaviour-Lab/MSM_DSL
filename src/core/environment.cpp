@@ -30,7 +30,7 @@ void Env::calcInside(void){
    
     //y axis----------------------------------
     do{
-        if(worldP->grid[Ex][Ey+i][Ez].Mids.size()>0){
+        if(worldP->grid[Ex][Ey+i][Ez].getMids().size()>0){
             flagInside=true;
             flag=1;
             //cell = worldP->grid[Ex][Ey+i][Ez].Mids[0]->Cell;
@@ -43,7 +43,7 @@ void Env::calcInside(void){
         flagInside=false;
         i=0;
         do{
-            if(worldP->grid[Ex][Ey-i][Ez].Mids.size()>0){
+            if(worldP->grid[Ex][Ey-i][Ez].getMids().size()>0){
                 flag=1;
                 //if(worldP->grid[Ex][Ey-i][Ez].Mids[0]->Cell==cell)
                 flagInside=true;
@@ -59,7 +59,7 @@ void Env::calcInside(void){
             flagInside=false;
             i=0;
             do{
-                if(worldP->grid[Ex][Ey][Ez+i].Mids.size()>0){
+                if(worldP->grid[Ex][Ey][Ez+i].getMids().size() > 0){
 
                     flag=1;
                     //if(worldP->grid[Ex][Ey][Ez+i].Mids[0]->Cell==cell)
@@ -74,7 +74,7 @@ void Env::calcInside(void){
                 flagInside=false;
                 i=0;
                 do{
-                    if(worldP->grid[Ex][Ey][Ez-i].Mids.size()>0){
+                    if(worldP->grid[Ex][Ey][Ez-i].getMids().size() > 0){
                         flag=1;
                         //if(worldP->grid[Ex][Ey][Ez-i].Mids[0]->Cell==cell)
                         flagInside=true;
@@ -303,7 +303,7 @@ int Env::checkForEnv(void) {
 
         if (worldP->insideWorld(m, n, p)) {
 
-            if ((worldP->grid[m][n][p].type == const_E) && (worldP->grid[m][n][p].Eid->VEGF > 0.0f)) {
+            if ((worldP->grid[m][n][p].getType() == const_E) && (worldP->grid[m][n][p].getEid()->VEGF > 0.0f)) {
                 flag = 1;
             }
         }

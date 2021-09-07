@@ -579,7 +579,7 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
         
        
     //remove from grid
-    worldP->grid[(int)replaced_med->Mx][(int)replaced_med->My][(int)replaced_med->Mz].med = NULL;
+    worldP->grid[(int)replaced_med->Mx][(int)replaced_med->My][(int)replaced_med->Mz].setMed(NULL);
     //delete agent
         //cout<<"deleted"<<endl;
     }
@@ -610,22 +610,20 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
    // cout<<"replacing with mem"<<endl;
     //cout<<"replaced"<<endl;//will need to do something with springs...
     }
-    else{
-
+    else {
 		std::cout<<"replacing with med"<<std::endl;
         //create new agent in same pos, belonging to other cell..
-    medp = new MedAgent( worldP);
+        medp = new MedAgent( worldP);
     //cout<<"newNode:"<<memp<<endl<<endl;
 
-    medp->Mx = X;
-    medp->My = Y;
-    medp->Mz = Z;
+        medp->Mx = X;
+        medp->My = Y;
+        medp->Mz = Z;
 
 
-    mediumAgents.push_back(medp);
-    worldP->grid[(int) X][(int) Y][(int) Z].med = medp;
-    worldP->grid[(int) X][(int) Y][(int) Z].type = MED;
-    
+        mediumAgents.push_back(medp);
+        worldP->grid[(int) X][(int) Y][(int) Z].setMed(medp);
+        worldP->grid[(int) X][(int) Y][(int) Z].setType(MED);
     }
 
     update_displaced_surfaceAgents(replaced_mem, replacer_mem);
@@ -1110,27 +1108,27 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
         if (n < 0) n = yMAX - 1;*/
 
         if(worldP->insideWorld(m,n,p)){
-        if (worldP->grid[m][n][p].type == const_M) {
+        if (worldP->grid[m][n][p].getType() == const_M) {
             //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
-            for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-                if ((worldP->grid[m][n][p].Mids[zed]->FIL != TIP) && (worldP->grid[m][n][p].Mids[zed]->FIL != STALK)) {
-                    connected = replaced_mem->meshConnected(worldP->grid[m][n][p].Mids[zed]);
+            for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
+                    connected = replaced_mem->meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                     if (connected) {
-                        worldP->grid[m][n][p].Mids[zed]->checkNeighs(true);
+                        worldP->grid[m][n][p].getMids()[zed]->checkNeighs(true);
                         //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
                         //so for this guy, checkNeighs, then put through Jsum calc..
-                        JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].Mids[zed], NULL);
+                        JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
                     }
                 }
 
             }
-        } else if (worldP->grid[m][n][p].type == MED) { //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
+        } else if (worldP->grid[m][n][p].getType() == MED) { //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
 
-            worldP->grid[m][n][p].med->checkNeighs();
+            worldP->grid[m][n][p].getMed()->checkNeighs();
             //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
             //so for this guy, checkNeighs, then put through Jsum calc..
             //cout<<m<<" "<<n<<" "<<p<<endl;
-            JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].med);
+            JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].getMed());
 
 
         }
@@ -1403,33 +1401,25 @@ void MedAgent::checkNeighs(void) {
             //-----------NEW BIT!
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
-            if (worldP->grid[m][n][p].type == const_M) {
+            if (worldP->grid[m][n][p].getType() == const_M) {
                 if (diffAd_replaced == NULL) {
-
-                    for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-                        DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                    for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                        DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                     }
                 } else if (diffAd_replaced != NULL) {
-
-                    for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-
-                        if ((worldP->grid[m][n][p].Mids[zed]->Cell != diffAd_replaced->Cell)) {
-                            DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                    for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                        if ((worldP->grid[m][n][p].getMids()[zed]->Cell != diffAd_replaced->Cell)) {
+                            DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                         }
-
                     }
                 }
 
-
-            } else if ((worldP->grid[m][n][p].type == MED) && (diffAd_replaced != NULL)) {
-
-
+            } else if ((worldP->grid[m][n][p].getType() == MED) && (diffAd_replaced != NULL)) {
                 mediumNeighs++;
+            } else if ((worldP->grid[m][n][p].getType() == MED) && (worldP->grid[m][n][p].getMed()->diffAd_replaced != NULL)) {
 
-            } else if ((worldP->grid[m][n][p].type == MED) && (worldP->grid[m][n][p].med->diffAd_replaced != NULL)) {
 
-
-                DiffAd_neighs.push_back(worldP->grid[m][n][p].med->diffAd_replaced);
+                DiffAd_neighs.push_back(worldP->grid[m][n][p].getMed()->diffAd_replaced);
 
             }
         }
@@ -1453,14 +1443,14 @@ void CPM_module::createMedium(void) {
 
     for (i = 0; i < xMAX; i++) {
         for (j = 0; j < yMAX; j++) {
-            if (worldP->grid[i][j][0].type != const_M) {
-                worldP->grid[i][j][0].type = MED;
+            if (worldP->grid[i][j][0].getType() != const_M) {
+                worldP->grid[i][j][0].setType(MED);
                 medp = new MedAgent(worldP);
                 medp->Mx = (float) i;
                 medp->My = (float) j;
                 medp->Mz = 0.0f;
                 mediumAgents.push_back(medp);
-                worldP->grid[i][j][0].med = medp;
+                worldP->grid[i][j][0].setMed(medp);
             }
         }
     }

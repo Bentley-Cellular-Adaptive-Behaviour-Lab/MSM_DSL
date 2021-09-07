@@ -509,24 +509,24 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                     	m = worldP->gridXDimensions - 1;
                     //-------------------------------
                     
-                    if(worldP->insideWorld(m, n, p)==true){
-                        if(worldP->grid[m][n][p].type == const_M){
-                            for(y=0;y<(int)worldP->grid[m][n][p].Mids.size();y++){
+                    if(worldP->insideWorld(m, n, p)){
+                        if(worldP->grid[m][n][p].getType() == const_M){
+                            for(y=0;y<(int)worldP->grid[m][n][p].getMids().size();y++){
                                 flag=0;
-                                if(worldP->grid[m][n][p].Mids[y]->Cell!=this){
+                                if(worldP->grid[m][n][p].getMids()[y]->Cell!=this){
                                     //-----------------------------------------------------------------------
                                     if(other==-1){
                                     for(t=0;t<worldP->cellNeighbourhoods[which].size();t++){
                                         if(flag==0){
-                                            if(worldP->grid[m][n][p].Mids[y]->Cell==worldP->cellNeighbourhoods[which][t]){
+                                            if(worldP->grid[m][n][p].getMids()[y]->Cell==worldP->cellNeighbourhoods[which][t]){
                                                 flag=1;
                                                 allow=true;
                                                 for(B=0;B<neighbours.size();B++){
-                                                    if(neighbours[B]==worldP->grid[m][n][p].Mids[y]->Cell) allow=false;
+                                                    if(neighbours[B]==worldP->grid[m][n][p].getMids()[y]->Cell) allow=false;
                                                 }
-                                                if(allow==true){
+                                                if(allow) {
                                                     junctionSizes[t]++ ;
-                                                    neighbours.push_back(worldP->grid[m][n][p].Mids[y]->Cell);
+                                                    neighbours.push_back(worldP->grid[m][n][p].getMids()[y]->Cell);
                                                 }
                                                 
                                             }
@@ -537,17 +537,16 @@ void EC::characterizeActNotchBoundaries(int which, int other){
                                     //----------------------------------------------------------------------
                                     //just find against a specific neighbour cell
                                     else{
-                                        if(worldP->grid[m][n][p].Mids[y]->Cell==worldP->cellNeighbourhoods[which][other]){
-                                                
-                                                allow=true;
-                                                for(B=0;B<neighbours.size();B++){
-                                                    if(neighbours[B]==worldP->grid[m][n][p].Mids[y]->Cell) allow=false;
-                                                }
-                                                if(allow==true){
-                                                    junctionSizes[t]++ ;
-                                                    neighbours.push_back(worldP->grid[m][n][p].Mids[y]->Cell);
-                                                }
+                                        if(worldP->grid[m][n][p].getMids()[y]->Cell==worldP->cellNeighbourhoods[which][other]){
+                                            allow=true;
+                                            for(B=0;B<neighbours.size();B++){
+                                                if (neighbours[B]==worldP->grid[m][n][p].getMids()[y]->Cell) allow=false;
                                             }
+                                            if (allow) {
+                                                junctionSizes[t]++ ;
+                                                neighbours.push_back(worldP->grid[m][n][p].getMids()[y]->Cell);
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1154,13 +1153,13 @@ void EC::removeStalkNode(Spring *STP) {
     //dont need to worry abuot proteins as they've already had their effect in sumProtLevels();
 
     //delete old grid ref
-    int upto = worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].Fids.size();
-    T = worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].Fids.begin();
+    int upto = worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].getFids().size();
+    T = worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].getFids().begin();
     flag1 = 0;
     i = 0;
     do {
-        if (worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].Fids[i] == stalkNode) {
-            worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].Fids.erase(T + i);
+        if (worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].getFids()[i] == stalkNode) {
+            worldP->grid[(int) stalkNode->Mx][(int) stalkNode->My][(int) stalkNode->Mz].getFids().erase(T + i);
             flag1 = 1;
         }
         i++;
@@ -1883,8 +1882,8 @@ void EC::remove_DoubledUp_SurfaceAgents(void) {
 
         mp = doubled_up_surface_agents_list[i];
 
-        for (j = 0; j < worldP->grid[(int) mp->Mx][(int) mp->My][(int) mp->Mz].Mids.size(); j++) {
-            memp = worldP->grid[(int) mp->Mx][(int) mp->My][(int) mp->Mz].Mids[j];
+        for (j = 0; j < worldP->grid[(int) mp->Mx][(int) mp->My][(int) mp->Mz].getMids().size(); j++) {
+            memp = worldP->grid[(int) mp->Mx][(int) mp->My][(int) mp->Mz].getMids()[j];
 
             if ((memp->Cell == mp->Cell) && (memp != mp)) {
 
