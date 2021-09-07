@@ -8,6 +8,7 @@
 #define meshNeighs 4
 #define NEIGHSMAX 25
 
+#include <array>
 #include <string>
 #include <vector>
 
@@ -25,6 +26,8 @@ private:
     float m_previous_x;
     float m_previous_y;
     float m_previous_z;
+
+    std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
 public:
 	///general
 	float Mx, My, Mz; ///continuous space coordinates
@@ -150,6 +153,14 @@ public:
     float getPreviousX();
     float getPreviousY();
     float getPreviousZ();
+
+    // Checking and updating of neighbouring location objects.
+    void updateNeighbourLocations();
+    std::array<Location*, 26>& getNeighbourLocations();
+    void setNeighbourLocations(std::array<Location*, 26> &arr);
+    std::array<Location*, 26>& calcNeighbourLocations();
+    Location* getStoredLocation(int index);
+    void setStoredLocation(Location& location,int index);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H
