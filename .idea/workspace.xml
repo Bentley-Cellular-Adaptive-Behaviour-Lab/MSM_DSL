@@ -15,41 +15,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Changing previous to be a member variable rather than a coordinate object.">
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/SpeciesContainerHeader_Constraints.java" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Changing usages of world NEIGH array based on context.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/classes_gen/SpeciesSetup/editor/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/models/SpeciesSetup.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen.caches/SpeciesSetup/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesSetup/source_gen/SpeciesSetup/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/CPM_module.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/CPM_module.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/environment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/environment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/filopodia.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/filopodia.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/location.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/location.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/location.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/location.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissue.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,14 +234,7 @@
       <workItem from="1630934484759" duration="1294000" />
       <workItem from="1630942823252" duration="4263000" />
       <workItem from="1630955032325" duration="115000" />
-      <workItem from="1631006096053" duration="1000" />
-    </task>
-    <task id="LOCAL-00009" summary="Implemented function to add proteins to environment agents during gradient creation.">
-      <created>1621611517436</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1621611517436</updated>
+      <workItem from="1631006096053" duration="4708000" />
     </task>
     <task id="LOCAL-00010" summary="Implemented function to add proteins to a memAgent during memAgent creation.">
       <created>1621614113643</created>
@@ -609,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630669771513</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Changing usages of world NEIGH array based on context.">
+      <created>1631007383227</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1631007383228</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,7 +598,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added call to logger creation during tissue setup" />
     <MESSAGE value="Implemented file writing functions for logger" />
     <MESSAGE value="Added call to logger during update loop." />
     <MESSAGE value="Created utils namespace and added functions to handle string manipulation" />
@@ -653,7 +622,8 @@
     <MESSAGE value="Building!" />
     <MESSAGE value="Creating world logger and moving old runsfile capabilities to that." />
     <MESSAGE value="Changing previous to be a member variable rather than a coordinate object." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changing previous to be a member variable rather than a coordinate object." />
+    <MESSAGE value="Changing usages of world NEIGH array based on context." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changing usages of world NEIGH array based on context." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
