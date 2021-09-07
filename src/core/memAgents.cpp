@@ -25,11 +25,11 @@ int Dolaycount = 0;
  * This is needed to tell if triangle positions have changed when 
  * on the fly surface agent coverage flag is switched ON (quick calculatoin of voxelisatoin though incomplete and shouldnt be used durnig real simulations, only in development to see faster, then retest with on the fly surface OFF to ensure full surface created.
  */
-void MemAgent::store_previous_triangle_pos(void) {
+void MemAgent::store_previous_triangle_pos() {
     if ((node) && ((FIL == NONE) || (FIL == BASE))) {
-        previous->x = Mx;
-        previous->y = My;
-        previous->z = Mz;
+        setPreviousX(Mx);
+        setPreviousX(My);
+        setPreviousX(Mz);
     }
 }
 //----------------------------------------------------------------------------------
@@ -45,22 +45,22 @@ void MemAgent::NotchResponse(void) {
     int flag = 0;
 
     do {
-        if (worldP->neigh[i]->type == const_M) {
-            for (j = 0; j < (int) worldP->neigh[i]->Mids.size(); j++) {
+        if (worldP->neigh[i]->getType() == const_M) {
+            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
                 if (flag == 0) {
-                    if (worldP->neigh[i]->Mids[j]->Cell != Cell) {
+                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
                         //if more than number of notch receptors  only take amount needed to activate notches
-                        if (worldP->neigh[i]->Mids[j]->Dll4 > Notch1) {
-                            worldP->neigh[i]->Mids[j]->Dll4 -= Notch1;
+                        if (worldP->neigh[i]->getMids()[j]->Dll4 > Notch1) {
+                            worldP->neigh[i]->getMids()[j]->Dll4 -= Notch1;
                             activeNotch = activeNotch + Notch1;
                             Notch1 = 0.0f;
                             flag = 1;
 
                         }//take all of it if less than it has notch receptors
                         else {
-                            Notch1 = Notch1 - worldP->neigh[i]->Mids[j]->Dll4;
-                            activeNotch = activeNotch + worldP->neigh[i]->Mids[j]->Dll4;
-                            worldP->neigh[i]->Mids[j]->Dll4 = 0.0f;
+                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+                            worldP->neigh[i]->getMids()[j]->Dll4 = 0.0f;
                         }
                     }
                 }
@@ -520,12 +520,12 @@ void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) {
                 if (flag == 0) {
 
                     if (worldP->insideWorld(i, j, k) == true) {
-                        if (worldP->grid[i][j][k].type == const_M) {
-                            for (m = 0; m < worldP->grid[i][j][k].Mids.size(); m++) {
+                        if (worldP->grid[i][j][k].getType() == const_M) {
+                            for (m = 0; m < worldP->grid[i][j][k].getMids().size(); m++) {
                                 if (flag2 == 0) {
-                                    if ((worldP->grid[i][j][k].Mids[m]->FIL != NONE) && (worldP->grid[i][j][k].Mids[m]->Cell == Cell)) {
+                                    if ((worldP->grid[i][j][k].getMids()[m]->FIL != NONE) && (worldP->grid[i][j][k].getMids()[m]->Cell == Cell)) {
                                         ///only passes one token as called in VEGFR response when only one new one has been allocated
-                                        worldP->grid[i][j][k].Mids[m]->filTokens++; 
+                                        worldP->grid[i][j][k].getMids()[m]->filTokens++;
                                         filTokens--;
                                         flag2 = 1;
 
@@ -591,17 +591,17 @@ bool MemAgent::checkNeighsVonForEnv(void) {
 
         //-------------------------------
         //toroidal only X
-        if(TOROIDAL_X_env==true){
+        if (TOROIDAL_X_env){
         	if (m >= this->worldP->gridXDimensions)
         		m = 0;
         	if (m < 0)
         		m = this->worldP->gridXDimensions - 1;
         }
-        if (worldP->insideWorld(m, n, p) == true) {
-            if (worldP->grid[m][n][p].type == const_E) {
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].getType() == const_E) {
                 
                 flag = 1;
-            } else if ((worldP->grid[m][n][p].type == const_E)&&(worldP->grid[m][n][p].Eid->Astro==true)) {
+            } else if ((worldP->grid[m][n][p].getType() == const_E)&&(worldP->grid[m][n][p].getEid()->Astro)) {
                 flag = 1;
             }
         }
@@ -865,7 +865,7 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
         //--------------------------------------------------------------------------------------------------------------------------
         //non filopodia agents change grid state to M
         if ((FIL == BASE) || (FIL == NONE)) {
-            if ((worldP->grid[newMx][newMy][newMz].type == const_M) || (worldP->grid[newMx][newMy][newMz].type == const_E) || (worldP->grid[newMx][newMy][newMz].type == BLOOD)) {
+            if ((worldP->grid[newMx][newMy][newMz].getType() == const_M) || (worldP->grid[newMx][newMy][newMz].getType() == const_E) || (worldP->grid[newMx][newMy][newMz].getType() == BLOOD)) {
 
                 worldP->deleteOldGridRef(this, false);
 
@@ -884,7 +884,7 @@ void MemAgent::moveAgent(float newX, float newY, float newZ, bool FAset) {
 
             worldP->deleteOldGridRef(this, true);
 
-            worldP->grid[newMx][newMy][newMz].Fids.push_back(this);
+            worldP->grid[newMx][newMy][newMz].addFilAgent(this);
 
             //move agent in continuous space
             Mx = newX;
@@ -1165,19 +1165,19 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
             //-------------------------------
 
             if (worldP->insideWorld(m, n, p)) {
-                if (worldP->grid[m][n][p].type == const_M) {
-                    for (y = 0; y < (int) worldP->grid[m][n][p].Mids.size(); y++) {
+                if (worldP->grid[m][n][p].getType() == const_M) {
+                    for (y = 0; y < (int) worldP->grid[m][n][p].getMids().size(); y++) {
                     	// Check if the adjacent memAgent belongs to a different cell and is not currently in a filopodia.
-                        if ((worldP->grid[m][n][p].Mids[y]->Cell != Cell) && (worldP->grid[m][n][p].Mids[y]->FIL != STALK) && (worldP->grid[m][n][p].Mids[y]->FIL != TIP)) {
+                        if ((worldP->grid[m][n][p].getMids()[y]->Cell != Cell) && (worldP->grid[m][n][p].getMids()[y]->FIL != STALK) && (worldP->grid[m][n][p].getMids()[y]->FIL != TIP)) {
                             junction = true;
                             flagA = 1;
 
-                            worldP->grid[m][n][p].Mids[y]->junction = true;
+                            worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells
                                 if(StoreInJunctionList!=true){
                                     if(ANASTOMOSIS==true)
-                                anastomosis(worldP->grid[m][n][p].Mids[y]);
+                                anastomosis(worldP->grid[m][n][p].getMids()[y]);
                                 }
                             }
                         }
@@ -1254,7 +1254,7 @@ void MemAgent::triggeredAnastSurge(MemAgent* junctionedAgent) {
     //second version+ move niegh nodes to nearest high VEGF conc - like a local actin lamella podia surge--------------------------------------------------
     for (i = 0; i < neighs; i++) {
 
-        if ((mesh3SpringsOnly == true) && (i == 3)) flag = 1;
+        if ((mesh3SpringsOnly) && (i == 3)) flag = 1;
 
         if (flag == 0) {
             current = neigh[i];
@@ -1326,8 +1326,8 @@ bool MemAgent::form_filopodia_contact(void) {
 
     //check if the memAgent is on a junction with another filopodia-at any point in the fil
     for (x = 0; x < 26; x++) {
-        for (y = 0; y < (int) worldP->neigh[x]->Fids.size(); y++) {
-            if ((worldP->neigh[x]->Fids[y]->Cell != Cell)) {
+        for (y = 0; y < (int) worldP->neigh[x]->getFids().size(); y++) {
+            if ((worldP->neigh[x]->getFids()[y]->Cell != Cell)) {
                 flagA = 1;
             }
 
@@ -1388,12 +1388,12 @@ bool MemAgent::extendFil(void) {
                 //else{
                     allow = true;
                 //}
-                if(allow==true){
-                highest = findHighestConc();
-                if ((highest != NULL) && (highest->VEGF != 0)) {
+                if(allow){
+                    highest = findHighestConc();
+                    if ((highest != NULL) && (highest->VEGF != 0)) {
 
                     //-----------------------------------------------------------------------
-                    if (FIL == NONE) {
+                        if (FIL == NONE) {
                         //if(testFilMax(Cell)==false){
                         //basal focal adhesion - inhibits veil and all cell body advance
 
@@ -1427,9 +1427,9 @@ bool MemAgent::extendFil(void) {
 								mp->FA = true;
 							}
 
-                            mp->previous->x = mp->Mx;
-                            mp->previous->y = mp->My;
-                            mp->previous->z = mp->Mz;
+                            mp->setPreviousX(mp->Mx);
+                            mp->setPreviousY(mp->My);
+                            mp->setPreviousZ(mp->Mz);
 
                             mp->FIL = TIP;
                             FIL = BASE;
@@ -1658,31 +1658,33 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
 
         //-------------------------------
         //toroidal only X
-        if(TOROIDAL_X==true){
+        if(TOROIDAL_X){
         if (m >= xMAX) m = 0;
         if (m < 0) m = xMAX - 1;
         }
 
-        if(TOROIDAL_Y==true){
+        if(TOROIDAL_Y){
         if (n >= yMAX) n = 0;
         if (n < 0) n = yMAX - 1;
         }
 
 
         if (worldP->insideWorld(m, n, p)) {
-            worldP->neigh[x]->Mids = worldP->grid[m][n][p].Mids;
-            worldP->neigh[x]->Eid = worldP->grid[m][n][p].Eid;
+            // NEIGHS IS NULL - FOUND OUT WHY.
+            // ALSO, THIS MIGHT BE NULL ANYWAY, IN WHICH CASE INCLUDE A CONDITION FOR IT.
+            Location *testNeigh = worldP->neigh[x];
+            std::vector<MemAgent*> test_mids = worldP->grid[m][n][p].getMids();
+            worldP->neigh[x]->setMids(worldP->grid[m][n][p].getMids());
+            worldP->neigh[x]->setFids(worldP->grid[m][n][p].getFids());
 
-            worldP->neigh[x]->type = worldP->grid[m][n][p].type;
-            worldP->neigh[x]->Fids = worldP->grid[m][n][p].Fids;
+            worldP->neigh[x]->setType(worldP->grid[m][n][p].getType());
+            worldP->neigh[x]->setEid(worldP->grid[m][n][p].getEid());
 
-            if (worldP->neigh[x]->type == const_M) {
+
+            if (worldP->neigh[x]->getType() == const_M) {
                 MneighCount++;
-            }
-
-
-            else if (worldP->neigh[x]->type == const_E) {
-                Eagent = worldP->neigh[x]->Eid;
+            } else if (worldP->neigh[x]->getType() == const_E) {
+                Eagent = worldP->neigh[x]->getEid();
                 SumVEGF += Eagent->VEGF;
                 EnvNeighs.push_back(Eagent);
             }
@@ -1696,40 +1698,40 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
 
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
-            if (called_fron_differentialAdhesion == true) {
-                if (worldP->grid[m][n][p].type == const_M) {
+            if (called_fron_differentialAdhesion) {
+                if (worldP->grid[m][n][p].getType() == const_M) {
                     if (diffAd_replaced_cell != NULL) {
-                        for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-                            if ((worldP->grid[m][n][p].Mids[zed]->FIL != TIP) && (worldP->grid[m][n][p].Mids[zed]->FIL != STALK)) {
-                                connected = meshConnected(worldP->grid[m][n][p].Mids[zed]);
-                                if (connected == true) {
+                        for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                            if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
+                                connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
+                                if (connected) {
 
-                                    if ((worldP->grid[m][n][p].Mids[zed]->Cell != this->diffAd_replaced_cell)) {
-                                        DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                                    if ((worldP->grid[m][n][p].getMids()[zed]->Cell != this->diffAd_replaced_cell)) {
+                                        DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                         //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
                                     }
                                 }
                             }
                         }
                     } else if (diffAd_replaced_med != NULL) {
-                        for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-                            DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                        for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                            DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                         }
 
                     } else {
-                        for (zed = 0; zed < worldP->grid[m][n][p].Mids.size(); zed++) {
-                            if ((worldP->grid[m][n][p].Mids[zed]->FIL != TIP) && (worldP->grid[m][n][p].Mids[zed]->FIL != STALK)) {
-                                connected = meshConnected(worldP->grid[m][n][p].Mids[zed]);
+                        for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+                            if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
+                                connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                                 if (connected == true) {
                                     //cout<<"*"<<endl;
-                                    if (worldP->grid[m][n][p].Mids[zed]->diffAd_replaced_cell != NULL) {
-                                        if ((worldP->grid[m][n][p].Mids[zed]->diffAd_replaced_cell != this->Cell)) {
-                                            DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                                    if (worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != NULL) {
+                                        if ((worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != this->Cell)) {
+                                            DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                             //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
                                         }
                                     } else {
-                                        if ((worldP->grid[m][n][p].Mids[zed]->Cell != this->Cell)) {
-                                            DiffAd_neighs.push_back(worldP->grid[m][n][p].Mids[zed]);
+                                        if ((worldP->grid[m][n][p].getMids()[zed]->Cell != this->Cell)) {
+                                            DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                             //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
                                         }
 
@@ -1738,27 +1740,19 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                             }
                         }
                     }
-                } else if ((worldP->grid[m][n][p].type == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].med->diffAd_replaced == NULL)) {
-
-
+                } else if ((worldP->grid[m][n][p].getType() == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].getMed()->diffAd_replaced == NULL)) {
                     mediumNeighs++;
-
-                } else if ((worldP->grid[m][n][p].type == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].med->diffAd_replaced != NULL)) {
-                    if (worldP->grid[m][n][p].med->diffAd_replaced->Cell != this->Cell) DiffAd_neighs.push_back(worldP->grid[m][n][p].med->diffAd_replaced);
-
+                } else if ((worldP->grid[m][n][p].getType() == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].getMed()->diffAd_replaced != NULL)) {
+                    if (worldP->grid[m][n][p].getMed()->diffAd_replaced->Cell != this->Cell) DiffAd_neighs.push_back(worldP->grid[m][n][p].getMed()->diffAd_replaced);
                 }
-
             }
-
-
-
             //_____________________
         } else {
-
-            worldP->neigh[x]->Eid = NULL;
-            worldP->neigh[x]->type = -1;
-            worldP->neigh[x]->Fids.clear();
-            worldP->neigh[x]->Mids.clear();
+            // Not in the world, therefore set everything to NULL/delete everything.
+            worldP->neigh[x]->setEid(NULL);
+            worldP->neigh[x]->setType(-1);
+            worldP->neigh[x]->getFids().clear();
+            worldP->neigh[x]->getMids().clear();
         }
         //-------------------------------
 
@@ -2314,7 +2308,6 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 
 	}
 	SpringBelong=NULL;
-    this->previous = new Coordinates();
 }
 
 MemAgent::~MemAgent(void){
@@ -2322,7 +2315,6 @@ MemAgent::~MemAgent(void){
 		delete protein;
 	}
 	EnvNeighs.clear();
-    delete this->previous;
 }
 
 /*****************************************************************************************
@@ -2527,8 +2519,8 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
         // If the environment agent at these coordinates is inside the world, and has the relevant protein,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == const_E) {
-                ep = worldP->grid[m][n][p].Eid;
+            if (worldP->grid[m][n][p].getType() == const_E) {
+                ep = worldP->grid[m][n][p].getEid();
                 if (ep->has_protein(protein_name)) {
                     protein_level+= ep->get_protein_level(protein_name);
                 }
@@ -2669,14 +2661,14 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
         // Also handles transfer of proteins along filopodia.
 
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == const_M) {
-                for (auto memAgent : worldP->grid[m][n][p].Mids) {
+            if (worldP->grid[m][n][p].getType() == const_M) {
+                for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
                     }
                 }
-            } else if (worldP->grid[m][n][p].type == const_E) {
-				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+            } else if (worldP->grid[m][n][p].getType() == const_E) {
+				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
 						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
 					}
@@ -2817,8 +2809,8 @@ float MemAgent::get_filopodia_protein_level(std::string protein_name) {
 		// increase the count by the level at those coordinates.
 
 		if (worldP->insideWorld(m, n, p)) {
-			if (worldP->grid[m][n][p].type == const_E) {
-				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+			if (worldP->grid[m][n][p].getType() == const_E) {
+				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
 						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
 					}
@@ -2959,9 +2951,9 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
         // increase the count by the level at those coordinates.
 
         if (worldP->insideWorld(m, n, p)) {
-            if (worldP->grid[m][n][p].type == const_M) {
+            if (worldP->grid[m][n][p].getType() == const_M) {
             	// Iterates over list of standard memAgents.
-                for (auto memAgent : worldP->grid[m][n][p].Mids) {
+                for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                 	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
                 	if (memAgent->junction) {
 						if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
@@ -3120,8 +3112,8 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
         }
 
 		if (worldP->insideWorld(m, n, p)) {
-			if (worldP->grid[m][n][p].type == const_M) {
-				for (auto memAgent : worldP->grid[m][n][p].Mids) {
+			if (worldP->grid[m][n][p].getType() == const_M) {
+				for (auto memAgent : worldP->grid[m][n][p].getMids()) {
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
@@ -3137,9 +3129,9 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 						}
 					}
 				}
-			} else if (worldP->grid[m][n][p].type == const_E) {
+			} else if (worldP->grid[m][n][p].getType() == const_E) {
 				// Check for memAgents in filopodia.
-				for (auto memAgent : worldP->grid[m][n][p].Fids) {
+				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein and are in a filopodia.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell && this->FIL != NONE) {
@@ -3222,11 +3214,11 @@ void MemAgent::connectJunctions(bool alsoNormalSprings) {
         }
 
         if (worldP->insideWorld(m, n, p)){
-            if (worldP->grid[m][n][p].type == const_M) {
-                for (s = 0; s < worldP->grid[m][n][p].Mids.size();s++) {
-                    if (worldP->grid[m][n][p].Mids[s]->Cell!=Cell) {
-                        neigh[neighs] = worldP->grid[m][n][p].Mids[s];
-                        Cell->createSpringTokenObject(this, worldP->grid[m][n][p].Mids[s], neighs);
+            if (worldP->grid[m][n][p].getType() == const_M) {
+                for (s = 0; s < worldP->grid[m][n][p].getMids().size();s++) {
+                    if (worldP->grid[m][n][p].getMids()[s]->Cell!=Cell) {
+                        neigh[neighs] = worldP->grid[m][n][p].getMids()[s];
+                        Cell->createSpringTokenObject(this, worldP->grid[m][n][p].getMids()[s], neighs);
 
                         if (x == 0) {
                             Cell->Springs[Cell->Springs.size()-1]->horizontal = false;
@@ -3252,9 +3244,9 @@ void MemAgent::connectJunctions(bool alsoNormalSprings) {
                 }
 
                 if (alsoNormalSprings) {
-                    if (worldP->grid[m][n][p].Mids[s]->Cell==Cell) {
-                        neigh[neighs]=worldP->grid[m][n][p].Mids[s];
-                        Cell->createSpringTokenObject(this, worldP->grid[m][n][p].Mids[s] , neighs);
+                    if (worldP->grid[m][n][p].getMids()[s]->Cell==Cell) {
+                        neigh[neighs]=worldP->grid[m][n][p].getMids()[s];
+                        Cell->createSpringTokenObject(this, worldP->grid[m][n][p].getMids()[s] , neighs);
 
                         if(x == 0) {
                             SpringNeigh[neighs]->horizontal = false;
@@ -3843,4 +3835,28 @@ void MemAgent::gridSurfaceAgents(void) {
         }
     }
     //}
+}
+
+void MemAgent::setPreviousX(float previous_x) {
+    this->m_previous_x = previous_x;
+}
+
+void MemAgent::setPreviousY(float previous_y) {
+    this->m_previous_y = previous_y;
+}
+
+void MemAgent::setPreviousZ(float previous_z) {
+    this->m_previous_z = previous_z;
+}
+
+float MemAgent::getPreviousX() {
+    return this->m_previous_x;
+}
+
+float MemAgent::getPreviousY() {
+    return this->m_previous_y;
+}
+
+float MemAgent::getPreviousZ() {
+    return this->m_previous_z;
 }

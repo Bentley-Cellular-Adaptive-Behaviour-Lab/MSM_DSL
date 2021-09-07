@@ -21,6 +21,10 @@ class Protein;
 class World;
 
 class MemAgent {
+private:
+    float m_previous_x;
+    float m_previous_y;
+    float m_previous_z;
 public:
 	///general
 	float Mx, My, Mz; ///continuous space coordinates
@@ -85,7 +89,6 @@ public:
 	int created; ///stores timstep when created as a surface agent (could be a debugging element to remove)
 	float Force[3]; ///force vector to sum forces from mesh springs to determine memAgent movement
 	Spring* SpringBelong; ///if it is a spring agent which spring does it belong to
-	Coordinates *previous; ///previous position before last move, useful for determining if surface triangle has changed
 	std::vector <MemAgent*> triangle;
 	std::vector <MemAgent*> surfaceAgentsUP;
 	std::vector <MemAgent*> surfaceAgentsDOWN;
@@ -139,6 +142,14 @@ public:
     float get_filopodia_protein_level(std::string protein_name);
 
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool is_junction_protein);
+
+    void setPreviousX(float previous_x);
+    void setPreviousY(float previous_y);
+    void setPreviousZ(float previous_Z);
+
+    float getPreviousX();
+    float getPreviousY();
+    float getPreviousZ();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

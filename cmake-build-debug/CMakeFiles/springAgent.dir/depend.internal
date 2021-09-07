@@ -70,11 +70,13 @@ CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.obj
 CMakeFiles/springAgent.dir/src/core/location.cpp.obj
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/location.cpp
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/location.h
+ C:/Users/Tom/MPSProjects/MSM_DSL/src/core/memAgents.h
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/objects.h
 CMakeFiles/springAgent.dir/src/core/macrophage.cpp.obj
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/macrophage.cpp
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/macrophage.h
 CMakeFiles/springAgent.dir/src/core/main.cpp.obj
+ ../src/dsl/utils/logger.h
  ../src/dsl/utils/utils.h
  ../src/dsl/world/worldContainer.h
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/display.h
@@ -2123,6 +2125,7 @@ CMakeFiles/springAgent.dir/src/core/world.cpp.obj
  ../libraries/boost/winapi/get_current_thread_id.hpp
  ../libraries/boost/winapi/thread.hpp
  ../src/dsl/tissue/tissueContainer.h
+ ../src/dsl/utils/logger.h
  ../src/dsl/utils/utils.h
  ../src/generated/dsl_species_gen.h
  C:/Users/Tom/MPSProjects/MSM_DSL/src/core/CPM_module.h

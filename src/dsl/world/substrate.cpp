@@ -63,8 +63,8 @@ void Substrate::apply_substrate_to_cuboid() {
     for (int i = x_start; i < x_end; i++) {
         for (int j = y_start; j < y_end; j++) {
             for (int k = z_start; k < z_end; k++) {
-                if (m_parent_world->grid[i][j][k].type == const_E) {
-                    ep = m_parent_world->grid[i][j][k].Eid;
+                if (m_parent_world->grid[i][j][k].getType() == const_E) {
+                    ep = m_parent_world->grid[i][j][k].getEid();
                     ep->adhesiveness = m_adhesiveness;
                 }
             }
@@ -158,8 +158,8 @@ void Substrate::apply_substrate_to_triangular_prism() {
     for (int k = z_start; k < z_end; k++) {
         for (int i = x_start; i < x_end; i++) {
             for (int j = y_start; j <y_end; j++) {
-                if (m_parent_world->grid[i][j][k].type == const_E) {
-                    ep = m_parent_world->grid[i][j][k].Eid;
+                if (m_parent_world->grid[i][j][k].getType() == const_E) {
+                    ep = m_parent_world->grid[i][j][k].getEid();
                     if (m_parent_world->is_within_triangle(ep, vertex_1, vertex_2, vertex_3)) {
                         ep->adhesiveness = m_adhesiveness;
                     }

@@ -29,13 +29,13 @@ std::vector <Filopodia*> Filopodia::checkForContact(void) {
         do {
             //only treats a fil from a different cell in same grid site as a contact
             //(could widen the search to all neighs...)
-            if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].Fids.size() > 1) {
+            if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].getFids().size() > 1) {
                 //could have more than one contact in same location
-                for (j = 0; j < (int) worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].Fids.size(); j++) {
-                    if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].Fids[j] != Mcurrent) {
-                        if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].Fids[j]->Cell != Mcurrent->Cell) {
+                for (j = 0; j < (int) worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].getFids().size(); j++) {
+                    if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].getFids()[j] != Mcurrent) {
+                        if (worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].getFids()[j]->Cell != Mcurrent->Cell) {
                             flag = 0;
-                            fil = findFil(worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].Fids[j]);
+                            fil = findFil(worldP->grid[(int) Mcurrent->Mx][(int) Mcurrent->My][(int) Mcurrent->Mz].getFids()[j]);
                             for (k = 0; k < filsContacted.size(); k++) {
                                 if (fil == filsContacted[k]) flag = 1;
                             }

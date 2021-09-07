@@ -340,11 +340,11 @@ void World::calcEnvVEGFlevel(void) {
     for (i = 0; i < this->gridXDimensions; i++) {
         for (j = 0; j < this->gridYDimensions; j++) {
             for (k = 0; k < this->gridZDimensions; k++) {
-                if ((grid[i][j][k].type == const_E) && (grid[i][j][k].Eid->VEGF > 0.0f)) {
-                    sum += grid[i][j][k].Eid->VEGF;
+                if ((grid[i][j][k].getType() == const_E) && (grid[i][j][k].getEid()->VEGF > 0.0f)) {
+                    sum += grid[i][j][k].getEid()->VEGF;
                     count++;
                 }
-                if ((grid[i][j][k].type == const_M) && (grid[i][j][k].Mids.size() >= 1)) {
+                if ((grid[i][j][k].getType() == const_M) && (grid[i][j][k].getMids().size() >= 1)) {
                     countM++;
                 }
             }
@@ -1051,15 +1051,15 @@ void World::getCellNeighbours(void) {
                     //-------------------------------
 
                     if (insideWorld(m, n, p) == true) {
-                        if (grid[m][n][p].type == const_M) {
-                            for (y = 0; y < (int) grid[m][n][p].Mids.size(); y++) {
-                                if (grid[m][n][p].Mids[y]->Cell != ecp) {
+                        if (grid[m][n][p].getType() == const_M) {
+                            for (y = 0; y < (int) grid[m][n][p].getMids().size(); y++) {
+                                if (grid[m][n][p].getMids()[y]->Cell != ecp) {
                                     for (t = 0; t < neighbours.size(); t++) {
-                                        if (grid[m][n][p].Mids[y]->Cell == neighbours[t]) {
+                                        if (grid[m][n][p].getMids()[y]->Cell == neighbours[t]) {
                                             flag = 1;
                                         }
                                     }
-                                    if (flag == 0) neighbours.push_back(grid[m][n][p].Mids[y]->Cell);
+                                    if (flag == 0) neighbours.push_back(grid[m][n][p].getMids()[y]->Cell);
                                 }
                             }
                         }
@@ -1267,9 +1267,9 @@ std::vector< std::vector<float> > World::getGridSiteData()
                 gridSiteValues.push_back(y);
                 gridSiteValues.push_back(z);
 
-                if (grid[x][y][z].Eid != NULL)
+                if (grid[x][y][z].getEid() != NULL)
                 {
-                    gridSiteValues.push_back(grid[x][y][z].Eid->VEGF);
+                    gridSiteValues.push_back(grid[x][y][z].getEid()->VEGF);
                 }
                 else {
                     gridSiteValues.push_back(0);
@@ -1280,10 +1280,10 @@ std::vector< std::vector<float> > World::getGridSiteData()
                 float activeVegfrTotal = 0;
                 float dll4Total = 0;
 
-                if (grid[x][y][z].type == const_E)
+                if (grid[x][y][z].getType() == const_E)
                 {
                     gridSiteValues.push_back(0); //for environment type
-                    gridSiteValues.push_back(grid[x][y][z].Fids.size());
+                    gridSiteValues.push_back(grid[x][y][z].getFids().size());
 
                     for (int endothelialCellNumber = 0 ; endothelialCellNumber < ECELLS; endothelialCellNumber++)
                     {
@@ -1292,17 +1292,17 @@ std::vector< std::vector<float> > World::getGridSiteData()
                         activeVegfrTotal = 0;
                         dll4Total = 0;
 
-                        if (grid[x][y][z].Fids.size() > 0) // Check if grid site contains filapodia
+                        if (grid[x][y][z].getFids().size() > 0) // Check if grid site contains filapodia
                         {
-                            for (int filopodiaID = 0; filopodiaID < grid[x][y][z].Fids.size(); filopodiaID++)
+                            for (int filopodiaID = 0; filopodiaID < grid[x][y][z].getFids().size(); filopodiaID++)
                             {
                                 // Check if filapodium belongs to this EC
-                                if (grid[x][y][z].Fids[filopodiaID]->Cell == ECagents[endothelialCellNumber])
+                                if (grid[x][y][z].getFids()[filopodiaID]->Cell == ECagents[endothelialCellNumber])
                                 {
-                                    vegfTotal += grid[x][y][z].Fids[filopodiaID]->SumVEGF;
-                                    vegfrTotal += grid[x][y][z].Fids[filopodiaID]->VEGFR;
-                                    activeVegfrTotal += grid[x][y][z].Fids[filopodiaID]->VEGFRactive;
-                                    dll4Total += grid[x][y][z].Fids[filopodiaID]->Dll4;
+                                    vegfTotal += grid[x][y][z].getFids()[filopodiaID]->SumVEGF;
+                                    vegfrTotal += grid[x][y][z].getFids()[filopodiaID]->VEGFR;
+                                    activeVegfrTotal += grid[x][y][z].getFids()[filopodiaID]->VEGFRactive;
+                                    dll4Total += grid[x][y][z].getFids()[filopodiaID]->Dll4;
                                 }
                             }
                         }
@@ -1312,10 +1312,10 @@ std::vector< std::vector<float> > World::getGridSiteData()
                         gridSiteValues.push_back(dll4Total);
                     }
                 }
-                else if (grid[x][y][z].type == const_M)
+                else if (grid[x][y][z].getType() == const_M)
                 {
                     gridSiteValues.push_back(1); // for membrane type
-                    gridSiteValues.push_back(grid[x][y][z].Fids.size() + grid[x][y][z].Mids.size());
+                    gridSiteValues.push_back(grid[x][y][z].getFids().size() + grid[x][y][z].getMids().size());
 
                     for (int endothelialCellNumber = 0 ; endothelialCellNumber < ECELLS; endothelialCellNumber++)
                     {
@@ -1324,29 +1324,29 @@ std::vector< std::vector<float> > World::getGridSiteData()
                         activeVegfrTotal = 0;
                         dll4Total = 0;
 
-                        if (grid[x][y][z].Fids.size() > 0)
+                        if (grid[x][y][z].getFids().size() > 0)
                         {
-                            for (int filopodiaID = 0; filopodiaID < grid[x][y][z].Fids.size(); filopodiaID++)
+                            for (int filopodiaID = 0; filopodiaID < grid[x][y][z].getFids().size(); filopodiaID++)
                             {
-                                if (grid[x][y][z].Fids[filopodiaID]->Cell == ECagents[endothelialCellNumber])
+                                if (grid[x][y][z].getFids()[filopodiaID]->Cell == ECagents[endothelialCellNumber])
                                 {
-                                    vegfTotal += grid[x][y][z].Fids[filopodiaID]->SumVEGF;
-                                    vegfrTotal += grid[x][y][z].Fids[filopodiaID]->VEGFR;
-                                    activeVegfrTotal += grid[x][y][z].Fids[filopodiaID]->VEGFRactive;
-                                    dll4Total += grid[x][y][z].Fids[filopodiaID]->Dll4;
+                                    vegfTotal += grid[x][y][z].getFids()[filopodiaID]->SumVEGF;
+                                    vegfrTotal += grid[x][y][z].getFids()[filopodiaID]->VEGFR;
+                                    activeVegfrTotal += grid[x][y][z].getFids()[filopodiaID]->VEGFRactive;
+                                    dll4Total += grid[x][y][z].getFids()[filopodiaID]->Dll4;
                                 }
                             }
                         }
-                        if (grid[x][y][z].Mids.size() > 0)
+                        if (grid[x][y][z].getMids().size() > 0)
                         {
-                            for (int memAgentID = 0; memAgentID < grid[x][y][z].Mids.size(); memAgentID++)
+                            for (int memAgentID = 0; memAgentID < grid[x][y][z].getMids().size(); memAgentID++)
                             {
-                                if (grid[x][y][z].Mids[memAgentID]->Cell == ECagents[endothelialCellNumber])
+                                if (grid[x][y][z].getMids()[memAgentID]->Cell == ECagents[endothelialCellNumber])
                                 {
-                                    vegfTotal += grid[x][y][z].Mids[memAgentID]->SumVEGF;
-                                    vegfrTotal += grid[x][y][z].Mids[memAgentID]->VEGFR;
-                                    activeVegfrTotal += grid[x][y][z].Mids[memAgentID]->VEGFRactive;
-                                    dll4Total += grid[x][y][z].Mids[memAgentID]->Dll4;
+                                    vegfTotal += grid[x][y][z].getMids()[memAgentID]->SumVEGF;
+                                    vegfrTotal += grid[x][y][z].getMids()[memAgentID]->VEGFR;
+                                    activeVegfrTotal += grid[x][y][z].getMids()[memAgentID]->VEGFRactive;
+                                    dll4Total += grid[x][y][z].getMids()[memAgentID]->Dll4;
                                 }
                             }
                         }
@@ -1377,7 +1377,7 @@ void World::create_new_environment(float base_permittivity) {
     for (int x = 0; x < gridXDimensions; x++) {
         for (int y = 0; y < gridYDimensions; y++) {
             for (int z = 0; z < gridZDimensions; z++) {
-                if ((grid[x][y][z].type == const_E) && (grid[x][y][z].Eid == NULL)) {
+                if ((grid[x][y][z].getType() == const_E) && (grid[x][y][z].getEid() == NULL)) {
                     create_env_agent(x, y, z, base_permittivity);
                 }
             }
@@ -1394,7 +1394,7 @@ void World::create_new_environment(float base_permittivity) {
 
 void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 
-	if (grid[x][y][z].Eid!=NULL) {
+	if (grid[x][y][z].getEid()!=NULL) {
 		std::cout<<"Attempted to assign an environment agent twice."<<std::endl;
 	}
 
@@ -1406,8 +1406,8 @@ void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 
 	ep->adhesiveness = base_permittivity;
 
-	grid[x][y][z].Eid=ep;
-	grid[x][y][z].type = const_E;
+	grid[x][y][z].setEid(ep);
+	grid[x][y][z].setType(const_E);
 
 	ep->calcInside();
 }
@@ -1427,8 +1427,8 @@ void World::set_focal_adhesion(MemAgent *memp) {
 	World *worldP = memp->worldP;
 	Location *target = &(worldP->grid[memp_x][memp_y][memp_z]);
 
-	if (target->type == const_E) {
-		Env *target_ep = worldP->grid[memp_x][memp_y][memp_z].Eid;
+	if (target->getType() == const_E) {
+		Env *target_ep = worldP->grid[memp_x][memp_y][memp_z].getEid();
 		float chance = (float) new_rand() / (float) NEW_RAND_MAX;
 		// Check against the adhesiveness of the target environment location.
 		// Higher adhesiveness makes it easier to form an FA, therefore if the chance is less than
@@ -2004,9 +2004,9 @@ void World::destroyWorld() {
 	for (i = 0; i < gridXDimensions; i++) {
 		for (j = 0; j < gridYDimensions; j++) {
 			for (k = 0; k < gridZDimensions; k++) {
-				if (grid[i][j][k].type == const_E) {
-					if (grid[i][j][k].Eid != NULL)
-						delete grid[i][j][k].Eid;
+				if (grid[i][j][k].getType() == const_E) {
+					if (grid[i][j][k].getEid() != NULL)
+						delete grid[i][j][k].getEid();
 				}
 			}
 		}
@@ -2195,8 +2195,8 @@ void World::label_env_exposed_von_neu_agents() {
     for (i = 0; i < this->gridXDimensions; i++) {
         for (j = 0; j < this->gridYDimensions; j++) {
             for (k = 0; k < this->gridZDimensions; k++){
-                if(grid[i][j][k].Eid!=NULL){
-                    grid[i][j][k].Eid->calcInside();
+                if(grid[i][j][k].getEid() != NULL){
+                    grid[i][j][k].getEid()->calcInside();
                 }
             }
         }
@@ -2206,9 +2206,9 @@ void World::label_env_exposed_von_neu_agents() {
     for(j=0;j<(int)ECagents.size();j++){
         count=0;
         for(k=0;k<ECagents[j]->nodeAgents.size();k++)
-            if(ECagents[j]->nodeAgents[k]->checkNeighsVonForEnv()==true) count++;
+            if(ECagents[j]->nodeAgents[k]->checkNeighsVonForEnv()) count++;
         for(k=0;k<ECagents[j]->surfaceAgents.size();k++)
-            if(ECagents[j]->surfaceAgents[k]->checkNeighsVonForEnv()==true) count++;
+            if(ECagents[j]->surfaceAgents[k]->checkNeighsVonForEnv()) count++;
     }
 }
 
@@ -2381,9 +2381,9 @@ void World::connectMonolayer(void){
 
 
             if(insideWorld(mp->Mx-1, mp->My, mp->Mz)){
-                if(grid[(int)mp->Mx-1][(int)mp->My][0].type == const_M){
-                    for(kelp=0;kelp<grid[(int)mp->Mx-1][(int)mp->My][0].Mids.size();kelp++) {
-                        nmp = grid[(int)mp->Mx-1][(int)mp->My][0].Mids[kelp];
+                if(grid[(int)mp->Mx-1][(int)mp->My][0].getType() == const_M){
+                    for(kelp=0;kelp<grid[(int)mp->Mx-1][(int)mp->My][0].getMids().size();kelp++) {
+                        nmp = grid[(int)mp->Mx-1][(int)mp->My][0].getMids()[kelp];
                         if(mp->Cell==nmp->Cell){
                             mp->neigh[N]=nmp;
                             ECagents[e]->createSpringTokenObject(mp, nmp, N);
@@ -2413,9 +2413,9 @@ void World::connectMonolayer(void){
             }
             }*/
             if(insideWorld(mp->Mx+1, mp->My, mp->Mz)){
-                if(grid[(int)mp->Mx+1][(int)mp->My][0].type == const_M){
-                    for(kelp=0;kelp<grid[(int)mp->Mx+1][(int)mp->My][0].Mids.size();kelp++){
-                        nmp = grid[(int)mp->Mx+1][(int)mp->My][0].Mids[kelp];
+                if(grid[(int)mp->Mx+1][(int)mp->My][0].getType() == const_M){
+                    for(kelp=0;kelp<grid[(int)mp->Mx+1][(int)mp->My][0].getMids().size();kelp++){
+                        nmp = grid[(int)mp->Mx+1][(int)mp->My][0].getMids()[kelp];
                         if(mp->Cell==nmp->Cell){
                             mp->neigh[N]=nmp;
                             ECagents[e]->createSpringTokenObject(mp, nmp, N);
@@ -2428,9 +2428,9 @@ void World::connectMonolayer(void){
                 }
             }
             if((insideWorld(mp->Mx, mp->My-1, mp->Mz))){
-                if(grid[(int)mp->Mx][(int)mp->My-1][0].type == const_M){
-                    for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My-1][0].Mids.size();kelp++){
-                        nmp = grid[(int)mp->Mx][(int)mp->My-1][0].Mids[kelp];
+                if(grid[(int)mp->Mx][(int)mp->My-1][0].getType() == const_M){
+                    for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My-1][0].getMids().size();kelp++){
+                        nmp = grid[(int)mp->Mx][(int)mp->My-1][0].getMids()[kelp];
                         if(mp->Cell==nmp->Cell){
                             mp->neigh[N]=nmp;
                             ECagents[e]->createSpringTokenObject(mp, nmp, N);
@@ -2443,9 +2443,9 @@ void World::connectMonolayer(void){
                 }
             }
             if((insideWorld(mp->Mx, mp->My+1, mp->Mz))) {
-                if(grid[(int)mp->Mx][(int)mp->My+1][0].type == const_M) {
-                    for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My+1][0].Mids.size();kelp++){
-                        nmp = grid[(int)mp->Mx][(int)mp->My+1][0].Mids[kelp];
+                if(grid[(int)mp->Mx][(int)mp->My+1][0].getType() == const_M) {
+                    for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My+1][0].getMids().size();kelp++){
+                        nmp = grid[(int)mp->Mx][(int)mp->My+1][0].getMids()[kelp];
                         if(mp->Cell==nmp->Cell) {
                             mp->neigh[N]=nmp;
                             ECagents[e]->createSpringTokenObject(mp, nmp, N);
@@ -2459,8 +2459,8 @@ void World::connectMonolayer(void){
             }
             if(insideWorld(mp->Mx, mp->My, mp->Mz)){
                 //if(grid[(int)mp->Mx][(int)mp->My][1].type==M){
-                for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My][0].Mids.size();kelp++) {
-                    nmp = grid[(int)mp->Mx][(int)mp->My][0].Mids[kelp];
+                for(kelp=0;kelp<grid[(int)mp->Mx][(int)mp->My][0].getMids().size();kelp++) {
+                    nmp = grid[(int)mp->Mx][(int)mp->My][0].getMids()[kelp];
                     if(mp->Cell!=nmp->Cell){
                         mp->neigh[N]=nmp;
                         ECagents[e]->createSpringTokenObject(mp, nmp, N);
@@ -2629,9 +2629,9 @@ void World::create_3D_round_cell(void){
         mp = ECagents[0]->nodeAgents[i];
         N=0;
 
-        if(grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].type == const_M){
+        if(grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getType() == const_M){
 
-            nmp = grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].Mids[0];
+            nmp = grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = true;
@@ -2639,8 +2639,8 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].type == const_M) {
-            nmp = grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].Mids[0];
+        if(grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].getType() == const_M) {
+            nmp = grid[(int)mp->Mx+1][(int)mp->My][(int)mp->Mz].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = true;
@@ -2648,8 +2648,8 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].type == const_M) {
-            nmp = grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].Mids[0];
+        if(grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].getType() == const_M) {
+            nmp = grid[(int)mp->Mx][(int)mp->My-1][(int)mp->Mz].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = false;
@@ -2657,8 +2657,8 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].type == const_M){
-            nmp = grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].Mids[0];
+        if(grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].getType() == const_M){
+            nmp = grid[(int)mp->Mx][(int)mp->My+1][(int)mp->Mz].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = false;
@@ -2666,8 +2666,8 @@ void World::create_3D_round_cell(void){
             N++;
             mp->neighs++;
         }
-        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].type == const_M){
-            nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].Mids[0];
+        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].getType() == const_M){
+            nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz+1].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = false;
@@ -2676,8 +2676,8 @@ void World::create_3D_round_cell(void){
             mp->neighs++;
         }
 
-        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].type == const_M){
-            nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].Mids[0];
+        if(grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].getType() == const_M){
+            nmp = grid[(int)mp->Mx][(int)mp->My][(int)mp->Mz-1].getMids()[0];
             mp->neigh[N]=nmp;
             ECagents[0]->createSpringTokenObject(mp, nmp, N);
             mp->SpringNeigh[N]->horizontal = false;
@@ -2719,7 +2719,7 @@ void World::createECagents(int Junc_arrang){
             drawMeshFirst(i, j, ecp, Junc_arrang);
 
         }
-        if(ANALYSIS_HYSTERESIS==true){
+        if(ANALYSIS_HYSTERESIS){
             ECagents[i]->hyst->Cell = ECagents[i];
         }
     }
@@ -2752,18 +2752,17 @@ void World::createBlood(void){
                 J=j+vesselCentreY-(vesselRadius-1);
                 K=k+vesselCentreZ-(vesselRadius-1);
 
-                if(insideWorld(i, J, K)==true){
+                if(insideWorld(i, J, K)){
 
                     //create blood in vessel
-                    if(distTest2D(J, K, vesselCentreY, vesselCentreZ, vesselRadius-1)==true){
+                    if(distTest2D(J, K, vesselCentreY, vesselCentreZ, vesselRadius-1)){
                         //if (grid[j+depth][k+Y][l+Z].Eid!=NULL){
-                        if(grid[i][J][K].type == const_E){
-                            grid[i][J][K].Eid->blood=1.0f;
+                        if(grid[i][J][K].getType() == const_E){
+                            grid[i][J][K].getEid()->blood=1.0f;
                             //grid[i][J][K].Vid=vp
                             //grid[i][J][K].type = BLOOD;
-                            grid[i][J][K].Eid->VEGF=0.0f;
+                            grid[i][J][K].getEid()->VEGF=0.0f;
                         }
-
                     }
                     //else if((grid[i][J][K].Mids.size()>0)&&(distTest2D(J,K,vesselCentreY,vesselCentreZ, bloodRadius+1)==true)) grid[i][J][K].Mids[0]->Lumen=true;
                 }
@@ -2775,13 +2774,13 @@ void World::createBlood(void){
 //-------------------------------------------------------------------------
 void World::replaceBlood(int i, int j, int k){
 
-    if(insideWorld(i, j, k)==true){
+    if(insideWorld(i, j, k)){
 
         //create blood in vessel
-        if(distTest2D(j, k, vesselCentreY, vesselCentreZ, bloodRadius)==true){
+        if(distTest2D(j, k, vesselCentreY, vesselCentreZ, bloodRadius)){
 
-            grid[i][j][k].type = BLOOD;
-            grid[i][j][k].Eid->VEGF=0.0f;
+            grid[i][j][k].setType(BLOOD);
+            grid[i][j][k].getEid()->VEGF=0.0f;
         }
 
     }
@@ -2873,9 +2872,10 @@ void World::drawMeshFirst(int i, int j, EC* ecp, int JunctArrangement){
 
             memp->Mz = l+Z;
 
-            memp->previous->x = memp->Mx;
-            memp->previous->y = memp->My;
-            memp->previous->z = memp->Mz;
+            memp->setPreviousX(memp->Mx);
+            memp->setPreviousY(memp->My);
+            memp->setPreviousZ(memp->Mz);
+
 
             memp->circlePos=(int)(J+circlePosStartAb);
 
@@ -3027,28 +3027,20 @@ void World::connectMesh(void){
 //------------------------------------------------------------------------
 //-------------------------------------------------------------------------
 void World::createNewEnvAgent(int x, int y, int z){
-
-
-
-
-    if(grid[x][y][z].Eid!=NULL){
+    if (grid[x][y][z].getEid() != NULL){
         std::cout<<"already got an env agent in createNew"<<std::endl;
     }
     Env * ep = new Env((World*) this);
-
     ep->Ex = x;
     ep->Ey = y;
     ep->Ez = z;
-    grid[x][y][z].Eid = ep;
-    grid[x][y][z].type = const_E;
+    grid[x][y][z].setEid(ep);
+    grid[x][y][z].setType(const_E);
 
     //if((timeStep>0)&&(y<vesselRadius*2+gap)) replaceBlood(x, y, z);
 
 //        if(timeStep!=0)calcEnvAgentVEGF(ep);
     ep->calcInside();
-
-
-
 }
 //-------------------------------------------------------------------------
 
@@ -3071,8 +3063,8 @@ void World::createAstrocytes(void){
         for(i=0;i<xMAX;i++)
             for(j=0;j<yMAX;j++){
                 for(m=0;m<Zgap;m++){
-                    grid[i][j][m].Eid->Astro=true;
-                    grid[i][j][m].Eid->OldAstro=true;
+                    grid[i][j][m].getEid()->Astro=true;
+                    grid[i][j][m].getEid()->OldAstro=true;
                     //cout<<"made astrocyte..."<<endl;
                 }
             }
@@ -3100,8 +3092,8 @@ void World::createAstrocytes(void){
                 for(k=0;k<2*Cradius;k++){
                     for(m=0;m<2*Cradius;m++){
                         if(getDist(centreX, centreY, 0, centreX-Cradius+k, centreY-Cradius+m, 0)<Cradius){
-                            if(insideWorld(centreX-Cradius+k, centreY-Cradius+m, 0)==true)
-                                grid[centreX-Cradius+k][centreY-Cradius+m][0].type = const_E;
+                            if(insideWorld(centreX-Cradius+k, centreY-Cradius+m, 0))
+                                grid[centreX-Cradius+k][centreY-Cradius+m][0].setType(const_E);
                         }
                     }
                 }
@@ -3221,8 +3213,8 @@ void World::createAstrocytes(void){
                     if((p2[k]>p1[k])){
                         if((i>=p1[k])&&(i<p2[k])){
                             for(m=0;m<4;m++){
-                                grid[i][j][m].Eid->Astro=true;
-                                grid[i][j][m].Eid->OldAstro=true;
+                                grid[i][j][m].getEid()->Astro=true;
+                                grid[i][j][m].getEid()->OldAstro=true;
                             }
                         }
 
@@ -3232,8 +3224,8 @@ void World::createAstrocytes(void){
                     else{
                         if((i>=p1[k])||(i<p2[k])){
                             for(m=0;m<4;m++){
-                                grid[i][j][m].Eid->Astro=true;
-                                grid[i][j][m].Eid->OldAstro=true;
+                                grid[i][j][m].getEid()->Astro=true;
+                                grid[i][j][m].getEid()->OldAstro=true;
                             }
                         }
                     }
@@ -3341,9 +3333,10 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
     //uniform layer of astrocytes
     if(ASTRO==UNIFORM){
 
-        if(checkOnly==false) grid[i][j][3].Eid->Astro=true;
-        flag=true;
-
+        if(!checkOnly) {
+            grid[i][j][3].getEid()->Astro=true;
+        }
+        flag = true;
     }
     //-------------------------------------------
     //-------------------------------------------
@@ -3365,15 +3358,15 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                     flagA=1;
                     break;
                 }
-
-
             }
 
         if(flagA==0){
-            if(checkOnly==true) flag=true;
-            else grid[i][j][3].Eid->Astro=true;
+            if(checkOnly) {
+                flag=true;
+            } else {
+                grid[i][j][3].getEid()->Astro=true;
+            }
         }
-
     }
     //----------------------------------------------
     //----------------------------------------------
@@ -3409,16 +3402,20 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
             //normal case
             if((p2[k]>p1[k])){
                 if((i>=p1[k])&&(i<p2[k])){
-                    if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
-                    flag=true;
+                    if(!checkOnly) {
+                        grid[i][j][0].getEid()->Astro = true;
+                    }
+                    flag = true;
                 }
             }
                 //-------------------------------
                 //has wrapped around only p2
-            else{
+            else {
                 if((i>=p1[k])||(i<p2[k])){
-                    if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
-                    flag=true;
+                    if(!checkOnly) {
+                        grid[i][j][0].getEid()->Astro = true;
+                    }
+                    flag = true;
                 }
             }
             //-------------------------------
@@ -3426,7 +3423,7 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
             //normal case
             if((b2[k]>b1[k])){
                 if((i>=b1[k])&&(i<b2[k])){
-                    if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
+                    if(!checkOnly)grid[i][j][0].getEid()->Astro = true;
                     flag=true;
                 }
             }
@@ -3434,7 +3431,7 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                 //has wrapped around only p2
             else{
                 if((i>=b1[k])||(i<b2[k])){
-                    if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
+                    if(!checkOnly)grid[i][j][0].getEid()->Astro = true;
                     flag=true;
                 }
             }
@@ -3472,7 +3469,7 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                 //normal case
                 if((p2[k]>p1[k])){
                     if((i>=p1[k])&&(i<p2[k])){
-                        if(checkOnly==false)grid[i][j][3].Eid->Astro = true;
+                        if(!checkOnly)grid[i][j][3].getEid()->Astro = true;
                         flag=true;
                     }
                 }
@@ -3480,7 +3477,7 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                     //has wrapped around only p2
                 else{
                     if((i>=p1[k])||(i<p2[k])){
-                        if(checkOnly==false)grid[i][j][3].Eid->Astro = true;
+                        if(!checkOnly)grid[i][j][3].getEid()->Astro = true;
                         flag=true;
                     }
                 }
@@ -3521,7 +3518,9 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                 //normal case
                 if((p2[k]>p1[k])){
                     if((i>=p1[k])&&(i<p2[k])){
-                        if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
+                        if(!checkOnly) {
+                            grid[i][j][0].getEid()->Astro = true;
+                        }
                         flag=true;
                     }
                 }
@@ -3529,7 +3528,9 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
                     //has wrapped around only p2
                 else{
                     if((i>=p1[k])||(i<p2[k])){
-                        if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
+                        if(!checkOnly) {
+                            grid[i][j][0].getEid()->Astro = true;
+                        }
                         flag=true;
                     }
                 }
@@ -3537,7 +3538,9 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
 
             }
             if((j%Vspacer==-3+10)||(j%Vspacer==-2+10)||(j%Vspacer==-1+10)||(j%Vspacer==0+10)||(j%Vspacer==1+10)||(j%Vspacer==2+10)){
-                if(checkOnly==false)grid[i][j][0].Eid->Astro = true;
+                if(!checkOnly) {
+                    grid[i][j][0].getEid()->Astro = true;
+                }
                 flag=true;
             }
         }
@@ -3669,7 +3672,7 @@ void World::createEnvironment(void){
     for(i=0;i<xMAX;i++)
         for(j=0;j<yMAX;j++){
             for(k=0;k<zMAX;k++){
-                if((grid[i][j][k].type == const_E)&&(grid[i][j][k].Eid==NULL)){
+                if((grid[i][j][k].getType() == const_E)&&(grid[i][j][k].getEid()==NULL)){
                     createNewEnvAgent(i, j, k);
                     //ep=grid[i][j][k].Eid;
 
@@ -3698,19 +3701,17 @@ void World::setInitialVEGF(void){
     Env* ep;
 
     //create environment onjects and place on grid++++++++++++++++++++++++++++++++++++++
-    for(i=0;i<xMAX;i++)
-        for(j=0;j<yMAX;j++){
-            for(k=0;k<zMAX;k++){
-
-                if((grid[i][j][k].type == const_E)&&(grid[i][j][k].Eid!=NULL)) {
-
-                    ep = grid[i][j][k].Eid;
+    for(i=0;i<xMAX;i++) {
+        for (j = 0; j < yMAX; j++) {
+            for (k = 0; k < zMAX; k++) {
+                if ((grid[i][j][k].getType() == const_E) && (grid[i][j][k].getEid() != NULL)) {
+                    ep = grid[i][j][k].getEid();
                     calcEnvAgentVEGF(ep);
                     //if(ep->VEGF>0)
                 }
             }
         }
-
+    }
 }
 
 void World::createTestCase(void){
@@ -3818,12 +3819,12 @@ void World::createHaptoTest(void){
                 if(j<4){
                     Env * ep = new Env((World*) this);
                     ep->Ex=i; ep->Ey=j;ep->Ez=0;
-                    grid[i][j][k].Eid=ep;
-                    grid[i][j][k].Eid->Astro = true;
+                    grid[i][j][k].setEid(ep);
+                    grid[i][j][k].getEid()->Astro = true;
                 }
                     //create blood
                 else{
-                    grid[i][j][0].Eid->Astro = true;
+                    grid[i][j][0].getEid()->Astro = true;
                 }
             }
         }
@@ -3846,7 +3847,7 @@ void World::runHapto(void){
 
     //set new pos
     float newPos[3] = {4.0f, 0.0f, 0.0f};
-    grid[(int)newPos[0]][(int)newPos[1]][(int)newPos[2]].type = BLOOD;
+    grid[(int)newPos[0]][(int)newPos[1]][(int)newPos[2]].setType(BLOOD);
 
     if(timeStep==1){
         //ECagents[0]->nodeAgents[0]->haptotaxis(newPos[0], newPos[1], newPos[2], AS, false);
@@ -3966,7 +3967,7 @@ void World:: curvedAstrocytes(Coordinates One, Coordinates Two, Coordinates Anch
                 }
 
                 if((flagY==1)&&(flagX==1)){
-                    if(insideWorld((int)x, (int)y, 0)==true)grid[(int)x][(int)y][0].Eid->Astro = true;
+                    if(insideWorld((int)x, (int)y, 0))grid[(int)x][(int)y][0].getEid()->Astro = true;
                 }
             }
         }
@@ -4040,10 +4041,8 @@ void World::initialise_macrophage_VEGF(void){
     float Dist[MACROS];
     float accum;
 
-
-
-    for(i=0; i<xMAX; i++){
-        for(j=0; j<yMAX; j++){
+    for (i = 0; i < xMAX; i++){
+        for(j = 0; j<yMAX; j++){
 
             accum = 0.0f;
 
@@ -4054,8 +4053,8 @@ void World::initialise_macrophage_VEGF(void){
                 //accum+=CD[m];
             }
 
-            if((checkForAstro(i, j, 1)==1)&&(grid[i][j][1].type == const_E)){
-                grid[i][j][1].Eid->VEGF=accum*VconcST;
+            if((checkForAstro(i, j, 1)==1)&&(grid[i][j][1].getType() == const_E)){
+                grid[i][j][1].getEid()->VEGF=accum*VconcST;
             }
         }
     }
@@ -4108,8 +4107,8 @@ void World::create_astro_retina_section(void){
     for(i=0;i<vesselRadius*2+2;i++){
         for(j=0;j<xMAX;j++){
             for(m=0;m<4;m++){
-                grid[j][i][m].Eid->Astro = true;
-                grid[j][i][m].Eid->OldAstro = true;
+                grid[j][i][m].getEid()->Astro = true;
+                grid[j][i][m].getEid()->OldAstro = true;
             }
         }
     }
@@ -4126,8 +4125,8 @@ void World::create_astro_retina_section(void){
         for(j=x-(width);j<=x+(width)+in;j++){
             if(insideWorld(i, j, 0)){
                 for(m=0;m<4;m++){
-                    grid[j][i][m].Eid->Astro = true;
-                    grid[j][i][m].Eid->OldAstro = true;
+                    grid[j][i][m].getEid()->Astro = true;
+                    grid[j][i][m].getEid()->OldAstro = true;
                 }
             }
         }
@@ -4149,8 +4148,8 @@ void World::create_astro_retina_section(void){
         for(j=x2-(width)-in;j<=x2+(width);j++){
             if(insideWorld(i, j, 0)){
                 for(m=0;m<4;m++){
-                    grid[j][i][m].Eid->Astro = true;
-                    grid[j][i][m].Eid->OldAstro = true;
+                    grid[j][i][m].getEid()->Astro = true;
+                    grid[j][i][m].getEid()->OldAstro = true;
                 }
             }
         }
@@ -4175,8 +4174,8 @@ void World::create_astro_retina_section(void){
         for(j=x2-(width);j<=x2+(width);j++){
             if(insideWorld(i, j, 0)){
                 for(m=0;m<4;m++){
-                    grid[j][i][m].Eid->Astro = true;
-                    grid[j][i][m].Eid->OldAstro = true;
+                    grid[j][i][m].getEid()->Astro = true;
+                    grid[j][i][m].getEid()->OldAstro = true;
                 }
             }
         }
@@ -5486,10 +5485,10 @@ void World::check_if_InsideVessel(void){
     for(i=0;i<gridXDimensions;i++){
         for(j=0;j<gridXDimensions;j++){
             for(k=0;k<gridZDimensions;k++){
-                if(grid[i][j][k].Eid!=NULL){
+                if(grid[i][j][k].getEid()!=NULL){
                     //only checking if was already inside...
-                    if(grid[i][j][k].Eid->inside==true)
-                        grid[i][j][k].Eid->calcInside();
+                    if(grid[i][j][k].getEid()->inside)
+                        grid[i][j][k].getEid()->calcInside();
                 }
 
             }
@@ -5503,9 +5502,9 @@ bool World::toroidalTest(float P[3], float N[3]) {
 }
 
 bool World::test_triange_Pos_change(std::vector<MemAgent*> triangle) {
-    if (((int) triangle[0]->Mx == (int) triangle[0]->previous->x) && ((int) triangle[0]->My == (int) triangle[0]->previous->y) && ((int) triangle[0]->Mz == (int) triangle[0]->previous->z)) {
-        if (((int) triangle[1]->Mx == (int) triangle[1]->previous->x) && ((int) triangle[1]->My == (int) triangle[1]->previous->y) && ((int) triangle[1]->Mz == (int) triangle[1]->previous->z)) {
-            if (((int) triangle[2]->Mx == (int) triangle[2]->previous->x) && ((int) triangle[2]->My == (int) triangle[2]->previous->y) && ((int) triangle[2]->Mz == (int) triangle[2]->previous->z)) {
+    if (((int) triangle[0]->Mx == (int) triangle[0]->getPreviousX()) && ((int) triangle[0]->My == (int) triangle[0]->getPreviousY()) && ((int) triangle[0]->Mz == (int) triangle[0]->getPreviousZ())) {
+        if (((int) triangle[1]->Mx == (int) triangle[1]->getPreviousX()) && ((int) triangle[1]->My == (int) triangle[1]->getPreviousY()) && ((int) triangle[1]->Mz == (int) triangle[1]->getPreviousZ())) {
+            if (((int) triangle[2]->Mx == (int) triangle[2]->getPreviousX()) && ((int) triangle[2]->My == (int) triangle[2]->getPreviousY()) && ((int) triangle[2]->Mz == (int) triangle[2]->getPreviousZ())) {
                 return false;
             } else {
                 return true;
@@ -5573,12 +5572,12 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
 
                     //-------------------------------------------------------
                     //for on-the fly-- if another memagent there already , from same cell, then double up - flag as doubled up and remove after...
-                    if (grid[X][Y][Z].type == const_M) {
+                    if (grid[X][Y][Z].getType() == const_M) {
                         i = 0;
                         flag = 0;
 
                         do {
-                            if (grid[X][Y][Z].Mids[i]->Cell == cell) {
+                            if (grid[X][Y][Z].getMids()[i]->Cell == cell) {
                                 flag = 1;
                                 dont_bother = true;
                                 //cout<<"got a double up!"<<endl;
@@ -5593,18 +5592,18 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
                                  }*/
                             }
                             i++;
-                        } while ((i < (int) grid[X][Y][Z].Mids.size()) && (flag == 0));
+                        } while ((i < (int) grid[X][Y][Z].getMids().size()) && (flag == 0));
 
                         //if (flag == 1)
                         //  dont_bother = true;
                     }
 
 
-                    if (dont_bother == false) {
+                    if (!dont_bother) {
                         countbell++;
                         //in same plane
                         grid_it = voxelise(Coords, (float) X + 0.5, (float) Y + 0.5, (float) Z + 0.5);
-                        if (grid_it == true) {
+                        if (grid_it) {
                             flagDone = 1;
                             createSurfaceAgent(X, Y, Z, cell, triangleNodes, up);
                             //memp->JunctionTest();
@@ -5846,20 +5845,20 @@ void World::createSurfaceAgent(int X, int Y, int Z, EC* cell, std::vector<MemAge
 
     int i = 0;
     bool allow = true;
-    if (grid[X][Y][Z].type == const_M) {
+    if (grid[X][Y][Z].getType() == const_M) {
         do {
-            if (grid[X][Y][Z].Mids[i]->Cell == cell) {
+            if (grid[X][Y][Z].getMids()[i]->Cell == cell) {
                 allow = false;
             }
             i++;
-        } while ((i < (int) grid[X][Y][Z].Mids.size()) && (allow == true));
+        } while ((i < (int) grid[X][Y][Z].getMids().size()) && (allow == true));
 
     }
 
-    if (allow == true) {
-        if (grid[X][Y][Z].type == const_E) {
-            delete grid[X][Y][Z].Eid;
-            grid[X][Y][Z].Eid = NULL;
+    if (allow) {
+        if (grid[X][Y][Z].getType() == const_E) {
+            delete grid[X][Y][Z].getEid();
+            grid[X][Y][Z].setEid(NULL);
         }
 
         MemAgent* memp = new MemAgent(cell, this);
@@ -6227,17 +6226,15 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
     int flagthere = 0;
     int j;
 
-    if (fil == true) {
-
-        upto = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Fids.size();
-        T = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Fids.begin();
+    if (fil) {
+        upto = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getFids().size();
+        T = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getFids().begin();
         j = 0;
         do {
 
-            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Fids[j] == memp) {
-                grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Fids.erase(T + j);
+            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getFids()[j] == memp) {
+                grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getFids().erase(T + j);
                 flagthere = 1;
-
             }
             j++;
         } while ((flagthere == 0) && (j < upto));
@@ -6254,23 +6251,22 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 
     }
     else {
-        upto = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids.size();
-        T = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids.begin();
+        upto = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getMids().size();
+        T = grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getMids().begin();
         j = 0;
         do {
-            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids[j] == memp) {
-                grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids.erase(T + j);
+            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getMids()[j] == memp) {
+                grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getMids().erase(T + j);
                 flagthere = 1;
                 //break;
             }
             j++;
         } while ((flagthere == 0) && (j < upto));
         if (flagthere == 0) std::cout << "not found agent in that grid site..." << std::endl;
-        if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Mids.size() == 0) {
+        if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getMids().size() == 0) {
             //grid[(int)memp->Mx][(int)memp->My][(int)memp->Mz].type = E;
-            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].Eid != NULL) std::cout << "already got an env agent in deleteOldGridRef " << memp->junction << std::endl;
+            if (grid[(int) memp->Mx][(int) memp->My][(int) memp->Mz].getEid() != NULL) std::cout << "already got an env agent in deleteOldGridRef " << memp->junction << std::endl;
             createNewEnvAgent((int) memp->Mx, (int) memp->My, (int) memp->Mz);
-
         }
     }
 
@@ -6284,18 +6280,19 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 //------------------------------------------------------------
 
 void World::setMLocation(int x, int y, int z, MemAgent * ident) {
-
-    grid[x][y][z].Mids.push_back(ident);
-    grid[x][y][z].type = const_M;
-    delete grid[x][y][z].Eid;
-    grid[x][y][z].Eid = NULL;
+    // TODO: REMOVE
+    Location loc_test = grid[x][y][z];
+    grid[x][y][z].addMemAgent(ident);
+    grid[x][y][z].setType(const_M);
+    delete grid[x][y][z].getEid();
+    grid[x][y][z].setEid(NULL);
 }
 //------------------------------------------------------------
 //------------------------------------------------------------
 
 void World::setFilLocation(int x, int y, int z, MemAgent * ident) {
 
-    grid[x][y][z].Fids.push_back(ident);
+    grid[x][y][z].getFids().push_back(ident);
 }
 //------------------------------------------------------------
 //------------------------------------------------------------
@@ -6431,14 +6428,13 @@ int World::checkForAstro(int i, int j, int k) {
         //if(m<0) m=xMAX-1;
         //-------------------------------
 
-        if (insideWorld(m, n, p) == true) {
-
-            if ((grid[m][n][p].type == const_E) && (grid[m][n][p].Eid->Astro == true)) {
+        if (insideWorld(m, n, p)) {
+            if ((grid[m][n][p].getType() == const_E) && (grid[m][n][p].getEid()->Astro)) {
                 flag = 1;
                 //cout<<"astro"<<endl;
             } else if (p == 0) {
                 //may have a fil there even though it strictly speaking should have astro there - so do replace with the check only flag on so it doesnt actually replace
-                if ((grid[m][n][p].type == const_E) && (grid[m][n][p].Eid->OldAstro == true)) flag = 1;
+                if ((grid[m][n][p].getType() == const_E) && (grid[m][n][p].getEid()->OldAstro)) flag = 1;
             }
         }
         //-------------------------------
