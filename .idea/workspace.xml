@@ -6,7 +6,11 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="src/springAgent" targetName="springAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,16 +19,50 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Rewritten memagent neighbour functions">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Locations in neigh are now being instantiated. Code now running without segfaulting.">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.19.2/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/includes_CXX.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects.a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed-1_run1_.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/location.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/location.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/location.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/location.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,32 +125,52 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.springAgent">
-    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
+  <component name="RunManager" selected="CTest Application.All CTest">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
+    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -148,7 +206,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.springAgent" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
       <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
@@ -240,6 +301,10 @@
       <workItem from="1630942823252" duration="4263000" />
       <workItem from="1630955032325" duration="115000" />
       <workItem from="1631006096053" duration="1000" />
+      <workItem from="1631185974988" duration="70000" />
+      <workItem from="1631187016194" duration="1711000" />
+      <workItem from="1631188919207" duration="186000" />
+      <workItem from="1631189118151" duration="1445000" />
     </task>
     <task id="LOCAL-00009" summary="Implemented function to add proteins to environment agents during gradient creation.">
       <created>1621611517436</created>

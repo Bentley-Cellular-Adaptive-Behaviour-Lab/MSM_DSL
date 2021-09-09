@@ -91,21 +91,21 @@ void BasicODEMemAgentTest::createMemAgents(EC *dummyCell, World *world) {
 	memAgent1->Mx = 25;
 	memAgent1->My = 25;
 	memAgent1->Mz = 25;
-	this->world->grid[25][25][25].type = const_M;
+	this->world->grid[25][25][25].setType(const_M);
 
 	auto memAgent2 = new MemAgent(dummyCell, world); // 2 + 3 are adjacent.
 	this->memAgent2 = memAgent2;
 	memAgent2->Mx = 30;
 	memAgent2->My = 30;
 	memAgent2->Mz = 30;
-	this->world->grid[30][30][30].type = const_M;
+	this->world->grid[30][30][30].setType(const_M);
 
 	auto memAgent3 = new MemAgent(dummyCell, world); // 2 + 3 are adjacent.
 	this->memAgent3 = memAgent3;
 	memAgent3->Mx = 31;
 	memAgent3->My = 30;
 	memAgent3->Mz = 30;
-	this->world->grid[31][30][30].type = const_M;
+	this->world->grid[31][30][30].setType(const_M);
 }
 
 void BasicODEMemAgentTest::setupEnvironment() {
@@ -113,9 +113,9 @@ void BasicODEMemAgentTest::setupEnvironment() {
 	for (int x = 0; x < world->gridXDimensions; x++) {
 		for (int y = 0; y < world->gridYDimensions; y++) {
 			for (int z = 0; z < world->gridYDimensions; z++) {
-				if (world->grid[x][y][z].type == const_E) {
+				if (world->grid[x][y][z].getType() == const_E) {
 					auto proteinB = new Protein("B", PROTEIN_LOCATION_ENVIRONMENT,1,0,100);
-					ep = world->grid[x][y][z].Eid;
+					ep = world->grid[x][y][z].getEid();
 					ep->owned_proteins.push_back(proteinB);
 				}
 			}
@@ -236,8 +236,8 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 	memAgent1->My = 25;
 	memAgent1->Mz = 25;
 	memAgent1->junction = true;
-	this->world->grid[25][25][25].type = const_M;
-	this->world->grid[25][25][25].Mids.push_back(memAgent1);
+	this->world->grid[25][25][25].setType(const_M);
+	this->world->grid[25][25][25].addMemAgent(memAgent1);
 
 	auto memAgent2 = new MemAgent(dummyCell2, world);
 	this->memAgent2 = memAgent2;
@@ -245,8 +245,8 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 	memAgent2->My = 25;
 	memAgent2->Mz = 25;
 	memAgent2->junction = true;
-	this->world->grid[26][25][25].type = const_M;
-	this->world->grid[26][25][25].Mids.push_back(memAgent2);
+	this->world->grid[26][25][25].setType(const_M);
+	this->world->grid[26][25][25].addMemAgent(memAgent2);
 
 	auto memAgent3 = new MemAgent(dummyCell2, world);
 	this->memAgent3 = memAgent3;
@@ -254,8 +254,8 @@ void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, W
 	memAgent3->My = 25;
 	memAgent3->Mz = 25;
 	memAgent3->junction = false;
-	this->world->grid[27][25][25].type = const_M;
-	this->world->grid[27][25][25].Mids.push_back(memAgent3);
+	this->world->grid[27][25][25].setType(const_M);
+	this->world->grid[27][25][25].addMemAgent(memAgent3);
 }
 
 void CrossCellODEMemAgentTest::setupAgentProteins() const {
@@ -417,8 +417,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent1->My = 20;
 	memAgent1->Mz = 20;
 	memAgent1->junction = false;
-	this->world->grid[19][20][20].type = const_M;
-	this->world->grid[19][20][20].Mids.push_back(memAgent1);
+	this->world->grid[19][20][20].setType(const_M);
+	this->world->grid[19][20][20].addMemAgent(memAgent1);
 
 	auto *memAgent2 = new MemAgent(dummyCell1, world);
 	this->memAgent2 = memAgent2;
@@ -426,8 +426,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent2->My = 20;
 	memAgent2->Mz = 20;
 	memAgent2->junction = false;
-	this->world->grid[20][20][20].type = const_M;
-	this->world->grid[20][20][20].Mids.push_back(memAgent2);
+	this->world->grid[20][20][20].setType(const_M);
+	this->world->grid[20][20][20].addMemAgent(memAgent2);
 
 	auto *memAgent3 = new MemAgent(dummyCell1, world);
 	this->memAgent3 = memAgent3;
@@ -435,8 +435,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent3->My = 20;
 	memAgent3->Mz = 20;
 	memAgent3->junction = false;
-	this->world->grid[21][20][20].type = const_M;
-	this->world->grid[21][20][20].Mids.push_back(memAgent3);
+	this->world->grid[21][20][20].setType(const_M);
+	this->world->grid[21][20][20].addMemAgent(memAgent3);
 
 	// Scenario 2
 
@@ -446,8 +446,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent4->My = 30;
 	memAgent4->Mz = 30;
 	memAgent4->junction = true;
-	this->world->grid[29][30][30].type = const_M;
-	this->world->grid[29][30][30].Mids.push_back(memAgent4);
+	this->world->grid[29][30][30].setType(const_M);
+	this->world->grid[29][30][30].addMemAgent(memAgent4);
 
 	auto *memAgent5 = new MemAgent(dummyCell1, world);
 	this->memAgent5 = memAgent5;
@@ -455,8 +455,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent5->My = 30;
 	memAgent5->Mz = 30;
 	memAgent5->junction = true;
-	this->world->grid[30][30][30].type = const_M;
-	this->world->grid[30][30][30].Mids.push_back(memAgent5);
+	this->world->grid[30][30][30].setType(const_M);
+	this->world->grid[30][30][30].addMemAgent(memAgent5);
 
 	auto *memAgent6 = new MemAgent(dummyCell1, world);
 	this->memAgent6 = memAgent6;
@@ -464,8 +464,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent6->My = 30;
 	memAgent6->Mz = 30;
 	memAgent6->junction = true;
-	this->world->grid[31][30][30].type = const_M;
-	this->world->grid[31][30][30].Mids.push_back(memAgent6);
+	this->world->grid[31][30][30].setType(const_M);
+	this->world->grid[31][30][30].addMemAgent(memAgent6);
 
 	auto *memAgent7 = new MemAgent(dummyCell2, world);
 	this->memAgent7 = memAgent7;
@@ -473,8 +473,8 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	memAgent7->My = 29;
 	memAgent7->Mz = 30;
 	memAgent7->junction = true;
-	this->world->grid[30][29][30].type = const_M;
-	this->world->grid[30][29][30].Mids.push_back(memAgent7);
+	this->world->grid[30][29][30].setType(const_M);
+	this->world->grid[30][29][30].addMemAgent(memAgent7);
 }
 
 void MultiNeighbourODEMemAgentTest::setupEnvironment() {
@@ -678,14 +678,14 @@ void BasicFilODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, Wo
 	memAgent1->Mx = 25;
 	memAgent1->My = 25;
 	memAgent1->Mz = 25;
-	this->world->grid[25][25][25].Fids.push_back(memAgent1);
+	this->world->grid[25][25][25].addFilAgent(memAgent1);
 
 	auto memAgent2 = new MemAgent(dummyCell2, world);
 	this->memAgent2 = memAgent1;
 	memAgent2->Mx = 26;
 	memAgent2->My = 25;
 	memAgent2->Mz = 25;
-	this->world->grid[26][25][25].Fids.push_back(memAgent1);
+	this->world->grid[26][25][25].addFilAgent(memAgent1);
 }
 
 void BasicFilODEMemAgentTest::setupEnvironment() {
@@ -693,9 +693,9 @@ void BasicFilODEMemAgentTest::setupEnvironment() {
 	for (int x = 0; x < world->gridXDimensions; x++) {
 		for (int y = 0; y < world->gridYDimensions; y++) {
 			for (int z = 0; z < world->gridYDimensions; z++) {
-				if (world->grid[x][y][z].type == const_E) {
+				if (world->grid[x][y][z].getType() == const_E) {
 					auto proteinA = new Protein("A", PROTEIN_LOCATION_ENVIRONMENT, 1, 0, 100);
-					ep = world->grid[x][y][z].Eid;
+					ep = world->grid[x][y][z].getEid();
 					ep->owned_proteins.push_back(proteinA);
 				}
 			}
@@ -1006,9 +1006,9 @@ void NotchPathwayTest::setupEnvironment() {
     for (int x = 0; x < world->gridXDimensions; x++) {
         for (int y = 0; y < world->gridYDimensions; y++) {
             for (int z = 0; z < world->gridYDimensions; z++) {
-                if (world->grid[x][y][z].type == const_E) {
+                if (world->grid[x][y][z].getType() == const_E) {
                     auto proteinB = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.04, 0, 100);
-                    ep = world->grid[x][y][z].Eid;
+                    ep = world->grid[x][y][z].getEid();
                     ep->owned_proteins.push_back(proteinB);
                 }
             }
