@@ -278,6 +278,11 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     simulateTimestep();
 
     std::cout << "Creation timestep complete." << std::endl;
+
+    for (int i = 0; i < 26; i++) {
+        this->neigh[i] = new Location();
+    }
+
 }
 
 //-----------------------------------------------------------------------------

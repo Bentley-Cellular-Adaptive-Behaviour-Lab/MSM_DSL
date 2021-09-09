@@ -22328,6 +22328,12 @@ vector
 
 ../src/core/coordinates.h
 
+../src/core/environment.h
+vector
+-
+string
+-
+
 ../src/core/hysteresis.h
 vector
 -
@@ -22337,8 +22343,6 @@ vector
 -
 
 ../src/core/memAgents.h
-array
--
 string
 -
 vector
@@ -22398,6 +22402,12 @@ tuple
 chrono
 -
 random
+-
+
+../src/dsl/world/worldContainer.h
+string
+-
+vector
 -
 
 ../src/generated/dsl_species_gen.h
@@ -22532,6 +22542,18 @@ C:/Users/Tom/MPSProjects/MSM_DSL/src/core/display.h
 string
 -
 
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/environment.cpp
+environment.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/environment.h
+location.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/location.h
+objects.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/objects.h
+world.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/world.h
+dsl/species/protein.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/core/dsl/species/protein.h
+
 C:/Users/Tom/MPSProjects/MSM_DSL/src/core/environment.h
 vector
 -
@@ -22607,8 +22629,6 @@ dsl/utils/utils.h
 C:/Users/Tom/MPSProjects/MSM_DSL/src/core/dsl/utils/utils.h
 
 C:/Users/Tom/MPSProjects/MSM_DSL/src/core/memAgents.h
-array
--
 string
 -
 vector
@@ -22766,19 +22786,51 @@ C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueContainer.h
 
 C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/tissue/tissueType.h
 
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_species_gen.cpp
-core/memAgents.h
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/core/memAgents.h
-core/EC.h
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/core/EC.h
-dsl/tissue/cellType.h
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl/tissue/cellType.h
-dsl_species_gen.h
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_species_gen.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.cpp
+cassert
+-
+cmath
+-
+gradient.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.h
+core/coordinates.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/coordinates.h
+core/environment.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/environment.h
+core/location.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/location.h
+core/objects.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/objects.h
+core/world.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/world.h
+dsl/species/protein.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/dsl/species/protein.h
+dsl/world/worldContainer.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/dsl/world/worldContainer.h
 
-C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_species_gen.h
-boost/array.hpp
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/gradient.h
+vector
 -
-boost/numeric/odeint.hpp
+
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.cpp
+cassert
 -
+substrate.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.h
+core/coordinates.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/coordinates.h
+core/environment.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/environment.h
+core/location.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/location.h
+core/objects.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/objects.h
+core/world.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/core/world.h
+dsl/utils/shape.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/dsl/utils/shape.h
+dsl/world/worldContainer.h
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/dsl/world/worldContainer.h
+
+C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/substrate.h
 
