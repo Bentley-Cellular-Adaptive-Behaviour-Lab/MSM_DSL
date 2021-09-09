@@ -17,7 +17,7 @@ std::vector<MemAgent*>& Location::getMids() {
     return this->Mids;
 }
 
-void Location::setMids(std::vector<MemAgent*>& mids) {
+void Location::setMids(const std::vector<MemAgent*>& mids) {
     this->Mids = mids;
 }
 
@@ -25,7 +25,7 @@ std::vector<MemAgent*>& Location::getFids() {
     return this->Fids;
 }
 
-void Location::setFids(std::vector<MemAgent*>& fids) {
+void Location::setFids(const std::vector<MemAgent*>& fids) {
     this->Mids = fids;
 }
 

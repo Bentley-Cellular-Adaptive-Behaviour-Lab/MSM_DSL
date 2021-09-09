@@ -1672,7 +1672,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
         if (worldP->insideWorld(m, n, p)) {
             // NEIGHS IS NULL - FOUND OUT WHY.
             // ALSO, THIS MIGHT BE NULL ANYWAY, IN WHICH CASE INCLUDE A CONDITION FOR IT.
-            Location *testNeigh = worldP->neigh[x];
+            Location testLocation = worldP->grid[m][n][p];
             std::vector<MemAgent*> test_mids = worldP->grid[m][n][p].getMids();
             worldP->neigh[x]->setMids(worldP->grid[m][n][p].getMids());
             worldP->neigh[x]->setFids(worldP->grid[m][n][p].getFids());
