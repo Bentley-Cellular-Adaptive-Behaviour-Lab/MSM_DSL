@@ -31,8 +31,8 @@ public:
     std::vector<MemAgent*>& getMids();
     std::vector<MemAgent*>& getFids();
 
-    void setMids(std::vector<MemAgent*>& mids);
-    void setFids(std::vector<MemAgent*>& fids);
+    void setMids(const std::vector<MemAgent*>& mids);
+    void setFids(const std::vector<MemAgent*>& fids);
 
     void addMemAgent(MemAgent* memAgent);
     void addFilAgent(MemAgent* memAgent);
