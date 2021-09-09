@@ -1545,20 +1545,159 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
     mediumNeighs = 0;
     //--------------
 
-    // Calculate and set neighbour locations
-    this->calcNeighbourLocations();
+    //same layer
+    for (x = 0; x < 26; x++) {
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        }            //layer below
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        }            //layer above
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
 
-    for (auto *location : this->getNeighbourLocations()) {
-        // Checks that the location is not out of bounds or null.
-        if (location->getType() != -1) {
-            if (location->getType() == const_M) {
+
+        //-------------------------------
+        //toroidal only X
+        if(TOROIDAL_X){
+        if (m >= xMAX) m = 0;
+        if (m < 0) m = xMAX - 1;
+        }
+
+        if(TOROIDAL_Y){
+        if (n >= yMAX) n = 0;
+        if (n < 0) n = yMAX - 1;
+        }
+
+
+        if (worldP->insideWorld(m, n, p)) {
+            // NEIGHS IS NULL - FOUND OUT WHY.
+            // ALSO, THIS MIGHT BE NULL ANYWAY, IN WHICH CASE INCLUDE A CONDITION FOR IT.
+            Location testLocation = worldP->grid[m][n][p];
+            std::vector<MemAgent*> test_mids = worldP->grid[m][n][p].getMids();
+            worldP->neigh[x]->setMids(worldP->grid[m][n][p].getMids());
+            worldP->neigh[x]->setFids(worldP->grid[m][n][p].getFids());
+
+            worldP->neigh[x]->setType(worldP->grid[m][n][p].getType());
+            worldP->neigh[x]->setEid(worldP->grid[m][n][p].getEid());
+
+
+            if (worldP->neigh[x]->getType() == const_M) {
                 MneighCount++;
-            } else if (location->getType() == const_E) {
+            } else if (worldP->neigh[x]->getType() == const_E) {
                 Eagent = worldP->neigh[x]->getEid();
                 SumVEGF += Eagent->VEGF;
                 EnvNeighs.push_back(Eagent);
             }
+            
+            /*else if((node==true)&&(worldP->neigh[x].type==AS)){
+             *
+             * if(FATimer>=0) FA=true;
+             *
+             * }*/
+            //-----------NEW BIT!
 
+            //for differential adhesion..
+            //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
             if (called_fron_differentialAdhesion) {
                 if (worldP->grid[m][n][p].getType() == const_M) {
                     if (diffAd_replaced_cell != NULL) {
@@ -1566,6 +1705,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                             if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                                 connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                                 if (connected) {
+
                                     if ((worldP->grid[m][n][p].getMids()[zed]->Cell != this->diffAd_replaced_cell)) {
                                         DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                         //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
@@ -1582,7 +1722,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                         for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
                             if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                                 connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
-                                if (connected) {
+                                if (connected == true) {
                                     //cout<<"*"<<endl;
                                     if (worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != NULL) {
                                         if ((worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != this->Cell)) {
@@ -1600,22 +1740,36 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                             }
                         }
                     }
-                } else if ((worldP->grid[m][n][p].getType() == MED) &&
-                            (diffAd_replaced_med == NULL) &&
-                            (worldP->grid[m][n][p].getMed()->diffAd_replaced == NULL)) {
+                } else if ((worldP->grid[m][n][p].getType() == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].getMed()->diffAd_replaced == NULL)) {
                     mediumNeighs++;
-                } else if ((worldP->grid[m][n][p].getType() == MED) &&
-                            (diffAd_replaced_med == NULL) &&
-                            (worldP->grid[m][n][p].getMed()->diffAd_replaced != NULL)) {
-                    if (worldP->grid[m][n][p].getMed()->diffAd_replaced->Cell != this->Cell) {
-                        DiffAd_neighs.push_back(worldP->grid[m][n][p].getMed()->diffAd_replaced);
-                    }
+                } else if ((worldP->grid[m][n][p].getType() == MED) && (diffAd_replaced_med == NULL) && (worldP->grid[m][n][p].getMed()->diffAd_replaced != NULL)) {
+                    if (worldP->grid[m][n][p].getMed()->diffAd_replaced->Cell != this->Cell) DiffAd_neighs.push_back(worldP->grid[m][n][p].getMed()->diffAd_replaced);
                 }
             }
+            //_____________________
+        } else {
+            // Not in the world, therefore set everything to NULL/delete everything.
+            worldP->neigh[x]->setEid(NULL);
+            worldP->neigh[x]->setType(-1);
+            worldP->neigh[x]->getFids().clear();
+            worldP->neigh[x]->getMids().clear();
         }
-    }
-}
+        //-------------------------------
 
+    }
+
+    /*if(diffAd_replaced!=NULL){
+            //out<<"D:";
+            for(i=0;i<DiffAd_neighs.size();i++){
+                    //cout<<DiffAd_neighs[i]->Cell->VEGFRtot<<endl;
+            }
+            //cout<<endl;
+    }*/
+
+}
+//-------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
 Env *MemAgent::findHighestConc(void){
 
     int i, direction;
@@ -2950,6 +3104,12 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			n = j;
 			p = k + 1;
 		}
+		// TODO: Tidy up these statements!
+
+        // TODO: TESTING - REMOVE
+        if (m == 19 && n == 26 && p == 25) {
+            int x = 0;
+        }
 
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].getType() == const_M) {
@@ -3699,162 +3859,4 @@ float MemAgent::getPreviousY() {
 
 float MemAgent::getPreviousZ() {
     return this->m_previous_z;
-}
-
-void MemAgent::setNeighbourLocations(std::array<Location*, 26> *arr) {
-    this->m_stored_locations = *arr;
-}
-
-void MemAgent::calcNeighbourLocations() {
-    // Calculates and sets the locations of neighbouring environment objects.
-    int m, n, p;
-    int i = (int) Mx;
-    int j = (int) My;
-    int k = (int) Mz;
-
-    std::array<Location *, 26> relevant_locations;
-
-    for (int x = 0; x < 26; x++) {
-        // Same layer.
-        if (x == 0) {
-            m = i + 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 1) {
-            m = i + 1;
-            n = j;
-            p = k;
-        } else if (x == 2) {
-            m = i + 1;
-            n = j + 1;
-            p = k;
-        } else if (x == 3) {
-            m = i;
-            n = j - 1;
-            p = k;
-        } else if (x == 4) {
-            m = i;
-            n = j + 1;
-            p = k;
-        } else if (x == 5) {
-            m = i - 1;
-            n = j - 1;
-            p = k;
-        } else if (x == 6) {
-            m = i - 1;
-            n = j;
-            p = k;
-        } else if (x == 7) {
-            m = i - 1;
-            n = j + 1;
-            p = k;
-        } // Layer below.
-        else if (x == 8) {
-            m = i + 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 9) {
-            m = i + 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 10) {
-            m = i + 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 11) {
-            m = i;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 12) {
-            m = i;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 13) {
-            m = i - 1;
-            n = j - 1;
-            p = k - 1;
-        } else if (x == 14) {
-            m = i - 1;
-            n = j;
-            p = k - 1;
-        } else if (x == 15) {
-            m = i - 1;
-            n = j + 1;
-            p = k - 1;
-        } else if (x == 16) {
-            m = i;
-            n = j;
-            p = k - 1;
-        } // Layer above.
-        else if (x == 17) {
-            m = i + 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 18) {
-            m = i + 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 19) {
-            m = i + 1;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 20) {
-            m = i;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 21) {
-            m = i;
-            n = j + 1;
-            p = k + 1;
-        } else if (x == 22) {
-            m = i - 1;
-            n = j - 1;
-            p = k + 1;
-        } else if (x == 23) {
-            m = i - 1;
-            n = j;
-            p = k + 1;
-        } else if (x == 24) {
-            m = i - 1;
-            n = j + 1;
-            p = k + 1;
-        } else {
-            m = i;
-            n = j;
-            p = k + 1;
-        }
-
-        if (TOROIDAL_X) {
-            if (m >= xMAX) {
-                m = 0;
-            }
-            if (m < 0) {
-                m = xMAX - 1;
-            }
-        }
-
-        if (TOROIDAL_Y) {
-            if (n >= yMAX) {
-                n = 0;
-            }
-            if (n < 0) {
-                n = yMAX - 1;
-            }
-        }
-
-        if (worldP->insideWorld(m, n, p)) {
-            relevant_locations[x] = &(worldP->grid[m][n][p]);
-        } else {
-            relevant_locations[x]->setType(-1);
-        }
-    }
-    this->setNeighbourLocations(&relevant_locations);
-}
-
-Location* MemAgent::getStoredLocation(int index) {
-    return this->m_stored_locations.at(index);
-}
-
-void MemAgent::setStoredLocation(Location *location, int index) {
-    this->m_stored_locations[index] = location;
 }
