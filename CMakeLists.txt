@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 0)
+set(TEST_TYPE 1)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -97,6 +97,9 @@ if(TEST_TYPE EQUAL 0)
 
     target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_LIBRARIES})
 elseif(TEST_TYPE EQUAL 1)
+    enable_testing()
+
+    set(CMAKE_VERBOSE_MAKEFILE ON)
     message("Testing: Automated")
 
     # Get Google Test library
@@ -144,8 +147,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
             tests/automated/helper_ODE.cpp
-            tests/automated/test_ODE.cpp
-            tests/automated/test_setup.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
             tests/automated/generated/dsl_world_gen.cpp)
@@ -183,20 +184,23 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/helper_ODE.h
             tests/automated/generated/dsl_species_gen.h)
 
-    add_executable(autoSpringAgent ${Sources} ${Headers})
-
     find_package(OpenGL)
     find_package(Boost)
+
+    add_executable(autoSpringAgent ${Sources} ${Headers})
+
 
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
     target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
 
-    enable_testing()
+    gtest_add_tests(TARGET autoSpringAgent SOURCES tests/automated/test_setup.cpp tests/automated/test_ODE.cpp TEST_LIST testList)
+    message(Tests="${testList}")
 
-    gtest_discover_tests(autoSpringAgent)
 elseif(TEST_TYPE EQUAL 2)
+    enable_testing()
+    set(CMAKE_VERBOSE_MAKEFILE ON)
     message("Testing: User model")
 
     # Get Google Test library
@@ -226,8 +230,6 @@ elseif(TEST_TYPE EQUAL 2)
     include(GoogleTest)
 
     target_link_libraries(userSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
-
-    enable_testing()
 
     gtest_discover_tests(userSpringAgent)
 else()
