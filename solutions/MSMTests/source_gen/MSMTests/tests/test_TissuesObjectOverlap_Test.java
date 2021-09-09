@@ -62,32 +62,32 @@ public class test_TissuesObjectOverlap_Test extends BaseTransformationTest {
     public void test_NodeTissueOverlapsWithAnotherCheck4110814406055051538() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055050591");
       SNode operation = getRealNodeById("4110814406055051538");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
     public void test_NodeTissueOverlapsWithAnotherCheck4110814406055051567() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055050866");
       SNode operation = getRealNodeById("4110814406055051567");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
     public void test_NodeTissueOverlapsWithAnotherCheck4110814406055079979() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055051608");
       SNode operation = getRealNodeById("4110814406055079979");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
     public void test_NodeTissueOverlapsWithAnotherCheck4110814406055080002() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055079522");
       SNode operation = getRealNodeById("4110814406055080002");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470114194"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
     public void test_NodeThisCellOverlapsWithAnotherCheck4110814406055050375() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055049122");
       SNode operation = getRealNodeById("4110814406055050375");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470112435"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470112435"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
     public void test_NodeThisCellOverlapsWithAnotherCheck4110814406055049790() throws Exception {
       SNode nodeToCheck = getRealNodeById("4110814406055049549");
       SNode operation = getRealNodeById("4110814406055049790");
-      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueSetup.typesystem)", "4122658121470112435"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
+      new CheckExpectedMessageRunnable.CheckExpectedRuleMessageRunnable(nodeToCheck, MessageStatus.ERROR, new SNodePointer("r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "4122658121470112435"), "", myProject.getRepository(), ((ProjectBase) myProject).getPlatform()).run();
     }
 
   }

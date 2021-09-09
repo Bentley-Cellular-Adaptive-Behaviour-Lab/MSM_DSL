@@ -2,32 +2,51 @@
 <model ref="r:7b4cd740-6f22-4ecb-8254-3ba785724d9e(MSMSimulation.user_simulation)">
   <persistence version="9" />
   <languages>
-    <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup" version="0" />
-    <use id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldSetup" version="0" />
+    <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
+    <use id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang" version="0" />
     <use id="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3" name="SimulationSettings" version="0" />
-    <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup" version="0" />
-    <use id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="Units" version="0" />
+    <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang" version="0" />
+    <use id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="UnitLang" version="0" />
     <use id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base" version="3" />
     <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
     <use id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout" version="0" />
     <use id="309e0004-4976-4416-b947-ec02ae4ecef2" name="com.mbeddr.mpsutil.modellisteners" version="0" />
+    <use id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang" version="0" />
   </languages>
   <imports>
-    <import index="lzpr" ref="r:16328b40-52c8-4e87-ac39-18b554bff87d(SpeciesSetup.listeners)" />
+    <import index="lzpr" ref="r:16328b40-52c8-4e87-ac39-18b554bff87d(SpeciesLang.listeners)" />
     <import index="slod" ref="r:0fac2319-607e-4342-a163-7b982bbd957e(com.mbeddr.mpsutil.modellisteners.runtime)" />
   </imports>
   <registry>
-    <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldSetup">
-      <concept id="3416854989769421750" name="WorldSetup.structure.Adhesiveness" flags="ng" index="2_kiwO">
+    <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
+      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
+        <child id="976479957056291978" name="protrusions" index="3Bb2fi" />
+        <child id="976479957056308507" name="cytoskeletalProteins" index="3Bb693" />
+      </concept>
+      <concept id="976479957056290939" name="ShapeLang.structure.Protrusion" flags="ng" index="3Bb2sz">
+        <property id="976479957056291952" name="thickness" index="3Bb2cC" />
+        <reference id="976479957056292377" name="followsEnvSpecies" index="3Bb251" />
+        <reference id="976479957056292181" name="foundOnType" index="3Bb28d" />
+        <child id="976479957056291946" name="maxLength" index="3Bb2cM" />
+        <child id="976479957056292076" name="allowedProteins" index="3Bb2eO" />
+        <child id="976479957056293749" name="sensitivity" index="3Bb2KH" />
+      </concept>
+      <concept id="976479957056291036" name="ShapeLang.structure.CytoskeletalProtein" flags="ng" index="3Bb2u4">
+        <reference id="976479957056306957" name="triggersProtrusion" index="3Bb1xl" />
+        <child id="976479957056306954" name="triggersWhen" index="3Bb1xi" />
+      </concept>
+    </language>
+    <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
+      <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
-      <concept id="5893570766194507600" name="WorldSetup.structure.Substrate_Shape_Cuboid" flags="ng" index="2Sr5gM">
+      <concept id="5893570766194507600" name="WorldLang.structure.Substrate_Shape_Cuboid" flags="ng" index="2Sr5gM">
         <child id="2483842479244859575" name="Centre" index="f4z$$" />
         <child id="4052263675728681439" name="Width" index="3oe_68" />
         <child id="4052263675728681446" name="Depth" index="3oe_6L" />
         <child id="4052263675728681442" name="Height" index="3oe_6P" />
       </concept>
-      <concept id="8343650468779203046" name="WorldSetup.structure.Grid" flags="ng" index="1yko03">
+      <concept id="8343650468779203046" name="WorldLang.structure.Grid" flags="ng" index="1yko03">
         <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
         <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
         <property id="5907682107548246398" name="Z_Size" index="3bD6NH" />
@@ -37,17 +56,18 @@
         <child id="91108499532674622" name="Adhesiveness" index="2nU_yc" />
         <child id="5907682107548062262" name="Buffer" index="3bEhY_" />
       </concept>
-      <concept id="8343650468779203043" name="WorldSetup.structure.World_Container" flags="ng" index="1yko06">
+      <concept id="8343650468779203043" name="WorldLang.structure.World_Container" flags="ng" index="1yko06">
         <reference id="7775299862363453103" name="Desired_Tissue_Container" index="3_H_MC" />
         <child id="8343650468779203044" name="grid" index="1yko01" />
         <child id="8343650468779203054" name="substrates" index="1yko0b" />
       </concept>
-      <concept id="8343650468779203058" name="WorldSetup.structure.Substrate" flags="ng" index="1yko0n">
+      <concept id="8343650468779203058" name="WorldLang.structure.Substrate" flags="ng" index="1yko0n">
         <child id="5893570766194507605" name="shape" index="2Sr5gR" />
         <child id="4052263675728673910" name="Adhesiveness" index="3oezgx" />
       </concept>
     </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
+      <concept id="7425695345928347719" name="org.iets3.core.expr.base.structure.Expression" flags="ng" index="2vmvVl" />
       <concept id="5115872837156652603" name="org.iets3.core.expr.base.structure.DivExpression" flags="ng" index="30dvO6" />
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
       <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
@@ -67,50 +87,50 @@
         <reference id="7775299862363355109" name="Desired_World_Setup" index="3_EdRy" />
       </concept>
     </language>
-    <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesSetup">
-      <concept id="1878314651098778609" name="SpeciesSetup.structure.Reaction_Reference" flags="ng" index="DdDr8">
+    <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang">
+      <concept id="1878314651098778609" name="SpeciesLang.structure.Reaction_Reference" flags="ng" index="DdDr8">
         <reference id="1878314651098778610" name="ReactionReference" index="DdDrb" />
       </concept>
-      <concept id="1155607132028676490" name="SpeciesSetup.structure.SpeciesReference" flags="ng" index="1csUcq">
+      <concept id="1155607132028676490" name="SpeciesLang.structure.SpeciesReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="Species" index="1csUcr" />
       </concept>
-      <concept id="1155607132030626610" name="SpeciesSetup.structure.SpeciesExpression" flags="ng" index="1cBA6y">
+      <concept id="1155607132030626610" name="SpeciesLang.structure.SpeciesExpression" flags="ng" index="1cBA6y">
         <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
-      <concept id="6116071663379962152" name="SpeciesSetup.structure.Regulation" flags="ng" index="1gufZI">
+      <concept id="6116071663379962152" name="SpeciesLang.structure.Regulation" flags="ng" index="1gufZI">
         <property id="7977339587325015291" name="TranscriptionDelay" index="2HBw3H" />
         <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
         <reference id="6116071663380263018" name="Target" index="1gv5qG" />
       </concept>
-      <concept id="6116071663380262908" name="SpeciesSetup.structure.Inhibits" flags="ng" index="1gv4$U" />
-      <concept id="6116071663380262909" name="SpeciesSetup.structure.Upregulates" flags="ng" index="1gv4$V" />
-      <concept id="2321914824001074115" name="SpeciesSetup.structure.RegulationReference" flags="ng" index="3rtiFT">
+      <concept id="6116071663380262908" name="SpeciesLang.structure.Inhibits" flags="ng" index="1gv4$U" />
+      <concept id="6116071663380262909" name="SpeciesLang.structure.Upregulates" flags="ng" index="1gv4$V" />
+      <concept id="2321914824001074115" name="SpeciesLang.structure.RegulationReference" flags="ng" index="3rtiFT">
         <reference id="2321914824001074116" name="target" index="3rtiFY" />
       </concept>
-      <concept id="3125878369731541730" name="SpeciesSetup.structure.ReversibleReaction" flags="ng" index="3_zqcM">
+      <concept id="3125878369731541730" name="SpeciesLang.structure.ReversibleReaction" flags="ng" index="3_zqcM">
         <reference id="7376055817164471390" name="ForwardRate" index="3JPVZL" />
         <reference id="7376055817164471388" name="ReverseRate" index="3JPVZN" />
       </concept>
-      <concept id="3125878369731540209" name="SpeciesSetup.structure.Parameter" flags="ng" index="3_zqOx">
+      <concept id="3125878369731540209" name="SpeciesLang.structure.Parameter" flags="ng" index="3_zqOx">
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
       </concept>
-      <concept id="3125878369731540210" name="SpeciesSetup.structure.Reaction_Term" flags="ng" index="3_zqOy">
+      <concept id="3125878369731540210" name="SpeciesLang.structure.Reaction_Term" flags="ng" index="3_zqOy">
         <property id="3177947373531494321" name="UsesNeighbourValue" index="1m8a7X" />
         <property id="3125878369731540211" name="Stoichiometry" index="3_zqOz" />
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
-      <concept id="3125878369731540203" name="SpeciesSetup.structure.SpeciesContainer" flags="ng" index="3_zqOV">
+      <concept id="3125878369731540203" name="SpeciesLang.structure.SpeciesContainer" flags="ng" index="3_zqOV">
         <reference id="8035241350173904356" name="Tissue_Container" index="m9Uib" />
         <child id="3125878369731540800" name="Species" index="3_zqUg" />
         <child id="3125878369731540802" name="Processes" index="3_zqUi" />
         <child id="3125878369731540805" name="Parameters" index="3_zqUl" />
       </concept>
-      <concept id="3125878369731540206" name="SpeciesSetup.structure.Reaction" flags="ng" index="3_zqOY">
+      <concept id="3125878369731540206" name="SpeciesLang.structure.Reaction" flags="ng" index="3_zqOY">
         <child id="3125878369731540217" name="Reactant_Terms" index="3_zqOD" />
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
-      <concept id="3125878369731540207" name="SpeciesSetup.structure.Species" flags="ng" index="3_zqOZ">
+      <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
         <property id="6420553392043975787" name="Transcription_Delay" index="2VbSsx" />
         <property id="3125878369731567265" name="Location" index="3_z0tL" />
         <child id="2231199800372990788" name="Max_Concentration" index="2UOkcx" />
@@ -130,20 +150,20 @@
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
-    <language id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="Units">
-      <concept id="3416854989768521319" name="Units.structure.Distance" flags="ng" index="2_hQR_">
+    <language id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="UnitLang">
+      <concept id="3416854989768521319" name="UnitLang.structure.Distance" flags="ng" index="2_hQR_">
         <child id="3416854989768522425" name="units" index="2_hQ4V" />
         <child id="3416854989768521320" name="value" index="2_hQRE" />
       </concept>
-      <concept id="3416854989768519025" name="Units.structure.Micrometre" flags="ng" index="2_hRrN" />
-      <concept id="3416854989769245876" name="Units.structure.Distance_Expression" flags="ng" index="2_n9WQ">
+      <concept id="3416854989768519025" name="UnitLang.structure.Micrometre" flags="ng" index="2_hRrN" />
+      <concept id="3416854989769245876" name="UnitLang.structure.Distance_Expression" flags="ng" index="2_n9WQ">
         <child id="3416854989769245877" name="expr" index="2_n9WR" />
       </concept>
-      <concept id="829681453102462370" name="Units.structure.Concentration_Expression" flags="ng" index="3bpmH0">
+      <concept id="829681453102462370" name="UnitLang.structure.Concentration_Expression" flags="ng" index="3bpmH0">
         <child id="7070710508215227644" name="expr" index="3lUA52" />
       </concept>
-      <concept id="829681453102462372" name="Units.structure.Micromolar" flags="ng" index="3bpmH6" />
-      <concept id="829681453102462392" name="Units.structure.Amount_Concentration" flags="ng" index="3bpmHq">
+      <concept id="829681453102462372" name="UnitLang.structure.Micromolar" flags="ng" index="3bpmH6" />
+      <concept id="829681453102462392" name="UnitLang.structure.Amount_Concentration" flags="ng" index="3bpmHq">
         <child id="7070710508215227650" name="units" index="3lUA2W" />
         <child id="7070710508215227648" name="value" index="3lUA2Y" />
       </concept>
@@ -180,36 +200,36 @@
         <child id="3253043142928125559" name="offset" index="3wpmZR" />
       </concept>
     </language>
-    <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueSetup">
-      <concept id="8255194269358657919" name="TissueSetup.structure.Tissue_Type" flags="ng" index="1apGoc">
+    <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
+      <concept id="8255194269358657919" name="TissueLang.structure.Tissue_Type" flags="ng" index="1apGoc">
         <reference id="8255194269358657920" name="cell_type" index="1apGrN" />
         <child id="4857589848835450443" name="arrangement" index="1v2cpK" />
       </concept>
-      <concept id="6249017959271690141" name="TissueSetup.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
+      <concept id="6249017959271690141" name="TissueLang.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="Width" index="2IF2Qc" />
         <child id="5171349398070263662" name="Height" index="2IF2Qe" />
       </concept>
-      <concept id="6249017959271690129" name="TissueSetup.structure.Arrangement_Cylindrical" flags="ng" index="3ZP1sC">
+      <concept id="6249017959271690129" name="TissueLang.structure.Arrangement_Cylindrical" flags="ng" index="3ZP1sC">
         <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
         <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
       </concept>
-      <concept id="6249017959271690123" name="TissueSetup.structure.Cell_Type" flags="ng" index="3ZP1sM">
+      <concept id="6249017959271690123" name="TissueLang.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
-      <concept id="6249017959271690117" name="TissueSetup.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
+      <concept id="6249017959271690117" name="TissueLang.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
         <child id="4857589848835393773" name="cell_types" index="1v2izm" />
         <child id="6249017959271690124" name="tissues" index="3ZP1sP" />
       </concept>
-      <concept id="6249017959271690119" name="TissueSetup.structure.Position" flags="ng" index="3ZP1sY">
+      <concept id="6249017959271690119" name="TissueLang.structure.Position" flags="ng" index="3ZP1sY">
         <child id="5171349398070263669" name="X_Coord" index="2IF2Ql" />
         <child id="5171349398070263671" name="Y_Coord" index="2IF2Qn" />
         <child id="5171349398070263674" name="Z_Coord" index="2IF2Qq" />
       </concept>
-      <concept id="6249017959271690118" name="TissueSetup.structure.Tissue" flags="ng" index="3ZP1sZ">
+      <concept id="6249017959271690118" name="TissueLang.structure.Tissue" flags="ng" index="3ZP1sZ">
         <reference id="4857589848835450453" name="tissue_type" index="1v2cpI" />
         <child id="6249017959271770686" name="position" index="3ZPHa7" />
       </concept>
@@ -978,6 +998,33 @@
   </node>
   <node concept="3ZP1sW" id="4Ei2F7s7sUN">
     <property role="TrG5h" value="NewTissues" />
+  </node>
+  <node concept="3Bb2si" id="Qd9PzECheZ">
+    <node concept="3Bb2u4" id="Qd9PzECkF0" role="3Bb693">
+      <property role="TrG5h" value="actin" />
+      <ref role="3Bb1xl" node="Qd9PzEChfp" resolve="filopodia" />
+      <node concept="2vmvVl" id="Qd9PzECkF1" role="3Bb1xi" />
+    </node>
+    <node concept="3Bb2sz" id="Qd9PzEChfp" role="3Bb2fi">
+      <property role="TrG5h" value="filopodia" />
+      <property role="3Bb2cC" value="2" />
+      <ref role="3Bb28d" node="6Zu6_HK$A7G" resolve="Endothelial" />
+      <ref role="3Bb251" node="6Zu6_HK$zdw" resolve="VEGF" />
+      <node concept="30bXRB" id="Qd9PzECjUc" role="3Bb2KH">
+        <property role="30bXRw" value="0.2" />
+      </node>
+      <node concept="2_hQR_" id="Qd9PzEChft" role="3Bb2cM">
+        <node concept="2_n9WQ" id="Qd9PzEChfu" role="2_hQRE">
+          <node concept="30bXRB" id="Qd9PzEChfJ" role="2_n9WR">
+            <property role="30bXRw" value="25" />
+          </node>
+        </node>
+        <node concept="2_hRrN" id="Qd9PzEChgb" role="2_hQ4V" />
+      </node>
+      <node concept="1csUcq" id="Qd9PzECjSN" role="3Bb2eO">
+        <ref role="1csUcr" node="6Zu6_HK$zj0" resolve="VEGFR" />
+      </node>
+    </node>
   </node>
 </model>
 

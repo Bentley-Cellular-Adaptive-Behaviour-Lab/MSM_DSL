@@ -12,8 +12,8 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.lang.test.runtime.TransformationTest;
 import org.junit.Assert;
-import TissueSetup.behavior.Cell__BehaviorDescriptor;
-import TissueSetup.behavior.Tissue__BehaviorDescriptor;
+import TissueLang.behavior.Cell__BehaviorDescriptor;
+import TissueLang.behavior.Tissue__BehaviorDescriptor;
 
 @MPSLaunch
 public class test_TissuesObjectBoundaries_Test extends BaseTransformationTest {

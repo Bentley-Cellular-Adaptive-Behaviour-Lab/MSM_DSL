@@ -2,11 +2,13 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/SpeciesSetup/SpeciesSetup.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/TissueSetup/TissueSetup.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/Units/Units.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/WorldSetup/WorldSetup.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/TestLang/TestLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" folder="" />
     </projectModules>

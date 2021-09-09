@@ -25,8 +25,8 @@
       </facets>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)</dependency>
-        <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)</dependency>
+        <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
+        <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
@@ -53,8 +53,8 @@
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" version="0" />
         <module reference="78d12d86-abfe-4072-94e4-6d25efc82118(SimulationSettings.generator)" version="0" />
-        <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" version="0" />
-        <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" version="0" />
+        <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
+        <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
       </dependencyVersions>
       <mapping-priorities />
@@ -63,7 +63,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
-    <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)</dependency>
+    <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="11" />
@@ -86,7 +86,7 @@
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3(SimulationSettings)" version="0" />
-    <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldSetup)" version="0" />
+    <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)" version="0" />
     <module reference="4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
     <module reference="a9e4c532-c5f5-4bb7-99ef-42abb73bbb70(jetbrains.mps.lang.descriptor.aspects)" version="0" />

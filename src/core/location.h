@@ -18,21 +18,22 @@ class Location {
     /// Buffer type.
     int m_oldType;
 
-    MedAgent* med;
-    Env * Eid;
+    MedAgent* m_med;
+    Env* m_Eid;
 
     ///cell body memAgent identifiers
-    std::vector <MemAgent *> Mids;
+    std::vector<MemAgent*> m_Mids;
     ///filopodia memAgent identifiers
-    std::vector <MemAgent *> Fids;
+    std::vector<MemAgent*> m_Fids;
+
 public:
     Location();
 
-    std::vector<MemAgent*>& getMids();
-    std::vector<MemAgent*>& getFids();
+    std::vector<MemAgent*> getMids();
+    std::vector<MemAgent*> getFids();
 
-    void setMids(std::vector<MemAgent*>& mids);
-    void setFids(std::vector<MemAgent*>& fids);
+    void setMids(std::vector<MemAgent*>* mids);
+    void setFids(std::vector<MemAgent*>* fids);
 
     void addMemAgent(MemAgent* memAgent);
     void addFilAgent(MemAgent* memAgent);

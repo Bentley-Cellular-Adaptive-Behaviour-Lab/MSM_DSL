@@ -16,6 +16,7 @@ class Coordinates;
 class EC;
 class Env;
 class Filopodia;
+class Location;
 class MedAgent;
 class Spring;
 class Protein;
@@ -155,12 +156,11 @@ public:
     float getPreviousZ();
 
     // Checking and updating of neighbouring location objects.
-    void updateNeighbourLocations();
-    std::array<Location*, 26>& getNeighbourLocations();
-    void setNeighbourLocations(std::array<Location*, 26> &arr);
-    std::array<Location*, 26>& calcNeighbourLocations();
+    std::array<Location*, 26> getNeighbourLocations();
+    void setNeighbourLocations(std::array<Location*, 26> *arr);
+    void calcNeighbourLocations();
     Location* getStoredLocation(int index);
-    void setStoredLocation(Location& location,int index);
+    void setStoredLocation(Location* location, int index);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

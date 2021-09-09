@@ -1545,7 +1545,8 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
     mediumNeighs = 0;
     //--------------
 
-    this->updateNeighbourLocations();
+    // Calculate and set neighbour locations
+    this->calcNeighbourLocations();
 
     for (auto *location : this->getNeighbourLocations()) {
         // Checks that the location is not out of bounds or null.
@@ -3700,22 +3701,12 @@ float MemAgent::getPreviousZ() {
     return this->m_previous_z;
 }
 
-
-void MemAgent::updateNeighbourLocations(std::array<Location*, 26> &arr) {
-    for (int i = 0; i < 26; i++) {
-        this->set
-    }
+void MemAgent::setNeighbourLocations(std::array<Location*, 26> *arr) {
+    this->m_stored_locations = *arr;
 }
 
-std::array<Location*, 26>& MemAgent::getNeighbourLocations() {
-    return this->m_stored_locations;
-}
-
-void MemAgent::setNeighbourLocations(std::array<Location*, 26> &arr) {
-    this->m_stored_locations = arr;
-}
-
-std::array<Location*, 26>& MemAgent::calcNeighbourLocations() {
+void MemAgent::calcNeighbourLocations() {
+    // Calculates and sets the locations of neighbouring environment objects.
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
@@ -3857,13 +3848,13 @@ std::array<Location*, 26>& MemAgent::calcNeighbourLocations() {
             relevant_locations[x]->setType(-1);
         }
     }
-
+    this->setNeighbourLocations(&relevant_locations);
 }
 
 Location* MemAgent::getStoredLocation(int index) {
     return this->m_stored_locations.at(index);
 }
 
-void MemAgent::setStoredLocation(Location& location, int index) {
+void MemAgent::setStoredLocation(Location *location, int index) {
     this->m_stored_locations[index] = location;
 }
