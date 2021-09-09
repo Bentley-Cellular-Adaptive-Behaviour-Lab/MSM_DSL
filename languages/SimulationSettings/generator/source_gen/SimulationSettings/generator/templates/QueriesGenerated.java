@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor;
+import TissueLang.behavior.Tissue_And_Cell_Container__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SEnumerationLiteral;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;

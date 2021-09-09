@@ -1802,9 +1802,6 @@ void World::updateMemAgents() {
 				memp->store_previous_triangle_pos();
 			}
 
-            // Determine which location objects the memAgent shares its Moore neighbourhood with.
-            memp->updateNeighbourLocations();
-
 			memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours

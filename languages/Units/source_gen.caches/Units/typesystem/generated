@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="25sza2xtnh3fxlcpw5gia0txbzebixv">
-  <files names="TypesystemDescriptor.java:check_AmountConcentrationValue_NonTypesystemRule.java:check_AreaValue_NonTypesystemRule.java:check_MassConcentrationValue_NonTypesystemRule.java:check_MassValue_NonTypesystemRule.java:check_VolumeValue_NonTypesystemRule.java:typeof_Amount_Concentration_InferenceRule.java:typeof_Amount_InferenceRule.java:typeof_Area_InferenceRule.java:typeof_Distance_InferenceRule.java:typeof_Mass_Concentration_InferenceRule.java:typeof_Mass_InferenceRule.java:typeof_Volume_InferenceRule.java" />
-</product>
-

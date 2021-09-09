@@ -12,7 +12,7 @@
   </facets>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)</dependency>
+    <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3:SimulationSettings" version="0" />
@@ -54,7 +54,7 @@
     <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="c57535e2-aa86-44ba-a3f3-9317718a570a(MSMTests)" version="0" />
-    <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueSetup)" version="0" />
+    <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
     <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
   </dependencyVersions>
 </solution>

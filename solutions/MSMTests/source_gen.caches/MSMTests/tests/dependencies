@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="MSMTests.tests.test_CellNumber_Test">
-    <classNode dependClassName="TissueSetup.behavior.Tissue_And_Cell_Container__BehaviorDescriptor" />
+    <classNode dependClassName="TissueLang.behavior.Tissue_And_Cell_Container__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -24,8 +24,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="MSMTests.tests.test_TissueProperties_Test">
-    <classNode dependClassName="TissueSetup.behavior.Arrangement_Cylindrical__BehaviorDescriptor" />
-    <classNode dependClassName="TissueSetup.behavior.Arrangement__BehaviorDescriptor" />
+    <classNode dependClassName="TissueLang.behavior.Arrangement_Cylindrical__BehaviorDescriptor" />
+    <classNode dependClassName="TissueLang.behavior.Arrangement__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
@@ -46,8 +46,8 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
   <dependency className="MSMTests.tests.test_TissuesObjectBoundaries_Test">
-    <classNode dependClassName="TissueSetup.behavior.Cell__BehaviorDescriptor" />
-    <classNode dependClassName="TissueSetup.behavior.Tissue__BehaviorDescriptor" />
+    <classNode dependClassName="TissueLang.behavior.Cell__BehaviorDescriptor" />
+    <classNode dependClassName="TissueLang.behavior.Tissue__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />

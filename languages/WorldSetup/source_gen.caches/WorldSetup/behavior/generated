@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="4sfda4in0z5jau54i7vdh4imy6josa1">
-  <files names="Adhesiveness__BehaviorDescriptor.java:BehaviorAspectDescriptor.java:Gradient_Shape_Cuboidal__BehaviorDescriptor.java:Gradient_Shape_Point__BehaviorDescriptor.java:Gradient_Shape_SinkAndSource__BehaviorDescriptor.java:Gradient_Type__BehaviorDescriptor.java:Grid__BehaviorDescriptor.java:Sink__BehaviorDescriptor.java:Source__BehaviorDescriptor.java:Substrate_Shape_Cuboid__BehaviorDescriptor.java:Substrate_Shape_Triangular__BehaviorDescriptor.java:Substrate__BehaviorDescriptor.java:Vertex__BehaviorDescriptor.java:World_Container__BehaviorDescriptor.java" />
-</product>
-
