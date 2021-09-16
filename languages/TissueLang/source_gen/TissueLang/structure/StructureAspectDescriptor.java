@@ -35,8 +35,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   @Override
   public void reportDependencies(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.Dependencies deps) {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
-    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
-    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesSetup");
+    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "UnitLang");
+    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesLang");
   }
 
   @Override

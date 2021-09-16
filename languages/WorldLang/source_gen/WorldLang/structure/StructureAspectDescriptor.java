@@ -54,9 +54,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, "org.iets3.core.expr.base");
     deps.aggregatedLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage");
-    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesSetup");
-    deps.aggregatedLanguage(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, "TissueSetup");
-    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
+    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesLang");
+    deps.aggregatedLanguage(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, "TissueLang");
+    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "UnitLang");
   }
 
   @Override

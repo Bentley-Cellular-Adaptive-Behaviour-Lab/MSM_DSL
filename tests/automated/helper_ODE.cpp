@@ -1043,6 +1043,7 @@ void NotchPathwayTest::setupCells() {
         }
     }
 }
+
 void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
     notch_memAgent_ode_states current_states;
     notch_memAgent_ode_states new_states;
@@ -1203,15 +1204,17 @@ void TranscriptionDelayTest::runCellODEs(EC *ec) {
 
     // Get levels for this timestep for source proteins.
     // Use future levels for target proteins.
-    current_states[0] = ec->get_cell_protein_level("A",0);
+    current_states[0] = ec->get_cell_protein_level("A",0); // <- Get this timesteps level.
     current_states[1] = ec->get_cell_protein_level("B",0);
     current_states[2] = ec->get_cell_protein_level("C", 0);
-    current_states[3] = ec->get_cell_protein_level("D", 4);
+    current_states[3] = ec->get_cell_protein_level("D", 4); // <- Access level four timesteps in the future(?).
 
+    // Do ODES
     stepper.do_step(TranscriptionDelayTest_system, current_states, 0.0, new_states, 1);
 
-    ec->set_cell_protein_level("C", new_states[2],1);
-    ec->set_cell_protein_level("D", new_states[3],5);
+    // Set future levels of protein based on results of ODEs.
+    ec->set_cell_protein_level("C", new_states[2],1); // <- Change the level for the next timestep.
+    ec->set_cell_protein_level("D", new_states[3],5); // <- Access level five timesteps in the future.
 }
 
 void TranscriptionDelayTest::TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t) {

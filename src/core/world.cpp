@@ -162,7 +162,7 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
 World::World()
 {
     std::cout << "Creating world..." << std::endl;
-    if (TESTING == true)
+    if (TESTING)
     {
         srand(100);
     }

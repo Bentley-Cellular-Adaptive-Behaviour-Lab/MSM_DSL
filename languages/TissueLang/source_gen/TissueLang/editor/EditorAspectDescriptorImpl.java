@@ -32,14 +32,16 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
       case 3:
         return Collections.<ConceptEditor>singletonList(new Cell_Type_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new Position_Editor());
+        return Collections.<ConceptEditor>singletonList(new Cell_Type_Reference_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new Shape_Rectangular_Editor());
+        return Collections.<ConceptEditor>singletonList(new Position_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new Tissue_Editor());
+        return Collections.<ConceptEditor>singletonList(new Shape_Rectangular_Editor());
       case 7:
-        return Arrays.asList(new ConceptEditor[]{new Tissue_And_Cell_Container_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_Editor()});
+        return Collections.<ConceptEditor>singletonList(new Tissue_Editor());
       case 8:
+        return Arrays.asList(new ConceptEditor[]{new Tissue_And_Cell_Container_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b2a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b4a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b6a_Editor(), new Tissue_And_Cell_Container_tooltipHint_hccigz_b8a_Editor()});
+      case 9:
         return Collections.<ConceptEditor>singletonList(new Tissue_Type_Editor());
       default:
     }
@@ -68,6 +70,6 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
     return Collections.<SubstituteMenu>emptyList();
   }
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef91L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9cL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef87L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef9dL), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef85L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
   private static final ConceptSwitchIndex conceptIndex1 = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef86L), MetaIdFactory.conceptId(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL)).seal();
 }

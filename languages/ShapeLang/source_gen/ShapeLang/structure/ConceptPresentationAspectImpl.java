@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private ConceptPresentation props_CytoskeletalProtein;
   private ConceptPresentation props_Protrusion;
+  private ConceptPresentation props_ProtrusionReference;
+  private ConceptPresentation props_SensitivityExpression;
   private ConceptPresentation props_ShapeContainer;
   private ConceptPresentation props_Shuffling;
 
@@ -33,6 +35,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Protrusion = cpb.create();
         }
         return props_Protrusion;
+      case LanguageConceptSwitch.ProtrusionReference:
+        if (props_ProtrusionReference == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.presentationByReference(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0x2bcf88441a902404L, 0x2bcf88441a902420L, "target", "", "");
+          props_ProtrusionReference = cpb.create();
+        }
+        return props_ProtrusionReference;
+      case LanguageConceptSwitch.SensitivityExpression:
+        if (props_SensitivityExpression == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("SensitivityExpression");
+          props_SensitivityExpression = cpb.create();
+        }
+        return props_SensitivityExpression;
       case LanguageConceptSwitch.ShapeContainer:
         if (props_ShapeContainer == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

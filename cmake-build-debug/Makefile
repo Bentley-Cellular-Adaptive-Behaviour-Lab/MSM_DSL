@@ -31,9 +31,6 @@ default_target: all
 
 .SUFFIXES: .hpux_make_needs_suffix_list
 
-# Produce verbose output by default.
-VERBOSE = 1
-
 # Command-line flag to silence nested $(MAKE).
 $(VERBOSE)MAKESILENT = -s
 
@@ -501,30 +498,6 @@ src/core/macrophage.s: src/core/macrophage.cpp.s
 src/core/macrophage.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/core/macrophage.cpp.s
 .PHONY : src/core/macrophage.cpp.s
-
-src/core/main.obj: src/core/main.cpp.obj
-.PHONY : src/core/main.obj
-
-# target to build an object file
-src/core/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/core/main.cpp.obj
-.PHONY : src/core/main.cpp.obj
-
-src/core/main.i: src/core/main.cpp.i
-.PHONY : src/core/main.i
-
-# target to preprocess a source file
-src/core/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/core/main.cpp.i
-.PHONY : src/core/main.cpp.i
-
-src/core/main.s: src/core/main.cpp.s
-.PHONY : src/core/main.s
-
-# target to generate assembly for a file
-src/core/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/src/core/main.cpp.s
-.PHONY : src/core/main.cpp.s
 
 src/core/medAgent.obj: src/core/medAgent.cpp.obj
 .PHONY : src/core/medAgent.obj
@@ -1030,6 +1003,54 @@ tests/automated/helper_ODE.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/helper_ODE.cpp.s
 .PHONY : tests/automated/helper_ODE.cpp.s
 
+tests/automated/test_ODE.obj: tests/automated/test_ODE.cpp.obj
+.PHONY : tests/automated/test_ODE.obj
+
+# target to build an object file
+tests/automated/test_ODE.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.obj
+.PHONY : tests/automated/test_ODE.cpp.obj
+
+tests/automated/test_ODE.i: tests/automated/test_ODE.cpp.i
+.PHONY : tests/automated/test_ODE.i
+
+# target to preprocess a source file
+tests/automated/test_ODE.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.i
+.PHONY : tests/automated/test_ODE.cpp.i
+
+tests/automated/test_ODE.s: tests/automated/test_ODE.cpp.s
+.PHONY : tests/automated/test_ODE.s
+
+# target to generate assembly for a file
+tests/automated/test_ODE.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_ODE.cpp.s
+.PHONY : tests/automated/test_ODE.cpp.s
+
+tests/automated/test_setup.obj: tests/automated/test_setup.cpp.obj
+.PHONY : tests/automated/test_setup.obj
+
+# target to build an object file
+tests/automated/test_setup.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.obj
+.PHONY : tests/automated/test_setup.cpp.obj
+
+tests/automated/test_setup.i: tests/automated/test_setup.cpp.i
+.PHONY : tests/automated/test_setup.i
+
+# target to preprocess a source file
+tests/automated/test_setup.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.i
+.PHONY : tests/automated/test_setup.cpp.i
+
+tests/automated/test_setup.s: tests/automated/test_setup.cpp.s
+.PHONY : tests/automated/test_setup.s
+
+# target to generate assembly for a file
+tests/automated/test_setup.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\autoSpringAgent.dir\build.make CMakeFiles/autoSpringAgent.dir/tests/automated/test_setup.cpp.s
+.PHONY : tests/automated/test_setup.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -1081,9 +1102,6 @@ help:
 	@echo ... src/core/macrophage.obj
 	@echo ... src/core/macrophage.i
 	@echo ... src/core/macrophage.s
-	@echo ... src/core/main.obj
-	@echo ... src/core/main.i
-	@echo ... src/core/main.s
 	@echo ... src/core/medAgent.obj
 	@echo ... src/core/medAgent.i
 	@echo ... src/core/medAgent.s
@@ -1147,6 +1165,12 @@ help:
 	@echo ... tests/automated/helper_ODE.obj
 	@echo ... tests/automated/helper_ODE.i
 	@echo ... tests/automated/helper_ODE.s
+	@echo ... tests/automated/test_ODE.obj
+	@echo ... tests/automated/test_ODE.i
+	@echo ... tests/automated/test_ODE.s
+	@echo ... tests/automated/test_setup.obj
+	@echo ... tests/automated/test_setup.i
+	@echo ... tests/automated/test_setup.s
 .PHONY : help
 
 

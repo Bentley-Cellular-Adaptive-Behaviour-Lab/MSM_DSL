@@ -250,6 +250,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForConcentration() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("UnitLang", "Concentration", 0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L);
     b.class_(false, true, false);
+    b.super_("org.iets3.core.expr.base.structure.Expression", 0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L);
     b.origin("r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)/829681453102462393");
     b.version(2);
     return b.create();
