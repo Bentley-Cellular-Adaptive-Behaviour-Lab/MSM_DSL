@@ -218,6 +218,9 @@ TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
 }
 
 TEST_F(NotchPathwayTest, NotchPathwayTest) {
+    // Have multiple test scenarios.
+    // Check on off patterning in a series of cells.
+    // Maybe only check qualitative behaviours?
     printCellProteinLevels(0);
     for (int i = 1; i < 10; i++) {
 

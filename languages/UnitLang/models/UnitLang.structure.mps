@@ -309,7 +309,7 @@
     <property role="TrG5h" value="Concentration" />
     <property role="3GE5qa" value="Concentration" />
     <property role="R5$K7" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="I3BIb0TJmV">
     <property role="EcuMT" value="829681453102462395" />

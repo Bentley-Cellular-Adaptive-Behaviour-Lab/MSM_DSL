@@ -53,7 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     deps.extendedLanguage(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, "org.iets3.core.expr.base");
     deps.extendedLanguage(0x6fadc44e69c24a4aL, 0x9d167ebf5f8d3ba0L, "org.iets3.core.expr.math");
     deps.aggregatedLanguage(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, "org.iets3.core.expr.base");
-    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "Units");
+    deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "UnitLang");
   }
 
   @Override

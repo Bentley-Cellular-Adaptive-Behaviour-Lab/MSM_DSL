@@ -5,7 +5,7 @@
 		<Option title="tests/automated/autoSpringAgent"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\googletest-src\;CMake Files\cmake-build-debug\_deps\googletest-src\googlemock\;CMake Files\cmake-build-debug\_deps\googletest-src\googlemock\cmake\;CMake Files\cmake-build-debug\_deps\googletest-src\googletest\;CMake Files\cmake-build-debug\_deps\googletest-src\googletest\cmake\;CMake Files\tests\;CMake Files\tests\automated\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\googletest-src\;CMake Files\cmake-build-debug\_deps\googletest-src\googlemock\;CMake Files\cmake-build-debug\_deps\googletest-src\googlemock\cmake\;CMake Files\cmake-build-debug\_deps\googletest-src\googletest\;CMake Files\cmake-build-debug\_deps\googletest-src\googletest\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug"/>
@@ -434,9 +434,6 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/macrophage.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/main.cpp">
-			<Option target="autoSpringAgent"/>
-		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/medAgent.cpp">
 			<Option target="autoSpringAgent"/>
 		</Unit>
@@ -560,6 +557,12 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/helper_ODE.h">
 			<Option target="autoSpringAgent"/>
 		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/test_ODE.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/test_setup.cpp">
+			<Option target="autoSpringAgent"/>
+		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
@@ -589,12 +592,6 @@
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-src/googletest/cmake/internal_utils.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\googletest-src\googletest\cmake\"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/test_ODE.cpp">
-			<Option virtualFolder="CMake Files\tests\automated\"/>
-		</Unit>
-		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/tests/automated/test_setup.cpp">
-			<Option virtualFolder="CMake Files\tests\automated\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

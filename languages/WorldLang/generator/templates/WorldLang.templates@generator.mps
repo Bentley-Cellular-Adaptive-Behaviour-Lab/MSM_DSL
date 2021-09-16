@@ -202,15 +202,33 @@
     <node concept="356WMU" id="cUvw_H2BuK" role="356KY_">
       <node concept="356sEK" id="cUvw_H2BuL" role="383Ya9">
         <node concept="356sEF" id="cUvw_H2BuM" role="356sEH">
-          <property role="TrG5h" value="#include &quot;world.h&quot;" />
+          <property role="TrG5h" value="#include &quot;core/coordinates.h&quot;" />
         </node>
         <node concept="2EixSi" id="cUvw_H2BuO" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="2D6O8IwVDFF" role="383Ya9">
+        <node concept="2EixSi" id="2D6O8IwVDFH" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="6NuB5Y81mX" role="383Ya9">
         <node concept="356sEF" id="6NuB5Y81mY" role="356sEH">
-          <property role="TrG5h" value="#include &quot;protein.h&quot;" />
+          <property role="TrG5h" value="#include &quot;dsl/utils/shape.h&quot;" />
         </node>
         <node concept="2EixSi" id="6NuB5Y81mZ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2D6O8IwVYse" role="383Ya9">
+        <node concept="2EixSi" id="2D6O8IwVYsg" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2D6O8IwVKom" role="383Ya9">
+        <node concept="356sEF" id="2D6O8IwVKon" role="356sEH">
+          <property role="TrG5h" value="#include &quot;dsl/world/substrate.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="2D6O8IwVKoo" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="2D6O8IwVR5s" role="383Ya9">
+        <node concept="356sEF" id="2D6O8IwVR5t" role="356sEH">
+          <property role="TrG5h" value="#include &quot;dsl/world/worldContainer.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="2D6O8IwVR5u" role="2EinRH" />
       </node>
       <node concept="356sEK" id="cUvw_H2BuP" role="383Ya9">
         <node concept="2EixSi" id="cUvw_H2BuS" role="2EinRH" />

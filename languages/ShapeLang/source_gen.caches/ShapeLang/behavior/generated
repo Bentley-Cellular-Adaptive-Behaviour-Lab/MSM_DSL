@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="8tkc9605a2p55ecpiqedlhzx5x496y8" />
+<product version="3" modelHash="7ema90j6gm0d3hu6qq6vxutgiohk8mj">
+  <files names="BehaviorAspectDescriptor.java:CytoskeletalProtein__BehaviorDescriptor.java:SensitivityExpression__BehaviorDescriptor.java" />
+</product>
 

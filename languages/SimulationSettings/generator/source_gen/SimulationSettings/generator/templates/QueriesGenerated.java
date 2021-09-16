@@ -61,51 +61,63 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_10(final PropertyMacroContext _context) {
-    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
-    if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
-      return "true";
-    } else {
-      return "false";
-    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
-    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
-    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
-      return "bistability";
-    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
-      return "time_to_pattern";
-    } else {
-      return "no_analysis";
-    }
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc), LINKS.Species_Container$u7EZ), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
+    return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
+  }
+  public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
     SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
     if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
       return "true";
     } else {
       return "false";
-    }
-  }
-  public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
-    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
-      return "bistability";
-    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
-      return "time_to_pattern";
-    } else {
-      return "no_analysis";
     }
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
+    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
+      return "bistability";
+    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
+      return "time_to_pattern";
+    } else {
+      return "no_analysis";
+    }
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+  }
+  public static Object propertyMacro_GetValue_1_18(final PropertyMacroContext _context) {
+    SEnumerationLiteral graphics_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Graphics_Option$D56S);
+    if (graphics_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e508056L, "SimulationSettings.structure.Graphics_Type"), 0x6be76a078e508058L, "Graphics_On")) {
+      return "true";
+    } else {
+      return "false";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_19(final PropertyMacroContext _context) {
+    SEnumerationLiteral analysis_option = SPropertyOperations.getEnum(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Analysis_Type$CZ0u);
+    if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7f8L, "Bistability")) {
+      return "bistability";
+    } else if (analysis_option == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0xe9f0394c0fe54206L, 0xb9d12af2fb5f41f3L, 0x6be76a078e4fb7f6L, "SimulationSettings.structure.Analysis_Type"), 0x6be76a078e4fb7fbL, "Patterning")) {
+      return "time_to_pattern";
+    } else {
+      return "no_analysis";
+    }
+  }
+  public static Object propertyMacro_GetValue_1_20(final PropertyMacroContext _context) {
+    return String.valueOf(SPropertyOperations.getInteger(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), PROPS.Max_Time_Steps$CZuw));
+  }
+  public static Object propertyMacro_GetValue_1_21(final PropertyMacroContext _context) {
     return (String) Tissue_And_Cell_Container__BehaviorDescriptor.count_cell_number_string_id4XZPqyVOe45.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), CONCEPTS.Settings_Container$og), LINKS.Desired_World_Setup$CE85), LINKS.Desired_Tissue_Container$Tkkc));
   }
   private final Map<String, PropertyValueQuery> pvqMethods = new HashMap<String, PropertyValueQuery>();
@@ -117,6 +129,10 @@ public class QueriesGenerated extends QueryProviderBase {
     pvqMethods.put("7775299862364430403", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
     pvqMethods.put("7275998898034590068", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
     pvqMethods.put("7275998898034686885", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
+    pvqMethods.put("2605682802876517995", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_Tissue"));
+    pvqMethods.put("2605682802876518018", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
+    pvqMethods.put("2605682802876518041", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
+    pvqMethods.put("2605682802876518067", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
     pvqMethods.put("7775299862364484749", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_Tissue"));
     pvqMethods.put("7775299862364492214", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_World"));
     pvqMethods.put("7275998898035256893", new PVQ(i++, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d565d10L, 0xf93d565d11L, "value"), "dsl_species"));
@@ -181,6 +197,14 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.propertyMacro_GetValue_1_16(ctx);
         case 17:
           return QueriesGenerated.propertyMacro_GetValue_1_17(ctx);
+        case 18:
+          return QueriesGenerated.propertyMacro_GetValue_1_18(ctx);
+        case 19:
+          return QueriesGenerated.propertyMacro_GetValue_1_19(ctx);
+        case 20:
+          return QueriesGenerated.propertyMacro_GetValue_1_20(ctx);
+        case 21:
+          return QueriesGenerated.propertyMacro_GetValue_1_21(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no method for query %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }

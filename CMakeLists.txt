@@ -98,8 +98,6 @@ if(TEST_TYPE EQUAL 0)
     target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_LIBRARIES})
 elseif(TEST_TYPE EQUAL 1)
     enable_testing()
-
-    set(CMAKE_VERBOSE_MAKEFILE ON)
     message("Testing: Automated")
 
     # Get Google Test library
@@ -127,7 +125,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/hysteresis.cpp
             src/core/location.cpp
             src/core/macrophage.cpp
-            src/core/main.cpp
             src/core/medAgent.cpp
             src/core/memAgents.cpp
             src/core/ScreenRecording.cpp
@@ -147,6 +144,8 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
             tests/automated/helper_ODE.cpp
+            tests/automated/test_ODE.cpp
+            tests/automated/test_setup.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
             tests/automated/generated/dsl_world_gen.cpp)
@@ -195,7 +194,7 @@ elseif(TEST_TYPE EQUAL 1)
 
     target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
 
-    gtest_add_tests(TARGET autoSpringAgent SOURCES tests/automated/test_setup.cpp tests/automated/test_ODE.cpp TEST_LIST testList)
+    gtest_discover_tests(autoSpringAgent)
     message(Tests="${testList}")
 
 elseif(TEST_TYPE EQUAL 2)

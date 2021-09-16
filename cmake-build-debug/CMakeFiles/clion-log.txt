@@ -1,7 +1,7 @@
 C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5080.54\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL
 TEST_TYPE = 1
 Testing: Automated
-Tests="HelloTest.CheckGoogleTesttest_ODE.ODEConstantRatetest_ODE.multi_ODEConstantRatetest_ODE.ODELinearRateBasicODEMemAgentTest.environmentCheckTestBasicODEMemAgentTest.memAgentTestCrossCellODEMemAgentTest.cellODETestCrossCellODEMemAgentTest.junctionODETestMultiNeighbourODEMemAgentTest.cellODETestBasicFilODEMemAgentTest.basicFilTestBasicCellDistributionTest.preDistributionTestBasicCellDistributionTest.postDistributionTestCellJunctionTest.crossJunctionODETestTranscriptionDelayTest.transcriptionDelayTestNotchPathwayTest.NotchPathwayTest"
+Tests=""
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug

@@ -39,10 +39,10 @@ public class RunMSM {
         old_speciesSource_path = Paths.get(output_string + "\\" + "Example1_Species" + ".cpp");
         old_speciesHeader_path = Paths.get(output_string + "\\" + "Example1_Species" + "_header.h");
 
-        new_tissue_path = Paths.get(root_string + "\\src\\dsl_Tissue.cpp");
-        new_world_path = Paths.get(root_string + "\\src\\dsl_World.cpp");
-        new_speciesSource_path = Paths.get(root_string + "\\src\\ODE.cpp");
-        new_speciesHeader_path = Paths.get(root_string + "\\src\\ODE.h");
+        new_tissue_path = Paths.get(root_string + "\\src\\generated\\dsl_tissue_gen.cpp");
+        new_world_path = Paths.get(root_string + "\\src\\generated\\dsl_world_gen.cpp");
+        new_speciesSource_path = Paths.get(root_string + "\\generated\\src\\dsl_species_gen.cpp");
+        new_speciesHeader_path = Paths.get(root_string + "\\generated\\src\\dsl_species_gen.h");
 
         System.out.println("Copying tissue file " + old_tissue_path + " to " + new_tissue_path);
         System.out.println("Copying world file " + old_world_path + " to " + new_world_path);
@@ -57,6 +57,27 @@ public class RunMSM {
         break;
 
       case LINUX:
+        old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
+        old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
+        old_speciesSource_path = Paths.get(output_string + "/" + "Example1_Species" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "Example1_Species" + "_header.h");
+
+        new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
+        new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
+        new_speciesSource_path = Paths.get(root_string + "/src/generated/dsl_species_gen.cpp");
+        new_speciesHeader_path = Paths.get(root_string + "/src/generated/dsl_species_gen.h");
+
+        System.out.println("Copying tissue file " + old_tissue_path + " to " + new_tissue_path);
+        System.out.println("Copying world file " + old_world_path + " to " + new_world_path);
+        System.out.println("Copying species source file " + old_speciesSource_path + " to " + new_speciesSource_path);
+        System.out.println("Copying species header file " + old_speciesHeader_path + " to " + new_speciesHeader_path);
+
+        utils.copy_files(old_tissue_path, new_tissue_path, StandardCopyOption.REPLACE_EXISTING);
+        utils.copy_files(old_world_path, new_world_path, StandardCopyOption.REPLACE_EXISTING);
+        utils.copy_files(old_speciesSource_path, new_speciesSource_path, StandardCopyOption.REPLACE_EXISTING);
+        utils.copy_files(old_speciesHeader_path, new_speciesHeader_path, StandardCopyOption.REPLACE_EXISTING);
+
+        break;
 
       case MAC:
         old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
@@ -64,10 +85,10 @@ public class RunMSM {
         old_speciesSource_path = Paths.get(output_string + "/" + "Example1_Species" + ".cpp");
         old_speciesHeader_path = Paths.get(output_string + "/" + "Example1_Species" + "_header.h");
 
-        new_tissue_path = Paths.get(root_string + "/src/dsl_Tissue.cpp");
-        new_world_path = Paths.get(root_string + "/src/dsl_World.cpp");
-        new_speciesSource_path = Paths.get(root_string + "/src/ODE.cpp");
-        new_speciesHeader_path = Paths.get(root_string + "/src/ODE.h");
+        new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
+        new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
+        new_speciesSource_path = Paths.get(root_string + "/src/generated/dsl_species_gen.cpp");
+        new_speciesHeader_path = Paths.get(root_string + "/src/generated/dsl_species_gen.h");
 
         System.out.println("Copying tissue file " + old_tissue_path + " to " + new_tissue_path);
         System.out.println("Copying world file " + old_world_path + " to " + new_world_path);

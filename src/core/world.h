@@ -90,7 +90,6 @@ public:
     void movieMaking(int movie);
     bool delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp); ///within memAgent update, doesnt reassess a spring agent if is scheduled for deletion, given asynchronous agent updates this must be checked first
 
-
     ///initialisation functions
     World();
     void createAgents(void);

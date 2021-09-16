@@ -59,8 +59,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "_deps/googletest-src/googletest/cmake/gtest.pc.in"
   "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
   "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
-  "../tests/automated/test_ODE.cpp"
-  "../tests/automated/test_setup.cpp"
   )
 
 # The corresponding makefile is:

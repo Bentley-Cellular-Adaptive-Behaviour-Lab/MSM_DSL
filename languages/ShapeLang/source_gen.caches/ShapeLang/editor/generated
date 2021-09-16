@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="1w71qqqbux0u76o4jiahyawcujsriwp" />
+<product version="3" modelHash="317z23sb6ym5vd08t54tygq3api004f">
+  <files names="CytoskeletalProtein_Editor.java:CytoskeletalProtein_EditorBuilder_a.java:EditorAspectDescriptorImpl.java:ProtrusionReference_Editor.java:ProtrusionReference_EditorBuilder_a.java:ProtrusionReference_SubstituteMenu.java:Protrusion_Editor.java:Protrusion_EditorBuilder_a.java:SensitivityExpression_Editor.java:SensitivityExpression_EditorBuilder_a.java:ShapeContainer_Editor.java:ShapeContainer_EditorBuilder_a.java" />
+</product>
 
