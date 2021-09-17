@@ -19,152 +19,32 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Tests working. 😁">
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/CytoskeletalProtein__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/SensitivityExpression__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/Protrusion_Constraints.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/CytoskeletalProtein_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/ProtrusionReference_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/ProtrusionReference_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/ProtrusionReference_SubstituteMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/Protrusion_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/Protrusion_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/SensitivityExpression_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/SensitivityExpression_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/ShapeContainer_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/ShapeContainer_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/check_ValidSensitivity_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/check_ValidThickness_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TestLang/generator/source_gen/TestLang/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/Cell_Type_Reference_Editor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/Cell_Type_Reference_EditorBuilder_a.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/UnitLang/generator/source_gen.caches/UnitLang/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/UnitLang/generator/source_gen.caches/UnitLang/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/UnitLang/generator/source_gen/UnitLang/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/UnitLang/generator/source_gen/UnitLang/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/dependencies" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/generated" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/trace.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species_header.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Parameterising Notch Test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/Shape/generator/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/Shape/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/Shape/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/Shape/generator/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/constraints/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/constraints/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/constraints/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/constraints/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/Language.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/Language.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/ConstraintsAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/ConstraintsAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/constraints/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$LINKS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PROPS.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated$PVQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/QueriesGenerated.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/classes_gen/SimulationSettings/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen/SimulationSettings/generator/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/generator/source_gen.caches/Tests/generator/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/generator/source_gen.caches/TestLang/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/generator/source_gen.caches/Tests/generator/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/generator/source_gen.caches/TestLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/generator/source_gen/Tests/generator/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/generator/source_gen/TestLang/Generator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/generator/source_gen/Tests/generator/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen.caches/TissueLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/source_gen/WorldLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/source_gen/WorldLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM$utils$operating_system.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM$utils$operating_system.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM$utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM$utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/RunMSM.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/classes_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/RunMSM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/species/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/species/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_setup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_setup.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +107,7 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CTest Application.TestTranscriptionDelay">
+  <component name="RunManager" selected="CTest Application.TestBasicNotchPathway">
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -250,11 +130,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -289,6 +164,12 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestBasicNotchPathway" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_METHOD="NotchPathwayTest.NotchPathwayTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestGoogleTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_METHOD="HelloTest.CheckGoogleTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -299,6 +180,11 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="DebugMPS" type="Remote">
@@ -320,6 +206,7 @@
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CTest Application.TestGoogleTest" />
+      <item itemvalue="CTest Application.TestBasicNotchPathway" />
       <item itemvalue="CTest Application.TestTranscriptionDelay" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
@@ -422,14 +309,8 @@
       <workItem from="1631285140641" duration="3047000" />
       <workItem from="1631524792943" duration="1708000" />
       <workItem from="1631713589605" duration="2424000" />
-      <workItem from="1631782786785" duration="1681000" />
-    </task>
-    <task id="LOCAL-00010" summary="Implemented function to add proteins to a memAgent during memAgent creation.">
-      <created>1621614113643</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1621614113643</updated>
+      <workItem from="1631782786785" duration="21138000" />
+      <workItem from="1631875883249" duration="1173000" />
     </task>
     <task id="LOCAL-00011" summary="Fixed issues with code insight not working properly.">
       <created>1621861425813</created>
@@ -767,7 +648,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631190601154</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Parameterising Notch Test">
+      <created>1631784682793</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1631784682793</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -786,7 +674,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented file writing functions for logger" />
     <MESSAGE value="Added call to logger during update loop." />
     <MESSAGE value="Created utils namespace and added functions to handle string manipulation" />
     <MESSAGE value="Begun changing generators for species to match new layout." />
@@ -811,7 +698,8 @@
     <MESSAGE value="Creating world logger and moving old runsfile capabilities to that." />
     <MESSAGE value="Changing previous to be a member variable rather than a coordinate object." />
     <MESSAGE value="Tests working. " />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests working. " />
+    <MESSAGE value="Parameterising Notch Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parameterising Notch Test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -820,6 +708,31 @@
           <url>file://$PROJECT_DIR$/src/core/ScreenRecording.h</url>
           <line>6</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
+          <line>2814</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/automated/test_ODE.cpp</url>
+          <line>223</line>
+          <option name="timeStamp" value="89" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/tests/automated/helper_ODE.cpp</url>
+          <line>1052</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
+          <line>2836</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
+          <line>2966</line>
+          <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

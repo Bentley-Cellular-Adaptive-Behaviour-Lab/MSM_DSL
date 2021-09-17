@@ -306,8 +306,8 @@ void CrossCellODEMemAgentTest::runODE(MemAgent *memAgent) {
 	memAgent->set_protein_level("A", ode_states[0]);
 	memAgent->set_protein_level("C", ode_states[2]);
 
-	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false); /* Use this cell value */
-	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true); /* Use neighbour's value */
+	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false, PROTEIN_LOCATION_CELL); /* Use this cell value */
+	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true, PROTEIN_LOCATION_JUNCTION); /* Use neighbour's value */
 }
 
 void CrossCellODEMemAgentTest::CrossCellODE_system(const crossCell_ode_states &x, crossCell_ode_states &dxdt, double t) {
@@ -495,8 +495,8 @@ void MultiNeighbourODEMemAgentTest::runODE(MemAgent *memAgent) {
 	memAgent->set_protein_level("A", ode_states[0]);
 	memAgent->set_protein_level("C", ode_states[2]);
 
-	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false); /* Use this cell value */
-	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true); /* Use neighbour's value */
+	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false, PROTEIN_LOCATION_CELL); /* Use this cell value */
+	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true, PROTEIN_LOCATION_JUNCTION); /* Use neighbour's value */
 }
 
 void MultiNeighbourODEMemAgentTest::MultiAgentODE_system(const multiAgent_ode_states &x,
@@ -914,10 +914,10 @@ void CellJunctionTest::runODE(MemAgent *memAgent) {
 
 	stepper.do_step(cellJunction_system, start_ode_states, 0.0, end_ode_states, 1);
 
-	memAgent->distribute_calculated_proteins("A", end_ode_states[0], true, true);
-	memAgent->distribute_calculated_proteins("B", end_ode_states[1], false, true);
-	memAgent->distribute_calculated_proteins("AB", end_ode_states[2], true, false);
-	memAgent->distribute_calculated_proteins("C", end_ode_states[3], true, false);
+	memAgent->distribute_calculated_proteins("A", end_ode_states[0], true, true, PROTEIN_LOCATION_JUNCTION);
+	memAgent->distribute_calculated_proteins("B", end_ode_states[1], false, true, PROTEIN_LOCATION_JUNCTION);
+	memAgent->distribute_calculated_proteins("AB", end_ode_states[2], true, false, PROTEIN_LOCATION_CELL);
+	memAgent->distribute_calculated_proteins("C", end_ode_states[3], true, false, PROTEIN_LOCATION_CELL);
 }
 
 /*
@@ -1023,11 +1023,11 @@ void NotchPathwayTest::setupCells() {
     auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
     auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
 
-    basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000, 0, 10000, 1));
-    basicCellType->add_protein(new Protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000, 0, 10000, 1));
-    basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
-    basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
-    basicCellType->add_protein(new Protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 1000, 0, 10000, 1));
+    basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 10000, 690, 31740, 1));
+    basicCellType->add_protein(new Protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0, 0, 31740, 1));
+    basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 10000, 0, 100000, 1));
+    basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0, 0, 100000, 1));
+    basicCellType->add_protein(new Protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 0, 0, 100000, 1));
 
     auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
     // Create the tissue using the defined tissue container.
@@ -1049,6 +1049,10 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
     notch_memAgent_ode_states new_states;
     odeint::euler<notch_memAgent_ode_states> stepper;
 
+    if (memAgent->junction) {
+        int stop = 0;
+    }
+
     current_states[0] = memAgent->get_environment_protein_level("VEGF");
     current_states[1] = memAgent->get_local_protein_level("VEGFR");
     current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
@@ -1058,11 +1062,11 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
 
     stepper.do_step(NotchPathway_memAgent_system, current_states, 0.0, new_states, 1);
 
-    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
-    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
-    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false);
-    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true);
-    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
+    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false, PROTEIN_LOCATION_MEMBRANE);
+    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false, PROTEIN_LOCATION_MEMBRANE);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false, PROTEIN_LOCATION_JUNCTION);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true, PROTEIN_LOCATION_JUNCTION);
+    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true, PROTEIN_LOCATION_JUNCTION);
 }
 
 void NotchPathwayTest::run_Cell_ODE(EC *ec) {
@@ -1109,11 +1113,13 @@ void NotchPathwayTest::NotchPathway_cell_system(const notch_cell_ode_states &x, 
     double NOTCH = x[3];
     double VEGFR_INHIBITION_MOD = calc_VEGFR_INHIBITION_MOD_rate(NOTCH_DLL4);
     double NOTCH_UPREGULATION_MOD = calc_NOTCH_UPREGULATION_MOD_rate(VEGFR, VEGF_VEGFR);
+
     dxdt[0] = 0;
     dxdt[1] = -VEGFR_INHIBITION_MOD;
     dxdt[2] = 0;
     dxdt[3] = +NOTCH_UPREGULATION_MOD;
 }
+
 void NotchPathwayTest::printCellProteinLevels(int timestep) const {
     std::cout << timestep << ",";
     int count = 1;
@@ -1176,10 +1182,10 @@ void TranscriptionDelayTest::setupCell() {
     // Create a new Cell Type that holds some dummy values - these aren't used at any point.
     auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
     auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
-    basicCellType->add_protein(new Protein("A", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0,1));
-    basicCellType->add_protein(new Protein("B", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0,1));
-    basicCellType->add_protein(new Protein("C", PROTEIN_LOCATION_CELL, 0.0, 0.0, 100.0,1));
-    basicCellType->add_protein(new Protein("D", PROTEIN_LOCATION_CELL, 0.0, 0.0, 100.0,5));
+    basicCellType->add_protein(new Protein("A", PROTEIN_LOCATION_CELL, 100.0, 0.0, 1000.0,1));
+    basicCellType->add_protein(new Protein("B", PROTEIN_LOCATION_CELL, 100.0, 0.0, 1000.0,1));
+    basicCellType->add_protein(new Protein("C", PROTEIN_LOCATION_CELL, 0.0, 0.0, 1000.0,1));
+    basicCellType->add_protein(new Protein("D", PROTEIN_LOCATION_CELL, 0.0, 0.0, 1000.0,5));
 
     auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 1);
     // Create the tissue using the defined tissue container.

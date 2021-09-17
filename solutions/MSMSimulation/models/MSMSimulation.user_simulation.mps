@@ -246,7 +246,7 @@
   </node>
   <node concept="3_zqOV" id="Wb8DHEYwYH">
     <property role="TrG5h" value="Example1_Species" />
-    <ref role="m9Uib" node="4Ei2F7s7sUN" resolve="NewTissues" />
+    <ref role="m9Uib" node="Wb8DHEYwZu" resolve="Example1_Tissues" />
     <node concept="3_zqOx" id="6Zu6_HK$zKc" role="3_zqUl">
       <property role="TrG5h" value="VEGF_VEGFR_FORWARD" />
       <node concept="30dDTi" id="4Ei2F7s7syF" role="3_zqNk">
@@ -998,9 +998,6 @@
         </node>
       </node>
     </node>
-  </node>
-  <node concept="3ZP1sW" id="4Ei2F7s7sUN">
-    <property role="TrG5h" value="NewTissues" />
   </node>
   <node concept="3Bb2si" id="Qd9PzECheZ">
     <node concept="3Bb2sz" id="2Jfy4gq_8Yb" role="3Bb2fi">

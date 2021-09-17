@@ -36,10 +36,16 @@ float Protein::get_cell_level(int timestep_value) const {
 }
 
 void Protein::set_cell_level(float new_level, int timestep_delay) {
-    //Gets the protein value at a certain point in time.
-    // 0 = this timestep.
-    // 0+X = X timesteps in the future.
-    this->cell_levels[timestep_delay] = new_level;
+    // Gets the protein value at a certain point in time.
+    if (new_level < 0) {
+        this->cell_levels[timestep_delay] = 0;
+    } else if (new_level < this->get_min()) {
+        this->cell_levels[timestep_delay] = this->get_min();
+    } else if (new_level > this->get_max()) {
+        this->cell_levels[timestep_delay] = this->get_max();
+    } else {
+        this->cell_levels[timestep_delay] = new_level;
+    }
 }
 
 float Protein::get_memAgent_level() const {
@@ -47,7 +53,11 @@ float Protein::get_memAgent_level() const {
 }
 
 void Protein::set_memAgent_level(float new_level) {
-    this->memAgent_level = new_level;
+    if (new_level < 0) {
+        this->memAgent_level = 0;
+    } else {
+        this->memAgent_level = new_level;
+    }
 }
 std::string Protein::get_name() {
     return this->name;

@@ -2,6 +2,7 @@
 #include "core/EC.h"
 
 #include "dsl/tissue/cellType.h"
+#include "dsl/species/protein.h"
 
 #include "dsl_species_gen.h"
 
@@ -53,12 +54,11 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
 
     stepper.do_step(Endothelial_memAgent_system, current_states, 0.0, new_states, 1);
 
-    memAgent->distribute_calculated_proteins("VEGF", new_states[0], true, false);
-    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false);
-    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false);
-    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false);
-    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true);
-    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true);
+    memAgent->distribute_calculated_proteins("VEGFR", new_states[1], true, false, PROTEIN_LOCATION_MEMBRANE);
+    memAgent->distribute_calculated_proteins("VEGF_VEGFR", new_states[2], true, false, PROTEIN_LOCATION_MEMBRANE);
+    memAgent->distribute_calculated_proteins("NOTCH", new_states[3], true, false, PROTEIN_LOCATION_JUNCTION);
+    memAgent->distribute_calculated_proteins("DLL4", new_states[4], false, true, PROTEIN_LOCATION_JUNCTION);
+    memAgent->distribute_calculated_proteins("NOTCH_DLL4", new_states[5], false, true, PROTEIN_LOCATION_JUNCTION);
 }
 
 void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
