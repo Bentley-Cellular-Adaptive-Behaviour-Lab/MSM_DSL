@@ -733,13 +733,13 @@ void EC::distribute_proteins() {
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             auto current_protein = this->m_cell_type->proteins[i];
-			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					protein_counts[i]++;
 				}
 			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE)
-				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL)) {
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
+				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					protein_counts[i]++;
 				}
@@ -791,24 +791,6 @@ void EC::distribute_proteins() {
 			}
         }
     }
-
-//    for (auto surfaceAgent : this->surfaceAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            if (surfaceAgent->has_protein(current_protein->get_name())) {
-//                surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-//            }
-//        }
-//    }
-//
-//    for (auto springAgent : this->springAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            if (springAgent->has_protein(current_protein->get_name())) {
-//                springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-//            }
-//        }
-//    }
 }
 
 /*****************************************************************************************
@@ -824,11 +806,8 @@ void EC::calculate_cell_protein_levels() {
         protein_counts.push_back(0);
     }
 
-
     // Determine the new totals for each protein in the cell, by checking the levels at all memAgents that have that protein.
     for (auto nodeAgent : this->nodeAgents) {
-        //Attempt to run ODEs at this memagent.
-//        this->worldP->run_ODEs(this->m_cell_type->m_name, nodeAgent);
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             Protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
@@ -864,7 +843,7 @@ void EC::calculate_cell_protein_levels() {
 
     // Now, set the protein levels for the cell at this current timestep.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        this->m_cell_type->proteins[i]->set_cell_level(protein_counts[i],0);
+        this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],0);
     }
 }
 
@@ -986,7 +965,16 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
                 if (protein->get_name() == protein_name) {
-                    protein->set_cell_level(new_level, timestep_value);
+                    if (new_level < 0) {
+                        // Not sure if this can ever happen, but better to be safe.
+                        protein->set_cell_level(0, timestep_value);
+                    } else if (new_level < protein->get_min()) {
+                        protein->set_cell_level(protein->get_min(), timestep_value);
+                    } else if (new_level > protein->get_max()) {
+                        protein->set_cell_level(protein->get_max(), timestep_value);
+                    } else {
+                        protein->set_cell_level(new_level, timestep_value);
+                    }
                 }
             }
         } else {
@@ -1009,7 +997,6 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
 
 void EC::cycle_protein_levels() {
     for (auto *protein : this->m_cell_type->proteins) {
-        //TODO: Get this to use a value set by the protein eventually.
         // This does work with both the species and regulation delays though.
         int size = protein->cell_levels.size();
         float newProteinValue = protein->cell_levels[size - 1];

@@ -223,7 +223,6 @@ TEST_F(NotchPathwayTest, NotchPathwayTest) {
     // Maybe only check qualitative behaviours?
     printCellProteinLevels(0);
     for (int i = 1; i < 10; i++) {
-
         for (auto *ec : this->tissueMonolayer->m_cell_agents) {
             ec->distribute_proteins();
         }
@@ -246,5 +245,10 @@ TEST_F(NotchPathwayTest, NotchPathwayTest) {
 
         // Now print the new levels.
         printCellProteinLevels(i);
+
+        // Cycle the protein levels.
+        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
+            ec->cycle_protein_levels();
+        }
     }
 }

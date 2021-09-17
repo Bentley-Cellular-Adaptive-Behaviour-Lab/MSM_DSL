@@ -2361,10 +2361,8 @@ void MemAgent::set_protein_level(std::string protein_name, float new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
-        	if (new_level < protein->get_min()) {
-        		protein->set_memAgent_level(protein->get_min());
-        	} else if (new_level > protein->get_max()) {
-				protein->set_memAgent_level(protein->get_max());
+        	if (new_level < 0) {
+        		protein->set_memAgent_level(0);
         	} else {
                 protein->set_memAgent_level(new_level);
             }
@@ -2664,13 +2662,15 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
             if (worldP->grid[m][n][p].getType() == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
+                        float gottenProteinLevel = memAgent->get_memAgent_protein_level(protein_name);
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
                     }
                 }
             } else if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
-						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                        float gottenProteinLevel = memAgent->get_memAgent_protein_level(protein_name);
+                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
 					}
 				}
             }
@@ -2985,15 +2985,13 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell) {
+void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
 	int k = (int) Mz;
 
 	std::vector<MemAgent*> relevant_memAgents;
-
-	int protein_location;
 
 	for (int x = 0; x < 26; x++) {
 		// Same layer.
@@ -3104,20 +3102,23 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 			n = j;
 			p = k + 1;
 		}
-		// TODO: Tidy up these statements!
 
-        // TODO: TESTING - REMOVE
-        if (m == 19 && n == 26 && p == 25) {
-            int x = 0;
-        }
-
+        // TODO: TIDY UP THESE IF STATEMENTS.
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].getType() == const_M) {
 				for (auto memAgent : worldP->grid[m][n][p].getMids()) {
 					if (affects_this_cell) {
 						// Check for memAgents in this cell that have the protein.
 						if (memAgent->has_protein(protein_name) && this->Cell == memAgent->Cell) {
-                            relevant_memAgents.push_back(memAgent);
+                            if (memAgent->junction && protein_location == PROTEIN_LOCATION_JUNCTION) {
+                                relevant_memAgents.push_back(memAgent);
+                            }
+                            if (!memAgent->junction && protein_location == PROTEIN_LOCATION_MEMBRANE) {
+                                relevant_memAgents.push_back(memAgent);
+                            }
+                            if (!memAgent->junction && protein_location == PROTEIN_LOCATION_CELL) {
+                                relevant_memAgents.push_back(memAgent);
+                            }
 						}
 					}
 					if (affects_neighbour_cell) {

@@ -23,9 +23,9 @@ private:
     float max;
     int protein_location;
     // If this protein is at a memAgent, use this value.
-    float memAgent_level = -1;
+    float memAgent_level = 0;
     // If this protein is at an environment agent, use this value.
-    float env_level = -1;
+    float env_level = 0;
     int transcription_delay;
 public:
     // Tracks the level of a protein across multiple timesteps.

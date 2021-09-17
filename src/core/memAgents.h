@@ -145,7 +145,7 @@ public:
     void set_protein_level(std::string protein_name, float new_level);
     float get_filopodia_protein_level(std::string protein_name);
 
-	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool is_junction_protein);
+	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
 
     void setPreviousX(float previous_x);
     void setPreviousY(float previous_y);
