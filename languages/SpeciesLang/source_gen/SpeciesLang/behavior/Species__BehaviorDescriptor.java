@@ -37,8 +37,10 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Float> getMinConcentrationValue_id1VQO6m$d9Os = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMinConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$d9Os").build();
   public static final SMethod<Float> getMaxConcentrationValue_id1VQO6m$daTe = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getMaxConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("1VQO6m$daTe").build();
   public static final SMethod<Integer> getMaxTranscriptionDelay_id6UPd1r3aEsj = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMaxTranscriptionDelay").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6UPd1r3aEsj").build();
+  public static final SMethod<Boolean> usesCellValue_id3FNuJRrY91G = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesCellValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3FNuJRrY91G").build();
+  public static final SMethod<Boolean> usesNeighbourValue_id3FNuJRrYw4K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesNeighbourValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3FNuJRrYw4K").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj, usesCellValue_id3FNuJRrY91G, usesNeighbourValue_id3FNuJRrYw4K);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SPropertyOperations.assign(__thisNode__, PROPS.Transcription_Delay$D$oz, 1);
@@ -137,6 +139,73 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return max_transcription_delay;
   }
+  /*package*/ static boolean usesCellValue_id3FNuJRrY91G(@NotNull SNode __thisNode__) {
+    // Check over all reactions in the species container - if one uses this species and has the cell value set to true at any point, return true. Otherwise, return false.
+    SNode speciesContainer = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig);
+    boolean usesCellValue = false;
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(speciesContainer, LINKS.Processes$hnPe))) {
+      // If we find even one term that uses the cell value, we stop looking.
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Reaction$JH) && (boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(speciesContainer, __thisNode__, process)) {
+        SNode currentReaction = SNodeOperations.as(process, CONCEPTS.Reaction$JH);
+        for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(currentReaction, LINKS.Reactant_Terms$Wnv9))) {
+          // If it is not using the neighbour value, then it must use the cell value.
+          if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde), __thisNode__) && !(SPropertyOperations.getBoolean(reactantTerm, PROPS.UsesNeighbourValue$$pnR))) {
+            usesCellValue = true;
+            break;
+          }
+        }
+        if (usesCellValue) {
+          break;
+        }
+        for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(currentReaction, LINKS.Product_Terms$WnXb))) {
+          if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde), __thisNode__) && !(SPropertyOperations.getBoolean(productTerm, PROPS.UsesNeighbourValue$$pnR))) {
+            usesCellValue = true;
+            break;
+          }
+        }
+        if (usesCellValue) {
+          break;
+        }
+      }
+      if (usesCellValue) {
+        break;
+      }
+    }
+    return usesCellValue;
+  }
+  /*package*/ static boolean usesNeighbourValue_id3FNuJRrYw4K(@NotNull SNode __thisNode__) {
+    // Check over all reactions in the species container - if one uses this species and has the cell value set to true at any point, return true. Otherwise, return false.
+    SNode speciesContainer = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig);
+    boolean usesNeighbourValue = false;
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(speciesContainer, LINKS.Processes$hnPe))) {
+      // If we find even one term that uses the cell value, we stop looking.
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Reaction$JH) && (boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(speciesContainer, __thisNode__, process)) {
+        SNode currentReaction = SNodeOperations.as(process, CONCEPTS.Reaction$JH);
+        for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(currentReaction, LINKS.Reactant_Terms$Wnv9))) {
+          if (Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde), __thisNode__) && SPropertyOperations.getBoolean(reactantTerm, PROPS.UsesNeighbourValue$$pnR)) {
+            usesNeighbourValue = true;
+            break;
+          }
+        }
+        if (usesNeighbourValue) {
+          break;
+        }
+        for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(currentReaction, LINKS.Product_Terms$WnXb))) {
+          if (Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde), __thisNode__) && SPropertyOperations.getBoolean(productTerm, PROPS.UsesNeighbourValue$$pnR)) {
+            usesNeighbourValue = true;
+            break;
+          }
+        }
+        if (usesNeighbourValue) {
+          break;
+        }
+      }
+      if (usesNeighbourValue) {
+        break;
+      }
+    }
+    return usesNeighbourValue;
+  }
 
   /*package*/ Species__BehaviorDescriptor() {
   }
@@ -167,6 +236,10 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Float) getMaxConcentrationValue_id1VQO6m$daTe(node));
       case 5:
         return (T) ((Integer) getMaxTranscriptionDelay_id6UPd1r3aEsj(node));
+      case 6:
+        return (T) ((Boolean) usesCellValue_id3FNuJRrY91G(node));
+      case 7:
+        return (T) ((Boolean) usesNeighbourValue_id3FNuJRrYw4K(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -199,6 +272,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   private static final class PROPS {
     /*package*/ static final SProperty Transcription_Delay$D$oz = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x591a634ae235e46bL, "Transcription_Delay");
     /*package*/ static final SProperty TranscriptionDelay$L0UN = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x6eb53416c32b34fbL, "TranscriptionDelay");
+    /*package*/ static final SProperty UsesNeighbourValue$$pnR = MetaAdapterFactory.getProperty(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2c1a564c7a3af7b1L, "UsesNeighbourValue");
   }
 
   private static final class LINKS {
@@ -216,6 +290,7 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SContainmentLink Min_Concentration$RVCW = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a427933bL, "Min_Concentration");
     /*package*/ static final SContainmentLink Max_Concentration$S2Fq = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x1ef6d065a4279344L, "Max_Concentration");
     /*package*/ static final SContainmentLink Processes$hnPe = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, 0x2b6159d0ceecf742L, "Processes");
+    /*package*/ static final SContainmentLink Product_Terms$WnXb = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4fbL, "Product_Terms");
   }
 
   private static final class CONCEPTS {
@@ -223,5 +298,6 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "UnitLang.structure.Mass_Concentration");
     /*package*/ static final SConcept Regulation$l6 = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, "SpeciesLang.structure.Regulation");
     /*package*/ static final SConcept SpeciesContainer$Ig = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4ebL, "SpeciesLang.structure.SpeciesContainer");
+    /*package*/ static final SConcept Reaction$JH = MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, "SpeciesLang.structure.Reaction");
   }
 }

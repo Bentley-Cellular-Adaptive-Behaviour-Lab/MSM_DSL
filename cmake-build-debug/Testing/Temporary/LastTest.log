@@ -1,3 +1,59 @@
-Start testing: Sep 17 12:07 GMT Daylight Time
+Start testing: Sep 20 11:16 GMT Daylight Time
 ----------------------------------------------------------
-End testing: Sep 17 12:07 GMT Daylight Time
+13/14 Testing: TranscriptionDelayTest.transcriptionDelayTest
+13/14 Test: TranscriptionDelayTest.transcriptionDelayTest
+Command: "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/autoSpringAgent.exe" "--gtest_filter=TranscriptionDelayTest.transcriptionDelayTest" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
+"TranscriptionDelayTest.transcriptionDelayTest" start time: Sep 20 11:16 GMT Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = TranscriptionDelayTest.transcriptionDelayTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TranscriptionDelayTest
+[ RUN      ] TranscriptionDelayTest.transcriptionDelayTest
+xMax: 50
+yMax: 50
+zMax: 50
+Grid size - X: 50
+Y: 50
+Z: 50
+Placing environment agents...
+Environment created.
+Setting up ODE systems...
+World created!
+Creation timestep... initialising everything
+memInit0
+Allocating cell proteins to memagents.
+VEGF total 0	0gridded membrane0
+VEGF total 0	0gridded membrane0
+
+The syntax of the command is incorrect.
+Creation complete
+Creation timestep complete.
+Tissue created successfully.
+ Tissue: Monolayer created successfully! 
+Timestep,A,B,C,D,
+0,100,100,0,0,
+1,100,100,0,0,
+2,100,100,150,0,
+3,100,100,300,0,
+4,100,100,450,0,
+5,200,100,600,0,
+6,200,100,900,150,
+[       OK ] TranscriptionDelayTest.transcriptionDelayTest (152 ms)
+[----------] 1 test from TranscriptionDelayTest (152 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (152 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.16 sec
+----------------------------------------------------------
+Test Passed.
+"TranscriptionDelayTest.transcriptionDelayTest" end time: Sep 20 11:16 GMT Daylight Time
+"TranscriptionDelayTest.transcriptionDelayTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 20 11:16 GMT Daylight Time

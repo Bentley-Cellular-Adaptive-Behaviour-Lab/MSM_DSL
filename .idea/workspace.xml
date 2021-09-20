@@ -19,30 +19,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Parameterising Notch Test">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Updating tests with new getter function.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Tissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewWorld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/species/protein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/species/protein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/species/protein.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/generated/dsl_species_gen.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
     </list>
@@ -58,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="UserTesting" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,7 +98,12 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CTest Application.TestBasicNotchPathway">
+  <component name="RunManager" selected="CTest Application.TestTranscriptionDelay">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -311,6 +307,7 @@
       <workItem from="1631713589605" duration="2424000" />
       <workItem from="1631782786785" duration="21138000" />
       <workItem from="1631875883249" duration="1173000" />
+      <workItem from="1632128122781" duration="4812000" />
     </task>
     <task id="LOCAL-00011" summary="Fixed issues with code insight not working properly.">
       <created>1621861425813</created>
@@ -711,28 +708,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
-          <line>2814</line>
+          <line>2811</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/tests/automated/test_ODE.cpp</url>
-          <line>223</line>
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/tests/automated/helper_ODE.cpp</url>
-          <line>1052</line>
+          <line>1047</line>
           <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
-          <line>2836</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/core/memAgents.cpp</url>
-          <line>2966</line>
-          <option name="timeStamp" value="95" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

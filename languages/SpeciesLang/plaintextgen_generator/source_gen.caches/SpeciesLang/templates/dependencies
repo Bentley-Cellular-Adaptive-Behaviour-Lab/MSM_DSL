@@ -5,6 +5,7 @@
     <classNode dependClassName="SpeciesLang.behavior.Reaction__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesLang.behavior.Regulation__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesLang.behavior.SpeciesContainer__BehaviorDescriptor" />
+    <classNode dependClassName="SpeciesLang.behavior.Species__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
