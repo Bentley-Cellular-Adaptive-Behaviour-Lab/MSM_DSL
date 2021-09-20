@@ -7,17 +7,14 @@ set(CMAKE_DEPENDS_GENERATOR "MinGW Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeCInformation.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeCXXInformation.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeDependentOption.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeFindCodeBlocks.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeGenericSystem.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakePackageConfigHelpers.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeRCInformation.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake"
@@ -25,16 +22,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU-C.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU-CXX.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent/CMakeLists.cmake.in"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindBoost.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindOpenGL.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindPackageHandleStandardArgs.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindPackageMessage.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindPython.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FindPython/Support.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/GNUInstallDirs.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/GoogleTest.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-C-ABI.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-C.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
@@ -44,21 +35,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake"
   "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/ProcessorCount.cmake"
-  "C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/WriteBasicConfigVersionFile.cmake"
   "../CMakeLists.txt"
   "CMakeFiles/3.20.2/CMakeCCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeRCCompiler.cmake"
   "CMakeFiles/3.20.2/CMakeSystem.cmake"
-  "_deps/googletest-src/CMakeLists.txt"
-  "_deps/googletest-src/googlemock/CMakeLists.txt"
-  "_deps/googletest-src/googlemock/cmake/gmock.pc.in"
-  "_deps/googletest-src/googlemock/cmake/gmock_main.pc.in"
-  "_deps/googletest-src/googletest/CMakeLists.txt"
-  "_deps/googletest-src/googletest/cmake/Config.cmake.in"
-  "_deps/googletest-src/googletest/cmake/gtest.pc.in"
-  "_deps/googletest-src/googletest/cmake/gtest_main.pc.in"
-  "_deps/googletest-src/googletest/cmake/internal_utils.cmake"
   )
 
 # The corresponding makefile is:
@@ -69,24 +50,10 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "_deps/googletest-subbuild/CMakeLists.txt"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
-  "_deps/googletest-build/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "_deps/googletest-build/googletest/generated/gmock.pc"
-  "_deps/googletest-build/googletest/generated/gmock_main.pc"
-  "_deps/googletest-build/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "_deps/googletest-build/googletest/generated/GTestConfigVersion.cmake"
-  "_deps/googletest-build/googletest/generated/GTestConfig.cmake"
-  "_deps/googletest-build/googletest/generated/gtest.pc"
-  "_deps/googletest-build/googletest/generated/gtest_main.pc"
-  "_deps/googletest-build/googletest/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/autoSpringAgent.dir/DependInfo.cmake"
-  "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake"
-  "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/DependInfo.cmake"
-  "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/DependInfo.cmake"
+  "CMakeFiles/springAgent.dir/DependInfo.cmake"
   )

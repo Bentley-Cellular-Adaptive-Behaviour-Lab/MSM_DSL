@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 1)
+set(TEST_TYPE 0)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -36,6 +36,7 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
+            src/dsl/shape/shapeContainer.cpp
             src/dsl/species/protein.cpp
             src/dsl/tissue/cell.cpp
             src/dsl/tissue/cellType.cpp
@@ -70,6 +71,7 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
+            src/dsl/shape/shapeContainer.h
             src/dsl/species/protein.h
             src/dsl/tissue/cell.h
             src/dsl/tissue/cellType.h

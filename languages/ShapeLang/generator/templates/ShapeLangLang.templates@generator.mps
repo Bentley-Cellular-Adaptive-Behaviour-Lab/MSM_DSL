@@ -89,7 +89,7 @@
       <node concept="356sEK" id="2D6O8IwYzvW" role="383Ya9">
         <node concept="373pV1" id="2D6O8IwYzwk" role="356sEH" />
         <node concept="356sEF" id="2D6O8IwYzwn" role="356sEH">
-          <property role="TrG5h" value="add_protrusion(CELL_TYPE_NAME, PROTRUSION_NAME);" />
+          <property role="TrG5h" value="add_protrusion(PROTRUSION_NAME, CELL_TYPE_NAME);" />
         </node>
         <node concept="2EixSi" id="2D6O8IwYzvY" role="2EinRH" />
       </node>
@@ -140,11 +140,58 @@
     <property role="TrG5h" value="dsl_Shape" />
     <property role="3Le9LX" value=".h" />
     <node concept="356WMU" id="2D6O8IwYA8x" role="356KY_">
+      <node concept="356sEK" id="3FNuJRsgnUU" role="383Ya9">
+        <node concept="2EixSi" id="3FNuJRsgnUW" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgovk" role="383Ya9">
+        <node concept="356sEF" id="3FNuJRsgovl" role="356sEH">
+          <property role="TrG5h" value="class Protrusion {" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgovm" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgoCI" role="383Ya9">
+        <node concept="356sEF" id="3FNuJRsgoCJ" role="356sEH">
+          <property role="TrG5h" value="private:" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgoCK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgoGl" role="383Ya9">
+        <node concept="373pV1" id="3FNuJRsgoId" role="356sEH" />
+        <node concept="356sEF" id="3FNuJRsgoIg" role="356sEH">
+          <property role="TrG5h" value="ProtrusionType *protrusion;" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgoGn" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgoKw" role="383Ya9">
+        <node concept="373pV1" id="3FNuJRsgoMq" role="356sEH" />
+        <node concept="356sEF" id="3FNuJRsgoMt" role="356sEH">
+          <property role="TrG5h" value="CellType *cellType;" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgoKy" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgoEw" role="383Ya9">
+        <node concept="356sEF" id="3FNuJRsgoEx" role="356sEH">
+          <property role="TrG5h" value="public:" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgoEy" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgoAZ" role="383Ya9">
+        <node concept="356sEF" id="3FNuJRsgoB0" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
+        <node concept="2EixSi" id="3FNuJRsgoB1" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgo56" role="383Ya9">
+        <node concept="2EixSi" id="3FNuJRsgo58" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="2D6O8IwYAbj" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwYAbk" role="356sEH">
           <property role="TrG5h" value="class CytoProtein {" />
         </node>
         <node concept="2EixSi" id="2D6O8IwYAbl" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3FNuJRsgnRX" role="383Ya9">
+        <node concept="2EixSi" id="3FNuJRsgnRZ" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwYAcL" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwYAdM" role="356sEH">
