@@ -188,6 +188,12 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/world.h">
 			<Option target="springAgent"/>
 		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/shapeContainer.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/shapeContainer.h">
+			<Option target="springAgent"/>
+		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/species/protein.cpp">
 			<Option target="springAgent"/>
 		</Unit>
