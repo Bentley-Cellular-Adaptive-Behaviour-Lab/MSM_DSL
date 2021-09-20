@@ -747,25 +747,6 @@ void EC::distribute_proteins() {
         }
     }
 
-
-//    for (auto surfaceAgent : this->surfaceAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            if (surfaceAgent->has_protein(current_protein->get_name())) {
-//                protein_counts[i]++;
-//            }
-//        }
-//    }
-
-//    for (auto springAgent : this->springAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            if (springAgent->has_protein(current_protein->get_name())) {
-//                protein_counts[i]++;
-//            }
-//        }
-//    }
-
     // Once counts have been determined, calculate the amount of each protein per memAgent.
 	std::vector<int> protein_totals_per_memAgent;
 
@@ -999,10 +980,10 @@ void EC::cycle_protein_levels() {
     for (auto *protein : this->m_cell_type->proteins) {
         // This does work with both the species and regulation delays though.
         int size = protein->cell_levels.size();
-        float newProteinValue = protein->cell_levels[size - 1];
+        float newProteinValue = protein->cell_levels[0];
         // Remove first element of the container - i.e. the current timestep.
         protein->cell_levels.pop_front();
-        // Add a float that will eventually be updated by ODEs - use the latest value in the container.
+        // Add a float that will eventually be updated by ODEs - use the current value in the container.
         protein->cell_levels.push_back(newProteinValue);
     }
 }

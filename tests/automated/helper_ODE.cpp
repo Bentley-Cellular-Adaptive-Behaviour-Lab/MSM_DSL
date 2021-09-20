@@ -852,10 +852,6 @@ void CellJunctionTest::SetUp() {
 			  << "Level,"
 			  << "Timestep"
 			  << "\n";
-	printCellProteinLevels(0);
-	for (auto cell : tissueMonolayer->m_cell_agents) {
-		cell->distribute_proteins();
-	}
 }
 
 void CellJunctionTest::TearDown() {
@@ -907,6 +903,10 @@ void CellJunctionTest::runODE(MemAgent *memAgent) {
 	cellJunction_ode_states end_ode_states;
 	odeint::euler<cellJunction_ode_states> stepper;
 
+    if (memAgent->junction) {
+        int i = 0;
+    }
+
 	start_ode_states[0] = memAgent->get_local_protein_level("A");
 	start_ode_states[1] = memAgent->get_junction_protein_level("B");
 	start_ode_states[2] = memAgent->get_local_protein_level("AB");
@@ -914,16 +914,11 @@ void CellJunctionTest::runODE(MemAgent *memAgent) {
 
 	stepper.do_step(cellJunction_system, start_ode_states, 0.0, end_ode_states, 1);
 
-	memAgent->distribute_calculated_proteins("A", end_ode_states[0], true, true, PROTEIN_LOCATION_JUNCTION);
+	memAgent->distribute_calculated_proteins("A", end_ode_states[0], true, false, PROTEIN_LOCATION_JUNCTION);
 	memAgent->distribute_calculated_proteins("B", end_ode_states[1], false, true, PROTEIN_LOCATION_JUNCTION);
 	memAgent->distribute_calculated_proteins("AB", end_ode_states[2], true, false, PROTEIN_LOCATION_CELL);
 	memAgent->distribute_calculated_proteins("C", end_ode_states[3], true, false, PROTEIN_LOCATION_CELL);
 }
-
-/*
- * ODE: 1A (from adjacent cell) + 1B (this cell) -> 1AB every timestep.
- * ODE: 1AB (this cell) -> 1C (this cell) every timestep.
-*/
 
 void CellJunctionTest::cellJunction_system(const cellJunction_ode_states &x,
 										   cellJunction_ode_states &dxdt,
@@ -949,7 +944,7 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 	for (auto cell : tissue->m_cell_agents) {
 		std::cout << cell->cell_number << ",";
 		for (auto protein : cell->m_cell_type->proteins) {
-			std::cout << protein->get_memAgent_level() << ",";
+			std::cout << protein->get_cell_level(0) << ",";
 		}
 		std::cout << timestep << "\n";
 	}

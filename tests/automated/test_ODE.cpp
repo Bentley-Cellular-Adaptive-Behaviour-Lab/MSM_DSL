@@ -143,24 +143,32 @@ TEST_F(BasicCellDistributionTest, postDistributionTest) {
 	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
 }
 
-TEST_F(CellJunctionTest, crossJunctionODETest) {
-	for (int i = 0; i < 10; i++) {
-		if (i != 0) {
-			for (auto cell : tissueMonolayer->m_cell_agents) {
-				cell->distribute_proteins();
-			}
-		}
-		for (auto cell : tissueMonolayer->m_cell_agents) {
-			for (auto memAgent : cell->nodeAgents) {
-				runODE(memAgent);
-			}
-			cell->calculate_cell_protein_levels();
-		}
-		this->printCellProteinLevels(i+1);
-	}
-//	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
-//	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
-}
+//TEST_F(CellJunctionTest, crossJunctionODETest) {
+//    this->printCellProteinLevels(0);
+//    for (int i = 1; i <= 10; i++) {
+//        for (auto cell : tissueMonolayer->m_cell_agents) {
+//            cell->distribute_proteins();
+//        }
+//
+//		for (auto cell : tissueMonolayer->m_cell_agents) {
+//			for (auto memAgent : cell->nodeAgents) {
+//				runODE(memAgent);
+//			}
+//		}
+//
+//        for (auto *cell : tissueMonolayer->m_cell_agents) {
+//            cell->calculate_cell_protein_levels();
+//        }
+//
+//        this->printCellProteinLevels(i);
+//
+//        for (auto *cell : tissueMonolayer->m_cell_agents) {
+//            cell->cycle_protein_levels();
+//        }
+//    }
+////	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
+////	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
+//}
 
 TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
     std::cout << "Timestep,A,B,C,D,\n";
@@ -214,6 +222,10 @@ TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
         }
 
         this->tissueMonolayer->m_cell_agents[0]->cycle_protein_levels();
+
+        if (i == 4) {
+            this->tissueMonolayer->m_cell_agents[0]->set_cell_protein_level("A", 200, 1);
+        }
     }
 }
 

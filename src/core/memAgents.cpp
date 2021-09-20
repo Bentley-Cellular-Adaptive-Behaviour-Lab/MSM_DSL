@@ -2653,16 +2653,13 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
             n = j;
             p = k + 1;
         }
-        // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
-        // increase the count by the level at those coordinates.
 
-        // Also handles transfer of proteins along filopodia.
 
+        //Search for protein in nearby memAgents - whether it is in a filopodia or not.
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].getType() == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
-                        float gottenProteinLevel = memAgent->get_memAgent_protein_level(protein_name);
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
                     }
                 }
