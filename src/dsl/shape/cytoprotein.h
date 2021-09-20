@@ -17,7 +17,13 @@ public:
     void setName(const std::string name);
 
     float getStartLevel() const;
-    void setName(float std::string name);
+    void setStartLevel(const float startLevel);
+
+    float getMinLevel() const;
+    void setMinLevel(const float minLevel);
+
+    float getMaxLevel() const;
+    void setMaxLevel(const float maxLevel);
 
     virtual bool checkCondition(MemAgent *memAgent);
 };
