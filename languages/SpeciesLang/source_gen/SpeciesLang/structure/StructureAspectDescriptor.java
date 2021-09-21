@@ -284,7 +284,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.property("binIndex", 0x34479ff5091e5407L).type(PrimitiveTypeId.INTEGER).origin("3767155488087495687").done();
     b.property("targetUsesNeighbourValue", 0x851f9bbb9efd229L).type(PrimitiveTypeId.BOOLEAN).origin("599534810090689065").done();
     b.property("targetUsesCellValue", 0x851f9bbb9f4171eL).type(PrimitiveTypeId.BOOLEAN).origin("599534810090968862").done();
-    b.associate("target", 0x34479ff5091e5408L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3767155488087495688").done();
+    b.associate("targetSpecies", 0x34479ff5091e5408L).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("3767155488087495688").done();
+    b.associate("targetProtrusion", 0x3af37afddc4ee4e0L).target(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa1007bL).optional(true).origin("4247874104281982176").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForSpeciesContainer() {
@@ -332,7 +333,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.origin("r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)/1155607132028676490");
     b.version(2);
-    b.associate("Species", 0x10098a905c7a298bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("1155607132028676491").done();
+    b.associate("target", 0x10098a905c7a298bL).target(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL).optional(false).origin("1155607132028676491").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForUpregulates() {

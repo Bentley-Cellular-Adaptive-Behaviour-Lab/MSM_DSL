@@ -30,8 +30,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     deps.extendedLanguage(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, "jetbrains.mps.lang.core");
     deps.aggregatedLanguage(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, "org.iets3.core.expr.base");
     deps.aggregatedLanguage(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, "UnitLang");
-    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesLang");
     deps.aggregatedLanguage(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, "TissueLang");
+    deps.aggregatedLanguage(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, "SpeciesLang");
   }
 
   @Override
@@ -71,9 +71,11 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)/976479957056291036");
     b.version(2);
-    b.aggregate("triggersWhen", 0xd8d2758eaa13f0aL).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("976479957056306954").done();
-    b.aggregate("amountNeeded", 0x24293eb426b59489L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("2605682802875012233").done();
-    b.aggregate("triggersProtrusion", 0x2bcf88441a904a29L).target(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0x2bcf88441a902404L).optional(false).ordered(true).multiple(false).origin("3156891689894824489").done();
+    b.aggregate("TriggersWhen", 0xd8d2758eaa13f0aL).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("976479957056306954").done();
+    b.aggregate("StartConcentration", 0x18120dc2de125c0fL).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("1734463937091623951").done();
+    b.aggregate("AmountNeeded", 0x24293eb426b59489L).target(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b9L).optional(false).ordered(true).multiple(false).origin("2605682802875012233").done();
+    b.aggregate("TriggersProtrusion", 0x2bcf88441a904a29L).target(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0x2bcf88441a902404L).optional(false).ordered(true).multiple(false).origin("3156891689894824489").done();
+    b.aggregate("FoundInCellTypes", 0x18120dc2de136552L).target(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x18c0ec6efa1c0357L).optional(true).ordered(true).multiple(true).origin("1734463937091691858").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForProtrusion() {

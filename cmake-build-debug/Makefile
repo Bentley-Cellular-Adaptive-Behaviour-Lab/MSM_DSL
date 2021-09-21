@@ -536,6 +536,78 @@ src/core/world.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/core/world.cpp.s
 .PHONY : src/core/world.cpp.s
 
+src/dsl/shape/cytoprotein.obj: src/dsl/shape/cytoprotein.cpp.obj
+.PHONY : src/dsl/shape/cytoprotein.obj
+
+# target to build an object file
+src/dsl/shape/cytoprotein.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/cytoprotein.cpp.obj
+.PHONY : src/dsl/shape/cytoprotein.cpp.obj
+
+src/dsl/shape/cytoprotein.i: src/dsl/shape/cytoprotein.cpp.i
+.PHONY : src/dsl/shape/cytoprotein.i
+
+# target to preprocess a source file
+src/dsl/shape/cytoprotein.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/cytoprotein.cpp.i
+.PHONY : src/dsl/shape/cytoprotein.cpp.i
+
+src/dsl/shape/cytoprotein.s: src/dsl/shape/cytoprotein.cpp.s
+.PHONY : src/dsl/shape/cytoprotein.s
+
+# target to generate assembly for a file
+src/dsl/shape/cytoprotein.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/cytoprotein.cpp.s
+.PHONY : src/dsl/shape/cytoprotein.cpp.s
+
+src/dsl/shape/protrusion.obj: src/dsl/shape/protrusion.cpp.obj
+.PHONY : src/dsl/shape/protrusion.obj
+
+# target to build an object file
+src/dsl/shape/protrusion.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusion.cpp.obj
+.PHONY : src/dsl/shape/protrusion.cpp.obj
+
+src/dsl/shape/protrusion.i: src/dsl/shape/protrusion.cpp.i
+.PHONY : src/dsl/shape/protrusion.i
+
+# target to preprocess a source file
+src/dsl/shape/protrusion.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusion.cpp.i
+.PHONY : src/dsl/shape/protrusion.cpp.i
+
+src/dsl/shape/protrusion.s: src/dsl/shape/protrusion.cpp.s
+.PHONY : src/dsl/shape/protrusion.s
+
+# target to generate assembly for a file
+src/dsl/shape/protrusion.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusion.cpp.s
+.PHONY : src/dsl/shape/protrusion.cpp.s
+
+src/dsl/shape/protrusionType.obj: src/dsl/shape/protrusionType.cpp.obj
+.PHONY : src/dsl/shape/protrusionType.obj
+
+# target to build an object file
+src/dsl/shape/protrusionType.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusionType.cpp.obj
+.PHONY : src/dsl/shape/protrusionType.cpp.obj
+
+src/dsl/shape/protrusionType.i: src/dsl/shape/protrusionType.cpp.i
+.PHONY : src/dsl/shape/protrusionType.i
+
+# target to preprocess a source file
+src/dsl/shape/protrusionType.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusionType.cpp.i
+.PHONY : src/dsl/shape/protrusionType.cpp.i
+
+src/dsl/shape/protrusionType.s: src/dsl/shape/protrusionType.cpp.s
+.PHONY : src/dsl/shape/protrusionType.s
+
+# target to generate assembly for a file
+src/dsl/shape/protrusionType.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/shape/protrusionType.cpp.s
+.PHONY : src/dsl/shape/protrusionType.cpp.s
+
 src/dsl/shape/shapeContainer.obj: src/dsl/shape/shapeContainer.cpp.obj
 .PHONY : src/dsl/shape/shapeContainer.obj
 
@@ -848,6 +920,30 @@ src/dsl/world/worldContainer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.s
 .PHONY : src/dsl/world/worldContainer.cpp.s
 
+src/generated/dsl_shape_gen.obj: src/generated/dsl_shape_gen.cpp.obj
+.PHONY : src/generated/dsl_shape_gen.obj
+
+# target to build an object file
+src/generated/dsl_shape_gen.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/generated/dsl_shape_gen.cpp.obj
+.PHONY : src/generated/dsl_shape_gen.cpp.obj
+
+src/generated/dsl_shape_gen.i: src/generated/dsl_shape_gen.cpp.i
+.PHONY : src/generated/dsl_shape_gen.i
+
+# target to preprocess a source file
+src/generated/dsl_shape_gen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/generated/dsl_shape_gen.cpp.i
+.PHONY : src/generated/dsl_shape_gen.cpp.i
+
+src/generated/dsl_shape_gen.s: src/generated/dsl_shape_gen.cpp.s
+.PHONY : src/generated/dsl_shape_gen.s
+
+# target to generate assembly for a file
+src/generated/dsl_shape_gen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\springAgent.dir\build.make CMakeFiles/springAgent.dir/src/generated/dsl_shape_gen.cpp.s
+.PHONY : src/generated/dsl_shape_gen.cpp.s
+
 src/generated/dsl_species_gen.obj: src/generated/dsl_species_gen.cpp.obj
 .PHONY : src/generated/dsl_species_gen.obj
 
@@ -980,6 +1076,15 @@ help:
 	@echo ... src/core/world.obj
 	@echo ... src/core/world.i
 	@echo ... src/core/world.s
+	@echo ... src/dsl/shape/cytoprotein.obj
+	@echo ... src/dsl/shape/cytoprotein.i
+	@echo ... src/dsl/shape/cytoprotein.s
+	@echo ... src/dsl/shape/protrusion.obj
+	@echo ... src/dsl/shape/protrusion.i
+	@echo ... src/dsl/shape/protrusion.s
+	@echo ... src/dsl/shape/protrusionType.obj
+	@echo ... src/dsl/shape/protrusionType.i
+	@echo ... src/dsl/shape/protrusionType.s
 	@echo ... src/dsl/shape/shapeContainer.obj
 	@echo ... src/dsl/shape/shapeContainer.i
 	@echo ... src/dsl/shape/shapeContainer.s
@@ -1019,6 +1124,9 @@ help:
 	@echo ... src/dsl/world/worldContainer.obj
 	@echo ... src/dsl/world/worldContainer.i
 	@echo ... src/dsl/world/worldContainer.s
+	@echo ... src/generated/dsl_shape_gen.obj
+	@echo ... src/generated/dsl_shape_gen.i
+	@echo ... src/generated/dsl_shape_gen.s
 	@echo ... src/generated/dsl_species_gen.obj
 	@echo ... src/generated/dsl_species_gen.i
 	@echo ... src/generated/dsl_species_gen.s

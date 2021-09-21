@@ -120,23 +120,37 @@
     <node concept="1TJgyj" id="Qd9PzECjWa" role="1TKVEi">
       <property role="IQ2ns" value="976479957056306954" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="triggersWhen" />
+      <property role="20kJfa" value="TriggersWhen" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="1wi3sbu4_Kf" role="1TKVEi">
+      <property role="IQ2ns" value="1734463937091623951" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="StartConcentration" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
     </node>
     <node concept="1TJgyj" id="2gDfFgAHpi9" role="1TKVEi">
       <property role="IQ2ns" value="2605682802875012233" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="amountNeeded" />
+      <property role="20kJfa" value="AmountNeeded" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
     </node>
     <node concept="1TJgyj" id="2Jfy4gq$4CD" role="1TKVEi">
       <property role="IQ2ns" value="3156891689894824489" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="triggersProtrusion" />
+      <property role="20kJfa" value="TriggersProtrusion" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Jfy4gq$2g4" resolve="ProtrusionReference" />
+    </node>
+    <node concept="1TJgyj" id="1wi3sbu4Qli" role="1TKVEi">
+      <property role="IQ2ns" value="1734463937091691858" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="FoundInCellTypes" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="Cell_Type_Reference" />
     </node>
     <node concept="PrWs8" id="2Jfy4gqzRBc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

@@ -82,35 +82,35 @@ public class QueriesGenerated extends QueryProviderBase {
     return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Cell_Type$$n), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_11(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.name$MnvL);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.name$MnvL);
   }
   public static Object propertyMacro_GetValue_1_12(final PropertyMacroContext _context) {
     String locationString = "";
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT"))) {
       locationString += "PROTEIN_LOCATION_ENVIRONMENT";
     }
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a9L, "LOCATION_MEMBRANE"))) {
       locationString += "PROTEIN_LOCATION_MEMBRANE";
     }
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39acL, "LOCATION_CELLULAR_INTERIOR"))) {
       locationString += "PROTEIN_LOCATION_CELL";
     }
-    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
+    if (SPropertyOperations.getEnum(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39b0L, "LOCATION_CELL_JUNCTION"))) {
       locationString += "PROTEIN_LOCATION_JUNCTION";
     }
     return locationString;
   }
   public static Object propertyMacro_GetValue_1_13(final PropertyMacroContext _context) {
-    return String.valueOf((float) Species__BehaviorDescriptor.getStartConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
+    return String.valueOf((float) Species__BehaviorDescriptor.getStartConcentrationValue_id3fk35jmCFN3.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_14(final PropertyMacroContext _context) {
-    return String.valueOf((float) Species__BehaviorDescriptor.getMinConcentrationValue_id1VQO6m$d9Os.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
+    return String.valueOf((float) Species__BehaviorDescriptor.getMinConcentrationValue_id1VQO6m$d9Os.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_15(final PropertyMacroContext _context) {
-    return String.valueOf((float) Species__BehaviorDescriptor.getMaxConcentrationValue_id1VQO6m$daTe.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka)));
+    return String.valueOf((float) Species__BehaviorDescriptor.getMaxConcentrationValue_id1VQO6m$daTe.invoke(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka)));
   }
   public static Object propertyMacro_GetValue_1_16(final PropertyMacroContext _context) {
-    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.Species$26Ka), PROPS.Transcription_Delay$D$oz));
+    return String.valueOf(SPropertyOperations.getInteger(SLinkOperations.getTarget(_context.getNode(), LINKS.target$26Ka), PROPS.Transcription_Delay$D$oz));
   }
   public static Object propertyMacro_GetValue_1_17(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), PROPS.name$MnvL);
@@ -480,7 +480,7 @@ public class QueriesGenerated extends QueryProviderBase {
 
   private static final class LINKS {
     /*package*/ static final SContainmentLink Shape$q0mn = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x56b8f8b9a96cefbbL, "Shape");
-    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
+    /*package*/ static final SReferenceLink target$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "target");
     /*package*/ static final SReferenceLink cell_type$E3tO = MetaAdapterFactory.getReferenceLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x7290577338f69180L, "cell_type");
     /*package*/ static final SContainmentLink arrangement$aAuk = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x7290577338f6917fL, 0x4369a03b1c61664bL, "arrangement");
     /*package*/ static final SContainmentLink position$L2Mv = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef88L, 0x56b8f8b9a96e2a48L, "position");

@@ -254,15 +254,18 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="SpeciesLang.behavior.Species__BehaviorDescriptor">
+    <classNode dependClassName="SpeciesLang.behavior.Reaction__BehaviorDescriptor" />
     <classNode dependClassName="SpeciesLang.behavior.SpeciesContainer__BehaviorDescriptor" />
     <classNode dependClassName="UnitLang.behavior.Amount_Concentration__BehaviorDescriptor" />
     <classNode dependClassName="UnitLang.behavior.Mass_Concentration__BehaviorDescriptor" />
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Float" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Objects" />

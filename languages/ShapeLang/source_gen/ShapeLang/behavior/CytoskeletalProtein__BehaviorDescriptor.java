@@ -5,24 +5,49 @@ package ShapeLang.behavior;
 import jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.util.List;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
+import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
+import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
+import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import UnitLang.behavior.Amount_Concentration__BehaviorDescriptor;
+import UnitLang.behavior.Mass_Concentration__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public final class CytoskeletalProtein__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa100dcL, "ShapeLang.structure.CytoskeletalProtein");
 
+  public static final SMethod<Float> getStartConcentrationValue_id3fk35jmCFN3 = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getStartConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3fk35jmCFN3").build();
+  public static final SMethod<Float> getRequiredConcentrationValue_id5CquPnWzgKu = new SMethodBuilder<Float>(new SJavaCompoundTypeImpl(Float.TYPE)).name("getRequiredConcentrationValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("5CquPnWzgKu").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList();
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getStartConcentrationValue_id3fk35jmCFN3, getRequiredConcentrationValue_id5CquPnWzgKu);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  /*package*/ static float getStartConcentrationValue_id3fk35jmCFN3(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.StartConcentration$Nh2A), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.StartConcentration$Nh2A), CONCEPTS.Amount_Concentration$r2)).floatValue();
+    } else {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.StartConcentration$Nh2A), CONCEPTS.Mass_Concentration$qz)).floatValue();
+    }
+  }
+  /*package*/ static float getRequiredConcentrationValue_id5CquPnWzgKu(@NotNull SNode __thisNode__) {
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(__thisNode__, LINKS.AmountNeeded$sEGn), CONCEPTS.Amount_Concentration$r2)) {
+      return Amount_Concentration__BehaviorDescriptor.get_amountconc_value_decimal_id7Eknuda0RxM.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.AmountNeeded$sEGn), CONCEPTS.Amount_Concentration$r2)).floatValue();
+    } else {
+      return Mass_Concentration__BehaviorDescriptor.get_massconc_value_decimal_id7Eknuda1wme.invoke(SNodeOperations.as(SLinkOperations.getTarget(__thisNode__, LINKS.AmountNeeded$sEGn), CONCEPTS.Mass_Concentration$qz)).floatValue();
+    }
+  }
 
   /*package*/ CytoskeletalProtein__BehaviorDescriptor() {
   }
@@ -39,6 +64,10 @@ public final class CytoskeletalProtein__BehaviorDescriptor extends BaseBHDescrip
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((Float) getStartConcentrationValue_id3fk35jmCFN3(node));
+      case 1:
+        return (T) ((Float) getRequiredConcentrationValue_id5CquPnWzgKu(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -66,5 +95,15 @@ public final class CytoskeletalProtein__BehaviorDescriptor extends BaseBHDescrip
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+
+  private static final class LINKS {
+    /*package*/ static final SContainmentLink StartConcentration$Nh2A = MetaAdapterFactory.getContainmentLink(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa100dcL, 0x18120dc2de125c0fL, "StartConcentration");
+    /*package*/ static final SContainmentLink AmountNeeded$sEGn = MetaAdapterFactory.getContainmentLink(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa100dcL, 0x24293eb426b59489L, "AmountNeeded");
+  }
+
+  private static final class CONCEPTS {
+    /*package*/ static final SConcept Amount_Concentration$r2 = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L, "UnitLang.structure.Amount_Concentration");
+    /*package*/ static final SConcept Mass_Concentration$qz = MetaAdapterFactory.getConcept(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L, "UnitLang.structure.Mass_Concentration");
   }
 }

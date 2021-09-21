@@ -36,6 +36,9 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
+            src/dsl/shape/cytoprotein.cpp
+            src/dsl/shape/protrusion.cpp
+            src/dsl/shape/protrusionType.cpp
             src/dsl/shape/shapeContainer.cpp
             src/dsl/species/protein.cpp
             src/dsl/tissue/cell.cpp
@@ -49,6 +52,7 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/gradient.cpp
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
+            src/generated/dsl_shape_gen.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_tissue_gen.cpp
             src/generated/dsl_world_gen.cpp)
@@ -71,6 +75,9 @@ if(TEST_TYPE EQUAL 0)
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
+            src/dsl/shape/cytoprotein.h
+            src/dsl/shape/protrusion.h
+            src/dsl/shape/protrusionType.h
             src/dsl/shape/shapeContainer.h
             src/dsl/species/protein.h
             src/dsl/tissue/cell.h

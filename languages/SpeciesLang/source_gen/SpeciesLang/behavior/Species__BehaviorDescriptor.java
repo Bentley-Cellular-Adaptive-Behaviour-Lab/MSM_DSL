@@ -10,9 +10,9 @@ import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Objects;
 import UnitLang.behavior.Amount_Concentration__BehaviorDescriptor;
 import UnitLang.behavior.Mass_Concentration__BehaviorDescriptor;
+import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -39,8 +40,9 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Integer> getMaxTranscriptionDelay_id6UPd1r3aEsj = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getMaxTranscriptionDelay").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6UPd1r3aEsj").build();
   public static final SMethod<Boolean> usesCellValue_id3FNuJRrY91G = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesCellValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3FNuJRrY91G").build();
   public static final SMethod<Boolean> usesNeighbourValue_id3FNuJRrYw4K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesNeighbourValue").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3FNuJRrYw4K").build();
+  public static final SMethod<List<SNode>> getReactionPartnerSpecies_id3FNuJRsgPNT = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getReactionPartnerSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("3FNuJRsgPNT").build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj, usesCellValue_id3FNuJRrY91G, usesNeighbourValue_id3FNuJRrYw4K);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(cleanReactionRelations_id1Ch7j$Nakak, cleanModifierRelations_id20T6jFVkZPx, getStartConcentrationValue_id3fk35jmCFN3, getMinConcentrationValue_id1VQO6m$d9Os, getMaxConcentrationValue_id1VQO6m$daTe, getMaxTranscriptionDelay_id6UPd1r3aEsj, usesCellValue_id3FNuJRrY91G, usesNeighbourValue_id3FNuJRrYw4K, getReactionPartnerSpecies_id3FNuJRsgPNT);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
     SPropertyOperations.assign(__thisNode__, PROPS.Transcription_Delay$D$oz, 1);
@@ -206,6 +208,31 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return usesNeighbourValue;
   }
+  /*package*/ static List<SNode> getReactionPartnerSpecies_id3FNuJRsgPNT(@NotNull SNode __thisNode__) {
+    // Gets a non-unique list of all species that a species participates in a reaction process with.
+    List<SNode> partnerSpecies = ListSequence.fromList(new ArrayList<SNode>());
+    SNode container = SNodeOperations.as(SNodeOperations.getParent(__thisNode__), CONCEPTS.SpeciesContainer$Ig);
+
+    for (SNode process : ListSequence.fromList(SLinkOperations.getChildren(container, LINKS.Processes$hnPe))) {
+      if (SNodeOperations.isInstanceOf(process, CONCEPTS.Reaction$JH)) {
+        SNode reaction = SNodeOperations.as(process, CONCEPTS.Reaction$JH);
+        if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, __thisNode__)) {
+          for (SNode reactantTerm : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
+            if (!(Objects.equals(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde), __thisNode__))) {
+              ListSequence.fromList(partnerSpecies).addElement(SLinkOperations.getTarget(reactantTerm, LINKS.Species_Ref$Wnde));
+            }
+          }
+          for (SNode productTerm : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
+            if (!(Objects.equals(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde), __thisNode__))) {
+              ListSequence.fromList(partnerSpecies).addElement(SLinkOperations.getTarget(productTerm, LINKS.Species_Ref$Wnde));
+            }
+          }
+        }
+      }
+    }
+
+    return partnerSpecies;
+  }
 
   /*package*/ Species__BehaviorDescriptor() {
   }
@@ -240,6 +267,8 @@ public final class Species__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((Boolean) usesCellValue_id3FNuJRrY91G(node));
       case 7:
         return (T) ((Boolean) usesNeighbourValue_id3FNuJRrYw4K(node));
+      case 8:
+        return (T) ((List<SNode>) getReactionPartnerSpecies_id3FNuJRsgPNT(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

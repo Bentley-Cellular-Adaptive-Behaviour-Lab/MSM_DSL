@@ -3,3 +3,8 @@
 //
 
 #include "shapeContainer.h"
+
+
+void ShapeContainer::setWorld(World* world) {
+    this->m_world = world;
+}
