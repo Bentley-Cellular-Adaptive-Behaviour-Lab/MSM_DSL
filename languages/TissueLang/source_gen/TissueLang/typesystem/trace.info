@@ -26,11 +26,11 @@
     </file>
     <file name="checkSpeciesLocation_NonTypesystemRule.java">
       <node id="1155607132031407226" at="30,9,31,68" concept="6" />
-      <node id="1155607132031407226" at="31,68,32,377" concept="6" />
+      <node id="1155607132031407226" at="31,68,32,376" concept="6" />
       <node id="1155607132031396010" at="37,50,38,33" concept="7" />
       <node id="1155607132031396010" at="40,68,41,102" concept="7" />
       <node id="1155607132031396010" at="43,30,44,17" concept="7" />
-      <node id="1155607132031396010" at="48,0,49,0" concept="9" trace="Species$26Ka" />
+      <node id="1155607132031396010" at="48,0,49,0" concept="9" trace="target$26Ka" />
       <node id="1155607132031396010" at="49,0,50,0" concept="9" trace="Owned_Species$sIXq" />
       <node id="1155607132031396010" at="53,0,54,0" concept="9" trace="Location$Gx$s" />
       <node id="1155607132031396010" at="54,0,55,0" concept="9" trace="name$MnvL" />
@@ -39,7 +39,7 @@
       <node id="1155607132031396010" at="37,0,40,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1155607132031396010" at="40,0,43,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1155607132031396010" at="43,0,46,0" concept="5" trace="overrides#()Z" />
-      <node id="1155607132031407226" at="29,348,33,9" concept="0" />
+      <node id="1155607132031407226" at="29,347,33,9" concept="0" />
       <node id="1155607132031397450" at="28,118,34,7" concept="4" />
       <node id="1155607132031396037" at="27,121,35,5" concept="3" />
       <node id="1155607132031396010" at="27,0,37,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
@@ -48,7 +48,7 @@
       <scope id="1155607132031396010" at="40,68,41,102" />
       <scope id="1155607132031396010" at="43,30,44,17" />
       <scope id="1155607132031396010" at="25,0,27,0" />
-      <scope id="1155607132031407226" at="30,9,32,377">
+      <scope id="1155607132031407226" at="30,9,32,376">
         <var name="_reporter_2309309498" id="1155607132031407226" />
         <var name="errorTarget" id="1155607132031407226" />
       </scope>
@@ -57,7 +57,7 @@
         <var name="argument" id="1155607132031396010" />
       </scope>
       <scope id="1155607132031396010" at="43,0,46,0" />
-      <scope id="1155607132031397452" at="29,348,33,9" />
+      <scope id="1155607132031397452" at="29,347,33,9" />
       <scope id="1155607132031396040" at="28,118,34,7" />
       <scope id="1155607132031396011" at="27,121,35,5" />
       <scope id="1155607132031396037" at="27,121,35,5">
@@ -390,14 +390,14 @@
       </scope>
     </file>
     <file name="duplicateOwnedProtein_NonTypesystemRule.java">
-      <node id="1783685413826392728" at="28,125,29,141" concept="6" />
-      <node id="1783685413826396636" at="30,125,31,139" concept="6" />
+      <node id="1783685413826392728" at="28,125,29,140" concept="6" />
+      <node id="1783685413826396636" at="30,125,31,138" concept="6" />
       <node id="1783685413826403788" at="33,11,34,70" concept="6" />
       <node id="1783685413826403788" at="34,70,35,264" concept="6" />
       <node id="1783685413826335112" at="41,50,42,33" concept="7" />
       <node id="1783685413826335112" at="44,68,45,102" concept="7" />
       <node id="1783685413826335112" at="47,30,48,17" concept="7" />
-      <node id="1783685413826335112" at="52,0,53,0" concept="9" trace="Species$26Ka" />
+      <node id="1783685413826335112" at="52,0,53,0" concept="9" trace="target$26Ka" />
       <node id="1783685413826335112" at="53,0,54,0" concept="9" trace="Owned_Species$sIXq" />
       <node id="1783685413826335112" at="57,0,58,0" concept="9" trace="name$MnvL" />
       <node id="1783685413826335112" at="61,0,62,0" concept="9" trace="Cell_Type$$n" />
@@ -406,8 +406,8 @@
       <node id="1783685413826335112" at="44,0,47,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1783685413826335112" at="47,0,50,0" concept="5" trace="overrides#()Z" />
       <node id="1783685413826403788" at="32,112,36,11" concept="0" />
-      <node id="1783685413826399957" at="31,139,37,9" concept="4" />
-      <node id="1783685413826390874" at="29,141,38,7" concept="3" />
+      <node id="1783685413826399957" at="31,138,37,9" concept="4" />
+      <node id="1783685413826390874" at="29,140,38,7" concept="3" />
       <node id="1783685413826383336" at="27,122,39,5" concept="3" />
       <node id="1783685413826335112" at="27,0,41,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1783685413826335112" at="25,52,25,52" />
@@ -428,7 +428,7 @@
       <scope id="1783685413826390877" at="30,125,37,9">
         <var name="query_name" id="1783685413826396637" />
       </scope>
-      <scope id="1783685413826390874" at="29,141,38,7">
+      <scope id="1783685413826390874" at="29,140,38,7">
         <var name="query_reference" id="1783685413826390875" />
       </scope>
       <scope id="1783685413826383339" at="28,125,38,7">

@@ -144,7 +144,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         if (props_SpeciesBin == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
           cpb.shortDesc("Stores the index of a species when constructing function arguments during text generation.");
-          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x34479ff5091e5408L, "target", "", "");
+          cpb.rawPresentation("SpeciesBin");
           props_SpeciesBin = cpb.create();
         }
         return props_SpeciesBin;
@@ -180,7 +180,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case LanguageConceptSwitch.SpeciesReference:
         if (props_SpeciesReference == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
-          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species", "", "");
+          cpb.presentationByReference(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "target", "", "");
           props_SpeciesReference = cpb.create();
         }
         return props_SpeciesReference;

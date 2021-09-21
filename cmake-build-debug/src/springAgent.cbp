@@ -188,6 +188,24 @@
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/core/world.h">
 			<Option target="springAgent"/>
 		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/cytoprotein.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/cytoprotein.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/protrusion.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/protrusion.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/protrusionType.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/protrusionType.h">
+			<Option target="springAgent"/>
+		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/shape/shapeContainer.cpp">
 			<Option target="springAgent"/>
 		</Unit>
@@ -264,6 +282,9 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/dsl/world/worldContainer.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_shape_gen.cpp">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="C:/Users/Tom/MPSProjects/MSM_DSL/src/generated/dsl_species_gen.cpp">

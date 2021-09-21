@@ -5,27 +5,27 @@
 #ifndef SRC_SPRINGAGENT_CYTOPROTEIN_H
 #define SRC_SPRINGAGENT_CYTOPROTEIN_H
 
+#include <string>
+
+class MemAgent;
 
 class CytoProtein {
 private:
     std::string m_name;
     float m_startLevel;
-    float m_minLevel;
-    float m_maxLevel;
+    float m_requiredAmount;
 public:
+    CytoProtein(std::string name, float startLevel, float requiredAmount);
     std::string getName() const;
     void setName(const std::string name);
 
     float getStartLevel() const;
     void setStartLevel(const float startLevel);
 
-    float getMinLevel() const;
-    void setMinLevel(const float minLevel);
+    float getRequiredAmount() const;
+    void setRequiredAmount(const float requiredAmount);
 
-    float getMaxLevel() const;
-    void setMaxLevel(const float maxLevel);
-
-    virtual bool checkCondition(MemAgent *memAgent);
+    bool checkCondition(MemAgent *memAgent);
 };
 
 

@@ -11,6 +11,7 @@
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)" />
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" />
+    <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="l80j" ref="r:9e71c0de-f9ab-4b67-96cc-7d9c857513f6(org.iets3.analysis.base.structure)" implicit="true" />
@@ -333,7 +334,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="109yD1suyAb" role="1TKVEi">
       <property role="IQ2ns" value="1155607132028676491" />
-      <property role="20kJfa" value="Species" />
+      <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
@@ -537,9 +538,14 @@
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
       <property role="IQ2ns" value="3767155488087495688" />
-      <property role="20kJfa" value="target" />
+      <property role="20kJfa" value="targetSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+    <node concept="1TJgyj" id="3FNuJRsjIjw" role="1TKVEi">
+      <property role="IQ2ns" value="4247874104281982176" />
+      <property role="20kJfa" value="targetProtrusion" />
+      <ref role="20lvS9" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
     </node>
   </node>
 </model>

@@ -26,10 +26,10 @@ public class checkSpeciesLocation_NonTypesystemRule extends AbstractNonTypesyste
   }
   public void applyRule(final SNode cellType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode species_ref : ListSequence.fromList(SLinkOperations.getChildren(cellType, LINKS.Owned_Species$sIXq))) {
-      if (SPropertyOperations.getEnum(SLinkOperations.getTarget(species_ref, LINKS.Species$26Ka), PROPS.Location$Gx$s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) {
+      if (SPropertyOperations.getEnum(SLinkOperations.getTarget(species_ref, LINKS.target$26Ka), PROPS.Location$Gx$s) == SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")) {
         {
           final MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(species_ref, SPropertyOperations.getString(SLinkOperations.getTarget(species_ref, LINKS.Species$26Ka), PROPS.name$MnvL) + " cannot be used by cells, if it is defined as extracellular.", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "1155607132031407226", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(species_ref, SPropertyOperations.getString(SLinkOperations.getTarget(species_ref, LINKS.target$26Ka), PROPS.name$MnvL) + " cannot be used by cells, if it is defined as extracellular.", "r:583b5986-f053-4561-9682-b6e844b2b168(TissueLang.typesystem)", "1155607132031407226", null, errorTarget);
         }
       }
     }
@@ -45,7 +45,7 @@ public class checkSpeciesLocation_NonTypesystemRule extends AbstractNonTypesyste
   }
 
   private static final class LINKS {
-    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
+    /*package*/ static final SReferenceLink target$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "target");
     /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 

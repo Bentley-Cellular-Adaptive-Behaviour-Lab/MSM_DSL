@@ -5,12 +5,15 @@
 #ifndef SRC_SPRINGAGENT_PROTRUSION_H
 #define SRC_SPRINGAGENT_PROTRUSION_H
 
+class CellType;
+class ProtrusionType;
 
 class Protrusion {
 private:
     ProtrusionType *protrusionType;
     CellType *cellType;
 public:
+    Protrusion();
 };
 
 

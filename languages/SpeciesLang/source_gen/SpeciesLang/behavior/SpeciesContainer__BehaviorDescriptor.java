@@ -470,7 +470,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     List<SNode> potentialProcesses = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode typeSpecies : ListSequence.fromList(SLinkOperations.getChildren(cellType, LINKS.Owned_Species$sIXq))) {
       for (SNode queryProcess : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
-        if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.Species$26Ka), queryProcess))) {
+        if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.target$26Ka), queryProcess))) {
           ListSequence.fromList(potentialProcesses).addElement(queryProcess);
         }
       }
@@ -483,7 +483,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     for (SNode typeSpecies : ListSequence.fromList(SLinkOperations.getChildren(cellType, LINKS.Owned_Species$sIXq))) {
       for (SNode queryProcess : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
         if (SNodeOperations.isInstanceOf(queryProcess, CONCEPTS.Regulation$l6)) {
-          if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.Species$26Ka), queryProcess))) {
+          if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.target$26Ka), queryProcess))) {
             ListSequence.fromList(potentialRegulations).addElement(SNodeOperations.as(queryProcess, CONCEPTS.Regulation$l6));
           }
         }
@@ -498,7 +498,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     for (SNode typeSpecies : ListSequence.fromList(SLinkOperations.getChildren(cellType, LINKS.Owned_Species$sIXq))) {
       for (SNode queryProcess : ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, LINKS.Processes$hnPe))) {
         if (SNodeOperations.isInstanceOf(queryProcess, CONCEPTS.Reaction$JH)) {
-          if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.Species$26Ka), queryProcess))) {
+          if (((boolean) SpeciesContainer__BehaviorDescriptor.speciesInvolvedInProcess_id2AP3$9HzFVa.invoke(__thisNode__, SLinkOperations.getTarget(typeSpecies, LINKS.target$26Ka), queryProcess))) {
             ListSequence.fromList(potentialReactions).addElement(SNodeOperations.as(queryProcess, CONCEPTS.Reaction$JH));
           }
         }
@@ -708,7 +708,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SReferenceLink Target$9C3I = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06aL, "Target");
     /*package*/ static final SReferenceLink Source$9HG6 = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x54e0a6c604985928L, 0x54e0a6c6049cf06dL, "Source");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
-    /*package*/ static final SReferenceLink Species$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "Species");
+    /*package*/ static final SReferenceLink target$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "target");
     /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
   }
 

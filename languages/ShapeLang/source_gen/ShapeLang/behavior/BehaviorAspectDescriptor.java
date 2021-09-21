@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
+  private final BHDescriptor myProtrusion__BehaviorDescriptor = new Protrusion__BehaviorDescriptor();
   private final BHDescriptor myCytoskeletalProtein__BehaviorDescriptor = new CytoskeletalProtein__BehaviorDescriptor();
   private final BHDescriptor mySensitivityExpression__BehaviorDescriptor = new SensitivityExpression__BehaviorDescriptor();
 
@@ -25,10 +26,12 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 0:
         return myCytoskeletalProtein__BehaviorDescriptor;
       case 1:
+        return myProtrusion__BehaviorDescriptor;
+      case 2:
         return mySensitivityExpression__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa100dcL), MetaIdFactory.conceptId(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0x2bcf88441a939c80L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa100dcL), MetaIdFactory.conceptId(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0xd8d2758eaa1007bL), MetaIdFactory.conceptId(0x615bc492e50a4c3eL, 0x8b868d639eaba343L, 0x2bcf88441a939c80L)).seal();
 }
