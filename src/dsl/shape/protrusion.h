@@ -14,6 +14,7 @@ private:
     CellType *cellType;
 public:
     Protrusion();
+
 };
 
 

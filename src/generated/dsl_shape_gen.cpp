@@ -10,7 +10,7 @@ void ShapeContainer::setup() {
     ProtrusionType *Filopodia;
     CytoProtein *Actin;
 
-    Filopodia = new ProtrusionType("Filopodia", "VEGF", -1, 1, 0.2);
+    Filopodia = new ProtrusionType("Filopodia", "VEGF", "Actin", -1, 1, 0.2);
     add_allowed_protein(Filopodia, "VEGFR");
     add_allowed_protein(Filopodia, "VEGF_VEGFR");
 
