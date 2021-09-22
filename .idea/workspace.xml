@@ -15,52 +15,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Finished cytoprotein declaration.">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Implemented functions for shape container to handle shape set up.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/source_gen.caches/SimulationSettings/generator/templates/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/behavior/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/constraints/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/editor/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/structure/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/source_gen.caches/SimulationSettings/typesystem/generated" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_CellNumber_Test$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_CellNumber_Test$LINKS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_CellNumber_Test$PROPS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_CellNumber_Test$TestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_CellNumber_Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissueProperties_Test$CONCEPTS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissueProperties_Test$LINKS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissueProperties_Test$TestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissueProperties_Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectBoundaries_Test$TestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectBoundaries_Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test$TestBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/classes_gen/MSMTests/tests/test_TissuesObjectOverlap_Test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cell.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cell.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_shape_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_shape_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,14 +275,7 @@
       <workItem from="1632150107613" duration="612000" />
       <workItem from="1632213770133" duration="6003000" />
       <workItem from="1632306591754" duration="124000" />
-      <workItem from="1632306726498" duration="4970000" />
-    </task>
-    <task id="LOCAL-00013" summary="Fixed problem CMAKE file not finding sources.">
-      <created>1621866846155</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1621866846155</updated>
+      <workItem from="1632306726498" duration="12942000" />
     </task>
     <task id="LOCAL-00014" summary="Created new ODE class and associated files.">
       <created>1623146799133</created>
@@ -659,7 +613,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632149861743</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Implemented functions for shape container to handle shape set up.">
+      <created>1632316966735</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1632316966735</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -678,7 +639,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Begun changing generators for species to match new layout." />
     <MESSAGE value="Testing spring allocation for flat tissues." />
     <MESSAGE value="Readded missing generated files" />
     <MESSAGE value="WORKING TESTS" />
@@ -703,7 +663,8 @@
     <MESSAGE value="Parameterising Notch Test" />
     <MESSAGE value="Implemented basic skeletons for shape classes." />
     <MESSAGE value="Finished cytoprotein declaration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished cytoprotein declaration." />
+    <MESSAGE value="Implemented functions for shape container to handle shape set up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented functions for shape container to handle shape set up." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
