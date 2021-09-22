@@ -11,6 +11,7 @@
 class Cell_Type;
 class Coordinates;
 class EC;
+class Protrusion;
 class Tissue_Container;
 class World;
 
@@ -27,6 +28,8 @@ public:
     Tissue_Container *m_tissue_container;
 
     EC* cell_agent;
+    // Protrusions that a cell currently has.
+    std::vector<Protrusion*> m_protrusions;
 
     std::string m_name;
     Cell_Type *m_cell_type;
