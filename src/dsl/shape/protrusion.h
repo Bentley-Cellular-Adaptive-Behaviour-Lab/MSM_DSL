@@ -30,10 +30,12 @@ private:
     std::stack<MemAgent *> m_memAgents; // Stores all the memAgents in this filopodia, including the base at position 0.
     ProtrusionType *m_protrusionType;
 public:
-
     EC *getCell();
 
     Protrusion(EC *cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType);
+
+    ProtrusionType* getProtrusionType();
+
     void addMemAgentToStack(MemAgent *memAgent);
     MemAgent *getTopMemAgent();
     void popMemAgentFromStack();

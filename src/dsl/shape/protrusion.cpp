@@ -41,6 +41,10 @@ Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrus
     this->m_protrusionType = protrusionType;
 }
 
+ProtrusionType* Protrusion::getProtrusionType() {
+    return this->m_protrusionType;
+}
+
 void Protrusion::addMemAgentToStack(MemAgent *memAgent) {
     this->m_memAgents.push(memAgent);
 }

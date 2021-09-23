@@ -86,17 +86,12 @@ bool patterned = false;
 //}
 World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s)
 {
-    if (TESTING == true)
-    {
+    if (TESTING) {
         srand(100);
-    }
-    else if (s > 0)
-    {
+    } else if (s > 0) {
         seed = s;
         g = std::mt19937(seed);
-    }
-    else
-    {
+    } else {
         g = std::mt19937(rdtsc());
     }
 
@@ -116,8 +111,9 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     std::cout << "world fil tip max: " << std::to_string(FILTIPMAX) << std::endl;
     std::cout << "world token str: " << std::to_string(tokenStrength) << std::endl;
 
-    if (randFilExtend >= 0 && randFilExtend <= 1)
+    if (randFilExtend >= 0 && randFilExtend <= 1) {
         EPSILON = 0;
+    }
 
     std::cout << "Creating world..." << std::endl;
 
