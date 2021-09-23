@@ -15,8 +15,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Adding unversioned language files as a commit.">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Added capability for protrusions to choose the furthest distance.">
+      <change afterPath="$PROJECT_DIR$/tests/automated/helper_shape.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" afterDir="false" />
     </list>
@@ -65,12 +67,13 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/automated/generated" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/automated" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\tests\automated" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\tests\automated\generated" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src" />
     </key>
@@ -83,11 +86,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.springAgent">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -110,6 +108,11 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
@@ -274,13 +277,7 @@
       <workItem from="1632213770133" duration="6003000" />
       <workItem from="1632306591754" duration="124000" />
       <workItem from="1632306726498" duration="12942000" />
-    </task>
-    <task id="LOCAL-00015" summary="Created functions for checking protein levels in the environment around memagents.">
-      <created>1623154575039</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1623154575039</updated>
+      <workItem from="1632408226394" duration="97000" />
     </task>
     <task id="LOCAL-00016" summary="Added functions for measuring the amount of protein in adjacent memagents">
       <created>1623165218262</created>
@@ -618,7 +615,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632387699180</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Added new functions to protrusion class">
+      <created>1632396324417</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1632396324418</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,8 +641,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Readded missing generated files" />
-    <MESSAGE value="WORKING TESTS" />
     <MESSAGE value="implementing tests" />
     <MESSAGE value="Amended generation profile to copy new ODE files to source folder." />
     <MESSAGE value="ODE LANGUAGE BUILDS AND RUNS" />
@@ -662,7 +664,9 @@
     <MESSAGE value="Finished cytoprotein declaration." />
     <MESSAGE value="Implemented functions for shape container to handle shape set up." />
     <MESSAGE value="Adding unversioned language files as a commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding unversioned language files as a commit." />
+    <MESSAGE value="Added new functions to protrusion class" />
+    <MESSAGE value="Added capability for protrusions to choose the furthest distance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added capability for protrusions to choose the furthest distance." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

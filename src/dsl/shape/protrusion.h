@@ -21,6 +21,8 @@ private:
     bool m_retracted = false;
     float m_currentLength = 0.0f;
 
+    bool getsFurthestEnv = false;
+
     EC *m_cell;
     // May not be needed - reassess once functions have been written.
     MemAgent *m_baseMemAgent;
@@ -36,7 +38,7 @@ public:
     MemAgent *getTopMemAgent();
     void popMemAgentFromStack();
     void updateCurrentLength(float distanceDelta);
-    Env *findHighestConcPosition(MemAgent* memAgent);
+    Env *findHighestConcPosition(MemAgent* memAgent, float prob);
     void extendProtrusion();
 };
 
