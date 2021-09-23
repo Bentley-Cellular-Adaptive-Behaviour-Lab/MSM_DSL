@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 0)
+set(TEST_TYPE 1)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -153,8 +153,10 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
             tests/automated/helper_ODE.cpp
+            tests/automated/helper_shape.cpp
             tests/automated/test_ODE.cpp
             tests/automated/test_setup.cpp
+            tests/automated/test_shape.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
             tests/automated/generated/dsl_world_gen.cpp)
@@ -190,6 +192,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/substrate.h
             src/dsl/world/worldContainer.h
             tests/automated/helper_ODE.h
+            tests/automated/helper_shape.h
             tests/automated/generated/dsl_species_gen.h)
 
     find_package(OpenGL)
