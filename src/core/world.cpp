@@ -86,17 +86,12 @@ bool patterned = false;
 //}
 World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s)
 {
-    if (TESTING == true)
-    {
+    if (TESTING) {
         srand(100);
-    }
-    else if (s > 0)
-    {
+    } else if (s > 0) {
         seed = s;
         g = std::mt19937(seed);
-    }
-    else
-    {
+    } else {
         g = std::mt19937(rdtsc());
     }
 
@@ -116,8 +111,9 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     std::cout << "world fil tip max: " << std::to_string(FILTIPMAX) << std::endl;
     std::cout << "world token str: " << std::to_string(tokenStrength) << std::endl;
 
-    if (randFilExtend >= 0 && randFilExtend <= 1)
+    if (randFilExtend >= 0 && randFilExtend <= 1) {
         EPSILON = 0;
+    }
 
     std::cout << "Creating world..." << std::endl;
 
@@ -1540,13 +1536,13 @@ void World::runSimulation()
 		}
 		simulateTimestep();
 
-		if (ANALYSIS_HYSTERESIS)
-			hysteresisAnalysis();
-		else if (ANALYSIS_TIME_TO_PATTERN)
-			evaluateSandP();
+		if (ANALYSIS_HYSTERESIS) {
+            hysteresisAnalysis();
+        } else if (ANALYSIS_TIME_TO_PATTERN) {
+            evaluateSandP();
+        }
 
-		if(MEM_LEAK_OCCURRING)
-		{
+		if (MEM_LEAK_OCCURRING) {
 			timeStep = MAXtime;
 //			RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
             getWorldLogger()->getHysteresisFile() << "MEMORY LEAKED!!!...quit run" << std::endl;
@@ -1695,8 +1691,7 @@ void World::simulateTimestep() {
 	timeStep++;
 	//TODO: maybe move this out of simulate timestep? bit misleading that its in here
 	//could just call creation timestep func from here.. and have timesteps start from zero instead of -1
-	if (timeStep == 0)
-	{
+	if (timeStep == 0) {
 		std::cout << "Creation timestep... initialising everything" << std::endl;
 		creationTimestep(movie);
 	} else {
@@ -1797,7 +1792,6 @@ void World::updateMemAgents() {
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
 
 		if (!deleted) {
-
 			//reset memAgents active Notch level ready for new binding
 			memp->activeNotch = 0.0f;
 
@@ -1833,9 +1827,7 @@ void World::updateMemAgents() {
 					if (memp->filRetract()) {
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);
-
 						delete memp;
-
 					}
 						//NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
 					else {
@@ -1878,8 +1870,7 @@ void World::updateMemAgents() {
 	// the force of new memAgent movements made in functions above are conveyed through the springs following Hookes Law to move all memAgents within the mesh
 	if ((ANALYSIS_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
 		calculateSpringAdjustments();
-	}
-	else if(!ANALYSIS_HYSTERESIS){
+	} else if(!ANALYSIS_HYSTERESIS){
 		calculateSpringAdjustments();
 	}
 }
@@ -1920,8 +1911,6 @@ void World::updateECagents() {
 
 		ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
 
-		//TODO: Add this back in.
-//        ECagents[j]->logger->write_to_file();
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
@@ -1940,8 +1929,8 @@ void World::updateECagents() {
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
-		//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 		if (PROTEIN_TESTING) {
+            //Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
 			ECagents[j]->distribute_proteins();
 		} else {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
@@ -4701,8 +4690,6 @@ bool World::check_point_within_triangle(Coordinates* point, std::vector<Coordina
     //if its the hypotenuse of the triange, the one line that isnt actually a spring, but the divider of the 4 way mesh into
     //two triangles, then need to test for points on that line aswell as within the triangle.
     Coordinates* order = new Coordinates[3];
-
-
 
     order[0] = triangle[1];
     order[1] = triangle[0];

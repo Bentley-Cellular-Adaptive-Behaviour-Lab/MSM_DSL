@@ -6,7 +6,11 @@
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="src/springAgent" targetName="springAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="autoSpringAgent" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gmock_main" />
+      <config projectName="tests/automated/autoSpringAgent" targetName="gtest" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -15,105 +19,121 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Finished cytoprotein declaration.">
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/Protrusion__BehaviorDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/check_protrusionSpeciesLocationIsMembrane_NonTypesystemRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/typeof_TriggersWhen_InferenceRule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/LanguageConceptSwitch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_tests.mps" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/dsl_Shape.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generated/dsl_shape_gen.cpp" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Added capability for protrusions to choose the furthest distance.">
+      <change afterPath="$PROJECT_DIR$/tests/automated/helper_shape.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/automated/test_shape.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/17" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/18" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/19" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/20" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/21" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/22" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/24" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/25" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/26" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/27" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/28" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/29" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/33" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/34" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/35" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/36" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/37" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/38" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/CXX.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/CPM_module.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/EC.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/contact.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/coordinates.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/display.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/environment.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/filopodia.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/hysteresis.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/location.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/macrophage.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/medAgent.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/memAgents.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/spring.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/vessel.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/core/world.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/shape/cytoprotein.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/shape/protrusion.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/shape/protrusionType.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/shape/shapeContainer.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/species/protein.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/tissue/cell.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/tissue/cellType.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/tissue/tissue.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/tissue/tissueContainer.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/tissue/tissueType.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/utils/logger.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/utils/shape.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/utils/utils.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/world/gradient.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/world/substrate.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/dsl/world/worldContainer.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/generated/dsl_shape_gen.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/generated/dsl_species_gen.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/generated/dsl_tissue_gen.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.o" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen.caches/ShapeLangLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/source_gen/ShapeLangLang/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen.caches/ShapeLang/typesystem/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/BehaviorAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/BehaviorAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/CytoskeletalProtein__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/CytoskeletalProtein__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/TypesystemDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/TypesystemDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/source_gen/ShapeLang/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/behavior/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/behavior/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/behavior/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/behavior/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/editor/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/editor/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen.caches/SpeciesLang/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/SpeciesContainer__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/SpeciesContainer__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/Species__BehaviorDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/Species__BehaviorDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/behavior/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/SpeciesBin_SubstituteMenu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/SpeciesReference_EditorBuilder_a.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/SpeciesReference_EditorBuilder_a.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/SpeciesReference_SubstituteMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/SpeciesReference_SubstituteMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/editor/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/StructureAspectDescriptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/source_gen/SpeciesLang/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/models/TestLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/models/TestLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/models/TestLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/models/TestLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/source_gen.caches/TestLang/structure/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/source_gen.caches/TestLang/structure/dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/source_gen.caches/TestLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/source_gen.caches/TestLang/structure/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/source_gen/TestLang/structure/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen.caches/TissueLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/source_gen/TissueLang/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/checkSpeciesLocation_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/checkSpeciesLocation_NonTypesystemRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/duplicateOwnedProtein_NonTypesystemRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/duplicateOwnedProtein_NonTypesystemRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/source_gen/TissueLang/typesystem/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen.caches/WorldLang/templates/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/templates/QueriesGenerated.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/source_gen/WorldLang/templates/trace.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen.caches/MSMSimulation/user_simulation/generated" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species_header.h" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/Example1_Species_header.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation/NewTissues.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/world.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/shapeContainer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/automated/helper_shape.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_shape.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +147,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="cytoproteins" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -150,6 +170,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
@@ -159,12 +180,13 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/automated/generated" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tests/automated" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\tests\automated" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\tests\automated\generated" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src" />
     </key>
@@ -176,10 +198,29 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote JVM Debug.DebugMPS">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="Google Test.BasicCellDistributionTest.preDistributionTest">
+    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
@@ -187,31 +228,22 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BasicFilODEMemAgentTest.basicFilTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicFilODEMemAgentTest" TEST_METHOD="basicFilTest" TEST_MODE="SUITE_TEST">
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellJunctionTest.crossJunctionODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="CellJunctionTest" TEST_METHOD="crossJunctionODETest" TEST_MODE="SUITE_TEST">
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MultiNeighbourODEMemAgentTest.cellODETest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="MultiNeighbourODEMemAgentTest" TEST_METHOD="cellODETest" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -246,6 +278,11 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DebugMPS" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -260,7 +297,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Remote JVM Debug.DebugMPS" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="CTest Application.TestBasicNotchPathway" />
+      <item itemvalue="CTest Application.TestGoogleTest" />
+      <item itemvalue="CTest Application.TestTranscriptionDelay" />
+      <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
+      <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
+      <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
+      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -357,34 +406,9 @@
       <workItem from="1632144056726" duration="4245000" />
       <workItem from="1632150107613" duration="612000" />
       <workItem from="1632213770133" duration="6003000" />
-    </task>
-    <task id="LOCAL-00013" summary="Fixed problem CMAKE file not finding sources.">
-      <created>1621866846155</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1621866846155</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Created new ODE class and associated files.">
-      <created>1623146799133</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1623146799133</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Created functions for checking protein levels in the environment around memagents.">
-      <created>1623154575039</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1623154575039</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Added functions for measuring the amount of protein in adjacent memagents">
-      <created>1623165218262</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1623165218262</updated>
+      <workItem from="1632306591754" duration="124000" />
+      <workItem from="1632306726498" duration="12942000" />
+      <workItem from="1632408226394" duration="7538000" />
     </task>
     <task id="LOCAL-00017" summary="Changed ODE_system to be a static function. Included additional rate function for example.">
       <created>1623168737127</created>
@@ -701,7 +725,35 @@
       <option name="project" value="LOCAL" />
       <updated>1632149861743</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Implemented functions for shape container to handle shape set up.">
+      <created>1632316966735</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1632316966735</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Adding unversioned language files as a commit.">
+      <created>1632387699180</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1632387699180</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Added new functions to protrusion class">
+      <created>1632396324417</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1632396324418</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Added capability for protrusions to choose the furthest distance.">
+      <created>1632408328766</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1632408328766</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,10 +772,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Begun changing generators for species to match new layout." />
-    <MESSAGE value="Testing spring allocation for flat tissues." />
-    <MESSAGE value="Readded missing generated files" />
-    <MESSAGE value="WORKING TESTS" />
     <MESSAGE value="implementing tests" />
     <MESSAGE value="Amended generation profile to copy new ODE files to source folder." />
     <MESSAGE value="ODE LANGUAGE BUILDS AND RUNS" />
@@ -745,7 +793,11 @@
     <MESSAGE value="Parameterising Notch Test" />
     <MESSAGE value="Implemented basic skeletons for shape classes." />
     <MESSAGE value="Finished cytoprotein declaration." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished cytoprotein declaration." />
+    <MESSAGE value="Implemented functions for shape container to handle shape set up." />
+    <MESSAGE value="Adding unversioned language files as a commit." />
+    <MESSAGE value="Added new functions to protrusion class" />
+    <MESSAGE value="Added capability for protrusions to choose the furthest distance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added capability for protrusions to choose the furthest distance." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

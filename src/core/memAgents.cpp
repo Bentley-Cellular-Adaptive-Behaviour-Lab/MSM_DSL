@@ -103,18 +103,20 @@ float MemAgent::FilLength(int type) {
             //score++;
             if (type == TIP) {
                 stored.push_back(Mcurrent);
-                if (Mcurrent->Mx - Mcurrent->filNeigh->Mx >= (float) this->worldP->gridXDimensions / 2.0f)
+                if (Mcurrent->Mx - Mcurrent->filNeigh->Mx >= (float) this->worldP->gridXDimensions / 2.0f) {
                     length += worldP->getDist(Mcurrent->Mx - this->worldP->gridXDimensions, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
-                else if (Mcurrent->filNeigh->Mx - Mcurrent->Mx >= (float) this->worldP->gridXDimensions / 2.0f)
+                } else if (Mcurrent->filNeigh->Mx - Mcurrent->Mx >= (float) this->worldP->gridXDimensions / 2.0f) {
                     length += worldP->getDist(Mcurrent->Mx, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx - this->worldP->gridXDimensions, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
-                else
+                }
+                else {
                     length += worldP->getDist(Mcurrent->Mx, Mcurrent->My, Mcurrent->Mz, Mcurrent->filNeigh->Mx, Mcurrent->filNeigh->My, Mcurrent->filNeigh->Mz);
+                }
                 Mcurrent = Mcurrent->filNeigh;
-            } else if (type == BASE) Mcurrent = Mcurrent->plusSite;
-
+            } else if (type == BASE) {
+                Mcurrent = Mcurrent->plusSite;
+            }
         } while (Mcurrent->FIL != BASE);
     }
-
     return (length);
 }
 //----------------------------------------------------------------------------------
@@ -135,7 +137,6 @@ void MemAgent::veilAdvance(void) {
     currentNode = filNeigh;
 
     do {
-
         if (currentNode->FIL != BASE) {
             count++;
             currentNode->FA = false;
@@ -212,7 +213,6 @@ bool MemAgent::filRetract(void) {
 
     ///if its spring length>1 (so nodeAgents either end of spring are not nearest neighbours in grid, return flase and stop function. It will reassess next timestep after the spring has retracted further
     if ((int) length > 1) {
-
         return (false);
     }
     ///else, the current tip has retracted the spring back to the node agents adhered at the other end of the current spring
@@ -279,9 +279,8 @@ bool MemAgent::filRetract(void) {
             mp->neighs = 0;
             //flag as deleted so dont assess receptors etc. 
             mp->deleteFlag = true;
-//pass down tipnodes actin to this new tip as the old will be deleted
+            //pass down tipnodes actin to this new tip as the old will be deleted
             mp->filTokens += filTokens;
-
         }
 
         mp->plusSite = NULL;
@@ -351,12 +350,9 @@ bool MemAgent::filRetract(void) {
                 }
             }
         }
-        
-
         delete neighStp;
         return (true);
     }
-
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
@@ -416,32 +412,23 @@ void MemAgent:: TokenTrading(void){
     //----------------------------------------
     
     if(flag==0){
-        
         //pass tokens up filopodia
         if((FIL==STALK)||(FIL==BASE)){
             if(plusSite==NULL){
                 //cout<<"no plusSite"; cout.flush();
             }
             else{
-                
                 plusSite->filTokens+=filTokens;
                 filTokens=0;
-                
-                
             }
         }
         else if((triangle.size()!=0)&&(filTokens>0)){
             //pick nearest node in triangle to give tokens to.
-            
             nearest = find_nearest_triangle_node();
             nearest->filTokens+=filTokens;
             filTokens=0;
-            
         }
-        
-        
     }
-    
 }
 ////---------------------------------------------------------------------------------------------
 /**
@@ -451,7 +438,6 @@ void MemAgent::ActinFlow(void) {
 
     int flag = 0;
     MemAgent* nearest;
-
 
     //lose all actin tokens (opposite of recruitment also simplified degradation) if VEGFR-2 receptors havent activated for a while------------------------
     if (VRinactiveCounter > TokDisRate) {
@@ -465,31 +451,22 @@ void MemAgent::ActinFlow(void) {
     //----------------------------------------
 
     if (flag == 0) {
-
         //pass tokens up filopodia towards tipnode
         if ((FIL == STALK) || (FIL == BASE)) {
             if (plusSite == NULL) {
 				std::cout<<"no plusSite_BUG DETECTED in memAgents.cpp line 429"; std::cout.flush(); ///!WORTH BUG TESTING! if this shows up then plusSite is not labelling correctly
             } else {
-
                 plusSite->filTokens += filTokens;
                 filTokens = 0;
-
-
             }
         } else if ((triangle.size() != 0) && (filTokens > 0)) {
             ///!WORTH BUG TESTING! is this def sending all surface agents accumulated actin around? and not any tipnodes in filopodia? Prob ok, but worth a recheck
             ///pick nearest node in triangle to give tokens to if a surface agent (which should have triangle.size()!=0
-
             nearest = find_nearest_triangle_node();
             nearest->filTokens += filTokens;
             filTokens = 0;
-
         }
-
-
     }
-
 }
 //---------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------
@@ -646,7 +623,7 @@ void MemAgent::VEGFRresponse(void) {
     }
 
     //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
-    if (FILOPODIA == true){
+    if (FILOPODIA){
     	//***** RANDFIL here
     	if (randFilExtend >= 0 && randFilExtend <= 1) {
 			Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
@@ -671,7 +648,7 @@ void MemAgent::VEGFRresponse(void) {
         if (FIL == NONE)
         	tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
 
-        if (oldVersion == true) {
+        if (oldVersion) {
             if (FIL == STALK) {
                 //passes its filExtend token to Magent in its plusSite
                 plusSite->filTokens++;
@@ -682,7 +659,7 @@ void MemAgent::VEGFRresponse(void) {
         //--------------------------------------------------------------------------------------------
         //filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
-            if (deleteFlag == false)
+            if (!deleteFlag)
             	moved = extendFil();
         }
         //--------------------------------------------------------------------------------------------
@@ -690,9 +667,11 @@ void MemAgent::VEGFRresponse(void) {
         //reset VRinactive counter as now activated
         VRinactiveCounter = 0;
 
-    } else VRinactiveCounter++;
+    } else  {
+        VRinactiveCounter++;
+    }
 
-    if (moved == false)
+    if (!moved)
     	filTipTimer++;
     else filTipTimer = 0;
 

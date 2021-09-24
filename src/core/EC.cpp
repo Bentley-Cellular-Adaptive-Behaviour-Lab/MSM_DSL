@@ -175,16 +175,12 @@ bool EC::tipCellTest(void){
  * , if reached it will stop any further filopdia growth until some retract and more actin in available
  */
 void EC::calcCurrentActinUsed(void){
-   
     actinUsed=0;
-
     int i;
     for(i=0;i<nodeAgents.size();i++)
         if(nodeAgents[i]->FIL==TIP){
-           
             actinUsed += nodeAgents[i]->FilLength(TIP);
         }
-    
   
 }
 //------------------------------------------------------------------------------------------
@@ -1164,25 +1160,23 @@ void EC::newNodes(void) {
     int count=0;
 
     for (i = 0; i < Springs.size(); i++) {
-
         count++;
-
         //this counter stops the memory leak infinite looping in here - we dont know what precisely causes it to go wrong, but its definitely in here and an infinitie loop of dividing and creating new springs, this counter will detect it and stop this run and start a new one. Doesnt happen often if at all anymore, just a failsafe incase.
         if(count<upto+1000){
 
             stp = Springs[i];
             //deletion set in remove stalk node
-            if (stp->deletion == true) {
+            if (stp->deletion) {
                 S = Springs.begin();
                 Springs.erase(S + i);
                 delete stp;
 
                 i--;
-            } else if ((stp->deletion == false) && (stp->filopodia == true)) {
-
+            } else if ((!stp->deletion) && (stp->filopodia)) {
                 x = stp->start->Mx;
                 y = stp->start->My;
                 z = stp->start->Mz;
+
                 a = stp->end->Mx;
                 b = stp->end->My;
                 c = stp->end->Mz;
@@ -1190,35 +1184,41 @@ void EC::newNodes(void) {
                 //toroidal adjustments
                 if(TOROIDAL_X){
                     if (sqrt(XA * XA) >= (float) this->worldP->gridXDimensions / 2.0f) {
-
-                        if (XA > 0) XA = -((float) this->worldP->gridXDimensions - XA);
-                        else XA = (float) this->worldP->gridXDimensions - fabs(XA);
+                        if (XA > 0) {
+                            XA = -((float) this->worldP->gridXDimensions - XA);
+                        } else {
+                            XA = (float) this->worldP->gridXDimensions - fabs(XA);
+                        }
                         length = sqrt((XA * XA)+((y - b)*(y - b))+((z - c)*(z - c)));
 
                     } else {
                         length = worldP->getDist(x, y, z, a, b, c);
                     }
+                } else {
+                    length = worldP->getDist(x, y, z, a, b, c);
                 }
-                else length = worldP->getDist(x, y, z, a, b, c);
+
                 //if((stp->start->FIL==STALK)&&(stp->end->FIL==STALK)){
                 if (stp->end->FIL != TIP) {
-                    if ((int) length <= 1.0) removeStalkNode(stp);
+                    if ((int) length <= 1.0) {
+                        removeStalkNode(stp);
+                    }
                 }
                 //check length, if longer than threshold create a new node in middle of spring
-                if ((length >= NewNodeLength) && (stp->veilAdvancing == false)) {
-
+                if ((length >= NewNodeLength) && (!stp->veilAdvancing)) {
                     //create new node
                     Coord = worldP->findMidPoint(x, y, z, a, b, c, length);
-
-                    if(Coord.x >= this->worldP->gridXDimensions)
+                    if (Coord.x >= this->worldP->gridXDimensions) {
                         Coord.x -= this->worldP->gridXDimensions;
-                    else if(Coord.x < 0)
+                    } else if(Coord.x < 0) {
                         Coord.x += this->worldP->gridXDimensions;
+                    }
 
                     memp = new MemAgent(this, worldP);
                     //cout<<"newNode:"<<memp<<endl<<endl;
-                    if ((Coord.x < 0) || (Coord.x >= this->worldP->gridXDimensions)) std::cout << "bug " << Coord.x;
-
+                    if ((Coord.x < 0) || (Coord.x >= this->worldP->gridXDimensions)) {
+                        std::cout << "bug " << Coord.x;
+                    }
 
                     memp->Mx = Coord.x;
                     memp->My = Coord.y;
@@ -1267,7 +1267,6 @@ void EC::newNodes(void) {
                     createSpringTokenObject(stp->start, memp, startN);
                     createSpringTokenObject(memp, stp->end, 0);
 
-
                     stp->start->SpringNeigh[startN]->agents.assign(stp->agents.begin(), D + half);
                     memp->SpringNeigh[0]->agents.assign(D + half, stp->agents.end());
 
@@ -1301,16 +1300,13 @@ void EC::newNodes(void) {
                     S = Springs.begin();
                     Springs.erase(S + i);
                     delete stp;
-
                     i--;
                 }
             }
-
-        }else{
+        } else {
             //it must be memory leaking and spilling out - so kill this run and start a new one.
             MEM_LEAK_OCCURRING=true;
             i = Springs.size();
-
         }
     }
 }
@@ -1450,8 +1446,7 @@ void EC::gridAgents(void) {
             J = 0;
             MemAgent* blemb = nodeAgents[i];
             do {
-
-                if (nodeAgents[i]->SpringNeigh[J]->filopodia == true) {
+                if (nodeAgents[i]->SpringNeigh[J]->filopodia) {
                     j = J;
                 }
                 J++;
@@ -1462,17 +1457,18 @@ void EC::gridAgents(void) {
 
             sumfilTok = 0;
 
-            if(j!=-1){
+            if (j!=-1) {
                 N[0] = nodeAgents[i]->neigh[j]->Mx;
                 N[1] = nodeAgents[i]->neigh[j]->My;
                 N[2] = nodeAgents[i]->neigh[j]->Mz;
 
-                if (testSpringLength(P, N, nodeAgents[i]->SpringNeigh[j]) == true) {
+                if (testSpringLength(P, N, nodeAgents[i]->SpringNeigh[j])) {
                     //cout<<"gridding "<<nodeAgents[i]<<" "<<nodeAgents[i]->neigh[j]<<endl;
-                    if (worldP->toroidalTest(P, N) == false) gridSpringAgents(P, N, false, nodeAgents[i]->SpringNeigh[j]);
-                    else gridSpringAgents(P, N, true, nodeAgents[i]->SpringNeigh[j]);
-
-
+                    if (!worldP->toroidalTest(P, N)) {
+                        gridSpringAgents(P, N, false, nodeAgents[i]->SpringNeigh[j]);
+                    } else {
+                        gridSpringAgents(P, N, true, nodeAgents[i]->SpringNeigh[j]);
+                    }
                 } else {
                     if ((nodeAgents[i]->filPos < nodeAgents[i]->neigh[j]->filPos) || (nodeAgents[i]->neigh[j]->FIL == TIP)) {
                         nodeAgents[i]->plusSite = nodeAgents[i]->neigh[j];
@@ -1484,7 +1480,6 @@ void EC::gridAgents(void) {
                         for (k = 0; k < nodeAgents[i]->SpringNeigh[j]->oldSize; k++) {
                             sumfilTok += nodeAgents[i]->SpringNeigh[j]->filTokPos[k];
                         }
-
                         nodeAgents[i]->SpringNeigh[j]->end->filTokens += sumfilTok;
                     }
                 }
