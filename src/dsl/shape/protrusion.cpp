@@ -5,10 +5,10 @@
 #include "protrusion.h"
 #include "protrusionType.h"
 
-#include "core/environment.h"
-#include "core/memAgents.h"
-#include "core/objects.h"
-#include "core/world.h"
+#include "../../core/environment.h"
+#include "../../core/memAgents.h"
+#include "../../core/objects.h"
+#include "../../core/world.h"
 
 // TODO:: WRITE REPLACEMENT FUNCTIONS FOR THESE PROTRUSION BEHAVIOUR FUNCTIONS
 

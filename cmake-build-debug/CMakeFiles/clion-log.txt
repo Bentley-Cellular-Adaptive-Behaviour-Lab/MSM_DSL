@@ -1,6 +1,6 @@
 /home/meadt/CLion/clion-2021.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/meadt/MPSProjects/MSM_DSL
-TEST_TYPE = 0
-Testing: None
+TEST_TYPE = 1
+Testing: Automated
 -- The C compiler identification is GNU 8.4.1
 -- The CXX compiler identification is GNU 8.4.1
 -- Detecting C compiler ABI info
@@ -13,8 +13,19 @@ Testing: None
 -- Check for working CXX compiler: /usr/bin/c++ - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
+-- Found Python: /usr/bin/python3.6 (found version "3.6.8") found components: Interpreter 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
 -- Could NOT find OpenGL (missing: OPENGL_opengl_LIBRARY OPENGL_glx_LIBRARY OPENGL_INCLUDE_DIR) 
 -- Could NOT find Boost (missing: Boost_INCLUDE_DIR) 
+Tests=""
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/meadt/MPSProjects/MSM_DSL/cmake-build-debug

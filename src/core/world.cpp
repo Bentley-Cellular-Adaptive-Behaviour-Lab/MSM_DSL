@@ -18,10 +18,12 @@
 #include "spring.h"
 #include "world.h"
 
-#include "dsl/tissue/tissueContainer.h"
-#include "dsl/utils/logger.h"
-#include "dsl/utils/utils.h"
-#include "generated/dsl_species_gen.h"
+#include "../generated/dsl_species_gen.h"
+
+#include "../dsl/tissue/tissueContainer.h"
+#include "../dsl/utils/logger.h"
+#include "../dsl/utils/utils.h"
+
 
 typedef Location** ppLocation;
 typedef Location* pLocation;

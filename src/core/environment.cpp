@@ -4,7 +4,7 @@
 #include "objects.h"
 #include "world.h"
 
-#include "dsl/species/protein.h"
+#include "../dsl/species/protein.h"
 
 Env::Env(World* WorldP){
     VEGF = 0.0f;

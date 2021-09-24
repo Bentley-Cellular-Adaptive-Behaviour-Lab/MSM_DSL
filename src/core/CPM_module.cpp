@@ -17,7 +17,7 @@
 #include "spring.h"
 #include "world.h"
 
-#include "dsl/utils/utils.h"
+#include "../dsl/utils/utils.h"
 
 std::vector<MemAgent*> deleteList;
 

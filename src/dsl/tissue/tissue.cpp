@@ -12,16 +12,16 @@
 #include "tissueType.h"
 #include "tissueContainer.h"
 
-#include "core/objects.h"
-#include "core/coordinates.h"
-#include "core/EC.h"
-#include "core/hysteresis.h"
-#include "core/location.h"
-#include "core/memAgents.h"
-#include "core/spring.h"
-#include "core/world.h"
+#include "../utils/shape.h"
 
-#include "dsl/utils/shape.h"
+#include "../../core/objects.h"
+#include "../../core/coordinates.h"
+#include "../../core/EC.h"
+#include "../../core/hysteresis.h"
+#include "../../core/location.h"
+#include "../../core/memAgents.h"
+#include "../../core/spring.h"
+#include "../../core/world.h"
 
 //********************************************************************************************************************//
 
