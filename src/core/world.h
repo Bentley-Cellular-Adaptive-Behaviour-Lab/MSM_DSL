@@ -181,7 +181,6 @@ public:
     void displayStats(void);
     void viewMesh_diagramSpheres(void);
 
-
     ///analysis/quantification
     void evaluate_shuffling(std::ofstream& fileTo);
     void printScores(std::ofstream& fileTo);
@@ -196,7 +195,6 @@ public:
     void setInitialVEGF(void); ///set VEGF gradient
     void store_new_fusion_events(EC* cell1, EC* cell2);
     void output_cell_protlevels(std::ofstream& fileTo);
-
 
     ///destructors
     ~World(void); ///destructor
