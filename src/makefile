@@ -32,7 +32,6 @@ ifeq ($(BAHTI_ANALYSIS), true)
 	TARGET := springAgent.so
 else
 	ifeq ($(GRAPHICS), true)
-                OBJS += display.o ScreenRecording.o
 		LIBS := -framework OpenGL -framework GLUT -lglui
 	endif
 	#TODO: could have below as standard val
@@ -49,7 +48,7 @@ ${TARGET} : ${OBJS}
 	${CC} ${CPPFLAGS} -c $*.cpp
 
 clean:
-	rm -f ${OBJS} display.o ScreenRecording.o
+	rm -f ${OBJS}
 
 	
 	

@@ -1,0 +1,4 @@
+1. Get UBUNTU
+2. Install JDK-8, Ant, make, g++, Boost
+3. Run Ant on DSL plugin.
+4. If already built, then don't redo this.

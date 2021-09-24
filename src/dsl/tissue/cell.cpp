@@ -10,8 +10,10 @@
 #include "tissueContainer.h"
 #include "tissueType.h"
 
-#include "core/coordinates.h"
-#include "dsl/utils/shape.h"
+#include "../utils/shape.h"
+
+#include "../../core/coordinates.h"
+
 
 /*****************************************************************************************
 *  Name:		create_2d_square_cell

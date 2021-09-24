@@ -11,9 +11,9 @@
 #include "spring.h"
 #include "world.h"
 
-#include "dsl/species/protein.h"
-#include "dsl/tissue/cellType.h"
-#include "dsl/utils/utils.h"
+#include "../dsl/species/protein.h"
+#include "../dsl/tissue/cellType.h"
+#include "../dsl/utils/utils.h"
 
 float steps = 0.5f;
 float overallVEGF = 0.0f;

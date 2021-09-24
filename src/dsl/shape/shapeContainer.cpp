@@ -6,10 +6,10 @@
 #include "shapeContainer.h"
 #include "protrusionType.h"
 
-#include "core/EC.h"
-#include "core/world.h"
+#include "../tissue/cellType.h"
 
-#include "dsl/tissue/cellType.h"
+#include "../../core/EC.h"
+#include "../../core/world.h"
 
 void ShapeContainer::setWorld(World* world) {
     this->m_world = world;

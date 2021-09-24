@@ -11,8 +11,8 @@
 #include "spring.h"
 #include "world.h"
 
-#include "dsl/species/protein.h"
-#include "dsl/tissue/cellType.h"
+#include "../dsl/species/protein.h"
+#include "../dsl/tissue/cellType.h"
 
 int countbell;
 
