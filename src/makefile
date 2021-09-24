@@ -1,5 +1,6 @@
-OBJS = main.o analysis.o Grid.o CPM_module.o constructors.o memAgents.o creation.o geometry_functions.o EC.o ECmesh.o environment.o Tissue.o dsl_Tissue.o dsl_World.o space.o world.o protein.o logger.o ODE.o utils.o
-
+# Recursive wildcard function from https://stackoverflow.com/questions/2483182/recursive-wildcards-in-gnu-make/18258352#18258352
+rwildcard=$(foreach d,$(wildcard $(1:=/*)),$(call rwildcard,$d,$2) $(filter $(subst *,%,$2),$d))
+OBJS = $(patsubst %.cpp, %.o, $(call rwildcard,.,*.cpp))
 CC = g++
 TARGET = springAgent
 
