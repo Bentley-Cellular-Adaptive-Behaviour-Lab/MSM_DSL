@@ -150,125 +150,125 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
 }
 
 
-void Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
-    EC *cell = this->m_cell;
-    MemAgent *newMemAgent;
-    Env * highest;
-    bool ans = false;
-    Filopodia* fp;
-    float distNeeded;
-    float newDist, oldDist;
-    int i;
-    bool allow;
-
-    this->m_baseMemAgent = startMemAgent;
-
-    if (node == true) {
-        // Find new position and extend if enough cytoprotein is available.
-        if (EnvNeighs.size() != 0) {
-            if (Cell->actinUsed < actinMax) {
-                allow = true;
-                if(allow){
-                    highest = findHighestConc();
-                    if ((highest != NULL) && (highest->VEGF != 0)) {
-                        //-----------------------------------------------------------------------
-                        if (FIL == NONE) {
-                            //if(testFilMax(Cell)==false){
-                            //basal focal adhesion - inhibits veil and all cell body advance
-
-                            if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
-                                if (highest->Ex > Mx) {
-                                    distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
-                                } else {
-                                    distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
-                                }
-                            } else {
-                                distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
-                            }
-
-
-                            if ((actinMax - Cell->actinUsed) >= distNeeded) {
-                                //cout<<distNeeded<<" B "<<Cell;
-                                Cell->actinUsed += distNeeded;
-                                FA=true;
-                                //Cell->fil = true;
-                                //create new node, only attached to the current guy. create it in highest VEGF site.
-                                newMemAgent = new MemAgent(Cell, worldP);
-
-                                newMemAgent->Mx = highest->Ex;
-                                newMemAgent->My = highest->Ey;
-                                newMemAgent->Mz = highest->Ez;
-
-                                if (DSL_TESTING) {
-                                    this->worldP->set_focal_adhesion(newMemAgent);
-                                } else {
-                                    newMemAgent->FA = true;
-                                }
-
-                                newMemAgent->setPreviousX(newMemAgent->Mx);
-                                newMemAgent->setPreviousY(newMemAgent->My);
-                                newMemAgent->setPreviousZ(newMemAgent->Mz);
-
-                                newMemAgent->FIL = TIP;
-                                FIL = BASE;
-
-
-                                Cell->nodeAgents.push_back(newMemAgent);
-
-                                worldP->setFilLocation((int) newMemAgent->Mx, (int) newMemAgent->My, (int) newMemAgent->Mz, newMemAgent);
-
-                                //connect the two nodes
-
-                                neigh[neighs] = newMemAgent;
-                                Cell->createSpringTokenObject(this, newMemAgent, neighs);
-                                neighs++;
-
-                                //this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
-                                newMemAgent->filNeigh = this;
-
-                                //link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
-                                plusSite = newMemAgent;
-                                newMemAgent->minusSite = this;
-
-                                //confirms the extension has succeeded
-                                ans = true;
-
-                                //spend the actin tokens
-                                filTokens -= tokenStrength;
-                                this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
-                            }
-                        } else {
-                            if (highest->Ex - filNeigh->Mx > xMAX / 2.0f) {
-                                newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                            } else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f) {
-                                newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                            } else {
-                                newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                            }
-
-
-                            if (Mx - filNeigh->Mx > xMAX / 2.0f) {
-                                oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                            } else if (filNeigh->Mx - Mx > xMAX / 2.0f) {
-                                oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                            } else {
-                                oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                            }
-
-                            distNeeded = newDist - oldDist;
-
-                            if ((actinMax - Cell->actinUsed) >= distNeeded) {
-                                Cell->actinUsed += distNeeded;
-                                moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
-                                this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
-                                ans = true;
-                                filTokens -= tokenStrength;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    return (ans);
-}
+//void Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
+//    EC *cell = this->m_cell;
+//    MemAgent *newMemAgent;
+//    Env * highest;
+//    bool ans = false;
+//    Filopodia* fp;
+//    float distNeeded;
+//    float newDist, oldDist;
+//    int i;
+//    bool allow;
+//
+//    this->m_baseMemAgent = startMemAgent;
+//
+//    if (node == true) {
+//        // Find new position and extend if enough cytoprotein is available.
+//        if (EnvNeighs.size() != 0) {
+//            if (Cell->actinUsed < actinMax) {
+//                allow = true;
+//                if(allow){
+//                    highest = findHighestConc();
+//                    if ((highest != NULL) && (highest->VEGF != 0)) {
+//                        //-----------------------------------------------------------------------
+//                        if (FIL == NONE) {
+//                            //if(testFilMax(Cell)==false){
+//                            //basal focal adhesion - inhibits veil and all cell body advance
+//
+//                            if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
+//                                if (highest->Ex > Mx) {
+//                                    distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
+//                                } else {
+//                                    distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
+//                                }
+//                            } else {
+//                                distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
+//                            }
+//
+//
+//                            if ((actinMax - Cell->actinUsed) >= distNeeded) {
+//                                //cout<<distNeeded<<" B "<<Cell;
+//                                Cell->actinUsed += distNeeded;
+//                                FA=true;
+//                                //Cell->fil = true;
+//                                //create new node, only attached to the current guy. create it in highest VEGF site.
+//                                newMemAgent = new MemAgent(Cell, worldP);
+//
+//                                newMemAgent->Mx = highest->Ex;
+//                                newMemAgent->My = highest->Ey;
+//                                newMemAgent->Mz = highest->Ez;
+//
+//                                if (DSL_TESTING) {
+//                                    this->worldP->set_focal_adhesion(newMemAgent);
+//                                } else {
+//                                    newMemAgent->FA = true;
+//                                }
+//
+//                                newMemAgent->setPreviousX(newMemAgent->Mx);
+//                                newMemAgent->setPreviousY(newMemAgent->My);
+//                                newMemAgent->setPreviousZ(newMemAgent->Mz);
+//
+//                                newMemAgent->FIL = TIP;
+//                                FIL = BASE;
+//
+//
+//                                Cell->nodeAgents.push_back(newMemAgent);
+//
+//                                worldP->setFilLocation((int) newMemAgent->Mx, (int) newMemAgent->My, (int) newMemAgent->Mz, newMemAgent);
+//
+//                                //connect the two nodes
+//
+//                                neigh[neighs] = newMemAgent;
+//                                Cell->createSpringTokenObject(this, newMemAgent, neighs);
+//                                neighs++;
+//
+//                                //this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
+//                                newMemAgent->filNeigh = this;
+//
+//                                //link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
+//                                plusSite = newMemAgent;
+//                                newMemAgent->minusSite = this;
+//
+//                                //confirms the extension has succeeded
+//                                ans = true;
+//
+//                                //spend the actin tokens
+//                                filTokens -= tokenStrength;
+//                                this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
+//                            }
+//                        } else {
+//                            if (highest->Ex - filNeigh->Mx > xMAX / 2.0f) {
+//                                newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+//                            } else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f) {
+//                                newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+//                            } else {
+//                                newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+//                            }
+//
+//
+//                            if (Mx - filNeigh->Mx > xMAX / 2.0f) {
+//                                oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+//                            } else if (filNeigh->Mx - Mx > xMAX / 2.0f) {
+//                                oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+//                            } else {
+//                                oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+//                            }
+//
+//                            distNeeded = newDist - oldDist;
+//
+//                            if ((actinMax - Cell->actinUsed) >= distNeeded) {
+//                                Cell->actinUsed += distNeeded;
+//                                moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
+//                                this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
+//                                ans = true;
+//                                filTokens -= tokenStrength;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
+//    return (ans);
+//}

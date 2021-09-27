@@ -646,25 +646,14 @@ void EC::set_initial_proteins() {
 				protein_counts[i]++;
         	}
 			// OTHERWISE, CHECK THAT IT IS EITHER A CELL OR MEMBRANE PROTEIN AND THAT THE AGENT IS NOT A JUNCTION AGENT.
-            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
-            		|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				protein_counts[i]++;
+            }
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+                protein_counts[i]++;
             }
         }
     }
-
-    // TODO: CHECK THAT WE'RE ONLY DISTRIBUTING PROTEINS TO NODE AGENTS.
-//    for (auto surfaceAgent : this->surfaceAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein_counts[i]++;
-//        }
-//    }
-//
-//    for (auto springAgent : this->springAgents) {
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein_counts[i]++;
-//        }
-//    }
 
     // Once counts have been determined, calculate the amount of each protein per memAgent.
     std::vector<float> protein_totals_per_memAgent;
@@ -684,29 +673,16 @@ void EC::set_initial_proteins() {
 				Protein *current_protein = this->m_cell_type->proteins[i];
 				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
-				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				Protein *current_protein = this->m_cell_type->proteins[i];
 				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+                Protein *current_protein = this->m_cell_type->proteins[i];
+                nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+            }
         }
     }
-
-//    for (auto surfaceAgent : this->surfaceAgents) {
-//        surfaceAgent->add_cell_proteins();
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            surfaceAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-//        }
-//    }
-//
-//    for (auto springAgent : this->springAgents) {
-//        springAgent->add_cell_proteins();
-//        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-//            protein *current_protein = this->m_cell_type->proteins[i];
-//            springAgent->update_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-//        }
-//    }
 }
 
 /*****************************************************************************************
@@ -734,12 +710,16 @@ void EC::distribute_proteins() {
 					protein_counts[i]++;
 				}
 			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
-				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
-				if (nodeAgent->has_protein(current_protein->get_name())) {
-					protein_counts[i]++;
-				}
-			}
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+                if (nodeAgent->has_protein(current_protein->get_name())) {
+                    protein_counts[i]++;
+                }
+            }
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+                if (nodeAgent->has_protein(current_protein->get_name())) {
+                    protein_counts[i]++;
+                }
+            }
         }
     }
 
@@ -760,12 +740,16 @@ void EC::distribute_proteins() {
 					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)
-				|| (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
 					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+                if (nodeAgent->has_protein(current_protein->get_name())) {
+                    nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                }
+            }
         }
     }
 }

@@ -17,6 +17,4 @@ TEST(test_Protrusion, ProtrusionConstructor) {
 TEST_F(FindHighestConcTest, FindHighestConcTest) {
     ProtrusionType *protrusionType = this->m_protrusion->getProtrusionType();
     Env *ep = this->m_protrusion->findHighestConcPosition(this->m_memAgent, protrusionType->getSensitivity());
-
-    ass
 }
