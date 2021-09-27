@@ -12,6 +12,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private ConceptPresentation props_Amount;
   private ConceptPresentation props_Amount_Concentration;
   private ConceptPresentation props_Amount_Expression;
+  private ConceptPresentation props_ArbitraryUnitAmount;
+  private ConceptPresentation props_ArbitraryUnitMass;
   private ConceptPresentation props_Area;
   private ConceptPresentation props_Area_Expression;
   private ConceptPresentation props_Concentration;
@@ -88,6 +90,20 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
           props_Amount_Expression = cpb.create();
         }
         return props_Amount_Expression;
+      case LanguageConceptSwitch.ArbitraryUnitAmount:
+        if (props_ArbitraryUnitAmount == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("a.u.");
+          props_ArbitraryUnitAmount = cpb.create();
+        }
+        return props_ArbitraryUnitAmount;
+      case LanguageConceptSwitch.ArbitraryUnitMass:
+        if (props_ArbitraryUnitMass == null) {
+          ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();
+          cpb.rawPresentation("a.u.");
+          props_ArbitraryUnitMass = cpb.create();
+        }
+        return props_ArbitraryUnitMass;
       case LanguageConceptSwitch.Area:
         if (props_Area == null) {
           ConceptPresentationBuilder cpb = new ConceptPresentationBuilder();

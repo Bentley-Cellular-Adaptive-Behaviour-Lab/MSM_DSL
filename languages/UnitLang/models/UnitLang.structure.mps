@@ -562,5 +562,19 @@
     <property role="R5$K7" value="true" />
     <ref role="1TJDcQ" node="68wdrURM_k6" resolve="Unit_Amount_Concentration" />
   </node>
+  <node concept="1TIwiD" id="2p6iHuN4bwA">
+    <property role="EcuMT" value="2757974112093648934" />
+    <property role="3GE5qa" value="Concentration" />
+    <property role="TrG5h" value="ArbitraryUnitAmount" />
+    <property role="34LRSv" value="a.u." />
+    <ref role="1TJDcQ" node="68wdrURM_k6" resolve="Unit_Amount_Concentration" />
+  </node>
+  <node concept="1TIwiD" id="2p6iHuN4bBT">
+    <property role="EcuMT" value="2757974112093649401" />
+    <property role="3GE5qa" value="Concentration" />
+    <property role="TrG5h" value="ArbitraryUnitMass" />
+    <property role="34LRSv" value="a.u." />
+    <ref role="1TJDcQ" node="68wdrURM_k5" resolve="Unit_Mass_Concentration" />
+  </node>
 </model>
 

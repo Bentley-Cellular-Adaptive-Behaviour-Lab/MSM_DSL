@@ -12,5 +12,5 @@ BasicCellDistributionTest.postDistributionTest 13 0.0121332
 CellJunctionTest.crossJunctionODETest 12 0.0141915
 HelloTest.CheckGoogleTest 19 0.000300637
 TranscriptionDelayTest.transcriptionDelayTest 14 0.012419
-NotchPathwayTest.NotchPathwayTest 13 0.020303
+NotchPathwayTest.NotchPathwayTest 14 0.021668
 ---

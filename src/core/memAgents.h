@@ -20,6 +20,7 @@ class Location;
 class MedAgent;
 class Spring;
 class Protein;
+class ProtrusionType;
 class World;
 
 class MemAgent {
@@ -146,6 +147,7 @@ public:
     float get_filopodia_protein_level(std::string protein_name);
 
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
+    void add_allowed_protrusion_proteins(ProtrusionType *protrusionType);
 
     void setPreviousX(float previous_x);
     void setPreviousY(float previous_y);

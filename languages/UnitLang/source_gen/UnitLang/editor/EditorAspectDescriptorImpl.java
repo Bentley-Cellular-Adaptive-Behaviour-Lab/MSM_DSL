@@ -22,66 +22,70 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
       case 1:
         return Collections.<ConceptEditor>singletonList(new Amount_Concentration_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new Area_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArbitraryUnitAmount_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new Distance_Editor());
+        return Collections.<ConceptEditor>singletonList(new ArbitraryUnitMass_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new Litre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Area_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new Mass_Editor());
+        return Collections.<ConceptEditor>singletonList(new Distance_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new Mass_Concentration_Editor());
+        return Collections.<ConceptEditor>singletonList(new Litre_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new Metres_Cubed_Editor());
+        return Collections.<ConceptEditor>singletonList(new Mass_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new Microgram_Editor());
+        return Collections.<ConceptEditor>singletonList(new Mass_Concentration_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new Microlitre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Metres_Cubed_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new Micrometre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Microgram_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new Micrometres_Cubed_Editor());
+        return Collections.<ConceptEditor>singletonList(new Microlitre_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new Micrometres_Squared_Editor());
+        return Collections.<ConceptEditor>singletonList(new Micrometre_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new Micromolar_Editor());
+        return Collections.<ConceptEditor>singletonList(new Micrometres_Cubed_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new Micromoles_Editor());
+        return Collections.<ConceptEditor>singletonList(new Micrometres_Squared_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new Milligram_Editor());
+        return Collections.<ConceptEditor>singletonList(new Micromolar_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new Millilitre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Micromoles_Editor());
       case 17:
-        return Collections.<ConceptEditor>singletonList(new Millimetre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Milligram_Editor());
       case 18:
-        return Collections.<ConceptEditor>singletonList(new Millimetres_Cubed_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millilitre_Editor());
       case 19:
-        return Collections.<ConceptEditor>singletonList(new Millimetres_Squared_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millimetre_Editor());
       case 20:
-        return Collections.<ConceptEditor>singletonList(new Millimolar_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millimetres_Cubed_Editor());
       case 21:
-        return Collections.<ConceptEditor>singletonList(new Millimoles_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millimetres_Squared_Editor());
       case 22:
-        return Collections.<ConceptEditor>singletonList(new Molar_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millimolar_Editor());
       case 23:
-        return Collections.<ConceptEditor>singletonList(new Moles_Editor());
+        return Collections.<ConceptEditor>singletonList(new Millimoles_Editor());
       case 24:
-        return Collections.<ConceptEditor>singletonList(new Nanogram_Editor());
+        return Collections.<ConceptEditor>singletonList(new Molar_Editor());
       case 25:
-        return Collections.<ConceptEditor>singletonList(new Nanolitre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Moles_Editor());
       case 26:
-        return Collections.<ConceptEditor>singletonList(new Nanometre_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanogram_Editor());
       case 27:
-        return Collections.<ConceptEditor>singletonList(new Nanometres_Cubed_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanolitre_Editor());
       case 28:
-        return Collections.<ConceptEditor>singletonList(new Nanometres_Squared_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanometre_Editor());
       case 29:
-        return Collections.<ConceptEditor>singletonList(new Nanomolar_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanometres_Cubed_Editor());
       case 30:
-        return Collections.<ConceptEditor>singletonList(new Nanomoles_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanometres_Squared_Editor());
       case 31:
-        return Collections.<ConceptEditor>singletonList(new Unit_Amount_Combined_Concentration_Editor());
+        return Collections.<ConceptEditor>singletonList(new Nanomolar_Editor());
       case 32:
+        return Collections.<ConceptEditor>singletonList(new Nanomoles_Editor());
+      case 33:
+        return Collections.<ConceptEditor>singletonList(new Unit_Amount_Combined_Concentration_Editor());
+      case 34:
         return Collections.<ConceptEditor>singletonList(new Unit_Mass_Concentration_Editor());
       default:
     }
@@ -90,5 +94,5 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
 
 
 
-  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5abL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c7L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5adL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c5L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x7a945de349fcbc4fL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b6L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5afL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d71L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bcL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a4L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca54f0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b4L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5aeL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d70L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bfL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bbL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a5L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a9L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a3L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a8L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x7a945de349fb5634L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d72L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bdL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a6L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca54f1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x64223a10df50ecf1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca5505L)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5abL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b8L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x26464ad7b310b826L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x26464ad7b310b9f9L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c7L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c7667L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5adL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c5L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b7L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x7a945de349fcbc4fL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b6L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5afL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d71L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bcL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a4L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca54f0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b4L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5aeL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d70L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bfL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bbL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a5L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a9L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a3L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a8L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x7a945de349fb5634L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5b0L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x2f6b1b828a2c6d72L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5c1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5bdL), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0xb839ee2c0e6f5a6L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca54f1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x64223a10df50ecf1L), MetaIdFactory.conceptId(0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca5505L)).seal();
 }

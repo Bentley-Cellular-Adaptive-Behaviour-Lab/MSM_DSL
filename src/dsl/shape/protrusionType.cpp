@@ -64,3 +64,7 @@ float ProtrusionType::getSensitivity() const {
 void ProtrusionType::add_allowed_species(const std::string name) {
     this->m_allowed_species.push_back(name);
 }
+
+std::vector<std::string>& ProtrusionType::getAllowedSpecies() {
+    return this->m_allowed_species;
+}

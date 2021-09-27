@@ -1018,10 +1018,10 @@ void NotchPathwayTest::setupCells() {
     auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
     auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
 
-    basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 10000, 690, 31740, 1));
+    basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 100, 0, 31740, 1));
     basicCellType->add_protein(new Protein( "VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0, 0, 31740, 1));
-    basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 10000, 0, 100000, 1));
-    basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0, 0, 100000, 1));
+    basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 100, 0, 100000, 1));
+    basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 100, 0, 100000, 1));
     basicCellType->add_protein(new Protein("NOTCH_DLL4", PROTEIN_LOCATION_JUNCTION, 0, 0, 100000, 1));
 
     auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
@@ -1044,12 +1044,15 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
     notch_memAgent_ode_states new_states;
     odeint::euler<notch_memAgent_ode_states> stepper;
 
+    if (memAgent->junction) {
+        int i = 0;
+    }
     current_states[0] = memAgent->get_environment_protein_level("VEGF");
     current_states[1] = memAgent->get_local_protein_level("VEGFR");
     current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
     current_states[3] = memAgent->get_local_protein_level("NOTCH"); // Need to get Notch level from this cell.
-    current_states[4] = memAgent->get_junction_protein_level("DLL4");
-    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4");
+    current_states[4] = memAgent->get_junction_protein_level("DLL4"); // Need to get Dll4 level from adjacent cell.
+    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4"); // Need to get Notch-Dll4 level from adjacent cell.
 
     stepper.do_step(NotchPathway_memAgent_system, current_states, 0.0, new_states, 1);
 

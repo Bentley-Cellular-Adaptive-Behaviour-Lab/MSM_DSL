@@ -415,14 +415,6 @@
       <property role="TrG5h" value="VEGFR" />
       <property role="3_z0tL" value="2Hxmt3eVjAD/LOCATION_MEMBRANE" />
       <property role="2VbSsx" value="1" />
-      <node concept="3bpmHq" id="6Zu6_HK$zjl" role="1tJpXo">
-        <node concept="3bpmH0" id="6Zu6_HK$zjn" role="3lUA2Y">
-          <node concept="30bXRB" id="6Zu6_HK$zkj" role="3lUA52">
-            <property role="30bXRw" value="0" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="6Zu6_HK$zkJ" role="3lUA2W" />
-      </node>
       <node concept="3bpmHq" id="6Zu6_HK$zl6" role="2UOkdu">
         <node concept="3bpmH0" id="6Zu6_HK$zl8" role="3lUA2Y">
           <node concept="30bXRB" id="6Zu6_HK$zls" role="3lUA52">
@@ -444,6 +436,14 @@
       </node>
       <node concept="DdDr8" id="4Ei2F7s7sNz" role="3_z4RZ">
         <ref role="DdDrb" node="4Ei2F7s7sI7" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="3bpmHq" id="2p6iHuN4mjx" role="1tJpXo">
+        <node concept="3bpmH0" id="2p6iHuN4mjz" role="3lUA2Y">
+          <node concept="30bXRB" id="2p6iHuN4mkv" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2p6iHuN4mkV" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="6Zu6_HK$z$3" role="3_zqUg">

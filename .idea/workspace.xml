@@ -19,68 +19,44 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="implemented test for finding the highest concentration of an env protein">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Refactored protein checking algorithms">
+      <change afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/core/memAgents.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/ArbitraryUnitAmount_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/ArbitraryUnitAmount_EditorBuilder_a.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/ArbitraryUnitMass_Editor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/ArbitraryUnitMass_EditorBuilder_a.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21__10_26_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21__10_26_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_24_21__10_37_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_24_21__10_37_AM__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.out" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/objects1.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestTestfile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/progress.make" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_include.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_include.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/tests/automated/autoSpringAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CPM_module.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EC.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScreenRecording.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/editor/EditorAspectDescriptorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/editor/EditorAspectDescriptorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/ConceptPresentationAspectImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/ConceptPresentationAspectImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/LanguageConceptSwitch.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/LanguageConceptSwitch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/StructureAspectDescriptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/StructureAspectDescriptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/classes_gen/UnitLang/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.structure.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/editor/dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/editor/dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/editor/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/editor/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/structure/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen.caches/UnitLang/structure/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/EditorAspectDescriptorImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/EditorAspectDescriptorImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/editor/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/ConceptPresentationAspectImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/ConceptPresentationAspectImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/LanguageConceptSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/LanguageConceptSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/StructureAspectDescriptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/StructureAspectDescriptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/aspectcps-descriptorclasses.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/source_gen/UnitLang/structure/trace.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/display.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environment.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filopodia.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hysteresis.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/macrophage.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/memAgents.o" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/spring.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/automated/test_shape.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_shape.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,14 +332,7 @@
       <workItem from="1632306591754" duration="124000" />
       <workItem from="1632306726498" duration="12942000" />
       <workItem from="1632408226394" duration="7538000" />
-      <workItem from="1632734804247" duration="2738000" />
-    </task>
-    <task id="LOCAL-00018" summary="Updated dsl files for testing">
-      <created>1623330827802</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1623330827802</updated>
+      <workItem from="1632734804247" duration="8772000" />
     </task>
     <task id="LOCAL-00019" summary="Testing addition of gradient and cell containing new proteins.">
       <created>1623339295546</created>
@@ -701,7 +670,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632734739781</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Refactored protein checking algorithms">
+      <created>1632738494535</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1632738494535</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -720,7 +696,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Amended generation profile to copy new ODE files to source folder." />
     <MESSAGE value="ODE LANGUAGE BUILDS AND RUNS" />
     <MESSAGE value="Staging changes before rebase" />
     <MESSAGE value="Implementing new regulation functions." />
@@ -745,7 +720,8 @@
     <MESSAGE value="Added new functions to protrusion class" />
     <MESSAGE value="Added capability for protrusions to choose the furthest distance." />
     <MESSAGE value="implemented test for finding the highest concentration of an env protein" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented test for finding the highest concentration of an env protein" />
+    <MESSAGE value="Refactored protein checking algorithms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored protein checking algorithms" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
