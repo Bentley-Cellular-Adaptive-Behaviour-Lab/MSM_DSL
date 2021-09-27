@@ -11,6 +11,7 @@
 #include "spring.h"
 #include "world.h"
 
+#include "../dsl/shape/protrusionType.h"
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/utils/utils.h"
@@ -2290,7 +2291,7 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 }
 
 MemAgent::~MemAgent(void){
-	for (auto protein : this->owned_proteins) {
+	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
 	EnvNeighs.clear();
@@ -3835,4 +3836,24 @@ float MemAgent::getPreviousY() {
 
 float MemAgent::getPreviousZ() {
     return this->m_previous_z;
+}
+
+void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
+    // Adds proteins which are allowed by the protrusion this memAgent is a part of.
+    Cell_Type *cellType = this->Cell->m_cell_type;
+    for (auto *cellProtein : cellType->proteins) {
+        bool proteinFound = false;
+        for (auto allowedProteinName : protrusionType->getAllowedSpecies()) {
+            if (allowedProteinName == cellProtein->get_name()) {
+                proteinFound = true;
+                break; // Protein has been found, so stop searching.
+            }
+        }
+        // Add the protein if it is allowed by the protrusion type.
+        if (proteinFound) {
+            auto *newProtein = new Protein(cellProtein->get_name(), cellProtein->get_location(), 0, cellProtein->get_min(), cellProtein->get_min(), cellProtein->get_transcription_delay());
+            this->owned_proteins.push_back(newProtein);
+        }
+        // Repeat until we've checked all cell proteins.
+    }
 }

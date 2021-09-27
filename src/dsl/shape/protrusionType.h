@@ -40,6 +40,7 @@ public:
     float getSensitivity() const;
 
     void add_allowed_species(const std::string name);
+    std::vector<std::string>& getAllowedSpecies();
 };
 
 

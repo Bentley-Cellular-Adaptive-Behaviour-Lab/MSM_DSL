@@ -665,5 +665,25 @@
       <node concept="2iRfu4" id="6gyex3vkG$s" role="2iSdaV" />
     </node>
   </node>
+  <node concept="24kQdi" id="2p6iHuN4bx8">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1XX52x" to="ottv:2p6iHuN4bwA" resolve="ArbitraryUnitAmount" />
+    <node concept="3F0ifn" id="2p6iHuN4bzk" role="2wV5jI">
+      <property role="3F0ifm" value="a.u." />
+      <node concept="2biZxu" id="2p6iHuN4b$_" role="3F10Kt">
+        <property role="1rj3mz" value="Calibri" />
+      </node>
+      <node concept="VSNWy" id="2p6iHuN4b$A" role="3F10Kt">
+        <property role="1lJzqX" value="16" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2p6iHuN4bDf">
+    <property role="3GE5qa" value="Concentration" />
+    <ref role="1XX52x" to="ottv:2p6iHuN4bBT" resolve="ArbitraryUnitMass" />
+    <node concept="3F0ifn" id="2p6iHuN4bDh" role="2wV5jI">
+      <property role="3F0ifm" value="a.u." />
+    </node>
+  </node>
 </model>
 

@@ -90,6 +90,7 @@ CMakeFiles/autoSpringAgent.dir/src/core/memAgents.cpp.obj: \
  ../src/core/objects.h \
  ../src/core/spring.h \
  ../src/core/world.h \
+ ../src/dsl/shape/protrusionType.h \
  ../src/dsl/species/protein.h \
  ../src/dsl/tissue/cellType.h \
  ../src/dsl/utils/utils.h

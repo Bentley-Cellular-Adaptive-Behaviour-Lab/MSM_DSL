@@ -15,6 +15,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAmount = createDescriptorForAmount();
   /*package*/ final ConceptDescriptor myConceptAmount_Concentration = createDescriptorForAmount_Concentration();
   /*package*/ final ConceptDescriptor myConceptAmount_Expression = createDescriptorForAmount_Expression();
+  /*package*/ final ConceptDescriptor myConceptArbitraryUnitAmount = createDescriptorForArbitraryUnitAmount();
+  /*package*/ final ConceptDescriptor myConceptArbitraryUnitMass = createDescriptorForArbitraryUnitMass();
   /*package*/ final ConceptDescriptor myConceptArea = createDescriptorForArea();
   /*package*/ final ConceptDescriptor myConceptArea_Expression = createDescriptorForArea_Expression();
   /*package*/ final ConceptDescriptor myConceptConcentration = createDescriptorForConcentration();
@@ -80,7 +82,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAmount, myConceptAmount_Concentration, myConceptAmount_Expression, myConceptArea, myConceptArea_Expression, myConceptConcentration, myConceptConcentration_Expression, myConceptDistance, myConceptDistance_Expression, myConceptLitre, myConceptMass, myConceptMass_Concentration, myConceptMass_Expression, myConceptMetres_Cubed, myConceptMicrogram, myConceptMicrolitre, myConceptMicrometre, myConceptMicrometres_Cubed, myConceptMicrometres_Squared, myConceptMicromolar, myConceptMicromoles, myConceptMilligram, myConceptMillilitre, myConceptMillimetre, myConceptMillimetres_Cubed, myConceptMillimetres_Squared, myConceptMillimolar, myConceptMillimoles, myConceptMolar, myConceptMoles, myConceptNanogram, myConceptNanolitre, myConceptNanometre, myConceptNanometres_Cubed, myConceptNanometres_Squared, myConceptNanomolar, myConceptNanomoles, myConceptUnit, myConceptUnit_Amount, myConceptUnit_Amount_Combined_Concentration, myConceptUnit_Amount_Concentration, myConceptUnit_Amount_Molar_Concentration, myConceptUnit_Area, myConceptUnit_Concentration, myConceptUnit_Distance, myConceptUnit_Mass, myConceptUnit_Mass_Concentration, myConceptUnit_Volume, myConceptUnit_Volume_Litre, myConceptUnit_Volume_Metre, myConceptVolume, myConceptVolume_Expression);
+    return Arrays.asList(myConceptAmount, myConceptAmount_Concentration, myConceptAmount_Expression, myConceptArbitraryUnitAmount, myConceptArbitraryUnitMass, myConceptArea, myConceptArea_Expression, myConceptConcentration, myConceptConcentration_Expression, myConceptDistance, myConceptDistance_Expression, myConceptLitre, myConceptMass, myConceptMass_Concentration, myConceptMass_Expression, myConceptMetres_Cubed, myConceptMicrogram, myConceptMicrolitre, myConceptMicrometre, myConceptMicrometres_Cubed, myConceptMicrometres_Squared, myConceptMicromolar, myConceptMicromoles, myConceptMilligram, myConceptMillilitre, myConceptMillimetre, myConceptMillimetres_Cubed, myConceptMillimetres_Squared, myConceptMillimolar, myConceptMillimoles, myConceptMolar, myConceptMoles, myConceptNanogram, myConceptNanolitre, myConceptNanometre, myConceptNanometres_Cubed, myConceptNanometres_Squared, myConceptNanomolar, myConceptNanomoles, myConceptUnit, myConceptUnit_Amount, myConceptUnit_Amount_Combined_Concentration, myConceptUnit_Amount_Concentration, myConceptUnit_Amount_Molar_Concentration, myConceptUnit_Area, myConceptUnit_Concentration, myConceptUnit_Distance, myConceptUnit_Mass, myConceptUnit_Mass_Concentration, myConceptUnit_Volume, myConceptUnit_Volume_Litre, myConceptUnit_Volume_Metre, myConceptVolume, myConceptVolume_Expression);
   }
 
   @Override
@@ -93,6 +95,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAmount_Concentration;
       case LanguageConceptSwitch.Amount_Expression:
         return myConceptAmount_Expression;
+      case LanguageConceptSwitch.ArbitraryUnitAmount:
+        return myConceptArbitraryUnitAmount;
+      case LanguageConceptSwitch.ArbitraryUnitMass:
+        return myConceptArbitraryUnitMass;
       case LanguageConceptSwitch.Area:
         return myConceptArea;
       case LanguageConceptSwitch.Area_Expression:
@@ -228,6 +234,24 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)/7070710508215227640");
     b.version(2);
     b.aggregate("expr", 0x622035beb7ca54f9L).target(0xcfaa4966b7d54b69L, 0xb66a309a6e1a7290L, 0x670d5e92f854a047L).optional(false).ordered(true).multiple(false).origin("7070710508215227641").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForArbitraryUnitAmount() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("UnitLang", "ArbitraryUnitAmount", 0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x26464ad7b310b826L);
+    b.class_(false, false, false);
+    b.super_("UnitLang.structure.Unit_Amount_Concentration", 0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca5506L);
+    b.origin("r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)/2757974112093648934");
+    b.version(2);
+    b.alias("a.u.");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForArbitraryUnitMass() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("UnitLang", "ArbitraryUnitMass", 0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x26464ad7b310b9f9L);
+    b.class_(false, false, false);
+    b.super_("UnitLang.structure.Unit_Mass_Concentration", 0x3236b0e3fbdf4a71L, 0x8bfb69d9a5a4f1beL, 0x622035beb7ca5505L);
+    b.origin("r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)/2757974112093649401");
+    b.version(2);
+    b.alias("a.u.");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForArea() {
