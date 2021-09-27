@@ -1,0 +1,1 @@
+-IC:/Users/Tom/MPSProjects/MSM_DSL/src -IC:/Users/Tom/MPSProjects/MSM_DSL/libraries -isystem C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-src/googletest/include -isystem C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-src/googletest
