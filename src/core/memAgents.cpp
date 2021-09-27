@@ -2645,7 +2645,6 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
             } else if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
-                        float gottenProteinLevel = memAgent->get_memAgent_protein_level(protein_name);
                         protein_level+= memAgent->get_memAgent_protein_level(protein_name);
 					}
 				}
@@ -2799,7 +2798,7 @@ float MemAgent::get_filopodia_protein_level(std::string protein_name) {
 
 /*****************************************************************************************
 *  Name:		get_junction_protein_level
-*  Description: Returns the level of a protein in nearby memAgents belonging to adjacent cells.
+*  Description: Returns the level of a protein in nearby memAgents belonging to adjacent cell junctions.
 *  				This is done only if the memAgents are defined as belonging to the junction.
 *  Returns:		float
 ******************************************************************************************/
@@ -2923,12 +2922,11 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
             n = j;
             p = k + 1;
         }
+
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
         // increase the count by the level at those coordinates.
-
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].getType() == const_M) {
-            	// Iterates over list of standard memAgents.
                 for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                 	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
                 	if (memAgent->junction) {
@@ -2958,6 +2956,7 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Description: Takes in a given protein level, counts the number of memAgents that own
 *				that protein then set the new level to that divided by the amount.
 *				Can either distribute proteins to the same memagents from the same cell or to
+ *				different cells
 *  Returns:		void
 ******************************************************************************************/
 

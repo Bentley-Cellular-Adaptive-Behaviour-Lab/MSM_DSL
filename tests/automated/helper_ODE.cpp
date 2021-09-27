@@ -1044,14 +1044,10 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
     notch_memAgent_ode_states new_states;
     odeint::euler<notch_memAgent_ode_states> stepper;
 
-    if (memAgent->junction) {
-        int stop = 0;
-    }
-
     current_states[0] = memAgent->get_environment_protein_level("VEGF");
     current_states[1] = memAgent->get_local_protein_level("VEGFR");
     current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
-    current_states[3] = memAgent->get_junction_protein_level("NOTCH");
+    current_states[3] = memAgent->get_local_protein_level("NOTCH"); // Need to get Notch level from this cell.
     current_states[4] = memAgent->get_junction_protein_level("DLL4");
     current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4");
 

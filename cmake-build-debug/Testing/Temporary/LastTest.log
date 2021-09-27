@@ -1,3 +1,62 @@
-Start testing: Sep 24 11:15 BST
+Start testing: Sep 27 10:58 GMT Daylight Time
 ----------------------------------------------------------
-End testing: Sep 24 11:15 BST
+16/16 Testing: NotchPathwayTest.NotchPathwayTest
+16/16 Test: NotchPathwayTest.NotchPathwayTest
+Command: "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/autoSpringAgent.exe" "--gtest_filter=NotchPathwayTest.NotchPathwayTest" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
+"NotchPathwayTest.NotchPathwayTest" start time: Sep 27 10:58 GMT Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = NotchPathwayTest.NotchPathwayTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from NotchPathwayTest
+[ RUN      ] NotchPathwayTest.NotchPathwayTest
+xMax: 50
+yMax: 50
+zMax: 50
+Grid size - X: 50
+Y: 50
+Z: 50
+Placing environment agents...
+Environment created.
+Setting up ODE systems...
+World created!
+Creation timestep... initialising everything
+memInit0
+Allocating cell proteins to memagents.
+VEGF total 0	0gridded membrane0
+VEGF total 0	0gridded membrane0
+
+The syntax of the command is incorrect.
+Creation complete
+Creation timestep complete.
+Tissue created successfully.
+ Tissue: Monolayer created successfully! 
+Timestep,VEGFR_1,VEGF_VEGFR_1,NOTCH_1,DLL4_1,NOTCH_DLL4_1,VEGFR_2,VEGF_VEGFR_2,NOTCH_2,DLL4_2,NOTCH_DLL4_2,
+0,10000,0,10000,0,0,10000,0,10000,0,0,
+1,6289.75,3710.25,0,0,0,6289.75,3710.25,0,0,0,
+2,3967.62,6012.38,0,0,0,3967.62,6012.38,0,0,0,
+3,2519.38,7440.62,0,0,0,2519.38,7440.62,0,0,0,
+4,1607.95,8332.05,0,0,0,1607.95,8332.05,0,0,0,
+5,1046.07,8873.93,0,0,0,1046.07,8873.93,0,0,0,
+6,696.419,9203.58,0,0,0,696.419,9203.58,0,0,0,
+7,690,9408.39,0,0,0,690,9408.39,0,0,0,
+8,690,9607.43,0,0,0,690,9607.43,0,0,0,
+9,690,9806.48,0,0,0,690,9806.48,0,0,0,
+[       OK ] NotchPathwayTest.NotchPathwayTest (247 ms)
+[----------] 1 test from NotchPathwayTest (247 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (247 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.26 sec
+----------------------------------------------------------
+Test Passed.
+"NotchPathwayTest.NotchPathwayTest" end time: Sep 27 10:58 GMT Daylight Time
+"NotchPathwayTest.NotchPathwayTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 27 10:58 GMT Daylight Time

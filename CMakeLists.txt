@@ -140,6 +140,10 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
+            src/dsl/shape/cytoprotein.cpp
+            src/dsl/shape/protrusion.cpp
+            src/dsl/shape/protrusionType.cpp
+            src/dsl/shape/shapeContainer.cpp
             src/dsl/species/protein.cpp
             src/dsl/tissue/cell.cpp
             src/dsl/tissue/cellType.cpp
@@ -179,6 +183,10 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
+            src/dsl/shape/cytoprotein.h
+            src/dsl/shape/protrusion.h
+            src/dsl/shape/protrusionType.h
+            src/dsl/shape/shapeContainer.h
             src/dsl/species/protein.h
             src/dsl/tissue/cell.h
             src/dsl/tissue/cellType.h
