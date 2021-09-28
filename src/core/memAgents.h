@@ -13,6 +13,7 @@
 #include <vector>
 
 class Coordinates;
+class CytoProtein;
 class EC;
 class Env;
 class Filopodia;
@@ -30,6 +31,7 @@ private:
     float m_previous_z;
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
+    std::vector<CytoProtein*> m_cytoproteins;
 public:
 	///general
 	float Mx, My, Mz; ///continuous space coordinates
@@ -148,6 +150,11 @@ public:
 
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
     void add_allowed_protrusion_proteins(ProtrusionType *protrusionType);
+    bool has_cytoprotein(std::string cytoproteinName);
+    float get_cytoprotein_level(std::string cytoproteinName);
+    void set_cytoprotein_level(std::string cytoproteinName, const float newLevel);
+    void add_cytoprotein(CytoProtein* cytoProtein);
+    void tryCytoproteinPass(int x, int y, int z, int N, std::string cytoproteinName);
 
     void setPreviousX(float previous_x);
     void setPreviousY(float previous_y);

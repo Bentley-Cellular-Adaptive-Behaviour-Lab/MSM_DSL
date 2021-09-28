@@ -36,6 +36,8 @@ public:
 
     void add_protrusion_type(ProtrusionType *protrusionType);
     void add_cytoprotein(CytoProtein *cytoProtein);
+    bool has_cytoprotein(std::string cytoProteinName);
+    CytoProtein* get_cytoprotein(std::string cytoProteinName);
 };
 
 

@@ -12,6 +12,8 @@ class EC;
 class Env;
 class MemAgent;
 class ProtrusionType;
+class Spring;
+class World;
 
 class Protrusion {
 private:
@@ -40,8 +42,16 @@ public:
     MemAgent *getTopMemAgent();
     void popMemAgentFromStack();
     void updateCurrentLength(float distanceDelta);
+
     Env *findHighestConcPosition(MemAgent* memAgent, float prob);
-    void extendProtrusion();
+    bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
+    bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
+    bool deconstructProtrusion(MemAgent *memAgent);
+    bool retractProtrusion(MemAgent *memAgent);
+    float calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemAgent);
+    bool removeSpringFromList(EC *cell, Spring *neighStp);
+    bool removeNodeFromList(EC *cell, MemAgent *memAgent);
+    bool deleteOldGridRefs(World *world, Spring *neighStp);
 };
 
 

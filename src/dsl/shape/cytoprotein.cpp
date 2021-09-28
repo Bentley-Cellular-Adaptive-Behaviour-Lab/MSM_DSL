@@ -6,6 +6,7 @@
 
 CytoProtein::CytoProtein(std::string name, float startLevel, float requiredAmount) {
     this->m_name = name;
+    this->m_cellLevel = startLevel;
     this->m_startLevel = startLevel;
     this->m_requiredAmount = requiredAmount;
 }
@@ -18,12 +19,28 @@ void CytoProtein::setName(const std::string name) {
     this->m_name = name;
 }
 
+float CytoProtein::getCellLevel() const {
+    return this->m_cellLevel;
+}
+
+void CytoProtein::setCellLevel(const float level) {
+    this->m_cellLevel = level;
+}
+
 float CytoProtein::getStartLevel() const {
     return this->m_startLevel;
 }
 
-void CytoProtein::setStartLevel(const float startLevel) {
-    this->m_startLevel = startLevel;
+void CytoProtein::setStartLevel(const float level) {
+    this->m_startLevel = level;
+}
+
+float CytoProtein::getMemAgentLevel() const {
+    return this->m_memAgentLevel;
+}
+
+void CytoProtein::setMemAgentLevel(const float level) {
+    this->m_memAgentLevel = level;
 }
 
 float CytoProtein::getRequiredAmount() const {
