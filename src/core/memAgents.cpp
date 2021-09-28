@@ -11,6 +11,7 @@
 #include "spring.h"
 #include "world.h"
 
+#include "../dsl/shape/cytoprotein.h"
 #include "../dsl/shape/protrusionType.h"
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
@@ -496,7 +497,6 @@ void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) {
         for (j = Y; j <= Y + (2 * N); j++) {
             for (k = Z; k <= Z + (2 * N); k++) {
                 if (flag == 0) {
-
                     if (worldP->insideWorld(i, j, k) == true) {
                         if (worldP->grid[i][j][k].getType() == const_M) {
                             for (m = 0; m < worldP->grid[i][j][k].getMids().size(); m++) {
@@ -506,7 +506,6 @@ void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) {
                                         worldP->grid[i][j][k].getMids()[m]->filTokens++;
                                         filTokens--;
                                         flag2 = 1;
-
                                     }
                                 }
                             }
@@ -516,7 +515,6 @@ void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) {
             }
         }
     }
-
 }
 //---------------------------------------------------------------------------------------------
 
@@ -2294,6 +2292,9 @@ MemAgent::~MemAgent(void){
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
+    for (auto *cytoprotein : this->m_cytoproteins) {
+        delete cytoprotein;
+    }
 	EnvNeighs.clear();
 }
 
@@ -3840,6 +3841,7 @@ float MemAgent::getPreviousZ() {
 
 void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
     // Adds proteins which are allowed by the protrusion this memAgent is a part of.
+    assert(this->FIL != NONE);
     Cell_Type *cellType = this->Cell->m_cell_type;
     for (auto *cellProtein : cellType->proteins) {
         bool proteinFound = false;
@@ -3855,5 +3857,74 @@ void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
             this->owned_proteins.push_back(newProtein);
         }
         // Repeat until we've checked all cell proteins.
+    }
+}
+
+bool MemAgent::has_cytoprotein(std::string cytoproteinName) {
+    bool hasCytoprotein = false;
+    for (auto *cytoprotein : this->m_cytoproteins) {
+        if (cytoprotein->getName() == cytoproteinName) {
+            hasCytoprotein = true;
+            break;
+        }
+    }
+    return hasCytoprotein;
+}
+
+float MemAgent::get_cytoprotein_level(std::string cytoproteinName) {
+    float cytoproteinLevel = 0.0f;
+    if (this->has_cytoprotein(cytoproteinName)) {
+        for (auto *cytoprotein: this->m_cytoproteins) {
+            if (cytoprotein->getName() == cytoproteinName) {
+                cytoproteinLevel = cytoprotein->getMemAgentLevel();
+                break;
+            }
+        }
+    }
+    return cytoproteinLevel;
+}
+void MemAgent::set_cytoprotein_level(std::string cytoproteinName, const float newLevel) {
+    if (this->has_cytoprotein(cytoproteinName)) {
+        for (auto *cytoprotein: this->m_cytoproteins) {
+            if (cytoprotein->getName() == cytoproteinName) {
+                cytoprotein->setMemAgentLevel(newLevel);
+                break;
+            }
+        }
+    }
+}
+
+void MemAgent::add_cytoprotein(CytoProtein* cytoProtein) {
+    this->m_cytoproteins.push_back(cytoProtein);
+}
+
+void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, std::string cytoproteinName) {
+    // Attempts to accumulate cytoprotein in a given memAgent using cytoprotein from nearby memAgents.
+    // This function passes from this memAgent to another one.
+    int i, j, k, X, Y, Z, m;
+    bool alreadyPassed = false;
+
+    X = x - N;
+    Y = y - N;
+    Z = z - N;
+
+    for (i = X; i <= X + (2 * N); i++) {
+        for (j = Y; j <= Y + (2 * N); j++) {
+            for (k = Z; k <= Z + (2 * N); k++) {
+                if (worldP->insideWorld(i, j, k)) {
+                    if (worldP->grid[i][j][k].getType() == const_M) {
+                        for (auto *memAgent : worldP->grid[i][j][k].getMids()) {
+                            if (alreadyPassed) {
+                                if ((worldP->grid[i][j][k].getMids()[m]->FIL != NONE) && (worldP->grid[i][j][k].getMids()[m]->Cell == Cell)) {
+                                    float thisLevel = this->get_cytoprotein_level(cytoproteinName);
+                                    float targetLevel = worldP->grid[i][j][k].getMids()[m]->get_cytoprotein_level(cytoproteinName);
+                                    alreadyPassed = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

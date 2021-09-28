@@ -5,6 +5,9 @@
 #include <assert.h>
 #include "cellType.h"
 
+#include "../shape/cytoprotein.h"
+
+
 //********************************************************************************************************************//
 
 // Cell Type
@@ -37,4 +40,26 @@ void Cell_Type::add_protrusion_type(ProtrusionType *protrusionType) {
 
 void Cell_Type::add_cytoprotein(CytoProtein *cytoProtein) {
     this->m_cytoskeletal_proteins.push_back(cytoProtein);
+}
+
+bool Cell_Type::has_cytoprotein(std::string cytoProteinName) {
+    bool proteinFound = false;
+    for (auto *cytoProtein : this->m_cytoskeletal_proteins) {
+        if (cytoProtein->getName() == cytoProteinName) {
+            proteinFound = true;
+            break;
+        }
+    }
+    return proteinFound;
+}
+
+CytoProtein* Cell_Type::get_cytoprotein(std::string cytoProteinName) {
+    if (has_cytoprotein(cytoProteinName)) {
+        for (auto *cytoProtein: this->m_cytoskeletal_proteins) {
+            if (cytoProtein->getName() == cytoProteinName) {
+                CytoProtein* targetCytoProtein = cytoProtein;
+                return targetCytoProtein;
+            }
+        }
+    }
 }

@@ -16,6 +16,7 @@ private:
     int m_maxLength;
     int m_thickness;
     float m_sensitivity;
+    float m_requiredCytoproteinAmount;
     // TODO: Change this to a vector of integers, corresponding to the ID of the species.
     std::vector<std::string> m_allowed_species;
 public:
@@ -27,8 +28,11 @@ public:
     void setTargetName(const std::string name);
     std::string getTargetName() const;
 
-    void setRequiredCytoroteinName(const std::string name);
-    std::string setRequiredCytoroteinName() const;
+    void setRequiredCytoproteinName(const std::string name);
+    std::string getRequiredCytoproteinName() const;
+
+    void setRequiredCytoproteinAmount(const float amount);
+    float getRequiredCytoproteinAmount() const;
 
     void setMaxLength(const int maxLength);
     int getMaxLength() const;

@@ -29,13 +29,22 @@ std::string ProtrusionType::getTargetName() const {
     return m_targetSpeciesName;
 }
 
-void ProtrusionType::setRequiredCytoroteinName(const std::string name) {
+void ProtrusionType::setRequiredCytoproteinName(const std::string name) {
     this->m_requiredCytoproteinName = name;
 }
 
-std::string ProtrusionType::setRequiredCytoroteinName() const {
+std::string ProtrusionType::getRequiredCytoproteinName() const {
     return this->m_requiredCytoproteinName;
 }
+
+void ProtrusionType::setRequiredCytoproteinAmount(const float amount) {
+    this->m_requiredCytoproteinAmount = amount;
+}
+
+float ProtrusionType::getRequiredCytoproteinAmount() const {
+    return this->m_requiredCytoproteinAmount;
+}
+
 
 void ProtrusionType::setMaxLength(const int maxLength) {
     this->m_maxLength = maxLength;

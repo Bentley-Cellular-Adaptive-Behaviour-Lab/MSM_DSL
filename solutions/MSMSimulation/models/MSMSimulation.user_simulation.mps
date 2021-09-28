@@ -1026,11 +1026,16 @@
     <node concept="3Bb2u4" id="5CquPnWxhRn" role="3Bb693">
       <property role="TrG5h" value="Actin" />
       <node concept="30d7iD" id="5CquPnWxhSQ" role="3Bb1xi">
-        <node concept="30bXRB" id="5CquPnWxhT3" role="30dEs_">
-          <property role="30bXRw" value="10" />
-        </node>
         <node concept="1cBA6y" id="5CquPnWxhSE" role="30dEsF">
           <ref role="1cBA6z" node="6Zu6_HK$z$3" resolve="VEGF_VEGFR" />
+        </node>
+        <node concept="3bpmHq" id="4T3PlPbfg1n" role="30dEs_">
+          <node concept="3bpmH0" id="4T3PlPbfg1p" role="3lUA2Y">
+            <node concept="30bXRB" id="4T3PlPbfg1P" role="3lUA52">
+              <property role="30bXRw" value="10" />
+            </node>
+          </node>
+          <node concept="3bpmH6" id="4T3PlPbfg2h" role="3lUA2W" />
         </node>
       </node>
       <node concept="3bpmHq" id="5CquPnWxhRx" role="36057d">
