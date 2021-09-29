@@ -154,5 +154,8 @@ public:
 	std::vector<EC*> neigh_cells;
 	void add_to_neighbour_list(EC *query_ec);
 	void cycle_protein_levels();
+
+    float getCellCytoproteinLevel(std::string cytoproteinName);
+    void setCellCytoproteinLevel(std::string cytoproteinName, float newLevel);
 };
 #endif //SPRINGAGENT_EC_H

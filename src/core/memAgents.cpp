@@ -3871,6 +3871,7 @@ bool MemAgent::has_cytoprotein(std::string cytoproteinName) {
     return hasCytoprotein;
 }
 
+
 float MemAgent::get_cytoprotein_level(std::string cytoproteinName) {
     float cytoproteinLevel = 0.0f;
     if (this->has_cytoprotein(cytoproteinName)) {
@@ -3928,3 +3929,8 @@ void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, std::string cytopr
         }
     }
 }
+
+std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
+    return this->m_cytoproteins;
+}
+

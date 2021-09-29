@@ -11,6 +11,7 @@
 #include "spring.h"
 #include "world.h"
 
+#include "../dsl/shape/cytoprotein.h"
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 
@@ -1859,4 +1860,13 @@ void EC::remove_DoubledUp_SurfaceAgents(void) {
         }
     }
 }
-//-------------------------------------------------------------------------------------------------------------
+
+float EC::getCellCytoproteinLevel(std::string cytoproteinName) {
+    CytoProtein *cytoProtein = this->m_cell_type->get_cytoprotein(cytoproteinName);
+    return cytoProtein->getCellLevel();
+}
+
+void EC::setCellCytoproteinLevel(std::string cytoproteinName, float newLevel) {
+    CytoProtein *cytoProtein = this->m_cell_type->get_cytoprotein(cytoproteinName);
+    cytoProtein->setCellLevel(newLevel);
+}
