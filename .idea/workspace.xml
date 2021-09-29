@@ -15,32 +15,94 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Changed protein test to correctly search for Notch in the same cell. Added new &quot;arbitrary unit&quot; to MPS.">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Updated makefile to recursively search for object files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Arrangement_Cylindrical_EditorBuilder_a$Cylinder_RadiusSingleRoleHandler_6asmbt_e0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Cell_EditorBuilder_a$positionSingleRoleHandler_tmo5f9_f0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Cell_Type_EditorBuilder_a$shapeSingleRoleHandler_iztune_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/EditorAspectDescriptorImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_EditorBuilder_a$Inline_Builder0$positionSingleRoleHandler_7vfpny_a0a3c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_EditorBuilder_a$sourceSingleRoleHandler_7vfpny_d1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Cuboidal_EditorBuilder_a$CentreSingleRoleHandler_l5bgkd_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Cuboidal_EditorBuilder_a$DepthSingleRoleHandler_l5bgkd_f3a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Cuboidal_EditorBuilder_a$HeightSingleRoleHandler_l5bgkd_f2a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Cuboidal_EditorBuilder_a$WidthSingleRoleHandler_l5bgkd_f1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Point_EditorBuilder_a$CentreSingleRoleHandler_e79t1g_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_Point_EditorBuilder_a$RadiusSingleRoleHandler_e79t1g_f1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_SinkAndSource_EditorBuilder_a$Inline_Builder0$SinkSingleRoleHandler_a1hpp9_a0a2a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Shape_SinkAndSource_EditorBuilder_a$Inline_Builder1$SourceSingleRoleHandler_a1hpp9_a0a4b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Type_Constant_EditorBuilder_a$Starting_ConcentrationSingleRoleHandler_ccl5e1_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Type_Exponential_EditorBuilder_a$ExponentSingleRoleHandler_vu7fcu_f1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Type_Exponential_EditorBuilder_a$Starting_ConcentrationSingleRoleHandler_vu7fcu_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Gradient_Type_Linear_EditorBuilder_a$Starting_ConcentrationSingleRoleHandler_vu5h88_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/LastTest.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Position_EditorBuilder_a$X_CoordSingleRoleHandler_hjjxd_c0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Position_EditorBuilder_a$Y_CoordSingleRoleHandler_hjjxd_e0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Position_EditorBuilder_a$Z_CoordSingleRoleHandler_hjjxd_g0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/ReversibleReaction_EditorBuilder_a$Product_TermsListHandler_9nv0iv_f0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/ReversibleReaction_EditorBuilder_a$Reactant_TermsListHandler_9nv0iv_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/RunMSM.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Shape_Rectangular_EditorBuilder_a$HeightSingleRoleHandler_l4n1ja_b0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Shape_Rectangular_EditorBuilder_a$WidthSingleRoleHandler_l4n1ja_d0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Source_EditorBuilder_a$positionSingleRoleHandler_x58f0o_a0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_EditorBuilder_a$Centre_PositionSingleRoleHandler_fphtn9_d0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_EditorBuilder_a$shapeSingleRoleHandler_fphtn9_d1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Cuboid_EditorBuilder_a$CentreSingleRoleHandler_r0xdaj_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Cuboid_EditorBuilder_a$DepthSingleRoleHandler_r0xdaj_c3a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Cuboid_EditorBuilder_a$HeightSingleRoleHandler_r0xdaj_c2a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Cuboid_EditorBuilder_a$WidthSingleRoleHandler_r0xdaj_c1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$DepthSingleRoleHandler_15ya70_c4a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_1SingleRoleHandler_15ya70_b0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_1SingleRoleHandler_15ya70_c1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_2SingleRoleHandler_15ya70_c2a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_2SingleRoleHandler_15ya70_d0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_3SingleRoleHandler_15ya70_c3a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Vertex_3SingleRoleHandler_15ya70_f0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Substrate_Shape_Triangular_EditorBuilder_a$Z_LocationSingleRoleHandler_15ya70_c0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Tissue_EditorBuilder_a$positionSingleRoleHandler_vzkxs3_f0a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/Tissue_Type_EditorBuilder_a$arrangementSingleRoleHandler_qi1jvw_f0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/World_Container_EditorBuilder_a$Inline_Builder1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/World_Container_EditorBuilder_a$gradientsListHandler_qumq7g_a0c4a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21,_10_26_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_22_21__10_26_AM__Default_Changelist_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeRCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/a.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/includes_CXX.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/linklibs.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/objects1.rsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/autoSpringAgent.dir/src/core/memAgents.cpp.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EC.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/EC.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/EC.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/memAgents.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/memAgents.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/cytoprotein.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusion.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/shape/protrusionType.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/cellType.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +232,11 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DebugMPS" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -297,6 +364,7 @@
       <workItem from="1632819908289" duration="6561000" />
       <workItem from="1632828103956" duration="440000" />
       <workItem from="1632833709567" duration="13131000" />
+      <workItem from="1632921804307" duration="9361000" />
     </task>
     <task id="LOCAL-00020" summary="Changed tissue creation to assign the cell type to cell agents.">
       <created>1623342190961</created>

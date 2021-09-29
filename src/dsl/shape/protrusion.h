@@ -44,14 +44,24 @@ public:
     void updateCurrentLength(float distanceDelta);
 
     Env *findHighestConcPosition(MemAgent* memAgent, float prob);
+
+    int extension(MemAgent *memAgent);
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
-    bool deconstructProtrusion(MemAgent *memAgent);
-    bool retractProtrusion(MemAgent *memAgent);
+
+    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
+
+    int retraction(MemAgent* memAgent);
+    bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
+    bool retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
+
     float calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemAgent);
     bool removeSpringFromList(EC *cell, Spring *neighStp);
     bool removeNodeFromList(EC *cell, MemAgent *memAgent);
     bool deleteOldGridRefs(World *world, Spring *neighStp);
+    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName);
+    void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
+    void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
 };
 
 

@@ -155,6 +155,7 @@ public:
     void set_cytoprotein_level(std::string cytoproteinName, const float newLevel);
     void add_cytoprotein(CytoProtein* cytoProtein);
     void tryCytoproteinPass(int x, int y, int z, int N, std::string cytoproteinName);
+    std::vector<CytoProtein*>& getCytoproteins();
 
     void setPreviousX(float previous_x);
     void setPreviousY(float previous_y);
