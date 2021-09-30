@@ -1,0 +1,76 @@
+Start testing: Sep 30 11:47 GMT Daylight Time
+----------------------------------------------------------
+1/16 Testing: test_Protrusion.ProtrusionConstructor
+1/16 Test: test_Protrusion.ProtrusionConstructor
+Command: "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/autoSpringAgent.exe" "--gtest_filter=test_Protrusion.ProtrusionConstructor" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
+"test_Protrusion.ProtrusionConstructor" start time: Sep 30 11:47 GMT Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = test_Protrusion.ProtrusionConstructor
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from test_Protrusion
+[ RUN      ] test_Protrusion.ProtrusionConstructor
+[       OK ] test_Protrusion.ProtrusionConstructor (0 ms)
+[----------] 1 test from test_Protrusion (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"test_Protrusion.ProtrusionConstructor" end time: Sep 30 11:47 GMT Daylight Time
+"test_Protrusion.ProtrusionConstructor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/16 Testing: FindHighestConcTest.FindHighestConcTest
+2/16 Test: FindHighestConcTest.FindHighestConcTest
+Command: "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/autoSpringAgent.exe" "--gtest_filter=FindHighestConcTest.FindHighestConcTest" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
+"FindHighestConcTest.FindHighestConcTest" start time: Sep 30 11:47 GMT Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = FindHighestConcTest.FindHighestConcTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from FindHighestConcTest
+[ RUN      ] FindHighestConcTest.FindHighestConcTest
+xMax: 50
+yMax: 50
+zMax: 50
+Grid size - X: 50
+Y: 50
+Z: 50
+Placing environment agents...
+Environment created.
+Setting up ODE systems...
+World created!
+Creation timestep... initialising everything
+memInit0
+Allocating cell proteins to memagents.
+VEGF total 0	0gridded membrane0
+VEGF total 0	0gridded membrane0
+
+The syntax of the command is incorrect.
+Creation complete
+Creation timestep complete.
+[       OK ] FindHighestConcTest.FindHighestConcTest (259 ms)
+[----------] 1 test from FindHighestConcTest (259 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (259 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.27 sec
+----------------------------------------------------------
+Test Passed.
+"FindHighestConcTest.FindHighestConcTest" end time: Sep 30 11:47 GMT Daylight Time
+"FindHighestConcTest.FindHighestConcTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Sep 30 11:47 GMT Daylight Time
