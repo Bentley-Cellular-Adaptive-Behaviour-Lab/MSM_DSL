@@ -47,10 +47,11 @@ void FindHighestConcTest::createEnvironment() {
         }
     }
     m_world->grid[25][25][26].getEid()->set_protein_level("TargetProtein", 100);
+    m_world->grid[25][25][26].getEid()->VEGF = 100.0;
 }
 
 void FindHighestConcTest::createProtrusion() {
-    ProtrusionType *protrusionType = new ProtrusionType("Protrusion", "TargetProtein", "RequiredCytoprotein", -1, 1, 1.0);
+    ProtrusionType *protrusionType = new ProtrusionType("Protrusion", "TargetProtein", "RequiredCytoprotein", 0.0, -1, 1, 1.0);
     this->m_protrusion = new Protrusion(this->m_cell, this->m_memAgent, protrusionType);
 }
 
@@ -63,4 +64,8 @@ void FindHighestConcTest::addMemAgent() {
    this->m_world->grid[25][25][25].addMemAgent(memAgent);
    this->m_memAgent = memAgent;
    memAgent->checkNeighs(false);
+}
+
+MemAgent *FindHighestConcTest::getMemAgent() {
+    return this->m_memAgent;
 }

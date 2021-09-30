@@ -1,13 +1,21 @@
 //
 // Created by Tom on 20/09/2021.
 //
+#include <cassert>
 
 #include "protrusionType.h"
 
-ProtrusionType::ProtrusionType(std::string name, std::string targetSpeciesName, std::string requiredCytoproteinName, int maxLength, int thickness, float sensitivity) {
+ProtrusionType::ProtrusionType(std::string name,
+                               std::string targetSpeciesName,
+                               std::string requiredCytoproteinName,
+                               float requiredCytoproteinAmount,
+                               float maxLength,
+                               int thickness,
+                               float sensitivity) {
     this->m_name = name;
     this->m_targetSpeciesName = targetSpeciesName;
     this->m_requiredCytoproteinName = requiredCytoproteinName;
+    this->m_requiredCytoproteinAmount = requiredCytoproteinAmount;
     this->m_maxLength = maxLength;
     this->m_thickness = thickness;
     this->m_sensitivity = sensitivity;
@@ -45,8 +53,8 @@ float ProtrusionType::getRequiredCytoproteinAmount() const {
     return this->m_requiredCytoproteinAmount;
 }
 
-
-void ProtrusionType::setMaxLength(const int maxLength) {
+void ProtrusionType::setMaxLength(const float maxLength) {
+    assert(maxLength >= 0 || maxLength == -1);
     this->m_maxLength = maxLength;
 }
 
@@ -55,6 +63,7 @@ int ProtrusionType::getMaxLength() const {
 }
 
 void ProtrusionType::setThickness(const int thickness) {
+    assert(thickness > 0);
     this->m_thickness = thickness;
 }
 
@@ -63,7 +72,8 @@ int ProtrusionType::getThickness() const {
 }
 
 void ProtrusionType::setSensitivity(const float sensitivity) {
-    this->m_sensitivity;
+    assert(sensitivity >= 0 && sensitivity <= 1);
+    this->m_sensitivity = sensitivity;
 }
 
 float ProtrusionType::getSensitivity() const {
@@ -72,6 +82,17 @@ float ProtrusionType::getSensitivity() const {
 
 void ProtrusionType::add_allowed_species(const std::string name) {
     this->m_allowed_species.push_back(name);
+}
+
+bool ProtrusionType::hasAllowedSpecies(std::string targetName) {
+    bool speciesFound = false;
+    for (auto speciesName : this->m_allowed_species) {
+        if (speciesName == targetName) {
+            speciesFound = true;
+            break;
+        }
+    }
+    return speciesFound;
 }
 
 std::vector<std::string>& ProtrusionType::getAllowedSpecies() {

@@ -309,7 +309,7 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
             memAgent->moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)memAgent->Mx, (int)memAgent->My, (int)memAgent->Mz});
             succeeded = true;
-            filTokens -= tokenStrength;
+//            filTokens -= tokenStrength;
         }
     }
 

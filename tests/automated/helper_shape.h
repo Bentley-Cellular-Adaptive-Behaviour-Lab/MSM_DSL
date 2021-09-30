@@ -26,6 +26,7 @@ public:
     void createCell();
     void createProtrusion();
     void addMemAgent();
+    MemAgent *getMemAgent();
 };
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_SHAPE_H

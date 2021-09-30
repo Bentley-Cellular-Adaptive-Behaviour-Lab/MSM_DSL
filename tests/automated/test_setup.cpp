@@ -7,7 +7,7 @@
 
 //Declare/define extern variables.
 std::ofstream RUNSfile;
-float EPSILON = 0.9;
+float EPSILON = 1.0; // Set to 1 to avoid any weirdness when extending filopodia.
 float FILTIPMAX = 15;
 int FIL_SPACING = 2;
 float FIL_VARY = 2;

@@ -1,8 +1,8 @@
-/home/meadt/CLion/clion-2021.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/meadt/MPSProjects/MSM_DSL
-TEST_TYPE = 0
-Testing: None
--- Could NOT find OpenGL (missing: OPENGL_opengl_LIBRARY OPENGL_glx_LIBRARY OPENGL_INCLUDE_DIR) 
--- Could NOT find Boost (missing: Boost_INCLUDE_DIR) 
+C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5284.51\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL
+TEST_TYPE = 1
+Testing: Automated
+-- Found Python: C:/Users/Tom/anaconda3/python.exe (found version "3.8.3") found components: Interpreter 
+Tests=""
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/meadt/MPSProjects/MSM_DSL/cmake-build-debug
+-- Build files have been written to: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
