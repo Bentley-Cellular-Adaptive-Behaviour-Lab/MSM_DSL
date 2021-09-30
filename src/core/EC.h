@@ -7,11 +7,14 @@
 
 #include <array>
 #include <string>
+#include <list>
 #include <vector>
 
 class Coordinates;
 class MemAgent;
 class Spring;
+class Protrusion;
+class ProtrusionType;
 class World;
 
 enum BELONGS_TO {
@@ -28,6 +31,8 @@ class Hysteresis;
 class Tissue;
 
 class EC {
+private:
+    std::list<Protrusion*> m_protrusions;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -157,5 +162,11 @@ public:
 
     float getCellCytoproteinLevel(std::string cytoproteinName);
     void setCellCytoproteinLevel(std::string cytoproteinName, float newLevel);
+
+    void createProtrusion(MemAgent* memAgent, ProtrusionType *protrusionType);
+    void destroyProtrusion(Protrusion *protrusion);
+    void addProtrusionToList(Protrusion* protrusion);
+    bool removeProtrusionFromList(Protrusion* protrusion);
+    std::list<Protrusion*>& getProtrusionList();
 };
 #endif //SPRINGAGENT_EC_H

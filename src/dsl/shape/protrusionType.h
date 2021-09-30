@@ -18,7 +18,6 @@ private:
     int m_thickness;
 
     float m_sensitivity;
-    float m_requiredCytoproteinAmount;
 
     // TODO: Change this to a vector of integers, corresponding to the ID of the species.
     std::vector<std::string> m_allowed_species;
@@ -26,7 +25,6 @@ public:
     ProtrusionType(std::string name,
                    std::string targetSpeciesName,
                    std::string requiredCytoproteinName,
-                   float requiredCytoproteinAmount,
                    float maxLength,
                    int thickness,
                    float sensitivity);
@@ -39,9 +37,6 @@ public:
 
     void setRequiredCytoproteinName(const std::string name);
     std::string getRequiredCytoproteinName() const;
-
-    void setRequiredCytoproteinAmount(const float amount);
-    float getRequiredCytoproteinAmount() const;
 
     void setMaxLength(const float maxLength);
     int getMaxLength() const;

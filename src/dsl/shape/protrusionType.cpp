@@ -8,14 +8,12 @@
 ProtrusionType::ProtrusionType(std::string name,
                                std::string targetSpeciesName,
                                std::string requiredCytoproteinName,
-                               float requiredCytoproteinAmount,
                                float maxLength,
                                int thickness,
                                float sensitivity) {
     this->m_name = name;
     this->m_targetSpeciesName = targetSpeciesName;
     this->m_requiredCytoproteinName = requiredCytoproteinName;
-    this->m_requiredCytoproteinAmount = requiredCytoproteinAmount;
     this->m_maxLength = maxLength;
     this->m_thickness = thickness;
     this->m_sensitivity = sensitivity;
@@ -45,13 +43,6 @@ std::string ProtrusionType::getRequiredCytoproteinName() const {
     return this->m_requiredCytoproteinName;
 }
 
-void ProtrusionType::setRequiredCytoproteinAmount(const float amount) {
-    this->m_requiredCytoproteinAmount = amount;
-}
-
-float ProtrusionType::getRequiredCytoproteinAmount() const {
-    return this->m_requiredCytoproteinAmount;
-}
 
 void ProtrusionType::setMaxLength(const float maxLength) {
     assert(maxLength >= 0 || maxLength == -1);

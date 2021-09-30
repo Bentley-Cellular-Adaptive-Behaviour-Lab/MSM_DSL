@@ -296,8 +296,7 @@ void Tissue_Container::create_2d_square_cell(int cell_number,
 
     for (i = (int) (centreX - (float) cell_width / 2.0f); i < (int) (centreX + (float) cell_width / 2.0f); i++) {
         for (j = (int) (centreY - (float) cell_height / 2.0f); j < (int) (centreY + (float) cell_height / 2.0f); j++) {
-            //TODO: HAVE INDIVIDUAL CELLS ADDED TO A NEW VECTOR IN WORLD AND LOOP OVER THESE.
-            memp = new MemAgent(m_single_cell_agents[cell_number-1], (World *) this->m_world);
+            memp = new MemAgent(m_single_cell_agents[cell_number-1], this->m_world);
             memp->Mx = (float) i;
             memp->My = (float) j;
             memp->Mz = (float) centreZ;
