@@ -48,22 +48,69 @@ Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrus
     this->m_cell = cell;
     this->m_baseMemAgent = baseMemAgent;
     this->m_protrusionType = protrusionType;
+    this->m_timeCreated = cell->worldP->timeStep;
+    this->addMemAgentToStack(baseMemAgent);
+}
+
+void Protrusion::setTimeCreated(const int time) {
+    this->m_timeCreated = time;
+}
+
+int Protrusion::getTimeCreated() const {
+    return this->m_timeCreated;
+}
+
+void Protrusion::setTimeRetracted(const int time) {
+    this->m_timeRetractComplete = time;
+}
+
+int Protrusion::getTimeRetracted() const {
+    return this->m_timeRetractComplete;
+}
+
+void Protrusion::setCurrentLength(const float newLength) {
+    this->m_currentLength = newLength;
+}
+
+float Protrusion::getCurrentLength() const {
+    return this->m_currentLength;
+}
+
+EC* Protrusion::getCell() const {
+    return this->m_cell;
+}
+
+MemAgent* Protrusion::getBaseMemAgent() const {
+    return this->m_baseMemAgent;
+}
+
+std::stack<MemAgent*>& Protrusion::getMemAgentStack() {
+    return this->m_memAgents;
 }
 
 ProtrusionType* Protrusion::getProtrusionType() {
     return this->m_protrusionType;
 }
 
+Env* Protrusion::getTipLocation() {
+    return this->m_tipLocation;
+}
+
+void Protrusion::setTipLocation(Env* env) {
+    this->m_tipLocation = env;
+}
+
+void Protrusion::setFurthest(const bool furthest) {
+    this->getsFurthestEnv = furthest;
+}
+
+bool Protrusion::getFurthest() const {
+    return this->getsFurthestEnv;
+}
+
+
 void Protrusion::addMemAgentToStack(MemAgent *memAgent) {
     this->m_memAgents.push(memAgent);
-}
-
-MemAgent* Protrusion::getTopMemAgent() {
-    return this->m_memAgents.top();
-}
-
-EC* Protrusion::getCell() {
-    return this->m_cell;
 }
 
 void Protrusion::popMemAgentFromStack() {
@@ -71,7 +118,7 @@ void Protrusion::popMemAgentFromStack() {
 }
 
 void Protrusion::updateCurrentLength(float distanceDelta) {
-    this->m_currentLength += distanceDelta;
+    this->setCurrentLength(this->getCurrentLength() + distanceDelta);
 }
 
 Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
@@ -159,11 +206,11 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
 }
 
 int Protrusion::extension(MemAgent *startMemAgent) {
+    int result = -1;
     EC *cell = this->m_cell;
     ProtrusionType *protrusionType = this->getProtrusionType();
     Cell_Type *cellType = cell->m_cell_type;
-    std::string requiredCytoprotein = protrusionType->getRequiredCytoproteinName();
-    float requiredCytoproteinAmount = protrusionType->getRequiredCytoproteinAmount();
+    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
     this->m_baseMemAgent = startMemAgent;
 
@@ -171,19 +218,22 @@ int Protrusion::extension(MemAgent *startMemAgent) {
     if (startMemAgent->node) {
         if (startMemAgent->EnvNeighs.size() > 0) { // <- Check that the memAgent is adjacent to an environment object.
             // TODO: CHECK WHETHER THIS IF STATEMENT IS NEEDED.
-            if (cellType->get_cytoprotein(requiredCytoprotein)->getCellLevel() > requiredCytoproteinAmount) {
+            if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() > requiredCytoprotein->getRequiredAmount()) {
                 if (startMemAgent->FIL == NONE) {
                     this->initiateProtrusion(startMemAgent);
+                    result = 0;
                 } else if (startMemAgent->FIL == TIP) {
                     this->extendProtrusion(startMemAgent);
+                    result = 0;
                 } else {
-                    return -2; // Failed due to being called on wrong memAgent type i.e. BASE OR STALK.
+                    result = -1; // Failed due to being called on wrong memAgent type i.e. BASE OR STALK.
                 }
             } else {
-                return -1; // Failed due to lack of cytoprotein.
+                result = -1; // Failed due to lack of cytoprotein.
             }
         }
     }
+    return result;
 }
 
 bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
@@ -193,8 +243,7 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     EC *cell = this->m_cell;
     ProtrusionType *protrusionType = this->getProtrusionType();
     Cell_Type *cellType = cell->m_cell_type;
-    std::string requiredCytoprotein = protrusionType->getRequiredCytoproteinName();
-    float requiredCytoproteinAmount = protrusionType->getRequiredCytoproteinAmount();
+    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
     this->m_baseMemAgent = startMemAgent;
 
@@ -203,8 +252,8 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     highest = this->findHighestConcPosition((startMemAgent), protrusionType->getSensitivity()); // Find the environment object with the highest level of the target protein.
     if ((highest != NULL) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
         float distNeeded = this->getDistNeeded(highest, startMemAgent);
-        if (cellType->get_cytoprotein(requiredCytoprotein)->getCellLevel() >= distNeeded) {
-            cellType->get_cytoprotein(requiredCytoprotein)->setCellLevel(distNeeded);
+        if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() >= distNeeded) {
+            cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
             startMemAgent->FA=true;
 
             /// Create  anew node, only attached to the current agent. Create it in selected protein site.
@@ -242,9 +291,9 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             succeeded = true;
 
             /// Subtract the required level from the level at this memAgent.
-            float currentCytoproteinLevel = startMemAgent->get_cytoprotein_level(requiredCytoprotein);
-            if (currentCytoproteinLevel > requiredCytoproteinAmount) {
-                startMemAgent->set_cytoprotein_level(requiredCytoprotein, currentCytoproteinLevel - requiredCytoproteinAmount);
+            float currentCytoproteinLevel = startMemAgent->get_cytoprotein_level(requiredCytoprotein->getName());
+            if (currentCytoproteinLevel > cellType->get_cytoprotein(requiredCytoprotein->getName())->getRequiredAmount()) {
+                startMemAgent->set_cytoprotein_level(requiredCytoprotein->getName(), currentCytoproteinLevel - cellType->get_cytoprotein(requiredCytoprotein->getName())->getRequiredAmount());
             }
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
         }
@@ -277,8 +326,7 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
     World *world = this->m_cell->worldP;
     ProtrusionType *protrusionType = this->getProtrusionType();
     Cell_Type *cellType = cell->m_cell_type;
-    std::string requiredCytoprotein = protrusionType->getRequiredCytoproteinName();
-    float requiredCytoproteinAmount = protrusionType->getRequiredCytoproteinAmount();
+    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
     MemAgent *filNeighbour = memAgent->filNeigh;
 

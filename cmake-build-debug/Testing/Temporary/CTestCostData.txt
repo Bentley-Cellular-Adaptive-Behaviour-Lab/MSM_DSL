@@ -13,6 +13,7 @@ CellJunctionTest.crossJunctionODETest 12 0.0141915
 HelloTest.CheckGoogleTest 19 0.000300637
 TranscriptionDelayTest.transcriptionDelayTest 14 0.012419
 NotchPathwayTest.NotchPathwayTest 14 0.021668
-test_Protrusion.ProtrusionConstructor 2 0.00284155
-FindHighestConcTest.FindHighestConcTest 4 0.0687255
+test_Protrusion.ProtrusionConstructor 5 0.0205869
+FindHighestConcTest.FindHighestConcTest 8 0.031598
+test_ProtrusionType.ProtrusionTypeConstructor 3 0.00189793
 ---

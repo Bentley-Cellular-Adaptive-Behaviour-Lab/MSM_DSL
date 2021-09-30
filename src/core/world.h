@@ -24,6 +24,7 @@ class Filopodia;
 class Macrophage;
 class MemAgent;
 class ODEs;
+class ProtrusionType;
 class world_logger;
 
 class World {
@@ -240,6 +241,8 @@ public:
     void createLogger();
     world_logger* getWorldLogger();
     void setWorldLogger(world_logger *logger);
+
+    ;
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

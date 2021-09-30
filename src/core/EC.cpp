@@ -12,6 +12,7 @@
 #include "world.h"
 
 #include "../dsl/shape/cytoprotein.h"
+#include "../dsl/shape/protrusion.h"
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 
@@ -1869,4 +1870,34 @@ float EC::getCellCytoproteinLevel(std::string cytoproteinName) {
 void EC::setCellCytoproteinLevel(std::string cytoproteinName, float newLevel) {
     CytoProtein *cytoProtein = this->m_cell_type->get_cytoprotein(cytoproteinName);
     cytoProtein->setCellLevel(newLevel);
+}
+
+void EC::createProtrusion(MemAgent* memAgent, ProtrusionType *protrusionType) {
+    auto newProtrusion = new Protrusion(this, memAgent, protrusionType);
+    this->addProtrusionToList(newProtrusion);
+}
+
+void EC::destroyProtrusion(Protrusion *protrusion) {
+    this->removeProtrusionFromList(protrusion);
+    delete protrusion;
+}
+
+void EC::addProtrusionToList(Protrusion* protrusion) {
+    this->m_protrusions.push_back(protrusion);
+}
+
+bool EC::removeProtrusionFromList(Protrusion* protrusion) {
+    bool protrusionRemoved = false;
+    for (auto *currentProtrusion :this->m_protrusions) {
+        if (protrusion == currentProtrusion) {
+            this->m_protrusions.remove(protrusion);
+            protrusionRemoved = true;
+            break;
+        }
+    }
+    return protrusionRemoved;
+}
+
+std::list<Protrusion*>& EC::getProtrusionList() {
+    return this->m_protrusions;
 }

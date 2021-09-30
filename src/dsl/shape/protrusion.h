@@ -20,7 +20,7 @@ private:
     int m_timeCreated = -1;
     int m_timeRetractComplete = -1;
 
-    bool m_retracted = false;
+    bool m_retracting = false;
     float m_currentLength = 0.0f;
 
     bool getsFurthestEnv = false;
@@ -28,19 +28,37 @@ private:
     EC *m_cell;
     // May not be needed - reassess once functions have been written.
     MemAgent *m_baseMemAgent;
-    MemAgent *m_tipMemAgent;
     std::stack<MemAgent *> m_memAgents; // Stores all the memAgents in this filopodia, including the base at position 0.
+    Env *m_tipLocation; // Set when the first extension occurs.
     ProtrusionType *m_protrusionType;
 public:
-    EC *getCell();
-
     Protrusion(EC *cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType);
 
+    void setTimeCreated(const int time);
+    int getTimeCreated() const;
+
+    void setTimeRetracted(const int time);
+    int getTimeRetracted() const;
+
+    void setRetracting(const bool retracting);
+    bool getRetracting() const;
+
+    void setFurthest(const bool furthest);
+    bool getFurthest() const;
+
+    void setCurrentLength(const float newLength);
+    float getCurrentLength() const;
+
+    EC* getCell() const;
+    MemAgent* getBaseMemAgent() const;
+    std::stack<MemAgent*>& getMemAgentStack();
     ProtrusionType* getProtrusionType();
+    Env* getTipLocation();
+    void setTipLocation(Env* env);
 
     void addMemAgentToStack(MemAgent *memAgent);
-    MemAgent *getTopMemAgent();
     void popMemAgentFromStack();
+
     void updateCurrentLength(float distanceDelta);
 
     Env *findHighestConcPosition(MemAgent* memAgent, float prob);
@@ -48,8 +66,6 @@ public:
     int extension(MemAgent *memAgent);
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
-
-    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
 
     int retraction(MemAgent* memAgent);
     bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
@@ -62,6 +78,7 @@ public:
     void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName);
     void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
     void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
+    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
 };
 
 
