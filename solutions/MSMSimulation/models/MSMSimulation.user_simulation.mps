@@ -836,8 +836,8 @@
   </node>
   <node concept="3ZP1sW" id="Wb8DHEYwZu">
     <property role="TrG5h" value="Example1_Tissues" />
-    <ref role="maghN" node="Wb8DHEYwYH" resolve="Example1_Species" />
     <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
+    <ref role="maghN" node="2NJEPCJlU1q" resolve="Robert" />
     <node concept="3ZP1sZ" id="6Zu6_HK$Ah0" role="3ZP1sP">
       <property role="TrG5h" value="Vessel" />
       <ref role="1v2cpI" node="6Zu6_HK$Ac5" resolve="Vessel" />
@@ -903,20 +903,11 @@
           <node concept="2_hRrN" id="6Zu6_HK$A8R" role="2_hQ4V" />
         </node>
       </node>
-      <node concept="1csUcq" id="6Zu6_HK$Abf" role="3FWu3_">
-        <ref role="1csUcr" node="6Zu6_HK$zj0" resolve="VEGFR" />
+      <node concept="1csUcq" id="2NJEPCJm9sI" role="3FWu3_">
+        <ref role="1csUcr" node="2NJEPCJm4oJ" resolve="ProteinA" />
       </node>
-      <node concept="1csUcq" id="6Zu6_HK$Abi" role="3FWu3_">
-        <ref role="1csUcr" node="6Zu6_HK$z$3" resolve="VEGF_VEGFR" />
-      </node>
-      <node concept="1csUcq" id="6Zu6_HK$Abm" role="3FWu3_">
-        <ref role="1csUcr" node="xhYrIU7B8v" resolve="NOTCH" />
-      </node>
-      <node concept="1csUcq" id="6Zu6_HK$Abr" role="3FWu3_">
-        <ref role="1csUcr" node="6Zu6_HK$zup" resolve="DLL4" />
-      </node>
-      <node concept="1csUcq" id="6Zu6_HK$Abx" role="3FWu3_">
-        <ref role="1csUcr" node="xhYrIU82pV" resolve="NOTCH_DLL4" />
+      <node concept="1csUcq" id="2NJEPCJm9sO" role="3FWu3_">
+        <ref role="1csUcr" node="2NJEPCJm4t3" resolve="ProteinB" />
       </node>
     </node>
   </node>
@@ -1057,6 +1048,106 @@
       <node concept="LnUL0" id="5CquPnWxhRr" role="LnW9H">
         <ref role="LnUL$" node="2Jfy4gq_8Yb" resolve="Filopodia" />
       </node>
+    </node>
+  </node>
+  <node concept="3_zqOV" id="2NJEPCJlU1q">
+    <property role="TrG5h" value="Robert" />
+    <ref role="m9Uib" node="Wb8DHEYwZu" resolve="Example1_Tissues" />
+    <node concept="3_zqOx" id="2NJEPCJm4y0" role="3_zqUl">
+      <property role="TrG5h" value="UpregulationRate" />
+      <node concept="1cBA6y" id="2NJEPCJm4yd" role="3_zqNk">
+        <ref role="1cBA6z" node="2NJEPCJm4oJ" resolve="ProteinA" />
+      </node>
+    </node>
+    <node concept="3_zqOx" id="2NJEPCJm4sL" role="3_zqUl">
+      <property role="TrG5h" value="InhibitionRate" />
+      <node concept="1cBA6y" id="2NJEPCJm4yj" role="3_zqNk">
+        <ref role="1cBA6z" node="2NJEPCJm4t3" resolve="ProteinB" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="2NJEPCJm4oJ" role="3_zqUg">
+      <property role="2VbSsx" value="10" />
+      <property role="TrG5h" value="ProteinA" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="2NJEPCJm4oR" role="1tJpXo">
+        <node concept="3bpmH0" id="2NJEPCJm4oT" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4pd" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4pD" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="2NJEPCJm4q0" role="2UOkdu">
+        <node concept="3bpmH0" id="2NJEPCJm4q2" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4qm" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4qG" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="2NJEPCJm4r3" role="2UOkcx">
+        <node concept="3bpmH0" id="2NJEPCJm4r5" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4rp" role="3lUA52">
+            <property role="30bXRw" value="100" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4sf" role="3lUA2W" />
+      </node>
+      <node concept="3rtiFT" id="2NJEPCJm4sS" role="3rqWia">
+        <ref role="3rtiFY" node="2NJEPCJm4sH" resolve="Inhib" />
+      </node>
+      <node concept="3rtiFT" id="2NJEPCJm4xR" role="3rtiFW">
+        <ref role="3rtiFY" node="2NJEPCJm4sX" resolve="Upreg" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="2NJEPCJm4t3" role="3_zqUg">
+      <property role="2VbSsx" value="1" />
+      <property role="TrG5h" value="ProteinB" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="2NJEPCJm4tq" role="1tJpXo">
+        <node concept="3bpmH0" id="2NJEPCJm4ts" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4tK" role="3lUA52">
+            <property role="30bXRw" value="10" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4uc" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="2NJEPCJm4uz" role="2UOkdu">
+        <node concept="3bpmH0" id="2NJEPCJm4u_" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4vx" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4vX" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="2NJEPCJm4wk" role="2UOkcx">
+        <node concept="3bpmH0" id="2NJEPCJm4wm" role="3lUA2Y">
+          <node concept="30bXRB" id="2NJEPCJm4wE" role="3lUA52">
+            <property role="30bXRw" value="100" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="2NJEPCJm4xw" role="3lUA2W" />
+      </node>
+      <node concept="3rtiFT" id="2NJEPCJm4xV" role="3rqWia">
+        <ref role="3rtiFY" node="2NJEPCJm4sX" resolve="Upreg" />
+      </node>
+      <node concept="3rtiFT" id="2NJEPCJm4xX" role="3rtiFW">
+        <ref role="3rtiFY" node="2NJEPCJm4sH" resolve="Inhib" />
+      </node>
+    </node>
+    <node concept="1gv4$V" id="2NJEPCJm4sX" role="3_zqUi">
+      <property role="2HBw3H" value="1" />
+      <property role="TrG5h" value="Upreg" />
+      <ref role="1gv5qF" node="2NJEPCJm4oJ" resolve="ProteinA" />
+      <ref role="1gv5qG" node="2NJEPCJm4t3" resolve="ProteinB" />
+      <ref role="1gufLq" node="2NJEPCJm4y0" resolve="UpregulationRate" />
+    </node>
+    <node concept="1gv4$U" id="2NJEPCJm4sH" role="3_zqUi">
+      <property role="2HBw3H" value="1" />
+      <property role="TrG5h" value="Inhib" />
+      <ref role="1gv5qG" node="2NJEPCJm4oJ" resolve="ProteinA" />
+      <ref role="1gufLq" node="2NJEPCJm4sL" resolve="InhibitionRate" />
+      <ref role="1gv5qF" node="2NJEPCJm4t3" resolve="ProteinB" />
     </node>
   </node>
 </model>

@@ -79,6 +79,9 @@ public:
     void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
     void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
     float getDistNeeded(Env *highest, MemAgent *startMemAgent);
+    void populateProteinList(MemAgent *memAgent);
+    void populateCytoproteinList(MemAgent *memAgent);
+    bool proteinIsAllowed(std::string proteinName);
 };
 
 

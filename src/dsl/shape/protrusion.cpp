@@ -256,7 +256,7 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
             startMemAgent->FA=true;
 
-            /// Create  anew node, only attached to the current agent. Create it in selected protein site.
+            /// Create a new node, only attached to the current agent. Create it in selected protein site.
             newMemAgent = new MemAgent(cell, startMemAgent->worldP);
             newMemAgent->Mx = highest->Ex;
             newMemAgent->My = highest->Ey;
@@ -287,6 +287,11 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             startMemAgent->plusSite = newMemAgent;
             newMemAgent->minusSite = startMemAgent;
 
+            /// Create new protein objects for proteins which are allowed by the protrusion.
+            for (auto *protein : cell->m_cell_type) {
+
+            }
+
             /// Confirms the extension has succeeded.
             succeeded = true;
 
@@ -296,6 +301,9 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
                 startMemAgent->set_cytoprotein_level(requiredCytoprotein->getName(), currentCytoproteinLevel - cellType->get_cytoprotein(requiredCytoprotein->getName())->getRequiredAmount());
             }
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
+
+            /// Add the memAgent to the protrusions list of memAgents.
+            this->addMemAgentToStack(newMemAgent);
         }
     }
     return succeeded;
@@ -643,4 +651,18 @@ void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAg
 void Protrusion::updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta) {
     float currentCellLevel = cell->getCellCytoproteinLevel(cytoproteinName);
     cell->setCellCytoproteinLevel(cytoproteinName, currentCellLevel + proteinDelta);
+}
+
+void Protrusion::populateProteinList(MemAgent *memAgent) {
+    Cell_Type *cellType = this->m_cell->m_cell_type;
+    for (auto *protein : cellType->proteins) {
+    }
+}
+
+void Protrusion::populateCytoproteinList(MemAgent *memAgent) {
+
+}
+
+bool Protrusion::proteinIsAllowed(std::string proteinName) {
+    return this->m_protrusionType->hasAllowedSpecies(proteinName);
 }

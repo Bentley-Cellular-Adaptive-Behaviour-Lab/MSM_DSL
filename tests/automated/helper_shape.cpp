@@ -111,23 +111,34 @@ void ExtendProtrusionTest::createEnvironment() {
 
 void ExtendProtrusionTest::createCell() {
     auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
-    auto *cell = new EC(this->m_world);
-    this->m_cell = cell;
-    cell->belongs_to = BELONGS_TO_SINGLECELL;
-    m_world->ECagents.push_back(cell);
+    auto *ec = new EC(this->m_world);
+    auto *cell = new Cell(this->m_tissueContainer, "Cell", this->m_world, new Coordinates(25,25,25), cellType);
 
-    cell->m_cell_type = cellType;
+    // Assign cell object information
+    cell->cell_agent = ec;
+    this->m_tissueContainer->cells.push_back(cell);
 
+    // Assign cell agent object information.
+    this->m_cell = ec;
+    ec->belongs_to = BELONGS_TO_SINGLECELL;
+    ec->m_cell_type = cellType;
+    m_world->ECagents.push_back(ec);
+
+    // Add a cytoprotein to the cell type (owned by the cell agent).
     cellType->add_cytoprotein(new CytoProtein("RequiredCytoprotein", 11.0, 5.0));
 
-    this->m_tissueContainer->m_single_cell_agents.push_back(cell);
-    this->m_tissueContainer->create_2d_square_cell(0,
+    this->m_tissueContainer->m_single_cell_agents.push_back(ec);
+    this->m_tissueContainer->create_2d_square_cell(1,
                                                    25,
                                                    25,
                                                    25,
                                                    5,
                                                    5);
-    this->m_tissueContainer->connect_2d_square_cell(0);
+    this->m_tissueContainer->connect_2d_square_cell(1);
+    // Ensure that memAgents know about their environment neighbours.
+    for (auto *memAgent : ec->nodeAgents) {
+        memAgent->checkNeighs(false);
+    }
 }
 
 void ExtendProtrusionTest::createProtrusion() {
