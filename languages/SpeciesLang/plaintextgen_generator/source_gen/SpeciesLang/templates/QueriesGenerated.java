@@ -502,11 +502,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode reaction : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialReactions_id6Hz4f3DkFjb.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -595,11 +598,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode reaction : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialReactions_id6Hz4f3DkFjb.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -618,11 +624,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode reaction : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialReactions_id6Hz4f3DkFjb.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -641,11 +650,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode reaction : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialReactions_id6Hz4f3DkFjb.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Reaction__BehaviorDescriptor.containsSpecies_id6Hz4f3Dh3F6.invoke(reaction, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -682,13 +694,15 @@ public class QueriesGenerated extends QueryProviderBase {
       }
       if (participatesInReaction) {
         if (!(SPropertyOperations.getEnum(species, PROPS.Location$Gx$s).equals(SEnumOperations.getMember(MetaAdapterFactory.getEnumeration(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceed39a7L, "SpeciesLang.structure.SpeciesLocation"), 0x2b6159d0ceed39a8L, "LOCATION_EXTRACELLULAR_ENVIRONMENT")))) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          SPropertyOperations.assign(newBin, PROPS.targetUsesCellValue$6tnC, usesCellValue);
-          SPropertyOperations.assign(newBin, PROPS.targetUsesNeighbourValue$xIQB, usesNeighbourValue);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            SPropertyOperations.assign(newBin, PROPS.targetUsesCellValue$6tnC, usesCellValue);
+            SPropertyOperations.assign(newBin, PROPS.targetUsesNeighbourValue$xIQB, usesNeighbourValue);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -707,11 +721,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode regulation : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialRegulations_id6Hz4f3DkEET.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Regulation__BehaviorDescriptor.containsSpecies_id6Hz4f3Ds$wM.invoke(regulation, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -767,7 +784,7 @@ public class QueriesGenerated extends QueryProviderBase {
     List<SNode> relevantSpecies = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> bins = ListSequence.fromList(new ArrayList<SNode>());
 
-    // Get all species involved in this cell type's reactions.
+    // Get all species involved in this cell type's reactions - CELL REGULATION.
     ListSequence.fromList(relevantSpecies).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getRegulationSpecies_id6Hz4f3Dm_0e.invoke(speciesContainer, _context.getNode())));
 
     // Create an object which tracks the needed index for each species, if it is involved in a reaction the cell type participates in.
@@ -775,11 +792,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode regulation : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialRegulations_id6Hz4f3DkEET.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Regulation__BehaviorDescriptor.containsSpecies_id6Hz4f3Ds$wM.invoke(regulation, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }
@@ -798,11 +818,14 @@ public class QueriesGenerated extends QueryProviderBase {
     for (SNode species : ListSequence.fromList(relevantSpecies).distinct()) {
       for (SNode regulation : ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getPotentialRegulations_id6Hz4f3DkEET.invoke(speciesContainer, _context.getNode())).distinct()) {
         if ((boolean) Regulation__BehaviorDescriptor.containsSpecies_id6Hz4f3Ds$wM.invoke(regulation, species)) {
-          SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
-          SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
-          SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
-          ListSequence.fromList(bins).addElement(newBin);
-          count++;
+          // This should be going over a unique list, but just in case.
+          if (!((boolean) SpeciesContainer__BehaviorDescriptor.binsContainsSpecies_id2ahUazjV8Ak.invoke(speciesContainer, species, bins))) {
+            SNode newBin = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, "SpeciesLang.structure.SpeciesBin"));
+            SLinkOperations.setTarget(newBin, LINKS.targetSpecies$nL6b, species);
+            SPropertyOperations.set(newBin, PROPS.binIndex$nKRa, count);
+            ListSequence.fromList(bins).addElement(newBin);
+            count++;
+          }
         }
       }
     }

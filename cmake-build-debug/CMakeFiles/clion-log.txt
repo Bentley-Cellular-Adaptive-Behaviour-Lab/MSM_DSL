@@ -1,6 +1,15 @@
-/home/meadt/CLion/clion-2021.2.1/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - Unix Makefiles" /home/meadt/MPSProjects/MSM_DSL
+C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5284.51\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL
 TEST_TYPE = 1
 Testing: Automated
--- Configuring done
--- Generating done
--- Build files have been written to: /home/meadt/MPSProjects/MSM_DSL/cmake-build-debug
+CMake Error: The current CMakeCache.txt directory C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-subbuild/CMakeCache.txt is different than the directory /home/meadt/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-subbuild where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
+
+CMake Error at C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1000 (message):
+  CMake step for googletest failed: 1
+Call Stack (most recent call first):
+  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1141:EVAL:2 (__FetchContent_directPopulate)
+  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1141 (cmake_language)
+  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1184 (FetchContent_Populate)
+  CMakeLists.txt:121 (FetchContent_MakeAvailable)
+
+
+-- Configuring incomplete, errors occurred!

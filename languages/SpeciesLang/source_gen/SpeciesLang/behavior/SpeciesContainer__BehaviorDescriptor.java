@@ -54,8 +54,9 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<List<SNode>> getPotentialReactions_id6Hz4f3DkFjb = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getPotentialReactions").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("6Hz4f3DkFjb").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> speciesInvolvedInProcess_id2AP3$9HzFVa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("speciesInvolvedInProcess").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9HzFVa").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getProcessSpecies_id2AP3$9H$1yb = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getProcessSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2AP3$9H$1yb").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> binsContainsSpecies_id2ahUazjV8Ak = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("binsContainsSpecies").modifiers(0, AccessPrivileges.PUBLIC).concept(CONCEPT).id("2ahUazjV8Ak").build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, sortParamExpressions_idcJYjfa5zz7, sortParams_id1MpPQ9imxeo, exprListContainsParameter_id6ujblCxXxzJ, listContainsParameter_id1MpPQ9iAjkj, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV, getSystemSpecies_id2AP3$9HzARu, getReactionSpecies_id6Hz4f3DmoSG, getRegulationSpecies_id6Hz4f3Dm_0e, getPotentialProcesses_id2AP3$9HzIup, getPotentialRegulations_id6Hz4f3DkEET, getPotentialReactions_id6Hz4f3DkFjb, speciesInvolvedInProcess_id2AP3$9HzFVa, getProcessSpecies_id2AP3$9H$1yb);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExprSpecies_idJ83UdHe8mr, getExprParameters_id3eqdKU_qMQ$, updateSpeciesRelations_idJ83UdHo8mt, updateModifiers_id20T6jFVk_r2, updateParameterRelations_id6UEPGYOxbAr, filterExpressionList_id3eqdKU_H9WR, sortParamExpressions_idcJYjfa5zz7, sortParams_id1MpPQ9imxeo, exprListContainsParameter_id6ujblCxXxzJ, listContainsParameter_id1MpPQ9iAjkj, inhibitionIsValid_id5Cso5p4sluh, upregulationIsValid_id5Cso5p4sX5X, irreversibleReactionIsValid_id5Cso5p4t3d0, reversibleReactionIsValid_id5Cso5p4tyaj, fixName_id1IP6pj5_cgV, getSystemSpecies_id2AP3$9HzARu, getReactionSpecies_id6Hz4f3DmoSG, getRegulationSpecies_id6Hz4f3Dm_0e, getPotentialProcesses_id2AP3$9HzIup, getPotentialRegulations_id6Hz4f3DkEET, getPotentialReactions_id6Hz4f3DkFjb, speciesInvolvedInProcess_id2AP3$9HzFVa, getProcessSpecies_id2AP3$9H$1yb, binsContainsSpecies_id2ahUazjV8Ak);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -589,6 +590,16 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
 
     return processSpecies;
   }
+  /*package*/ static boolean binsContainsSpecies_id2ahUazjV8Ak(@NotNull SNode __thisNode__, SNode species, List<SNode> bins) {
+    boolean binsContainsSpecies = false;
+    for (SNode bin : ListSequence.fromList(bins)) {
+      if (SLinkOperations.getTarget(bin, LINKS.targetSpecies$nL6b) == species) {
+        binsContainsSpecies = true;
+        break;
+      }
+    }
+    return binsContainsSpecies;
+  }
 
   /*package*/ SpeciesContainer__BehaviorDescriptor() {
   }
@@ -654,6 +665,8 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((Boolean) speciesInvolvedInProcess_id2AP3$9HzFVa(node, (SNode) parameters[0], (SNode) parameters[1]));
       case 22:
         return (T) ((List<SNode>) getProcessSpecies_id2AP3$9H$1yb(node, (SNode) parameters[0]));
+      case 23:
+        return (T) ((Boolean) binsContainsSpecies_id2ahUazjV8Ak(node, (SNode) parameters[0], (List<SNode>) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -710,6 +723,7 @@ public final class SpeciesContainer__BehaviorDescriptor extends BaseBHDescriptor
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
     /*package*/ static final SReferenceLink target$26Ka = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x10098a905c7a298aL, 0x10098a905c7a298bL, "target");
     /*package*/ static final SContainmentLink Owned_Species$sIXq = MetaAdapterFactory.getContainmentLink(0xb1ff4d68a5194928L, 0x8e36de776040fb5aL, 0x56b8f8b9a96cef8bL, 0x2b13de3ac0e23edfL, "Owned_Species");
+    /*package*/ static final SReferenceLink targetSpecies$nL6b = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x34479ff5091e5406L, 0x34479ff5091e5408L, "targetSpecies");
   }
 
   private static final class PROPS {

@@ -15,7 +15,7 @@ import java.nio.file.Files;
 public class RunMSM {
   public static void main(String[] args) {
     String root_string = System.getProperty("user.dir");
-    String output_string = "/home/meadt/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
+    String output_string = "C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/source_gen/MSMSimulation/user_simulation";
 
     Path old_tissue_path;
     Path old_world_path;
@@ -36,8 +36,8 @@ public class RunMSM {
       case WINDOWS:
         old_tissue_path = Paths.get(output_string + "\\" + "Example1_Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "\\" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "\\" + "Example1_Species" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "\\" + "Example1_Species" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "\\" + "Robert" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "\\" + "Robert" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "\\src\\generated\\dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "\\src\\generated\\dsl_world_gen.cpp");
@@ -59,8 +59,8 @@ public class RunMSM {
       case LINUX:
         old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "/" + "Example1_Species" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "/" + "Example1_Species" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "/" + "Robert" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "Robert" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
@@ -82,8 +82,8 @@ public class RunMSM {
       case MAC:
         old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "/" + "Example1_Species" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "/" + "Example1_Species" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "/" + "Robert" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "Robert" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
