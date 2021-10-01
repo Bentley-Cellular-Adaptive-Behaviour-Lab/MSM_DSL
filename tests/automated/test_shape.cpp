@@ -87,4 +87,5 @@ TEST_F(FindHighestConcTest, FindHighestConcTest) {
 TEST_F(ExtendProtrusionTest, ExtendProtrusionTest) {
     // Attempt to extend the protrusion out towards the highest protein location.
     this->m_protrusion->extension(this->m_protrusion->getBaseMemAgent());
+
 }

@@ -94,8 +94,6 @@ if(TEST_TYPE EQUAL 0)
             src/generated/dsl_species_gen.h)
 
     add_executable(springAgent ${Sources} ${Headers})
-
-    find_package(OpenGL)
     find_package(Boost)
 
     if(Boost_FOUND)
@@ -203,7 +201,6 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/helper_shape.h
             tests/automated/generated/dsl_species_gen.h)
 
-    find_package(OpenGL)
     find_package(Boost)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
@@ -215,8 +212,6 @@ elseif(TEST_TYPE EQUAL 1)
     target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
 
     gtest_discover_tests(autoSpringAgent)
-    message(Tests="${testList}")
-
 elseif(TEST_TYPE EQUAL 2)
     enable_testing()
     set(CMAKE_VERBOSE_MAKEFILE ON)
