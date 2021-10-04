@@ -123,23 +123,23 @@ public class QueriesGenerated extends QueryProviderBase {
     String reactantString = "";
     SNode reaction = SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.Reaction_Reference$_p), LINKS.ReactionReference$PJYZ);
     if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
-      reactantString = "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + "*";
           reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
     }
     if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
-      reactantString = "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + "*";
           reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
-      reactantString += "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Reactant_Terms$Wnv9))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          reactantString += "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
           reactantString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
@@ -157,23 +157,23 @@ public class QueriesGenerated extends QueryProviderBase {
     String productString = "";
     SNode reaction = SLinkOperations.getTarget(SNodeOperations.as(_context.getNode(), CONCEPTS.Reaction_Reference$_p), LINKS.ReactionReference$PJYZ);
     if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.IrreversibleReaction$ja)) {
-      productString = "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.IrreversibleReaction$ja), LINKS.Rate$Otxh), PROPS.name$MnvL) + "*";
           productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
     }
     if (SNodeOperations.isInstanceOf(reaction, CONCEPTS.ReversibleReaction$fi)) {
-      productString = "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += "+" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ForwardRate$OzkM), PROPS.name$MnvL) + "*";
           productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
-      productString += "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
       for (SNode term : ListSequence.fromList(SLinkOperations.getChildren(reaction, LINKS.Product_Terms$WnXb))) {
         if (Objects.equals(SLinkOperations.getTarget(term, LINKS.Species_Ref$Wnde), SNodeOperations.getParent(_context.getNode()))) {
+          productString += "-" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(reaction, CONCEPTS.ReversibleReaction$fi), LINKS.ReverseRate$OtVr), PROPS.name$MnvL) + "*";
           productString += String.valueOf(SPropertyOperations.getInteger(term, PROPS.Stoichiometry$Wmha));
         }
       }
@@ -482,6 +482,26 @@ public class QueriesGenerated extends QueryProviderBase {
     } else {
       return false;
     }
+  }
+  public static boolean ifMacro_Condition_1_4(final IfMacroContext _context) {
+    boolean reactionsOccur = false;
+    SNode speciesContainer = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> relevantSpecies = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(relevantSpecies).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getReactionSpecies_id6Hz4f3DmoSG.invoke(speciesContainer, _context.getNode())));
+    if (relevantSpecies.size() > 0) {
+      reactionsOccur = true;
+    }
+    return reactionsOccur;
+  }
+  public static boolean ifMacro_Condition_1_5(final IfMacroContext _context) {
+    boolean cellRegulationsOccur = false;
+    SNode speciesContainer = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), CONCEPTS.Tissue_And_Cell_Container$ni), LINKS.Species_Container$u7EZ);
+    List<SNode> relevantSpecies = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(relevantSpecies).addSequence(ListSequence.fromList(SpeciesContainer__BehaviorDescriptor.getRegulationSpecies_id6Hz4f3Dm_0e.invoke(speciesContainer, _context.getNode())));
+    if (relevantSpecies.size() > 0) {
+      cellRegulationsOccur = true;
+    }
+    return cellRegulationsOccur;
   }
   public static Iterable<SNode> sourceNodesQuery_1_0(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), LINKS.Tissue_Container$Ds8T), LINKS.cell_types$$$44);
@@ -1394,6 +1414,8 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("4247874104279087295", new IfMC(i++));
     imcMethods.put("4247874104279089814", new IfMC(i++));
     imcMethods.put("4247874104279093025", new IfMC(i++));
+    imcMethods.put("1055087302664533127", new IfMC(i++));
+    imcMethods.put("1055087302663710766", new IfMC(i++));
   }
   @NotNull
   @Override
@@ -1417,6 +1439,10 @@ public class QueriesGenerated extends QueryProviderBase {
           return QueriesGenerated.ifMacro_Condition_1_2(ctx);
         case 3:
           return QueriesGenerated.ifMacro_Condition_1_3(ctx);
+        case 4:
+          return QueriesGenerated.ifMacro_Condition_1_4(ctx);
+        case 5:
+          return QueriesGenerated.ifMacro_Condition_1_5(ctx);
         default:
           throw new GenerationFailureException(String.format("Inconsistent QueriesGenerated: there's no condition method for if macro %s (key: #%d)", ctx.getTemplateReference(), methodKey));
       }
@@ -1479,8 +1505,8 @@ public class QueriesGenerated extends QueryProviderBase {
     /*package*/ static final SReferenceLink Degradation_Term$Cd2S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af8984818bL, "Degradation_Term");
     /*package*/ static final SReferenceLink Production_Term$Cs3S = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4efL, 0x665d03af898481a1L, "Production_Term");
     /*package*/ static final SReferenceLink ReactionReference$PJYZ = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x1a111d3933278bf1L, 0x1a111d3933278bf2L, "ReactionReference");
-    /*package*/ static final SReferenceLink Rate$Otxh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, 0x665d03af898abc5aL, "Rate");
     /*package*/ static final SReferenceLink Species_Ref$Wnde = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4f2L, 0x2b6159d0ceecf4f7L, "Species_Ref");
+    /*package*/ static final SReferenceLink Rate$Otxh = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfaeaL, 0x665d03af898abc5aL, "Rate");
     /*package*/ static final SContainmentLink Reactant_Terms$Wnv9 = MetaAdapterFactory.getContainmentLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecf4eeL, 0x2b6159d0ceecf4f9L, "Reactant_Terms");
     /*package*/ static final SReferenceLink ForwardRate$OzkM = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5eL, "ForwardRate");
     /*package*/ static final SReferenceLink ReverseRate$OtVr = MetaAdapterFactory.getReferenceLink(0x84970ad9a9644f15L, 0xa393dc0fcd724c0fL, 0x2b6159d0ceecfae2L, 0x665d03af898abc5cL, "ReverseRate");

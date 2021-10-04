@@ -14,36 +14,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Implemented infrastructure for protrusion extension testing.">
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_00__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_00__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_04__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Checkout_at_18_05_2021_12_04__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_24_21__10_37_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/shelf/Uncommitted_changes_before_Update_at_9_24_21__10_37_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.20.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-subbuild/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-subbuild/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$AmountNeededSingleRoleHandler_6sr0zt_c5a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$AmountNeededSingleRoleHandler_6sr0zt_c5a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$MaxConcentrationSingleRoleHandler_6sr0zt_c3a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$MaxConcentrationSingleRoleHandler_6sr0zt_c3a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$MinConcentrationSingleRoleHandler_6sr0zt_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$MinConcentrationSingleRoleHandler_6sr0zt_c2a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$TriggersWhenSingleRoleHandler_6sr0zt_c4a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$TriggersWhenSingleRoleHandler_6sr0zt_c4a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$amountNeededSingleRoleHandler_6sr0zt_c3a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$amountNeededSingleRoleHandler_6sr0zt_c3a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$amountNeededSingleRoleHandler_6sr0zt_c6a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$amountNeededSingleRoleHandler_6sr0zt_c6a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$positionSingleRoleHandler_6sr0zt_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$positionSingleRoleHandler_6sr0zt_c2a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersProtrusionSingleRoleHandler_6sr0zt_c1a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersProtrusionSingleRoleHandler_6sr0zt_c1a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersProtrusionSingleRoleHandler_6sr0zt_c4a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersProtrusionSingleRoleHandler_6sr0zt_c4a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersWhenSingleRoleHandler_6sr0zt_c2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersWhenSingleRoleHandler_6sr0zt_c2a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersWhenSingleRoleHandler_6sr0zt_c5a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/CytoskeletalProtein_EditorBuilder_a$triggersWhenSingleRoleHandler_6sr0zt_c5a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$Inline_Builder0.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$Inline_Builder0.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$maxLengthSingleRoleHandler_srpkau_c4a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$maxLengthSingleRoleHandler_srpkau_c4a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$sensitivitySingleRoleHandler_srpkau_c5a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$sensitivitySingleRoleHandler_srpkau_c5a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$sensitivitySingleRoleHandler_srpkau_c6a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/Protrusion_EditorBuilder_a$sensitivitySingleRoleHandler_srpkau_c6a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/ShapeContainer_EditorBuilder_a$cytoskeletalProteinsListHandler_vag76e_b2a.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/classes_gen/ShapeLang/editor/ShapeContainer_EditorBuilder_a$cytoskeletalProteinsListHandler_vag76e_b2a.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$CONCEPTS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$CONCEPTS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$IfMC.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$IfMC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$LINKS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$LINKS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$PROPS.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$PROPS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$PVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$PVQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$SCB.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$SCB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$SNsQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$SNsQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$VVQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated$VVQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated.class" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/QueriesGenerated.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/classes_gen/SpeciesLang/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen.caches/SpeciesLang/templates/generated" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/trace.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLang.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/source_gen.caches/WorldLang/generated" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/source_gen.caches/WorldLang/generated" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="cytoproteins" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,17 +113,7 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="Remote JVM Debug.DebugMPS">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="CTest Application.All CTest">
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -140,6 +136,11 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="PATTERN">
@@ -184,6 +185,11 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DebugMPS" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -198,7 +204,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Remote JVM Debug.DebugMPS" />
+      <item itemvalue="CTest Application.All CTest" />
+      <item itemvalue="CTest Application.TestBasicNotchPathway" />
+      <item itemvalue="CTest Application.TestExtension" />
+      <item itemvalue="CTest Application.TestGoogleTest" />
+      <item itemvalue="CTest Application.TestShape" />
+      <item itemvalue="CTest Application.TestTranscriptionDelay" />
+      <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
+      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
+      <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
+      <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
+      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -306,6 +322,7 @@
       <workItem from="1633079039057" duration="280000" />
       <workItem from="1633079329897" duration="5936000" />
       <workItem from="1633099109682" duration="1104000" />
+      <workItem from="1633337706947" duration="2595000" />
     </task>
     <task id="LOCAL-00021" summary="Testing Boost library bug">
       <created>1623676295769</created>
@@ -697,15 +714,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Continued refactoring of protrusion extension behaviour" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/source_gen/SpeciesLang/templates/QueriesGenerated.java</url>
-          <line>773</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="jetbrains.mps.smodel.SNode" memberName="myConcept" />

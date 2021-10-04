@@ -34,10 +34,10 @@ public class RunMSM {
     // Determine DSL-generated file paths based on operating system and copy the designated files to the source folder.
     switch (utils.getOS()) {
       case WINDOWS:
-        old_tissue_path = Paths.get(output_string + "\\" + "Example1_Tissues" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "\\" + "TissueExample" + ".cpp");
         old_world_path = Paths.get(output_string + "\\" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "\\" + "Robert" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "\\" + "Robert" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "\\" + "ExampleSignalling" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "\\" + "ExampleSignalling" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "\\src\\generated\\dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "\\src\\generated\\dsl_world_gen.cpp");
@@ -57,10 +57,10 @@ public class RunMSM {
         break;
 
       case LINUX:
-        old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "/" + "TissueExample" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "/" + "Robert" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "/" + "Robert" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "/" + "ExampleSignalling" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "ExampleSignalling" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
@@ -80,10 +80,10 @@ public class RunMSM {
         break;
 
       case MAC:
-        old_tissue_path = Paths.get(output_string + "/" + "Example1_Tissues" + ".cpp");
+        old_tissue_path = Paths.get(output_string + "/" + "TissueExample" + ".cpp");
         old_world_path = Paths.get(output_string + "/" + "NewWorld" + ".cpp");
-        old_speciesSource_path = Paths.get(output_string + "/" + "Robert" + ".cpp");
-        old_speciesHeader_path = Paths.get(output_string + "/" + "Robert" + "_header.h");
+        old_speciesSource_path = Paths.get(output_string + "/" + "ExampleSignalling" + ".cpp");
+        old_speciesHeader_path = Paths.get(output_string + "/" + "ExampleSignalling" + "_header.h");
 
         new_tissue_path = Paths.get(root_string + "/src/generated/dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "/src/generated/dsl_world_gen.cpp");
@@ -107,8 +107,8 @@ public class RunMSM {
 
     // Attempt to build the MSM using the settings defined in the parent node.
     try {
-      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "true" + " " + "no_analysis" + " " + "10000" + " " + "2");
-      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "true", "no_analysis", "10000", "2");
+      System.out.println("Passing build command: " + "sh buildSpringAgent.sh " + "true" + " " + "no_analysis" + " " + "10000" + " " + "1");
+      ProcessBuilder pb = new ProcessBuilder("sh", "buildSpringAgent.sh", "true", "no_analysis", "10000", "1");
       pb.redirectErrorStream(true);
       pb.directory(new File("src"));
       Process p = pb.start();

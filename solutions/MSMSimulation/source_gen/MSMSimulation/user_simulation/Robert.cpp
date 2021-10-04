@@ -24,13 +24,6 @@ void ODEs::check_cell_ODEs(EC *ec) {
   }
 
   void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
-  	Endothelial_memAgent_ode_states current_states;
-  	Endothelial_memAgent_ode_states new_states;
-  	odeint::euler<Endothelial_memAgent_ode_states> stepper;
-
-
-  	stepper.do_step(Endothelial_memAgent_system, current_states, 0.0, new_states, 1);
-
   }
 
   void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
