@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import UnitLang.templates.QueriesGenerated;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import java.util.Arrays;
@@ -27,7 +26,6 @@ public class Generator extends TemplateModuleInterpreted2 {
 
   @Override
   protected void fillTemplateModels(TemplateModuleInterpreted2.TemplateModels models) {
-    models.templates("r:9ef82b02-0337-4252-9004-bdd4a343509d", QueriesGenerated.class);
   }
 
 

@@ -7,12 +7,13 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import UnitLang.behavior.Distance__BehaviorDescriptor;
+import ShapeLang.behavior.SensitivityExpression__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.math.BigDecimal;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
+import UnitLang.behavior.Distance__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -22,7 +23,7 @@ public class check_ValidSensitivity_NonTypesystemRule extends AbstractNonTypesys
   public check_ValidSensitivity_NonTypesystemRule() {
   }
   public void applyRule(final SNode protrusion, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (Distance__BehaviorDescriptor.get_distance_value_decimal_id3wWy5vw4PXg.invoke(SLinkOperations.getTarget(protrusion, LINKS.sensitivity$940a)).compareTo(BigDecimal.ZERO) == -1) {
+    if (SensitivityExpression__BehaviorDescriptor.get_decimal_value_id2Jfy4gq$TNn.invoke(SLinkOperations.getTarget(protrusion, LINKS.sensitivity$940a)).compareTo(BigDecimal.ZERO) == -1) {
       {
         final MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(protrusion, LINKS.thickness$s$zc), "Sensitivty cannot be less than zero.", "r:ec855cb5-c31b-4763-b37e-8c6813331837(ShapeLang.typesystem)", "3156891689895006300", null, errorTarget);

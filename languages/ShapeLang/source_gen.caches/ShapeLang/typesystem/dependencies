@@ -10,6 +10,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
   </dependency>
   <dependency className="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule">
+    <classNode dependClassName="ShapeLang.behavior.SensitivityExpression__BehaviorDescriptor" />
     <classNode dependClassName="UnitLang.behavior.Distance__BehaviorDescriptor" />
     <classNode dependClassName="java.math.BigDecimal" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />

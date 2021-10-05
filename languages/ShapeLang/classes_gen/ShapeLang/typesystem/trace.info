@@ -74,53 +74,53 @@
       </scope>
     </file>
     <file name="check_ValidSensitivity_NonTypesystemRule.java">
-      <node id="3156891689895006300" at="26,7,27,66" concept="6" />
-      <node id="3156891689895006300" at="27,66,28,289" concept="6" />
-      <node id="3156891689895017213" at="31,7,32,66" concept="6" />
-      <node id="3156891689895017213" at="32,66,33,292" concept="6" />
-      <node id="3156891689895006196" at="37,50,38,34" concept="7" />
-      <node id="3156891689895006196" at="40,68,41,102" concept="7" />
-      <node id="3156891689895006196" at="43,30,44,17" concept="7" />
-      <node id="3156891689895006196" at="48,0,49,0" concept="8" trace="thickness$s$zc" />
-      <node id="3156891689895006196" at="49,0,50,0" concept="8" trace="sensitivity$940a" />
-      <node id="3156891689895006196" at="53,0,54,0" concept="8" trace="Protrusion$iC" />
-      <node id="3156891689895006196" at="22,0,24,0" concept="1" trace="check_ValidSensitivity_NonTypesystemRule#()V" />
-      <node id="3156891689895006196" at="37,0,40,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
-      <node id="3156891689895006196" at="40,0,43,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-      <node id="3156891689895006196" at="43,0,46,0" concept="5" trace="overrides#()Z" />
-      <node id="3156891689895006300" at="25,183,29,7" concept="0" />
-      <node id="3156891689895017213" at="30,186,34,7" concept="0" />
-      <node id="3156891689895006298" at="24,123,35,5" concept="4" />
-      <node id="3156891689895006196" at="24,0,37,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-      <scope id="3156891689895006196" at="22,53,22,53" />
-      <scope id="3156891689895006196" at="37,50,38,34" />
-      <scope id="3156891689895006196" at="40,68,41,102" />
-      <scope id="3156891689895006196" at="43,30,44,17" />
-      <scope id="3156891689895006196" at="22,0,24,0" />
-      <scope id="3156891689895006300" at="26,7,28,289">
+      <node id="3156891689895006300" at="27,7,28,66" concept="6" />
+      <node id="3156891689895006300" at="28,66,29,289" concept="6" />
+      <node id="3156891689895017213" at="32,7,33,66" concept="6" />
+      <node id="3156891689895017213" at="33,66,34,292" concept="6" />
+      <node id="3156891689895006196" at="38,50,39,34" concept="7" />
+      <node id="3156891689895006196" at="41,68,42,102" concept="7" />
+      <node id="3156891689895006196" at="44,30,45,17" concept="7" />
+      <node id="3156891689895006196" at="49,0,50,0" concept="8" trace="thickness$s$zc" />
+      <node id="3156891689895006196" at="50,0,51,0" concept="8" trace="sensitivity$940a" />
+      <node id="3156891689895006196" at="54,0,55,0" concept="8" trace="Protrusion$iC" />
+      <node id="3156891689895006196" at="23,0,25,0" concept="1" trace="check_ValidSensitivity_NonTypesystemRule#()V" />
+      <node id="3156891689895006196" at="38,0,41,0" concept="5" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
+      <node id="3156891689895006196" at="41,0,44,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="3156891689895006196" at="44,0,47,0" concept="5" trace="overrides#()Z" />
+      <node id="3156891689895006300" at="26,187,30,7" concept="0" />
+      <node id="3156891689895017213" at="31,186,35,7" concept="0" />
+      <node id="3156891689895006298" at="25,123,36,5" concept="4" />
+      <node id="3156891689895006196" at="25,0,38,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="3156891689895006196" at="23,53,23,53" />
+      <scope id="3156891689895006196" at="38,50,39,34" />
+      <scope id="3156891689895006196" at="41,68,42,102" />
+      <scope id="3156891689895006196" at="44,30,45,17" />
+      <scope id="3156891689895006196" at="23,0,25,0" />
+      <scope id="3156891689895006300" at="27,7,29,289">
         <var name="_reporter_2309309498" id="3156891689895006300" />
         <var name="errorTarget" id="3156891689895006300" />
       </scope>
-      <scope id="3156891689895017213" at="31,7,33,292">
+      <scope id="3156891689895017213" at="32,7,34,292">
         <var name="_reporter_2309309498" id="3156891689895017213" />
         <var name="errorTarget" id="3156891689895017213" />
       </scope>
-      <scope id="3156891689895006196" at="37,0,40,0" />
-      <scope id="3156891689895006196" at="40,0,43,0">
+      <scope id="3156891689895006196" at="38,0,41,0" />
+      <scope id="3156891689895006196" at="41,0,44,0">
         <var name="argument" id="3156891689895006196" />
       </scope>
-      <scope id="3156891689895006196" at="43,0,46,0" />
-      <scope id="3156891689895006299" at="25,183,29,7" />
-      <scope id="3156891689895008582" at="30,186,34,7" />
-      <scope id="3156891689895006197" at="24,123,35,5" />
-      <scope id="3156891689895006196" at="24,0,37,0">
+      <scope id="3156891689895006196" at="44,0,47,0" />
+      <scope id="3156891689895006299" at="26,187,30,7" />
+      <scope id="3156891689895008582" at="31,186,35,7" />
+      <scope id="3156891689895006197" at="25,123,36,5" />
+      <scope id="3156891689895006196" at="25,0,38,0">
         <var name="protrusion" id="3156891689895006196" />
         <var name="status" id="3156891689895006196" />
         <var name="typeCheckingContext" id="3156891689895006196" />
       </scope>
-      <unit id="3156891689895006196" at="52,0,55,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule$CONCEPTS" />
-      <unit id="3156891689895006196" at="47,0,51,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule$LINKS" />
-      <unit id="3156891689895006196" at="21,0,56,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule" />
+      <unit id="3156891689895006196" at="53,0,56,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule$CONCEPTS" />
+      <unit id="3156891689895006196" at="48,0,52,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule$LINKS" />
+      <unit id="3156891689895006196" at="22,0,57,0" name="ShapeLang.typesystem.check_ValidSensitivity_NonTypesystemRule" />
     </file>
   </root>
   <root nodeRef="r:ec855cb5-c31b-4763-b37e-8c6813331837(ShapeLang.typesystem)/4247874104281876486">
