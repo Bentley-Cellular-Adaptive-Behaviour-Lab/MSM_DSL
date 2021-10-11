@@ -9,9 +9,9 @@
       <modulePath path="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/MSMDSL.build/MSMDSL.build.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/MSM_DSL.build/MSM_DSL.build.msd" folder="" />
     </projectModules>
   </component>
 </project>

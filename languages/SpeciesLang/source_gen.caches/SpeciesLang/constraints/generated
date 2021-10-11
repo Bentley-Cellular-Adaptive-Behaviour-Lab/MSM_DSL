@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="e8pgufht0a0b0hpdv26ngq4073sx02o">
-  <files names="ConstraintsAspectDescriptor.java:Inhibits_Constraints.java:IrreversibleReaction_Constraints.java:Process_Constraints.java:Reaction_Constraints.java:Regulation_Constraints.java:ReversibleReaction_Constraints.java:SpeciesContainerHeader_Constraints.java:SpeciesContainer_Constraints.java:Species_Constraints.java:Upregulates_Constraints.java" />
-</product>
-
