@@ -378,7 +378,7 @@
         <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
         <node concept="3XFhqQ" id="5gBmBO5aXxc" role="3EZMnx" />
         <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
-          <property role="3F0ifm" value="Expresses proteins:" />
+          <property role="3F0ifm" value="Has Species:" />
           <node concept="2biZxu" id="2FvyIAlEDUV" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
