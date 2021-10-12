@@ -1002,7 +1002,7 @@
                     <ref role="2Gs0qQ" node="1z0V6VUaGRD" resolve="current_reference" />
                   </node>
                   <node concept="3TrEf2" id="109yD1sv4tr" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1z0V6VUaK3I" role="2OqNvi">
@@ -1034,7 +1034,7 @@
                         <ref role="2Gs0qQ" node="1z0V6VUaIHr" resolve="query_reference" />
                       </node>
                       <node concept="3TrEf2" id="109yD1sv4nH" role="2OqNvi">
-                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1z0V6VUaKSt" role="2OqNvi">
@@ -2173,7 +2173,7 @@
                     <ref role="2Gs0qQ" node="109yD1sCUz6" resolve="species_ref" />
                   </node>
                   <node concept="3TrEf2" id="109yD1sCVkz" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="109yD1sCVI0" role="2OqNvi">
@@ -2204,7 +2204,7 @@
                         <ref role="2Gs0qQ" node="109yD1sCUz6" resolve="species_ref" />
                       </node>
                       <node concept="3TrEf2" id="109yD1sCXIN" role="2OqNvi">
-                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="Species" />
+                        <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="109yD1sCY5O" role="2OqNvi">
