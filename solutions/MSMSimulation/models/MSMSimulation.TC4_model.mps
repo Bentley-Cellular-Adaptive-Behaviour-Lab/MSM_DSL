@@ -20,6 +20,12 @@
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
       <concept id="8343650468779203046" name="WorldLang.structure.Grid" flags="ng" index="1yko03">
+        <property id="5907682107548246391" name="X_Size" index="3bD6N$" />
+        <property id="5907682107548246394" name="Y_Size" index="3bD6ND" />
+        <property id="5907682107548246398" name="Z_Size" index="3bD6NH" />
+        <property id="1178415553713540470" name="Neg_Z_Space" index="3cJDZ5" />
+        <property id="1178415553713540457" name="Neg_X_Space" index="3cJDZq" />
+        <property id="1178415553713540463" name="Neg_Y_Space" index="3cJDZs" />
         <child id="91108499532674622" name="Adhesiveness" index="2nU_yc" />
         <child id="5907682107548062262" name="Buffer" index="3bEhY_" />
       </concept>
@@ -173,6 +179,12 @@
     <property role="TrG5h" value="World" />
     <ref role="3_H_MC" node="5yFEiLG5640" resolve="Tissues" />
     <node concept="1yko03" id="71cLj9Wu1$7" role="1yko01">
+      <property role="3cJDZq" value="-20" />
+      <property role="3cJDZs" value="-20" />
+      <property role="3cJDZ5" value="-20" />
+      <property role="3bD6N$" value="40" />
+      <property role="3bD6ND" value="40" />
+      <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="71cLj9Wu1$8" role="3bEhY_">
         <node concept="2_n9WQ" id="71cLj9Wu1$9" role="2_hQRE">
           <node concept="30bXRB" id="5yFEiLG562R" role="2_n9WR">
@@ -289,8 +301,13 @@
     </node>
     <node concept="3_zqOx" id="5yFEiLG56nJ" role="3_zqUl">
       <property role="TrG5h" value="k-2" />
-      <node concept="30bXRB" id="5yFEiLG57ee" role="3_zqNk">
-        <property role="30bXRw" value="0.1" />
+      <node concept="30dDTi" id="2w9SzWxZ9tZ" role="3_zqNk">
+        <node concept="1cBA6y" id="2w9SzWxZ9uC" role="30dEs_">
+          <ref role="1cBA6z" node="5yFEiLG56be" resolve="DLL4_NOTCH" />
+        </node>
+        <node concept="30bXRB" id="5yFEiLG57ee" role="30dEsF">
+          <property role="30bXRw" value="0.1" />
+        </node>
       </node>
     </node>
     <node concept="3_zqOx" id="5yFEiLG56CU" role="3_zqUl">
@@ -574,12 +591,6 @@
         <ref role="Cfe3M" node="5yFEiLG57Wd" resolve="DLL4_Reg" />
       </node>
     </node>
-    <node concept="3_zqOx" id="5yFEiLG56xX" role="3_zqUl">
-      <property role="TrG5h" value="BasalGeneExpression" />
-      <node concept="30bXRB" id="5yFEiLG57xr" role="3_zqNk">
-        <property role="30bXRw" value="0.001" />
-      </node>
-    </node>
     <node concept="3_zqOx" id="5yFEiLG56yp" role="3_zqUl">
       <property role="TrG5h" value="FilopodiaTurnover" />
       <node concept="30bXRB" id="5yFEiLG57pg" role="3_zqNk">
@@ -733,7 +744,7 @@
       <node concept="3rtiFT" id="5yFEiLG56CM" role="3rqWia">
         <ref role="3rtiFY" node="5yFEiLG56Bb" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="1O9im_PLHMv" role="3_z4RZ">
+      <node concept="DdDr8" id="2w9SzWxZ9u7" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -771,7 +782,7 @@
       <node concept="3rtiFT" id="5yFEiLG56PL" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56NT" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="1O9im_PLHMw" role="3_z4Rx">
+      <node concept="DdDr8" id="2w9SzWxZ9u8" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -839,7 +850,7 @@
         </node>
         <node concept="2llJbL" id="1O9im_PLHnB" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="1O9im_PLHMx" role="3_z4RZ">
+      <node concept="DdDr8" id="2w9SzWxZ9u9" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -874,7 +885,7 @@
       <node concept="DdDr8" id="5yFEiLG56KH" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
-      <node concept="DdDr8" id="1O9im_PLHMy" role="3_z4Rx">
+      <node concept="DdDr8" id="2w9SzWxZ9ua" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -910,7 +921,7 @@
       <node concept="3rtiFT" id="5yFEiLG56qa" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56px" resolve="HE" />
       </node>
-      <node concept="DdDr8" id="1O9im_PLHMz" role="3_z4Rx">
+      <node concept="DdDr8" id="2w9SzWxZ9ub" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
     </node>

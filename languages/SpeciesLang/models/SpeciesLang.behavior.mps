@@ -12403,7 +12403,7 @@
                     <node concept="3cpWs3" id="1IP6pj5uA14" role="3uHU7B">
                       <node concept="3cpWs3" id="1IP6pj5uyT6" role="3uHU7B">
                         <node concept="Xl_RD" id="1IP6pj5uxJV" role="3uHU7B">
-                          <property role="Xl_RC" value="Math.pow(" />
+                          <property role="Xl_RC" value="pow(" />
                         </node>
                         <node concept="BsUDl" id="1IP6pj5u$hX" role="3uHU7w">
                           <ref role="37wK5l" node="1IP6pj5t$0C" resolve="getString" />
