@@ -177,6 +177,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -5138,6 +5139,71 @@
       </node>
     </node>
     <node concept="1YaCAy" id="5$qoOFydYLY" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6LsyKwDmUv_">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_EnvSpeciesTerms" />
+    <node concept="3clFbS" id="6LsyKwDmUvA" role="18ibNy">
+      <node concept="3clFbJ" id="6LsyKwDmUvL" role="3cqZAp">
+        <node concept="2OqwBi" id="6LsyKwDmVmd" role="3clFbw">
+          <node concept="2OqwBi" id="6LsyKwDmUW4" role="2Oq$k0">
+            <node concept="1YBJjd" id="6LsyKwDmUvX" role="2Oq$k0">
+              <ref role="1YBMHb" node="6LsyKwDmUvC" resolve="species" />
+            </node>
+            <node concept="3TrcHB" id="6LsyKwDmVar" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+            </node>
+          </node>
+          <node concept="21noJN" id="6LsyKwDmVtx" role="2OqNvi">
+            <node concept="21nZrQ" id="6LsyKwDmVtz" role="21noJM">
+              <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="6LsyKwDmUvN" role="3clFbx">
+          <node concept="3clFbJ" id="6LsyKwDmVwq" role="3cqZAp">
+            <node concept="22lmx$" id="6LsyKwDmWVm" role="3clFbw">
+              <node concept="2OqwBi" id="6LsyKwDmXM4" role="3uHU7w">
+                <node concept="2OqwBi" id="6LsyKwDmXe0" role="2Oq$k0">
+                  <node concept="1YBJjd" id="6LsyKwDmWWn" role="2Oq$k0">
+                    <ref role="1YBMHb" node="6LsyKwDmUvC" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="6LsyKwDmXA2" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6pt0UY9x86x" resolve="Production_Term" />
+                  </node>
+                </node>
+                <node concept="3x8VRR" id="6LsyKwDmY6U" role="2OqNvi" />
+              </node>
+              <node concept="2OqwBi" id="6LsyKwDmWeB" role="3uHU7B">
+                <node concept="2OqwBi" id="6LsyKwDmVHf" role="2Oq$k0">
+                  <node concept="1YBJjd" id="6LsyKwDmVwA" role="2Oq$k0">
+                    <ref role="1YBMHb" node="6LsyKwDmUvC" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="6LsyKwDmW2V" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6pt0UY9x86x" resolve="Production_Term" />
+                  </node>
+                </node>
+                <node concept="3x8VRR" id="6LsyKwDmWU_" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="6LsyKwDmVws" role="3clFbx">
+              <node concept="2MkqsV" id="6LsyKwDmY7Q" role="3cqZAp">
+                <node concept="Xl_RD" id="6LsyKwDmY82" role="2MkJ7o">
+                  <property role="Xl_RC" value="Error: Environmental species cannot have production or degradation terms." />
+                </node>
+                <node concept="1YBJjd" id="6LsyKwDmYaJ" role="1urrMF">
+                  <ref role="1YBMHb" node="6LsyKwDmUvC" resolve="species" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6LsyKwDmUvC" role="1YuTPh">
       <property role="TrG5h" value="species" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     </node>

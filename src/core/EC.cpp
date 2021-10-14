@@ -804,9 +804,11 @@ void EC::calculate_cell_protein_levels() {
 //        }
 //    }
 
+
+    // TODO: SET THIS TO BE FOR THE NEXT TIMESTEP
     // Now, set the protein levels for the cell at this current timestep.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],0);
+        this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],1);
     }
 }
 
