@@ -762,6 +762,7 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="VEGFR" />
       <property role="3_z0tL" value="2Hxmt3eVjAD/LOCATION_MEMBRANE" />
+      <ref role="3JQo8$" node="5yFEiLG56Rj" resolve="VR_Degradation" />
       <node concept="3bpmHq" id="1O9im_PLH9H" role="1tJpXo">
         <node concept="3bpmH0" id="1O9im_PLH9J" role="3lUA2Y">
           <node concept="30bXRB" id="1O9im_PLHa3" role="3lUA52">
@@ -789,7 +790,7 @@
       <node concept="3rtiFT" id="5yFEiLG56CM" role="3rqWia">
         <ref role="3rtiFY" node="5yFEiLG56Bb" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="GA$MhIrbmA" role="3_z4RZ">
+      <node concept="DdDr8" id="6LsyKwDhU9B" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -827,7 +828,7 @@
       <node concept="3rtiFT" id="5yFEiLG56PL" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56NT" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="GA$MhIrbmB" role="3_z4Rx">
+      <node concept="DdDr8" id="6LsyKwDhU9C" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -835,6 +836,7 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="DLL4" />
       <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
+      <ref role="3JQo8$" node="5yFEiLG56VZ" resolve="D_Degradation" />
       <node concept="3bpmHq" id="1O9im_PLHgC" role="1tJpXo">
         <node concept="3bpmH0" id="1O9im_PLHgE" role="3lUA2Y">
           <node concept="30bXRB" id="1O9im_PLHgY" role="3lUA52">
@@ -871,6 +873,7 @@
       <property role="TrG5h" value="NOTCH" />
       <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
       <ref role="3JQo8e" node="5yFEiLG56Sx" resolve="N_Production" />
+      <ref role="3JQo8$" node="5yFEiLG56UN" resolve="N_Degradation" />
       <node concept="3bpmHq" id="1O9im_PLHkl" role="1tJpXo">
         <node concept="3bpmH0" id="1O9im_PLHkn" role="3lUA2Y">
           <node concept="30bXRB" id="1O9im_PLHkF" role="3lUA52">
@@ -895,7 +898,7 @@
         </node>
         <node concept="2llJbL" id="1O9im_PLHnB" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="GA$MhIrbmC" role="3_z4RZ">
+      <node concept="DdDr8" id="6LsyKwDhU9D" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -903,6 +906,7 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="DLL4_NOTCH" />
       <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
+      <ref role="3JQo8$" node="5yFEiLG57_w" resolve="D_N_Degradation" />
       <node concept="3bpmHq" id="1O9im_PLHol" role="1tJpXo">
         <node concept="3bpmH0" id="1O9im_PLHon" role="3lUA2Y">
           <node concept="30bXRB" id="1O9im_PLHoF" role="3lUA52">
@@ -930,7 +934,7 @@
       <node concept="DdDr8" id="5yFEiLG56KH" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
-      <node concept="DdDr8" id="GA$MhIrbmD" role="3_z4Rx">
+      <node concept="DdDr8" id="6LsyKwDhU9E" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -966,7 +970,7 @@
       <node concept="3rtiFT" id="5yFEiLG56qa" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56px" resolve="HE" />
       </node>
-      <node concept="DdDr8" id="GA$MhIrbmE" role="3_z4Rx">
+      <node concept="DdDr8" id="6LsyKwDhU9F" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
     </node>
