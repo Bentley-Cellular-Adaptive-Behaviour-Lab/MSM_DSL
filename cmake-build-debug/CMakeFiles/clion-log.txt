@@ -1,15 +1,20 @@
 C:\Users\Tom\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\212.5284.51\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Tom\MPSProjects\MSM_DSL
 TEST_TYPE = 1
 Testing: Automated
-CMake Error: The current CMakeCache.txt directory C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-subbuild/CMakeCache.txt is different than the directory /home/meadt/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-subbuild where CMakeCache.txt was created. This may result in binaries being created in the wrong place. If you are not sure, reedit the CMakeCache.txt
-
-CMake Error at C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1000 (message):
-  CMake step for googletest failed: 1
-Call Stack (most recent call first):
-  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1141:EVAL:2 (__FetchContent_directPopulate)
-  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1141 (cmake_language)
-  C:/Users/Tom/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/212.5284.51/bin/cmake/win/share/cmake-3.20/Modules/FetchContent.cmake:1184 (FetchContent_Populate)
-  CMakeLists.txt:121 (FetchContent_MakeAvailable)
-
-
--- Configuring incomplete, errors occurred!
+-- The C compiler identification is GNU 10.2.0
+-- The CXX compiler identification is GNU 10.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/msys64/mingw64/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/msys64/mingw64/bin/g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found Python: C:/Users/Tom/anaconda3/python.exe (found version "3.8.3") found components: Interpreter 
+-- Found Boost: C:/msys64/mingw64/include (found version "1.75.0")  
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
