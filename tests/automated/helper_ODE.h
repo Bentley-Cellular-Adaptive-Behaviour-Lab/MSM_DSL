@@ -16,8 +16,8 @@ typedef boost::array<float, 4> cellJunction_ode_states;
 typedef boost::array<float, 6> notch_memAgent_ode_states;
 typedef boost::array<float, 4> notch_cell_ode_states;
 typedef boost::array<float, 4> TranscriptionDelayTest_ode_states;
-typedef boost::array<float, 9> Venkatraman_memAgent_ode_states;
-typedef boost::array<float, 7> Venkatraman_cell_ode_states;
+typedef boost::array<float, 9> VenkatramanTest_memAgent_ode_states;
+typedef boost::array<float, 7> VenkatramanTest_cell_ode_states;
 
 class World;
 class World_Container;
@@ -207,6 +207,43 @@ public:
     void runCellODEs(EC *ec);
     void printProteinLevels(EC *ec);
     static void TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t);
+};
+
+class VenkatramanTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    void runCellODE(EC *ec);
+    void runMemAgentODE(MemAgent *memAgent);
+
+    static void cellODESystem(const VenkatramanTest_cell_ode_states &x, VenkatramanTest_cell_ode_states &dxdt, double t);
+    static void memAgentODESystem(const VenkatramanTest_memAgent_ode_states &x, VenkatramanTest_memAgent_ode_states &dxdt, double t);
+
+    static double calc_k1_rate(double VEGF, double VEGFR);
+    static double calc_k_1_rate(double VEGF_VEGFR);
+    static double calc_k2_rate(double DLL4, double NOTCH);
+    static double calc_k_2_rate(double DLL4_NOTCH);
+    static double calc_k3_rate(double VEGFR, double HEY, double Nu);
+    static double calc_k4_rate(double DLL4_NOTCH);
+    static double calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu);
+    static double calc_k6_VEGFSensing_rate(double FILOPODIA, double V0);
+    static double calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu);
+    static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu);
+    static double calc_V0_rate();
+    static double calc_Theta_rate();
+    static double calc_Phi_rate();
+    static double calc_Gamma_rate();
+    static double calc_VR_Production_rate(double Gamma, double VEGFR);
+    static double calc_N_Production_rate(double Gamma, double NOTCH);
+    static double calc_VR_Degradation_rate(double Phi, double VEGFR);
+    static double calc_N_Degradation_rate(double Phi, double NOTCH);
+    static double calc_D_Degradation_rate(double Phi, double DLL4);
+    static double calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH);
+    static double calc_I_Degradation_rate(double Phi, double NICD);
+    static double calc_HEY_Degradation_rate(double Phi, double HEY);
+    static double calc_Nu_rate();
+    static double calc_FilopodiaTurnover_rate();
 };
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
