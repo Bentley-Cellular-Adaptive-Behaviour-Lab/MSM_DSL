@@ -3140,7 +3140,7 @@
                   <node concept="3clFbF" id="EX9x3Xxc9Y" role="3cqZAp">
                     <node concept="2OqwBi" id="EX9x3XxcRB" role="3clFbG">
                       <node concept="37vLTw" id="EX9x3Xxc9X" role="2Oq$k0">
-                        <ref role="3cqZAo" node="EX9x3XwYqs" resolve="new_name" />
+                        <ref role="3cqZAo" node="EX9x3XwYqs" resolve="fixedName" />
                       </node>
                       <node concept="liA8E" id="EX9x3XxcZH" role="2OqNvi">
                         <ref role="37wK5l" to="wyt6:~String.concat(java.lang.String)" resolve="concat" />

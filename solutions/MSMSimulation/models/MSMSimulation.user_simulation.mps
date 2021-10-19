@@ -185,11 +185,11 @@
     <property role="TrG5h" value="Settings" />
     <property role="3_Ed86" value="10000" />
     <property role="3_Ed83" value="6JBqwuek81o/Graphics_On" />
-    <ref role="3_EdRy" node="6VIN$acjK$T" resolve="NewWorld" />
+    <ref role="3_EdRy" node="6VIN$acjK$T" resolve="World" />
   </node>
   <node concept="1yko06" id="6VIN$acjK$T">
     <property role="TrG5h" value="World" />
-    <ref role="3_H_MC" node="U$r4Zai4YU" resolve="TissueExample" />
+    <ref role="3_H_MC" node="U$r4Zai4YU" resolve="Tissues" />
     <node concept="1yko03" id="6VIN$acjK$U" role="1yko01">
       <property role="3cJDZq" value="-30" />
       <property role="3cJDZs" value="-16" />
@@ -214,8 +214,8 @@
   </node>
   <node concept="3ZP1sW" id="U$r4Zai4YU">
     <property role="TrG5h" value="Tissues" />
-    <ref role="2ppKUs" node="6VIN$acjK$T" resolve="NewWorld" />
-    <ref role="maghN" node="U$r4Zai5eu" resolve="ExampleSignalling" />
+    <ref role="2ppKUs" node="6VIN$acjK$T" resolve="World" />
+    <ref role="maghN" node="U$r4Zai5eu" resolve="Signalling" />
     <node concept="3ZP1sM" id="U$r4Zai4Zl" role="1v2izm">
       <property role="TrG5h" value="Endothelial" />
       <node concept="3ZP1s$" id="U$r4Zai4Zp" role="3ZP1s2">
@@ -246,7 +246,7 @@
   </node>
   <node concept="3_zqOV" id="U$r4Zai5eu">
     <property role="TrG5h" value="Signalling" />
-    <ref role="m9Uib" node="U$r4Zai4YU" resolve="TissueExample" />
+    <ref role="m9Uib" node="U$r4Zai4YU" resolve="Tissues" />
     <node concept="3_zqOx" id="GA$MhIvMYS" role="3_zqUl">
       <property role="TrG5h" value="DLL4_REG" />
       <node concept="30dvO6" id="GA$MhIvN7_" role="3_zqNk">

@@ -1,3 +1,4 @@
 *_gen*
 .mps/workspace.xml
 cmake-build-debug
+*.swp
