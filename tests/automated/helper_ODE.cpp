@@ -1306,3 +1306,28 @@ void testRobert() {
     }
 
 }
+
+void VenkatramanTest::SetUp() {
+
+}
+
+void VenkatramanTest::TearDown() {
+
+}
+
+void VenkatramanTest::runCellODE(EC *ec) {
+
+}
+
+void VenkatramanTest::runMemAgentODE(MemAgent *memAgent) {
+
+}
+
+void VenkatramanTest::cellODESystem(VenkatramanTest_cell_ode_states &x, VenkatramanTest_cell_ode_states &dxdt, double t) {
+
+}
+
+void VenkatramanTest::memAgentODESystem(VenkatramanTest_memAgent_ode_states &x, VenkatramanTest_memAgent_ode_states &dxdt, double t) {
+
+}
+
