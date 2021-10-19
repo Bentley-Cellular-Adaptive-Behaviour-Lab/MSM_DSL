@@ -1328,6 +1328,134 @@ void VenkatramanTest::cellODESystem(VenkatramanTest_cell_ode_states &x, Venkatra
 }
 
 void VenkatramanTest::memAgentODESystem(VenkatramanTest_memAgent_ode_states &x, VenkatramanTest_memAgent_ode_states &dxdt, double t) {
-
+// Species Definitions
+    double DLL4 = x[0];
+    double NOTCH = x[1];	
+    double DLL4_NOTCH = x[2];
+    double NICD = x[3];
+    double VEGF = x[4];
+    double VEGFR = x[5];
+    double VEGF_VEGFR = x[6];
+    double FILOPODIA = x[7];
+    double HEY = x[8];
+// Parameter Definitions
+    double k2 = calc_k2_rate(DLL4, NOTCH);
+    double k_2 = calc_k_2_rate(DLL4_NOTCH);
+    double k4 = calc_k4_rate(DLL4_NOTCH);
+    double k1 = calc_k1_rate(VEGF, VEGFR);
+    double k_1 = calc_k_1_rate(VEGF_VEGFR);
+    double Phi = calc_Phi_rate();
+    double N_Degradation = calc_N_Degradation_rate(Phi, NOTCH);
+    double Gamma = calc_Gamma_rate();
+    double D_N_Degradation = calc_D_N_Degradation_rate(Phi, DLL4_NOTCH);
+    double I_Degradation = calc_I_Degradation_rate(Phi, NICD);
+    double FilopodiaTurnover = calc_FilopodiaTurnover_rate();
+    double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
+    double VR_Degradation = calc_VR_Degradation_rate(Phi, VEGFR);
+    double D_Degradation = calc_D_Degradation_rate(Phi, DLL4);
+    double N_Production = calc_N_Production_rate(Gamma, NOTCH);
+// ODE Definitions
+    dxdt[0] = -(k2)*1+(k_2)*1-(D_Degradation);
+    dxdt[1] = +(N_Production)-(k2)*1+(k_2)*1-(N_Degradation);
+    dxdt[2] = -(k4)*1-(D_N_Degradation)+(k2)*1-(k_2)*1;
+    dxdt[3] = -(I_Degradation)+(k4)*1;
+    dxdt[4] = -(k1)*1+(k_1)*1;
+    dxdt[5] = -(k1)*1+(k_1)*1-(VR_Degradation);
+    dxdt[6] = +(k1)*1-(k_1)*1;
+    dxdt[7] = -(FilopodiaTurnover);
+    dxdt[8] = -(HEY_Degradation);
 }
 
+static double calc_k1_rate(double VEGF, double VEGFR) {
+    return 0.1*VEGF*VEGFR;
+}
+
+static double calc_k_1_rate(double VEGF_VEGFR) {
+    return 0.001*VEGF_VEGFR;
+}
+
+static double calc_k2_rate(double DLL4, double NOTCH) {
+    return 0.001*DLL4*NOTCH;
+}
+
+static double calc_k_2_rate(double DLL4_NOTCH) {
+    return 0.1*DLL4_NOTCH;
+}
+
+static double calc_k3_rate(double VEGFR, double HEY, double Nu) {
+    return 0.005*VEGFR*pow(HEY,Nu);
+}
+
+static double calc_k4_rate(double DLL4_NOTCH) {
+    return 0.1*DLL4_NOTCH;
+}
+
+static double calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu) {
+    return 0.1*pow(VEGF_VEGFR,Nu);
+}
+
+static double calc_k6_VEGFSensing_rate(double FILOPODIA, double V0) {
+    return pow(FILOPODIA,2)*0.005*V0+V0;
+}
+
+static double calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
+    return Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu));
+}
+
+static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
+    return Theta*pow(NICD,Nu)/(1+pow(NICD,Nu));
+}
+
+static double calc_V0_rate() {
+    return 100;
+}
+
+static double calc_Theta_rate() {
+    return 0.1;
+}
+
+static double calc_Phi_rate() {
+    return 0.001;
+}
+
+static double calc_Gamma_rate() {
+    return 0.005;
+}
+
+static double calc_VR_Production_rate(double Gamma, double VEGFR) {
+    return Gamma*VEGFR;
+}
+
+static double calc_N_Production_rate(double Gamma, double NOTCH) {
+    return Gamma*NOTCH;
+}
+
+static double calc_VR_Degradation_rate(double Phi, double VEGFR) {
+    return Phi*VEGFR;
+}
+static double calc_N_Degradation_rate(double Phi, double NOTCH) {
+    return Phi*NOTCH;
+}
+
+static double calc_D_Degradation_rate(double Phi, double DLL4) {
+    return Phi*DLL4;
+}
+static double calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH) {
+    return Phi*DLL4_NOTCH;
+}
+
+static double calc_I_Degradation_rate(double Phi, double NICD) {
+    return Phi*NICD;
+}
+
+static double calc_HEY_Degradation_rate(double Phi, double HEY) {
+    return Phi*HEY;
+}
+
+static double calc_Nu_rate() {
+    return 2;
+}
+
+static double calc_FilopodiaTurnover_rate() {
+    return 0.001;
+}

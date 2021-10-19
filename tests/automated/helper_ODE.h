@@ -16,6 +16,8 @@ typedef boost::array<float, 4> cellJunction_ode_states;
 typedef boost::array<float, 6> notch_memAgent_ode_states;
 typedef boost::array<float, 4> notch_cell_ode_states;
 typedef boost::array<float, 4> TranscriptionDelayTest_ode_states;
+typedef boost::array<float, 9> Venkatraman_memAgent_ode_states;
+typedef boost::array<float, 7> Venkatraman_cell_ode_states;
 
 class World;
 class World_Container;
