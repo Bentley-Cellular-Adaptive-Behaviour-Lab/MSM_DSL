@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="UnitLang" uuid="9b08b74c-d286-4efb-acac-5b9da360764e">
+    <generator alias="main" namespace="UnitLangGenerator" uuid="9b08b74c-d286-4efb-acac-5b9da360764e">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot location="templates" />
@@ -51,7 +51,7 @@
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
         <module reference="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)" version="0" />
-        <module reference="9b08b74c-d286-4efb-acac-5b9da360764e(UnitLang)" version="0" />
+        <module reference="9b08b74c-d286-4efb-acac-5b9da360764e(UnitLangGenerator)" version="0" />
         <module reference="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" version="0" />
         <module reference="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />

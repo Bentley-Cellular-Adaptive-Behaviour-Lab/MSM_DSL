@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="TissueLang" uuid="d5bc41a4-09e4-47ba-9e46-e4c6bf115597">
+    <generator alias="main" namespace="TissueLangGenerator" uuid="d5bc41a4-09e4-47ba-9e46-e4c6bf115597">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot location="templates" />
@@ -56,7 +56,7 @@
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
-        <module reference="d5bc41a4-09e4-47ba-9e46-e4c6bf115597(TissueLang)" version="0" />
+        <module reference="d5bc41a4-09e4-47ba-9e46-e4c6bf115597(TissueLangGenerator)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
         <module reference="63e0e566-5131-447e-90e3-12ea330e1a00(com.mbeddr.mpsutil.blutil)" version="0" />
         <module reference="d3a0fd26-445a-466c-900e-10444ddfed52(com.mbeddr.mpsutil.filepicker)" version="0" />

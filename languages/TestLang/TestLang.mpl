@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="TestLang" uuid="c8275293-21c0-4f0d-b4aa-a88b6d0daf84">
+    <generator alias="main" namespace="TestLangGenerator" uuid="c8275293-21c0-4f0d-b4aa-a88b6d0daf84">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot location="templates" />
@@ -48,7 +48,7 @@
         <module reference="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="9ab2ac61-131d-4c2e-b9b0-6923648b2317(TestLang)" version="0" />
-        <module reference="c8275293-21c0-4f0d-b4aa-a88b6d0daf84(TestLang)" version="0" />
+        <module reference="c8275293-21c0-4f0d-b4aa-a88b6d0daf84(TestLangGenerator)" version="0" />
         <module reference="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" version="0" />
       </dependencyVersions>
       <mapping-priorities />

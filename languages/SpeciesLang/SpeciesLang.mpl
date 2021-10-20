@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="plaintextgen_generator" namespace="SpeciesLang" uuid="93848004-9140-4cf7-9c0b-3541bf12fc88" generatorOutputPath="${module}/plaintextgen_generator/source_gen">
+    <generator alias="plaintextgen_generator" namespace="SpeciesLangGenerator" uuid="93848004-9140-4cf7-9c0b-3541bf12fc88" generatorOutputPath="${module}/plaintextgen_generator/source_gen">
       <models>
         <modelRoot contentPath="${module}/plaintextgen_generator" type="default">
           <sourceRoot location="templates" />
@@ -60,7 +60,7 @@
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
-        <module reference="93848004-9140-4cf7-9c0b-3541bf12fc88(SpeciesLang)" version="0" />
+        <module reference="93848004-9140-4cf7-9c0b-3541bf12fc88(SpeciesLangGenerator)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
         <module reference="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" version="0" />
         <module reference="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" version="0" />

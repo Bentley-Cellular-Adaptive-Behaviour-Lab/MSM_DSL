@@ -43,11 +43,7 @@ public class Arrangement_Constraints extends BaseConstraintsDescriptor {
   }
   public static class Total_cell_number_Property extends BasePropertyConstraintsDescriptor {
     public Total_cell_number_Property(ConstraintsDescriptor container) {
-      super(PROPS.total_cell_number$ujP3, container);
-    }
-    @Override
-    public boolean hasOwnGetter() {
-      return true;
+      super(PROPS.total_cell_number$ujP3, container, true, false, false);
     }
     @Override
     public Object getValue(SNode node) {

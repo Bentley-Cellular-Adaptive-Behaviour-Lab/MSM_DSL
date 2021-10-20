@@ -12,7 +12,7 @@
   </facets>
   <accessoryModels />
   <generators>
-    <generator alias="main" namespace="WorldLang" uuid="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9">
+    <generator alias="main" namespace="WorldLangGenerator" uuid="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9">
       <models>
         <modelRoot contentPath="${module}/generator" type="default">
           <sourceRoot location="templates" />
@@ -59,7 +59,7 @@
         <module reference="f3f95abc-aef1-4f78-aa77-fb36d4ba916a(SpeciesSetup)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
         <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)" version="0" />
-        <module reference="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldLang)" version="0" />
+        <module reference="282506ae-d7ff-44ed-9ff7-11c49fe3d6e9(WorldLangGenerator)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
         <module reference="63e0e566-5131-447e-90e3-12ea330e1a00(com.mbeddr.mpsutil.blutil)" version="0" />
         <module reference="d3a0fd26-445a-466c-900e-10444ddfed52(com.mbeddr.mpsutil.filepicker)" version="0" />
