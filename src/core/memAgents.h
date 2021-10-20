@@ -147,8 +147,15 @@ public:
     float get_junction_protein_level(std::string protein_name);
     void set_protein_level(std::string protein_name, float new_level);
     float get_filopodia_protein_level(std::string protein_name);
-
+    [[deprecated]]
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
+    void distribute_proteins(std::string protein_name, float protein_delta, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
+    std::vector<EC*> find_cells(bool add_this_cell);
+    std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*> relevantCells,
+                                                           std::string proteinName,
+                                                           bool affectsThisCell,
+                                                           bool affectsNeighbourCell,
+                                                           int proteinLocation);
     void add_allowed_protrusion_proteins(ProtrusionType *protrusionType);
     bool has_cytoprotein(std::string cytoproteinName);
     float get_cytoprotein_level(std::string cytoproteinName);
