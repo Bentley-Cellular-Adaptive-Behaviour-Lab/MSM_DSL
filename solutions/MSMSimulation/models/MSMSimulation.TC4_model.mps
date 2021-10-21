@@ -18,32 +18,6 @@
     <import index="xggr" ref="r:12584d60-2d80-4ca9-9c6e-b79d499da0cf(de.itemis.mps.editor.celllayout.layout)" />
   </imports>
   <registry>
-    <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
-      <concept id="3156891689895042176" name="ShapeLang.structure.SensitivityExpression" flags="ng" index="Ln1j4">
-        <child id="3156891689895106887" name="expr" index="LmL43" />
-      </concept>
-      <concept id="3156891689894814724" name="ShapeLang.structure.ProtrusionReference" flags="ng" index="LnUL0">
-        <reference id="3156891689894814752" name="target" index="LnUL$" />
-      </concept>
-      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
-        <child id="976479957056291978" name="protrusions" index="3Bb2fi" />
-        <child id="976479957056308507" name="cytoskeletalProteins" index="3Bb693" />
-      </concept>
-      <concept id="976479957056290939" name="ShapeLang.structure.Protrusion" flags="ng" index="3Bb2sz">
-        <child id="2605682802875058616" name="allowedCellTypes" index="2BRsc" />
-        <child id="3156891689894719325" name="followsEnvSpecies" index="Lgisp" />
-        <child id="3156891689894738126" name="thickness" index="Lgn2a" />
-        <child id="976479957056291946" name="maxLength" index="3Bb2cM" />
-        <child id="976479957056292076" name="allowedProteins" index="3Bb2eO" />
-        <child id="976479957056293749" name="sensitivity" index="3Bb2KH" />
-      </concept>
-      <concept id="976479957056291036" name="ShapeLang.structure.CytoskeletalProtein" flags="ng" index="3Bb2u4">
-        <child id="2605682802875012233" name="AmountNeeded" index="2BaCX" />
-        <child id="3156891689894824489" name="TriggersProtrusion" index="LnW9H" />
-        <child id="1734463937091623951" name="StartConcentration" index="36057d" />
-        <child id="976479957056306954" name="TriggersWhen" index="3Bb1xi" />
-      </concept>
-    </language>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
       <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
@@ -67,7 +41,6 @@
       <concept id="5115872837157187871" name="org.iets3.core.expr.base.structure.ParensExpression" flags="ng" index="30bsCy">
         <child id="5115872837157187954" name="expr" index="30bsDf" />
       </concept>
-      <concept id="5115872837156687890" name="org.iets3.core.expr.base.structure.LessExpression" flags="ng" index="30d6GJ" />
       <concept id="5115872837156652603" name="org.iets3.core.expr.base.structure.DivExpression" flags="ng" index="30dvO6" />
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
       <concept id="5115872837156578546" name="org.iets3.core.expr.base.structure.PlusExpression" flags="ng" index="30dDZf" />
@@ -183,7 +156,6 @@
       <concept id="829681453102462370" name="UnitLang.structure.Concentration_Expression" flags="ng" index="3bpmH0">
         <child id="7070710508215227644" name="expr" index="3lUA52" />
       </concept>
-      <concept id="829681453102462372" name="UnitLang.structure.Micromolar" flags="ng" index="3bpmH6" />
       <concept id="829681453102462392" name="UnitLang.structure.Amount_Concentration" flags="ng" index="3bpmHq">
         <child id="7070710508215227650" name="units" index="3lUA2W" />
         <child id="7070710508215227648" name="value" index="3lUA2Y" />
@@ -222,9 +194,6 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
-      <concept id="1783685413825413975" name="TissueLang.structure.Cell_Type_Reference" flags="ng" index="3yReWT">
-        <reference id="1783685413825588302" name="Cell_Type_Reference" index="3yR$0w" />
-      </concept>
       <concept id="6249017959271690141" name="TissueLang.structure.Shape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="Width" index="2IF2Qc" />
         <child id="5171349398070263662" name="Height" index="2IF2Qe" />
@@ -1534,83 +1503,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node concept="3Bb2si" id="1Swcpcy51Jn">
-    <node concept="3Bb2u4" id="1Swcpcy51JS" role="3Bb693">
-      <property role="TrG5h" value="Actin" />
-      <node concept="30d6GJ" id="16vX0Cgh3MR" role="3Bb1xi">
-        <node concept="30dvO6" id="16vX0Cgh3MS" role="30dEsF">
-          <node concept="30bsCy" id="16vX0Cgh3MT" role="30dEsF">
-            <node concept="30dDZf" id="16vX0Cgh3MU" role="30bsDf">
-              <node concept="1cBA6y" id="16vX0Cgh3GR" role="30dEsF">
-                <ref role="1cBA6z" node="5yFEiLG56ha" resolve="VEGF" />
-              </node>
-              <node concept="1cBA6y" id="16vX0Cgh3HF" role="30dEs_">
-                <ref role="1cBA6z" node="5yFEiLG568a" resolve="VEGFR" />
-              </node>
-            </node>
-          </node>
-          <node concept="1cBA6y" id="16vX0Cgh3ID" role="30dEs_">
-            <ref role="1cBA6z" node="5yFEiLG568i" resolve="VEGF_VEGFR" />
-          </node>
-        </node>
-        <node concept="30bXRB" id="16vX0Cgh3Nl" role="30dEs_">
-          <property role="30bXRw" value="0.5" />
-        </node>
-      </node>
-      <node concept="3bpmHq" id="16vX0Cgh3B0" role="36057d">
-        <node concept="3bpmH0" id="16vX0Cgh3B2" role="3lUA2Y">
-          <node concept="30bXRB" id="16vX0Cgh3Bs" role="3lUA52">
-            <property role="30bXRw" value="100" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="16vX0Cgh3BU" role="3lUA2W" />
-      </node>
-      <node concept="3bpmHq" id="16vX0Cgh3Ea" role="2BaCX">
-        <node concept="3bpmH0" id="16vX0Cgh3Ec" role="3lUA2Y">
-          <node concept="30bXRB" id="16vX0Cgh3EE" role="3lUA52">
-            <property role="30bXRw" value="5" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="16vX0Cgh3F6" role="3lUA2W" />
-      </node>
-      <node concept="LnUL0" id="1Swcpcy51JW" role="LnW9H">
-        <ref role="LnUL$" node="1Swcpcy51JK" resolve="Filopodia" />
-      </node>
-    </node>
-    <node concept="3Bb2sz" id="1Swcpcy51JK" role="3Bb2fi">
-      <property role="TrG5h" value="Filopodia" />
-      <node concept="1csUcq" id="1Swcpcy51JL" role="Lgisp">
-        <ref role="1csUcr" node="5yFEiLG56ha" resolve="VEGF" />
-      </node>
-      <node concept="Ln1j4" id="1Swcpcy51JM" role="3Bb2KH">
-        <node concept="30bXRB" id="16vX0Cgh3yw" role="LmL43">
-          <property role="30bXRw" value="0.9" />
-        </node>
-      </node>
-      <node concept="3yReWT" id="16vX0Cgh3yW" role="2BRsc">
-        <ref role="3yR$0w" node="1O9im_PLJZf" resolve="Endothelial" />
-      </node>
-      <node concept="1csUcq" id="16vX0Cgh3yY" role="3Bb2eO">
-        <ref role="1csUcr" node="5yFEiLG568a" resolve="VEGFR" />
-      </node>
-      <node concept="2_hQR_" id="16vX0Cgh3z0" role="Lgn2a">
-        <node concept="2_n9WQ" id="16vX0Cgh3z1" role="2_hQRE">
-          <node concept="30bXRB" id="16vX0Cgh3_O" role="2_n9WR">
-            <property role="30bXRw" value="1" />
-          </node>
-        </node>
-        <node concept="2_hRrN" id="16vX0Cgh3zI" role="2_hQ4V" />
-      </node>
-      <node concept="2_hQR_" id="16vX0Cgh3$5" role="3Bb2cM">
-        <node concept="2_n9WQ" id="16vX0Cgh3$6" role="2_hQRE">
-          <node concept="30bXRB" id="16vX0Cgh3$n" role="2_n9WR">
-            <property role="30bXRw" value="70" />
-          </node>
-        </node>
-        <node concept="2_hRrN" id="16vX0Cgh3$P" role="2_hQ4V" />
       </node>
     </node>
   </node>

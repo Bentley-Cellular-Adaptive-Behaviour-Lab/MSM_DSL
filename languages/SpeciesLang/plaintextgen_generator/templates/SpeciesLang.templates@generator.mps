@@ -8834,7 +8834,7 @@
           <node concept="356sEK" id="3FNuJRs29ez" role="383Ya9">
             <node concept="373pV1" id="U$r4ZalALi" role="356sEH" />
             <node concept="356sEF" id="3FNuJRs2p4i" role="356sEH">
-              <property role="TrG5h" value="memAgent-&gt;distribute_calculated_proteins(&quot;" />
+              <property role="TrG5h" value="memAgent-&gt;distribute_proteins(&quot;" />
             </node>
             <node concept="356sEF" id="3FNuJRs2p4j" role="356sEH">
               <property role="TrG5h" value="PROTEIN_NAME" />
@@ -8861,7 +8861,33 @@
               </node>
             </node>
             <node concept="356sEF" id="3FNuJRs2p4t" role="356sEH">
-              <property role="TrG5h" value="&quot;, new_states[" />
+              <property role="TrG5h" value="&quot;, current_states[" />
+            </node>
+            <node concept="356sEF" id="5FJlD1YANub" role="356sEH">
+              <property role="TrG5h" value="INDEX" />
+              <node concept="17Uvod" id="5FJlD1YAQrt" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="5FJlD1YAQru" role="3zH0cK">
+                  <node concept="3clFbS" id="5FJlD1YAQrv" role="2VODD2">
+                    <node concept="3clFbF" id="5FJlD1YAQw9" role="3cqZAp">
+                      <node concept="2YIFZM" id="5FJlD1YAQwa" role="3clFbG">
+                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                        <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                        <node concept="2OqwBi" id="5FJlD1YAQwb" role="37wK5m">
+                          <node concept="30H73N" id="5FJlD1YAQwc" role="2Oq$k0" />
+                          <node concept="3TrcHB" id="5FJlD1YAQwd" role="2OqNvi">
+                            <ref role="3TsBF5" to="w3cn:3h7BZk97_g7" resolve="binIndex" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="356sEF" id="5FJlD1YANuc" role="356sEH">
+              <property role="TrG5h" value="], new_states[" />
             </node>
             <node concept="356sEF" id="3FNuJRs2p4u" role="356sEH">
               <property role="TrG5h" value="INDEX" />

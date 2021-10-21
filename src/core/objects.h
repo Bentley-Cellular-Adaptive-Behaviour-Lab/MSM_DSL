@@ -118,7 +118,6 @@ extern float VconcST;
 extern float VconcSTMACRO;
 extern long long seed;
 ///cytoskeleton
-#define FILOPODIA true
 #define VEIL_ADVANCE false
 #define ANASTOMOSIS false
 extern float actinMax;///128(for 0.25 scale cells (rearrangement model)///512(in JTB 2008 and PLoS CB 2009)///max filagests extra, calcs on the fly with retraction = 1 and extension  =1 rather than i actual memagents as they are updated synchronously in this version, in calc force...and remove/grids spring agents

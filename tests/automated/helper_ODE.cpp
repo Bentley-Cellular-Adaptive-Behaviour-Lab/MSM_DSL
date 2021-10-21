@@ -1236,6 +1236,183 @@ void TranscriptionDelayTest::printProteinLevels(EC *ec) {
     std::cout << "\n";
 }
 
+/*****************************************************************************************
+*  Name:		UnequalDistributionTest::SetUp()
+*  Description: - Runs an ODE on a memAgent surrounded by memAgents, with some memAgents
+*               from one cell having more protein than an adjacent cell.
+*                1 - 1 - 2
+*                1 - X - 2
+*                1 - 1 - 2
+*	  			ODE 1: dA/dt = -8
+*
+*  Returns:		void
+******************************************************************************************/
+
+void UnequalDistributionTest::SetUp() {
+    //Creates a 50 by 50 world with an adhesiveness value of 1.0.
+    auto w_container = new World_Container();
+    addWorldContainer(w_container);
+    worldContainer->world_setup();
+    addWorld(w_container->get_world());
+    setupMemAgents(new EC(world), new EC(world), world);
+    addMemAgentProteins();
+    std::cout << "Timestep,1,2,3,4,5,6,7,8" << std::endl;
+}
+
+void UnequalDistributionTest::TearDown() {
+
+}
+
+void UnequalDistributionTest::addWorldContainer(World_Container *w_container) {
+    this->worldContainer = w_container;
+}
+
+void UnequalDistributionTest::addWorld(World *world) {
+    this->world = world;
+}
+
+void UnequalDistributionTest::setupMemAgents(EC* cell1, EC* cell2, World *world) {
+    auto centreMemAgent = new MemAgent(cell1, world);
+    this->centreMemAgent = centreMemAgent;
+    centreMemAgent->Mx = 25;
+    centreMemAgent->My = 25;
+    centreMemAgent->Mz = 25;
+    centreMemAgent->junction = true;
+    this->world->grid[25][25][25].setType(const_M);
+    this->world->grid[25][25][25].addMemAgent(centreMemAgent);
+
+    // Lower left agent - pos 0 in vector.
+    auto memAgent1 = new MemAgent(cell1, world);
+    memAgent1->Mx = 24;
+    memAgent1->My = 24;
+    memAgent1->Mz = 25;
+    memAgent1->junction = false;
+    this->world->grid[24][24][25].setType(const_M);
+    this->world->grid[24][24][25].addMemAgent(memAgent1);
+    this->adjacentMemAgents.push_back(memAgent1);
+
+    // Centre left agent - pos 1 in vector.
+    auto memAgent2 = new MemAgent(cell1, world);
+    memAgent2->Mx = 24;
+    memAgent2->My = 25;
+    memAgent2->Mz = 25;
+    memAgent2->junction = false;
+    this->world->grid[24][25][25].setType(const_M);
+    this->world->grid[24][25][25].addMemAgent(memAgent2);
+    this->adjacentMemAgents.push_back(memAgent2);
+
+    // Upper left agent - pos 2 in vector.
+    auto memAgent3 = new MemAgent(cell1, world);
+    memAgent3->Mx = 24;
+    memAgent3->My = 26;
+    memAgent3->Mz = 25;
+    memAgent3->junction = false;
+    this->world->grid[24][26][25].setType(const_M);
+    this->world->grid[24][26][25].addMemAgent(memAgent3);
+    this->adjacentMemAgents.push_back(memAgent3);
+
+    // Upper centre agent - pos 3 in vector.
+    auto memAgent4 = new MemAgent(cell1, world);
+    memAgent4->Mx = 25;
+    memAgent4->My = 26;
+    memAgent4->Mz = 25;
+    memAgent4->junction = true;
+    this->world->grid[25][26][25].setType(const_M);
+    this->world->grid[25][26][25].addMemAgent(memAgent4);
+    this->adjacentMemAgents.push_back(memAgent4);
+
+    // Lower centre agent - pos 4 in vector.
+    auto memAgent5 = new MemAgent(cell1, world);
+    memAgent5->Mx = 25;
+    memAgent5->My = 24;
+    memAgent5->Mz = 25;
+    memAgent4->junction = true;
+    this->world->grid[25][24][25].setType(const_M);
+    this->world->grid[25][24][25].addMemAgent(memAgent5);
+    this->adjacentMemAgents.push_back(memAgent5);
+
+    // Lower right agent - pos 5 in vector.
+    auto memAgent6 = new MemAgent(cell2, world);
+    memAgent6->Mx = 26;
+    memAgent6->My = 24;
+    memAgent6->Mz = 25;
+    memAgent6->junction = true;
+    this->world->grid[26][24][25].setType(const_M);
+    this->world->grid[26][24][25].addMemAgent(memAgent6);
+    this->adjacentMemAgents.push_back(memAgent6);
+
+    // Centre right agent - pos 6 in vector.
+    auto memAgent7 = new MemAgent(cell2, world);
+    memAgent7->Mx = 26;
+    memAgent7->My = 25;
+    memAgent7->Mz = 25;
+    memAgent7->junction = true;
+    this->world->grid[26][25][25].setType(const_M);
+    this->world->grid[25][25][25].addMemAgent(memAgent7);
+    this->adjacentMemAgents.push_back(memAgent7);
+
+    // Upper right agent - pos 7 in vector.
+    auto memAgent8 = new MemAgent(cell2, world);
+    memAgent8->Mx = 26;
+    memAgent8->My = 26;
+    memAgent8->Mz = 25;
+    memAgent8->junction = true;
+    this->world->grid[26][26][25].setType(const_M);
+    this->world->grid[26][26][25].addMemAgent(memAgent8);
+    this->adjacentMemAgents.push_back(memAgent8);
+}
+
+void UnequalDistributionTest::addMemAgentProteins() {
+    // Go over all adjacent memAgents next to our own.
+    for (int i = 0; i < this->adjacentMemAgents.size(); i++) {
+        // Get memAgents that belong to cell 1 (below position 5 in the vector).
+        MemAgent *currentMemAgent = adjacentMemAgents[i];
+        if (i < 3) {
+            currentMemAgent->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
+        } else if (i >= 3 && i < 5) {
+            currentMemAgent->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 100, 0, 100, 1));
+        } else {
+            currentMemAgent->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 50, 0, 100, 1));
+        }
+    }
+}
+
+void UnequalDistributionTest::runMemAgentODE(MemAgent *memAgent) {
+    UnequalDistributionTest_ode_states current_states;
+    UnequalDistributionTest_ode_states  new_states;
+    odeint::euler<UnequalDistributionTest_ode_states> stepper;
+
+    double A_total = 0;
+    A_total += memAgent->get_local_protein_level("A");
+    A_total += memAgent->get_junction_protein_level("A");
+
+    current_states[0] = A_total;
+
+    stepper.do_step(UnequalDistributionTest_system, current_states, 0.0, new_states, 1);
+
+    // Set future levels of protein based on results of ODEs.
+    memAgent->distribute_proteins("A", current_states[0], new_states[0], true, true, PROTEIN_LOCATION_JUNCTION);
+}
+
+void UnequalDistributionTest::printProteinLevels(int timestep) {
+    std::cout << timestep << ",";
+    for (MemAgent *memAgent : this->adjacentMemAgents) {
+        std::cout << memAgent->get_memAgent_protein_level("A") << ",";
+    }
+    std::cout << std::endl;
+}
+
+void UnequalDistributionTest::UnequalDistributionTest_system(const UnequalDistributionTest_ode_states &x, UnequalDistributionTest_ode_states &dxdt, double t) {
+    double A = x[0];
+    dxdt[0] = -8; // We've got 8 memAgents, so remove 8 from the total and then see what the new total is.
+}
+
+/*****************************************************************************************
+*  Name:		VenkatramanTest::SetUp()
+*  Description:
+*  Returns:		void
+******************************************************************************************/
+
 void VenkatramanTest::SetUp() {
 
 }
@@ -1243,6 +1420,7 @@ void VenkatramanTest::SetUp() {
 void VenkatramanTest::TearDown() {
 
 }
+
 
 void VenkatramanTest::runCellODE(EC *ec) {
     VenkatramanTest_cell_ode_states current_states;
@@ -1330,7 +1508,7 @@ void VenkatramanTest::cellODESystem(const VenkatramanTest_cell_ode_states &x, Ve
     double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
     double k3 = calc_k3_rate(VEGFR, HEY, Nu);
     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
-    double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0);
+    double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILO, V0);
 // ODE Definitions
     dxdt[0] = 0;
     dxdt[1] = +(DLL4_Reg);

@@ -6,6 +6,7 @@
 #define TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_ODE_H
 
 #include <gtest/gtest.h>
+#include <vector>
 
 typedef boost::array<float, 2> basic_ode_states;
 typedef boost::array<float, 4> crossCell_ode_states;
@@ -16,6 +17,7 @@ typedef boost::array<float, 4> cellJunction_ode_states;
 typedef boost::array<float, 6> notch_memAgent_ode_states;
 typedef boost::array<float, 4> notch_cell_ode_states;
 typedef boost::array<float, 4> TranscriptionDelayTest_ode_states;
+typedef boost::array<float, 1> UnequalDistributionTest_ode_states;
 typedef boost::array<float, 9> VenkatramanTest_memAgent_ode_states;
 typedef boost::array<float, 7> VenkatramanTest_cell_ode_states;
 
@@ -207,6 +209,25 @@ public:
     void runCellODEs(EC *ec);
     void printProteinLevels(EC *ec);
     static void TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t);
+};
+
+class UnequalDistributionTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    World *world;
+    World_Container *worldContainer;
+    MemAgent* centreMemAgent;
+    std::vector<MemAgent*> adjacentMemAgents;
+
+    void addWorldContainer(World_Container *w_container);
+    void addWorld(World *world);
+    void setupMemAgents(EC* cell1, EC* cell2, World *world);
+    void addMemAgentProteins();
+    void runMemAgentODE(MemAgent *memAgent);
+    void printProteinLevels(int timestep);
+    static void UnequalDistributionTest_system(const UnequalDistributionTest_ode_states &x, UnequalDistributionTest_ode_states &dxdt, double t);
 };
 
 class VenkatramanTest : public ::testing::Test {

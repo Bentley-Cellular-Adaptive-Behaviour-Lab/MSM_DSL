@@ -265,6 +265,14 @@ TEST_F(NotchPathwayTest, NotchPathwayTest) {
     }
 }
 
+TEST_F(UnequalDistributionTest, UnequalDistributionTest) {
+    this->printProteinLevels(0);
+    for (int i = 1; i <= 10; i++) {
+        runMemAgentODE(centreMemAgent);
+        printProteinLevels(i);
+    }
+}
+
 TEST_F(VenkatramanTest, VenkatramanTest) {
 
 }

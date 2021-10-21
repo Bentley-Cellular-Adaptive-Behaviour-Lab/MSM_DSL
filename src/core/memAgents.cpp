@@ -611,6 +611,8 @@ void MemAgent::VEGFRresponse(void) {
     j = (int) My;
     k = (int) Mz;
     bool moved = false;
+
+    bool filopodiaOn = true;
    
     //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF.. 
     VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
@@ -622,7 +624,7 @@ void MemAgent::VEGFRresponse(void) {
     }
 
     //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
-    if (FILOPODIA){
+    if (filopodiaOn) {
     	//***** RANDFIL here
     	if (randFilExtend >= 0 && randFilExtend <= 1) {
 			Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
@@ -3148,11 +3150,13 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::distribute_proteins(std::string protein_name, float protein_level_change, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
+void MemAgent::distribute_proteins(std::string protein_name, float start_protein_level, float end_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
     int k = (int) Mz;
+
+    float protein_level_change = end_protein_level - start_protein_level;
 
     std::vector<EC*> relevantCells = find_cells(true);
     std::vector<std::vector<MemAgent*>> relevant_memAgents = findRelevantAgents(relevantCells,
@@ -3162,15 +3166,34 @@ void MemAgent::distribute_proteins(std::string protein_name, float protein_level
                                                                    protein_location);
     std::vector<float> memAgentProportions;
 
+    int totalRelevantMemAgents = 0;
+
+    for (auto *cell : relevantCells) {
+        memAgentProportions.push_back(-1);
+    }
+
+    // Determine the total number of memAgents being looked up.
+    for (auto agentVector : relevant_memAgents) {
+        totalRelevantMemAgents += agentVector.size();
+    }
+
+    for (int index = 0; index < relevant_memAgents.size(); index++) {
+        // Get the proportion of agents that are taking part in the interaction.
+        memAgentProportions[index] = relevant_memAgents[index].size() / totalRelevantMemAgents;
+    }
+
     // TODO: CALCULATE TOTAL CHANGE ACROSS THE CELL.
-    // TODO: CALCULATE CHANGE PER MEMAGENT (HINT: MULTIPLY BY THE NUMBER OF AGENTS BELONGING TO A CELL DIVIDED BY THE TOTAL NUMBER OF MEMAGENTS).
-    // TODO: APPLY THE CHANGE PER MEMAGENT TO EACH MEMAGENT USING THE CURRENT PROTEIN TOTAL AT THAT AGENT
 
-
-    int divisor = relevant_memAgents.size();
-    float new_amount = total_protein_level / (float) divisor;
-    for (auto memAgent : relevant_memAgents) {
-        memAgent->set_protein_level(protein_name, new_amount);
+    // Now, go over each memAgent belonging to each cell, then change its current amount by a proporotion of the total change.
+    int index = 0;
+    for (auto agentVector : relevant_memAgents) {
+        float proportionalChange = protein_level_change * memAgentProportions[index];
+        // The amount that each memAgent changes its value by.
+        float changePerAgent = proportionalChange / relevant_memAgents.size();
+        for (auto *memAgent : agentVector) {
+            memAgent->update_protein_level(protein_name, changePerAgent);
+        }
+        index++;
     }
 }
 
@@ -4347,5 +4370,12 @@ void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, std::string cytopr
 
 std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
     return this->m_cytoproteins;
+}
+
+void MemAgent::update_protein_level(std::string protein_name, float protein_delta) {
+    // Change the level of a protein at a given memAgent by the specified amount.
+    float current_level = this->get_memAgent_protein_level(protein_name);
+    float new_level = current_level + protein_delta;
+    this->set_protein_level(protein_name, new_level);
 }
 
