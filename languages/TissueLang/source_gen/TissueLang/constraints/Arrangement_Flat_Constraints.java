@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import TissueLang.behavior.Arrangement__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -45,7 +45,11 @@ public class Arrangement_Flat_Constraints extends BaseConstraintsDescriptor {
   }
   public static class Total_cell_number_Property extends BasePropertyConstraintsDescriptor {
     public Total_cell_number_Property(ConstraintsDescriptor container) {
-      super(PROPS.total_cell_number$ujP3, container, true, false, false);
+      super(PROPS.total_cell_number$ujP3, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
     }
     @Override
     public Object getValue(SNode node) {
@@ -54,13 +58,18 @@ public class Arrangement_Flat_Constraints extends BaseConstraintsDescriptor {
   }
   public static class Flat_height_in_cells_Property extends BasePropertyConstraintsDescriptor {
     public Flat_height_in_cells_Property(ConstraintsDescriptor container) {
-      super(PROPS.flat_height_in_cells$pFdw, container, false, false, true);
+      super(PROPS.flat_height_in_cells$pFdw, container);
     }
+    @Override
+    public boolean hasOwnValidator() {
+      return true;
+    }
+    private static final SNodePointer validatePropertyBreakingPoint = new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueLang.constraints)", "7544900677410098438");
     @Override
     public boolean validateValue(SNode node, Object propertyValue, CheckingNodeContext checkingNodeContext) {
       boolean result = staticValidateProperty(node, SPropertyOperations.castInteger(propertyValue));
       if (!(result) && checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueLang.constraints)", "7544900677410098438"));
+        checkingNodeContext.setBreakingNode(validatePropertyBreakingPoint);
       }
       return result;
     }
@@ -70,13 +79,18 @@ public class Arrangement_Flat_Constraints extends BaseConstraintsDescriptor {
   }
   public static class Flat_width_in_cells_Property extends BasePropertyConstraintsDescriptor {
     public Flat_width_in_cells_Property(ConstraintsDescriptor container) {
-      super(PROPS.flat_width_in_cells$pFFy, container, false, false, true);
+      super(PROPS.flat_width_in_cells$pFFy, container);
     }
+    @Override
+    public boolean hasOwnValidator() {
+      return true;
+    }
+    private static final SNodePointer validatePropertyBreakingPoint = new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueLang.constraints)", "7544900677410104420");
     @Override
     public boolean validateValue(SNode node, Object propertyValue, CheckingNodeContext checkingNodeContext) {
       boolean result = staticValidateProperty(node, SPropertyOperations.castInteger(propertyValue));
       if (!(result) && checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(new SNodePointer("r:7fe3d642-a3fa-4906-9844-700ca7238ef7(TissueLang.constraints)", "7544900677410104420"));
+        checkingNodeContext.setBreakingNode(validatePropertyBreakingPoint);
       }
       return result;
     }

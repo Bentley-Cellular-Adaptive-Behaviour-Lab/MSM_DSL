@@ -1,0 +1,1 @@
+Documentation moved to [https://jetbrains.github.io/MPS-extensions/extensions/shadowmodels/](https://jetbrains.github.io/MPS-extensions/extensions/shadowmodels/)

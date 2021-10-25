@@ -45,7 +45,11 @@ public class Arrangement_Cylindrical_Constraints extends BaseConstraintsDescript
   }
   public static class Cylinder_cross_section_cells_Property extends BasePropertyConstraintsDescriptor {
     public Cylinder_cross_section_cells_Property(ConstraintsDescriptor container) {
-      super(PROPS.cylinder_cross_section_cells$pzjl, container, true, false, false);
+      super(PROPS.cylinder_cross_section_cells$pzjl, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
     }
     @Override
     public Object getValue(SNode node) {
@@ -54,7 +58,11 @@ public class Arrangement_Cylindrical_Constraints extends BaseConstraintsDescript
   }
   public static class Cylinder_total_cells_Property extends BasePropertyConstraintsDescriptor {
     public Cylinder_total_cells_Property(ConstraintsDescriptor container) {
-      super(PROPS.cylinder_total_cells$o_jT, container, true, false, false);
+      super(PROPS.cylinder_total_cells$o_jT, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
     }
     @Override
     public Object getValue(SNode node) {
@@ -63,7 +71,11 @@ public class Arrangement_Cylindrical_Constraints extends BaseConstraintsDescript
   }
   public static class Cylinder_total_length_int_Property extends BasePropertyConstraintsDescriptor {
     public Cylinder_total_length_int_Property(ConstraintsDescriptor container) {
-      super(PROPS.cylinder_total_length_int$Xfju, container, true, false, false);
+      super(PROPS.cylinder_total_length_int$Xfju, container);
+    }
+    @Override
+    public boolean hasOwnGetter() {
+      return true;
     }
     @Override
     public Object getValue(SNode node) {
