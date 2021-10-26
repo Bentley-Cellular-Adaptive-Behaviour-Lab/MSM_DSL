@@ -1408,24 +1408,24 @@ void UnequalDistributionTest::UnequalDistributionTest_system(const UnequalDistri
 }
 
 /*****************************************************************************************
-*  Name:		VenkatramanTest::SetUp()
+*  Name:		VenkatramanMemAgentTest::SetUp()
 *  Description:
 *  Returns:		void
 ******************************************************************************************/
 
-void VenkatramanTest::SetUp() {
+void VenkatramanMemAgentTest::SetUp() {
 
 }
 
-void VenkatramanTest::TearDown() {
+void VenkatramanMemAgentTest::TearDown() {
 
 }
 
 
-void VenkatramanTest::runCellODE(EC *ec) {
-    VenkatramanTest_cell_ode_states current_states;
-    VenkatramanTest_cell_ode_states new_states;
-    odeint::euler<VenkatramanTest_cell_ode_states> stepper;
+void VenkatramanMemAgentTest::runCellODE(EC *ec) {
+    VenkatramanMemAgentTest_cell_ode_states current_states;
+    VenkatramanMemAgentTest_cell_ode_states new_states;
+    odeint::euler<VenkatramanMemAgentTest_cell_ode_states> stepper;
 
     current_states[0] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
     current_states[1] = ec->get_cell_protein_level("DLL4", 0);
@@ -1444,10 +1444,10 @@ void VenkatramanTest::runCellODE(EC *ec) {
     ec->set_cell_protein_level("VEGFR", new_states[6], 1);
 }
 
-void VenkatramanTest::runMemAgentODE(MemAgent *memAgent) {
-    VenkatramanTest_memAgent_ode_states current_states;
-    VenkatramanTest_memAgent_ode_states new_states;
-    odeint::euler<VenkatramanTest_memAgent_ode_states> stepper;
+void VenkatramanMemAgentTest::runMemAgentODE(MemAgent *memAgent) {
+    VenkatramanMemAgentTest_memAgent_ode_states current_states;
+    VenkatramanMemAgentTest_memAgent_ode_states new_states;
+    odeint::euler<VenkatramanMemAgentTest_memAgent_ode_states> stepper;
 
     double DLL4_total = 0;
     double NOTCH_total = 0;
@@ -1491,7 +1491,7 @@ void VenkatramanTest::runMemAgentODE(MemAgent *memAgent) {
     memAgent->distribute_calculated_proteins("HEY", new_states[8], false, false, PROTEIN_LOCATION_CELL);
 }
 
-void VenkatramanTest::cellODESystem(const VenkatramanTest_cell_ode_states &x, VenkatramanTest_cell_ode_states &dxdt, double t) {
+void VenkatramanMemAgentTest::cellODESystem(const VenkatramanMemAgentTest_cell_ode_states &x, VenkatramanMemAgentTest_cell_ode_states &dxdt, double t) {
 // Species Definitions
     double VEGF_VEGFR = x[0];
     double DLL4 = x[1];
@@ -1520,7 +1520,7 @@ void VenkatramanTest::cellODESystem(const VenkatramanTest_cell_ode_states &x, Ve
 }
 
 
-void VenkatramanTest::memAgentODESystem(const VenkatramanTest_memAgent_ode_states &x, VenkatramanTest_memAgent_ode_states &dxdt, double t) {
+void VenkatramanMemAgentTest::memAgentODESystem(const VenkatramanMemAgentTest_memAgent_ode_states &x, VenkatramanMemAgentTest_memAgent_ode_states &dxdt, double t) {
 // Species Definitions
     double DLL4 = x[0];
     double NOTCH = x[1];	
@@ -1559,98 +1559,312 @@ void VenkatramanTest::memAgentODESystem(const VenkatramanTest_memAgent_ode_state
     dxdt[8] = -(HEY_Degradation);
 }
 
-double VenkatramanTest::calc_k1_rate(double VEGF, double VEGFR) {
+double VenkatramanMemAgentTest::calc_k1_rate(double VEGF, double VEGFR) {
     return 0.1*VEGF*VEGFR;
 }
 
-double VenkatramanTest::calc_k_1_rate(double VEGF_VEGFR) {
+double VenkatramanMemAgentTest::calc_k_1_rate(double VEGF_VEGFR) {
     return 0.001*VEGF_VEGFR;
 }
 
-double VenkatramanTest::calc_k2_rate(double DLL4, double NOTCH) {
+double VenkatramanMemAgentTest::calc_k2_rate(double DLL4, double NOTCH) {
     return 0.001*DLL4*NOTCH;
 }
 
-double VenkatramanTest::calc_k_2_rate(double DLL4_NOTCH) {
+double VenkatramanMemAgentTest::calc_k_2_rate(double DLL4_NOTCH) {
     return 0.1*DLL4_NOTCH;
 }
 
-double VenkatramanTest::calc_k3_rate(double VEGFR, double HEY, double Nu) {
+double VenkatramanMemAgentTest::calc_k3_rate(double VEGFR, double HEY, double Nu) {
     return 0.005*VEGFR*pow(HEY,Nu);
 }
 
-double VenkatramanTest::calc_k4_rate(double DLL4_NOTCH) {
+double VenkatramanMemAgentTest::calc_k4_rate(double DLL4_NOTCH) {
     return 0.1*DLL4_NOTCH;
 }
 
-double VenkatramanTest::calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu) {
+double VenkatramanMemAgentTest::calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu) {
     return 0.1*pow(VEGF_VEGFR,Nu);
 }
 
-double VenkatramanTest::calc_k6_VEGFSensing_rate(double FILO, double V0) {
+double VenkatramanMemAgentTest::calc_k6_VEGFSensing_rate(double FILO, double V0) {
     return pow(FILO,2)*0.005*V0+V0;
 }
 
-double VenkatramanTest::calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
+double VenkatramanMemAgentTest::calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
     return Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu));
 }
 
-double VenkatramanTest::calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
+double VenkatramanMemAgentTest::calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
     return Theta*pow(NICD,Nu)/(1+pow(NICD,Nu));
 }
 
-double VenkatramanTest::calc_V0_rate() {
+double VenkatramanMemAgentTest::calc_V0_rate() {
     return 100;
 }
 
-double VenkatramanTest::calc_Theta_rate() {
+double VenkatramanMemAgentTest::calc_Theta_rate() {
     return 0.1;
 }
 
-double VenkatramanTest::calc_Phi_rate() {
+double VenkatramanMemAgentTest::calc_Phi_rate() {
     return 0.001;
 }
 
-double VenkatramanTest::calc_Gamma_rate() {
+double VenkatramanMemAgentTest::calc_Gamma_rate() {
     return 0.005;
 }
 
-double VenkatramanTest::calc_VR_Production_rate(double Gamma, double VEGFR) {
+double VenkatramanMemAgentTest::calc_VR_Production_rate(double Gamma, double VEGFR) {
     return Gamma*VEGFR;
 }
 
-double VenkatramanTest::calc_N_Production_rate(double Gamma, double NOTCH) {
+double VenkatramanMemAgentTest::calc_N_Production_rate(double Gamma, double NOTCH) {
     return Gamma*NOTCH;
 }
 
-double VenkatramanTest::calc_VR_Degradation_rate(double Phi, double VEGFR) {
+double VenkatramanMemAgentTest::calc_VR_Degradation_rate(double Phi, double VEGFR) {
     return Phi*VEGFR;
 }
 
-double VenkatramanTest::calc_N_Degradation_rate(double Phi, double NOTCH) {
+double VenkatramanMemAgentTest::calc_N_Degradation_rate(double Phi, double NOTCH) {
     return Phi*NOTCH;
 }
 
-double VenkatramanTest::calc_D_Degradation_rate(double Phi, double DLL4) {
+double VenkatramanMemAgentTest::calc_D_Degradation_rate(double Phi, double DLL4) {
     return Phi*DLL4;
 }
 
-double VenkatramanTest::calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH) {
+double VenkatramanMemAgentTest::calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH) {
     return Phi*DLL4_NOTCH;
 }
 
-double VenkatramanTest::calc_I_Degradation_rate(double Phi, double NICD) {
+double VenkatramanMemAgentTest::calc_I_Degradation_rate(double Phi, double NICD) {
     return Phi*NICD;
 }
 
-double VenkatramanTest::calc_HEY_Degradation_rate(double Phi, double HEY) {
+double VenkatramanMemAgentTest::calc_HEY_Degradation_rate(double Phi, double HEY) {
     return Phi*HEY;
 }
 
-double VenkatramanTest::calc_Nu_rate() {
+double VenkatramanMemAgentTest::calc_Nu_rate() {
     return 2;
 }
 
-double VenkatramanTest::calc_FilopodiaTurnover_rate() {
+double VenkatramanMemAgentTest::calc_FilopodiaTurnover_rate() {
     return 0.001;
 }
+
+/*****************************************************************************************
+*  Name:		VenkatramanCellTest::SetUp()
+*  Description:
+*  Returns:		void
+******************************************************************************************/
+void VenkatramanCellTest::SetUp() {
+//Creates a 50 by 50 world with an adhesiveness value of 1.0.
+    auto w_container = new World_Container();
+    addWorldContainer(w_container);
+    worldContainer->world_setup();
+    addWorld(w_container->get_world());
+    setupCells();
+    for (auto cell: tissueMonolayer->m_cell_agents) {
+        cell->distribute_proteins();
+    }
+}
+
+void VenkatramanCellTest::TearDown() {
+
+}
+
+void VenkatramanCellTest::addWorldContainer(World_Container *w_container) {
+    this->worldContainer = w_container;
+}
+
+void VenkatramanCellTest::addWorld(World *world) {
+    this->world = world;
+}
+
+void VenkatramanCellTest::setupCells() {
+    // Creates a tissue monolayer with only one cell.
+    this->tissueContainer = new Tissue_Container(this->world);
+    // Create a new Cell Type that holds some dummy values - these aren't used at any point.
+    auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
+    auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
+
+    auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
+    // Create the tissue using the defined tissue container.
+    this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
+    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
+
+    basicCellType = tissueContainer->define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
+    basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 1000.0, 1000.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
+
+
+    // Force add the proteins to the memAgents and check whether they're at a junction.
+    for (auto cell : this->tissueMonolayer->m_cell_agents) {
+        for (auto memAgent : cell->nodeAgents) {
+            memAgent->add_cell_proteins();
+            memAgent->JunctionTest(true);
+        }
+    }
+}
+
+
+
+void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellTest_ode_states &x, VenkatramanCellTest_ode_states &dxdt, double t) {
+    // Species Definitions
+    double VEGF_VEGFR = x[0];
+    double DLL4 = x[1];
+    double FILOPODIA = x[2];
+    double VEGF = x[3];
+    double NICD = x[4];
+    double HEY = x[5];
+    double VEGFR = x[6];
+    double NOTCH = x[7];
+    double DLL4_NOTCH = x[8];
+    // Parameter Definitions
+    double Nu = calc_Nu_rate();
+    double Theta = calc_Theta_rate();
+    double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
+    double V0 = calc_V0_rate();
+    double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
+    double k3 = calc_k3_rate(VEGFR, HEY, Nu);
+    double k2 = calc_k2_rate(DLL4, NOTCH);
+    double k_2 = calc_k_2_rate(DLL4_NOTCH);
+    double k4 = calc_k4_rate(DLL4_NOTCH);
+    double k1 = calc_k1_rate(VEGF, VEGFR);
+    double k_1 = calc_k_1_rate(VEGF_VEGFR);
+    double Phi = calc_Phi_rate();
+    double FilopodiaTurnover = calc_FilopodiaTurnover_rate();
+    double I_Degradation = calc_I_Degradation_rate(Phi, NICD);
+    double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
+    double VR_Degradation = calc_VR_Degradation_rate(Phi, VEGFR);
+    double N_Degradation = calc_N_Degradation_rate(Phi, NOTCH);
+    double Gamma = calc_Gamma_rate();
+    double D_N_Degradation = calc_D_N_Degradation_rate(Phi, DLL4_NOTCH);
+    double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
+    double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0);
+    double D_Degradation = calc_D_Degradation_rate(Phi, DLL4);
+    double N_Production = calc_N_Production_rate(Gamma, NOTCH);
+    // ODE Definitions
+    dxdt[0] = +(k1)*1-(k_1)*1;
+    dxdt[1] = -(D_Degradation)-(k2)*1+(k_2)*1+(DLL4_Reg);
+    dxdt[2] = -(FilopodiaTurnover)+(k5_FilProduction);
+    dxdt[3] = -(k1)*1+(k_1)*1+(k6_VEGFSensing);
+    dxdt[4] = -(I_Degradation)+(k4)*1;
+    dxdt[5] = -(HEY_Degradation)+(HEY_Reg);
+    dxdt[6] = -(VR_Degradation)-(k1)*1+(k_1)*1-(k3);
+    dxdt[7] = +(N_Production)-(N_Degradation)-(k2)*1+(k_2)*1;
+    dxdt[8] = -(D_N_Degradation)-(k4)*1+(k2)*1-(k_2)*1;
+}
+
+void VenkatramanCellTest::VenkatramanCellTest_run_cell_ODEs(EC *ec) {
+    VenkatramanCellTest_ode_states current_states;
+    VenkatramanCellTest_ode_states new_states;
+    odeint::euler<VenkatramanCellTest_ode_states> stepper;
+
+    current_states[0] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+    current_states[1] = ec->get_cell_protein_level("DLL4", 0);
+    current_states[2] = ec->get_cell_protein_level("FILOPODIA", 0);
+    current_states[3] = ec->get_cell_protein_level("VEGF", 0);
+    current_states[4] = ec->get_cell_protein_level("NICD", 0);
+    current_states[5] = ec->get_cell_protein_level("HEY", 0);
+    current_states[6] = ec->get_cell_protein_level("VEGFR", 0);
+    current_states[7] = ec->get_cell_protein_level("NOTCH", 0);
+    current_states[8] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+
+    stepper.do_step(VenkatramanCellTest_cell_system, current_states, 0.0, new_states, 1);
+
+    ec->set_cell_protein_level("VEGF_VEGFR", new_states[0], 1);
+    ec->set_cell_protein_level("DLL4", new_states[1], 1);
+    ec->set_cell_protein_level("FILOPODIA", new_states[2], 1);
+    ec->set_cell_protein_level("VEGF", new_states[3], 1);
+    ec->set_cell_protein_level("NICD", new_states[4], 1);
+    ec->set_cell_protein_level("HEY", new_states[5], 1);
+    ec->set_cell_protein_level("VEGFR", new_states[6], 1);
+    ec->set_cell_protein_level("NOTCH", new_states[7], 1);
+    ec->set_cell_protein_level("DLL4_NOTCH", new_states[8], 1);
+}
+
+
+double VenkatramanCellTest::calc_k1_rate(double VEGF, double VEGFR) {
+    return 0.1*VEGF*VEGFR;
+}
+double VenkatramanCellTest::calc_k_1_rate(double VEGF_VEGFR) {
+    return 0.001*VEGF_VEGFR;
+}
+double VenkatramanCellTest::calc_k2_rate(double DLL4, double NOTCH) {
+    return 0.001*DLL4*NOTCH;
+}
+double VenkatramanCellTest::calc_k_2_rate(double DLL4_NOTCH) {
+    return 0.1*DLL4_NOTCH;
+}
+double VenkatramanCellTest::calc_k3_rate(double VEGFR, double HEY, double Nu) {
+    return 0.005*VEGFR*pow(HEY,Nu);
+}
+double VenkatramanCellTest::calc_k4_rate(double DLL4_NOTCH) {
+    return 0.1*DLL4_NOTCH;
+}
+double VenkatramanCellTest::calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu) {
+    return 0.1*pow(VEGF_VEGFR,Nu);
+}
+double VenkatramanCellTest::calc_k6_VEGFSensing_rate(double FILOPODIA, double V0) {
+    return pow(FILOPODIA,2)*0.005*V0+V0;
+}
+double VenkatramanCellTest::calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
+    return Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu));
+}
+double VenkatramanCellTest::calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
+    return Theta*pow(NICD,Nu)/(1+pow(NICD,Nu));
+}
+double VenkatramanCellTest::calc_V0_rate() {
+    return 100;
+}
+double VenkatramanCellTest::calc_Theta_rate() {
+    return 0.1;
+}
+double VenkatramanCellTest::calc_Phi_rate() {
+    return 0.001;
+}
+double VenkatramanCellTest::calc_Gamma_rate() {
+    return 0.005;
+}
+double VenkatramanCellTest::calc_VR_Production_rate(double Gamma, double VEGFR) {
+    return Gamma*VEGFR;
+}
+double VenkatramanCellTest::calc_N_Production_rate(double Gamma, double NOTCH) {
+    return Gamma*NOTCH;
+}
+double VenkatramanCellTest::calc_VR_Degradation_rate(double Phi, double VEGFR) {
+    return Phi*VEGFR;
+}
+double VenkatramanCellTest::calc_N_Degradation_rate(double Phi, double NOTCH) {
+    return Phi*NOTCH;
+}
+double VenkatramanCellTest::calc_D_Degradation_rate(double Phi, double DLL4) {
+    return Phi*DLL4;
+}
+double VenkatramanCellTest::calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH) {
+    return Phi*DLL4_NOTCH;
+}
+double VenkatramanCellTest::calc_I_Degradation_rate(double Phi, double NICD) {
+    return Phi*NICD;
+}
+double VenkatramanCellTest::calc_HEY_Degradation_rate(double Phi, double HEY) {
+    return Phi*HEY;
+}
+double VenkatramanCellTest::calc_Nu_rate() {
+    return 2;
+}
+double VenkatramanCellTest::calc_FilopodiaTurnover_rate() {
+    return 0.001;
+}
+

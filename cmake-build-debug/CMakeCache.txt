@@ -393,12 +393,6 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
 //Value Computed by CMake
-src/springAgent_BINARY_DIR:STATIC=C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
-
-//Value Computed by CMake
-src/springAgent_SOURCE_DIR:STATIC=C:/Users/Tom/MPSProjects/MSM_DSL
-
-//Value Computed by CMake
 tests/automated/autoSpringAgent_BINARY_DIR:STATIC=C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
 
 //Value Computed by CMake
@@ -628,17 +622,5 @@ _Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;8;3;64;;cp38-win_amd64;C:\Users
 _Python_INTERPRETER_SIGNATURE:INTERNAL=56250aa503967dde7e0e3748bfb02c99
 cmake_package_name:INTERNAL=GTest
 generated_dir:INTERNAL=C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/_deps/googletest-build/googletest/generated
-//ADVANCED property for variable: gmock_build_tests
-gmock_build_tests-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_build_samples
-gtest_build_samples-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_build_tests
-gtest_build_tests-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_disable_pthreads
-gtest_disable_pthreads-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_force_shared_crt
-gtest_force_shared_crt-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: gtest_hide_internal_symbols
-gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
 targets_export_name:INTERNAL=GTestTargets
 

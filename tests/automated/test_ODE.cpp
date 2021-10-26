@@ -273,6 +273,11 @@ TEST_F(UnequalDistributionTest, UnequalDistributionTest) {
     }
 }
 
-TEST_F(VenkatramanTest, VenkatramanTest) {
+
+TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentTest) {
+
+}
+
+TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
 
 }

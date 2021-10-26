@@ -849,7 +849,7 @@
             </node>
           </node>
           <node concept="356sEF" id="1VQO6m$cE7m" role="356sEH">
-            <property role="TrG5h" value="_Type-&gt;add_protein(new protein(&quot;" />
+            <property role="TrG5h" value="_Type-&gt;add_protein(new Protein(&quot;" />
           </node>
           <node concept="356sEF" id="1VQO6m$cEgB" role="356sEH">
             <property role="TrG5h" value="PROTEIN_NAME" />
