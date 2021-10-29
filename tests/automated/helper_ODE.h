@@ -281,14 +281,15 @@ public:
     Cell_Type *cellType;
     Tissue_Container *tissueContainer;
     Tissue_Monolayer *tissueMonolayer;
+    EC *cell1;
+    EC *cell2;
 
     void addWorldContainer(World_Container *w_container);
     void addWorld(World *world);
     void setupCells();
-    void runCellODEs(EC *ec);
     void printProteinLevels(int timestep);
 
-    void VenkatramanCellTest_run_cell_ODEs(EC *ec);
+    void VenkatramanCellTest_run_cell_ODEs(EC *ec, EC *neighbourEC);
     static void VenkatramanCellTest_cell_system(const VenkatramanCellTest_ode_states &x, VenkatramanCellTest_ode_states &dxdt, double t);
 
     static double calc_k1_rate(double VEGF, double VEGFR);

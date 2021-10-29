@@ -624,6 +624,53 @@ EC::EC(World*  world){
 
 }
 
+EC::EC(World *world, Cell_Type *cell_type) {
+    worldP = world;
+    mutant = false;
+    this->m_cell_type = new Cell_Type(*cell_type);
+    filCONST = FIL_VARY; //LTK link add user config value link here
+
+    //wt values FLTK link
+    VEGFRnorm = VEGFRNORM;
+    Vsink =VsinkNorm;
+
+    if(VR2_HET==true){
+        VEGFRnorm = VEGFRNORM*0.5;
+    }
+    if(VR1_HET==true) Vsink = Vsink*0.5;
+
+
+    VEGFRtot=VEGFRnorm;
+    Dll4tot=0.0f;
+    Notchtot=0.0f;
+    activeNotchtot=0.0f;
+    stableVEGFR=VEGFRnorm;
+    base_of_longest_fil= NULL;
+    length_of_longest_fil = 0;
+    newJunction = 0;
+
+    actinUsed=0;
+
+    int i;
+    for(i=0;i<actNot_VEGFR_delay;i++){
+        NotchDelayArray.push_back(0.0f);
+    }
+    for(i=0;i<actNot_VEGFR_lasts;i++){
+        NotchLastsArray.push_back(0.0f);
+    }
+    for(i=0;i<VEGFR_dll4_delay;i++){
+        VEGFRDelayArray.push_back(0.0f);
+    }
+    for(i=0;i<VEGFR_dll4_lasts;i++){
+        VEGFRlastsArray.push_back(0.0f);
+    }
+
+
+
+    VonNeighs = 0;
+}
+
+
 /*****************************************************************************************
 *  Name:		set_initial_proteins
 *  Description: Iterates over all cell proteins and allocates those proteins to all agents,

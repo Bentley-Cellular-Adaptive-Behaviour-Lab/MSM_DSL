@@ -19,5 +19,5 @@ test_ProtrusionType.ProtrusionTypeConstructor 5 0.00137338
 ExtendProtrusionTest.ExtendProtrusionTest 1 0.25594
 UnequalDistributionTest.UnequalDistributionTest 0 0
 VenkatramanTest.VenkatramanTest 1 0.0058551
-VenkatramanCellTest.VenkatramanCellTest 3 0.0636054
+VenkatramanCellTest.VenkatramanCellTest 8 0.0316853
 ---

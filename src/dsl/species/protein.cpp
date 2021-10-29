@@ -29,6 +29,17 @@ Protein::Protein(std::string name, int protein_location, float env_level, float 
     this->max = max;
 }
 
+Protein::Protein(const Protein &rhs) {
+    this->name = rhs.name;
+    this->protein_location = rhs.protein_location;
+    this->env_level = rhs.env_level;
+    this->min = rhs.min;
+    this->transcription_delay = rhs.transcription_delay;
+    this->max = rhs.max;
+    std::copy(rhs.cell_levels.begin(), rhs.cell_levels.end(),std::back_inserter(this->cell_levels));
+}
+
+
 float Protein::get_cell_level(int timestep_value) const {
     assert(timestep_value < cell_levels.size() && timestep_value > -1);
     //Returns the level at this current timestep i.e. at the start of the vector.

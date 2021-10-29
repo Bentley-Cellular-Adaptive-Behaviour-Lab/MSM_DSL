@@ -572,9 +572,7 @@ void Tissue_Vessel::create_vessel() {
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
-        EC *ecp = new EC((World*) m_world);
-
-        ecp->set_cell_type(this->m_tissue_type->m_cell_type);
+        EC *ecp = new EC((World*) m_world, this->m_tissue_type->m_cell_type);
 
         // Put the address into the world vector Ecells
         m_world->ECagents.push_back(ecp);
@@ -834,13 +832,11 @@ void Tissue_Monolayer::create_monolayer() {
 
     for (int i = 0; i < m_cell_number; i++) {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
-        EC *ecp = new EC( this->m_world);
+        EC *ecp = new EC( this->m_world, m_tissue_type->m_cell_type);
 
         //TODO: Have run number logging use a variable.
 
         ecp->belongs_to = BELONGS_TO_FLAT;
-
-        ecp->set_cell_type(this->m_tissue_type->m_cell_type);
 
         ecp->m_tissue = this;
 

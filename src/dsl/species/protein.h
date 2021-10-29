@@ -43,6 +43,8 @@ public:
     std::string get_name();
     Protein(std::string name, int protein_location, float initial_level, float min, float max, int max_transcription_delay);
     Protein(std::string name, int protein_location, float env_level, float min, float max);
+    // Copy Constructor for Protein objects.
+    Protein(const Protein &rhs);
     ~Protein();
 };
 

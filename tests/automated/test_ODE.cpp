@@ -14,6 +14,7 @@
 #include "helper_ODE.h"
 
 #include "dsl/tissue/cell.h"
+#include "dsl/tissue/cellType.h"
 #include "dsl/tissue/tissue.h"
 
 
@@ -279,5 +280,15 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentTest) {
 }
 
 TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
+    EC *cell1 = this->cell1;
+    EC *cell2 = this->cell2;
+
     printProteinLevels(0);
+    for (int timestep = 1; timestep <= 100; timestep++) {
+        VenkatramanCellTest_run_cell_ODEs(cell1, cell2);
+        VenkatramanCellTest_run_cell_ODEs(cell2, cell1);
+        cell1->cycle_protein_levels();
+        cell2->cycle_protein_levels();
+        printProteinLevels(timestep);
+    }
 }

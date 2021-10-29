@@ -1722,13 +1722,8 @@ void VenkatramanCellTest::setupCells() {
     this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
     this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
 
-    // Force add the proteins to the memAgents and check whether they're at a junction.
-    for (auto cell : this->tissueMonolayer->m_cell_agents) {
-        for (auto memAgent : cell->nodeAgents) {
-            memAgent->add_cell_proteins();
-            memAgent->JunctionTest(true);
-        }
-    }
+    this->cell1 = tissueMonolayer->m_cell_agents[0];
+    this->cell2 = tissueMonolayer->m_cell_agents[1];
 }
 
 void VenkatramanCellTest::printProteinLevels(int timestep) {
@@ -1788,32 +1783,36 @@ void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellT
     dxdt[8] = -(D_N_Degradation)-(k4)*1+(k2)*1-(k_2)*1;
 }
 
-void VenkatramanCellTest::VenkatramanCellTest_run_cell_ODEs(EC *ec) {
+void VenkatramanCellTest::VenkatramanCellTest_run_cell_ODEs(EC *ec, EC *neighbourEC) {
+    // N.B. Having to hack in the checking of proteins on the adjacent cell.
+    // This won't work like this in the planned version, but it should suffice for testing whether the ODEs
+    // work correctly.
+
     VenkatramanCellTest_ode_states current_states;
     VenkatramanCellTest_ode_states new_states;
     odeint::euler<VenkatramanCellTest_ode_states> stepper;
 
     current_states[0] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-    current_states[1] = ec->get_cell_protein_level("DLL4", 0);
+    current_states[1] = neighbourEC->get_cell_protein_level("DLL4", 0); // Get neighbour's value.
     current_states[2] = ec->get_cell_protein_level("FILOPODIA", 0);
     current_states[3] = ec->get_cell_protein_level("VEGF", 0);
     current_states[4] = ec->get_cell_protein_level("NICD", 0);
     current_states[5] = ec->get_cell_protein_level("HEY", 0);
     current_states[6] = ec->get_cell_protein_level("VEGFR", 0);
     current_states[7] = ec->get_cell_protein_level("NOTCH", 0);
-    current_states[8] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+    current_states[8] = neighbourEC->get_cell_protein_level("DLL4_NOTCH", 0); // Get neighbour's value.
 
     stepper.do_step(VenkatramanCellTest_cell_system, current_states, 0.0, new_states, 1);
 
     ec->set_cell_protein_level("VEGF_VEGFR", new_states[0], 1);
-    ec->set_cell_protein_level("DLL4", new_states[1], 1);
+    neighbourEC->set_cell_protein_level("DLL4", new_states[1], 1);
     ec->set_cell_protein_level("FILOPODIA", new_states[2], 1);
     ec->set_cell_protein_level("VEGF", new_states[3], 1);
     ec->set_cell_protein_level("NICD", new_states[4], 1);
     ec->set_cell_protein_level("HEY", new_states[5], 1);
     ec->set_cell_protein_level("VEGFR", new_states[6], 1);
     ec->set_cell_protein_level("NOTCH", new_states[7], 1);
-    ec->set_cell_protein_level("DLL4_NOTCH", new_states[8], 1);
+    neighbourEC->set_cell_protein_level("DLL4_NOTCH", new_states[8], 1);
 }
 
 
