@@ -279,5 +279,5 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentTest) {
 }
 
 TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
-
+    printProteinLevels(0);
 }

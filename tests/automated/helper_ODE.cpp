@@ -1660,6 +1660,7 @@ double VenkatramanMemAgentTest::calc_FilopodiaTurnover_rate() {
 *  Description:
 *  Returns:		void
 ******************************************************************************************/
+
 void VenkatramanCellTest::SetUp() {
 //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
@@ -1670,6 +1671,16 @@ void VenkatramanCellTest::SetUp() {
     for (auto cell: tissueMonolayer->m_cell_agents) {
         cell->distribute_proteins();
     }
+
+    //Set up output formatting.
+    std::cout << "Timestep,";
+
+    for (auto *protein : this->cellType->proteins) {
+        for (int cell_n = 0; cell_n < 2; cell_n++) {
+            std::cout << protein->get_name() << "_" << cell_n << ",";
+        }
+    }
+    std::cout << std::endl;
 }
 
 void VenkatramanCellTest::TearDown() {
@@ -1685,17 +1696,13 @@ void VenkatramanCellTest::addWorld(World *world) {
 }
 
 void VenkatramanCellTest::setupCells() {
-    // Creates a tissue monolayer with only one cell.
+    // Creates a tissue monolayer with two cells.
     this->tissueContainer = new Tissue_Container(this->world);
     // Create a new Cell Type that holds some dummy values - these aren't used at any point.
     auto *basicCellShape = new Shape_Square(CELL_SHAPE_SQUARE, 5, 5);
     auto *basicCellType = new Cell_Type(this->tissueContainer, "basicCellType", basicCellShape);
 
-    auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
-    // Create the tissue using the defined tissue container.
-    this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
-    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
-
+    // Add proteins to the cell type.
     basicCellType = tissueContainer->define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
     basicCellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
@@ -1707,6 +1714,13 @@ void VenkatramanCellTest::setupCells() {
     basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
 
+    // Store the cell type for use later.
+    this->cellType = basicCellType;
+
+    // Create the tissue using the defined tissue container and the cell type.
+    auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 2);
+    this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
+    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
 
     // Force add the proteins to the memAgents and check whether they're at a junction.
     for (auto cell : this->tissueMonolayer->m_cell_agents) {
@@ -1717,7 +1731,15 @@ void VenkatramanCellTest::setupCells() {
     }
 }
 
-
+void VenkatramanCellTest::printProteinLevels(int timestep) {
+    std::cout << timestep << ",";
+    for (auto *cell: this->tissueMonolayer->m_cell_agents) {
+        for (auto *protein : cell->m_cell_type->proteins) {
+            std::cout << protein->get_cell_level(0) << ",";
+        }
+    }
+    std::cout << std::endl;
+}
 
 void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellTest_ode_states &x, VenkatramanCellTest_ode_states &dxdt, double t) {
     // Species Definitions

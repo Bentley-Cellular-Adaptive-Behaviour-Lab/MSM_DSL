@@ -19,15 +19,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Written new test for distribute proteins function. Now debugging.">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Implemented new test for Cell ODE only Venkatraman set-up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/CTestCostData.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/generator/templates/CellODEGenerator.templates@generator.mps" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/autoSpringAgent[1]_tests.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/helper_ODE.h" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/helper_ODE.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/automated/test_ODE.cpp" afterDir="false" />
@@ -96,7 +96,7 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CTest Application.TestUnequalDistribution">
+  <component name="RunManager" selected="CTest Application.VenkatramanCellTest">
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -119,11 +119,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -194,6 +189,12 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VenkatramanCellTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$CMakeCurrentLocalGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_METHOD="VenkatramanCellTest.VenkatramanCellTest" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -217,6 +218,7 @@
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CTest Application.VenkatramanCellTest" />
       <item itemvalue="CTest Application.TestUnequalDistribution" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="CTest Application.TestNotchPathway" />
@@ -346,14 +348,8 @@
       <workItem from="1634651428728" duration="1117000" />
       <workItem from="1634807326061" duration="13680000" />
       <workItem from="1634831428937" duration="2723000" />
-      <workItem from="1635259183520" duration="7309000" />
-    </task>
-    <task id="LOCAL-00022" summary="Renamed endothelial cell variables in dsl_tissue example.">
-      <created>1623769512630</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1623769512630</updated>
+      <workItem from="1635259183520" duration="7614000" />
+      <workItem from="1635500452768" duration="2056000" />
     </task>
     <task id="LOCAL-00023" summary="Implemented new function to allocate proteins at the start of the simulation.">
       <created>1623769543730</created>
@@ -691,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634836014424</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Implemented new test for Cell ODE only Venkatraman set-up">
+      <created>1635267411490</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1635267411490</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +713,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implementing test for notch signalling pathway" />
     <MESSAGE value="Updating tests after changing protein levels" />
     <MESSAGE value="Tests now building" />
     <MESSAGE value="Fixing tests after refactoring." />
@@ -735,7 +737,8 @@
     <MESSAGE value="Changed protein test to correctly search for Notch in the same cell. Added new &quot;arbitrary unit&quot; to MPS." />
     <MESSAGE value="Continued refactoring of protrusion extension behaviour" />
     <MESSAGE value="Written new test for distribute proteins function. Now debugging." />
-    <option name="LAST_COMMIT_MESSAGE" value="Written new test for distribute proteins function. Now debugging." />
+    <MESSAGE value="Implemented new test for Cell ODE only Venkatraman set-up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented new test for Cell ODE only Venkatraman set-up" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

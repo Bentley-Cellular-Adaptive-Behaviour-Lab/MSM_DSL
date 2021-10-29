@@ -1,3 +1,53 @@
-Start testing: Oct 26 15:39 GMT Daylight Time
+Start testing: Oct 29 11:15 GMT Daylight Time
 ----------------------------------------------------------
-End testing: Oct 26 15:39 GMT Daylight Time
+21/21 Testing: VenkatramanCellTest.VenkatramanCellTest
+21/21 Test: VenkatramanCellTest.VenkatramanCellTest
+Command: "C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug/autoSpringAgent.exe" "--gtest_filter=VenkatramanCellTest.VenkatramanCellTest" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Tom/MPSProjects/MSM_DSL/cmake-build-debug
+"VenkatramanCellTest.VenkatramanCellTest" start time: Oct 29 11:15 GMT Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Tom\MPSProjects\MSM_DSL\cmake-build-debug\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = VenkatramanCellTest.VenkatramanCellTest
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from VenkatramanCellTest
+[ RUN      ] VenkatramanCellTest.VenkatramanCellTest
+xMax: 50
+yMax: 50
+zMax: 50
+Grid size - X: 50
+Y: 50
+Z: 50
+Placing environment agents...
+Environment created.
+Setting up ODE systems...
+World created!
+Creation timestep... initialising everything
+memInit0
+Allocating cell proteins to memagents.
+VEGF total 0	0gridded membrane0
+VEGF total 0	0gridded membrane0
+
+The syntax of the command is incorrect.
+Creation complete
+Creation timestep complete.
+Tissue created successfully.
+ Tissue: Monolayer created successfully! 
+Timestep,DLL4_0,DLL4_1,DLL4_NOTCH_0,DLL4_NOTCH_1,FILOPODIA_0,FILOPODIA_1,HEY_0,HEY_1,NICD_0,NICD_1,NOTCH_0,NOTCH_1,VEGF_0,VEGF_1,VEGFR_0,VEGFR_1,VEGF_VEGFR_0,VEGF_VEGFR_1,
+0,0,0,0,0,0,0,1000,0,0,0,0,0,0,0,0,1000,0,0,
+[       OK ] VenkatramanCellTest.VenkatramanCellTest (182 ms)
+[----------] 1 test from VenkatramanCellTest (182 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (182 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.19 sec
+----------------------------------------------------------
+Test Passed.
+"VenkatramanCellTest.VenkatramanCellTest" end time: Oct 29 11:15 GMT Daylight Time
+"VenkatramanCellTest.VenkatramanCellTest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 29 11:15 GMT Daylight Time

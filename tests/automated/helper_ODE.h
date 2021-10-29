@@ -22,13 +22,15 @@ typedef boost::array<float, 9> VenkatramanMemAgentTest_memAgent_ode_states;
 typedef boost::array<float, 7> VenkatramanMemAgentTest_cell_ode_states;
 typedef boost::array<float, 9> VenkatramanCellTest_ode_states;
 
-class World;
-class World_Container;
+class Cell;
+class Cell_Type;
 class MemAgent;
+class EC;
 class Tissue_Container;
 class Tissue_Monolayer;
-class Cell;
-class EC;
+class World;
+class World_Container;
+
 
 class BasicODEMemAgentTest : public ::testing::Test {
 protected:
@@ -254,7 +256,6 @@ public:
     static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu);
     static double calc_V0_rate();
     static double calc_Theta_rate();
-    static double calc_Theta_rate();
     static double calc_Phi_rate();
     static double calc_Gamma_rate();
     static double calc_VR_Production_rate(double Gamma, double VEGFR);
@@ -277,6 +278,7 @@ public:
 
     World *world;
     World_Container *worldContainer;
+    Cell_Type *cellType;
     Tissue_Container *tissueContainer;
     Tissue_Monolayer *tissueMonolayer;
 
@@ -284,7 +286,7 @@ public:
     void addWorld(World *world);
     void setupCells();
     void runCellODEs(EC *ec);
-    void printProteinLevels(EC *ec);
+    void printProteinLevels(int timestep);
 
     void VenkatramanCellTest_run_cell_ODEs(EC *ec);
     static void VenkatramanCellTest_cell_system(const VenkatramanCellTest_ode_states &x, VenkatramanCellTest_ode_states &dxdt, double t);
