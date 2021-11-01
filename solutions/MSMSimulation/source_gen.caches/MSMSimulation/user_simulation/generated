@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="e4yjoix6hac2k96zlqhqkt0c2j9m1jk">
-  <files names="Example1_Species.cpp:Example1_Species_header.h:Example1_Tissues.cpp:ExampleSignalling.cpp:ExampleSignalling_header.h:NewWorld.cpp:Robert.cpp:Robert_header.h:RunMSM.java:TissueExample.cpp:dsl_Shape.cpp" />
+<product version="3" modelHash="-86ki9ckwxwpfikhyuyh6sv4hnmcb9ph">
+  <files names="Example1_Tissues.cpp:NewWorld.cpp:TissueExample.cpp" />
 </product>
 

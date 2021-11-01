@@ -21,7 +21,7 @@ void Tissue_Container::tissue_set_up() {
 
 
     Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
-    Endothelial_Type->add_protein(new protein("ProteinA", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0, 1));
+    Endothelial_Type->add_protein(new protein("ProteinA", PROTEIN_LOCATION_CELL, 100.0, 0.0, 100.0, 10));
     Endothelial_Type->add_protein(new protein("ProteinB", PROTEIN_LOCATION_CELL, 0.0, 0.0, 100.0, 1));
 
     // Tissue Type Creation //

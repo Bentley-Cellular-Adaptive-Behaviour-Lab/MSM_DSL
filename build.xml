@@ -81,6 +81,7 @@
         <exclude name="mps-tips.jar" />
       </fileset>
     </copy>
+    <copy file="${artifacts.mpsStandalone}/lib/idea.jar" todir="${build.layout}/lib" />
     <mkdir dir="${build.tmp}/default/branding.jar" />
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
@@ -113,7 +114,6 @@
     <copy todir="${build.layout}/plugins/mps-core">
       <fileset dir="${artifacts.mpsStandalone}/plugins/mps-core" />
     </copy>
-    <copy file="${artifacts.mpsStandalone}/lib/idea.jar" todir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/MSM_DSL" />
     <mkdir dir="${build.layout}/plugins/MSM_DSL/META-INF" />
     <echoxml file="${build.layout}/plugins/MSM_DSL/META-INF/plugin.xml">

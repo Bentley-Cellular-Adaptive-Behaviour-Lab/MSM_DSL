@@ -517,6 +517,9 @@
             <property role="3LWZYl" value="mps-tips.jar" />
           </node>
         </node>
+        <node concept="3_I8Xc" id="5n1qb1$Ifdo" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:4LdE6kxkoZ2" />
+        </node>
         <node concept="3981dx" id="rdOTgLtV4R" role="39821P">
           <node concept="3_J27D" id="rdOTgLtV4S" role="Nbhlr">
             <node concept="3Mxwew" id="rdOTgLtV4T" role="3MwsjC">
@@ -531,9 +534,6 @@
       <node concept="398223" id="rdOTgLtV4V" role="39821P">
         <node concept="3_I8Xc" id="rdOTgLtV4Y" role="39821P">
           <ref role="3_I8Xa" to="ffeo:4EdAnGErOtx" resolve="mps-core" />
-        </node>
-        <node concept="3_I8Xc" id="76n9nEbQ$yF" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:4LdE6kxkoZ2" />
         </node>
         <node concept="m$_wl" id="rdOTgLtV50" role="39821P">
           <ref role="m_rDy" node="rdOTgLtV4d" resolve="MSM_DSL" />
