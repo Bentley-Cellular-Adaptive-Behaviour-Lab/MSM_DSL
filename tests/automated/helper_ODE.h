@@ -306,8 +306,8 @@ public:
     static double calc_Theta_rate();
     static double calc_Phi_rate();
     static double calc_Gamma_rate();
-    static double calc_VR_Production_rate(double Gamma, double VEGFR);
-    static double calc_N_Production_rate(double Gamma, double NOTCH);
+    static double calc_VR_Production_rate();
+    static double calc_N_Production_rate();
     static double calc_VR_Degradation_rate(double Phi, double VEGFR);
     static double calc_N_Degradation_rate(double Phi, double NOTCH);
     static double calc_D_Degradation_rate(double Phi, double DLL4);

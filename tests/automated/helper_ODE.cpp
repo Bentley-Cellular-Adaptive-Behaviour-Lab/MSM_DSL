@@ -1765,12 +1765,12 @@ void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellT
     double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
     double VR_Degradation = calc_VR_Degradation_rate(Phi, VEGFR);
     double N_Degradation = calc_N_Degradation_rate(Phi, NOTCH);
-    double Gamma = calc_Gamma_rate();
     double D_N_Degradation = calc_D_N_Degradation_rate(Phi, DLL4_NOTCH);
     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
     double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0);
     double D_Degradation = calc_D_Degradation_rate(Phi, DLL4);
-    double N_Production = calc_N_Production_rate(Gamma, NOTCH);
+    double N_Production = calc_N_Production_rate();
+    double VR_Production = calc_VR_Production_rate();
     // ODE Definitions
     dxdt[0] = +(k1)*1-(k_1)*1;
     dxdt[1] = -(D_Degradation)-(k2)*1+(k_2)*1+(DLL4_Reg);
@@ -1778,7 +1778,7 @@ void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellT
     dxdt[3] = -(k1)*1+(k_1)*1+(k6_VEGFSensing);
     dxdt[4] = -(I_Degradation)+(k4)*1;
     dxdt[5] = -(HEY_Degradation)+(HEY_Reg);
-    dxdt[6] = -(VR_Degradation)-(k1)*1+(k_1)*1-(k3);
+    dxdt[6] = +(VR_Production)-(VR_Degradation)-(k1)*1+(k_1)*1-(k3);
     dxdt[7] = +(N_Production)-(N_Degradation)-(k2)*1+(k_2)*1;
     dxdt[8] = -(D_N_Degradation)-(k4)*1+(k2)*1-(k_2)*1;
 }
@@ -1805,86 +1805,105 @@ void VenkatramanCellTest::VenkatramanCellTest_run_cell_ODEs(EC *ec, EC *neighbou
     stepper.do_step(VenkatramanCellTest_cell_system, current_states, 0.0, new_states, 1);
 
     ec->set_cell_protein_level("VEGF_VEGFR", new_states[0], 1);
-    neighbourEC->set_cell_protein_level("DLL4", new_states[1], 1);
+    neighbourEC->set_cell_protein_level("DLL4", new_states[1], 1); // Get neighbour's value.
     ec->set_cell_protein_level("FILOPODIA", new_states[2], 1);
     ec->set_cell_protein_level("VEGF", new_states[3], 1);
     ec->set_cell_protein_level("NICD", new_states[4], 1);
     ec->set_cell_protein_level("HEY", new_states[5], 1);
     ec->set_cell_protein_level("VEGFR", new_states[6], 1);
     ec->set_cell_protein_level("NOTCH", new_states[7], 1);
-    neighbourEC->set_cell_protein_level("DLL4_NOTCH", new_states[8], 1);
+    neighbourEC->set_cell_protein_level("DLL4_NOTCH", new_states[8], 1); // Get neighbour's value.
 }
 
 
 double VenkatramanCellTest::calc_k1_rate(double VEGF, double VEGFR) {
     return 0.1*VEGF*VEGFR;
 }
+
 double VenkatramanCellTest::calc_k_1_rate(double VEGF_VEGFR) {
     return 0.001*VEGF_VEGFR;
 }
+
 double VenkatramanCellTest::calc_k2_rate(double DLL4, double NOTCH) {
     return 0.001*DLL4*NOTCH;
 }
+
 double VenkatramanCellTest::calc_k_2_rate(double DLL4_NOTCH) {
     return 0.1*DLL4_NOTCH;
 }
+
 double VenkatramanCellTest::calc_k3_rate(double VEGFR, double HEY, double Nu) {
     return 0.005*VEGFR*pow(HEY,Nu);
 }
+
 double VenkatramanCellTest::calc_k4_rate(double DLL4_NOTCH) {
     return 0.1*DLL4_NOTCH;
 }
+
 double VenkatramanCellTest::calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu) {
     return 0.1*pow(VEGF_VEGFR,Nu);
 }
+
 double VenkatramanCellTest::calc_k6_VEGFSensing_rate(double FILOPODIA, double V0) {
     return pow(FILOPODIA,2)*0.005*V0+V0;
 }
+
 double VenkatramanCellTest::calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
     return Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu));
 }
+
 double VenkatramanCellTest::calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
     return Theta*pow(NICD,Nu)/(1+pow(NICD,Nu));
 }
+
 double VenkatramanCellTest::calc_V0_rate() {
     return 100;
 }
+
 double VenkatramanCellTest::calc_Theta_rate() {
     return 0.1;
 }
+
 double VenkatramanCellTest::calc_Phi_rate() {
     return 0.001;
 }
-double VenkatramanCellTest::calc_Gamma_rate() {
+
+double VenkatramanCellTest::calc_VR_Production_rate() {
     return 0.005;
 }
-double VenkatramanCellTest::calc_VR_Production_rate(double Gamma, double VEGFR) {
-    return Gamma*VEGFR;
+
+double VenkatramanCellTest::calc_N_Production_rate() {
+    return 0.005;
 }
-double VenkatramanCellTest::calc_N_Production_rate(double Gamma, double NOTCH) {
-    return Gamma*NOTCH;
-}
+
 double VenkatramanCellTest::calc_VR_Degradation_rate(double Phi, double VEGFR) {
     return Phi*VEGFR;
 }
+
 double VenkatramanCellTest::calc_N_Degradation_rate(double Phi, double NOTCH) {
     return Phi*NOTCH;
 }
+
 double VenkatramanCellTest::calc_D_Degradation_rate(double Phi, double DLL4) {
     return Phi*DLL4;
 }
+
 double VenkatramanCellTest::calc_D_N_Degradation_rate(double Phi, double DLL4_NOTCH) {
     return Phi*DLL4_NOTCH;
 }
+
 double VenkatramanCellTest::calc_I_Degradation_rate(double Phi, double NICD) {
     return Phi*NICD;
 }
+
 double VenkatramanCellTest::calc_HEY_Degradation_rate(double Phi, double HEY) {
     return Phi*HEY;
 }
+
 double VenkatramanCellTest::calc_Nu_rate() {
     return 2;
 }
+
 double VenkatramanCellTest::calc_FilopodiaTurnover_rate() {
     return 0.001;
 }

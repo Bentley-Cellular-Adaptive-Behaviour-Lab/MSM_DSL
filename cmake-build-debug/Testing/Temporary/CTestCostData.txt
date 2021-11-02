@@ -1,23 +1,26 @@
-test_ODE.ODEConstantRate 18 0.000299883
-test_ODE.multi_ODEConstantRate 18 0.0003221
-test_ODE.ODELinearRate 18 0.000299094
-BasicODEMemAgentTest.environmentCheckTest 17 0.014978
-BasicODEMemAgentTest.memAgentTest 14 0.0182602
-CrossCellODEMemAgentTest.cellODETest 15 0.0114223
-CrossCellODEMemAgentTest.junctionODETest 15 0.0113824
-MultiNeighbourODEMemAgentTest.cellODETest 15 0.0114136
-BasicFilODEMemAgentTest.basicFilTest 13 0.0199512
-BasicCellDistributionTest.preDistributionTest 14 0.0125603
+test_ODE.ODEConstantRate 19 0.000386189
+test_ODE.multi_ODEConstantRate 19 0.000306942
+test_ODE.ODELinearRate 19 0.000347958
+BasicODEMemAgentTest.environmentCheckTest 18 0.0150576
+BasicODEMemAgentTest.memAgentTest 15 0.0186519
+CrossCellODEMemAgentTest.cellODETest 16 0.0133507
+CrossCellODEMemAgentTest.junctionODETest 16 0.0155887
+MultiNeighbourODEMemAgentTest.cellODETest 16 0.014293
+BasicFilODEMemAgentTest.basicFilTest 14 0.023442
+BasicCellDistributionTest.preDistributionTest 15 0.0134459
 BasicCellDistributionTest.postDistributionTest 13 0
 CellJunctionTest.crossJunctionODETest 12 0.0141915
-HelloTest.CheckGoogleTest 20 0.00028203
-TranscriptionDelayTest.transcriptionDelayTest 15 0.0114541
-NotchPathwayTest.NotchPathwayTest 15 0.0180325
-test_Protrusion.ProtrusionConstructor 7 0.0157386
-FindHighestConcTest.FindHighestConcTest 10 0.0258715
-test_ProtrusionType.ProtrusionTypeConstructor 5 0.00137338
-ExtendProtrusionTest.ExtendProtrusionTest 1 0.25594
+HelloTest.CheckGoogleTest 21 0.000304433
+TranscriptionDelayTest.transcriptionDelayTest 16 0.0112884
+NotchPathwayTest.NotchPathwayTest 16 0.0178877
+test_Protrusion.ProtrusionConstructor 8 0.0142485
+FindHighestConcTest.FindHighestConcTest 11 0.0246574
+test_ProtrusionType.ProtrusionTypeConstructor 6 0.000959733
+ExtendProtrusionTest.ExtendProtrusionTest 2 0.136362
 UnequalDistributionTest.UnequalDistributionTest 0 0
 VenkatramanTest.VenkatramanTest 1 0.0058551
-VenkatramanCellTest.VenkatramanCellTest 8 0.0316853
+VenkatramanCellTest.VenkatramanCellTest 9 0.0207004
+VenkatramanMemAgentTest.VenkatramanMemAgentTest 1 0.0069581
 ---
+BasicCellDistributionTest.postDistributionTest
+UnequalDistributionTest.UnequalDistributionTest
