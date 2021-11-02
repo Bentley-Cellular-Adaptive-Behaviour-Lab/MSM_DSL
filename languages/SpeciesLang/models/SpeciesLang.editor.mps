@@ -2950,6 +2950,21 @@
           <property role="1lJzqX" value="16" />
         </node>
       </node>
+      <node concept="3F0ifn" id="2L_6n0dlqWr" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;-C" />
+        <node concept="pkWqt" id="2L_6n0dlqWH" role="pqm2j">
+          <node concept="3clFbS" id="2L_6n0dlqWI" role="2VODD2">
+            <node concept="3clFbF" id="2L_6n0dlwp8" role="3cqZAp">
+              <node concept="2OqwBi" id="2L_6n0dlwDD" role="3clFbG">
+                <node concept="pncrf" id="2L_6n0dlwp7" role="2Oq$k0" />
+                <node concept="3TrcHB" id="2L_6n0dlwVs" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2iRfu4" id="109yD1s_YGT" role="2iSdaV" />
     </node>
   </node>

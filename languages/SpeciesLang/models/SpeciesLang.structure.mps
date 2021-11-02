@@ -342,6 +342,11 @@
     <property role="TrG5h" value="SpeciesExpression" />
     <property role="3GE5qa" value="Species" />
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    <node concept="1TJgyi" id="2L_6n0dlqW2" role="1TKVEl">
+      <property role="IQ2nx" value="3198991079367356162" />
+      <property role="TrG5h" value="usesNeighbourValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="109yD1s_YGN" role="1TKVEi">
       <property role="IQ2ns" value="1155607132030626611" />
       <property role="20kJfa" value="Species" />
