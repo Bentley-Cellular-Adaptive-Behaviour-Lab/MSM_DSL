@@ -1674,9 +1674,8 @@ void VenkatramanCellTest::SetUp() {
 
     //Set up output formatting.
     std::cout << "Timestep,";
-
-    for (auto *protein : this->cellType->proteins) {
-        for (int cell_n = 0; cell_n < 2; cell_n++) {
+    for (int cell_n = 0; cell_n < 2; cell_n++) {
+        for (auto *protein : this->cellType->proteins) {
             std::cout << protein->get_name() << "_" << cell_n << ",";
         }
     }
@@ -1710,7 +1709,7 @@ void VenkatramanCellTest::setupCells() {
     basicCellType->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
-    basicCellType->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 1000.0, 1000.0, 10000.0, 1));
+    basicCellType->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
     basicCellType->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
 
@@ -1857,7 +1856,7 @@ double VenkatramanCellTest::calc_HEY_Reg_rate(double Theta, double NICD, double 
 }
 
 double VenkatramanCellTest::calc_V0_rate() {
-    return 100;
+    return 0;
 }
 
 double VenkatramanCellTest::calc_Theta_rate() {

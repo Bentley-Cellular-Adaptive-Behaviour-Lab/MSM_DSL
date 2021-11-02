@@ -284,11 +284,13 @@ TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
     EC *cell2 = this->cell2;
 
     printProteinLevels(0);
-    for (int timestep = 1; timestep <= 100; timestep++) {
+    for (int timestep = 1; timestep <= 10000; timestep++) {
         VenkatramanCellTest_run_cell_ODEs(cell1, cell2);
         VenkatramanCellTest_run_cell_ODEs(cell2, cell1);
         cell1->cycle_protein_levels();
         cell2->cycle_protein_levels();
-        printProteinLevels(timestep);
+        if (timestep % 100 == 0) {
+            printProteinLevels(timestep);
+        }
     }
 }
