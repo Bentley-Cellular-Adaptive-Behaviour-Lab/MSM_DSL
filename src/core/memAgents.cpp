@@ -1152,6 +1152,14 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                             junction = true;
                             flagA = 1;
 
+                            // TOM: Add the cell to the list of neighbours.
+                            // TOM: Only do this once if we're not doing cell shuffling.
+                            if (ANALYSIS_SHUFFLING) {
+                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+                            } else if (!ANALYSIS_SHUFFLING && worldP->timeStep == 0) {
+                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+                            }
+
                             worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells

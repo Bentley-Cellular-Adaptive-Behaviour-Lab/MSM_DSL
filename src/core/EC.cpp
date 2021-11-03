@@ -929,22 +929,47 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 /*****************************************************************************************
 *  Name:		add_to_neighbour_list
 *  Description: If a queried cell is not already included in this cell's list of neighbours,
-*  				then add it. This should only be called when a cell is attempting to form
-*  				junction agents.
+*  				then add it. This should only be called when a cell is determining junction
+*  				agents.
 *  Returns:		void
 ******************************************************************************************/
 
 void EC::add_to_neighbour_list(EC* query_ec) {
-	bool cell_found = false;
-	for (auto current_ec : this->neigh_cells) {
-		if (current_ec != query_ec) {
-			cell_found = true;
-		}
-	}
-	// Cell not found in neighbour list, so add it.
-	if (!cell_found) {
+    bool cell_found = false;
+    for (auto current_ec : this->neigh_cells) {
+        if (current_ec != query_ec) {
+            cell_found = true;
+        }
+    }
+	if (!cellIsNeighbour(query_ec)) {
 		this->neigh_cells.push_back(query_ec);
 	}
+}
+
+/*****************************************************************************************
+*  Name:		getNeighCellVector
+*  Description: Returns the vector of neighbouring cell agents.
+*  Returns:		std::vector<EC*>&
+******************************************************************************************/
+
+std::vector<EC*>& EC::getNeighCellVector() {
+    return this->neigh_cells;
+}
+
+/*****************************************************************************************
+*  Name:		cellIsNeighbour
+*  Description: Checks whether a cell agent neighbours the cell agent calling the function.
+*  Returns:		bool
+******************************************************************************************/
+
+bool EC::cellIsNeighbour(EC *query_ec) {
+    bool cell_found = false;
+    for (auto current_ec : this->neigh_cells) {
+        if (current_ec != query_ec) {
+            cell_found = true;
+        }
+    }
+    return cell_found;
 }
 
 /*****************************************************************************************
@@ -954,7 +979,6 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 ******************************************************************************************/
 
 float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
-
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {

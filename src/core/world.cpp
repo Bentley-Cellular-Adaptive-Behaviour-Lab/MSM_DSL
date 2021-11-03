@@ -1698,6 +1698,10 @@ void World::simulateTimestep() {
 		creationTimestep(movie);
 	} else {
 		for (EC* ec : ECagents) {
+            // Clear the vector of neighbouring cells.
+            if (ANALYSIS_SHUFFLING) {
+                ec->getNeighCellVector().clear();
+            }
 		    ec->print_memAgent_protein_levels(1);
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
