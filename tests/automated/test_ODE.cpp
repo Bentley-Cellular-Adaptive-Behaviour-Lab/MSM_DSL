@@ -285,8 +285,8 @@ TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
 
     printProteinLevels(0);
     for (int timestep = 1; timestep <= 10000; timestep++) {
-        VenkatramanCellTest_run_cell_ODEs(cell1, cell2);
-        VenkatramanCellTest_run_cell_ODEs(cell2, cell1);
+        VenkatramanCellTest_run_cell_ODEs(cell1);
+        VenkatramanCellTest_run_cell_ODEs(cell2);
         cell1->cycle_protein_levels();
         cell2->cycle_protein_levels();
         if (timestep % 100 == 0) {
