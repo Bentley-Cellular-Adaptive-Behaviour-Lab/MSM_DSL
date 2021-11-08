@@ -358,7 +358,7 @@
     <property role="EcuMT" value="7376055817164365584" />
     <property role="TrG5h" value="SpeciesPowerExpression" />
     <property role="R4oN_" value="power" />
-    <property role="34LRSv" value="power" />
+    <property role="34LRSv" value="power - MSM" />
     <property role="3GE5qa" value="Species" />
     <ref role="1TJDcQ" to="1qv1:4iu6t1eB654" resolve="PowerExpression" />
     <node concept="PrWs8" id="6pt0UY9ylZ$" role="PzmwI">
@@ -559,6 +559,16 @@
       <property role="IQ2ns" value="4247874104281982176" />
       <property role="20kJfa" value="targetProtrusion" />
       <ref role="20lvS9" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2G0IbzGWWxi">
+    <property role="EcuMT" value="3098679648019794002" />
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="SpeciesFractionExpression" />
+    <property role="34LRSv" value="fraction - MSM" />
+    <ref role="1TJDcQ" to="1qv1:4iu6t1eAWP6" resolve="FractionExpression" />
+    <node concept="PrWs8" id="2G0IbzGWWxj" role="PzmwI">
+      <ref role="PrY4T" to="l80j:4OgAv3N4pT3" resolve="ICanBeMappedToSolver" />
     </node>
   </node>
 </model>

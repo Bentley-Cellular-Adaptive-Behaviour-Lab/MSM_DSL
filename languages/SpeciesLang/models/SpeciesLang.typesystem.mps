@@ -5208,5 +5208,57 @@
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     </node>
   </node>
+  <node concept="1YbPZF" id="2G0IbzH5h78">
+    <property role="TrG5h" value="typeof_FractionExpression" />
+    <property role="3GE5qa" value="Species" />
+    <node concept="3clFbS" id="2G0IbzH5h79" role="18ibNy">
+      <node concept="1ZobV4" id="2G0IbzH5h7f" role="3cqZAp">
+        <node concept="mw_s8" id="2G0IbzH5h7g" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2G0IbzH5h7h" role="mwGJk">
+            <node concept="2OqwBi" id="2G0IbzH5h7i" role="1Z2MuG">
+              <node concept="3TrEf2" id="2G0IbzH5h7k" role="2OqNvi">
+                <ref role="3Tt5mk" to="1qv1:4iu6t1eAWP7" resolve="numerator" />
+              </node>
+              <node concept="1YBJjd" id="2G0IbzH5hvr" role="2Oq$k0">
+                <ref role="1YBMHb" node="2G0IbzH5h7b" resolve="frac" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="2G0IbzH5h7l" role="1ZfhKB">
+          <node concept="2YIFZM" id="2G0IbzH5h7m" role="mwGJk">
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <node concept="10Nm6u" id="2G0IbzH5h7n" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="1ZobV4" id="2G0IbzH5h7o" role="3cqZAp">
+        <node concept="mw_s8" id="2G0IbzH5h7p" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2G0IbzH5h7q" role="mwGJk">
+            <node concept="2OqwBi" id="2G0IbzH5h7r" role="1Z2MuG">
+              <node concept="3TrEf2" id="2G0IbzH5h7t" role="2OqNvi">
+                <ref role="3Tt5mk" to="1qv1:4iu6t1eAWPa" resolve="denominator" />
+              </node>
+              <node concept="1YBJjd" id="2G0IbzH5h_I" role="2Oq$k0">
+                <ref role="1YBMHb" node="2G0IbzH5h7b" resolve="frac" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="2G0IbzH5h7u" role="1ZfhKB">
+          <node concept="2YIFZM" id="2G0IbzH5h7v" role="mwGJk">
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+            <node concept="10Nm6u" id="2G0IbzH5h7w" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="2G0IbzH5h7b" role="1YuTPh">
+      <property role="TrG5h" value="frac" />
+      <ref role="1YaFvo" to="1qv1:4iu6t1eAWP6" resolve="FractionExpression" />
+    </node>
+  </node>
 </model>
 

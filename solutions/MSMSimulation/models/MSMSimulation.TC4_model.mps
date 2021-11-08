@@ -68,6 +68,7 @@
       <concept id="1878314651098778609" name="SpeciesLang.structure.Reaction_Reference" flags="ng" index="DdDr8">
         <reference id="1878314651098778610" name="ReactionReference" index="DdDrb" />
       </concept>
+      <concept id="3098679648019794002" name="SpeciesLang.structure.SpeciesFractionExpression" flags="ng" index="37WR3E" />
       <concept id="1155607132028676490" name="SpeciesLang.structure.SpeciesReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="target" index="1csUcr" />
       </concept>
@@ -135,6 +136,10 @@
       <concept id="4944417823362146628" name="org.iets3.core.expr.math.structure.PowerExpression" flags="ng" index="a0Byk">
         <child id="4944417823362178786" name="expr" index="a0GsM" />
         <child id="5098456557379673903" name="exponent" index="2zCggm" />
+      </concept>
+      <concept id="4944417823362108742" name="org.iets3.core.expr.math.structure.FractionExpression" flags="ng" index="a1tim">
+        <child id="4944417823362108743" name="numerator" index="a1tin" />
+        <child id="4944417823362108746" name="denominator" index="a1tiq" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -756,6 +761,17 @@
         <ref role="Cfe3M" node="5yFEiLG5719" resolve="Phi" />
       </node>
     </node>
+    <node concept="3_zqOx" id="2G0IbzH9Uc0" role="3_zqUl">
+      <property role="TrG5h" value="Fraction" />
+      <node concept="37WR3E" id="2G0IbzH9UeN" role="3_zqNk">
+        <node concept="1cBA6y" id="2G0IbzH9Ufu" role="a1tin">
+          <ref role="1cBA6z" node="5yFEiLG568u" resolve="DLL4" />
+        </node>
+        <node concept="30bXRB" id="2G0IbzH9UfW" role="a1tiq">
+          <property role="30bXRw" value="10" />
+        </node>
+      </node>
+    </node>
     <node concept="3_zqcM" id="5yFEiLG56fv" role="3_zqUi">
       <property role="TrG5h" value="VEGF_VEGFR_BINDING" />
       <ref role="3JPVZL" node="5yFEiLG56f4" resolve="k1" />
@@ -907,7 +923,7 @@
       <node concept="3rtiFT" id="5yFEiLG56CM" role="3rqWia">
         <ref role="3rtiFY" node="5yFEiLG56Bb" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="5nupkjF7Xtd" role="3_z4RZ">
+      <node concept="DdDr8" id="2G0IbzH9UeY" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -946,7 +962,7 @@
       <node concept="3rtiFT" id="5yFEiLG56PL" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56NT" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="5nupkjF7Xte" role="3_z4Rx">
+      <node concept="DdDr8" id="2G0IbzH9UeZ" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -1016,7 +1032,7 @@
         </node>
         <node concept="2llJbL" id="1O9im_PLHnB" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="5nupkjF7Xtf" role="3_z4RZ">
+      <node concept="DdDr8" id="2G0IbzH9Uf0" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1052,7 +1068,7 @@
       <node concept="DdDr8" id="5yFEiLG56KH" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
-      <node concept="DdDr8" id="5nupkjF7Xtg" role="3_z4Rx">
+      <node concept="DdDr8" id="2G0IbzH9Uf1" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1088,7 +1104,7 @@
       <node concept="3rtiFT" id="5yFEiLG56qa" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56px" resolve="HEY_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="5nupkjF7Xth" role="3_z4Rx">
+      <node concept="DdDr8" id="2G0IbzH9Uf2" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
     </node>
