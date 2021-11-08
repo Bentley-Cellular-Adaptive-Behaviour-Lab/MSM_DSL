@@ -19,7 +19,35 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Continuing testing of Venkatraman model. Reconsidering whether to add in checking of adjacent values." />
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TestLang/TestLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/TestLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TestLang/models/TestLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/models/TestLang.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.behavior.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.constraints.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.TC4_model.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.TC4_model.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +56,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -84,7 +111,12 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
-  <component name="RunManager" selected="CTest Application.VenkatramanCellTest">
+  <component name="RunManager" selected="Remote JVM Debug.DebugMPS">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tests/automated/autoSpringAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -107,11 +139,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tests/automated/autoSpringAgent" TARGET_NAME="gmock" CONFIG_NAME="Debug">
@@ -188,11 +215,6 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DebugMPS" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -207,23 +229,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
-      <item itemvalue="CTest Application.VenkatramanCellTest" />
-      <item itemvalue="CTest Application.TestUnequalDistribution" />
-      <item itemvalue="CTest Application.All CTest" />
-      <item itemvalue="CTest Application.TestNotchPathway" />
-      <item itemvalue="CTest Application.TestExtension" />
-      <item itemvalue="CTest Application.TestGoogleTest" />
-      <item itemvalue="CTest Application.TestShape" />
-      <item itemvalue="CTest Application.TestTranscriptionDelay" />
-      <item itemvalue="CTest Application.BasicODEMemAgentTest.memAgentTest" />
-      <item itemvalue="Google Test.BasicCellDistributionTest.preDistributionTest" />
-      <item itemvalue="Google Test.BasicFilODEMemAgentTest.basicFilTest" />
-      <item itemvalue="Google Test.CellJunctionTest.crossJunctionODETest" />
-      <item itemvalue="Google Test.MultiNeighbourODEMemAgentTest.cellODETest" />
+      <item itemvalue="Remote JVM Debug.DebugMPS" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -350,13 +356,8 @@
       <workItem from="1635853455060" duration="150000" />
       <workItem from="1635853618026" duration="88000" />
       <workItem from="1635853717405" duration="6072000" />
-    </task>
-    <task id="LOCAL-00027" summary="Moved steppers to ODE running function.">
-      <created>1623774075490</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1623774075490</updated>
+      <workItem from="1636112411023" duration="806000" />
+      <workItem from="1636116227152" duration="9243000" />
     </task>
     <task id="LOCAL-00028" summary="Moved steppers to ODE running function.">
       <created>1623859279775</created>
@@ -694,7 +695,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635867817086</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters.">
+      <created>1636131078186</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1636131078187</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,7 +721,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Tests now working! " />
     <MESSAGE value="Implemented test for Notch-Dll4 example. Now refactoring code to be better organised." />
     <MESSAGE value="Linker errors after refactoring." />
     <MESSAGE value="Still getting linker error with random functions. Moving these function to be part of the world class." />
@@ -738,7 +745,8 @@
     <MESSAGE value="Added copy constructors for cell types, proteins and cytoskeletal proteins. Added these to cell and tissue constructors" />
     <MESSAGE value="Added basal production rate to Venkatraman Cell test - changed autogenerated file to call Protein constructor" />
     <MESSAGE value="Continuing testing of Venkatraman model. Reconsidering whether to add in checking of adjacent values." />
-    <option name="LAST_COMMIT_MESSAGE" value="Continuing testing of Venkatraman model. Reconsidering whether to add in checking of adjacent values." />
+    <MESSAGE value="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
