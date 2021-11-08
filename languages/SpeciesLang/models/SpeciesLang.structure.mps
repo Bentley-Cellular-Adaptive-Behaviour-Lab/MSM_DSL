@@ -512,6 +512,11 @@
       <property role="TrG5h" value="binIndex" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="4e6e46gPqyv" role="1TKVEl">
+      <property role="IQ2nx" value="4865638301674350751" />
+      <property role="TrG5h" value="expressionChecksAdjacent" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="3LeNXFhUH1L" role="1TKVEi">
       <property role="IQ2ns" value="4345639229190754417" />
       <property role="20kJfa" value="target" />
@@ -531,12 +536,17 @@
     </node>
     <node concept="1TJgyi" id="xhYrITVX8D" role="1TKVEl">
       <property role="IQ2nx" value="599534810090689065" />
-      <property role="TrG5h" value="targetUsesNeighbourValue" />
+      <property role="TrG5h" value="reactionUsesNeighbourValue" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="xhYrITX1su" role="1TKVEl">
-      <property role="IQ2nx" value="599534810090968862" />
-      <property role="TrG5h" value="targetUsesCellValue" />
+    <node concept="1TJgyi" id="5nupkjFf11n" role="1TKVEl">
+      <property role="IQ2nx" value="6187494284732403799" />
+      <property role="TrG5h" value="reactionUsesCellValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5nupkjF4WVy" role="1TKVEl">
+      <property role="IQ2nx" value="6187494284729765602" />
+      <property role="TrG5h" value="parameterUsesNeighbourValue" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">

@@ -21,32 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmock_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgmockd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtest_maind.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/lib/libgtestd.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/TestLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/TestLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TestLang/models/TestLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TestLang/models/TestLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/models/UnitLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.TC4_model.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.TC4_model.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/MSMTests.msd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMTests/models/MSMTests.tests@tests.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

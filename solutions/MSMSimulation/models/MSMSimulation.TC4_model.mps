@@ -681,7 +681,7 @@
       </node>
     </node>
     <node concept="3_zqOx" id="2L_6n0dqguK" role="3_zqUl">
-      <property role="TrG5h" value="DLL4_Diff " />
+      <property role="TrG5h" value="DLL4_Diff" />
       <node concept="30dDTi" id="2L_6n0dqgNc" role="3_zqNk">
         <node concept="30bXRB" id="2L_6n0dqgPn" role="30dEsF">
           <property role="30bXRw" value="0.001" />
@@ -907,7 +907,7 @@
       <node concept="3rtiFT" id="5yFEiLG56CM" role="3rqWia">
         <ref role="3rtiFY" node="5yFEiLG56Bb" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="5nupkjEmlpA" role="3_z4RZ">
+      <node concept="DdDr8" id="5nupkjF7Xtd" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -946,7 +946,7 @@
       <node concept="3rtiFT" id="5yFEiLG56PL" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56NT" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="5nupkjEmlpB" role="3_z4Rx">
+      <node concept="DdDr8" id="5nupkjF7Xte" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56fv" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -1016,7 +1016,7 @@
         </node>
         <node concept="2llJbL" id="1O9im_PLHnB" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="5nupkjEmlpC" role="3_z4RZ">
+      <node concept="DdDr8" id="5nupkjF7Xtf" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1052,7 +1052,7 @@
       <node concept="DdDr8" id="5yFEiLG56KH" role="3_z4RZ">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
-      <node concept="DdDr8" id="5nupkjEmlpD" role="3_z4Rx">
+      <node concept="DdDr8" id="5nupkjF7Xtg" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56iQ" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1088,7 +1088,7 @@
       <node concept="3rtiFT" id="5yFEiLG56qa" role="3rtiFW">
         <ref role="3rtiFY" node="5yFEiLG56px" resolve="HEY_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="5nupkjEmlpE" role="3_z4Rx">
+      <node concept="DdDr8" id="5nupkjF7Xth" role="3_z4Rx">
         <ref role="DdDrb" node="5yFEiLG56F0" resolve="NICD_CATALYSIS" />
       </node>
     </node>
