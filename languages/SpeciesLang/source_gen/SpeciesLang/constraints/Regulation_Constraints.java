@@ -10,9 +10,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SNodePointer;
 import java.util.Map;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -44,18 +44,13 @@ public class Regulation_Constraints extends BaseConstraintsDescriptor {
   }
   public static class TranscriptionDelay_Property extends BasePropertyConstraintsDescriptor {
     public TranscriptionDelay_Property(ConstraintsDescriptor container) {
-      super(PROPS.TranscriptionDelay$L0UN, container);
+      super(PROPS.TranscriptionDelay$L0UN, container, false, false, true);
     }
-    @Override
-    public boolean hasOwnValidator() {
-      return true;
-    }
-    private static final SNodePointer validatePropertyBreakingPoint = new SNodePointer("r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesLang.constraints)", "6420553392044115361");
     @Override
     public boolean validateValue(SNode node, Object propertyValue, CheckingNodeContext checkingNodeContext) {
       boolean result = staticValidateProperty(node, SPropertyOperations.castInteger(propertyValue));
       if (!(result) && checkingNodeContext != null) {
-        checkingNodeContext.setBreakingNode(validatePropertyBreakingPoint);
+        checkingNodeContext.setBreakingNode(new SNodePointer("r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesLang.constraints)", "6420553392044115361"));
       }
       return result;
     }

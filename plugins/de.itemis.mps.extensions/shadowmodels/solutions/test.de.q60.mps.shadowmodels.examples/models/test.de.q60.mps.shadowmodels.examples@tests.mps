@@ -1185,14 +1185,14 @@
           <node concept="3cpWsn" id="56YPHTotlD6" role="3cpWs9">
             <property role="TrG5h" value="transformationsProvider" />
             <node concept="3uibUv" id="56YPHTotlD7" role="1tU5fm">
-              <ref role="3uigEE" to="l6bp:7YhLqbpj_AC" resolve="SM_TransformationsFromAspect" />
+              <ref role="3uigEE" to="l6bp:7YhLqbpj_AC" resolve="TransformationsFromAspect" />
             </node>
             <node concept="2ShNRf" id="56YPHTotlD8" role="33vP2m">
               <node concept="YeOm9" id="56YPHTotlD9" role="2ShVmc">
                 <node concept="1Y3b0j" id="56YPHTotlDa" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <ref role="1Y3XeK" to="l6bp:7YhLqbpj_AC" resolve="SM_TransformationsFromAspect" />
-                  <ref role="37wK5l" to="l6bp:7YhLqbpjF1U" resolve="SM_TransformationsFromAspect" />
+                  <ref role="1Y3XeK" to="l6bp:7YhLqbpj_AC" resolve="TransformationsFromAspect" />
+                  <ref role="37wK5l" to="l6bp:7YhLqbpjF1U" resolve="TransformationsFromAspect" />
                   <node concept="3Tm1VV" id="56YPHTotlDb" role="1B3o_S" />
                   <node concept="3clFb_" id="56YPHTotlDc" role="jymVt">
                     <property role="TrG5h" value="getSModules" />

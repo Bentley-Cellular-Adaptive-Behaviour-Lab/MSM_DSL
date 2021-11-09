@@ -393,6 +393,24 @@
         <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
       </node>
     </node>
+    <node concept="2sgV4H" id="1sOigHAh_Ge" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:5rNMDvYzelV" resolve="mpsMakePlugin" />
+      <node concept="398BVA" id="1sOigHAh_GO" role="2JcizS">
+        <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="1sOigHAh_GR" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
+    <node concept="2sgV4H" id="1sOigHAh_mv" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:5mc7nVumjii" resolve="mpsDebuggerPlugin" />
+      <node concept="398BVA" id="1sOigHAh_mT" role="2JcizS">
+        <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="1sOigHAh_o$" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
     <node concept="2sgV4H" id="2DpkCoJxvaO" role="1l3spa">
       <ref role="1l3spb" to="ffeo:7pdFgzxlDme" resolve="mpsBuild" />
       <node concept="398BVA" id="2DpkCoJxvbu" role="2JcizS">
@@ -411,6 +429,15 @@
         </node>
       </node>
     </node>
+    <node concept="2sgV4H" id="1sOigHAh_p2" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:1JaUSFUm4ER" resolve="mpsContextActionsTool" />
+      <node concept="398BVA" id="1sOigHAh_pv" role="2JcizS">
+        <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="1sOigHAh_py" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
     <node concept="2sgV4H" id="2DpkCoJwQWL" role="1l3spa">
       <ref role="1l3spb" to="ffeo:6pse5qHNfTX" resolve="mpsHttpSupportPlugin" />
       <node concept="398BVA" id="2DpkCoJwQX2" role="2JcizS">
@@ -425,6 +452,24 @@
       <node concept="398BVA" id="76n9nEbQguc" role="2JcizS">
         <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
         <node concept="2Ry0Ak" id="76n9nEbQguf" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
+    <node concept="2sgV4H" id="1sOigHAh_q3" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:ymnOULAEsd" resolve="mpsTesting" />
+      <node concept="398BVA" id="1sOigHAh_qz" role="2JcizS">
+        <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="1sOigHAh_qA" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+        </node>
+      </node>
+    </node>
+    <node concept="2sgV4H" id="1sOigHAh_uX" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:6ifcnI8$2iR" resolve="mpsVcsPlatform" />
+      <node concept="398BVA" id="1sOigHAh_w$" role="2JcizS">
+        <ref role="398BVh" node="rdOTgLtV2X" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="1sOigHAh_wD" role="iGT6I">
           <property role="2Ry0Am" value="plugins" />
         </node>
       </node>
@@ -517,9 +562,6 @@
             <property role="3LWZYl" value="mps-tips.jar" />
           </node>
         </node>
-        <node concept="3_I8Xc" id="5n1qb1$Ifdo" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:4LdE6kxkoZ2" />
-        </node>
         <node concept="3981dx" id="rdOTgLtV4R" role="39821P">
           <node concept="3_J27D" id="rdOTgLtV4S" role="Nbhlr">
             <node concept="3Mxwew" id="rdOTgLtV4T" role="3MwsjC">
@@ -535,9 +577,46 @@
         <node concept="3_I8Xc" id="rdOTgLtV4Y" role="39821P">
           <ref role="3_I8Xa" to="ffeo:4EdAnGErOtx" resolve="mps-core" />
         </node>
+        <node concept="3_I8Xc" id="1sOigHAh_xG" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_y2" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:1JaUSFUm4H1" resolve="mps-context-actions" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_yq" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:1x6h9EwqP32" resolve="mps-make" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_H6" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:5CFKsRWS5pU" resolve="mps-debugger-api" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_Hy" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:5CFKsRWRsZ0" resolve="mps-execution-api" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_I0" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:5CFKsRWS5yu" resolve="mps-debugger-java" />
+        </node>
+        <node concept="3_I8Xc" id="1sOigHAh_Iw" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:ymnOULAZ8H" resolve="mps-testing" />
+        </node>
+        <node concept="3ygNvl" id="1sOigHAh_JO" role="39821P">
+          <ref role="3ygNvj" to="ffeo:5xa9wY2vhbF" />
+        </node>
         <node concept="m$_wl" id="rdOTgLtV50" role="39821P">
           <ref role="m_rDy" node="rdOTgLtV4d" resolve="MSM_DSL" />
           <node concept="pUk6x" id="rdOTgLtV51" role="pUk7w" />
+        </node>
+        <node concept="3981dx" id="1sOigHAh_xh" role="39821P">
+          <node concept="3_J27D" id="1sOigHAh_xj" role="Nbhlr">
+            <node concept="3Mxwew" id="1sOigHAh_xs" role="3MwsjC">
+              <property role="3MwjfP" value="mps-resources.jar" />
+            </node>
+          </node>
+          <node concept="3ygNvl" id="1sOigHAh_xu" role="39821P">
+            <ref role="3ygNvj" to="ffeo:5xa9wY2vqbW" resolve="mps-resources.jar" />
+            <node concept="3LWZYq" id="1sOigHAh_xw" role="1juEy9">
+              <property role="3LWZYl" value="idea/PlatformActions.xml" />
+            </node>
+          </node>
         </node>
         <node concept="3_J27D" id="rdOTgLtV52" role="Nbhlr">
           <node concept="3Mxwew" id="rdOTgLtV53" role="3MwsjC">
@@ -579,6 +658,12 @@
     </node>
     <node concept="m$_wf" id="rdOTgLtV4d" role="3989C9">
       <property role="m$_wk" value="MSM_DSL" />
+      <node concept="m$_yC" id="1sOigHAh_wF" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
+      </node>
+      <node concept="m$_yC" id="1sOigHAh_wM" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:6EN03E8oSte" resolve="jetbrains.mps.ide.make" />
+      </node>
       <node concept="m$_yC" id="76n9nEbQ$yw" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:6WtY9M1bDO_" resolve="jetbrains.mps.ide.java" />
       </node>
