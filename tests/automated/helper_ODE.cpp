@@ -1939,6 +1939,14 @@ double VenkatramanCellTest::get_adjacent_DLL4_level(EC *ec) {
     return level;
 }
 
+double VenkatramanCellTest::calc_DLL4_DIFF_rate(double DLL4, double adjacent_DLL4) {
+    return 0.001*((DLL4 + adjacent_DLL4) /  2 - DLL4);
+}
+
+double VenkatramanCellTest::calc_NOTCH_DIFF_rate(double NOTCH, double adjacent_NOTCH) {
+    return 0.001*((NOTCH + adjacent_NOTCH) /  2 - NOTCH);
+}
+
 double VenkatramanCellTest::get_adjacent_Notch_level(EC *ec) {
     float level = 0.0;
     for (auto *cell : ec->getNeighCellVector()) {
@@ -1947,11 +1955,4 @@ double VenkatramanCellTest::get_adjacent_Notch_level(EC *ec) {
     return level;
 }
 
-double VenkatramanCellTest::calc_DLL4_DIFF_rate(double DLL4, double adjacent_DLL4) {
-    return 0.001*((DLL4 + adjacent_DLL4) /  2 - DLL4);
-}
-
-double VenkatramanCellTest::calc_NOTCH_DIFF_rate(double NOTCH, double adjacent_NOTCH) {
-    return 0.001*((NOTCH + adjacent_NOTCH) /  2 - NOTCH);
-}
 
