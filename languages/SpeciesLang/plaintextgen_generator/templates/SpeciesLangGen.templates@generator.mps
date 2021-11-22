@@ -24094,7 +24094,7 @@
         <node concept="356sEK" id="2L_6n0dx23T" role="383Ya9">
           <node concept="373pV1" id="2L_6n0dxi43" role="356sEH" />
           <node concept="356sEF" id="2L_6n0dxi46" role="356sEH">
-            <property role="TrG5h" value="for (auto *neighbour : ec-&gt;neigh_cells) {" />
+            <property role="TrG5h" value="for (auto *neighbour : ec-&gt;getNeighCellVector()) {" />
           </node>
           <node concept="2EixSi" id="2L_6n0dx23V" role="2EinRH" />
         </node>
