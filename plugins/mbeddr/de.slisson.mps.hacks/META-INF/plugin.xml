@@ -3,10 +3,9 @@
   <id>de.slisson.mps.hacks</id>
   <name>de.slisson.mps.hacks</name>
   <description>Various small extensions: editor utilities, generation plan extensions for better cross-model generation, reflection language (deprecated)</description>
-  <version>2020.3.1594.831b14e</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://www.itemis.com/">Itemis</vendor>
   <depends>jetbrains.mps.core</depends>
-  <description>Various small extensions: editor utilities, generation plan extensions for better cross-model generation, reflection language (deprecated)</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

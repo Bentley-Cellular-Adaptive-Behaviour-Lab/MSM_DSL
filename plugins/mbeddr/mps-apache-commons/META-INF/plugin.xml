@@ -7,7 +7,6 @@
   <vendor url="https://commons.apache.org/math">Apache Foundation</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
-  <description>JARs and their stubs to use Apache Commons Library in MPS</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

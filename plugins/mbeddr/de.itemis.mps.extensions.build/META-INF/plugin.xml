@@ -3,10 +3,9 @@
   <id>de.itemis.mps.extensions.build</id>
   <name>de.itemis.mps.extensions.build</name>
   <description>Contains the build solution of all MPS Extensions; necessary if you want to do command line builds of languages that use an MPS Extension.</description>
-  <version>2020.3.1594.831b14e</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://www.itemis.com/">Itemis</vendor>
   <depends>jetbrains.mps.build</depends>
-  <description>Contains the build solution of all MPS Extensions; necessary if you want to do command line builds of languages that use an MPS Extension.</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

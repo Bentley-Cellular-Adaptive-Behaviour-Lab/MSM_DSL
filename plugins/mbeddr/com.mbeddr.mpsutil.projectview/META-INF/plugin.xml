@@ -2,8 +2,9 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.projectview</id>
   <name>com.mbeddr.mpsutil.projectview</name>
-  <version>2020.3-2020.3.22717.f714161</version>
-  <vendor url="http://mbeddr.com">mbedrr</vendor>
+  <description>Abstraction on top of MPS lower-level API to create custom views in the view tool window (like logical view, file view, etc.)</description>
+  <version>2021.1.2079.e88dd58</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>de.slisson.mps.hacks</depends>
   <depends>com.intellij.modules.mps</depends>

@@ -13986,7 +13986,7 @@
           <node concept="3clFbS" id="4e6e46h4rwd" role="3clFbx">
             <node concept="3clFbF" id="4e6e46h4rwe" role="3cqZAp">
               <node concept="BsUDl" id="4e6e46h4rwf" role="3clFbG">
-                <ref role="37wK5l" node="4e6e46h4rtO" resolve="findArgumentNodes" />
+                <ref role="37wK5l" node="4e6e46h4rtO" resolve="findAdjacentArgumentNodes" />
                 <node concept="2OqwBi" id="4e6e46h4rwg" role="37wK5m">
                   <node concept="1PxgMI" id="4e6e46h4rwh" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
@@ -14008,7 +14008,7 @@
             </node>
             <node concept="3clFbF" id="4e6e46h4rwm" role="3cqZAp">
               <node concept="BsUDl" id="4e6e46h4rwn" role="3clFbG">
-                <ref role="37wK5l" node="4e6e46h4rtO" resolve="findArgumentNodes" />
+                <ref role="37wK5l" node="4e6e46h4rtO" resolve="findAdjacentArgumentNodes" />
                 <node concept="2OqwBi" id="4e6e46h4rwo" role="37wK5m">
                   <node concept="1PxgMI" id="4e6e46h4rwp" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
@@ -14688,7 +14688,7 @@
                               <property role="3clFbU" value="true" />
                             </node>
                             <node concept="37vLTw" id="5nupkjEus$a" role="37vLTJ">
-                              <ref role="3cqZAo" node="5nupkjEulaQ" resolve="selfRefers" />
+                              <ref role="3cqZAo" node="5nupkjEulaQ" resolve="refers" />
                             </node>
                           </node>
                         </node>
@@ -14712,7 +14712,7 @@
                         <node concept="2OqwBi" id="5nupkjF7S3r" role="3clFbw">
                           <node concept="13iPFW" id="5nupkjF7RNk" role="2Oq$k0" />
                           <node concept="2qgKlT" id="5nupkjF7SNt" role="2OqNvi">
-                            <ref role="37wK5l" node="5nupkjEueOd" resolve="parameterSelfRefers" />
+                            <ref role="37wK5l" node="5nupkjEueOd" resolve="expressionRefersToThis" />
                             <node concept="37vLTw" id="5nupkjF7URI" role="37wK5m">
                               <ref role="3cqZAo" node="5nupkjF7PYT" resolve="expr" />
                             </node>
@@ -14755,7 +14755,7 @@
         </node>
         <node concept="3cpWs6" id="5nupkjEumkG" role="3cqZAp">
           <node concept="37vLTw" id="5nupkjEumsf" role="3cqZAk">
-            <ref role="3cqZAo" node="5nupkjEulaQ" resolve="selfRefers" />
+            <ref role="3cqZAo" node="5nupkjEulaQ" resolve="refers" />
           </node>
         </node>
       </node>

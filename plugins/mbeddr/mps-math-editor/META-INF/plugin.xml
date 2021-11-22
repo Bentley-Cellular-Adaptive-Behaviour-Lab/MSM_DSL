@@ -3,12 +3,11 @@
   <id>de.itemis.mps.editor.math</id>
   <name>MPS Math Editor</name>
   <description>Mathematical notation for MPS Editors</description>
-  <version>2020.3.1594.831b14e</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://github.com/slisson/mps-math">itemis AG</vendor>
   <depends>de.slisson.mps.hacks</depends>
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
-  <description>Mathematical notation for MPS Editors</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

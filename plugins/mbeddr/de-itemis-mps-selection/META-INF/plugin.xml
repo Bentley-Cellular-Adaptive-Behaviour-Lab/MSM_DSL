@@ -2,11 +2,10 @@
 <idea-plugin>
   <id>de.itemis.mps.selection</id>
   <name>Mouse Selection Support</name>
-  <description>With this plugin you can select nodes in MPS using the mouse. It allows invoking intentions over a selection of nodes in an nlist</description>
-  <version>2020.3.1594.831b14e</version>
+  <description>With this plugin you can select nodes in MPS using the mouse. It also allows invoking intentions over a selection of nodes in an nlist</description>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://github.com/slisson/mps-all">itemis AG</vendor>
   <depends>jetbrains.mps.core</depends>
-  <description>With this plugin you can select nodes in MPS using the mouse. It allows invoking intentions over a selection of nodes in an nlist</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

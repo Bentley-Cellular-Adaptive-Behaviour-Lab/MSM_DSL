@@ -2,7 +2,8 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.modellisteners</id>
   <name>com.mbeddr.mpsutil.modellisteners</name>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <description>Mechanism for installing callbacks that listen to changes in specific parts of models. Use only when you have no other MPS mechanism for achieving what you need, because many listeners can quickly eat performance.</description>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="http://mbeddr.com">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <extensions defaultExtensionNs="com.intellij">

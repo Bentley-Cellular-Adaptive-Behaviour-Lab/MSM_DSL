@@ -7,6 +7,7 @@
   <depends>jetbrains.mps.core</depends>
   <depends>de.itemis.mps.editor.diagram</depends>
   <depends>jetbrains.mps.vcs</depends>
+  <depends>com.mbeddr.mpsutil.filepicker</depends>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

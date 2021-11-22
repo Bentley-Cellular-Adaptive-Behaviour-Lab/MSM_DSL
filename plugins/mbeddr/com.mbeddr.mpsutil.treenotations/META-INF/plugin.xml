@@ -2,8 +2,9 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.treenotations</id>
   <name>com.mbeddr.mpsutil.treenotations</name>
-  <version>2020.3-2020.3.22717.f714161</version>
-  <vendor url="http://mbeddr.com">mbedrr</vendor>
+  <description>Tree-like notation for MPS Editors</description>
+  <version>2021.1.2079.e88dd58</version>
+  <vendor url="http://mbeddr.com">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
