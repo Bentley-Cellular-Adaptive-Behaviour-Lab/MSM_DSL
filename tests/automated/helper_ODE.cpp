@@ -1934,7 +1934,7 @@ double VenkatramanCellTest::calc_V_VR_Degradation_rate(double VEGF_VEGFR, double
 
 double VenkatramanCellTest::get_adjacent_DLL4_level(EC *ec) {
     float level = 0.0;
-    for (auto *cell : ec->neigh_cells) {
+    for (auto *cell : ec->getNeighCellVector()) {
         level += cell->get_cell_protein_level("DLL4", 0);
     }
     return level;
@@ -1942,7 +1942,7 @@ double VenkatramanCellTest::get_adjacent_DLL4_level(EC *ec) {
 
 double VenkatramanCellTest::get_adjacent_Notch_level(EC *ec) {
     float level = 0.0;
-    for (auto *cell : ec->neigh_cells) {
+    for (auto *cell : ec->getNeighCellVector()) {
         level += cell->get_cell_protein_level("NOTCH", 0);
     }
     return level;
