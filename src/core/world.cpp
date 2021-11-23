@@ -20,6 +20,8 @@
 
 #include "../generated/dsl_species_gen.h"
 
+#include "../dsl/species/protein.h"
+#include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/utils/logger.h"
 #include "../dsl/utils/utils.h"
@@ -240,10 +242,6 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     gridYDimensions = grid_yMax;
     gridZDimensions = grid_zMax;
 
-    std::cout << "xMax: " << gridXDimensions << "\n"
-              << "yMax: " << gridYDimensions << "\n"
-              << "zMax: " << gridZDimensions << "\n";
-
     int i, j;
     grid = new ppLocation[gridXDimensions];
     for ( int i = 0; i < gridXDimensions; i++)
@@ -280,7 +278,6 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
     for (int i = 0; i < 26; i++) {
         this->neigh[i] = new Location();
     }
-
 }
 
 //-----------------------------------------------------------------------------
@@ -1536,7 +1533,7 @@ void World::runSimulation()
 	while (timeStep <= MAXtime)
 	{
         if (timeStep % 50 == 0) {
-//			std::cout << "Current timestep: " << timeStep << " - " << MAXtime - timeStep << " steps left." << std::endl;
+			printProteinLevels(50);
 		}
 		simulateTimestep();
 
@@ -1610,12 +1607,6 @@ void World::creationTimestep(int movie) {
 	/** set the memInit value if needed for watching cell growth and tip cell quantification **/
 	if (ECagents.size() < 0)
 		memINIT = ECagents[0]->nodeAgents.size() + ECagents[0]->surfaceAgents.size();
-	std::cout << "memInit" << memINIT << std::endl;
-
-	//create environment
-//    createEnvironment();
-
-//    cout <<"created environment"<<endl;
 
 	///TODO: ask kate if this still needs to be in here?
 	if (CELL_SETUP == 2) {
@@ -1674,11 +1665,6 @@ void World::creationTimestep(int movie) {
 	if (ANALYSIS_TOTALVEGF_TOTAL_MEMBRANE)
 		calcEnvVEGFlevel();
 
-	///TODO: sort this movie thing out to hopw it was before.. only used in graphics on, so maybe hav
-	/// separate setup func to this
-	if (movie == 1)
-		system(" mkdir /tmp/movie2; rm -vf /tmp/movie2/*");
-
 	//on first timestep this sets up the CPM module
 	if (REARRANGEMENT)
 		diffAd->run_CPM();
@@ -1686,8 +1672,6 @@ void World::creationTimestep(int movie) {
 	if (ANALYSIS_PROTLEVELS)
 		output_cell_protlevels(dataFile);
 
-	system("mkdir movie; rm -vf movie/*");
-	std::cout << "Creation complete" << std::endl;
 }
 
 void World::simulateTimestep() {
@@ -1696,7 +1680,6 @@ void World::simulateTimestep() {
 	//TODO: maybe move this out of simulate timestep? bit misleading that its in here
 	//could just call creation timestep func from here.. and have timesteps start from zero instead of -1
 	if (timeStep == 0) {
-		std::cout << "Creation timestep... initialising everything" << std::endl;
 		creationTimestep(movie);
 	} else {
 		for (EC* ec : ECagents) {
@@ -1704,7 +1687,6 @@ void World::simulateTimestep() {
             if (ANALYSIS_SHUFFLING) {
                 ec->getNeighCellVector().clear();
             }
-		    ec->print_memAgent_protein_levels(1);
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
 //			if (DSL_TESTING) {
@@ -1907,7 +1889,7 @@ void World::updateECagents() {
 		// TOM
 		if (PROTEIN_TESTING) {
 			// Determine the total level of protein across all memAgents, then report this back to the cell.
-			ECagents[j]->calculate_cell_protein_levels();
+//			ECagents[j]->calculate_cell_protein_levels();
 			// Do gene regulation based on the calculated levels of proteins.
 			this->odes->check_cell_ODEs(ECagents[j]);
 		}
@@ -1939,7 +1921,7 @@ void World::updateECagents() {
 	for (j = 0; j < (int) ECagents.size(); j++) {
 		if (PROTEIN_TESTING) {
             //Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
-			ECagents[j]->distribute_proteins();
+//			ECagents[j]->distribute_proteins();
 		} else {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 			ECagents[j]->allocateProts();
@@ -6519,3 +6501,26 @@ void World::setWorldLogger(world_logger *logger) {
     this->m_worldLogger = logger;
 }
 
+void World::printProteinNames() {
+	std::cout << "Timestep,";
+	int count = 0;
+	for (auto *cell : ECagents) {
+		for (auto *protein : cell->m_cell_type->proteins) {
+			std::cout << protein->get_name() << "_" << count << ",";
+		}
+		count++;
+	}
+	std::cout << std::endl;
+}
+
+void World::printProteinLevels(int timestepInterval) {
+	if (timeStep % timestepInterval == 0) {
+		std::cout << timeStep << ",";
+		for (auto *cell : ECagents) {
+			for (auto *protein : cell->m_cell_type->proteins) {
+				std::cout << protein->get_cell_level(0)  << ",";
+			}
+		}
+		std::cout << std::endl;
+	}
+}
