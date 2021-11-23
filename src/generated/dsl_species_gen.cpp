@@ -20,13 +20,6 @@ void ODEs::check_cell_ODEs(EC *ec) {
 		Endothelial_run_cell_ODEs(ec);
 	}
 }
-  void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
-// Removed for testing.
-  }
-
-  void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
-//Removed for testing
-  }
 
   void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
 	  // Species Definitions
@@ -217,7 +210,7 @@ static double calc_V_VR_Degradation_rate(double VEGF_VEGFR, double Phi) {
 static double calc_DLL4_adjacent_level(EC *ec) {
 	double level = 0.0;
 	for (auto *neighbour : ec->getNeighCellVector()) {
-		level += neighbour->get_cell_protein_level("DLL4");
+		level += neighbour->get_cell_protein_level("DLL4",0);
 	}
 	return level;
 }
@@ -225,7 +218,7 @@ static double calc_DLL4_adjacent_level(EC *ec) {
 static double calc_NOTCH_adjacent_level(EC *ec) {
 	double level = 0.0;
 	for (auto *neighbour : ec->getNeighCellVector()) {
-		level += neighbour->get_cell_protein_level("NOTCH");
+		level += neighbour->get_cell_protein_level("NOTCH",0);
 	}
 	return level;
 }
