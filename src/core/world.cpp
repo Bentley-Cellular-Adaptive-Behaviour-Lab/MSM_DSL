@@ -1498,9 +1498,11 @@ void World::setup_ODEs() {
 *  Returns:		void
 ******************************************************************************************/
 
-void World::run_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {
-    this->odes->check_memAgent_ODEs(cell_type_name, memAgent);
-}
+// Disabled while testing MemAgent ODES
+
+//void World::run_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {
+//    this->odes->check_memAgent_ODEs(cell_type_name, memAgent);
+//}
 
 /*****************************************************************************************
 *  Name:		get_time_string
