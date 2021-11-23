@@ -1532,8 +1532,8 @@ void World::runSimulation()
 {
 	while (timeStep <= MAXtime)
 	{
-        if (timeStep % 50 == 0) {
-			printProteinLevels(50);
+        if (timeStep % 1 == 0) {
+			printProteinLevels(1);
 		}
 		simulateTimestep();
 
@@ -1689,9 +1689,6 @@ void World::simulateTimestep() {
             }
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
-//			if (DSL_TESTING) {
-//				ec->print_protein_levels(50);
-//			}
 		}
 		updateMemAgents();
 		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
@@ -1699,6 +1696,9 @@ void World::simulateTimestep() {
 		}
 		updateECagents();
 		updateEnvironment();
+		for (EC *ec :ECagents) {
+			ec->cycle_protein_levels();
+		}
 	}
 }
 
@@ -1929,7 +1929,7 @@ void World::updateECagents() {
 
 		if (PROTEIN_TESTING) {
 		    // Updates the protein levels container for each protein.
-		    ECagents[j]->cycle_protein_levels();
+//		    ECagents[j]->cycle_protein_levels();
 		}
 		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (ANALYSIS_JTB_SP_PATTERN == true)
