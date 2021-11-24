@@ -936,12 +936,13 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 
 void EC::add_to_neighbour_list(EC* query_ec) {
     bool cell_found = false;
-    for (auto current_ec : this->neigh_cells) {
-        if (current_ec != query_ec) {
+	// Check we don't already know about this cell.
+    for (auto *current_ec : this->neigh_cells) {
+        if (current_ec->cell_number != query_ec->cell_number) {
             cell_found = true;
         }
     }
-	if (!cellIsNeighbour(query_ec)) {
+	if (!cellIsNeighbour(query_ec) && !cell_found) {
 		this->neigh_cells.push_back(query_ec);
 	}
 }

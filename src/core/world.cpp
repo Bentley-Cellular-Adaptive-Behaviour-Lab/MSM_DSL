@@ -1532,8 +1532,8 @@ void World::runSimulation()
 {
 	while (timeStep <= MAXtime)
 	{
-        if (timeStep % 1 == 0) {
-			printProteinLevels(1);
+        if (timeStep % 50 == 0) {
+			printProteinLevels(50);
 		}
 		simulateTimestep();
 

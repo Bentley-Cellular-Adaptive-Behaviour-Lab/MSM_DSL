@@ -1778,7 +1778,6 @@ void VenkatramanCellTest::VenkatramanCellTest_cell_system(const VenkatramanCellT
     double DLL4_DIFF = calc_DLL4_DIFF_rate(DLL4, adjacent_DLL4);
     double NOTCH_DIFF = calc_NOTCH_DIFF_rate(NOTCH, adjacent_NOTCH);
     // ODE Definitions
-
     dxdt[0] = -(V_VR_Degradation)+(k1)*1-(k_1)*1;
     dxdt[1] = -(D_Degradation)-(k2)*1+(k_2)*1+(DLL4_Reg)+(DLL4_DIFF);
     dxdt[2] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction);

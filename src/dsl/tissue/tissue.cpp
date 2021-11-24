@@ -579,6 +579,7 @@ void Tissue_Vessel::create_vessel() {
 
         // Add this agent to the relevant tissue.
         store_cell_agent(ecp);
+		ecp->m_tissue = this;
         ecp->belongs_to = BELONGS_TO_CYLINDER;
 
         ecp->cell_number = i;

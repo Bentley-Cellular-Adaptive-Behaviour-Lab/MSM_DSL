@@ -20,10 +20,6 @@ void World_Container::world_setup() {
 
     // GRADIENT CREATION
 
-
-
-
-
     // SUBSTRATE CREATION
     create_substrate(Substrate_shape, &(Substrate_centre), NO_DIRECTION, 1.0);
 }

@@ -289,7 +289,7 @@ TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
         VenkatramanCellTest_run_cell_ODEs(cell2);
         cell1->cycle_protein_levels();
         cell2->cycle_protein_levels();
-        if (timestep % 100 == 0) {
+        if (timestep % 50 == 0) {
             printProteinLevels(timestep);
         }
     }

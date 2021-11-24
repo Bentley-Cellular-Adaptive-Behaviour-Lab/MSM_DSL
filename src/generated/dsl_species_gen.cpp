@@ -16,7 +16,7 @@ void ODEs::check_cell_ODEs(EC *ec) {
 }
 
 void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
-	// Species Definitions
+	// Species Definitions <- Fine.
 	double VEGF_VEGFR = x[0];
 	double DLL4 = x[1];
 	double FILOPODIA = x[2];
@@ -29,44 +29,45 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
 	double adjacent_DLL4 = x[9];
 	double adjacent_NOTCH = x[10];
 	// Parameter Definitions
-	double Nu = calc_Nu_rate();
-	double Theta = calc_Theta_rate();
-	double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
-	double V0 = calc_V0_rate();
-	double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
-	double k3 = calc_k3_rate(VEGFR, HEY, Nu);
-	double k2 = calc_k2_rate(DLL4, NOTCH);
-	double k_2 = calc_k_2_rate(DLL4_NOTCH);
-	double k4 = calc_k4_rate(DLL4_NOTCH);
-	double k1 = calc_k1_rate(VEGF, VEGFR);
-	double k_1 = calc_k_1_rate(VEGF_VEGFR);
-	double Phi = calc_Phi_rate();
-	double D_Degradation = calc_D_Degradation_rate(Phi, DLL4);
-	double DLL4_Diff = calc_DLL4_Diff_rate(DLL4, adjacent_DLL4);
-	double FilopodiaTurnover = calc_FilopodiaTurnover_rate();
-	double I_Degradation = calc_I_Degradation_rate(Phi, NICD);
+	double Nu = calc_Nu_rate(); // Fine.
+	double Theta = calc_Theta_rate(); // Fine.
+	double beta = calc_beta_rate(); // Added this.
+	double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu); // Fine.
+	double V0 = calc_V0_rate(); // Fine.
+	double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu); // Fine.
+	double k3 = calc_k3_rate(VEGFR, HEY, Nu); // Fine.
+	double k2 = calc_k2_rate(DLL4, NOTCH); // Fine.
+	double k_2 = calc_k_2_rate(DLL4_NOTCH); // Fine.
+	double k4 = calc_k4_rate(DLL4_NOTCH); // Fine.
+	double k1 = calc_k1_rate(VEGF, VEGFR); // Fine.
+	double k_1 = calc_k_1_rate(VEGF_VEGFR); // Fine.
+	double Phi = calc_Phi_rate(); // Changed to 0.005.
+	double D_Degradation = calc_D_Degradation_rate(Phi, DLL4); // Fine.
+	double DLL4_Diff = calc_DLL4_Diff_rate(DLL4, adjacent_DLL4); // Fine.
+	double FilopodiaTurnover = calc_FilopodiaTurnover_rate(FILOPODIA); // Changed to use FILOPODIA value.
+	double I_Degradation = calc_I_Degradation_rate(Phi, NICD); // Fine.
 	double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
-	double VR_Degradation = calc_VR_Degradation_rate(Phi, VEGFR);
-	double VR_Production = calc_VR_Production_rate();
-	double N_Degradation = calc_N_Degradation_rate(Phi, NOTCH);
-	double NOTCH_Diff = calc_NOTCH_Diff_rate(NOTCH, adjacent_NOTCH);
-	double D_N_Degradation = calc_D_N_Degradation_rate(Phi, DLL4_NOTCH);
-	double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
-	double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0);
-	double V_VR_Degradation = calc_V_VR_Degradation_rate(VEGF_VEGFR, Phi);
-	double N_Production = calc_N_Production_rate(NOTCH_Diff);
+	double VR_Degradation = calc_VR_Degradation_rate(Phi, VEGFR); // Fine.
+	double VR_Production = calc_VR_Production_rate(); // Fine.
+	double N_Degradation = calc_N_Degradation_rate(Phi, NOTCH); // Fine.
+	double NOTCH_Diff = calc_NOTCH_Diff_rate(NOTCH, adjacent_NOTCH); // Fine.
+	double D_N_Degradation = calc_D_N_Degradation_rate(Phi, DLL4_NOTCH); // Fine.
+	double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu); // Added divisor and "betaD".
+	double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0); // Fine.
+	double V_VR_Degradation = calc_V_VR_Degradation_rate(VEGF_VEGFR, Phi); // Fine.
+	double N_Production = calc_N_Production_rate(NOTCH_Diff); // Notch diff calculated here. Check this.
 	// ODE Definitions
-	dxdt[0] = -(V_VR_Degradation)+(k1)*1-(k_1)*1;
-	dxdt[1] = +(DLL4_Diff)-(D_Degradation)-(k2)*1+(k_2)*1+(DLL4_Reg);
-	dxdt[2] = -(FilopodiaTurnover)+(k5_FilProduction);
-	dxdt[3] = -(k1)*1+(k_1)*1+(k6_VEGFSensing);
-	dxdt[4] = -(I_Degradation)+(k4)*1;
-	dxdt[5] = -(HEY_Degradation)+(HEY_Reg);
-	dxdt[6] = +(VR_Production)-(VR_Degradation)-(k1)*1+(k_1)*1-(k3);
-	dxdt[7] = +(N_Production)-(N_Degradation)-(k2)*1+(k_2)*1;
-	dxdt[8] = -(D_N_Degradation)-(k4)*1+(k2)*1-(k_2)*1;
-	dxdt[9] = 0;
-	dxdt[10] = 0;
+	dxdt[0] = -(V_VR_Degradation)+(k1)*1-(k_1)*1; // Fine.
+	dxdt[1] = +(DLL4_Diff)-(D_Degradation)-(k2)*1+(k_2)*1+(DLL4_Reg); // Fine.
+	dxdt[2] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction); // No beta.
+	dxdt[3] = -(k1)*1+(k_1)*1+(k6_VEGFSensing); // Fine.
+	dxdt[4] = -(I_Degradation)+(k4); // Fine.
+	dxdt[5] = +(beta)-(HEY_Degradation)+(HEY_Reg); // No beta.
+	dxdt[6] = +(VR_Production)-(VR_Degradation)-(k1)*1+(k_1)*1-(k3); // Fine.
+	dxdt[7] = +(N_Production)-(N_Degradation)-(k2)*1+(k_2)*1; // Notch diff calculated here. Check this.
+	dxdt[8] = -(D_N_Degradation)+(k2)*1-(k_2)*1; // k4 shouldn't be here.
+	dxdt[9] = 0; // Fine.
+	dxdt[10] = 0; // Fine.
 }
 
 void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
@@ -132,7 +133,7 @@ static double calc_k6_VEGFSensing_rate(double FILOPODIA, double V0) {
 }
 
 static double calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
-	return Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu));
+	return (0.001+Theta*pow(VEGF_VEGFR,Nu)/(1+pow(VEGF_VEGFR,Nu)))/2; // Added divisor and "betaD".
 }
 
 static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
@@ -148,7 +149,7 @@ static double calc_Theta_rate() {
 }
 
 static double calc_Phi_rate() {
-	return 0.001;
+	return 0.005; // Changed to 0.005.
 }
 
 static double calc_VR_Production_rate() {
@@ -156,7 +157,7 @@ static double calc_VR_Production_rate() {
 }
 
 static double calc_N_Production_rate(double NOTCH_Diff) {
-	return 0.005+NOTCH_Diff;
+	return (0.005/ 2)+NOTCH_Diff; // Added divisor. Notch Diff is here, check it's correct.
 }
 
 static double calc_VR_Degradation_rate(double Phi, double VEGFR) {
@@ -187,8 +188,12 @@ static double calc_Nu_rate() {
 	return 2;
 }
 
-static double calc_FilopodiaTurnover_rate() {
+static double calc_beta_rate() {
 	return 0.001;
+}
+
+static double calc_FilopodiaTurnover_rate(double FILOPODIA) {
+	return 0.001 * FILOPODIA;
 }
 
 static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4) {
