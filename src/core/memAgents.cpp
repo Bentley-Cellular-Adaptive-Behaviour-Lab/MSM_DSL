@@ -1005,7 +1005,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
     bool previousJunction = junction;
 
-
     i = (int) Mx;
     j = (int) My;
     k = (int) Mz;
@@ -1151,6 +1150,7 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                         if ((worldP->grid[m][n][p].getMids()[y]->Cell != Cell) && (worldP->grid[m][n][p].getMids()[y]->FIL != STALK) && (worldP->grid[m][n][p].getMids()[y]->FIL != TIP)) {
                             junction = true;
                             flagA = 1;
+
 
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
