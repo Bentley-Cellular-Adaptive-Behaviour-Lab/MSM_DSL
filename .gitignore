@@ -5,3 +5,4 @@ cmake-build-debug
 *.log
 *.a
 *.o
+workspace.xml
