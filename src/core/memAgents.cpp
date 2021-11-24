@@ -1005,6 +1005,10 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
     bool previousJunction = junction;
 
+    if (worldP->timeStep == 2) {
+        int test = 0;
+    }
+
     i = (int) Mx;
     j = (int) My;
     k = (int) Mz;
@@ -1151,7 +1155,9 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                             junction = true;
                             flagA = 1;
 
-
+                            if (this->Cell->cell_number == 0 && worldP->timeStep == 0) {
+                                int test = 0;
+                            }
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
                             if (ANALYSIS_SHUFFLING) {
