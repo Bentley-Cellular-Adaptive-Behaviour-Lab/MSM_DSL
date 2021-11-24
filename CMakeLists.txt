@@ -205,7 +205,6 @@ elseif(TEST_TYPE EQUAL 1)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
 
-
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
 
