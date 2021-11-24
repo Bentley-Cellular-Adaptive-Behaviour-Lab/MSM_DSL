@@ -697,7 +697,6 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
 
             m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), memp);
 
-            memp->JunctionTest( true);
         }
     }
 }
