@@ -938,8 +938,9 @@ void EC::add_to_neighbour_list(EC* query_ec) {
     bool cell_found = false;
 	// Check we don't already know about this cell.
     for (auto *current_ec : this->neigh_cells) {
-        if (current_ec->cell_number != query_ec->cell_number) {
+        if (current_ec == query_ec) {
             cell_found = true;
+            break;
         }
     }
 	if (!cellIsNeighbour(query_ec) && !cell_found) {
@@ -996,8 +997,6 @@ float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
 ******************************************************************************************/
 
 void EC::set_cell_protein_level(std::string protein_name, float new_level, int timestep_value) {
-    // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
-    // This is also used during ODE running and so has the potential to fail.
     try {
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
