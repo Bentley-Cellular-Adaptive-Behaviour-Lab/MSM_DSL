@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="525vlof68cskj2svt2k4vyf2yf6pky2">
-  <files names="BinaryExpression_TextGen.java:LogicalNotExpression_TextGen.java:ParensExpression_TextGen.java:PrimitiveType_TextGen.java:TextGenAspectDescriptor.java:UnaryMinusExpression_TextGen.java" />
-</product>
-
