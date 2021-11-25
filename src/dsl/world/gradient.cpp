@@ -7,14 +7,14 @@
 
 #include "gradient.h"
 
-#include "core/coordinates.h"
-#include "core/environment.h"
-#include "core/location.h"
-#include "core/objects.h"
-#include "core/world.h"
+#include "../../core/coordinates.h"
+#include "../../core/environment.h"
+#include "../../core/location.h"
+#include "../../core/objects.h"
+#include "../../core/world.h"
 
-#include "dsl/species/protein.h"
-#include "dsl/world/worldContainer.h"
+#include "../species/protein.h"
+#include "../world/worldContainer.h"
 
 /*****************************************************************************************
 *  Name:		add_env_protein

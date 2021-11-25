@@ -11,15 +11,15 @@
 #include "tissueContainer.h"
 #include "tissueType.h"
 
-#include "core/coordinates.h"
-#include "core/EC.h"
-#include "core/location.h"
-#include "core/memAgents.h"
-#include "core/objects.h"
-#include "core/spring.h"
-#include "core/world.h"
+#include "../../core/coordinates.h"
+#include "../../core/EC.h"
+#include "../../core/location.h"
+#include "../../core/memAgents.h"
+#include "../../core/objects.h"
+#include "../../core/spring.h"
+#include "../../core/world.h"
 
-#include "dsl/utils/shape.h"
+#include "../utils/shape.h"
 
 /*****************************************************************************************
 *  Name:		define_cell_type

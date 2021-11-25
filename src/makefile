@@ -42,7 +42,7 @@ CPPFLAGS += $(CDBG)
 
 #for non pybind  use:
 ${TARGET} : ${OBJS}
-	${CC} -o ${TARGET} ${CPPFLAGS} ${OBJS} ${LIBS}
+	${CC} -o ${TARGET} ${CPPFLAGS} *.o ${LIBS}
 
 .cpp.o:
 	${CC} ${CPPFLAGS} -c $*.cpp

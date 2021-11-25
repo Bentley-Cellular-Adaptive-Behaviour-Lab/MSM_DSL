@@ -1,9 +1,11 @@
-#include "core/memAgents.h"
-#include "core/EC.h"
-
-#include "dsl/tissue/cellType.h"
-#include "dsl/species/protein.h"
 #include "dsl_species_gen.h"
+
+#include "../core/memAgents.h"
+#include "../core/EC.h"
+
+#include "../dsl/tissue/cellType.h"
+#include "../dsl/species/protein.h"
+
 
 // Created using: Example1_Species //
 ODEs::ODEs() {

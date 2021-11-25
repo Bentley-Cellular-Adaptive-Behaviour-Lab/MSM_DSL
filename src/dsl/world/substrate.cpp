@@ -6,14 +6,14 @@
 
 #include "substrate.h"
 
-#include "core/coordinates.h"
-#include "core/environment.h"
-#include "core/location.h"
-#include "core/objects.h"
-#include "core/world.h"
+#include "../../core/coordinates.h"
+#include "../../core/environment.h"
+#include "../../core/location.h"
+#include "../../core/objects.h"
+#include "../../core/world.h"
 
-#include "dsl/utils/shape.h"
-#include "dsl/world/worldContainer.h"
+#include "../utils/shape.h"
+#include "../world/worldContainer.h"
 
 /*****************************************************************************************
 *  Name:		apply_substrate_to_cuboid

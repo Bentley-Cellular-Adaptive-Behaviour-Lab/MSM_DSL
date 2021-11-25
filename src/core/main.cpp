@@ -1,9 +1,8 @@
 #include "objects.h"
 #include "world.h"
 
-#include "dsl/utils/logger.h"
-#include "dsl/utils/utils.h"
-#include "dsl/world/worldContainer.h"
+#include "../dsl/utils/utils.h"
+#include "../dsl/world/worldContainer.h"
 
 
 #if GRAPHICS
@@ -220,7 +219,7 @@ int main(int argc, char * argv[]) {
 	world = w_container->get_world();
 	WORLDpointer = world;
 
-    world->getWorldLogger()->openHysteresisFile();
+//    world->getWorldLogger()->openHysteresisFile();
 
 	std::cout << "World created." << "\n";
 
@@ -244,6 +243,6 @@ int main(int argc, char * argv[]) {
 	write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
 
 #endif
-    world->getWorldLogger()->closeHysteresisFile();
+//    world->getWorldLogger()->closeHysteresisFile();
 //    RUNSfile.close();
 }

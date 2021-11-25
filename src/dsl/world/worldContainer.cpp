@@ -3,14 +3,14 @@
 //
 #include <iostream>
 
-#include "core/world.h"
+#include "../../core/world.h"
 
 #include "gradient.h"
 #include "substrate.h"
 #include "worldContainer.h"
 
-#include "dsl/species/protein.h"
-#include "dsl/utils/shape.h"
+#include "../species/protein.h"
+#include "../utils/shape.h"
 
 //********************************************************************************************************************//
 

@@ -4,11 +4,11 @@
 
 #include "logger.h"
 
-#include "core/EC.h"
-#include "core/world.h"
+#include "../../core/EC.h"
+#include "../../core/world.h"
 
-#include "dsl/species/protein.h"
-#include "dsl/tissue/cellType.h"
+#include "../species/protein.h"
+#include "../tissue/cellType.h"
 
 world_logger::world_logger(World* world, const char *hysteresisFileName) {
     setWorld(world);

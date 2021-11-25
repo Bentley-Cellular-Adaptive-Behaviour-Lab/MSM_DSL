@@ -2,9 +2,9 @@
 // Created by Tom on 21/09/2021.
 //
 
-#include "../src/dsl/shape/cytoprotein.h"
-#include "../src/dsl/shape/protrusionType.h"
-#include "../src/dsl/shape/shapeContainer.h"
+#include "../dsl/shape/cytoprotein.h"
+#include "../dsl/shape/protrusionType.h"
+#include "../dsl/shape/shapeContainer.h"
 
 void ShapeContainer::setup() {
     ProtrusionType *Filopodia;
