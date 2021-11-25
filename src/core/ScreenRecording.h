@@ -23,6 +23,9 @@
 #include <glui.h>
 
 #endif
+
+#include <string>
+
 enum Recording
 {
     NotRecording,

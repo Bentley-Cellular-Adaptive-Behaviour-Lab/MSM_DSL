@@ -20,6 +20,8 @@
 
 #endif
 
+#include <cmath>
+
 void ScreenRecording::screenDump(std::string filename)
 {
     int width, height;
