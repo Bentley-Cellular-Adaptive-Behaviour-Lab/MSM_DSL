@@ -288,7 +288,7 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             newMemAgent->minusSite = startMemAgent;
 
             /// Create new protein objects for proteins which are allowed by the protrusion.
-            for (auto *protein : cell->m_cell_type) {
+            for (auto *protein : cell->m_cell_type->proteins) {
 
             }
 

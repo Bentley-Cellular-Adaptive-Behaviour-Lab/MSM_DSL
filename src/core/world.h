@@ -242,7 +242,8 @@ public:
     world_logger* getWorldLogger();
     void setWorldLogger(world_logger *logger);
 
-    ;
+	void printProteinNames();
+	void printProteinLevels(int timestepInterval);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

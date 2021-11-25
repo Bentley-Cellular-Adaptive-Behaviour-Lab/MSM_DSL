@@ -3,7 +3,7 @@
   <id>com.mbeddr.mpsutil.asynccell</id>
   <name>com.mbeddr.mpsutil.asynccell</name>
   <description>Cell that shows a spinner while the long-running computation of the cell value is still running in background.</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1-2021.1.23075.71f44c9</version>
   <vendor url="http://mbeddr.com">mbedrr</vendor>
   <depends>jetbrains.mps.core</depends>
   <extensions defaultExtensionNs="com.intellij">

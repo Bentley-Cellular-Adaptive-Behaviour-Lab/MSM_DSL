@@ -33,6 +33,7 @@ class Tissue;
 class EC {
 private:
     std::list<Protrusion*> m_protrusions;
+    std::vector<EC*> neigh_cells;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -156,7 +157,7 @@ public:
 
 	// Tracks which cells are neighbouring this one i.e. have formed junctions.
 	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
-	std::vector<EC*> neigh_cells;
+    bool cellIsNeighbour(EC *query_ec);
 	void add_to_neighbour_list(EC *query_ec);
 	void cycle_protein_levels();
 
@@ -168,5 +169,6 @@ public:
     void addProtrusionToList(Protrusion* protrusion);
     bool removeProtrusionFromList(Protrusion* protrusion);
     std::list<Protrusion*>& getProtrusionList();
+    std::vector<EC*>& getNeighCellVector();
 };
 #endif //SPRINGAGENT_EC_H

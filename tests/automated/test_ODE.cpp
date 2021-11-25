@@ -14,6 +14,7 @@
 #include "helper_ODE.h"
 
 #include "dsl/tissue/cell.h"
+#include "dsl/tissue/cellType.h"
 #include "dsl/tissue/tissue.h"
 
 
@@ -261,6 +262,35 @@ TEST_F(NotchPathwayTest, NotchPathwayTest) {
         // Cycle the protein levels.
         for (auto *ec : this->tissueMonolayer->m_cell_agents) {
             ec->cycle_protein_levels();
+        }
+    }
+}
+
+TEST_F(UnequalDistributionTest, UnequalDistributionTest) {
+    this->printProteinLevels(0);
+    for (int i = 1; i <= 10; i++) {
+        runMemAgentODE(centreMemAgent);
+        printProteinLevels(i);
+    }
+}
+
+
+TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentTest) {
+
+}
+
+TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
+    EC *cell1 = this->cell1;
+    EC *cell2 = this->cell2;
+
+    printProteinLevels(0);
+    for (int timestep = 1; timestep <= 10000; timestep++) {
+        VenkatramanCellTest_run_cell_ODEs(cell1);
+        VenkatramanCellTest_run_cell_ODEs(cell2);
+        cell1->cycle_protein_levels();
+        cell2->cycle_protein_levels();
+        if (timestep % 50 == 0) {
+            printProteinLevels(timestep);
         }
     }
 }

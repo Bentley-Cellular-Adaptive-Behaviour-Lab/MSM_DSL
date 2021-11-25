@@ -153,3 +153,4 @@ void ExtendProtrusionTest::createProtrusion() {
     this->m_cell->createProtrusion(targetMemAgent, protrusionType);
     this->m_protrusion = this->m_cell->getProtrusionList().front();
 }
+

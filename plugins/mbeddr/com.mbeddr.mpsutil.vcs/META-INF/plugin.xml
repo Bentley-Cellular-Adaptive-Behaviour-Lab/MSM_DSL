@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <idea-plugin>
-  <id>com.mbeddr.mpsutil.vcs</id>
+  <id>com.mbeddr.mpsutil.projectview.vcs</id>
   <name>com.mbeddr.mpsutil.vcs</name>
   <description>VCS integration for mbeddr plugins</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="http://mbeddr.com/">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>com.mbeddr.mpsutil.projectview</depends>

@@ -3,7 +3,7 @@
   <id>com.mbeddr.mpsutil.parameterizedMenu</id>
   <name>com.mbeddr.mpsutil.parameterizedMenu</name>
   <description>extension to the Transformation Menu of j.mps.lang.editor that allows two further childen for a `parameterized` item</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1-2021.1.23075.71f44c9</version>
   <vendor url="http://mbeddr.com">mbedrr</vendor>
   <depends>jetbrains.mps.core</depends>
   <extensions defaultExtensionNs="com.intellij">

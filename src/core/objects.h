@@ -25,16 +25,26 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-#define ANALYSIS_HYSTERESIS false
-#define ANALYSIS_TIME_TO_PATTERN false
-#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-#define GRAPHICS false
-#define ECpack 15
-#define MAXtime 10 ///2000 ///480 for fil lifetime
+//#define ANALYSIS_HYSTERESIS false
+//#define ANALYSIS_TIME_TO_PATTERN false
+//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+//#define GRAPHICS false
+//#define ECpack 15
+//#define MAXtime 10000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
 #define PROTEIN_TESTING true
+
+/// below defines are set through makefile
+#if PROTEIN_TESTING
+#define ANALYSIS_HYSTERESIS false
+#define ANALYSIS_TIME_TO_PATTERN false
+#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+#define GRAPHICS false
+#define ECpack 2
+#define MAXtime 10000 ///2000 ///480 for fil lifetime
+#endif
 
 //extern std::ofstream RUNSfile;
 ///analysis/quantification
@@ -118,7 +128,6 @@ extern float VconcST;
 extern float VconcSTMACRO;
 extern long long seed;
 ///cytoskeleton
-#define FILOPODIA true
 #define VEIL_ADVANCE false
 #define ANASTOMOSIS false
 extern float actinMax;///128(for 0.25 scale cells (rearrangement model)///512(in JTB 2008 and PLoS CB 2009)///max filagests extra, calcs on the fly with retraction = 1 and extension  =1 rather than i actual memagents as they are updated synchronously in this version, in calc force...and remove/grids spring agents

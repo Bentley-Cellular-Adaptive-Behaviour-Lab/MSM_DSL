@@ -137,7 +137,7 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
             cell = new Cell(this, name, m_world, position, cell_type);
             cell->determine_boundaries();
             store_cell(cell);
-            EC *ecp = new EC((World*) m_world);
+            EC *ecp = new EC((World*) m_world, cell_type);
 
             ecp->belongs_to = BELONGS_TO_SINGLECELL;
 
@@ -151,8 +151,6 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
             //Assign the cell agent to the cell object.
             cell->cell_agent = ecp;
             ecp->m_cell = cell;
-            ecp->m_cell_type = cell->m_cell_type;
-
             check_position(cell);
 
             create_2d_square_cell(m_single_cell_agents.size(),

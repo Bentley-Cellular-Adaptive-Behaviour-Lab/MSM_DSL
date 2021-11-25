@@ -18,6 +18,9 @@ private:
     float m_requiredAmount;
 public:
     CytoProtein(std::string name, float startLevel, float requiredAmount);
+    // Copy constructors.
+    CytoProtein(const CytoProtein &rhs);
+
     std::string getName() const;
     void setName(const std::string name);
 

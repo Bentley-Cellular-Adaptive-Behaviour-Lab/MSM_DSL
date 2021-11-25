@@ -624,6 +624,53 @@ EC::EC(World*  world){
 
 }
 
+EC::EC(World *world, Cell_Type *cell_type) {
+    worldP = world;
+    mutant = false;
+    this->m_cell_type = new Cell_Type(*cell_type);
+    filCONST = FIL_VARY; //LTK link add user config value link here
+
+    //wt values FLTK link
+    VEGFRnorm = VEGFRNORM;
+    Vsink =VsinkNorm;
+
+    if(VR2_HET==true){
+        VEGFRnorm = VEGFRNORM*0.5;
+    }
+    if(VR1_HET==true) Vsink = Vsink*0.5;
+
+
+    VEGFRtot=VEGFRnorm;
+    Dll4tot=0.0f;
+    Notchtot=0.0f;
+    activeNotchtot=0.0f;
+    stableVEGFR=VEGFRnorm;
+    base_of_longest_fil= NULL;
+    length_of_longest_fil = 0;
+    newJunction = 0;
+
+    actinUsed=0;
+
+    int i;
+    for(i=0;i<actNot_VEGFR_delay;i++){
+        NotchDelayArray.push_back(0.0f);
+    }
+    for(i=0;i<actNot_VEGFR_lasts;i++){
+        NotchLastsArray.push_back(0.0f);
+    }
+    for(i=0;i<VEGFR_dll4_delay;i++){
+        VEGFRDelayArray.push_back(0.0f);
+    }
+    for(i=0;i<VEGFR_dll4_lasts;i++){
+        VEGFRlastsArray.push_back(0.0f);
+    }
+
+
+
+    VonNeighs = 0;
+}
+
+
 /*****************************************************************************************
 *  Name:		set_initial_proteins
 *  Description: Iterates over all cell proteins and allocates those proteins to all agents,
@@ -804,9 +851,11 @@ void EC::calculate_cell_protein_levels() {
 //        }
 //    }
 
+
+    // TODO: SET THIS TO BE FOR THE NEXT TIMESTEP
     // Now, set the protein levels for the cell at this current timestep.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],0);
+        this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],1);
     }
 }
 
@@ -880,22 +929,49 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 /*****************************************************************************************
 *  Name:		add_to_neighbour_list
 *  Description: If a queried cell is not already included in this cell's list of neighbours,
-*  				then add it. This should only be called when a cell is attempting to form
-*  				junction agents.
+*  				then add it. This should only be called when a cell is determining junction
+*  				agents.
 *  Returns:		void
 ******************************************************************************************/
 
 void EC::add_to_neighbour_list(EC* query_ec) {
-	bool cell_found = false;
-	for (auto current_ec : this->neigh_cells) {
-		if (current_ec != query_ec) {
-			cell_found = true;
-		}
-	}
-	// Cell not found in neighbour list, so add it.
-	if (!cell_found) {
+    bool cell_found = false;
+	// Check we don't already know about this cell.
+    for (auto *current_ec : this->neigh_cells) {
+        if (current_ec == query_ec) {
+            cell_found = true;
+            break;
+        }
+    }
+	if (!cellIsNeighbour(query_ec) && !cell_found) {
 		this->neigh_cells.push_back(query_ec);
 	}
+}
+
+/*****************************************************************************************
+*  Name:		getNeighCellVector
+*  Description: Returns the vector of neighbouring cell agents.
+*  Returns:		std::vector<EC*>&
+******************************************************************************************/
+
+std::vector<EC*>& EC::getNeighCellVector() {
+    return this->neigh_cells;
+}
+
+/*****************************************************************************************
+*  Name:		cellIsNeighbour
+*  Description: Checks whether a cell agent neighbours the cell agent calling the function.
+*  Returns:		bool
+******************************************************************************************/
+
+bool EC::cellIsNeighbour(EC *query_ec) {
+    bool cell_found = false;
+    for (auto current_ec : this->neigh_cells) {
+        if (current_ec != query_ec) {
+            cell_found = true;
+        }
+    }
+    return cell_found;
 }
 
 /*****************************************************************************************
@@ -905,7 +981,6 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 ******************************************************************************************/
 
 float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
-
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {
@@ -922,8 +997,6 @@ float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
 ******************************************************************************************/
 
 void EC::set_cell_protein_level(std::string protein_name, float new_level, int timestep_value) {
-    // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
-    // This is also used during ODE running and so has the potential to fail.
     try {
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {

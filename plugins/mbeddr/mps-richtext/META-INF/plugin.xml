@@ -3,14 +3,13 @@
   <id>de.slisson.mps.richtext</id>
   <name>MPS Richtext Editor Component</name>
   <description>An editor component for mixing plain text and MPS nodes</description>
-  <version>2020.3.1594.831b14e</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://github.com/slisson/mps-richtext">Sascha Lisson</vendor>
   <depends>jetbrains.mps.build</depends>
   <depends>jetbrains.mps.core</depends>
   <depends>de.slisson.mps.editor.multiline</depends>
   <depends>de.itemis.mps.selection</depends>
   <depends>de.itemis.mps.celllayout</depends>
-  <description>An editor component for mixing plain text and MPS nodes</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 1)
+set(TEST_TYPE 0)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -204,7 +204,6 @@ elseif(TEST_TYPE EQUAL 1)
     find_package(Boost)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
-
 
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)

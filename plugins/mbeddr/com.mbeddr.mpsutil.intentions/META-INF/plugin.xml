@@ -2,8 +2,8 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.intentions</id>
   <name>com.mbeddr.mpsutil.intentions</name>
-  <description>Intentions Langauge from mbeddr.mpsutil</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <description>Enables the grouping of different intentions under one label</description>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="http://mbeddr.com/">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>de.slisson.mps.hacks</depends>

@@ -6,7 +6,7 @@
     <use id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips" version="0" />
   </languages>
   <imports>
-    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueSetup.structure)" implicit="true" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -378,7 +378,7 @@
         <node concept="VPM3Z" id="1z0V6VU8Xy5" role="3F10Kt" />
         <node concept="3XFhqQ" id="5gBmBO5aXxc" role="3EZMnx" />
         <node concept="3F0ifn" id="1z0V6VU8Xy7" role="3EZMnx">
-          <property role="3F0ifm" value="Expresses proteins:" />
+          <property role="3F0ifm" value="Has Species:" />
           <node concept="2biZxu" id="2FvyIAlEDUV" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

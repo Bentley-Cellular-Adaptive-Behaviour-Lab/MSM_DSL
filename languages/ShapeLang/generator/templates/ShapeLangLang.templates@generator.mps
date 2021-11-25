@@ -4,7 +4,6 @@
   <languages>
     <use id="990507d3-3527-4c54-bfe9-0ca3c9c6247a" name="com.dslfoundry.plaintextgen" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="4" />
-    <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
@@ -63,7 +62,6 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT" />
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
@@ -892,32 +890,6 @@
                               </node>
                               <node concept="3oM_SD" id="3FNuJRssHqf" role="1PaTwD">
                                 <property role="3oM_SC" value="used." />
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="3FNuJRssHqg" role="3cqZAp">
-                            <node concept="37vLTI" id="3FNuJRssHqh" role="3clFbG">
-                              <node concept="3clFbT" id="3FNuJRssHqi" role="37vLTx" />
-                              <node concept="2OqwBi" id="3FNuJRssHqj" role="37vLTJ">
-                                <node concept="37vLTw" id="3FNuJRssHqk" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3FNuJRssHq4" resolve="newBin" />
-                                </node>
-                                <node concept="3TrcHB" id="3FNuJRssHql" role="2OqNvi">
-                                  <ref role="3TsBF5" to="w3cn:xhYrITX1su" resolve="targetUsesCellValue" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3clFbF" id="3FNuJRssHqm" role="3cqZAp">
-                            <node concept="37vLTI" id="3FNuJRssHqn" role="3clFbG">
-                              <node concept="3clFbT" id="3FNuJRssHqo" role="37vLTx" />
-                              <node concept="2OqwBi" id="3FNuJRssHqp" role="37vLTJ">
-                                <node concept="37vLTw" id="3FNuJRssHqq" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="3FNuJRssHq4" resolve="newBin" />
-                                </node>
-                                <node concept="3TrcHB" id="3FNuJRssHqr" role="2OqNvi">
-                                  <ref role="3TsBF5" to="w3cn:xhYrITVX8D" resolve="targetUsesNeighbourValue" />
-                                </node>
                               </node>
                             </node>
                           </node>

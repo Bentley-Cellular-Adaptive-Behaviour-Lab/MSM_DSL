@@ -215,9 +215,6 @@ int main(int argc, char * argv[]) {
 
 	std::cout << "Creating world..." << "\n";
 
-//    World* world = new World();
-//    WORLDpointer = world;
-
 
 	w_container->world_setup();
 	world = w_container->get_world();
@@ -232,6 +229,7 @@ int main(int argc, char * argv[]) {
     displayGlui(&argc, argv);
     glutMainLoop();
 #else
+	world->printProteinNames();
     world->runSimulation();
 
     //Get end time, and calculate elapsed time -> add these to results file.

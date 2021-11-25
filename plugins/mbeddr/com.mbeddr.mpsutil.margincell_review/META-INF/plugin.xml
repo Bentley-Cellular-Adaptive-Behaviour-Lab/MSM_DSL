@@ -3,7 +3,7 @@
   <id>com.mbeddr.mpsutil.margincell_review</id>
   <name>com.mbeddr.mpsutil.margincell_review</name>
   <description>Review support for user models (using margin cells)</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1-2021.1.23075.71f44c9</version>
   <vendor url="http://mbeddr.com/">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>de.slisson.mps.hacks</depends>

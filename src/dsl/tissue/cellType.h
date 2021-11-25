@@ -31,13 +31,30 @@ public:
     ODE *ode_system;
 
     Cell_Type(Tissue_Container *tissue_container, std::string name, Shape *shape);
+    // Copy constructor for Cell Type objects.
+    Cell_Type(const Cell_Type& rhs);
+
     void add_protein(Protein* protein);
     void set_ODE_system(ODE *ode_system);
+    bool has_protein(std::string proteinName);
 
     void add_protrusion_type(ProtrusionType *protrusionType);
     void add_cytoprotein(CytoProtein *cytoProtein);
     bool has_cytoprotein(std::string cytoProteinName);
     CytoProtein* get_cytoprotein(std::string cytoProteinName);
+    Protein* get_protein(std::string proteinName);
+
+
+    // Copy operator for Cell Type objects;
+    Cell_Type& operator=(const Cell_Type& rhs) {
+        this->m_name = rhs.m_name;
+        this->m_shape = rhs.m_shape;
+        this->m_tissue_container = rhs.m_tissue_container;
+        std::copy(rhs.proteins.begin(), rhs.proteins.end(),std::back_inserter(this->proteins));
+        std::copy(rhs.m_protrusion_types.begin(), rhs.m_protrusion_types.end(),std::back_inserter(this->m_protrusion_types));
+        std::copy(rhs.m_cytoskeletal_proteins.begin(), rhs.m_cytoskeletal_proteins.end(),std::back_inserter(this->m_cytoskeletal_proteins));
+        return *this;
+    };
 };
 
 

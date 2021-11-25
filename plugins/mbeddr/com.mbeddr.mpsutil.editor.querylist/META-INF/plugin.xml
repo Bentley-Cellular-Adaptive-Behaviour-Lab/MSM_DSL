@@ -2,8 +2,8 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.editor.querylist</id>
   <name>com.mbeddr.mpsutil.editor.querylist</name>
-  <description>Editor Querylist Langauge from mbeddr.mpsutil</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <description>Enables the definition of editors over smodel queries as opposed to only a fixed concept structure</description>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="http://mbeddr.com/">mbeddr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>de.slisson.mps.hacks</depends>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="bn1y2p46eq1z5rrc4jl8g6tyub554so">
-  <files names="TypesystemDescriptor.java:checkAdhesiveness_NonTypesystemRule.java:checkBufferSize_NonTypesystemRule.java:checkCoarseness_NonTypesystemRule.java:checkCuboidGradientBoundaries_NonTypesystemRule.java:checkCuboidSubstrateBoundaries_NonTypesystemRule.java:checkPointGradientBoundaries_NonTypesystemRule.java:checkSinkAndSourceGradientBoundaries_NonTypesystemRule.java:checkTriangularSubstrateBoundaries_NonTypesystemRule.java:checkVertexSubstrateBoundaries_NonTypesystemRule.java:duplicateGradientName_NonTypesystemRule.java:duplicateSubstrateName_NonTypesystemRule.java:typeof_Adhesiveness_InferenceRule.java" />
-</product>
-

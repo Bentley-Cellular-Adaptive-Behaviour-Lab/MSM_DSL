@@ -3,7 +3,7 @@
   <id>com.mbeddr.mpsutil.blutil.test.waitfor</id>
   <name>com.mbeddr.mpsutil.blutil.test.waitfor</name>
   <description>Test asynchronous behavior: `wait for` is an assertion similar to `assert true` with the difference, that a false expression will be reevaluated until true or reaching a timeout.</description>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1-2021.1.23075.71f44c9</version>
   <vendor url="http://mbeddr.com">mbedrr</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.testing</depends>

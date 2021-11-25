@@ -1,4 +1,9 @@
-
+*_gen*
 .mps/workspace.xml
-.idea/workspace.xml
 cmake-build-debug
+*.swp
+*.log
+*.a
+*.o
+workspace.xml
+Makefile

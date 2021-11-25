@@ -611,6 +611,8 @@ void MemAgent::VEGFRresponse(void) {
     j = (int) My;
     k = (int) Mz;
     bool moved = false;
+
+    bool filopodiaOn = true;
    
     //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF.. 
     VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
@@ -622,7 +624,7 @@ void MemAgent::VEGFRresponse(void) {
     }
 
     //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
-    if (FILOPODIA){
+    if (filopodiaOn) {
     	//***** RANDFIL here
     	if (randFilExtend >= 0 && randFilExtend <= 1) {
 			Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
@@ -1003,6 +1005,9 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
     bool previousJunction = junction;
 
+    if (worldP->timeStep == 2) {
+        int test = 0;
+    }
 
     i = (int) Mx;
     j = (int) My;
@@ -1149,6 +1154,17 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                         if ((worldP->grid[m][n][p].getMids()[y]->Cell != Cell) && (worldP->grid[m][n][p].getMids()[y]->FIL != STALK) && (worldP->grid[m][n][p].getMids()[y]->FIL != TIP)) {
                             junction = true;
                             flagA = 1;
+
+                            if (this->Cell->cell_number == 0 && worldP->timeStep == 0) {
+                                int test = 0;
+                            }
+                            // TOM: Add the cell to the list of neighbours.
+                            // TOM: Only do this once if we're not doing cell shuffling.
+                            if (ANALYSIS_SHUFFLING) {
+                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+                            } else if (!ANALYSIS_SHUFFLING && worldP->timeStep == 0) {
+                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+                            }
 
                             worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
@@ -2954,7 +2970,7 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 // TODO: This function!
 
 /*****************************************************************************************
-*  Name:		distribute_calculated_proteins
+*  Name:		distribute_calculated_proteins (deprecated)
 *  Description: Takes in a given protein level, counts the number of memAgents that own
 *				that protein then set the new level to that divided by the amount.
 *				Can either distribute proteins to the same memagents from the same cell or to
@@ -2962,6 +2978,7 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
+[[deprecated]]
 void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
 	int m, n, p;
 	int i = (int) Mx;
@@ -2969,6 +2986,10 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 	int k = (int) Mz;
 
 	std::vector<MemAgent*> relevant_memAgents;
+
+    // TODO: CALCULATE TOTAL CHANGE ACROSS THE CELL.
+    // TODO: CALCULATE CHANGE PER MEMAGENT (HINT: MULTIPLY BY THE NUMBER OF AGENTS BELONGING TO A CELL DIVIDED BY THE TOTAL NUMBER OF MEMAGENTS).
+    // TODO: APPLY THE CHANGE PER MEMAGENT TO EACH MEMAGENT USING THE CURRENT PROTEIN TOTAL AT THAT AGENT
 
 	for (int x = 0; x < 26; x++) {
 		// Same layer.
@@ -3134,6 +3155,437 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
     }
 }
 
+/*****************************************************************************************
+*  Name:		distribute_proteins
+*  Description: Takes in the change of a protein level, determines the change per memAgent
+ *              then applies that change to the relevant memAgent
+*				Can either distribute proteins to the same memagents from the same cell or to
+ *				different cells
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::distribute_proteins(std::string protein_name, float start_protein_level, float end_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
+
+    float protein_level_change = end_protein_level - start_protein_level;
+
+    std::vector<EC*> relevantCells = find_cells(true);
+    std::vector<std::vector<MemAgent*>> relevant_memAgents = findRelevantAgents(relevantCells,
+                                                                   protein_name,
+                                                                   affects_this_cell,
+                                                                   affects_neighbour_cell,
+                                                                   protein_location);
+    std::vector<float> memAgentProportions;
+
+    int totalRelevantMemAgents = 0;
+
+    for (auto *cell : relevantCells) {
+        memAgentProportions.push_back(-1);
+    }
+
+    // Determine the total number of memAgents being looked up.
+    for (auto agentVector : relevant_memAgents) {
+        totalRelevantMemAgents += agentVector.size();
+    }
+
+    for (int index = 0; index < relevant_memAgents.size(); index++) {
+        // Get the proportion of agents that are taking part in the interaction.
+        memAgentProportions[index] = relevant_memAgents[index].size() / totalRelevantMemAgents;
+    }
+
+    // TODO: CALCULATE TOTAL CHANGE ACROSS THE CELL.
+
+    // Now, go over each memAgent belonging to each cell, then change its current amount by a proporotion of the total change.
+    int index = 0;
+    for (auto agentVector : relevant_memAgents) {
+        float proportionalChange = protein_level_change * memAgentProportions[index];
+        // The amount that each memAgent changes its value by.
+        float changePerAgent = proportionalChange / relevant_memAgents.size();
+        for (auto *memAgent : agentVector) {
+            memAgent->update_protein_level(protein_name, changePerAgent);
+        }
+        index++;
+    }
+}
+
+/*****************************************************************************************
+*  Name:		find_cells
+*  Description: Gets a vector of cell objects adjacent to this memAgent, including the cell
+*               the MemAgent is part of if the optional boolean is true.
+*  Returns:		std::vector<EC*>
+******************************************************************************************/
+
+std::vector<EC*> MemAgent::find_cells(bool add_this_cell) {
+    std::vector<EC*> cell_vector;
+
+    if (add_this_cell) {
+        cell_vector.push_back(this->Cell);
+    }
+
+    // Now check adjacent sites.
+
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
+
+    for (int x = 0; x < 26; x++) {
+        // Same layer.
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        } // Layer below.
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        } // Layer above.
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
+
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].getType() == const_M) {
+                for (auto *memAgent: worldP->grid[m][n][p].getMids()) {
+                    EC* currentCell = memAgent->Cell;
+                    // Check we haven't already found the cell in question, if not, then add it to the vector.
+                    bool cellAlreadyAdded = false;
+                    for (auto *cell : cell_vector) {
+                        if (cell == currentCell) {
+                            cellAlreadyAdded = true;
+                        }
+                    }
+                    if (!cellAlreadyAdded) {
+                        cell_vector.push_back(currentCell);
+                    }
+                }
+            }
+        }
+    }
+
+    return cell_vector;
+}
+
+/*****************************************************************************************
+*  Name:		findRelevantAgents
+*  Description: Iterates over the list of cells provided, and adds memAgents to a 2D container,
+*              with one vector per cell.
+*  Returns:		std::vector<EC*>
+******************************************************************************************/
+
+std::vector<std::vector<MemAgent*>> MemAgent::findRelevantAgents(std::vector<EC*> relevantCells,
+                                                                 std::string proteinName,
+                                                                 bool affectsThisCell,
+                                                                 bool affectsNeighbourCell,
+                                                                 int proteinLocation) {
+
+    std::vector<std::vector<MemAgent*>> relevantAgents;
+
+    // Create a vector for each nearby cell.
+    for (auto *cell : relevantCells) {
+        relevantAgents.push_back(std::vector<MemAgent*>());
+    }
+
+    int m, n, p;
+    int i = (int) Mx;
+    int j = (int) My;
+    int k = (int) Mz;
+
+    for (int x = 0; x < 26; x++) {
+        // Same layer.
+        if (x == 0) {
+            m = i + 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 1) {
+            m = i + 1;
+            n = j;
+            p = k;
+        } else if (x == 2) {
+            m = i + 1;
+            n = j + 1;
+            p = k;
+        } else if (x == 3) {
+            m = i;
+            n = j - 1;
+            p = k;
+        } else if (x == 4) {
+            m = i;
+            n = j + 1;
+            p = k;
+        } else if (x == 5) {
+            m = i - 1;
+            n = j - 1;
+            p = k;
+        } else if (x == 6) {
+            m = i - 1;
+            n = j;
+            p = k;
+        } else if (x == 7) {
+            m = i - 1;
+            n = j + 1;
+            p = k;
+        } // Layer below.
+        else if (x == 8) {
+            m = i + 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 9) {
+            m = i + 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 10) {
+            m = i + 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 11) {
+            m = i;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 12) {
+            m = i;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 13) {
+            m = i - 1;
+            n = j - 1;
+            p = k - 1;
+        } else if (x == 14) {
+            m = i - 1;
+            n = j;
+            p = k - 1;
+        } else if (x == 15) {
+            m = i - 1;
+            n = j + 1;
+            p = k - 1;
+        } else if (x == 16) {
+            m = i;
+            n = j;
+            p = k - 1;
+        } // Layer above.
+        else if (x == 17) {
+            m = i + 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 18) {
+            m = i + 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 19) {
+            m = i + 1;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 20) {
+            m = i;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 21) {
+            m = i;
+            n = j + 1;
+            p = k + 1;
+        } else if (x == 22) {
+            m = i - 1;
+            n = j - 1;
+            p = k + 1;
+        } else if (x == 23) {
+            m = i - 1;
+            n = j;
+            p = k + 1;
+        } else if (x == 24) {
+            m = i - 1;
+            n = j + 1;
+            p = k + 1;
+        } else {
+            m = i;
+            n = j;
+            p = k + 1;
+        }
+
+        // TODO: TIDY UP THESE IF STATEMENTS.
+        if (worldP->insideWorld(m, n, p)) {
+            if (worldP->grid[m][n][p].getType() == const_M) {
+                for (auto memAgent : worldP->grid[m][n][p].getMids()) {
+                    EC* currentCell = memAgent->Cell;
+                    if (affectsThisCell) {
+                        // Check for memAgents in this cell that have the protein.
+                        if (memAgent->has_protein(proteinName) && this->Cell == memAgent->Cell) {
+                            if (memAgent->junction && proteinLocation == PROTEIN_LOCATION_JUNCTION) {
+                                // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                                for (int index = 0; index < relevantCells.size(); index++) {
+                                    if (currentCell == relevantCells[i]) {
+                                        relevantAgents[i].push_back(memAgent);
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!memAgent->junction && proteinLocation == PROTEIN_LOCATION_MEMBRANE) {
+                                // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                                for (int index = 0; index < relevantCells.size(); index++) {
+                                    if (currentCell == relevantCells[i]) {
+                                        relevantAgents[i].push_back(memAgent);
+                                        break;
+                                    }
+                                }
+                            }
+                            if (!memAgent->junction && proteinLocation == PROTEIN_LOCATION_CELL) {
+                                // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                                for (int index = 0; index < relevantCells.size(); index++) {
+                                    if (currentCell == relevantCells[i]) {
+                                        relevantAgents[i].push_back(memAgent);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    if (affectsNeighbourCell) {
+                        // Check for memAgents in neighbouring junctions that have the protein.
+                        if (memAgent->junction) {
+                            if (memAgent->has_protein(proteinName) && this->Cell != memAgent->Cell) {
+                                // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                                for (int index = 0; index < relevantCells.size(); index++) {
+                                    if (currentCell == relevantCells[i]) {
+                                        relevantAgents[i].push_back(memAgent);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else if (worldP->grid[m][n][p].getType() == const_E) {
+                // Check for memAgents in filopodia.
+                for (auto memAgent : worldP->grid[m][n][p].getFids()) {
+                    EC* currentCell = memAgent->Cell;
+                    if (affectsThisCell) {
+                        // Check for memAgents in this cell that have the protein and are in a filopodia.
+                        if (memAgent->has_protein(proteinName) && this->Cell == memAgent->Cell && this->FIL != NONE) {
+                            // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                            for (int index = 0; index < relevantCells.size(); index++) {
+                                if (currentCell == relevantCells[i]) {
+                                    relevantAgents[i].push_back(memAgent);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (affectsNeighbourCell) {
+                        // Check for memAgents in neighbouring cells that have the protein.
+                        if (memAgent->has_protein(proteinName) && this->Cell != memAgent->Cell && this->FIL != NONE) {
+                            // Now add the memAgent to the vector that corresponds to the cell it belongs to.
+                            for (int index = 0; index < relevantCells.size(); index++) {
+                                if (currentCell == relevantCells[i]) {
+                                    relevantAgents[i].push_back(memAgent);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return relevantAgents;
+}
+
 void MemAgent::connectJunctions(bool alsoNormalSprings) {
     // Tom: This appears to only be used for 2D cells level with the Z-plane.
     int x = 0;
@@ -3146,7 +3598,7 @@ void MemAgent::connectJunctions(bool alsoNormalSprings) {
     int k = (int)Mz;
 
     //same layer
-    for(x = 0; x < 6; x++) {
+    for (x = 0; x < 6; x++) {
         if(x==0) {
             m=i;
             n=j+1;
@@ -3932,5 +4384,12 @@ void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, std::string cytopr
 
 std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
     return this->m_cytoproteins;
+}
+
+void MemAgent::update_protein_level(std::string protein_name, float protein_delta) {
+    // Change the level of a protein at a given memAgent by the specified amount.
+    float current_level = this->get_memAgent_protein_level(protein_name);
+    float new_level = current_level + protein_delta;
+    this->set_protein_level(protein_name, new_level);
 }
 

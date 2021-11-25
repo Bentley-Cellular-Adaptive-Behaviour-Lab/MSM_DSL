@@ -3,11 +3,10 @@
   <id>de.itemis.mps.nativelibs</id>
   <name>de.itemis.mps.nativelibs</name>
   <description>Language to use native libraries in MPS</description>
-  <version>2020.3.1594.831b14e</version>
+  <version>2021.1.2079.e88dd58</version>
   <vendor url="https://www.itemis.com/">Itemis</vendor>
   <depends>jetbrains.mps.core</depends>
   <depends>jetbrains.mps.build</depends>
-  <description>Language to use native libraries in MPS</description>
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages" />
   </extensions>

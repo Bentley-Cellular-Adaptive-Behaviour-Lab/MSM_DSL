@@ -2,7 +2,7 @@
 <idea-plugin>
   <id>com.mbeddr.mpsutil.infrastructure.misc</id>
   <name>com.mbeddr.mpsutil.infrastructure.misc</name>
-  <version>2020.3-2020.3.22717.f714161</version>
+  <version>2021.1-2021.1.23075.71f44c9</version>
   <vendor url="http://mbeddr.com">mbeddr</vendor>
   <depends>de.itemis.mps.utils</depends>
   <depends>jetbrains.mps.core</depends>

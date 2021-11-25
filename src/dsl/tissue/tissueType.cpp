@@ -43,7 +43,7 @@ Tissue_Type::Tissue_Type(Tissue_Container *tissue_container,
     m_tissue_container = tissue_container;
     m_name = name;
     m_tissue_configuration = tissue_configuration;
-    m_cell_type = cell_type;
+    m_cell_type = new Cell_Type(*cell_type);
 }
 
 // Cylindrical //
