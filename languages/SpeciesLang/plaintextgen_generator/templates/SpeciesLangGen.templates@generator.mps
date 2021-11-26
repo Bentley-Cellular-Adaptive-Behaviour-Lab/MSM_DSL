@@ -17897,13 +17897,13 @@
       <node concept="356WMU" id="4yAZJe6oLH_" role="383Ya9">
         <node concept="356sEK" id="4yAZJe6oLHA" role="383Ya9">
           <node concept="356sEF" id="4yAZJe6oLHB" role="356sEH">
-            <property role="TrG5h" value="#include &quot;core/memAgents.h&quot;" />
+            <property role="TrG5h" value="#include &quot;../core/memAgents.h&quot;" />
           </node>
           <node concept="2EixSi" id="4yAZJe6oLHC" role="2EinRH" />
         </node>
         <node concept="356sEK" id="4yAZJe6oLHD" role="383Ya9">
           <node concept="356sEF" id="4yAZJe6oLHE" role="356sEH">
-            <property role="TrG5h" value="#include &quot;core/EC.h&quot;" />
+            <property role="TrG5h" value="#include &quot;../core/EC.h&quot;" />
           </node>
           <node concept="2EixSi" id="4yAZJe6oLHF" role="2EinRH" />
         </node>
@@ -17912,13 +17912,13 @@
         </node>
         <node concept="356sEK" id="4yAZJe6oLHI" role="383Ya9">
           <node concept="356sEF" id="4yAZJe6oLHJ" role="356sEH">
-            <property role="TrG5h" value="#include &quot;dsl/tissue/cellType.h&quot;" />
+            <property role="TrG5h" value="#include &quot;../dsl/tissue/cellType.h&quot;" />
           </node>
           <node concept="2EixSi" id="4yAZJe6oLHK" role="2EinRH" />
         </node>
         <node concept="356sEK" id="4yAZJe6oLHL" role="383Ya9">
           <node concept="356sEF" id="4yAZJe6oLHM" role="356sEH">
-            <property role="TrG5h" value="#include &quot;dsl/species/protein.h&quot;" />
+            <property role="TrG5h" value="#include &quot;../dsl/species/protein.h&quot;" />
           </node>
           <node concept="2EixSi" id="4yAZJe6oLHN" role="2EinRH" />
         </node>
@@ -17974,109 +17974,105 @@
           </node>
           <node concept="2EixSi" id="4yAZJe6oLIc" role="2EinRH" />
         </node>
-      </node>
-      <node concept="356sEK" id="4yAZJe6oLId" role="383Ya9">
-        <node concept="2EixSi" id="4yAZJe6oLIe" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="4yAZJe6oLIf" role="383Ya9">
-        <node concept="356sEF" id="4yAZJe6oLIg" role="356sEH">
-          <property role="TrG5h" value="void ODEs::check_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {" />
-        </node>
-        <node concept="2EixSi" id="4yAZJe6oLIh" role="2EinRH" />
-      </node>
-      <node concept="356sEQ" id="4yAZJe6oLIi" role="383Ya9">
-        <property role="333NGx" value="  " />
-        <node concept="356sEK" id="4yAZJe6oLIj" role="383Ya9">
-          <node concept="373pV1" id="4yAZJe6oLIk" role="356sEH" />
-          <node concept="356sEF" id="4yAZJe6oLIl" role="356sEH">
-            <property role="TrG5h" value="if (cell_type_name == &quot;" />
+        <node concept="356sEK" id="7_zGWtM3$3J" role="383Ya9">
+          <node concept="356sEF" id="7_zGWtM3$3K" role="356sEH">
+            <property role="TrG5h" value="void ODEs::check_cell_ODEs(EC *ec) {" />
           </node>
-          <node concept="356sEF" id="4yAZJe6oLIm" role="356sEH">
-            <property role="TrG5h" value="CELL_TYPE_NAME" />
-            <node concept="17Uvod" id="4yAZJe6oLIn" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="4yAZJe6oLIo" role="3zH0cK">
-                <node concept="3clFbS" id="4yAZJe6oLIp" role="2VODD2">
-                  <node concept="3clFbF" id="4yAZJe6oLIq" role="3cqZAp">
-                    <node concept="2OqwBi" id="4yAZJe6oLIr" role="3clFbG">
-                      <node concept="30H73N" id="4yAZJe6oLIs" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="4yAZJe6oLIt" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+          <node concept="2EixSi" id="7_zGWtM3$3L" role="2EinRH" />
+        </node>
+        <node concept="356WMU" id="7_zGWtM3$3M" role="383Ya9">
+          <node concept="356sEK" id="7_zGWtM3$3N" role="383Ya9">
+            <node concept="373pV1" id="7_zGWtM3$3O" role="356sEH" />
+            <node concept="356sEF" id="7_zGWtM3$3P" role="356sEH">
+              <property role="TrG5h" value="if (ec-&gt;m_cell_type-&gt;m_name == &quot;" />
+            </node>
+            <node concept="356sEF" id="7_zGWtM3$3Q" role="356sEH">
+              <property role="TrG5h" value="CELL_TYPE_NAME" />
+              <node concept="17Uvod" id="7_zGWtM3$3R" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="7_zGWtM3$3S" role="3zH0cK">
+                  <node concept="3clFbS" id="7_zGWtM3$3T" role="2VODD2">
+                    <node concept="3clFbF" id="7_zGWtM3$3U" role="3cqZAp">
+                      <node concept="2OqwBi" id="7_zGWtM3$3V" role="3clFbG">
+                        <node concept="30H73N" id="7_zGWtM3$3W" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="7_zGWtM3$3X" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="356sEF" id="7_zGWtM3$3Y" role="356sEH">
+              <property role="TrG5h" value="&quot;) {" />
+            </node>
+            <node concept="2EixSi" id="7_zGWtM3$3Z" role="2EinRH" />
           </node>
-          <node concept="356sEF" id="4yAZJe6oLIu" role="356sEH">
-            <property role="TrG5h" value="&quot;) {" />
-          </node>
-          <node concept="2EixSi" id="4yAZJe6oLIv" role="2EinRH" />
-        </node>
-        <node concept="356sEK" id="4yAZJe6oLIw" role="383Ya9">
-          <node concept="373pV1" id="4yAZJe6oLIx" role="356sEH" />
-          <node concept="373pV1" id="4yAZJe6oLIy" role="356sEH" />
-          <node concept="356sEF" id="4yAZJe6oLIz" role="356sEH">
-            <property role="TrG5h" value="CELL_TYPE_NAME" />
-            <node concept="17Uvod" id="4yAZJe6oLI$" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="4yAZJe6oLI_" role="3zH0cK">
-                <node concept="3clFbS" id="4yAZJe6oLIA" role="2VODD2">
-                  <node concept="3clFbF" id="4yAZJe6oLIB" role="3cqZAp">
-                    <node concept="2OqwBi" id="4yAZJe6oLIC" role="3clFbG">
-                      <node concept="30H73N" id="4yAZJe6oLID" role="2Oq$k0" />
-                      <node concept="3TrcHB" id="4yAZJe6oLIE" role="2OqNvi">
-                        <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+          <node concept="356sEK" id="7_zGWtM3$40" role="383Ya9">
+            <node concept="373pV1" id="7_zGWtM3$41" role="356sEH" />
+            <node concept="373pV1" id="7_zGWtM3$42" role="356sEH" />
+            <node concept="356sEF" id="7_zGWtM3$43" role="356sEH">
+              <property role="TrG5h" value="CELL_TYPE_NAME" />
+              <node concept="17Uvod" id="7_zGWtM3$44" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="7_zGWtM3$45" role="3zH0cK">
+                  <node concept="3clFbS" id="7_zGWtM3$46" role="2VODD2">
+                    <node concept="3clFbF" id="7_zGWtM3$47" role="3cqZAp">
+                      <node concept="2OqwBi" id="7_zGWtM3$48" role="3clFbG">
+                        <node concept="30H73N" id="7_zGWtM3$49" role="2Oq$k0" />
+                        <node concept="3TrcHB" id="7_zGWtM3$4a" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="356sEF" id="7_zGWtM3$4b" role="356sEH">
+              <property role="TrG5h" value="_run_cell_ODEs(ec);" />
+            </node>
+            <node concept="2EixSi" id="7_zGWtM3$4c" role="2EinRH" />
           </node>
-          <node concept="356sEF" id="4yAZJe6oLIF" role="356sEH">
-            <property role="TrG5h" value="_run_memAgent_ODEs(memAgent);" />
+          <node concept="356sEK" id="7_zGWtM3$4d" role="383Ya9">
+            <node concept="373pV1" id="7_zGWtM3$4e" role="356sEH" />
+            <node concept="356sEF" id="7_zGWtM3$4f" role="356sEH">
+              <property role="TrG5h" value="}" />
+            </node>
+            <node concept="2EixSi" id="7_zGWtM3$4g" role="2EinRH" />
           </node>
-          <node concept="2EixSi" id="4yAZJe6oLIG" role="2EinRH" />
-        </node>
-        <node concept="356sEK" id="4yAZJe6oLIH" role="383Ya9">
-          <node concept="373pV1" id="4yAZJe6oLII" role="356sEH" />
-          <node concept="356sEF" id="4yAZJe6oLIJ" role="356sEH">
-            <property role="TrG5h" value="}" />
-          </node>
-          <node concept="2EixSi" id="4yAZJe6oLIK" role="2EinRH" />
-        </node>
-        <node concept="1WS0z7" id="4yAZJe6oLIL" role="lGtFl">
-          <node concept="3JmXsc" id="4yAZJe6oLIM" role="3Jn$fo">
-            <node concept="3clFbS" id="4yAZJe6oLIN" role="2VODD2">
-              <node concept="3clFbF" id="4yAZJe6oLIO" role="3cqZAp">
-                <node concept="2OqwBi" id="4yAZJe6oLIP" role="3clFbG">
-                  <node concept="2OqwBi" id="4yAZJe6oLIQ" role="2Oq$k0">
-                    <node concept="30H73N" id="4yAZJe6oLIR" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="4yAZJe6oLIS" role="2OqNvi">
-                      <ref role="3Tt5mk" to="w3cn:6Y2UmXTDkR$" resolve="Tissue_Container" />
+          <node concept="1WS0z7" id="7_zGWtM3$4h" role="lGtFl">
+            <node concept="3JmXsc" id="7_zGWtM3$4i" role="3Jn$fo">
+              <node concept="3clFbS" id="7_zGWtM3$4j" role="2VODD2">
+                <node concept="3clFbF" id="7_zGWtM3$4k" role="3cqZAp">
+                  <node concept="2OqwBi" id="7_zGWtM3$4l" role="3clFbG">
+                    <node concept="2OqwBi" id="7_zGWtM3$4m" role="2Oq$k0">
+                      <node concept="30H73N" id="7_zGWtM3$4n" role="2Oq$k0" />
+                      <node concept="3TrEf2" id="7_zGWtM3$4o" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:6Y2UmXTDkR$" resolve="Tissue_Container" />
+                      </node>
                     </node>
-                  </node>
-                  <node concept="3Tsc0h" id="4yAZJe6oLIT" role="2OqNvi">
-                    <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+                    <node concept="3Tsc0h" id="7_zGWtM3$4p" role="2OqNvi">
+                      <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+                    </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
         </node>
-      </node>
-      <node concept="356sEK" id="4yAZJe6oLIU" role="383Ya9">
-        <node concept="356sEF" id="4yAZJe6oLIV" role="356sEH">
-          <property role="TrG5h" value="}" />
-        </node>
-        <node concept="2EixSi" id="4yAZJe6oLIW" role="2EinRH" />
       </node>
       <node concept="356sEK" id="4yAZJe6oLIX" role="383Ya9">
+        <node concept="356sEF" id="7_zGWtMh_W1" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
         <node concept="2EixSi" id="4yAZJe6oLIY" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="7_zGWtMhhZr" role="383Ya9">
+        <node concept="2EixSi" id="7_zGWtMhhZt" role="2EinRH" />
       </node>
       <node concept="356sEQ" id="4yAZJe6oLIZ" role="383Ya9">
         <property role="333NGx" value="  " />
@@ -23756,7 +23752,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2L_6n0dz6Ur" role="356sEH">
-            <property role="TrG5h" value="&quot;);" />
+            <property role="TrG5h" value="&quot;,0);" />
           </node>
           <node concept="2EixSi" id="2L_6n0dxARy" role="2EinRH" />
         </node>

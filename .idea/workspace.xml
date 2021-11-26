@@ -15,21 +15,39 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Implemented infrastructure for protrusion extension testing.">
+    <list default="true" id="89557931-1118-44d0-b711-ffcba6aaad23" name="Default Changelist" comment="Finished debugging">
+      <change afterPath="$PROJECT_DIR$/src/springAgent" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/statistics_msm_filvary_2_epsilon_0.9_VconcST0.04_GRADIENT2_FILTIPMAX15_tokenStrength1_FILSPACING2_randFilExtend-1_randFilRetract-1_seed1_run1_.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/src/springAgent.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/generator/templates/SimulationSettings.generator.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.TC4_model.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_tests.mps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ScreenRecording.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/ScreenRecording.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/ScreenRecording.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/ScreenRecording.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/display.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/display.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/graphics/display.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/tissue/tissueContainer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/utils/logger.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/gradient.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/substrate.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dsl/world/worldContainer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_shape_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_shape_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/objects.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/objects.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generated/dsl_species_gen.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_species_gen.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/makefile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,14 +109,19 @@
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/graphics" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\core" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\utils" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\species" />
       <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\world" />
-      <recent name="C:\Users\Tom\MPSProjects\MSM_DSL\src\dsl\tissue" />
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.springAgent">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BasicCellDistributionTest.preDistributionTest" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="autoSpringAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="autoSpringAgent" TEST_CLASS="BasicCellDistributionTest" TEST_METHOD="preDistributionTest" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -121,11 +144,6 @@
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="springAgent" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="src/springAgent" TARGET_NAME="springAgent" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="src/springAgent" RUN_TARGET_NAME="springAgent">
@@ -349,21 +367,10 @@
       <workItem from="1636112411023" duration="806000" />
       <workItem from="1636116227152" duration="9243000" />
       <workItem from="1637595721503" duration="101000" />
-      <workItem from="1637841939626" duration="1969000" />
-    </task>
-    <task id="LOCAL-00028" summary="Moved steppers to ODE running function.">
-      <created>1623859279775</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1623859279775</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Created logger class">
-      <created>1623859429651</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1623859429651</updated>
+      <workItem from="1637841939626" duration="2207000" />
+      <workItem from="1637844593826" duration="30000" />
+      <workItem from="1637853804253" duration="91000" />
+      <workItem from="1637855367924" duration="5958000" />
     </task>
     <task id="LOCAL-00030" summary="Filled out logger class with functions, and added it as a member to ECs.">
       <created>1623921808650</created>
@@ -694,7 +701,21 @@
       <option name="project" value="LOCAL" />
       <updated>1636131078187</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Updated includes in various generated files. Updated makefile to account for new positions in folder">
+      <created>1637844352308</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1637844352309</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Fixed includes in ScreenRecording.cpp">
+      <created>1637855716219</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1637855716220</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -713,8 +734,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented test for Notch-Dll4 example. Now refactoring code to be better organised." />
-    <MESSAGE value="Linker errors after refactoring." />
     <MESSAGE value="Still getting linker error with random functions. Moving these function to be part of the world class." />
     <MESSAGE value="Building!" />
     <MESSAGE value="Creating world logger and moving old runsfile capabilities to that." />
@@ -738,7 +757,9 @@
     <MESSAGE value="Added basal production rate to Venkatraman Cell test - changed autogenerated file to call Protein constructor" />
     <MESSAGE value="Continuing testing of Venkatraman model. Reconsidering whether to add in checking of adjacent values." />
     <MESSAGE value="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters." />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished tweaking Venkatraman cell test. Output matches matlab code but labels are off. Will double check. Generator needs to be updated to enable adjacent cell checking for parameters." />
+    <MESSAGE value="Updated includes in various generated files. Updated makefile to account for new positions in folder" />
+    <MESSAGE value="Fixed includes in ScreenRecording.cpp" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed includes in ScreenRecording.cpp" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

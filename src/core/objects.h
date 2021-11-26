@@ -38,12 +38,12 @@ class World;
 
 /// below defines are set through makefile
 #if PROTEIN_TESTING
-#define ANALYSIS_HYSTERESIS false
-#define ANALYSIS_TIME_TO_PATTERN false
-#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-#define GRAPHICS false
-#define ECpack 2
-#define MAXtime 10000 ///2000 ///480 for fil lifetime
+//#define ANALYSIS_HYSTERESIS false
+//#define ANALYSIS_TIME_TO_PATTERN false
+//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+//#define GRAPHICS false
+//#define ECpack 2
+//#define MAXtime 10000 ///2000 ///480 for fil lifetime
 #endif
 
 //extern std::ofstream RUNSfile;

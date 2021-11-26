@@ -199,7 +199,7 @@
       </node>
       <node concept="356sEK" id="4DdJmqSDt4E" role="383Ya9">
         <node concept="356sEF" id="4DdJmqSDt4F" role="356sEH">
-          <property role="TrG5h" value="#include &quot;core/coordinates.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../core/coordinates.h&quot;" />
         </node>
         <node concept="2EixSi" id="4DdJmqSDt4G" role="2EinRH" />
       </node>
@@ -208,31 +208,31 @@
       </node>
       <node concept="356sEK" id="2D6O8IwVbSC" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwVbSD" role="356sEH">
-          <property role="TrG5h" value="#include &quot;dsl/species/protein.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/species/protein.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwVbSE" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwVfuW" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwVfuX" role="356sEH">
-          <property role="TrG5h" value="#include &quot;dsl/tissue/cell.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/cell.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwVfuY" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwVj0k" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwVj0l" role="356sEH">
-          <property role="TrG5h" value="#include &quot;dsl/tissue/cellType.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/cellType.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwVj0m" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwVmxJ" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwVmxK" role="356sEH">
-          <property role="TrG5h" value="#include &quot;dsl/tissue/tissue.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/tissue.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwVmxL" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwVt$I" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwVt$J" role="356sEH">
-          <property role="TrG5h" value="#include &quot;dsl/tissue/tissueContainer.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/tissueContainer.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwVt$K" role="2EinRH" />
       </node>

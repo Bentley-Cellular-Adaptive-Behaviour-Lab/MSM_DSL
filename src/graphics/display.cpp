@@ -1,17 +1,18 @@
 
-#if GRAPHICS
+//#if GRAPHICS
 
-#include "coordinates.h"
 #include "display.h"
-#include "EC.h"
-#include "environment.h"
-#include "location.h"
-#include "memAgents.h"
-#include "macrophage.h"
-#include "objects.h"
 #include "ScreenRecording.h"
-#include "spring.h"
-#include "world.h"
+
+#include "../core/coordinates.h"
+#include "../core/EC.h"
+#include "../core/environment.h"
+#include "../core/location.h"
+#include "../core/memAgents.h"
+#include "../core/macrophage.h"
+#include "../core/objects.h"
+#include "../core/spring.h"
+#include "../core/world.h"
 
 // J Switch for os type
 
@@ -446,9 +447,9 @@ void World::drawFilAgentsCylinders(float a,  float b,  float c,  int a2,  int b2
     GLfloat posy=(float)(b-b2);
     GLfloat posz=(float)(c-c2);
     
-    float minX=(grid[(int)a][(int)b][(int)c].Fids[X]->filNeigh->Mx) - (float)a2;
-    float minY=(grid[(int)a][(int)b][(int)c].Fids[X]->filNeigh->My) - (float)b2;
-    float minZ=(grid[(int)a][(int)b][(int)c].Fids[X]->filNeigh->Mz) -(float) c2;
+    float minX=(grid[(int)a][(int)b][(int)c].getFids()[X]->filNeigh->Mx) - (float)a2;
+    float minY=(grid[(int)a][(int)b][(int)c].getFids()[X]->filNeigh->My) - (float)b2;
+    float minZ=(grid[(int)a][(int)b][(int)c].getFids()[X]->filNeigh->Mz) -(float) c2;
     
     GLfloat posx2=minX;
     GLfloat posy2=minY;
@@ -459,7 +460,7 @@ void World::drawFilAgentsCylinders(float a,  float b,  float c,  int a2,  int b2
     GLdouble height=sqrt(pow((posx2-posx), 2)+pow((posy2-posy), 2)+pow((posz2-posz), 2));
     
     //if(((minX+a2)!=0)&&((minX+a2)!=xMAX)&&(a!=0)&&(a!=yMAX)){
-    if(fabs(grid[(int)a][(int)b][(int)c].Fids[X]->filNeigh->Mx-a)<(float)xMAX/2.0f){
+    if(fabs(grid[(int)a][(int)b][(int)c].getFids()[X]->filNeigh->Mx-a)<(float)xMAX/2.0f){
         glPushMatrix();
         
         glTranslatef(posx, posy, posz);
@@ -1201,10 +1202,10 @@ void World::viewGrid(void){
                 
                 //if(grid[i][j][k].Eid!=NULL)
                         //if(junctionView==1)DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, 0.1, 0.1, 1.0, 0.6, L);
-                               if(grid[i][j][k].type==const_E){
+                               if(grid[i][j][k].getType()==const_E){
 
                         if(viewInsideEnv==1){
-                            if(grid[i][j][k].Eid->inside==true){
+                            if(grid[i][j][k].getEid()->inside==true){
                             red=0.9f; green = 0.0f; blue =0.0;
                             DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
                        }
@@ -1212,7 +1213,7 @@ void World::viewGrid(void){
                         
                                 //........................................................................................................................................................................
                 //astrocytes blue
-                if(((grid[i][j][k].Eid->Astro==true)||(grid[i][j][k].Eid->OldAstro==true))&&(astro)){
+                if(((grid[i][j][k].getEid()->Astro)||(grid[i][j][k].getEid()->OldAstro))&&(astro)){
                     red=0.067; green=0.1245098; blue = 0.445098;
                     DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1.0, L);
 
@@ -1223,29 +1224,29 @@ void World::viewGrid(void){
                                }
                 //........................................................................................................................................................................
                 //view filopodia
-                if((grid[i][j][k].Fids.size()!=0)){
+                if((grid[i][j][k].getFids().size()!=0)){
                     
                     if(membrane==1){
-                        for(m=0;m<(int)grid[i][j][k].Fids.size();m++){
-                            if((pickedCell==ECELLS)||(grid[i][j][k].Fids[m]->Cell==ECagents[pickedCell])){
-                                if((nodeAgentView==1)&&(grid[i][j][k].Fids[m]->node==true)) flag=1;
-                                if((springAgentsView==1)&&(grid[i][j][k].Fids[m]->node==false)) flag=1;
+                        for(m=0;m<(int)grid[i][j][k].getFids().size();m++){
+                            if((pickedCell==ECELLS)||(grid[i][j][k].getFids()[m]->Cell==ECagents[pickedCell])){
+                                if((nodeAgentView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
+                                if((springAgentsView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
                                 if(flag==1){
-                                    if(viewType==1){ red=((float)grid[i][j][k].Fids[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].Fids[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].Fids[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].Fids[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].Fids[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].Fids[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].Fids[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
+                                    if(viewType==1){ red=((float)grid[i][j][k].getFids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
+                                    else if(viewType==3){ red=(float)grid[i][j][k].getFids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getFids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
+                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getFids()[m]->Dll4/50.0f; blue = 0.5923f;}
+                                    else if(viewType==5){ red=(grid[i][j][k].getFids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==6){ red=grid[i][j][k].getFids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getFids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
                                     else if(viewType==8){
 									
-                                    if(grid[i][j][k].Fids[m]->node==false){red= 0.7f;green=0.7f; blue = 0.7f;}
+                                    if(grid[i][j][k].getFids()[m]->node==false){red= 0.7f;green=0.7f; blue = 0.7f;}
                                     else{red= 0.0f;green=0.0f; blue = 0.0f;}
-}else if(viewType==10){ red= grid[i][j][k].Fids[m]->Cell->red;green=grid[i][j][k].Fids[m]->Cell->green; blue =grid[i][j][k].Fids[m]->Cell->blue;}
+}else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
 
-                                    if((junctionView==1)&&(grid[i][j][k].Fids[m]->junction ==true)) {red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].Fids[m]->FA ==true)) {red=0.03f; green = 1.8f; blue = 0.2f;}
+                                    if((junctionView==1)&&(grid[i][j][k].getFids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
+                                    if((FAview==1)&&(grid[i][j][k].getFids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
                                     
                                     //drawFilAgentsCylinders(grid[i][j][k].Fids[m]->Mx,grid[i][j][k].Fids[m]->My, grid[i][j][k].Fids[m]->Mz, recentreX, recentreY, recentreZ, red, green, blue, 0.2, m);
                                     DrawCube(((float)i)-recentreX, ((float)j)-recentreY, ((float)k)-recentreZ, red, green, blue, 0.6, L);
@@ -1258,7 +1259,7 @@ void World::viewGrid(void){
                 //........................................................................................................................................................................
                 //........................................................................................................................................................................
                 //there is no cytoplasm in this model version!
-                if(grid[i][j][k].type==MED){
+                if(grid[i][j][k].getType()==MED){
                     
                     //if(cytoView==1){
                         red=0.8f; green = 0.5f; blue = 0.7f;
@@ -1268,7 +1269,7 @@ void World::viewGrid(void){
                 //........................................................................................................................................................................
                 //........................................................................................................................................................................
                 //membrane
-                if(grid[i][j][k].type==const_M){
+                if(grid[i][j][k].getType()==const_M){
                     /*tester
                      * int LER;
                      * int fleg=0;
@@ -1282,11 +1283,11 @@ void World::viewGrid(void){
                      * }
                      * }
                      * }*/
-                    uptoM = grid[i][j][k].Mids.size();
+                    uptoM = grid[i][j][k].getMids().size();
                     
                     if(membrane==1){
                         for(m=0;m<uptoM;m++){
-                            if((pickedCell==ECELLS)||(grid[i][j][k].Mids[m]->Cell==ECagents[pickedCell])){
+                            if((pickedCell==ECELLS)||(grid[i][j][k].getMids()[m]->Cell==ECagents[pickedCell])){
                                 /*if((springAgentsView==1)&&(grid[i][j][k].Mids[m]->node==false)&&(grid[i][j][k].Mids[m]->triangle.size()==0)){
                                     
                                     //if(grid[i][j][k].Mids[m]->FIL==NONE) cout<<"left over"<<endl;
@@ -1306,50 +1307,50 @@ void World::viewGrid(void){
                                     DrawCube(i-recentreX-L/2.0f, j-recentreY-L/2.0f, k-recentreZ-L/2.0f, red, green, blue, 0.5, L);
                                 }*/
                                 
-                                if((surfaceAgentsView==1)&&(grid[i][j][k].Mids[m]->triangle.size()!=0)){
+                                if((surfaceAgentsView==1)&&(grid[i][j][k].getMids()[m]->triangle.size()!=0)){
                                     
                                     //if(grid[i][j][k].Mids[m]->FIL==NONE) cout<<"left over"<<endl;
                                     red=0.30f; green = 0.40f; blue = 1.0f;
                                     //if(grid[i][j][k].Mids.size()>1)cout<<"doubled up!"<<grid[i][j][k].Mids.size()<<endl;
-                                    if(viewType==1){ red=((float)grid[i][j][k].Mids[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].Mids[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].Mids[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].Mids[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].Mids[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
+                                    if(viewType==1){ red=((float)grid[i][j][k].getMids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
+                                    else if(viewType==3){ red=(float)grid[i][j][k].getMids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
+                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Dll4/50.0f; blue = 0.5923f;}
+                                    else if(viewType==5){ red=(grid[i][j][k].getMids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==6){ red=grid[i][j][k].getMids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getMids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
                                     else if(viewType==8){ red= 0.3f;green=0.3f; blue = 0.3f;}
-                                    else if(viewType==10){ red= grid[i][j][k].Mids[m]->Cell->red;green=grid[i][j][k].Mids[m]->Cell->green; blue =grid[i][j][k].Mids[m]->Cell->blue;}
+                                    else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
 
 
 									
-                                    if((junctionView==1)&&(grid[i][j][k].Mids[m]->junction ==true)) {red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].Mids[m]->FA ==true)) {red=0.03f; green = 1.8f; blue = 0.2f;}
+                                    if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
+                                    if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
 
-                                    if((grid[i][j][k].Mids[m]->labelled==true)&&(labelledView))green = 0.8;
-                                    if((grid[i][j][k].Mids[m]->labelled2==true)&&(labelledView))green = 0;
+                                    if((grid[i][j][k].getMids()[m]->labelled)&&(labelledView))green = 0.8;
+                                    if((grid[i][j][k].getMids()[m]->labelled2)&&(labelledView))green = 0;
 
                                     DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.6, L);
                                 }
                                 
-                                if((nodeAgentView==1)&&(grid[i][j][k].Mids[m]->node==true)){
+                                if((nodeAgentView==1)&&(grid[i][j][k].getMids()[m]->node)){
                                     
-                                    if(viewType==1){ red=((float)grid[i][j][k].Mids[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
-                                    else if(viewType==3){ red=(float)grid[i][j][k].Mids[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
-                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].Mids[m]->Dll4/50.0f; blue = 0.5923f;}
-                                    else if(viewType==5){ red=(grid[i][j][k].Mids[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==6){ red=grid[i][j][k].Mids[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
-                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].Mids[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;
+                                    if(viewType==1){ red=((float)grid[i][j][k].getMids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
+                                    else if(viewType==3){ red=(float)grid[i][j][k].getMids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
+                                    else if(viewType==4){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Dll4/50.0f; blue = 0.5923f;}
+                                    else if(viewType==5){ red=(grid[i][j][k].getMids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==6){ red=grid[i][j][k].getMids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
+                                    else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getMids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;
                                     //cout<<grid[i][j][k].Mids[m]->activeNotch<<endl;
                                     }
                                     else if(viewType==8){ red= 0.0f;green=0.0f; blue = 0.0f;}
-                    else if(viewType==10){ red= grid[i][j][k].Mids[m]->Cell->red;green=grid[i][j][k].Mids[m]->Cell->green; blue =grid[i][j][k].Mids[m]->Cell->blue;}
+                    else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
 				
-                                    if((junctionView==1)&&(grid[i][j][k].Mids[m]->junction ==true)){ red=1.03f; green = 1.8f; blue = 1.2f;}
-                                    if((FAview==1)&&(grid[i][j][k].Mids[m]->FA ==true)) {red=0.03f; green = 1.8f; blue = 0.2f;}
-                                    if((grid[i][j][k].Mids[m]->labelled==true)&&(labelledView))green = 0.8;
-                                    if((grid[i][j][k].Mids[m]->labelled2==true)&&(labelledView))green = 0;
+                                    if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)){ red=1.03f; green = 1.8f; blue = 1.2f;}
+                                    if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
+                                    if((grid[i][j][k].getMids()[m]->labelled)&&(labelledView))green = 0.8;
+                                    if((grid[i][j][k].getMids()[m]->labelled2)&&(labelledView))green = 0;
                                     
                                     DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.6, L);
                                     
@@ -1376,7 +1377,7 @@ void World::viewGrid(void){
                 
                     //........................................................................................................................................................................
                     //environment -VEGF or blood  *translucent*
-                    if(grid[i][j][k].type==BLOOD){
+                    if(grid[i][j][k].getType()==BLOOD){
                         
                         if(bloodView==1){
                             red=1.0f; green = 0.0f; blue = 0.0f;
@@ -1384,18 +1385,18 @@ void World::viewGrid(void){
                             DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 0.1, L);
                         }
                     }
-                    if(grid[i][j][k].type==const_E){
+                    if(grid[i][j][k].getType() == const_E){
 
                         //if(grid[i][j][k].Eid->inside==true){
                         //    red=0.2f; green = 0.57f; blue =0.3;
                         //    DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, 1,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
 
                         //}
-                        if((VEGFview==1)&&(grid[i][j][k].Eid->VEGF>0.0f)){
+                        if((VEGFview==1)&&(grid[i][j][k].getEid()->VEGF>0.0f)){
                             
                                                         //red=1.0f; green = 1.0f; blue =(grid[i][j][k].Eid->VEGF)*0.01f;
-                            red=0.2f; green = 0.57f; blue =0.3+(grid[i][j][k].Eid->VEGF)*0.01f;
-                            DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].Eid->VEGF)*0.01,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
+                            red=0.2f; green = 0.57f; blue =0.3+(grid[i][j][k].getEid()->VEGF)*0.01f;
+                            DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].getEid()->VEGF)*0.01,L);//(grid[i][j][k].Eid->VEGF)*0.01, L);
                             
                             /*glColor4f(1.0f,1.0f,(grid[i][j][k].Eid->VEGF)*0.01, (grid[i][j][k].Eid->VEGF)*0.01);
                              * // Specify the point size before the primitive is specified
@@ -1409,8 +1410,8 @@ void World::viewGrid(void){
                             
                         }
                         if (AdhesivenessView == 1) {
-							red = grid[i][j][k].Eid->adhesiveness; green = grid[i][j][k].Eid->adhesiveness; grid[i][j][k].Eid->adhesiveness;
-							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].Eid->adhesiveness)*0.1,L);
+							red = grid[i][j][k].getEid()->adhesiveness; green = grid[i][j][k].getEid()->adhesiveness; grid[i][j][k].getEid()->adhesiveness;
+							DrawCube(i-recentreX, j-recentreY, k-recentreZ, red, green, blue, (grid[i][j][k].getEid()->adhesiveness)*0.1,L);
 						}
                     }
                     //........................................................................................................................................................................
@@ -2018,4 +2019,4 @@ void displayGlui(int * argc, char  ** argv) {
     GLUI_Master.set_glutIdleFunc( myGlutIdle );
 }
 
-#endif
+//#endif

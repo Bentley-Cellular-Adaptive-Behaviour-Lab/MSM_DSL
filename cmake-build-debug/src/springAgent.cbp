@@ -96,12 +96,6 @@
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/EC.h">
 			<Option target="springAgent"/>
 		</Unit>
-		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/ScreenRecording.cpp">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/ScreenRecording.h">
-			<Option target="springAgent"/>
-		</Unit>
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/contact.cpp">
 			<Option target="springAgent"/>
 		</Unit>
@@ -112,12 +106,6 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/coordinates.h">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/display.cpp">
-			<Option target="springAgent"/>
-		</Unit>
-		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/display.h">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/core/environment.cpp">
@@ -295,6 +283,18 @@
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/generated/dsl_world_gen.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/graphics/ScreenRecording.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/graphics/ScreenRecording.h">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/graphics/display.cpp">
+			<Option target="springAgent"/>
+		</Unit>
+		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/src/graphics/display.h">
 			<Option target="springAgent"/>
 		</Unit>
 		<Unit filename="/Users/meadt/MPSProjects/MSM_DSL/MSM_DSL/CMakeLists.txt">

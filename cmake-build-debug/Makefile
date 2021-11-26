@@ -177,30 +177,6 @@ src/core/EC.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/EC.cpp.s
 .PHONY : src/core/EC.cpp.s
 
-src/core/ScreenRecording.o: src/core/ScreenRecording.cpp.o
-.PHONY : src/core/ScreenRecording.o
-
-# target to build an object file
-src/core/ScreenRecording.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.o
-.PHONY : src/core/ScreenRecording.cpp.o
-
-src/core/ScreenRecording.i: src/core/ScreenRecording.cpp.i
-.PHONY : src/core/ScreenRecording.i
-
-# target to preprocess a source file
-src/core/ScreenRecording.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.i
-.PHONY : src/core/ScreenRecording.cpp.i
-
-src/core/ScreenRecording.s: src/core/ScreenRecording.cpp.s
-.PHONY : src/core/ScreenRecording.s
-
-# target to generate assembly for a file
-src/core/ScreenRecording.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/ScreenRecording.cpp.s
-.PHONY : src/core/ScreenRecording.cpp.s
-
 src/core/contact.o: src/core/contact.cpp.o
 .PHONY : src/core/contact.o
 
@@ -248,30 +224,6 @@ src/core/coordinates.s: src/core/coordinates.cpp.s
 src/core/coordinates.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/coordinates.cpp.s
 .PHONY : src/core/coordinates.cpp.s
-
-src/core/display.o: src/core/display.cpp.o
-.PHONY : src/core/display.o
-
-# target to build an object file
-src/core/display.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/display.cpp.o
-.PHONY : src/core/display.cpp.o
-
-src/core/display.i: src/core/display.cpp.i
-.PHONY : src/core/display.i
-
-# target to preprocess a source file
-src/core/display.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/display.cpp.i
-.PHONY : src/core/display.cpp.i
-
-src/core/display.s: src/core/display.cpp.s
-.PHONY : src/core/display.s
-
-# target to generate assembly for a file
-src/core/display.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/core/display.cpp.s
-.PHONY : src/core/display.cpp.s
 
 src/core/environment.o: src/core/environment.cpp.o
 .PHONY : src/core/environment.o
@@ -1017,6 +969,54 @@ src/generated/dsl_world_gen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/generated/dsl_world_gen.cpp.s
 .PHONY : src/generated/dsl_world_gen.cpp.s
 
+src/graphics/ScreenRecording.o: src/graphics/ScreenRecording.cpp.o
+.PHONY : src/graphics/ScreenRecording.o
+
+# target to build an object file
+src/graphics/ScreenRecording.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/ScreenRecording.cpp.o
+.PHONY : src/graphics/ScreenRecording.cpp.o
+
+src/graphics/ScreenRecording.i: src/graphics/ScreenRecording.cpp.i
+.PHONY : src/graphics/ScreenRecording.i
+
+# target to preprocess a source file
+src/graphics/ScreenRecording.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/ScreenRecording.cpp.i
+.PHONY : src/graphics/ScreenRecording.cpp.i
+
+src/graphics/ScreenRecording.s: src/graphics/ScreenRecording.cpp.s
+.PHONY : src/graphics/ScreenRecording.s
+
+# target to generate assembly for a file
+src/graphics/ScreenRecording.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/ScreenRecording.cpp.s
+.PHONY : src/graphics/ScreenRecording.cpp.s
+
+src/graphics/display.o: src/graphics/display.cpp.o
+.PHONY : src/graphics/display.o
+
+# target to build an object file
+src/graphics/display.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/display.cpp.o
+.PHONY : src/graphics/display.cpp.o
+
+src/graphics/display.i: src/graphics/display.cpp.i
+.PHONY : src/graphics/display.i
+
+# target to preprocess a source file
+src/graphics/display.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/display.cpp.i
+.PHONY : src/graphics/display.cpp.i
+
+src/graphics/display.s: src/graphics/display.cpp.s
+.PHONY : src/graphics/display.s
+
+# target to generate assembly for a file
+src/graphics/display.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/springAgent.dir/build.make CMakeFiles/springAgent.dir/src/graphics/display.cpp.s
+.PHONY : src/graphics/display.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1032,18 +1032,12 @@ help:
 	@echo "... src/core/EC.o"
 	@echo "... src/core/EC.i"
 	@echo "... src/core/EC.s"
-	@echo "... src/core/ScreenRecording.o"
-	@echo "... src/core/ScreenRecording.i"
-	@echo "... src/core/ScreenRecording.s"
 	@echo "... src/core/contact.o"
 	@echo "... src/core/contact.i"
 	@echo "... src/core/contact.s"
 	@echo "... src/core/coordinates.o"
 	@echo "... src/core/coordinates.i"
 	@echo "... src/core/coordinates.s"
-	@echo "... src/core/display.o"
-	@echo "... src/core/display.i"
-	@echo "... src/core/display.s"
 	@echo "... src/core/environment.o"
 	@echo "... src/core/environment.i"
 	@echo "... src/core/environment.s"
@@ -1137,6 +1131,12 @@ help:
 	@echo "... src/generated/dsl_world_gen.o"
 	@echo "... src/generated/dsl_world_gen.i"
 	@echo "... src/generated/dsl_world_gen.s"
+	@echo "... src/graphics/ScreenRecording.o"
+	@echo "... src/graphics/ScreenRecording.i"
+	@echo "... src/graphics/ScreenRecording.s"
+	@echo "... src/graphics/display.o"
+	@echo "... src/graphics/display.i"
+	@echo "... src/graphics/display.s"
 .PHONY : help
 
 

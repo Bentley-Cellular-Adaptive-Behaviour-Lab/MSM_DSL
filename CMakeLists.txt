@@ -22,7 +22,7 @@ if(TEST_TYPE EQUAL 0)
     set (Sources src/core/contact.cpp
             src/core/coordinates.cpp
             src/core/CPM_module.cpp
-            src/core/display.cpp
+            src/graphics/display.cpp
             src/core/EC.cpp
             src/core/environment.cpp
             src/core/filopodia.cpp
@@ -32,7 +32,7 @@ if(TEST_TYPE EQUAL 0)
             src/core/main.cpp
             src/core/medAgent.cpp
             src/core/memAgents.cpp
-            src/core/ScreenRecording.cpp
+            src/graphics/ScreenRecording.cpp
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
@@ -60,7 +60,7 @@ if(TEST_TYPE EQUAL 0)
     set (Headers src/core/contact.h
             src/core/coordinates.h
             src/core/CPM_module.h
-            src/core/display.h
+            src/graphics/display.h
             src/core/EC.cpp
             src/core/EC.h
             src/core/environment.h
@@ -71,7 +71,7 @@ if(TEST_TYPE EQUAL 0)
             src/core/medAgent.h
             src/core/memAgents.h
             src/core/objects.h
-            src/core/ScreenRecording.h
+            src/graphics/ScreenRecording.h
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
@@ -125,7 +125,7 @@ elseif(TEST_TYPE EQUAL 1)
     set (Sources src/core/contact.cpp
             src/core/coordinates.cpp
             src/core/CPM_module.cpp
-            src/core/display.cpp
+            src/graphics/display.cpp
             src/core/EC.cpp
             src/core/environment.cpp
             src/core/filopodia.cpp
@@ -134,7 +134,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/macrophage.cpp
             src/core/medAgent.cpp
             src/core/memAgents.cpp
-            src/core/ScreenRecording.cpp
+            src/graphics/ScreenRecording.cpp
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
@@ -166,7 +166,7 @@ elseif(TEST_TYPE EQUAL 1)
     set (Headers src/core/contact.h
             src/core/coordinates.h
             src/core/CPM_module.h
-            src/core/display.h
+            src/graphics/display.h
             src/core/EC.cpp
             src/core/EC.h
             src/core/environment.h
@@ -177,7 +177,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/medAgent.h
             src/core/memAgents.h
             src/core/objects.h
-            src/core/ScreenRecording.h
+            src/graphics/ScreenRecording.h
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h

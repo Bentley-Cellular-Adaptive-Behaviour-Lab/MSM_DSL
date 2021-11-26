@@ -6,7 +6,7 @@
 
 
 #if GRAPHICS
-#include "display.h"
+#include "../graphics/display.h"
 
 #ifdef __linux__
 
