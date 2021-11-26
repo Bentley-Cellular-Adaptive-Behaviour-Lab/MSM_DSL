@@ -5,5 +5,5 @@ cmake-build-debug
 *.log
 *.a
 *.o
-workspace.xml
+.idea/workspace.xml
 Makefile
