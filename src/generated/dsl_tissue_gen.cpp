@@ -21,15 +21,8 @@ void Tissue_Container::tissue_set_up() {
 
 
     Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
-    Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 1000.0, 1000.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
-    Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0.0, 10000.0, 1));
+    Endothelial_Type->add_protein(new Protein("ProteinA", PROTEIN_LOCATION_CELL, 10.0, 0.0, 10000.0, 1));
+    Endothelial_Type->add_protein(new Protein("ProteinB", PROTEIN_LOCATION_CELL, 0.0, 0.0, 10000.0, 5));
 
     // Tissue Type Creation //
     Vessel_Type_Type = define_tissue_type("Vessel_Type", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
