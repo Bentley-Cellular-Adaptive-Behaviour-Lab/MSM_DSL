@@ -7,3 +7,5 @@ cmake-build-debug
 *.o
 .idea/workspace.xml
 Makefile
+/src/.idea/
+/.mps/

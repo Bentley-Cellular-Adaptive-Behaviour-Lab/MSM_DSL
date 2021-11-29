@@ -11,29 +11,30 @@
 class EC;
 class World;
 
-class logger {
+class Logger {
 
 };
 
-class world_logger : public logger {
+class WorldLogger : public Logger {
 private:
     World *m_world;
 
     // Tracks hysteresis behaviour across the world.
     const std::string m_hystFileName;
 
-    // Tracks proteins levels across individual cells.
-    const std::string m_proteinFileName;
+    // Tracks protein levels across individual cells.
+    std::string m_proteinFileName;
 public:
-    world_logger(World* world);
+    WorldLogger();
+    explicit WorldLogger(World* world);
 
     World* getWorld();
 
     const std::string& getHystFileName();
     const std::string& determineHystFileName();
 
-    const std::string& getProteinFileName();
-    const std::string& determineProteinFileName();
+    std::string& getProteinFileName();
+    void determineProteinFileName();
 
     std::string& constructHeaderString();
     std::string& constructProteinLevelString();

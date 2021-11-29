@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.mpsutil.guides">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mpsutil.editingGuide/languages/group.editingGuide.devkit/com.mbeddr.mpsutil.guides.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

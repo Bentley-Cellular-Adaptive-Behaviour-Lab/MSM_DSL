@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.cc.variability">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.ple/languages/com.mbeddr.ple.devkit/com.mbeddr.cc.variability.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

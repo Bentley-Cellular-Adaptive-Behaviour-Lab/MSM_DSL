@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 0)
+set(TEST_TYPE 1)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -52,7 +52,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/gradient.cpp
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
-            src/generated/dsl_shape_gen.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_tissue_gen.cpp
             src/generated/dsl_world_gen.cpp)
@@ -104,7 +103,8 @@ if(TEST_TYPE EQUAL 0)
 
     target_link_libraries(springAgent ${OPENGL_LIBRARIES} ${BOOST_LIBRARIES})
 elseif(TEST_TYPE EQUAL 1)
-    enable_testing()
+    set(CMAKE_VERBOSE_MAKEFILE ON)
+    include_directories(tests)
     message("Testing: Automated")
 
     # Get Google Test library
@@ -159,6 +159,7 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/test_ODE.cpp
             tests/automated/test_setup.cpp
             tests/automated/test_shape.cpp
+            tests/automated/test_utils.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
             tests/automated/generated/dsl_world_gen.cpp)
@@ -199,6 +200,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/worldContainer.h
             tests/automated/helper_ODE.h
             tests/automated/helper_shape.h
+            tests/automated/test_utils.h
             tests/automated/generated/dsl_species_gen.h)
 
     find_package(Boost)
@@ -209,9 +211,8 @@ elseif(TEST_TYPE EQUAL 1)
     include(GoogleTest)
 
     target_link_libraries(autoSpringAgent ${OPENGL_LIBRARIES} ${BOOST_INCLUDE_DIRS} gtest_main)
-
-    gtest_discover_tests(autoSpringAgent)
 elseif(TEST_TYPE EQUAL 2)
+    include_directories(tests)
     enable_testing()
     set(CMAKE_VERBOSE_MAKEFILE ON)
     message("Testing: User model")

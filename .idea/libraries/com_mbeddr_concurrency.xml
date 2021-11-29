@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.concurrency">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.concurrency/languages/com.mbeddr.ext.concurrency.devkit/com.mbeddr.concurrency.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
