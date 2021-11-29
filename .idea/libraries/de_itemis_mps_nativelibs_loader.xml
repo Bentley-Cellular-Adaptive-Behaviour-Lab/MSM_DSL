@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="de.itemis.mps.nativelibs.loader">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/de.itemis.mps.nativelibs.loader/lib/de.itemis.mps.nativelibs.loader.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.statemachinesInComponents">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.SmInComp/languages/com.mbeddr.ext.statemachineInComponents.devkit/com.mbeddr.statemachinesInComponents.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

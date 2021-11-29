@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.documentation">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.doc/languages/com.mbeddr.doc.devkit/com.mbeddr.documentation.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
