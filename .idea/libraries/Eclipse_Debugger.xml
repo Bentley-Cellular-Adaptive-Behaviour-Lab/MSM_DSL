@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Eclipse.Debugger">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.spawner/languages/Eclipse.Debugger.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

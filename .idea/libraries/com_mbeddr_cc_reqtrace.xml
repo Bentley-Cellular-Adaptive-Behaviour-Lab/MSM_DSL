@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="com.mbeddr.cc.reqtrace">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/plugins/mbeddr/mbeddr.req/languages/com.mbeddr.cc.req.devkit/com.mbeddr.cc.reqtrace.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
