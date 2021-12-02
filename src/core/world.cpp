@@ -1532,9 +1532,8 @@ void World::runSimulation()
 {
 	while (timeStep <= MAXtime)
 	{
-        if (timeStep % 50 == 0) {
-			printProteinLevels(50);
-		}
+        printProteinLevels(1);
+
 		simulateTimestep();
 
 		if (ANALYSIS_HYSTERESIS) {
