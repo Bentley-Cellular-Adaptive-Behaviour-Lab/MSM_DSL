@@ -883,13 +883,13 @@ void World::evaluateSandP() {
         std::cout << "patterned!" << std::endl;
         patterned = true;
 //        RUNSfile << timeStep;
-        getWorldLogger()->getHysteresisFile() << timeStep;
+//        getWorldLogger()->getHysteresisFile() << timeStep;
         timeStep = MAXtime;
     }
 
     if (timeStep == MAXtime - 1 && !patterned) {
         //RUNSfile << "-1";
-        getWorldLogger()->getHysteresisFile() << -1;
+//        getWorldLogger()->getHysteresisFile() << -1;
     }
 }
 
@@ -1528,31 +1528,32 @@ std::string World::get_time_string() {
 *  Returns:		void
 ******************************************************************************************/
 
-void World::runSimulation()
-{
-	while (timeStep <= MAXtime)
-	{
-        printProteinLevels(1);
+void World::runSimulation() {
+	while (timeStep <= MAXtime) {
+        if (timeStep % 50 == 0) {
+            printProteinLevels(50);
+        }
+        simulateTimestep();
 
-		simulateTimestep();
-
-		if (ANALYSIS_HYSTERESIS) {
+        if (ANALYSIS_HYSTERESIS) {
             hysteresisAnalysis();
         } else if (ANALYSIS_TIME_TO_PATTERN) {
             evaluateSandP();
         }
 
-		if (MEM_LEAK_OCCURRING) {
-			timeStep = MAXtime;
+        if (MEM_LEAK_OCCURRING) {
+            timeStep = MAXtime;
 //			RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
-            getWorldLogger()->getHysteresisFile() << "MEMORY LEAKED!!!...quit run" << std::endl;
-			std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
-			MEM_LEAK_OCCURRING = false;
-		}
+//            getWorldLogger()->getHysteresisFile() << "MEMORY LEAKED!!!...quit run" << std::endl;
+            std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
+            MEM_LEAK_OCCURRING = false;
+        }
 
-		if (timeStep == MAXtime)
-            getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
-            //RUNSFILE << std::endl << std::endl;
+        if (timeStep == MAXtime) {
+
+        }
+//            getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
+        //RUNSFILE << std::endl << std::endl;
 //        if (timeStep ==3)
 //        {
 //            getGridSiteData();
@@ -1715,12 +1716,12 @@ void World::hysteresisAnalysis() {
 		ECagents[1]->hyst->stableActin = ECagents[1]->actinUsed;
 	}
     //continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(RUNSFILE);
-	continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(getWorldLogger()->getHysteresisFile());
+//	continue_hysteresis = ECagents[1]->hyst->evaluate_hysteresis(getWorldLogger()->getHysteresisFile());
 	if (!continue_hysteresis)
 	{
 		timeStep = MAXtime+1;
         //RUNSFILE<<std::endl<<std::endl;
-        getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
+//        getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
 	}
 }
 
@@ -6489,14 +6490,14 @@ void World::shuffleEnvAgents(std::vector<Env*> envAgents) {
 }
 
 void World::createLogger() {
-    setWorldLogger(new world_logger(this, hysteresisFileName));
+    setWorldLogger(new WorldLogger(this));
 }
 
-world_logger* World::getWorldLogger() {
+WorldLogger* World::getWorldLogger() {
     return this->m_worldLogger;
 }
 
-void World::setWorldLogger(world_logger *logger) {
+void World::setWorldLogger(WorldLogger *logger) {
     this->m_worldLogger = logger;
 }
 

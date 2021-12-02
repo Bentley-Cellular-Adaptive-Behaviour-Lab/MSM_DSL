@@ -25,11 +25,11 @@ class Macrophage;
 class MemAgent;
 class ODEs;
 class ProtrusionType;
-class world_logger;
+class WorldLogger;
 
 class World {
 private:
-    world_logger *m_worldLogger;
+    WorldLogger *m_worldLogger;
 public:
 
     ///general
@@ -239,8 +239,8 @@ public:
     /// World info logger.
 
     void createLogger();
-    world_logger* getWorldLogger();
-    void setWorldLogger(world_logger *logger);
+    WorldLogger* getWorldLogger();
+    void setWorldLogger(WorldLogger *logger);
 
 	void printProteinNames();
 	void printProteinLevels(int timestepInterval);

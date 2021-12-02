@@ -25,12 +25,12 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-//#define ANALYSIS_HYSTERESIS false
-//#define ANALYSIS_TIME_TO_PATTERN false
-//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-//#define GRAPHICS false
-//#define ECpack 15
-//#define MAXtime 10000 ///2000 ///480 for fil lifetime
+#define ANALYSIS_HYSTERESIS false
+#define ANALYSIS_TIME_TO_PATTERN false
+#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
+#define GRAPHICS false
+#define ECpack 15
+#define MAXtime 10000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true

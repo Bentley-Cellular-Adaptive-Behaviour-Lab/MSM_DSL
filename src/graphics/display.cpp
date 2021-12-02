@@ -1,5 +1,5 @@
 
-//#if GRAPHICS
+#if GRAPHICS
 
 #include "display.h"
 #include "ScreenRecording.h"
@@ -2019,4 +2019,4 @@ void displayGlui(int * argc, char  ** argv) {
     GLUI_Master.set_glutIdleFunc( myGlutIdle );
 }
 
-//#endif
+#endif

@@ -11,43 +11,35 @@
 class EC;
 class World;
 
-class logger {
+class Logger {
 
 };
 
-class world_logger : public logger {
+class WorldLogger : public Logger {
 private:
     World *m_world;
-    std::ofstream m_hysteresisFile;
-    const char *m_hysteresisFileName;
+
+    // Tracks hysteresis behaviour across the world.
+    const std::string m_hystFileName;
+
+    // Tracks protein levels across individual cells.
+    std::string m_proteinFileName;
 public:
-    world_logger(World* world, const char *hysteresisFileName);
+    WorldLogger();
+    explicit WorldLogger(World* world);
 
     World* getWorld();
-    void setWorld(World* world);
 
-    const char* getHysteresisFileName();
-    void setHysteresisFileName(const char *filename);
-    std::ofstream& getHysteresisFile();
-    void openHysteresisFile();
-    void closeHysteresisFile();
-};
+    const std::string& getHystFileName();
+    const std::string& determineHystFileName();
 
-class cell_logger : public logger {
-private:
-    EC *ec;
-    std::string output_filename;
-    std::string initial_time;
-public:
+    std::string& getProteinFileName();
+    void determineProteinFileName();
 
-    cell_logger(int run_number, std::string initial_time, EC *ec);
-    void add_EC(EC *ec);
-    void set_initial_time(std::string time_string);
-    void create_filename(int run_number, std::string output_directory);
-    void create_results_file();
-    void write_to_file();
-    void export_protein_levels(std::fstream &file);
-    void add_timestep(std::fstream &file);
+    std::string& constructHeaderString();
+    std::string& constructProteinLevelString();
+
+    void writeProteinLevels();
 };
 
 

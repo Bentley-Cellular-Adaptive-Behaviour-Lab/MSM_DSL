@@ -2,6 +2,20 @@
 // Created by Tom on 16/06/2021.
 //
 
+#include <cstdio>  /* defines FILENAME_MAX */
+
+#ifdef WINDOWS
+#include <direct.h>
+#define GetCurrentDir GetCurrentDirectory
+#define OSOutputDir "\\output\\"
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#define OSOutputDir "/output/"
+#endif
+
+#include <unistd.h>
+
 #include "logger.h"
 
 #include "../../core/EC.h"
@@ -10,172 +24,53 @@
 #include "../species/protein.h"
 #include "../tissue/cellType.h"
 
-world_logger::world_logger(World* world, const char *hysteresisFileName) {
-    setWorld(world);
-    setHysteresisFileName(hysteresisFileName);
-}
+WorldLogger::WorldLogger() = default;
 
-World* world_logger::getWorld() {
+WorldLogger::WorldLogger(World* world)
+    : m_world(world) {}
+
+World* WorldLogger::getWorld() {
     return this->m_world;
 }
 
-void world_logger::setWorld(World* world) {
-    this->m_world = world;
+const std::string& WorldLogger::getHystFileName() {
+    return this->m_hystFileName;
 }
 
-const char* world_logger::getHysteresisFileName() {
-    return this->m_hysteresisFileName;
+const std::string& WorldLogger::determineHystFileName() {
+
 }
 
-void world_logger::setHysteresisFileName(const char *hysteresisFileName) {
-    this->m_hysteresisFileName = hysteresisFileName;
+std::string& WorldLogger::getProteinFileName() {
+    return this->m_proteinFileName;
 }
 
-std::ofstream& world_logger::getHysteresisFile() {
-    return this->m_hysteresisFile;
-}
+void WorldLogger::determineProteinFileName() {
+    std::string proteinFileName, outputDir;
 
-void world_logger::openHysteresisFile() {
-    this->m_hysteresisFile.open(this->getHysteresisFileName());
-}
+    char currentPath[FILENAME_MAX];
 
-void world_logger::closeHysteresisFile() {
-    this->m_hysteresisFile.close();
-}
-
-cell_logger::cell_logger(int run_number, std::string initial_time, EC *ec) {
-    add_EC(ec);
-    create_filename(run_number, "results");
-    set_initial_time(initial_time);
-    create_results_file();
-}
-
-void cell_logger::add_EC(EC *ec) {
-    this->ec = ec;
-}
-
-void cell_logger::set_initial_time(std::string time_string) {
-    this->initial_time = time_string;
-}
-
-void cell_logger::create_filename(int run_number, std::string output_directory) {
-//    std::string tissue_name = this->ec->m_tissue->m_name;
-//    std::string cell_name = this->ec->m_cell->m_name;
-//    std::string cell_number = std::to_string(this->ec->cell_number);
-//
-//    boost::filesystem::path current_dir = boost::filesystem::detail::current_path();
-//    std::string dir_string = current_dir.string();
-//
-//#ifdef __linux__
-//    output_directory += "/";
-//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-//            this->output_filename = output_directory +
-//                    "simulationTime_" + this->initial_time + "/"
-//                    "results_" +
-//                    cell_name + "_" +
-//                    "run_" + std::to_string(run_number) +
-//                    ".csv";
-//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-//        this->output_filename = output_directory +
-//                                "results_" +
-//                                "tissue_" + tissue_name + "_" +
-//                                "cell_number_" + cell_number + "_" +
-//                                "run_" + std::to_string(run_number) +
-//                                ".csv";
-//    }
-//#endif
-//
-//#ifdef __APPLE__
-//    output_directory += "/";
-//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-//            this->output_filename = output_directory +
-//                    "simulationTime_" + this->initial_time + "/"
-//                    "results_" +
-//                    cell_name + "_" +
-//                    "run_" + std::to_string(run_number) +
-//                    ".csv";
-//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-//        this->output_filename = output_directory +
-//                                "results_" +
-//                                "tissue_" + tissue_name + "_" +
-//                                "cell_number_" + cell_number + "_" +
-//                                "run_" + std::to_string(run_number) +
-//                                ".csv";
-//    }
-//#endif
-//
-//#ifdef _WIN32
-//    // Determine filename based on OS.
-//
-//    std::vector<std::string> split_dir = split(dir_string, '\\');
-//
-//    // Remove the last element of the path, which corresponds to this directory, then reconstruct the string to "move up" a directory.
-//    split_dir.pop_back();
-//
-//    output_directory += "\\";
-//    if (ec->belongs_to == BELONGS_TO_SINGLECELL) {
-//            this->output_filename = output_directory +
-//                    "simulationTime_" + this->initial_time + "\\"
-//                    "results_" +
-//                    cell_name + "_" +
-//                    "run_" + std::to_string(run_number) +
-//                    ".csv";
-//    } else if (ec->belongs_to == BELONGS_TO_CYLINDER || ec->belongs_to == BELONGS_TO_FLAT) {
-//        this->output_filename = output_directory +
-//                                "results_" +
-//                                "tissue_" + tissue_name + "_" +
-//                                "cell_number_" + cell_number + "_" +
-//                                "run_" + std::to_string(run_number) +
-//                                ".csv";
-//    }
-//#endif
-}
-
-void cell_logger::create_results_file() {
-    std::fstream outfile (this->output_filename);
-    std::vector<Protein*> cell_proteins = this->ec->m_cell_type->proteins;
-    try {
-        if ( outfile.is_open() ) {
-            outfile << "Timestep,";
-            for (auto current_protein : cell_proteins) {
-                for (auto protein : cell_proteins) {
-                    std::string protein_name = protein->get_name();
-                    outfile << protein_name << "_level,";
-                }
-            }
-            outfile << "\n";
-        } else {
-            throw std::invalid_argument("Incorrect filename - file " + this->output_filename + "does not exist.");
-        }
-    } catch (const std::invalid_argument& ia) {
-        std::cerr << ia.what() << std::endl;
+    if (!GetCurrentDir(currentPath, sizeof(currentPath))) {
+        throw std::exception();
     }
-    outfile.close();
+
+    // Doing copy assignment here because the defines are set to const.
+    outputDir = OSOutputDir;
+
+    this->m_proteinFileName = currentPath + outputDir;
 }
 
-void cell_logger::write_to_file() {
-    std::fstream file(this->output_filename);
-    try {
-        if ( file.is_open() ) {
-            add_timestep(file);
-            export_protein_levels(file);
-        } else {
-            throw std::invalid_argument("Incorrect filename - file " + this->output_filename + "does not exist.");
-        }
-    } catch (const std::invalid_argument& ia) {
-        std::cerr << ia.what() << std::endl;
-    }
-    file.close();
+// Iterates over all cells in the simulation and writes the level of each protein that they have to the specified file.
+void WorldLogger::writeProteinLevels() {
+
 }
 
-void cell_logger::add_timestep(std::fstream &file) {
-    file << this->ec->worldP->timeStep << ",";
+// Creates the line at the top of the protein level file, which contains names for each cell.
+std::string& WorldLogger::constructHeaderString() {
+
 }
 
-void cell_logger::export_protein_levels(std::fstream &file) {
-    std::vector<Protein*> cell_proteins = this->ec->m_cell_type->proteins;
-    for (auto current_protein : cell_proteins) {
-        file << current_protein->get_name();
-    }
-}
+// Creates a line for each timestep containing the levels of each protein.
+std::string& WorldLogger::constructProteinLevelString() {
 
+}
