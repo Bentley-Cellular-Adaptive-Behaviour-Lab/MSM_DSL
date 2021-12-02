@@ -49,11 +49,15 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
       </concept>
@@ -73,6 +77,9 @@
       </concept>
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
+      <concept id="1207055528241" name="jetbrains.mps.lang.typesystem.structure.WarningStatement" flags="nn" index="a7r0C">
+        <child id="1207055552304" name="warningText" index="a7wSD" />
+      </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
@@ -206,7 +213,7 @@
           <node concept="2OqwBi" id="i2Gwg1$w0M" role="2Oq$k0">
             <node concept="1PxgMI" id="i2Gwg1$vPE" role="2Oq$k0">
               <node concept="chp4Y" id="i2Gwg1$vQi" role="3oSUPX">
-                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
               <node concept="2OqwBi" id="i2Gwg1$vcz" role="1m5AlR">
                 <node concept="1YBJjd" id="i2Gwg1$v1S" role="2Oq$k0">
@@ -338,7 +345,7 @@
           <node concept="2OqwBi" id="i2Gwg1_4Om" role="2Oq$k0">
             <node concept="1PxgMI" id="i2Gwg1_4AI" role="2Oq$k0">
               <node concept="chp4Y" id="i2Gwg1_4F4" role="3oSUPX">
-                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
               <node concept="2OqwBi" id="i2Gwg1_4j6" role="1m5AlR">
                 <node concept="1YBJjd" id="i2Gwg1_48z" role="2Oq$k0">
@@ -467,7 +474,7 @@
           <node concept="2OqwBi" id="i2Gwg1$VSl" role="2Oq$k0">
             <node concept="1PxgMI" id="i2Gwg1$VD7" role="2Oq$k0">
               <node concept="chp4Y" id="i2Gwg1$VJ3" role="3oSUPX">
-                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
               <node concept="2OqwBi" id="i2Gwg1$Vjg" role="1m5AlR">
                 <node concept="1YBJjd" id="i2Gwg1$V8H" role="2Oq$k0">
@@ -599,7 +606,7 @@
           <node concept="2OqwBi" id="i2Gwg1$NDX" role="2Oq$k0">
             <node concept="1PxgMI" id="i2Gwg1$Nqm" role="2Oq$k0">
               <node concept="chp4Y" id="i2Gwg1$Nwz" role="3oSUPX">
-                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+                <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
               <node concept="2OqwBi" id="i2Gwg1$N6R" role="1m5AlR">
                 <node concept="1YBJjd" id="i2Gwg1$N6_" role="2Oq$k0">
@@ -777,7 +784,7 @@
     </node>
     <node concept="1YaCAy" id="6leo5vIfx5y" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="3$QBVvWAIMR">
@@ -2219,6 +2226,55 @@
     <node concept="1YaCAy" id="109yD1sCUyH" role="1YuTPh">
       <property role="TrG5h" value="cellType" />
       <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4O6RXqWIKi6">
+    <property role="TrG5h" value="check_cellNumber" />
+    <node concept="3clFbS" id="4O6RXqWIKi7" role="18ibNy">
+      <node concept="3clFbJ" id="4O6RXqWJRGx" role="3cqZAp">
+        <node concept="3eOSWO" id="4O6RXqWJTmD" role="3clFbw">
+          <node concept="2OqwBi" id="4O6RXqWJRQb" role="3uHU7B">
+            <node concept="1YBJjd" id="4O6RXqWJRHq" role="2Oq$k0">
+              <ref role="1YBMHb" node="4O6RXqWIKiu" resolve="container" />
+            </node>
+            <node concept="2qgKlT" id="4O6RXqWJS0y" role="2OqNvi">
+              <ref role="37wK5l" to="4ebj:6yORN46v92v" resolve="count_cell_number_int" />
+            </node>
+          </node>
+          <node concept="3cmrfG" id="4O6RXqWJTnJ" role="3uHU7w">
+            <property role="3cmrfH" value="50" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="4O6RXqWJRGz" role="3clFbx">
+          <node concept="a7r0C" id="4O6RXqWJTog" role="3cqZAp">
+            <node concept="3cpWs3" id="4O6RXqWJVaw" role="a7wSD">
+              <node concept="Xl_RD" id="4O6RXqWJVbP" role="3uHU7w">
+                <property role="Xl_RC" value=", which is above the recommended amount of 50." />
+              </node>
+              <node concept="3cpWs3" id="4O6RXqWJTTa" role="3uHU7B">
+                <node concept="Xl_RD" id="4O6RXqWJToy" role="3uHU7B">
+                  <property role="Xl_RC" value="WARNING: Number of cells is " />
+                </node>
+                <node concept="2OqwBi" id="4O6RXqWJTU0" role="3uHU7w">
+                  <node concept="1YBJjd" id="4O6RXqWJTU1" role="2Oq$k0">
+                    <ref role="1YBMHb" node="4O6RXqWIKiu" resolve="container" />
+                  </node>
+                  <node concept="2qgKlT" id="4O6RXqWJTU2" role="2OqNvi">
+                    <ref role="37wK5l" to="4ebj:6yORN46v92v" resolve="count_cell_number_int" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="1YBJjd" id="4O6RXqWJToK" role="1urrMF">
+              <ref role="1YBMHb" node="4O6RXqWIKiu" resolve="container" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4O6RXqWIKiu" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     </node>
   </node>
 </model>

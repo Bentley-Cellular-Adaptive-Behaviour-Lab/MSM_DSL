@@ -77,7 +77,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="5qSYbADreYX">
-    <ref role="1XX52x" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    <ref role="1XX52x" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     <node concept="3EZMnI" id="5qSYbADreZf" role="2wV5jI">
       <node concept="3EZMnI" id="5qSYbADreZm" role="3EZMnx">
         <node concept="VPM3Z" id="5qSYbADreZo" role="3F10Kt" />
