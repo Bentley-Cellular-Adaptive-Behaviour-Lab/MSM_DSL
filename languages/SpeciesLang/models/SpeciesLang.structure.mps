@@ -144,14 +144,12 @@
       <property role="IQ2ns" value="2231199800372990779" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Min_Concentration" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
     </node>
     <node concept="1TJgyj" id="1VQO6m$9Td4" role="1TKVEi">
       <property role="IQ2ns" value="2231199800372990788" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Max_Concentration" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVhgJ" role="1TKVEi">
