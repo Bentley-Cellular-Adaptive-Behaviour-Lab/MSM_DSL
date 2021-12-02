@@ -327,7 +327,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6Y2UmXTGqrL">
-    <ref role="1M2myG" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    <ref role="1M2myG" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     <node concept="1N5Pfh" id="6Y2UmXTGqsa" role="1Mr941">
       <ref role="1N5Vy1" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
       <node concept="3k9gUc" id="6Y2UmXTGqsY" role="3kmjI7">

@@ -77,7 +77,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="5qSYbADreYX">
-    <ref role="1XX52x" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+    <ref role="1XX52x" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     <node concept="3EZMnI" id="5qSYbADreZf" role="2wV5jI">
       <node concept="3EZMnI" id="5qSYbADreZm" role="3EZMnx">
         <node concept="VPM3Z" id="5qSYbADreZo" role="3F10Kt" />
@@ -274,7 +274,7 @@
       <node concept="3EZMnI" id="6Y2UmXTEYRC" role="3EZMnx">
         <node concept="VPM3Z" id="6Y2UmXTEYRE" role="3F10Kt" />
         <node concept="3F0ifn" id="6Y2UmXTEYRG" role="3EZMnx">
-          <property role="3F0ifm" value="Choose desired species container:" />
+          <property role="3F0ifm" value="Choose desired signalling container:" />
           <node concept="2biZxu" id="2FvyIAlEDZJ" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

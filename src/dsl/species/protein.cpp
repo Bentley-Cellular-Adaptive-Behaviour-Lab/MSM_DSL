@@ -52,7 +52,8 @@ void Protein::set_cell_level(float new_level, int timestep_delay) {
         this->cell_levels[timestep_delay] = 0;
     } else if (new_level < this->get_min()) {
         this->cell_levels[timestep_delay] = this->get_min();
-    } else if (new_level > this->get_max()) {
+    } else if (new_level > this->get_max() && this->get_max() != -1) {
+        // If the max is set to -1, then it has no limit.
         this->cell_levels[timestep_delay] = this->get_max();
     } else {
         this->cell_levels[timestep_delay] = new_level;

@@ -1006,7 +1006,8 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
                         protein->set_cell_level(0, timestep_value);
                     } else if (new_level < protein->get_min()) {
                         protein->set_cell_level(protein->get_min(), timestep_value);
-                    } else if (new_level > protein->get_max()) {
+                    } else if (new_level > protein->get_max() && protein->get_max() != -1) {
+                        // If the max is set to -1, then it has no limit.
                         protein->set_cell_level(protein->get_max(), timestep_value);
                     } else {
                         protein->set_cell_level(new_level, timestep_value);

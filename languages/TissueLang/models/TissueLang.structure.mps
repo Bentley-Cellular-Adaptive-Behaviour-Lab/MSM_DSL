@@ -8,6 +8,7 @@
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
+    <import index="6zkc" ref="r:0c81e2c1-ba6e-4ec9-83d9-30ec00711168(com.mbeddr.mpsutil.modellisteners.behavior)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -48,7 +49,7 @@
   </registry>
   <node concept="1TIwiD" id="5qSYbADreY5">
     <property role="EcuMT" value="6249017959271690117" />
-    <property role="TrG5h" value="Tissue_And_Cell_Container" />
+    <property role="TrG5h" value="TissueContainer" />
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Root concept which stores user-defined cell and tissue types, and instances of cells and tissues in the simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />

@@ -866,7 +866,7 @@
         </node>
         <node concept="356sEK" id="6VIN$acolMz" role="383Ya9">
           <node concept="356sEF" id="6VIN$acyfrx" role="356sEH">
-            <property role="TrG5h" value="protein *" />
+            <property role="TrG5h" value="Protein *" />
           </node>
           <node concept="356sEF" id="6VIN$acolM$" role="356sEH">
             <property role="TrG5h" value="PROTEIN_NAME" />
@@ -898,7 +898,7 @@
             </node>
           </node>
           <node concept="356sEF" id="6VIN$acosA7" role="356sEH">
-            <property role="TrG5h" value="_protein = new protein(&quot;" />
+            <property role="TrG5h" value="_protein = new Protein(&quot;" />
           </node>
           <node concept="356sEF" id="6VIN$acov1N" role="356sEH">
             <property role="TrG5h" value="PROTEIN_NAME" />
