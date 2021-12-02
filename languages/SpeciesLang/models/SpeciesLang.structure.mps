@@ -66,7 +66,7 @@
   </registry>
   <node concept="1TIwiD" id="2Hxmt3eVfjF">
     <property role="EcuMT" value="3125878369731540203" />
-    <property role="TrG5h" value="SpeciesContainer" />
+    <property role="TrG5h" value="SignallingContainer" />
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="Species" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -138,19 +138,19 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Starting_Concentration" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
     <node concept="1TJgyj" id="1VQO6m$9TcV" role="1TKVEi">
       <property role="IQ2ns" value="2231199800372990779" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Min_Concentration" />
-      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
     <node concept="1TJgyj" id="1VQO6m$9Td4" role="1TKVEi">
       <property role="IQ2ns" value="2231199800372990788" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Max_Concentration" />
-      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVhgJ" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731548207" />
@@ -187,8 +187,28 @@
     </node>
     <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
       <property role="IQ2nx" value="6420553392043975787" />
-      <property role="TrG5h" value="Transcription_Delay" />
+      <property role="TrG5h" value="TranscriptionDelay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="4O6RXqW77zQ" role="1TKVEl">
+      <property role="IQ2nx" value="5550369704152692982" />
+      <property role="TrG5h" value="showMinMax" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4O6RXqW77zU" role="1TKVEl">
+      <property role="IQ2nx" value="5550369704152692986" />
+      <property role="TrG5h" value="showDelay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4O6RXqW77zZ" role="1TKVEl">
+      <property role="IQ2nx" value="5550369704152692991" />
+      <property role="TrG5h" value="showProd" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4O6RXqW77$5" role="1TKVEl">
+      <property role="IQ2nx" value="5550369704152692997" />
+      <property role="TrG5h" value="showDeg" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
@@ -494,7 +514,7 @@
       <property role="IQ2ns" value="4236022032102404628" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="20lvS9" node="2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
     <node concept="PrWs8" id="3F9nTx4ffEA" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

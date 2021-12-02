@@ -274,7 +274,7 @@
       <node concept="3EZMnI" id="6Y2UmXTEYRC" role="3EZMnx">
         <node concept="VPM3Z" id="6Y2UmXTEYRE" role="3F10Kt" />
         <node concept="3F0ifn" id="6Y2UmXTEYRG" role="3EZMnx">
-          <property role="3F0ifm" value="Choose desired species container:" />
+          <property role="3F0ifm" value="Choose desired signalling container:" />
           <node concept="2biZxu" id="2FvyIAlEDZJ" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

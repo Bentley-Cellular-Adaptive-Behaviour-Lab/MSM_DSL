@@ -772,7 +772,7 @@
     </node>
     <node concept="1YaCAy" id="J83UdHo7r7" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="4Q3VeFU0AE2">
@@ -1059,7 +1059,7 @@
     </node>
     <node concept="1YaCAy" id="4Q3VeFU0AE5" role="1YuTPh">
       <property role="TrG5h" value="speciesContainer" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="6UEPGYOx7HN">
@@ -1119,7 +1119,7 @@
     </node>
     <node concept="1YaCAy" id="6UEPGYOx7HQ" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="ufje78nf9C">
@@ -1434,7 +1434,7 @@
     </node>
     <node concept="1YaCAy" id="6YT8FA9C$$_" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="6YT8FA9DRVr">
@@ -1604,7 +1604,7 @@
     </node>
     <node concept="1YaCAy" id="6YT8FA9DRVu" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="6YT8FA9DSWx">
@@ -1774,7 +1774,7 @@
     </node>
     <node concept="1YaCAy" id="6YT8FA9DSWZ" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfs3d">
@@ -5122,7 +5122,7 @@
               <ref role="1YBMHb" node="5$qoOFydYLY" resolve="species" />
             </node>
             <node concept="3TrcHB" id="5$qoOFydZ7x" role="2OqNvi">
-              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
             </node>
           </node>
         </node>

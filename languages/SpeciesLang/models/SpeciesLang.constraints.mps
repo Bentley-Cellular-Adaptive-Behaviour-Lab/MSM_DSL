@@ -184,12 +184,12 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6Y2UmXTDpk0">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
   </node>
   <node concept="1M2fIO" id="5$qoOFye2an">
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     <node concept="EnEH3" id="5$qoOFye2aK" role="1MhHOB">
-      <ref role="EomxK" to="w3cn:5$qoOFyduhF" resolve="Transcription_Delay" />
+      <ref role="EomxK" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
       <node concept="QB0g5" id="5$qoOFye2eX" role="QCWH9">
         <node concept="3clFbS" id="5$qoOFye2eY" role="2VODD2">
           <node concept="3clFbJ" id="5$qoOFye2k0" role="3cqZAp">
