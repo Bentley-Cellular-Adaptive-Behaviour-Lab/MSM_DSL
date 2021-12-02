@@ -11,10 +11,12 @@
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
+      <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
         <child id="1154032183016" name="body" index="2LFqv$" />
       </concept>
@@ -60,11 +62,16 @@
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
+      </concept>
+      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
+        <reference id="1107535924139" name="classifier" index="3uigEE" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="8356039341262087992" name="line" index="1aUNEU" />
       </concept>
@@ -2273,6 +2280,455 @@
       </node>
     </node>
     <node concept="1YaCAy" id="4O6RXqWIKiu" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4O6RXqWNz2s">
+    <property role="TrG5h" value="checkNames" />
+    <node concept="3clFbS" id="4O6RXqWNz2t" role="18ibNy">
+      <node concept="3cpWs8" id="4O6RXqWO0Fn" role="3cqZAp">
+        <node concept="3cpWsn" id="4O6RXqWO0Fo" role="3cpWs9">
+          <property role="TrG5h" value="containerString" />
+          <node concept="3uibUv" id="4O6RXqWO0Fp" role="1tU5fm">
+            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+          </node>
+          <node concept="2OqwBi" id="4O6RXqWO0P0" role="33vP2m">
+            <node concept="1YBJjd" id="4O6RXqWO0Gd" role="2Oq$k0">
+              <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+            </node>
+            <node concept="2qgKlT" id="4O6RXqWO14S" role="2OqNvi">
+              <ref role="37wK5l" to="4ebj:4O6RXqWNXVe" resolve="checkName" />
+              <node concept="2OqwBi" id="4O6RXqWO18B" role="37wK5m">
+                <node concept="1YBJjd" id="4O6RXqWO17F" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+                </node>
+                <node concept="3TrcHB" id="4O6RXqWO1cL" role="2OqNvi">
+                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="4O6RXqWO3yI" role="3cqZAp">
+        <node concept="1PaTwC" id="4O6RXqWO3yJ" role="1aUNEU">
+          <node concept="3oM_SD" id="4O6RXqWO3zb" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="4O6RXqWO3$W" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="4O6RXqWO3$Z" role="1PaTwD">
+            <property role="3oM_SC" value="the" />
+          </node>
+          <node concept="3oM_SD" id="4O6RXqWO3_3" role="1PaTwD">
+            <property role="3oM_SC" value="function" />
+          </node>
+          <node concept="3oM_SD" id="4O6RXqWO3_l" role="1PaTwD">
+            <property role="3oM_SC" value="returned" />
+          </node>
+          <node concept="3oM_SD" id="4O6RXqWO3_r" role="1PaTwD">
+            <property role="3oM_SC" value="something." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="4O6RXqWO1f6" role="3cqZAp">
+        <node concept="3clFbS" id="4O6RXqWO1f8" role="3clFbx">
+          <node concept="2MkqsV" id="4O6RXqWOmcV" role="3cqZAp">
+            <node concept="3cpWs3" id="4O6RXqWOmwB" role="2MkJ7o">
+              <node concept="37vLTw" id="4O6RXqWOmwT" role="3uHU7w">
+                <ref role="3cqZAo" node="4O6RXqWO0Fo" resolve="containerString" />
+              </node>
+              <node concept="Xl_RD" id="4O6RXqWOmda" role="3uHU7B">
+                <property role="Xl_RC" value="Container name contains disallowed characters: " />
+              </node>
+            </node>
+            <node concept="1YBJjd" id="4O6RXqWOmxf" role="1urrMF">
+              <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+            </node>
+          </node>
+        </node>
+        <node concept="3y3z36" id="4O6RXqWO2Ri" role="3clFbw">
+          <node concept="3cmrfG" id="4O6RXqWO3rN" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="4O6RXqWO1z4" role="3uHU7B">
+            <node concept="37vLTw" id="4O6RXqWO1gY" role="2Oq$k0">
+              <ref role="3cqZAo" node="4O6RXqWO0Fo" resolve="containerString" />
+            </node>
+            <node concept="liA8E" id="4O6RXqWO29D" role="2OqNvi">
+              <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4O6RXqWNz3l" role="3cqZAp">
+        <node concept="2GrKxI" id="4O6RXqWNz3m" role="2Gsz3X">
+          <property role="TrG5h" value="cellType" />
+        </node>
+        <node concept="2OqwBi" id="4O6RXqWNToh" role="2GsD0m">
+          <node concept="1YBJjd" id="4O6RXqWNTfk" role="2Oq$k0">
+            <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="4O6RXqWNT_4" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="4O6RXqWNz3o" role="2LFqv$">
+          <node concept="3cpWs8" id="4O6RXqWOnzt" role="3cqZAp">
+            <node concept="3cpWsn" id="4O6RXqWOnzu" role="3cpWs9">
+              <property role="TrG5h" value="cellTypeString" />
+              <node concept="3uibUv" id="4O6RXqWOnzv" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOnzw" role="33vP2m">
+                <node concept="1YBJjd" id="4O6RXqWOnzx" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+                </node>
+                <node concept="2qgKlT" id="4O6RXqWOnzy" role="2OqNvi">
+                  <ref role="37wK5l" to="4ebj:4O6RXqWNXVe" resolve="checkName" />
+                  <node concept="2OqwBi" id="4O6RXqWOnzz" role="37wK5m">
+                    <node concept="2GrUjf" id="4O6RXqWOnU3" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="cellType" />
+                    </node>
+                    <node concept="3TrcHB" id="4O6RXqWOnz_" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="4O6RXqWOnzA" role="3cqZAp">
+            <node concept="1PaTwC" id="4O6RXqWOnzB" role="1aUNEU">
+              <node concept="3oM_SD" id="4O6RXqWOnzC" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOnzD" role="1PaTwD">
+                <property role="3oM_SC" value="that" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOnzE" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOnzF" role="1PaTwD">
+                <property role="3oM_SC" value="function" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOnzG" role="1PaTwD">
+                <property role="3oM_SC" value="returned" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOnzH" role="1PaTwD">
+                <property role="3oM_SC" value="something." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4O6RXqWOnzI" role="3cqZAp">
+            <node concept="3clFbS" id="4O6RXqWOnzJ" role="3clFbx">
+              <node concept="2MkqsV" id="4O6RXqWOnzK" role="3cqZAp">
+                <node concept="3cpWs3" id="4O6RXqWOnzL" role="2MkJ7o">
+                  <node concept="37vLTw" id="4O6RXqWOnzM" role="3uHU7w">
+                    <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="containerString" />
+                  </node>
+                  <node concept="Xl_RD" id="4O6RXqWOnzN" role="3uHU7B">
+                    <property role="Xl_RC" value="Cell type name contains disallowed characters: " />
+                  </node>
+                </node>
+                <node concept="2GrUjf" id="4O6RXqWSFK2" role="1urrMF">
+                  <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="cellType" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4O6RXqWOnzP" role="3clFbw">
+              <node concept="3cmrfG" id="4O6RXqWOnzQ" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOnzR" role="3uHU7B">
+                <node concept="37vLTw" id="4O6RXqWOnzS" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="containerString" />
+                </node>
+                <node concept="liA8E" id="4O6RXqWOnzT" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4O6RXqWOpE$" role="3cqZAp">
+        <node concept="2GrKxI" id="4O6RXqWOpE_" role="2Gsz3X">
+          <property role="TrG5h" value="tissueType" />
+        </node>
+        <node concept="2OqwBi" id="4O6RXqWOpEA" role="2GsD0m">
+          <node concept="1YBJjd" id="4O6RXqWOpEB" role="2Oq$k0">
+            <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="4O6RXqWOpEC" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="4O6RXqWOpED" role="2LFqv$">
+          <node concept="3cpWs8" id="4O6RXqWOpEE" role="3cqZAp">
+            <node concept="3cpWsn" id="4O6RXqWOpEF" role="3cpWs9">
+              <property role="TrG5h" value="tissueTypeString" />
+              <node concept="3uibUv" id="4O6RXqWOpEG" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOpEH" role="33vP2m">
+                <node concept="1YBJjd" id="4O6RXqWOpEI" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+                </node>
+                <node concept="2qgKlT" id="4O6RXqWOpEJ" role="2OqNvi">
+                  <ref role="37wK5l" to="4ebj:4O6RXqWNXVe" resolve="checkName" />
+                  <node concept="2OqwBi" id="4O6RXqWOpEK" role="37wK5m">
+                    <node concept="2GrUjf" id="4O6RXqWOpEL" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="cellType" />
+                    </node>
+                    <node concept="3TrcHB" id="4O6RXqWOpEM" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="4O6RXqWOpEN" role="3cqZAp">
+            <node concept="1PaTwC" id="4O6RXqWOpEO" role="1aUNEU">
+              <node concept="3oM_SD" id="4O6RXqWOpEP" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOpEQ" role="1PaTwD">
+                <property role="3oM_SC" value="that" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOpER" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOpES" role="1PaTwD">
+                <property role="3oM_SC" value="function" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOpET" role="1PaTwD">
+                <property role="3oM_SC" value="returned" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOpEU" role="1PaTwD">
+                <property role="3oM_SC" value="something." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4O6RXqWOpEV" role="3cqZAp">
+            <node concept="3clFbS" id="4O6RXqWOpEW" role="3clFbx">
+              <node concept="2MkqsV" id="4O6RXqWOpEX" role="3cqZAp">
+                <node concept="3cpWs3" id="4O6RXqWOpEY" role="2MkJ7o">
+                  <node concept="37vLTw" id="4O6RXqWOpEZ" role="3uHU7w">
+                    <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="cellTypeString" />
+                  </node>
+                  <node concept="Xl_RD" id="4O6RXqWOpF0" role="3uHU7B">
+                    <property role="Xl_RC" value="Tissue type name contains disallowed characters: " />
+                  </node>
+                </node>
+                <node concept="2GrUjf" id="4O6RXqWSG1f" role="1urrMF">
+                  <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="tissueType" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4O6RXqWOpF2" role="3clFbw">
+              <node concept="3cmrfG" id="4O6RXqWOpF3" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOpF4" role="3uHU7B">
+                <node concept="37vLTw" id="4O6RXqWOpF5" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="cellTypeString" />
+                </node>
+                <node concept="liA8E" id="4O6RXqWOpF6" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4O6RXqWOtRO" role="3cqZAp">
+        <node concept="2GrKxI" id="4O6RXqWOtRP" role="2Gsz3X">
+          <property role="TrG5h" value="cell" />
+        </node>
+        <node concept="2OqwBi" id="4O6RXqWOtRQ" role="2GsD0m">
+          <node concept="1YBJjd" id="4O6RXqWOtRR" role="2Oq$k0">
+            <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="4O6RXqWOtRS" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="4O6RXqWOtRT" role="2LFqv$">
+          <node concept="3cpWs8" id="4O6RXqWOtRU" role="3cqZAp">
+            <node concept="3cpWsn" id="4O6RXqWOtRV" role="3cpWs9">
+              <property role="TrG5h" value="cellString" />
+              <node concept="3uibUv" id="4O6RXqWOtRW" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOtRX" role="33vP2m">
+                <node concept="1YBJjd" id="4O6RXqWOtRY" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+                </node>
+                <node concept="2qgKlT" id="4O6RXqWOtRZ" role="2OqNvi">
+                  <ref role="37wK5l" to="4ebj:4O6RXqWNXVe" resolve="checkName" />
+                  <node concept="2OqwBi" id="4O6RXqWOtS0" role="37wK5m">
+                    <node concept="2GrUjf" id="4O6RXqWOtS1" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="4O6RXqWOtRP" resolve="tissueType" />
+                    </node>
+                    <node concept="3TrcHB" id="4O6RXqWOtS2" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="4O6RXqWOtS3" role="3cqZAp">
+            <node concept="1PaTwC" id="4O6RXqWOtS4" role="1aUNEU">
+              <node concept="3oM_SD" id="4O6RXqWOtS5" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOtS6" role="1PaTwD">
+                <property role="3oM_SC" value="that" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOtS7" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOtS8" role="1PaTwD">
+                <property role="3oM_SC" value="function" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOtS9" role="1PaTwD">
+                <property role="3oM_SC" value="returned" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOtSa" role="1PaTwD">
+                <property role="3oM_SC" value="something." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4O6RXqWOtSb" role="3cqZAp">
+            <node concept="3clFbS" id="4O6RXqWOtSc" role="3clFbx">
+              <node concept="2MkqsV" id="4O6RXqWOtSd" role="3cqZAp">
+                <node concept="3cpWs3" id="4O6RXqWOtSe" role="2MkJ7o">
+                  <node concept="37vLTw" id="4O6RXqWOtSf" role="3uHU7w">
+                    <ref role="3cqZAo" node="4O6RXqWOtRV" resolve="tissueTypeString" />
+                  </node>
+                  <node concept="Xl_RD" id="4O6RXqWOtSg" role="3uHU7B">
+                    <property role="Xl_RC" value="Cell name contains disallowed characters: " />
+                  </node>
+                </node>
+                <node concept="2GrUjf" id="4O6RXqWSGT$" role="1urrMF">
+                  <ref role="2Gs0qQ" node="4O6RXqWOtRP" resolve="cell" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4O6RXqWOtSi" role="3clFbw">
+              <node concept="3cmrfG" id="4O6RXqWOtSj" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOtSk" role="3uHU7B">
+                <node concept="37vLTw" id="4O6RXqWOtSl" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4O6RXqWOtRV" resolve="tissueTypeString" />
+                </node>
+                <node concept="liA8E" id="4O6RXqWOtSm" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="4O6RXqWOw9B" role="3cqZAp">
+        <node concept="2GrKxI" id="4O6RXqWOw9C" role="2Gsz3X">
+          <property role="TrG5h" value="tissue" />
+        </node>
+        <node concept="2OqwBi" id="4O6RXqWOw9D" role="2GsD0m">
+          <node concept="1YBJjd" id="4O6RXqWOw9E" role="2Oq$k0">
+            <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="4O6RXqWOy_f" role="2OqNvi">
+            <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="4O6RXqWOw9G" role="2LFqv$">
+          <node concept="3cpWs8" id="4O6RXqWOw9H" role="3cqZAp">
+            <node concept="3cpWsn" id="4O6RXqWOw9I" role="3cpWs9">
+              <property role="TrG5h" value="tissueString" />
+              <node concept="3uibUv" id="4O6RXqWOw9J" role="1tU5fm">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOw9K" role="33vP2m">
+                <node concept="1YBJjd" id="4O6RXqWOw9L" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
+                </node>
+                <node concept="2qgKlT" id="4O6RXqWOw9M" role="2OqNvi">
+                  <ref role="37wK5l" to="4ebj:4O6RXqWNXVe" resolve="checkName" />
+                  <node concept="2OqwBi" id="4O6RXqWOw9N" role="37wK5m">
+                    <node concept="2GrUjf" id="4O6RXqWOw9O" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="4O6RXqWOw9C" resolve="cell" />
+                    </node>
+                    <node concept="3TrcHB" id="4O6RXqWOw9P" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="4O6RXqWOw9Q" role="3cqZAp">
+            <node concept="1PaTwC" id="4O6RXqWOw9R" role="1aUNEU">
+              <node concept="3oM_SD" id="4O6RXqWOw9S" role="1PaTwD">
+                <property role="3oM_SC" value="Check" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOw9T" role="1PaTwD">
+                <property role="3oM_SC" value="that" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOw9U" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOw9V" role="1PaTwD">
+                <property role="3oM_SC" value="function" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOw9W" role="1PaTwD">
+                <property role="3oM_SC" value="returned" />
+              </node>
+              <node concept="3oM_SD" id="4O6RXqWOw9X" role="1PaTwD">
+                <property role="3oM_SC" value="something." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="4O6RXqWOw9Y" role="3cqZAp">
+            <node concept="3clFbS" id="4O6RXqWOw9Z" role="3clFbx">
+              <node concept="2MkqsV" id="4O6RXqWOwa0" role="3cqZAp">
+                <node concept="3cpWs3" id="4O6RXqWOwa1" role="2MkJ7o">
+                  <node concept="37vLTw" id="4O6RXqWOwa2" role="3uHU7w">
+                    <ref role="3cqZAo" node="4O6RXqWOw9I" resolve="cellString" />
+                  </node>
+                  <node concept="Xl_RD" id="4O6RXqWOwa3" role="3uHU7B">
+                    <property role="Xl_RC" value="Tissue name contains disallowed characters: " />
+                  </node>
+                </node>
+                <node concept="2GrUjf" id="4O6RXqWSHav" role="1urrMF">
+                  <ref role="2Gs0qQ" node="4O6RXqWOw9C" resolve="tissue" />
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="4O6RXqWOwa5" role="3clFbw">
+              <node concept="3cmrfG" id="4O6RXqWOwa6" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="2OqwBi" id="4O6RXqWOwa7" role="3uHU7B">
+                <node concept="liA8E" id="4O6RXqWOwa9" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+                </node>
+                <node concept="37vLTw" id="4O6RXqWOzD1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4O6RXqWOw9I" resolve="tissueString" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4O6RXqWNz2O" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     </node>

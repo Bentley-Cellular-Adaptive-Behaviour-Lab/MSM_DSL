@@ -154,7 +154,7 @@
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
-      <concept id="6249017959271690117" name="TissueLang.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
+      <concept id="6249017959271690117" name="TissueLang.structure.TissueContainer" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />

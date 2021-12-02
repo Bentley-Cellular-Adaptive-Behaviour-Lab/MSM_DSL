@@ -990,7 +990,7 @@
         </node>
       </node>
       <node concept="3F2HdR" id="2Hxmt3eVqBM" role="3EZMnx">
-        <property role="2czwfO" value=" +" />
+        <property role="2czwfO" value="+" />
         <ref role="1NtTu8" to="w3cn:2Hxmt3eVfjT" resolve="Reactant_Terms" />
         <node concept="2iRfu4" id="2Hxmt3eVqBO" role="2czzBx" />
       </node>
