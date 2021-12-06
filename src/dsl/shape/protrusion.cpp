@@ -223,14 +223,14 @@ int Protrusion::extension() {
         if (memAgent->EnvNeighs.empty()) { // <- Check that the memAgent is adjacent to an environment object.
             // TODO: CHECK WHETHER THIS IF STATEMENT IS NEEDED.
             if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() > requiredCytoprotein->getRequiredAmount()) {
-                if (memAgent->FIL == NONE) {
+                if (memAgent->FIL == BASE) {
                     this->initiateProtrusion(memAgent);
                     result = 0;
                 } else if (memAgent->FIL == TIP) {
                     this->extendProtrusion(memAgent);
                     result = 0;
                 } else {
-                    result = -1; // Failed due to being called on wrong memAgent type i.e. BASE OR STALK.
+                    result = -1; // Failed due to being called on wrong memAgent type i.e. STALK OR NONE.
                 }
             } else {
                 result = -1; // Failed due to lack of cytoprotein.
@@ -254,7 +254,7 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     bool succeeded = false;
 
     highest = this->findHighestConcPosition((startMemAgent), protrusionType->getSensitivity()); // Find the environment object with the highest level of the target protein.
-    if ((highest != NULL) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
+    if ((highest != nullptr) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
         float distNeeded = this->getDistNeeded(highest, startMemAgent);
         if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() >= distNeeded) {
             cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
@@ -273,7 +273,10 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             newMemAgent->setPreviousZ(newMemAgent->Mz);
 
             newMemAgent->FIL = TIP;
-            startMemAgent->FIL = BASE;
+            // If we've not set the filopodia type yet, do so now.
+            if (startMemAgent->FIL != BASE && startMemAgent->FIL == NONE) {
+                startMemAgent->FIL = BASE;
+            }
 
             cell->nodeAgents.push_back(newMemAgent);
 
@@ -673,4 +676,22 @@ bool Protrusion::proteinIsAllowed(std::string proteinName) {
 
 MemAgent* Protrusion::getTipMemAgent() {
     return getMemAgentStack().top();
+}
+
+float Protrusion::calcTotalLength() {
+    // Determines the length of the protrusion by iterating over the memAgents and summing their lengths.
+    int score = 0;
+    float length = 0.0f;
+
+    auto currentMemAgent = getTipMemAgent(); // Start from the tip of the protrusion.
+    auto neighbourMemAgent = currentMemAgent->filNeigh;
+
+    do { // Calculate the length.
+        length += calcAdjustedLength(currentMemAgent, neighbourMemAgent);
+        // Move down the filopodia.
+        currentMemAgent = neighbourMemAgent;
+        neighbourMemAgent = currentMemAgent->filNeigh;
+    } while (currentMemAgent->FIL != BASE);
+
+    return length;
 }
