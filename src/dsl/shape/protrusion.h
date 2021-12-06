@@ -49,8 +49,9 @@ public:
     void setCurrentLength(const float newLength);
     float getCurrentLength() const;
 
-    EC* getCell() const;
-    MemAgent* getBaseMemAgent() const;
+    EC* getCell();
+    MemAgent* getBaseMemAgent();
+    MemAgent* getTipMemAgent();
     std::stack<MemAgent*>& getMemAgentStack();
     ProtrusionType* getProtrusionType();
     Env* getTipLocation();
@@ -63,7 +64,7 @@ public:
 
     Env *findHighestConcPosition(MemAgent* memAgent, float prob);
 
-    int extension(MemAgent *memAgent);
+    int extension();
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
 
@@ -82,6 +83,8 @@ public:
     void populateProteinList(MemAgent *memAgent);
     void populateCytoproteinList(MemAgent *memAgent);
     bool proteinIsAllowed(std::string proteinName);
+
+    float calcTotalLength();
 };
 
 
