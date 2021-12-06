@@ -45,8 +45,13 @@
 // void MemAgent::calcRetractDist()
 
 Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType) {
+    assert(baseMemAgent->FIL == NONE);
     this->m_cell = cell;
     this->m_baseMemAgent = baseMemAgent;
+
+    // Set the memAgent's type to base.
+    baseMemAgent->FIL = BASE;
+
     this->m_protrusionType = protrusionType;
     this->m_timeCreated = cell->worldP->timeStep;
     this->addMemAgentToStack(baseMemAgent);
@@ -76,11 +81,11 @@ float Protrusion::getCurrentLength() const {
     return this->m_currentLength;
 }
 
-EC* Protrusion::getCell() const {
+EC* Protrusion::getCell() {
     return this->m_cell;
 }
 
-MemAgent* Protrusion::getBaseMemAgent() const {
+MemAgent* Protrusion::getBaseMemAgent() {
     return this->m_baseMemAgent;
 }
 
@@ -205,25 +210,24 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
     }
 }
 
-int Protrusion::extension(MemAgent *startMemAgent) {
+int Protrusion::extension() {
     int result = -1;
-    EC *cell = this->m_cell;
-    ProtrusionType *protrusionType = this->getProtrusionType();
-    Cell_Type *cellType = cell->m_cell_type;
+    auto *cell = this->m_cell;
+    auto *protrusionType = this->getProtrusionType();
+    auto *cellType = cell->m_cell_type;
     auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
-
-    this->m_baseMemAgent = startMemAgent;
+    auto memAgent = getTipMemAgent();
 
     // Find a new position and extend if enough cytoprotein is available.
-    if (startMemAgent->node) {
-        if (startMemAgent->EnvNeighs.size() > 0) { // <- Check that the memAgent is adjacent to an environment object.
+    if (memAgent->node) {
+        if (memAgent->EnvNeighs.empty()) { // <- Check that the memAgent is adjacent to an environment object.
             // TODO: CHECK WHETHER THIS IF STATEMENT IS NEEDED.
             if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() > requiredCytoprotein->getRequiredAmount()) {
-                if (startMemAgent->FIL == NONE) {
-                    this->initiateProtrusion(startMemAgent);
+                if (memAgent->FIL == NONE) {
+                    this->initiateProtrusion(memAgent);
                     result = 0;
-                } else if (startMemAgent->FIL == TIP) {
-                    this->extendProtrusion(startMemAgent);
+                } else if (memAgent->FIL == TIP) {
+                    this->extendProtrusion(memAgent);
                     result = 0;
                 } else {
                     result = -1; // Failed due to being called on wrong memAgent type i.e. BASE OR STALK.
@@ -665,4 +669,8 @@ void Protrusion::populateCytoproteinList(MemAgent *memAgent) {
 
 bool Protrusion::proteinIsAllowed(std::string proteinName) {
     return this->m_protrusionType->hasAllowedSpecies(proteinName);
+}
+
+MemAgent* Protrusion::getTipMemAgent() {
+    return getMemAgentStack().top();
 }
