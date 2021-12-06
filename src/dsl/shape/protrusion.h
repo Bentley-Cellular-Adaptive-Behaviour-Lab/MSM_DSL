@@ -7,7 +7,8 @@
 
 #include <stack>
 
-class CellType;
+class Cell_Type;
+class CytoProtein;
 class EC;
 class Env;
 class MemAgent;
@@ -34,6 +35,8 @@ private:
 public:
     Protrusion(EC *cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType);
 
+    // Getters and setters.
+
     void setTimeCreated(const int time);
     int getTimeCreated() const;
 
@@ -54,6 +57,7 @@ public:
     MemAgent* getTipMemAgent();
     std::stack<MemAgent*>& getMemAgentStack();
     ProtrusionType* getProtrusionType();
+
     Env* getTipLocation();
     void setTipLocation(Env* env);
 
@@ -62,29 +66,37 @@ public:
 
     void updateCurrentLength(float distanceDelta);
 
-    Env *findHighestConcPosition(MemAgent* memAgent, float prob);
-
+    // Extension Functions:
     int extension();
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
+    bool canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein); // Checks whether a protrusion is capable of extending i.e. dependent on cytoprotein levels.
 
+    // Retraction Functions:
     int retraction(MemAgent* memAgent);
     bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
     bool retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
 
-    float calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemAgent);
+    // Cytoprotein Functions:
+    void populateCytoproteinList(MemAgent *memAgent);
+    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName);
+    void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
+
+    // Protein Functions:
+    void populateProteinList(MemAgent *memAgent);
+    bool proteinIsAllowed(std::string proteinName);
+    void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
+
+    // Spring Functions:
     bool removeSpringFromList(EC *cell, Spring *neighStp);
     bool removeNodeFromList(EC *cell, MemAgent *memAgent);
     bool deleteOldGridRefs(World *world, Spring *neighStp);
-    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName);
-    void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
-    void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
-    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
-    void populateProteinList(MemAgent *memAgent);
-    void populateCytoproteinList(MemAgent *memAgent);
-    bool proteinIsAllowed(std::string proteinName);
 
-    float calcTotalLength();
+    // Utils:
+    float calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemAgent); // Gets length between memAgents
+    float calcTotalLength(); // Gets for whole protrusion
+    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
+    Env *findHighestConcPosition(MemAgent* memAgent, float prob);
 };
 
 

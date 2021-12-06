@@ -19,12 +19,7 @@
 #include "../../core/spring.h"
 #include "../../core/world.h"
 
-// TODO:: WRITE REPLACEMENT FUNCTIONS FOR THESE PROTRUSION BEHAVIOUR FUNCTIONS
-
-// Env * MemAgent::findHighestConc(void); ///guides filopodia direction in VEGF gradient direction
-
-
-// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE ACTIN TOKEN FUNCTIONS.
+// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
 
 // void MemAgent::VEGFRresponse()
 
@@ -32,13 +27,7 @@
 
 // void EC::calcCurrentActinUsed()
 
-// bool MemAgent::filExtend()
-
-// bool MemAgent::filRetract()
-
 // void MemAgent::veilAdvance()
-
-// float MemAgent::FilLength(int type)
 
 // void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N)
 
@@ -212,17 +201,18 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
 
 int Protrusion::extension() {
     int result = -1;
+
     auto *cell = this->m_cell;
-    auto *protrusionType = this->getProtrusionType();
     auto *cellType = cell->m_cell_type;
-    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
     auto memAgent = getTipMemAgent();
+    auto *protrusionType = this->getProtrusionType();
+    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
     // Find a new position and extend if enough cytoprotein is available.
     if (memAgent->node) {
-        if (memAgent->EnvNeighs.empty()) { // <- Check that the memAgent is adjacent to an environment object.
+        if (!memAgent->EnvNeighs.empty()) { // <- Check that the memAgent is adjacent to an environment object.
             // TODO: CHECK WHETHER THIS IF STATEMENT IS NEEDED.
-            if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() > requiredCytoprotein->getRequiredAmount()) {
+            if (canExtend(cellType, requiredCytoprotein)) {
                 if (memAgent->FIL == BASE) {
                     this->initiateProtrusion(memAgent);
                     result = 0;
@@ -244,9 +234,9 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     MemAgent *newMemAgent;
     Env * highest;
 
-    EC *cell = this->m_cell;
-    ProtrusionType *protrusionType = this->getProtrusionType();
-    Cell_Type *cellType = cell->m_cell_type;
+    auto *cell = this->m_cell;
+    auto *cellType = cell->m_cell_type;
+    auto *protrusionType = this->getProtrusionType();
     auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
     this->m_baseMemAgent = startMemAgent;
@@ -257,7 +247,8 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     if ((highest != nullptr) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
         float distNeeded = this->getDistNeeded(highest, startMemAgent);
         if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() >= distNeeded) {
-            cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
+
+            //cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
             startMemAgent->FA=true;
 
             /// Create a new node, only attached to the current agent. Create it in selected protein site.
@@ -294,23 +285,28 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
             startMemAgent->plusSite = newMemAgent;
             newMemAgent->minusSite = startMemAgent;
 
+            /// Check the neighbour's agents.
+            newMemAgent->checkNeighs(false);
+
             /// Create new protein objects for proteins which are allowed by the protrusion.
             for (auto *protein : cell->m_cell_type->proteins) {
 
             }
 
-            /// Confirms the extension has succeeded.
-            succeeded = true;
+            /// Subtract the required level * distance that is being extended from the cell's current level.
+            auto currentCytoproteinLevel = requiredCytoprotein->getCellLevel();
+            auto deltaProteinLevel = requiredCytoprotein->getRequiredAmount() * distNeeded;
+            requiredCytoprotein->setCellLevel(currentCytoproteinLevel - deltaProteinLevel);
 
-            /// Subtract the required level from the level at this memAgent.
-            float currentCytoproteinLevel = startMemAgent->get_cytoprotein_level(requiredCytoprotein->getName());
-            if (currentCytoproteinLevel > cellType->get_cytoprotein(requiredCytoprotein->getName())->getRequiredAmount()) {
-                startMemAgent->set_cytoprotein_level(requiredCytoprotein->getName(), currentCytoproteinLevel - cellType->get_cytoprotein(requiredCytoprotein->getName())->getRequiredAmount());
-            }
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
+
+            /// TODO: Subtract the required level * distance from the level at this memAgent.
 
             /// Add the memAgent to the protrusions list of memAgents.
             this->addMemAgentToStack(newMemAgent);
+
+            /// Confirms the extension has succeeded.
+            succeeded = true;
         }
     }
     return succeeded;
@@ -337,13 +333,12 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
 
     int XMAX = memAgent->worldP->gridXDimensions;
 
-    EC *cell = this->m_cell;
-    World *world = this->m_cell->worldP;
-    ProtrusionType *protrusionType = this->getProtrusionType();
-    Cell_Type *cellType = cell->m_cell_type;
+    auto *cell = this->m_cell;
+    auto *cellType = cell->m_cell_type;
+    auto *protrusionType = this->getProtrusionType();
     auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
-
-    MemAgent *filNeighbour = memAgent->filNeigh;
+    auto *filNeighbour = memAgent->filNeigh;
+    auto *world = this->m_cell->worldP;
 
     bool succeeded = false;
     // If the current level of cytoprotein across the cell can still support extension, continue.
@@ -372,6 +367,7 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
             memAgent->moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)memAgent->Mx, (int)memAgent->My, (int)memAgent->Mz});
             succeeded = true;
+            // TODO: HAVE SUBTRACTION OF CYTOPROTEIN OCCUR HERE AS WELL.
 //            filTokens -= tokenStrength;
         }
     }
@@ -694,4 +690,14 @@ float Protrusion::calcTotalLength() {
     } while (currentMemAgent->FIL != BASE);
 
     return length;
+}
+
+bool Protrusion::canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein) {
+    auto currentCytproteinLevel = cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel();
+    auto requiredCytoproteinLevel = requiredCytoprotein->getRequiredAmount();
+    if (currentCytproteinLevel > requiredCytoproteinLevel) {
+        return true;
+    } else {
+        return false;
+    }
 }
