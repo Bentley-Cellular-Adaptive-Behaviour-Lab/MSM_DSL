@@ -32,7 +32,6 @@ if(TEST_TYPE EQUAL 0)
             src/core/main.cpp
             src/core/medAgent.cpp
             src/core/memAgents.cpp
-            src/core/ScreenRecording.cpp
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
@@ -52,6 +51,7 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/gradient.cpp
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
+            src/graphics/ScreenRecording.cpp
             src/generated/dsl_shape_gen.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_tissue_gen.cpp
@@ -60,7 +60,6 @@ if(TEST_TYPE EQUAL 0)
     set (Headers src/core/contact.h
             src/core/coordinates.h
             src/core/CPM_module.h
-            src/core/display.h
             src/core/EC.cpp
             src/core/EC.h
             src/core/environment.h
@@ -71,7 +70,6 @@ if(TEST_TYPE EQUAL 0)
             src/core/medAgent.h
             src/core/memAgents.h
             src/core/objects.h
-            src/core/ScreenRecording.h
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
@@ -91,6 +89,8 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/gradient.h
             src/dsl/world/substrate.h
             src/dsl/world/worldContainer.h
+            src/graphics/display.h
+            src/graphics/ScreenRecording.h
             src/generated/dsl_species_gen.h)
 
     add_executable(springAgent ${Sources} ${Headers})
@@ -125,7 +125,6 @@ elseif(TEST_TYPE EQUAL 1)
     set (Sources src/core/contact.cpp
             src/core/coordinates.cpp
             src/core/CPM_module.cpp
-            src/core/display.cpp
             src/core/EC.cpp
             src/core/environment.cpp
             src/core/filopodia.cpp
@@ -134,7 +133,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/macrophage.cpp
             src/core/medAgent.cpp
             src/core/memAgents.cpp
-            src/core/ScreenRecording.cpp
             src/core/spring.cpp
             src/core/vessel.cpp
             src/core/world.cpp
@@ -154,6 +152,8 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/gradient.cpp
             src/dsl/world/substrate.cpp
             src/dsl/world/worldContainer.cpp
+            src/graphics/display.cpp
+            src/graphics/ScreenRecording.cpp
             tests/automated/helper_ODE.cpp
             tests/automated/helper_shape.cpp
             tests/automated/test_ODE.cpp
@@ -166,7 +166,6 @@ elseif(TEST_TYPE EQUAL 1)
     set (Headers src/core/contact.h
             src/core/coordinates.h
             src/core/CPM_module.h
-            src/core/display.h
             src/core/EC.cpp
             src/core/EC.h
             src/core/environment.h
@@ -177,10 +176,11 @@ elseif(TEST_TYPE EQUAL 1)
             src/core/medAgent.h
             src/core/memAgents.h
             src/core/objects.h
-            src/core/ScreenRecording.h
             src/core/spring.h
             src/core/vessel.h
             src/core/world.h
+            src/graphics/display.h
+            src/graphics/ScreenRecording.h
             src/dsl/shape/cytoprotein.h
             src/dsl/shape/protrusion.h
             src/dsl/shape/protrusionType.h
@@ -204,7 +204,6 @@ elseif(TEST_TYPE EQUAL 1)
     find_package(Boost)
 
     add_executable(autoSpringAgent ${Sources} ${Headers})
-
 
     include_directories(${OPENGL_INCLUDE_DIRS} ${BOOST_INCLUDE_DIRS})
     include(GoogleTest)
