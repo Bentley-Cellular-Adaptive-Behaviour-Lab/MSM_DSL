@@ -178,6 +178,11 @@ public:
     void calcNeighbourLocations();
     Location* getStoredLocation(int index);
     void setStoredLocation(Location* location, int index);
+
+    // DSL functions for controlling protrusion behaviour.
+    void extendProtrusions();
+    ProtrusionType* pickProtrusionType();
+    bool positionHasFormedProtrusion();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

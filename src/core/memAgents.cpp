@@ -4395,6 +4395,9 @@ void MemAgent::update_protein_level(std::string protein_name, float protein_delt
 
 void MemAgent::extendProtrusions() {
     // The memAgent is at a node and not in a filopodia, and no other memAgents at this position are in a filopodia.
+    if (!positionHasFormedProtrusion()) {
+
+    }
     //     CHECK THAT THERE ISN'T ALREADY A PROTRUSION AT THIS LOCATION.
     //     CREATE A NEW PROTRUSION.
     //     CALL THE PROTRUSION EXTENSION FUNCTION.
@@ -4403,17 +4406,27 @@ void MemAgent::extendProtrusions() {
     //      CALL THE PROTRUSION EXTENSION FUNCTION.
 }
 
-ProtrusionType* MemAgent::getEligibleProtusionTypes() {
+ProtrusionType* MemAgent::pickProtrusionType() {
     std::vector<ProtrusionType*> eligibleTypes;
     // ITERATE OVER TYPES THE CELL CAN FORM
     // CHECK THE CONDITION IS FULFILLED, IF SO, ADD THE TYPE TO THE LIST.
     // CHOOSE ONE OF THE PROTRUSION TYPES RANDOMLY AND RETURN IT.
+
+    auto cellType = this->Cell->m_cell_type;
+    for (auto protrusionType : cellType->m_protrusion_types) {
+
+    }
 }
 
 
 bool MemAgent::positionHasFormedProtrusion() {
+    bool hasFormedProtrusion = false;
     auto env = this->worldP->grid[(int)Mx][(int)My][(int)Mz];
-    for (auto *memAgent :  {
-
+    for (auto *memAgent : env.getMids())  {
+        if (memAgent->FIL == BASE) {
+            hasFormedProtrusion = true;
+            break;
+        }
     }
+    return hasFormedProtrusion;
 }
