@@ -701,3 +701,128 @@ bool Protrusion::canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein
         return false;
     }
 }
+
+void Protrusion::calcRetractDist(MemAgent *memAgent) {
+    float newX, newY, newZ, oldDist, newDist;
+    float outForces[3];
+
+    auto cell = memAgent->Cell;
+    auto filNeighbour = memAgent->filNeigh;
+    auto world = memAgent->worldP;
+    auto xMax = world->gridXDimensions;
+    auto requiredCytoProteinName = m_protrusionType->getRequiredCytoproteinName();
+    auto requiredCytoProteinLevel = cell->getCellCytoproteinLevel(requiredCytoProteinName);
+
+    // Get the current distance between the memAgent and its neighbour
+    oldDist = calcAdjustedLength(memAgent, filNeighbour);
+
+    // Calculate the forces exerted by the spring as it retracts.
+    calcRetractForces(world, memAgent, filNeighbour, outForces);
+
+    newX = memAgent->Mx - (outForces[0] / 2.0f);
+    newY = memAgent->My - (outForces[1] / 2.0f);
+    newZ = memAgent->Mz - (outForces[2] / 2.0f);
+
+    if (newX - filNeighbour->Mx >= (float) xMax / 2.0f) {
+        newDist = world->getDist(newX - (float) xMax, newY, newZ, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
+    } else if (filNeighbour->Mx - newX >= (float) xMax / 2.0f) {
+        newDist = world->getDist(newX, newY, newZ, filNeighbour->Mx - (float) xMax, filNeighbour->My, filNeighbour->Mz);
+    } else {
+        newDist = world->getDist(newX, newY, newZ, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
+    }
+
+    // Update the protrusion's used level of CytoProtein -> scale the amount required by the distance being travelled.
+    auto cytoproteinLevelChange = (newDist - oldDist) * requiredCytoProteinLevel;
+    updateCellCytoproteinLevel(cell,requiredCytoProteinName, cytoproteinLevelChange);
+}
+
+void Protrusion::calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]) {
+    int upto = meshNeighs + 5;
+    float denom, length, sConst, SL;
+    float PN[upto][3];
+    float SN[upto][3];
+    float DN[upto][3];
+    float sumDN[3];
+
+    bool flagFil = false;
+    bool finished = false;
+
+    auto xMax = world->gridXDimensions;
+
+    for (float & i : sumDN) {
+        i = 0.0f;
+    }
+
+    if (memAgent->FIL == TIP) {
+        sConst = filSpringConstant;
+        SL = filSpringLength;
+    }
+
+    int i = 0;
+    do {
+        if (memAgent->neigh[i] != nullptr) {
+            auto currentNeigh = memAgent->neigh[i];
+            PN[i][0] = memAgent->Mx - currentNeigh->Mx;
+            PN[i][1] = memAgent->My - currentNeigh->My;
+            PN[i][2] = memAgent->Mz - currentNeigh->Mz;
+            length = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, currentNeigh->Mx, currentNeigh->My, currentNeigh->Mz);
+
+            if (currentNeigh->FA) {
+                sConst = FAspringConstant;
+                SL = springLength;
+            }
+
+            if (((memAgent->FIL == BASE) || (memAgent->FIL == STALK))
+                && (memAgent->veilAdvancing) && ((currentNeigh->FIL == STALK) || (currentNeigh->FIL == TIP))) {
+                sConst = filBaseConstant;
+                SL = filSpringLength;
+            } else if (currentNeigh->Cell != memAgent->Cell) {
+                sConst = junctionConstant;
+                SL = JunctionSpringLength;
+            } else {
+                sConst = springConstant;
+                SL = springLength;
+            }
+        } else if ((memAgent->FIL == TIP) && (!flagFil)) {
+            flagFil = true;
+            PN[i][0] = memAgent->Mx - filNeighbour->Mx;
+            PN[i][1] = memAgent->My - filNeighbour->My;
+            PN[i][2] = memAgent->Mz - filNeighbour->Mz;
+            length = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
+        } else {
+            finished = true;
+        }
+
+        if (!finished) {
+            if (std::sqrt(PN[i][0] * PN[i][0]) >= (float) xMax / 2.0f) {
+                if (PN[i][0] > 0) {
+                    PN[i][0] = -((float) xMax - PN[i][0]);
+                } else {
+                    PN[i][0] = (float) xMax - std::fabs(PN[i][0]);
+                }
+                length = std::fabs((float) xMax - PN[i][0]);
+            }
+            denom = std::sqrt((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2]));
+
+            // Only apply force when spring is longer than it should be, not smaller -as membranes dont ping outwards, they ruffle - should avoid 'sagging of membrane'
+            if (length > SL) {
+                for (int j = 0; j < 3; j++) {
+                    SN[i][j] = SL * (PN[i][j] / denom);
+                }
+
+                for (int j = 0; j < 3; j++) {
+                    DN[i][j] = PN[i][j] - SN[i][j];
+                }
+
+                for (int j = 0; j < 3; j++) {
+                    sumDN[j] += (sConst * DN[i][j]);
+                }
+            }
+        }
+        i++;
+    } while ((i < upto) && (!finished));
+
+    for (int index = 0; index < 3; index++) {
+        outForces[index] = sumDN[index];
+    }
+}

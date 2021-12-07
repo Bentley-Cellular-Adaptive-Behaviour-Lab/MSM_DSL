@@ -76,6 +76,8 @@ public:
     int retraction(MemAgent* memAgent);
     bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
     bool retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
+    void calcRetractDist(MemAgent* memAgent);
+    void calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]);
 
     // Cytoprotein Functions:
     void populateCytoproteinList(MemAgent *memAgent);
