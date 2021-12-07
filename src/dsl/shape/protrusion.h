@@ -37,19 +37,19 @@ public:
 
     // Getters and setters.
 
-    void setTimeCreated(const int time);
+    void setTimeCreated(const int& time);
     int getTimeCreated() const;
 
-    void setTimeRetracted(const int time);
+    void setTimeRetracted(const int& time);
     int getTimeRetracted() const;
 
-    void setRetracting(const bool retracting);
+    void setRetracting(const bool& retracting);
     bool getRetracting() const;
 
-    void setFurthest(const bool furthest);
+    void setFurthest(const bool& furthest);
     bool getFurthest() const;
 
-    void setCurrentLength(const float newLength);
+    void setCurrentLength(const float& newLength);
     float getCurrentLength() const;
 
     EC* getCell();
@@ -70,35 +70,35 @@ public:
     int extension();
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
-    bool canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein); // Checks whether a protrusion is capable of extending i.e. dependent on cytoprotein levels.
+    static bool canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein); // Checks whether a protrusion is capable of extending i.e. dependent on cytoprotein levels.
 
     // Retraction Functions:
     int retraction(MemAgent* memAgent);
     bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
     bool retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
-    void calcRetractDist(MemAgent* memAgent);
-    void calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]);
+    void releaseCytoProtein(MemAgent* memAgent);
+    static void calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]);
 
     // Cytoprotein Functions:
     void populateCytoproteinList(MemAgent *memAgent);
-    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName);
-    void updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta);
+    void transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& cytoproteinName);
+    static void updateCellCytoproteinLevel(EC *cell, const std::string& cytoproteinName, const float& proteinDelta);
 
     // Protein Functions:
     void populateProteinList(MemAgent *memAgent);
-    bool proteinIsAllowed(std::string proteinName);
-    void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName);
+    bool proteinIsAllowed(const std::string& proteinName);
+    static void transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& proteinName);
 
     // Spring Functions:
-    bool removeSpringFromList(EC *cell, Spring *neighStp);
-    bool removeNodeFromList(EC *cell, MemAgent *memAgent);
-    bool deleteOldGridRefs(World *world, Spring *neighStp);
+    static bool removeSpringFromList(EC *cell, Spring *neighStp);
+    static bool removeNodeFromList(EC *cell, MemAgent *memAgent);
+    static bool deleteOldGridRefs(World *world, Spring *neighStp);
 
     // Utils:
     float calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemAgent); // Gets length between memAgents
     float calcTotalLength(); // Gets for whole protrusion
-    float getDistNeeded(Env *highest, MemAgent *startMemAgent);
-    Env *findHighestConcPosition(MemAgent* memAgent, float prob);
+    static float calcDistNeeded(Env *highest, MemAgent *startMemAgent);
+    Env *findHighestConcPosition(MemAgent* memAgent, const float& prob);
 };
 
 

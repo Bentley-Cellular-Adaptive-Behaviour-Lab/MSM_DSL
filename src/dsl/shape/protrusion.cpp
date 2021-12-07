@@ -21,17 +21,15 @@
 
 // TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
 
-// void MemAgent::VEGFRresponse()
-
 // void MemAgent::TokenTrading() OR void MemAgent::ActinFlow()
 
-// void EC::calcCurrentActinUsed()
+// void EC::calcCurrentActinUsed() -> EC:: calcCytoProteinUsed()
 
 // void MemAgent::veilAdvance()
 
-// void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N)
+// void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) ->
 
-// void MemAgent::calcRetractDist()
+// void MemAgent::VEGFRresponse() ->
 
 Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType) {
     assert(baseMemAgent->FIL == NONE);
@@ -46,7 +44,7 @@ Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrus
     this->addMemAgentToStack(baseMemAgent);
 }
 
-void Protrusion::setTimeCreated(const int time) {
+void Protrusion::setTimeCreated(const int& time) {
     this->m_timeCreated = time;
 }
 
@@ -54,7 +52,7 @@ int Protrusion::getTimeCreated() const {
     return this->m_timeCreated;
 }
 
-void Protrusion::setTimeRetracted(const int time) {
+void Protrusion::setTimeRetracted(const int& time) {
     this->m_timeRetractComplete = time;
 }
 
@@ -62,7 +60,7 @@ int Protrusion::getTimeRetracted() const {
     return this->m_timeRetractComplete;
 }
 
-void Protrusion::setCurrentLength(const float newLength) {
+void Protrusion::setCurrentLength(const float& newLength) {
     this->m_currentLength = newLength;
 }
 
@@ -94,7 +92,7 @@ void Protrusion::setTipLocation(Env* env) {
     this->m_tipLocation = env;
 }
 
-void Protrusion::setFurthest(const bool furthest) {
+void Protrusion::setFurthest(const bool& furthest) {
     this->getsFurthestEnv = furthest;
 }
 
@@ -115,7 +113,7 @@ void Protrusion::updateCurrentLength(float distanceDelta) {
     this->setCurrentLength(this->getCurrentLength() + distanceDelta);
 }
 
-Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
+Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) {
     // Derived from MemAgent::extendFil()
     // Finds the env objects with the highest level of the protrusions target protein and returns its address.
     std::vector<Env*> envNeighs = memAgent->EnvNeighs;
@@ -128,63 +126,56 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
     memAgent->worldP->shuffleEnvAgents(envNeighs);
 
     Env *currentHighestEnv = envNeighs[0];
-    Env *chosenEnv = envNeighs[0];
+    Env *chosenEnv;
 
     // Check the level at each position for the desired environment protein - optionally ensure that the environment
     // agent picked is the one furthest away from the base.
 
     if (this->getsFurthestEnv) {
         MemAgent* filNeigh = memAgent->filNeigh;
-        int direction;
-        int start, picked;
         Env* furthest  = envNeighs[0];
         float currentDist;
         float furthestDist = 0;
-        Env* straight=NULL;
-        float currLength;
 
         if (envNeighs[0]->VEGF > 0) {
             if (memAgent->FIL == NONE) {
-                furthestDist = world->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)memAgent->Mx, (int)memAgent->My, (int)memAgent->Mz);
+                furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
             } else {
-                furthestDist = world->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+                furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
             }
         } else {
-            furthest = NULL;
+            furthest = nullptr;
         }
 
-        for (int i = 0; i < envNeighs.size(); i++) {
-            if (envNeighs[i]->has_protein(targetProteinName)) {
-                float currentProteinLevel = envNeighs[i]->get_protein_level(targetProteinName);
+        for (auto & envNeigh : envNeighs) {
+            if (envNeigh->has_protein(targetProteinName)) {
+                float currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
                 if (currentProteinLevel >= highestProteinConc) {
                     highestProteinConc = currentProteinLevel;
-                    currentHighestEnv = envNeighs[i];
+                    currentHighestEnv = envNeigh;
                 }
 
                 if (memAgent->FIL == NONE) {
-                    currentDist = world->getDist(envNeighs[i]->Ex, envNeighs[i]->Ey, envNeighs[i]->Ez, (int) memAgent->Mx, (int) memAgent->My, (int) memAgent->Mz);
+                    currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
                 } else {
-                    currentDist = world->getDist(envNeighs[i]->Ex, envNeighs[i]->Ey, envNeighs[i]->Ez, (int) filNeigh->Mx, (int) filNeigh->My, (int) filNeigh->Mz);
+                    currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
                 }
 
                 if (currentDist >= furthestDist) {
                     furthestDist = currentDist;
-                    furthest = envNeighs[i];
+                    furthest = envNeigh;
                 }
             }
         }
-
         //TODO: HAVE THE PROTEIN LEVEL FACTOR INTO THE SELECTION PROCESS SOMEHOW?
         chosenEnv = furthest;
-
-        return chosenEnv;
     } else {
-        for (int i = 0; i < envNeighs.size(); i++) {
-            if (envNeighs[i]->has_protein(targetProteinName)) {
-                float currentProteinLevel = envNeighs[i]->get_protein_level(targetProteinName);
+        for (auto & envNeigh : envNeighs) {
+            if (envNeigh->has_protein(targetProteinName)) {
+                float currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
                 if (currentProteinLevel > highestProteinConc) {
                     highestProteinConc = currentProteinLevel;
-                    currentHighestEnv = envNeighs[i];
+                    currentHighestEnv = envNeigh;
                 }
             }
         }
@@ -195,8 +186,8 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, float prob) {
             int chosenIndex = (int) ((float)world->new_rand() * (float)envNeighs.size() / (float)NEW_RAND_MAX);
             chosenEnv = envNeighs[chosenIndex];
         }
-        return chosenEnv;
     }
+    return chosenEnv;
 }
 
 int Protrusion::extension() {
@@ -245,17 +236,15 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
 
     highest = this->findHighestConcPosition((startMemAgent), protrusionType->getSensitivity()); // Find the environment object with the highest level of the target protein.
     if ((highest != nullptr) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
-        float distNeeded = this->getDistNeeded(highest, startMemAgent);
+        float distNeeded = calcDistNeeded(highest, startMemAgent);
         if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() >= distNeeded) {
-
-            //cellType->get_cytoprotein(requiredCytoprotein->getName())->setCellLevel(distNeeded);
             startMemAgent->FA=true;
 
             /// Create a new node, only attached to the current agent. Create it in selected protein site.
             newMemAgent = new MemAgent(cell, startMemAgent->worldP);
-            newMemAgent->Mx = highest->Ex;
-            newMemAgent->My = highest->Ey;
-            newMemAgent->Mz = highest->Ez;
+            newMemAgent->Mx = (float) highest->Ex;
+            newMemAgent->My = (float) highest->Ey;
+            newMemAgent->Mz = (float) highest->Ez;
 
             startMemAgent->worldP->set_focal_adhesion(newMemAgent);
 
@@ -312,17 +301,32 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
     return succeeded;
 }
 
-float Protrusion::getDistNeeded(Env *highest, MemAgent *startMemAgent) {
-    int XMAX = startMemAgent->worldP->gridXDimensions;
-    float distNeeded = -1;
-    if (sqrt((highest->Ex - startMemAgent->Mx)*(highest->Ex - startMemAgent->Mx)) > XMAX / 2.0f) {
-        if (highest->Ex > startMemAgent->Mx) {
-            distNeeded = startMemAgent->worldP->getDist(highest->Ex - XMAX, highest->Ey, highest->Ez, startMemAgent->Mx, startMemAgent->My, startMemAgent->Mz);
+float Protrusion::calcDistNeeded(Env *highest, MemAgent *startMemAgent) {
+    int xMax = startMemAgent->worldP->gridXDimensions;
+    float distNeeded;
+    if (std::sqrt(((float) highest->Ex - startMemAgent->Mx)*((float) highest->Ex - startMemAgent->Mx)) > (float) xMax / 2.0f) {
+        if ((float) highest->Ex > startMemAgent->Mx) {
+            distNeeded = startMemAgent->worldP->getDist((float) highest->Ex - (float) xMax,
+                                                            (float) highest->Ey,
+                                                            (float) highest->Ez,
+                                                            startMemAgent->Mx,
+                                                            startMemAgent->My,
+                                                            startMemAgent->Mz);
         } else {
-            distNeeded = startMemAgent->worldP->getDist(highest->Ex, highest->Ey, highest->Ez, startMemAgent->Mx - XMAX, startMemAgent->My, startMemAgent->Mz);
+            distNeeded = startMemAgent->worldP->getDist((float) highest->Ex,
+                                                        (float) highest->Ey,
+                                                        (float)highest->Ez,
+                                                        startMemAgent->Mx - (float) xMax,
+                                                        startMemAgent->My,
+                                                        startMemAgent->Mz);
         }
     } else {
-        distNeeded = startMemAgent->worldP->getDist(highest->Ex, highest->Ey, highest->Ez, startMemAgent->Mx, startMemAgent->My, startMemAgent->Mz);
+        distNeeded = startMemAgent->worldP->getDist((float) highest->Ex,
+                                                    (float) highest->Ey,
+                                                    (float) highest->Ez,
+                                                    startMemAgent->Mx,
+                                                    startMemAgent->My,
+                                                    startMemAgent->Mz);
     }
     return distNeeded;
 }
@@ -331,32 +335,48 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
     Env * highest;
     float newDist, oldDist, distNeeded;
 
-    int XMAX = memAgent->worldP->gridXDimensions;
-
     auto *cell = this->m_cell;
-    auto *cellType = cell->m_cell_type;
     auto *protrusionType = this->getProtrusionType();
-    auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
     auto *filNeighbour = memAgent->filNeigh;
     auto *world = this->m_cell->worldP;
+    auto xMax = (float) world->gridXDimensions;
 
     bool succeeded = false;
     // If the current level of cytoprotein across the cell can still support extension, continue.
     highest = this->findHighestConcPosition((memAgent), protrusionType->getSensitivity()); // Find the environment object with the highest level of the target protein.
-    if ((highest != NULL) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
-        if (highest->Ex - filNeighbour->Mx > xMAX / 2.0f) {
-            newDist = world->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
-        } else if (filNeighbour->Mx - highest->Ex > xMAX / 2.0f) {
-            newDist = world->getDist(highest->Ex, highest->Ey, highest->Ez, filNeighbour->Mx - xMAX, filNeighbour->My, filNeighbour->Mz);
+    if ((highest != nullptr) && (highest->get_protein_level(protrusionType->getTargetName()) > 0)) { // If this environment object isn't null and has some protein, continue.
+        if ((float) highest->Ex - filNeighbour->Mx > xMax / 2.0f) {
+            newDist = world->getDist((float) highest->Ex - xMax,
+                                     (float) highest->Ey,
+                                     (float) highest->Ez,
+                                     filNeighbour->Mx,
+                                     filNeighbour->My,
+                                     filNeighbour->Mz);
+        } else if (filNeighbour->Mx - (float) highest->Ex > xMax / 2.0f) {
+            newDist = world->getDist((float) highest->Ex,
+                                     (float) highest->Ey,
+                                     (float) highest->Ez,
+                                     filNeighbour->Mx - xMax,
+                                     filNeighbour->My,
+                                     filNeighbour->Mz);
         } else {
-            newDist = world->getDist(highest->Ex, highest->Ey, highest->Ez, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
+            newDist = world->getDist((float) highest->Ex,
+                                     (float) highest->Ey,
+                                     (float) highest->Ez,
+                                     filNeighbour->Mx,
+                                     filNeighbour->My,
+                                     filNeighbour->Mz);
         }
-        newDist = world->getDist(highest->Ex, highest->Ey, highest->Ez, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
 
-        if (memAgent->Mx - filNeighbour->Mx > xMAX / 2.0f) {
-            oldDist = world->getDist(memAgent->Mx - xMAX, memAgent->My, memAgent->Mz, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
-        } else if (filNeighbour->Mx - memAgent->Mx > xMAX / 2.0f) {
-            oldDist = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, filNeighbour->Mx - xMAX, filNeighbour->My, filNeighbour->Mz);
+        if (memAgent->Mx - filNeighbour->Mx > xMax / 2.0f) {
+            oldDist = world->getDist(memAgent->Mx - xMax,
+                                     memAgent->My,
+                                     memAgent->Mz,
+                                     filNeighbour->Mx,
+                                     filNeighbour->My,
+                                     filNeighbour->Mz);
+        } else if (filNeighbour->Mx - memAgent->Mx > xMax / 2.0f) {
+            oldDist = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, filNeighbour->Mx - xMax, filNeighbour->My, filNeighbour->Mz);
         } else {
             oldDist = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
         }
@@ -364,14 +384,16 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
 
         if ((actinMax - cell->actinUsed) >= distNeeded) {
             cell->actinUsed += distNeeded;
-            memAgent->moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
+            memAgent->moveAgent((float) highest->Ex,
+                                (float) highest->Ey,
+                                (float) highest->Ez,
+                                true);
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)memAgent->Mx, (int)memAgent->My, (int)memAgent->Mz});
             succeeded = true;
             // TODO: HAVE SUBTRACTION OF CYTOPROTEIN OCCUR HERE AS WELL.
 //            filTokens -= tokenStrength;
         }
     }
-
     return succeeded;
 }
 
@@ -467,13 +489,13 @@ bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMe
     neighbourMemAgent->plusSite = NULL;
 
     /// Remove the spring from the cell's list.
-    this->removeSpringFromList(cell, neighStp);
+    removeSpringFromList(cell, neighStp);
 
     /// Remove the tip node from the cell's list.
-    this->removeNodeFromList(cell, memAgent);
+    removeNodeFromList(cell, memAgent);
 
     /// Go through and remove springAgents from grid.
-    this->deleteOldGridRefs(world, neighStp);
+    deleteOldGridRefs(world, neighStp);
 
     delete neighStp;
     return true;
@@ -513,16 +535,16 @@ bool Protrusion::retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAge
         this->transferProtein(memAgent, neighbourMemAgent, cytoprotein->getName());
     }
 
-    neighbourMemAgent->plusSite = NULL;
+    neighbourMemAgent->plusSite = nullptr;
 
     /// Remove the spring from the cell's list.
-    this->removeSpringFromList(cell, neighStp);
+    removeSpringFromList(cell, neighStp);
 
     /// Remove the tip node from cell's list.
-    this->removeNodeFromList(cell, memAgent);
+    removeNodeFromList(cell, memAgent);
 
     /// Go through and remove springAgents from grid - though there shouldn't be any as the distance is less than 1.
-    this->deleteOldGridRefs(world, neighStp);
+    deleteOldGridRefs(world, neighStp);
 
     delete neighStp;
     return true;
@@ -533,19 +555,19 @@ float Protrusion::calcAdjustedLength(MemAgent *memAgent, MemAgent *neighbourMemA
     // Gets adjusted length between two memAgents, taking into account the toroidal boundary.
     World *world = memAgent->worldP;
     float length = -1;
-    int XA = (int) memAgent->Mx - (int) neighbourMemAgent->Mx;
-    float B = (int) memAgent->My - (int) neighbourMemAgent->My; // Should these be casting to ints?
-    float D = (int) memAgent->Mz - (int) neighbourMemAgent->Mz;
+    float XA = memAgent->Mx -neighbourMemAgent->Mx;
+    float B = memAgent->My - neighbourMemAgent->My;
+    float D = memAgent->Mz - neighbourMemAgent->Mz;
 
     //toroidal adjustments
     if(TOROIDAL_X){
-        if (sqrt(XA * XA) >= (int) ((float) memAgent->worldP->gridXDimensions / 2.0f)) {
+        if (std::sqrt(XA * XA) >= ((float) memAgent->worldP->gridXDimensions / 2.0f)) {
             if (XA > 0) {
-                XA = -(memAgent->worldP->gridXDimensions - XA);
+                XA = -((float)memAgent->worldP->gridXDimensions - XA);
             } else {
-                XA = memAgent->worldP->gridXDimensions - abs(XA);
+                XA = (float) memAgent->worldP->gridXDimensions - std::abs(XA);
             }
-            length = sqrt((XA * XA)+(B * B)+(D * D));
+            length = std::sqrt((XA * XA)+(B * B)+(D * D));
         } else {
             length = world->getDist(memAgent->Mx, memAgent->My, memAgent->Mz, neighbourMemAgent->Mx, neighbourMemAgent->My, neighbourMemAgent->Mz);
         }
@@ -631,7 +653,7 @@ bool Protrusion::deleteOldGridRefs(World *world, Spring *neighStp) {
     return springFound;
 }
 
-void Protrusion::transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string cytoproteinName) {
+void Protrusion::transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& cytoproteinName) {
     /// Transfers all of a specified cytoprotein from one memAgent to another.
     /// Usually called before deletion of the source agent.
     float sourceAmount = sourceMemAgent->get_cytoprotein_level(cytoproteinName);
@@ -641,7 +663,7 @@ void Protrusion::transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetM
     sourceMemAgent->set_cytoprotein_level(cytoproteinName, 0);
 }
 
-void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, std::string proteinName) {
+void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& proteinName) {
     /// Transfers all of a specified protein from one memAgent to another.
     /// Usually called before deletion of the source agent.
     float sourceAmount = sourceMemAgent->get_memAgent_protein_level(proteinName);
@@ -651,7 +673,7 @@ void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAg
     sourceMemAgent->set_cytoprotein_level(proteinName, 0);
 }
 
-void Protrusion::updateCellCytoproteinLevel(EC *cell, std::string cytoproteinName, float proteinDelta) {
+void Protrusion::updateCellCytoproteinLevel(EC *cell, const std::string& cytoproteinName,const float& proteinDelta) {
     float currentCellLevel = cell->getCellCytoproteinLevel(cytoproteinName);
     cell->setCellCytoproteinLevel(cytoproteinName, currentCellLevel + proteinDelta);
 }
@@ -666,7 +688,7 @@ void Protrusion::populateCytoproteinList(MemAgent *memAgent) {
 
 }
 
-bool Protrusion::proteinIsAllowed(std::string proteinName) {
+bool Protrusion::proteinIsAllowed(const std::string& proteinName) {
     return this->m_protrusionType->hasAllowedSpecies(proteinName);
 }
 
@@ -702,9 +724,9 @@ bool Protrusion::canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein
     }
 }
 
-void Protrusion::calcRetractDist(MemAgent *memAgent) {
+void Protrusion::releaseCytoProtein(MemAgent *memAgent) {
     float newX, newY, newZ, oldDist, newDist;
-    float outForces[3];
+    float forces[3];
 
     auto cell = memAgent->Cell;
     auto filNeighbour = memAgent->filNeigh;
@@ -717,11 +739,12 @@ void Protrusion::calcRetractDist(MemAgent *memAgent) {
     oldDist = calcAdjustedLength(memAgent, filNeighbour);
 
     // Calculate the forces exerted by the spring as it retracts.
-    calcRetractForces(world, memAgent, filNeighbour, outForces);
+    calcRetractForces(world, memAgent, filNeighbour, forces);
 
-    newX = memAgent->Mx - (outForces[0] / 2.0f);
-    newY = memAgent->My - (outForces[1] / 2.0f);
-    newZ = memAgent->Mz - (outForces[2] / 2.0f);
+    // Determine the distance between the new position of the memAgent and its neighbour.
+    newX = memAgent->Mx - (forces[0] / 2.0f);
+    newY = memAgent->My - (forces[1] / 2.0f);
+    newZ = memAgent->Mz - (forces[2] / 2.0f);
 
     if (newX - filNeighbour->Mx >= (float) xMax / 2.0f) {
         newDist = world->getDist(newX - (float) xMax, newY, newZ, filNeighbour->Mx, filNeighbour->My, filNeighbour->Mz);
@@ -825,4 +848,12 @@ void Protrusion::calcRetractForces(World *world, MemAgent *memAgent, MemAgent *f
     for (int index = 0; index < 3; index++) {
         outForces[index] = sumDN[index];
     }
+}
+
+void Protrusion::setRetracting(const bool &retracting) {
+    this->m_retracting = retracting;
+}
+
+bool Protrusion::getRetracting() const {
+    return this->m_retracting;
 }
