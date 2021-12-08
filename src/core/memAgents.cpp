@@ -4397,17 +4397,22 @@ void MemAgent::update_protein_level(std::string protein_name, float protein_delt
 }
 
 void MemAgent::shapeResponse(const float& randomChance) {
-
-    retractProtrusions(); // Do retraction - if we extend all the way back, then delete, otherwise, just update cytoprotein.
-    extendProtrusions(); // Do extension - check conditions and try to initiate a protrusion, or extend an existing one.
-
-    if (VEIL_ADVANCE) {
-        if (form_filopodia_contact() || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
-            if(!ANALYSIS_HYSTERESIS) {
-                doVeilAdvance();
-            }
-        }
+    retractProtrusions(); // Attempt retraction - if we extend all the way back, then delete, otherwise, just update cytoprotein.
+    extendProtrusions(); // Attempt extension - check conditions and try to initiate a protrusion, or extend an existing one.
+    if (VEIL_ADVANCE && !ANALYSIS_HYSTERESIS) {
+        doVeilAdvance(randomChance); // Attempt veil advance - check if we meet the random chance specifier.
     }
+    //cytoProteinTransfer();
+}
+
+bool MemAgent::retractProtrusions() {
+    bool retractionOccurred = false;
+    if (this->node && this->FIL == TIP) {
+        auto protrusion = this->getBelongsToProtrusion();
+        protrusion->retraction(this);
+        retractionOccurred = true;
+    }
+    return retractionOccurred;
 }
 
 void MemAgent::extendProtrusions() {
@@ -4457,15 +4462,45 @@ bool MemAgent::positionHasFormedProtrusion() {
     return hasFormedProtrusion;
 }
 
-bool MemAgent::retractProtrusions() {
-    bool retractionOccurred = false;
-    return retractionOccurred;
-}
-
 Protrusion* MemAgent::getBelongsToProtrusion() {
     return this->m_belongsToProtrusion;
 }
 
 void MemAgent::setBelongsToProtrusion(Protrusion *protrusion) {
     this->m_belongsToProtrusion = protrusion;
+}
+
+void MemAgent::doVeilAdvance(const float& randomChance) {
+    if (form_filopodia_contact() || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
+        int flag = 0;
+        int i;
+        MemAgent* currentNode = filNeigh;
+        MemAgent* nextNode;
+
+        int count = 0;
+        do {
+            if (currentNode->FIL != BASE) {
+                count++;
+                currentNode->FA = false;
+                currentNode->SpringNeigh[0]->veilAdvancing = true;
+                // Important to flag as veil advancing here so that newNodes() doesn't insert a new node in the middle
+                // of the spring when it goes over threshold length for an adhesion node as per filopodia extension.
+                nextNode = currentNode->filNeigh;
+                currentNode = nextNode;
+            } else if (count > 0) {
+                flag = 1;
+                for (i = 0; i < currentNode->neighs; i++)
+                    if (currentNode->SpringNeigh[i]->filopodia) {
+                        currentNode->SpringNeigh[i]->veilAdvancing = true;
+                    }
+                currentNode->veilAdvancing = true;
+            } else {
+                flag = 1;
+            }
+
+            if (currentNode->FIL == BASE) {
+                currentNode->veilAdvancing = true;
+            }
+        } while (flag == 0);
+    }
 }

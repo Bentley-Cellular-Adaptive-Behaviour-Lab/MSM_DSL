@@ -501,10 +501,8 @@ bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMe
     return true;
 }
 
-
 bool Protrusion::retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength) {
     /// Called when a protrusion has not retracted fully back to the cell's surface.
-
     Spring* neighStp;
     World *world = memAgent->worldP;
     EC *cell = memAgent->Cell;

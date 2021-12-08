@@ -192,6 +192,7 @@ public:
     void getEligibleTypes(std::vector<ProtrusionType*>& types);
 
     void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
+    void doVeilAdvance(const float& randomChance);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H
