@@ -99,6 +99,8 @@ public:
     float calcTotalLength(); // Gets for whole protrusion
     static float calcDistNeeded(Env *highest, MemAgent *startMemAgent);
     Env *findHighestConcPosition(MemAgent* memAgent, const float& prob);
+
+    ~Protrusion();
 };
 
 

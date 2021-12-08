@@ -32,6 +32,8 @@ private:
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
     std::vector<CytoProtein*> m_cytoproteins;
+
+    Protrusion* m_belongsToProtrusion;
 public:
 	///general
 	float Mx, My, Mz; ///continuous space coordinates
@@ -183,6 +185,13 @@ public:
     void extendProtrusions();
     ProtrusionType* pickProtrusionType();
     bool positionHasFormedProtrusion();
+
+    bool retractProtrusions();
+    Protrusion* getBelongsToProtrusion();
+    void setBelongsToProtrusion(Protrusion* protrusion);
+    void getEligibleTypes(std::vector<ProtrusionType*>& types);
+
+    void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

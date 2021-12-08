@@ -857,3 +857,6 @@ void Protrusion::setRetracting(const bool &retracting) {
 bool Protrusion::getRetracting() const {
     return this->m_retracting;
 }
+
+Protrusion::~Protrusion() {
+}

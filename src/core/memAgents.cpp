@@ -1,4 +1,6 @@
+#include <algorithm>
 #include <cassert>
+#include <random>
 
 #include "coordinates.h"
 #include "EC.h"
@@ -12,6 +14,7 @@
 #include "world.h"
 
 #include "../dsl/shape/cytoprotein.h"
+#include "../dsl/shape/protrusion.h"
 #include "../dsl/shape/protrusionType.h"
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
@@ -4393,40 +4396,76 @@ void MemAgent::update_protein_level(std::string protein_name, float protein_delt
     this->set_protein_level(protein_name, new_level);
 }
 
+void MemAgent::shapeResponse(const float& randomChance) {
+
+    retractProtrusions(); // Do retraction - if we extend all the way back, then delete, otherwise, just update cytoprotein.
+    extendProtrusions(); // Do extension - check conditions and try to initiate a protrusion, or extend an existing one.
+
+    if (VEIL_ADVANCE) {
+        if (form_filopodia_contact() || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
+            if(!ANALYSIS_HYSTERESIS) {
+                doVeilAdvance();
+            }
+        }
+    }
+}
+
 void MemAgent::extendProtrusions() {
     // The memAgent is at a node and not in a filopodia, and no other memAgents at this position are in a filopodia.
-    if (!positionHasFormedProtrusion()) {
-
+    if (this->node && this->FIL == NONE) {
+        if (!positionHasFormedProtrusion()) {
+            auto cell = this->Cell;
+            // Create a new protrusion, based on a random type that fulfils the requirements.
+            auto protrusionType = pickProtrusionType();
+            auto protrusion = new Protrusion(cell, this, protrusionType);
+            // Add the protrusion to the cell list and set it to be the memAgent's protrusion.
+            cell->addProtrusionToList(protrusion);
+            setBelongsToProtrusion(protrusion);
+            // Attempt to extend the protrusion.
+            protrusion->extension();
+        }
     }
-    //     CHECK THAT THERE ISN'T ALREADY A PROTRUSION AT THIS LOCATION.
-    //     CREATE A NEW PROTRUSION.
-    //     CALL THE PROTRUSION EXTENSION FUNCTION.
 
-    // The memAgent is at a tip.
-    //      CALL THE PROTRUSION EXTENSION FUNCTION.
+    if (this->node && this->FIL == TIP) {
+        // Attempt to extend the protrusion.
+        getBelongsToProtrusion()->extension();
+    }
 }
 
 ProtrusionType* MemAgent::pickProtrusionType() {
-    std::vector<ProtrusionType*> eligibleTypes;
-    // ITERATE OVER TYPES THE CELL CAN FORM
-    // CHECK THE CONDITION IS FULFILLED, IF SO, ADD THE TYPE TO THE LIST.
-    // CHOOSE ONE OF THE PROTRUSION TYPES RANDOMLY AND RETURN IT.
-
-    auto cellType = this->Cell->m_cell_type;
-    for (auto protrusionType : cellType->m_protrusion_types) {
-
-    }
+    std::vector<ProtrusionType*> eligibleTypes, randomType;
+    // Get the protrusion types that the cell can form.
+    checkConditions(this, eligibleTypes);
+    // Choose one of the eligible protrusion types randomly and return it.
+    std::sample(eligibleTypes.begin(),
+                eligibleTypes.end(),
+                std::back_inserter(randomType),
+                1,
+                std::mt19937{std::random_device{}()});
+    return randomType.at(0);
 }
-
 
 bool MemAgent::positionHasFormedProtrusion() {
     bool hasFormedProtrusion = false;
     auto env = this->worldP->grid[(int)Mx][(int)My][(int)Mz];
-    for (auto *memAgent : env.getMids())  {
+    for (auto *memAgent : env.getMids()) {
         if (memAgent->FIL == BASE) {
             hasFormedProtrusion = true;
             break;
         }
     }
     return hasFormedProtrusion;
+}
+
+bool MemAgent::retractProtrusions() {
+    bool retractionOccurred = false;
+    return retractionOccurred;
+}
+
+Protrusion* MemAgent::getBelongsToProtrusion() {
+    return this->m_belongsToProtrusion;
+}
+
+void MemAgent::setBelongsToProtrusion(Protrusion *protrusion) {
+    this->m_belongsToProtrusion = protrusion;
 }

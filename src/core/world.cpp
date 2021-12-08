@@ -1795,6 +1795,10 @@ void World::updateMemAgents() {
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
+
+
+            // TODO: Put new cytoprotein trading functions here.
+
 			//if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
 			if (memp->FIL == TIP) {
 
