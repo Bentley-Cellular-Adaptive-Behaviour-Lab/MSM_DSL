@@ -1791,19 +1791,18 @@ void World::updateMemAgents() {
 				memp->store_previous_triangle_pos();
 			}
 
-			memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
+            randomChance = new_rand() / (float) NEW_RAND_MAX;
+
+            memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
-
-
-            // TODO: Put new cytoprotein trading functions here.
+            memp->shapeResponse(randomChance);
 
 			//if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
 			if (memp->FIL == TIP) {
 
 				//randomChance = rand() / (float) RAND_MAX;
-				randomChance = new_rand() / (float) NEW_RAND_MAX;
 
 				//veil advance for cell migration------------------------
 				if (VEIL_ADVANCE) {
@@ -1817,7 +1816,7 @@ void World::updateMemAgents() {
 				}
 				//------------------------------------
 				//retract fils if inactive------------
-				if ( ((RAND_FILRETRACT_CHANCE==-1)&&(memp->filTipTimer > FILTIPMAX)) || ((RAND_FILRETRACT_CHANCE>-1) &&(randomChance < RAND_FILRETRACT_CHANCE)) ) {
+				if (((RAND_FILRETRACT_CHANCE==-1)&&(memp->filTipTimer > FILTIPMAX)) || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
 					if (memp->filRetract()) {
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);

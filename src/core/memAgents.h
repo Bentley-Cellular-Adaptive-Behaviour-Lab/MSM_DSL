@@ -182,14 +182,17 @@ public:
     void setStoredLocation(Location* location, int index);
 
     // DSL functions for controlling protrusion behaviour.
+    void shapeResponse(const float& randomChance);
+
     void extendProtrusions();
     ProtrusionType* pickProtrusionType();
     bool positionHasFormedProtrusion();
+    void setBelongsToProtrusion(Protrusion* protrusion);
+    void getEligibleTypes(std::vector<ProtrusionType*>& types);
 
     bool retractProtrusions();
     Protrusion* getBelongsToProtrusion();
-    void setBelongsToProtrusion(Protrusion* protrusion);
-    void getEligibleTypes(std::vector<ProtrusionType*>& types);
+    bool retractionCanOccur(const float& randomChance) const;
 
     void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
     void doVeilAdvance(const float& randomChance);

@@ -403,10 +403,8 @@ int Protrusion::retraction(MemAgent* memAgent) {
 
     /// Release this memAgents adhesion (FIL=TIP for this node)
     memAgent->FA = false;
-
     /// Flag it for deletion, which will also stop it being assessed in any further update functions.
     memAgent->deleteFlag = true;
-
     /// Locate its nearest nodeAgent back in the protrusion.
     MemAgent* neighbourMemAgent = memAgent->filNeigh;
 

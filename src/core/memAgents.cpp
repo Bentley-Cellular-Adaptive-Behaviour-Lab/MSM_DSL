@@ -4397,20 +4397,42 @@ void MemAgent::update_protein_level(std::string protein_name, float protein_delt
 }
 
 void MemAgent::shapeResponse(const float& randomChance) {
-    retractProtrusions(); // Attempt retraction - if we extend all the way back, then delete, otherwise, just update cytoprotein.
-    extendProtrusions(); // Attempt extension - check conditions and try to initiate a protrusion, or extend an existing one.
-    if (VEIL_ADVANCE && !ANALYSIS_HYSTERESIS) {
-        doVeilAdvance(randomChance); // Attempt veil advance - check if we meet the random chance specifier.
+    bool retracting = false;
+    // Attempt retraction - if we extend all the way back, then delete, otherwise, just update cytoprotein.
+    if (retractionCanOccur(randomChance)) {
+        if (retractProtrusions()) {
+            retracting = true;
+        }
     }
-    //cytoProteinTransfer();
+
+    if (!retracting) {
+        extendProtrusions(); // Attempt extension - check conditions and try to initiate a protrusion, or extend an existing one.
+        if (VEIL_ADVANCE && !ANALYSIS_HYSTERESIS) {
+            doVeilAdvance(randomChance); // Attempt veil advance - check if we meet the random chance specifier.
+        }
+        //cytoProteinTransfer();
+    }
+}
+
+bool MemAgent::retractionCanOccur(const float& randomChance) const {
+    return (RAND_FILRETRACT_CHANCE == -1 && (float) filTipTimer > FILTIPMAX)
+        || (RAND_FILRETRACT_CHANCE > -1 && randomChance < RAND_FILRETRACT_CHANCE);
 }
 
 bool MemAgent::retractProtrusions() {
     bool retractionOccurred = false;
     if (this->node && this->FIL == TIP) {
         auto protrusion = this->getBelongsToProtrusion();
-        protrusion->retraction(this);
-        retractionOccurred = true;
+        int retractionStatus = protrusion->retraction(this);
+        // THIS IS WRONG, CHECK THE ORDER THAT THESE ARE CALLED IN.
+        if (retractionStatus == 0) {
+            worldP->deleteOldGridRef(this, true);
+            retractionOccurred = true;
+            delete this;
+        } else if (retractionStatus == 1) {
+            protrusion->releaseCytoProtein(this);
+            retractionOccurred = true;
+        }
     }
     return retractionOccurred;
 }
