@@ -22,33 +22,33 @@ private:
     // TODO: Change this to a vector of integers, corresponding to the ID of the species.
     std::vector<std::string> m_allowed_species;
 public:
-    ProtrusionType(std::string name,
-                   std::string targetSpeciesName,
-                   std::string requiredCytoproteinName,
-                   float maxLength,
-                   int thickness,
-                   float sensitivity);
+    ProtrusionType(const std::string& name,
+                   const std::string& targetSpeciesName,
+                   const std::string& requiredCytoproteinName,
+                   const float& maxLength,
+                   const int& thickness,
+                   const float& sensitivity);
 
-    void setName(const std::string name);
+    void setName(const std::string& name);
     std::string getName() const;
 
-    void setTargetName(const std::string name);
+    void setTargetName(const std::string& name);
     std::string getTargetName() const;
 
-    void setRequiredCytoproteinName(const std::string name);
+    void setRequiredCytoproteinName(const std::string& name);
     std::string getRequiredCytoproteinName() const;
 
-    void setMaxLength(const float maxLength);
-    int getMaxLength() const;
+    void setMaxLength(const float& maxLength);
+    float getMaxLength() const;
 
-    void setThickness(const int thickness);
+    void setThickness(const int& thickness);
     int getThickness() const;
 
-    void setSensitivity(const float sensitivity);
+    void setSensitivity(const float& sensitivity);
     float getSensitivity() const;
 
-    void add_allowed_species(const std::string name);
-    bool hasAllowedSpecies(std::string targetName);
+    void add_allowed_species(const std::string& name);
+    bool hasAllowedSpecies(const std::string& targetName);
     std::vector<std::string>& getAllowedSpecies();
 };
 
