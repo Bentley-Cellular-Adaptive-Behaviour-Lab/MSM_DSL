@@ -67,13 +67,13 @@ public:
     void updateCurrentLength(float distanceDelta);
 
     // Extension Functions:
-    int extension();
+    int extension(MemAgent *memAgent);
     bool initiateProtrusion(MemAgent *memAgent); // Begins a protrusion.
     bool extendProtrusion(MemAgent *startMemAgent); // Extends an existing protrusion.
     static bool canExtend(Cell_Type* cellType, CytoProtein *requiredCytoprotein); // Checks whether a protrusion is capable of extending i.e. dependent on cytoprotein levels.
 
     // Retraction Functions:
-    int retraction(MemAgent* memAgent);
+    int retraction(MemAgent *memAgent);
     bool deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
     bool retractProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength);
     void releaseCytoProtein(MemAgent* memAgent);

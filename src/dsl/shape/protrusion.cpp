@@ -14,6 +14,7 @@
 #include "../../core/EC.h"
 #include "../../core/environment.h"
 #include "../../core/filopodia.h"
+#include "../../core/location.h"
 #include "../../core/memAgents.h"
 #include "../../core/objects.h"
 #include "../../core/spring.h"
@@ -117,7 +118,7 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) 
     // Derived from MemAgent::extendFil()
     // Finds the env objects with the highest level of the protrusions target protein and returns its address.
     std::vector<Env*> envNeighs = memAgent->EnvNeighs;
-    std::string targetProteinName = this->m_protrusionType->getTargetName();
+    auto targetProteinName = this->m_protrusionType->getTargetName();
     World *world = memAgent->worldP;
 
     float chance = (float) world->new_rand() / (float) NEW_RAND_MAX;
@@ -125,7 +126,8 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) 
 
     memAgent->worldP->shuffleEnvAgents(envNeighs);
 
-    Env *currentHighestEnv = envNeighs[0];
+    auto protrusionType = this->m_protrusionType;
+    auto *currentHighestEnv = envNeighs[0];
     Env *chosenEnv;
 
     // Check the level at each position for the desired environment protein - optionally ensure that the environment
@@ -137,7 +139,7 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) 
         float currentDist;
         float furthestDist = 0;
 
-        if (envNeighs[0]->VEGF > 0) {
+        if (furthest->get_protein_level(targetProteinName) > 0) {
             if (memAgent->FIL == NONE) {
                 furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
             } else {
@@ -149,7 +151,7 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) 
 
         for (auto & envNeigh : envNeighs) {
             if (envNeigh->has_protein(targetProteinName)) {
-                float currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
+                auto currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
                 if (currentProteinLevel >= highestProteinConc) {
                     highestProteinConc = currentProteinLevel;
                     currentHighestEnv = envNeigh;
@@ -190,12 +192,15 @@ Env *Protrusion::findHighestConcPosition(MemAgent* memAgent, const float& prob) 
     return chosenEnv;
 }
 
-int Protrusion::extension() {
+int Protrusion::extension(MemAgent* memAgent) {
+    // Check we're getting the tip memAgent for the protrusion we want to extend. This will be either the BASE memAgent
+    // (if we haven't actually extended yet) or the current TIP.
+    assert(memAgent == getTipMemAgent());
+    assert(memAgent->FIL != NONE || memAgent->FIL != STALK);
     int result = -1;
-
     auto *cell = this->m_cell;
     auto *cellType = cell->m_cell_type;
-    auto memAgent = getTipMemAgent();
+
     auto *protrusionType = this->getProtrusionType();
     auto requiredCytoprotein = this->m_cell->m_cell_type->get_cytoprotein(protrusionType->getRequiredCytoproteinName());
 
@@ -240,7 +245,7 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
         if (cellType->get_cytoprotein(requiredCytoprotein->getName())->getCellLevel() >= distNeeded) {
             startMemAgent->FA=true;
 
-            /// Create a new node, only attached to the current agent. Create it in selected protein site.
+            // Create a new node, only attached to the current agent. Create it in selected protein site.
             newMemAgent = new MemAgent(cell, startMemAgent->worldP);
             newMemAgent->Mx = (float) highest->Ex;
             newMemAgent->My = (float) highest->Ey;
@@ -262,39 +267,43 @@ bool Protrusion::initiateProtrusion(MemAgent *startMemAgent) {
 
             newMemAgent->worldP->setFilLocation((int) newMemAgent->Mx, (int) newMemAgent->My, (int) newMemAgent->Mz, newMemAgent);
 
-            /// Connect the two nodes.
+            // Connect the two nodes.
             startMemAgent->neigh[startMemAgent->neighs] = newMemAgent;
             cell->createSpringTokenObject(startMemAgent, newMemAgent, startMemAgent->neighs);
             startMemAgent->neighs++;
 
-            /// This is so the tip knows which node it is connected to, rather than having a full spring as we don't want the tip to be pulled back down.
+            // This is so the tip knows which node it is connected to, rather than having a full spring as we don't want the tip to be pulled back down.
             newMemAgent->filNeigh = startMemAgent;
 
-            /// Link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
+            // Link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
             startMemAgent->plusSite = newMemAgent;
             newMemAgent->minusSite = startMemAgent;
 
-            /// Check the neighbour's agents.
+            // Check the neighbour's agents.
             newMemAgent->checkNeighs(false);
 
-            /// Create new protein objects for proteins which are allowed by the protrusion.
+            // Create new protein objects for proteins which are allowed by the protrusion.
             for (auto *protein : cell->m_cell_type->proteins) {
 
             }
 
-            /// Subtract the required level * distance that is being extended from the cell's current level.
+            // Subtract the required level * distance that is being extended from the cell's current level.
             auto currentCytoproteinLevel = requiredCytoprotein->getCellLevel();
             auto deltaProteinLevel = requiredCytoprotein->getRequiredAmount() * distNeeded;
             requiredCytoprotein->setCellLevel(currentCytoproteinLevel - deltaProteinLevel);
 
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)newMemAgent->Mx, (int)newMemAgent->My, (int)newMemAgent->Mz});
 
-            /// TODO: Subtract the required level * distance from the level at this memAgent.
+            // TODO: Subtract the required level * distance from the level at this memAgent.
 
-            /// Add the memAgent to the protrusions list of memAgents.
+            // Add the memAgent to the protrusions list of memAgents.
             this->addMemAgentToStack(newMemAgent);
 
-            /// Confirms the extension has succeeded.
+            // Set the current location of the memAgent tip.
+            auto location = newMemAgent->worldP->grid[(int) newMemAgent->Mx][(int) newMemAgent->My][(int) newMemAgent->Mz];
+            setTipLocation(location.getEid());
+
+            // Confirms the extension has succeeded.
             succeeded = true;
         }
     }
@@ -389,6 +398,11 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
                                 (float) highest->Ez,
                                 true);
             cell->filopodiaExtensions.push_back(std::array<int,3>{(int)memAgent->Mx, (int)memAgent->My, (int)memAgent->Mz});
+
+            // Set the current location of the memAgent tip.
+            auto location = memAgent->worldP->grid[(int) memAgent->Mx][(int) memAgent->My][(int) memAgent->Mz];
+            setTipLocation(location.getEid());
+
             succeeded = true;
             // TODO: HAVE SUBTRACTION OF CYTOPROTEIN OCCUR HERE AS WELL.
 //            filTokens -= tokenStrength;
@@ -398,28 +412,32 @@ bool Protrusion::extendProtrusion(MemAgent *memAgent) {
 }
 
 int Protrusion::retraction(MemAgent* memAgent) {
+    // Check that we're getting the TIP memAgent of this protrusion.
+    // Note this means that a protrusion must have extended by some amount before it can retract.
+    assert(memAgent == getTipMemAgent() && memAgent->FIL == TIP);
+    auto cytoproteinName = this->getProtrusionType()->getRequiredCytoproteinName();
 
-    std::string cytoproteinName = this->getProtrusionType()->getRequiredCytoproteinName();
-
-    /// Release this memAgents adhesion (FIL=TIP for this node)
+    // Release this memAgents adhesion (FIL=TIP for this node)
     memAgent->FA = false;
-    /// Flag it for deletion, which will also stop it being assessed in any further update functions.
+    // Flag it for deletion, which will also stop it being assessed in any further update functions.
     memAgent->deleteFlag = true;
-    /// Locate its nearest nodeAgent back in the protrusion.
-    MemAgent* neighbourMemAgent = memAgent->filNeigh;
+    // Locate its nearest nodeAgent back in the protrusion.
+    auto neighbourMemAgent = memAgent->filNeigh;
 
-    /// Calculate length of the spring between this node and its nearest neighbour.
-    float adjustedLength = this->calcAdjustedLength(memAgent, neighbourMemAgent);
+    // Calculate length of the spring between this node and its nearest neighbour.
+    auto adjustedLength = this->calcAdjustedLength(memAgent, neighbourMemAgent);
 
     if (adjustedLength > 1) {
-        return -1; /// Return -1 to show that we weren't able to retract due to spring length.
+        return -1; // Return -1 to show that we weren't able to retract due to spring length.
     } else {
         if (neighbourMemAgent->FIL == BASE) {
-            /// We've reached the end of the protrusion, so fully deconstruct it.
+            // We've reached the end of the protrusion, so fully deconstruct it and delete the object.
             deconstructProtrusion(memAgent, neighbourMemAgent, adjustedLength);
+            m_cell->getProtrusionList().remove(this);
+            delete this;
             return 0;
         } else {
-            /// Otherwise, we haven't reached the end of the protrusion, so just retract the tip memAgent.
+            // Otherwise, we haven't reached the end of the protrusion, so just retract the tip memAgent.
             retractProtrusion(memAgent, neighbourMemAgent, adjustedLength);
             return 1;
         }
@@ -427,34 +445,32 @@ int Protrusion::retraction(MemAgent* memAgent) {
 }
 
 bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMemAgent, float adjustedLength) {
-    /// Called when a protrusion has retracted fully back to the cell's surface.
+    // Called when a protrusion has retracted fully back to the cell's surface.
     bool springFound = false;
     EC *cell = memAgent->Cell;
     World *world = cell->worldP;
     Spring* neighStp;
 
-    assert(neighbourMemAgent->FIL != BASE);
-
     cell->filopodiaRetractions.push_back(std::array<int, 3>{ (int)neighbourMemAgent->Mx, (int)neighbourMemAgent->My, (int)neighbourMemAgent->Mz });
 
-    /// Update current actin usage by minus-ing the current length of the spring from cells list, as this spring is now going to be deleted
+    // Update current actin usage by minus-ing the current length of the spring from cells list, as this spring is now going to be deleted
     // TODO: CHANGE THIS TO USE THE CYTOPROTEIN OF THE FILOPODIA AFTER CONSIDERING HOW TO LINK IT TO THE REQUIRED AMOUNT OF CYTOPROTEIN.
 //    cell->actinUsed -= adjustedLength;
 
     neighbourMemAgent->FIL = NONE;
-    /// If vessel is blind-ended dont release adhesion, otherwise do.
+    // If the vessel is blind-ended, don't release adhesion, otherwise do.
     if (BLINDENDED_SPROUT) {
         if (!neighbourMemAgent->labelledBlindended) {
             neighbourMemAgent->FA = false;
         }
     }
 
-    /// Send all proteins that this agent currently has back to its neighbour
+    // Send all proteins that this agent currently has back to its neighbour.
     for (auto *protein : memAgent->owned_proteins) {
-        this->transferProtein(memAgent, neighbourMemAgent, protein->get_name());
+        transferProtein(memAgent, neighbourMemAgent, protein->get_name());
     }
     for (auto *cytoprotein : memAgent->getCytoproteins()) {
-        this->transferProtein(memAgent, neighbourMemAgent, cytoprotein->getName());
+        transferProtein(memAgent, neighbourMemAgent, cytoprotein->getName());
     }
 
     /// Analysis of filopodia done here.
@@ -853,6 +869,12 @@ void Protrusion::setRetracting(const bool &retracting) {
 bool Protrusion::getRetracting() const {
     return this->m_retracting;
 }
+
+
+//void Protrusion::createNodes() {
+//    // If the spring length exceeds a certain amount, then create new nodes along it.
+//
+//}
 
 Protrusion::~Protrusion() {
 }
