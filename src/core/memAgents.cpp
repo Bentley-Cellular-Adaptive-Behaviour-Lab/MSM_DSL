@@ -1809,13 +1809,13 @@ Env *MemAgent::findHighestConc(void){
     if (EnvNeighs[0]->VEGF > 0)
     {
         furthest = EnvNeighs[0];
-        if (FIL == NONE)
+        if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
             furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
         else
             furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+    } else {
+        furthest=NULL;
     }
-    
-    else furthest=NULL;
     
     upto=EnvNeighs.size();
     
@@ -1838,7 +1838,7 @@ Env *MemAgent::findHighestConc(void){
         if(EnvNeighs[i]->VEGF>=highest->VEGF)
             highest=EnvNeighs[i];
         if(EnvNeighs[i]->VEGF>0){
-            if(FIL==NONE)
+            if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
                 dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)Mx, (int)My, (int)Mz);
             else
                 dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
@@ -4449,13 +4449,13 @@ void MemAgent::extendProtrusions() {
             cell->addProtrusionToList(protrusion);
             setBelongsToProtrusion(protrusion);
             // Attempt to extend the protrusion.
-            protrusion->extension();
+            protrusion->extension(this);
         }
     }
 
     if (this->node && this->FIL == TIP) {
-        // Attempt to extend the protrusion.
-        getBelongsToProtrusion()->extension();
+        // Attempt to extend the protrusion that this memAgent belongs to.
+        getBelongsToProtrusion()->extension(this);
     }
 }
 
