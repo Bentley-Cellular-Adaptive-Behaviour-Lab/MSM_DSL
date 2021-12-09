@@ -43,6 +43,7 @@ public:
     void createEnvironment();
     void createCell();
     void createProtrusion();
+    void extend();
 };
 
 class CalcTotalLengthTest : public ::testing::Test {
@@ -58,6 +59,22 @@ public:
     void createCell();
     void createProtrusion();
     void doExtensions();
+};
+
+class RetractProtrusionTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    World *m_world;
+    Tissue_Container *m_tissueContainer;
+    EC *m_cell;
+    Protrusion *m_protrusion;
+    void createEnvironment();
+    void createCell();
+    void createProtrusion();
+    void doExtensions();
+    void retract();
 };
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_SHAPE_H
