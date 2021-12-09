@@ -68,6 +68,7 @@ TEST(test_Protrusion, ProtrusionConstructor) {
     EXPECT_FLOAT_EQ(protrusion->getCurrentLength(), 0.0); // Should be zero as we haven't done any extensions, obviously.
 
     // Check the base memAgent has been added to the memAgent stack.
+    EXPECT_EQ(memAgent->FIL, 2);
     EXPECT_EQ(memAgent, protrusion->getTipMemAgent());
 
     // Change the current distance by some amount, and check that it has updated.
@@ -84,14 +85,31 @@ TEST_F(FindHighestConcTest, FindHighestConcTest) {
     EXPECT_EQ(ep, this->getMemAgent()->findHighestConc());
 }
 
-TEST_F(ExtendProtrusionTest, ExtendProtrusionTest) {
-    // Attempt to extend the protrusion out towards the highest protein location.
-    this->m_protrusion->extension();
+TEST_F(ExtendProtrusionTest, ExtendPropertiesTest) {
+    auto protrusion = this->m_protrusion;
+    auto protrusionType = protrusion->getProtrusionType();
+    auto *highest = protrusion->findHighestConcPosition(protrusion->getTipMemAgent(), protrusionType->getSensitivity());
 
+    EXPECT_EQ(highest, protrusion->getTipLocation());
+
+}
+
+TEST_F(ExtendProtrusionTest, ExtendLocationTest) {
+    auto protrusion = this->m_protrusion;
+    auto protrusionType = protrusion->getProtrusionType();
+    auto *highest = protrusion->findHighestConcPosition(protrusion->getTipMemAgent(), protrusionType->getSensitivity());
+
+    EXPECT_EQ(highest, protrusion->getTipLocation());
 }
 
 TEST_F(CalcTotalLengthTest, CalcTotalLengthTest) {
     auto protrusion = this->m_protrusion;
     // Extend straight up twice, then expect the length to be equal to 2.
     EXPECT_EQ(protrusion->calcTotalLength(), 2);
+}
+
+TEST_F(RetractProtrusionTest, OneRetractionTest) {
+    // Single retraction after extending twice, should lead to deconstruction because no new nodes have been created.
+    retract();
+    EXPECT_EQ(this->m_cell->getProtrusionList().size(), 0);
 }
