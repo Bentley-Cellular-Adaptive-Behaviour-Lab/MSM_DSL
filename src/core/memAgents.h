@@ -21,6 +21,7 @@ class Location;
 class MedAgent;
 class Spring;
 class Protein;
+class Protrusion;
 class ProtrusionType;
 class World;
 
