@@ -11,7 +11,7 @@ include_directories(libraries)
 # TODO: SET TESTING TO USE A SPECIFIED ARGUMENT.
 # TODO: HAVE CMAKE READ IN MSM ARGUMENTS AND PROVIDE IT TO THE EXECUTABLE.
 
-set(TEST_TYPE 0)
+set(TEST_TYPE 1)
 
 message("TEST_TYPE = ${TEST_TYPE}")
 if(TEST_TYPE EQUAL 0)
@@ -91,6 +91,7 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/worldContainer.h
             src/graphics/display.h
             src/graphics/ScreenRecording.h
+            src/generated/dsl_shape_gen.h
             src/generated/dsl_species_gen.h)
 
     add_executable(springAgent ${Sources} ${Headers})
@@ -159,6 +160,7 @@ elseif(TEST_TYPE EQUAL 1)
             tests/automated/test_ODE.cpp
             tests/automated/test_setup.cpp
             tests/automated/test_shape.cpp
+            tests/automated/generated/dsl_shape_gen.cpp
             tests/automated/generated/dsl_species_gen.cpp
             tests/automated/generated/dsl_tissue_gen.cpp
             tests/automated/generated/dsl_world_gen.cpp)
@@ -199,6 +201,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/worldContainer.h
             tests/automated/helper_ODE.h
             tests/automated/helper_shape.h
+            tests/automated/generated/dsl_shape_gen.h
             tests/automated/generated/dsl_species_gen.h)
 
     find_package(Boost)
