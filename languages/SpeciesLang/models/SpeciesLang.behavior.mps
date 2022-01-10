@@ -10485,7 +10485,7 @@
         </node>
         <node concept="3clFbJ" id="4O6RXqWNZQs" role="3cqZAp">
           <node concept="BsUDl" id="4O6RXqWNZQK" role="3clFbw">
-            <ref role="37wK5l" node="4O6RXqWNAXv" />
+            <ref role="37wK5l" node="4O6RXqWNAXv" resolve="nameContainsSpace" />
             <node concept="37vLTw" id="4O6RXqWNZRe" role="37wK5m">
               <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>
@@ -10517,7 +10517,7 @@
             </node>
           </node>
           <node concept="BsUDl" id="4O6RXqWOhrw" role="3clFbw">
-            <ref role="37wK5l" node="4O6RXqWNGVI" />
+            <ref role="37wK5l" node="4O6RXqWNGVI" resolve="nameContainsHyphen" />
             <node concept="37vLTw" id="4O6RXqWOhrx" role="37wK5m">
               <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>
@@ -10537,7 +10537,7 @@
             </node>
           </node>
           <node concept="BsUDl" id="4O6RXqWOhBJ" role="3clFbw">
-            <ref role="37wK5l" node="4O6RXqWNKaa" />
+            <ref role="37wK5l" node="4O6RXqWNKaa" resolve="nameContainsSemicolon" />
             <node concept="37vLTw" id="4O6RXqWOhBK" role="37wK5m">
               <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>
@@ -10557,7 +10557,7 @@
             </node>
           </node>
           <node concept="BsUDl" id="4O6RXqWOhTR" role="3clFbw">
-            <ref role="37wK5l" node="4O6RXqWNR7o" />
+            <ref role="37wK5l" node="4O6RXqWNR7o" resolve="nameContainsHash" />
             <node concept="37vLTw" id="4O6RXqWOhTS" role="37wK5m">
               <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>
@@ -10577,7 +10577,7 @@
             </node>
           </node>
           <node concept="BsUDl" id="4O6RXqWOies" role="3clFbw">
-            <ref role="37wK5l" node="4O6RXqWNOH_" />
+            <ref role="37wK5l" node="4O6RXqWNOH_" resolve="nameContainsAT" />
             <node concept="37vLTw" id="4O6RXqWOiet" role="37wK5m">
               <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>

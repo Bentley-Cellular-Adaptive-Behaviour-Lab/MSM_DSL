@@ -72,7 +72,7 @@
       <property role="IQ2ns" value="7775299862363453103" />
       <property role="20kJfa" value="Desired_Tissue_Container" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="Tissue_And_Cell_Container" />
+      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     </node>
     <node concept="1TJgyj" id="7faAukhALB$" role="1TKVEi">
       <property role="IQ2ns" value="8343650468779203044" />

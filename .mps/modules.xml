@@ -2,6 +2,7 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/SettingsLang/SettingsLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/SimulationSettings/SimulationSettings.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" folder="" />

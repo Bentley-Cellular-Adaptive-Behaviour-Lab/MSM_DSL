@@ -51,7 +51,9 @@
     </language>
     <language id="e9f0394c-0fe5-4206-b9d1-2af2fb5f41f3" name="SimulationSettings">
       <concept id="7775299862363134673" name="SimulationSettings.structure.Settings_Container" flags="ng" index="3_EN3m">
-        <property id="7775299862363355137" name="Max_Time_Steps" index="3_Ed86" />
+        <property id="8115658504614300112" name="runsNumber" index="XilmT" />
+        <property id="8115658504614299469" name="runOnCluster" index="XilG$" />
+        <property id="7775299862363355137" name="maxTimeSteps" index="3_Ed86" />
         <reference id="7775299862363355109" name="Desired_World_Setup" index="3_EdRy" />
       </concept>
     </language>
@@ -75,7 +77,7 @@
         <property id="3125878369731540211" name="Stoichiometry" index="3_zqOz" />
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
-      <concept id="3125878369731540203" name="SpeciesLang.structure.SpeciesContainer" flags="ng" index="3_zqOV">
+      <concept id="3125878369731540203" name="SpeciesLang.structure.SignallingContainer" flags="ng" index="3_zqOV">
         <reference id="8035241350173904356" name="Tissue_Container" index="m9Uib" />
         <child id="3125878369731540800" name="Species" index="3_zqUg" />
         <child id="3125878369731540802" name="Processes" index="3_zqUi" />
@@ -86,7 +88,7 @@
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
-        <property id="6420553392043975787" name="Transcription_Delay" index="2VbSsx" />
+        <property id="6420553392043975787" name="TranscriptionDelay" index="2VbSsx" />
         <property id="3125878369731567265" name="Location" index="3_z0tL" />
         <child id="2231199800372990788" name="Max_Concentration" index="2UOkcx" />
         <child id="2231199800372990779" name="Min_Concentration" index="2UOkdu" />
@@ -170,7 +172,7 @@
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
         <child id="6249017959271690171" name="Shape" index="3ZP1s2" />
       </concept>
-      <concept id="6249017959271690117" name="TissueLang.structure.Tissue_And_Cell_Container" flags="ng" index="3ZP1sW">
+      <concept id="6249017959271690117" name="TissueLang.structure.TissueContainer" flags="ng" index="3ZP1sW">
         <reference id="8035241350174338332" name="Species_Container" index="maghN" />
         <reference id="2132970487586675655" name="World_Container" index="2ppKUs" />
         <child id="4857589848835393769" name="tissue_types" index="1v2izi" />
@@ -191,6 +193,8 @@
   <node concept="3_EN3m" id="71cLj9Wu1yP">
     <property role="TrG5h" value="Simulation" />
     <property role="3_Ed86" value="1000" />
+    <property role="XilG$" value="72wB6_dUsuC/None" />
+    <property role="XilmT" value="1" />
     <ref role="3_EdRy" node="71cLj9Wu1$6" resolve="World" />
   </node>
   <node concept="1yko06" id="71cLj9Wu1$6">

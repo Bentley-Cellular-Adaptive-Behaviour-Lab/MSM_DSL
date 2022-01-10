@@ -91,7 +91,7 @@
       <property role="IQ2ns" value="8035241350174338332" />
       <property role="20kJfa" value="Species_Container" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SpeciesContainer" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
     <node concept="PrWs8" id="1QpPlI505Gj" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

@@ -8041,7 +8041,7 @@
           <node concept="BsUDl" id="4O6RXqWNZQK" role="3clFbw">
             <ref role="37wK5l" node="4O6RXqWNAXv" resolve="nameContainsSpace" />
             <node concept="37vLTw" id="4O6RXqWNZRe" role="37wK5m">
-              <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="name" />
+              <ref role="3cqZAo" node="4O6RXqWNZPb" resolve="nameString" />
             </node>
           </node>
           <node concept="3clFbS" id="4O6RXqWNZQu" role="3clFbx">

@@ -6226,7 +6226,7 @@
                   <ref role="37wK5l" to="pxw4:4O6RXqWNXVe" resolve="checkName" />
                   <node concept="2OqwBi" id="4O6RXqWOnzz" role="37wK5m">
                     <node concept="2GrUjf" id="4O6RXqWOnU3" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="cellType" />
+                      <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="gradient" />
                     </node>
                     <node concept="3TrcHB" id="4O6RXqWOnz_" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -6263,7 +6263,7 @@
               <node concept="2MkqsV" id="4O6RXqWOnzK" role="3cqZAp">
                 <node concept="3cpWs3" id="4O6RXqWOnzL" role="2MkJ7o">
                   <node concept="37vLTw" id="4O6RXqWOnzM" role="3uHU7w">
-                    <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="cellTypeString" />
+                    <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="gradientString" />
                   </node>
                   <node concept="Xl_RD" id="4O6RXqWOnzN" role="3uHU7B">
                     <property role="Xl_RC" value="Gradient name contains disallowed characters: " />
@@ -6280,7 +6280,7 @@
               </node>
               <node concept="2OqwBi" id="4O6RXqWOnzR" role="3uHU7B">
                 <node concept="37vLTw" id="4O6RXqWOnzS" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="cellTypeString" />
+                  <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="gradientString" />
                 </node>
                 <node concept="liA8E" id="4O6RXqWOnzT" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
@@ -6317,7 +6317,7 @@
                   <ref role="37wK5l" to="pxw4:4O6RXqWNXVe" resolve="checkName" />
                   <node concept="2OqwBi" id="4O6RXqWOpEK" role="37wK5m">
                     <node concept="2GrUjf" id="4O6RXqWOpEL" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="tissueType" />
+                      <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="substrate" />
                     </node>
                     <node concept="3TrcHB" id="4O6RXqWOpEM" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -6354,7 +6354,7 @@
               <node concept="2MkqsV" id="4O6RXqWOpEX" role="3cqZAp">
                 <node concept="3cpWs3" id="4O6RXqWOpEY" role="2MkJ7o">
                   <node concept="37vLTw" id="4O6RXqWOpEZ" role="3uHU7w">
-                    <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="tissueTypeString" />
+                    <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="substrateString" />
                   </node>
                   <node concept="Xl_RD" id="4O6RXqWOpF0" role="3uHU7B">
                     <property role="Xl_RC" value="Substrate name contains disallowed characters: " />
@@ -6371,7 +6371,7 @@
               </node>
               <node concept="2OqwBi" id="4O6RXqWOpF4" role="3uHU7B">
                 <node concept="37vLTw" id="4O6RXqWOpF5" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="tissueTypeString" />
+                  <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="substrateString" />
                 </node>
                 <node concept="liA8E" id="4O6RXqWOpF6" role="2OqNvi">
                   <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />

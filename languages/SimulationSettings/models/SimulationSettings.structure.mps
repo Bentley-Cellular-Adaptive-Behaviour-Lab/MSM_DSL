@@ -65,18 +65,28 @@
     </node>
     <node concept="1TJgyi" id="6JBqwuejVvZ" role="1TKVEl">
       <property role="IQ2nx" value="7775299862363355135" />
-      <property role="TrG5h" value="Analysis_Type" />
+      <property role="TrG5h" value="analysisType" />
       <ref role="AX2Wp" node="6JBqwuejVvQ" resolve="Analysis_Type" />
     </node>
     <node concept="1TJgyi" id="6JBqwuejVw1" role="1TKVEl">
       <property role="IQ2nx" value="7775299862363355137" />
-      <property role="TrG5h" value="Max_Time_Steps" />
+      <property role="TrG5h" value="maxTimeSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6JBqwuejVw4" role="1TKVEl">
       <property role="IQ2nx" value="7775299862363355140" />
-      <property role="TrG5h" value="Graphics_Option" />
+      <property role="TrG5h" value="graphicsOption" />
       <ref role="AX2Wp" node="6JBqwuek81m" resolve="Graphics_Type" />
+    </node>
+    <node concept="1TJgyi" id="72wB6_dUstd" role="1TKVEl">
+      <property role="IQ2nx" value="8115658504614299469" />
+      <property role="TrG5h" value="runOnCluster" />
+      <ref role="AX2Wp" node="72wB6_dUsuh" resolve="Cluster_Run" />
+    </node>
+    <node concept="1TJgyi" id="72wB6_dUsBg" role="1TKVEl">
+      <property role="IQ2nx" value="8115658504614300112" />
+      <property role="TrG5h" value="runsNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="PrWs8" id="6JBqwueqMLi" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
@@ -118,6 +128,33 @@
       <property role="3tVfz5" value="7775299862363406424" />
       <property role="TrG5h" value="Graphics_On" />
       <property role="1L1pqM" value="Yes" />
+    </node>
+  </node>
+  <node concept="25R3W" id="72wB6_dUsuh">
+    <property role="3F6X1D" value="8115658504614299537" />
+    <property role="TrG5h" value="Cluster_Run" />
+    <node concept="25R33" id="72wB6_dUsui" role="25R1y">
+      <property role="3tVfz5" value="8115658504614299538" />
+      <property role="TrG5h" value="CAMP" />
+    </node>
+    <node concept="25R33" id="72wB6_dUsuC" role="25R1y">
+      <property role="3tVfz5" value="8115658504614299560" />
+      <property role="TrG5h" value="None" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7wJJsVzqMF$">
+    <property role="EcuMT" value="8660349304733117156" />
+    <property role="TrG5h" value="RunContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7wJJsVzqMGh" role="1TKVEl">
+      <property role="IQ2nx" value="8660349304733117201" />
+      <property role="TrG5h" value="runNumber" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7wJJsVzqMGf" role="1TKVEl">
+      <property role="IQ2nx" value="8660349304733117199" />
+      <property role="TrG5h" value="clusterRun" />
+      <ref role="AX2Wp" node="72wB6_dUsuh" resolve="Cluster_Run" />
     </node>
   </node>
 </model>
