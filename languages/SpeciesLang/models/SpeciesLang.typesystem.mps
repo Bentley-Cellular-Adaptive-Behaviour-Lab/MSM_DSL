@@ -10,16 +10,24 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" implicit="true" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" implicit="true" />
+    <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
         <child id="1082485599096" name="statements" index="9aQI4" />
+      </concept>
+      <concept id="1215693861676" name="jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression" flags="nn" index="d038R">
+        <child id="1068498886297" name="rValue" index="37vLTx" />
+        <child id="1068498886295" name="lValue" index="37vLTJ" />
       </concept>
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="8118189177080264853" name="jetbrains.mps.baseLanguage.structure.AlternativeType" flags="ig" index="nSUau">
@@ -53,12 +61,15 @@
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
+      <concept id="1070534436861" name="jetbrains.mps.baseLanguage.structure.FloatType" flags="in" index="10OMs4" />
+      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
+      <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
@@ -76,6 +87,9 @@
       </concept>
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
+      </concept>
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
@@ -112,6 +126,7 @@
         <child id="8276990574895933172" name="throwable" index="1zc67B" />
       </concept>
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
+      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="5351203823916750322" name="jetbrains.mps.baseLanguage.structure.TryUniversalStatement" flags="nn" index="3J1_TO">
         <child id="8276990574886367510" name="catchClause" index="1zxBo5" />
         <child id="8276990574886367508" name="body" index="1zxBo7" />
@@ -167,6 +182,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -175,11 +193,15 @@
       <concept id="1966870290088668512" name="jetbrains.mps.lang.smodel.structure.Enum_MemberLiteral" flags="ng" index="2ViDtV">
         <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
       </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -216,6 +238,9 @@
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
+      <concept id="1151688443754" name="jetbrains.mps.baseLanguage.collections.structure.ListType" flags="in" index="_YKpA">
+        <child id="1151688676805" name="elementType" index="_ZDj9" />
+      </concept>
       <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
         <child id="1153944400369" name="variable" index="2Gsz3X" />
         <child id="1153944424730" name="inputSequence" index="2GsD0m" />
@@ -5264,7 +5289,7 @@
   </node>
   <node concept="18kY7G" id="4O6RXqWTRdT">
     <property role="3GE5qa" value="Species" />
-    <property role="TrG5h" value="checkNames" />
+    <property role="TrG5h" value="check_Names" />
     <node concept="3clFbS" id="4O6RXqWTRdU" role="18ibNy">
       <node concept="3cpWs8" id="4O6RXqWO0Fn" role="3cqZAp">
         <node concept="3cpWsn" id="4O6RXqWO0Fo" role="3cpWs9">
@@ -5622,6 +5647,1162 @@
     <node concept="1YaCAy" id="4O6RXqWTReh" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32WKv0">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_MinZero" />
+    <node concept="3clFbS" id="3CIYR32WKv1" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR32WKv$" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32WKvA" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR32WVkB" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR32WVkC" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR32WVnQ" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVnS" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVnV" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVnZ" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVo4" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVoa" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WVoh" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32WPWr" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32WPWu" role="3cpWs9">
+              <property role="TrG5h" value="startMin" />
+              <node concept="10OMs4" id="3CIYR32WPWp" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32WPZe" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32WPZf" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32WPZg" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32WPZh" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32WKvo" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32WPZi" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32WPZj" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32WPZk" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32WQq7" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32WQqa" role="3cpWs9">
+              <property role="TrG5h" value="startMax" />
+              <node concept="10OMs4" id="3CIYR32WQq5" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32WTlP" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32WRHR" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32WQDZ" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32WQti" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32WKvo" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32WRtD" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32WSIE" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32WU2x" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32WLYp" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32WLYr" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32WPaP" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32WPb4" role="2MkJ7o">
+                  <property role="Xl_RC" value="Minimum start value cannot be less than zero" />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32WPce" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32WKvo" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="3eOVzh" id="3CIYR32WOGj" role="3clFbw">
+              <node concept="3cmrfG" id="3CIYR32WOUR" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="37vLTw" id="3CIYR32WVZj" role="3uHU7B">
+                <ref role="3cqZAo" node="3CIYR32WPWu" resolve="startMin" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbH" id="3CIYR32WPcQ" role="3cqZAp" />
+        </node>
+        <node concept="2OqwBi" id="3CIYR32WLIG" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR32WLzZ" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32WKvo" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR32WLVS" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32WKvo" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32WWsz">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_MaxZero" />
+    <node concept="3clFbS" id="3CIYR32WWs$" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR32WWs_" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32WWsA" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR32WWsB" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR32WWsC" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR32WWsD" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsE" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsF" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsG" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsH" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsI" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WWsJ" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32WWsK" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32WWsL" role="3cpWs9">
+              <property role="TrG5h" value="startMax" />
+              <node concept="10OMs4" id="3CIYR32WWsM" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32WWsN" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32WWsO" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32WWsP" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32WWsQ" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32WWtg" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32WWsR" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32WWsS" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32WWsT" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32WWt4" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32WWt5" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32WWt6" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32WWt7" role="2MkJ7o">
+                  <property role="Xl_RC" value="Maximum start value cannot be less than zero" />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32WWt8" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32WWtg" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="3eOVzh" id="3CIYR32WWt9" role="3clFbw">
+              <node concept="3cmrfG" id="3CIYR32WWta" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="37vLTw" id="3CIYR32WWtb" role="3uHU7B">
+                <ref role="3cqZAo" node="3CIYR32WWsL" resolve="startMin" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3CIYR32WWtd" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR32WWte" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32WWtg" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR32WWtf" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32WWtg" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32WYjj">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_BigMin" />
+    <node concept="3clFbS" id="3CIYR32WYjk" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR32WYkv" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32WYkw" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR32WYkx" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR32WYky" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR32WYkz" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYk$" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYk_" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYkA" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYkB" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYkC" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32WYkD" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32WZ2z" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32WZ2$" role="3cpWs9">
+              <property role="TrG5h" value="startMin" />
+              <node concept="10OMs4" id="3CIYR32WZ2_" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32WZ2A" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32WZ2B" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32WZ2C" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32WZ2D" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32WYjF" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32WZ2E" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32WZ2F" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32WZ2G" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32WYkE" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32WYkF" role="3cpWs9">
+              <property role="TrG5h" value="startMax" />
+              <node concept="10OMs4" id="3CIYR32WYkG" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32WYkH" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32WYkI" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32WYkJ" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32WYkK" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32WYjF" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32WYkL" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32WYkM" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32WYkN" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32WYkO" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32WYkP" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32WYkQ" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32WYkR" role="2MkJ7o">
+                  <property role="Xl_RC" value="Minimum start value cannot be less than maximum" />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32WYkS" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32WYjF" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="3eOVzh" id="3CIYR32WYkT" role="3clFbw">
+              <node concept="37vLTw" id="3CIYR32WYkV" role="3uHU7B">
+                <ref role="3cqZAo" node="3CIYR32WZ2$" resolve="startMin" />
+              </node>
+              <node concept="37vLTw" id="3CIYR32X08O" role="3uHU7w">
+                <ref role="3cqZAo" node="3CIYR32WYkF" resolve="startMax" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3CIYR32WYkW" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR32WYkX" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32WYjF" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR32WYkY" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32WYjF" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32X1aI">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_RealMin" />
+    <node concept="3clFbS" id="3CIYR32X1aJ" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR32X1aK" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32X1aL" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR32X1aM" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR32X1aN" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR32X1aO" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aP" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aQ" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aR" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aS" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aT" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X1aU" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X1aV" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X1aW" role="3cpWs9">
+              <property role="TrG5h" value="startMin" />
+              <node concept="10OMs4" id="3CIYR32X1aX" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X1aY" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X1aZ" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X1b0" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X1b1" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X1bq" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X1b2" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X1b3" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X1b4" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X1b5" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X1b6" role="3cpWs9">
+              <property role="TrG5h" value="startMax" />
+              <node concept="10OMs4" id="3CIYR32X1b7" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X1b8" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X1b9" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X1ba" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X1bb" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X1bq" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X1bc" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X1bd" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X1be" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X2p8" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X2pb" role="3cpWs9">
+              <property role="TrG5h" value="min" />
+              <node concept="10OMs4" id="3CIYR32X2p6" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X4Li" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X3DJ" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X2AP" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X2s4" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X1bq" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X3cI" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:1VQO6m$9TcV" resolve="Min_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X4p3" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X5rM" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32X1bf" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32X1bg" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32X1bh" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32X1bi" role="2MkJ7o">
+                  <property role="Xl_RC" value="Parameter analysis values cannot be less than minimum." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32X1bj" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32X1bq" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="22lmx$" id="3CIYR32X6ot" role="3clFbw">
+              <node concept="3eOVzh" id="3CIYR32X77_" role="3uHU7w">
+                <node concept="37vLTw" id="3CIYR32X78c" role="3uHU7w">
+                  <ref role="3cqZAo" node="3CIYR32X2pb" resolve="min" />
+                </node>
+                <node concept="37vLTw" id="3CIYR32X6uU" role="3uHU7B">
+                  <ref role="3cqZAo" node="3CIYR32X1b6" resolve="startMax" />
+                </node>
+              </node>
+              <node concept="3eOVzh" id="3CIYR32X1bk" role="3uHU7B">
+                <node concept="37vLTw" id="3CIYR32X1bl" role="3uHU7B">
+                  <ref role="3cqZAo" node="3CIYR32X1aW" resolve="startMin" />
+                </node>
+                <node concept="37vLTw" id="3CIYR32X5PM" role="3uHU7w">
+                  <ref role="3cqZAo" node="3CIYR32X2pb" resolve="min" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3CIYR32X1bn" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR32X1bo" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32X1bq" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR32X1bp" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32X1bq" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32X8tN">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_RealMax" />
+    <node concept="3clFbS" id="3CIYR32X8tO" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR32X8tP" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32X8tQ" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR32X8tR" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR32X8tS" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR32X8tT" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tU" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tV" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tW" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tX" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tY" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR32X8tZ" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X8u0" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X8u1" role="3cpWs9">
+              <property role="TrG5h" value="startMin" />
+              <node concept="10OMs4" id="3CIYR32X8u2" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X8u3" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X8u4" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X8u5" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X8u6" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X8uH" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X8u7" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X8u8" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X8u9" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X8ua" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X8ub" role="3cpWs9">
+              <property role="TrG5h" value="startMax" />
+              <node concept="10OMs4" id="3CIYR32X8uc" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X8ud" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X8ue" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X8uf" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X8ug" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X8uH" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X8uh" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X8ui" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X8uj" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWs8" id="3CIYR32X8uk" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32X8ul" role="3cpWs9">
+              <property role="TrG5h" value="max" />
+              <node concept="10OMs4" id="3CIYR32X8um" role="1tU5fm" />
+              <node concept="2OqwBi" id="3CIYR32X8un" role="33vP2m">
+                <node concept="2OqwBi" id="3CIYR32X8uo" role="2Oq$k0">
+                  <node concept="2OqwBi" id="3CIYR32X8up" role="2Oq$k0">
+                    <node concept="1YBJjd" id="3CIYR32X8uq" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR32X8uH" resolve="species" />
+                    </node>
+                    <node concept="3TrEf2" id="3CIYR32X8ur" role="2OqNvi">
+                      <ref role="3Tt5mk" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="3CIYR32X8us" role="2OqNvi">
+                    <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="3CIYR32X8ut" role="2OqNvi">
+                  <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32X8uu" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32X8uv" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32X8uw" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32X8ux" role="2MkJ7o">
+                  <property role="Xl_RC" value="Parameter analysis values cannot be less than minimum." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32X8uy" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32X8uH" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="22lmx$" id="3CIYR32X8uz" role="3clFbw">
+              <node concept="3eOSWO" id="3CIYR32X9fd" role="3uHU7w">
+                <node concept="37vLTw" id="3CIYR32X8uA" role="3uHU7B">
+                  <ref role="3cqZAo" node="3CIYR32X8ub" resolve="startMax" />
+                </node>
+                <node concept="37vLTw" id="3CIYR32X8u_" role="3uHU7w">
+                  <ref role="3cqZAo" node="3CIYR32X8ul" resolve="max" />
+                </node>
+              </node>
+              <node concept="3eOSWO" id="3CIYR32X9ew" role="3uHU7B">
+                <node concept="37vLTw" id="3CIYR32X8uC" role="3uHU7B">
+                  <ref role="3cqZAo" node="3CIYR32X8u1" resolve="startMin" />
+                </node>
+                <node concept="37vLTw" id="3CIYR32X8uD" role="3uHU7w">
+                  <ref role="3cqZAo" node="3CIYR32X8ul" resolve="max" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3CIYR32X8uE" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR32X8uF" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32X8uH" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR32X8uG" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32X8uH" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR32XFjq">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_ClusterDefined" />
+    <node concept="3clFbS" id="3CIYR32XFjr" role="18ibNy">
+      <node concept="3cpWs8" id="3CIYR32XFkk" role="3cqZAp">
+        <node concept="3cpWsn" id="3CIYR32XFkn" role="3cpWs9">
+          <property role="TrG5h" value="doingParamAnalysis" />
+          <node concept="10P_77" id="3CIYR32XFki" role="1tU5fm" />
+          <node concept="3clFbT" id="3CIYR32XFkT" role="33vP2m" />
+        </node>
+      </node>
+      <node concept="2Gpval" id="3CIYR32XFjY" role="3cqZAp">
+        <node concept="2GrKxI" id="3CIYR32XFjZ" role="2Gsz3X">
+          <property role="TrG5h" value="species" />
+        </node>
+        <node concept="2OqwBi" id="3CIYR32XFx8" role="2GsD0m">
+          <node concept="1YBJjd" id="3CIYR32XFmf" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR32XFjM" resolve="container" />
+          </node>
+          <node concept="3Tsc0h" id="3CIYR32XFK9" role="2OqNvi">
+            <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="3CIYR32XFk1" role="2LFqv$">
+          <node concept="3clFbJ" id="3CIYR32XFMW" role="3cqZAp">
+            <node concept="2OqwBi" id="3CIYR32XFXP" role="3clFbw">
+              <node concept="2GrUjf" id="3CIYR32XFN8" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="3CIYR32XFjZ" resolve="species" />
+              </node>
+              <node concept="3TrcHB" id="3CIYR32XGHr" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3CIYR32XFMY" role="3clFbx">
+              <node concept="3clFbF" id="3CIYR32XGMA" role="3cqZAp">
+                <node concept="37vLTI" id="3CIYR32XH4W" role="3clFbG">
+                  <node concept="3clFbT" id="3CIYR32XH5d" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="37vLTw" id="3CIYR32XGM_" role="37vLTJ">
+                    <ref role="3cqZAo" node="3CIYR32XFkn" resolve="doingParamAnalysis" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3zACq4" id="3CIYR32XH5y" role="3cqZAp" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="3CIYR32XH7s" role="3cqZAp">
+        <node concept="1PaTwC" id="3CIYR32XH7t" role="1aUNEU">
+          <node concept="3oM_SD" id="3CIYR32XH7V" role="1PaTwD">
+            <property role="3oM_SC" value="Only" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH7X" role="1PaTwD">
+            <property role="3oM_SC" value="bother" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH80" role="1PaTwD">
+            <property role="3oM_SC" value="with" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH84" role="1PaTwD">
+            <property role="3oM_SC" value="this" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH89" role="1PaTwD">
+            <property role="3oM_SC" value="if" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH8u" role="1PaTwD">
+            <property role="3oM_SC" value="we" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH8_" role="1PaTwD">
+            <property role="3oM_SC" value="didn't" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH8H" role="1PaTwD">
+            <property role="3oM_SC" value="find" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH8Q" role="1PaTwD">
+            <property role="3oM_SC" value="any" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH90" role="1PaTwD">
+            <property role="3oM_SC" value="species" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH9b" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH9n" role="1PaTwD">
+            <property role="3oM_SC" value="are" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH9$" role="1PaTwD">
+            <property role="3oM_SC" value="doing" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XH9M" role="1PaTwD">
+            <property role="3oM_SC" value="parameter" />
+          </node>
+          <node concept="3oM_SD" id="3CIYR32XHa1" role="1PaTwD">
+            <property role="3oM_SC" value="analysis" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3CIYR32XH60" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32XH62" role="3clFbx">
+          <node concept="2Gpval" id="3CIYR32XHaA" role="3cqZAp">
+            <node concept="2GrKxI" id="3CIYR32XHaB" role="2Gsz3X">
+              <property role="TrG5h" value="parameter" />
+            </node>
+            <node concept="2OqwBi" id="3CIYR32XHaC" role="2GsD0m">
+              <node concept="1YBJjd" id="3CIYR32XHaD" role="2Oq$k0">
+                <ref role="1YBMHb" node="3CIYR32XFjM" resolve="container" />
+              </node>
+              <node concept="3Tsc0h" id="3CIYR32XHGr" role="2OqNvi">
+                <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+              </node>
+            </node>
+            <node concept="3clFbS" id="3CIYR32XHaF" role="2LFqv$">
+              <node concept="3clFbJ" id="3CIYR32XHaG" role="3cqZAp">
+                <node concept="2OqwBi" id="3CIYR32XHaH" role="3clFbw">
+                  <node concept="2GrUjf" id="3CIYR32XHaI" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3CIYR32XHaB" resolve="species" />
+                  </node>
+                  <node concept="3TrcHB" id="3CIYR32XHaJ" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="3CIYR32XHaK" role="3clFbx">
+                  <node concept="3clFbF" id="3CIYR32XHaL" role="3cqZAp">
+                    <node concept="37vLTI" id="3CIYR32XHaM" role="3clFbG">
+                      <node concept="3clFbT" id="3CIYR32XHaN" role="37vLTx">
+                        <property role="3clFbU" value="true" />
+                      </node>
+                      <node concept="37vLTw" id="3CIYR32XHaO" role="37vLTJ">
+                        <ref role="3cqZAo" node="3CIYR32XFkn" resolve="doingParamAnalysis" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3zACq4" id="3CIYR32XHaP" role="3cqZAp" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="3CIYR32XH6z" role="3clFbw">
+          <node concept="37vLTw" id="3CIYR32XH6N" role="3fr31v">
+            <ref role="3cqZAo" node="3CIYR32XFkn" resolve="doingParamAnalysis" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="3CIYR32XHMs" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR32XHMu" role="3clFbx">
+          <node concept="3cpWs8" id="3CIYR32XIpQ" role="3cqZAp">
+            <node concept="3cpWsn" id="3CIYR32XIpT" role="3cpWs9">
+              <property role="TrG5h" value="settingsContainer" />
+              <node concept="3Tqbb2" id="3CIYR32XIpO" role="1tU5fm">
+                <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+              </node>
+              <node concept="2OqwBi" id="3CIYR32XIHi" role="33vP2m">
+                <node concept="1YBJjd" id="3CIYR32XIWk" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3CIYR32XFjM" resolve="container" />
+                </node>
+                <node concept="2Xjw5R" id="3CIYR32XIRX" role="2OqNvi">
+                  <node concept="1xMEDy" id="3CIYR32XIRZ" role="1xVPHs">
+                    <node concept="chp4Y" id="3CIYR32XIUj" role="ri$Ld">
+                      <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR32XIWZ" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR32XIX1" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR32XL10" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR32XL1f" role="2MkJ7o">
+                  <property role="Xl_RC" value="Cannot perform parameter analysis without selecting a cluster." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR32XL3i" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR32XFjM" resolve="container" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3CIYR32XKBv" role="3clFbw">
+              <node concept="2OqwBi" id="3CIYR32XKep" role="2Oq$k0">
+                <node concept="2OqwBi" id="3CIYR32XJyC" role="2Oq$k0">
+                  <node concept="37vLTw" id="3CIYR32XJm9" role="2Oq$k0">
+                    <ref role="3cqZAo" node="3CIYR32XIpT" resolve="settingsContainer" />
+                  </node>
+                  <node concept="3TrEf2" id="3CIYR32XJPp" role="2OqNvi">
+                    <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="3CIYR32XKqq" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                </node>
+              </node>
+              <node concept="21noJN" id="3CIYR32XKXm" role="2OqNvi">
+                <node concept="21nZrQ" id="3CIYR32XKXo" role="21noJM">
+                  <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="37vLTw" id="3CIYR32XHN$" role="3clFbw">
+          <ref role="3cqZAo" node="3CIYR32XFkn" resolve="doingParamAnalysis" />
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR32XFjM" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR333$Gi">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_ParamAnalysis" />
+    <node concept="3clFbS" id="3CIYR333$Gj" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR333$Gk" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR333$Gl" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR333$Gm" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR333$Gn" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR333$Go" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gp" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gq" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gr" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gs" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gt" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333$Gu" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR333$GN" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR333$GO" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR333$GP" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR333$GQ" role="2MkJ7o">
+                  <property role="Xl_RC" value="Minimum and maximum start concentrations cannot be undefined if parameter analysis is not being done." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR333$GR" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="22lmx$" id="3CIYR333GHL" role="3clFbw">
+              <node concept="2OqwBi" id="3CIYR333HPM" role="3uHU7w">
+                <node concept="2OqwBi" id="3CIYR333H52" role="2Oq$k0">
+                  <node concept="1YBJjd" id="3CIYR333GU9" role="2Oq$k0">
+                    <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="3CIYR333HAC" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="3CIYR333II7" role="2OqNvi" />
+              </node>
+              <node concept="2OqwBi" id="3CIYR333AHo" role="3uHU7B">
+                <node concept="2OqwBi" id="3CIYR333_YG" role="2Oq$k0">
+                  <node concept="1YBJjd" id="3CIYR333_NR" role="2Oq$k0">
+                    <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="3CIYR333Acx" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="3CIYR333Blc" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="3CIYR333$WP" role="3clFbw">
+          <node concept="1YBJjd" id="3CIYR333$WQ" role="2Oq$k0">
+            <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+          </node>
+          <node concept="3TrcHB" id="3CIYR333$WR" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR333$GY" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR333F93">
+    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="TrG5h" value="check_SpeciesParamValues_NoParamAnalysis" />
+    <node concept="3clFbS" id="3CIYR333F94" role="18ibNy">
+      <node concept="3clFbJ" id="3CIYR333F95" role="3cqZAp">
+        <node concept="3clFbS" id="3CIYR333F96" role="3clFbx">
+          <node concept="3SKdUt" id="3CIYR333F97" role="3cqZAp">
+            <node concept="1PaTwC" id="3CIYR333F98" role="1aUNEU">
+              <node concept="3oM_SD" id="3CIYR333F99" role="1PaTwD">
+                <property role="3oM_SC" value="checks" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9a" role="1PaTwD">
+                <property role="3oM_SC" value="the" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9b" role="1PaTwD">
+                <property role="3oM_SC" value="values" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9c" role="1PaTwD">
+                <property role="3oM_SC" value="associated" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9d" role="1PaTwD">
+                <property role="3oM_SC" value="with" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9e" role="1PaTwD">
+                <property role="3oM_SC" value="parameter" />
+              </node>
+              <node concept="3oM_SD" id="3CIYR333F9f" role="1PaTwD">
+                <property role="3oM_SC" value="analysis." />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR333F9g" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR333F9h" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR333F9i" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR333F9j" role="2MkJ7o">
+                  <property role="Xl_RC" value="Starting concentration cannot be undefined if parameter analysis is not being done." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR333F9k" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3CIYR333F9l" role="3clFbw">
+              <node concept="2OqwBi" id="3CIYR333F9m" role="2Oq$k0">
+                <node concept="1YBJjd" id="3CIYR333F9n" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
+                </node>
+                <node concept="3TrEf2" id="3CIYR333F9o" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                </node>
+              </node>
+              <node concept="3w_OXm" id="3CIYR333F9p" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+        <node concept="3fqX7Q" id="3CIYR333F9q" role="3clFbw">
+          <node concept="2OqwBi" id="3CIYR333F9r" role="3fr31v">
+            <node concept="1YBJjd" id="3CIYR333F9s" role="2Oq$k0">
+              <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
+            </node>
+            <node concept="3TrcHB" id="3CIYR333F9t" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3CIYR333F9u" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3CIYR3396qf">
+    <property role="TrG5h" value="check_ParameterParamValues_children" />
+    <property role="3GE5qa" value="ParameterParamValues" />
+    <node concept="3clFbS" id="3CIYR3396qg" role="18ibNy">
+      <node concept="3cpWs8" id="3CIYR33oHvJ" role="3cqZAp">
+        <node concept="3cpWsn" id="3CIYR33oHvM" role="3cpWs9">
+          <property role="TrG5h" value="minExpressions" />
+          <node concept="_YKpA" id="3CIYR33oHvF" role="1tU5fm">
+            <node concept="3Tqbb2" id="3CIYR33qqJu" role="_ZDj9">
+              <ref role="ehGHo" to="hm2y:6sdnDbSla17" resolve="Expression" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3CIYR33qyJ$" role="33vP2m">
+            <node concept="1YBJjd" id="3CIYR33qy$3" role="2Oq$k0">
+              <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+            </node>
+            <node concept="2qgKlT" id="3CIYR33qz8Q" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3CIYR33oSat" resolve="getExpressions" />
+              <node concept="2OqwBi" id="3CIYR33qzq9" role="37wK5m">
+                <node concept="1YBJjd" id="3CIYR33qzev" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+                <node concept="3TrEf2" id="3CIYR33qzT1" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6WHzz7cWc8d" resolve="Min_Expression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cpWs8" id="3CIYR33q$9x" role="3cqZAp">
+        <node concept="3cpWsn" id="3CIYR33q$9y" role="3cpWs9">
+          <property role="TrG5h" value="maxExpressions" />
+          <node concept="_YKpA" id="3CIYR33q$9z" role="1tU5fm">
+            <node concept="3Tqbb2" id="3CIYR33q$9$" role="_ZDj9">
+              <ref role="ehGHo" to="hm2y:6sdnDbSla17" resolve="Expression" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3CIYR33q$9_" role="33vP2m">
+            <node concept="1YBJjd" id="3CIYR33q$9A" role="2Oq$k0">
+              <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+            </node>
+            <node concept="2qgKlT" id="3CIYR33q$9B" role="2OqNvi">
+              <ref role="37wK5l" to="f3yh:3CIYR33oSat" resolve="getExpressions" />
+              <node concept="2OqwBi" id="3CIYR33q$9C" role="37wK5m">
+                <node concept="1YBJjd" id="3CIYR33q$9D" role="2Oq$k0">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+                <node concept="3TrEf2" id="3CIYR33q$9E" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:6WHzz7cWc88" resolve="Max_Expression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3CIYR33q$Gk" role="3cqZAp">
+        <node concept="2GrKxI" id="3CIYR33q$Gm" role="2Gsz3X">
+          <property role="TrG5h" value="expression" />
+        </node>
+        <node concept="37vLTw" id="3CIYR33q$JL" role="2GsD0m">
+          <ref role="3cqZAo" node="3CIYR33oHvM" resolve="minExpressions" />
+        </node>
+        <node concept="3clFbS" id="3CIYR33q$Gq" role="2LFqv$">
+          <node concept="3clFbJ" id="3CIYR33q$LG" role="3cqZAp">
+            <node concept="2OqwBi" id="3CIYR33q$X_" role="3clFbw">
+              <node concept="2GrUjf" id="3CIYR33q$LS" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="3CIYR33q$Gm" resolve="expression" />
+              </node>
+              <node concept="1mIQ4w" id="3CIYR33q_JT" role="2OqNvi">
+                <node concept="chp4Y" id="3CIYR33q_OA" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="3CIYR33q$LI" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR33qAOP" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR33qAP1" role="2MkJ7o">
+                  <property role="Xl_RC" value="Parameter expressions are not allowed when defining ranges." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR33qAR1" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR33qASa" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR33qASc" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR33qD0f" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR33qD0g" role="2MkJ7o">
+                  <property role="Xl_RC" value="Species expressions are not allowed when defining ranges." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR33qD0h" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3CIYR33qB4f" role="3clFbw">
+              <node concept="2GrUjf" id="3CIYR33qASy" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="3CIYR33q$Gm" resolve="expression" />
+              </node>
+              <node concept="1mIQ4w" id="3CIYR33qCMx" role="2OqNvi">
+                <node concept="chp4Y" id="3CIYR33qCP7" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2Gpval" id="3CIYR33qDEA" role="3cqZAp">
+        <node concept="2GrKxI" id="3CIYR33qDEB" role="2Gsz3X">
+          <property role="TrG5h" value="expression" />
+        </node>
+        <node concept="37vLTw" id="3CIYR33qDEC" role="2GsD0m">
+          <ref role="3cqZAo" node="3CIYR33q$9y" resolve="maxExpressions" />
+        </node>
+        <node concept="3clFbS" id="3CIYR33qDED" role="2LFqv$">
+          <node concept="3clFbJ" id="3CIYR33qDEE" role="3cqZAp">
+            <node concept="2OqwBi" id="3CIYR33qDEF" role="3clFbw">
+              <node concept="2GrUjf" id="3CIYR33qDEG" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="3CIYR33qDEB" resolve="expression" />
+              </node>
+              <node concept="1mIQ4w" id="3CIYR33qDEH" role="2OqNvi">
+                <node concept="chp4Y" id="3CIYR33qDEI" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbS" id="3CIYR33qDEJ" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR33qDEK" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR33qDEL" role="2MkJ7o">
+                  <property role="Xl_RC" value="Parameter expressions are not allowed when defining ranges." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR33qDEM" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="3CIYR33qDEN" role="3cqZAp">
+            <node concept="3clFbS" id="3CIYR33qDEO" role="3clFbx">
+              <node concept="2MkqsV" id="3CIYR33qDEP" role="3cqZAp">
+                <node concept="Xl_RD" id="3CIYR33qDEQ" role="2MkJ7o">
+                  <property role="Xl_RC" value="Species expressions are not allowed when defining ranges." />
+                </node>
+                <node concept="1YBJjd" id="3CIYR33qDER" role="1urrMF">
+                  <ref role="1YBMHb" node="3CIYR3396qB" resolve="parameter" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="3CIYR33qDES" role="3clFbw">
+              <node concept="2GrUjf" id="3CIYR33qDET" role="2Oq$k0">
+                <ref role="2Gs0qQ" node="3CIYR33qDEB" resolve="expression" />
+              </node>
+              <node concept="1mIQ4w" id="3CIYR33qDEU" role="2OqNvi">
+                <node concept="chp4Y" id="3CIYR33qDEV" role="cj9EA">
+                  <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="3CIYR33qDo1" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="3CIYR3396qB" role="1YuTPh">
+      <property role="TrG5h" value="parameter" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
     </node>
   </node>
 </model>

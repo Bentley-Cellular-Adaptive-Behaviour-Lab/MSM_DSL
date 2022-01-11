@@ -701,5 +701,115 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="3CIYR32XN4y">
+    <property role="TrG5h" value="setSpeciesParamAnalysis" />
+    <ref role="2ZfgGC" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <node concept="2S6ZIM" id="3CIYR32XN4z" role="2ZfVej">
+      <node concept="3clFbS" id="3CIYR32XN4$" role="2VODD2">
+        <node concept="3clFbF" id="3CIYR32XNao" role="3cqZAp">
+          <node concept="Xl_RD" id="3CIYR32XNan" role="3clFbG">
+            <property role="Xl_RC" value="Use in parameter analysis?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3CIYR32XN4_" role="2ZfgGD">
+      <node concept="3clFbS" id="3CIYR32XN4A" role="2VODD2">
+        <node concept="3clFbJ" id="3CIYR32XNlX" role="3cqZAp">
+          <node concept="2OqwBi" id="3CIYR32XNx4" role="3clFbw">
+            <node concept="2Sf5sV" id="3CIYR32XNmm" role="2Oq$k0" />
+            <node concept="3TrcHB" id="3CIYR32XNFV" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="3CIYR32XNlZ" role="3clFbx">
+            <node concept="3clFbF" id="3CIYR32XNIB" role="3cqZAp">
+              <node concept="37vLTI" id="3CIYR32XOgm" role="3clFbG">
+                <node concept="3clFbT" id="3CIYR32XOgO" role="37vLTx" />
+                <node concept="2OqwBi" id="3CIYR32XNIP" role="37vLTJ">
+                  <node concept="2Sf5sV" id="3CIYR32XNIA" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="3CIYR32XNUU" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="3CIYR32XOt4" role="9aQIa">
+            <node concept="3clFbS" id="3CIYR32XOt5" role="9aQI4">
+              <node concept="3clFbF" id="3CIYR32XOwb" role="3cqZAp">
+                <node concept="37vLTI" id="3CIYR32XPc0" role="3clFbG">
+                  <node concept="3clFbT" id="3CIYR32XPcF" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="2OqwBi" id="3CIYR32XOCV" role="37vLTJ">
+                    <node concept="2Sf5sV" id="3CIYR32XOwa" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="3CIYR32XOQ$" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="3CIYR33eMiv">
+    <property role="TrG5h" value="setParameterParamAnalysis" />
+    <ref role="2ZfgGC" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    <node concept="2S6ZIM" id="3CIYR33eMiw" role="2ZfVej">
+      <node concept="3clFbS" id="3CIYR33eMix" role="2VODD2">
+        <node concept="3clFbF" id="3CIYR33eMiy" role="3cqZAp">
+          <node concept="Xl_RD" id="3CIYR33eMiz" role="3clFbG">
+            <property role="Xl_RC" value="Use in parameter analysis?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3CIYR33eMi$" role="2ZfgGD">
+      <node concept="3clFbS" id="3CIYR33eMi_" role="2VODD2">
+        <node concept="3clFbJ" id="3CIYR33eMiA" role="3cqZAp">
+          <node concept="2OqwBi" id="3CIYR33eMiB" role="3clFbw">
+            <node concept="2Sf5sV" id="3CIYR33eMiC" role="2Oq$k0" />
+            <node concept="3TrcHB" id="3CIYR33eMiD" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="3CIYR33eMiE" role="3clFbx">
+            <node concept="3clFbF" id="3CIYR33eMiF" role="3cqZAp">
+              <node concept="37vLTI" id="3CIYR33eMiG" role="3clFbG">
+                <node concept="3clFbT" id="3CIYR33eMiH" role="37vLTx" />
+                <node concept="2OqwBi" id="3CIYR33eMiI" role="37vLTJ">
+                  <node concept="2Sf5sV" id="3CIYR33eMiJ" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="3CIYR33eMiK" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="3CIYR33eMiL" role="9aQIa">
+            <node concept="3clFbS" id="3CIYR33eMiM" role="9aQI4">
+              <node concept="3clFbF" id="3CIYR33eMiN" role="3cqZAp">
+                <node concept="37vLTI" id="3CIYR33eMiO" role="3clFbG">
+                  <node concept="3clFbT" id="3CIYR33eMiP" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="2OqwBi" id="3CIYR33eMiQ" role="37vLTJ">
+                    <node concept="2Sf5sV" id="3CIYR33eMiR" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="3CIYR33eMiS" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
