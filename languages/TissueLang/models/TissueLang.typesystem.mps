@@ -8,6 +8,7 @@
   <imports>
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
@@ -15,6 +16,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
@@ -44,6 +46,7 @@
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
+      <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
       <concept id="1068580123159" name="jetbrains.mps.baseLanguage.structure.IfStatement" flags="nn" index="3clFbJ">
         <child id="1068580123160" name="condition" index="3clFbw" />
         <child id="1068580123161" name="ifTrue" index="3clFbx" />
@@ -108,8 +111,17 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
+        <child id="4705942098322609813" name="member" index="21noJM" />
+      </concept>
+      <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
+        <reference id="4705942098322467736" name="decl" index="21nZrZ" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
@@ -119,11 +131,18 @@
       <concept id="1966870290088668512" name="jetbrains.mps.lang.smodel.structure.Enum_MemberLiteral" flags="ng" index="2ViDtV">
         <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
       </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
+        <reference id="1138405853777" name="concept" index="ehGHo" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -2731,6 +2750,288 @@
     <node concept="1YaCAy" id="4O6RXqWNz2O" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6WHzz7d2MrR">
+    <property role="TrG5h" value="check_CylinderParamValues" />
+    <node concept="3clFbS" id="6WHzz7d2MrS" role="18ibNy">
+      <node concept="3cpWs8" id="6WHzz7d2Mtc" role="3cqZAp">
+        <node concept="3cpWsn" id="6WHzz7d2Mtf" role="3cpWs9">
+          <property role="TrG5h" value="container" />
+          <node concept="3Tqbb2" id="6WHzz7d2Mtb" role="1tU5fm">
+            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+          </node>
+          <node concept="2OqwBi" id="6WHzz7d2MA4" role="33vP2m">
+            <node concept="1YBJjd" id="6WHzz7d2Mua" role="2Oq$k0">
+              <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+            </node>
+            <node concept="2Xjw5R" id="6WHzz7d2MKp" role="2OqNvi">
+              <node concept="1xMEDy" id="6WHzz7d2MKr" role="1xVPHs">
+                <node concept="chp4Y" id="6WHzz7d2MUZ" role="ri$Ld">
+                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="6WHzz7d2Niz" role="3cqZAp">
+        <node concept="3clFbS" id="6WHzz7d2Ni_" role="3clFbx">
+          <node concept="2MkqsV" id="6WHzz7d2Pmy" role="3cqZAp">
+            <node concept="Xl_RD" id="6WHzz7d2PmL" role="2MkJ7o">
+              <property role="Xl_RC" value="Change the cluster setting in Settings from None to specify parameter analysis." />
+            </node>
+            <node concept="1YBJjd" id="6WHzz7d2Prj" role="1urrMF">
+              <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="6WHzz7d2OUU" role="3clFbw">
+          <node concept="2OqwBi" id="6WHzz7d2P8B" role="3uHU7w">
+            <node concept="1YBJjd" id="6WHzz7d2OZu" role="2Oq$k0">
+              <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+            </node>
+            <node concept="3TrcHB" id="6WHzz7d2PjJ" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:6WHzz7cXnHN" resolve="ANALYSIS_PARAM" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6WHzz7d2O$5" role="3uHU7B">
+            <node concept="2OqwBi" id="6WHzz7d2NKR" role="2Oq$k0">
+              <node concept="2OqwBi" id="6WHzz7d2NrF" role="2Oq$k0">
+                <node concept="37vLTw" id="6WHzz7d2NiU" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6WHzz7d2Mtf" resolve="container" />
+                </node>
+                <node concept="3TrEf2" id="6WHzz7d2N_Z" role="2OqNvi">
+                  <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="6WHzz7d2OpP" role="2OqNvi">
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+              </node>
+            </node>
+            <node concept="21noJN" id="6WHzz7d2OFv" role="2OqNvi">
+              <node concept="21nZrQ" id="6WHzz7d2OFx" role="21noJM">
+                <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="5A0f7KHCl6z" role="3cqZAp">
+        <node concept="3clFbS" id="5A0f7KHCl6_" role="3clFbx">
+          <node concept="3clFbJ" id="5A0f7KHClJZ" role="3cqZAp">
+            <node concept="3clFbS" id="5A0f7KHClK1" role="3clFbx">
+              <node concept="2MkqsV" id="5A0f7KHCnVa" role="3cqZAp">
+                <node concept="Xl_RD" id="5A0f7KHCnVp" role="2MkJ7o">
+                  <property role="Xl_RC" value="The cylinder minimum length must be less than the maximum length." />
+                </node>
+                <node concept="1YBJjd" id="5A0f7KHCnXj" role="1urrMF">
+                  <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+                </node>
+              </node>
+            </node>
+            <node concept="2d3UOw" id="5A0f7KHCn5F" role="3clFbw">
+              <node concept="2OqwBi" id="5A0f7KHClSA" role="3uHU7B">
+                <node concept="1YBJjd" id="5A0f7KHClKe" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCm1v" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHU" resolve="PARAM_MIN_length" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5A0f7KHCnB6" role="3uHU7w">
+                <node concept="1YBJjd" id="5A0f7KHCne3" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCnTx" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHH" resolve="PARAM_MAX_length" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="5A0f7KHClfW" role="3clFbw">
+          <node concept="1YBJjd" id="5A0f7KHCl7b" role="2Oq$k0">
+            <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
+          </node>
+          <node concept="3TrcHB" id="5A0f7KHClIn" role="2OqNvi">
+            <ref role="3TsBF5" to="nguq:6WHzz7cXnHN" resolve="ANALYSIS_PARAM" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6WHzz7d2MsT" role="1YuTPh">
+      <property role="TrG5h" value="cylinder" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6WHzz7d2Pta">
+    <property role="TrG5h" value="check_FlatParamValues" />
+    <node concept="3clFbS" id="6WHzz7d2Ptb" role="18ibNy">
+      <node concept="3cpWs8" id="6WHzz7d2Ptc" role="3cqZAp">
+        <node concept="3cpWsn" id="6WHzz7d2Ptd" role="3cpWs9">
+          <property role="TrG5h" value="container" />
+          <node concept="3Tqbb2" id="6WHzz7d2Pte" role="1tU5fm">
+            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+          </node>
+          <node concept="2OqwBi" id="6WHzz7d2Ptf" role="33vP2m">
+            <node concept="1YBJjd" id="6WHzz7d2Ptg" role="2Oq$k0">
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+            </node>
+            <node concept="2Xjw5R" id="6WHzz7d2Pth" role="2OqNvi">
+              <node concept="1xMEDy" id="6WHzz7d2Pti" role="1xVPHs">
+                <node concept="chp4Y" id="6WHzz7d2Ptj" role="ri$Ld">
+                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="6WHzz7d2Ptk" role="3cqZAp">
+        <node concept="3clFbS" id="6WHzz7d2Ptl" role="3clFbx">
+          <node concept="2MkqsV" id="6WHzz7d2Ptm" role="3cqZAp">
+            <node concept="Xl_RD" id="6WHzz7d2Ptn" role="2MkJ7o">
+              <property role="Xl_RC" value="Change the cluster setting in Settings from None to specify parameter analysis." />
+            </node>
+            <node concept="1YBJjd" id="6WHzz7d2Pto" role="1urrMF">
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="6WHzz7d2Ptp" role="3clFbw">
+          <node concept="2OqwBi" id="6WHzz7d2Ptq" role="3uHU7w">
+            <node concept="1YBJjd" id="6WHzz7d2Ptr" role="2Oq$k0">
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+            </node>
+            <node concept="3TrcHB" id="6WHzz7d2Pts" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:6WHzz7cXnIG" resolve="_ANALYSIS_PARAM" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="6WHzz7d2Ptt" role="3uHU7B">
+            <node concept="2OqwBi" id="6WHzz7d2Ptu" role="2Oq$k0">
+              <node concept="2OqwBi" id="6WHzz7d2Ptv" role="2Oq$k0">
+                <node concept="37vLTw" id="6WHzz7d2Ptw" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6WHzz7d2Ptd" resolve="container" />
+                </node>
+                <node concept="3TrEf2" id="6WHzz7d2Ptx" role="2OqNvi">
+                  <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="6WHzz7d2Pty" role="2OqNvi">
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+              </node>
+            </node>
+            <node concept="21noJN" id="6WHzz7d2Ptz" role="2OqNvi">
+              <node concept="21nZrQ" id="6WHzz7d2Pt$" role="21noJM">
+                <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3SKdUt" id="6WHzz7d3lmz" role="3cqZAp">
+        <node concept="1PaTwC" id="6WHzz7d3lm$" role="1aUNEU">
+          <node concept="3oM_SD" id="6WHzz7d3ln8" role="1PaTwD">
+            <property role="3oM_SC" value="" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lnq" role="1PaTwD">
+            <property role="3oM_SC" value="Check" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lnt" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lnx" role="1PaTwD">
+            <property role="3oM_SC" value="range" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lnA" role="1PaTwD">
+            <property role="3oM_SC" value="values" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lnG" role="1PaTwD">
+            <property role="3oM_SC" value="are" />
+          </node>
+          <node concept="3oM_SD" id="6WHzz7d3lpL" role="1PaTwD">
+            <property role="3oM_SC" value="congruent." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="5A0f7KHCoi1" role="3cqZAp">
+        <node concept="3clFbS" id="5A0f7KHCoi2" role="3clFbx">
+          <node concept="3clFbJ" id="5A0f7KHCoi3" role="3cqZAp">
+            <node concept="3clFbS" id="5A0f7KHCoi4" role="3clFbx">
+              <node concept="2MkqsV" id="5A0f7KHCoi5" role="3cqZAp">
+                <node concept="Xl_RD" id="5A0f7KHCoi6" role="2MkJ7o">
+                  <property role="Xl_RC" value="The flat tissue minimum height must be less than the maximum height." />
+                </node>
+                <node concept="1YBJjd" id="5A0f7KHCoi7" role="1urrMF">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+              </node>
+            </node>
+            <node concept="2d3UOw" id="5A0f7KHCoi8" role="3clFbw">
+              <node concept="2OqwBi" id="5A0f7KHCoi9" role="3uHU7B">
+                <node concept="1YBJjd" id="5A0f7KHCoia" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCoib" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_PARAM_min_height" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5A0f7KHCoic" role="3uHU7w">
+                <node concept="1YBJjd" id="5A0f7KHCoid" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCoie" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_PARAM_max_height" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="5A0f7KHCpaC" role="3cqZAp">
+            <node concept="3clFbS" id="5A0f7KHCpaD" role="3clFbx">
+              <node concept="2MkqsV" id="5A0f7KHCpaE" role="3cqZAp">
+                <node concept="Xl_RD" id="5A0f7KHCpaF" role="2MkJ7o">
+                  <property role="Xl_RC" value="The flat tissue minimum width must be less than the maximum width." />
+                </node>
+                <node concept="1YBJjd" id="5A0f7KHCpaG" role="1urrMF">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+              </node>
+            </node>
+            <node concept="2d3UOw" id="5A0f7KHCpaH" role="3clFbw">
+              <node concept="2OqwBi" id="5A0f7KHCpaI" role="3uHU7B">
+                <node concept="1YBJjd" id="5A0f7KHCpaJ" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCpaK" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_PARAM_min_height" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="5A0f7KHCpaL" role="3uHU7w">
+                <node concept="1YBJjd" id="5A0f7KHCpaM" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+                </node>
+                <node concept="3TrcHB" id="5A0f7KHCpaN" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_PARAM_max_height" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="5A0f7KHCoif" role="3clFbw">
+          <node concept="1YBJjd" id="5A0f7KHCoig" role="2Oq$k0">
+            <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
+          </node>
+          <node concept="3TrcHB" id="5A0f7KHCoih" role="2OqNvi">
+            <ref role="3TsBF5" to="nguq:6WHzz7cXnIG" resolve="_ANALYSIS_PARAM" />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="5A0f7KHCoht" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="6WHzz7d2Pt_" role="1YuTPh">
+      <property role="TrG5h" value="flat" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
     </node>
   </node>
 </model>

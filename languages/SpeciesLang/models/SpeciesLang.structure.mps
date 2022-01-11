@@ -12,6 +12,7 @@
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="l80j" ref="r:9e71c0de-f9ab-4b67-96cc-7d9c857513f6(org.iets3.analysis.base.structure)" implicit="true" />
   </imports>
   <registry>
@@ -137,7 +138,18 @@
       <property role="IQ2ns" value="3989375547139458228" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Starting_Concentration" />
-      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+    </node>
+    <node concept="1TJgyj" id="6WHzz7cWc74" role="1TKVEi">
+      <property role="IQ2ns" value="8011215656704852420" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Min_Start_Concentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+    </node>
+    <node concept="1TJgyj" id="6WHzz7cWc7f" role="1TKVEi">
+      <property role="IQ2ns" value="8011215656704852431" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Max_Start_Concentration" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
     <node concept="1TJgyj" id="1VQO6m$9TcV" role="1TKVEi">
@@ -210,6 +222,16 @@
       <property role="TrG5h" value="showDeg" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="6WHzz7cWc6W" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656704852412" />
+      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5A0f7KHEgs4" role="1TKVEl">
+      <property role="IQ2nx" value="6449221170434213636" />
+      <property role="TrG5h" value="PARAM_steps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
       <property role="IQ2ns" value="7376055817164063115" />
       <property role="20kJfa" value="Degradation_Term" />
@@ -246,6 +268,20 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="6WHzz7cWc8d" role="1TKVEi">
+      <property role="IQ2ns" value="8011215656704852493" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Min_Expression" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
+    </node>
+    <node concept="1TJgyj" id="6WHzz7cWc88" role="1TKVEi">
+      <property role="IQ2ns" value="8011215656704852488" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Max_Expression" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
     <node concept="1TJgyj" id="6ngYmLdV2b1" role="1TKVEi">
       <property role="IQ2ns" value="7336638036545643201" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -262,6 +298,11 @@
     </node>
     <node concept="PrWs8" id="2Hxmt3eVfk2" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cWc7L" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656704852465" />
+      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjM">

@@ -236,6 +236,26 @@
       <property role="TrG5h" value="cylinder_total_length_int" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="6WHzz7cXnHN" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162099" />
+      <property role="TrG5h" value="ANALYSIS_PARAM" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cXnHU" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162106" />
+      <property role="TrG5h" value="PARAM_MIN_length" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cXnHH" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162093" />
+      <property role="TrG5h" value="PARAM_MAX_length" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7d3lZl" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656706727893" />
+      <property role="TrG5h" value="PARAM_steps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="3wWy5vw4eP2" role="1TKVEi">
       <property role="IQ2ns" value="4052263675729341762" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -252,12 +272,47 @@
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYu" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690142" />
-      <property role="TrG5h" value="flat_height_in_cells" />
+      <property role="TrG5h" value="_height" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="5qSYbADreYw" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690144" />
-      <property role="TrG5h" value="flat_width_in_cells" />
+      <property role="TrG5h" value="_width" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cXnIG" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162156" />
+      <property role="TrG5h" value="_ANALYSIS_PARAM" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cXnJ5" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162181" />
+      <property role="TrG5h" value="_PARAM_min_height" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7cXnJv" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656705162207" />
+      <property role="TrG5h" value="_PARAM_max_height" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7d38CJ" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656706673199" />
+      <property role="TrG5h" value="_PARAM_min_width" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7d38CQ" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656706673206" />
+      <property role="TrG5h" value="_PARAM_max_width" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7d3m17" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656706728007" />
+      <property role="TrG5h" value="_PARAM_height_steps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="6WHzz7d3m1g" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656706728016" />
+      <property role="TrG5h" value="_PARAM_width_steps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
@@ -267,18 +322,21 @@
     <property role="R4oN_" value="Square cell shape type." />
     <property role="34LRSv" value="Rectangular" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
+    <node concept="1TJgyi" id="6WHzz7cWd8h" role="1TKVEl">
+      <property role="IQ2nx" value="8011215656704856593" />
+      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263660" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Width" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XI" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263662" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="Height" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>

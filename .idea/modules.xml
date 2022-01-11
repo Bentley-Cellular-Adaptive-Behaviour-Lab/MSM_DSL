@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/UserTesting_MSM_DSL.iml" filepath="$PROJECT_DIR$/.idea/UserTesting_MSM_DSL.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tests/automated/autoSpringAgent.iml" filepath="$PROJECT_DIR$/.idea/tests/automated/autoSpringAgent.iml" />
     </modules>
   </component>
 </project>

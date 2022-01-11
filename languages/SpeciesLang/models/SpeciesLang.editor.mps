@@ -695,6 +695,51 @@
         </node>
         <node concept="2iRfu4" id="2Hxmt3eVq$x" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="5A0f7KHEga_" role="3EZMnx">
+        <node concept="VPM3Z" id="5A0f7KHEgaA" role="3F10Kt" />
+        <node concept="3XFhqQ" id="5A0f7KHEgaB" role="3EZMnx" />
+        <node concept="3F0ifn" id="5A0f7KHEgaC" role="3EZMnx">
+          <property role="3F0ifm" value="Start Concentrations :" />
+          <node concept="2biZxu" id="5A0f7KHEgaD" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5A0f7KHEgaE" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="5A0f7KHEgaF" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+          <node concept="2biZxu" id="5A0f7KHEgaG" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5A0f7KHEgaH" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5A0f7KHEgp0" role="3EZMnx">
+          <property role="3F0ifm" value="-" />
+          <node concept="2biZxu" id="5A0f7KHEgpa" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5A0f7KHEgpb" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="5A0f7KHEgq4" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+          <node concept="2biZxu" id="5A0f7KHEgql" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5A0f7KHEgqm" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="5A0f7KHEgrf" role="3EZMnx">
+          <property role="3F0ifm" value="; Steps:" />
+        </node>
+        <node concept="3EYTF0" id="5A0f7KHEgrv" role="3EZMnx" />
+        <node concept="2iRfu4" id="5A0f7KHEgaI" role="2iSdaV" />
+      </node>
       <node concept="3EZMnI" id="1VQO6m$9TeR" role="3EZMnx">
         <node concept="VPM3Z" id="1VQO6m$9TeS" role="3F10Kt" />
         <node concept="3XFhqQ" id="1VQO6m$9TeT" role="3EZMnx" />
@@ -727,6 +772,12 @@
         </node>
         <node concept="3F1sOY" id="1VQO6m$9YFa" role="3EZMnx">
           <ref role="1NtTu8" to="w3cn:1VQO6m$9Td4" resolve="Max_Concentration" />
+          <node concept="2biZxu" id="5A0f7KHEgqh" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="5A0f7KHEgqi" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
         </node>
         <node concept="2iRfu4" id="1VQO6m$9Tf0" role="2iSdaV" />
         <node concept="pkWqt" id="4O6RXqWcaJ2" role="pqm2j">

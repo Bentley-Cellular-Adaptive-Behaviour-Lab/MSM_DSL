@@ -164,9 +164,16 @@
         <child id="5171349398070263660" name="Width" index="2IF2Qc" />
         <child id="5171349398070263662" name="Height" index="2IF2Qe" />
       </concept>
-      <concept id="6249017959271690129" name="TissueLang.structure.Arrangement_Cylindrical" flags="ng" index="3ZP1sC">
-        <property id="6249017959271690133" name="cylinder_length_in_cells" index="3ZP1sG" />
-        <child id="4052263675729341762" name="Cylinder_Radius" index="3ob6kl" />
+      <concept id="6249017959271690140" name="TissueLang.structure.Arrangement_Flat" flags="ng" index="3ZP1s_">
+        <property id="8011215656706728016" name="_PARAM_width_steps" index="2y8eTx" />
+        <property id="8011215656706728007" name="_PARAM_height_steps" index="2y8eTQ" />
+        <property id="8011215656706673206" name="_PARAM_max_width" index="2y8gg7" />
+        <property id="8011215656706673199" name="_PARAM_min_width" index="2y8ggu" />
+        <property id="8011215656705162156" name="_ANALYSIS_PARAM" index="2zQfmt" />
+        <property id="8011215656705162207" name="_PARAM_max_height" index="2zQfnI" />
+        <property id="8011215656705162181" name="_PARAM_min_height" index="2zQfnO" />
+        <property id="6249017959271690144" name="_width" index="3ZP1sp" />
+        <property id="6249017959271690142" name="_height" index="3ZP1sB" />
       </concept>
       <concept id="6249017959271690123" name="TissueLang.structure.Cell_Type" flags="ng" index="3ZP1sM">
         <child id="3104068912113925855" name="Owned_Species" index="3FWu3_" />
@@ -259,16 +266,16 @@
     <node concept="1apGoc" id="5X46dFlBx5U" role="1v2izi">
       <property role="TrG5h" value="VesselType" />
       <ref role="1apGrN" node="5X46dFlBx3u" resolve="Endothelial" />
-      <node concept="3ZP1sC" id="5X46dFlBx5Y" role="1v2cpK">
-        <property role="3ZP1sG" value="2" />
-        <node concept="2_hQR_" id="5X46dFlBx60" role="3ob6kl">
-          <node concept="2_n9WQ" id="5X46dFlBx62" role="2_hQRE">
-            <node concept="30bXRB" id="5X46dFlBx6x" role="2_n9WR">
-              <property role="30bXRw" value="3" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="5X46dFlBx6X" role="2_hQ4V" />
-        </node>
+      <node concept="3ZP1s_" id="5A0f7KHCkFL" role="1v2cpK">
+        <property role="2y8ggu" value="1" />
+        <property role="2y8gg7" value="1" />
+        <property role="2zQfnO" value="1" />
+        <property role="2zQfnI" value="1" />
+        <property role="2y8eTx" value="1" />
+        <property role="2y8eTQ" value="1" />
+        <property role="3ZP1sB" value="2" />
+        <property role="3ZP1sp" value="2" />
+        <property role="2zQfmt" value="true" />
       </node>
     </node>
     <node concept="3ZP1sM" id="5X46dFlBx3u" role="1v2izm">

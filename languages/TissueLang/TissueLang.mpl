@@ -99,6 +99,7 @@
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
     <dependency reexport="false">309e0004-4976-4416-b947-ec02ae4ecef2(com.mbeddr.mpsutil.modellisteners)</dependency>
+    <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3f95abc-aef1-4f78-aa77-fb36d4ba916a:SpeciesSetup" version="0" />
@@ -108,6 +109,7 @@
     <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
     <language slang="l:f2801650-65d5-424e-bb1b-463a8781b786:jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <language slang="l:c7d5b9dd-a05f-4be2-bc73-f2e16994cc67:jetbrains.mps.baseLanguage.lightweightdsl" version="1" />
     <language slang="l:760a0a8c-eabb-4521-8bfd-65db761a9ba3:jetbrains.mps.baseLanguage.logging" version="0" />
     <language slang="l:a247e09e-2435-45ba-b8d2-07e93feba96a:jetbrains.mps.baseLanguage.tuples" version="0" />
     <language slang="l:af65afd8-f0dd-4942-87d9-63a55f2a9db1:jetbrains.mps.lang.behavior" version="2" />
@@ -122,6 +124,7 @@
     <language slang="l:f4ad079d-bc71-4ffb-9600-9328705cf998:jetbrains.mps.lang.descriptor" version="0" />
     <language slang="l:18bc6592-03a6-4e29-a83a-7ff23bde13ba:jetbrains.mps.lang.editor" version="14" />
     <language slang="l:b1ab8c10-c118-4755-bf2a-cebab35cf533:jetbrains.mps.lang.editor.tooltips" version="0" />
+    <language slang="l:d7a92d38-f7db-40d0-8431-763b0c3c9f20:jetbrains.mps.lang.intentions" version="1" />
     <language slang="l:ad93155d-79b2-4759-b10c-55123e763903:jetbrains.mps.lang.messages" version="0" />
     <language slang="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" version="0" />
     <language slang="l:3a13115c-633c-4c5c-bbcc-75c4219e9555:jetbrains.mps.lang.quotation" version="5" />
@@ -143,6 +146,7 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" version="0" />
+    <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" version="0" />
     <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
     <module reference="f3f95abc-aef1-4f78-aa77-fb36d4ba916a(SpeciesSetup)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
