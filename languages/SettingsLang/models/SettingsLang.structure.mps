@@ -61,7 +61,7 @@
     <property role="EcuMT" value="8660349304734434856" />
     <property role="TrG5h" value="SettingsContainer" />
     <property role="19KtqR" value="true" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7wJJsVzvXDa" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472778" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -155,7 +155,7 @@
     <property role="EcuMT" value="8660349304734468152" />
     <property role="TrG5h" value="ClusterContainer" />
     <property role="3GE5qa" value="SubContainers" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXj2" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471362" />
       <property role="TrG5h" value="clusterType" />
@@ -163,7 +163,7 @@
     </node>
     <node concept="1TJgyi" id="7wJJsVzvXl4" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471492" />
-      <property role="TrG5h" value="runNumber" />
+      <property role="TrG5h" value="replicateNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
@@ -171,7 +171,7 @@
     <property role="EcuMT" value="8660349304734468237" />
     <property role="TrG5h" value="AnalysisContainer" />
     <property role="3GE5qa" value="SubContainers" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXk3" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471427" />
       <property role="TrG5h" value="analysisType" />
@@ -182,7 +182,7 @@
     <property role="EcuMT" value="8660349304734468343" />
     <property role="TrG5h" value="GraphicsContainer" />
     <property role="3GE5qa" value="SubContainers" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXhY" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471294" />
       <property role="TrG5h" value="graphicsType" />

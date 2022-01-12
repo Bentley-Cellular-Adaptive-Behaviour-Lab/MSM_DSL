@@ -70,11 +70,20 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
+        <child id="4705942098322609813" name="member" index="21noJM" />
+      </concept>
+      <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
+        <reference id="4705942098322467736" name="decl" index="21nZrZ" />
+      </concept>
       <concept id="1966870290088668512" name="jetbrains.mps.lang.smodel.structure.Enum_MemberLiteral" flags="ng" index="2ViDtV">
         <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
       </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
+      </concept>
+      <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
+        <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
       <concept id="5779574625830813396" name="jetbrains.mps.lang.smodel.structure.EnumerationIdRefExpression" flags="ng" index="1XH99k">
         <reference id="5779574625830813397" name="enumDeclaration" index="1XH99l" />
@@ -179,7 +188,7 @@
                 <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
               </node>
               <node concept="3TrcHB" id="7wJJsVzw0z3" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="runNumber" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
               </node>
             </node>
             <node concept="3cmrfG" id="7wJJsVzw1QX" role="3uHU7w">
@@ -285,7 +294,7 @@
                 <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
               </node>
               <node concept="3TrcHB" id="7wJJsVzw2rR" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="runNumber" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
               </node>
             </node>
             <node concept="3cmrfG" id="7wJJsVzw8Bo" role="3uHU7w">
@@ -320,6 +329,71 @@
     <node concept="1YaCAy" id="7wJJsVzvQwu" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="yy1h:7wJJsVzvWwS" resolve="ClusterContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="1PDLoEBS3d6">
+    <property role="TrG5h" value="check_graphicsWithCluster" />
+    <node concept="3clFbS" id="1PDLoEBS3d7" role="18ibNy">
+      <node concept="3clFbJ" id="1PDLoEBS3iO" role="3cqZAp">
+        <node concept="1Wc70l" id="1PDLoEBS5DL" role="3clFbw">
+          <node concept="2OqwBi" id="1PDLoEBS6VM" role="3uHU7w">
+            <node concept="2OqwBi" id="1PDLoEBS6ls" role="2Oq$k0">
+              <node concept="2OqwBi" id="1PDLoEBS5Yr" role="2Oq$k0">
+                <node concept="1YBJjd" id="1PDLoEBS5J3" role="2Oq$k0">
+                  <ref role="1YBMHb" node="1PDLoEBS3d9" resolve="container" />
+                </node>
+                <node concept="3TrEf2" id="1PDLoEBS6a4" role="2OqNvi">
+                  <ref role="3Tt5mk" to="yy1h:7wJJsVzw7ex" resolve="_graphicsContainer" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="1PDLoEBS6_6" role="2OqNvi">
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXhY" resolve="graphicsType" />
+              </node>
+            </node>
+            <node concept="21noJN" id="1PDLoEBS76n" role="2OqNvi">
+              <node concept="21nZrQ" id="1PDLoEBS76p" role="21noJM">
+                <ref role="21nZrZ" to="yy1h:6JBqwuek81o" resolve="Graphics_On" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="1PDLoEBS3jr" role="3uHU7B">
+            <node concept="2OqwBi" id="1PDLoEBS3Rn" role="3fr31v">
+              <node concept="2OqwBi" id="1PDLoEBS4L6" role="2Oq$k0">
+                <node concept="2OqwBi" id="1PDLoEBS3uT" role="2Oq$k0">
+                  <node concept="1YBJjd" id="1PDLoEBS3k6" role="2Oq$k0">
+                    <ref role="1YBMHb" node="1PDLoEBS3d9" resolve="container" />
+                  </node>
+                  <node concept="3TrEf2" id="1PDLoEBS3Ea" role="2OqNvi">
+                    <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="1PDLoEBS4Zt" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                </node>
+              </node>
+              <node concept="21noJN" id="1PDLoEBS5lb" role="2OqNvi">
+                <node concept="21nZrQ" id="1PDLoEBS5ld" role="21noJM">
+                  <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="1PDLoEBS3iQ" role="3clFbx">
+          <node concept="2MkqsV" id="1PDLoEBS78Z" role="3cqZAp">
+            <node concept="Xl_RD" id="1PDLoEBS79A" role="2MkJ7o">
+              <property role="Xl_RC" value="Cluster runs cannot be done when using graphics." />
+            </node>
+            <node concept="1YBJjd" id="1PDLoEBS7eq" role="1urrMF">
+              <ref role="1YBMHb" node="1PDLoEBS3d9" resolve="container" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1PDLoEBS3d9" role="1YuTPh">
+      <property role="TrG5h" value="container" />
+      <ref role="1YaFvo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
     </node>
   </node>
 </model>

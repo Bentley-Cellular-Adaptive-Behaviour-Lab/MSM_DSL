@@ -2876,7 +2876,7 @@
           </node>
           <node concept="2OqwBi" id="6WHzz7d2Ptf" role="33vP2m">
             <node concept="1YBJjd" id="6WHzz7d2Ptg" role="2Oq$k0">
-              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
             </node>
             <node concept="2Xjw5R" id="6WHzz7d2Pth" role="2OqNvi">
               <node concept="1xMEDy" id="6WHzz7d2Pti" role="1xVPHs">
@@ -2895,14 +2895,14 @@
               <property role="Xl_RC" value="Change the cluster setting in Settings from None to specify parameter analysis." />
             </node>
             <node concept="1YBJjd" id="6WHzz7d2Pto" role="1urrMF">
-              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
             </node>
           </node>
         </node>
         <node concept="1Wc70l" id="6WHzz7d2Ptp" role="3clFbw">
           <node concept="2OqwBi" id="6WHzz7d2Ptq" role="3uHU7w">
             <node concept="1YBJjd" id="6WHzz7d2Ptr" role="2Oq$k0">
-              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="cylinder" />
+              <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
             </node>
             <node concept="3TrcHB" id="6WHzz7d2Pts" role="2OqNvi">
               <ref role="3TsBF5" to="nguq:6WHzz7cXnIG" resolve="_ANALYSIS_PARAM" />

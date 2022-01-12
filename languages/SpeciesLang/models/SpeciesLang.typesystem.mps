@@ -5836,7 +5836,7 @@
                 <property role="3cmrfH" value="0" />
               </node>
               <node concept="37vLTw" id="3CIYR32WWtb" role="3uHU7B">
-                <ref role="3cqZAo" node="3CIYR32WWsL" resolve="startMin" />
+                <ref role="3cqZAo" node="3CIYR32WWsL" resolve="startMax" />
               </node>
             </node>
           </node>
@@ -6385,7 +6385,7 @@
               <node concept="3clFbJ" id="3CIYR32XHaG" role="3cqZAp">
                 <node concept="2OqwBi" id="3CIYR32XHaH" role="3clFbw">
                   <node concept="2GrUjf" id="3CIYR32XHaI" role="2Oq$k0">
-                    <ref role="2Gs0qQ" node="3CIYR32XHaB" resolve="species" />
+                    <ref role="2Gs0qQ" node="3CIYR32XHaB" resolve="parameter" />
                   </node>
                   <node concept="3TrcHB" id="3CIYR32XHaJ" role="2OqNvi">
                     <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />

@@ -145,7 +145,7 @@
   <node concept="1TIwiD" id="7wJJsVzqMF$">
     <property role="EcuMT" value="8660349304733117156" />
     <property role="TrG5h" value="RunContainer" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzqMGh" role="1TKVEl">
       <property role="IQ2nx" value="8660349304733117201" />
       <property role="TrG5h" value="runNumber" />

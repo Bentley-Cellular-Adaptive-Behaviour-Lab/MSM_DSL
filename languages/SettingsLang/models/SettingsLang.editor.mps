@@ -247,7 +247,7 @@
         </node>
         <node concept="2iRfu4" id="72wB6_dUsyO" role="2iSdaV" />
         <node concept="3F0ifn" id="72wB6_dUsAQ" role="3EZMnx">
-          <property role="3F0ifm" value="- Runs: " />
+          <property role="3F0ifm" value="- Number of replicates: " />
           <node concept="pkWqt" id="72wB6_dUsB$" role="pqm2j">
             <node concept="3clFbS" id="72wB6_dUsB_" role="2VODD2">
               <node concept="3clFbF" id="72wB6_dUsFs" role="3cqZAp">
@@ -271,7 +271,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="72wB6_dUsBm" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzvXl4" resolve="runNumber" />
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
           <node concept="pkWqt" id="72wB6_dUtRj" role="pqm2j">
             <node concept="3clFbS" id="72wB6_dUtRk" role="2VODD2">
               <node concept="3clFbF" id="72wB6_dUu2y" role="3cqZAp">

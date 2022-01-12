@@ -1321,6 +1321,12 @@
           </node>
         </node>
       </node>
+      <node concept="356sEK" id="1$ipqjylBVO" role="383Ya9">
+        <node concept="356sEF" id="1$ipqjylBVP" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
+        <node concept="2EixSi" id="1$ipqjylBVQ" role="2EinRH" />
+      </node>
     </node>
     <node concept="n94m4" id="2D6O8IwUPeR" role="lGtFl">
       <ref role="n9lRv" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
