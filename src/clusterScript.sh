@@ -5,20 +5,8 @@ n_replicates=100
 n_params=5
 analysis_type="time_to_pattern"
 
-numberOfRuns=1
-epsilon=0.9
-vconcst=0.04
-gradient=2
-filconstnorm=2.0
-filtipmax=15
-tokenstrength=1
-filspacing=2
-randFilExtend=-1
-randFilRetract=-1
-maxtime=5000 #just for pybind version
-seed=-1
-
-POSITIONAL=()
+start_increment_values=()
+current_increment_values=()
 
 while [[ $# -gt 0 ]]
 do
@@ -41,8 +29,8 @@ case $key in
     shift # past argument
     shift # past value
     ;;
-    *)    # unknown option
-    POSITIONAL+=("$1") # save it in an array for later
+    *)    # Increment options
+    start_increment_values+=("$1") # save it in an array
     shift # past argument
     ;;
 esac
@@ -73,8 +61,25 @@ echo "uploaded files to CAMP... logging in"
 ssh login.camp.thecrick.org  "echo  \"Log in successful - setting up environment.\"; cd $camp_home/$camp_subfolder_name; ml purge; ml foss; echo \"Running make... \"; ./buildSpringAgent.sh --analysis \"$analysis_type\"; echo \" finished building spring agent\"; exit;"
 
 
-for combination_number in $n_params
+# Total number of runs per replicate, determined by multiplying all the increments together.
+increment_total=1
+
+for increment_value in "${start_increment_values[@]}"
 do
+  increment_total=$((increment_value*increment_total))
+  current_increment_values+=(1)
+done
+
+
+# Go over all possible
+for i in "$increment_total"
+do
+  # Update current count
+  for j in "${start_increment_values[@]}"
+  do
+    if
+    true
+  done
   true
 done
 
