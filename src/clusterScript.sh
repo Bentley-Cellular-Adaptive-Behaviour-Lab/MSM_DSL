@@ -1,6 +1,10 @@
-analysis="time_to_pattern"
+
 vary_params=
 vary_vals=()
+
+n_replicates=100
+n_params=1
+analysis="time_to_pattern"
 
 numberOfRuns=1
 epsilon=0.9
@@ -16,95 +20,20 @@ maxtime=5000 #just for pybind version
 seed=-1
 
 POSITIONAL=()
+
 while [[ $# -gt 0 ]]
 do
 key="$1"
 case $key in
-    --runs)
-    numberOfRuns="$2"
+    --replicates)
+    n_replicates="$2"
     shift # past argument
     shift # past value
     ;;
-    --analysis)
-    analysis="$2"
+    --params)
+    n_params="$2"
     # break
     shift # past argument
-    shift # past value
-    ;;
-    --epsilon)
-    epsilon="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --vconcst)
-    vconcst="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --gradient)
-    gradient="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --filconstnorm)
-    filconstnorm="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --filtipmax)
-    filtipmax="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --tokenstrength)
-    tokenstrength="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --filspacing)
-    filspacing="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --randFilExtend)
-    randFilExtend="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --randFilRetract)
-    randFilRetract="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --maxtime)
-    maxtime="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --seed)
-    seed="$2"
-    shift # past argument
-    shift # past value
-    ;;
-    --vary1)
-    vary1_param="$2"
-    vary1_vals+="$3"
-    shift # past argument
-    shift # past value
-    shift # past value
-    ;;
-    --vary2)
-    vary2_param="$2"
-    vary2_vals+="$3"
-    shift # past argument
-    shift # past value
-    shift # past value
-    ;;
-    --vary3)
-    vary3_param="$2"
-    vary3_vals+="$3"
-    shift # past argument
-    shift # past value
     shift # past value
     ;;
     *)    # unknown option
