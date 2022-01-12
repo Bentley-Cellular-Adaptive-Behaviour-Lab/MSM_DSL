@@ -1,10 +1,9 @@
-
 vary_params=
 vary_vals=()
 
 n_replicates=100
-n_params=1
-analysis="time_to_pattern"
+n_params=5
+analysis_type="time_to_pattern"
 
 numberOfRuns=1
 epsilon=0.9
@@ -36,6 +35,12 @@ case $key in
     shift # past argument
     shift # past value
     ;;
+    --analysis)
+    analysis_type="$2"
+    # break
+    shift # past argument
+    shift # past value
+    ;;
     *)    # unknown option
     POSITIONAL+=("$1") # save it in an array for later
     shift # past argument
@@ -43,24 +48,35 @@ case $key in
 esac
 done
 
+echo "Number of replicates: $n_replicates"
+echo "Number of parameters: $n_params"
+echo "Analysis type: $analysis_type"
+
 timestamp=$(date "+%Y.%m.%d-%H.%M.%S")
-local_output_foldername="Cluster_Output_"$analysis"_"$timestamp
-camp_subfolder_name="MSM_DSL/"$analysis"_"$timestamp
+local_output_folder="Cluster_Output_"$analysis_type"_"$timestamp
+camp_subfolder_name="MSM_DSL/"$analysis_type"_"$timestamp
 
-echo "camp folder name: $camp_subfolder_name"
+echo "Writing results to:" "$local_output_folder"
+echo "Cluster Folder Name: $camp_subfolder_name"
 
-mkdir $local_output_foldername
+if [ -d "$local_output_folder" ]
+then
+  mkdir "$local_output_folder"
+fi
+
 camp_home="/camp/lab/bentleyk/home/shared/$USER"
-echo "analysis type: $analysis"
-echo "number of runs: $numberOfRuns"
-echo "uploading to simulation files CAMP..."
 
+echo "Uploading simulation files..."
 rsync -r --include='*.'{sh,cpp,h,} --include="makefile" --exclude="*" --delete-excluded ./ login.camp.thecrick.org:"$camp_home"/"$camp_subfolder_name"/
 echo "uploaded files to CAMP... logging in"
 
+ssh login.camp.thecrick.org  "echo  \"Log in successful - setting up environment.\"; cd $camp_home/$camp_subfolder_name; ml purge; ml foss; echo \"Running make... \"; ./buildSpringAgent.sh --analysis \"$analysis_type\"; echo \" finished building spring agent\"; exit;"
 
-ssh login.camp.thecrick.org  "echo  \"log in successful... setting up environment\"; cd $camp_home/$camp_subfolder_name; ml purge; ml foss; echo \"running make... \"; ./buildSpringAgent.sh --analysis \"$analysis\"; echo \" finished building spring agent\"; exit;"
 
+for combination_number in $n_params
+do
+  true
+done
 
 for vary1_val in $vary1_vals
 do
@@ -153,14 +169,8 @@ do
             then
                 randFilRetract=$vary3_val
             fi
-            if [ "$analysis" == "pybind" ]
-            then
-                echo "calling slurm script for pybind, passing in flags: --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --maxtime $maxtime"
-                ssh login.camp.thecrick.org  "cd $camp_home/$camp_subfolder_name; echo \"running slurm script... \"; sbatch --array 1-$numberOfRuns slurmScript.sh --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --maxtime $maxtime --seed $seed; exit;"
-            else
-                echo "calling slurm script for $analysis, passing in flags: --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --seed $seed"
-                ssh login.camp.thecrick.org  "cd $camp_home/$camp_subfolder_name; echo \"running slurm script... \"; sbatch --array 1-$numberOfRuns slurmScript.sh --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --maxtime $maxtime --seed $seed; exit;"
-            fi
+            echo "calling slurm script for $analysis, passing in flags: --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --seed $seed"
+            ssh login.camp.thecrick.org  "cd $camp_home/$camp_subfolder_name; echo \"running slurm script... \"; sbatch --array 1-$numberOfRuns slurmScript.sh --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --maxtime $maxtime --seed $seed; exit;"
         done
     done
 done
