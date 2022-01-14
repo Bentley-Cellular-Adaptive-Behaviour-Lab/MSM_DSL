@@ -78,46 +78,13 @@ long long seed = -1;
 
 //------------------------------------------------------------------------------
 //#define BAHTI_ANALYSIS true
-#if BAHTI_ANALYSIS
-template <typename... Args>
-using overload_cast_ = pybind11::detail::overload_cast_impl<Args...>;
-PYBIND11_MODULE(springAgent, m) {
-    py::class_<World>(m, "World")
-            .def(py::init<float, float, int, float, float, float, int, float, float, long long>(), "World constructor: World(float epsilon, float vconcst, int gradientType, float filConstNorm, float filTipMax, float tokenstrength, int filSpacing, float randFilExtension, float randFilRetract, long long seed)")
-            .def("simulateTimestep", overload_cast_<>()(&World::simulateTimestep), "Simulate one timestep in MemAgent-Spring Model")
-            .def("simulateTimestep", overload_cast_<std::vector<std::vector<float>>>()(&World::simulateTimestep), "Simulate one timestep in MemAgent-Spring Model with 2d array of protein value changes for each cell.")
-            .def_readwrite("timeStep", &World::timeStep)
-            .def_readonly("gridXDimensions", &World::gridXDimensions)
-            .def_readonly("gridYDimensions", &World::gridYDimensions)
-            .def_readonly("gridZDimensions", &World::gridZDimensions)
-            .def("getGridSiteData", &World::getGridSiteData, "Get grid site data in 2D array. Each index in first array represents a grid site then the second array contains X, Y, Z, grid site vegf, Grid Type (0 = environment, 1 = membrane), Number of sub agents (filopodia/memagents), Cell1 vegf (the amount of vegf the cell can see in neighbour grid sites from that grid site), Cell1 vegfr, Cell1 active vegfr, cell2 vegf, cell2 vegfr, cell2 active vegfr, cell3... etc etc")
-            .def("getFilopodiaBaseLocationsAndTotalVegfr", &World::getFilopodiaBaseLocationsAndTotalVegfr, "returns a 3 dimensional vector. first dimension is cell 1 then cell 2. second dimension contains vectors for all the filopodia in the cell. 3rd dimension is the filopodia values, these are: 0. base x coordinate, 1. base y coordinate, 2. base z coordinate, 3. total active vegfr in the filopodia")
-            .def("getGridMapOfFilopodiaMovement", &World::getGridMapOfFilopodiaMovement, "returns 3d vector grid reflecting grid in simulation. The inner most vector contains an array of size 2. The first value in the array represents how many filopodia extensions into that grid site have occured on the current timestep. Second value represents the amount of retractions.");
-}
-#endif
-void readArgs(int argc, char * argv[]) {
-    if (argc > 1)
-        run_number = atoi(argv[1]);
-    if (argc > 2)
-    {
-        EPSILON = atof(argv[2]);
-        VconcST = atof(argv[3]);
-        GRADIENT = atoi(argv[4]);
-        FIL_VARY = atof(argv[5]);
-        FILTIPMAX = atof(argv[6]);
-        tokenStrength = atof(argv[7]);
-		FIL_SPACING = atof(argv[8]);
-        if (argc > 9)
-        {
-            randFilExtend = atof(argv[9]);
-            if (randFilExtend >= 0 && randFilExtend <= 1)
-                EPSILON = 0;
-            RAND_FILRETRACT_CHANCE = atof(argv[10]);
-            if (argc > 11)
-                seed = std::stoll(argv[11]);
-        }
-        VEGFconc = VconcST;
-    }
+
+void readArgs(int argc, char * argv[], std::vector<int>& param_increments) {
+    // Argument structure: no. of params being varied, increment numbers.
+   int n_params = atoi(argv[1]) ;
+   for (int i = 2; i < n_params + 2; i++) {
+        param_increments.push_back(atoi(argv[i]));
+   }
 }
 
 void checkArgValues(int argc, char * argv[])
@@ -136,19 +103,9 @@ int main(int argc, char * argv[]) {
 	World *world;
 	auto *w_container = new World_Container();
 
-    //seeds all randomness in the simulation. set to 1 if testing against normal output so has "deterministic stochasticity"
-//    if (TESTING == true)
-//        srand(100);
-//    else
-//        srand(time(NULL));
-
-/*    if (ENV_SETUP == 6)
-        VconcST = 0.008;
-    if (ENV_SETUP == 1)
-        VconcST = 0.04;*/ //0.008 for blind ended sprout x axis increasing gradient//0.04 for JTB and PLoS Comp Biol vessel
-
 	char statistics_file_buffer[500];
-    readArgs(argc, argv);
+    std::vector<int> param_increments;
+    readArgs(argc, argv, param_increments);
 
     if (ANALYSIS_HYSTERESIS) {
 		sprintf(statistics_file_buffer,
@@ -173,21 +130,6 @@ int main(int argc, char * argv[]) {
 	std::string start_time_string = format_time_string(start_time, true);
 	write_to_statistics_file(statistics_file_buffer, start_time_string);
 
-	std::cout << "Current time: " << std::ctime(&start_time);
-	std::cout << "ECPACK: " << ECpack << std::endl;
-	std::cout << "GRAPHICS: " << GRAPHICS << std::endl;
-	std::cout << "bahti analysis: " << BAHTI_ANALYSIS << " @@ time to pattern analysis: " << ANALYSIS_TIME_TO_PATTERN << " @@  hysteresis analysis: " << ANALYSIS_HYSTERESIS << std::endl;
-    //TODO: read args and create world
-	std::cout << "ECELLS: " << ECELLS << std::endl;
-	std::cout << "Epsilon: " << EPSILON << std::endl;
-	std::cout << "VconcST: " << VconcST << std::endl;
-	std::cout << "gradient: " << GRADIENT << std::endl;
-	std::cout << "FIL_VARY (filconstnorm): " << FIL_VARY << std::endl;
-	std::cout << "FILTIPMAX: " << FILTIPMAX << std::endl;
-	std::cout << "tokenStrength: " << tokenStrength << std::endl;
-	std::cout << "FIL_SPACING: " << FIL_SPACING << std::endl;
-	std::cout << "randFilExtension: " << randFilExtend << std::endl;
-	std::cout << "RAND_FILRETRACT_CHANCE: " << RAND_FILRETRACT_CHANCE<< std::endl;
     //---------------------------------------------------------------
 
     char outfilename[500];
@@ -215,18 +157,17 @@ int main(int argc, char * argv[]) {
 	std::cout << "Creating world..." << "\n";
 
 
-	w_container->world_setup();
+	w_container->world_setup(param_increments); // Set the current increments that we are at.
 	world = w_container->get_world();
 	WORLDpointer = world;
-
-//    world->getWorldLogger()->openHysteresisFile();
 
 	std::cout << "World created." << "\n";
 
 #if GRAPHICS
-    //main display function - simulating the model is called within here
+
     displayGlui(&argc, argv);
     glutMainLoop();
+
 #else
 	world->printProteinNames();
     world->runSimulation();
@@ -243,6 +184,4 @@ int main(int argc, char * argv[]) {
 	write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
 
 #endif
-//    world->getWorldLogger()->closeHysteresisFile();
-//    RUNSfile.close();
 }

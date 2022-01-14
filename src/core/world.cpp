@@ -6531,3 +6531,13 @@ void World::printProteinLevels(int timestepInterval) {
 		std::cout << std::endl;
 	}
 }
+
+void World::fillParamIncrementVector(const std::vector<int>& param_increments) {
+    for (auto increment : param_increments) {
+        m_param_increments.push_back(increment);
+    }
+}
+
+int World::getParamIncrement(const int& i) {
+    return m_param_increments.at(i);
+}

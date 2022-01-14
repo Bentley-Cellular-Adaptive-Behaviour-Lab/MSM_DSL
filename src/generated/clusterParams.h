@@ -1,0 +1,16 @@
+//
+// Created by Tom on 13/01/2022.
+//
+
+#ifndef SPRINGAGENT_CLUSTERPARAMS_H
+#define SPRINGAGENT_CLUSTERPARAMS_H
+
+enum CLUSTER_PARAMS {
+    TEST_TISSUE_WIDTH,
+    TEST_TISSUE_HEIGHT,
+    N_CLUSTER_PARAMS
+};
+
+int max_increments[] = {2, 2};
+
+#endif //SPRINGAGENT_CLUSTERPARAMS_H

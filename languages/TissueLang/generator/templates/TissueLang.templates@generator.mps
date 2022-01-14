@@ -1656,7 +1656,7 @@
             <property role="TrG5h" value=", " />
           </node>
           <node concept="356sEF" id="3CIYR32UtYy" role="356sEH">
-            <property role="TrG5h" value="STEPS" />
+            <property role="TrG5h" value="CURRENT_INCREMENT" />
             <node concept="17Uvod" id="3CIYR32UviK" role="lGtFl">
               <property role="2qtEX9" value="name" />
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />

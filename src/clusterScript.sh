@@ -71,16 +71,19 @@ do
 done
 
 
-# Go over all possible
-for i in "$increment_total"
+# Go over all possible combinations
+for i in $increment_total
 do
-  # Update current count
-  for j in "${start_increment_values[@]}"
+  # Update current counts
+  for j in "${current_increment_values[@]}"
   do
-    if
-    true
+    # Check the corresponding values in the starting values array.
+    # If equal, we've hit the max, and need to reset.
+    if [ "$j" == "${start_increment_values[$j]}" ]
+    then
+      true
+    fi
   done
-  true
 done
 
 for vary1_val in $vary1_vals
