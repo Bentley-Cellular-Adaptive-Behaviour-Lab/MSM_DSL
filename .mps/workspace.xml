@@ -7,14 +7,8 @@
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.behavior.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.structure.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.intentions.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.intentions.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_tissue_gen.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/generated/dsl_world_gen.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,26 +124,9 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
+      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesLangGen" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesLangGen" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -178,7 +155,129 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="SpeciesLangGen" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.behavior.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesLang.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Parameters" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesLang.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.typesystem.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpeciesParamValues" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.structure.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:d72a7192-cb5c-43df-9221-ca66be04175d(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -224,152 +323,6 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:d72a7192-cb5c-43df-9221-ca66be04175d(MSMSimulation.user_simulation) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesLang.typesystem) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.typesystem.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Parameters" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpeciesLangGen" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TissueLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TissueLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TissueLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -386,6 +339,66 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TissueLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TissueLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TissueLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpeciesLangGen" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpeciesLangGen" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
           <SELECTED>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
@@ -396,17 +409,24 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.structure.mps]" />
+              <option name="myItemId" value="SpeciesLangGen" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="765588292356208836" />
+              <option name="myItemId" value="SpeciesLangGen" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:62e39e48-6896-4c7d-b478-774d888dbdba(SpeciesLangGen.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="5235151938749930339" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
         </subPane>
       </pane>
-      <pane id="FileSystem" />
       <pane id="CustomProjectView_org.iets3.core.plugin.plugin.SpecExplorer">
         <subPane />
       </pane>
@@ -446,6 +466,14 @@
       <option name="presentableId" value="Default" />
       <updated>1642413107187</updated>
     </task>
+    <task id="LOCAL-00001" summary="Refactored param analysis to be stored by the arrangement concept, also updated finished updating the generator">
+      <created>1642522086683</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1642522086683</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -466,5 +494,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Refactored param analysis to be stored by the arrangement concept, also updated finished updating the generator" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored param analysis to be stored by the arrangement concept, also updated finished updating the generator" />
   </component>
 </project>

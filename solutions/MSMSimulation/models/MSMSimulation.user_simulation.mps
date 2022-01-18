@@ -71,9 +71,6 @@
         <reference id="7376055817164471386" name="Rate" index="3JPVZP" />
       </concept>
       <concept id="3125878369731540209" name="SpeciesLang.structure.Parameter" flags="ng" index="3_zqOx">
-        <property id="8011215656704852465" name="PARAM_ANALYSIS" index="2zRkZ0" />
-        <child id="8011215656704852488" name="Max_Expression" index="2zRkKT" />
-        <child id="8011215656704852493" name="Min_Expression" index="2zRkKW" />
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
       </concept>
       <concept id="3125878369731540210" name="SpeciesLang.structure.Reaction_Term" flags="ng" index="3_zqOy">
@@ -315,16 +312,6 @@
   <node concept="3_zqOV" id="5yFEiLG564H">
     <property role="TrG5h" value="Species" />
     <ref role="m9Uib" node="5yFEiLG5640" resolve="Tissues" />
-    <node concept="3_zqOx" id="3CIYR33oxuv" role="3_zqUl">
-      <property role="TrG5h" value="k1" />
-      <property role="2zRkZ0" value="true" />
-      <node concept="30bXRB" id="3CIYR33oxuU" role="2zRkKT">
-        <property role="30bXRw" value="1" />
-      </node>
-      <node concept="1cBA6y" id="3CIYR33v$28" role="2zRkKW">
-        <ref role="1cBA6z" node="4wzvMWU5noY" resolve="A" />
-      </node>
-    </node>
     <node concept="3_zqOx" id="4wzvMWU5nBD" role="3_zqUl">
       <property role="TrG5h" value="k_1" />
       <node concept="30dDTi" id="4wzvMWU5nBX" role="3_zqNk">
@@ -396,7 +383,7 @@
         </node>
         <node concept="3bpmH6" id="4wzvMWU5nx7" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="3CIYR33oxvP" role="3_z4RZ">
+      <node concept="DdDr8" id="EvUBVyrnXm" role="3_z4RZ">
         <ref role="DdDrb" node="5X46dFlRTN0" resolve="Binding" />
       </node>
     </node>
@@ -428,7 +415,7 @@
         </node>
         <node concept="3bpmH6" id="4wzvMWU5n$Y" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="3CIYR33oxvQ" role="3_z4Rx">
+      <node concept="DdDr8" id="EvUBVyrnXn" role="3_z4Rx">
         <ref role="DdDrb" node="5X46dFlRTN0" resolve="Binding" />
       </node>
     </node>
