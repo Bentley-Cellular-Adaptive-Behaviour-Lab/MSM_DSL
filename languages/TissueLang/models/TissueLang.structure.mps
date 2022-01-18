@@ -186,6 +186,11 @@
       <property role="TrG5h" value="total_cell_number" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+    <node concept="1TJgyi" id="2U$IHhp1$ne" role="1TKVEl">
+      <property role="IQ2nx" value="3361016643114649038" />
+      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYb">
     <property role="EcuMT" value="6249017959271690123" />
@@ -236,11 +241,6 @@
       <property role="TrG5h" value="cylinder_total_length_int" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="6WHzz7cXnHN" role="1TKVEl">
-      <property role="IQ2nx" value="8011215656705162099" />
-      <property role="TrG5h" value="ANALYSIS_PARAM" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyi" id="6WHzz7cXnHU" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162106" />
       <property role="TrG5h" value="PARAM_MIN_length" />
@@ -279,11 +279,6 @@
       <property role="IQ2nx" value="6249017959271690144" />
       <property role="TrG5h" value="_width" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="6WHzz7cXnIG" role="1TKVEl">
-      <property role="IQ2nx" value="8011215656705162156" />
-      <property role="TrG5h" value="_ANALYSIS_PARAM" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6WHzz7cXnJ5" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162181" />

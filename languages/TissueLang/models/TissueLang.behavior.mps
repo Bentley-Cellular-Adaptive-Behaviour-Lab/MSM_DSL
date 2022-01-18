@@ -1766,7 +1766,7 @@
             <node concept="2OqwBi" id="6WHzz7d2UWL" role="37vLTJ">
               <node concept="13iPFW" id="6WHzz7d2UPW" role="2Oq$k0" />
               <node concept="3TrcHB" id="6WHzz7d2V76" role="2OqNvi">
-                <ref role="3TsBF5" to="nguq:6WHzz7cXnHN" resolve="ANALYSIS_PARAM" />
+                <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
               </node>
             </node>
           </node>
@@ -2633,7 +2633,7 @@
             <node concept="2OqwBi" id="6WHzz7d2X3U" role="37vLTJ">
               <node concept="13iPFW" id="6WHzz7d2WXu" role="2Oq$k0" />
               <node concept="3TrcHB" id="6WHzz7d2Xhu" role="2OqNvi">
-                <ref role="3TsBF5" to="nguq:6WHzz7cXnIG" resolve="_ANALYSIS_PARAM" />
+                <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
               </node>
             </node>
           </node>
