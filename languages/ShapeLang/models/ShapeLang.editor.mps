@@ -81,7 +81,7 @@
         </node>
         <node concept="VPM3Z" id="2Jfy4gqvqOR" role="3F10Kt" />
         <node concept="3F2HdR" id="2Jfy4gqvqPM" role="3EZMnx">
-          <ref role="1NtTu8" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+          <ref role="1NtTu8" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
           <node concept="2iRfu4" id="2Jfy4gqvqPO" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="2Jfy4gqvqOU" role="2iSdaV" />
@@ -95,7 +95,7 @@
         <node concept="3EZMnI" id="2Jfy4gqzwvS" role="3EZMnx">
           <node concept="2iRkQZ" id="2Jfy4gqzwvT" role="2iSdaV" />
           <node concept="3F2HdR" id="2Jfy4gqvr1d" role="3EZMnx">
-            <ref role="1NtTu8" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+            <ref role="1NtTu8" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
             <node concept="2iRfu4" id="2Jfy4gqzww1" role="2czzBx" />
           </node>
         </node>

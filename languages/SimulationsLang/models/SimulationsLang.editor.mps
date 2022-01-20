@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:3f1544cd-ea86-48a2-9d2e-8d981eebec8d(SettingsLang.editor)">
+<model ref="r:3f1544cd-ea86-48a2-9d2e-8d981eebec8d(SimulationsLang.editor)">
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
@@ -112,8 +112,8 @@
     </language>
   </registry>
   <node concept="24kQdi" id="7wJJsVzvW$D">
-    <property role="3GE5qa" value="SubContainers" />
-    <ref role="1XX52x" to="yy1h:7wJJsVzvWzR" resolve="GraphicsContainer" />
+    <property role="3GE5qa" value="SubAspects" />
+    <ref role="1XX52x" to="yy1h:7wJJsVzvWzR" resolve="GraphicsFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvE9" role="2wV5jI">
       <property role="2oejA6" value="true" />
       <node concept="3F0ifn" id="2B5sNxPnvIn" role="wsdo6">
@@ -139,7 +139,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="2B5sNxPnvWe" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzvXhY" resolve="graphicsType" />
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXhY" resolve="_graphicsType" />
           <node concept="VechU" id="2B5sNxPSnod" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
@@ -158,8 +158,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7wJJsVzvX04">
-    <property role="3GE5qa" value="SubContainers" />
-    <ref role="1XX52x" to="yy1h:7wJJsVzvWyd" resolve="AnalysisContainer" />
+    <property role="3GE5qa" value="SubAspects" />
+    <ref role="1XX52x" to="yy1h:7wJJsVzvWyd" resolve="AnalysisFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvN9" role="2wV5jI">
       <property role="2oejA6" value="true" />
       <node concept="3F0ifn" id="2B5sNxPnvRB" role="wsdo6">
@@ -185,7 +185,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="2B5sNxPnvRk" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzvXk3" resolve="analysisType" />
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXk3" resolve="_analysisType" />
           <node concept="VechU" id="2B5sNxPSnmy" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
@@ -204,8 +204,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="7wJJsVzvX1K">
-    <property role="3GE5qa" value="SubContainers" />
-    <ref role="1XX52x" to="yy1h:7wJJsVzvWwS" resolve="ClusterContainer" />
+    <property role="3GE5qa" value="SubAspects" />
+    <ref role="1XX52x" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
     <node concept="1v6uyg" id="72wB6_dUsyA" role="2wV5jI">
       <property role="2oejA6" value="true" />
       <node concept="3F0ifn" id="72wB6_dUsyB" role="wsdo6">
@@ -231,7 +231,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="72wB6_dUsyJ" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
           <node concept="VechU" id="72wB6_dUsyK" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
@@ -256,7 +256,7 @@
                     <node concept="2OqwBi" id="7wJJsVzw6NX" role="2Oq$k0">
                       <node concept="pncrf" id="7wJJsVzw6NY" role="2Oq$k0" />
                       <node concept="3TrcHB" id="7wJJsVzw6NZ" role="2OqNvi">
-                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
                       </node>
                     </node>
                     <node concept="21noJN" id="7wJJsVzw6O0" role="2OqNvi">
@@ -271,7 +271,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="72wB6_dUsBm" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
+          <ref role="1NtTu8" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
           <node concept="pkWqt" id="72wB6_dUtRj" role="pqm2j">
             <node concept="3clFbS" id="72wB6_dUtRk" role="2VODD2">
               <node concept="3clFbF" id="72wB6_dUu2y" role="3cqZAp">
@@ -280,7 +280,7 @@
                     <node concept="2OqwBi" id="72wB6_dUu2_" role="2Oq$k0">
                       <node concept="pncrf" id="72wB6_dUu2A" role="2Oq$k0" />
                       <node concept="3TrcHB" id="72wB6_dUu2B" role="2OqNvi">
-                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
                       </node>
                     </node>
                     <node concept="21noJN" id="72wB6_dUu2C" role="2OqNvi">
@@ -400,7 +400,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="5hUuDYPchLa" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:5hUuDYPci2B" resolve="_worldContainer" />
+          <ref role="1NtTu8" to="yy1h:4jUcCWy80Nz" resolve="_worldContainerRef" />
           <node concept="1sVBvm" id="5hUuDYPchLb" role="1sWHZn">
             <node concept="3F0A7n" id="5hUuDYPchLc" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -434,7 +434,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="5hUuDYPchNq" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:5hUuDYPchQy" resolve="_tissueContainer" />
+          <ref role="1NtTu8" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
           <node concept="1sVBvm" id="5hUuDYPchNr" role="1sWHZn">
             <node concept="3F0A7n" id="5hUuDYPchNs" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -468,7 +468,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="5hUuDYPci4b" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:5hUuDYPchQD" resolve="_speciesContainer" />
+          <ref role="1NtTu8" to="yy1h:4jUcCWy80PS" resolve="_signallingContainerRef" />
           <node concept="1sVBvm" id="5hUuDYPci4c" role="1sWHZn">
             <node concept="3F0A7n" id="5hUuDYPci4d" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -502,7 +502,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="5hUuDYPci7M" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:5hUuDYPchQL" resolve="_shapeContainer" />
+          <ref role="1NtTu8" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
           <node concept="1sVBvm" id="5hUuDYPci7N" role="1sWHZn">
             <node concept="3F0A7n" id="5hUuDYPci7O" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -526,58 +526,6 @@
       </node>
       <node concept="3F0ifn" id="5hUuDYPci6z" role="3EZMnx" />
       <node concept="2iRkQZ" id="6JBqwuek7XS" role="2iSdaV" />
-    </node>
-  </node>
-  <node concept="24kQdi" id="7wJJsVzweuF">
-    <property role="3GE5qa" value="SubContainers" />
-    <ref role="1XX52x" to="yy1h:7wJJsVzwers" resolve="DesiredWorldContainer" />
-    <node concept="1v6uyg" id="7wJJsVzwevn" role="2wV5jI">
-      <property role="2oejA6" value="true" />
-      <node concept="3F0ifn" id="7wJJsVzwevo" role="wsdo6">
-        <property role="3F0ifm" value="Choose the simulation world set-up!" />
-        <node concept="2biZxu" id="7wJJsVzwevp" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
-        </node>
-        <node concept="VSNWy" id="7wJJsVzwevq" role="3F10Kt">
-          <property role="1lJzqX" value="12" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="7wJJsVzwevr" role="1j7Clw">
-        <node concept="3F0ifn" id="7wJJsVzwevs" role="3EZMnx">
-          <property role="3F0ifm" value="Desired Simulation World:" />
-          <node concept="VQ3r3" id="7wJJsVzwevt" role="3F10Kt">
-            <property role="2USNnj" value="gtbM8PH/underlined" />
-          </node>
-          <node concept="2biZxu" id="7wJJsVzwevu" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="7wJJsVzwevv" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="1iCGBv" id="7wJJsVzwevw" role="3EZMnx">
-          <ref role="1NtTu8" to="yy1h:7wJJsVzwesO" resolve="_worldContainer" />
-          <node concept="1sVBvm" id="7wJJsVzwevx" role="1sWHZn">
-            <node concept="3F0A7n" id="7wJJsVzwevy" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="VechU" id="7wJJsVzwevz" role="3F10Kt">
-                <property role="Vb096" value="fLwANPu/blue" />
-              </node>
-              <node concept="Vb9p2" id="7wJJsVzwev$" role="3F10Kt">
-                <property role="Vbekb" value="g1_k_vY/BOLD" />
-              </node>
-              <node concept="2biZxu" id="7wJJsVzwev_" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="7wJJsVzwevA" role="3F10Kt">
-                <property role="1lJzqX" value="16" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2iRfu4" id="7wJJsVzwevB" role="2iSdaV" />
-      </node>
     </node>
   </node>
 </model>

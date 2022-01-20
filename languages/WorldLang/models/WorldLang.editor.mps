@@ -6,7 +6,7 @@
     <use id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips" version="0" />
   </languages>
   <imports>
-    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -18,7 +18,6 @@
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
-      <concept id="1106270637846" name="jetbrains.mps.lang.editor.structure.CellLayout_Flow" flags="nn" index="2iR$Sn" />
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
@@ -156,7 +155,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2B5sNxPvaRE" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:7faAukhALB$" resolve="grid" />
+          <ref role="1NtTu8" to="s9ob:7faAukhALB$" resolve="_grid" />
           <node concept="2biZxu" id="2FvyIAlFjOL" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -203,7 +202,7 @@
         </node>
         <node concept="3EZMnI" id="2B5sNxPvay3" role="3EZMnx">
           <node concept="3F2HdR" id="2B5sNxPvay4" role="3EZMnx">
-            <ref role="1NtTu8" to="s9ob:7faAukhALBF" resolve="gradients" />
+            <ref role="1NtTu8" to="s9ob:7faAukhALBF" resolve="_gradients" />
             <node concept="2iRkQZ" id="2B5sNxPvay5" role="2czzBx" />
           </node>
           <node concept="2iRkQZ" id="2B5sNxPvay6" role="2iSdaV" />
@@ -224,7 +223,7 @@
         <node concept="1v6uyg" id="2B5sNxPuZuM" role="3EZMnx">
           <property role="2oejA6" value="true" />
           <node concept="3F0ifn" id="2B5sNxPuZz0" role="wsdo6">
-            <property role="3F0ifm" value="Create surfaces for filopodia to adhere to." />
+            <property role="3F0ifm" value="Create surfaces for cells to adhere to." />
             <node concept="2biZxu" id="2FvyIAlFjQj" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
@@ -247,7 +246,7 @@
         </node>
         <node concept="3EZMnI" id="2B5sNxPuZvW" role="3EZMnx">
           <node concept="3F2HdR" id="2B5sNxPuZvX" role="3EZMnx">
-            <ref role="1NtTu8" to="s9ob:7faAukhALBI" resolve="substrates" />
+            <ref role="1NtTu8" to="s9ob:7faAukhALBI" resolve="_substrates" />
             <node concept="2iRkQZ" id="2B5sNxPuZvY" role="2czzBx" />
           </node>
           <node concept="2iRkQZ" id="2B5sNxPuZvZ" role="2iSdaV" />
@@ -264,41 +263,23 @@
       </node>
       <node concept="3EZMnI" id="2B5sNxPuZiG" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPuZiH" role="3F10Kt" />
-        <node concept="3EZMnI" id="2B5sNxPuZiI" role="3EZMnx">
-          <node concept="2iR$Sn" id="2B5sNxPuZiJ" role="2iSdaV" />
-          <node concept="1v6uyg" id="2B5sNxPuZiK" role="3EZMnx">
-            <property role="2oejA6" value="true" />
-            <node concept="3F0ifn" id="2B5sNxPuZiL" role="wsdo6">
-              <property role="3F0ifm" value="Choose which tissues are created for this world." />
-              <node concept="2biZxu" id="2FvyIAlFjQf" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="2FvyIAlFjQg" role="3F10Kt">
-                <property role="1lJzqX" value="12" />
-              </node>
-            </node>
-            <node concept="3F0ifn" id="2B5sNxPuZnZ" role="1j7Clw">
-              <property role="3F0ifm" value="Desired tissue set-up:" />
-              <node concept="VQ3r3" id="2B5sNxPuZpd" role="3F10Kt">
-                <property role="2USNnj" value="gtbM8PH/underlined" />
-              </node>
-              <node concept="2biZxu" id="2FvyIAlFjPC" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="2FvyIAlFjPD" role="3F10Kt">
-                <property role="1lJzqX" value="16" />
-              </node>
-            </node>
+        <node concept="3F0ifn" id="4jUcCWy6bu7" role="3EZMnx">
+          <property role="3F0ifm" value="Used in simulation:" />
+          <node concept="2biZxu" id="4jUcCWy6buh" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="4jUcCWy6bui" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
           </node>
         </node>
         <node concept="1iCGBv" id="2B5sNxPuZiN" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+          <ref role="1NtTu8" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
           <node concept="1sVBvm" id="2B5sNxPuZiO" role="1sWHZn">
             <node concept="3F0A7n" id="2B5sNxPuZiP" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="VechU" id="2B5sNxPR56C" role="3F10Kt">
-                <property role="Vb096" value="fLwANPu/blue" />
+                <property role="Vb096" value="6cZGtrcKCoS/black" />
               </node>
               <node concept="Vb9p2" id="59YMCJZW_YU" role="3F10Kt">
                 <property role="Vbekb" value="g1_k_vY/BOLD" />
@@ -314,11 +295,11 @@
         </node>
         <node concept="2iRfu4" id="2B5sNxPuZiS" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="4KNMtF8nGpf" role="3EZMnx">
-        <node concept="2biZxu" id="2FvyIAlNnLu" role="3F10Kt">
+      <node concept="3F0ifn" id="4jUcCWyejrf" role="3EZMnx">
+        <node concept="2biZxu" id="4jUcCWyejrg" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
-        <node concept="VSNWy" id="2FvyIAlNnLv" role="3F10Kt">
+        <node concept="VSNWy" id="4jUcCWyejrh" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
       </node>
@@ -347,7 +328,7 @@
               </node>
               <node concept="3F0A7n" id="11q$Fft1adV" role="3EZMnx">
                 <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+                <ref role="1NtTu8" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
                 <node concept="2biZxu" id="2FvyIAlFjHI" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -370,7 +351,7 @@
               </node>
               <node concept="3F0A7n" id="11q$Fft1afX" role="3EZMnx">
                 <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                <ref role="1NtTu8" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                 <node concept="2biZxu" id="2FvyIAlFjHQ" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -392,7 +373,7 @@
                 </node>
               </node>
               <node concept="3F0A7n" id="11q$Fft1aeu" role="3EZMnx">
-                <ref role="1NtTu8" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+                <ref role="1NtTu8" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
                 <node concept="2biZxu" id="2FvyIAlFjHY" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -414,7 +395,7 @@
                 </node>
               </node>
               <node concept="3F0A7n" id="11q$Fft1ah1" role="3EZMnx">
-                <ref role="1NtTu8" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                <ref role="1NtTu8" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                 <node concept="2biZxu" id="2FvyIAlFjIm" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -436,7 +417,7 @@
                 </node>
               </node>
               <node concept="3F0A7n" id="11q$Fft1af5" role="3EZMnx">
-                <ref role="1NtTu8" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+                <ref role="1NtTu8" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
                 <node concept="2biZxu" id="2FvyIAlFjIa" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -458,7 +439,7 @@
                 </node>
               </node>
               <node concept="3F0A7n" id="11q$Fft1aik" role="3EZMnx">
-                <ref role="1NtTu8" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                <ref role="1NtTu8" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                 <node concept="2biZxu" id="2FvyIAlFjIi" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -545,7 +526,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="1iCGBv" id="6B5I$h9C3JP" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:53FFamEvoY" resolve="Adhesiveness" />
+          <ref role="1NtTu8" to="s9ob:53FFamEvoY" resolve="_adhesiveness" />
           <node concept="1sVBvm" id="6B5I$h9C3JR" role="1sWHZn">
             <node concept="3F1sOY" id="6B5I$h9C3Ka" role="2wV5jI">
               <ref role="1NtTu8" to="s9ob:2XF6SaaezeR" resolve="expr" />
@@ -617,7 +598,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="3F0A7n" id="57WjpeqcpLk" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+          <ref role="1NtTu8" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
           <node concept="VechU" id="1S53i998Del" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
@@ -693,7 +674,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="3F1sOY" id="57Wjpeqlmac" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57Wjpeqll8Q" resolve="Buffer" />
+          <ref role="1NtTu8" to="s9ob:57Wjpeqll8Q" resolve="_buffer" />
           <node concept="2biZxu" id="2FvyIAlFjN_" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -770,7 +751,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="CB_Y3MvWot" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+          <ref role="1NtTu8" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
           <node concept="2biZxu" id="2FvyIAlFjuC" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -793,7 +774,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="CB_Y3MvWoC" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+          <ref role="1NtTu8" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
           <node concept="2biZxu" id="2FvyIAlFjuG" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -816,7 +797,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="109yD1sHcju" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+          <ref role="1NtTu8" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
           <node concept="2biZxu" id="2FvyIAlFjuK" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -851,7 +832,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="2zgk2Od2Tnd" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:cUvw_H2smI" resolve="position" />
+        <ref role="1NtTu8" to="s9ob:cUvw_H2smI" resolve="_position" />
       </node>
       <node concept="2iRfu4" id="2zgk2Od2Tn3" role="2iSdaV" />
     </node>
@@ -913,7 +894,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="4Cy4apMYiNw" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXl" resolve="shape" />
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXl" resolve="_shape" />
         </node>
         <node concept="2iRfu4" id="4Cy4apMYiMI" role="2iSdaV" />
       </node>
@@ -969,7 +950,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="1iCGBv" id="7Eknuda3KBW" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1FLQ" resolve="Adhesiveness" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1FLQ" resolve="_adhesiveness" />
           <node concept="1sVBvm" id="7Eknuda3KBY" role="1sWHZn">
             <node concept="3F1sOY" id="7Eknuda3KCk" role="2wV5jI">
               <ref role="1NtTu8" to="s9ob:2XF6SaaezeR" resolve="expr" />
@@ -996,7 +977,7 @@
   </node>
   <node concept="24kQdi" id="4JVq81Fp7dr">
     <property role="3GE5qa" value="Substrates" />
-    <ref role="1XX52x" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+    <ref role="1XX52x" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
     <node concept="3EZMnI" id="29SopcHq_NF" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPwZYn" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPwZYp" role="3F10Kt" />
@@ -1036,7 +1017,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3seu8bO3K7V" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:29SopcHq_yR" resolve="Centre" />
+          <ref role="1NtTu8" to="s9ob:29SopcHq_yR" resolve="_centre" />
         </node>
         <node concept="2iRfu4" id="3seu8bO3K7a" role="2iSdaV" />
       </node>
@@ -1053,7 +1034,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="4Cy4apMYiZX" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBv" resolve="Width" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBv" resolve="_width" />
         </node>
         <node concept="2iRfu4" id="4Cy4apMYiZb" role="2iSdaV" />
       </node>
@@ -1070,7 +1051,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="4Cy4apMYj1A" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBy" resolve="Height" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBy" resolve="_height" />
         </node>
         <node concept="2iRfu4" id="4Cy4apMYj0I" role="2iSdaV" />
       </node>
@@ -1087,7 +1068,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="4Cy4apMYj3r" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBA" resolve="Depth" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBA" resolve="_depth" />
         </node>
         <node concept="2iRfu4" id="4Cy4apMYj2t" role="2iSdaV" />
       </node>
@@ -1104,7 +1085,7 @@
   </node>
   <node concept="24kQdi" id="4JVq81Fp7f9">
     <property role="3GE5qa" value="Substrates" />
-    <ref role="1XX52x" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+    <ref role="1XX52x" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
     <node concept="3EZMnI" id="4JVq81Fp7gc" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPxaUa" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPxaUc" role="3F10Kt" />
@@ -1144,7 +1125,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uSvYY" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBk" resolve="Z_Location" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBk" resolve="_zLocation" />
         </node>
         <node concept="2iRfu4" id="6mloH5uSvYc" role="2iSdaV" />
       </node>
@@ -1162,7 +1143,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="29SopcHrruv" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
         </node>
         <node concept="2iRfu4" id="29SopcHrrrU" role="2iSdaV" />
       </node>
@@ -1179,7 +1160,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="29SopcHrrB0" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
         </node>
         <node concept="2iRfu4" id="29SopcHrrzN" role="2iSdaV" />
       </node>
@@ -1196,7 +1177,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="29SopcHrrE$" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+          <ref role="1NtTu8" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
         </node>
         <node concept="2iRfu4" id="29SopcHrrCd" role="2iSdaV" />
       </node>
@@ -1213,7 +1194,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="4Cy4apMYj7p" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBf" resolve="Depth" />
+          <ref role="1NtTu8" to="s9ob:3wWy5vw1HBf" resolve="_depth" />
         </node>
         <node concept="2iRfu4" id="4Cy4apMYj6h" role="2iSdaV" />
       </node>
@@ -1241,7 +1222,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="5yIQRIorwQt" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:3wWy5vw0YZ5" resolve="X_Coord" />
+        <ref role="1NtTu8" to="s9ob:3wWy5vw0YZ5" resolve="_xCoord" />
         <node concept="2biZxu" id="2FvyIAlFjGE" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
@@ -1259,7 +1240,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="5yIQRIorwQG" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:3wWy5vw0YZ7" resolve="Y_Coord" />
+        <ref role="1NtTu8" to="s9ob:3wWy5vw0YZ7" resolve="_yCoord" />
         <node concept="2biZxu" id="2FvyIAlFjGA" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
@@ -1272,7 +1253,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2Od1kVR">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
     <node concept="3EZMnI" id="2S6lVSSuHvS" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSSuHvT" role="2iSdaV" />
       <node concept="3EZMnI" id="2zgk2Od1kWk" role="3EZMnx">
@@ -1312,7 +1293,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3seu8bO3K92" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+          <ref role="1NtTu8" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
           <node concept="2biZxu" id="2FvyIAlFjvs" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1335,7 +1316,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2XF6Saaftx0" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2XF6Saae602" resolve="Width" />
+          <ref role="1NtTu8" to="s9ob:2XF6Saae602" resolve="_width" />
           <node concept="2biZxu" id="2FvyIAlFjv$" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1358,7 +1339,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2XF6Saaftxt" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2XF6Saae605" resolve="Height" />
+          <ref role="1NtTu8" to="s9ob:2XF6Saae605" resolve="_height" />
           <node concept="2biZxu" id="2FvyIAlFjvG" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1381,7 +1362,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2XF6SaaftxU" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2XF6Saae609" resolve="Depth" />
+          <ref role="1NtTu8" to="s9ob:2XF6Saae609" resolve="_depth" />
           <node concept="2biZxu" id="2FvyIAlFjvO" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1404,7 +1385,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="2S6lVSS$lzV" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+          <ref role="1NtTu8" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
           <node concept="VechU" id="109yD1sK87C" role="3F10Kt">
             <property role="Vb096" value="fLwANPu/blue" />
           </node>
@@ -1444,7 +1425,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="2zgk2Od1HQZ" role="3EZMnx">
-        <ref role="1NtTu8" to="s9ob:cUvw_H2smK" resolve="position" />
+        <ref role="1NtTu8" to="s9ob:cUvw_H2smK" resolve="_position" />
       </node>
       <node concept="2iRfu4" id="2zgk2Od1HQS" role="2iSdaV" />
     </node>
@@ -1459,7 +1440,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2OdaVso">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od0CG8" resolve="Gradient_Type_Constant" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od0CG8" resolve="GradientTypeConstant" />
     <node concept="3EZMnI" id="2S6lVSSzWPE" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSSzWPF" role="2iSdaV" />
       <node concept="3EZMnI" id="2S6lVSSzWPG" role="3EZMnx">
@@ -1481,7 +1462,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2OdaVun">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od0CHC" resolve="Gradient_Type_Exponential" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od0CHC" resolve="GradientTypeExponential" />
     <node concept="3EZMnI" id="2S6lVSS$ltT" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSS$ltU" role="2iSdaV" />
       <node concept="3EZMnI" id="2S6lVSS$ltV" role="3EZMnx">
@@ -1503,7 +1484,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2OdaVw6">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od0CIy" resolve="Gradient_Type_Custom" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od0CIy" resolve="GradientTypeCustom" />
     <node concept="3EZMnI" id="2S6lVSS$Vta" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSS$Vtb" role="2iSdaV" />
       <node concept="3EZMnI" id="3seu8bO3Kfu" role="3EZMnx">
@@ -1544,7 +1525,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="4KNMtF8jtce" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8j5q8" resolve="X_Value" />
+          <ref role="1NtTu8" to="s9ob:4KNMtF8j5q8" resolve="_xValue" />
           <node concept="1sVBvm" id="4KNMtF8jtcg" role="1sWHZn">
             <node concept="3F1sOY" id="4KNMtF8jtcp" role="2wV5jI">
               <ref role="1NtTu8" to="s9ob:4KNMtF8hNP5" resolve="Expression" />
@@ -1572,7 +1553,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="4KNMtF8jtcM" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8j5qa" resolve="Y_Value" />
+          <ref role="1NtTu8" to="s9ob:4KNMtF8j5qa" resolve="_yValue" />
           <node concept="1sVBvm" id="4KNMtF8jtcN" role="1sWHZn">
             <node concept="3F1sOY" id="4KNMtF8jtcO" role="2wV5jI">
               <ref role="1NtTu8" to="s9ob:4KNMtF8hNP5" resolve="Expression" />
@@ -1600,7 +1581,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="4KNMtF8jtdI" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:4KNMtF8j5qd" resolve="Z_Value" />
+          <ref role="1NtTu8" to="s9ob:4KNMtF8j5qd" resolve="_zValue" />
           <node concept="1sVBvm" id="4KNMtF8jtdJ" role="1sWHZn">
             <node concept="3F1sOY" id="4KNMtF8jtdK" role="2wV5jI">
               <ref role="1NtTu8" to="s9ob:4KNMtF8hNP5" resolve="Expression" />
@@ -1627,7 +1608,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2OdaVxz">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od0CFO" resolve="Gradient_Type_Linear" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od0CFO" resolve="GradientTypeLinear" />
     <node concept="3EZMnI" id="2S6lVSS_wPO" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSS_wPP" role="2iSdaV" />
       <node concept="3EZMnI" id="2S6lVSS_wPQ" role="3EZMnx">
@@ -1649,7 +1630,7 @@
   </node>
   <node concept="24kQdi" id="2zgk2OdaVyj">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+    <ref role="1XX52x" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
     <node concept="3EZMnI" id="2S6lVSSxTKF" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSSxTKG" role="2iSdaV" />
       <node concept="3EZMnI" id="2S6lVSSxTKH" role="3EZMnx">
@@ -1689,7 +1670,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3seu8bO3Kcb" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+          <ref role="1NtTu8" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
           <node concept="2biZxu" id="2FvyIAlFjx6" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1712,7 +1693,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="2XF6Saaftyf" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2XF6Saae60k" resolve="Radius" />
+          <ref role="1NtTu8" to="s9ob:2XF6Saae60k" resolve="_radius" />
           <node concept="2biZxu" id="2FvyIAlFjxe" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1734,7 +1715,7 @@
   </node>
   <node concept="24kQdi" id="2S6lVSSv_jH">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="1XX52x" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+    <ref role="1XX52x" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
     <node concept="3EZMnI" id="2S6lVSSv_kV" role="2wV5jI">
       <node concept="2iRkQZ" id="2S6lVSSv_kW" role="2iSdaV" />
       <node concept="3EZMnI" id="2S6lVSSv_kX" role="3EZMnx">
@@ -1774,10 +1755,10 @@
           </node>
         </node>
         <node concept="1iCGBv" id="3seu8bO3Ke8" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+          <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
           <node concept="1sVBvm" id="3seu8bO3Kea" role="1sWHZn">
             <node concept="3F1sOY" id="6WFtrLblFGA" role="2wV5jI">
-              <ref role="1NtTu8" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+              <ref role="1NtTu8" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
               <node concept="2biZxu" id="2FvyIAlFjyQ" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
@@ -1802,10 +1783,10 @@
           </node>
         </node>
         <node concept="1iCGBv" id="2S6lVSSv_pW" role="3EZMnx">
-          <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+          <ref role="1NtTu8" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
           <node concept="1sVBvm" id="2S6lVSSv_pY" role="1sWHZn">
             <node concept="3F1sOY" id="2S6lVSSv_qk" role="2wV5jI">
-              <ref role="1NtTu8" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+              <ref role="1NtTu8" to="s9ob:CB_Y3MuCk0" resolve="_source" />
               <node concept="2biZxu" id="2FvyIAlFjyM" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>

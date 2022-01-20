@@ -171,7 +171,7 @@
         <node concept="3EZMnI" id="2B5sNxPA87w" role="3EZMnx">
           <node concept="2iRkQZ" id="2B5sNxPA87x" role="2iSdaV" />
           <node concept="3F2HdR" id="2B5sNxPA87y" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+            <ref role="1NtTu8" to="nguq:4dDC3Gso8zH" resolve="_cellTypes" />
             <node concept="2iRkQZ" id="2B5sNxPA87z" role="2czzBx" />
           </node>
         </node>
@@ -207,7 +207,7 @@
         </node>
         <node concept="3EZMnI" id="2B5sNxPA8n4" role="3EZMnx">
           <node concept="3F2HdR" id="2B5sNxPA8n5" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
+            <ref role="1NtTu8" to="nguq:4dDC3Gso8zD" resolve="_tissueTypes" />
             <node concept="2iRkQZ" id="2B5sNxPA8n6" role="2czzBx" />
           </node>
           <node concept="2iRkQZ" id="2B5sNxPA8n7" role="2iSdaV" />
@@ -246,7 +246,7 @@
         <node concept="3EZMnI" id="2B5sNxPA8$w" role="3EZMnx">
           <node concept="2iRkQZ" id="2B5sNxPA8$x" role="2iSdaV" />
           <node concept="3F2HdR" id="2B5sNxPA8$y" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYe" resolve="cells" />
+            <ref role="1NtTu8" to="nguq:5qSYbADreYe" resolve="_cells" />
             <node concept="2iRkQZ" id="2B5sNxPA8$z" role="2czzBx" />
             <node concept="VPM3Z" id="2B5sNxPA8$$" role="3F10Kt" />
           </node>
@@ -285,7 +285,7 @@
         <node concept="3EZMnI" id="2B5sNxPvCtV" role="3EZMnx">
           <node concept="2iRkQZ" id="2B5sNxPvCtW" role="2iSdaV" />
           <node concept="3F2HdR" id="2B5sNxPvCtX" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:5qSYbADreYc" resolve="tissues" />
+            <ref role="1NtTu8" to="nguq:5qSYbADreYc" resolve="_tissues" />
             <node concept="2iRkQZ" id="2B5sNxPvCtY" role="2czzBx" />
           </node>
         </node>
@@ -299,45 +299,53 @@
           <property role="1lJzqX" value="16" />
         </node>
       </node>
-      <node concept="3EZMnI" id="6Y2UmXTEYRC" role="3EZMnx">
-        <node concept="VPM3Z" id="6Y2UmXTEYRE" role="3F10Kt" />
-        <node concept="3F0ifn" id="6Y2UmXTEYRG" role="3EZMnx">
-          <property role="3F0ifm" value="Choose desired signalling container:" />
-          <node concept="2biZxu" id="2FvyIAlEDZJ" role="3F10Kt">
+      <node concept="3EZMnI" id="4jUcCWydoJb" role="3EZMnx">
+        <node concept="VPM3Z" id="4jUcCWydoJc" role="3F10Kt" />
+        <node concept="3F0ifn" id="4jUcCWydoJd" role="3EZMnx">
+          <property role="3F0ifm" value="Used in simulation:" />
+          <node concept="2biZxu" id="4jUcCWydoJe" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlEDZK" role="3F10Kt">
+          <node concept="VSNWy" id="4jUcCWydoJf" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>
-        <node concept="1iCGBv" id="6Y2UmXTEYTa" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
-          <node concept="1sVBvm" id="6Y2UmXTEYTc" role="1sWHZn">
-            <node concept="3F0A7n" id="6Y2UmXTEYTn" role="2wV5jI">
+        <node concept="1iCGBv" id="4jUcCWydoJg" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
+          <node concept="1sVBvm" id="4jUcCWydoJh" role="1sWHZn">
+            <node concept="3F0A7n" id="4jUcCWydoJi" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="VechU" id="59YMCJZO$n5" role="3F10Kt">
-                <property role="Vb096" value="fLwANPu/blue" />
+              <node concept="VechU" id="4jUcCWydoJj" role="3F10Kt">
+                <property role="Vb096" value="6cZGtrcKCoS/black" />
               </node>
-              <node concept="Vb9p2" id="59YMCJZV7e1" role="3F10Kt">
+              <node concept="Vb9p2" id="4jUcCWydoJk" role="3F10Kt">
                 <property role="Vbekb" value="g1_k_vY/BOLD" />
               </node>
-              <node concept="2biZxu" id="2FvyIAlEDZR" role="3F10Kt">
+              <node concept="2biZxu" id="4jUcCWydoJl" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
-              <node concept="VSNWy" id="2FvyIAlEDZS" role="3F10Kt">
+              <node concept="VSNWy" id="4jUcCWydoJm" role="3F10Kt">
                 <property role="1lJzqX" value="16" />
               </node>
             </node>
           </node>
         </node>
-        <node concept="2iRfu4" id="6Y2UmXTEYRH" role="2iSdaV" />
+        <node concept="2iRfu4" id="4jUcCWydoJn" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="4jUcCWyibBz" role="3EZMnx">
+        <node concept="2biZxu" id="4jUcCWyibB$" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="4jUcCWyibB_" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
       </node>
       <node concept="2iRkQZ" id="5qSYbADreZi" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fhwc1">
-    <ref role="1XX52x" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYb" resolve="CellType" />
     <node concept="3EZMnI" id="1z0V6VU8XrN" role="2wV5jI">
       <node concept="3EZMnI" id="6mloH5uSw3x" role="3EZMnx">
         <node concept="VPM3Z" id="6mloH5uSw3z" role="3F10Kt" />
@@ -392,7 +400,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uSw6o" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5qSYbADreYV" resolve="Shape" />
+          <ref role="1NtTu8" to="nguq:5qSYbADreYV" resolve="_shape" />
           <node concept="2biZxu" id="2FvyIAlEDUR" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -416,7 +424,7 @@
         </node>
         <node concept="3EZMnI" id="1z0V6VU8X$g" role="3EZMnx">
           <node concept="3F2HdR" id="1z0V6VU8X$B" role="3EZMnx">
-            <ref role="1NtTu8" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
+            <ref role="1NtTu8" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
             <node concept="2iRkQZ" id="1z0V6VU8X$D" role="2czzBx" />
           </node>
           <node concept="2iRkQZ" id="1z0V6VU8X$j" role="2iSdaV" />
@@ -435,7 +443,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">
-    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
     <node concept="3EZMnI" id="6mloH5uSvZ5" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uSvZ6" role="2iSdaV" />
       <node concept="3EZMnI" id="6mloH5uSvZt" role="3EZMnx">
@@ -508,7 +516,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhUeq">
-    <ref role="1XX52x" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+    <ref role="1XX52x" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
     <node concept="3EZMnI" id="6mloH5uS3Mq" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uS3Mr" role="2iSdaV" />
       <node concept="3EZMnI" id="6mloH5uTl5K" role="3EZMnx">
@@ -563,7 +571,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="6mloH5uS3RR" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:7aglRcSXD60" resolve="cell_type" />
+          <ref role="1NtTu8" to="nguq:7aglRcSXD60" resolve="_cellTypeRef" />
           <node concept="1sVBvm" id="6mloH5uS3RS" role="1sWHZn">
             <node concept="3F0A7n" id="6mloH5uS3RT" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -598,7 +606,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uS3UD" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+          <ref role="1NtTu8" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
           <node concept="2biZxu" id="2FvyIAlEE2D" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -619,7 +627,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fi8p3">
-    <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     <node concept="3EZMnI" id="4JVq81Fi8qV" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPKgEv" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPKgEx" role="3F10Kt" />
@@ -652,7 +660,7 @@
               <node concept="VPM3Z" id="2B5sNxPKgNB" role="3F10Kt" />
               <node concept="3F0A7n" id="2B5sNxPKgNC" role="3EZMnx">
                 <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="nguq:5qSYbADreYj" resolve="cylinder_cross_section_cells" />
+                <ref role="1NtTu8" to="nguq:5qSYbADreYj" resolve="_crossSectionCells" />
                 <node concept="2biZxu" id="2FvyIAlE7Mu" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -675,7 +683,7 @@
               <node concept="VPM3Z" id="2B5sNxPKgNG" role="3F10Kt" />
               <node concept="3F0A7n" id="2B5sNxPKgNH" role="3EZMnx">
                 <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="nguq:4JVq81FjZEM" resolve="cylinder_total_cells" />
+                <ref role="1NtTu8" to="nguq:4JVq81FjZEM" resolve="_totalCells" />
                 <node concept="2biZxu" id="2FvyIAlE7MA" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -707,7 +715,7 @@
               </node>
               <node concept="3F0A7n" id="2B5sNxPKgNN" role="3EZMnx">
                 <property role="1Intyy" value="true" />
-                <ref role="1NtTu8" to="nguq:6Z$0llyihG3" resolve="cylinder_total_length_int" />
+                <ref role="1NtTu8" to="nguq:6Z$0llyihG3" resolve="_totalLength" />
                 <node concept="2biZxu" id="2FvyIAlE7MM" role="3F10Kt">
                   <property role="1rj3mz" value="Calibri" />
                 </node>
@@ -758,7 +766,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="6mloH5uWA9c" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5qSYbADreYl" resolve="cylinder_length_in_cells" />
+          <ref role="1NtTu8" to="nguq:5qSYbADreYl" resolve="_lengthInCells" />
           <node concept="2biZxu" id="2FvyIAlE7N$" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -786,7 +794,7 @@
                 <node concept="2OqwBi" id="5A0f7KHyF7Z" role="3fr31v">
                   <node concept="pncrf" id="5A0f7KHyF80" role="2Oq$k0" />
                   <node concept="3TrcHB" id="5A0f7KHyF81" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -807,7 +815,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtHYN" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7cXnHU" resolve="PARAM_MIN_length" />
+          <ref role="1NtTu8" to="nguq:6WHzz7cXnHU" resolve="_sweepMinLength" />
           <node concept="2biZxu" id="5A0f7KHtHYO" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -828,7 +836,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtI60" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7cXnHH" resolve="PARAM_MAX_length" />
+          <ref role="1NtTu8" to="nguq:6WHzz7cXnHH" resolve="_sweepMaxLength" />
           <node concept="2biZxu" id="5A0f7KHtI61" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -849,7 +857,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtLBM" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7d3lZl" resolve="PARAM_steps" />
+          <ref role="1NtTu8" to="nguq:6WHzz7d3lZl" resolve="_sweepSteps" />
           <node concept="2biZxu" id="5A0f7KHtLCs" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -867,7 +875,7 @@
               <node concept="2OqwBi" id="5A0f7KHyFrn" role="3clFbG">
                 <node concept="pncrf" id="5A0f7KHyFeL" role="2Oq$k0" />
                 <node concept="3TrcHB" id="5A0f7KHyFJt" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                 </node>
               </node>
             </node>
@@ -887,7 +895,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uWAaL" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:3wWy5vw4eP2" resolve="Cylinder_Radius" />
+          <ref role="1NtTu8" to="nguq:3wWy5vw4eP2" resolve="_cylinderRadius" />
           <node concept="2biZxu" id="2FvyIAlE7NC" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -964,7 +972,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="6mloH5uTNVK" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:7aglRcSXD5S" resolve="cell_type" />
+          <ref role="1NtTu8" to="nguq:7aglRcSXD5S" resolve="_cellType" />
           <node concept="1sVBvm" id="6mloH5uTNVM" role="1sWHZn">
             <node concept="3F0A7n" id="6mloH5uUDRb" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -1000,7 +1008,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uTNXm" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5qSYbADryD8" resolve="position" />
+          <ref role="1NtTu8" to="nguq:5qSYbADryD8" resolve="_position" />
           <node concept="2biZxu" id="2FvyIAlE7ZG" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1032,7 +1040,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4v4kI3Dq8u7" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XP" resolve="X_Coord" />
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XP" resolve="_xCoord" />
         <node concept="2biZxu" id="2FvyIAlEDVn" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
@@ -1050,7 +1058,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4v4kI3Dq8uv" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XR" resolve="Y_Coord" />
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XR" resolve="_yCoord" />
         <node concept="2biZxu" id="2FvyIAlEDWc" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
@@ -1068,7 +1076,7 @@
         </node>
       </node>
       <node concept="3F1sOY" id="4v4kI3Dq8uO" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XU" resolve="Z_Coord" />
+        <ref role="1NtTu8" to="nguq:4v4kI3Dq7XU" resolve="_zCoord" />
         <node concept="2biZxu" id="2FvyIAlEDW8" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
         </node>
@@ -1136,7 +1144,7 @@
           </node>
         </node>
         <node concept="1iCGBv" id="6mloH5uQCzS" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:4dDC3Gsompl" resolve="tissue_type" />
+          <ref role="1NtTu8" to="nguq:4dDC3Gsompl" resolve="_tissueTypeRef" />
           <node concept="1sVBvm" id="6mloH5uQCzU" role="1sWHZn">
             <node concept="3F0A7n" id="6mloH5uQC$3" role="2wV5jI">
               <property role="1Intyy" value="true" />
@@ -1171,7 +1179,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uQC_p" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:5qSYbADryCY" resolve="position" />
+          <ref role="1NtTu8" to="nguq:5qSYbADryCY" resolve="_position" />
         </node>
         <node concept="2iRfu4" id="6mloH5uQC$F" role="2iSdaV" />
       </node>
@@ -1186,7 +1194,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81Fl1FF">
-    <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     <node concept="3EZMnI" id="4JVq81Fl1FK" role="2wV5jI">
       <node concept="3EZMnI" id="2B5sNxPFce_" role="3EZMnx">
         <node concept="VPM3Z" id="2B5sNxPFceB" role="3F10Kt" />
@@ -1210,7 +1218,7 @@
           <node concept="3EZMnI" id="2B5sNxPFcmO" role="wsdo6">
             <node concept="3F0A7n" id="2B5sNxPFcnp" role="3EZMnx">
               <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="nguq:4JVq81Fl21R" resolve="total_cell_number" />
+              <ref role="1NtTu8" to="nguq:4JVq81Fl21R" resolve="_totalCellNumber" />
               <node concept="2biZxu" id="2FvyIAlE7P2" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
@@ -1282,7 +1290,7 @@
                 <node concept="2OqwBi" id="5A0f7KHtJjc" role="3fr31v">
                   <node concept="pncrf" id="5A0f7KHtJ6y" role="2Oq$k0" />
                   <node concept="3TrcHB" id="5A0f7KHtJBq" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -1331,7 +1339,7 @@
                 <node concept="2OqwBi" id="5A0f7KHtITJ" role="3fr31v">
                   <node concept="pncrf" id="5A0f7KHtITK" role="2Oq$k0" />
                   <node concept="3TrcHB" id="5A0f7KHtITL" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -1356,7 +1364,7 @@
                 <node concept="2OqwBi" id="5A0f7KHtHpX" role="3clFbG">
                   <node concept="pncrf" id="5A0f7KHtHpY" role="2Oq$k0" />
                   <node concept="3TrcHB" id="5A0f7KHtHpZ" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -1364,7 +1372,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtHq0" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7cXnJ5" resolve="_PARAM_min_height" />
+          <ref role="1NtTu8" to="nguq:6WHzz7cXnJ5" resolve="_sweepMinHeight" />
           <node concept="2biZxu" id="5A0f7KHtHq1" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1385,7 +1393,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtHNp" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7cXnJv" resolve="_PARAM_max_height" />
+          <ref role="1NtTu8" to="nguq:6WHzz7cXnJv" resolve="_sweepMaxHeight" />
           <node concept="2biZxu" id="5A0f7KHtHNq" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1406,7 +1414,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtLkq" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7d3m17" resolve="_PARAM_height_steps" />
+          <ref role="1NtTu8" to="nguq:6WHzz7d3m17" resolve="_sweepHeightSteps" />
           <node concept="2biZxu" id="5A0f7KHtLrw" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1424,7 +1432,7 @@
               <node concept="2OqwBi" id="5A0f7KHtJOA" role="3clFbG">
                 <node concept="pncrf" id="5A0f7KHtJMe" role="2Oq$k0" />
                 <node concept="3TrcHB" id="5A0f7KHtKlh" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                 </node>
               </node>
             </node>
@@ -1448,7 +1456,7 @@
                 <node concept="2OqwBi" id="5A0f7KHtGNb" role="3clFbG">
                   <node concept="pncrf" id="5A0f7KHtGNc" role="2Oq$k0" />
                   <node concept="3TrcHB" id="5A0f7KHtGNd" role="2OqNvi">
-                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                    <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                   </node>
                 </node>
               </node>
@@ -1456,7 +1464,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtGNe" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7d38CJ" resolve="_PARAM_min_width" />
+          <ref role="1NtTu8" to="nguq:6WHzz7d38CJ" resolve="_sweepMinWidth" />
           <node concept="2biZxu" id="5A0f7KHtGNf" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1477,7 +1485,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtHgA" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7d38CQ" resolve="_PARAM_max_width" />
+          <ref role="1NtTu8" to="nguq:6WHzz7d38CQ" resolve="_sweepMaxWidth" />
           <node concept="2biZxu" id="5A0f7KHtL_S" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1498,7 +1506,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5A0f7KHtLyD" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:6WHzz7d3m1g" resolve="_PARAM_width_steps" />
+          <ref role="1NtTu8" to="nguq:6WHzz7d3m1g" resolve="_sweepWidthSteps" />
           <node concept="2biZxu" id="5A0f7KHtLzQ" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1516,7 +1524,7 @@
               <node concept="2OqwBi" id="5A0f7KHtKGC" role="3clFbG">
                 <node concept="pncrf" id="5A0f7KHtKvJ" role="2Oq$k0" />
                 <node concept="3TrcHB" id="5A0f7KHtL0y" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                  <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                 </node>
               </node>
             </node>
@@ -1535,7 +1543,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Jfy4gqv_3A">
-    <ref role="1XX52x" to="nguq:1z0V6VU70dn" resolve="Cell_Type_Reference" />
+    <ref role="1XX52x" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
     <node concept="3EZMnI" id="2Jfy4gqw3nh" role="2wV5jI">
       <node concept="2iRfu4" id="2Jfy4gqw3ni" role="2iSdaV" />
       <node concept="3F0ifn" id="2Jfy4gqw3ow" role="3EZMnx">
@@ -1548,7 +1556,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2Jfy4gqv_3C" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:1z0V6VU7ELe" resolve="Cell_Type_Reference" />
+        <ref role="1NtTu8" to="nguq:1z0V6VU7ELe" resolve="_cellTypeRef" />
         <node concept="1sVBvm" id="2Jfy4gqv_3E" role="1sWHZn">
           <node concept="3F0A7n" id="2Jfy4gqv_3L" role="2wV5jI">
             <property role="1Intyy" value="true" />

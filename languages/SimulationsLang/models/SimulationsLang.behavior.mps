@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SettingsLang.behavior)">
+<model ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)">
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="19" />
@@ -213,7 +213,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7wJJsVzw4De">
-    <ref role="13h7C2" to="yy1h:7wJJsVzvWwS" resolve="ClusterContainer" />
+    <ref role="13h7C2" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
     <node concept="13hLZK" id="7wJJsVzw4Df" role="13h7CW">
       <node concept="3clFbS" id="7wJJsVzw4Dg" role="2VODD2">
         <node concept="3clFbF" id="7wJJsVzw4DJ" role="3cqZAp">
@@ -221,7 +221,7 @@
             <node concept="2OqwBi" id="7wJJsVzw4LL" role="37vLTJ">
               <node concept="13iPFW" id="7wJJsVzw4DI" role="2Oq$k0" />
               <node concept="3TrcHB" id="7wJJsVzw4W3" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
               </node>
             </node>
             <node concept="3cmrfG" id="7wJJsVzw8Os" role="37vLTx">
@@ -298,12 +298,12 @@
           <node concept="3cpWsn" id="1PDLoEB_MSA" role="3cpWs9">
             <property role="TrG5h" value="worldContainer" />
             <node concept="3Tqbb2" id="1PDLoEB_MSx" role="1tU5fm">
-              <ref role="ehGHo" to="s9ob:7faAukhALBz" resolve="World_Container" />
+              <ref role="ehGHo" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
             </node>
             <node concept="2OqwBi" id="1PDLoEB_N79" role="33vP2m">
               <node concept="13iPFW" id="1PDLoEB_N7a" role="2Oq$k0" />
               <node concept="3TrEf2" id="1PDLoEB_N7b" role="2OqNvi">
-                <ref role="3Tt5mk" to="yy1h:5hUuDYPci2B" resolve="_worldContainer" />
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy80Nz" resolve="_worldContainerRef" />
               </node>
             </node>
           </node>
@@ -319,7 +319,7 @@
                 <ref role="3cqZAo" node="1PDLoEB_MSA" resolve="worldContainer" />
               </node>
               <node concept="3TrEf2" id="1PDLoEB_MMK" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -335,7 +335,7 @@
                 <ref role="3cqZAo" node="1PDLoEB_LeS" resolve="tissueContainer" />
               </node>
               <node concept="3TrEf2" id="1PDLoEB_SCa" role="2OqNvi">
-                <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="Species_Container" />
+                <ref role="3Tt5mk" to="nguq:6Y2UmXTEYOs" resolve="_signallingContainerRef" />
               </node>
             </node>
           </node>
@@ -396,7 +396,7 @@
               <ref role="3cqZAo" node="1PDLoEB_LeS" resolve="tissueContainer" />
             </node>
             <node concept="3Tsc0h" id="1PDLoEB_VlW" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
+              <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="_tissueTypes" />
             </node>
           </node>
           <node concept="3clFbS" id="1PDLoEB_Tiv" role="2LFqv$">
@@ -409,7 +409,7 @@
                     <ref role="2Gs0qQ" node="1PDLoEB_Tir" resolve="tissueType" />
                   </node>
                   <node concept="3TrEf2" id="1PDLoEBA1Nq" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                    <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                   </node>
                 </node>
               </node>
@@ -418,7 +418,7 @@
               <node concept="2OqwBi" id="1PDLoEB_Zfl" role="3clFbw">
                 <node concept="1mIQ4w" id="1PDLoEB_ZCf" role="2OqNvi">
                   <node concept="chp4Y" id="1PDLoEB_ZGS" role="cj9EA">
-                    <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+                    <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="1PDLoEBA2cV" role="2Oq$k0">
@@ -431,14 +431,14 @@
                     <node concept="1PxgMI" id="1PDLoEBA4EP" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
                       <node concept="chp4Y" id="1PDLoEBA4Qc" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                       </node>
                       <node concept="37vLTw" id="1PDLoEBA4eE" role="1m5AlR">
                         <ref role="3cqZAo" node="1PDLoEBA0kg" resolve="arrangement" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1PDLoEBA5xr" role="2OqNvi">
-                      <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                      <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="1PDLoEBA4bI" role="3clFbx">
@@ -464,14 +464,14 @@
                       <node concept="1PxgMI" id="1PDLoEBAaNs" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="1PDLoEBAaNt" role="3oSUPX">
-                          <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+                          <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                         </node>
                         <node concept="37vLTw" id="1PDLoEBAaNu" role="1m5AlR">
                           <ref role="3cqZAo" node="1PDLoEBA0kg" resolve="arrangement" />
                         </node>
                       </node>
                       <node concept="3TrcHB" id="1PDLoEBAaNv" role="2OqNvi">
-                        <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+                        <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="1PDLoEBAaNw" role="3clFbx">
@@ -505,7 +505,7 @@
                 <node concept="2OqwBi" id="1PDLoEBAa_K" role="3eO9$A">
                   <node concept="1mIQ4w" id="1PDLoEBAa_L" role="2OqNvi">
                     <node concept="chp4Y" id="1PDLoEBAa_M" role="cj9EA">
-                      <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+                      <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="1PDLoEBAa_N" role="2Oq$k0">
@@ -715,7 +715,7 @@
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1PDLoEBL0rt" role="2OqNvi">
-                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
                 </node>
               </node>
               <node concept="21noJN" id="1PDLoEBL0ru" role="2OqNvi">
@@ -865,7 +865,7 @@
             <node concept="10Oyi0" id="7FLCRyLEOT9" role="1tU5fm" />
             <node concept="2OqwBi" id="7FLCRyLEUMR" role="33vP2m">
               <node concept="37vLTw" id="7FLCRyLEOUq" role="2Oq$k0">
-                <ref role="3cqZAo" node="7FLCRyLEORW" resolve="currentList" />
+                <ref role="3cqZAo" node="7FLCRyLEORW" resolve="listSoFar" />
               </node>
               <node concept="34oBXx" id="7FLCRyLEVMs" role="2OqNvi" />
             </node>
@@ -877,7 +877,7 @@
             <node concept="10Oyi0" id="7FLCRyLEVTg" role="1tU5fm" />
             <node concept="2OqwBi" id="7FLCRyLEWJy" role="33vP2m">
               <node concept="37vLTw" id="7FLCRyLEVUw" role="2Oq$k0">
-                <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="listOfLists" />
+                <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="rangeLists" />
               </node>
               <node concept="34oBXx" id="7FLCRyLEXUt" role="2OqNvi" />
             </node>
@@ -894,7 +894,7 @@
                 <ref role="3cqZAo" node="7FLCRyLEOTd" resolve="offset" />
               </node>
               <node concept="37vLTw" id="7FLCRyLF0Md" role="1y566C">
-                <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="listOfLists" />
+                <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="rangeLists" />
               </node>
             </node>
           </node>
@@ -914,7 +914,7 @@
                   <property role="3clFbU" value="true" />
                 </node>
                 <node concept="37vLTw" id="7FLCRyLF04f" role="37vLTJ">
-                  <ref role="3cqZAo" node="7FLCRyLEXXe" resolve="printIt" />
+                  <ref role="3cqZAo" node="7FLCRyLEXXe" resolve="doThing" />
                 </node>
               </node>
             </node>
@@ -943,13 +943,13 @@
           <node concept="3clFbS" id="7FLCRyLF0Gh" role="2LFqv$">
             <node concept="3clFbJ" id="7FLCRyLF1EF" role="3cqZAp">
               <node concept="37vLTw" id="7FLCRyLF1EZ" role="3clFbw">
-                <ref role="3cqZAo" node="7FLCRyLEXXe" resolve="printIt" />
+                <ref role="3cqZAo" node="7FLCRyLEXXe" resolve="doThing" />
               </node>
               <node concept="3clFbS" id="7FLCRyLF1EH" role="3clFbx">
                 <node concept="3clFbF" id="7FLCRyLF8Cr" role="3cqZAp">
                   <node concept="2OqwBi" id="7FLCRyLF9kR" role="3clFbG">
                     <node concept="37vLTw" id="7FLCRyLF8Cq" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7FLCRyLEORW" resolve="currentList" />
+                      <ref role="3cqZAo" node="7FLCRyLEORW" resolve="listSoFar" />
                     </node>
                     <node concept="TSZUe" id="7FLCRyLFaPt" role="2OqNvi">
                       <node concept="2GrUjf" id="7FLCRyLFaZW" role="25WWJ7">
@@ -989,7 +989,7 @@
                     <node concept="BsUDl" id="7FLCRyLF75l" role="3clFbG">
                       <ref role="37wK5l" node="7FLCRyLEOes" resolve="incrementCounter" />
                       <node concept="37vLTw" id="7FLCRyLFbao" role="37wK5m">
-                        <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="listOfLists" />
+                        <ref role="3cqZAo" node="7FLCRyLEOQr" resolve="rangeLists" />
                       </node>
                       <node concept="37vLTw" id="7FLCRyLFdo1" role="37wK5m">
                         <ref role="3cqZAo" node="7FLCRyLEORW" resolve="listSoFar" />
@@ -1130,25 +1130,25 @@
                           <node concept="1PxgMI" id="5hUuDYP4cKy" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="5hUuDYP4cKz" role="3oSUPX">
-                              <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+                              <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                             </node>
                             <node concept="2OqwBi" id="5hUuDYP4cK$" role="1m5AlR">
                               <node concept="1PxgMI" id="5hUuDYP4cK_" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
                                 <node concept="chp4Y" id="5hUuDYP4cKA" role="3oSUPX">
-                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                                 </node>
                                 <node concept="2GrUjf" id="5hUuDYP4cKB" role="1m5AlR">
                                   <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5hUuDYP4cKC" role="2OqNvi">
-                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="5hUuDYP4dPd" role="2OqNvi">
-                            <ref role="3TsBF5" to="nguq:6WHzz7d3m1g" resolve="_PARAM_width_steps" />
+                            <ref role="3TsBF5" to="nguq:6WHzz7d3m1g" resolve="_sweepWidthSteps" />
                           </node>
                         </node>
                       </node>
@@ -1161,25 +1161,25 @@
                           <node concept="1PxgMI" id="5hUuDYP4eXP" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="5hUuDYP4eXQ" role="3oSUPX">
-                              <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+                              <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                             </node>
                             <node concept="2OqwBi" id="5hUuDYP4eXR" role="1m5AlR">
                               <node concept="1PxgMI" id="5hUuDYP4eXS" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
                                 <node concept="chp4Y" id="5hUuDYP4eXT" role="3oSUPX">
-                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                                 </node>
                                 <node concept="2GrUjf" id="5hUuDYP4eXU" role="1m5AlR">
                                   <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5hUuDYP4eXV" role="2OqNvi">
-                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="5hUuDYP4eXW" role="2OqNvi">
-                            <ref role="3TsBF5" to="nguq:6WHzz7d3m17" resolve="_PARAM_height_steps" />
+                            <ref role="3TsBF5" to="nguq:6WHzz7d3m17" resolve="_sweepHeightSteps" />
                           </node>
                         </node>
                       </node>
@@ -1220,19 +1220,19 @@
                       <node concept="1PxgMI" id="5hUuDYP3Xkh" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="5hUuDYP3Xra" role="3oSUPX">
-                          <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                          <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                         </node>
                         <node concept="2GrUjf" id="5hUuDYP3X0$" role="1m5AlR">
                           <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="5hUuDYP3YIY" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                        <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                       </node>
                     </node>
                     <node concept="1mIQ4w" id="5hUuDYP3ZvK" role="2OqNvi">
                       <node concept="chp4Y" id="5hUuDYP3Z_5" role="cj9EA">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                       </node>
                     </node>
                   </node>
@@ -1247,25 +1247,25 @@
                           <node concept="1PxgMI" id="5hUuDYP4q_a" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="5hUuDYP4q_b" role="3oSUPX">
-                              <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+                              <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                             </node>
                             <node concept="2OqwBi" id="5hUuDYP4q_c" role="1m5AlR">
                               <node concept="1PxgMI" id="5hUuDYP4q_d" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
                                 <node concept="chp4Y" id="5hUuDYP4q_e" role="3oSUPX">
-                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                                 </node>
                                 <node concept="2GrUjf" id="5hUuDYP4q_f" role="1m5AlR">
                                   <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5hUuDYP4q_g" role="2OqNvi">
-                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                                <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="5hUuDYP4q_h" role="2OqNvi">
-                            <ref role="3TsBF5" to="nguq:6WHzz7d3lZl" resolve="PARAM_steps" />
+                            <ref role="3TsBF5" to="nguq:6WHzz7d3lZl" resolve="_sweepSteps" />
                           </node>
                         </node>
                       </node>
@@ -1291,19 +1291,19 @@
                       <node concept="1PxgMI" id="5hUuDYP4m6Z" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="5hUuDYP4mCU" role="3oSUPX">
-                          <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                          <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                         </node>
                         <node concept="2GrUjf" id="5hUuDYP4lMv" role="1m5AlR">
                           <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="5hUuDYP4oOU" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="arrangement" />
+                        <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                       </node>
                     </node>
                     <node concept="1mIQ4w" id="5hUuDYP4pYd" role="2OqNvi">
                       <node concept="chp4Y" id="5hUuDYP4qoK" role="cj9EA">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+                        <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                       </node>
                     </node>
                   </node>
@@ -1315,7 +1315,7 @@
                 </node>
                 <node concept="1mIQ4w" id="5hUuDYP38jY" role="2OqNvi">
                   <node concept="chp4Y" id="5hUuDYP38qm" role="cj9EA">
-                    <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+                    <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                   </node>
                 </node>
               </node>

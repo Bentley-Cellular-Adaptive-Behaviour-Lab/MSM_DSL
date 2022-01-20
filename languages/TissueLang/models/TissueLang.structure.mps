@@ -9,7 +9,9 @@
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
     <import index="6zkc" ref="r:0c81e2c1-ba6e-4ec9-83d9-30ec00711168(com.mbeddr.mpsutil.modellisteners.behavior)" />
+    <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -56,45 +58,38 @@
     <node concept="1TJgyj" id="4dDC3Gso8zD" role="1TKVEi">
       <property role="IQ2ns" value="4857589848835393769" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="tissue_types" />
+      <property role="20kJfa" value="_tissueTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="7aglRcSXD5Z" resolve="Tissue_Type" />
+      <ref role="20lvS9" node="7aglRcSXD5Z" resolve="TissueType" />
     </node>
     <node concept="1TJgyj" id="4dDC3Gso8zH" role="1TKVEi">
       <property role="IQ2ns" value="4857589848835393773" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="cell_types" />
+      <property role="20kJfa" value="_cellTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
     </node>
     <node concept="1TJgyj" id="5qSYbADreYc" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271690124" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="tissues" />
+      <property role="20kJfa" value="_tissues" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5qSYbADreY6" resolve="Tissue" />
     </node>
     <node concept="1TJgyj" id="5qSYbADreYe" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271690126" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="cells" />
+      <property role="20kJfa" value="_cells" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5qSYbADreY8" resolve="Cell" />
     </node>
-    <node concept="1TJgyj" id="1QpPlI4ZHJ7" role="1TKVEi">
-      <property role="IQ2ns" value="2132970487586675655" />
-      <property role="20kJfa" value="World_Container" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="s9ob:7faAukhALBz" resolve="World_Container" />
-    </node>
-    <node concept="1TJgyj" id="6Y2UmXTEYOs" role="1TKVEi">
-      <property role="IQ2ns" value="8035241350174338332" />
-      <property role="20kJfa" value="Species_Container" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
-    </node>
     <node concept="PrWs8" id="1QpPlI505Gj" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="4jUcCWydX_x" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729092561249" />
+      <property role="20kJfa" value="_simulationContainerRef" />
+      <ref role="20lvS9" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreY6">
@@ -105,15 +100,15 @@
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="position" />
+      <property role="20kJfa" value="_position" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreY7" resolve="Position" />
     </node>
     <node concept="1TJgyj" id="4dDC3Gsompl" role="1TKVEi">
       <property role="IQ2ns" value="4857589848835450453" />
-      <property role="20kJfa" value="tissue_type" />
+      <property role="20kJfa" value="_tissueTypeRef" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7aglRcSXD5Z" resolve="Tissue_Type" />
+      <ref role="20lvS9" node="7aglRcSXD5Z" resolve="TissueType" />
     </node>
     <node concept="PrWs8" id="4dDC3GsoAE7" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -127,21 +122,21 @@
     <node concept="1TJgyj" id="4v4kI3Dq7XP" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263669" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="X_Coord" />
+      <property role="20kJfa" value="_xCoord" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XR" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263671" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Y_Coord" />
+      <property role="20kJfa" value="_yCoord" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XU" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263674" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Z_Coord" />
+      <property role="20kJfa" value="_zCoord" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
@@ -154,15 +149,15 @@
     <node concept="1TJgyj" id="5qSYbADryD8" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770696" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="position" />
+      <property role="20kJfa" value="_position" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreY7" resolve="Position" />
     </node>
     <node concept="1TJgyj" id="7aglRcSXD5S" role="1TKVEi">
       <property role="IQ2ns" value="8255194269358657912" />
-      <property role="20kJfa" value="cell_type" />
+      <property role="20kJfa" value="_cellType" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
     </node>
     <node concept="PrWs8" id="4dDC3GsoADZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -183,31 +178,31 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4JVq81Fl21R" role="1TKVEl">
       <property role="IQ2nx" value="5475084672764747895" />
-      <property role="TrG5h" value="total_cell_number" />
+      <property role="TrG5h" value="_totalCellNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="2U$IHhp1$ne" role="1TKVEl">
       <property role="IQ2nx" value="3361016643114649038" />
-      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <property role="TrG5h" value="_doingParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYb">
     <property role="EcuMT" value="6249017959271690123" />
-    <property role="TrG5h" value="Cell_Type" />
+    <property role="TrG5h" value="CellType" />
     <property role="R4oN_" value="Concept for storing the initial shape and behaviour (planned) of a cell." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5qSYbADreYV" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271690171" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Shape" />
+      <property role="20kJfa" value="_shape" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreY9" resolve="Shape" />
     </node>
     <node concept="1TJgyj" id="2GjRzF0SzVv" role="1TKVEi">
       <property role="IQ2ns" value="3104068912113925855" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Owned_Species" />
+      <property role="20kJfa" value="_ownedSpecies" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     </node>
@@ -217,56 +212,56 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYh">
     <property role="EcuMT" value="6249017959271690129" />
-    <property role="TrG5h" value="Arrangement_Cylindrical" />
+    <property role="TrG5h" value="ArrangementCylindrical" />
     <property role="34LRSv" value="Cylindrical" />
     <property role="R4oN_" value="Concept for describing a hollow, 2D cylindrical tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
     <node concept="1TJgyi" id="5qSYbADreYj" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690131" />
-      <property role="TrG5h" value="cylinder_cross_section_cells" />
+      <property role="TrG5h" value="_crossSectionCells" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="5qSYbADreYl" role="1TKVEl">
       <property role="IQ2nx" value="6249017959271690133" />
-      <property role="TrG5h" value="cylinder_length_in_cells" />
+      <property role="TrG5h" value="_lengthInCells" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4JVq81FjZEM" role="1TKVEl">
       <property role="IQ2nx" value="5475084672764476082" />
-      <property role="TrG5h" value="cylinder_total_cells" />
+      <property role="TrG5h" value="_totalCells" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6Z$0llyihG3" role="1TKVEl">
       <property role="IQ2nx" value="8062570699132836611" />
-      <property role="TrG5h" value="cylinder_total_length_int" />
+      <property role="TrG5h" value="_totalLength" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7cXnHU" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162106" />
-      <property role="TrG5h" value="PARAM_MIN_length" />
+      <property role="TrG5h" value="_sweepMinLength" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7cXnHH" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162093" />
-      <property role="TrG5h" value="PARAM_MAX_length" />
+      <property role="TrG5h" value="_sweepMaxLength" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7d3lZl" role="1TKVEl">
       <property role="IQ2nx" value="8011215656706727893" />
-      <property role="TrG5h" value="PARAM_steps" />
+      <property role="TrG5h" value="_sweepSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="3wWy5vw4eP2" role="1TKVEi">
       <property role="IQ2ns" value="4052263675729341762" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Cylinder_Radius" />
+      <property role="20kJfa" value="_cylinderRadius" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYs">
     <property role="EcuMT" value="6249017959271690140" />
-    <property role="TrG5h" value="Arrangement_Flat" />
+    <property role="TrG5h" value="ArrangementFlat" />
     <property role="34LRSv" value="Flat" />
     <property role="R4oN_" value="Concept for describing a flat (2D), rectangular tissue and related attributes." />
     <ref role="1TJDcQ" node="5qSYbADreYa" resolve="Arrangement" />
@@ -282,44 +277,44 @@
     </node>
     <node concept="1TJgyi" id="6WHzz7cXnJ5" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162181" />
-      <property role="TrG5h" value="_PARAM_min_height" />
+      <property role="TrG5h" value="_sweepMinHeight" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7cXnJv" role="1TKVEl">
       <property role="IQ2nx" value="8011215656705162207" />
-      <property role="TrG5h" value="_PARAM_max_height" />
+      <property role="TrG5h" value="_sweepMaxHeight" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7d38CJ" role="1TKVEl">
       <property role="IQ2nx" value="8011215656706673199" />
-      <property role="TrG5h" value="_PARAM_min_width" />
+      <property role="TrG5h" value="_sweepMinWidth" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7d38CQ" role="1TKVEl">
       <property role="IQ2nx" value="8011215656706673206" />
-      <property role="TrG5h" value="_PARAM_max_width" />
+      <property role="TrG5h" value="_sweepMaxWidth" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7d3m17" role="1TKVEl">
       <property role="IQ2nx" value="8011215656706728007" />
-      <property role="TrG5h" value="_PARAM_height_steps" />
+      <property role="TrG5h" value="_sweepHeightSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="6WHzz7d3m1g" role="1TKVEl">
       <property role="IQ2nx" value="8011215656706728016" />
-      <property role="TrG5h" value="_PARAM_width_steps" />
+      <property role="TrG5h" value="_sweepWidthSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="5qSYbADreYt">
     <property role="EcuMT" value="6249017959271690141" />
-    <property role="TrG5h" value="Shape_Rectangular" />
+    <property role="TrG5h" value="ShapeRectangular" />
     <property role="R4oN_" value="Square cell shape type." />
     <property role="34LRSv" value="Rectangular" />
     <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
     <node concept="1TJgyi" id="6WHzz7cWd8h" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704856593" />
-      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <property role="TrG5h" value="_doingParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
@@ -337,19 +332,19 @@
   </node>
   <node concept="1TIwiD" id="7aglRcSXD5Z">
     <property role="EcuMT" value="8255194269358657919" />
-    <property role="TrG5h" value="Tissue_Type" />
+    <property role="TrG5h" value="TissueType" />
     <property role="R4oN_" value="Concept which stores the arrangement of a tissue and the cell type that constitutes it." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="7aglRcSXD60" role="1TKVEi">
       <property role="IQ2ns" value="8255194269358657920" />
-      <property role="20kJfa" value="cell_type" />
+      <property role="20kJfa" value="_cellTypeRef" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
     </node>
     <node concept="1TJgyj" id="4dDC3Gsompb" role="1TKVEi">
       <property role="IQ2ns" value="4857589848835450443" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="arrangement" />
+      <property role="20kJfa" value="_arrangement" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreYa" resolve="Arrangement" />
     </node>
@@ -359,13 +354,13 @@
   </node>
   <node concept="1TIwiD" id="1z0V6VU70dn">
     <property role="EcuMT" value="1783685413825413975" />
-    <property role="TrG5h" value="Cell_Type_Reference" />
+    <property role="TrG5h" value="CellTypeReference" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1z0V6VU7ELe" role="1TKVEi">
       <property role="IQ2ns" value="1783685413825588302" />
-      <property role="20kJfa" value="Cell_Type_Reference" />
+      <property role="20kJfa" value="_cellTypeRef" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
     </node>
   </node>
 </model>

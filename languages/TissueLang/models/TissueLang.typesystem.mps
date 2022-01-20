@@ -8,7 +8,7 @@
   <imports>
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
-    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
@@ -249,7 +249,7 @@
               </node>
             </node>
             <node concept="3Tsc0h" id="i2Gwg1$wab" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+              <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="_cellTypes" />
             </node>
           </node>
           <node concept="2HwmR7" id="i2Gwg1$zVa" role="2OqNvi">
@@ -317,7 +317,7 @@
     </node>
     <node concept="1YaCAy" id="i2Gwg1$v1z" role="1YuTPh">
       <property role="TrG5h" value="cell_type" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="CellType" />
     </node>
   </node>
   <node concept="18kY7G" id="i2Gwg1zrYx">
@@ -381,7 +381,7 @@
               </node>
             </node>
             <node concept="3Tsc0h" id="i2Gwg1_4Y0" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
+              <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="_tissueTypes" />
             </node>
           </node>
           <node concept="2HwmR7" id="i2Gwg1_8Lm" role="2OqNvi">
@@ -449,7 +449,7 @@
     </node>
     <node concept="1YaCAy" id="i2Gwg1_48b" role="1YuTPh">
       <property role="TrG5h" value="tissue_type" />
-      <ref role="1YaFvo" to="nguq:7aglRcSXD5Z" resolve="Tissue_Type" />
+      <ref role="1YaFvo" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
     </node>
   </node>
   <node concept="18kY7G" id="i2Gwg1zz9z">
@@ -510,7 +510,7 @@
               </node>
             </node>
             <node concept="3Tsc0h" id="i2Gwg1$W2j" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="2HwmR7" id="i2Gwg1$Zrd" role="2OqNvi">
@@ -642,7 +642,7 @@
               </node>
             </node>
             <node concept="3Tsc0h" id="i2Gwg1$NNB" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="2HwmR7" id="i2Gwg1$R$l" role="2OqNvi">
@@ -1019,7 +1019,7 @@
             <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
           </node>
           <node concept="3Tsc0h" id="2GjRzF0Txjn" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
+            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
           </node>
         </node>
         <node concept="3clFbS" id="1z0V6VUaGRF" role="2LFqv$">
@@ -1051,7 +1051,7 @@
                 <ref role="1YBMHb" node="1z0V6VUax7O" resolve="cell_type" />
               </node>
               <node concept="3Tsc0h" id="2GjRzF0Txgt" role="2OqNvi">
-                <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
+                <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
               </node>
             </node>
             <node concept="3clFbS" id="1z0V6VUaIHt" role="2LFqv$">
@@ -1116,7 +1116,7 @@
     </node>
     <node concept="1YaCAy" id="1z0V6VUax7O" role="1YuTPh">
       <property role="TrG5h" value="cell_type" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="CellType" />
     </node>
   </node>
   <node concept="18kY7G" id="7Eknuda1QPx">
@@ -1129,12 +1129,12 @@
               <ref role="1YBMHb" node="7Eknuda1QP$" resolve="type" />
             </node>
             <node concept="3TrEf2" id="7Eknuda1RMQ" role="2OqNvi">
-              <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="Shape" />
+              <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
             </node>
           </node>
           <node concept="1mIQ4w" id="7Eknuda1Skv" role="2OqNvi">
             <node concept="chp4Y" id="7Eknuda1SmK" role="cj9EA">
-              <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+              <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
             </node>
           </node>
         </node>
@@ -1144,14 +1144,14 @@
               <node concept="2OqwBi" id="7Eknuda1TqP" role="2Oq$k0">
                 <node concept="1PxgMI" id="7Eknuda1T9b" role="2Oq$k0">
                   <node concept="chp4Y" id="7Eknuda1TiL" role="3oSUPX">
-                    <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+                    <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
                   </node>
                   <node concept="2OqwBi" id="7Eknuda1SyH" role="1m5AlR">
                     <node concept="1YBJjd" id="7Eknuda1Sq5" role="2Oq$k0">
                       <ref role="1YBMHb" node="7Eknuda1QP$" resolve="type" />
                     </node>
                     <node concept="3TrEf2" id="7Eknuda1SOa" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="Shape" />
+                      <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
                     </node>
                   </node>
                 </node>
@@ -1171,14 +1171,14 @@
                 <node concept="2OqwBi" id="7Eknuda1Vp_" role="1urrMF">
                   <node concept="1PxgMI" id="7Eknuda1V4a" role="2Oq$k0">
                     <node concept="chp4Y" id="7Eknuda1Viy" role="3oSUPX">
-                      <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+                      <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
                     </node>
                     <node concept="2OqwBi" id="7Eknuda1UlT" role="1m5AlR">
                       <node concept="1YBJjd" id="7Eknuda1Uc4" role="2Oq$k0">
                         <ref role="1YBMHb" node="7Eknuda1QP$" resolve="type" />
                       </node>
                       <node concept="3TrEf2" id="7Eknuda1UBX" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="Shape" />
+                        <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
                       </node>
                     </node>
                   </node>
@@ -1198,14 +1198,14 @@
                 <node concept="2OqwBi" id="7Eknuda1X2U" role="1urrMF">
                   <node concept="1PxgMI" id="7Eknuda1WHd" role="2Oq$k0">
                     <node concept="chp4Y" id="7Eknuda1WVR" role="3oSUPX">
-                      <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+                      <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
                     </node>
                     <node concept="2OqwBi" id="7Eknuda1Wd8" role="1m5AlR">
                       <node concept="1YBJjd" id="7Eknuda1W5d" role="2Oq$k0">
                         <ref role="1YBMHb" node="7Eknuda1QP$" resolve="type" />
                       </node>
                       <node concept="3TrEf2" id="7Eknuda1WAz" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="Shape" />
+                        <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
                       </node>
                     </node>
                   </node>
@@ -1219,14 +1219,14 @@
               <node concept="2OqwBi" id="7Eknuda1VFe" role="2Oq$k0">
                 <node concept="1PxgMI" id="7Eknuda1VFf" role="2Oq$k0">
                   <node concept="chp4Y" id="7Eknuda1VFg" role="3oSUPX">
-                    <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="Shape_Rectangular" />
+                    <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
                   </node>
                   <node concept="2OqwBi" id="7Eknuda1VFh" role="1m5AlR">
                     <node concept="1YBJjd" id="7Eknuda1VFi" role="2Oq$k0">
                       <ref role="1YBMHb" node="7Eknuda1QP$" resolve="type" />
                     </node>
                     <node concept="3TrEf2" id="7Eknuda1VFj" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="Shape" />
+                      <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
                     </node>
                   </node>
                 </node>
@@ -1244,7 +1244,7 @@
     </node>
     <node concept="1YaCAy" id="7Eknuda1QP$" role="1YuTPh">
       <property role="TrG5h" value="type" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="CellType" />
     </node>
   </node>
   <node concept="18kY7G" id="1mt1AeX6rKE">
@@ -1852,7 +1852,7 @@
               <node concept="2OqwBi" id="3seu8bO0k8g" role="33vP2m">
                 <node concept="2OqwBi" id="3seu8bO0hvn" role="2Oq$k0">
                   <node concept="3TrEf2" id="3seu8bO0jZB" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="position" />
+                    <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="_position" />
                   </node>
                   <node concept="1YBJjd" id="3seu8bO0hvp" role="2Oq$k0">
                     <ref role="1YBMHb" node="3seu8bO0dqq" resolve="cell" />
@@ -2138,7 +2138,7 @@
               <node concept="2OqwBi" id="3seu8bO0osE" role="33vP2m">
                 <node concept="2OqwBi" id="3seu8bO0osF" role="2Oq$k0">
                   <node concept="3TrEf2" id="3seu8bO0osG" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="position" />
+                    <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="_position" />
                   </node>
                   <node concept="1YBJjd" id="3seu8bO0osH" role="2Oq$k0">
                     <ref role="1YBMHb" node="3seu8bO0dOU" resolve="cell" />
@@ -2192,7 +2192,7 @@
             <ref role="1YBMHb" node="109yD1sCUyH" resolve="cellType" />
           </node>
           <node concept="3Tsc0h" id="109yD1sCUQz" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="Owned_Species" />
+            <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
           </node>
         </node>
         <node concept="3clFbS" id="109yD1sCUz8" role="2LFqv$">
@@ -2251,7 +2251,7 @@
     </node>
     <node concept="1YaCAy" id="109yD1sCUyH" role="1YuTPh">
       <property role="TrG5h" value="cellType" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="Cell_Type" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="CellType" />
     </node>
   </node>
   <node concept="18kY7G" id="4O6RXqWIKi6">
@@ -2391,7 +2391,7 @@
             <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="4O6RXqWNT_4" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="cell_types" />
+            <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="_cellTypes" />
           </node>
         </node>
         <node concept="3clFbS" id="4O6RXqWNz3o" role="2LFqv$">
@@ -2482,7 +2482,7 @@
             <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="4O6RXqWOpEC" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="tissue_types" />
+            <ref role="3TtcxE" to="nguq:4dDC3Gso8zD" resolve="_tissueTypes" />
           </node>
         </node>
         <node concept="3clFbS" id="4O6RXqWOpED" role="2LFqv$">
@@ -2573,7 +2573,7 @@
             <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="4O6RXqWOtRS" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+            <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
           </node>
         </node>
         <node concept="3clFbS" id="4O6RXqWOtRT" role="2LFqv$">
@@ -2664,7 +2664,7 @@
             <ref role="1YBMHb" node="4O6RXqWNz2O" resolve="container" />
           </node>
           <node concept="3Tsc0h" id="4O6RXqWOy_f" role="2OqNvi">
-            <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+            <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
           </node>
         </node>
         <node concept="3clFbS" id="4O6RXqWOw9G" role="2LFqv$">
@@ -2759,7 +2759,7 @@
         <node concept="3cpWsn" id="6WHzz7d2Mtf" role="3cpWs9">
           <property role="TrG5h" value="container" />
           <node concept="3Tqbb2" id="6WHzz7d2Mtb" role="1tU5fm">
-            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
           </node>
           <node concept="2OqwBi" id="6WHzz7d2MA4" role="33vP2m">
             <node concept="1YBJjd" id="6WHzz7d2Mua" role="2Oq$k0">
@@ -2768,7 +2768,7 @@
             <node concept="2Xjw5R" id="6WHzz7d2MKp" role="2OqNvi">
               <node concept="1xMEDy" id="6WHzz7d2MKr" role="1xVPHs">
                 <node concept="chp4Y" id="6WHzz7d2MUZ" role="ri$Ld">
-                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
                 </node>
               </node>
             </node>
@@ -2792,7 +2792,7 @@
               <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
             </node>
             <node concept="3TrcHB" id="6WHzz7d2PjJ" role="2OqNvi">
-              <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+              <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
             </node>
           </node>
           <node concept="2OqwBi" id="6WHzz7d2O$5" role="3uHU7B">
@@ -2806,7 +2806,7 @@
                 </node>
               </node>
               <node concept="3TrcHB" id="6WHzz7d2OpP" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
               </node>
             </node>
             <node concept="21noJN" id="6WHzz7d2OFv" role="2OqNvi">
@@ -2836,7 +2836,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCm1v" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHU" resolve="PARAM_MIN_length" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHU" resolve="_sweepMinLength" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5A0f7KHCnB6" role="3uHU7w">
@@ -2844,7 +2844,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCnTx" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHH" resolve="PARAM_MAX_length" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnHH" resolve="_sweepMaxLength" />
                 </node>
               </node>
             </node>
@@ -2855,14 +2855,14 @@
             <ref role="1YBMHb" node="6WHzz7d2MsT" resolve="cylinder" />
           </node>
           <node concept="3TrcHB" id="5A0f7KHClIn" role="2OqNvi">
-            <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+            <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
     </node>
     <node concept="1YaCAy" id="6WHzz7d2MsT" role="1YuTPh">
       <property role="TrG5h" value="cylinder" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYh" resolve="Arrangement_Cylindrical" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     </node>
   </node>
   <node concept="18kY7G" id="6WHzz7d2Pta">
@@ -2872,7 +2872,7 @@
         <node concept="3cpWsn" id="6WHzz7d2Ptd" role="3cpWs9">
           <property role="TrG5h" value="container" />
           <node concept="3Tqbb2" id="6WHzz7d2Pte" role="1tU5fm">
-            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
           </node>
           <node concept="2OqwBi" id="6WHzz7d2Ptf" role="33vP2m">
             <node concept="1YBJjd" id="6WHzz7d2Ptg" role="2Oq$k0">
@@ -2881,7 +2881,7 @@
             <node concept="2Xjw5R" id="6WHzz7d2Pth" role="2OqNvi">
               <node concept="1xMEDy" id="6WHzz7d2Pti" role="1xVPHs">
                 <node concept="chp4Y" id="6WHzz7d2Ptj" role="ri$Ld">
-                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
                 </node>
               </node>
             </node>
@@ -2905,7 +2905,7 @@
               <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
             </node>
             <node concept="3TrcHB" id="6WHzz7d2Pts" role="2OqNvi">
-              <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+              <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
             </node>
           </node>
           <node concept="2OqwBi" id="6WHzz7d2Ptt" role="3uHU7B">
@@ -2919,7 +2919,7 @@
                 </node>
               </node>
               <node concept="3TrcHB" id="6WHzz7d2Pty" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
               </node>
             </node>
             <node concept="21noJN" id="6WHzz7d2Ptz" role="2OqNvi">
@@ -2974,7 +2974,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCoib" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_PARAM_min_height" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_sweepMinHeight" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5A0f7KHCoic" role="3uHU7w">
@@ -2982,7 +2982,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCoie" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_PARAM_max_height" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_sweepMaxHeight" />
                 </node>
               </node>
             </node>
@@ -3004,7 +3004,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCpaK" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_PARAM_min_height" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_sweepMinHeight" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5A0f7KHCpaL" role="3uHU7w">
@@ -3012,7 +3012,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCpaN" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_PARAM_max_height" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_sweepMaxHeight" />
                 </node>
               </node>
             </node>
@@ -3023,7 +3023,7 @@
             <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
           </node>
           <node concept="3TrcHB" id="5A0f7KHCoih" role="2OqNvi">
-            <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="PARAM_ANALYSIS" />
+            <ref role="3TsBF5" to="nguq:2U$IHhp1$ne" resolve="_doingParameterSweep" />
           </node>
         </node>
       </node>
@@ -3031,7 +3031,7 @@
     </node>
     <node concept="1YaCAy" id="6WHzz7d2Pt_" role="1YuTPh">
       <property role="TrG5h" value="flat" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYs" resolve="Arrangement_Flat" />
+      <ref role="1YaFvo" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     </node>
   </node>
 </model>

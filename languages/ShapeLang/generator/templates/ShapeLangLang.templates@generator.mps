@@ -270,7 +270,7 @@
               <node concept="3clFbF" id="1wi3sbu3P$J" role="3cqZAp">
                 <node concept="2OqwBi" id="1wi3sbu3P$E" role="3clFbG">
                   <node concept="3Tsc0h" id="1wi3sbu3P$H" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                   </node>
                   <node concept="30H73N" id="1wi3sbu3P$I" role="2Oq$k0" />
                 </node>
@@ -313,7 +313,7 @@
               <node concept="3clFbF" id="1wi3sbu3PEd" role="3cqZAp">
                 <node concept="2OqwBi" id="1wi3sbu3PE8" role="3clFbG">
                   <node concept="3Tsc0h" id="1wi3sbu3PEb" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
                   </node>
                   <node concept="30H73N" id="1wi3sbu3PEc" role="2Oq$k0" />
                 </node>
@@ -492,7 +492,7 @@
               <node concept="3clFbF" id="3FNuJRsgKNu" role="3cqZAp">
                 <node concept="2OqwBi" id="3FNuJRsgKNp" role="3clFbG">
                   <node concept="3Tsc0h" id="3FNuJRsgKNs" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                   </node>
                   <node concept="30H73N" id="3FNuJRsgKNt" role="2Oq$k0" />
                 </node>
@@ -572,7 +572,7 @@
                 <node concept="2OqwBi" id="3FNuJRslYd5" role="3clFbG">
                   <node concept="2OqwBi" id="3FNuJRslUZX" role="2Oq$k0">
                     <node concept="3Tsc0h" id="3FNuJRslV00" role="2OqNvi">
-                      <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+                      <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                     </node>
                     <node concept="30H73N" id="3FNuJRslV01" role="2Oq$k0" />
                   </node>
@@ -718,7 +718,7 @@
                 <node concept="2OqwBi" id="3FNuJRsrGn1" role="2GsD0m">
                   <node concept="30H73N" id="3FNuJRsrFNP" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="3FNuJRsrHyt" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                   </node>
                 </node>
                 <node concept="3clFbS" id="3FNuJRsrDhm" role="2LFqv$">
@@ -1035,7 +1035,7 @@
               <node concept="3clFbF" id="3FNuJRsgEf2" role="3cqZAp">
                 <node concept="2OqwBi" id="3FNuJRsgEeX" role="3clFbG">
                   <node concept="3Tsc0h" id="3FNuJRsgEf0" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="protrusions" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                   </node>
                   <node concept="30H73N" id="3FNuJRsgEf1" role="2Oq$k0" />
                 </node>
@@ -1166,7 +1166,7 @@
               <node concept="3clFbF" id="1wi3sbu4ycP" role="3cqZAp">
                 <node concept="2OqwBi" id="1wi3sbu4ycK" role="3clFbG">
                   <node concept="3Tsc0h" id="1wi3sbu4ycN" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
                   </node>
                   <node concept="30H73N" id="1wi3sbu4ycO" role="2Oq$k0" />
                 </node>
@@ -1223,7 +1223,7 @@
                     <node concept="2OqwBi" id="1wi3sbu5jAI" role="2Oq$k0">
                       <node concept="30H73N" id="1wi3sbu5jq2" role="2Oq$k0" />
                       <node concept="3TrEf2" id="1wi3sbu5jZG" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:1z0V6VU7ELe" resolve="Cell_Type_Reference" />
+                        <ref role="3Tt5mk" to="nguq:1z0V6VU7ELe" resolve="_cellTypeRef" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1wi3sbu5kyb" role="2OqNvi">
@@ -1246,7 +1246,7 @@
                 <node concept="2OqwBi" id="1wi3sbu5fUZ" role="3clFbG">
                   <node concept="2OqwBi" id="1wi3sbu4yio" role="2Oq$k0">
                     <node concept="3Tsc0h" id="1wi3sbu4yir" role="2OqNvi">
-                      <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+                      <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
                     </node>
                     <node concept="30H73N" id="1wi3sbu4yis" role="2Oq$k0" />
                   </node>
@@ -1312,7 +1312,7 @@
               <node concept="3clFbF" id="5CquPnWzmLc" role="3cqZAp">
                 <node concept="2OqwBi" id="5CquPnWzmL7" role="3clFbG">
                   <node concept="3Tsc0h" id="5CquPnWzmLa" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
                   </node>
                   <node concept="30H73N" id="5CquPnWzmLb" role="2Oq$k0" />
                 </node>
@@ -1397,7 +1397,7 @@
                   <ref role="2Gs0qQ" node="1wi3sbu4S9N" resolve="container" />
                 </node>
                 <node concept="3Tsc0h" id="1wi3sbu4TMY" role="2OqNvi">
-                  <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="cytoskeletalProteins" />
+                  <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
                 </node>
               </node>
               <node concept="3clFbS" id="1wi3sbu4ScE" role="2LFqv$">

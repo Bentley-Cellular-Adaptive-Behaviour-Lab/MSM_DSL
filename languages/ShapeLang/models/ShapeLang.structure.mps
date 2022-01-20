@@ -10,6 +10,7 @@
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -48,17 +49,22 @@
     <property role="TrG5h" value="ShapeContainer" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="4jUcCWydXrU" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729092560634" />
+      <property role="20kJfa" value="_simulationContainerRef" />
+      <ref role="20lvS9" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
+    </node>
     <node concept="1TJgyj" id="Qd9PzECgia" role="1TKVEi">
       <property role="IQ2ns" value="976479957056291978" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="protrusions" />
+      <property role="20kJfa" value="_protrusions" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="Qd9PzECg1V" resolve="Protrusion" />
     </node>
     <node concept="1TJgyj" id="Qd9PzECkkr" role="1TKVEi">
       <property role="IQ2ns" value="976479957056308507" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="cytoskeletalProteins" />
+      <property role="20kJfa" value="_cytoskeletalProteins" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="Qd9PzECg3s" resolve="CytoskeletalProtein" />
     </node>
@@ -112,7 +118,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="allowedCellTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="Cell_Type_Reference" />
+      <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="Qd9PzECg3s">
@@ -153,7 +159,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="FoundInCellTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="Cell_Type_Reference" />
+      <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
     </node>
     <node concept="PrWs8" id="2Jfy4gqzRBc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />

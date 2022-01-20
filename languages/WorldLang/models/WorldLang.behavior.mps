@@ -15,6 +15,7 @@
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -245,7 +246,7 @@
           <node concept="2OqwBi" id="1r0uutBIAVp" role="3cqZAk">
             <node concept="13iPFW" id="1r0uutBIANw" role="2Oq$k0" />
             <node concept="3TrcHB" id="fEhJG2G85z" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
             </node>
           </node>
         </node>
@@ -273,7 +274,7 @@
             <node concept="2OqwBi" id="fEhJG2GaSq" role="37wK5m">
               <node concept="13iPFW" id="fEhJG2GaJ0" role="2Oq$k0" />
               <node concept="3TrcHB" id="fEhJG2Gb1t" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
               </node>
             </node>
           </node>
@@ -301,7 +302,7 @@
           <node concept="2OqwBi" id="fEhJG2GbNv" role="3cqZAk">
             <node concept="13iPFW" id="fEhJG2GbNw" role="2Oq$k0" />
             <node concept="3TrcHB" id="fEhJG2GcJ5" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
             </node>
           </node>
         </node>
@@ -329,7 +330,7 @@
             <node concept="2OqwBi" id="fEhJG2GbNG" role="37wK5m">
               <node concept="13iPFW" id="fEhJG2GbNH" role="2Oq$k0" />
               <node concept="3TrcHB" id="fEhJG2GcT_" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
               </node>
             </node>
           </node>
@@ -357,7 +358,7 @@
           <node concept="2OqwBi" id="fEhJG2GdAJ" role="3cqZAk">
             <node concept="13iPFW" id="fEhJG2GdAK" role="2Oq$k0" />
             <node concept="3TrcHB" id="fEhJG2GdGl" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
             </node>
           </node>
         </node>
@@ -385,7 +386,7 @@
             <node concept="2OqwBi" id="fEhJG2GdAW" role="37wK5m">
               <node concept="13iPFW" id="fEhJG2GdAX" role="2Oq$k0" />
               <node concept="3TrcHB" id="fEhJG2Gez7" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
               </node>
             </node>
           </node>
@@ -441,7 +442,7 @@
             <node concept="2OqwBi" id="11q$FfsTnU1" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsTnMd" role="2Oq$k0" />
               <node concept="3TrcHB" id="11q$FfsToaW" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="11q$FfsTosf" role="2OqNvi">
@@ -472,7 +473,7 @@
               <node concept="2OqwBi" id="11q$FfsTpe4" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTpe5" role="2Oq$k0" />
                 <node concept="3TrcHB" id="11q$FfsTpe6" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="11q$FfsTpe7" role="2OqNvi">
@@ -488,7 +489,7 @@
             <node concept="2OqwBi" id="11q$FfsToEh" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsTowj" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsToOK" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57Wjpeqll8Q" resolve="Buffer" />
+                <ref role="3Tt5mk" to="s9ob:57Wjpeqll8Q" resolve="_buffer" />
               </node>
             </node>
             <node concept="2qgKlT" id="11q$FfsTp9C" role="2OqNvi">
@@ -518,7 +519,7 @@
             <node concept="2OqwBi" id="1r0uutBEy62" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEy63" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEy64" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzhH" role="2OqNvi">
@@ -548,7 +549,7 @@
             <node concept="2OqwBi" id="1r0uutBEy6i" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEy6j" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEy6k" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzpK" role="2OqNvi">
@@ -578,7 +579,7 @@
             <node concept="2OqwBi" id="1r0uutBEy6y" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEy6z" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEy6$" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzr6" role="2OqNvi">
@@ -607,7 +608,7 @@
             <node concept="2OqwBi" id="1r0uutBGq8B" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGq8C" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGq8D" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzrY" role="2OqNvi">
@@ -639,7 +640,7 @@
             <node concept="2OqwBi" id="1r0uutBGq8P" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGq8Q" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGq8R" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzsR" role="2OqNvi">
@@ -671,7 +672,7 @@
             <node concept="2OqwBi" id="1r0uutBGq93" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGq94" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGq95" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="6B5I$h9pzu2" role="2OqNvi">
@@ -703,7 +704,7 @@
             <node concept="2OqwBi" id="57Wjpeqq5HS" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq5HT" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq5HU" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq5HV" role="2OqNvi">
@@ -733,7 +734,7 @@
             <node concept="2OqwBi" id="57Wjpeqq5I6" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq5I7" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq5I8" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq5I9" role="2OqNvi">
@@ -763,7 +764,7 @@
             <node concept="2OqwBi" id="57Wjpeqq5Ik" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq5Il" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq5Im" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smI" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq5In" role="2OqNvi">
@@ -799,7 +800,7 @@
               <node concept="2OqwBi" id="2OHr9yL68kS" role="2Oq$k0">
                 <node concept="13iPFW" id="2OHr9yL68kT" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2OHr9yL68kU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
                 </node>
               </node>
               <node concept="2qgKlT" id="2OHr9yL68kV" role="2OqNvi">
@@ -834,7 +835,7 @@
               <node concept="2OqwBi" id="2OHr9yL68l2" role="2Oq$k0">
                 <node concept="13iPFW" id="2OHr9yL68l3" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2OHr9yL68l4" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
                 </node>
               </node>
               <node concept="2qgKlT" id="2OHr9yL68l5" role="2OqNvi">
@@ -872,7 +873,7 @@
               <node concept="2OqwBi" id="11q$FfsWVZT" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsWVZU" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsWVZV" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                  <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
                 </node>
               </node>
               <node concept="2qgKlT" id="11q$FfsWWwe" role="2OqNvi">
@@ -905,7 +906,7 @@
             <node concept="2OqwBi" id="1r0uutBEyFZ" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEyG0" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEyG1" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGp3h" role="2OqNvi">
@@ -937,7 +938,7 @@
             <node concept="2OqwBi" id="1r0uutBEyGf" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEyGg" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGpij" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGp_9" role="2OqNvi">
@@ -969,7 +970,7 @@
             <node concept="2OqwBi" id="1r0uutBEyGv" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEyGw" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGpMO" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGpUN" role="2OqNvi">
@@ -1001,7 +1002,7 @@
             <node concept="2OqwBi" id="57Wjpeqq3Rv" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq3Rw" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq3Rx" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq4pM" role="2OqNvi">
@@ -1031,7 +1032,7 @@
             <node concept="2OqwBi" id="57Wjpeqq4vR" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq4vS" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq4vT" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq5Hp" role="2OqNvi">
@@ -1061,7 +1062,7 @@
             <node concept="2OqwBi" id="57Wjpeqq56T" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq56U" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq56V" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="position" />
+                <ref role="3Tt5mk" to="s9ob:cUvw_H2smK" resolve="_position" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq5Ab" role="2OqNvi">
@@ -1085,7 +1086,7 @@
   </node>
   <node concept="13h7C7" id="2OHr9yL6aIU">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="13h7C2" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+    <ref role="13h7C2" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
     <node concept="13i0hz" id="2OHr9yL6aJ5" role="13h7CS">
       <property role="TrG5h" value="get_sourcex_string" />
       <node concept="3Tm1VV" id="2OHr9yL6aJ6" role="1B3o_S" />
@@ -1097,11 +1098,11 @@
               <node concept="2OqwBi" id="CB_Y3Mwoif" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3Mwoih" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSsn$E" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1r0uutBGolU" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGosB" role="2OqNvi">
@@ -1132,11 +1133,11 @@
               <node concept="2OqwBi" id="CB_Y3MwnV1" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3MwnV3" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSsnYO" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2S6lVSSsnZV" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGmTO" role="2OqNvi">
@@ -1167,11 +1168,11 @@
               <node concept="2OqwBi" id="CB_Y3MwnkZ" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3Mwnl2" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSsouz" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2S6lVSSsoPt" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGmUK" role="2OqNvi">
@@ -1202,11 +1203,11 @@
               <node concept="2OqwBi" id="CB_Y3MwmYo" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3MwmYq" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSspm9" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2S6lVSSspxi" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
               </node>
             </node>
             <node concept="2qgKlT" id="CB_Y3Mwnkb" role="2OqNvi">
@@ -1237,11 +1238,11 @@
               <node concept="2OqwBi" id="CB_Y3MwmUJ" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3MwmUL" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSsq06" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2S6lVSSsqiV" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
               </node>
             </node>
             <node concept="2qgKlT" id="CB_Y3MwmXr" role="2OqNvi">
@@ -1272,11 +1273,11 @@
               <node concept="2OqwBi" id="CB_Y3MwlDO" role="2Oq$k0">
                 <node concept="13iPFW" id="CB_Y3Mwlaf" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2S6lVSSsqvn" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2S6lVSSsqwu" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
               </node>
             </node>
             <node concept="2qgKlT" id="11q$FfsWWXk" role="2OqNvi">
@@ -1302,7 +1303,7 @@
   </node>
   <node concept="13h7C7" id="57aaQbDEkkh">
     <property role="3GE5qa" value="Substrates" />
-    <ref role="13h7C2" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+    <ref role="13h7C2" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
     <node concept="13i0hz" id="57aaQbDEkks" role="13h7CS">
       <property role="TrG5h" value="get_vertex1x_decimal" />
       <node concept="3Tm1VV" id="57aaQbDEkkt" role="1B3o_S" />
@@ -1312,7 +1313,7 @@
             <node concept="2OqwBi" id="1r0uutBHjUn" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHjID" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHor4" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNfSE" role="2OqNvi">
@@ -1345,7 +1346,7 @@
             <node concept="2OqwBi" id="1r0uutBHr_L" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHrsF" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHrBH" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNfX9" role="2OqNvi">
@@ -1374,7 +1375,7 @@
             <node concept="2OqwBi" id="1r0uutBHuAB" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHuAC" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHuAD" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNfYj" role="2OqNvi">
@@ -1407,7 +1408,7 @@
             <node concept="2OqwBi" id="1r0uutBHwej" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHwek" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHwel" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNg4M" role="2OqNvi">
@@ -1436,7 +1437,7 @@
             <node concept="2OqwBi" id="1r0uutBHzlM" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHzlN" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHzLt" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNg5E" role="2OqNvi">
@@ -1469,7 +1470,7 @@
             <node concept="2OqwBi" id="1r0uutBH$1R" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBH$1S" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBH$II" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgcr" role="2OqNvi">
@@ -1498,7 +1499,7 @@
             <node concept="2OqwBi" id="1r0uutBHAOt" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHAOu" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHBON" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgdj" role="2OqNvi">
@@ -1531,7 +1532,7 @@
             <node concept="2OqwBi" id="1r0uutBHDLS" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHDLT" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHDLU" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgeu" role="2OqNvi">
@@ -1560,7 +1561,7 @@
             <node concept="2OqwBi" id="1r0uutBHFQh" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHFQi" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHGO9" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgkW" role="2OqNvi">
@@ -1593,7 +1594,7 @@
             <node concept="2OqwBi" id="1r0uutBHIbP" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHIbQ" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHIRU" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNglP" role="2OqNvi">
@@ -1622,7 +1623,7 @@
             <node concept="2OqwBi" id="1r0uutBHL2h" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHL2i" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHL2j" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgmZ" role="2OqNvi">
@@ -1655,7 +1656,7 @@
             <node concept="2OqwBi" id="1r0uutBNcSr" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBNcLB" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBNd2U" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNgtP" role="2OqNvi">
@@ -1686,7 +1687,7 @@
               <node concept="2OqwBi" id="1r0uutBHOSH" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBHOO_" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBHOTS" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="Depth" />
+                  <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="_depth" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBNh5Z" role="2OqNvi">
@@ -1722,7 +1723,7 @@
             <node concept="2OqwBi" id="1r0uutBHYjy" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHYjz" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHYj$" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNh75" role="2OqNvi">
@@ -1768,7 +1769,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="11q$FfsSOJE" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -1806,7 +1807,7 @@
                 <ref role="3cqZAo" node="11q$FfsSOJy" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="11q$FfsSOJV" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="11q$FfsSOJW" role="2OqNvi">
@@ -1839,7 +1840,7 @@
                   <ref role="3cqZAo" node="11q$FfsSOJy" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="11q$FfsSOKa" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="11q$FfsSOKb" role="2OqNvi">
@@ -1855,7 +1856,7 @@
             <node concept="2OqwBi" id="11q$FfsSPil" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsSPdK" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsSPoL" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="Z_Location" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="_zLocation" />
               </node>
             </node>
             <node concept="2qgKlT" id="11q$FfsSPOO" role="2OqNvi">
@@ -1890,7 +1891,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="fEhJG2G3wJ" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -1928,7 +1929,7 @@
                 <ref role="3cqZAo" node="fEhJG2G3wB" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="fEhJG2G3x0" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="fEhJG2G3x1" role="2OqNvi">
@@ -1961,7 +1962,7 @@
                   <ref role="3cqZAo" node="fEhJG2G3wB" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="fEhJG2G3xf" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="fEhJG2G3xg" role="2OqNvi">
@@ -1977,7 +1978,7 @@
             <node concept="2OqwBi" id="fEhJG2G3xk" role="2Oq$k0">
               <node concept="13iPFW" id="fEhJG2G3xl" role="2Oq$k0" />
               <node concept="3TrEf2" id="fEhJG2G3xm" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBf" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="fEhJG2G3xn" role="2OqNvi">
@@ -2000,7 +2001,7 @@
             <node concept="2OqwBi" id="1r0uutBHTtc" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHT2C" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHUf$" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="Z_Location" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="_zLocation" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNheo" role="2OqNvi">
@@ -2023,7 +2024,7 @@
               <node concept="2OqwBi" id="1r0uutBHUk8" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBHUk9" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBHUka" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="Z_Location" />
+                  <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBk" resolve="_zLocation" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBNhDd" role="2OqNvi">
@@ -2343,7 +2344,7 @@
             <node concept="2OqwBi" id="1r0uutBGvCX" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGvwi" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGvMZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1FLQ" resolve="Adhesiveness" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1FLQ" resolve="_adhesiveness" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGw9i" role="2OqNvi">
@@ -2399,7 +2400,7 @@
             <node concept="2OqwBi" id="1r0uutBHkOc" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHkOd" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHlZO" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ5" resolve="X_Coord" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ5" resolve="_xCoord" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBHmkF" role="2OqNvi">
@@ -2432,7 +2433,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="3V40ltr1cqm" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -2470,7 +2471,7 @@
                 <ref role="3cqZAo" node="3V40ltr1cqe" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="3V40ltr1cqB" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="3V40ltr1cqC" role="2OqNvi">
@@ -2503,7 +2504,7 @@
                   <ref role="3cqZAo" node="3V40ltr1cqe" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="3V40ltr1cqQ" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="3V40ltr1cqR" role="2OqNvi">
@@ -2519,7 +2520,7 @@
             <node concept="2OqwBi" id="3V40ltr1as4" role="2Oq$k0">
               <node concept="13iPFW" id="3V40ltr1as5" role="2Oq$k0" />
               <node concept="3TrEf2" id="3V40ltr1as6" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ5" resolve="X_Coord" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ5" resolve="_xCoord" />
               </node>
             </node>
             <node concept="2qgKlT" id="3V40ltr1b1P" role="2OqNvi">
@@ -2574,7 +2575,7 @@
             <node concept="2OqwBi" id="1r0uutBHmwD" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBHmwE" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBHncN" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ7" resolve="Y_Coord" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ7" resolve="_yCoord" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBHmwG" role="2OqNvi">
@@ -2607,7 +2608,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="3V40ltr1cTn" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -2645,7 +2646,7 @@
                 <ref role="3cqZAo" node="3V40ltr1cTf" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="3V40ltr1cTC" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="3V40ltr1cTD" role="2OqNvi">
@@ -2678,7 +2679,7 @@
                   <ref role="3cqZAo" node="3V40ltr1cTf" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="3V40ltr1cTR" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="3V40ltr1cTS" role="2OqNvi">
@@ -2694,7 +2695,7 @@
             <node concept="2OqwBi" id="3V40ltr1cTW" role="2Oq$k0">
               <node concept="13iPFW" id="3V40ltr1cTX" role="2Oq$k0" />
               <node concept="3TrEf2" id="5P5dWvv89lL" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ7" resolve="Y_Coord" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw0YZ7" resolve="_yCoord" />
               </node>
             </node>
             <node concept="2qgKlT" id="3V40ltr1cTZ" role="2OqNvi">
@@ -2713,14 +2714,14 @@
   </node>
   <node concept="13h7C7" id="2zgk2Od53yI">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="13h7C2" to="s9ob:2zgk2Od0CFw" resolve="Gradient_Type" />
+    <ref role="13h7C2" to="s9ob:2zgk2Od0CFw" resolve="GradientType" />
     <node concept="13hLZK" id="2zgk2Od53yJ" role="13h7CW">
       <node concept="3clFbS" id="2zgk2Od53yK" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="2zgk2Od53dz">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="13h7C2" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+    <ref role="13h7C2" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
     <node concept="13i0hz" id="3wWy5vw26dt" role="13h7CS">
       <property role="TrG5h" value="get_cuboid_height_string" />
       <node concept="3Tm1VV" id="3wWy5vw26du" role="1B3o_S" />
@@ -2750,7 +2751,7 @@
             <node concept="2OqwBi" id="1r0uutBFDBJ" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBFDBK" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBFDBL" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="Height" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="_height" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBO$0$" role="2OqNvi">
@@ -2785,7 +2786,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqpy4X" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -2823,7 +2824,7 @@
                 <ref role="3cqZAo" node="57Wjpeqpx1A" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqpz3v" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57WjpeqpzM1" role="2OqNvi">
@@ -2856,7 +2857,7 @@
                   <ref role="3cqZAo" node="57Wjpeqpx1A" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqp_ox" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqp_oy" role="2OqNvi">
@@ -2872,7 +2873,7 @@
             <node concept="2OqwBi" id="57WjpeqpvwY" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpvwZ" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqpvx0" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="Height" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="_height" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqp_LZ" role="2OqNvi">
@@ -2915,7 +2916,7 @@
             <node concept="2OqwBi" id="1r0uutBGecU" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGecV" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGecW" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="Width" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="_width" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBO$Fm" role="2OqNvi">
@@ -2950,7 +2951,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqp_Y1" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -2988,7 +2989,7 @@
                 <ref role="3cqZAo" node="57Wjpeqp_XT" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqp_Yi" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57Wjpeqp_Yj" role="2OqNvi">
@@ -3021,7 +3022,7 @@
                   <ref role="3cqZAo" node="57Wjpeqp_XT" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqp_Yx" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqp_Yy" role="2OqNvi">
@@ -3037,7 +3038,7 @@
             <node concept="2OqwBi" id="57Wjpeqp_YA" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqp_YB" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpBn$" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="Width" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="_width" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqp_YD" role="2OqNvi">
@@ -3080,7 +3081,7 @@
             <node concept="2OqwBi" id="1r0uutBGcAm" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGcAn" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGcAo" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBO_75" role="2OqNvi">
@@ -3115,7 +3116,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57WjpeqpBoP" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -3153,7 +3154,7 @@
                 <ref role="3cqZAo" node="57WjpeqpBoH" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57WjpeqpBp6" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57WjpeqpBp7" role="2OqNvi">
@@ -3186,7 +3187,7 @@
                   <ref role="3cqZAo" node="57WjpeqpBoH" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57WjpeqpBpl" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57WjpeqpBpm" role="2OqNvi">
@@ -3202,7 +3203,7 @@
             <node concept="2OqwBi" id="57WjpeqpBpq" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpBpr" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpCCt" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="57WjpeqpBpt" role="2OqNvi">
@@ -3276,7 +3277,7 @@
               <node concept="2OqwBi" id="1r0uutBEcnQ" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEcdk" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEcLz" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBO_VN" role="2OqNvi">
@@ -3316,7 +3317,7 @@
               <node concept="2OqwBi" id="57WjpeqpJDq" role="2Oq$k0">
                 <node concept="13iPFW" id="57WjpeqpJb5" role="2Oq$k0" />
                 <node concept="3TrEf2" id="57WjpeqpJYJ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="57WjpeqpKj8" role="2OqNvi">
@@ -3414,7 +3415,7 @@
               <node concept="2OqwBi" id="1r0uutBEdvk" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEdvl" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEdvm" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBFjgo" role="2OqNvi">
@@ -3454,7 +3455,7 @@
               <node concept="2OqwBi" id="57WjpeqpMzS" role="2Oq$k0">
                 <node concept="13iPFW" id="57WjpeqpMzT" role="2Oq$k0" />
                 <node concept="3TrEf2" id="57WjpeqpMzU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="57WjpeqpMzV" role="2OqNvi">
@@ -3552,7 +3553,7 @@
               <node concept="2OqwBi" id="1r0uutBEeno" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEenp" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEenq" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBFjiP" role="2OqNvi">
@@ -3592,7 +3593,7 @@
               <node concept="2OqwBi" id="57WjpeqpNHw" role="2Oq$k0">
                 <node concept="13iPFW" id="57WjpeqpNHx" role="2Oq$k0" />
                 <node concept="3TrEf2" id="57WjpeqpNHy" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="57WjpeqpOUi" role="2OqNvi">
@@ -3690,7 +3691,7 @@
               <node concept="2OqwBi" id="1r0uutBEeTI" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEeTJ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEeTK" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBFjBj" role="2OqNvi">
@@ -3730,7 +3731,7 @@
               <node concept="2OqwBi" id="57WjpeqpPoT" role="2Oq$k0">
                 <node concept="13iPFW" id="57WjpeqpPoU" role="2Oq$k0" />
                 <node concept="3TrEf2" id="57WjpeqpPoV" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="57WjpeqpPoW" role="2OqNvi">
@@ -3828,7 +3829,7 @@
               <node concept="2OqwBi" id="1r0uutBEjID" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEjIE" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEjIF" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBFjDu" role="2OqNvi">
@@ -3868,7 +3869,7 @@
               <node concept="2OqwBi" id="11q$FfsSAV0" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsSAV1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsSAV2" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="11q$FfsSAV3" role="2OqNvi">
@@ -3966,7 +3967,7 @@
               <node concept="2OqwBi" id="1r0uutBEk$m" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBEk$n" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBEk$o" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBFjGq" role="2OqNvi">
@@ -4006,7 +4007,7 @@
               <node concept="2OqwBi" id="57WjpeqpSJC" role="2Oq$k0">
                 <node concept="13iPFW" id="57WjpeqpSJD" role="2Oq$k0" />
                 <node concept="3TrEf2" id="57WjpeqpSJE" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="57WjpeqpSJF" role="2OqNvi">
@@ -4164,7 +4165,7 @@
   </node>
   <node concept="13h7C7" id="7e7Fgy6tl3J">
     <property role="3GE5qa" value="Substrates" />
-    <ref role="13h7C2" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+    <ref role="13h7C2" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
     <node concept="13i0hz" id="7e7Fgy6tl4V" role="13h7CS">
       <property role="TrG5h" value="get_cuboid_height_string" />
       <node concept="3Tm1VV" id="3wWy5vw1OV3" role="1B3o_S" />
@@ -4194,7 +4195,7 @@
             <node concept="2OqwBi" id="1r0uutBGCBh" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGCBi" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGCBj" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBy" resolve="Height" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBy" resolve="_height" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNjJY" role="2OqNvi">
@@ -4229,7 +4230,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqq7Lh" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -4267,7 +4268,7 @@
                 <ref role="3cqZAo" node="57Wjpeqq7L9" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqq7Ly" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57Wjpeqq7Lz" role="2OqNvi">
@@ -4300,7 +4301,7 @@
                   <ref role="3cqZAo" node="57Wjpeqq7L9" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqq7LL" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqq7LM" role="2OqNvi">
@@ -4316,7 +4317,7 @@
             <node concept="2OqwBi" id="57Wjpeqq7LQ" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq7LR" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqq7LS" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBy" resolve="Height" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBy" resolve="_height" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq7LT" role="2OqNvi">
@@ -4359,7 +4360,7 @@
             <node concept="2OqwBi" id="1r0uutBGHQt" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGHQu" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGJwu" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBv" resolve="Width" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBv" resolve="_width" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNkgq" role="2OqNvi">
@@ -4394,7 +4395,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqq8G8" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -4432,7 +4433,7 @@
                 <ref role="3cqZAo" node="57Wjpeqq8G0" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqq8Gp" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57Wjpeqq8Gq" role="2OqNvi">
@@ -4465,7 +4466,7 @@
                   <ref role="3cqZAo" node="57Wjpeqq8G0" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqq8GC" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqq8GD" role="2OqNvi">
@@ -4481,7 +4482,7 @@
             <node concept="2OqwBi" id="57Wjpeqq8GH" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqq8GI" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqqauq" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBv" resolve="Width" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBv" resolve="_width" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq8GK" role="2OqNvi">
@@ -4524,7 +4525,7 @@
             <node concept="2OqwBi" id="1r0uutBGQFw" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGQFx" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGQYZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBNkvU" role="2OqNvi">
@@ -4559,7 +4560,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqqc4W" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -4597,7 +4598,7 @@
                 <ref role="3cqZAo" node="57Wjpeqqc4O" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqqc5d" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57Wjpeqqc5e" role="2OqNvi">
@@ -4630,7 +4631,7 @@
                   <ref role="3cqZAo" node="57Wjpeqqc4O" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqqc5s" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqqc5t" role="2OqNvi">
@@ -4646,7 +4647,7 @@
             <node concept="2OqwBi" id="57Wjpeqqc5x" role="2Oq$k0">
               <node concept="13iPFW" id="57Wjpeqqc5y" role="2Oq$k0" />
               <node concept="3TrEf2" id="57Wjpeqqdwp" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="Depth" />
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="_depth" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqqc5$" role="2OqNvi">
@@ -4720,7 +4721,7 @@
               <node concept="2OqwBi" id="1r0uutBGVJN" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBGVJO" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH0WK" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBNlqn" role="2OqNvi">
@@ -4760,7 +4761,7 @@
               <node concept="2OqwBi" id="fEhJG2FM6X" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FM6Y" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FM6Z" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FM70" role="2OqNvi">
@@ -4858,7 +4859,7 @@
               <node concept="2OqwBi" id="1r0uutBH1K0" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBH1K1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH1K2" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBH1K3" role="2OqNvi">
@@ -4898,7 +4899,7 @@
               <node concept="2OqwBi" id="fEhJG2FNKu" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FNKv" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FNKw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FNKx" role="2OqNvi">
@@ -4996,7 +4997,7 @@
               <node concept="2OqwBi" id="1r0uutBH3eq" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBH3er" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH3es" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBH9IR" role="2OqNvi">
@@ -5036,7 +5037,7 @@
               <node concept="2OqwBi" id="fEhJG2FPo2" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FPo3" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FPo4" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FQXa" role="2OqNvi">
@@ -5134,7 +5135,7 @@
               <node concept="2OqwBi" id="1r0uutBH5a4" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBH5a5" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH5a6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBHa32" role="2OqNvi">
@@ -5174,7 +5175,7 @@
               <node concept="2OqwBi" id="fEhJG2FRrH" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FRrI" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FRrJ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FRrK" role="2OqNvi">
@@ -5272,7 +5273,7 @@
               <node concept="2OqwBi" id="1r0uutBH6bY" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBH6bZ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH6c0" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBMQfs" role="2OqNvi">
@@ -5312,7 +5313,7 @@
               <node concept="2OqwBi" id="fEhJG2FTBw" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FTBx" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FTBy" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FVW7" role="2OqNvi">
@@ -5410,7 +5411,7 @@
               <node concept="2OqwBi" id="1r0uutBH8SD" role="2Oq$k0">
                 <node concept="13iPFW" id="1r0uutBH8SE" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1r0uutBH8SF" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="1r0uutBHa8k" role="2OqNvi">
@@ -5450,7 +5451,7 @@
               <node concept="2OqwBi" id="fEhJG2FVY4" role="2Oq$k0">
                 <node concept="13iPFW" id="fEhJG2FVY5" role="2Oq$k0" />
                 <node concept="3TrEf2" id="fEhJG2FVY6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                  <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                 </node>
               </node>
               <node concept="2qgKlT" id="fEhJG2FVY7" role="2OqNvi">
@@ -5494,7 +5495,7 @@
   </node>
   <node concept="13h7C7" id="3wWy5vw6mL4">
     <property role="3GE5qa" value="Gradients" />
-    <ref role="13h7C2" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+    <ref role="13h7C2" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
     <node concept="13i0hz" id="3wWy5vw6mLf" role="13h7CS">
       <property role="TrG5h" value="get_point_centrex_decimal" />
       <node concept="3Tm1VV" id="3wWy5vw6mLg" role="1B3o_S" />
@@ -5507,7 +5508,7 @@
             <node concept="2OqwBi" id="1r0uutBEneC" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEmYg" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEnpm" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGkFW" role="2OqNvi">
@@ -5547,7 +5548,7 @@
             <node concept="2OqwBi" id="57WjpeqpU$y" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpU$z" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpVsx" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="57WjpeqpY9z" role="2OqNvi">
@@ -5569,7 +5570,7 @@
             <node concept="2OqwBi" id="1r0uutBEpzP" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEpzQ" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEpzR" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGkOQ" role="2OqNvi">
@@ -5609,7 +5610,7 @@
             <node concept="2OqwBi" id="57WjpeqpYdI" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpYdJ" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpYdK" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="57WjpeqpYFa" role="2OqNvi">
@@ -5631,7 +5632,7 @@
             <node concept="2OqwBi" id="1r0uutBErec" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBEred" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBEree" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGkQI" role="2OqNvi">
@@ -5671,7 +5672,7 @@
             <node concept="2OqwBi" id="57WjpeqpYLr" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpYLs" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpYLt" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
               </node>
             </node>
             <node concept="2qgKlT" id="57WjpeqpZfo" role="2OqNvi">
@@ -5693,7 +5694,7 @@
             <node concept="2OqwBi" id="1r0uutBGlsf" role="2Oq$k0">
               <node concept="13iPFW" id="1r0uutBGlj2" role="2Oq$k0" />
               <node concept="3TrEf2" id="1r0uutBGlAO" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae60k" resolve="Radius" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae60k" resolve="_radius" />
               </node>
             </node>
             <node concept="2qgKlT" id="1r0uutBGlY7" role="2OqNvi">
@@ -5746,7 +5747,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="57Wjpeqq1io" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
           </node>
@@ -5784,7 +5785,7 @@
                 <ref role="3cqZAo" node="57Wjpeqq1ig" resolve="grid" />
               </node>
               <node concept="3TrcHB" id="57Wjpeqq1iD" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="57Wjpeqq1iE" role="2OqNvi">
@@ -5817,7 +5818,7 @@
                   <ref role="3cqZAo" node="57Wjpeqq1ig" resolve="grid" />
                 </node>
                 <node concept="3TrcHB" id="57Wjpeqq1iS" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="57Wjpeqq1iT" role="2OqNvi">
@@ -5833,7 +5834,7 @@
             <node concept="2OqwBi" id="57WjpeqpZlD" role="2Oq$k0">
               <node concept="13iPFW" id="57WjpeqpZlE" role="2Oq$k0" />
               <node concept="3TrEf2" id="57WjpeqpZlF" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:2XF6Saae60k" resolve="Radius" />
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae60k" resolve="_radius" />
               </node>
             </node>
             <node concept="2qgKlT" id="57Wjpeqq2nV" role="2OqNvi">
@@ -6073,11 +6074,11 @@
               <node concept="2OqwBi" id="11q$FfsTwiJ" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTwc3" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTwl$" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTwER" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
               </node>
             </node>
             <node concept="37vLTw" id="1qp0FKQJp$U" role="37vLTx">
@@ -6091,11 +6092,11 @@
               <node concept="2OqwBi" id="11q$FfsTxv1" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTxv2" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTxv3" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTxWy" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
               </node>
             </node>
             <node concept="37vLTw" id="1qp0FKQJpRa" role="37vLTx">
@@ -6109,11 +6110,11 @@
               <node concept="2OqwBi" id="11q$FfsTydJ" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTyai" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTyeQ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTy$9" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
               </node>
             </node>
             <node concept="37vLTw" id="1qp0FKQJq4x" role="37vLTx">
@@ -6215,11 +6216,11 @@
               <node concept="2OqwBi" id="3fk35jmuMTY" role="2Oq$k0">
                 <node concept="13iPFW" id="3fk35jmuMTZ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="3fk35jmuNkw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="3fk35jmuN_T" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
               </node>
             </node>
             <node concept="21noJN" id="3fk35jmuMU1" role="2OqNvi">
@@ -6251,11 +6252,11 @@
                 <node concept="2OqwBi" id="3fk35jmuMUd" role="2Oq$k0">
                   <node concept="13iPFW" id="3fk35jmuMUe" role="2Oq$k0" />
                   <node concept="3TrEf2" id="3fk35jmuNPE" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                    <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="3fk35jmuO5K" role="2OqNvi">
-                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="Scaling" />
+                  <ref role="3TsBF5" to="s9ob:57Wjpeqc6R0" resolve="_scaling" />
                 </node>
               </node>
               <node concept="21noJN" id="3fk35jmuMUg" role="2OqNvi">
@@ -6272,11 +6273,11 @@
               <node concept="2OqwBi" id="3fk35jmuOeE" role="2Oq$k0">
                 <node concept="13iPFW" id="3fk35jmuMUl" role="2Oq$k0" />
                 <node concept="3TrEf2" id="3fk35jmuOxu" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrEf2" id="3fk35jmuOGW" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:57Wjpeqll8Q" resolve="Buffer" />
+                <ref role="3Tt5mk" to="s9ob:57Wjpeqll8Q" resolve="_buffer" />
               </node>
             </node>
             <node concept="2qgKlT" id="3fk35jmuMUn" role="2OqNvi">
@@ -6372,11 +6373,11 @@
               <node concept="2OqwBi" id="11q$FfsTDRK" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTDNs" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTE9c" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTE$f" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
               </node>
             </node>
           </node>
@@ -6493,11 +6494,11 @@
               <node concept="2OqwBi" id="11q$FfsTGKX" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTGKY" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTGKZ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTIOl" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
               </node>
             </node>
           </node>
@@ -6614,11 +6615,11 @@
               <node concept="2OqwBi" id="11q$FfsTIY8" role="2Oq$k0">
                 <node concept="13iPFW" id="11q$FfsTIY9" role="2Oq$k0" />
                 <node concept="3TrEf2" id="11q$FfsTIYa" role="2OqNvi">
-                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                  <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                 </node>
               </node>
               <node concept="3TrcHB" id="11q$FfsTKfj" role="2OqNvi">
-                <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
               </node>
             </node>
           </node>
@@ -6662,11 +6663,11 @@
             <node concept="2OqwBi" id="11q$FfsT0YZ" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsT0Qh" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsT193" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT1u1" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
             </node>
           </node>
         </node>
@@ -6682,11 +6683,11 @@
             <node concept="2OqwBi" id="11q$FfsT1yw" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsT1yx" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsT1yy" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT1Hv" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
             </node>
           </node>
         </node>
@@ -6702,11 +6703,11 @@
             <node concept="2OqwBi" id="11q$FfsT1HS" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsT1HT" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsT1HU" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT1WX" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+              <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
             </node>
           </node>
         </node>
@@ -6722,11 +6723,11 @@
             <node concept="2OqwBi" id="11q$FfsTzRN" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsTzRO" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsTzRP" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT_Z1" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
             </node>
           </node>
         </node>
@@ -6742,11 +6743,11 @@
             <node concept="2OqwBi" id="11q$FfsTzRX" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsTzRY" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsTzRZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT_Km" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
             </node>
           </node>
         </node>
@@ -6762,11 +6763,11 @@
             <node concept="2OqwBi" id="11q$FfsTzS7" role="2Oq$k0">
               <node concept="13iPFW" id="11q$FfsTzS8" role="2Oq$k0" />
               <node concept="3TrEf2" id="11q$FfsTzS9" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
               </node>
             </node>
             <node concept="3TrcHB" id="11q$FfsT_Jx" role="2OqNvi">
-              <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+              <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
             </node>
           </node>
         </node>
@@ -6783,10 +6784,15 @@
             <node concept="3Tqbb2" id="57Wjpeqm263" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="57Wjpeqm2fp" role="33vP2m">
-              <node concept="13iPFW" id="57Wjpeqm26F" role="2Oq$k0" />
-              <node concept="3TrEf2" id="57Wjpeqm2pr" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyf$IE" role="33vP2m">
+              <node concept="2OqwBi" id="57Wjpeqm2fp" role="2Oq$k0">
+                <node concept="13iPFW" id="57Wjpeqm26F" role="2Oq$k0" />
+                <node concept="3TrEf2" id="57Wjpeqm2pr" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfApe" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -6824,7 +6830,7 @@
               <ref role="3cqZAo" node="57Wjpeqm267" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="57Wjpeqm2Wl" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="57Wjpeqm2BI" role="2LFqv$">
@@ -6943,7 +6949,7 @@
               <ref role="3cqZAo" node="57Wjpeqm267" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltqZFpN" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltqZD45" role="2LFqv$">
@@ -7164,12 +7170,12 @@
                     <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltqZLvs" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltqZMm$" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltqZMoR" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -7254,14 +7260,14 @@
                     <node concept="2OqwBi" id="3V40ltr1MBE" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr1MBF" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr1MBG" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr1MBH" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr1MBI" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr1MBJ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -7376,14 +7382,14 @@
                       <node concept="2OqwBi" id="3V40ltr1UOg" role="33vP2m">
                         <node concept="1PxgMI" id="3V40ltr1UOh" role="2Oq$k0">
                           <node concept="chp4Y" id="3V40ltr1UOi" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="3V40ltr1UOj" role="1m5AlR">
                             <node concept="2GrUjf" id="3V40ltr1UOk" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="3V40ltr1UOl" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -7422,12 +7428,12 @@
                       <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltqZT0J" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltqZT0K" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltqZT8k" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -7486,23 +7492,23 @@
                           <node concept="2OqwBi" id="3V40ltr0n8V" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr0mq2" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr0mZY" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr0lPw" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr0lPx" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr0lPy" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr0o0c" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr0oWx" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr0po_" role="2OqNvi">
@@ -7520,23 +7526,23 @@
                           <node concept="2OqwBi" id="3V40ltr0qhg" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr0qhh" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr0qhi" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr0qhj" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr0qhk" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr0qhl" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr0qhm" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr0qOc" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr0r4s" role="2OqNvi">
@@ -7728,12 +7734,12 @@
                       <ref role="2Gs0qQ" node="3V40ltqZIWS" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr0iGB" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr0iGC" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr0jE6" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -7743,7 +7749,7 @@
           <node concept="2OqwBi" id="3V40ltqZJZU" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltqZJO2" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltqZKd2" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -7768,7 +7774,7 @@
           <node concept="2OqwBi" id="3V40ltr0KmF" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr0K4R" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr0LjH" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr0ILt" role="2LFqv$">
@@ -7819,12 +7825,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr0Qoo" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr0Rf5" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr0Rho" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -7909,14 +7915,14 @@
                     <node concept="2OqwBi" id="3V40ltr218I" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr218J" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr218K" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr218L" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr218M" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr218N" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -7956,12 +7962,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr11jo" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr11U3" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr11Uq" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -8041,19 +8047,19 @@
                         <node concept="2OqwBi" id="3V40ltr16WL" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr166I" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr16Om" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr155b" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr14Wu" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr15Xk" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr187j" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr1eh1" role="2OqNvi">
@@ -8070,19 +8076,19 @@
                         <node concept="2OqwBi" id="3V40ltr1ell" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr1elm" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr1eln" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr1elo" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr1elp" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr1elq" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr1giK" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr1els" role="2OqNvi">
@@ -8099,19 +8105,19 @@
                         <node concept="2OqwBi" id="3V40ltr1fbv" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr1fbw" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr1fbx" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr1fby" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr1fbz" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr0ILp" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr1fb$" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr1gkF" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr1fbA" role="2OqNvi">
@@ -8229,10 +8235,15 @@
             <node concept="3Tqbb2" id="3V40ltr2dkF" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="3V40ltr2dkG" role="33vP2m">
-              <node concept="13iPFW" id="3V40ltr2dkH" role="2Oq$k0" />
-              <node concept="3TrEf2" id="3V40ltr2dkI" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyfCUD" role="33vP2m">
+              <node concept="2OqwBi" id="3V40ltr2dkG" role="2Oq$k0">
+                <node concept="13iPFW" id="3V40ltr2dkH" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3V40ltr2dkI" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfEXj" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -8270,7 +8281,7 @@
               <ref role="3cqZAo" node="3V40ltr2dkE" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2dkY" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2dkZ" role="2LFqv$">
@@ -8389,7 +8400,7 @@
               <ref role="3cqZAo" node="3V40ltr2dkE" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2dlF" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2dlG" role="2LFqv$">
@@ -8610,12 +8621,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2dmY" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2dmZ" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2dn0" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -8700,14 +8711,14 @@
                     <node concept="2OqwBi" id="3V40ltr2dnu" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2dnv" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2dnw" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2dnx" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2dny" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2dnz" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -8822,14 +8833,14 @@
                       <node concept="2OqwBi" id="3V40ltr2doc" role="33vP2m">
                         <node concept="1PxgMI" id="3V40ltr2dod" role="2Oq$k0">
                           <node concept="chp4Y" id="3V40ltr2doe" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="3V40ltr2dof" role="1m5AlR">
                             <node concept="2GrUjf" id="3V40ltr2dog" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2doh" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -8868,12 +8879,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2dov" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2dow" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2dox" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -8932,23 +8943,23 @@
                           <node concept="2OqwBi" id="3V40ltr2doS" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2doT" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2doU" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2doV" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2doW" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2doX" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2doY" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2doZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2iej" role="2OqNvi">
@@ -8966,23 +8977,23 @@
                           <node concept="2OqwBi" id="3V40ltr2dp6" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2dp7" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2dp8" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2dp9" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2dpa" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2dpb" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2dpc" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2dpd" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2ipW" role="2OqNvi">
@@ -9174,12 +9185,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2dmE" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2dqj" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2dqk" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2dql" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -9189,7 +9200,7 @@
           <node concept="2OqwBi" id="3V40ltr2dqm" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2dqn" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2dqo" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -9214,7 +9225,7 @@
           <node concept="2OqwBi" id="3V40ltr2dqx" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2dqy" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2dqz" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2dq$" role="2LFqv$">
@@ -9265,12 +9276,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2dqR" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2dqS" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2dqT" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -9355,14 +9366,14 @@
                     <node concept="2OqwBi" id="3V40ltr2drn" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2dro" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2drp" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2drq" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2drr" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2drs" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -9402,12 +9413,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2drF" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2drG" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2drH" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -9487,19 +9498,19 @@
                         <node concept="2OqwBi" id="3V40ltr2dsa" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2dsb" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2dsc" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2dsd" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2dse" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2dsf" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2dsg" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2nGW" role="2OqNvi">
@@ -9516,19 +9527,19 @@
                         <node concept="2OqwBi" id="3V40ltr2dsm" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2dsn" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2dso" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2dsp" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2dsq" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2dsr" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2dss" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2nEl" role="2OqNvi">
@@ -9545,19 +9556,19 @@
                         <node concept="2OqwBi" id="3V40ltr2dsy" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2dsz" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2ds$" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2ds_" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2dsA" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2dqw" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2dsB" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2dsC" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2nfG" role="2OqNvi">
@@ -9675,10 +9686,15 @@
             <node concept="3Tqbb2" id="11q$FfsSVMS" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="11q$FfsSVMT" role="33vP2m">
-              <node concept="13iPFW" id="11q$FfsSVMU" role="2Oq$k0" />
-              <node concept="3TrEf2" id="11q$FfsSVMV" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyfH7L" role="33vP2m">
+              <node concept="2OqwBi" id="11q$FfsSVMT" role="2Oq$k0">
+                <node concept="13iPFW" id="11q$FfsSVMU" role="2Oq$k0" />
+                <node concept="3TrEf2" id="11q$FfsSVMV" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfIQa" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -9716,7 +9732,7 @@
               <ref role="3cqZAo" node="11q$FfsSVMR" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="11q$FfsSVNb" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="11q$FfsSVNc" role="2LFqv$">
@@ -9800,7 +9816,7 @@
                       <ref role="2Gs0qQ" node="11q$FfsSVN8" resolve="cell" />
                     </node>
                     <node concept="3TrEf2" id="11q$FfsSVNF" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="position" />
+                      <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="_position" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="11q$FfsSVNG" role="2OqNvi">
@@ -9843,7 +9859,7 @@
               <ref role="3cqZAo" node="11q$FfsSVMR" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="11q$FfsSVNV" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="11q$FfsSVNW" role="2LFqv$">
@@ -10067,12 +10083,12 @@
                     <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="11q$FfsSVPf" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="11q$FfsSVPg" role="2OqNvi">
                   <node concept="chp4Y" id="11q$FfsSVPh" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -10157,14 +10173,14 @@
                     <node concept="2OqwBi" id="11q$FfsSVPJ" role="33vP2m">
                       <node concept="1PxgMI" id="11q$FfsSVPK" role="2Oq$k0">
                         <node concept="chp4Y" id="11q$FfsSVPL" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="11q$FfsSVPM" role="1m5AlR">
                           <node concept="2GrUjf" id="11q$FfsSVPN" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="11q$FfsSVPO" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -10279,14 +10295,14 @@
                       <node concept="2OqwBi" id="11q$FfsSVQt" role="33vP2m">
                         <node concept="1PxgMI" id="11q$FfsSVQu" role="2Oq$k0">
                           <node concept="chp4Y" id="11q$FfsSVQv" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="11q$FfsSVQw" role="1m5AlR">
                             <node concept="2GrUjf" id="11q$FfsSVQx" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="11q$FfsSVQy" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -10325,12 +10341,12 @@
                       <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="11q$FfsSVQK" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="11q$FfsSVQL" role="2OqNvi">
                     <node concept="chp4Y" id="11q$FfsSVQM" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -10389,23 +10405,23 @@
                           <node concept="2OqwBi" id="11q$FfsSVR9" role="2Oq$k0">
                             <node concept="1PxgMI" id="11q$FfsSVRa" role="2Oq$k0">
                               <node concept="chp4Y" id="11q$FfsSVRb" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="11q$FfsSVRc" role="1m5AlR">
                                 <node concept="2GrUjf" id="11q$FfsSVRd" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="11q$FfsSVRe" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="11q$FfsSVRf" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="11q$FfsSVRg" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="11q$FfsSVRh" role="2OqNvi">
@@ -10423,23 +10439,23 @@
                           <node concept="2OqwBi" id="11q$FfsSVRn" role="2Oq$k0">
                             <node concept="1PxgMI" id="11q$FfsSVRo" role="2Oq$k0">
                               <node concept="chp4Y" id="11q$FfsSVRp" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="11q$FfsSVRq" role="1m5AlR">
                                 <node concept="2GrUjf" id="11q$FfsSVRr" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="11q$FfsSVRs" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="11q$FfsSVRt" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="11q$FfsSVRu" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="11q$FfsSVRv" role="2OqNvi">
@@ -10631,12 +10647,12 @@
                       <ref role="2Gs0qQ" node="11q$FfsSVOV" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="11q$FfsSVS$" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="11q$FfsSVS_" role="2OqNvi">
                     <node concept="chp4Y" id="11q$FfsSVSA" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -10646,7 +10662,7 @@
           <node concept="2OqwBi" id="11q$FfsSVSB" role="2GsD0m">
             <node concept="13iPFW" id="11q$FfsSVSC" role="2Oq$k0" />
             <node concept="3Tsc0h" id="11q$FfsSVSD" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -10671,7 +10687,7 @@
           <node concept="2OqwBi" id="11q$FfsSVSM" role="2GsD0m">
             <node concept="13iPFW" id="11q$FfsSVSN" role="2Oq$k0" />
             <node concept="3Tsc0h" id="11q$FfsSVSO" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="11q$FfsSVSP" role="2LFqv$">
@@ -10722,12 +10738,12 @@
                     <ref role="2Gs0qQ" node="11q$FfsSVSL" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="11q$FfsSVT8" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="11q$FfsSVT9" role="2OqNvi">
                   <node concept="chp4Y" id="11q$FfsSVTa" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -10812,14 +10828,14 @@
                     <node concept="2OqwBi" id="11q$FfsSVTC" role="33vP2m">
                       <node concept="1PxgMI" id="11q$FfsSVTD" role="2Oq$k0">
                         <node concept="chp4Y" id="11q$FfsSVTE" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="11q$FfsSVTF" role="1m5AlR">
                           <node concept="2GrUjf" id="11q$FfsSVTG" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="11q$FfsSVSL" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="11q$FfsSVTH" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -10859,12 +10875,12 @@
                       <ref role="2Gs0qQ" node="11q$FfsSVSL" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="11q$FfsSVTW" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="11q$FfsSVTX" role="2OqNvi">
                     <node concept="chp4Y" id="11q$FfsSVTY" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -10943,14 +10959,14 @@
                       <node concept="2OqwBi" id="11q$FfsSVUq" role="33vP2m">
                         <node concept="1PxgMI" id="11q$FfsSVUr" role="2Oq$k0">
                           <node concept="chp4Y" id="11q$FfsSVUs" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                           </node>
                           <node concept="2OqwBi" id="11q$FfsSVUt" role="1m5AlR">
                             <node concept="2GrUjf" id="11q$FfsSVUu" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="11q$FfsSVSL" resolve="substrate" />
                             </node>
                             <node concept="3TrEf2" id="11q$FfsSVUv" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -11046,10 +11062,15 @@
             <node concept="3Tqbb2" id="3V40ltr25mD" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="3V40ltr25mE" role="33vP2m">
-              <node concept="13iPFW" id="3V40ltr25mF" role="2Oq$k0" />
-              <node concept="3TrEf2" id="3V40ltr25mG" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyfJX2" role="33vP2m">
+              <node concept="2OqwBi" id="3V40ltr25mE" role="2Oq$k0">
+                <node concept="13iPFW" id="3V40ltr25mF" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3V40ltr25mG" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfM3I" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -11087,7 +11108,7 @@
               <ref role="3cqZAo" node="3V40ltr25mC" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr25mW" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr25mX" role="2LFqv$">
@@ -11209,7 +11230,7 @@
               <ref role="3cqZAo" node="3V40ltr25mC" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr25nD" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr25nE" role="2LFqv$">
@@ -11433,12 +11454,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr25oW" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr25oX" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr25oY" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -11523,14 +11544,14 @@
                     <node concept="2OqwBi" id="3V40ltr25ps" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr25pt" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr25pu" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr25pv" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr25pw" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25px" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -11645,14 +11666,14 @@
                       <node concept="2OqwBi" id="3V40ltr25qa" role="33vP2m">
                         <node concept="1PxgMI" id="3V40ltr25qb" role="2Oq$k0">
                           <node concept="chp4Y" id="3V40ltr25qc" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="3V40ltr25qd" role="1m5AlR">
                             <node concept="2GrUjf" id="3V40ltr25qe" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="3V40ltr25qf" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -11691,12 +11712,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr25qt" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr25qu" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr25qv" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -11755,23 +11776,23 @@
                           <node concept="2OqwBi" id="3V40ltr25qQ" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr25qR" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr25qS" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr25qT" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr25qU" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr25qV" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr25qW" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25qX" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr25qY" role="2OqNvi">
@@ -11789,23 +11810,23 @@
                           <node concept="2OqwBi" id="3V40ltr25r4" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr25r5" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr25r6" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr25r7" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr25r8" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr25r9" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr25ra" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25rb" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr25rc" role="2OqNvi">
@@ -11997,12 +12018,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr25oC" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr25sh" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr25si" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr25sj" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -12012,7 +12033,7 @@
           <node concept="2OqwBi" id="3V40ltr25sk" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr25sl" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr25sm" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -12037,7 +12058,7 @@
           <node concept="2OqwBi" id="3V40ltr25sv" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr25sw" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr25sx" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr25sy" role="2LFqv$">
@@ -12088,12 +12109,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr25sP" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr25sQ" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr25sR" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -12178,14 +12199,14 @@
                     <node concept="2OqwBi" id="3V40ltr25tl" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr25tm" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr25tn" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr25to" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr25tp" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25tq" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -12225,12 +12246,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr25tD" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr25tE" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr25tF" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -12310,19 +12331,19 @@
                         <node concept="2OqwBi" id="3V40ltr25u8" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr25u9" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr25ua" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr25ub" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr25uc" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr25ud" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25ue" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr25uf" role="2OqNvi">
@@ -12339,19 +12360,19 @@
                         <node concept="2OqwBi" id="3V40ltr25uk" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr25ul" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr25um" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr25un" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr25uo" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr25up" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25uq" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr25ur" role="2OqNvi">
@@ -12368,19 +12389,19 @@
                         <node concept="2OqwBi" id="3V40ltr25uw" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr25ux" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr25uy" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr25uz" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr25u$" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr25su" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr25u_" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr25uA" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr25uB" role="2OqNvi">
@@ -12498,10 +12519,15 @@
             <node concept="3Tqbb2" id="3V40ltr2iBu" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="3V40ltr2iBv" role="33vP2m">
-              <node concept="13iPFW" id="3V40ltr2iBw" role="2Oq$k0" />
-              <node concept="3TrEf2" id="3V40ltr2iBx" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyfxwY" role="33vP2m">
+              <node concept="2OqwBi" id="3V40ltr2iBv" role="2Oq$k0">
+                <node concept="13iPFW" id="3V40ltr2iBw" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3V40ltr2iBx" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfzby" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -12539,7 +12565,7 @@
               <ref role="3cqZAo" node="3V40ltr2iBt" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2iBL" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2iBM" role="2LFqv$">
@@ -12661,7 +12687,7 @@
               <ref role="3cqZAo" node="3V40ltr2iBt" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2iCv" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2iCw" role="2LFqv$">
@@ -12885,12 +12911,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2iDN" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2iDO" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2iDP" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -12975,14 +13001,14 @@
                     <node concept="2OqwBi" id="3V40ltr2iEj" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2iEk" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2iEl" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2iEm" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2iEn" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iEo" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -13097,14 +13123,14 @@
                       <node concept="2OqwBi" id="3V40ltr2iF1" role="33vP2m">
                         <node concept="1PxgMI" id="3V40ltr2iF2" role="2Oq$k0">
                           <node concept="chp4Y" id="3V40ltr2iF3" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="3V40ltr2iF4" role="1m5AlR">
                             <node concept="2GrUjf" id="3V40ltr2iF5" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2iF6" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -13143,12 +13169,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2iFk" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2iFl" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2iFm" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -13207,23 +13233,23 @@
                           <node concept="2OqwBi" id="3V40ltr2iFH" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2iFI" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2iFJ" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2iFK" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2iFL" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2iFM" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2iFN" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iFO" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2oem" role="2OqNvi">
@@ -13241,23 +13267,23 @@
                           <node concept="2OqwBi" id="3V40ltr2iFV" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2iFW" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2iFX" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2iFY" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2iFZ" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2iG0" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2iG1" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iG2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2ouj" role="2OqNvi">
@@ -13449,12 +13475,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2iDv" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2iH8" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2iH9" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2iHa" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -13464,7 +13490,7 @@
           <node concept="2OqwBi" id="3V40ltr2iHb" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2iHc" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2iHd" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -13489,7 +13515,7 @@
           <node concept="2OqwBi" id="3V40ltr2iHm" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2iHn" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2iHo" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2iHp" role="2LFqv$">
@@ -13540,12 +13566,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2iHG" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2iHH" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2iHI" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -13630,14 +13656,14 @@
                     <node concept="2OqwBi" id="3V40ltr2iIc" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2iId" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2iIe" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2iIf" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2iIg" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iIh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -13677,12 +13703,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2iIw" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2iIx" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2iIy" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -13762,19 +13788,19 @@
                         <node concept="2OqwBi" id="3V40ltr2iIZ" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2iJ0" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2iJ1" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2iJ2" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2iJ3" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2iJ4" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iJ5" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2pC$" role="2OqNvi">
@@ -13791,19 +13817,19 @@
                         <node concept="2OqwBi" id="3V40ltr2iJb" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2iJc" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2iJd" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2iJe" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2iJf" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2iJg" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iJh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2pFD" role="2OqNvi">
@@ -13820,19 +13846,19 @@
                         <node concept="2OqwBi" id="3V40ltr2iJn" role="2Oq$k0">
                           <node concept="1PxgMI" id="3V40ltr2iJo" role="2Oq$k0">
                             <node concept="chp4Y" id="3V40ltr2iJp" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                             </node>
                             <node concept="2OqwBi" id="3V40ltr2iJq" role="1m5AlR">
                               <node concept="2GrUjf" id="3V40ltr2iJr" role="2Oq$k0">
                                 <ref role="2Gs0qQ" node="3V40ltr2iHl" resolve="substrate" />
                               </node>
                               <node concept="3TrEf2" id="3V40ltr2iJs" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2iJt" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3V40ltr2pJ0" role="2OqNvi">
@@ -13950,10 +13976,15 @@
             <node concept="3Tqbb2" id="3V40ltr2qb6" role="1tU5fm">
               <ref role="ehGHo" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
             </node>
-            <node concept="2OqwBi" id="3V40ltr2qb7" role="33vP2m">
-              <node concept="13iPFW" id="3V40ltr2qb8" role="2Oq$k0" />
-              <node concept="3TrEf2" id="3V40ltr2qb9" role="2OqNvi">
-                <ref role="3Tt5mk" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
+            <node concept="2OqwBi" id="4jUcCWyfO4U" role="33vP2m">
+              <node concept="2OqwBi" id="3V40ltr2qb7" role="2Oq$k0">
+                <node concept="13iPFW" id="3V40ltr2qb8" role="2Oq$k0" />
+                <node concept="3TrEf2" id="3V40ltr2qb9" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:4jUcCWydX_N" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="4jUcCWyfPKB" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
               </node>
             </node>
           </node>
@@ -13991,7 +14022,7 @@
               <ref role="3cqZAo" node="3V40ltr2qb5" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2qbp" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="cells" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2qbq" role="2LFqv$">
@@ -14075,7 +14106,7 @@
                       <ref role="2Gs0qQ" node="3V40ltr2qbm" resolve="cell" />
                     </node>
                     <node concept="3TrEf2" id="11q$FfsSybt" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="position" />
+                      <ref role="3Tt5mk" to="nguq:5qSYbADryD8" resolve="_position" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="11q$FfsSz9m" role="2OqNvi">
@@ -14118,7 +14149,7 @@
               <ref role="3cqZAo" node="3V40ltr2qb5" resolve="tissue_container" />
             </node>
             <node concept="3Tsc0h" id="3V40ltr2qc7" role="2OqNvi">
-              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="tissues" />
+              <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2qc8" role="2LFqv$">
@@ -14342,12 +14373,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2qdr" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                    <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2qds" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2qdt" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                    <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                   </node>
                 </node>
               </node>
@@ -14432,14 +14463,14 @@
                     <node concept="2OqwBi" id="3V40ltr2qdV" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2qdW" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2qdX" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2qdY" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2qdZ" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2qe0" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                           </node>
                         </node>
                       </node>
@@ -14554,14 +14585,14 @@
                       <node concept="2OqwBi" id="3V40ltr2qeD" role="33vP2m">
                         <node concept="1PxgMI" id="3V40ltr2qeE" role="2Oq$k0">
                           <node concept="chp4Y" id="3V40ltr2qeF" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="3V40ltr2qeG" role="1m5AlR">
                             <node concept="2GrUjf" id="3V40ltr2qeH" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2qeI" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -14600,12 +14631,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2qeW" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2qeX" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2qeY" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                      <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                     </node>
                   </node>
                 </node>
@@ -14664,23 +14695,23 @@
                           <node concept="2OqwBi" id="3V40ltr2qfl" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2qfm" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2qfn" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2qfo" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2qfp" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2qfq" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2qfr" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2qfs" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="11q$FfsSDI0" role="2OqNvi">
@@ -14698,23 +14729,23 @@
                           <node concept="2OqwBi" id="3V40ltr2qfz" role="2Oq$k0">
                             <node concept="1PxgMI" id="3V40ltr2qf$" role="2Oq$k0">
                               <node concept="chp4Y" id="3V40ltr2qf_" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3V40ltr2qfA" role="1m5AlR">
                                 <node concept="2GrUjf" id="3V40ltr2qfB" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                                 </node>
                                 <node concept="3TrEf2" id="3V40ltr2qfC" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3V40ltr2qfD" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2qfE" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="11q$FfsSE1T" role="2OqNvi">
@@ -14906,12 +14937,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2qd7" resolve="gradient" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2qgK" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                      <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2qgL" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2qgM" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                      <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                     </node>
                   </node>
                 </node>
@@ -14921,7 +14952,7 @@
           <node concept="2OqwBi" id="3V40ltr2qgN" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2qgO" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2qgP" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
             </node>
           </node>
         </node>
@@ -14946,7 +14977,7 @@
           <node concept="2OqwBi" id="3V40ltr2qgY" role="2GsD0m">
             <node concept="13iPFW" id="3V40ltr2qgZ" role="2Oq$k0" />
             <node concept="3Tsc0h" id="3V40ltr2qh0" role="2OqNvi">
-              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+              <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
             </node>
           </node>
           <node concept="3clFbS" id="3V40ltr2qh1" role="2LFqv$">
@@ -14997,12 +15028,12 @@
                     <ref role="2Gs0qQ" node="3V40ltr2qgX" resolve="substrate" />
                   </node>
                   <node concept="3TrEf2" id="3V40ltr2qhk" role="2OqNvi">
-                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                    <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="3V40ltr2qhl" role="2OqNvi">
                   <node concept="chp4Y" id="3V40ltr2qhm" role="cj9EA">
-                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                    <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                   </node>
                 </node>
               </node>
@@ -15087,14 +15118,14 @@
                     <node concept="2OqwBi" id="3V40ltr2qhO" role="33vP2m">
                       <node concept="1PxgMI" id="3V40ltr2qhP" role="2Oq$k0">
                         <node concept="chp4Y" id="3V40ltr2qhQ" role="3oSUPX">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                         <node concept="2OqwBi" id="3V40ltr2qhR" role="1m5AlR">
                           <node concept="2GrUjf" id="3V40ltr2qhS" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="3V40ltr2qgX" resolve="substrate" />
                           </node>
                           <node concept="3TrEf2" id="3V40ltr2qhT" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                       </node>
@@ -15134,12 +15165,12 @@
                       <ref role="2Gs0qQ" node="3V40ltr2qgX" resolve="substrate" />
                     </node>
                     <node concept="3TrEf2" id="3V40ltr2qi8" role="2OqNvi">
-                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                      <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="3V40ltr2qi9" role="2OqNvi">
                     <node concept="chp4Y" id="3V40ltr2qia" role="cj9EA">
-                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                      <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                     </node>
                   </node>
                 </node>
@@ -15218,14 +15249,14 @@
                       <node concept="2OqwBi" id="11q$FfsSIc_" role="33vP2m">
                         <node concept="1PxgMI" id="11q$FfsSHnm" role="2Oq$k0">
                           <node concept="chp4Y" id="11q$FfsSI3M" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                           </node>
                           <node concept="2OqwBi" id="11q$FfsSGem" role="1m5AlR">
                             <node concept="2GrUjf" id="11q$FfsSG5D" role="2Oq$k0">
                               <ref role="2Gs0qQ" node="3V40ltr2qgX" resolve="substrate" />
                             </node>
                             <node concept="3TrEf2" id="11q$FfsSGEw" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>

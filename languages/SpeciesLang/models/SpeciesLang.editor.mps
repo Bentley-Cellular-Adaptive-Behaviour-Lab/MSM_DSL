@@ -443,7 +443,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="3F2HdR" id="2Hxmt3eVgJw" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft0" resolve="_species" />
           <node concept="2iRkQZ" id="2Hxmt3eVN1M" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="2Hxmt3eVgJo" role="2iSdaV" />
@@ -498,7 +498,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="3F2HdR" id="7H2UEn9dG$n" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft5" resolve="_parameters" />
           <node concept="2iRkQZ" id="7H2UEn9dG$o" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="7H2UEn9dG$p" role="2iSdaV" />
@@ -553,7 +553,7 @@
           <property role="3F0ifm" value=":" />
         </node>
         <node concept="3F2HdR" id="2Hxmt3eVgJL" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+          <ref role="1NtTu8" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
           <node concept="2iRkQZ" id="2Hxmt3eVN1P" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="2Hxmt3eVgJN" role="2iSdaV" />
@@ -569,7 +569,7 @@
       <node concept="3EZMnI" id="5ns1KRzfcQ8" role="3EZMnx">
         <node concept="VPM3Z" id="5ns1KRzfcQa" role="3F10Kt" />
         <node concept="3F0ifn" id="5ns1KRzfcR7" role="3EZMnx">
-          <property role="3F0ifm" value="Using Tissue Set-up:" />
+          <property role="3F0ifm" value="Used in simulation:" />
           <node concept="2biZxu" id="2FvyIAlCSaG" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -578,13 +578,13 @@
           </node>
         </node>
         <node concept="1iCGBv" id="5ns1KRzfcRd" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:6Y2UmXTDkR$" resolve="Tissue_Container" />
+          <ref role="1NtTu8" to="w3cn:4jUcCWydX_d" resolve="_simulationContainerRef" />
           <node concept="1sVBvm" id="5ns1KRzfcRf" role="1sWHZn">
             <node concept="3F0A7n" id="5ns1KRzfcRq" role="2wV5jI">
               <property role="1Intyy" value="true" />
               <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
               <node concept="VechU" id="59YMCJZYkCV" role="3F10Kt">
-                <property role="Vb096" value="fLwANPu/blue" />
+                <property role="Vb096" value="6cZGtrcKCoS/black" />
               </node>
               <node concept="Vb9p2" id="59YMCJZYkD0" role="3F10Kt">
                 <property role="Vbekb" value="g1_k_vY/BOLD" />
@@ -1444,10 +1444,10 @@
     </node>
     <node concept="27vDVx" id="2Hxmt3eWvOc" role="2wV5jI">
       <node concept="1RuTs0" id="6pt0UY9xHUb" role="1RuSHk">
-        <ref role="1RuSHD" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+        <ref role="1RuSHD" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
       </node>
       <node concept="1RuTs0" id="6pt0UY9xIni" role="1RuSHk">
-        <ref role="1RuSHD" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+        <ref role="1RuSHD" to="w3cn:2Hxmt3eVft0" resolve="_species" />
       </node>
       <node concept="ahg9e" id="2Hxmt3eWvOf" role="aCds2">
         <node concept="238au4" id="2Hxmt3eWvOg" role="23bJyd">
@@ -1533,7 +1533,7 @@
               <node concept="2OqwBi" id="2Hxmt3eW$jC" role="3clFbG">
                 <node concept="23r2z0" id="2Hxmt3eW$7y" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="2Hxmt3eW$v1" role="2OqNvi">
-                  <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+                  <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_species" />
                 </node>
               </node>
             </node>
@@ -1644,7 +1644,7 @@
                 <node concept="2OqwBi" id="20T6jFUKPca" role="2Oq$k0">
                   <node concept="23r2z0" id="20T6jFUKPcb" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="20T6jFUKPcc" role="2OqNvi">
-                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="20T6jFUKPcd" role="2OqNvi">
@@ -1839,7 +1839,7 @@
                 <node concept="2OqwBi" id="20T6jFUPmrM" role="2Oq$k0">
                   <node concept="23r2z0" id="20T6jFUPmrN" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="20T6jFUPmrO" role="2OqNvi">
-                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="20T6jFUPmrP" role="2OqNvi">
@@ -1948,7 +1948,7 @@
                 <node concept="2OqwBi" id="5jwDGo4BXqa" role="2Oq$k0">
                   <node concept="23r2z0" id="5jwDGo4BXf7" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="5jwDGo4BXBv" role="2OqNvi">
-                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="5jwDGo4C0Ax" role="2OqNvi">
@@ -2176,7 +2176,7 @@
                 <node concept="2OqwBi" id="5jwDGo4CnO3" role="2Oq$k0">
                   <node concept="23r2z0" id="5jwDGo4CnO4" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="5jwDGo4CnO5" role="2OqNvi">
-                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="5jwDGo4CnO6" role="2OqNvi">
@@ -2404,7 +2404,7 @@
                 <node concept="2OqwBi" id="20T6jFUHri8" role="2Oq$k0">
                   <node concept="23r2z0" id="20T6jFUHri9" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="20T6jFUHria" role="2OqNvi">
-                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="Processes" />
+                    <ref role="3TtcxE" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
                   </node>
                 </node>
                 <node concept="3zZkjj" id="20T6jFUHrib" role="2OqNvi">

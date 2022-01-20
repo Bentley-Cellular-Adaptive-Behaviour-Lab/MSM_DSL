@@ -191,7 +191,7 @@
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="cUvw_H2Bgk" role="3lj3bC">
       <property role="13Pg2o" value="h94ayQF/true_" />
-      <ref role="30HIoZ" to="s9ob:7faAukhALBz" resolve="World_Container" />
+      <ref role="30HIoZ" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
       <ref role="3lhOvi" node="cUvw_H2BrA" resolve="dsl_World" />
     </node>
   </node>
@@ -333,7 +333,7 @@
                   <node concept="2OqwBi" id="6B5I$h9zNDS" role="3clFbG">
                     <node concept="2OqwBi" id="2OHr9yL5Pgr" role="2Oq$k0">
                       <node concept="3Tsc0h" id="2OHr9yL5Pgu" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                       <node concept="30H73N" id="2OHr9yL5Pgv" role="2Oq$k0" />
                     </node>
@@ -347,12 +347,12 @@
                                   <ref role="3cqZAo" node="6B5I$h9zQd4" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="6B5I$h9zRUo" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="6B5I$h9zSwF" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9zSMP" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                                 </node>
                               </node>
                             </node>
@@ -407,7 +407,7 @@
                   <node concept="2OqwBi" id="6B5I$h9$5aG" role="3clFbG">
                     <node concept="2OqwBi" id="6B5I$h9$2cd" role="2Oq$k0">
                       <node concept="3Tsc0h" id="6B5I$h9$2cg" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                       <node concept="30H73N" id="6B5I$h9$2ch" role="2Oq$k0" />
                     </node>
@@ -421,12 +421,12 @@
                                   <ref role="3cqZAo" node="6B5I$h9$6NW" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="6B5I$h9$7DN" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="6B5I$h9$8u5" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9$8Co" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                                 </node>
                               </node>
                             </node>
@@ -478,7 +478,7 @@
                   <node concept="2OqwBi" id="6B5I$h9$d6D" role="3clFbG">
                     <node concept="2OqwBi" id="6B5I$h9$d6E" role="2Oq$k0">
                       <node concept="3Tsc0h" id="6B5I$h9$d6F" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                       <node concept="30H73N" id="6B5I$h9$d6G" role="2Oq$k0" />
                     </node>
@@ -492,12 +492,12 @@
                                   <ref role="3cqZAo" node="6B5I$h9$d6R" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="6B5I$h9$d6O" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="6B5I$h9$d6P" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9$h72" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                                 </node>
                               </node>
                             </node>
@@ -552,12 +552,12 @@
                       <node concept="2OqwBi" id="57aaQbDDTSF" role="2Oq$k0">
                         <node concept="30H73N" id="57aaQbDDTSG" role="2Oq$k0" />
                         <node concept="3TrEf2" id="57aaQbDDUQB" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                          <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                         </node>
                       </node>
                       <node concept="1mIQ4w" id="57aaQbDDXH8" role="2OqNvi">
                         <node concept="chp4Y" id="57aaQbDDXMe" role="cj9EA">
-                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                          <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                         </node>
                       </node>
                     </node>
@@ -578,12 +578,12 @@
                         <node concept="2OqwBi" id="57aaQbDDTSR" role="2Oq$k0">
                           <node concept="30H73N" id="57aaQbDDTSS" role="2Oq$k0" />
                           <node concept="3TrEf2" id="57aaQbDDYGZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                            <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="57aaQbDDYTC" role="2OqNvi">
                           <node concept="chp4Y" id="57aaQbDDYXa" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                           </node>
                         </node>
                       </node>
@@ -644,7 +644,7 @@
                 <node concept="3clFbF" id="57aaQbDDS9x" role="3cqZAp">
                   <node concept="2OqwBi" id="57aaQbDDS9s" role="3clFbG">
                     <node concept="3Tsc0h" id="57aaQbDDS9v" role="2OqNvi">
-                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                     </node>
                     <node concept="30H73N" id="57aaQbDDS9w" role="2Oq$k0" />
                   </node>
@@ -686,7 +686,7 @@
                 <node concept="3clFbF" id="6KnhZ9_cCz1" role="3cqZAp">
                   <node concept="2OqwBi" id="6KnhZ9_cCyW" role="3clFbG">
                     <node concept="3Tsc0h" id="6KnhZ9_cCyZ" role="2OqNvi">
-                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                     </node>
                     <node concept="30H73N" id="6KnhZ9_cCz0" role="2Oq$k0" />
                   </node>
@@ -726,11 +726,11 @@
                         <node concept="2OqwBi" id="11q$FfsZDFD" role="2Oq$k0">
                           <node concept="30H73N" id="11q$FfsZDmP" role="2Oq$k0" />
                           <node concept="3TrEf2" id="11q$FfsZDZE" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="11q$FfsZEx8" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="X_Size" />
+                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25R" resolve="_xSize" />
                         </node>
                       </node>
                     </node>
@@ -757,11 +757,11 @@
                         <node concept="2OqwBi" id="11q$FfsZFMk" role="2Oq$k0">
                           <node concept="30H73N" id="11q$FfsZFMl" role="2Oq$k0" />
                           <node concept="3TrEf2" id="11q$FfsZFMm" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="11q$FfsZIb6" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="Y_Size" />
+                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25U" resolve="_ySize" />
                         </node>
                       </node>
                     </node>
@@ -788,11 +788,11 @@
                         <node concept="2OqwBi" id="11q$FfsZGRX" role="2Oq$k0">
                           <node concept="30H73N" id="11q$FfsZGRY" role="2Oq$k0" />
                           <node concept="3TrEf2" id="11q$FfsZGRZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="11q$FfsZI4n" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="Z_Size" />
+                          <ref role="3TsBF5" to="s9ob:57Wjpeqm25Y" resolve="_zSize" />
                         </node>
                       </node>
                     </node>
@@ -818,11 +818,11 @@
                           <node concept="2OqwBi" id="6B5I$h9AXLM" role="2Oq$k0">
                             <node concept="30H73N" id="6B5I$h9AX_8" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6B5I$h9AXNi" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="6B5I$h9AZah" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:53FFamEvoY" resolve="Adhesiveness" />
+                            <ref role="3Tt5mk" to="s9ob:53FFamEvoY" resolve="_adhesiveness" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6B5I$h9BwLH" role="2OqNvi">
@@ -881,7 +881,7 @@
                         <node concept="2OqwBi" id="6VIN$acot65" role="2Oq$k0">
                           <node concept="30H73N" id="6VIN$acosSt" role="2Oq$k0" />
                           <node concept="3TrEf2" id="6VIN$acotvZ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="6VIN$acotWv" role="2OqNvi">
@@ -913,7 +913,7 @@
                         <node concept="2OqwBi" id="6VIN$acoxXI" role="2Oq$k0">
                           <node concept="30H73N" id="6VIN$acoxK6" role="2Oq$k0" />
                           <node concept="3TrEf2" id="6VIN$acoyeY" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="6VIN$acoz1z" role="2OqNvi">
@@ -946,7 +946,7 @@
                           <node concept="2OqwBi" id="6VIN$aco$TW" role="2Oq$k0">
                             <node concept="30H73N" id="6VIN$aco$EG" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6VIN$aco_fn" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="6VIN$aco_JM" role="2OqNvi">
@@ -984,7 +984,7 @@
                             <node concept="2OqwBi" id="6VIN$acoBAR" role="2Oq$k0">
                               <node concept="30H73N" id="6VIN$acoBAS" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6VIN$acoBAT" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6VIN$acoBAU" role="2OqNvi">
@@ -1009,7 +1009,7 @@
                             <node concept="2OqwBi" id="6VIN$acoCEq" role="2Oq$k0">
                               <node concept="30H73N" id="6VIN$acoCpe" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6VIN$acoD84" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6VIN$acoDB5" role="2OqNvi">
@@ -1041,7 +1041,7 @@
                             <node concept="2OqwBi" id="6VIN$acoGEK" role="2Oq$k0">
                               <node concept="30H73N" id="6VIN$acoGoB" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6VIN$acoHfS" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                                <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6VIN$acoHVv" role="2OqNvi">
@@ -1099,7 +1099,7 @@
                           <node concept="2OqwBi" id="6VIN$acoVyq" role="2Oq$k0">
                             <node concept="30H73N" id="6VIN$acoVyr" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6VIN$acoVys" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                              <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="6VIN$acoVyt" role="2OqNvi">
@@ -1183,7 +1183,7 @@
                 <node concept="3clFbF" id="6VIN$acoshL" role="3cqZAp">
                   <node concept="2OqwBi" id="6VIN$acoshG" role="3clFbG">
                     <node concept="3Tsc0h" id="6VIN$acoshJ" role="2OqNvi">
-                      <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                      <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                     </node>
                     <node concept="30H73N" id="6VIN$acoshK" role="2Oq$k0" />
                   </node>
@@ -1234,7 +1234,7 @@
                           <node concept="1PxgMI" id="3fk35jmAx4x" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAx4N" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAwoE" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAwc2" role="2Oq$k0" />
@@ -1242,11 +1242,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAxvK" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmAyza" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                         </node>
                       </node>
                     </node>
@@ -1261,21 +1261,21 @@
                             <node concept="1PxgMI" id="3fk35jmAzbs" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmAzbt" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmAzbu" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmAzbv" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmAzbw" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmAzbx" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAzby" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAzbz" role="2OqNvi">
@@ -1321,7 +1321,7 @@
                           <node concept="1PxgMI" id="3fk35jmABul" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmABum" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmABun" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmABuo" role="2Oq$k0" />
@@ -1329,11 +1329,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmABuq" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmADbv" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                         </node>
                       </node>
                     </node>
@@ -1348,21 +1348,21 @@
                             <node concept="1PxgMI" id="3fk35jmABuy" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmABuz" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmABu$" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmABu_" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmABuA" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmABuB" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmABuC" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAEkJ" role="2OqNvi">
@@ -1408,7 +1408,7 @@
                           <node concept="1PxgMI" id="3fk35jmAEoq" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAEor" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAEos" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAEot" role="2Oq$k0" />
@@ -1416,11 +1416,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAEov" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmAG2M" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -1435,21 +1435,21 @@
                             <node concept="1PxgMI" id="3fk35jmAEoB" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmAEoC" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmAEoD" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmAEoE" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmAEoF" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmAEoG" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAEoH" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="Source" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCk0" resolve="_source" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAGk_" role="2OqNvi">
@@ -1488,7 +1488,7 @@
                     <node concept="2OqwBi" id="2S6lVSSsOAj" role="2Oq$k0">
                       <node concept="30H73N" id="2S6lVSSsOAl" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="2S6lVSSsQB4" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="2S6lVSSsOAm" role="2OqNvi">
@@ -1501,12 +1501,12 @@
                                   <ref role="3cqZAo" node="2S6lVSSsOAw" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="2S6lVSSsRf2" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="2S6lVSSsOAu" role="2OqNvi">
                                 <node concept="chp4Y" id="2S6lVSSsPpC" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                                 </node>
                               </node>
                             </node>
@@ -1563,7 +1563,7 @@
                           <node concept="1PxgMI" id="3fk35jmAGof" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAGog" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAGoh" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAGoi" role="2Oq$k0" />
@@ -1571,11 +1571,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAGok" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmAI36" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                         </node>
                       </node>
                     </node>
@@ -1590,21 +1590,21 @@
                             <node concept="1PxgMI" id="3fk35jmAGos" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmAGot" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmAGou" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmAGov" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmAGow" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmAGox" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAJt6" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAJIJ" role="2OqNvi">
@@ -1650,7 +1650,7 @@
                           <node concept="1PxgMI" id="3fk35jmAJMz" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAJM$" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAJM_" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAJMA" role="2Oq$k0" />
@@ -1658,11 +1658,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAJMC" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmALqM" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                         </node>
                       </node>
                     </node>
@@ -1677,21 +1677,21 @@
                             <node concept="1PxgMI" id="3fk35jmAJMK" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmAJML" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmAJMM" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmAJMN" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmAJMO" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmAJMP" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAJMQ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAJMR" role="2OqNvi">
@@ -1737,7 +1737,7 @@
                           <node concept="1PxgMI" id="3fk35jmANC9" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmANCa" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmANCb" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmANCc" role="2Oq$k0" />
@@ -1745,11 +1745,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmANCe" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmAQjz" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -1764,21 +1764,21 @@
                             <node concept="1PxgMI" id="3fk35jmANCm" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmANCn" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmANCo" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmANCp" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmANCq" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmANCr" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="SinkAndSource" />
+                              <ref role="3Tt5mk" to="s9ob:2S6lVSSrJfy" resolve="_sinkAndSource" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmANCs" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="Sink" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MuCjY" resolve="_sink" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAQ_m" role="2OqNvi">
@@ -1817,7 +1817,7 @@
                     <node concept="2OqwBi" id="4KNMtF8NoIf" role="2Oq$k0">
                       <node concept="30H73N" id="4KNMtF8NoIg" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="4KNMtF8NoIh" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="4KNMtF8NoIi" role="2OqNvi">
@@ -1830,12 +1830,12 @@
                                   <ref role="3cqZAo" node="4KNMtF8NoIs" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="4KNMtF8NoIp" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="4KNMtF8NoIq" role="2OqNvi">
                                 <node concept="chp4Y" id="4KNMtF8NoIr" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                                 </node>
                               </node>
                             </node>
@@ -1890,12 +1890,12 @@
                       <node concept="2OqwBi" id="CB_Y3MxzRy" role="2Oq$k0">
                         <node concept="30H73N" id="CB_Y3MxzC7" role="2Oq$k0" />
                         <node concept="3TrEf2" id="CB_Y3Mx$7A" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                         </node>
                       </node>
                       <node concept="1mIQ4w" id="CB_Y3Mx$yS" role="2OqNvi">
                         <node concept="chp4Y" id="CB_Y3Mx$Ad" role="cj9EA">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="Gradient_Type_Constant" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="GradientTypeConstant" />
                         </node>
                       </node>
                     </node>
@@ -1904,12 +1904,12 @@
                         <node concept="2OqwBi" id="CB_Y3Mx_W7" role="2Oq$k0">
                           <node concept="30H73N" id="CB_Y3Mx_Cm" role="2Oq$k0" />
                           <node concept="3TrEf2" id="CB_Y3MxArq" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="CB_Y3MxAXZ" role="2OqNvi">
                           <node concept="chp4Y" id="CB_Y3MxB0t" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="Gradient_Type_Custom" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="GradientTypeCustom" />
                           </node>
                         </node>
                       </node>
@@ -1931,12 +1931,12 @@
                         <node concept="2OqwBi" id="CB_Y3MxBQu" role="2Oq$k0">
                           <node concept="30H73N" id="CB_Y3MxBun" role="2Oq$k0" />
                           <node concept="3TrEf2" id="CB_Y3MxCg$" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="CB_Y3MxCOB" role="2OqNvi">
                           <node concept="chp4Y" id="CB_Y3MxCS4" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="Gradient_Type_Linear" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="GradientTypeLinear" />
                           </node>
                         </node>
                       </node>
@@ -1958,12 +1958,12 @@
                         <node concept="2OqwBi" id="CB_Y3MxF4I" role="2Oq$k0">
                           <node concept="30H73N" id="CB_Y3MxECh" role="2Oq$k0" />
                           <node concept="3TrEf2" id="CB_Y3MxFE4" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="CB_Y3MxG9f" role="2OqNvi">
                           <node concept="chp4Y" id="CB_Y3MxGdF" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="Gradient_Type_Exponential" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="GradientTypeExponential" />
                           </node>
                         </node>
                       </node>
@@ -2006,7 +2006,7 @@
                         <node concept="2OqwBi" id="4KNMtF8PMmB" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8PM95" role="2Oq$k0" />
                           <node concept="3TrEf2" id="109yD1sLxjv" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="109yD1sLxHU" role="2OqNvi">
@@ -2081,7 +2081,7 @@
                     <node concept="2OqwBi" id="4KNMtF8NpyY" role="2Oq$k0">
                       <node concept="30H73N" id="4KNMtF8NpyZ" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="4KNMtF8Npz0" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="4KNMtF8Npz1" role="2OqNvi">
@@ -2094,12 +2094,12 @@
                                   <ref role="3cqZAo" node="4KNMtF8Npzb" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="4KNMtF8Npz8" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="4KNMtF8Npz9" role="2OqNvi">
                                 <node concept="chp4Y" id="4KNMtF8Npza" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="Gradient_Shape_SinkAndSource" />
+                                  <ref role="cht4Q" to="s9ob:2S6lVSSrJfe" resolve="GradientShapeSinkAndSource" />
                                 </node>
                               </node>
                             </node>
@@ -2159,7 +2159,7 @@
                           <node concept="1PxgMI" id="3fk35jmAWlg" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAWlh" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAWli" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAWlj" role="2Oq$k0" />
@@ -2167,11 +2167,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAWll" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmAWlm" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                         </node>
                       </node>
                     </node>
@@ -2185,17 +2185,17 @@
                           <node concept="1PxgMI" id="3fk35jmAUHk" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmAUHl" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmAUHm" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmAUHn" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmAUHo" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmAUHp" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmAUHq" role="2OqNvi">
@@ -2241,7 +2241,7 @@
                           <node concept="1PxgMI" id="3fk35jmB0kF" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB0kG" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB0kH" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB0kI" role="2Oq$k0" />
@@ -2249,11 +2249,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB0kK" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmB209" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                         </node>
                       </node>
                     </node>
@@ -2267,17 +2267,17 @@
                           <node concept="1PxgMI" id="3fk35jmB0kR" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB0kS" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB0kT" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB0kU" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB0kV" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB0kW" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmB30v" role="2OqNvi">
@@ -2323,7 +2323,7 @@
                           <node concept="1PxgMI" id="3fk35jmB346" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB347" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB348" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB349" role="2Oq$k0" />
@@ -2331,11 +2331,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB34b" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmB4UY" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -2349,17 +2349,17 @@
                           <node concept="1PxgMI" id="3fk35jmB34i" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB34j" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB34k" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB34l" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB34m" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB34n" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgw" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmB52T" role="2OqNvi">
@@ -2397,7 +2397,7 @@
                   <node concept="2OqwBi" id="6B5I$h9$j86" role="3clFbG">
                     <node concept="2OqwBi" id="6B5I$h9$hiy" role="2Oq$k0">
                       <node concept="3Tsc0h" id="6B5I$h9$hi_" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                       <node concept="30H73N" id="6B5I$h9$hiA" role="2Oq$k0" />
                     </node>
@@ -2411,12 +2411,12 @@
                                   <ref role="3cqZAo" node="6B5I$h9$kED" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="6B5I$h9$li4" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="6B5I$h9$lWy" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9$mrr" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                                 </node>
                               </node>
                             </node>
@@ -2471,12 +2471,12 @@
                       <node concept="2OqwBi" id="4KNMtF8NdcY" role="2Oq$k0">
                         <node concept="30H73N" id="4KNMtF8NdcZ" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4KNMtF8Ndd0" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                         </node>
                       </node>
                       <node concept="1mIQ4w" id="4KNMtF8Ndd1" role="2OqNvi">
                         <node concept="chp4Y" id="4KNMtF8Ndd2" role="cj9EA">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="Gradient_Type_Constant" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="GradientTypeConstant" />
                         </node>
                       </node>
                     </node>
@@ -2485,12 +2485,12 @@
                         <node concept="2OqwBi" id="4KNMtF8Ndd5" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8Ndd6" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8Ndd7" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8Ndd8" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8Ndd9" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="Gradient_Type_Custom" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="GradientTypeCustom" />
                           </node>
                         </node>
                       </node>
@@ -2512,12 +2512,12 @@
                         <node concept="2OqwBi" id="4KNMtF8Nddh" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8Nddi" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8Nddj" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8Nddk" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8Nddl" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="Gradient_Type_Linear" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="GradientTypeLinear" />
                           </node>
                         </node>
                       </node>
@@ -2539,12 +2539,12 @@
                         <node concept="2OqwBi" id="4KNMtF8Nddt" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8Nddu" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8Nddv" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8Nddw" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8Nddx" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="Gradient_Type_Exponential" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="GradientTypeExponential" />
                           </node>
                         </node>
                       </node>
@@ -2587,7 +2587,7 @@
                         <node concept="2OqwBi" id="6B5I$h9yJCH" role="2Oq$k0">
                           <node concept="30H73N" id="6B5I$h9yJrb" role="2Oq$k0" />
                           <node concept="3TrEf2" id="109yD1sLyW2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="109yD1sLzig" role="2OqNvi">
@@ -2667,17 +2667,17 @@
                       <node concept="2OqwBi" id="6ZdR30bdKC7" role="2Oq$k0">
                         <node concept="1PxgMI" id="6ZdR30bdKC8" role="2Oq$k0">
                           <node concept="chp4Y" id="6ZdR30bdKC9" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                           </node>
                           <node concept="2OqwBi" id="6ZdR30bdKCa" role="1m5AlR">
                             <node concept="30H73N" id="6ZdR30bdKCb" role="2Oq$k0" />
                             <node concept="3TrEf2" id="6ZdR30bdKCc" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
                         <node concept="3TrcHB" id="6ZdR30bdKCd" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                          <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                         </node>
                       </node>
                       <node concept="21noJN" id="6ZdR30bdKCe" role="2OqNvi">
@@ -2703,17 +2703,17 @@
                         <node concept="2OqwBi" id="6ZdR30bdKCn" role="2Oq$k0">
                           <node concept="1PxgMI" id="6ZdR30bdKCo" role="2Oq$k0">
                             <node concept="chp4Y" id="6ZdR30bdKCp" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="6ZdR30bdKCq" role="1m5AlR">
                               <node concept="30H73N" id="6ZdR30bdKCr" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6ZdR30bdKCs" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6ZdR30bdKCt" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                           </node>
                         </node>
                         <node concept="21noJN" id="6ZdR30bdKCu" role="2OqNvi">
@@ -2728,17 +2728,17 @@
                         <node concept="2OqwBi" id="6ZdR30bdKCy" role="2Oq$k0">
                           <node concept="1PxgMI" id="6ZdR30bdKCz" role="2Oq$k0">
                             <node concept="chp4Y" id="6ZdR30bdKC$" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="6ZdR30bdKC_" role="1m5AlR">
                               <node concept="30H73N" id="6ZdR30bdKCA" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6ZdR30bdKCB" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6ZdR30bdKCC" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                           </node>
                         </node>
                         <node concept="21noJN" id="6ZdR30bdKCD" role="2OqNvi">
@@ -2777,17 +2777,17 @@
                         <node concept="2OqwBi" id="6ZdR30bdKCR" role="2Oq$k0">
                           <node concept="1PxgMI" id="6ZdR30bdKCS" role="2Oq$k0">
                             <node concept="chp4Y" id="6ZdR30bdKCT" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="6ZdR30bdKCU" role="1m5AlR">
                               <node concept="30H73N" id="6ZdR30bdKCV" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6ZdR30bdKCW" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6ZdR30bdKCX" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                           </node>
                         </node>
                         <node concept="21noJN" id="6ZdR30bdKCY" role="2OqNvi">
@@ -2814,17 +2814,17 @@
                         <node concept="2OqwBi" id="6ZdR30bdKD7" role="2Oq$k0">
                           <node concept="1PxgMI" id="6ZdR30bdKD8" role="2Oq$k0">
                             <node concept="chp4Y" id="6ZdR30bdKD9" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="6ZdR30bdKDa" role="1m5AlR">
                               <node concept="30H73N" id="6ZdR30bdKDb" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6ZdR30bdKDc" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6ZdR30bdKDd" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                           </node>
                         </node>
                         <node concept="21noJN" id="6ZdR30bdKDe" role="2OqNvi">
@@ -2851,17 +2851,17 @@
                         <node concept="2OqwBi" id="6ZdR30bdKDn" role="2Oq$k0">
                           <node concept="1PxgMI" id="6ZdR30bdKDo" role="2Oq$k0">
                             <node concept="chp4Y" id="6ZdR30bdKDp" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                             </node>
                             <node concept="2OqwBi" id="6ZdR30bdKDq" role="1m5AlR">
                               <node concept="30H73N" id="6ZdR30bdKDr" role="2Oq$k0" />
                               <node concept="3TrEf2" id="6ZdR30bdKDs" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6ZdR30bdKDt" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="Gradient_Direction" />
+                            <ref role="3TsBF5" to="s9ob:2S6lVSS$lxW" resolve="_gradientDirection" />
                           </node>
                         </node>
                         <node concept="21noJN" id="6ZdR30bdKDu" role="2OqNvi">
@@ -2898,12 +2898,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNgVr" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNgVs" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNgVt" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNgVu" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNgVv" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNgVw" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -2934,12 +2934,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNih5" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNih6" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNih7" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNih8" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNih9" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNiha" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -2970,12 +2970,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNka_" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNkaA" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNkaB" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNkaC" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNkaD" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNkaE" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -3001,7 +3001,7 @@
                     <node concept="2OqwBi" id="4KNMtF8OeIy" role="2Oq$k0">
                       <node concept="30H73N" id="4KNMtF8OeIz" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="4KNMtF8OeI$" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="4KNMtF8OeI_" role="2OqNvi">
@@ -3014,12 +3014,12 @@
                                   <ref role="3cqZAo" node="4KNMtF8OeIJ" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="4KNMtF8OeIG" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="4KNMtF8OeIH" role="2OqNvi">
                                 <node concept="chp4Y" id="4KNMtF8Oh2a" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="Gradient_Shape_Cuboidal" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
                                 </node>
                               </node>
                             </node>
@@ -3079,7 +3079,7 @@
                           <node concept="1PxgMI" id="3fk35jmB5Z$" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB5Z_" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB5ZA" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB5ZB" role="2Oq$k0" />
@@ -3087,11 +3087,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB5ZD" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmB5ZE" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                         </node>
                       </node>
                     </node>
@@ -3105,17 +3105,17 @@
                           <node concept="1PxgMI" id="3fk35jmB5ZK" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB7u5" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB5ZM" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB5ZN" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB5ZO" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBxf6" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmB5ZQ" role="2OqNvi">
@@ -3161,7 +3161,7 @@
                           <node concept="1PxgMI" id="3fk35jmB7$s" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB7$t" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB7$u" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB7$v" role="2Oq$k0" />
@@ -3169,11 +3169,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB7$x" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmB9kK" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                         </node>
                       </node>
                     </node>
@@ -3187,17 +3187,17 @@
                           <node concept="1PxgMI" id="3fk35jmB7$C" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB7$D" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB7$E" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB7$F" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB7$G" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB7$H" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmBal$" role="2OqNvi">
@@ -3243,7 +3243,7 @@
                           <node concept="1PxgMI" id="3fk35jmBapB" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmBapC" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmBapD" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBapE" role="2Oq$k0" />
@@ -3251,11 +3251,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBapG" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmBc9b" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -3269,17 +3269,17 @@
                           <node concept="1PxgMI" id="3fk35jmBapN" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmBapO" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                              <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmBapP" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBapQ" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmBapR" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBapS" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:2S6lVSSrJgb" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmBbUE" role="2OqNvi">
@@ -3317,7 +3317,7 @@
                   <node concept="2OqwBi" id="6B5I$h9_YwD" role="3clFbG">
                     <node concept="2OqwBi" id="6B5I$h9$DvC" role="2Oq$k0">
                       <node concept="3Tsc0h" id="6B5I$h9$DvF" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                       <node concept="30H73N" id="6B5I$h9$DvG" role="2Oq$k0" />
                     </node>
@@ -3331,12 +3331,12 @@
                                   <ref role="3cqZAo" node="6B5I$h9A0eA" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="6B5I$h9A1fr" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="6B5I$h9A3zi" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9A3LQ" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                                 </node>
                               </node>
                             </node>
@@ -3391,12 +3391,12 @@
                       <node concept="2OqwBi" id="4KNMtF8P$Z9" role="2Oq$k0">
                         <node concept="30H73N" id="4KNMtF8P$Za" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4KNMtF8P$Zb" role="2OqNvi">
-                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                          <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                         </node>
                       </node>
                       <node concept="1mIQ4w" id="4KNMtF8P$Zc" role="2OqNvi">
                         <node concept="chp4Y" id="4KNMtF8P$Zd" role="cj9EA">
-                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="Gradient_Type_Constant" />
+                          <ref role="cht4Q" to="s9ob:2zgk2Od0CG8" resolve="GradientTypeConstant" />
                         </node>
                       </node>
                     </node>
@@ -3405,12 +3405,12 @@
                         <node concept="2OqwBi" id="4KNMtF8P$Zg" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8P$Zh" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8P$Zi" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8P$Zj" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8P$Zk" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="Gradient_Type_Custom" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CIy" resolve="GradientTypeCustom" />
                           </node>
                         </node>
                       </node>
@@ -3432,12 +3432,12 @@
                         <node concept="2OqwBi" id="4KNMtF8P$Zs" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8P$Zt" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8P$Zu" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8P$Zv" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8P$Zw" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="Gradient_Type_Linear" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CFO" resolve="GradientTypeLinear" />
                           </node>
                         </node>
                       </node>
@@ -3459,12 +3459,12 @@
                         <node concept="2OqwBi" id="4KNMtF8P$ZC" role="2Oq$k0">
                           <node concept="30H73N" id="4KNMtF8P$ZD" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4KNMtF8P$ZE" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="Gradient_Type" />
+                            <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaJ" resolve="_gradientType" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="4KNMtF8P$ZF" role="2OqNvi">
                           <node concept="chp4Y" id="4KNMtF8P$ZG" role="cj9EA">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="Gradient_Type_Exponential" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CHC" resolve="GradientTypeExponential" />
                           </node>
                         </node>
                       </node>
@@ -3507,7 +3507,7 @@
                         <node concept="2OqwBi" id="6B5I$h9yLjm" role="2Oq$k0">
                           <node concept="30H73N" id="6B5I$h9yL5O" role="2Oq$k0" />
                           <node concept="3TrEf2" id="109yD1sL$Pw" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="SpeciesReference" />
+                            <ref role="3Tt5mk" to="s9ob:109yD1sHKQA" resolve="_speciesReference" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="109yD1sL_bI" role="2OqNvi">
@@ -3574,12 +3574,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNnU0" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNnU1" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNnU2" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                            <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNnU3" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNnU4" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNnU5" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                              <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                             </node>
                           </node>
                         </node>
@@ -3605,7 +3605,7 @@
                     <node concept="2OqwBi" id="4KNMtF8P_1a" role="2Oq$k0">
                       <node concept="30H73N" id="4KNMtF8P_1b" role="2Oq$k0" />
                       <node concept="3Tsc0h" id="4KNMtF8P_1c" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="gradients" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
                       </node>
                     </node>
                     <node concept="3zZkjj" id="4KNMtF8P_1d" role="2OqNvi">
@@ -3618,12 +3618,12 @@
                                   <ref role="3cqZAo" node="4KNMtF8P_1n" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="4KNMtF8P_1k" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="Gradient_Shape" />
+                                  <ref role="3Tt5mk" to="s9ob:CB_Y3MvTaL" resolve="_gradientShape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="4KNMtF8P_1l" role="2OqNvi">
                                 <node concept="chp4Y" id="6B5I$h9$mDk" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="Gradient_Shape_Point" />
+                                  <ref role="cht4Q" to="s9ob:2zgk2Od0CJa" resolve="GradientShapePoint" />
                                 </node>
                               </node>
                             </node>
@@ -3690,12 +3690,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNrl7" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNrl8" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNrl9" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNrla" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNrlb" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNrlc" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -3726,12 +3726,12 @@
                       <node concept="2OqwBi" id="7e7Fgy6tiWS" role="37wK5m">
                         <node concept="1PxgMI" id="7e7Fgy6tiBh" role="2Oq$k0">
                           <node concept="chp4Y" id="7e7Fgy6tiEf" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                           </node>
                           <node concept="2OqwBi" id="7e7Fgy6ti14" role="1m5AlR">
                             <node concept="30H73N" id="7e7Fgy6thHx" role="2Oq$k0" />
                             <node concept="3TrEf2" id="7e7Fgy6tihx" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -3762,12 +3762,12 @@
                       <node concept="2OqwBi" id="39Wpe6qNwgW" role="37wK5m">
                         <node concept="1PxgMI" id="39Wpe6qNwgX" role="2Oq$k0">
                           <node concept="chp4Y" id="39Wpe6qNwgY" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                           </node>
                           <node concept="2OqwBi" id="39Wpe6qNwgZ" role="1m5AlR">
                             <node concept="30H73N" id="39Wpe6qNwh0" role="2Oq$k0" />
                             <node concept="3TrEf2" id="39Wpe6qNwh1" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -3795,7 +3795,7 @@
                   <node concept="2OqwBi" id="57aaQbDE2Ij" role="3clFbG">
                     <node concept="2OqwBi" id="6KnhZ9_cO6r" role="2Oq$k0">
                       <node concept="3Tsc0h" id="6KnhZ9_cO6u" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                       </node>
                       <node concept="30H73N" id="6KnhZ9_cO6v" role="2Oq$k0" />
                     </node>
@@ -3809,12 +3809,12 @@
                                   <ref role="3cqZAo" node="57aaQbDE4KK" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="57aaQbDE5HD" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="57aaQbDE6a6" role="2OqNvi">
                                 <node concept="chp4Y" id="57aaQbDE6qR" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                                 </node>
                               </node>
                             </node>
@@ -3876,7 +3876,7 @@
                             <node concept="1PxgMI" id="3fk35jmBdgF" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBdgG" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBdgH" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBdgI" role="2Oq$k0" />
@@ -3884,11 +3884,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBdgK" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBdgL" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                           </node>
                         </node>
                       </node>
@@ -3902,17 +3902,17 @@
                             <node concept="1PxgMI" id="3fk35jmBi3I" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBi7m" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBg$k" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBfpo" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBgRa" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBkL3" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBlds" role="2OqNvi">
@@ -3958,7 +3958,7 @@
                             <node concept="1PxgMI" id="3fk35jmBmdl" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBmdm" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBmdn" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBmdo" role="2Oq$k0" />
@@ -3966,11 +3966,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBmdq" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBnW3" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                           </node>
                         </node>
                       </node>
@@ -3984,17 +3984,17 @@
                             <node concept="1PxgMI" id="3fk35jmBmdx" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBmdy" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBmdz" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBmd$" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBmd_" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBmdA" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="Vertex_1" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXx" resolve="_vertex1" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBodI" role="2OqNvi">
@@ -4068,7 +4068,7 @@
                             <node concept="1PxgMI" id="3fk35jmBol$" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBol_" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBolA" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBolB" role="2Oq$k0" />
@@ -4076,11 +4076,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBolD" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBolE" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                           </node>
                         </node>
                       </node>
@@ -4094,17 +4094,17 @@
                             <node concept="1PxgMI" id="3fk35jmBolK" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBolL" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBolM" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBolN" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBolO" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBq2M" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBolQ" role="2OqNvi">
@@ -4150,7 +4150,7 @@
                             <node concept="1PxgMI" id="3fk35jmBqa$" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBqa_" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBqaA" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBqaB" role="2Oq$k0" />
@@ -4158,11 +4158,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBqaD" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBqaE" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                           </node>
                         </node>
                       </node>
@@ -4176,17 +4176,17 @@
                             <node concept="1PxgMI" id="3fk35jmBqaK" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBqaL" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBqaM" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBqaN" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBqaO" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBrSv" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="Vertex_2" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXD" resolve="_vertex2" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBqaQ" role="2OqNvi">
@@ -4260,7 +4260,7 @@
                             <node concept="1PxgMI" id="3fk35jmBs0n" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBs0o" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBs0p" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBs0q" role="2Oq$k0" />
@@ -4268,11 +4268,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBs0s" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBs0t" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                           </node>
                         </node>
                       </node>
@@ -4286,17 +4286,17 @@
                             <node concept="1PxgMI" id="3fk35jmBs0z" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBs0$" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBs0_" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBs0A" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBs0B" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBtIQ" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBs0D" role="2OqNvi">
@@ -4342,7 +4342,7 @@
                             <node concept="1PxgMI" id="3fk35jmBtMn" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBtMo" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                                <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBtMp" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBtMq" role="2Oq$k0" />
@@ -4350,11 +4350,11 @@
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBtMs" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                              <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3fk35jmBtMt" role="2OqNvi">
-                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                            <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                           </node>
                         </node>
                       </node>
@@ -4368,17 +4368,17 @@
                             <node concept="1PxgMI" id="3fk35jmBtMz" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3fk35jmBtM$" role="3oSUPX">
-                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                               </node>
                               <node concept="2OqwBi" id="3fk35jmBtM_" role="1m5AlR">
                                 <node concept="30H73N" id="3fk35jmBtMA" role="2Oq$k0" />
                                 <node concept="3TrEf2" id="3fk35jmBtMB" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                             </node>
                             <node concept="3TrEf2" id="3fk35jmBw6N" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="Vertex_3" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXG" resolve="_vertex3" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3fk35jmBtMD" role="2OqNvi">
@@ -4510,12 +4510,12 @@
                       <node concept="2OqwBi" id="4JVq81FgvGv" role="3clFbG">
                         <node concept="1PxgMI" id="4JVq81Fgvvc" role="2Oq$k0">
                           <node concept="chp4Y" id="4JVq81Fgv$2" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                           </node>
                           <node concept="2OqwBi" id="4JVq81Fgv3_" role="1m5AlR">
                             <node concept="30H73N" id="4JVq81FguQN" role="2Oq$k0" />
                             <node concept="3TrEf2" id="4JVq81Fgvh2" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -4540,7 +4540,7 @@
                   <node concept="2OqwBi" id="57aaQbDEg2p" role="3clFbG">
                     <node concept="2OqwBi" id="57aaQbDEfc_" role="2Oq$k0">
                       <node concept="3Tsc0h" id="57aaQbDEfcC" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                       </node>
                       <node concept="30H73N" id="57aaQbDEfcD" role="2Oq$k0" />
                     </node>
@@ -4554,12 +4554,12 @@
                                   <ref role="3cqZAo" node="57aaQbDEh1B" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="57aaQbDEhyy" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="57aaQbDEhY_" role="2OqNvi">
                                 <node concept="chp4Y" id="57aaQbDEi7I" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                                 </node>
                               </node>
                             </node>
@@ -4616,7 +4616,7 @@
                           <node concept="1PxgMI" id="3fk35jmBykc" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmBykd" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmByke" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBykf" role="2Oq$k0" />
@@ -4624,11 +4624,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBykh" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmByki" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="Neg_X_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PD" resolve="_negXSpace" />
                         </node>
                       </node>
                     </node>
@@ -4642,17 +4642,17 @@
                           <node concept="1PxgMI" id="3fk35jmByko" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB_7X" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmBykq" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBykr" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB$0d" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBDlj" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmByku" role="2OqNvi">
@@ -4698,7 +4698,7 @@
                           <node concept="1PxgMI" id="3fk35jmB_iX" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB_iY" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB_iZ" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB_j0" role="2Oq$k0" />
@@ -4706,11 +4706,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB_j2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmBBM6" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="Neg_Y_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PJ" resolve="_negYSpace" />
                         </node>
                       </node>
                     </node>
@@ -4724,17 +4724,17 @@
                           <node concept="1PxgMI" id="3fk35jmB_j9" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmB_ja" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmB_jb" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmB_jc" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmB_jd" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmB_je" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmBCc2" role="2OqNvi">
@@ -4780,7 +4780,7 @@
                           <node concept="1PxgMI" id="3fk35jmBDBZ" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmBDC0" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmBDC1" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBDC2" role="2Oq$k0" />
@@ -4788,11 +4788,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBDC4" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="3fk35jmBFD4" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -4806,17 +4806,17 @@
                           <node concept="1PxgMI" id="3fk35jmBDCb" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3fk35jmBDCc" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                              <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                             </node>
                             <node concept="2OqwBi" id="3fk35jmBDCd" role="1m5AlR">
                               <node concept="30H73N" id="3fk35jmBDCe" role="2Oq$k0" />
                               <node concept="3TrEf2" id="3fk35jmBDCf" role="2OqNvi">
-                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                               </node>
                             </node>
                           </node>
                           <node concept="3TrEf2" id="3fk35jmBDCg" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="Centre" />
+                            <ref role="3Tt5mk" to="s9ob:29SopcHq_yR" resolve="_centre" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="3fk35jmBGyn" role="2OqNvi">
@@ -4854,7 +4854,7 @@
                   <node concept="2OqwBi" id="29SopcHslcE" role="3clFbG">
                     <node concept="2OqwBi" id="29SopcHslcF" role="2Oq$k0">
                       <node concept="3Tsc0h" id="29SopcHslcG" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                       </node>
                       <node concept="30H73N" id="29SopcHslcH" role="2Oq$k0" />
                     </node>
@@ -4868,12 +4868,12 @@
                                   <ref role="3cqZAo" node="29SopcHslcS" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="29SopcHslcP" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="29SopcHslcQ" role="2OqNvi">
                                 <node concept="chp4Y" id="29SopcHsmaG" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="Substrate_Shape_Cuboid" />
+                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
                                 </node>
                               </node>
                             </node>
@@ -4930,7 +4930,7 @@
                           <node concept="1PxgMI" id="14cWnRSU9d0" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="14cWnRSU9d1" role="3oSUPX">
-                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                              <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                             </node>
                             <node concept="2OqwBi" id="14cWnRSU9d2" role="1m5AlR">
                               <node concept="30H73N" id="14cWnRSU9d3" role="2Oq$k0" />
@@ -4938,11 +4938,11 @@
                             </node>
                           </node>
                           <node concept="3TrEf2" id="14cWnRSU9d5" role="2OqNvi">
-                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="grid" />
+                            <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="14cWnRSUbNb" role="2OqNvi">
-                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="Neg_Z_Space" />
+                          <ref role="3TsBF5" to="s9ob:11q$FfsT0PQ" resolve="_negZSpace" />
                         </node>
                       </node>
                     </node>
@@ -4955,12 +4955,12 @@
                         <node concept="1PxgMI" id="14cWnRSU9dc" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="14cWnRSU9dd" role="3oSUPX">
-                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                            <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                           </node>
                           <node concept="2OqwBi" id="14cWnRSU9de" role="1m5AlR">
                             <node concept="30H73N" id="14cWnRSU9df" role="2Oq$k0" />
                             <node concept="3TrEf2" id="14cWnRSU9dg" role="2OqNvi">
-                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                              <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                             </node>
                           </node>
                         </node>
@@ -4999,7 +4999,7 @@
                   <node concept="2OqwBi" id="29SopcHsk$Q" role="3clFbG">
                     <node concept="2OqwBi" id="29SopcHsk$R" role="2Oq$k0">
                       <node concept="3Tsc0h" id="29SopcHsk$S" role="2OqNvi">
-                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                        <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                       </node>
                       <node concept="30H73N" id="29SopcHsk$T" role="2Oq$k0" />
                     </node>
@@ -5013,12 +5013,12 @@
                                   <ref role="3cqZAo" node="29SopcHsk_4" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="29SopcHsk_1" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="shape" />
+                                  <ref role="3Tt5mk" to="s9ob:57aaQbDDBXl" resolve="_shape" />
                                 </node>
                               </node>
                               <node concept="1mIQ4w" id="29SopcHsk_2" role="2OqNvi">
                                 <node concept="chp4Y" id="29SopcHsk_3" role="cj9EA">
-                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="Substrate_Shape_Triangular" />
+                                  <ref role="cht4Q" to="s9ob:57aaQbDDBXf" resolve="SubstrateShapeTriangular" />
                                 </node>
                               </node>
                             </node>
@@ -5132,7 +5132,7 @@
                 <node concept="3clFbF" id="6KnhZ9_cOi4" role="3cqZAp">
                   <node concept="2OqwBi" id="6KnhZ9_cOhZ" role="3clFbG">
                     <node concept="3Tsc0h" id="6KnhZ9_cOi2" role="2OqNvi">
-                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="substrates" />
+                      <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
                     </node>
                     <node concept="30H73N" id="6KnhZ9_cOi3" role="2Oq$k0" />
                   </node>
@@ -5150,7 +5150,7 @@
       </node>
     </node>
     <node concept="n94m4" id="cUvw_H2BrC" role="lGtFl">
-      <ref role="n9lRv" to="s9ob:7faAukhALBz" resolve="World_Container" />
+      <ref role="n9lRv" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
     </node>
     <node concept="17Uvod" id="6JBqwuem7C0" role="lGtFl">
       <property role="2qtEX9" value="name" />

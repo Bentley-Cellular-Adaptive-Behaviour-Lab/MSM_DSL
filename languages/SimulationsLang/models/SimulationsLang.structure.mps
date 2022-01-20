@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)">
+<model ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
@@ -10,8 +10,8 @@
     <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -71,21 +71,21 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_analysisContainer" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7wJJsVzvWyd" resolve="AnalysisContainer" />
+      <ref role="20lvS9" node="7wJJsVzvWyd" resolve="AnalysisFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzvXDc" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472780" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_clusterContainer" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7wJJsVzvWwS" resolve="ClusterContainer" />
+      <ref role="20lvS9" node="7wJJsVzvWwS" resolve="ClusterFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzw7ex" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734512033" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_graphicsContainer" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="7wJJsVzvWzR" resolve="GraphicsContainer" />
+      <ref role="20lvS9" node="7wJJsVzvWzR" resolve="GraphicsFacet" />
     </node>
     <node concept="1TJgyj" id="5hUuDYP5qR9" role="1TKVEi">
       <property role="IQ2ns" value="6087312672701132233" />
@@ -93,34 +93,6 @@
       <property role="20kJfa" value="_incrementCombinations" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5hUuDYP50tw" resolve="IncrementCombination" />
-    </node>
-    <node concept="1TJgyj" id="5hUuDYPchQy" role="1TKVEi">
-      <property role="IQ2ns" value="6087312672702930338" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_tissueContainer" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
-    </node>
-    <node concept="1TJgyj" id="5hUuDYPchQD" role="1TKVEi">
-      <property role="IQ2ns" value="6087312672702930345" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_speciesContainer" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
-    </node>
-    <node concept="1TJgyj" id="5hUuDYPchQL" role="1TKVEi">
-      <property role="IQ2ns" value="6087312672702930353" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_shapeContainer" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
-    </node>
-    <node concept="1TJgyj" id="5hUuDYPci2B" role="1TKVEi">
-      <property role="IQ2ns" value="6087312672702931111" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_worldContainer" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
     </node>
     <node concept="1TJgyi" id="7wJJsVzwenC" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734541288" />
@@ -133,10 +105,34 @@
     <node concept="PrWs8" id="5hUuDYPdjKn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="1TJgyj" id="4jUcCWy80OH" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729091001645" />
+      <property role="20kJfa" value="_shapeContainerRef" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
+    </node>
+    <node concept="1TJgyj" id="4jUcCWy80PS" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729091001720" />
+      <property role="20kJfa" value="_signallingContainerRef" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+    </node>
+    <node concept="1TJgyj" id="4jUcCWy7Cvx" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729090901985" />
+      <property role="20kJfa" value="_tissueContainerRef" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+    </node>
+    <node concept="1TJgyj" id="4jUcCWy80Nz" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729091001571" />
+      <property role="20kJfa" value="_worldContainerRef" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
+    </node>
   </node>
   <node concept="25R3W" id="6JBqwuejVvQ">
     <property role="3F6X1D" value="7775299862363355126" />
-    <property role="TrG5h" value="Analysis_Enum" />
+    <property role="TrG5h" value="AnalysisTypeEnum" />
     <property role="3GE5qa" value="Enums" />
     <ref role="1H5jkz" node="6JBqwuejVvR" resolve="None" />
     <node concept="25R33" id="6JBqwuejVvR" role="25R1y">
@@ -157,7 +153,7 @@
   </node>
   <node concept="25R3W" id="72wB6_dUsuh">
     <property role="3F6X1D" value="8115658504614299537" />
-    <property role="TrG5h" value="Cluster_Enum" />
+    <property role="TrG5h" value="ClusterTypeEnum" />
     <property role="3GE5qa" value="Enums" />
     <node concept="25R33" id="72wB6_dUsui" role="25R1y">
       <property role="3tVfz5" value="8115658504614299538" />
@@ -172,7 +168,7 @@
   </node>
   <node concept="25R3W" id="6JBqwuek81m">
     <property role="3F6X1D" value="7775299862363406422" />
-    <property role="TrG5h" value="Graphics_Enum" />
+    <property role="TrG5h" value="GraphicsTypeEnum" />
     <property role="3GE5qa" value="Enums" />
     <ref role="1H5jkz" node="6JBqwuek81n" resolve="Graphics_Off" />
     <node concept="25R33" id="6JBqwuek81n" role="25R1y">
@@ -188,59 +184,46 @@
   </node>
   <node concept="1TIwiD" id="7wJJsVzvWwS">
     <property role="EcuMT" value="8660349304734468152" />
-    <property role="TrG5h" value="ClusterContainer" />
-    <property role="3GE5qa" value="SubContainers" />
+    <property role="TrG5h" value="ClusterFacet" />
+    <property role="3GE5qa" value="SubAspects" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXj2" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471362" />
-      <property role="TrG5h" value="clusterType" />
-      <ref role="AX2Wp" node="72wB6_dUsuh" resolve="Cluster_Enum" />
+      <property role="TrG5h" value="_clusterType" />
+      <ref role="AX2Wp" node="72wB6_dUsuh" resolve="ClusterTypeEnum" />
     </node>
     <node concept="1TJgyi" id="7wJJsVzvXl4" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471492" />
-      <property role="TrG5h" value="replicateNumber" />
+      <property role="TrG5h" value="_replicateNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
   <node concept="1TIwiD" id="7wJJsVzvWyd">
     <property role="EcuMT" value="8660349304734468237" />
-    <property role="TrG5h" value="AnalysisContainer" />
-    <property role="3GE5qa" value="SubContainers" />
+    <property role="TrG5h" value="AnalysisFacet" />
+    <property role="3GE5qa" value="SubAspects" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXk3" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471427" />
-      <property role="TrG5h" value="analysisType" />
-      <ref role="AX2Wp" node="6JBqwuejVvQ" resolve="Analysis_Enum" />
+      <property role="TrG5h" value="_analysisType" />
+      <ref role="AX2Wp" node="6JBqwuejVvQ" resolve="AnalysisTypeEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="7wJJsVzvWzR">
     <property role="EcuMT" value="8660349304734468343" />
-    <property role="TrG5h" value="GraphicsContainer" />
-    <property role="3GE5qa" value="SubContainers" />
+    <property role="TrG5h" value="GraphicsFacet" />
+    <property role="3GE5qa" value="SubAspects" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXhY" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471294" />
-      <property role="TrG5h" value="graphicsType" />
-      <ref role="AX2Wp" node="6JBqwuek81m" resolve="Graphics_Enum" />
-    </node>
-  </node>
-  <node concept="1TIwiD" id="7wJJsVzwers">
-    <property role="EcuMT" value="8660349304734541532" />
-    <property role="TrG5h" value="DesiredWorldContainer" />
-    <property role="3GE5qa" value="SubContainers" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="1TJgyj" id="7wJJsVzwesO" role="1TKVEi">
-      <property role="IQ2ns" value="8660349304734541620" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_worldContainer" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="s9ob:7faAukhALBz" resolve="World_Container" />
+      <property role="TrG5h" value="_graphicsType" />
+      <ref role="AX2Wp" node="6JBqwuek81m" resolve="GraphicsTypeEnum" />
     </node>
   </node>
   <node concept="1TIwiD" id="5hUuDYP50tw">
     <property role="EcuMT" value="6087312672701024096" />
     <property role="TrG5h" value="IncrementCombination" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5hUuDYP51rN" role="1TKVEi">
       <property role="IQ2ns" value="6087312672701028083" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -248,12 +231,6 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="tpee:fzcmrck" resolve="IntegerConstant" />
     </node>
-  </node>
-  <node concept="1TIwiD" id="5hUuDYPaMyo">
-    <property role="EcuMT" value="6087312672702539928" />
-    <property role="3GE5qa" value="SubContainers" />
-    <property role="TrG5h" value="DesiredTissueContainer" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
 </model>
 

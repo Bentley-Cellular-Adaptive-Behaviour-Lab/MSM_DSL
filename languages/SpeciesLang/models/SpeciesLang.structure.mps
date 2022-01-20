@@ -11,7 +11,7 @@
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" />
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
     <import index="l80j" ref="r:9e71c0de-f9ab-4b67-96cc-7d9c857513f6(org.iets3.analysis.base.structure)" implicit="true" />
   </imports>
   <registry>
@@ -73,32 +73,31 @@
     <node concept="1TJgyj" id="2Hxmt3eVft0" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540800" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Species" />
+      <property role="20kJfa" value="_species" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVft2" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540802" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Processes" />
+      <property role="20kJfa" value="_processes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="5jwDGo4Bf0N" resolve="Process" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVft5" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540805" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Parameters" />
+      <property role="20kJfa" value="_parameters" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
     </node>
     <node concept="PrWs8" id="109yD1swrWZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="6Y2UmXTDkR$" role="1TKVEi">
-      <property role="IQ2ns" value="8035241350173904356" />
-      <property role="20kJfa" value="Tissue_Container" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+    <node concept="1TJgyj" id="4jUcCWydX_d" role="1TKVEi">
+      <property role="IQ2ns" value="4970340729092561229" />
+      <property role="20kJfa" value="_simulationContainerRef" />
+      <ref role="20lvS9" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjI">

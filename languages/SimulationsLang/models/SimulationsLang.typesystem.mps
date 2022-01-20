@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:2f40cffd-1a04-4fe7-9aa0-414de19377c4(SettingsLang.typesystem)">
+<model ref="r:2f40cffd-1a04-4fe7-9aa0-414de19377c4(SimulationsLang.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="5" />
     <devkit ref="00000000-0000-4000-0000-1de82b3a4936(jetbrains.mps.devkit.aspect.typesystem)" />
   </languages>
   <imports>
-    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -188,7 +188,7 @@
                 <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
               </node>
               <node concept="3TrcHB" id="7wJJsVzw0z3" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
               </node>
             </node>
             <node concept="3cmrfG" id="7wJJsVzw1QX" role="3uHU7w">
@@ -202,14 +202,14 @@
                   <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
                 </node>
                 <node concept="3TrcHB" id="7wJJsVzw7t_" role="2OqNvi">
-                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
                 </node>
               </node>
               <node concept="liA8E" id="7wJJsVzw7tA" role="2OqNvi">
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                 <node concept="2OqwBi" id="7wJJsVzw7tB" role="37wK5m">
                   <node concept="1XH99k" id="7wJJsVzw7tC" role="2Oq$k0">
-                    <ref role="1XH99l" to="yy1h:72wB6_dUsuh" resolve="Cluster_Enum" />
+                    <ref role="1XH99l" to="yy1h:72wB6_dUsuh" resolve="ClusterTypeEnum" />
                   </node>
                   <node concept="2ViDtV" id="7wJJsVzw7tD" role="2OqNvi">
                     <ref role="2ViDtZ" to="yy1h:72wB6_dUsuC" resolve="None" />
@@ -294,7 +294,7 @@
                 <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
               </node>
               <node concept="3TrcHB" id="7wJJsVzw2rR" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="replicateNumber" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
               </node>
             </node>
             <node concept="3cmrfG" id="7wJJsVzw8Bo" role="3uHU7w">
@@ -307,14 +307,14 @@
                 <ref role="1YBMHb" node="7wJJsVzvQwu" resolve="container" />
               </node>
               <node concept="3TrcHB" id="7wJJsVzw2rW" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
               </node>
             </node>
             <node concept="liA8E" id="7wJJsVzw2rX" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
               <node concept="2OqwBi" id="7wJJsVzw2rY" role="37wK5m">
                 <node concept="1XH99k" id="7wJJsVzw2rZ" role="2Oq$k0">
-                  <ref role="1XH99l" to="yy1h:72wB6_dUsuh" resolve="Cluster_Enum" />
+                  <ref role="1XH99l" to="yy1h:72wB6_dUsuh" resolve="ClusterTypeEnum" />
                 </node>
                 <node concept="2ViDtV" id="7wJJsVzw2s0" role="2OqNvi">
                   <ref role="2ViDtZ" to="yy1h:72wB6_dUsuC" resolve="None" />
@@ -328,7 +328,7 @@
     </node>
     <node concept="1YaCAy" id="7wJJsVzvQwu" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="yy1h:7wJJsVzvWwS" resolve="ClusterContainer" />
+      <ref role="1YaFvo" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
     </node>
   </node>
   <node concept="18kY7G" id="1PDLoEBS3d6">
@@ -347,7 +347,7 @@
                 </node>
               </node>
               <node concept="3TrcHB" id="1PDLoEBS6_6" role="2OqNvi">
-                <ref role="3TsBF5" to="yy1h:7wJJsVzvXhY" resolve="graphicsType" />
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXhY" resolve="_graphicsType" />
               </node>
             </node>
             <node concept="21noJN" id="1PDLoEBS76n" role="2OqNvi">
@@ -368,7 +368,7 @@
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1PDLoEBS4Zt" role="2OqNvi">
-                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="clusterType" />
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
                 </node>
               </node>
               <node concept="21noJN" id="1PDLoEBS5lb" role="2OqNvi">
