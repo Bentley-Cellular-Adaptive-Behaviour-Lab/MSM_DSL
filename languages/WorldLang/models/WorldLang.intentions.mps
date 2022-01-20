@@ -82,7 +82,7 @@
               <node concept="2Xjw5R" id="11q$Fft0tzf" role="2OqNvi">
                 <node concept="1xMEDy" id="11q$Fft0tzh" role="1xVPHs">
                   <node concept="chp4Y" id="11q$Fft0t_D" role="ri$Ld">
-                    <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="World_Container" />
+                    <ref role="cht4Q" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
                   </node>
                 </node>
               </node>

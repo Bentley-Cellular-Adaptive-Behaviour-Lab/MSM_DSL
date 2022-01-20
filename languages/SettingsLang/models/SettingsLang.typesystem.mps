@@ -393,7 +393,7 @@
     </node>
     <node concept="1YaCAy" id="1PDLoEBS3d9" role="1YuTPh">
       <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="yy1h:7wJJsVzvOoC" resolve="SettingsContainer" />
+      <ref role="1YaFvo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     </node>
   </node>
 </model>

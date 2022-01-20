@@ -64,7 +64,7 @@
   </registry>
   <node concept="1TIwiD" id="7faAukhALBz">
     <property role="EcuMT" value="8343650468779203043" />
-    <property role="TrG5h" value="World_Container" />
+    <property role="TrG5h" value="WorldContainer" />
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Concept for describing the gradients, substrate and properties of a simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />

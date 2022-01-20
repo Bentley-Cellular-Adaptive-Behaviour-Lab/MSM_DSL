@@ -87,7 +87,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="4JVq81Fmyqh">
-    <ref role="1XX52x" to="s9ob:7faAukhALBz" resolve="World_Container" />
+    <ref role="1XX52x" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
     <node concept="3EZMnI" id="4JVq81Fmyqj" role="2wV5jI">
       <node concept="3EZMnI" id="4JVq81Fmyqt" role="3EZMnx">
         <node concept="VPM3Z" id="4JVq81Fmyqv" role="3F10Kt" />

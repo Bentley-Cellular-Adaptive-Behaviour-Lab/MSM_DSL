@@ -117,6 +117,7 @@
     <dependency reexport="false">4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)</dependency>
     <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
     <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+    <dependency reexport="false">615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueLang" version="0" />
@@ -163,6 +164,7 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" version="0" />
+    <module reference="615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)" version="0" />
     <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
     <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)" version="0" />

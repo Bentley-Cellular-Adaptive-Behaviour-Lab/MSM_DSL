@@ -62,6 +62,9 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" node="Qd9PzECg3s" resolve="CytoskeletalProtein" />
     </node>
+    <node concept="PrWs8" id="5hUuDYPcJMA" role="PzmwI">
+      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
   </node>
   <node concept="1TIwiD" id="Qd9PzECg1V">
     <property role="EcuMT" value="976479957056290939" />

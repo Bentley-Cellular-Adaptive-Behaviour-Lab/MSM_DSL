@@ -105,7 +105,7 @@
     <ref role="1M2myG" to="s9ob:7faAukhALBA" resolve="Grid" />
   </node>
   <node concept="1M2fIO" id="6JBqwuekIzl">
-    <ref role="1M2myG" to="s9ob:7faAukhALBz" resolve="World_Container" />
+    <ref role="1M2myG" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
     <node concept="1N5Pfh" id="6JBqwuekIzm" role="1Mr941">
       <ref role="1N5Vy1" to="s9ob:6JBqwuekjqJ" resolve="Desired_Tissue_Container" />
       <node concept="3k9gUc" id="6JBqwuekI$6" role="3kmjI7">
