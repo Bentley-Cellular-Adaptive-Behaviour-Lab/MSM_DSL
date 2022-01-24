@@ -214,6 +214,15 @@
       <node concept="356sEK" id="4DdJmqSDt5V" role="383Ya9">
         <node concept="2EixSi" id="4DdJmqSDt5X" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="HXXIX2QiYU" role="383Ya9">
+        <node concept="356sEF" id="HXXIX2QiYV" role="356sEH">
+          <property role="TrG5h" value="#include &lt;cmath&gt;" />
+        </node>
+        <node concept="2EixSi" id="HXXIX2QiYW" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="HXXIX2Qu9o" role="383Ya9">
+        <node concept="2EixSi" id="HXXIX2Qu9q" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="4DdJmqSDt4E" role="383Ya9">
         <node concept="356sEF" id="4DdJmqSDt4F" role="356sEH">
           <property role="TrG5h" value="#include &quot;../core/coordinates.h&quot;" />
@@ -297,7 +306,7 @@
         <node concept="356sEK" id="2U$IHhoIrNS" role="383Ya9">
           <node concept="373pV1" id="2U$IHhoIB9S" role="356sEH" />
           <node concept="356sEF" id="2U$IHhoIrNT" role="356sEH">
-            <property role="TrG5h" value="return world-&gt;getParamValue(" />
+            <property role="TrG5h" value="return (int) round(world-&gt;getParamValue(" />
           </node>
           <node concept="356sEF" id="2U$IHhoIXdu" role="356sEH">
             <property role="TrG5h" value="FLAT_TISSUE_NAME" />
@@ -319,7 +328,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2U$IHhoIXdv" role="356sEH">
-            <property role="TrG5h" value="_WIDTH);" />
+            <property role="TrG5h" value="_WIDTH));" />
           </node>
           <node concept="2EixSi" id="2U$IHhoIrNU" role="2EinRH" />
         </node>
@@ -443,7 +452,7 @@
           <node concept="356sEK" id="2U$IHhoJSKV" role="383Ya9">
             <node concept="373pV1" id="2U$IHhoJSKW" role="356sEH" />
             <node concept="356sEF" id="2U$IHhoJSKX" role="356sEH">
-              <property role="TrG5h" value="return world-&gt;getParamValue(" />
+              <property role="TrG5h" value="return (int) round(world-&gt;getParamValue(" />
             </node>
             <node concept="356sEF" id="2U$IHhoJSKY" role="356sEH">
               <property role="TrG5h" value="FLAT_TISSUE_NAME" />
@@ -465,7 +474,7 @@
               </node>
             </node>
             <node concept="356sEF" id="2U$IHhoJSL6" role="356sEH">
-              <property role="TrG5h" value="_HEIGHT);" />
+              <property role="TrG5h" value="_HEIGHT));" />
             </node>
             <node concept="2EixSi" id="2U$IHhoJSL7" role="2EinRH" />
           </node>
@@ -588,7 +597,7 @@
         <node concept="356sEK" id="2U$IHhoKqWn" role="383Ya9">
           <node concept="373pV1" id="2U$IHhoKqWo" role="356sEH" />
           <node concept="356sEF" id="2U$IHhoKqWp" role="356sEH">
-            <property role="TrG5h" value="return world-&gt;getParamValue(" />
+            <property role="TrG5h" value="return (int) round(world-&gt;getParamValue(" />
           </node>
           <node concept="356sEF" id="2U$IHhoKqWq" role="356sEH">
             <property role="TrG5h" value="CYLINDRICAL_TISSUE_NAME" />
@@ -610,7 +619,7 @@
             </node>
           </node>
           <node concept="356sEF" id="2U$IHhoKqWy" role="356sEH">
-            <property role="TrG5h" value="_LENGTH);" />
+            <property role="TrG5h" value="_LENGTH));" />
           </node>
           <node concept="2EixSi" id="2U$IHhoKqWz" role="2EinRH" />
         </node>
