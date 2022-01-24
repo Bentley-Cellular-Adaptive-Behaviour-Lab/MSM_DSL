@@ -192,42 +192,42 @@
     </node>
     <node concept="1TJgyi" id="2Hxmt3eVlUx" role="1TKVEl">
       <property role="IQ2nx" value="3125878369731567265" />
-      <property role="TrG5h" value="Location" />
+      <property role="TrG5h" value="_location" />
       <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
     </node>
     <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
       <property role="IQ2nx" value="6420553392043975787" />
-      <property role="TrG5h" value="TranscriptionDelay" />
+      <property role="TrG5h" value="_transcriptionDelay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4O6RXqW77zQ" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692982" />
-      <property role="TrG5h" value="showMinMax" />
+      <property role="TrG5h" value="_showMinMax" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="4O6RXqW77zU" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692986" />
-      <property role="TrG5h" value="showDelay" />
+      <property role="TrG5h" value="_showDelay" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="4O6RXqW77zZ" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692991" />
-      <property role="TrG5h" value="showProd" />
+      <property role="TrG5h" value="_showProd" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="4O6RXqW77$5" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692997" />
-      <property role="TrG5h" value="showDeg" />
+      <property role="TrG5h" value="_showDeg" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6WHzz7cWc6W" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704852412" />
-      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <property role="TrG5h" value="_doingParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="5A0f7KHEgs4" role="1TKVEl">
       <property role="IQ2nx" value="6449221170434213636" />
-      <property role="TrG5h" value="PARAM_steps" />
+      <property role="TrG5h" value="_concSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="6pt0UY9x86b" role="1TKVEi">
@@ -296,12 +296,12 @@
     </node>
     <node concept="1TJgyi" id="6WHzz7cWc7L" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704852465" />
-      <property role="TrG5h" value="PARAM_ANALYSIS" />
+      <property role="TrG5h" value="_doingParameterSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="1PDLoEBBeNS" role="1TKVEl">
       <property role="IQ2nx" value="2119442298962767096" />
-      <property role="TrG5h" value="PARAM_steps" />
+      <property role="TrG5h" value="_valueSteps" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>

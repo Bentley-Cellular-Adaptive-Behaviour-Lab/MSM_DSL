@@ -232,5 +232,45 @@
       <ref role="20lvS9" to="tpee:fzcmrck" resolve="IntegerConstant" />
     </node>
   </node>
+  <node concept="1TIwiD" id="2D4cW4vHxMw">
+    <property role="EcuMT" value="3045616152563031200" />
+    <property role="TrG5h" value="IncrementBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="2D4cW4vPr0O" role="1TKVEi">
+      <property role="IQ2ns" value="3045616152565100596" />
+      <property role="20kJfa" value="_tissueTypeRef" />
+      <ref role="20lvS9" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    </node>
+    <node concept="1TJgyj" id="2D4cW4vJ_GC" role="1TKVEi">
+      <property role="IQ2ns" value="3045616152563571496" />
+      <property role="20kJfa" value="_parameterRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+    <node concept="1TJgyj" id="2D4cW4vJ_GE" role="1TKVEi">
+      <property role="IQ2ns" value="3045616152563571498" />
+      <property role="20kJfa" value="_speciesRef" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+    <node concept="1TJgyi" id="2D4cW4vHxMx" role="1TKVEl">
+      <property role="IQ2nx" value="3045616152563031201" />
+      <property role="TrG5h" value="_increment" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2D4cW4vJair" role="1TKVEl">
+      <property role="IQ2nx" value="3045616152563459227" />
+      <property role="TrG5h" value="_index" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="2D4cW4vJaiz" role="1TKVEl">
+      <property role="IQ2nx" value="3045616152563459235" />
+      <property role="TrG5h" value="_name" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+    <node concept="1TJgyi" id="2D4cW4vPzhx" role="1TKVEl">
+      <property role="IQ2nx" value="3045616152565134433" />
+      <property role="TrG5h" value="_containsWidth" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+  </node>
 </model>
 
