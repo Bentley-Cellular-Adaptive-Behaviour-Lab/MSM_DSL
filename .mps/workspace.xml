@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b57e069c-096d-4d34-83c8-243e1bf59368" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.mps/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SettingsLang/models/SettingsLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SettingsLang/models/SettingsLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationSettings/models/SimulationSettings.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/models/MSMSimulation.user_simulation.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/models/WorldLang.typesystem.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +34,11 @@
     </search_options>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="7a61d3e37ce8031d7bbc6d00a0f98dfdd4299ff8" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -130,7 +134,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" />
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -140,11 +144,13 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" />
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SettingsLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SettingsLang/models/SettingsLang.behavior.mps]" />
+              <option name="myItemId" value="MSM_DSL" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -154,17 +160,51 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" />
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SettingsLang/models/SettingsLang.structure.mps]" />
+              <option name="myItemId" value="SimulationsLang" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:5c782e13-7141-4b31-985b-12aca0a793c0(SimulationsLang.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -174,15 +214,7 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SettingsLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SettingsLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SettingsLang/models/SettingsLang.behavior.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="8011215656704805334" />
+              <option name="myItemId" value="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -217,6 +249,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/languages/SimulationsLang/SimulationsLang.mpl" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -242,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642527383808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactored grid code to check for max sweep values for tissues">
+      <created>1643050336153</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1643050336153</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -267,6 +307,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Refactored param analysis to be stored by the arrangement concept, also updated finished updating the generator" />
     <MESSAGE value="Updating species lang generator to do parameter analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating species lang generator to do parameter analysis" />
+    <MESSAGE value="Refactored grid code to check for max sweep values for tissues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored grid code to check for max sweep values for tissues" />
   </component>
 </project>
