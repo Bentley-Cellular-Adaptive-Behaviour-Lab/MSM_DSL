@@ -21,7 +21,7 @@ public:
     std::vector<Substrate*> m_substrates;
     std::vector<Gradient*> m_gradients;
 
-    void world_setup(std::vector<int> paramIncrements);
+    void world_setup(std::vector<double> paramIncrements);
 
     World *create_world(int xMax, int yMax, int zMax, float base_permittivity);
 

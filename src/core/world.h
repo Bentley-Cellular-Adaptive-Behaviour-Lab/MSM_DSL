@@ -29,7 +29,7 @@ class WorldLogger;
 
 class World {
 private:
-    std::vector<int> m_param_increments;
+    std::vector<double> m_param_increments;
     WorldLogger *m_worldLogger;
 public:
 
@@ -238,8 +238,8 @@ public:
     void shuffleEnvAgents(std::vector<Env*> envAgents);
 
     // Parameters
-    void fillParamIncrementVector(const std::vector<int>& param_increments);
-    int getParamIncrement(const int& i);
+    void fillParamVector(const std::vector<double>& param_increments);
+    double getParamValue(const int& i);
 
     /// World info logger.
 

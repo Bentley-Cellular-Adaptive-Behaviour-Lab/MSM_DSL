@@ -25,7 +25,7 @@ public:
 
     Tissue_Container(World* world);
 
-    void tissue_set_up();
+    void tissue_set_up(World* world);
 
     Cell_Type *define_cell_type(std::string name, int cell_shape_type, int height, int width);
 

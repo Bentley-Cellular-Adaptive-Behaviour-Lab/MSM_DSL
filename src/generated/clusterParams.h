@@ -11,6 +11,4 @@ enum CLUSTER_PARAMS {
     N_CLUSTER_PARAMS
 };
 
-int max_increments[] = {2, 2};
-
 #endif //SPRINGAGENT_CLUSTERPARAMS_H

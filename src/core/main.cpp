@@ -79,11 +79,11 @@ long long seed = -1;
 //------------------------------------------------------------------------------
 //#define BAHTI_ANALYSIS true
 
-void readArgs(int argc, char * argv[], std::vector<int>& param_increments) {
+void readArgs(int argc, char * argv[], std::vector<double>& param_increments) {
     // Argument structure: no. of params being varied, increment numbers.
    int n_params = atoi(argv[1]) ;
    for (int i = 2; i < n_params + 2; i++) {
-        param_increments.push_back(atoi(argv[i]));
+        param_increments.push_back(atof(argv[i]));
    }
 }
 
@@ -104,7 +104,7 @@ int main(int argc, char * argv[]) {
 	auto *w_container = new World_Container();
 
 	char statistics_file_buffer[500];
-    std::vector<int> param_increments;
+    std::vector<double> param_increments;
     readArgs(argc, argv, param_increments);
 
     if (ANALYSIS_HYSTERESIS) {
