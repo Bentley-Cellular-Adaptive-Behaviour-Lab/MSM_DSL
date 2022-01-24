@@ -108,16 +108,53 @@
     <ref role="1XX52x" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
     <node concept="3EZMnI" id="5qSYbADreZf" role="2wV5jI">
       <node concept="3EZMnI" id="5qSYbADreZm" role="3EZMnx">
-        <node concept="VPM3Z" id="5qSYbADreZo" role="3F10Kt" />
-        <node concept="3F0ifn" id="5qSYbADreZq" role="3EZMnx">
-          <property role="3F0ifm" value="Tissue Set-up Name: " />
-          <node concept="2biZxu" id="2FvyIAlEDXG" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
+        <node concept="1v6uyg" id="6m1Il21nc9Q" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="6m1Il21nca8" role="1j7Clw">
+            <property role="3F0ifm" value="Tissue Set-up Name:" />
+            <node concept="2biZxu" id="6m1Il21nca9" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="6m1Il21ncaa" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="6m1Il21nchp" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
           </node>
-          <node concept="VSNWy" id="2FvyIAlEDXH" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
+          <node concept="3EZMnI" id="6m1Il21ncap" role="wsdo6">
+            <node concept="VPM3Z" id="6m1Il21ncaq" role="3F10Kt" />
+            <node concept="3F0ifn" id="6m1Il21ncar" role="3EZMnx">
+              <property role="3F0ifm" value="Used in simulation:" />
+              <node concept="2biZxu" id="6m1Il21ncas" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="6m1Il21ncat" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
+              </node>
+            </node>
+            <node concept="1iCGBv" id="6m1Il21ncau" role="3EZMnx">
+              <ref role="1NtTu8" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
+              <node concept="1sVBvm" id="6m1Il21ncav" role="1sWHZn">
+                <node concept="3F0A7n" id="6m1Il21ncaw" role="2wV5jI">
+                  <property role="1Intyy" value="true" />
+                  <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                  <node concept="Vb9p2" id="6m1Il21ncay" role="3F10Kt">
+                    <property role="Vbekb" value="g1_k_vY/BOLD" />
+                  </node>
+                  <node concept="2biZxu" id="6m1Il21ncaz" role="3F10Kt">
+                    <property role="1rj3mz" value="Calibri" />
+                  </node>
+                  <node concept="VSNWy" id="6m1Il21nca$" role="3F10Kt">
+                    <property role="1lJzqX" value="16" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="2iRfu4" id="6m1Il21nca_" role="2iSdaV" />
           </node>
         </node>
+        <node concept="VPM3Z" id="5qSYbADreZo" role="3F10Kt" />
         <node concept="3F0A7n" id="1QpPlI505Kh" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="VechU" id="59YMCJZO$n1" role="3F10Kt">
@@ -296,48 +333,6 @@
           <property role="1rj3mz" value="Calibri" />
         </node>
         <node concept="VSNWy" id="2FvyIAlMRRj" role="3F10Kt">
-          <property role="1lJzqX" value="16" />
-        </node>
-      </node>
-      <node concept="3EZMnI" id="4jUcCWydoJb" role="3EZMnx">
-        <node concept="VPM3Z" id="4jUcCWydoJc" role="3F10Kt" />
-        <node concept="3F0ifn" id="4jUcCWydoJd" role="3EZMnx">
-          <property role="3F0ifm" value="Used in simulation:" />
-          <node concept="2biZxu" id="4jUcCWydoJe" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="4jUcCWydoJf" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="1iCGBv" id="4jUcCWydoJg" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
-          <node concept="1sVBvm" id="4jUcCWydoJh" role="1sWHZn">
-            <node concept="3F0A7n" id="4jUcCWydoJi" role="2wV5jI">
-              <property role="1Intyy" value="true" />
-              <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-              <node concept="VechU" id="4jUcCWydoJj" role="3F10Kt">
-                <property role="Vb096" value="6cZGtrcKCoS/black" />
-              </node>
-              <node concept="Vb9p2" id="4jUcCWydoJk" role="3F10Kt">
-                <property role="Vbekb" value="g1_k_vY/BOLD" />
-              </node>
-              <node concept="2biZxu" id="4jUcCWydoJl" role="3F10Kt">
-                <property role="1rj3mz" value="Calibri" />
-              </node>
-              <node concept="VSNWy" id="4jUcCWydoJm" role="3F10Kt">
-                <property role="1lJzqX" value="16" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2iRfu4" id="4jUcCWydoJn" role="2iSdaV" />
-      </node>
-      <node concept="3F0ifn" id="4jUcCWyibBz" role="3EZMnx">
-        <node concept="2biZxu" id="4jUcCWyibB$" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
-        </node>
-        <node concept="VSNWy" id="4jUcCWyibB_" role="3F10Kt">
           <property role="1lJzqX" value="16" />
         </node>
       </node>
