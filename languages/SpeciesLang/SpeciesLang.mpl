@@ -59,6 +59,7 @@
         <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
+        <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
         <module reference="93848004-9140-4cf7-9c0b-3541bf12fc88(SpeciesLangGen)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />

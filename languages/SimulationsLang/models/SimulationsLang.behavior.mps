@@ -569,7 +569,7 @@
               <ref role="3cqZAo" node="1PDLoEB_Njx" resolve="signallingContainer" />
             </node>
             <node concept="3Tsc0h" id="1PDLoEBAr4A" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="Species" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft0" resolve="_species" />
             </node>
           </node>
           <node concept="3clFbS" id="1PDLoEBAnVB" role="2LFqv$">
@@ -652,7 +652,7 @@
               <ref role="3cqZAo" node="1PDLoEB_Njx" resolve="signallingContainer" />
             </node>
             <node concept="3Tsc0h" id="1PDLoEBACDM" role="2OqNvi">
-              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="Parameters" />
+              <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="_parameters" />
             </node>
           </node>
           <node concept="3clFbS" id="1PDLoEBA$CN" role="2LFqv$">

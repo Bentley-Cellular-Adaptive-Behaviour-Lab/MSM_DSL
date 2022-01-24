@@ -97,7 +97,7 @@
         <node concept="3clFbF" id="4O6RXqWL2Jn" role="3cqZAp">
           <node concept="2OqwBi" id="4O6RXqWL2T3" role="3clFbG">
             <node concept="37vLTw" id="4O6RXqWL2Jl" role="2Oq$k0">
-              <ref role="3cqZAo" node="4O6RXqWL1Iw" resolve="container" />
+              <ref role="3cqZAo" node="4O6RXqWL1Iw" resolve="worldContainer" />
             </node>
             <node concept="2qgKlT" id="4O6RXqWL3u6" role="2OqNvi">
               <ref role="37wK5l" to="pxw4:11q$FfsT8bU" resolve="updateGrid" />
