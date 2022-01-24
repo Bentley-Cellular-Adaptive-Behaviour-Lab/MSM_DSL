@@ -363,16 +363,36 @@
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     <node concept="3EZMnI" id="2Hxmt3eVgJ9" role="2wV5jI">
       <node concept="3EZMnI" id="109yD1s_yQc" role="3EZMnx">
-        <node concept="VPM3Z" id="109yD1s_yQe" role="3F10Kt" />
-        <node concept="3F0ifn" id="109yD1s_yQg" role="3EZMnx">
-          <property role="3F0ifm" value="Signalling Container Name: " />
-          <node concept="2biZxu" id="2FvyIAlCSa4" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
+        <node concept="1j7BWu" id="2jdW4eN_NBV" role="3EZMnx">
+          <node concept="3EZMnI" id="2jdW4eN_NDz" role="1j7ClA">
+            <node concept="3F0ifn" id="2jdW4eN_NDE" role="3EZMnx">
+              <property role="3F0ifm" value="Used in simulation: " />
+            </node>
+            <node concept="1iCGBv" id="2jdW4eN_NDK" role="3EZMnx">
+              <ref role="1NtTu8" to="w3cn:4jUcCWydX_d" resolve="_simulationContainerRef" />
+              <node concept="1sVBvm" id="2jdW4eN_NDM" role="1sWHZn">
+                <node concept="3F0A7n" id="2jdW4eN_NDX" role="2wV5jI">
+                  <property role="1Intyy" value="true" />
+                  <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+                </node>
+              </node>
+            </node>
+            <node concept="2iRfu4" id="2jdW4eN_NDA" role="2iSdaV" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlCSa5" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
+          <node concept="3F0ifn" id="2jdW4eN_NCd" role="1j7Clw">
+            <property role="3F0ifm" value="Signalling Container Name:" />
+            <node concept="2biZxu" id="2jdW4eN_NCg" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2jdW4eN_NCh" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="2jdW4eN_NCo" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
           </node>
         </node>
+        <node concept="VPM3Z" id="109yD1s_yQe" role="3F10Kt" />
         <node concept="3F0A7n" id="109yD1s_yQj" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="VechU" id="2B5sNxPR5kP" role="3F10Kt">

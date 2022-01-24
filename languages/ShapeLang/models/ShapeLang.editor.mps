@@ -75,6 +75,16 @@
   <node concept="24kQdi" id="2Jfy4gqvqOj">
     <ref role="1XX52x" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
     <node concept="3EZMnI" id="2Jfy4gqvqOI" role="2wV5jI">
+      <node concept="3EZMnI" id="2jdW4eN_twX" role="3EZMnx">
+        <node concept="VPM3Z" id="2jdW4eN_twZ" role="3F10Kt" />
+        <node concept="3F0ifn" id="2jdW4eN_txn" role="3EZMnx">
+          <property role="3F0ifm" value="Name: " />
+        </node>
+        <node concept="3F0A7n" id="2jdW4eN_txt" role="3EZMnx">
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+        <node concept="2iRfu4" id="2jdW4eN_tx2" role="2iSdaV" />
+      </node>
       <node concept="3EZMnI" id="2Jfy4gqvqOP" role="3EZMnx">
         <node concept="3F0ifn" id="2Jfy4gqvqQL" role="3EZMnx">
           <property role="3F0ifm" value="Protrusion Types: " />
