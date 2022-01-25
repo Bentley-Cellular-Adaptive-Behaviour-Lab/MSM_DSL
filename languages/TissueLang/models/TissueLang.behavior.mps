@@ -11292,7 +11292,7 @@
                             </node>
                           </node>
                           <node concept="2qgKlT" id="2AY95d_9cwb" role="2OqNvi">
-                            <ref role="37wK5l" node="1QpPlI523LR" resolve="check_vessel_monolayer_overlap" />
+                            <ref role="37wK5l" node="1p5qYO3gLDn" resolve="check_monolayer_monolayer_overlap" />
                             <node concept="13iPFW" id="2AY95d_9cwc" role="37wK5m" />
                             <node concept="2GrUjf" id="2AY95d_9cwd" role="37wK5m">
                               <ref role="2Gs0qQ" node="6leo5vIfAJ9" resolve="tissue" />

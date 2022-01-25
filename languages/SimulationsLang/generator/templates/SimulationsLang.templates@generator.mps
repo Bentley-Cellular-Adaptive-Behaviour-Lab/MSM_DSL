@@ -25,7 +25,6 @@
     <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
-    <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldLang.behavior)" implicit="true" />
   </imports>
@@ -4774,8 +4773,8 @@
                             </node>
                             <node concept="30H73N" id="1PDLoEBCIzI" role="1m5AlR" />
                           </node>
-                          <node concept="2qgKlT" id="1PDLoEBCIzJ" role="2OqNvi">
-                            <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                          <node concept="3TrcHB" id="7_TSZTcHz1h" role="2OqNvi">
+                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
                       </node>
@@ -4807,11 +4806,11 @@
                               <ref role="3cqZAo" node="1PDLoEBCwdL" resolve="result" />
                             </node>
                             <node concept="3cpWs3" id="1PDLoEBCDrg" role="37vLTx">
-                              <node concept="Xl_RD" id="1PDLoEBCDyp" role="3uHU7w">
-                                <property role="Xl_RC" value="_FLAT_HEIGHT,\n" />
-                              </node>
                               <node concept="37vLTw" id="1PDLoEBCCud" role="3uHU7B">
                                 <ref role="3cqZAo" node="1PDLoEBCIzD" resolve="tissueTypeName" />
+                              </node>
+                              <node concept="Xl_RD" id="5N7HNntfBZu" role="3uHU7w">
+                                <property role="Xl_RC" value="_HEIGHT" />
                               </node>
                             </node>
                           </node>
@@ -4820,7 +4819,7 @@
                           <node concept="d57v9" id="1PDLoEBCES$" role="3clFbG">
                             <node concept="3cpWs3" id="1PDLoEBCFXQ" role="37vLTx">
                               <node concept="Xl_RD" id="1PDLoEBCFXU" role="3uHU7w">
-                                <property role="Xl_RC" value="_FLAT_WIDTH" />
+                                <property role="Xl_RC" value="_WIDTH" />
                               </node>
                               <node concept="37vLTw" id="1PDLoEBCFuV" role="3uHU7B">
                                 <ref role="3cqZAo" node="1PDLoEBCIzD" resolve="tissueTypeName" />
@@ -4838,7 +4837,7 @@
                             <node concept="d57v9" id="1PDLoEBCJOJ" role="3clFbG">
                               <node concept="3cpWs3" id="1PDLoEBCJOK" role="37vLTx">
                                 <node concept="Xl_RD" id="1PDLoEBCJOL" role="3uHU7w">
-                                  <property role="Xl_RC" value="_CYLINDER_LENGTH" />
+                                  <property role="Xl_RC" value="_LENGTH" />
                                 </node>
                                 <node concept="37vLTw" id="1PDLoEBCJOM" role="3uHU7B">
                                   <ref role="3cqZAo" node="1PDLoEBCIzD" resolve="tissueTypeName" />
@@ -5035,7 +5034,7 @@
       </node>
       <node concept="356sEK" id="1PDLoEB_KgR" role="383Ya9">
         <node concept="356sEF" id="1PDLoEB_KgS" role="356sEH">
-          <property role="TrG5h" value="}" />
+          <property role="TrG5h" value="};" />
         </node>
         <node concept="2EixSi" id="1PDLoEB_KgT" role="2EinRH" />
       </node>

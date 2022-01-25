@@ -148,11 +148,11 @@
     <property role="TrG5h" value="World" />
     <ref role="1ANuJW" node="4jUcCWycOcT" resolve="Simulation" />
     <node concept="1yko03" id="4jUcCWydmv7" role="1yko01">
-      <property role="3cJDZq" value="-30" />
-      <property role="3cJDZs" value="-30" />
+      <property role="3cJDZq" value="-40" />
+      <property role="3cJDZs" value="-40" />
       <property role="3cJDZ5" value="-20" />
-      <property role="3bD6N$" value="60" />
-      <property role="3bD6ND" value="60" />
+      <property role="3bD6N$" value="80" />
+      <property role="3bD6ND" value="80" />
       <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="4jUcCWydmv8" role="3bEhY_">
         <node concept="2_n9WQ" id="4jUcCWydmv9" role="2_hQRE">

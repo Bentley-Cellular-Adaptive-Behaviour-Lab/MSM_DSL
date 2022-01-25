@@ -5,6 +5,7 @@
 #ifndef SRC_SHAPE_GEN_H
 #define SRC_SHAPE_GEN_H
 
+class MemAgent;
 class Protrusion;
 
 static bool check_FILOPODIA_condition(MemAgent *memAgent);

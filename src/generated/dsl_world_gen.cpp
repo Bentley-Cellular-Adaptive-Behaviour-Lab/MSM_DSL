@@ -8,7 +8,7 @@
 #include "dsl/world/worldContainer.h"
 
 
-void World_Container::world_setup(std::vector<double> paramIncrements) {
+void World_Container::world_setup(std::vector<double>& paramIncrements) {
 	// Created using: NewWorld //
 
 	World *world;
