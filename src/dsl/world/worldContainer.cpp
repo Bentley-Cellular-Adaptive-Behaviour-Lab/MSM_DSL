@@ -177,8 +177,16 @@ void World_Container::store_substrate(Substrate *substrate) {
 *  Returns:		void
 ******************************************************************************************/
 
-World* World_Container::create_world(int xMax, int yMax, int zMax, float base_permittivity) {
-    auto *new_world = new World(xMax, yMax, zMax, base_permittivity);
+World* World_Container::create_world(const int& xMax,
+                                     const int& yMax,
+                                     const int& zMax,
+                                     const double& base_permittivity,
+                                     const std::vector<double>& paramValues) {
+    auto *new_world = new World(xMax,
+                                yMax,
+                                zMax,
+                                base_permittivity,
+                                paramValues);
     return new_world;
 }
 

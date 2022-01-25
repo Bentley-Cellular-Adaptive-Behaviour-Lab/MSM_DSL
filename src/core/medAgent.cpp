@@ -6,5 +6,5 @@
 
 MedAgent::MedAgent(World* WorldP){
     worldP = WorldP;
-    diffAd_replaced = NULL;
+    diffAd_replaced = nullptr;
 }

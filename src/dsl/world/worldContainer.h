@@ -23,7 +23,11 @@ public:
 
     void world_setup(std::vector<double>& paramIncrements);
 
-    World *create_world(int xMax, int yMax, int zMax, float base_permittivity);
+    World *create_world(const int& xMax,
+                        const int& yMax,
+                        const int& zMax,
+                        const double& base_permittivity,
+                        const std::vector<double>& paramValues);
 
     void create_substrate(Shape *substrate_shape, Coordinates *centre_coordinates, int substrate_direction, float adhesiveness);
 

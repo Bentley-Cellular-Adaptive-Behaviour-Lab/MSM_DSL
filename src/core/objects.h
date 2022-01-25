@@ -34,6 +34,9 @@ class World;
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
+#define WORLD_TESTING true
+#define TISSUE_TESTING true
+#define SHAPE_TESTING false
 #define PROTEIN_TESTING true
 
 /// below defines are set through makefile

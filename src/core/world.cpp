@@ -222,7 +222,11 @@ World::World()
     std::cout << "Creation timestep complete." << std::endl;
 }
 
-World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity)
+World::World(const int& grid_xMax,
+             const int& grid_yMax,
+             const int& grid_zMax,
+             const double& base_permittivity,
+             const std::vector<double>& paramValues)
 {
     if (TESTING) {
         srand(100);
@@ -233,7 +237,9 @@ World::World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivit
         g = std::mt19937(rdtsc());
     }
 
-    createLogger();
+//    createLogger();
+
+    this->fillParamVector(paramValues);
 
     Pause = 0;
     timeStep = -1;
@@ -1598,7 +1604,7 @@ void World::creationTimestep(int movie) {
 	}
 
 	auto *tissue_container = new Tissue_Container(this);
-	tissue_container->tissue_set_up();
+	tissue_container->tissue_set_up(this);
 
 	//now place agents onto gridded lattice
 	for (int j = 0; j < (int) ECagents.size(); j++)
@@ -1797,7 +1803,7 @@ void World::updateMemAgents() {
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
-            if (DSL_TESTING) {
+            if (SHAPE_TESTING) {
                 memp->shapeResponse(randomChance);
             } else {
                 //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)

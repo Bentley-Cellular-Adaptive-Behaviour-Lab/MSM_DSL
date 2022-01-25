@@ -5,8 +5,8 @@
 #include "spring.h"
 
 Spring::Spring() {
-    start = NULL;
-    end = NULL;
+    start = nullptr;
+    end = nullptr;
     oldSize = 0;
     filopodia = false;
     Junction = false;

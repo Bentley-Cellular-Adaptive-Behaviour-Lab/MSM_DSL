@@ -1,21 +1,29 @@
-//
-// Created by Thomas Mead on 19/07/2021.
-//
+#include "../core/coordinates.h"
+#include "../core/world.h"
 
-#include <math.h>
-#include "clusterParams.h"
-#include "core/world.h"
-#include "dsl/world/worldContainer.h"
+#include "../dsl/utils/shape.h"
+
+#include "../dsl/world/substrate.h"
+#include "../dsl/world/worldContainer.h"
 
 
-void World_Container::world_setup(std::vector<double>& paramIncrements) {
-	// Created using: NewWorld //
+void World_Container::world_setup(std::vector<double>& paramValues) {
+    // Created using: World // 
 
-	World *world;
+    World *world;
 
-	// WORLD CREATION
-	world = create_world(50, 50, 50, 1.0);
-    world->fillParamVector(paramIncrements);
-	m_world = world;
+
+    // WORLD CREATION
+
+    world = create_world(80, 80, 40, 1.0, paramValues);
+    m_world = world;
+
+    // GRADIENT CREATION
+
+
+
+
+
+    // SUBSTRATE CREATION
 
 }

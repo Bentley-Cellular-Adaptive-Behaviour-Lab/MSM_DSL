@@ -215,7 +215,12 @@ public:
                    std::tuple<float, float> point_1,
                    std::tuple<float, float> point_2);
 
-    World(int grid_xMax, int grid_yMax, int grid_zMax, float base_permittivity);
+    // World constructor for DSL.
+    World(const int& grid_xMax,
+          const int& grid_yMax,
+          const int& grid_zMax,
+          const double& base_permittivity,
+          const std::vector<double>& paramValues);
 
     ODEs *odes;
     void setup_ODEs();

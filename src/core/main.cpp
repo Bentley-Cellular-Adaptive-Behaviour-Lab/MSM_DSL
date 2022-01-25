@@ -82,8 +82,9 @@ long long seed = -1;
 void readArgs(int argc, char * argv[], std::vector<double>& param_increments) {
     // Argument structure: no. of params being varied, increment numbers.
    int n_params = atoi(argv[1]) ;
-   for (int i = 2; i < n_params + 2; i++) {
-        param_increments.push_back(atof(argv[i]));
+   for (int i = 2; i <= n_params + 1; i++) {
+       double current_value = atof(argv[i]);
+       param_increments.push_back(atof(argv[i]));
    }
 }
 
