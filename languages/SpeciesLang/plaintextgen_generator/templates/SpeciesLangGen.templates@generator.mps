@@ -1498,7 +1498,7 @@
                                   <ref role="2Gs0qQ" node="1z5v0U7F2XV" resolve="species" />
                                 </node>
                                 <node concept="3TrcHB" id="1z5v0U7F312" role="2OqNvi">
-                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="1z5v0U7F313" role="2OqNvi">
@@ -1652,7 +1652,7 @@
                                     <ref role="2Gs0qQ" node="1z5v0U7F2XV" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="1z5v0U7F32f" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="1z5v0U7F32g" role="2OqNvi">
@@ -4623,7 +4623,7 @@
                                   <ref role="2Gs0qQ" node="8mCqS_ZU4L" resolve="species" />
                                 </node>
                                 <node concept="3TrcHB" id="EX9x3WWLhy" role="2OqNvi">
-                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="EX9x3WWLhz" role="2OqNvi">
@@ -4777,7 +4777,7 @@
                                     <ref role="2Gs0qQ" node="8mCqS_ZU4L" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="EX9x3WWLiJ" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="EX9x3WWLiK" role="2OqNvi">
@@ -5749,7 +5749,7 @@
                                     <ref role="2Gs0qQ" node="3FNuJRrZBLz" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="EX9x3WWp9h" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="EX9x3WWp9i" role="2OqNvi">
@@ -5903,7 +5903,7 @@
                                       <ref role="2Gs0qQ" node="3FNuJRrZBLz" resolve="species" />
                                     </node>
                                     <node concept="3TrcHB" id="EX9x3WWpau" role="2OqNvi">
-                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="EX9x3WWpav" role="2OqNvi">
@@ -6736,7 +6736,7 @@
                                     <ref role="2Gs0qQ" node="3FNuJRs9yCz" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="EX9x3WW4dD" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="EX9x3WW4dE" role="2OqNvi">
@@ -6905,7 +6905,7 @@
                                       <ref role="2Gs0qQ" node="3FNuJRs9yCz" resolve="species" />
                                     </node>
                                     <node concept="3TrcHB" id="EX9x3WW4eQ" role="2OqNvi">
-                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="EX9x3WW4eR" role="2OqNvi">
@@ -7008,7 +7008,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3FNuJRs8F2P" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                           </node>
                         </node>
                         <node concept="21noJN" id="3FNuJRs8F2Q" role="2OqNvi">
@@ -7139,7 +7139,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="3FNuJRs8FDA" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                             </node>
                           </node>
                           <node concept="21noJN" id="3FNuJRs8FDB" role="2OqNvi">
@@ -7263,7 +7263,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3FNuJRs8Gpf" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                           </node>
                         </node>
                         <node concept="21noJN" id="3FNuJRs8Gpg" role="2OqNvi">
@@ -7386,7 +7386,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3FNuJRs8H39" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                           </node>
                         </node>
                         <node concept="21noJN" id="3FNuJRs8H3a" role="2OqNvi">
@@ -8253,7 +8253,7 @@
                                     <ref role="2Gs0qQ" node="3FNuJRsbWmb" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="EX9x3WVQxx" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="EX9x3WVQxy" role="2OqNvi">
@@ -8407,7 +8407,7 @@
                                       <ref role="2Gs0qQ" node="3FNuJRsbWmb" resolve="species" />
                                     </node>
                                     <node concept="3TrcHB" id="EX9x3WVQyI" role="2OqNvi">
-                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="EX9x3WVQyJ" role="2OqNvi">
@@ -8655,7 +8655,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="3FNuJRs2p5i" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                           </node>
                         </node>
                         <node concept="liA8E" id="3FNuJRs2p5j" role="2OqNvi">
@@ -8694,7 +8694,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="3FNuJRs2p5z" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                             </node>
                           </node>
                           <node concept="liA8E" id="3FNuJRs2p5$" role="2OqNvi">
@@ -8727,7 +8727,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="3FNuJRs2p5L" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                             </node>
                           </node>
                           <node concept="liA8E" id="3FNuJRs2p5M" role="2OqNvi">
@@ -9554,7 +9554,7 @@
                                     <ref role="2Gs0qQ" node="3FNuJRs2rS2" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="3FNuJRs2rV1" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="3FNuJRs2rV2" role="2OqNvi">
@@ -9708,7 +9708,7 @@
                                       <ref role="2Gs0qQ" node="3FNuJRs2rS2" resolve="species" />
                                     </node>
                                     <node concept="3TrcHB" id="6LsyKwDybXO" role="2OqNvi">
-                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="6LsyKwDybXP" role="2OqNvi">
@@ -11979,7 +11979,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="yQY4YiDdvG" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
+                              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
                             </node>
                           </node>
                         </node>
@@ -12496,7 +12496,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="5$qoOFygXrV" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
+                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
                           </node>
                         </node>
                       </node>
@@ -14615,7 +14615,7 @@
                                   <ref role="2Gs0qQ" node="4I2C8aHVA6k" resolve="species" />
                                 </node>
                                 <node concept="3TrcHB" id="4I2C8aHVA9r" role="2OqNvi">
-                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                 </node>
                               </node>
                               <node concept="liA8E" id="4I2C8aHVA9s" role="2OqNvi">
@@ -14784,7 +14784,7 @@
                                     <ref role="2Gs0qQ" node="4I2C8aHVA6k" resolve="species" />
                                   </node>
                                   <node concept="3TrcHB" id="4I2C8aHVAaC" role="2OqNvi">
-                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                                    <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                                   </node>
                                 </node>
                                 <node concept="liA8E" id="4I2C8aHVAaD" role="2OqNvi">
@@ -18601,7 +18601,7 @@
                                 <ref role="3cqZAo" node="vmbuJ3dzST" resolve="it" />
                               </node>
                               <node concept="3TrcHB" id="vmbuJ3dzSS" role="2OqNvi">
-                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
                               </node>
                             </node>
                           </node>
@@ -19165,7 +19165,7 @@
                                 <ref role="3cqZAo" node="vmbuJ3d2q5" resolve="it" />
                               </node>
                               <node concept="3TrcHB" id="vmbuJ3d8yT" role="2OqNvi">
-                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
                               </node>
                             </node>
                           </node>
@@ -20764,7 +20764,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="4yAZJe6oM2q" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
+                              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
                             </node>
                           </node>
                         </node>
@@ -21083,7 +21083,7 @@
                             </node>
                           </node>
                           <node concept="3TrcHB" id="4yAZJe6oM5D" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
+                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
                           </node>
                         </node>
                       </node>
@@ -21201,7 +21201,7 @@
                       <node concept="X8dFx" id="4yAZJe6oM6m" role="2OqNvi">
                         <node concept="2OqwBi" id="4yAZJe6oM6n" role="25WWJ7">
                           <node concept="37vLTw" id="4yAZJe6oM6o" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                            <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                           </node>
                           <node concept="2qgKlT" id="4yAZJe6oM6p" role="2OqNvi">
                             <ref role="37wK5l" to="f3yh:6Hz4f3Dm_0e" resolve="getRegulationSpecies" />
@@ -21251,7 +21251,7 @@
                       <node concept="X8dFx" id="1eVQvDc2Ine" role="2OqNvi">
                         <node concept="2OqwBi" id="1eVQvDc2Inf" role="25WWJ7">
                           <node concept="37vLTw" id="1eVQvDc2Ing" role="2Oq$k0">
-                            <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                            <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                           </node>
                           <node concept="2qgKlT" id="1eVQvDc2Inh" role="2OqNvi">
                             <ref role="37wK5l" to="f3yh:6Hz4f3DmoSG" resolve="getReactionSpecies" />
@@ -21362,7 +21362,7 @@
                         <node concept="2OqwBi" id="4yAZJe6oM71" role="2GsD0m">
                           <node concept="2OqwBi" id="4yAZJe6oM72" role="2Oq$k0">
                             <node concept="37vLTw" id="4yAZJe6oM73" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                              <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                             </node>
                             <node concept="2qgKlT" id="4yAZJe6oM74" role="2OqNvi">
                               <ref role="37wK5l" to="f3yh:6Hz4f3DkEET" resolve="getPotentialRegulations" />
@@ -21499,7 +21499,7 @@
                                 <node concept="3fqX7Q" id="4yAZJe6oM7U" role="3clFbw">
                                   <node concept="2OqwBi" id="4yAZJe6oM7V" role="3fr31v">
                                     <node concept="37vLTw" id="4yAZJe6oM7W" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                                      <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                                     </node>
                                     <node concept="2qgKlT" id="4yAZJe6oM7X" role="2OqNvi">
                                       <ref role="37wK5l" to="f3yh:2ahUazjV8Ak" resolve="binsContainsSpecies" />
@@ -21524,7 +21524,7 @@
                         <node concept="2OqwBi" id="69TN_kxw8nf" role="2GsD0m">
                           <node concept="2OqwBi" id="69TN_kxw8ng" role="2Oq$k0">
                             <node concept="37vLTw" id="69TN_kxw8nh" role="2Oq$k0">
-                              <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                              <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                             </node>
                             <node concept="2qgKlT" id="69TN_kxw8ni" role="2OqNvi">
                               <ref role="37wK5l" to="f3yh:6Hz4f3DkFjb" resolve="getPotentialReactions" />
@@ -21661,7 +21661,7 @@
                                 <node concept="3fqX7Q" id="69TN_kxw8o8" role="3clFbw">
                                   <node concept="2OqwBi" id="69TN_kxw8o9" role="3fr31v">
                                     <node concept="37vLTw" id="69TN_kxw8oa" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="speciesContainer" />
+                                      <ref role="3cqZAo" node="4yAZJe6oM5K" resolve="signallingContainer" />
                                     </node>
                                     <node concept="2qgKlT" id="69TN_kxw8ob" role="2OqNvi">
                                       <ref role="37wK5l" to="f3yh:2ahUazjV8Ak" resolve="binsContainsSpecies" />
@@ -21834,7 +21834,7 @@
                     <node concept="X8dFx" id="1nszO8c7qvE" role="2OqNvi">
                       <node concept="2OqwBi" id="1nszO8c7qvF" role="25WWJ7">
                         <node concept="37vLTw" id="1nszO8c7qvG" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                          <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                         </node>
                         <node concept="2qgKlT" id="1nszO8c7qvH" role="2OqNvi">
                           <ref role="37wK5l" to="f3yh:6Hz4f3Dm_0e" resolve="getRegulationSpecies" />
@@ -21887,7 +21887,7 @@
                     <node concept="X8dFx" id="1nszO8c7qvZ" role="2OqNvi">
                       <node concept="2OqwBi" id="1nszO8c7qw0" role="25WWJ7">
                         <node concept="37vLTw" id="1nszO8c7qw1" role="2Oq$k0">
-                          <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                          <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                         </node>
                         <node concept="2qgKlT" id="1nszO8c7qw2" role="2OqNvi">
                           <ref role="37wK5l" to="f3yh:6Hz4f3DmoSG" resolve="getReactionSpecies" />
@@ -21999,7 +21999,7 @@
                       <node concept="2OqwBi" id="1nszO8c7qwF" role="2GsD0m">
                         <node concept="2OqwBi" id="1nszO8c7qwG" role="2Oq$k0">
                           <node concept="37vLTw" id="1nszO8c7qwH" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                            <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                           </node>
                           <node concept="2qgKlT" id="1nszO8c7qwI" role="2OqNvi">
                             <ref role="37wK5l" to="f3yh:6Hz4f3DkEET" resolve="getPotentialRegulations" />
@@ -22136,7 +22136,7 @@
                               <node concept="3fqX7Q" id="1nszO8c7qx$" role="3clFbw">
                                 <node concept="2OqwBi" id="1nszO8c7qx_" role="3fr31v">
                                   <node concept="37vLTw" id="1nszO8c7qxA" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                                    <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                                   </node>
                                   <node concept="2qgKlT" id="1nszO8c7qxB" role="2OqNvi">
                                     <ref role="37wK5l" to="f3yh:2ahUazjV8Ak" resolve="binsContainsSpecies" />
@@ -22161,7 +22161,7 @@
                       <node concept="2OqwBi" id="1nszO8c7qxG" role="2GsD0m">
                         <node concept="2OqwBi" id="1nszO8c7qxH" role="2Oq$k0">
                           <node concept="37vLTw" id="1nszO8c7qxI" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                            <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                           </node>
                           <node concept="2qgKlT" id="1nszO8c7qxJ" role="2OqNvi">
                             <ref role="37wK5l" to="f3yh:6Hz4f3DkFjb" resolve="getPotentialReactions" />
@@ -22298,7 +22298,7 @@
                               <node concept="3fqX7Q" id="1nszO8c7qy_" role="3clFbw">
                                 <node concept="2OqwBi" id="1nszO8c7qyA" role="3fr31v">
                                   <node concept="37vLTw" id="1nszO8c7qyB" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                                    <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                                   </node>
                                   <node concept="2qgKlT" id="1nszO8c7qyC" role="2OqNvi">
                                     <ref role="37wK5l" to="f3yh:2ahUazjV8Ak" resolve="binsContainsSpecies" />
@@ -22399,7 +22399,7 @@
                   </node>
                   <node concept="2OqwBi" id="1nszO8c7qza" role="2GsD0m">
                     <node concept="37vLTw" id="1nszO8c7qzb" role="2Oq$k0">
-                      <ref role="3cqZAo" node="1nszO8c7qv3" resolve="speciesContainer" />
+                      <ref role="3cqZAo" node="1nszO8c7qv3" resolve="signallingContainer" />
                     </node>
                     <node concept="3Tsc0h" id="1nszO8c7qzc" role="2OqNvi">
                       <ref role="3TtcxE" to="w3cn:2Hxmt3eVft5" resolve="_parameters" />
@@ -22667,7 +22667,7 @@
                   <node concept="2OqwBi" id="vmbuJ3arJW" role="2GsD0m">
                     <node concept="2OqwBi" id="vmbuJ3arJX" role="2Oq$k0">
                       <node concept="37vLTw" id="vmbuJ3arJY" role="2Oq$k0">
-                        <ref role="3cqZAo" node="vmbuJ3arJm" resolve="speciesContainer" />
+                        <ref role="3cqZAo" node="vmbuJ3arJm" resolve="signallingContainer" />
                       </node>
                       <node concept="2qgKlT" id="vmbuJ3arJZ" role="2OqNvi">
                         <ref role="37wK5l" to="f3yh:6Hz4f3DkEET" resolve="getPotentialRegulations" />
@@ -22795,7 +22795,7 @@
                   <node concept="2OqwBi" id="vmbuJ3arKI" role="2GsD0m">
                     <node concept="2OqwBi" id="vmbuJ3arKJ" role="2Oq$k0">
                       <node concept="37vLTw" id="vmbuJ3arKK" role="2Oq$k0">
-                        <ref role="3cqZAo" node="vmbuJ3arJm" resolve="speciesContainer" />
+                        <ref role="3cqZAo" node="vmbuJ3arJm" resolve="signallingContainer" />
                       </node>
                       <node concept="2qgKlT" id="vmbuJ3arKL" role="2OqNvi">
                         <ref role="37wK5l" to="f3yh:6Hz4f3DkFjb" resolve="getPotentialReactions" />
@@ -23073,7 +23073,7 @@
                     <node concept="X8dFx" id="vmbuJ3arMu" role="2OqNvi">
                       <node concept="2OqwBi" id="vmbuJ3arMv" role="25WWJ7">
                         <node concept="37vLTw" id="vmbuJ3arMw" role="2Oq$k0">
-                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="speciesContainer" />
+                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="signallingContainer" />
                         </node>
                         <node concept="2qgKlT" id="vmbuJ3arMx" role="2OqNvi">
                           <ref role="37wK5l" to="f3yh:6Hz4f3Dm_0e" resolve="getRegulationSpecies" />
@@ -23126,7 +23126,7 @@
                     <node concept="X8dFx" id="vmbuJ3arMN" role="2OqNvi">
                       <node concept="2OqwBi" id="vmbuJ3arMO" role="25WWJ7">
                         <node concept="37vLTw" id="vmbuJ3arMP" role="2Oq$k0">
-                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="speciesContainer" />
+                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="signallingContainer" />
                         </node>
                         <node concept="2qgKlT" id="vmbuJ3arMQ" role="2OqNvi">
                           <ref role="37wK5l" to="f3yh:6Hz4f3DmoSG" resolve="getReactionSpecies" />
@@ -23367,7 +23367,7 @@
                     <node concept="X8dFx" id="vmbuJ3arOo" role="2OqNvi">
                       <node concept="2OqwBi" id="vmbuJ3arOp" role="25WWJ7">
                         <node concept="37vLTw" id="vmbuJ3arOq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="speciesContainer" />
+                          <ref role="3cqZAo" node="vmbuJ3arJm" resolve="signallingContainer" />
                         </node>
                         <node concept="2qgKlT" id="vmbuJ3arOr" role="2OqNvi">
                           <ref role="37wK5l" to="f3yh:1MpPQ9imxeo" resolve="sortParams" />
@@ -23476,7 +23476,7 @@
                               <ref role="3cqZAo" node="3C$HQym4uXr" resolve="it" />
                             </node>
                             <node concept="3TrcHB" id="3C$HQym4vC7" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                              <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
                             </node>
                           </node>
                         </node>
@@ -24120,7 +24120,7 @@
                                 <ref role="3cqZAo" node="vmbuJ37ClC" resolve="it" />
                               </node>
                               <node concept="3TrcHB" id="vmbuJ37ClB" role="2OqNvi">
-                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
                               </node>
                             </node>
                           </node>

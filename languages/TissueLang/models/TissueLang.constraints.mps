@@ -147,7 +147,7 @@
             <node concept="2OqwBi" id="6Z$0llyijIf" role="3cqZAk">
               <node concept="EsrRn" id="6Z$0llyijrD" role="2Oq$k0" />
               <node concept="2qgKlT" id="6Z$0llyijRK" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:1QpPlI52lcy" resolve="get_total_width_gridpoints" />
+                <ref role="37wK5l" to="4ebj:1QpPlI52lcy" resolve="get_total_length_gridpoints" />
               </node>
             </node>
           </node>

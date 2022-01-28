@@ -211,7 +211,7 @@ public:
                             std::tuple<float, float> triangle_point_1,
                             std::tuple<float, float> triangle_point_2,
                             std::tuple<float, float> triangle_point_3);
-    float get_sign(Env *ep,
+    static float get_sign(Env *ep,
                    std::tuple<float, float> point_1,
                    std::tuple<float, float> point_2);
 

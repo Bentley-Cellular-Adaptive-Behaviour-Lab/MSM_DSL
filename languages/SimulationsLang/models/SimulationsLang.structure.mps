@@ -235,7 +235,7 @@
   <node concept="1TIwiD" id="2D4cW4vHxMw">
     <property role="EcuMT" value="3045616152563031200" />
     <property role="TrG5h" value="IncrementBin" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="2D4cW4vPr0O" role="1TKVEi">
       <property role="IQ2ns" value="3045616152565100596" />
       <property role="20kJfa" value="_tissueTypeRef" />

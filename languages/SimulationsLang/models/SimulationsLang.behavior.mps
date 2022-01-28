@@ -548,7 +548,7 @@
                   <ref role="2Gs0qQ" node="1PDLoEBAnVz" resolve="species" />
                 </node>
                 <node concept="3TrcHB" id="1PDLoEBAsDN" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
                 </node>
               </node>
               <node concept="3clFbS" id="1PDLoEBArf_" role="3clFbx">
@@ -628,7 +628,7 @@
             <node concept="3clFbJ" id="1PDLoEBACOK" role="3cqZAp">
               <node concept="2OqwBi" id="1PDLoEBACOL" role="3clFbw">
                 <node concept="3TrcHB" id="1PDLoEBACON" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="PARAM_ANALYSIS" />
+                  <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
                 </node>
                 <node concept="2GrUjf" id="1PDLoEBAE5o" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="1PDLoEBA$CJ" resolve="parameter" />
@@ -874,7 +874,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="2D4cW4vzEVv" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:5A0f7KHEgs4" resolve="PARAM_steps" />
+                          <ref role="3TsBF5" to="w3cn:5A0f7KHEgs4" resolve="_concSteps" />
                         </node>
                       </node>
                     </node>
@@ -911,7 +911,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="2D4cW4vCSln" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:1PDLoEBBeNS" resolve="PARAM_steps" />
+                          <ref role="3TsBF5" to="w3cn:1PDLoEBBeNS" resolve="_valueSteps" />
                         </node>
                       </node>
                     </node>
@@ -1593,7 +1593,7 @@
                         </node>
                       </node>
                       <node concept="3TrcHB" id="5hUuDYP4zpc" role="2OqNvi">
-                        <ref role="3TsBF5" to="w3cn:5A0f7KHEgs4" resolve="PARAM_steps" />
+                        <ref role="3TsBF5" to="w3cn:5A0f7KHEgs4" resolve="_concSteps" />
                       </node>
                     </node>
                   </node>
@@ -1632,7 +1632,7 @@
                         </node>
                       </node>
                       <node concept="3TrcHB" id="5hUuDYP4HBU" role="2OqNvi">
-                        <ref role="3TsBF5" to="w3cn:1PDLoEBBeNS" resolve="PARAM_steps" />
+                        <ref role="3TsBF5" to="w3cn:1PDLoEBBeNS" resolve="_valueSteps" />
                       </node>
                     </node>
                   </node>

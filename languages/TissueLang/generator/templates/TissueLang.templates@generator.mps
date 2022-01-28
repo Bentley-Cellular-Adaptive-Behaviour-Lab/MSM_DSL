@@ -848,7 +848,7 @@
                               </node>
                             </node>
                             <node concept="3TrcHB" id="2U$IHhp7wZF" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                              <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
                             </node>
                           </node>
                         </node>
@@ -1309,7 +1309,7 @@
                                 </node>
                               </node>
                               <node concept="3TrcHB" id="2U$IHhoQ4k8" role="2OqNvi">
-                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                                <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
                               </node>
                             </node>
                           </node>
@@ -1647,7 +1647,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="1VQO6m$cMyi" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1VQO6m$cNhI" role="2OqNvi">
@@ -1685,7 +1685,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="1VQO6m$cQ9l" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1VQO6m$cQ9m" role="2OqNvi">
@@ -1723,7 +1723,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="1VQO6m$cRRW" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1VQO6m$cRRX" role="2OqNvi">
@@ -1761,7 +1761,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="1VQO6m$cT74" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                         </node>
                       </node>
                       <node concept="liA8E" id="1VQO6m$cT75" role="2OqNvi">
@@ -1837,7 +1837,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="2U$IHhoR5Kl" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="PARAM_ANALYSIS" />
+                          <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
                         </node>
                       </node>
                     </node>
@@ -2011,7 +2011,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="5$qoOFygaFi" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="TranscriptionDelay" />
+                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
                         </node>
                       </node>
                     </node>

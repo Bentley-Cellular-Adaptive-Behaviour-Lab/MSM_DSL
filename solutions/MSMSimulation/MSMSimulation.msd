@@ -15,8 +15,8 @@
     <dependency reexport="false">6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)</dependency>
   </dependencies>
   <languageVersions>
-    <language slang="l:61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac:SettingsLang" version="0" />
     <language slang="l:615bc492-e50a-4c3e-8b86-8d639eaba343:ShapeLang" version="0" />
+    <language slang="l:61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac:SimulationsLang" version="0" />
     <language slang="l:84970ad9-a964-4f15-a393-dc0fcd724c0f:SpeciesLang" version="0" />
     <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueLang" version="0" />
     <language slang="l:276cd304-748c-4d5d-aad0-4b34e2a42ced:WorldLang" version="0" />
@@ -34,6 +34,7 @@
     <language slang="l:443f4c36-fcf5-4eb6-9500-8d06ed259e3e:jetbrains.mps.baseLanguage.classifiers" version="0" />
     <language slang="l:fd392034-7849-419d-9071-12563d152375:jetbrains.mps.baseLanguage.closures" version="0" />
     <language slang="l:83888646-71ce-4f1c-9c53-c54016f6ad4f:jetbrains.mps.baseLanguage.collections" version="1" />
+    <language slang="l:4caf0310-491e-41f5-8a9b-2006b3a94898:jetbrains.mps.execution.util" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="2" />
     <language slang="l:18bc6592-03a6-4e29-a83a-7ff23bde13ba:jetbrains.mps.lang.editor" version="14" />
     <language slang="l:446c26eb-2b7b-4bf0-9b35-f83fa582753e:jetbrains.mps.lang.modelapi" version="0" />

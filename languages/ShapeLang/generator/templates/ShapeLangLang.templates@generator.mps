@@ -967,7 +967,7 @@
                               <ref role="2Gs0qQ" node="3FNuJRss3Rx" resolve="species" />
                             </node>
                             <node concept="3TrcHB" id="3FNuJRssLea" role="2OqNvi">
-                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="Location" />
+                              <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
                             </node>
                           </node>
                         </node>
