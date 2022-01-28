@@ -71,21 +71,6 @@ do
 done
 
 
-# Go over all possible combinations
-for i in $increment_total
-do
-  # Update current counts
-  for j in "${current_increment_values[@]}"
-  do
-    # Check the corresponding values in the starting values array.
-    # If equal, we've hit the max, and need to reset.
-    if [ "$j" == "${start_increment_values[$j]}" ]
-    then
-      true
-    fi
-  done
-done
-
 for vary1_val in $vary1_vals
 do
     if [ "$vary1_param" == "epsilon" ]
@@ -188,10 +173,12 @@ echo "All camp jobs submitted. Wait for runs to finish (check with sacct or sque
 #!/bin/bash
 for INCREMENT_0 in {0..1}
 do
-INCREMENT_0_VALUE = $((((2 - 1 / 1) * INCREMENT_0) + 1))
+INCREMENT_0_VALUE=$((((2 - 1 / 1) * INCREMENT_0) + 1))
 for INCREMENT_1 in {0..1}
 do
-INCREMENT_1_VALUE = $((((2 - 1 / 1) * INCREMENT_1) + 1))
-./springAgent 1 $"INCREMENT_0_VALUE" $"INCREMENT_1_VALUE"
+INCREMENT_1_VALUE=$((((2 - 1 / 1) * INCREMENT_1) + 1))
+./springAgent 1 "$INCREMENT_0_VALUE" "$INCREMENT_1_VALUE"
 done
 done
+
+rsync -r --include={**,.}.{sh,cpp,h,}
