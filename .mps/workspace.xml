@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b57e069c-096d-4d34-83c8-243e1bf59368" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/generator/templates/ShapeLangLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/ShapeLang/models/ShapeLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/SimulationsLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/SimulationsLang.mpl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.structure.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.structure.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/plaintextgen_generator/templates/SpeciesLangGen.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/generator/templates/TissueLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.behavior.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.constraints.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.constraints.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/TissueLang/models/TissueLang.typesystem.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/WorldLang/generator/templates/WorldLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" beforeDir="false" afterPath="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clusterScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/clusterScript.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/world.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/world.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +126,6 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" />
     <panes>
-      <pane id="FileSystem" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -153,11 +134,53 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SpeciesLang.editor) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SpeciesLang.editor) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.editor.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Species" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -216,20 +239,6 @@
               <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationsLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -250,6 +259,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:5c782e13-7141-4b31-985b-12aca0a793c0(SimulationsLang.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps]" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -287,6 +310,7 @@
           </SELECTED>
         </subPane>
       </pane>
+      <pane id="FileSystem" />
       <pane id="CustomProjectView_org.iets3.core.plugin.plugin.SpecExplorer">
         <subPane />
       </pane>
@@ -362,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1643108433481</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Removing spacers from template">
+      <created>1643374103629</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1643374103629</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -390,6 +421,7 @@
     <MESSAGE value="Refactored grid code to check for max sweep values for tissues" />
     <MESSAGE value="Removed redundant type checking for grid boundary - should now be handled by DSL" />
     <MESSAGE value="Fixing generator bugs for parameter sweep" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing generator bugs for parameter sweep" />
+    <MESSAGE value="Removing spacers from template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing spacers from template" />
   </component>
 </project>

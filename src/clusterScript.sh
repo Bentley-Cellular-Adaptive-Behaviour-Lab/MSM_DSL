@@ -188,10 +188,10 @@ echo "All camp jobs submitted. Wait for runs to finish (check with sacct or sque
 #!/bin/bash
 for INCREMENT_0 in {0..1}
 do
-	INCREMENT_0_VALUE=$((((2 - 1 / 1) * INCREMENT_0) + 1))
-	for INCREMENT_1 in {0..1}
-	do
-		INCREMENT_1_VALUE=$((((2 - 1 / 1) * INCREMENT_1) + 1))
-		./springAgent "$INCREMENT_0_VALUE" "$INCREMENT_1_VALUE"
-	done
+INCREMENT_0_VALUE = $((((2 - 1 / 1) * INCREMENT_0) + 1))
+for INCREMENT_1 in {0..1}
+do
+INCREMENT_1_VALUE = $((((2 - 1 / 1) * INCREMENT_1) + 1))
+./springAgent 1 $"INCREMENT_0_VALUE" $"INCREMENT_1_VALUE"
+done
 done

@@ -11,7 +11,7 @@
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports>
-    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SettingsLang.structure)" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="eoo2" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.nio.file(JDK/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
@@ -5069,6 +5069,70 @@
         </node>
         <node concept="2EixSi" id="2D4cW4vuj4k" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="6dETgESRjt6" role="383Ya9">
+        <node concept="356sEF" id="6dETgESRjt7" role="356sEH">
+          <property role="TrG5h" value="timestamp=$(date &quot;+%Y.%m.%d-%H.%M.%S&quot;)" />
+        </node>
+        <node concept="2EixSi" id="6dETgESRjt8" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESRsYV" role="383Ya9">
+        <node concept="356sEF" id="6dETgESRsYW" role="356sEH">
+          <property role="TrG5h" value="local_output_folder=&quot;Cluster_Output_&quot;$analysis_type&quot;_&quot;$timestamp" />
+        </node>
+        <node concept="2EixSi" id="6dETgESRsYX" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESRAnI" role="383Ya9">
+        <node concept="356sEF" id="6dETgESRAnJ" role="356sEH">
+          <property role="TrG5h" value="camp_subfolder_name=&quot;MSM_DSL/&quot;$analysis_type&quot;_&quot;$timestamp" />
+        </node>
+        <node concept="2EixSi" id="6dETgESRAnK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESRKdL" role="383Ya9">
+        <node concept="2EixSi" id="6dETgESRKdN" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESRTJP" role="383Ya9">
+        <node concept="356sEF" id="6dETgESRTJQ" role="356sEH">
+          <property role="TrG5h" value="echo &quot;Writing results to:&quot; &quot;$local_output_folder&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgESRTJR" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESS3a8" role="383Ya9">
+        <node concept="356sEF" id="6dETgESS3a9" role="356sEH">
+          <property role="TrG5h" value="echo &quot;Cluster Folder Name: $camp_subfolder_name&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgESS3aa" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESSc_a" role="383Ya9">
+        <node concept="2EixSi" id="6dETgESSc_c" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESSlZZ" role="383Ya9">
+        <node concept="2EixSi" id="6dETgESSm01" role="2EinRH" />
+        <node concept="356sEF" id="6dETgESSqFq" role="356sEH">
+          <property role="TrG5h" value="if [ -d &quot;$local_output_folder&quot; ]" />
+        </node>
+      </node>
+      <node concept="356sEK" id="6dETgESSvvr" role="383Ya9">
+        <node concept="356sEF" id="6dETgESSvvs" role="356sEH">
+          <property role="TrG5h" value="then" />
+        </node>
+        <node concept="2EixSi" id="6dETgESSvvt" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESSCUk" role="383Ya9">
+        <node concept="373pV1" id="6dETgESSHDO" role="356sEH" />
+        <node concept="356sEF" id="6dETgESSHDY" role="356sEH">
+          <property role="TrG5h" value="mkdir &quot;$local_output_folder&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgESSCUm" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESSMq5" role="383Ya9">
+        <node concept="356sEF" id="6dETgESSMq6" role="356sEH">
+          <property role="TrG5h" value="fi" />
+        </node>
+        <node concept="2EixSi" id="6dETgESSMq7" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgESSVPn" role="383Ya9">
+        <node concept="2EixSi" id="6dETgESSVPp" role="2EinRH" />
+      </node>
       <node concept="356WMU" id="2D4cW4vIP3S" role="383Ya9">
         <node concept="356sEK" id="2D4cW4vuj2V" role="383Ya9">
           <node concept="356sEF" id="2D4cW4vujhf" role="356sEH">
@@ -7352,6 +7416,19 @@
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
             <node concept="3zFVjK" id="2D4cW4vJ0x6" role="3zH0cK">
               <node concept="3clFbS" id="2D4cW4vJ0x7" role="2VODD2">
+                <node concept="3SKdUt" id="1hhlivv5x8V" role="3cqZAp">
+                  <node concept="1PaTwC" id="1hhlivv5x8W" role="1aUNEU">
+                    <node concept="3oM_SD" id="1hhlivv5xmC" role="1PaTwD">
+                      <property role="3oM_SC" value="TESTING" />
+                    </node>
+                    <node concept="3oM_SD" id="1hhlivv5xmM" role="1PaTwD">
+                      <property role="3oM_SC" value="SPACERS" />
+                    </node>
+                    <node concept="3oM_SD" id="1hhlivv5xmX" role="1PaTwD">
+                      <property role="3oM_SC" value="HERE" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="2D4cW4vJ0_L" role="3cqZAp">
                   <node concept="3cpWsn" id="2D4cW4vJ0_M" role="3cpWs9">
                     <property role="TrG5h" value="spacer" />
@@ -7402,7 +7479,7 @@
                       <property role="3cmrfH" value="0" />
                     </node>
                   </node>
-                  <node concept="3eOVzh" id="1hhlivuSnQu" role="1Dwp0S">
+                  <node concept="2dkUwp" id="1hhlivuVgNT" role="1Dwp0S">
                     <node concept="37vLTw" id="2D4cW4vJ0A6" role="3uHU7B">
                       <ref role="3cqZAo" node="2D4cW4vJ0A1" resolve="i" />
                     </node>
