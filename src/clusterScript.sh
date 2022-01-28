@@ -159,15 +159,21 @@ done
 echo "All camp jobs submitted. Wait for runs to finish (check with sacct or squeue -u <username>) then copy output files from $camp_home/$camp_subfolder_name"
 
 
-#!/bin/bash
+count=0
+for i in {0..100}
+do
 for INCREMENT_0 in {0..1}
 do
-INCREMENT_0_VALUE=$((((2 - 1 / 1) * INCREMENT_0) + 1))
 for INCREMENT_1 in {0..1}
 do
+count=$count+1
+if [ $count == $SLURM_ARRAY_TASK_ID ]
+then
+break
+fi
+done
+done
+done
+INCREMENT_0_VALUE=$((((2 - 1 / 1) * INCREMENT_0) + 1))
 INCREMENT_1_VALUE=$((((2 - 1 / 1) * INCREMENT_1) + 1))
 ./springAgent 1 "$INCREMENT_0_VALUE" "$INCREMENT_1_VALUE"
-done
-done
-
-rsync -r --include={**,.}.{sh,cpp,h,}
