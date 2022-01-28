@@ -4,8 +4,7 @@
     <list default="true" id="b57e069c-096d-4d34-83c8-243e1bf59368" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.mps/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.mps/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SpeciesLang/models/SpeciesLang.editor.mps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clusterScript.sh" beforeDir="false" afterPath="$PROJECT_DIR$/src/clusterScript.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.behavior.mps" beforeDir="false" afterPath="$PROJECT_DIR$/languages/SimulationsLang/models/SimulationsLang.behavior.mps" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,39 +147,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SpeciesLang.editor) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SpeciesLang.editor) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SpeciesLang/models/SpeciesLang.editor.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Species" />
+              <option name="myItemId" value="MSMSimulation" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -219,44 +190,6 @@
               <option name="myItemId" value="SimulationsLang" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MSM_DSL" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationsLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationsLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="r:5c782e13-7141-4b31-985b-12aca0a793c0(SimulationsLang.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps]" />
               <option name="myItemType" value="" />
@@ -268,17 +201,55 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="MSMSimulation" />
+              <option name="myItemId" value="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/models/SimulationsLang.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6f44159c-8f51-434c-9ebf-3b31958d1c42" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MSM_DSL" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SimulationsLang" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
@@ -292,19 +263,11 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationsLang" />
+              <option name="myItemId" value="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/models/SimulationsLang.behavior.mps]" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SimulationsLang" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="r:5c782e13-7141-4b31-985b-12aca0a793c0(SimulationsLang.templates@generator) in IdeaFile[path: C:/Users/Tom/MPSProjects/MSM_DSL/languages/SimulationsLang/generator/templates/SimulationsLang.templates@generator.mps]" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3045616152559038639" />
+              <option name="myItemId" value="8011215656704805334" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </SELECTED>
@@ -393,7 +356,28 @@
       <option name="project" value="LOCAL" />
       <updated>1643374103629</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding in more CAMP information to runParameterSweep.sh generator">
+      <created>1643376015291</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1643376015291</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Moved springagent call to separate template">
+      <created>1643381253217</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1643381253217</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Changes to runParameterSweep.sh">
+      <created>1643382642437</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1643382642437</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="UsagesViewTool">
@@ -422,6 +406,9 @@
     <MESSAGE value="Removed redundant type checking for grid boundary - should now be handled by DSL" />
     <MESSAGE value="Fixing generator bugs for parameter sweep" />
     <MESSAGE value="Removing spacers from template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing spacers from template" />
+    <MESSAGE value="Adding in more CAMP information to runParameterSweep.sh generator" />
+    <MESSAGE value="Moved springagent call to separate template" />
+    <MESSAGE value="Changes to runParameterSweep.sh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes to runParameterSweep.sh" />
   </component>
 </project>
