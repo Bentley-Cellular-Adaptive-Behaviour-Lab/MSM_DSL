@@ -188,7 +188,6 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
-      <concept id="1208623485264" name="jetbrains.mps.baseLanguage.structure.AbstractOperation" flags="nn" index="1B$H19" />
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
@@ -388,6 +387,11 @@
       <property role="13Pg2o" value="h94ayQF/true_" />
       <ref role="30HIoZ" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
       <ref role="3lhOvi" node="2D4cW4vuj2J" resolve="runParameterSweep" />
+    </node>
+    <node concept="3lhOvk" id="6dETgETbd2t" role="3lj3bC">
+      <property role="13Pg2o" value="h94ayQF/true_" />
+      <ref role="30HIoZ" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
+      <ref role="3lhOvi" node="6dETgET6Px3" resolve="slurmMSM" />
     </node>
   </node>
   <node concept="312cEu" id="7wJJsVzwlmR">
@@ -5418,7 +5422,7 @@
       </node>
       <node concept="356sEK" id="6dETgET8jha" role="383Ya9">
         <node concept="356sEF" id="6dETgET8jhb" role="356sEH">
-          <property role="TrG5h" value="#SBATCH --nodes=1" />
+          <property role="TrG5h" value="#SBATCH --nodes=10" />
         </node>
         <node concept="2EixSi" id="6dETgET8jhc" role="2EinRH" />
       </node>
@@ -5435,11 +5439,13 @@
               <node concept="3clFbS" id="6dETgET9bDc" role="2VODD2">
                 <node concept="3clFbF" id="6dETgET9bHR" role="3cqZAp">
                   <node concept="2YIFZM" id="6dETgET9d4f" role="3clFbG">
-                    <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
                     <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
                     <node concept="2OqwBi" id="6dETgET9dBZ" role="37wK5m">
                       <node concept="30H73N" id="6dETgET9dhF" role="2Oq$k0" />
-                      <node concept="1B$H19" id="6dETgET9dC4" role="2OqNvi" />
+                      <node concept="2qgKlT" id="6dETgETakmS" role="2OqNvi">
+                        <ref role="37wK5l" to="5ycg:6dETgET9gW9" resolve="getCombinationNumber" />
+                      </node>
                     </node>
                   </node>
                 </node>
