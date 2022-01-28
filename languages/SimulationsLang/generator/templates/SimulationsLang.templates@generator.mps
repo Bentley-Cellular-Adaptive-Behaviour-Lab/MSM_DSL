@@ -247,7 +247,11 @@
         <child id="1048903277984099213" name="variables" index="1ps_xO" />
       </concept>
       <concept id="1167756080639" name="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" flags="in" index="3zFVjK" />
+      <concept id="1167945743726" name="jetbrains.mps.lang.generator.structure.IfMacro_Condition" flags="in" index="3IZrLx" />
       <concept id="1167951910403" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" flags="in" index="3JmXsc" />
+      <concept id="1118773211870" name="jetbrains.mps.lang.generator.structure.IfMacro" flags="ln" index="1W57fq">
+        <child id="1167945861827" name="conditionFunction" index="3IZSJc" />
+      </concept>
       <concept id="1118786554307" name="jetbrains.mps.lang.generator.structure.LoopMacro" flags="ln" index="1WS0z7">
         <child id="1167952069335" name="sourceNodesQuery" index="3Jn$fo" />
       </concept>
@@ -5136,11 +5140,188 @@
       <node concept="356sEK" id="6dETgET7NGz" role="383Ya9">
         <node concept="356sEF" id="6dETgET7NG$" role="356sEH">
           <property role="TrG5h" value="camp_home=&quot;/camp/lab/bentleyk/home/shared/$USER&quot;" />
+          <node concept="1W57fq" id="6dETgET7PDH" role="lGtFl">
+            <node concept="3IZrLx" id="6dETgET7PDI" role="3IZSJc">
+              <node concept="3clFbS" id="6dETgET7PDJ" role="2VODD2">
+                <node concept="3clFbF" id="6dETgET7PLr" role="3cqZAp">
+                  <node concept="2OqwBi" id="6dETgET7PLs" role="3clFbG">
+                    <node concept="2OqwBi" id="6dETgET7PLt" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6dETgET7PLu" role="2Oq$k0">
+                        <node concept="30H73N" id="6dETgET7PLv" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6dETgET7PLw" role="2OqNvi">
+                          <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="6dETgET7PLx" role="2OqNvi">
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
+                      </node>
+                    </node>
+                    <node concept="21noJN" id="6dETgET7PLy" role="2OqNvi">
+                      <node concept="21nZrQ" id="6dETgET7PLz" role="21noJM">
+                        <ref role="21nZrZ" to="yy1h:72wB6_dUsui" resolve="SLURM" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="2EixSi" id="6dETgET7NG_" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="6dETgET7NJk" role="383Ya9">
+        <node concept="2EixSi" id="6dETgET7NJm" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="6dETgESSVPn" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7NK7" role="356sEH">
+          <property role="TrG5h" value="echo &quot;Uploading simulation files...&quot;" />
+        </node>
         <node concept="2EixSi" id="6dETgESSVPp" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7NM_" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7NMA" role="356sEH">
+          <property role="TrG5h" value="rsync -r --include={**./*}.{sh,cpp,h,} --include=&quot;makefile&quot; --exclude=&quot;*&quot; --delete-excluded ./ login.camp.thecrick.org:&quot;$camp_home&quot;/&quot;$camp_subfolder_name&quot;/" />
+          <node concept="1W57fq" id="6dETgET7NP4" role="lGtFl">
+            <node concept="3IZrLx" id="6dETgET7NP5" role="3IZSJc">
+              <node concept="3clFbS" id="6dETgET7NP6" role="2VODD2">
+                <node concept="3clFbF" id="6dETgET7NT6" role="3cqZAp">
+                  <node concept="2OqwBi" id="6dETgET7P6u" role="3clFbG">
+                    <node concept="2OqwBi" id="6dETgET7OFA" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6dETgET7OaH" role="2Oq$k0">
+                        <node concept="30H73N" id="6dETgET7NT5" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6dETgET7Ox1" role="2OqNvi">
+                          <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="6dETgET7OUu" role="2OqNvi">
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
+                      </node>
+                    </node>
+                    <node concept="21noJN" id="6dETgET7PhS" role="2OqNvi">
+                      <node concept="21nZrQ" id="6dETgET7PhU" role="21noJM">
+                        <ref role="21nZrZ" to="yy1h:72wB6_dUsui" resolve="SLURM" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2EixSi" id="6dETgET7NMB" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7Rkp" role="383Ya9">
+        <node concept="2EixSi" id="6dETgET7Rkr" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7NOb" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7NOc" role="356sEH">
+          <property role="TrG5h" value="echo &quot;Uploaded files... logging in&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgET7NOd" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7PBU" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7PBV" role="356sEH">
+          <property role="TrG5h" value="ssh login.camp.thecrick.org  &quot;echo  \&quot;Log in successful - setting up environment.\&quot;; cd $camp_home/$camp_subfolder_name; ml purge; ml foss; echo \&quot;Running make... \&quot;; ./buildSpringAgent.sh --analysis \&quot;none\&quot; --graphics \&quot;false\&quot; --max_time \&quot;" />
+        </node>
+        <node concept="356sEF" id="6dETgET7SMP" role="356sEH">
+          <property role="TrG5h" value="MAX_TIME" />
+          <node concept="17Uvod" id="6dETgET7Weg" role="lGtFl">
+            <property role="2qtEX9" value="name" />
+            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+            <node concept="3zFVjK" id="6dETgET7Weh" role="3zH0cK">
+              <node concept="3clFbS" id="6dETgET7Wei" role="2VODD2">
+                <node concept="3clFbF" id="6dETgET7Wj1" role="3cqZAp">
+                  <node concept="2YIFZM" id="6dETgET7Wj2" role="3clFbG">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                    <node concept="2OqwBi" id="6dETgET7Wj4" role="37wK5m">
+                      <node concept="30H73N" id="6dETgET7Wj5" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="6dETgET7XVN" role="2OqNvi">
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzwenC" resolve="maxTimeSteps" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEF" id="6dETgET7SMQ" role="356sEH">
+          <property role="TrG5h" value="\&quot; --cell_number \&quot;" />
+        </node>
+        <node concept="356sEF" id="6dETgET7SMU" role="356sEH">
+          <property role="TrG5h" value="N_CELLS" />
+          <node concept="17Uvod" id="6dETgET7SN1" role="lGtFl">
+            <property role="2qtEX9" value="name" />
+            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+            <node concept="3zFVjK" id="6dETgET7SN2" role="3zH0cK">
+              <node concept="3clFbS" id="6dETgET7SN3" role="2VODD2">
+                <node concept="3clFbF" id="6dETgET7Uo0" role="3cqZAp">
+                  <node concept="2YIFZM" id="6dETgET7UqQ" role="3clFbG">
+                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                    <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
+                    <node concept="2OqwBi" id="6dETgET7UNw" role="37wK5m">
+                      <node concept="2OqwBi" id="6dETgET7UNx" role="2Oq$k0">
+                        <node concept="30H73N" id="6dETgET7UNy" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6dETgET7UNz" role="2OqNvi">
+                          <ref role="3Tt5mk" to="yy1h:4jUcCWy7Cvx" resolve="_tissueContainerRef" />
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="6dETgET7UN$" role="2OqNvi">
+                        <ref role="37wK5l" to="4ebj:6yORN46v92v" resolve="count_cell_number_int" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="356sEF" id="6dETgET7SMV" role="356sEH">
+          <property role="TrG5h" value="\&quot;; echo \&quot; finished building spring agent\&quot;; exit;&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgET7PBW" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7QzN" role="383Ya9">
+        <node concept="2EixSi" id="6dETgET7QzP" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7QMy" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7QMz" role="356sEH">
+          <property role="TrG5h" value="echo &quot;Running batch jobs...&quot;" />
+        </node>
+        <node concept="2EixSi" id="6dETgET7QM$" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="6dETgET7R1m" role="383Ya9">
+        <node concept="356sEF" id="6dETgET7R1n" role="356sEH">
+          <property role="TrG5h" value="ssh login.camp.thecrick.org  &quot;cd $camp_home/$camp_subfolder_name; echo \&quot;running slurm script... \&quot;; sbatch --array 1-$numberOfRuns slurmScript.sh --analysis $analysis --epsilon $epsilon --vconcst $vconcst --gradient $gradient --filconstnorm $filconstnorm --filtipmax $filtipmax --tokenstrength $tokenstrength --filspacing $filspacing --randFilExtend $randFilExtend --randFilRetract $randFilRetract --maxtime $maxtime --seed $seed; exit;&quot;" />
+          <node concept="1W57fq" id="6dETgET7R4Z" role="lGtFl">
+            <node concept="3IZrLx" id="6dETgET7R50" role="3IZSJc">
+              <node concept="3clFbS" id="6dETgET7R51" role="2VODD2">
+                <node concept="3clFbF" id="6dETgET7RrQ" role="3cqZAp">
+                  <node concept="2OqwBi" id="6dETgET7RrR" role="3clFbG">
+                    <node concept="2OqwBi" id="6dETgET7RrS" role="2Oq$k0">
+                      <node concept="2OqwBi" id="6dETgET7RrT" role="2Oq$k0">
+                        <node concept="30H73N" id="6dETgET7RrU" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6dETgET7RrV" role="2OqNvi">
+                          <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                        </node>
+                      </node>
+                      <node concept="3TrcHB" id="6dETgET7RrW" role="2OqNvi">
+                        <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
+                      </node>
+                    </node>
+                    <node concept="21noJN" id="6dETgET7RrX" role="2OqNvi">
+                      <node concept="21nZrQ" id="6dETgET7RrY" role="21noJM">
+                        <ref role="21nZrZ" to="yy1h:72wB6_dUsui" resolve="SLURM" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2EixSi" id="6dETgET7R1o" role="2EinRH" />
       </node>
     </node>
     <node concept="n94m4" id="2D4cW4vuj2L" role="lGtFl">

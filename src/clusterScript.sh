@@ -60,17 +60,6 @@ echo "uploaded files to CAMP... logging in"
 
 ssh login.camp.thecrick.org  "echo  \"Log in successful - setting up environment.\"; cd $camp_home/$camp_subfolder_name; ml purge; ml foss; echo \"Running make... \"; ./buildSpringAgent.sh --analysis \"$analysis_type\"; echo \" finished building spring agent\"; exit;"
 
-
-# Total number of runs per replicate, determined by multiplying all the increments together.
-increment_total=1
-
-for increment_value in "${start_increment_values[@]}"
-do
-  increment_total=$((increment_value*increment_total))
-  current_increment_values+=(1)
-done
-
-
 for vary1_val in $vary1_vals
 do
     if [ "$vary1_param" == "epsilon" ]
