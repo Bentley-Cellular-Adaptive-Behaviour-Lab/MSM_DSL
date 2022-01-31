@@ -79,21 +79,26 @@ long long seed = -1;
 //------------------------------------------------------------------------------
 //#define BAHTI_ANALYSIS true
 
-void readArgs(int argc, char * argv[], std::vector<double>& param_increments, int& replicate_number) {
+void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& replicate_number) {
     // Argument structure: no. of params being varied, increment numbers.
-
-    // Create a string before processing args.
-    std::string tempString;
-
     int i;
+    // Read in parameter values, if being used.
 
-    for (int i = 1; i < argc - 1; i++) {
-        param_increments.push_back(atof(argv[i]));
+    int current_value = -1;
+    for (i = 0; i < argc; i++) {
+        current_value = atoi(argv[i]);
     }
 
-    // Set replicate number
-    i++;
+    for (i = 1; i < argc - 2; i++) {
+        param_values.push_back(atof(argv[i]));
+    }
+
+    // Set replicate number.
     replicate_number = atoi(argv[i]);
+
+    // Set analysis type.
+    i++;
+    analysis_type = atoi(argv[i]);
 }
 
 void checkArgValues(int argc, char * argv[])
@@ -107,17 +112,41 @@ void print_exit( std::string message )
     exit(1);
 }
 
+void construct_file_string(const int& replicate_number, std::vector<double>& param_values, std::string& file_string) {
+    file_string.append("out/run");
+    for (auto &value : param_values) {
+        file_string.append("_");
+        file_string.append(std::to_string(value));
+    }
+    file_string.append("_" + std::to_string(replicate_number));
+    file_string.append("_" + std::to_string(analysis_type));
+    file_string.append(".txt" + std::to_string(analysis_type));
+}
+
 int main(int argc, char * argv[]) {
     if (SWEEP_TESTING) {
-        std::vector<double> param_increments;
+        // Set analysis_type to none in case something goes wrong.
+        analysis_type = 0;
+        // Set buffer for file name.
+        int file_buffer_size = 200;
+        char file_buffer[file_buffer_size];
+        std::vector<double> param_values;
         int replicate_no;
-        readArgs(argc, argv, param_increments, replicate_no);
+        readArgs(argc, argv, param_values, replicate_no);
         std::cout << "Args: ";
-        for (auto &arg : param_increments) {
+        for (auto &arg : param_values) {
             std::cout << arg << ", ";
         }
         std::cout << "\n";
-        std::cout << "Replicate Number: " << replicate_no << std::endl;
+
+        std::cout << "Replicate Number: " << replicate_no << "\n";
+        std::cout << "Analysis type: " << analysis_type << "\n";
+
+        // Print file name.
+        std::string file_string;
+        construct_file_string(replicate_no, param_values, file_string);
+        sprintf(file_buffer,
+                file_string.c_str());
     } else {
 
         World *world;
@@ -128,12 +157,12 @@ int main(int argc, char * argv[]) {
         int replicate_no;
         readArgs(argc, argv, param_increments, replicate_no);
 
-        if (ANALYSIS_HYSTERESIS) {
+        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             sprintf(statistics_file_buffer,
                     "statistics_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
                     double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
                     randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (ANALYSIS_TIME_TO_PATTERN) {
+        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
             sprintf(statistics_file_buffer,
                     "statistics_time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
                     double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
@@ -157,13 +186,13 @@ int main(int argc, char * argv[]) {
 
         //TODO update these file names with variable vals
         //do print statement as well
-        if (ANALYSIS_HYSTERESIS) {
+        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             std::cout << "running bistability analysis" << std::endl;
             sprintf(outfilename,
                     "analysis_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",
                     double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
                     randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (ANALYSIS_TIME_TO_PATTERN) {
+        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
             std::cout << "running time to pattern analysis" << std::endl;
             sprintf(outfilename,
                     "time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",

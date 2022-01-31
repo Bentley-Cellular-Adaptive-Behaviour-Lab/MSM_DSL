@@ -244,7 +244,7 @@ bool MemAgent::filRetract(void) {
             mp->filTokens += filTokens;
             
             //ANALYSIS of filopodia can be done here
-            if (ANALYSIS_contactsTest == true) {
+            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
                 mp->base_fil_belong->time_retract_complete = worldP->timeStep;
                 mp->base_fil_belong->retracted = true;
                 mp->base_fil_belong = NULL;
@@ -1163,9 +1163,9 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                             }
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
-                            if (ANALYSIS_SHUFFLING) {
+                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
                                 this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-                            } else if (!ANALYSIS_SHUFFLING && worldP->timeStep == 0) {
+                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == 0) {
                                 this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
                             }
 
@@ -1459,7 +1459,7 @@ bool MemAgent::extendFil(void) {
                             //focalAdhesions();
 
                             //for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
-                            if (ANALYSIS_contactsTest == true) {
+                            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
 
                                 Filopodia* fp = new Filopodia(worldP);
 
@@ -4407,7 +4407,7 @@ void MemAgent::shapeResponse(const float& randomChance) {
 
     if (!retracting) {
         extendProtrusions(); // Attempt extension - check conditions and try to initiate a protrusion, or extend an existing one.
-        if (VEIL_ADVANCE && !ANALYSIS_HYSTERESIS) {
+        if (VEIL_ADVANCE && analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
             doVeilAdvance(randomChance); // Attempt veil advance - check if we meet the random chance specifier.
         }
         //cytoProteinTransfer();

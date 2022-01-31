@@ -1541,9 +1541,9 @@ void World::runSimulation() {
         }
         simulateTimestep();
 
-        if (ANALYSIS_HYSTERESIS) {
+        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             hysteresisAnalysis();
-        } else if (ANALYSIS_TIME_TO_PATTERN) {
+        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
             evaluateSandP();
         }
 
@@ -1668,14 +1668,14 @@ void World::creationTimestep(int movie) {
 
 	calcEnvVEGFlevel();
 
-	if (ANALYSIS_TOTALVEGF_TOTAL_MEMBRANE)
+	if (analysis_type == ANALYSIS_TYPE_TOTALVEGF_TOTAL_MEMBRANE)
 		calcEnvVEGFlevel();
 
 	//on first timestep this sets up the CPM module
 	if (REARRANGEMENT)
 		diffAd->run_CPM();
 
-	if (ANALYSIS_PROTLEVELS)
+	if (analysis_type == ANALYSIS_TYPE_PROTLEVELS)
 		output_cell_protlevels(dataFile);
 
 }
@@ -1690,7 +1690,7 @@ void World::simulateTimestep() {
 	} else {
 		for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
-            if (ANALYSIS_SHUFFLING) {
+            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
                 ec->getNeighCellVector().clear();
             }
 			ec->filopodiaExtensions.clear();
@@ -1814,9 +1814,9 @@ void World::updateMemAgents() {
                     //veil advance for cell migration------------------------
                     if (VEIL_ADVANCE) {
                         if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
-                            if ((ANALYSIS_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+                            if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
                                 memp->veilAdvance();
-                            } else if(!ANALYSIS_HYSTERESIS) {
+                            } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
                                 memp->veilAdvance();
                             }
                         }
@@ -1840,11 +1840,11 @@ void World::updateMemAgents() {
                 //if memAGent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
                 if (!tipDeleteFlag) {
                     memp->VEGFRactive = 0.0f; //reset VEGFR activation level
-                    if ((ANALYSIS_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
                         if (memp->vonNeu) {
                             memp->VEGFRresponse();
                         }
-                    } else if(!ANALYSIS_HYSTERESIS){
+                    } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
                         if (memp->vonNeu) {
                             memp->VEGFRresponse();
                         }
@@ -1855,11 +1855,11 @@ void World::updateMemAgents() {
                     }
 
                     ///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
-                    if ((ANALYSIS_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
                         //memp->ActinFlow();
                         memp->TokenTrading();
                     }
-                    else if(!ANALYSIS_HYSTERESIS){
+                    else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
                         //memp->ActinFlow();
                         memp->TokenTrading();
                     }
@@ -1871,9 +1871,9 @@ void World::updateMemAgents() {
 	}
 
 	// the force of new memAgent movements made in functions above are conveyed through the springs following Hookes Law to move all memAgents within the mesh
-	if ((ANALYSIS_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+	if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0]) && (memp->Cell != ECagents[ECELLS - 1])) {
 		calculateSpringAdjustments();
-	} else if(!ANALYSIS_HYSTERESIS){
+	} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
 		calculateSpringAdjustments();
 	}
 }
@@ -1893,7 +1893,7 @@ void World::updateECagents() {
 	int upto = ECagents.size();
 
 	for (j = 0; j < upto; j++) {
-		if (ANALYSIS_COMS) {
+		if (analysis_type == ANALYSIS_TYPE_COMS) {
 			ECagents[j]->store_cell_COM(); //to see cell movement, monitor its centre of mass
 		}
 
@@ -1945,7 +1945,7 @@ void World::updateECagents() {
 //		    ECagents[j]->cycle_protein_levels();
 		}
 		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
-		if (ANALYSIS_JTB_SP_PATTERN == true)
+		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
 			ECagents[j]->calcStability();
 	}
 }
@@ -2711,12 +2711,11 @@ void World::createECagents(int Junc_arrang){
         ECagents[i]->green = ((float)new_rand()/(float)NEW_RAND_MAX);
         ECagents[i]->blue = ((float)new_rand()/(float)NEW_RAND_MAX);
 
-        for(j=0;j<ECwidth;j++){
-
+        for (j = 0; j < ECwidth; j++) {
             drawMeshFirst(i, j, ecp, Junc_arrang);
-
         }
-        if(ANALYSIS_HYSTERESIS){
+
+        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS){
             ECagents[i]->hyst->Cell = ECagents[i];
         }
     }

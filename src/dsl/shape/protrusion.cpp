@@ -474,7 +474,7 @@ bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMe
     }
 
     /// Analysis of filopodia done here.
-    if (ANALYSIS_contactsTest) {
+    if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
         neighbourMemAgent->base_fil_belong->time_retract_complete = world->timeStep;
         neighbourMemAgent->base_fil_belong->retracted = true;
         neighbourMemAgent->base_fil_belong = NULL;

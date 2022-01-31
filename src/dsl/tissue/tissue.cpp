@@ -598,7 +598,7 @@ void Tissue_Vessel::create_vessel() {
             this->tissue_vessel_draw_mesh(i, j, ecp);
         }
 
-        if (ANALYSIS_HYSTERESIS==true){
+        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
     }

@@ -17,6 +17,7 @@
 #include "../dsl/tissue/cellType.h"
 
 int countbell;
+int analysis_type;
 
 Coordinates EC::calcCOM_toroidal(void){
     //calculates centre of mass of cell position for cell tracking in toroidal space
@@ -368,9 +369,11 @@ void EC::GRN(void){
     //down-reg VEGFR2 via notch
     VEGFRtot=(VEGFRnorm)-(actNotCurrent*sigma); //VEGFRnorm is now a EC specific param and scaled at config if mutant
 
-    if(VEGFRtot<VEGFRmin) VEGFRtot=VEGFRmin;
+    if (VEGFRtot<VEGFRmin) {
+        VEGFRtot=VEGFRmin;
+    }
    
-    if(ANALYSIS_HYSTERESIS==true){
+    if (analysis_type == ANALYSIS_TYPE_HYSTERESIS){
         if((this != worldP->ECagents[0])&&(this!=worldP->ECagents[ECELLS-1]))
             Dll4tot+=(actVEGFRcurrent*delta);
         else{

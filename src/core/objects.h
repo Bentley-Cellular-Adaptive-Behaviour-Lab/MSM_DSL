@@ -13,7 +13,6 @@ namespace py = pybind11;
 
 class World;
 
-///------------------------------------
 
 
 //#define GRAPHICS true
@@ -25,8 +24,6 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-#define ANALYSIS_HYSTERESIS false
-#define ANALYSIS_TIME_TO_PATTERN false
 #define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
 #define GRAPHICS false
 #define ECpack 15
@@ -39,6 +36,24 @@ class World;
 #define SHAPE_TESTING false
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING true
+
+// Analysis types for the MSM.
+
+extern int analysis_type;
+
+enum ANALYSIS_TYPE {
+    ANALYSIS_TYPE_NONE,
+    ANALYSIS_TYPE_TIME_TO_PATTERN,
+    ANALYSIS_TYPE_HYSTERESIS,
+    ANALYSIS_TYPE_SHUFFLING,
+    ANALYSIS_TYPE_COMS,
+    ANALYSIS_TYPE_JTB_SP_PATTERN,
+    ANALYSIS_TYPE_TOTALVEGF_TOTAL_MEMBRANE,
+    ANALYSIS_TYPE_PROTLEVELS,
+    ANALYSIS_TYPE_CONTACTS,
+    ANALYSIS_TYPE_BAHTI_ANALYSIS,
+    N_ANALYSIS_TYPES
+};
 
 /// below defines are set through makefile
 #if PROTEIN_TESTING
@@ -55,14 +70,6 @@ class World;
 #define SigRange 15.0f*(VEGFRnorm/100.0f) ///percentage of total VEGFR poss, within this range we say the cell is stable.
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.
 #define TIP_MEMS 1.2///lower limit on no. of Magents needed to qualify as a tip cell, X times the initial value TIP_MEMS is X
-#define ANALYSIS_SHUFFLING false
-#define ANALYSIS_COMS false
-#define ANALYSIS_JTB_SP_PATTERN false ///stability score pattern score tip cell number
-#define ANALYSIS_TOTALVEGF_TOTAL_MEMBRANE true
-#define ANALYSIS_contactsTest false ///only use if quantifying filopdia contacts for anastomosis (as in Benltey PLoS comp Biol 2009)
-#define ANALYSIS_PROTLEVELS true
-//#define ANALYSIS_HYSTERESIS true
-//#define ANALYSIS_TIME_TO_PATTERN false
 
 #define TESTING  false //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
 #define on_the_fly_surface_agents false ///faster as doesnt do voxellisatoin but cant use for full runs as not correct
@@ -100,7 +107,6 @@ class World;
 ///ENVIRONMENT SETUP
 #define ENV_SETUP 1//6 /////Environment types:
 
-//(vessel setup)
 
 //Environment 1 (with CELL_SETUP=1): 3D VEGF gradient (increasing in y axis) (as in Bentley et al JTB 2008), Environment 2 with CELL_SETUP=1): 2D VEGF gradient adhered to astrocyte grid (as in PLoS Comp Biol), Environment 3 with CELL_SETUP=1): 2D uniform gradient , Environment 4 with CELL_SETUP=1): 3D uniform gradient (as in Bentley et al JTB 2008), Environment 5 with CELL_SETUP=2):  VEGF radiating around horizontal/vertical sprout (Jakobsson et al 2010), Environment 6 with CELL_SETUP=2): VEGF increasing in x axis (Bentley et al rearrangement submitted), Environment 7 with CELL_SETUP=3): VEGF above monolayer (Ubezio et al 2013); Environment 8: RETINA ( VIllefranc 2012)
 #define VEGFbase 0//2.1 ///normal 2.1
