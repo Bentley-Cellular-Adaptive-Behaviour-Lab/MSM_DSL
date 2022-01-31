@@ -120,7 +120,7 @@ void construct_file_string(const int& replicate_number, std::vector<double>& par
     }
     file_string.append("_" + std::to_string(replicate_number));
     file_string.append("_" + std::to_string(analysis_type));
-    file_string.append(".txt" + std::to_string(analysis_type));
+    file_string.append(".txt");
 }
 
 int main(int argc, char * argv[]) {
