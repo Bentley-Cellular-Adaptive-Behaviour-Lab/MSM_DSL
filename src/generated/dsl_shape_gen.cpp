@@ -1,9 +1,9 @@
-#include "core/memAgents.h"
-#include "core/EC.h"
+#include "../core/memAgents.h"
+#include "../core/EC.h"
 
-#include "dsl/tissue/cellType.h"
-#include "dsl/shape/protrusionType.h"
-#include "dsl/species/protein.h"
+#include "../dsl/tissue/cellType.h"
+#include "../dsl/shape/protrusionType.h"
+#include "../dsl/species/protein.h"
 
 #include "dsl_shape_gen.h"
 

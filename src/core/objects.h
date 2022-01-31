@@ -24,10 +24,9 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-#define GRAPHICS false
-#define ECpack 15
-#define MAXtime 10000 ///2000 ///480 for fil lifetime
+//#define GRAPHICS false
+//#define ECpack 15
+//#define MAXtime 10000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
@@ -37,7 +36,7 @@ class World;
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING true
 
-// Analysis types for the MSM.
+// Analysis types for the DSL.
 
 extern int analysis_type;
 

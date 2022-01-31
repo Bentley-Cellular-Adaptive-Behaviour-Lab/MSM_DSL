@@ -113,7 +113,7 @@ void print_exit( std::string message )
 }
 
 void construct_file_string(const int& replicate_number, std::vector<double>& param_values, std::string& file_string) {
-    file_string.append("out/run");
+    file_string.append("run");
     for (auto &value : param_values) {
         file_string.append("_");
         file_string.append(std::to_string(value));
@@ -121,6 +121,22 @@ void construct_file_string(const int& replicate_number, std::vector<double>& par
     file_string.append("_" + std::to_string(replicate_number));
     file_string.append("_" + std::to_string(analysis_type));
     file_string.append(".txt");
+}
+
+void write_args_to_outfile(const std::string& file_string,
+						   const int& replicate_no,
+						   std::vector<double>& param_values) {
+	std::ofstream test_file;
+	test_file.open(file_string.c_str(), std::ios_base::app);
+	test_file << "Replicate Number: " << replicate_no << "\n";
+	test_file << "Analysis type: " << analysis_type << "\n";
+	if (test_file.is_open()) {
+		test_file << "Args: ";
+		for (auto &arg : param_values) {
+			test_file << arg << ", ";
+		}
+	}
+	test_file.close();
 }
 
 int main(int argc, char * argv[]) {
@@ -133,20 +149,12 @@ int main(int argc, char * argv[]) {
         std::vector<double> param_values;
         int replicate_no;
         readArgs(argc, argv, param_values, replicate_no);
-        std::cout << "Args: ";
-        for (auto &arg : param_values) {
-            std::cout << arg << ", ";
-        }
-        std::cout << "\n";
 
-        std::cout << "Replicate Number: " << replicate_no << "\n";
-        std::cout << "Analysis type: " << analysis_type << "\n";
-
-        // Print file name.
+        // Create output file.
         std::string file_string;
         construct_file_string(replicate_no, param_values, file_string);
-        sprintf(file_buffer,
-                file_string.c_str());
+        sprintf(file_buffer, "%s", file_string.c_str());
+		write_args_to_outfile(file_string, replicate_no, param_values);
     } else {
 
         World *world;

@@ -64,7 +64,7 @@ endif
 # -Wno-deprecated -O3 -Wall -shared -std=c++11 -fPIC -I/camp/home/vuurenk/pybind_sims/include/python2.7 -I/camp/home/vuurenk/pybind_sims/lib/python2.7/site-packages/pybind11/include 
 # CCFLAGS = -g -Wno-deprecated -DGRAPHICS -std=c++11 
 ifeq ($(BAHTI_ANALYSIS), true)
-	CPPFLAGS := -Wno-deprecated -O3 -Wall -shared -std=c++11 -DECpack=$(ECpack) -DGRAPHICS=$(GRAPHICS) -DMAXtime=$(MAXtime) -DBAHTI_ANALYSIS=$(BAHTI_ANALYSIS) -DANALYSIS_HYSTERESIS=$(ANALYSIS_HYSTERESIS) -DANALYSIS_TIME_TO_PATTERN=$(ANALYSIS_TIME_TO_PATTERN)
+	CPPFLAGS := -Wno-deprecated -O3 -Wall -shared -std=c++17 -DECpack=$(ECpack) -DGRAPHICS=$(GRAPHICS) -DMAXtime=$(MAXtime) -DBAHTI_ANALYSIS=$(BAHTI_ANALYSIS) -DANALYSIS_HYSTERESIS=$(ANALYSIS_HYSTERESIS) -DANALYSIS_TIME_TO_PATTERN=$(ANALYSIS_TIME_TO_PATTERN)
 	CPPFLAGS += $(PYBIND_INC)
 	TARGET := springAgent.so
 else
@@ -73,7 +73,7 @@ else
 		OBJS += ./graphics/display.o ./graphics/ScreenRecording.o
 	endif
 	#TODO: could have below as standard val
-	CPPFLAGS := -Wno-deprecated -g -std=c++11 -DECpack=$(ECpack) -DGRAPHICS=$(GRAPHICS) -DMAXtime=$(MAXtime) -DBAHTI_ANALYSIS=$(BAHTI_ANALYSIS) -DANALYSIS_HYSTERESIS=$(ANALYSIS_HYSTERESIS) -DANALYSIS_TIME_TO_PATTERN=$(ANALYSIS_TIME_TO_PATTERN) 
+	CPPFLAGS := -Wno-deprecated -g -std=c++17 -DECpack=$(ECpack) -DGRAPHICS=$(GRAPHICS) -DMAXtime=$(MAXtime) -DBAHTI_ANALYSIS=$(BAHTI_ANALYSIS) -DANALYSIS_HYSTERESIS=$(ANALYSIS_HYSTERESIS) -DANALYSIS_TIME_TO_PATTERN=$(ANALYSIS_TIME_TO_PATTERN) 
 endif
 
 CPPFLAGS += $(CDBG)
