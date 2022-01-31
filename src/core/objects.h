@@ -38,6 +38,7 @@ class World;
 #define TISSUE_TESTING true
 #define SHAPE_TESTING false
 #define PROTEIN_TESTING true
+#define SWEEP_TESTING true
 
 /// below defines are set through makefile
 #if PROTEIN_TESTING
