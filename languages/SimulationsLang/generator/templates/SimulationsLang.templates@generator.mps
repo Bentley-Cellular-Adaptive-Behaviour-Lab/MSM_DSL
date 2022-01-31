@@ -4898,7 +4898,7 @@
       </node>
       <node concept="356sEK" id="6dETgESRsYV" role="383Ya9">
         <node concept="356sEF" id="6dETgESRsYW" role="356sEH">
-          <property role="TrG5h" value="local_output_folder=&quot;out&quot;" />
+          <property role="TrG5h" value="local_output_folder=&quot;out/&quot;" />
         </node>
         <node concept="2EixSi" id="6dETgESRsYX" role="2EinRH" />
       </node>
@@ -4962,6 +4962,42 @@
                       <node concept="3cpWs6" id="1d4L5Eu4$B$" role="3cqZAp">
                         <node concept="Xl_RD" id="1d4L5Eu4$Mm" role="3cqZAk">
                           <property role="Xl_RC" value="BISTABILITY" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3eNFk2" id="1d4L5Eu5ee4" role="3eNLev">
+                    <node concept="2OqwBi" id="1d4L5Eu5fVr" role="3eO9$A">
+                      <node concept="2OqwBi" id="1d4L5Eu5fpJ" role="2Oq$k0">
+                        <node concept="2OqwBi" id="1d4L5Eu5eCZ" role="2Oq$k0">
+                          <node concept="30H73N" id="1d4L5Eu5eo4" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="1d4L5Eu5fci" role="2OqNvi">
+                            <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDa" resolve="_analysisContainer" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="1d4L5Eu5fKt" role="2OqNvi">
+                          <ref role="3TsBF5" to="yy1h:7wJJsVzvXk3" resolve="_analysisType" />
+                        </node>
+                      </node>
+                      <node concept="21noJN" id="1d4L5Eu5g7N" role="2OqNvi">
+                        <node concept="21nZrQ" id="1d4L5Eu5g7P" role="21noJM">
+                          <ref role="21nZrZ" to="yy1h:6JBqwuejVvV" resolve="Patterning" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="1d4L5Eu5ee6" role="3eOfB_">
+                      <node concept="3cpWs6" id="1d4L5Eu5geY" role="3cqZAp">
+                        <node concept="Xl_RD" id="1d4L5Eu5gqE" role="3cqZAk">
+                          <property role="Xl_RC" value="PATTERNING" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="9aQIb" id="1d4L5Eu5gvM" role="9aQIa">
+                    <node concept="3clFbS" id="1d4L5Eu5gvN" role="9aQI4">
+                      <node concept="3cpWs6" id="1d4L5Eu5gvR" role="3cqZAp">
+                        <node concept="Xl_RD" id="1d4L5Eu5gFR" role="3cqZAk">
+                          <property role="Xl_RC" value="NO_ANALYSIS" />
                         </node>
                       </node>
                     </node>
