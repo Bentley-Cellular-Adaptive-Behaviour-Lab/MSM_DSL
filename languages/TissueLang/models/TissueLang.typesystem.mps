@@ -17,6 +17,7 @@
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1153417849900" name="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" flags="nn" index="2d3UOw" />
+      <concept id="1153422305557" name="jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression" flags="nn" index="2dkUwp" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
@@ -1155,7 +1156,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="7Eknuda1TMq" role="2OqNvi">
-                  <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XI" resolve="Height" />
+                  <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XI" resolve="_height" />
                 </node>
               </node>
               <node concept="2qgKlT" id="7Eknuda1U77" role="2OqNvi">
@@ -1182,7 +1183,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="7Eknuda1V_X" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XI" resolve="Height" />
+                    <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XI" resolve="_height" />
                   </node>
                 </node>
               </node>
@@ -1209,7 +1210,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="7Eknuda1Xi7" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XG" resolve="Width" />
+                    <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XG" resolve="_width" />
                   </node>
                 </node>
               </node>
@@ -1230,7 +1231,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="7Eknuda1VY1" role="2OqNvi">
-                  <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XG" resolve="Width" />
+                  <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XG" resolve="_width" />
                 </node>
               </node>
               <node concept="2qgKlT" id="7Eknuda1VFl" role="2OqNvi">
@@ -2057,20 +2058,20 @@
             <node concept="3clFbS" id="5A0f7KHCpaD" role="3clFbx">
               <node concept="2MkqsV" id="5A0f7KHCpaE" role="3cqZAp">
                 <node concept="Xl_RD" id="5A0f7KHCpaF" role="2MkJ7o">
-                  <property role="Xl_RC" value="The flat tissue minimum width must be less than the maximum width." />
+                  <property role="Xl_RC" value="The flat tissue maximum width must be greater than the minimum width." />
                 </node>
                 <node concept="1YBJjd" id="5A0f7KHCpaG" role="1urrMF">
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
               </node>
             </node>
-            <node concept="2d3UOw" id="5A0f7KHCpaH" role="3clFbw">
+            <node concept="2dkUwp" id="2JK4Ae9Lmr$" role="3clFbw">
               <node concept="2OqwBi" id="5A0f7KHCpaI" role="3uHU7B">
                 <node concept="1YBJjd" id="5A0f7KHCpaJ" role="2Oq$k0">
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCpaK" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_sweepMinHeight" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_sweepMaxHeight" />
                 </node>
               </node>
               <node concept="2OqwBi" id="5A0f7KHCpaL" role="3uHU7w">
@@ -2078,7 +2079,7 @@
                   <ref role="1YBMHb" node="6WHzz7d2Pt_" resolve="flat" />
                 </node>
                 <node concept="3TrcHB" id="5A0f7KHCpaN" role="2OqNvi">
-                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJv" resolve="_sweepMaxHeight" />
+                  <ref role="3TsBF5" to="nguq:6WHzz7cXnJ5" resolve="_sweepMinHeight" />
                 </node>
               </node>
             </node>

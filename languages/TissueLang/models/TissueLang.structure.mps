@@ -320,13 +320,15 @@
     <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263660" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Width" />
+      <property role="20kJfa" value="_width" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XI" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263662" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="Height" />
+      <property role="20kJfa" value="_height" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
   </node>

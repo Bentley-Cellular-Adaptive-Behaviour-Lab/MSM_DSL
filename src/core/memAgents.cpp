@@ -1893,7 +1893,7 @@ Env *MemAgent::findHighestConc(void){
      * if((chosen->Ex==Mx+1)&&(chosen->Ey==My)) right2++;
      * count3++;*/
 
-    if(BAHTI_ANALYSIS==true){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
+    if (analysis_type == ANALYSIS_TYPE_BAHTI_ANALYSIS){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
         
     }
     

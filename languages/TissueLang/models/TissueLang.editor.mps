@@ -479,7 +479,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3seu8bOi86b" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:4v4kI3Dq7XI" resolve="Height" />
+          <ref role="1NtTu8" to="nguq:4v4kI3Dq7XI" resolve="_height" />
         </node>
         <node concept="2iRfu4" id="6mloH5uSvZY" role="2iSdaV" />
       </node>
@@ -496,7 +496,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="3seu8bOi86m" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:4v4kI3Dq7XG" resolve="Width" />
+          <ref role="1NtTu8" to="nguq:4v4kI3Dq7XG" resolve="_width" />
         </node>
         <node concept="2iRfu4" id="6mloH5uSw1u" role="2iSdaV" />
       </node>

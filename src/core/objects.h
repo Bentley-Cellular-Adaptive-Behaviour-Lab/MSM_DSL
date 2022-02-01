@@ -24,9 +24,9 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-//#define GRAPHICS false
-//#define ECpack 15
-//#define MAXtime 10000 ///2000 ///480 for fil lifetime
+#define GRAPHICS false
+#define ECpack 15
+#define MAXtime 10000 ///2000 ///480 for fil lifetime
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
