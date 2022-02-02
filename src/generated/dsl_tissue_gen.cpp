@@ -12,14 +12,14 @@
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 
-// Start Value Functions
+// Start Value Functions 
 
-static int get_TissueType_width_value(World* world) {
-    return (int) round(world->getParamValue(TissueType_WIDTH));
+static int get_FlatType_width_value(World* world) {
+	return (int) round(world->getParamValue(FlatType_WIDTH));
 }
 
-static int get_TissueType_height_value(World* world) {
-    return (int) round(world->getParamValue(TissueType_HEIGHT));
+static int get_FlatType_height_value(World* world) {
+	return (int) round(world->getParamValue(FlatType_HEIGHT));
 }
 
 
@@ -31,22 +31,22 @@ void Tissue_Container::tissue_set_up(World* world) {
     Cell_Type *Endothelial_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Flat *TissueType_Type;
+    Tissue_Type_Flat *FlatType_Type;
 
     // Coordinate Declarations //
-    Coordinates Tissue_Pos;
+    Coordinates FlatTissue_Pos;
 
     // Cell Type Creation //
     Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
 
     // Tissue Type Creation //
-    int current_TissueType_width = get_TissueType_width_value(world);
-    int current_TissueType_height = get_TissueType_height_value(world);
-    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_FLAT, current_TissueType_height, current_TissueType_height);
+    int current_FlatType_width = get_FlatType_width_value(world);
+    int current_FlatType_height = get_FlatType_height_value(world);
+    FlatType_Type = define_tissue_type("FlatType", Endothelial_Type, CELL_CONFIGURATION_FLAT, current_FlatType_height, current_FlatType_height);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Tissue_Pos = Coordinates(40, 40, 20);
-    create_tissue("Tissue", TissueType_Type, &(Tissue_Pos));
+    FlatTissue_Pos = Coordinates(0, 0, 0);
+    create_tissue("FlatTissue", FlatType_Type, &(FlatTissue_Pos));
 }

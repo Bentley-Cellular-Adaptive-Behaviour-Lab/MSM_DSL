@@ -28,6 +28,8 @@
         <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)</dependency>
         <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
         <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
+        <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
+        <dependency reexport="false">822a7acd-f487-45f5-bbb9-1ce595a1705f(com.mbeddr.mpsutil.ecore.stubs)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:84970ad9-a964-4f15-a393-dc0fcd724c0f:SpeciesLang" version="0" />
@@ -72,6 +74,7 @@
         <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
+        <module reference="86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)" version="0" />
         <module reference="fd56c581-848a-4465-919d-40982731639b(SimulationsLang)" version="0" />
         <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
@@ -81,6 +84,7 @@
         <module reference="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
         <module reference="63e0e566-5131-447e-90e3-12ea330e1a00(com.mbeddr.mpsutil.blutil)" version="0" />
+        <module reference="822a7acd-f487-45f5-bbb9-1ce595a1705f(com.mbeddr.mpsutil.ecore.stubs)" version="0" />
         <module reference="d3a0fd26-445a-466c-900e-10444ddfed52(com.mbeddr.mpsutil.filepicker)" version="0" />
         <module reference="47f075a6-558e-4640-a606-7ce0236c8023(com.mbeddr.mpsutil.interpreter)" version="0" />
         <module reference="735f86bc-17fb-4d1c-a664-82c2b8e8a34e(com.mbeddr.mpsutil.interpreter.rt)" version="0" />
