@@ -2394,14 +2394,15 @@ float MemAgent::get_memAgent_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_environment_protein_level(std::string protein_name) {
+double MemAgent::get_environment_protein_level(std::string protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
     int k = (int) Mz;
 
-    float protein_level = 0;
+    double protein_level = 0;
+    int relevant_memAgents = 0;
 
     for (int x = 0; x < 26; x++) {
         // Same layer.
@@ -2521,11 +2522,12 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
                 ep = worldP->grid[m][n][p].getEid();
                 if (ep->has_protein(protein_name)) {
                     protein_level+= ep->get_protein_level(protein_name);
+                    relevant_memAgents++;
                 }
             }
         }
     }
-    return protein_level;
+    return (double) (protein_level / relevant_memAgents);
 }
 
 /*****************************************************************************************
@@ -2534,6 +2536,7 @@ float MemAgent::get_environment_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
+[[deprecated]]
 float MemAgent::get_local_protein_level(std::string protein_name) {
     int m, n, p;
     int i = (int) Mx;
@@ -2677,18 +2680,19 @@ float MemAgent::get_local_protein_level(std::string protein_name) {
 
 /*****************************************************************************************
 *  Name:		get_filopodia_protein_level
-*  Description: Returns the level of a protein in nearby memAgents belonging to filopodia,
+*  Description: Returns the average level of a protein in nearby memAgents belonging to filopodia,
  *  			in other cells.
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_filopodia_protein_level(std::string protein_name) {
+double MemAgent::get_filopodia_protein_level(std::string protein_name) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
 	int k = (int) Mz;
 
-	float protein_level = 0;
+	double protein_level = 0;
+    int relevant_memAgents = 0;
 
 	for (int x = 0; x < 26; x++) {
 		// Same layer.
@@ -2804,33 +2808,36 @@ float MemAgent::get_filopodia_protein_level(std::string protein_name) {
 		// If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
 		// increase the count by the level at those coordinates.
 
+
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
 						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                        relevant_memAgents++;
 					}
 				}
 			}
 		}
 	}
-	return protein_level;
+	return (double) (protein_level / relevant_memAgents);
 }
 
 /*****************************************************************************************
 *  Name:		get_junction_protein_level
-*  Description: Returns the level of a protein in nearby memAgents belonging to adjacent cell junctions.
+*  Description: Returns the average level of a protein in nearby memAgents belonging to adjacent cell junctions.
 *  				This is done only if the memAgents are defined as belonging to the junction.
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_junction_protein_level(std::string protein_name) {
+double MemAgent::get_junction_protein_level(std::string protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
     int k = (int) Mz;
 
-    float protein_level = 0;
+    double protein_level = 0;
+    int relevant_memAgents = 0;
 
     for (int x = 0; x < 26; x++) {
         // Same layer.
@@ -2953,13 +2960,14 @@ float MemAgent::get_junction_protein_level(std::string protein_name) {
                 	if (memAgent->junction) {
 						if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
 							protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                            relevant_memAgents++;
 						}
                 	}
                 }
             }
         }
     }
-    return protein_level;
+    return (double) (protein_level / relevant_memAgents);
 }
 
 /*****************************************************************************************
