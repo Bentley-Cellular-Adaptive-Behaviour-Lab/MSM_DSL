@@ -9976,7 +9976,7 @@
           </node>
         </node>
         <node concept="356sEF" id="1d4L5EtV6Qq" role="356sEH">
-          <property role="TrG5h" value="replicate_number " />
+          <property role="TrG5h" value="$replicate_number " />
         </node>
         <node concept="356sEF" id="1d4L5EtV7ij" role="356sEH">
           <property role="TrG5h" value="ANALYSIS_TYPE" />
