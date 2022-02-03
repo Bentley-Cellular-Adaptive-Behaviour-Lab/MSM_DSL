@@ -230,14 +230,65 @@
     </node>
   </node>
   <node concept="356sEV" id="2D6O8IwUPeP">
-    <property role="TrG5h" value="dsl_Shape" />
+    <property role="TrG5h" value="Shape" />
     <property role="3Le9LX" value=".cpp" />
     <node concept="356WMU" id="2D6O8IwUPeQ" role="356KY_">
       <node concept="356sEK" id="2D6O8IwUPfs" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwUPfZ" role="356sEH">
-          <property role="TrG5h" value="void ShapeContainer::setup() {" />
+          <property role="TrG5h" value="#include &quot;../core/memAgents.h&quot;" />
         </node>
         <node concept="2EixSi" id="2D6O8IwUPfu" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vJDm3" role="383Ya9">
+        <node concept="2EixSi" id="3vcTe5vJDm5" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vJJuL" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vJJuM" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/shape/cytoprotein.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vJJuN" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vvVWU" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vvVWV" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/shape/shapeContainer.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vvVWW" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vvQnz" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vvQn$" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/shape/protrusion.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vvQn_" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vvB5Q" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vvB5R" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/shape/protrusionType.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vvB5S" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vvKU6" role="383Ya9">
+        <node concept="2EixSi" id="3vcTe5vvKU8" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vJfbw" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vJfbx" role="356sEH">
+          <property role="TrG5h" value="void MemAgent::checkConditions(MemAgent* memAgent, std::vector&lt;ProtrusionType*&gt;&amp; eligibleTypes) {" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vJfby" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vJpUZ" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vJpV0" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vJpV1" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vJzp5" role="383Ya9">
+        <node concept="2EixSi" id="3vcTe5vJzp7" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3vcTe5vv_ff" role="383Ya9">
+        <node concept="356sEF" id="3vcTe5vv_fg" role="356sEH">
+          <property role="TrG5h" value="void ShapeContainer::setup() {" />
+        </node>
+        <node concept="2EixSi" id="3vcTe5vv_fh" role="2EinRH" />
       </node>
       <node concept="356sEK" id="2D6O8IwUPge" role="383Ya9">
         <node concept="373pV1" id="2D6O8IwYzmw" role="356sEH" />
@@ -287,17 +338,17 @@
         <node concept="356sEF" id="2D6O8IwY_X7" role="356sEH">
           <property role="TrG5h" value="CytoProtein *" />
         </node>
-        <node concept="356sEF" id="1wi3sbu3RcM" role="356sEH">
+        <node concept="356sEF" id="3vcTe5weKYN" role="356sEH">
           <property role="TrG5h" value="CYTOPROTEIN" />
-          <node concept="17Uvod" id="1wi3sbu3RRp" role="lGtFl">
+          <node concept="17Uvod" id="3vcTe5weLad" role="lGtFl">
             <property role="2qtEX9" value="name" />
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="1wi3sbu3RRq" role="3zH0cK">
-              <node concept="3clFbS" id="1wi3sbu3RRr" role="2VODD2">
-                <node concept="3clFbF" id="1wi3sbu3RW0" role="3cqZAp">
-                  <node concept="2OqwBi" id="1wi3sbu3S9B" role="3clFbG">
-                    <node concept="30H73N" id="1wi3sbu3RVZ" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="1wi3sbu3Sso" role="2OqNvi">
+            <node concept="3zFVjK" id="3vcTe5weLae" role="3zH0cK">
+              <node concept="3clFbS" id="3vcTe5weLaf" role="2VODD2">
+                <node concept="3clFbF" id="3vcTe5weLfp" role="3cqZAp">
+                  <node concept="2OqwBi" id="3vcTe5weLte" role="3clFbG">
+                    <node concept="30H73N" id="3vcTe5weLfo" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="3vcTe5weN16" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                   </node>
@@ -1259,12 +1310,6 @@
           </node>
         </node>
       </node>
-      <node concept="356sEK" id="2D6O8IwUPg1" role="383Ya9">
-        <node concept="356sEF" id="2D6O8IwUPg2" role="356sEH">
-          <property role="TrG5h" value="}" />
-        </node>
-        <node concept="2EixSi" id="2D6O8IwUPg3" role="2EinRH" />
-      </node>
       <node concept="356sEK" id="2D6O8IwYA1r" role="383Ya9">
         <node concept="2EixSi" id="2D6O8IwYA1t" role="2EinRH" />
       </node>
@@ -1330,6 +1375,22 @@
     </node>
     <node concept="n94m4" id="2D6O8IwUPeR" role="lGtFl">
       <ref role="n9lRv" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
+    </node>
+    <node concept="17Uvod" id="3vcTe5w4nXC" role="lGtFl">
+      <property role="2qtEX9" value="name" />
+      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+      <node concept="3zFVjK" id="3vcTe5w4nXD" role="3zH0cK">
+        <node concept="3clFbS" id="3vcTe5w4nXE" role="2VODD2">
+          <node concept="3clFbF" id="3vcTe5w4rqA" role="3cqZAp">
+            <node concept="2OqwBi" id="3vcTe5w4rBQ" role="3clFbG">
+              <node concept="30H73N" id="3vcTe5w4rq_" role="2Oq$k0" />
+              <node concept="3TrcHB" id="3vcTe5w4rOT" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="356sEV" id="2D6O8IwYA8w">

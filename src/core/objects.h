@@ -13,8 +13,6 @@ namespace py = pybind11;
 
 class World;
 
-
-
 //#define GRAPHICS true
 ///main switches and settings
 //#ifdef GRAPHICS
@@ -24,9 +22,12 @@ class World;
 //#endif
 
 /// below defines are set through makefile
-#define GRAPHICS false
-#define ECpack 15
-#define MAXtime 10000 ///2000 ///480 for fil lifetime
+//#define GRAPHICS false
+
+//#define MAXtime 10000
+
+// ECpack no longer does anything - set to 1 to avoid breaking code.
+#define ECpack 1
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
