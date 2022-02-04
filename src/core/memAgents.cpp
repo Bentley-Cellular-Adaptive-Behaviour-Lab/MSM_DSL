@@ -2537,7 +2537,7 @@ double MemAgent::get_environment_protein_level(std::string protein_name) {
 ******************************************************************************************/
 
 [[deprecated]]
-float MemAgent::get_local_protein_level(std::string protein_name) {
+double MemAgent::get_local_protein_level(std::string protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;

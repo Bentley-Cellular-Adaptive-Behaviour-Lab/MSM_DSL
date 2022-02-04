@@ -149,7 +149,7 @@ public:
     double get_local_protein_level(std::string protein_name);
     double get_junction_protein_level(std::string protein_name);
     void set_protein_level(std::string protein_name, float new_level);
-    float get_filopodia_protein_level(std::string protein_name);
+    double get_filopodia_protein_level(std::string protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);
     void distribute_proteins(std::string protein_name, float start_protein_level, float end_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location);

@@ -419,16 +419,11 @@
           <node concept="3cpWsn" id="GHHs3TuJ$F" role="3cpWs9">
             <property role="TrG5h" value="root_string" />
             <node concept="17QB3L" id="GHHs3TuJ$A" role="1tU5fm" />
-            <node concept="3cpWs3" id="77gQeLR32ML" role="33vP2m">
-              <node concept="Xl_RD" id="77gQeLR3gTg" role="3uHU7w">
-                <property role="Xl_RC" value="/MPSProjects/MSM_DSL" />
-              </node>
-              <node concept="2YIFZM" id="GHHs3TuKxW" role="3uHU7B">
-                <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
-                <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-                <node concept="Xl_RD" id="GHHs3TuKE9" role="37wK5m">
-                  <property role="Xl_RC" value="user.dir" />
-                </node>
+            <node concept="2YIFZM" id="GHHs3TuKxW" role="33vP2m">
+              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String)" resolve="getProperty" />
+              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+              <node concept="Xl_RD" id="GHHs3TuKE9" role="37wK5m">
+                <property role="Xl_RC" value="user.dir" />
               </node>
             </node>
           </node>
@@ -1687,7 +1682,7 @@
               </node>
               <node concept="3clFbF" id="10Fz2WfFya4" role="3cqZAp">
                 <node concept="2YIFZM" id="10Fz2WfFya5" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
                   <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
                   <node concept="37vLTw" id="10Fz2WfFya6" role="37wK5m">
                     <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
@@ -2613,7 +2608,7 @@
               </node>
               <node concept="3clFbF" id="10Fz2WfIXMI" role="3cqZAp">
                 <node concept="2YIFZM" id="10Fz2WfIXMJ" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
                   <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
                   <node concept="37vLTw" id="10Fz2WfIXMK" role="37wK5m">
                     <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
@@ -3044,7 +3039,7 @@
                                     <node concept="2OqwBi" id="5hUuDYPkMNk" role="2Oq$k0">
                                       <node concept="30H73N" id="5hUuDYPkMNl" role="2Oq$k0" />
                                       <node concept="3TrEf2" id="5hUuDYPkMNm" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
+                                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80PS" resolve="_signallingContainerRef" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="5hUuDYPkMNn" role="2OqNvi">
@@ -3251,7 +3246,7 @@
                     <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
                     <node concept="3cpWs3" id="1PDLoEBTeey" role="37wK5m">
                       <node concept="Xl_RD" id="1PDLoEBTeez" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/generated/dsl_species_gen.sh" />
+                        <property role="Xl_RC" value="/src/generated/dsl_species_gen.h" />
                       </node>
                       <node concept="37vLTw" id="1PDLoEBTee$" role="3uHU7B">
                         <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
@@ -3540,7 +3535,7 @@
               </node>
               <node concept="3clFbF" id="10Fz2WfJiob" role="3cqZAp">
                 <node concept="2YIFZM" id="10Fz2WfJioc" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="utils" />
+                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
                   <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
                   <node concept="37vLTw" id="10Fz2WfJiod" role="37wK5m">
                     <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
@@ -3958,7 +3953,7 @@
                     <node concept="1pGfFk" id="1vG5M8CvHpq" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="1vG5M8CvHpr" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProjects/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>
@@ -4159,7 +4154,7 @@
                     <property role="373rjd" value="true" />
                     <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                     <node concept="Xl_RD" id="3vcTe5xD68J" role="37wK5m">
-                      <property role="Xl_RC" value="MPSProjects/MSM_DSL/src/slurmMSM.sh" />
+                      <property role="Xl_RC" value="src/slurmMSM.sh" />
                     </node>
                   </node>
                 </node>
@@ -4812,7 +4807,7 @@
                     <node concept="1pGfFk" id="4MBiVKQqyAc" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="4MBiVKQqyAd" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProject/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>
@@ -5056,7 +5051,7 @@
                     <node concept="1pGfFk" id="1PDLoEC1GSu" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="1PDLoEC1GSv" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProjects/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>
@@ -5276,7 +5271,7 @@
                     <node concept="1pGfFk" id="1HcQq$TRXNt" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="1HcQq$TRXNu" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProjects/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>
@@ -5495,7 +5490,7 @@
                     <node concept="1pGfFk" id="1HcQq$TSaAm" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="1HcQq$TSaAn" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProjects/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>
@@ -5714,7 +5709,7 @@
                     <node concept="1pGfFk" id="1vG5M8DurHi" role="2ShVmc">
                       <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
                       <node concept="Xl_RD" id="1vG5M8DurHj" role="37wK5m">
-                        <property role="Xl_RC" value="MPSProjects/MSM_DSL/src" />
+                        <property role="Xl_RC" value="src" />
                       </node>
                     </node>
                   </node>

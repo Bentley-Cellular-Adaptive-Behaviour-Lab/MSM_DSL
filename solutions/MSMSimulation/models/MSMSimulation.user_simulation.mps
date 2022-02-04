@@ -73,8 +73,8 @@
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
       </concept>
       <concept id="6249017959271690141" name="TissueLang.structure.ShapeRectangular" flags="ng" index="3ZP1s$">
-        <child id="5171349398070263660" name="Width" index="2IF2Qc" />
-        <child id="5171349398070263662" name="Height" index="2IF2Qe" />
+        <child id="5171349398070263660" name="_width" index="2IF2Qc" />
+        <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
       <concept id="6249017959271690140" name="TissueLang.structure.ArrangementFlat" flags="ng" index="3ZP1s_">
         <property id="8011215656706728016" name="_sweepWidthSteps" index="2y8eTx" />
@@ -138,7 +138,7 @@
     <ref role="1AQzTG" node="4jUcCWydmv6" resolve="World" />
     <node concept="2rk7l3" id="4jUcCWycOcU" role="2rk6u4" />
     <node concept="2rk7nQ" id="4jUcCWycOcV" role="2rk6u2">
-      <property role="2rk6ya" value="100" />
+      <property role="2rk6ya" value="10" />
       <property role="2rk6$c" value="72wB6_dUsui/SLURM" />
     </node>
     <node concept="2rk7kT" id="4jUcCWycOcW" role="2rFWTJ" />

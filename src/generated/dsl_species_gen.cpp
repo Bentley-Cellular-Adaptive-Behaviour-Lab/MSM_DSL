@@ -5,7 +5,7 @@
 #include "../dsl/species/protein.h"
 #include "dsl_species_gen.h"
 
-// Created using: Signalling //
+// Created using: Species //
 ODEs::ODEs() {
 }
 
