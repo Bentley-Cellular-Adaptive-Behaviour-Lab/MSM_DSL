@@ -145,9 +145,9 @@ public:
 	bool has_protein(std::string query_name);
 	void update_protein_level(std::string protein_name, float protein_delta);
     float get_memAgent_protein_level(std::string protein_name);
-    float get_environment_protein_level(std::string protein_name);
-    float get_local_protein_level(std::string protein_name);
-    float get_junction_protein_level(std::string protein_name);
+    double get_environment_protein_level(std::string protein_name);
+    double get_local_protein_level(std::string protein_name);
+    double get_junction_protein_level(std::string protein_name);
     void set_protein_level(std::string protein_name, float new_level);
     float get_filopodia_protein_level(std::string protein_name);
 //    [[deprecated]]
