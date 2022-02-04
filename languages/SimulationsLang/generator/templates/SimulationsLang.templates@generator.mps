@@ -4198,6 +4198,22 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="1p_GhllOwyk" role="3cqZAp">
+              <node concept="1PaTwC" id="1p_GhllOwyl" role="1aUNEU">
+                <node concept="3oM_SD" id="1p_GhllOwzD" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllODDB" role="1PaTwD">
+                  <property role="3oM_SC" value="Remove" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOzhz" role="1PaTwD">
+                  <property role="3oM_SC" value="carriage" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOGHf" role="1PaTwD">
+                  <property role="3oM_SC" value="returns." />
+                </node>
+              </node>
+            </node>
             <node concept="2$JKZl" id="3vcTe5xGyv7" role="3cqZAp">
               <node concept="3clFbS" id="3vcTe5xGyv9" role="2LFqv$">
                 <node concept="3clFbF" id="3vcTe5xIvar" role="3cqZAp">
@@ -4207,12 +4223,12 @@
                         <ref role="3cqZAo" node="3vcTe5xAFzZ" resolve="line" />
                       </node>
                       <node concept="liA8E" id="3vcTe5xJ5yP" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~String.replace(char,char)" resolve="replace" />
-                        <node concept="1Xhbcc" id="3vcTe5zr2s2" role="37wK5m">
-                          <property role="1XhdNS" value="\r" />
+                        <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence)" resolve="replace" />
+                        <node concept="Xl_RD" id="1p_GhllN$q_" role="37wK5m">
+                          <property role="Xl_RC" value="\r" />
                         </node>
-                        <node concept="1Xhbcc" id="3vcTe5zrL20" role="37wK5m">
-                          <property role="1XhdNS" value="\n" />
+                        <node concept="Xl_RD" id="1p_GhllOkY5" role="37wK5m">
+                          <property role="Xl_RC" value="" />
                         </node>
                       </node>
                     </node>
@@ -4275,6 +4291,31 @@
               </node>
             </node>
             <node concept="3clFbH" id="3vcTe5xMcxd" role="3cqZAp" />
+            <node concept="3SKdUt" id="1p_GhllOJZk" role="3cqZAp">
+              <node concept="1PaTwC" id="1p_GhllOJZl" role="1aUNEU">
+                <node concept="3oM_SD" id="1p_GhllOVCf" role="1PaTwD">
+                  <property role="3oM_SC" value="Write" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVEo" role="1PaTwD">
+                  <property role="3oM_SC" value="back" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVFh" role="1PaTwD">
+                  <property role="3oM_SC" value="into" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVGb" role="1PaTwD">
+                  <property role="3oM_SC" value="file" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVH6" role="1PaTwD">
+                  <property role="3oM_SC" value="using" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVIt" role="1PaTwD">
+                  <property role="3oM_SC" value="LF" />
+                </node>
+                <node concept="3oM_SD" id="1p_GhllOVKg" role="1PaTwD">
+                  <property role="3oM_SC" value="formatting." />
+                </node>
+              </node>
+            </node>
             <node concept="3cpWs8" id="3vcTe5xMog2" role="3cqZAp">
               <node concept="3cpWsn" id="3vcTe5xMog3" role="3cpWs9">
                 <property role="TrG5h" value="fw" />
@@ -4326,6 +4367,19 @@
                       <ref role="37wK5l" to="guwi:~Writer.write(java.lang.String)" resolve="write" />
                       <node concept="2GrUjf" id="3vcTe5xRXWi" role="37wK5m">
                         <ref role="2Gs0qQ" node="3vcTe5xP1Je" resolve="l" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3clFbF" id="1p_GhllOYT9" role="3cqZAp">
+                  <node concept="2OqwBi" id="1p_GhllP22e" role="3clFbG">
+                    <node concept="37vLTw" id="1p_GhllOYT7" role="2Oq$k0">
+                      <ref role="3cqZAo" node="3vcTe5xNBF_" resolve="out" />
+                    </node>
+                    <node concept="liA8E" id="1p_GhllPeuI" role="2OqNvi">
+                      <ref role="37wK5l" to="guwi:~BufferedWriter.write(int)" resolve="write" />
+                      <node concept="1Xhbcc" id="1p_GhllPIOp" role="37wK5m">
+                        <property role="1XhdNS" value="\n" />
                       </node>
                     </node>
                   </node>
