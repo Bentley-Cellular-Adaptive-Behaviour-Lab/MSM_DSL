@@ -22,9 +22,11 @@
 
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
+#include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/utils/logger.h"
 #include "../dsl/utils/utils.h"
+#include "../dsl/world/worldContainer.h"
 
 
 typedef Location** ppLocation;
@@ -1544,7 +1546,10 @@ void World::runSimulation() {
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             hysteresisAnalysis();
         } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            evaluateSandP();
+            // Checks that all tissues have patterned, if so, end the simulation.
+            if (tissuesHavePatterned()) {
+                timeStep = MAXtime;
+            }
         }
 
         if (MEM_LEAK_OCCURRING) {
@@ -6545,4 +6550,32 @@ void World::fillParamVector(const std::vector<double>& param_values) {
 
 double World::getParamValue(const int& i) {
     return m_param_increments.at(i);
+}
+
+bool World::tissuesHavePatterned() const {
+    bool tissuesHavePatterned = false;
+
+    try {
+        int patternedTissues = 0;
+        for (auto tissue : m_tissueContainer->tissues) {
+            // If a tissue has not patterned, check that it has.
+            // If it has patterned, don't bother checking.
+            if (!tissue->get_patterned()) {
+                if (tissue->tissueHasPatterned())
+                    patternedTissues++;
+            } else {
+                patternedTissues++;
+            }
+
+            if (patternedTissues == m_tissueContainer->tissues.size()) {
+                tissuesHavePatterned = true;
+            } else if (patternedTissues > m_tissueContainer->tissues.size()) {
+                throw std::exception();
+            }
+        }
+    } catch (std::exception& e) {
+        std::cout << "More tissues have patterned than there are tissues!";
+    }
+
+    return tissuesHavePatterned;
 }

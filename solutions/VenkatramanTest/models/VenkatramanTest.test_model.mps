@@ -15,7 +15,9 @@
   </imports>
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
-      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si" />
+      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
+        <reference id="4970340729092560634" name="_simulationContainerRef" index="1ANuhP" />
+      </concept>
     </language>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
       <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
@@ -26,6 +28,7 @@
         <child id="5907682107548062262" name="_buffer" index="3bEhY_" />
       </concept>
       <concept id="8343650468779203043" name="WorldLang.structure.WorldContainer" flags="ng" index="1yko06">
+        <reference id="4970340729092561267" name="_simulationContainerRef" index="1ANuJW" />
         <child id="8343650468779203044" name="_grid" index="1yko01" />
       </concept>
     </language>
@@ -84,6 +87,7 @@
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
       <concept id="3125878369731540203" name="SpeciesLang.structure.SignallingContainer" flags="ng" index="3_zqOV">
+        <reference id="4970340729092561229" name="_simulationContainerRef" index="1ANuJ2" />
         <child id="3125878369731540800" name="_species" index="3_zqUg" />
         <child id="3125878369731540802" name="_processes" index="3_zqUi" />
         <child id="3125878369731540805" name="_parameters" index="3_zqUl" />
@@ -162,6 +166,7 @@
         <child id="6249017959271690171" name="_shape" index="3ZP1s2" />
       </concept>
       <concept id="6249017959271690117" name="TissueLang.structure.TissueContainer" flags="ng" index="3ZP1sW">
+        <reference id="4970340729092561249" name="_simulationContainerRef" index="1ANuJI" />
         <child id="4857589848835393769" name="_tissueTypes" index="1v2izi" />
         <child id="4857589848835393773" name="_cellTypes" index="1v2izm" />
         <child id="6249017959271690124" name="_tissues" index="3ZP1sP" />
@@ -185,6 +190,10 @@
       </concept>
       <concept id="8660349304734434856" name="SimulationsLang.structure.SimulationContainer" flags="ng" index="2rkfJA">
         <property id="8660349304734541288" name="maxTimeSteps" index="2rFPwA" />
+        <reference id="4970340729091001571" name="_worldContainerRef" index="1AQzTG" />
+        <reference id="4970340729091001645" name="_shapeContainerRef" index="1AQzYy" />
+        <reference id="4970340729091001720" name="_signallingContainerRef" index="1AQzZR" />
+        <reference id="4970340729090901985" name="_tissueContainerRef" index="1ATblI" />
         <child id="8660349304734472780" name="_clusterContainer" index="2rk6u2" />
         <child id="8660349304734472778" name="_analysisContainer" index="2rk6u4" />
         <child id="8660349304734512033" name="_graphicsContainer" index="2rFWTJ" />
@@ -196,6 +205,10 @@
   <node concept="2rkfJA" id="7ZEZEd$U2kP">
     <property role="2rFPwA" value="1000" />
     <property role="TrG5h" value="VenkatramanSimulation" />
+    <ref role="1AQzTG" node="7ZEZEd_3_lH" resolve="World" />
+    <ref role="1ATblI" node="13EEdumPOIQ" resolve="Tissues" />
+    <ref role="1AQzZR" node="13EEdumPOOb" resolve="Signalling" />
+    <ref role="1AQzYy" node="13EEdumPOOa" resolve="Shapes" />
     <node concept="2rk7l3" id="7ZEZEd$U2kQ" role="2rk6u4" />
     <node concept="2rk7nQ" id="7ZEZEd$U2kR" role="2rk6u2">
       <property role="2rk6ya" value="100" />
@@ -206,6 +219,7 @@
   </node>
   <node concept="1yko06" id="7ZEZEd_3_lH">
     <property role="TrG5h" value="World" />
+    <ref role="1ANuJW" node="7ZEZEd$U2kP" resolve="VenkatramanSimulation" />
     <node concept="1yko03" id="7ZEZEd_3_lI" role="1yko01">
       <node concept="2_hQR_" id="7ZEZEd_3_lJ" role="3bEhY_">
         <node concept="2_n9WQ" id="7ZEZEd_3_lK" role="2_hQRE">
@@ -224,6 +238,7 @@
   </node>
   <node concept="3ZP1sW" id="13EEdumPOIQ">
     <property role="TrG5h" value="Tissues" />
+    <ref role="1ANuJI" node="7ZEZEd$U2kP" resolve="VenkatramanSimulation" />
     <node concept="3ZP1sZ" id="13EEdumPOKX" role="3ZP1sP">
       <property role="TrG5h" value="Monolayer" />
       <ref role="1v2cpI" node="13EEdumPOKQ" resolve="MonolayerType" />
@@ -292,9 +307,11 @@
   </node>
   <node concept="3Bb2si" id="13EEdumPOOa">
     <property role="TrG5h" value="Shapes" />
+    <ref role="1ANuhP" node="7ZEZEd$U2kP" resolve="VenkatramanSimulation" />
   </node>
   <node concept="3_zqOV" id="13EEdumPOOb">
     <property role="TrG5h" value="Signalling" />
+    <ref role="1ANuJ2" node="7ZEZEd$U2kP" resolve="VenkatramanSimulation" />
     <node concept="3_zqcM" id="4OtEzjULMmx" role="3_zqUi">
       <property role="TrG5h" value="VEGF_VEGF_BINDING" />
       <ref role="3JPVZL" node="13EEdumPOP6" resolve="k1" />

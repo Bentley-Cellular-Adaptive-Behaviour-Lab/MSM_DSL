@@ -25,11 +25,15 @@ class Macrophage;
 class MemAgent;
 class ODEs;
 class ProtrusionType;
+class Tissue_Container;
+class World_Container;
 class WorldLogger;
 
 class World {
 private:
     std::vector<double> m_param_increments;
+    Tissue_Container *m_tissueContainer;
+    World_Container* m_worldContainer;
     WorldLogger *m_worldLogger;
 public:
 
@@ -242,6 +246,23 @@ public:
     //Hacky way to avoid linker errors.
     void shuffleEnvAgents(std::vector<Env*> envAgents);
 
+    //
+    World_Container* getWorldContainer() {
+        return m_worldContainer;
+    }
+
+    void setWorldContainer(World_Container* container) {
+        m_worldContainer = container;
+    }
+
+    Tissue_Container* getTissueContainer() {
+        return m_tissueContainer;
+    }
+
+    void setTissueContainer(Tissue_Container* container) {
+        m_tissueContainer = container;
+    }
+
     // Parameters
     void fillParamVector(const std::vector<double>& param_increments);
     double getParamValue(const int& i);
@@ -254,6 +275,8 @@ public:
 
 	void printProteinNames();
 	void printProteinLevels(int timestepInterval);
+
+    bool tissuesHavePatterned() const;
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

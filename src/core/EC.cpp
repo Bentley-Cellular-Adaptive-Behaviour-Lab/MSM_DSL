@@ -1978,3 +1978,4 @@ bool EC::removeProtrusionFromList(Protrusion* protrusion) {
 std::list<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
+
