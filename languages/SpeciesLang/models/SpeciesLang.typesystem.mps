@@ -7091,5 +7091,50 @@
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
     </node>
   </node>
+  <node concept="18kY7G" id="13EEdumPOPx">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_valueDefined" />
+    <node concept="3clFbS" id="13EEdumPOPy" role="18ibNy">
+      <node concept="3clFbJ" id="13EEdumPQkc" role="3cqZAp">
+        <node concept="1Wc70l" id="13EEdumPS8m" role="3clFbw">
+          <node concept="2OqwBi" id="13EEdumPSOX" role="3uHU7w">
+            <node concept="2OqwBi" id="13EEdumPSm0" role="2Oq$k0">
+              <node concept="1YBJjd" id="13EEdumPSbl" role="2Oq$k0">
+                <ref role="1YBMHb" node="13EEdumPOP$" resolve="parameter" />
+              </node>
+              <node concept="3TrEf2" id="13EEdumPSC8" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:2Hxmt3eVfk4" resolve="Expression" />
+              </node>
+            </node>
+            <node concept="3w_OXm" id="13EEdumPTDh" role="2OqNvi" />
+          </node>
+          <node concept="3fqX7Q" id="13EEdumPRnW" role="3uHU7B">
+            <node concept="2OqwBi" id="13EEdumPRnY" role="3fr31v">
+              <node concept="1YBJjd" id="13EEdumPRnZ" role="2Oq$k0">
+                <ref role="1YBMHb" node="13EEdumPOP$" resolve="parameter" />
+              </node>
+              <node concept="3TrcHB" id="13EEdumPRo0" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="13EEdumPQke" role="3clFbx">
+          <node concept="2MkqsV" id="13EEdumPTE0" role="3cqZAp">
+            <node concept="Xl_RD" id="13EEdumPTEc" role="2MkJ7o">
+              <property role="Xl_RC" value="Parameter value cannot be left undefined if doing a parameter sweep." />
+            </node>
+            <node concept="1YBJjd" id="13EEdumPTGl" role="1urrMF">
+              <ref role="1YBMHb" node="13EEdumPOP$" resolve="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="13EEdumPOP$" role="1YuTPh">
+      <property role="TrG5h" value="parameter" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
+    </node>
+  </node>
 </model>
 
