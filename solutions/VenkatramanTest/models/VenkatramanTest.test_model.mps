@@ -97,12 +97,16 @@
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
+        <property id="8011215656704852412" name="_doingParameterSweep" index="2zRkYd" />
         <property id="6420553392043975787" name="_transcriptionDelay" index="2VbSsx" />
         <property id="3125878369731567265" name="_location" index="3_z0tL" />
         <property id="5550369704152692997" name="_showDeg" index="3L6Erj" />
         <property id="5550369704152692991" name="_showProd" index="3L6EsD" />
+        <property id="6449221170434213636" name="_concSteps" index="1OajHS" />
         <reference id="7376055817164063137" name="Production_Term" index="3JQo8e" />
         <reference id="7376055817164063115" name="Degradation_Term" index="3JQo8$" />
+        <child id="8011215656704852420" name="Min_Start_Concentration" index="2zRkZP" />
+        <child id="8011215656704852431" name="Max_Start_Concentration" index="2zRkZY" />
         <child id="2321914824001510832" name="ModifiedByProcess" index="3rqWia" />
         <child id="2321914824001074118" name="ModifiesProcess" index="3rtiFW" />
         <child id="3989375547139458228" name="Starting_Concentration" index="1tJpXo" />
@@ -211,7 +215,7 @@
     <ref role="1AQzYy" node="13EEdumPOOa" resolve="Shapes" />
     <node concept="2rk7l3" id="7ZEZEd$U2kQ" role="2rk6u4" />
     <node concept="2rk7nQ" id="7ZEZEd$U2kR" role="2rk6u2">
-      <property role="2rk6ya" value="100" />
+      <property role="2rk6ya" value="1" />
       <property role="2rk6$c" value="72wB6_dUsui/SLURM" />
     </node>
     <node concept="2rk7kT" id="7ZEZEd$U2kS" role="2rFWTJ" />
@@ -798,6 +802,8 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="VEGF" />
       <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <property role="2zRkYd" value="true" />
+      <property role="1OajHS" value="20" />
       <node concept="3bpmHq" id="13EEdumPOOS" role="1tJpXo">
         <node concept="3bpmH0" id="13EEdumPOOT" role="3lUA2Y">
           <node concept="30bXRB" id="13EEdumV3aQ" role="3lUA52">
@@ -811,6 +817,22 @@
       </node>
       <node concept="3rtiFT" id="4OtEzjULMyM" role="3rqWia">
         <ref role="3rtiFY" node="4OtEzjULMxW" resolve="VEGF_SENSING" />
+      </node>
+      <node concept="3bpmHq" id="7cwCqjSRk$f" role="2zRkZP">
+        <node concept="3bpmH0" id="7cwCqjSRk$g" role="3lUA2Y">
+          <node concept="30bXRB" id="7cwCqjSRk$x" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="2llJbL" id="7cwCqjSRk$X" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="7cwCqjSRk_k" role="2zRkZY">
+        <node concept="3bpmH0" id="7cwCqjSRk_l" role="3lUA2Y">
+          <node concept="30bXRB" id="7cwCqjSRkAw" role="3lUA52">
+            <property role="30bXRw" value="0.5" />
+          </node>
+        </node>
+        <node concept="2llJbL" id="7cwCqjSRkAW" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="13EEdumPOOe" role="3_zqUg">
