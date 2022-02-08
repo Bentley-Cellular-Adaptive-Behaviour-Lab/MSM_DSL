@@ -277,6 +277,11 @@ public:
 	void printProteinLevels(int timestepInterval);
 
     bool tissuesHavePatterned() const;
+
+    void adjustCellProteinValue(EC *ec,
+                                const double& newValue,
+                                const bool& changeVEGF = false,
+                                const bool& changeDLL4 = false);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

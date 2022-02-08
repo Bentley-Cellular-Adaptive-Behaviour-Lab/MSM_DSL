@@ -1529,6 +1529,15 @@ std::string World::get_time_string() {
     return timeStream.str();
 }
 
+void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& changeVEGF = false, const bool& changeDLL4 = false) {
+    if (changeVEGF) {
+        ec->set_cell_protein_level("VEGF", newValue, 0);
+    }
+    if (changeDLL4) {
+        ec->set_cell_protein_level("DLL4", newValue, 0);
+    }
+}
+
 /*****************************************************************************************
 *  Name:		runSimulation (CORE MSM)
 *  Description: Controls simulation run - goes over all timesteps and moves world forward
@@ -1537,6 +1546,9 @@ std::string World::get_time_string() {
 ******************************************************************************************/
 
 void World::runSimulation() {
+
+
+
 	while (timeStep <= MAXtime) {
         if (timeStep % 50 == 0) {
             printProteinLevels(50);

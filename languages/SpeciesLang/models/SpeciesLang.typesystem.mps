@@ -5935,14 +5935,14 @@
             <node concept="3clFbS" id="3CIYR32WYkP" role="3clFbx">
               <node concept="2MkqsV" id="3CIYR32WYkQ" role="3cqZAp">
                 <node concept="Xl_RD" id="3CIYR32WYkR" role="2MkJ7o">
-                  <property role="Xl_RC" value="Minimum start value cannot be less than maximum" />
+                  <property role="Xl_RC" value="Minimum start value cannot be greater than maximum" />
                 </node>
                 <node concept="1YBJjd" id="3CIYR32WYkS" role="1urrMF">
                   <ref role="1YBMHb" node="3CIYR32WYjF" resolve="species" />
                 </node>
               </node>
             </node>
-            <node concept="3eOVzh" id="3CIYR32WYkT" role="3clFbw">
+            <node concept="3eOSWO" id="6cu2R_vAXOy" role="3clFbw">
               <node concept="37vLTw" id="3CIYR32WYkV" role="3uHU7B">
                 <ref role="3cqZAo" node="3CIYR32WZ2$" resolve="startMin" />
               </node>

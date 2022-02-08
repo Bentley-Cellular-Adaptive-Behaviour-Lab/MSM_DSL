@@ -42,7 +42,7 @@ void Tissue_Container::tissue_set_up(World* world) {
     // Tissue Type Creation //
     int current_TissueType_width = get_TissueType_width_value(world);
     int current_TissueType_height = get_TissueType_height_value(world);
-    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_FLAT, current_TissueType_height, current_TissueType_height);
+    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_FLAT, current_TissueType_height, current_TissueType_width);
 
     // Cell Creation //
 

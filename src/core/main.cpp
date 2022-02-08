@@ -2,6 +2,8 @@
 #include "world.h"
 
 #include "../dsl/utils/utils.h"
+#include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/world/worldContainer.h"
 
 
@@ -161,9 +163,9 @@ int main(int argc, char * argv[]) {
         auto *w_container = new World_Container();
 
         char statistics_file_buffer[500];
-        std::vector<double> param_increments;
+        std::vector<double> param_values;
         int replicate_no;
-        readArgs(argc, argv, param_increments, replicate_no);
+        readArgs(argc, argv, param_values, replicate_no);
 
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             sprintf(statistics_file_buffer,
@@ -219,17 +221,21 @@ int main(int argc, char * argv[]) {
         std::cout << "Creating world..." << "\n";
 
 
-        w_container->world_setup(param_increments); // Set the current increments that we are at.
+        w_container->world_setup(param_values); // Set the current increments that we are at.
         world = w_container->get_world();
         WORLDpointer = world;
+
+        // Venkatraman Example Specific Stuff.
+        auto tissue = world->getTissueContainer()->tissues.at(0);
+        auto cell2 = tissue->m_cell_agents.at(1);
+
+        world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
 
         std::cout << "World created." << "\n";
 
 #if GRAPHICS
-
         displayGlui(&argc, argv);
         glutMainLoop();
-
 #else
         world->printProteinNames();
         world->runSimulation();
@@ -244,7 +250,6 @@ int main(int argc, char * argv[]) {
         long elapsed_time = end_time - start_time;
         std::string elapsed_time_string = "Elapsed time, " + std::to_string(elapsed_time);
         write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
-
 #endif
     }
 }

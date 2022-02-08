@@ -948,6 +948,12 @@
           </node>
           <node concept="2EixSi" id="cUvw_H2Bvp" role="2EinRH" />
         </node>
+        <node concept="356sEK" id="6Vbpjk7NwLW" role="383Ya9">
+          <node concept="356sEF" id="6Vbpjk7NwLX" role="356sEH">
+            <property role="TrG5h" value="world-&gt;setWorldContainer(this);" />
+          </node>
+          <node concept="2EixSi" id="6Vbpjk7NwLY" role="2EinRH" />
+        </node>
         <node concept="356sEK" id="4OESM7xcr1f" role="383Ya9">
           <node concept="356sEF" id="4OESM7xcr1g" role="356sEH">
             <property role="TrG5h" value="world-&gt;fillParamVector(paramValues);" />

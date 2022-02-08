@@ -91,7 +91,7 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/worldContainer.h
             src/graphics/display.h
             src/graphics/ScreenRecording.h
-            src/generated/dsl_shape_gen.h
+#            src/generated/dsl_shape_gen.h
             src/generated/dsl_species_gen.h
             src/generated/clusterParams.h)
 

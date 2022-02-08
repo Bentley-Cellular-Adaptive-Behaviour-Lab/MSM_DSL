@@ -35,7 +35,7 @@ class World;
 #define TISSUE_TESTING true
 #define SHAPE_TESTING false
 #define PROTEIN_TESTING true
-#define SWEEP_TESTING true
+#define SWEEP_TESTING false
 
 // Analysis types for the DSL.
 

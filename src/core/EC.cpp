@@ -627,6 +627,7 @@ EC::EC(World*  world){
 
 }
 
+
 EC::EC(World *world, Cell_Type *cell_type) {
     worldP = world;
     mutant = false;
