@@ -6,6 +6,7 @@
 #define SRC_SPRINGAGENT_TISSUECONTAINER_H
 
 class Cell;
+class Cell_Type;
 class Tissue_Monolayer;
 class Tissue_Type;
 class Tissue_Type_Cylindrical;

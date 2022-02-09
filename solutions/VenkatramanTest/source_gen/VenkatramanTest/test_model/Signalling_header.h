@@ -9,7 +9,7 @@ class EC;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 2> EndothelialType_cell_ode_states;
+typedef boost::array<double, 11> EndothelialType_cell_ode_states;
 
 class ODEs {
 public:

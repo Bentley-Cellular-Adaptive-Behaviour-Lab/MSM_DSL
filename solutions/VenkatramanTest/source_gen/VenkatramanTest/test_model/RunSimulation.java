@@ -81,8 +81,8 @@ public class RunSimulation {
 
         new_tissue_path = Paths.get(root_string + "\\src\\generated\\dsl_tissue_gen.cpp");
         new_world_path = Paths.get(root_string + "\\src\\generated\\dsl_world_gen.cpp");
-        new_speciesHeader_path = Paths.get(root_string + "\\src\\generated\\dsl_species_gen.cpp");
-        new_speciesSource_path = Paths.get(root_string + "\\src\\generated\\dsl_species_gen.h");
+        new_speciesHeader_path = Paths.get(root_string + "\\src\\generated\\dsl_species_gen.h");
+        new_speciesSource_path = Paths.get(root_string + "\\src\\generated\\dsl_species_gen.cpp");
         new_shape_path = Paths.get(root_string + "\\src\\generated\\dsl_shape_gen.cpp");
         new_buildScript_path = Paths.get(root_string + "\\src\\buildSpringAgent.sh");
 

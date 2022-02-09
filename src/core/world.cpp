@@ -1529,7 +1529,7 @@ std::string World::get_time_string() {
     return timeStream.str();
 }
 
-void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& changeVEGF = false, const bool& changeDLL4 = false) {
+void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& changeVEGF , const bool& changeDLL4 ) {
     if (changeVEGF) {
         ec->set_cell_protein_level("VEGF", newValue, 0);
     }

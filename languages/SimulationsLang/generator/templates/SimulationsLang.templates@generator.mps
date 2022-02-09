@@ -34,8 +34,8 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" implicit="true" />
     <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldLang.behavior)" implicit="true" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">
@@ -1379,7 +1379,7 @@
                     <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
                     <node concept="3cpWs3" id="1PDLoEBTe7a" role="37wK5m">
                       <node concept="Xl_RD" id="1PDLoEBTe7b" role="3uHU7w">
-                        <property role="Xl_RC" value="\\src\\generated\\dsl_species_gen.cpp" />
+                        <property role="Xl_RC" value="\\src\\generated\\dsl_species_gen.h" />
                       </node>
                       <node concept="37vLTw" id="1PDLoEBTe7c" role="3uHU7B">
                         <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
@@ -1398,7 +1398,7 @@
                     <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
                     <node concept="3cpWs3" id="1PDLoEBTe7h" role="37wK5m">
                       <node concept="Xl_RD" id="1PDLoEBTe7i" role="3uHU7w">
-                        <property role="Xl_RC" value="\\src\\generated\\dsl_species_gen.h" />
+                        <property role="Xl_RC" value="\\src\\generated\\dsl_species_gen.cpp" />
                       </node>
                       <node concept="37vLTw" id="1PDLoEBTe7j" role="3uHU7B">
                         <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
@@ -6799,8 +6799,8 @@
                                 <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
                               </node>
                             </node>
-                            <node concept="2qgKlT" id="3vcTe5vyuQ8" role="2OqNvi">
-                              <ref role="37wK5l" to="f3yh:EX9x3XwWKk" resolve="getFixedName" />
+                            <node concept="3TrcHB" id="1bFKLjhLGSI" role="2OqNvi">
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                             </node>
                           </node>
                         </node>
@@ -6852,8 +6852,8 @@
                                 <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
                               </node>
                             </node>
-                            <node concept="2qgKlT" id="3vcTe5vyuQw" role="2OqNvi">
-                              <ref role="37wK5l" to="f3yh:EX9x3XwWKk" resolve="getFixedName" />
+                            <node concept="3TrcHB" id="1bFKLjhLJxV" role="2OqNvi">
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                             </node>
                           </node>
                         </node>

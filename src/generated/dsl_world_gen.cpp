@@ -15,8 +15,9 @@ void World_Container::world_setup(std::vector<double>& paramValues) {
 
     // WORLD CREATION
 
-    world = create_world(80, 80, 40, 1.0, paramValues);
+    world = create_world(0, 0, 0, 1.0, paramValues);
     m_world = world;
+    world->setWorldContainer(this);
     world->fillParamVector(paramValues);
 
     // GRADIENT CREATION

@@ -1,3 +1,4 @@
+#include "EC.h"
 #include "objects.h"
 #include "world.h"
 
@@ -5,7 +6,6 @@
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/world/worldContainer.h"
-
 
 #if GRAPHICS
 #include "../graphics/display.h"
@@ -157,62 +157,30 @@ int main(int argc, char * argv[]) {
         construct_file_string(replicate_no, param_values, file_string);
         sprintf(file_buffer, "%s", file_string.c_str());
 		write_args_to_outfile(file_string, replicate_no, param_values);
+
     } else {
 
         World *world;
         auto *w_container = new World_Container();
 
-        char statistics_file_buffer[500];
+        // Set analysis_type to none in case something goes wrong.
+        analysis_type = 0;
+        // Set buffer for file name.
+        int file_buffer_size = 200;
+        char file_buffer[file_buffer_size];
         std::vector<double> param_values;
         int replicate_no;
         readArgs(argc, argv, param_values, replicate_no);
 
-        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
-            sprintf(statistics_file_buffer,
-                    "statistics_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            sprintf(statistics_file_buffer,
-                    "statistics_time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else {
-            sprintf(statistics_file_buffer,
-                    "statistics_msm_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        }
-
-        create_statistics_file(statistics_file_buffer);
-
-        std::time_t start_time = get_current_time();
-        std::string start_time_string = format_time_string(start_time, true);
-        write_to_statistics_file(statistics_file_buffer, start_time_string);
+        // Create output file.
+        std::string file_string;
+        construct_file_string(replicate_no, param_values, file_string);
+        sprintf(file_buffer, "%s", file_string.c_str());
+        write_args_to_outfile(file_string, replicate_no, param_values);
 
         //---------------------------------------------------------------
 
         char outfilename[500];
-
-        //TODO update these file names with variable vals
-        //do print statement as well
-        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
-            std::cout << "running bistability analysis" << std::endl;
-            sprintf(outfilename,
-                    "analysis_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            std::cout << "running time to pattern analysis" << std::endl;
-            sprintf(outfilename,
-                    "time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else {
-            std::cout << "analysis must either be ANALYSIS_HYSTERESIS or ANALYSIS_TIME_TO_PATTERN.. aborting run";
-            sprintf(outfilename, "testforpybind");
-            //exit(1);
-        }
 
         std::cout << "output file name: " << outfilename << std::endl;
 
@@ -225,31 +193,31 @@ int main(int argc, char * argv[]) {
         world = w_container->get_world();
         WORLDpointer = world;
 
+        // -----------------------------------------------------------------------------------------------------------//
         // Venkatraman Example Specific Stuff.
         auto tissue = world->getTissueContainer()->tissues.at(0);
+        auto cell1 = tissue->m_cell_agents.at(0);
         auto cell2 = tissue->m_cell_agents.at(1);
+
+        std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
+        std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
 
         world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
 
-        std::cout << "World created." << "\n";
+        std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
+        // -----------------------------------------------------------------------------------------------------------//
 
 #if GRAPHICS
         displayGlui(&argc, argv);
         glutMainLoop();
 #else
+        std::cout << "World created." << "\n";
         world->printProteinNames();
-        world->runSimulation();
+//        world->runSimulation();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();
         std::cout << "End time: " << std::ctime(&end_time) << std::endl;
-
-        std::string end_time_string = format_time_string(end_time, false);
-        write_to_statistics_file(statistics_file_buffer, end_time_string);
-
-        long elapsed_time = end_time - start_time;
-        std::string elapsed_time_string = "Elapsed time, " + std::to_string(elapsed_time);
-        write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
 #endif
     }
 }

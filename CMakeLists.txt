@@ -53,8 +53,8 @@ if(TEST_TYPE EQUAL 0)
             src/graphics/display.cpp
             src/graphics/ScreenRecording.cpp
             src/generated/dsl_shape_gen.cpp
-            src/generated/dsl_species_gen.cpp
             src/generated/dsl_tissue_gen.cpp
+            src/generated/dsl_species_gen.cpp
             src/generated/dsl_world_gen.cpp)
 
     set (Headers src/core/contact.h
@@ -91,9 +91,8 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/worldContainer.h
             src/graphics/display.h
             src/graphics/ScreenRecording.h
-#            src/generated/dsl_shape_gen.h
-            src/generated/dsl_species_gen.h
-            src/generated/clusterParams.h)
+            src/generated/clusterParams.h
+            src/generated/dsl_species_gen.h)
 
     add_executable(springAgent ${Sources} ${Headers})
     find_package(Boost)
