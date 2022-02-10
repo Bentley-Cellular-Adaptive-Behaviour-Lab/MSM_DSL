@@ -44,7 +44,7 @@ public:
 	std::string get_name();
 	Tissue_Type* get_tissue_type();
     const int& get_pattern_history();
-    const bool& get_patterned();
+    const bool& is_patterned();
 
     // Setters //
 
@@ -73,7 +73,7 @@ public:
 
 	void store_cell_agent(EC *ecp);
 
-    bool tissueHasPatterned();
+    bool checkTissueHasPatterned();
 };
 
 class Tissue_Vessel : public Tissue {

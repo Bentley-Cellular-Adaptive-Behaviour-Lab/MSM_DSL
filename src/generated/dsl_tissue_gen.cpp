@@ -18,8 +18,8 @@
 
 
 
-static double get_VEGF_conc_value(World* world) {
-	return world->getParamValue(VEGF_CONC);
+static double get_DLL4_conc_value(World* world) {
+	return world->getParamValue(DLL4_CONC);
 }
 
 void Tissue_Container::tissue_set_up(World* world) {
@@ -36,9 +36,9 @@ void Tissue_Container::tissue_set_up(World* world) {
     Coordinates Monolayer_Pos;
 
     // Cell Type Creation //
-    double current_VEGF_conc = get_VEGF_conc_value(world);
+    double current_DLL4_conc = get_DLL4_conc_value(world);
     EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-    EndothelialType_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, current_VEGF_conc, 0, -1, 1));
+    EndothelialType_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, current_DLL4_conc, 0, -1, 1));
     EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
     EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
     EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));

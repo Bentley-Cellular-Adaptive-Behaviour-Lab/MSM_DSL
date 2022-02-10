@@ -1546,12 +1546,9 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 ******************************************************************************************/
 
 void World::runSimulation() {
-
-
-
 	while (timeStep <= MAXtime) {
-        if (timeStep % 50 == 0) {
-            printProteinLevels(50);
+        if (timeStep % 200 == 0) {
+            printProteinLevels(200);
         }
         simulateTimestep();
 
@@ -1561,6 +1558,7 @@ void World::runSimulation() {
             // Checks that all tissues have patterned, if so, end the simulation.
             if (tissuesHavePatterned()) {
                 timeStep = MAXtime;
+                break;
             }
         }
 
@@ -6572,8 +6570,8 @@ bool World::tissuesHavePatterned() const {
         for (auto tissue : m_tissueContainer->tissues) {
             // If a tissue has not patterned, check that it has.
             // If it has patterned, don't bother checking.
-            if (!tissue->get_patterned()) {
-                if (tissue->tissueHasPatterned())
+            if (!tissue->is_patterned()) {
+                if (tissue->checkTissueHasPatterned())
                     patternedTissues++;
             } else {
                 patternedTissues++;
