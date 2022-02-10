@@ -10,14 +10,13 @@ class EC;
 namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 2> EndothelialType_cell_ode_states;
-typedef boost::array<double, 11> EndothelialType_cell_ode_states;
 
 class ODEs {
 public:
-    ODEs();
-    void check_cell_ODEs(EC *ec);
-    static void EndothelialType_cell_system(const EndothelialType_cell_ode_states &x, EndothelialType_cell_ode_states &dxdt, double t);
-    void EndothelialType_run_cell_ODEs(EC *ec);
+	ODEs();
+	void check_cell_ODEs(EC *ec);
+  	static void EndothelialType_cell_system(const EndothelialType_cell_ode_states &x, EndothelialType_cell_ode_states &dxdt, double t);
+  	void EndothelialType_run_cell_ODEs(EC *ec);
 };
 
 
@@ -49,8 +48,7 @@ static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4);
 static double calc_NOTCH_Diff_rate(double NOTCH, double DLL4, double adjacent_NOTCH);
 static double calc_beta_rate();
 
-static double calc_DLL4_adjacent_level(EC *ec);
-static double calc_NOTCH_adjacent_level(EC *ec);
+static double calc_DLL4_adjacent_level(EC *ec); 
+static double calc_NOTCH_adjacent_level(EC *ec); 
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/
-

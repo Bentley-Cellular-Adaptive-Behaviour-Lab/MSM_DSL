@@ -23232,7 +23232,7 @@
         <node concept="356sEK" id="2L_6n0dy$dm" role="383Ya9">
           <node concept="373pV1" id="2L_6n0dyQcc" role="356sEH" />
           <node concept="356sEF" id="2L_6n0dyQcf" role="356sEH">
-            <property role="TrG5h" value="return level;" />
+            <property role="TrG5h" value="return level / (float) ec-&gt;getNeighCellVector().size();" />
           </node>
           <node concept="2EixSi" id="2L_6n0dy$do" role="2EinRH" />
         </node>
