@@ -14,10 +14,6 @@
 
 // Start Value Functions 
 
-
-
-
-
 static double get_DLL4_conc_value(World* world) {
 	return world->getParamValue(DLL4_CONC);
 }

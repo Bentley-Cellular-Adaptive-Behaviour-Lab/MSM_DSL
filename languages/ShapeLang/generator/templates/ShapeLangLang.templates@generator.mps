@@ -222,7 +222,7 @@
   <node concept="bUwia" id="Qd9PzE_eiL">
     <property role="TrG5h" value="main" />
     <node concept="3lhOvk" id="3FNuJRsg$Zc" role="3lj3bC">
-      <ref role="3lhOvi" node="2D6O8IwUPeP" resolve="dsl_Shape" />
+      <ref role="3lhOvi" node="2D6O8IwUPeP" resolve="Shape" />
       <ref role="30HIoZ" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
     </node>
     <node concept="1puMqW" id="5CquPnWz_18" role="1puA0r">
