@@ -232,7 +232,7 @@ int main(int argc, char * argv[]) {
 //        varyParams(param_values.at(0), 0.1, 0.5);
 //        varyParams(param_values.at(1), 0.1, 0.5);
 
-        bool changeVEGF = false;
+        bool changeVEGF = true;
 
         auto tissue = world->getTissueContainer()->tissues.at(0);
         auto cell1 = tissue->m_cell_agents.at(0);
