@@ -252,9 +252,6 @@ int main(int argc, char * argv[]) {
             std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
             std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
 
-            std::cout << "Cell 1 DLL4 level set at: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
-            std::cout << "Cell 2 DLL4 level set at: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
-
 
         } else {
             std::cout << "Cell 1 DLL4 level set at: " << cell1->get_cell_protein_level("DLL4",0) << "\n";

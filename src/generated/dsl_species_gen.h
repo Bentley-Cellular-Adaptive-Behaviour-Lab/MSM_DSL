@@ -4,16 +4,18 @@
 #include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
 
-class MemAgent;
 class EC;
+class MemAgent;
+class World;
 
 namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 11> EndothelialType_cell_ode_states;
 
 class ODEs {
+private:
 public:
-	ODEs();
+    ODEs();
 	void check_cell_ODEs(EC *ec);
   	static void EndothelialType_cell_system(const EndothelialType_cell_ode_states &x, EndothelialType_cell_ode_states &dxdt, double t);
   	void EndothelialType_run_cell_ODEs(EC *ec);

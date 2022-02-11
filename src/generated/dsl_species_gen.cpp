@@ -1,9 +1,15 @@
 #include "../core/memAgents.h"
 #include "../core/EC.h"
+#include "../core/world.h"
+
 
 #include "../dsl/tissue/cellType.h"
+#include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/species/protein.h"
 #include "dsl_species_gen.h"
+
+bool checking_VESSEL_Cell1 = false;
 
 // Created using: Signalling //
 ODEs::ODEs() {
@@ -11,10 +17,14 @@ ODEs::ODEs() {
 
 void ODEs::check_cell_ODEs(EC *ec) {
 	if (ec->m_cell_type->m_name == "EndothelialType") {
+        if (ec->cell_number == 1) {
+            checking_VESSEL_Cell1 = true;
+        } else {
+            checking_VESSEL_Cell1 = false;
+        }
 		EndothelialType_run_cell_ODEs(ec);
 	}
 }
-
 
   void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x, EndothelialType_cell_ode_states &dxdt, double t) {
   // Species Definitions
@@ -59,7 +69,8 @@ void ODEs::check_cell_ODEs(EC *ec) {
   	double N_Production = calc_N_Production_rate(NOTCH_Diff); // FINE.
   // ODE Definitions
   	dxdt[0] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction); // FINE.
-  	dxdt[1] = -(k1)*1+(k_1)*1+(k6_VEGF_Sensing); // FINE.
+  	//dxdt[1] = -(k1)*1+(k_1)*1+(k6_VEGF_Sensing); // OLD VERSION W/ REVERSIBLE BINDING.
+      dxdt[1] = +(k6_VEGF_Sensing); // FINE.
   	dxdt[2] = +(beta)-(Hey_Degradation)+(HEY_Reg); // FINE.
   	dxdt[3] = +(VR_Production)-(VR_Degradation)-(k1)*1+(k_1)*1-(k3); // FINE.
   	dxdt[4] = -(V_VR_Degradation)+(k1)*1-(k_1)*1; // FINE.
@@ -148,7 +159,11 @@ static double calc_HEY_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
 }
 
 static double calc_V0_rate() {
-	return 0;
+    if (checking_VESSEL_Cell1) {
+        return 0.5;
+    } else {
+        return 0;
+    }
 }
 
 static double calc_Phi_rate() {
