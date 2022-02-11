@@ -10,7 +10,7 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 10> EndothelialType_cell_ode_states;
+typedef boost::array<double, 11> EndothelialType_cell_ode_states;
 
 class ODEs {
 private:
@@ -24,8 +24,8 @@ public:
 
 static double calc_k1_rate(double VEGF, double VEGFR);
 static double calc_k_1_rate(double VEGF_VEGFR);
-static double calc_k2_rate(double DLL4, double NOTCH);
-static double calc_k_2_rate(double DLL4_NOTCH);
+static double calc_k2_rate(double DLL4, double adjacent_NOTCH);
+static double calc_k_2_rate(double adjacent_DLL4_NOTCH);
 static double calc_k3_rate(double VEGFR, double HEY, double Nu);
 static double calc_k4_rate(double DLL4_NOTCH);
 static double calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu);
@@ -36,7 +36,7 @@ static double calc_HEY_Reg_rate(double Theta, double VEGF_VEGFR, double Nu);
 static double calc_V0_rate();
 static double calc_Phi_rate();
 static double calc_VR_Production_rate();
-static double calc_N_Production_rate(double NOTCH_Diff);
+static double calc_N_Production_rate();
 static double calc_VR_Degradation_rate(double VEGFR, double Phi);
 static double calc_V_VR_Degradation_rate(double VEGFR, double Phi);
 static double calc_N_Degradation_rate(double NOTCH, double Phi);
@@ -46,11 +46,10 @@ static double calc_I_Degradation_rate(double NICD, double Phi);
 static double calc_Hey_Degradation_rate(double HEY, double Phi);
 static double calc_Nu_rate();
 static double calc_FilopodiaTurnover_rate(double FILOPODIA);
-static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4);
-static double calc_NOTCH_Diff_rate(double NOTCH, double DLL4, double adjacent_NOTCH);
 static double calc_beta_rate();
 static double calc_DLL4_adjacent_level(EC *ec); 
 static double calc_NOTCH_adjacent_level(EC *ec);
+static double calc_DLL4_NOTCH_adjacent_level(EC *ec);
 
 // ADDED IN VEGF AS A PARAMETER.
 

@@ -135,7 +135,7 @@ public:
     bool has_protein(const std::string& protein_name) const;
     double get_cell_protein_level(const std::string& protein_name, const int& timestep_value);
     void set_cell_protein_level(const std::string& protein_name, const double& new_level, const int& timestep_value);
-    void print_current_protein_levels(int timestep_interval);
+    void print_current_protein_levels(const int& timestep_interval);
     void print_memAgent_protein_levels(int timestep_interval);
 
     cell_logger *logger;
