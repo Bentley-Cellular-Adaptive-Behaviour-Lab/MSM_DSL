@@ -132,9 +132,9 @@ public:
     void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);
-    bool has_protein(std::string protein_name);
-    float get_cell_protein_level(std::string protein_name, int timestep_value);
-    void set_cell_protein_level(std::string protein_name, float new_level, int timestep_value);
+    bool has_protein(const std::string& protein_name) const;
+    double get_cell_protein_level(const std::string& protein_name, const int& timestep_value);
+    void set_cell_protein_level(const std::string& protein_name, const double& new_level, const int& timestep_value);
     void print_current_protein_levels(int timestep_interval);
     void print_memAgent_protein_levels(int timestep_interval);
 
@@ -159,10 +159,10 @@ public:
 	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
     bool cellIsNeighbour(EC *query_ec);
 	void add_to_neighbour_list(EC *query_ec);
-	void cycle_protein_levels();
+	void cycle_protein_levels() const;
 
-    float getCellCytoproteinLevel(std::string cytoproteinName);
-    void setCellCytoproteinLevel(std::string cytoproteinName, float newLevel);
+    double getCellCytoproteinLevel(const std::string& cytoproteinName) const;
+    void setCellCytoproteinLevel(const std::string& cytoproteinName, const double& newLevel);
 
     void createProtrusion(MemAgent* memAgent, ProtrusionType *protrusionType);
     void destroyProtrusion(Protrusion *protrusion);

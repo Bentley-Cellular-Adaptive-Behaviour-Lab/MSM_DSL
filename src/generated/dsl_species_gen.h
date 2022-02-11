@@ -10,7 +10,7 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 11> EndothelialType_cell_ode_states;
+typedef boost::array<double, 10> EndothelialType_cell_ode_states;
 
 class ODEs {
 private:
@@ -49,8 +49,11 @@ static double calc_FilopodiaTurnover_rate(double FILOPODIA);
 static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4);
 static double calc_NOTCH_Diff_rate(double NOTCH, double DLL4, double adjacent_NOTCH);
 static double calc_beta_rate();
-
 static double calc_DLL4_adjacent_level(EC *ec); 
-static double calc_NOTCH_adjacent_level(EC *ec); 
+static double calc_NOTCH_adjacent_level(EC *ec);
+
+// ADDED IN VEGF AS A PARAMETER.
+
+static double calc_VEGF(double k6);
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/

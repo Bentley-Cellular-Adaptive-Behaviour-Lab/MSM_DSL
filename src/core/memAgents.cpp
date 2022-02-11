@@ -2342,7 +2342,7 @@ void MemAgent::add_cell_proteins() {
 *  Returns:		boolean
 ******************************************************************************************/
 
-bool MemAgent::has_protein(std::string query_name) {
+bool MemAgent::has_protein(const std::string& query_name) const {
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == query_name) {
             return true;
@@ -2357,7 +2357,7 @@ bool MemAgent::has_protein(std::string query_name) {
 *  Returns:		boolean
 ******************************************************************************************/
 
-void MemAgent::set_protein_level(std::string protein_name, float new_level) {
+void MemAgent::set_protein_level(const std::string& protein_name, const double& new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
@@ -2376,7 +2376,7 @@ void MemAgent::set_protein_level(std::string protein_name, float new_level) {
 *  Returns:		float
 ******************************************************************************************/
 
-float MemAgent::get_memAgent_protein_level(std::string protein_name) {
+double MemAgent::get_memAgent_protein_level(const std::string& protein_name) const {
     // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
     // This is also used during ODE running and so has the potential to fail.
     if (this->has_protein(protein_name)) {
@@ -2394,7 +2394,7 @@ float MemAgent::get_memAgent_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_environment_protein_level(std::string protein_name) {
+double MemAgent::get_environment_protein_level(const std::string& protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
@@ -2537,13 +2537,13 @@ double MemAgent::get_environment_protein_level(std::string protein_name) {
 ******************************************************************************************/
 
 [[deprecated]]
-double MemAgent::get_local_protein_level(std::string protein_name) {
+double MemAgent::get_local_protein_level(const std::string& protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
     int k = (int) Mz;
 
-    float protein_level = 0;
+    double protein_level = 0;
 
     for (int x = 0; x < 26; x++) {
         // Same layer.
@@ -2685,7 +2685,7 @@ double MemAgent::get_local_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_filopodia_protein_level(std::string protein_name) {
+double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
@@ -2830,7 +2830,7 @@ double MemAgent::get_filopodia_protein_level(std::string protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_junction_protein_level(std::string protein_name) {
+double MemAgent::get_junction_protein_level(const std::string& protein_name) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
@@ -2990,7 +2990,11 @@ double MemAgent::get_junction_protein_level(std::string protein_name) {
 ******************************************************************************************/
 
 [[deprecated]]
-void MemAgent::distribute_calculated_proteins(std::string protein_name, float total_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
+void MemAgent::distribute_calculated_proteins(const std::string& protein_name,
+                                              const double& total_protein_level,
+                                              const bool& affects_this_cell,
+                                              const bool& affects_neighbour_cell,
+                                              const int& protein_location) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
@@ -3159,8 +3163,8 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 		}
 	}
     // Divide out the protein evenly to all surrounding memAgents.
-    int divisor = relevant_memAgents.size();
-    float new_amount = total_protein_level / (float) divisor;
+    auto divisor = relevant_memAgents.size();
+    double new_amount = total_protein_level / (double) divisor;
     for (auto memAgent : relevant_memAgents) {
         memAgent->set_protein_level(protein_name, new_amount);
     }
@@ -3175,13 +3179,18 @@ void MemAgent::distribute_calculated_proteins(std::string protein_name, float to
 *  Returns:		void
 ******************************************************************************************/
 
-void MemAgent::distribute_proteins(std::string protein_name, float start_protein_level, float end_protein_level, bool affects_this_cell, bool affects_neighbour_cell, int protein_location) {
+void MemAgent::distribute_proteins(const std::string& protein_name,
+                                   const double& start_protein_level,
+                                   const double& end_protein_level,
+                                   const bool& affects_this_cell,
+                                   const bool& affects_neighbour_cell,
+                                   const int& protein_location) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
     int k = (int) Mz;
 
-    float protein_level_change = end_protein_level - start_protein_level;
+    double protein_level_change = end_protein_level - start_protein_level;
 
     std::vector<EC*> relevantCells = find_cells(true);
     std::vector<std::vector<MemAgent*>> relevant_memAgents = findRelevantAgents(relevantCells,
@@ -3193,13 +3202,14 @@ void MemAgent::distribute_proteins(std::string protein_name, float start_protein
 
     int totalRelevantMemAgents = 0;
 
+    memAgentProportions.reserve(relevantCells.size());
     for (auto *cell : relevantCells) {
         memAgentProportions.push_back(-1);
     }
 
     // Determine the total number of memAgents being looked up.
-    for (auto agentVector : relevant_memAgents) {
-        totalRelevantMemAgents += agentVector.size();
+    for (const auto& agentVector : relevant_memAgents) {
+        totalRelevantMemAgents += (int) agentVector.size();
     }
 
     for (int index = 0; index < relevant_memAgents.size(); index++) {
@@ -3211,10 +3221,9 @@ void MemAgent::distribute_proteins(std::string protein_name, float start_protein
 
     // Now, go over each memAgent belonging to each cell, then change its current amount by a proporotion of the total change.
     int index = 0;
-    for (auto agentVector : relevant_memAgents) {
-        float proportionalChange = protein_level_change * memAgentProportions[index];
+    for (const auto& agentVector : relevant_memAgents) {
         // The amount that each memAgent changes its value by.
-        float changePerAgent = proportionalChange / relevant_memAgents.size();
+        double changePerAgent = (protein_level_change * memAgentProportions[index]) / (double) relevant_memAgents.size();
         for (auto *memAgent : agentVector) {
             memAgent->update_protein_level(protein_name, changePerAgent);
         }
@@ -3229,7 +3238,7 @@ void MemAgent::distribute_proteins(std::string protein_name, float start_protein
 *  Returns:		std::vector<EC*>
 ******************************************************************************************/
 
-std::vector<EC*> MemAgent::find_cells(bool add_this_cell) {
+std::vector<EC*> MemAgent::find_cells(const bool& add_this_cell) {
     std::vector<EC*> cell_vector;
 
     if (add_this_cell) {
@@ -3382,11 +3391,11 @@ std::vector<EC*> MemAgent::find_cells(bool add_this_cell) {
 *  Returns:		std::vector<EC*>
 ******************************************************************************************/
 
-std::vector<std::vector<MemAgent*>> MemAgent::findRelevantAgents(std::vector<EC*> relevantCells,
-                                                                 std::string proteinName,
-                                                                 bool affectsThisCell,
-                                                                 bool affectsNeighbourCell,
-                                                                 int proteinLocation) {
+std::vector<std::vector<MemAgent*>> MemAgent::findRelevantAgents(std::vector<EC*>& relevantCells,
+                                                                 const std::string& proteinName,
+                                                                 const bool& affectsThisCell,
+                                                                 const bool& affectsNeighbourCell,
+                                                                 const int& proteinLocation) {
 
     std::vector<std::vector<MemAgent*>> relevantAgents;
 
@@ -4323,7 +4332,7 @@ void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
     }
 }
 
-bool MemAgent::has_cytoprotein(std::string cytoproteinName) {
+bool MemAgent::has_cytoprotein(const std::string& cytoproteinName) const {
     bool hasCytoprotein = false;
     for (auto *cytoprotein : this->m_cytoproteins) {
         if (cytoprotein->getName() == cytoproteinName) {
@@ -4335,8 +4344,8 @@ bool MemAgent::has_cytoprotein(std::string cytoproteinName) {
 }
 
 
-float MemAgent::get_cytoprotein_level(std::string cytoproteinName) {
-    float cytoproteinLevel = 0.0f;
+double MemAgent::get_cytoprotein_level(const std::string& cytoproteinName) const {
+    double cytoproteinLevel = 0.0f;
     if (this->has_cytoprotein(cytoproteinName)) {
         for (auto *cytoprotein: this->m_cytoproteins) {
             if (cytoprotein->getName() == cytoproteinName) {
@@ -4347,7 +4356,7 @@ float MemAgent::get_cytoprotein_level(std::string cytoproteinName) {
     }
     return cytoproteinLevel;
 }
-void MemAgent::set_cytoprotein_level(std::string cytoproteinName, const float newLevel) {
+void MemAgent::set_cytoprotein_level(const std::string& cytoproteinName, const double& newLevel) {
     if (this->has_cytoprotein(cytoproteinName)) {
         for (auto *cytoprotein: this->m_cytoproteins) {
             if (cytoprotein->getName() == cytoproteinName) {
@@ -4362,7 +4371,7 @@ void MemAgent::add_cytoprotein(CytoProtein* cytoProtein) {
     this->m_cytoproteins.push_back(cytoProtein);
 }
 
-void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, std::string cytoproteinName) {
+void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, const std::string& cytoproteinName) {
     // Attempts to accumulate cytoprotein in a given memAgent using cytoprotein from nearby memAgents.
     // This function passes from this memAgent to another one.
     int i, j, k, X, Y, Z, m;
@@ -4397,10 +4406,10 @@ std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
     return this->m_cytoproteins;
 }
 
-void MemAgent::update_protein_level(std::string protein_name, float protein_delta) {
+void MemAgent::update_protein_level(const std::string& protein_name, const double& protein_delta) {
     // Change the level of a protein at a given memAgent by the specified amount.
-    float current_level = this->get_memAgent_protein_level(protein_name);
-    float new_level = current_level + protein_delta;
+    double current_level = this->get_memAgent_protein_level(protein_name);
+    double new_level = current_level + protein_delta;
     this->set_protein_level(protein_name, new_level);
 }
 

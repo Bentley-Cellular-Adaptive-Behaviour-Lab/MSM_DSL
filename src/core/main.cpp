@@ -244,13 +244,13 @@ int main(int argc, char * argv[]) {
         cell2->add_to_neighbour_list(cell1);
 
         if (changeVEGF) {
-            std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-            std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
-
-            world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
-
-            std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-            std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
+//            std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
+//            std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
+//
+//            world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
+//
+//            std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
+//            std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
 
 
         } else {

@@ -4,7 +4,7 @@
 
 #include "cytoprotein.h"
 
-CytoProtein::CytoProtein(std::string name, float startLevel, float requiredAmount) {
+CytoProtein::CytoProtein(const std::string& name, const double& startLevel, const double& requiredAmount) {
     this->m_name = name;
     this->m_cellLevel = startLevel;
     this->m_startLevel = startLevel;
@@ -24,38 +24,38 @@ std::string CytoProtein::getName() const {
     return this->m_name;
 }
 
-void CytoProtein::setName(const std::string name) {
+void CytoProtein::setName(const std::string& name) {
     this->m_name = name;
 }
 
-float CytoProtein::getCellLevel() const {
+double CytoProtein::getCellLevel() const {
     return this->m_cellLevel;
 }
 
-void CytoProtein::setCellLevel(const float level) {
+void CytoProtein::setCellLevel(const double& level) {
     this->m_cellLevel = level;
 }
 
-float CytoProtein::getStartLevel() const {
+double CytoProtein::getStartLevel() const {
     return this->m_startLevel;
 }
 
-void CytoProtein::setStartLevel(const float level) {
+void CytoProtein::setStartLevel(const double& level) {
     this->m_startLevel = level;
 }
 
-float CytoProtein::getMemAgentLevel() const {
+double CytoProtein::getMemAgentLevel() const {
     return this->m_memAgentLevel;
 }
 
-void CytoProtein::setMemAgentLevel(const float level) {
+void CytoProtein::setMemAgentLevel(const double& level) {
     this->m_memAgentLevel = level;
 }
 
-float CytoProtein::getRequiredAmount() const {
+double CytoProtein::getRequiredAmount() const {
     return this->m_requiredAmount;
 }
 
-void CytoProtein::setRequiredAmount(const float requiredAmount) {
+void CytoProtein::setRequiredAmount(const double& requiredAmount) {
     this->m_requiredAmount = requiredAmount;
 }

@@ -12,29 +12,29 @@ class MemAgent;
 class CytoProtein {
 private:
     std::string m_name;
-    float m_startLevel; // Used to track the max across the cell. i.e. the start is the max.
-    float m_cellLevel; // Tracks the current level across the cell
-    float m_memAgentLevel = 0; // Analogue for actin tokens.
-    float m_requiredAmount;
+    double m_startLevel; // Used to track the max across the cell. i.e. the start is the max.
+    double m_cellLevel; // Tracks the current level across the cell
+    double m_memAgentLevel = 0; // Tracks the current level at a given memAgent
+    double m_requiredAmount;
 public:
-    CytoProtein(std::string name, float startLevel, float requiredAmount);
+    CytoProtein(const std::string& name, const double& startLevel, const double& requiredAmount);
     // Copy constructors.
     CytoProtein(const CytoProtein &rhs);
 
-    std::string getName() const;
-    void setName(const std::string name);
+    [[nodiscard]] std::string getName() const;
+    void setName(const std::string& name);
 
-    float getCellLevel() const;
-    void setCellLevel(const float level);
+    double getCellLevel() const;
+    void setCellLevel(const double& level);
 
-    float getStartLevel() const;
-    void setStartLevel(const float level);
+    double getStartLevel() const;
+    void setStartLevel(const double& level);
 
-    float getMemAgentLevel() const;
-    void setMemAgentLevel(const float level);
+    double getMemAgentLevel() const;
+    void setMemAgentLevel(const double& level);
 
-    float getRequiredAmount() const;
-    void setRequiredAmount(const float requiredAmount);
+    double getRequiredAmount() const;
+    void setRequiredAmount(const double& requiredAmount);
 
     bool checkCondition(MemAgent *memAgent);
 };
