@@ -1955,4 +1955,3 @@ double VenkatramanCellTest::get_adjacent_Notch_level(EC *ec) {
     return level;
 }
 
-

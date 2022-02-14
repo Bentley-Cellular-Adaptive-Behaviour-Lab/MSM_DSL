@@ -1126,7 +1126,7 @@ bool Tissue::checkTissueHasPatterned() {
     // Tissue must remain patterned for 150 timesteps to count as stable.
     // TODO: CHANGE THIS BACK TO 150.
     if (currentPatternHistory == 1) {
-        std::cout << "Tissue " << get_name() << " has patterned at timestep: " << m_world->timeStep << std::endl;
+        std::cout << "PATTERNING - Tissue " << get_name() << " has patterned at timestep:" << m_world->timeStep << std::endl;
         set_patterned(true);
         return true;
     } else {
