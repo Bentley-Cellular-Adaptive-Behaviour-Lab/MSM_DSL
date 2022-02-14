@@ -177,7 +177,7 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
 void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
     EndothelialType_cell_ode_states current_states;
     EndothelialType_cell_ode_states new_states;
-    odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> stepper;
+    odeint::runge_kutta_dopri5<EndothelialType_cell_ode_states> stepper;
 
     current_states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     current_states[1] = ec->get_cell_protein_level("HEY", 0);
