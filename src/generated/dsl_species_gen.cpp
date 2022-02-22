@@ -177,9 +177,20 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
 //}
 
 void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
-    EndothelialType_cell_ode_states current_states;
+    EndothelialType_cell_ode_states states_states;
     EndothelialType_cell_ode_states new_states;
-    odeint::runge_kutta4<EndothelialType_cell_ode_states> stepper;
+//    odeint::runge_kutta4<EndothelialType_cell_ode_states> stepper;
+
+    //[ define_adapt_stepper
+    typedef odeint::runge_kutta_cash_karp54< EndothelialType_cell_ode_states > error_stepper_type;
+    //]
+
+    //[ integrate_adapt
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
+    integrate_adaptive( controlled_stepper , harmonic_oscillator ,  , 0.0 , 10.0 , 0.01 );
+    //]
+
 
     current_states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     current_states[1] = ec->get_cell_protein_level("HEY", 0);
