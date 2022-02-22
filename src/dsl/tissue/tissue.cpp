@@ -1077,7 +1077,8 @@ static bool tipCellTest(EC *cellAgent)  {
     bool noActiveNeighbours = true;
 
     // We consider a cell to be active (and therefore tip-like) at a certain threshold of DLL4.
-    if (cellAgent->get_cell_protein_level("DLL4", 0) > 13) {
+    // Changed from 13.
+    if (cellAgent->get_cell_protein_level("DLL4", 0) > 11.95) {
         cellIsActive = true;
     }
 

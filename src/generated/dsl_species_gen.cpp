@@ -148,7 +148,9 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
     dxdt[5] = +(k2_1)*1 -(k_2_1)*1 -(D_N_Degradation) -(k4); // DLL4_NOTCH - FINE.
     dxdt[6] = +(k4) -(I_Degradation); // NICD - FINE.
     dxdt[1] = +(beta) +(HEY_Reg) -(Hey_Degradation); // HEY - FINE.
-    dxdt[0] = +(beta) +(k5_FilProduction) -(FilopodiaTurnover) ; // FILOPODIA - FINE.
+//    dxdt[0] = +(beta) +(k5_FilProduction) -(FilopodiaTurnover) ; // FILOPODIA - FINE.
+    dxdt[0] = +(beta)-(FilopodiaTurnover) ; // FILOPODIA - FINE.
+
 
     // THE LEVEL OF SPECIES FROM OTHER CELLS REMAINS CONSTANT.
     dxdt[8] = 0;
@@ -177,7 +179,7 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
 void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
     EndothelialType_cell_ode_states current_states;
     EndothelialType_cell_ode_states new_states;
-    odeint::runge_kutta_dopri5<EndothelialType_cell_ode_states> stepper;
+    odeint::runge_kutta4<EndothelialType_cell_ode_states> stepper;
 
     current_states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     current_states[1] = ec->get_cell_protein_level("HEY", 0);
@@ -191,7 +193,7 @@ void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
     current_states[9] = calc_NOTCH_adjacent_level(ec);
     current_states[10] = calc_DLL4_NOTCH_adjacent_level(ec);
 
-    stepper.do_step(EndothelialType_cell_system, current_states, 0.0, new_states, 1);
+    stepper.do_step(EndothelialType_cell_system, current_states, 0.0, new_states, 0.1);
 
     ec->set_cell_protein_level("FILOPODIA", new_states[0], 1);
     ec->set_cell_protein_level("HEY", new_states[1], 1);
