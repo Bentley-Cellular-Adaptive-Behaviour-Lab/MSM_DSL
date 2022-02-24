@@ -1,12 +1,13 @@
 #include "../core/memAgents.h"
 #include "../core/EC.h"
+#include "../core/objects.h"
 #include "../core/world.h"
-
 
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/species/protein.h"
+#include "clusterParams.h"
 #include "dsl_species_gen.h"
 
 bool checking_VESSEL_Cell1 = false;
@@ -266,9 +267,9 @@ static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
 
 static double calc_V0_rate() {
     if (checking_VESSEL_Cell1) {
-        return 0.01;
+        return WORLDpointer->getParamValue(VEGF_START_0);
     } else {
-        return 0.1;
+        return WORLDpointer->getParamValue(VEGF_START_1);
     }
 //    return 0;
 }
