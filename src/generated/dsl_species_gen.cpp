@@ -95,6 +95,8 @@ void ODEs::check_cell_ODEs(EC *ec) {
 
 void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x, EndothelialType_cell_ode_states &dxdt,
                                        double t) {
+    bool test = checking_VESSEL_Cell1;
+
     // Species Definitions
     double FILOPODIA = x[0]; // CELL 1 FILOPODIA
     double HEY = x[1]; // CELL 1 HEY
@@ -148,9 +150,7 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
     dxdt[5] = +(k2_1)*1 -(k_2_1)*1 -(D_N_Degradation) -(k4); // DLL4_NOTCH - FINE.
     dxdt[6] = +(k4) -(I_Degradation); // NICD - FINE.
     dxdt[1] = +(beta) +(HEY_Reg) -(Hey_Degradation); // HEY - FINE.
-//    dxdt[0] = +(beta) +(k5_FilProduction) -(FilopodiaTurnover) ; // FILOPODIA - FINE.
-    dxdt[0] = +(beta)-(FilopodiaTurnover) ; // FILOPODIA - FINE.
-
+    dxdt[0] = +(beta)+(k5_FilProduction)-(FilopodiaTurnover) ; // FILOPODIA - FINE.
 
     // THE LEVEL OF SPECIES FROM OTHER CELLS REMAINS CONSTANT.
     dxdt[8] = 0;
@@ -177,43 +177,38 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
 //}
 
 void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
-    EndothelialType_cell_ode_states states_states;
-    EndothelialType_cell_ode_states new_states;
-//    odeint::runge_kutta4<EndothelialType_cell_ode_states> stepper;
+    EndothelialType_cell_ode_states states;
 
-    //[ define_adapt_stepper
+    // SET ERROR STEPPER.
     typedef odeint::runge_kutta_cash_karp54< EndothelialType_cell_ode_states > error_stepper_type;
-    //]
 
-    //[ integrate_adapt
+    // SET START VALUES.
+    states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
+    states[1] = ec->get_cell_protein_level("HEY", 0);
+    states[2] = ec->get_cell_protein_level("VEGFR", 0);
+    states[3] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+    states[4] = ec->get_cell_protein_level("DLL4", 0);
+    states[5] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+    states[6] = ec->get_cell_protein_level("NICD", 0);
+    states[7] = ec->get_cell_protein_level("NOTCH", 0);
+    states[8] = calc_DLL4_adjacent_level(ec);
+    states[9] = calc_NOTCH_adjacent_level(ec);
+    states[10] = calc_DLL4_NOTCH_adjacent_level(ec);
+
+    // DO ADAPTIVE INTEGRATION OVER 15 "TIMESTEPS".
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
-    integrate_adaptive( controlled_stepper , harmonic_oscillator ,  , 0.0 , 10.0 , 0.01 );
-    //]
+    integrate_adaptive( controlled_stepper , EndothelialType_cell_system ,  states, 0.0 , 15.0 , 0.01 );
 
-
-    current_states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
-    current_states[1] = ec->get_cell_protein_level("HEY", 0);
-    current_states[2] = ec->get_cell_protein_level("VEGFR", 0);
-    current_states[3] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-    current_states[4] = ec->get_cell_protein_level("DLL4", 0);
-    current_states[5] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-    current_states[6] = ec->get_cell_protein_level("NICD", 0);
-    current_states[7] = ec->get_cell_protein_level("NOTCH", 0);
-    current_states[8] = calc_DLL4_adjacent_level(ec);
-    current_states[9] = calc_NOTCH_adjacent_level(ec);
-    current_states[10] = calc_DLL4_NOTCH_adjacent_level(ec);
-
-    stepper.do_step(EndothelialType_cell_system, current_states, 0.0, new_states, 0.1);
-
-    ec->set_cell_protein_level("FILOPODIA", new_states[0], 1);
-    ec->set_cell_protein_level("HEY", new_states[1], 1);
-    ec->set_cell_protein_level("VEGFR", new_states[2], 1);
-    ec->set_cell_protein_level("VEGF_VEGFR", new_states[3], 1);
-    ec->set_cell_protein_level("DLL4", new_states[4], 1);
-    ec->set_cell_protein_level("DLL4_NOTCH", new_states[5], 1);
-    ec->set_cell_protein_level("NICD", new_states[6], 1);
-    ec->set_cell_protein_level("NOTCH", new_states[7], 1);
+    // UPDATE PROTEIN LEVELS.
+    ec->set_cell_protein_level("FILOPODIA", states[0], 1);
+    ec->set_cell_protein_level("HEY", states[1], 1);
+    ec->set_cell_protein_level("VEGFR", states[2], 1);
+    ec->set_cell_protein_level("VEGF_VEGFR", states[3], 1);
+    ec->set_cell_protein_level("DLL4", states[4], 1);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[5], 1);
+    ec->set_cell_protein_level("NICD", states[6], 1);
+    ec->set_cell_protein_level("NOTCH", states[7], 1);
 }
 
 
@@ -271,9 +266,9 @@ static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
 
 static double calc_V0_rate() {
     if (checking_VESSEL_Cell1) {
-        return 0.5;
+        return 0.01;
     } else {
-        return 0;
+        return 0.1;
     }
 //    return 0;
 }
