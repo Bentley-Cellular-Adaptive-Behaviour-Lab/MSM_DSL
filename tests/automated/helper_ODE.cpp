@@ -41,9 +41,10 @@ void BasicODEMemAgentTest::SetUp() {
 	// Setup world container for this test fixture.
 	auto *w_container = new World_Container();
 	addWorldContainer(w_container);
-
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	auto world = worldContainer->get_world();
 	addWorld(world);
 
@@ -186,8 +187,11 @@ void CrossCellODEMemAgentTest::SetUp() {
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
 
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	auto world = worldContainer->get_world();
 	addWorld(world);
 
@@ -365,8 +369,11 @@ void MultiNeighbourODEMemAgentTest::SetUp() {
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
 
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	auto world = worldContainer->get_world();
 	addWorld(world);
 
@@ -628,8 +635,11 @@ void BasicFilODEMemAgentTest::SetUp() {
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
 
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	auto world = worldContainer->get_world();
 	addWorld(world);
 
@@ -760,8 +770,11 @@ void BasicCellDistributionTest::SetUp() {
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
 
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	auto world = worldContainer->get_world();
 	addWorld(world);
 	setupCell();
@@ -840,8 +853,11 @@ void CellJunctionTest::SetUp() {
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
 
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
-	worldContainer->world_setup();
+	worldContainer->world_setup(params);
 	addWorld(worldContainer->get_world());
 	setupCells();
 	std::cout << "Cell,"
@@ -968,8 +984,12 @@ void CellJunctionTest::printCellProteinLevels(int timestep) const {
 void NotchPathwayTest::SetUp() {
     //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
+
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
     addWorldContainer(w_container);
-    worldContainer->world_setup();
+    worldContainer->world_setup(params);
     addWorld(w_container->get_world());
     // Adds VEGF to the environment.
     setupEnvironment();
@@ -1148,8 +1168,11 @@ double NotchPathwayTest::calc_NOTCH_UPREGULATION_MOD_rate(double VEGFR, double V
 void TranscriptionDelayTest::SetUp() {
     //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
     addWorldContainer(w_container);
-    worldContainer->world_setup();
+    worldContainer->world_setup(params);
     addWorld(w_container->get_world());
     setupCell();
     for (auto cell : tissueMonolayer->m_cell_agents) {
@@ -1251,8 +1274,12 @@ void TranscriptionDelayTest::printProteinLevels(EC *ec) {
 void UnequalDistributionTest::SetUp() {
     //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
+
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
+
     addWorldContainer(w_container);
-    worldContainer->world_setup();
+    worldContainer->world_setup(params);
     addWorld(w_container->get_world());
     setupMemAgents(new EC(world), new EC(world), world);
     addMemAgentProteins();
@@ -1664,8 +1691,10 @@ double VenkatramanMemAgentTest::calc_FilopodiaTurnover_rate() {
 void VenkatramanCellTest::SetUp() {
 //Creates a 50 by 50 world with an adhesiveness value of 1.0.
     auto w_container = new World_Container();
+    // Create an empty vector and pass it to the world creation function.
+    std::vector<double> params{};
     addWorldContainer(w_container);
-    worldContainer->world_setup();
+    worldContainer->world_setup(params);
     addWorld(w_container->get_world());
     setupCells();
     for (auto cell: tissueMonolayer->m_cell_agents) {
