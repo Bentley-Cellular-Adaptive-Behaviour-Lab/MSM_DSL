@@ -23,34 +23,54 @@ namespace odeint = boost::numeric::odeint;
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
 // Runs for a single timestep.
 TEST(test_ODE, ODEConstantRate) {
-	basic_ode_states current_states;
-	basic_ode_states new_states;
-	odeint::runge_kutta4<basic_ode_states> stepper;
+	basic_ode_states states;
+    // SET ERROR STEPPER AND STEPPER.
+    typedef odeint::runge_kutta_cash_karp54< basic_ode_states > error_stepper_type;
 
-	current_states[0] = 100.0f;
-	current_states[1] = 0.0f;
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
 
-	stepper.do_step(constantODE_system, current_states, 0.0, new_states, 1);
+	states[0] = 100.0;
+	states[1] = 0.0;
 
-	EXPECT_EQ(new_states[0], 95.0f);
-	EXPECT_EQ(new_states[1], 5.0f);
+    integrate_adaptive( controlled_stepper , constantODE_system,  states, 0.0 , 1.0 , 0.1 );
+
+	EXPECT_DOUBLE_EQ(states[0], 95.0);
+	EXPECT_DOUBLE_EQ(states[1], 5.0);
 }
 
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
+// Also checks that running this five steps once is equivalent to doing one step five times.
 // Runs for multiple timesteps.
 TEST(test_ODE, multi_ODEConstantRate) {
-	basic_ode_states ode_states;
-	odeint::runge_kutta4<basic_ode_states> stepper;
+    basic_ode_states states;
+    // SET ERROR STEPPER AND STEPPER.
+    typedef odeint::runge_kutta_cash_karp54< basic_ode_states > error_stepper_type;
 
-	ode_states[0] = 100;
-	ode_states[1] = 0;
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
 
-	for (int i = 0; i < 5; i++) {
-		stepper.do_step(constantODE_system, ode_states, 0.0, 1);
+    states[0] = 100.0;
+    states[1] = 0.0;
+
+    for (int i = 0; i < 5; i++) {
+        integrate_adaptive( controlled_stepper , constantODE_system,  states, 0.0 , 1.0 , 0.1 );
 	}
 
-	EXPECT_EQ(round(ode_states[0]), 75);
-	EXPECT_EQ(round(ode_states[1]), 25);
+	EXPECT_DOUBLE_EQ(states[0], 75);
+	EXPECT_DOUBLE_EQ(states[1], 25);
+
+
+    // Do this again, but doing five steps once and check for parity between the two cases.
+    basic_ode_states states2;
+
+    states2[0] = 100.0;
+    states2[1] = 0.0;
+
+    integrate_adaptive( controlled_stepper , constantODE_system,  states2, 0.0 , 5.0 , 0.1 );
+
+    EXPECT_DOUBLE_EQ(states[0], states2[0]);
+    EXPECT_DOUBLE_EQ(states[1], states2[1]);
 }
 
 // Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
