@@ -20,7 +20,8 @@
 #include "dsl/utils/shape.h"
 
 void FindHighestConcTest::SetUp() {
-    this->m_world = new World(50,50,50,1.0);
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0, params);
     createEnvironment();
     createCell();
     addMemAgent();
@@ -74,7 +75,8 @@ MemAgent *FindHighestConcTest::getMemAgent() {
 }
 
 void ExtendProtrusionTest::SetUp() {
-    this->m_world = new World(50,50,50,1.0);
+    std::vector<double> params{};
+    this->m_world = new World( 50, 50, 50, 1.0, params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();
@@ -164,7 +166,8 @@ void ExtendProtrusionTest::extend() {
 // CalcTotalLengthTest Test Functions //
 
 void CalcTotalLengthTest::SetUp() {
-    this->m_world = new World(50,50,50,1.0);
+    std::vector<double> params{};
+    this->m_world = new World(50, 50, 50, 1.0, params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();
@@ -254,7 +257,8 @@ void CalcTotalLengthTest::doExtensions() {
 // Retract Protrusion Test Helper Functions //
 
 void RetractProtrusionTest::SetUp() {
-    this->m_world = new World(50,50,50,1.0);
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0,params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();

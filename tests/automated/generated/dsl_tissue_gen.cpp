@@ -3,14 +3,17 @@
 //
 
 #include "core/coordinates.h"
+#include "core/world.h"
 
 #include "dsl/tissue/cell.h"
 #include "dsl/tissue/cellType.h"
 #include "dsl/tissue/tissue.h"
 #include "dsl/tissue/tissueContainer.h"
 
-void Tissue_Container::tissue_set_up() {
-	// Created using: NewTissues //
+void Tissue_Container::tissue_set_up(World* world) {
+    // Created using: Tissues //
+
+    world->setTissueContainer(this);
 
 	// Cell Type Declarations //
 	Cell_Type *EndoType_Type;
