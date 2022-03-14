@@ -1631,6 +1631,68 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="7cwCqjTI2mp" role="13h7CS">
+      <property role="TrG5h" value="getMinStartConcentrationValue" />
+      <node concept="3Tm1VV" id="7cwCqjTI2mq" role="1B3o_S" />
+      <node concept="10OMs4" id="7cwCqjTI2mr" role="3clF45" />
+      <node concept="3clFbS" id="7cwCqjTI2ms" role="3clF47">
+        <node concept="3cpWs6" id="7cwCqjTI2mt" role="3cqZAp">
+          <node concept="2OqwBi" id="7cwCqjTI2mu" role="3cqZAk">
+            <node concept="2OqwBi" id="7cwCqjTI2mv" role="2Oq$k0">
+              <node concept="1PxgMI" id="7cwCqjTI2mw" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="7cwCqjTI2mx" role="3oSUPX">
+                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                </node>
+                <node concept="2OqwBi" id="7cwCqjTI2my" role="1m5AlR">
+                  <node concept="13iPFW" id="7cwCqjTI2mz" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7cwCqjTI2m$" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2qgKlT" id="7cwCqjTI2m_" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7cwCqjTI2mA" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="7cwCqjTI2mB" role="13h7CS">
+      <property role="TrG5h" value="getMaxStartConcentrationValue" />
+      <node concept="3Tm1VV" id="7cwCqjTI2mC" role="1B3o_S" />
+      <node concept="10OMs4" id="7cwCqjTI2mD" role="3clF45" />
+      <node concept="3clFbS" id="7cwCqjTI2mE" role="3clF47">
+        <node concept="3cpWs6" id="7cwCqjTI2mF" role="3cqZAp">
+          <node concept="2OqwBi" id="7cwCqjTI2mG" role="3cqZAk">
+            <node concept="2OqwBi" id="7cwCqjTI2mH" role="2Oq$k0">
+              <node concept="1PxgMI" id="7cwCqjTI2mI" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="7cwCqjTI2mJ" role="3oSUPX">
+                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                </node>
+                <node concept="2OqwBi" id="7cwCqjTI2mK" role="1m5AlR">
+                  <node concept="13iPFW" id="7cwCqjTI2mL" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7cwCqjTI2mM" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2qgKlT" id="7cwCqjTI2mN" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7cwCqjTI2mO" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="13i0hz" id="6UPd1r3aEsj" role="13h7CS">
       <property role="TrG5h" value="getMaxTranscriptionDelay" />
       <node concept="3Tm1VV" id="6UPd1r3aEsk" role="1B3o_S" />

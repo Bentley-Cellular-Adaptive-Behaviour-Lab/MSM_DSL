@@ -23,6 +23,9 @@ enum cell_configurations{
 };
 
 class Tissue {
+private:
+    int m_patternHistory = 0;
+    bool m_hasPatterned = false; // Determines whether a tissue has patterned or not.
 public:
 	Tissue_Container *m_tissue_container;
 	World *m_world;
@@ -40,13 +43,17 @@ public:
 	virtual int get_n_cells();
 	std::string get_name();
 	Tissue_Type* get_tissue_type();
+    const int& get_pattern_history();
+    const bool& is_patterned();
 
-	// Setters //
+    // Setters //
 
 	void set_n_cells(int n_cells);
 	void set_name(std::string name);
 	void set_tissue_type(Tissue_Type *tissue_type);
 	void set_tissue_container(Tissue_Container *tissue_container);
+    void set_pattern_history(const int& new_value);
+    void set_patterned(const bool& hasPatterned);
 
 	// Constructors //
 
@@ -65,6 +72,8 @@ public:
 	virtual void determine_boundaries();
 
 	void store_cell_agent(EC *ecp);
+
+    bool checkTissueHasPatterned();
 };
 
 class Tissue_Vessel : public Tissue {

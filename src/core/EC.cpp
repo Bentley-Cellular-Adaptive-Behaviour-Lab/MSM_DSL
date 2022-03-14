@@ -627,6 +627,7 @@ EC::EC(World*  world){
 
 }
 
+
 EC::EC(World *world, Cell_Type *cell_type) {
     worldP = world;
     mutant = false;
@@ -878,7 +879,7 @@ void EC::set_cell_type(Cell_Type *cell_type) {
 *  Returns:		bool
 ******************************************************************************************/
 
-bool EC::has_protein(std::string protein_name) {
+bool EC::has_protein(const std::string& protein_name) const {
     for (auto protein : this->m_cell_type->proteins) {
         if (protein->get_name() == protein_name) {
             return true;
@@ -893,7 +894,7 @@ bool EC::has_protein(std::string protein_name) {
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::print_current_protein_levels(int timestep_interval) {
+void EC::print_current_protein_levels(const int& timestep_interval) {
 	if (this->worldP->timeStep % timestep_interval == 0) {
 		for (auto protein : this->m_cell_type->proteins) {
 			std::cout << "Protein: " << protein->get_name()
@@ -983,7 +984,8 @@ bool EC::cellIsNeighbour(EC *query_ec) {
 *  Returns:		float
 ******************************************************************************************/
 
-float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
+double EC::get_cell_protein_level(const std::string& protein_name,
+                                  const int& timestep_value) {
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {
@@ -999,7 +1001,9 @@ float EC::get_cell_protein_level(std::string protein_name, int timestep_value) {
 *  Returns:		float
 ******************************************************************************************/
 
-void EC::set_cell_protein_level(std::string protein_name, float new_level, int timestep_value) {
+void EC::set_cell_protein_level(const std::string& protein_name,
+                                const double& new_level,
+                                const int& timestep_value) {
     try {
         if (this->has_protein(protein_name)) {
             for (auto protein : this->m_cell_type->proteins) {
@@ -1020,7 +1024,7 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
         } else {
             throw std::invalid_argument(protein_name);
         }
-    } catch (std::invalid_argument) {
+    } catch (std::invalid_argument&) {
         std::cerr << "Attempted to get the level of a protein at a cell which did not possess it." << std::endl;
         std::cerr << "PROTEIN NAME: " << protein_name << std::endl;
         exit(1);
@@ -1035,11 +1039,11 @@ void EC::set_cell_protein_level(std::string protein_name, float new_level, int t
 *  Returns:		float
 ******************************************************************************************/
 
-void EC::cycle_protein_levels() {
+void EC::cycle_protein_levels() const {
     for (auto *protein : this->m_cell_type->proteins) {
         // This does work with both the species and regulation delays though.
-        int size = protein->cell_levels.size();
-        float newProteinValue = protein->cell_levels[0];
+        auto size = protein->cell_levels.size();
+        auto newProteinValue = protein->cell_levels[0];
         // Remove first element of the container - i.e. the current timestep.
         protein->cell_levels.pop_front();
         // Add a float that will eventually be updated by ODEs - use the current value in the container.
@@ -1939,12 +1943,13 @@ void EC::remove_DoubledUp_SurfaceAgents(void) {
     }
 }
 
-float EC::getCellCytoproteinLevel(std::string cytoproteinName) {
+double EC::getCellCytoproteinLevel(const std::string& cytoproteinName) const {
     CytoProtein *cytoProtein = this->m_cell_type->get_cytoprotein(cytoproteinName);
     return cytoProtein->getCellLevel();
 }
 
-void EC::setCellCytoproteinLevel(std::string cytoproteinName, float newLevel) {
+void EC::setCellCytoproteinLevel(const std::string& cytoproteinName,
+                                 const double& newLevel) {
     CytoProtein *cytoProtein = this->m_cell_type->get_cytoprotein(cytoproteinName);
     cytoProtein->setCellLevel(newLevel);
 }
@@ -1978,3 +1983,4 @@ bool EC::removeProtrusionFromList(Protrusion* protrusion) {
 std::list<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
+

@@ -907,6 +907,12 @@
         <node concept="356sEK" id="6JBqwuemeWK" role="383Ya9">
           <node concept="2EixSi" id="6JBqwuemeWM" role="2EinRH" />
         </node>
+        <node concept="356sEK" id="6Vbpjk7N7D7" role="383Ya9">
+          <node concept="356sEF" id="6Vbpjk7N7D8" role="356sEH">
+            <property role="TrG5h" value="world-&gt;setTissueContainer(this);" />
+          </node>
+          <node concept="2EixSi" id="6Vbpjk7N7D9" role="2EinRH" />
+        </node>
         <node concept="356sEK" id="6JBqwuemdZb" role="383Ya9">
           <node concept="356sEF" id="6JBqwuemeWF" role="356sEH">
             <property role="TrG5h" value="// Cell Type Declarations //" />
@@ -2867,7 +2873,7 @@
                         <node concept="3cpWs6" id="2U$IHhoRBgI" role="3cqZAp">
                           <node concept="3cpWs3" id="2U$IHhoRBgJ" role="3cqZAk">
                             <node concept="Xl_RD" id="2U$IHhoRBgK" role="3uHU7w">
-                              <property role="Xl_RC" value="_height" />
+                              <property role="Xl_RC" value="_width" />
                             </node>
                             <node concept="3cpWs3" id="2U$IHhoRBgL" role="3uHU7B">
                               <node concept="Xl_RD" id="2U$IHhoRBgM" role="3uHU7B">

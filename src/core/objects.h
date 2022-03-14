@@ -24,7 +24,7 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-//#define MAXtime 10000
+#define MAXtime 20000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -35,7 +35,7 @@ class World;
 #define TISSUE_TESTING true
 #define SHAPE_TESTING false
 #define PROTEIN_TESTING true
-#define SWEEP_TESTING true
+#define SWEEP_TESTING false
 
 // Analysis types for the DSL.
 

@@ -1069,6 +1069,89 @@ void Tissue_Monolayer::determine_boundaries() {
 	this->m_boundaries = boundary_coords;
 }
 
+// SEPARATE OUT TIP CELL TEST AND STALK CELL TEST.
+static bool tipCellTest(EC *cellAgent)  {
+    // Derived from EC::tipCellTest()
+    // SPECIFIC FOR VENKATRAMAN MODEL, REFACTOR THIS LATER.
+    bool cellIsActive = false;
+    bool noActiveNeighbours = true;
+
+    // We consider a cell to be active (and therefore tip-like) at a certain threshold of DLL4.
+    // Changed from 13.
+    if (cellAgent->get_cell_protein_level("DLL4", 0) > 10) {
+        cellIsActive = true;
+    }
+
+    // AM I A STALK CELL?
+
+    // Look for neighbouring cells that have some level of activity.
+    // If any are somewhat active, then we haven't patterned yet.
+    // Only bother doing this if this cell is active.
+    if (cellIsActive) {
+        for (auto *neighEC: cellAgent->getNeighCellVector()) {
+            if ((double) neighEC->get_cell_protein_level("DLL4", 0) > 1.0) {
+                noActiveNeighbours = false;
+            }
+        }
+    }
+
+    return cellIsActive && noActiveNeighbours; // Is a tip cell when both of these conditions have been met.
+}
+
+bool Tissue::checkTissueHasPatterned() {
+    // Abstracted version of patterning test.
+    // Derived from World::evaluateSandP()
+    // Only call this when the tissue's patterned flag is set to false.
+    // N.B. Patterning no longer ends the simulation unless all tissues have patterned.
+
+    // DO I HAVE ONE TIP AND ONE STALK?
+
+    int currentPatternHistory = get_pattern_history();
+
+    int tipCount = 0; // Number of cell agents meeting the requirements for being a tip cell in the tissue.
+    int threshold = 1; // The number of tip agents required for a tissue to be considered "patterned".
+
+    for (auto *cell : m_cell_agents) {
+        if (tipCellTest(cell)) {
+            tipCount++;
+        }
+    }
+
+    if (tipCount >= threshold) {
+        currentPatternHistory++;
+        set_pattern_history(currentPatternHistory);
+    } else {
+        set_pattern_history(0);
+    }
+
+    // Tissue must remain patterned for 150 timesteps to count as stable.
+    // TODO: CHANGE THIS BACK TO 150.
+    if (currentPatternHistory == 1) {
+        std::cout << "PATTERNING - Tissue " << get_name() << " has patterned at timestep:" << m_world->timeStep << std::endl;
+        set_patterned(true);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+const int& Tissue::get_pattern_history() {
+    return this->m_patternHistory;
+}
+
+void Tissue::set_pattern_history(const int& new_value) {
+    this->m_patternHistory = new_value;
+}
+
+const bool& Tissue::is_patterned() {
+    return this->m_hasPatterned;
+}
+
+void Tissue::set_patterned(const bool& hasPatterned) {
+    this->m_hasPatterned = hasPatterned;
+}
+
+
 // CONSTRUCTOR //
 
 Tissue_Monolayer::Tissue_Monolayer( Tissue_Container *tissue_container,

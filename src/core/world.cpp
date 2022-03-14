@@ -22,9 +22,11 @@
 
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
+#include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/utils/logger.h"
 #include "../dsl/utils/utils.h"
+#include "../dsl/world/worldContainer.h"
 
 
 typedef Location** ppLocation;
@@ -1527,6 +1529,15 @@ std::string World::get_time_string() {
     return timeStream.str();
 }
 
+void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& changeVEGF , const bool& changeDLL4 ) {
+    if (changeVEGF) {
+        ec->set_cell_protein_level("VEGF", newValue, 0);
+    }
+    if (changeDLL4) {
+        ec->set_cell_protein_level("DLL4", newValue, 0);
+    }
+}
+
 /*****************************************************************************************
 *  Name:		runSimulation (CORE MSM)
 *  Description: Controls simulation run - goes over all timesteps and moves world forward
@@ -1544,7 +1555,11 @@ void World::runSimulation() {
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             hysteresisAnalysis();
         } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            evaluateSandP();
+            // Checks that all tissues have patterned, if so, end the simulation.
+            if (tissuesHavePatterned()) {
+                timeStep = MAXtime;
+                break;
+            }
         }
 
         if (MEM_LEAK_OCCURRING) {
@@ -6545,4 +6560,32 @@ void World::fillParamVector(const std::vector<double>& param_values) {
 
 double World::getParamValue(const int& i) {
     return m_param_increments.at(i);
+}
+
+bool World::tissuesHavePatterned() const {
+    bool tissuesHavePatterned = false;
+
+    try {
+        int patternedTissues = 0;
+        for (auto tissue : m_tissueContainer->tissues) {
+            // If a tissue has not patterned, check that it has.
+            // If it has patterned, don't bother checking.
+            if (!tissue->is_patterned()) {
+                if (tissue->checkTissueHasPatterned())
+                    patternedTissues++;
+            } else {
+                patternedTissues++;
+            }
+
+            if (patternedTissues == m_tissueContainer->tissues.size()) {
+                tissuesHavePatterned = true;
+            } else if (patternedTissues > m_tissueContainer->tissues.size()) {
+                throw std::exception();
+            }
+        }
+    } catch (std::exception& e) {
+        std::cout << "More tissues have patterned than there are tissues!";
+    }
+
+    return tissuesHavePatterned;
 }

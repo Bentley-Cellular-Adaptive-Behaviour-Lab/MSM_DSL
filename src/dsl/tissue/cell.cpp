@@ -25,8 +25,8 @@ bool Cell::check_boundaries() {
     Cell *current_cell;
     Tissue *current_tissue;
 
-    for (int i = 0; i < m_tissue_container->cells.size(); i++) {
-        current_cell = m_tissue_container->cells[i];
+    for (auto & cell : m_tissue_container->cells) {
+        current_cell = cell;
         if (current_cell != this) {
             if (m_tissue_container->check_cell_cell_overlap(this, current_cell)) {
                 return false; // <- Overlap detected, send false to the assert statement calling this function.
@@ -34,8 +34,8 @@ bool Cell::check_boundaries() {
         }
     }
 
-    for (int i = 0; i < m_tissue_container->tissues.size(); i++) {
-        current_tissue = m_tissue_container->tissues[i];
+    for (auto & tissue : m_tissue_container->tissues) {
+        current_tissue = tissue;
         if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
             auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
             if (m_tissue_container->check_cell_monolayer_overlap(this, current_monolayer)) {

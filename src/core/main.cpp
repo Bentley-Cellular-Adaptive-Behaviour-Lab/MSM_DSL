@@ -1,9 +1,13 @@
+#include <cassert>
+
+#include "EC.h"
 #include "objects.h"
 #include "world.h"
 
 #include "../dsl/utils/utils.h"
+#include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/world/worldContainer.h"
-
 
 #if GRAPHICS
 #include "../graphics/display.h"
@@ -139,6 +143,33 @@ void write_args_to_outfile(const std::string& file_string,
 	test_file.close();
 }
 
+void varyParams(double& param, const double& min, const double& max) {
+    //
+    assert(min <= max);
+    assert(min >= 0 && min <= 1.0);
+    assert(max >= 0 && max <= 1.0);
+    double range_min = param * min;
+    double range_max = param * max;
+
+// obtain a seed from the system clock:
+    unsigned seed1 = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    unsigned seed2 = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+    std::mt19937 g1 (seed1);
+
+    int flip = (g1()%2)+ 1 ;
+
+    std::mt19937 g2 (seed2);
+
+    std::uniform_real_distribution<double> gen(range_min, range_max);
+    double offset = gen(g2);
+
+    if (flip == 1) {
+        param = param + offset;
+    } else {
+        param = param - offset;
+    }
+}
+
 int main(int argc, char * argv[]) {
     if (SWEEP_TESTING) {
         // Set analysis_type to none in case something goes wrong.
@@ -155,62 +186,31 @@ int main(int argc, char * argv[]) {
         construct_file_string(replicate_no, param_values, file_string);
         sprintf(file_buffer, "%s", file_string.c_str());
 		write_args_to_outfile(file_string, replicate_no, param_values);
+
     } else {
 
         World *world;
         auto *w_container = new World_Container();
 
-        char statistics_file_buffer[500];
-        std::vector<double> param_increments;
+        // Set analysis_type to none in case something goes wrong.
+        analysis_type = 0;
+        // Set buffer for file name.
+        int file_buffer_size = 200;
+        char file_buffer[file_buffer_size];
+        std::vector<double> param_values;
         int replicate_no;
-        readArgs(argc, argv, param_increments, replicate_no);
+        readArgs(argc, argv, param_values, replicate_no);
 
-        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
-            sprintf(statistics_file_buffer,
-                    "statistics_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            sprintf(statistics_file_buffer,
-                    "statistics_time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else {
-            sprintf(statistics_file_buffer,
-                    "statistics_msm_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.csv",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        }
 
-        create_statistics_file(statistics_file_buffer);
-
-        std::time_t start_time = get_current_time();
-        std::string start_time_string = format_time_string(start_time, true);
-        write_to_statistics_file(statistics_file_buffer, start_time_string);
+        // Create output file.
+        std::string file_string;
+        construct_file_string(replicate_no, param_values, file_string);
+        sprintf(file_buffer, "%s", file_string.c_str());
+        write_args_to_outfile(file_string, replicate_no, param_values);
 
         //---------------------------------------------------------------
 
         char outfilename[500];
-
-        //TODO update these file names with variable vals
-        //do print statement as well
-        if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
-            std::cout << "running bistability analysis" << std::endl;
-            sprintf(outfilename,
-                    "analysis_hysteresis_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
-            std::cout << "running time to pattern analysis" << std::endl;
-            sprintf(outfilename,
-                    "time_to_pattern_filvary_%g_epsilon_%g_VconcST%g_GRADIENT%i_FILTIPMAX%g_tokenStrength%g_FILSPACING%i_randFilExtend%g_randFilRetract%g_seed%lld_run%i_.txt",
-                    double(FIL_VARY), double(EPSILON), VconcST, GRADIENT, FILTIPMAX, tokenStrength, FIL_SPACING,
-                    randFilExtend, RAND_FILRETRACT_CHANCE, seed, run_number);
-        } else {
-            std::cout << "analysis must either be ANALYSIS_HYSTERESIS or ANALYSIS_TIME_TO_PATTERN.. aborting run";
-            sprintf(outfilename, "testforpybind");
-            //exit(1);
-        }
 
         std::cout << "output file name: " << outfilename << std::endl;
 
@@ -219,32 +219,65 @@ int main(int argc, char * argv[]) {
         std::cout << "Creating world..." << "\n";
 
 
-        w_container->world_setup(param_increments); // Set the current increments that we are at.
+        w_container->world_setup(param_values); // Set the current increments that we are at.
         world = w_container->get_world();
         WORLDpointer = world;
 
-        std::cout << "World created." << "\n";
+
+
+        // -----------------------------------------------------------------------------------------------------------//
+        // Venkatraman Example Specific Stuff.
+
+        // Vary parameters by a random amount.
+//        varyParams(param_values.at(0), 0.1, 0.5);
+//        varyParams(param_values.at(1), 0.1, 0.5);
+
+        bool changeVEGF = true;
+
+        auto tissue = world->getTissueContainer()->tissues.at(0);
+        auto cell1 = tissue->m_cell_agents.at(0);
+        auto cell2 = tissue->m_cell_agents.at(1);
+
+        // Force add the cells to each others neighbour lists.
+        // Junction testing may not happen quickly enough for this test to be valid.
+        cell1->add_to_neighbour_list(cell2);
+        cell2->add_to_neighbour_list(cell1);
+
+        if (changeVEGF) {
+//            std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
+//            std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
+//
+//            world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
+//
+//            std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
+//            std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
+
+
+        } else {
+            std::cout << "Cell 1 DLL4 level set at: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
+            std::cout << "Cell 2 DLL4 level set at: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
+
+            world->adjustCellProteinValue(cell1,param_values.at(0),false,true);
+            world->adjustCellProteinValue(cell2,param_values.at(1),false,true);
+
+            std::cout << "Cell 1 DLL4 level changed to: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
+            std::cout << "Cell 2 DLL4 level changed to: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
+        }
+
+
+        // -----------------------------------------------------------------------------------------------------------//
 
 #if GRAPHICS
-
         displayGlui(&argc, argv);
         glutMainLoop();
-
 #else
+        std::cout << "World created." << "\n";
         world->printProteinNames();
         world->runSimulation();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();
         std::cout << "End time: " << std::ctime(&end_time) << std::endl;
-
-        std::string end_time_string = format_time_string(end_time, false);
-        write_to_statistics_file(statistics_file_buffer, end_time_string);
-
-        long elapsed_time = end_time - start_time;
-        std::string elapsed_time_string = "Elapsed time, " + std::to_string(elapsed_time);
-        write_to_statistics_file(statistics_file_buffer, elapsed_time_string);
-
 #endif
     }
 }
