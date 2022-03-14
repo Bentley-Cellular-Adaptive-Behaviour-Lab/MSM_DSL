@@ -8,19 +8,19 @@
 #include <gtest/gtest.h>
 #include <vector>
 
-typedef boost::array<float, 2> basic_ode_states;
-typedef boost::array<float, 4> crossCell_ode_states;
-typedef boost::array<float, 4> multiAgent_ode_states;
-typedef boost::array<float, 3> basicFil_ode_states;
-typedef boost::array<float, 1> basicDistribution_ode_states;
-typedef boost::array<float, 4> cellJunction_ode_states;
-typedef boost::array<float, 6> notch_memAgent_ode_states;
-typedef boost::array<float, 4> notch_cell_ode_states;
-typedef boost::array<float, 4> TranscriptionDelayTest_ode_states;
-typedef boost::array<float, 1> UnequalDistributionTest_ode_states;
-typedef boost::array<float, 9> VenkatramanMemAgentTest_memAgent_ode_states;
-typedef boost::array<float, 7> VenkatramanMemAgentTest_cell_ode_states;
-typedef boost::array<float, 11> VenkatramanCellTest_ode_states;
+typedef boost::array<double, 2> basic_ode_states;
+typedef boost::array<double, 4> crossCell_ode_states;
+typedef boost::array<double, 4> multiAgent_ode_states;
+typedef boost::array<double, 3> basicFil_ode_states;
+typedef boost::array<double, 1> basicDistribution_ode_states;
+typedef boost::array<double, 4> cellJunction_ode_states;
+typedef boost::array<double, 6> notch_memAgent_ode_states;
+typedef boost::array<double, 4> notch_cell_ode_states;
+typedef boost::array<double, 4> TranscriptionDelayTest_ode_states;
+typedef boost::array<double, 1> UnequalDistributionTest_ode_states;
+typedef boost::array<double, 9> VenkatramanMemAgentTest_memAgent_ode_states;
+typedef boost::array<double, 7> VenkatramanMemAgentTest_cell_ode_states;
+typedef boost::array<double, 11> VenkatramanCellTest_ode_states;
 
 class Cell;
 class Cell_Type;

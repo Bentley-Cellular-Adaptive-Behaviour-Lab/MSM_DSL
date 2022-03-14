@@ -2377,8 +2377,6 @@ void MemAgent::set_protein_level(const std::string& protein_name, const double& 
 ******************************************************************************************/
 
 double MemAgent::get_memAgent_protein_level(const std::string& protein_name) const {
-    // This assert should always pass when calculating cell levels, as we're checking this in the calculate cell protein totals function.
-    // This is also used during ODE running and so has the potential to fail.
     if (this->has_protein(protein_name)) {
 		for (auto protein : this->owned_proteins) {
 			if (protein->get_name() == protein_name) {

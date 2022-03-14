@@ -26,7 +26,6 @@ TEST(test_ODE, ODEConstantRate) {
 	basic_ode_states states;
     // SET ERROR STEPPER AND STEPPER.
     typedef odeint::runge_kutta_cash_karp54< basic_ode_states > error_stepper_type;
-
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
 
@@ -46,7 +45,6 @@ TEST(test_ODE, multi_ODEConstantRate) {
     basic_ode_states states;
     // SET ERROR STEPPER AND STEPPER.
     typedef odeint::runge_kutta_cash_karp54< basic_ode_states > error_stepper_type;
-
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
 
@@ -73,43 +71,28 @@ TEST(test_ODE, multi_ODEConstantRate) {
     EXPECT_DOUBLE_EQ(states[1], states2[1]);
 }
 
-// Test that an ODE with a constant rate of change increases a product and decreases a reactant by the rate of change.
-// Runs for a single timestep.
-TEST(test_ODE, ODELinearRate) {
-	basic_ode_states current_states;
-	basic_ode_states new_states;
-	odeint::runge_kutta4<basic_ode_states> stepper;
-
-	current_states[0] = 100;
-	current_states[1] = 0;
-
-	stepper.do_step(linearODE_system, current_states, 0.0, new_states, 1);
-	EXPECT_EQ(round(new_states[0]), 90);
-	EXPECT_EQ(round(new_states[1]), 10);
-}
-
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
-	EXPECT_EQ(round(memAgent1->get_environment_protein_level("B")), 26);
-	EXPECT_EQ(round(memAgent2->get_environment_protein_level("B")), 25);
-	EXPECT_EQ(round(memAgent3->get_environment_protein_level("B")), 25);
-
+    // Measures the average environment level of memAgents.
+    EXPECT_DOUBLE_EQ(memAgent1->get_environment_protein_level("B"), 1);
+	EXPECT_DOUBLE_EQ(memAgent2->get_environment_protein_level("B"), 1);
+	EXPECT_DOUBLE_EQ(memAgent3->get_environment_protein_level("B"), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("A")), 270);
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 260);
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 260);
+	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent2->get_memAgent_protein_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent3->get_memAgent_protein_level("A"), 20);
 }
 
 TEST_F(CrossCellODEMemAgentTest, cellODETest) {
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("A")), 1);
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 1);
+	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("A"), 1);
+	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("B"), 1);
 
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 11);
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 1);
+	EXPECT_FLOAT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 11);
+	EXPECT_FLOAT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 1);
 
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 11);
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 1);
+	EXPECT_FLOAT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 11);
+	EXPECT_FLOAT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 1);
 }
 
 TEST_F(CrossCellODEMemAgentTest, junctionODETest) {

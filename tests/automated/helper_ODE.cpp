@@ -38,22 +38,22 @@ namespace odeint = boost::numeric::odeint;
 *  Returns:		void
 ******************************************************************************************/
 void BasicODEMemAgentTest::SetUp() {
-	// Setup world container for this test fixture.
+	// Setup world container for this test fixture. - generates 50x50x50 world w/ no objects.
 	auto *w_container = new World_Container();
 	addWorldContainer(w_container);
     // Create an empty vector and pass it to the world creation function.
     std::vector<double> params{};
-	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
+	// Setup world for this test fixture
 	worldContainer->world_setup(params);
-	auto world = worldContainer->get_world();
-	addWorld(world);
+	auto w = worldContainer->get_world();
+	addWorld(w);
 
 	// Create an uninitialised "dummy" cell for use with the MemAgents.
-	auto dummyCell = new EC(world);
-	world->ECagents.push_back(dummyCell);
+	auto dummyCell = new EC(w);
+	w->ECagents.push_back(dummyCell);
 
 	// Create new memAgents.
-	createMemAgents(dummyCell, world);
+	createMemAgents(dummyCell, w);
 
 	// Set protein levels for each env agent.
 	setupEnvironment();
@@ -133,15 +133,18 @@ void BasicODEMemAgentTest::BasicMemAgentODE_system(const basic_ode_states &x, ba
 }
 
 void BasicODEMemAgentTest::runODE(MemAgent *memAgent) {
-	basic_ode_states ode_states;
-	odeint::euler<basic_ode_states> stepper;
+    basic_ode_states states;
+    // SET ERROR STEPPER AND STEPPER.
+    typedef odeint::runge_kutta_cash_karp54< basic_ode_states > error_stepper_type;
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
 
-	ode_states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A
-	ode_states[1] = memAgent->get_environment_protein_level("B"); // Protein B
+	states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A
+	states[1] = memAgent->get_environment_protein_level("B"); // Protein B
 
-	stepper.do_step(BasicMemAgentODE_system, ode_states, 0.0, 1);
+    integrate_adaptive(controlled_stepper , BasicMemAgentODE_system,  states, 0.0 , 1.0 , 0.1 );
 
-	memAgent->set_protein_level("A", ode_states[0]);
+	memAgent->set_protein_level("A", states[0]);
 }
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t) {
@@ -192,17 +195,17 @@ void CrossCellODEMemAgentTest::SetUp() {
 
 	// Setup world for this test fixture - generates 50x50x50 world w/ no objects.
 	worldContainer->world_setup(params);
-	auto world = worldContainer->get_world();
-	addWorld(world);
+	auto w = worldContainer->get_world();
+	addWorld(w);
 
 	// Create two uninitialised "dummy" cells for use with the MemAgents.
-	auto dummyCell1 = new EC(world);
-	auto dummyCell2 = new EC(world);
-	world->ECagents.push_back(dummyCell1);
-	world->ECagents.push_back(dummyCell2);
+	auto dummyCell1 = new EC(w);
+	auto dummyCell2 = new EC(w);
+	w->ECagents.push_back(dummyCell1);
+	w->ECagents.push_back(dummyCell2);
 
 	// Create memAgents and assign them to cells.
-	createMemAgents(dummyCell1, dummyCell2, world);
+	createMemAgents(dummyCell1, dummyCell2, w);
 	// Setup agent proteins.
 	setupAgentProteins();
 
@@ -216,7 +219,6 @@ void CrossCellODEMemAgentTest::SetUp() {
 		runODE(memAgent1);
 		runODE(memAgent2);
 		runODE(memAgent3);
-		printMemAgentProteinLevels(i + 1);
 	}
 }
 
@@ -298,20 +300,20 @@ void CrossCellODEMemAgentTest::setupEnvironment() {
 
 void CrossCellODEMemAgentTest::runODE(MemAgent *memAgent) {
 	crossCell_ode_states ode_states;
-	odeint::euler<crossCell_ode_states> stepper;
+    typedef odeint::runge_kutta_cash_karp54< crossCell_ode_states > error_stepper_type;
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
 
-	ode_states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A (Cell Protein) *Uses this cell value*
-	ode_states[1] = memAgent->get_local_protein_level("B"); // Protein B (Cell Protein) *Uses neighbour's value*
-	ode_states[2] = memAgent->get_memAgent_protein_level("C"); // Protein C (Junctional Protein) *Uses this cell value*
-	ode_states[3] = memAgent->get_junction_protein_level("D"); // Protein D (Junctional Protein) *Uses neighbour's value*
+    ode_states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A (Cell Protein)
+	ode_states[1] = memAgent->get_local_protein_level("B"); // Protein B (Cell Protein)
 
-	stepper.do_step(CrossCellODE_system, ode_states, 0.0, 1);
+	ode_states[2] = memAgent->get_memAgent_protein_level("C"); // Protein C (Junctional Protein)
+	ode_states[3] = memAgent->get_junction_protein_level("D"); // Protein D (Junctional Protein)
 
-	memAgent->set_protein_level("A", ode_states[0]);
+    integrate_adaptive(controlled_stepper , CrossCellODE_system,  ode_states, 0.0 , 1.0 , 0.1 );
+
+    memAgent->set_protein_level("A", ode_states[0]);
 	memAgent->set_protein_level("C", ode_states[2]);
-
-	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false, PROTEIN_LOCATION_CELL); /* Use this cell value */
-	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true, PROTEIN_LOCATION_JUNCTION); /* Use neighbour's value */
 }
 
 void CrossCellODEMemAgentTest::CrossCellODE_system(const crossCell_ode_states &x, crossCell_ode_states &dxdt, double t) {
