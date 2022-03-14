@@ -1,12 +1,13 @@
 #include "../core/memAgents.h"
 #include "../core/EC.h"
+#include "../core/objects.h"
 #include "../core/world.h"
-
 
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/species/protein.h"
+#include "clusterParams.h"
 #include "dsl_species_gen.h"
 
 bool checking_VESSEL_Cell1 = false;
@@ -143,22 +144,14 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
     double k1 = calc_k1_rate(VEGF, VEGFR); // FINE.
 
     // ODE Definitions
-    dxdt[2] = +(VR_Production) -(VR_Degradation) -(k1)*1 +(k_1)*1 -(k3); // VEGFR - FINE.
-
+    dxdt[2] = +(VR_Production) -(VR_Degradation) -(k1)*1 + (k_1)*1 -(k3); // VEGFR - FINE.
     dxdt[3] = -(V_VR_Degradation) +(k1)*1 -(k_1)*1; // VEGF_VEGFR - FINE.
-
     dxdt[4] = +(Dll4_Reg) -(D_Degradation) -(k2_0)*1 +(k_2_0)*1 ; // DLL4 - FINE.
-
     dxdt[7] = -(k2_1)*1 +(k_2_1)*1 -(N_Degradation) +(N_Production); // NOTCH - FINE.
-
     dxdt[5] = +(k2_1)*1 -(k_2_1)*1 -(D_N_Degradation) -(k4); // DLL4_NOTCH - FINE.
-
     dxdt[6] = +(k4) -(I_Degradation); // NICD - FINE.
-
     dxdt[1] = +(beta) +(HEY_Reg) -(Hey_Degradation); // HEY - FINE.
-
     dxdt[0] = +(beta)+(k5_FilProduction)-(FilopodiaTurnover) ; // FILOPODIA - FINE.
-
 
     // THE LEVEL OF SPECIES FROM OTHER CELLS REMAINS CONSTANT.
     dxdt[8] = 0;
@@ -206,7 +199,7 @@ void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
     // DO ADAPTIVE INTEGRATION OVER 15 "TIMESTEPS".
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
-    integrate_adaptive( controlled_stepper , EndothelialType_cell_system ,  states, 0.0 , 1.0 , 0.1 );
+    integrate_adaptive( controlled_stepper , EndothelialType_cell_system ,  states, 0.0 , 15.0 , 0.01 );
 
     // UPDATE PROTEIN LEVELS.
     ec->set_cell_protein_level("FILOPODIA", states[0], 1);
@@ -274,9 +267,9 @@ static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
 
 static double calc_V0_rate() {
     if (checking_VESSEL_Cell1) {
-        return 0.05;
+        return WORLDpointer->getParamValue(VEGF_START_0);
     } else {
-        return 0.05;
+        return WORLDpointer->getParamValue(VEGF_START_1);
     }
 //    return 0;
 }
