@@ -724,15 +724,15 @@ void EC::set_initial_proteins() {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				Protein *current_protein = this->m_cell_type->proteins[i];
-				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				Protein *current_protein = this->m_cell_type->proteins[i];
-				nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 			}
             if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
                 Protein *current_protein = this->m_cell_type->proteins[i];
-                nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
             }
         }
     }
@@ -790,17 +790,17 @@ void EC::distribute_proteins() {
             Protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
-					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
-					nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
 				}
 			}
             if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
-                    nodeAgent->set_protein_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
                 }
             }
         }
@@ -826,7 +826,7 @@ void EC::calculate_cell_protein_levels() {
             Protein *current_protein = this->m_cell_type->proteins[i];
             if (nodeAgent->has_protein(current_protein->get_name())) {
                 // Determine the amount for the current protein at this memAgent and update the total for that.
-                float current_protein_level = nodeAgent->get_memAgent_protein_level(current_protein->get_name());
+                float current_protein_level = nodeAgent->get_memAgent_current_level(current_protein->get_name());
                 protein_counts[i] += current_protein_level;
             }
         }
@@ -916,7 +916,7 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
         for (auto *memAgent : this->nodeAgents) {
             for (auto protein : this->m_cell_type->proteins) {
                 if (protein->get_name() == "A") {
-                    std::cout << memAgent->get_memAgent_protein_level("A") << ",";
+                    std::cout << memAgent->get_memAgent_current_level("A") << ",";
                 }
             }
         }

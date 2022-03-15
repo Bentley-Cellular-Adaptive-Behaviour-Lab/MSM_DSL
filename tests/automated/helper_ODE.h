@@ -9,8 +9,8 @@
 #include <vector>
 
 typedef boost::array<double, 2> basic_ode_states;
-typedef boost::array<double, 4> crossCell_ode_states;
-typedef boost::array<double, 4> multiAgent_ode_states;
+typedef boost::array<double, 3> JunctionTestStates;
+typedef boost::array<double, 5> multiAgent_ode_states;
 typedef boost::array<double, 3> basicFil_ode_states;
 typedef boost::array<double, 1> basicDistribution_ode_states;
 typedef boost::array<double, 4> cellJunction_ode_states;
@@ -53,7 +53,7 @@ public:
 	static void BasicMemAgentODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
 };
 
-class CrossCellODEMemAgentTest : public ::testing::Test {
+class JunctionTest : public ::testing::Test {
 protected:
 	void SetUp() override;
 	void TearDown() override;
@@ -61,23 +61,36 @@ public:
 	World *world;
 	World_Container *worldContainer;
 
-	MemAgent *memAgent1;
-	MemAgent *memAgent2;
-	MemAgent *memAgent3;
+	MemAgent *m_memAgent1;
+	MemAgent *m_memAgent2;
+	MemAgent *m_memAgent3;
+    MemAgent *m_memAgent4;
 
-	void addWorld(World *crossCellWorld);
-	void addWorldContainer(World_Container *crossCellWorldContainer);
+    double m_memAgent1_A = -1; // Log the level of A at MemAgent 1 after one timestep.
+    double m_memAgent1_B = -1; // Log the level of B at MemAgent 1 after one timestep.
+
+    double m_memAgent2_A = -1; // Log the level of A at MemAgent 2 after one timestep.
+    double m_memAgent2_B = -1; // Log the level of B at MemAgent 2 after one timestep.
+
+    double m_memAgent3_A = -1; // Log the level of A at MemAgent 3 after one timestep.
+    double m_memAgent3_B = -1; // Log the level of B at MemAgent 3 after one timestep.
+
+    double m_memAgent4_A = -1; // Log the level of A at MemAgent 4 after one timestep.
+    double m_memAgent4_B = -1; // Log the level of B at MemAgent 4 after one timestep.
+
+    void addWorld(World *crossCellWorld);
+	void addWorldContainer(World_Container *JunctionWorldContainer);
 	void createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world);
 	void setupEnvironment();
 	static void runODE(MemAgent *memAgent);
 
-	static void CrossCellODE_system(const crossCell_ode_states &x, crossCell_ode_states &dxdt, double t);
+	static void JunctionSystem(const JunctionTestStates &x, JunctionTestStates &dxdt, double t);
 	void setupAgentProteins() const;
 
 	void printMemAgentProteinLevels(int timestep) const;
 };
 
-class MultiNeighbourODEMemAgentTest : public ::testing::Test {
+class FilopodiaTest : public ::testing::Test {
 protected:
 	void SetUp() override;
 	void TearDown() override;

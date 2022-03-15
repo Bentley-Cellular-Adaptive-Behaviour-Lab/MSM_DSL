@@ -13,10 +13,10 @@ Protein::Protein(const std::string& name,
                  const int& max_transcription_delay) {
     // Used when setting up cellular proteins.
     assert(max_transcription_delay > 0);
-    this->name = name;
-	this->protein_location = protein_location;
-    this->min = min;
-    this->max = max;
+    this->m_name = name;
+	this->m_protein_location = protein_location;
+    this->m_min = min;
+    this->m_max = max;
     this->transcription_delay = max_transcription_delay;
 
     // Set up levels vector by filling it with zeros for each timestep, then add the initial level to the end of the vector.
@@ -31,21 +31,21 @@ Protein::Protein(const std::string& name,
                  const double& min,
                  const double& max) {
     // Used when setting up environment proteins.
-    this->name = name;
-    this->protein_location = protein_location;
+    this->m_name = name;
+    this->m_protein_location = protein_location;
     this->env_level = env_level;
-    this->min = min;
-    this->max = max;
+    this->m_min = min;
+    this->m_max = max;
     this->transcription_delay = 1;
 }
 
 Protein::Protein(const Protein &rhs) {
-    this->name = rhs.name;
-    this->protein_location = rhs.protein_location;
+    this->m_name = rhs.m_name;
+    this->m_protein_location = rhs.m_protein_location;
     this->env_level = rhs.env_level;
-    this->min = rhs.min;
+    this->m_min = rhs.m_min;
     this->transcription_delay = rhs.transcription_delay;
-    this->max = rhs.max;
+    this->m_max = rhs.m_max;
     std::copy(rhs.cell_levels.begin(), rhs.cell_levels.end(),std::back_inserter(this->cell_levels));
 }
 
@@ -70,31 +70,31 @@ void Protein::set_cell_level(const double& new_level, const int& timestep_delay)
     }
 }
 
-double Protein::get_memAgent_level() const {
-    return this->memAgent_level;
+double Protein::get_memAgent_current_level() const {
+    return this->m_memAgent_current_level;
 }
 
-void Protein::set_memAgent_level(const double& new_level) {
+void Protein::set_memAgent_current_level(const double& new_level) {
     if (new_level < 0) {
-        this->memAgent_level = 0;
+        this->m_memAgent_current_level = 0;
     } else {
-        this->memAgent_level = new_level;
+        this->m_memAgent_current_level = new_level;
     }
 }
 std::string Protein::get_name() {
-    return this->name;
+    return this->m_name;
 }
 
 double Protein::get_min() const {
-	return this->min;
+	return this->m_min;
 }
 
 double Protein::get_max() const {
-	return this->max;
+	return this->m_max;
 }
 
 int Protein::get_location() const {
-	return this->protein_location;
+	return this->m_protein_location;
 }
 
 double Protein::get_env_level() const {
@@ -107,6 +107,18 @@ void Protein::set_env_level(const double& new_level) {
 
 int Protein::get_transcription_delay() const {
     return this->transcription_delay;
+}
+
+void Protein::update_protein_level() {
+    this->m_memAgent_current_level = this->m_memAgent_next_level;
+}
+
+double Protein::get_memAgent_next_level() const {
+    return this->m_memAgent_next_level;
+}
+
+void Protein::set_memAgent_next_level(const double &new_level) {
+    this->m_memAgent_next_level = new_level;
 }
 
 Protein::~Protein() = default;

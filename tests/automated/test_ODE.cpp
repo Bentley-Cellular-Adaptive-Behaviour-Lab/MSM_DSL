@@ -73,66 +73,46 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_DOUBLE_EQ(memAgent1->get_environment_protein_level("B"), 1);
-	EXPECT_DOUBLE_EQ(memAgent2->get_environment_protein_level("B"), 1);
-	EXPECT_DOUBLE_EQ(memAgent3->get_environment_protein_level("B"), 1);
+    EXPECT_DOUBLE_EQ(memAgent1->get_environment_level("B"), 1);
+	EXPECT_DOUBLE_EQ(memAgent2->get_environment_level("B"), 1);
+	EXPECT_DOUBLE_EQ(memAgent3->get_environment_level("B"), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
-	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("A"), 20);
-	EXPECT_FLOAT_EQ(memAgent2->get_memAgent_protein_level("A"), 20);
-	EXPECT_FLOAT_EQ(memAgent3->get_memAgent_protein_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_current_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent2->get_memAgent_current_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent3->get_memAgent_current_level("A"), 20);
 }
 
-TEST_F(CrossCellODEMemAgentTest, cellODETest) {
-	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("A"), 1);
-	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_protein_level("B"), 1);
+TEST_F(JunctionTest, JunctionODETest) {
 
-	EXPECT_FLOAT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 11);
-	EXPECT_FLOAT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 1);
-
-	EXPECT_FLOAT_EQ(round(memAgent3->get_memAgent_protein_level("A")), 11);
-	EXPECT_FLOAT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 1);
-}
-
-TEST_F(CrossCellODEMemAgentTest, junctionODETest) {
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("C")), 11);
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("D")), 1);
-
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("C")), 11);
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("D")), 1);
-
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("C")), 1);
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("D")), 1);
 }
 
 // Tests that memAgents are able to check multiple neighbours.
-// Runs an ODE in two memAgents with have either 2 (memAgent2) or 3 (memAgent7) neighbours, for a single timestep.
-// TODO: Revisit this test, asynchronous updating of memAgents.
-TEST_F(MultiNeighbourODEMemAgentTest, cellODETest) {
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("A")), 20);
-	EXPECT_EQ(round(memAgent7->get_memAgent_protein_level("C")), 25);
+TEST_F(FilopodiaTest, DISABLED_cellODETest) {
+	EXPECT_FLOAT_EQ(memAgent2->get_memAgent_current_level("A"), 20);
+	EXPECT_FLOAT_EQ(memAgent7->get_memAgent_current_level("C"), 25);
 
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 5);
-	EXPECT_EQ(round(memAgent3->get_memAgent_protein_level("B")), 5);
-	EXPECT_EQ(round(memAgent4->get_memAgent_protein_level("D")), 5);
-	EXPECT_EQ(round(memAgent5->get_memAgent_protein_level("D")), 5);
-	EXPECT_EQ(round(memAgent6->get_memAgent_protein_level("D")), 5);
+	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_current_level("B"), 5);
+	EXPECT_FLOAT_EQ(memAgent3->get_memAgent_current_level("B"), 5);
+	EXPECT_FLOAT_EQ(memAgent4->get_memAgent_current_level("D"), 5);
+	EXPECT_FLOAT_EQ(memAgent5->get_memAgent_current_level("D"), 5);
+	EXPECT_FLOAT_EQ(memAgent6->get_memAgent_current_level("D"), 5);
 }
 
-TEST_F(BasicFilODEMemAgentTest, basicFilTest) {
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("B")), 26);
-	EXPECT_EQ(round(memAgent1->get_memAgent_protein_level("C")), 26);
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("B")), 26);
-	EXPECT_EQ(round(memAgent2->get_memAgent_protein_level("C")), 26);
+TEST_F(BasicFilODEMemAgentTest, DISABLED_basicFilTest) {
+	EXPECT_EQ(round(memAgent1->get_memAgent_current_level("B")), 26);
+	EXPECT_EQ(round(memAgent1->get_memAgent_current_level("C")), 26);
+	EXPECT_EQ(round(memAgent2->get_memAgent_current_level("B")), 26);
+	EXPECT_EQ(round(memAgent2->get_memAgent_current_level("C")), 26);
 }
 
-TEST_F(BasicCellDistributionTest, preDistributionTest) {
+TEST_F(BasicCellDistributionTest, DISABLED_preDistributionTest) {
 	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 1000);
-	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 40);
+	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_current_level("A"), 40);
 }
 
-TEST_F(BasicCellDistributionTest, postDistributionTest) {
+TEST_F(BasicCellDistributionTest, DISABLED_postDistributionTest) {
 	for (int i = 0; i < 10; i++) {
 		if (i != 0) {
 			this->cell->cell_agent->distribute_proteins();
@@ -144,37 +124,10 @@ TEST_F(BasicCellDistributionTest, postDistributionTest) {
 		this->printCellProteinLevels(i+1);
 	}
 	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 750);
-	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
+	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_current_level("A"), 30);
 }
 
-//TEST_F(CellJunctionTest, crossJunctionODETest) {
-//    this->printCellProteinLevels(0);
-//    for (int i = 1; i <= 10; i++) {
-//        for (auto cell : tissueMonolayer->m_cell_agents) {
-//            cell->distribute_proteins();
-//        }
-//
-//		for (auto cell : tissueMonolayer->m_cell_agents) {
-//			for (auto memAgent : cell->nodeAgents) {
-//				runODE(memAgent);
-//			}
-//		}
-//
-//        for (auto *cell : tissueMonolayer->m_cell_agents) {
-//            cell->calculate_cell_protein_levels();
-//        }
-//
-//        this->printCellProteinLevels(i);
-//
-//        for (auto *cell : tissueMonolayer->m_cell_agents) {
-//            cell->cycle_protein_levels();
-//        }
-//    }
-////	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A"), 750);
-////	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_protein_level("A"), 30);
-//}
-
-TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
+TEST_F(TranscriptionDelayTest, DISABLED_transcriptionDelayTest) {
     std::cout << "Timestep,A,B,C,D,\n";
     std::cout << 0 << ",";
     printProteinLevels(this->tissueMonolayer->m_cell_agents[0]);
@@ -229,71 +182,6 @@ TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
 
         if (i == 4) {
             this->tissueMonolayer->m_cell_agents[0]->set_cell_protein_level("A", 200, 1);
-        }
-    }
-}
-
-TEST_F(NotchPathwayTest, NotchPathwayTest) {
-    // Have multiple test scenarios.
-    // Check on off patterning in a series of cells.
-    // Maybe only check qualitative behaviours?
-    printCellProteinLevels(0);
-    for (int i = 1; i < 10; i++) {
-        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
-            ec->distribute_proteins();
-        }
-
-        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
-            for (auto *nodeAgent : ec->nodeAgents) {
-                run_memAgent_ODE(nodeAgent);
-            }
-        }
-
-        // Calculate the new cell levels.
-        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
-            ec->calculate_cell_protein_levels();
-        }
-
-        // Run ODEs on the new cell levels.
-        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
-            run_Cell_ODE(ec);
-        }
-
-        // Now print the new levels.
-        printCellProteinLevels(i);
-
-        // Cycle the protein levels.
-        for (auto *ec : this->tissueMonolayer->m_cell_agents) {
-            ec->cycle_protein_levels();
-        }
-    }
-}
-
-TEST_F(UnequalDistributionTest, UnequalDistributionTest) {
-    this->printProteinLevels(0);
-    for (int i = 1; i <= 10; i++) {
-        runMemAgentODE(centreMemAgent);
-        printProteinLevels(i);
-    }
-}
-
-
-TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentTest) {
-
-}
-
-TEST_F(VenkatramanCellTest, VenkatramanCellTest) {
-    EC *cell1 = this->cell1;
-    EC *cell2 = this->cell2;
-
-    printProteinLevels(0);
-    for (int timestep = 1; timestep <= 10000; timestep++) {
-        VenkatramanCellTest_run_cell_ODEs(cell1);
-        VenkatramanCellTest_run_cell_ODEs(cell2);
-        cell1->cycle_protein_levels();
-        cell2->cycle_protein_levels();
-        if (timestep % 50 == 0) {
-            printProteinLevels(timestep);
         }
     }
 }

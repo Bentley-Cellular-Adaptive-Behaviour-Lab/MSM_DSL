@@ -144,11 +144,15 @@ public:
 	void add_cell_proteins();
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
-    double get_memAgent_protein_level(const std::string& protein_name) const;
-    double get_environment_protein_level(const std::string& protein_name);
+    double get_memAgent_current_level(const std::string& protein_name) const;
+    double get_environment_level(const std::string& protein_name);
     double get_local_protein_level(const std::string& protein_name);
     double get_junction_protein_level(const std::string& protein_name);
-    void set_protein_level(const std::string& protein_name, const double& new_level);
+
+    void set_protein_current_level(const std::string& protein_name, const double& new_level);
+    void set_protein_next_level(const std::string& protein_name, const double& new_level);
+
+    double get_memAgent_next_level(const std::string& protein_name) const;
     double get_filopodia_protein_level(const std::string& protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(const std::string& protein_name,
@@ -163,6 +167,9 @@ public:
                              const bool& affects_neighbour_cell,
                              const int& protein_location);
     std::vector<EC*> find_cells(const bool& add_this_cell);
+
+    void cycle_protein_levels();
+
     std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*>& relevantCells,
                                                            const std::string& proteinName,
                                                            const bool& affectsThisCell,

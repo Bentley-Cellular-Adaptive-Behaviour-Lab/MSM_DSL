@@ -2352,37 +2352,72 @@ bool MemAgent::has_protein(const std::string& query_name) const {
 }
 
 /*****************************************************************************************
-*  Name:		set_protein_level
+*  Name:		set_protein_current_level
 *  Description: Sets the level of a protein for this timestep, if that memAgent possesses that protein.
 *  Returns:		boolean
 ******************************************************************************************/
 
-void MemAgent::set_protein_level(const std::string& protein_name, const double& new_level) {
+void MemAgent::set_protein_current_level(const std::string& protein_name, const double& new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
         	if (new_level < 0) {
-        		protein->set_memAgent_level(0);
+                protein->set_memAgent_current_level(0);
         	} else {
-                protein->set_memAgent_level(new_level);
+                protein->set_memAgent_current_level(new_level);
             }
         }
     }
 }
 
 /*****************************************************************************************
-*  Name:		get_protein_level
-*  Description: Returns the level of a protein owned by this memAgent.
+*  Name:		set_protein_next_level
+*  Description: Sets the level of a protein for the next timestep, if that memAgent possesses that protein.
+*  Returns:		boolean
+******************************************************************************************/
+
+void MemAgent::set_protein_next_level(const std::string& protein_name, const double& new_level) {
+    assert(this->has_protein(protein_name));
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == protein_name) {
+            if (new_level < 0) {
+                protein->set_memAgent_next_level(0);
+            } else {
+                protein->set_memAgent_next_level(new_level);
+            }
+        }
+    }
+}
+
+/*****************************************************************************************
+*  Name:		get_memAgent_current_level
+*  Description: Returns the level of a protein owned by this memAgent, at this timestep.
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_memAgent_protein_level(const std::string& protein_name) const {
+double MemAgent::get_memAgent_current_level(const std::string& protein_name) const {
     if (this->has_protein(protein_name)) {
 		for (auto protein : this->owned_proteins) {
 			if (protein->get_name() == protein_name) {
-				return protein->get_memAgent_level();
+				return protein->get_memAgent_current_level();
 			}
 		}
+    }
+}
+
+/*****************************************************************************************
+*  Name:		get_memAgent_next_level
+*  Description: Returns the level of a protein owned by this memAgent, at the next timestep.
+*  Returns:		float
+******************************************************************************************/
+
+double MemAgent::get_memAgent_next_level(const std::string& protein_name) const {
+    if (this->has_protein(protein_name)) {
+        for (auto protein : this->owned_proteins) {
+            if (protein->get_name() == protein_name) {
+                return protein->get_memAgent_next_level();
+            }
+        }
     }
 }
 
@@ -2392,7 +2427,7 @@ double MemAgent::get_memAgent_protein_level(const std::string& protein_name) con
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_environment_protein_level(const std::string& protein_name) {
+double MemAgent::get_environment_level(const std::string& protein_name) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
@@ -2661,13 +2696,13 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
             if (worldP->grid[m][n][p].getType() == const_M) {
                 for (auto memAgent : worldP->grid[m][n][p].getMids()) {
                     if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
-                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                        protein_level+= memAgent->get_memAgent_current_level(protein_name);
                     }
                 }
             } else if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell == this->Cell) {
-                        protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+                        protein_level+= memAgent->get_memAgent_current_level(protein_name);
 					}
 				}
             }
@@ -2811,7 +2846,7 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 			if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
 					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-						protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+						protein_level+= memAgent->get_memAgent_current_level(protein_name);
                         relevant_memAgents++;
 					}
 				}
@@ -2949,6 +2984,10 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
             p = k + 1;
         }
 
+        if (m == 25 && n == 26 && p == 25) {
+            int test = 0;
+        }
+
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
@@ -2957,7 +2996,7 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
                 	// Check that this memAgent is a junctional memAgent, it has the protein we're looking for, and that it belongs to a different cell.
                 	if (memAgent->junction) {
 						if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-							protein_level+= memAgent->get_memAgent_protein_level(protein_name);
+							protein_level+= memAgent->get_memAgent_current_level(protein_name);
                             relevant_memAgents++;
 						}
                 	}
@@ -2965,7 +3004,12 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
             }
         }
     }
-    return (double) (protein_level / relevant_memAgents);
+
+    if (relevant_memAgents > 0) {
+        return (double) (protein_level / relevant_memAgents);
+    } else {
+        return 0;
+    }
 }
 
 /*****************************************************************************************
@@ -3164,7 +3208,7 @@ void MemAgent::distribute_calculated_proteins(const std::string& protein_name,
     auto divisor = relevant_memAgents.size();
     double new_amount = total_protein_level / (double) divisor;
     for (auto memAgent : relevant_memAgents) {
-        memAgent->set_protein_level(protein_name, new_amount);
+        memAgent->set_protein_current_level(protein_name, new_amount);
     }
 }
 
@@ -4406,9 +4450,9 @@ std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
 
 void MemAgent::update_protein_level(const std::string& protein_name, const double& protein_delta) {
     // Change the level of a protein at a given memAgent by the specified amount.
-    double current_level = this->get_memAgent_protein_level(protein_name);
+    double current_level = this->get_memAgent_current_level(protein_name);
     double new_level = current_level + protein_delta;
-    this->set_protein_level(protein_name, new_level);
+    this->set_protein_current_level(protein_name, new_level);
 }
 
 void MemAgent::shapeResponse(const float& randomChance) {
@@ -4539,5 +4583,12 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
                 currentNode->veilAdvancing = true;
             }
         } while (flag == 0);
+    }
+}
+
+void MemAgent::cycle_protein_levels() {
+    // Goes over all proteins owned by a memAgent, then sets the next timestep to be the current one.
+    for (auto *protein : this->owned_proteins) {
+        protein->update_protein_level();
     }
 }

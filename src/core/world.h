@@ -227,6 +227,9 @@ public:
           const std::vector<double>& paramValues);
 
     ODEs *odes;
+
+    void update_memAgent_protein_levels();
+
     void setup_ODEs();
     void run_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent);
     std::string get_time_string();

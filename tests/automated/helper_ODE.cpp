@@ -60,17 +60,21 @@ void BasicODEMemAgentTest::SetUp() {
 
 	// Add proteins to memAgents.
 	memAgent1->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
-	memAgent1->owned_proteins[0]->set_memAgent_level(10);
+    memAgent1->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent2->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
-	memAgent2->owned_proteins[0]->set_memAgent_level(10);
+    memAgent2->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent3->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 1000, 1));
-	memAgent3->owned_proteins[0]->set_memAgent_level(10);
+    memAgent3->owned_proteins[0]->set_memAgent_current_level(10);
 
 	for (int i = 0; i < 10; i++) {
 		runODE(memAgent1);
 		runODE(memAgent2);
 		runODE(memAgent3);
-	}
+
+        memAgent1->cycle_protein_levels();
+        memAgent2->cycle_protein_levels();
+        memAgent3->cycle_protein_levels();
+    }
 }
 
 void BasicODEMemAgentTest::TearDown() {
@@ -139,12 +143,12 @@ void BasicODEMemAgentTest::runODE(MemAgent *memAgent) {
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
 
-	states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A
-	states[1] = memAgent->get_environment_protein_level("B"); // Protein B
+	states[0] = memAgent->get_memAgent_current_level("A"); // Protein A
+	states[1] = memAgent->get_environment_level("B"); // Protein B
 
     integrate_adaptive(controlled_stepper , BasicMemAgentODE_system,  states, 0.0 , 1.0 , 0.1 );
 
-	memAgent->set_protein_level("A", states[0]);
+    memAgent->set_protein_next_level("A", states[0]);
 }
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t) {
@@ -164,28 +168,28 @@ void linearODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double 
 }
 
 /*****************************************************************************************
-*  Name:		CrossCellODEMemAgentTest::SetUp()
-*  Description: - Creates a world with three memAgents, which each have a certain level of
-*  				proteins A, B, C and D.
- *  			- memAgents 1 & 2 are junctional and belong to different cells.
-*	  			- memAgent 3 belongs to the same cell as memAgent 2.
+*  Name:		JunctionTest::SetUp()
+*  Description: - Creates a world with four memAgents, which each have different levels of
+*  				junctional proteins A and B.
+*  			    - memAgents 1, 2 and 3 are junctional and belong to the same cells.
+*	  			- memAgent 4 belongs to a different cell.
 *	  			Diagram:
 *
-*	  			O O O O O O O O O O O O O O O O
-*	  			O O O O O O 1 2 3 O O O O O O O
-*	  			O O O O O O O O O O O O O O O O
+*	  			O O O O O
+*	  			O 1 2 3 O
+*	  			O O 4 O O
+*	  			0 0 0 0 0
 *
-*	  			- The world runs 10 rounds of updating an ODE between A and B (cell proteins) as well as
-*	  			C and D (junctional proteins) and checks the levels in the memAgent after these.
-*	  			- Tests whether junctional and intercell ODEs work correctly.
+*	  			- The world runs 10 rounds of updating an ODE between A and B (junction proteins)
+*	  			and checks the levels in the memAgent after these.
+*	  			- Tests whether junctional ODEs work correctly.
 *
-*	  			ODE: 1 B -> 1 A every timestep.
-*	  			ODE: 1 D -> 1 C every timestep.
+*	  			ODE: 0.01 (adjacent) A -> 0.01 B every timestep.
 *
 *  Returns:		void
 ******************************************************************************************/
 
-void CrossCellODEMemAgentTest::SetUp() {
+void JunctionTest::SetUp() {
 	// Setup world container for this test fixture.
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
@@ -209,153 +213,160 @@ void CrossCellODEMemAgentTest::SetUp() {
 	// Setup agent proteins.
 	setupAgentProteins();
 
-	std::cout << "mem1_A," << "mem2_A," << "mem3_A,"
-			  << "mem1_B," << "mem2_B," << "mem3_B,"
-			  << "mem1_C," << "mem2_C," << "mem3_C,"
-			  << "mem1_D," << "mem2_D," << "mem3_D," <<  "time\n";
-	printMemAgentProteinLevels(0);
-
 	for (int i = 0; i < 10; i++) {
-		runODE(memAgent1);
-		runODE(memAgent2);
-		runODE(memAgent3);
-	}
+		runODE(m_memAgent1);
+		runODE(m_memAgent2);
+		runODE(m_memAgent3);
+        runODE(m_memAgent4);
+
+        m_memAgent1->cycle_protein_levels();
+        m_memAgent2->cycle_protein_levels();
+        m_memAgent3->cycle_protein_levels();
+        m_memAgent4->cycle_protein_levels();
+
+        // Log levels after first timestep.
+        if (i == 0) {
+            m_memAgent1_A = m_memAgent1->get_memAgent_current_level("A");
+            m_memAgent1_B = m_memAgent1->get_memAgent_current_level("B");
+
+            m_memAgent2_A = m_memAgent2->get_memAgent_current_level("A");
+            m_memAgent2_B = m_memAgent2->get_memAgent_current_level("B");
+
+            m_memAgent3_A = m_memAgent3->get_memAgent_current_level("A");
+            m_memAgent3_B = m_memAgent3->get_memAgent_current_level("B");
+
+            m_memAgent4_A = m_memAgent4->get_memAgent_current_level("A");
+            m_memAgent4_B = m_memAgent4->get_memAgent_current_level("B");
+        }
+    }
 }
 
-void CrossCellODEMemAgentTest::TearDown() {
+void JunctionTest::TearDown() {
 
 }
 
-void CrossCellODEMemAgentTest::addWorld(World *crossCellWorld) {
+void JunctionTest::addWorld(World *crossCellWorld) {
 	this->world = crossCellWorld;
 }
 
-void CrossCellODEMemAgentTest::addWorldContainer(World_Container *crossCellWorldContainer) {
-	this->worldContainer = crossCellWorldContainer;
+void JunctionTest::addWorldContainer(World_Container *JunctionWorldContainer) {
+	this->worldContainer = JunctionWorldContainer;
 }
 
-void CrossCellODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world) {
+void JunctionTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world) {
 	// Create three memAgents, set their positions and add them to the world.
 	auto memAgent1 = new MemAgent(dummyCell1, world);
-	this->memAgent1 = memAgent1;
-	memAgent1->Mx = 25;
-	memAgent1->My = 25;
-	memAgent1->Mz = 25;
-	memAgent1->junction = true;
-	this->world->grid[25][25][25].setType(const_M);
-	this->world->grid[25][25][25].addMemAgent(memAgent1);
+	this->m_memAgent1 = memAgent1;
+    memAgent1->Mx = 24;
+    memAgent1->My = 25;
+    memAgent1->Mz = 25;
+    memAgent1->junction = true;
+	this->world->grid[24][25][25].setType(const_M);
+	this->world->grid[24][25][25].addMemAgent(memAgent1);
 
-	auto memAgent2 = new MemAgent(dummyCell2, world);
-	this->memAgent2 = memAgent2;
-	memAgent2->Mx = 26;
+	auto memAgent2 = new MemAgent(dummyCell1, world);
+	this->m_memAgent2 = memAgent2;
+	memAgent2->Mx = 25;
 	memAgent2->My = 25;
 	memAgent2->Mz = 25;
 	memAgent2->junction = true;
-	this->world->grid[26][25][25].setType(const_M);
-	this->world->grid[26][25][25].addMemAgent(memAgent2);
+	this->world->grid[25][25][25].setType(const_M);
+	this->world->grid[25][25][25].addMemAgent(memAgent2);
 
-	auto memAgent3 = new MemAgent(dummyCell2, world);
-	this->memAgent3 = memAgent3;
-	memAgent3->Mx = 27;
+	auto memAgent3 = new MemAgent(dummyCell1, world);
+	this->m_memAgent3 = memAgent3;
+	memAgent3->Mx = 26;
 	memAgent3->My = 25;
 	memAgent3->Mz = 25;
-	memAgent3->junction = false;
-	this->world->grid[27][25][25].setType(const_M);
-	this->world->grid[27][25][25].addMemAgent(memAgent3);
+	memAgent3->junction = true;
+	this->world->grid[26][25][25].setType(const_M);
+	this->world->grid[26][25][25].addMemAgent(memAgent3);
+
+    auto memAgent4 = new MemAgent(dummyCell2, world);
+    this->m_memAgent4 = memAgent4;
+    memAgent4->Mx = 25;
+    memAgent4->My = 26;
+    memAgent4->Mz = 25;
+    memAgent4->junction = true;
+    this->world->grid[25][26][25].setType(const_M);
+    this->world->grid[25][26][25].addMemAgent(memAgent4);
 }
 
-void CrossCellODEMemAgentTest::setupAgentProteins() const {
-	memAgent1->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
-	memAgent1->owned_proteins[0]->set_memAgent_level(1);
-	memAgent2->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
-	memAgent2->owned_proteins[0]->set_memAgent_level(1);
-	memAgent3->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 1, 0, 100,1));
-	memAgent3->owned_proteins[0]->set_memAgent_level(1);
+void JunctionTest::setupAgentProteins() const {
+	m_memAgent1->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent1->owned_proteins[0]->set_memAgent_current_level(5);
+    m_memAgent1->owned_proteins[0]->set_memAgent_next_level(5);
 
-	memAgent1->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
-	memAgent1->owned_proteins[1]->set_memAgent_level(1);
-	memAgent2->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
-	memAgent2->owned_proteins[1]->set_memAgent_level(1);
-	memAgent3->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 1, 0, 100, 1));
-	memAgent3->owned_proteins[1]->set_memAgent_level(1);
+    m_memAgent2->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent2->owned_proteins[0]->set_memAgent_current_level(10);
+    m_memAgent2->owned_proteins[0]->set_memAgent_next_level(10);
 
-	memAgent1->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins[2]->set_memAgent_level(1);
-	memAgent2->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent2->owned_proteins[2]->set_memAgent_level(1);
-	memAgent3->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent3->owned_proteins[2]->set_memAgent_level(1);
+    m_memAgent3->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent3->owned_proteins[0]->set_memAgent_current_level(15);
+    m_memAgent3->owned_proteins[0]->set_memAgent_next_level(15);
 
-	memAgent1->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent1->owned_proteins[3]->set_memAgent_level(1);
-	memAgent2->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent2->owned_proteins[3]->set_memAgent_level(1);
-	memAgent3->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
-	memAgent3->owned_proteins[3]->set_memAgent_level(1);
+    m_memAgent4->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent4->owned_proteins[0]->set_memAgent_current_level(6);
+    m_memAgent4->owned_proteins[0]->set_memAgent_next_level(6);
+
+
+    m_memAgent1->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent1->owned_proteins[1]->set_memAgent_current_level(0);
+    m_memAgent1->owned_proteins[1]->set_memAgent_next_level(0);
+
+    m_memAgent2->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent2->owned_proteins[1]->set_memAgent_current_level(0);
+    m_memAgent2->owned_proteins[1]->set_memAgent_next_level(0);
+
+    m_memAgent3->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent3->owned_proteins[1]->set_memAgent_current_level(0);
+    m_memAgent3->owned_proteins[1]->set_memAgent_next_level(0);
+
+    m_memAgent4->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_JUNCTION, 1, 0, 100, 1));
+    m_memAgent4->owned_proteins[1]->set_memAgent_current_level(0);
+    m_memAgent4->owned_proteins[1]->set_memAgent_next_level(0);
 }
 
-void CrossCellODEMemAgentTest::setupEnvironment() {
+void JunctionTest::setupEnvironment() {
 
 }
 
-void CrossCellODEMemAgentTest::runODE(MemAgent *memAgent) {
-	crossCell_ode_states ode_states;
-    typedef odeint::runge_kutta_cash_karp54< crossCell_ode_states > error_stepper_type;
+void JunctionTest::runODE(MemAgent *memAgent) {
+	JunctionTestStates ode_states;
+    typedef odeint::runge_kutta_cash_karp54< JunctionTestStates > error_stepper_type;
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
 
-    ode_states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A (Cell Protein)
-	ode_states[1] = memAgent->get_local_protein_level("B"); // Protein B (Cell Protein)
+	ode_states[0] = memAgent->get_memAgent_current_level("A"); // Protein A (Junctional Protein, This Cell)
+	ode_states[1] = memAgent->get_memAgent_current_level("B"); // Protein B (Junctional Protein, This Cell)
+    ode_states[2] = memAgent->get_junction_protein_level("A"); // Protein A (Junctional Protein, Other Cells)
 
-	ode_states[2] = memAgent->get_memAgent_protein_level("C"); // Protein C (Junctional Protein)
-	ode_states[3] = memAgent->get_junction_protein_level("D"); // Protein D (Junctional Protein)
+    integrate_adaptive(controlled_stepper, JunctionSystem, ode_states, 0.0, 1.0, 0.1);
 
-    integrate_adaptive(controlled_stepper , CrossCellODE_system,  ode_states, 0.0 , 1.0 , 0.1 );
-
-    memAgent->set_protein_level("A", ode_states[0]);
-	memAgent->set_protein_level("C", ode_states[2]);
+    memAgent->set_protein_next_level("A", ode_states[0]);
+    memAgent->set_protein_next_level("B", ode_states[1]);
 }
 
-void CrossCellODEMemAgentTest::CrossCellODE_system(const crossCell_ode_states &x, crossCell_ode_states &dxdt, double t) {
+void JunctionTest::JunctionSystem(const JunctionTestStates &x, JunctionTestStates &dxdt, double t) {
 	double A = x[0];
 	double B = x[1];
-	double C = x[2];
-	double D = x[3];
+	double adjacent_A = x[2];
 
-	dxdt[0] = +B; 	// Rate of change for species A
-	dxdt[1] = 0; 	// Rate of change for species B
-	dxdt[2] = +D; 	// Rate of change for species C
-	dxdt[3] = 0; 	// Rate of change for species B
-}
-
-void CrossCellODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
-
-	std::cout << memAgent1->get_memAgent_protein_level("A") << ","
-			  << memAgent2->get_memAgent_protein_level("A") << ","
-			  << memAgent3->get_memAgent_protein_level("A") << ","
-			  << memAgent1->get_memAgent_protein_level("B") << ","
-			  << memAgent2->get_memAgent_protein_level("B") << ","
-			  << memAgent3->get_memAgent_protein_level("B") << ","
-			  << memAgent1->get_memAgent_protein_level("C") << ","
-			  << memAgent2->get_memAgent_protein_level("C") << ","
-			  << memAgent3->get_memAgent_protein_level("C") << ","
-			  << memAgent1->get_memAgent_protein_level("D") << ","
-			  << memAgent2->get_memAgent_protein_level("D") << ","
-			  << memAgent3->get_memAgent_protein_level("D") << ","
-			  << timestep << "\n";
+	dxdt[0] = -0.01*A; 	// Rate of change for species A
+	dxdt[1] = +0.01*adjacent_A; 	// Rate of change for species B
+	dxdt[2] = 0; 	// Rate of change for adjacent_A - always 0.
 }
 
 /*****************************************************************************************
 *  Name:		MultiNeighbourODEMemAgentTest::SetUp()
-*  Description: - Creates a world with seven memAgents, which each have a certain level of proteins A, B.
-*  				- memAgents 1, 2 & 3 belong to the same cell.
-*	  			- memAgents 4, 5 & 6 belong to the same cell.
+*  Description: - Creates a world with four memAgents, which each have a certain level of proteins A, B.
+*	  			- memAgents 1, 2 & 3 belong to the same cell.
 *
 *	  			Diagram:
 *
 *	  			O O O O O O O O O O O O O O O O
-*	  			O O 1 2 3 O 0 0 0 O 4 5 6 O O O
-*	  			O O O O O O O O O O O 7 O O O O
+*	  			O O 1 2 3 O 0 0 0 O 1 2 3 O O O
+*	  			O O O O O O O O O O O 4 5 O O O
 *	  			O O O O O O O O O O O O O O O O
 *
 *	  			The world runs 10 rounds of updating an ODE between A and B (cell proteins)
@@ -366,7 +377,7 @@ void CrossCellODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
 *  Returns:		void
 ******************************************************************************************/
 
-void MultiNeighbourODEMemAgentTest::SetUp() {
+void FilopodiaTest::SetUp() {
 	// Setup world container for this test fixture.
 	auto w_container = new World_Container();
 	addWorldContainer(w_container);
@@ -390,35 +401,39 @@ void MultiNeighbourODEMemAgentTest::SetUp() {
 	// Setup agent proteins.
 	setupAgentProteins();
 
-	std::cout << "mem1_A," << "mem2_A," << "mem3_A,"
-			  << "mem1_B," << "mem2_B," << "mem3_B,"
-			  << "mem4_C," << "mem5_C," << "mem6_C," << "mem7_C,"
-			  << "mem4_D," << "mem5_D," << "mem6_D," << "mem7_D,"
-			  <<  "time\n";
+//	std::cout << "mem1_A," << "mem2_A," << "mem3_A,"
+//			  << "mem1_B," << "mem2_B," << "mem3_B,"
+//			  << "mem4_C," << "mem5_C," << "mem6_C," << "mem7_C,"
+//			  << "mem4_D," << "mem5_D," << "mem6_D," << "mem7_D,"
+//			  <<  "time\n";
 
 	printMemAgentProteinLevels(0);
 
 	for (int i = 0; i < 1; i++) {
-		// Updating is not asynchronous, so update only two memAgents and check that they're .
+        runODE(memAgent1);
 		runODE(memAgent2);
-		runODE(memAgent7);
-		printMemAgentProteinLevels(i + 1);
+        runODE(memAgent3);
+        runODE(memAgent4);
+        runODE(memAgent5);
+        runODE(memAgent6);
+        runODE(memAgent7);
+//		printMemAgentProteinLevels(i + 1);
 	}
 }
 
-void MultiNeighbourODEMemAgentTest::TearDown() {
+void FilopodiaTest::TearDown() {
 
 }
 
-void MultiNeighbourODEMemAgentTest::addWorld(World *multiNeighbourWorld) {
+void FilopodiaTest::addWorld(World *multiNeighbourWorld) {
 	this->world = multiNeighbourWorld;
 }
 
-void MultiNeighbourODEMemAgentTest::addWorldContainer(World_Container *multiNeighbourWorldContainer) {
+void FilopodiaTest::addWorldContainer(World_Container *multiNeighbourWorldContainer) {
 	this->worldContainer = multiNeighbourWorldContainer;
 }
 
-void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world) {
+void FilopodiaTest::createMemAgents(EC *dummyCell1, EC *dummyCell2, World *world) {
 	// Scenario 1.
 	auto *memAgent1 = new MemAgent(dummyCell1, world);
 	this->memAgent1 = memAgent1;
@@ -486,128 +501,129 @@ void MultiNeighbourODEMemAgentTest::createMemAgents(EC *dummyCell1, EC *dummyCel
 	this->world->grid[30][29][30].addMemAgent(memAgent7);
 }
 
-void MultiNeighbourODEMemAgentTest::setupEnvironment() {
+void FilopodiaTest::setupEnvironment() {
 
 }
 
-void MultiNeighbourODEMemAgentTest::runODE(MemAgent *memAgent) {
-	multiAgent_ode_states ode_states;
-	odeint::euler<multiAgent_ode_states> stepper;
+void FilopodiaTest::runODE(MemAgent *memAgent) {
+    multiAgent_ode_states ode_states;
+    typedef odeint::runge_kutta_cash_karp54< multiAgent_ode_states > error_stepper_type;
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
 
-	ode_states[0] = memAgent->get_memAgent_protein_level("A"); // Protein A (Cell Protein) *Uses local value*
-	ode_states[1] = memAgent->get_local_protein_level("B"); // Protein B (Cell Protein) *Uses neighbour's value*
-	ode_states[2] = memAgent->get_memAgent_protein_level("C"); // Protein C (Junctional Protein) *Uses local value*
-	ode_states[3] = memAgent->get_junction_protein_level("D"); // Protein D (Junctional Protein) *Uses neighbour's value*
+	ode_states[0] = memAgent->get_memAgent_current_level("A"); // Protein A (Cell Protein)
+	ode_states[1] = memAgent->get_memAgent_current_level("B"); // Protein B (Cell Protein)
+	ode_states[2] = memAgent->get_memAgent_current_level("C"); // Protein C (Junctional Protein)
+	ode_states[3] = memAgent->get_memAgent_current_level("D"); // Protein D (Junctional Protein)
 
-	stepper.do_step(MultiAgentODE_system, ode_states, 0.0, 1);
+    integrate_adaptive(controlled_stepper , MultiAgentODE_system,  ode_states, 0.0 , 1.0 , 0.1 );
 
-	memAgent->set_protein_level("A", ode_states[0]);
-	memAgent->set_protein_level("C", ode_states[2]);
-
-	memAgent->distribute_calculated_proteins("B", ode_states[1], true, false, PROTEIN_LOCATION_CELL); /* Use this cell value */
-	memAgent->distribute_calculated_proteins("D", ode_states[3], false, true, PROTEIN_LOCATION_JUNCTION); /* Use neighbour's value */
+    memAgent->set_protein_next_level("A", ode_states[0]);
+    memAgent->set_protein_next_level("B", ode_states[1]);
+    memAgent->set_protein_next_level("C", ode_states[2]);
+    memAgent->set_protein_next_level("D", ode_states[3]);
 }
 
-void MultiNeighbourODEMemAgentTest::MultiAgentODE_system(const multiAgent_ode_states &x,
-														 multiAgent_ode_states &dxdt,
-														 double t) {
+void FilopodiaTest::MultiAgentODE_system(const multiAgent_ode_states &x,
+                                         multiAgent_ode_states &dxdt,
+                                         double t) {
 	double A = x[0];
 	double B = x[1];
 	double C = x[2];
 	double D = x[3];
 
-	dxdt[0] = +x[1] * 0.5; 	// Rate of change for species A
-	dxdt[1] = -x[1] * 0.5; 	// Rate of change for species B
-	dxdt[2] = +x[3] * 0.5; 	// Rate of change for species C
-	dxdt[3] = -x[3] * 0.5; 	// Rate of change for species B
+	dxdt[0] = +B * 0.5; 	// Rate of change for species A
+	dxdt[1] = -B * 0.5; 	// Rate of change for species B
+	dxdt[2] = +D * 0.5; 	// Rate of change for species C
+	dxdt[3] = -D * 0.5; 	// Rate of change for species D
 }
 
-void MultiNeighbourODEMemAgentTest::setupAgentProteins() const {
+void FilopodiaTest::setupAgentProteins() const {
 	// Scenario 1
 	memAgent1->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent1->owned_proteins[0]->set_memAgent_level(10);
+    memAgent1->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent2->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent2->owned_proteins[0]->set_memAgent_level(10);
+    memAgent2->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent3->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent3->owned_proteins[0]->set_memAgent_level(10);
+    memAgent3->owned_proteins[0]->set_memAgent_current_level(10);
 
 	memAgent1->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent1->owned_proteins[1]->set_memAgent_level(10);
+    memAgent1->owned_proteins[1]->set_memAgent_current_level(10);
 	memAgent2->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent2->owned_proteins[1]->set_memAgent_level(10);
+    memAgent2->owned_proteins[1]->set_memAgent_current_level(10);
 	memAgent3->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 10, 0, 100, 1));
-	memAgent3->owned_proteins[1]->set_memAgent_level(10);
+    memAgent3->owned_proteins[1]->set_memAgent_current_level(10);
 
 	// Scenario 2
 	memAgent4->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent4->owned_proteins[0]->set_memAgent_level(10);
+    memAgent4->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent5->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent5->owned_proteins[0]->set_memAgent_level(10);
+    memAgent5->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent6->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent6->owned_proteins[0]->set_memAgent_level(10);
+    memAgent6->owned_proteins[0]->set_memAgent_current_level(10);
 	memAgent7->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent7->owned_proteins[0]->set_memAgent_level(10);
+    memAgent7->owned_proteins[0]->set_memAgent_current_level(10);
 
 	memAgent4->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent4->owned_proteins[1]->set_memAgent_level(10);
+    memAgent4->owned_proteins[1]->set_memAgent_current_level(10);
 	memAgent5->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent5->owned_proteins[1]->set_memAgent_level(10);
+    memAgent5->owned_proteins[1]->set_memAgent_current_level(10);
 	memAgent6->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent6->owned_proteins[1]->set_memAgent_level(10);
+    memAgent6->owned_proteins[1]->set_memAgent_current_level(10);
 	memAgent7->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 10, 0, 100, 1));
-	memAgent7->owned_proteins[1]->set_memAgent_level(10);
+    memAgent7->owned_proteins[1]->set_memAgent_current_level(10);
 
 	// Set everything else to 0.
 	memAgent1->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent1->owned_proteins[2]->set_memAgent_level(0);
+    memAgent1->owned_proteins[2]->set_memAgent_current_level(0);
 	memAgent2->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent2->owned_proteins[2]->set_memAgent_level(0);
+    memAgent2->owned_proteins[2]->set_memAgent_current_level(0);
 	memAgent3->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent3->owned_proteins[2]->set_memAgent_level(0);
+    memAgent3->owned_proteins[2]->set_memAgent_current_level(0);
 
 	memAgent1->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent1->owned_proteins[3]->set_memAgent_level(0);
+    memAgent1->owned_proteins[3]->set_memAgent_current_level(0);
 	memAgent2->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent2->owned_proteins[3]->set_memAgent_level(0);
+    memAgent2->owned_proteins[3]->set_memAgent_current_level(0);
 	memAgent3->owned_proteins.push_back(new Protein("D", PROTEIN_LOCATION_JUNCTION, 0, 0, 100, 1));
-	memAgent3->owned_proteins[3]->set_memAgent_level(0);
+    memAgent3->owned_proteins[3]->set_memAgent_current_level(0);
 
 	memAgent4->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent4->owned_proteins[2]->set_memAgent_level(0);
+    memAgent4->owned_proteins[2]->set_memAgent_current_level(0);
 	memAgent5->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent5->owned_proteins[2]->set_memAgent_level(0);
+    memAgent5->owned_proteins[2]->set_memAgent_current_level(0);
 	memAgent6->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent6->owned_proteins[2]->set_memAgent_level(0);
+    memAgent6->owned_proteins[2]->set_memAgent_current_level(0);
 	memAgent7->owned_proteins.push_back(new Protein("A", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent7->owned_proteins[2]->set_memAgent_level(0);
+    memAgent7->owned_proteins[2]->set_memAgent_current_level(0);
 
 	memAgent4->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent4->owned_proteins[3]->set_memAgent_level(0);
+    memAgent4->owned_proteins[3]->set_memAgent_current_level(0);
 	memAgent5->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent5->owned_proteins[3]->set_memAgent_level(0);
+    memAgent5->owned_proteins[3]->set_memAgent_current_level(0);
 	memAgent6->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent6->owned_proteins[3]->set_memAgent_level(0);
+    memAgent6->owned_proteins[3]->set_memAgent_current_level(0);
 	memAgent7->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_CELL, 0, 0, 100, 1));
-	memAgent7->owned_proteins[3]->set_memAgent_level(0);
+    memAgent7->owned_proteins[3]->set_memAgent_current_level(0);
 }
 
-void MultiNeighbourODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
+void FilopodiaTest::printMemAgentProteinLevels(int timestep) const {
 			  /* Scenario 1 */
-	std::cout << memAgent1->get_memAgent_protein_level("A") << ","
-			  << memAgent2->get_memAgent_protein_level("A") << ","
-			  << memAgent3->get_memAgent_protein_level("A") << ","
-			  << memAgent1->get_memAgent_protein_level("B") << ","
-			  << memAgent2->get_memAgent_protein_level("B") << ","
-			  << memAgent3->get_memAgent_protein_level("B") << ","
+	std::cout << memAgent1->get_memAgent_current_level("A") << ","
+              << memAgent2->get_memAgent_current_level("A") << ","
+              << memAgent3->get_memAgent_current_level("A") << ","
+              << memAgent1->get_memAgent_current_level("B") << ","
+              << memAgent2->get_memAgent_current_level("B") << ","
+              << memAgent3->get_memAgent_current_level("B") << ","
 			  /* Scenario 2 */
-			  << memAgent4->get_memAgent_protein_level("C") << ","
-			  << memAgent5->get_memAgent_protein_level("C") << ","
-			  << memAgent6->get_memAgent_protein_level("C") << ","
-			  << memAgent7->get_memAgent_protein_level("C") << ","
-			  << memAgent4->get_memAgent_protein_level("D") << ","
-			  << memAgent5->get_memAgent_protein_level("D") << ","
-			  << memAgent6->get_memAgent_protein_level("D") << ","
-			  << memAgent7->get_memAgent_protein_level("D") << ","
+			  << memAgent4->get_memAgent_current_level("C") << ","
+              << memAgent5->get_memAgent_current_level("C") << ","
+              << memAgent6->get_memAgent_current_level("C") << ","
+              << memAgent7->get_memAgent_current_level("C") << ","
+            << memAgent4->get_memAgent_current_level("D") << ","
+            << memAgent5->get_memAgent_current_level("D") << ","
+            << memAgent6->get_memAgent_current_level("D") << ","
+            << memAgent7->get_memAgent_current_level("D") << ","
 			  << timestep << "\n";
 }
 
@@ -719,14 +735,14 @@ void BasicFilODEMemAgentTest::runODE(MemAgent *memAgent) {
 	basicFil_ode_states ode_states;
 	odeint::euler<basicFil_ode_states> stepper;
 
-	ode_states[0] = memAgent->get_environment_protein_level("A"); // THIS IS FINE.
+	ode_states[0] = memAgent->get_environment_level("A"); // THIS IS FINE.
 	ode_states[1] = memAgent->get_local_protein_level("B") + memAgent->get_filopodia_protein_level("B"); // THIS IS FOR THE REACTANT OF REACTION 2
-	ode_states[2] = memAgent->get_memAgent_protein_level("C"); // THIS IS FINE.
+	ode_states[2] = memAgent->get_memAgent_current_level("C"); // THIS IS FINE.
 
 	stepper.do_step(basicFilODE_system, ode_states, 0.0, 1);
 
-	memAgent->set_protein_level("B", ode_states[1]);
-	memAgent->set_protein_level("C", ode_states[2]);
+    memAgent->set_protein_current_level("B", ode_states[1]);
+    memAgent->set_protein_current_level("C", ode_states[2]);
 }
 
 void BasicFilODEMemAgentTest::basicFilODE_system(const basicFil_ode_states &x, basicFil_ode_states &dxdt, double t) {
@@ -741,21 +757,21 @@ void BasicFilODEMemAgentTest::basicFilODE_system(const basicFil_ode_states &x, b
 
 void BasicFilODEMemAgentTest::setupAgentProteins() const {
 	this->memAgent1->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
-	this->memAgent1->owned_proteins[0]->set_memAgent_level(0);
+    this->memAgent1->owned_proteins[0]->set_memAgent_current_level(0);
 	this->memAgent1->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
-	this->memAgent1->owned_proteins[1]->set_memAgent_level(0);
+    this->memAgent1->owned_proteins[1]->set_memAgent_current_level(0);
 
 	this->memAgent2->owned_proteins.push_back(new Protein("B", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
-	this->memAgent2->owned_proteins[0]->set_memAgent_level(0);
+    this->memAgent2->owned_proteins[0]->set_memAgent_current_level(0);
 	this->memAgent2->owned_proteins.push_back(new Protein("C", PROTEIN_LOCATION_MEMBRANE, 0, 0, 100, 1));
-	this->memAgent2->owned_proteins[0]->set_memAgent_level(0);
+    this->memAgent2->owned_proteins[0]->set_memAgent_current_level(0);
 }
 
 void BasicFilODEMemAgentTest::printMemAgentProteinLevels(int timestep) const {
-	std::cout << memAgent1->get_memAgent_protein_level("B") << ","
-			  << memAgent2->get_memAgent_protein_level("B") << ","
-			  << memAgent1->get_memAgent_protein_level("C") << ","
-			  << memAgent2->get_memAgent_protein_level("C") << ","
+	std::cout << memAgent1->get_memAgent_current_level("B") << ","
+              << memAgent2->get_memAgent_current_level("B") << ","
+              << memAgent1->get_memAgent_current_level("C") << ","
+              << memAgent2->get_memAgent_current_level("C") << ","
 			  << timestep << "\n";
 }
 /*****************************************************************************************
@@ -819,10 +835,10 @@ void BasicCellDistributionTest::runODE(MemAgent *memAgent) {
 	basicDistribution_ode_states ode_states;
 	odeint::euler<basicDistribution_ode_states> stepper;
 
-	ode_states[0] = memAgent->get_memAgent_protein_level("A");
+	ode_states[0] = memAgent->get_memAgent_current_level("A");
 	stepper.do_step(basicCellDistribution_system, ode_states, 0.0, 1);
 
-	memAgent->set_protein_level("A", ode_states[0]);
+    memAgent->set_protein_current_level("A", ode_states[0]);
 }
 
 void BasicCellDistributionTest::basicCellDistribution_system(const basicDistribution_ode_states &x, basicDistribution_ode_states &dxdt, double t) {
@@ -834,7 +850,7 @@ void BasicCellDistributionTest::printCellProteinLevels(int timestep) const {
 	// Only one cell in this setup.
 	auto cell = this->cell;
 	for (auto protein : cell->m_cell_type->proteins) {
-		std::cout << protein->get_name() << "," << protein->get_memAgent_level() << ",";
+		std::cout << protein->get_name() << "," << protein->get_memAgent_current_level() << ",";
 	}
 	std::cout << timestep << "\n";
 }
@@ -1069,7 +1085,7 @@ void NotchPathwayTest::run_memAgent_ODE(MemAgent *memAgent) {
     if (memAgent->junction) {
         int i = 0;
     }
-    current_states[0] = memAgent->get_environment_protein_level("VEGF");
+    current_states[0] = memAgent->get_environment_level("VEGF");
     current_states[1] = memAgent->get_local_protein_level("VEGFR");
     current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
     current_states[3] = memAgent->get_local_protein_level("NOTCH"); // Need to get Notch level from this cell.
@@ -1426,7 +1442,7 @@ void UnequalDistributionTest::runMemAgentODE(MemAgent *memAgent) {
 void UnequalDistributionTest::printProteinLevels(int timestep) {
     std::cout << timestep << ",";
     for (MemAgent *memAgent : this->adjacentMemAgents) {
-        std::cout << memAgent->get_memAgent_protein_level("A") << ",";
+        std::cout << memAgent->get_memAgent_current_level("A") << ",";
     }
     std::cout << std::endl;
 }

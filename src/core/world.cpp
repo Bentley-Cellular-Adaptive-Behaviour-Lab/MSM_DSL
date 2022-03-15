@@ -6589,3 +6589,12 @@ bool World::tissuesHavePatterned() const {
 
     return tissuesHavePatterned;
 }
+
+void World::update_memAgent_protein_levels() {
+    // Goes over all cells in the simulation and updates their memAgent proteins to use the next timestep's value.
+    for (auto &cell : this->ECagents) {
+        for (auto &memAgent : cell->nodeAgents) {
+            memAgent->cycle_protein_levels();
+        }
+    }
+}

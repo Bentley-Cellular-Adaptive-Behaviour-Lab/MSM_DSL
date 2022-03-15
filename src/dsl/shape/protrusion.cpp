@@ -678,7 +678,7 @@ void Protrusion::transferCytoProtein(MemAgent *sourceMemAgent, MemAgent *targetM
 void Protrusion::transferProtein(MemAgent *sourceMemAgent, MemAgent *targetMemAgent, const std::string& proteinName) {
     /// Transfers all of a specified protein from one memAgent to another.
     /// Usually called before deletion of the source agent.
-    float sourceAmount = sourceMemAgent->get_memAgent_protein_level(proteinName);
+    float sourceAmount = sourceMemAgent->get_memAgent_current_level(proteinName);
     float targetAmount = targetMemAgent->get_cytoprotein_level(proteinName);
 
     targetMemAgent->set_cytoprotein_level(proteinName, targetAmount + sourceAmount);
