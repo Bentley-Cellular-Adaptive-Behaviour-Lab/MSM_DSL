@@ -2841,7 +2841,6 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 		// If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
 		// increase the count by the level at those coordinates.
 
-
 		if (worldP->insideWorld(m, n, p)) {
 			if (worldP->grid[m][n][p].getType() == const_E) {
 				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
@@ -2853,7 +2852,12 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 			}
 		}
 	}
-	return (double) (protein_level / relevant_memAgents);
+
+    if (relevant_memAgents > 0) {
+        return (double) (protein_level / relevant_memAgents);
+    } else {
+        return 0;
+    }
 }
 
 /*****************************************************************************************
@@ -3011,16 +3015,6 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
         return 0;
     }
 }
-
-/*****************************************************************************************
-*  Name:		get_filopodia_protein_level
-*  Description: Takes in a given protein level, counts the number of memAgents that own
-*				that protein then set the new level to that divided by the amount.
-*				Can either distribute proteins to the same memagents from the same cell or to
-*  Returns:		void
-******************************************************************************************/
-
-// TODO: This function!
 
 /*****************************************************************************************
 *  Name:		distribute_calculated_proteins (deprecated)
