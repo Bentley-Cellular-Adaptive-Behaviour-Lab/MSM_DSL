@@ -8,6 +8,7 @@
 #include "dsl_species_gen.h"
 #include "clusterParams.h"
 
+
 // Created using: Species //
 ODEs::ODEs() {
 }
@@ -15,12 +16,6 @@ ODEs::ODEs() {
 void ODEs::check_cell_ODEs(EC *ec) {
     if (ec->m_cell_type->m_name == "Endothelial") {
         Endothelial_run_cell_ODEs(ec);
-    }
-}
-
-void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
-    if (cell_type_name == "Endothelial") {
-        Endothelial_run_memAgent_ODEs(memAgent);
     }
 }
 
@@ -34,9 +29,11 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     double VEGF_VEGFR = x[4];
     double DLL4 = x[5];
     double NICD = x[6];
-    double adjacent_DLL4 = x[7];
-    double adjacent_NOTCH = x[8];
-    double adjacent_DLL4_NOTCH = x[9];
+    double NOTCH = x[7];
+    double DLL4_NOTCH = x[8];
+    double adjacent_DLL4 = x[9];
+    double adjacent_NOTCH = x[10];
+    double adjacent_DLL4_NOTCH = x[11];
     // Parameter Definitions
     double VEGF_INITIAL = get_VEGF_INITIAL_sweep_value(WORLDpointer);
     double VEGFR_REG = calc_VEGFR_REG_rate(VEGFR, HEY);
@@ -63,15 +60,17 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     double Prod_N = calc_Prod_N_rate(NOTCH_Diff);
     // ODE Definitions
     dxdt[0] = -(Deg_FA)+(FILOPODIA_REG);
-    dxdt[1] = +(VEGF_REG);
+    dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1+(VEGF_REG);
     dxdt[2] = -(Deg_HE)+(HEY_REG);
-    dxdt[3] = +(Prod_VR)-(Deg_VR)-(VEGFR_REG);
-    dxdt[4] = -(Deg_V_VR);
-    dxdt[5] = +(DLL4_Diff)-(Deg_DLL4)+(DLL4_REG);
-    dxdt[6] = -(Deg_I);
-    dxdt[7] = 0;
-    dxdt[8] = 0;
+    dxdt[3] = +(Prod_VR)-(Deg_VR)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_REG);
+    dxdt[4] = -(Deg_V_VR)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
+    dxdt[5] = +(DLL4_Diff)-(Deg_DLL4)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1+(DLL4_REG);
+    dxdt[6] = -(Deg_I)+(NICD_CAT)*1;
+    dxdt[7] = +(Prod_N)-(Deg_N)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1;
+    dxdt[8] = -(Deg_DN)-(NICD_CAT)*1+(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_OFF)*1;
     dxdt[9] = 0;
+    dxdt[10] = 0;
+    dxdt[11] = 0;
 }
 
 void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
@@ -85,9 +84,11 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
     states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
     states[5] = ec->get_cell_protein_level("DLL4", 0);
     states[6] = ec->get_cell_protein_level("NICD", 0);
-    states[7] = calc_DLL4_adjacent_level(ec);
-    states[8] = calc_NOTCH_adjacent_level(ec);
-    states[9] = calc_DLL4_NOTCH_adjacent_level(ec);
+    states[7] = ec->get_cell_protein_level("NOTCH", 0);
+    states[8] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+    states[9] = calc_DLL4_adjacent_level(ec);
+    states[10] = calc_NOTCH_adjacent_level(ec);
+    states[11] = calc_DLL4_NOTCH_adjacent_level(ec);
 
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
@@ -100,66 +101,10 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
     ec->set_cell_protein_level("VEGF_VEGFR", states[4], 1);
     ec->set_cell_protein_level("DLL4", states[5], 1);
     ec->set_cell_protein_level("NICD", states[6], 1);
+    ec->set_cell_protein_level("NOTCH", states[7], 1);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[8], 1);
 }
 
-void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
-// Species Definitions
-    double VEGF = x[0];
-    double VEGFR = x[1];
-    double VEGF_VEGFR = x[2];
-    double DLL4 = x[3];
-    double NOTCH = x[4];
-    double DLL4_NOTCH = x[5];
-    double NICD = x[6];
-    double adjacent_DLL4 = x[7];
-    double adjacent_NOTCH = x[8];
-    double adjacent_DLL4_NOTCH = x[9];
-// Parameter Definitions
-    double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
-    double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-    double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(DLL4, adjacent_NOTCH);
-    double DLL4_NOTCH_OFF = calc_DLL4_NOTCH_OFF_rate(adjacent_DLL4_NOTCH);
-    double NICD_CAT = calc_NICD_CAT_rate(DLL4_NOTCH);
-// ODE Definitions
-    dxdt[0] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-    dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-    dxdt[2] = +(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-    dxdt[3] = -(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1;
-    dxdt[4] = -(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1;
-    dxdt[5] = -(NICD_CAT)*1+(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_OFF)*1;
-    dxdt[6] = +(NICD_CAT)*1;
-    dxdt[7] = 0;
-    dxdt[8] = 0;
-    dxdt[9] = 0;
-}
-
-void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent){
-    Endothelial_memAgent_ode_states states;
-    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
-
-    states[0] = memAgent->get_memAgent_current_level("VEGF");
-    states[1] = memAgent->get_memAgent_current_level("VEGFR");
-    states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-    states[3] = memAgent->get_memAgent_current_level("DLL4");
-    states[4] = memAgent->get_memAgent_current_level("NOTCH");
-    states[5] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-    states[6] = memAgent->get_memAgent_current_level("NICD");
-    states[7] = memAgent->get_junction_protein_level("DLL4");
-    states[8] = memAgent->get_junction_protein_level("NOTCH");
-    states[9] = memAgent->get_junction_protein_level("DLL4_NOTCH");
-
-    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-    controlled_stepper_type controlled_stepper;
-    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
-
-    memAgent->set_protein_next_level("VEGF", states[0]);
-    memAgent->set_protein_next_level("VEGFR", states[1]);
-    memAgent->set_protein_next_level("VEGF_VEGFR", states[2]);
-    memAgent->set_protein_next_level("DLL4", states[3]);
-    memAgent->set_protein_next_level("NOTCH", states[4]);
-    memAgent->set_protein_next_level("DLL4_NOTCH", states[5]);
-    memAgent->set_protein_next_level("NICD", states[6]);
-}
 
 static double get_VEGF_INITIAL_sweep_value(World *world) {
     return world->getParamValue(VEGF_INITIAL_VALUE);
@@ -258,14 +203,6 @@ static double calc_DLL4_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
         level += neighbour->get_cell_protein_level("DLL4",0);
-    }
-    return level / (float) ec->getNeighCellVector().size();
-}
-
-static double calc_NOTCH_adjacent_level(EC *ec) {
-    double level = 0.0;
-    for (auto *neighbour : ec->getNeighCellVector()) {
-        level += neighbour->get_cell_protein_level("NOTCH",0);
     }
     return level / (float) ec->getNeighCellVector().size();
 }

@@ -15,6 +15,7 @@
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -14253,6 +14254,57 @@
           <node concept="37vLTw" id="EX9x3XxjyM" role="3cqZAk">
             <ref role="3cqZAo" node="EX9x3XwYqs" resolve="fixedName" />
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="4MFt7FnVQ7u" role="13h7CS">
+      <property role="TrG5h" value="hasSpecies" />
+      <node concept="3Tm1VV" id="4MFt7FnVQ7v" role="1B3o_S" />
+      <node concept="10P_77" id="4MFt7FnVQfc" role="3clF45" />
+      <node concept="3clFbS" id="4MFt7FnVQ7x" role="3clF47">
+        <node concept="2Gpval" id="4MFt7FnVQgu" role="3cqZAp">
+          <node concept="2GrKxI" id="4MFt7FnVQgv" role="2Gsz3X">
+            <property role="TrG5h" value="speciesRef" />
+          </node>
+          <node concept="2OqwBi" id="4MFt7FnVQq_" role="2GsD0m">
+            <node concept="13iPFW" id="4MFt7FnVQi0" role="2Oq$k0" />
+            <node concept="3Tsc0h" id="4MFt7FnVQGp" role="2OqNvi">
+              <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="4MFt7FnVQgx" role="2LFqv$">
+            <node concept="3clFbJ" id="4MFt7FnVQJd" role="3cqZAp">
+              <node concept="17R0WA" id="4MFt7FnVQTn" role="3clFbw">
+                <node concept="2OqwBi" id="4MFt7FnVR4M" role="3uHU7w">
+                  <node concept="2GrUjf" id="4MFt7FnVQUe" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="4MFt7FnVQgv" resolve="speciesRef" />
+                  </node>
+                  <node concept="3TrEf2" id="4MFt7FnVRpX" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
+                  </node>
+                </node>
+                <node concept="37vLTw" id="4MFt7FnVQJZ" role="3uHU7B">
+                  <ref role="3cqZAo" node="4MFt7FnVQfC" resolve="querySpecies" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="4MFt7FnVQJf" role="3clFbx">
+                <node concept="3cpWs6" id="4MFt7FnVRsR" role="3cqZAp">
+                  <node concept="3clFbT" id="4MFt7FnVRtW" role="3cqZAk">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4MFt7FnVRwj" role="3cqZAp">
+          <node concept="3clFbT" id="4MFt7FnVRxM" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4MFt7FnVQfC" role="3clF46">
+        <property role="TrG5h" value="querySpecies" />
+        <node concept="3Tqbb2" id="4MFt7FnVQfB" role="1tU5fm">
+          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
         </node>
       </node>
     </node>

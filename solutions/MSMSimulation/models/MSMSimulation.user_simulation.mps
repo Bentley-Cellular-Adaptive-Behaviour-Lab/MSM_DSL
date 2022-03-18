@@ -322,9 +322,6 @@
       <node concept="1csUcq" id="59qBf2EvIBf" role="3FWu3_">
         <ref role="1csUcr" node="59qBf2Ds7t0" resolve="VEGF_VEGFR" />
       </node>
-      <node concept="1csUcq" id="59qBf2EvIBj" role="3FWu3_">
-        <ref role="1csUcr" node="59qBf2Ds7ub" resolve="DLL4" />
-      </node>
       <node concept="1csUcq" id="59qBf2EvIBo" role="3FWu3_">
         <ref role="1csUcr" node="59qBf2Ds7vr" resolve="NOTCH" />
       </node>
