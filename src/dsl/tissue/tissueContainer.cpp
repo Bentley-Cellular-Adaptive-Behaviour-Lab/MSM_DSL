@@ -28,7 +28,10 @@
 *  Returns:		*Cell_Type
 ******************************************************************************************/
 
-Cell_Type *Tissue_Container::define_cell_type(std::string name, int cell_shape_type, int height, int width) {
+Cell_Type *Tissue_Container::define_cell_type(const std::string& name,
+                                              const int& cell_shape_type,
+                                              const int& height,
+                                              const int& width) {
     Cell_Type *cell_type;
     Shape_Square *square_pointer;
     try {
@@ -43,7 +46,7 @@ Cell_Type *Tissue_Container::define_cell_type(std::string name, int cell_shape_t
         std::cout << "Invalid shape definition called (square) for specified shape type: "
                   << cell_shape_type << ". Exception type: " << e;
     }
-    cell_type = new Cell_Type(this, std::move(name), square_pointer);
+    cell_type = new Cell_Type(this, name, square_pointer);
     store_cell_type(cell_type);
     return cell_type;
 }
@@ -55,12 +58,12 @@ Cell_Type *Tissue_Container::define_cell_type(std::string name, int cell_shape_t
 *  Returns:		*Tissue_Type_Cylindrical
 ******************************************************************************************/
 
-Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(std::string name,
+Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(const std::string& name,
                                                               Cell_Type *cell_type,
-                                                              int tissue_configuration,
-                                                              int cross_section_cells,
-                                                              int length_in_cells,
-                                                              int total_radius) {
+                                                              const int& tissue_configuration,
+                                                              const int& cross_section_cells,
+                                                              const int& length_in_cells,
+                                                              const int& total_radius) {
     Tissue_Type_Cylindrical *tissue_type;
     try {
         if (tissue_configuration == CELL_CONFIGURATION_CYLINDRICAL) {
@@ -92,11 +95,11 @@ Tissue_Type_Cylindrical *Tissue_Container::define_tissue_type(std::string name,
 *  Returns:		*Tissue_Type_Flat
 ******************************************************************************************/
 
-Tissue_Type_Flat *Tissue_Container::define_tissue_type(std::string name,
+Tissue_Type_Flat *Tissue_Container::define_tissue_type(const std::string& name,
                                                        Cell_Type *cell_type,
-                                                       int tissue_configuration,
-                                                       int height_in_cells,
-                                                       int width_in_cells) {
+                                                       const int& tissue_configuration,
+                                                       const int& height_in_cells,
+                                                       const int& width_in_cells) {
     Tissue_Type_Flat *tissue_type;
     try {
         if (tissue_configuration == CELL_CONFIGURATION_FLAT) {
@@ -127,11 +130,13 @@ Tissue_Type_Flat *Tissue_Container::define_tissue_type(std::string name,
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coordinates *position) {
+void Tissue_Container::create_cell(const std::string& name,
+                                   Cell_Type *cell_type,
+                                   Coordinates *position) {
     Cell *cell;
     try {
-        assert(cell_type != NULL);
-        assert(position != NULL);
+        assert(cell_type != nullptr);
+        assert(position != nullptr);
         if (cell_type->m_shape->get_shape_type() == CELL_SHAPE_SQUARE) {
 
             cell = new Cell(this, name, m_world, position, cell_type);
@@ -143,7 +148,7 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
 
             m_world->ECagents.push_back(ecp);
 
-            ecp->cell_number = m_world->ECagents.size();
+            ecp->cell_number = (int) m_world->ECagents.size();
 
             //Add the cell to list of tissue container's known cell agents.
             this->m_single_cell_agents.push_back(ecp);
@@ -178,7 +183,7 @@ void Tissue_Container::create_cell(std::string name, Cell_Type *cell_type, Coord
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_tissue(std::string name, Tissue_Type_Cylindrical *tissue_type, Coordinates *position) {
+void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylindrical *tissue_type, Coordinates *position) {
     Tissue_Vessel *tissue;
     try {
         assert(tissue_type != nullptr);
@@ -206,7 +211,7 @@ void Tissue_Container::create_tissue(std::string name, Tissue_Type_Cylindrical *
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_tissue(std::string name, Tissue_Type_Flat *tissue_type, Coordinates *position) {
+void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Flat *tissue_type, Coordinates *position) {
     Tissue_Monolayer *tissue;
     try {
         assert(tissue_type != nullptr);
@@ -275,12 +280,12 @@ void Tissue_Container::store_tissue(Tissue *tissue) {
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::create_2d_square_cell(int cell_number,
-                                             int centreX,
-                                             int centreY,
-                                             int centreZ,
-                                             int cell_width,
-                                             int cell_height) {
+void Tissue_Container::create_2d_square_cell(const int& cell_number,
+                                             const int& centreX,
+                                             const int& centreY,
+                                             const int& centreZ,
+                                             const int& cell_width,
+                                             const int& cell_height) {
 
     //assert(centreX > 0); <- Check the effect of a periodic boundary on this.
     assert(centreY >= 0);
@@ -292,8 +297,8 @@ void Tissue_Container::create_2d_square_cell(int cell_number,
     int i, j;
     MemAgent *memp;
 
-    for (i = (int) (centreX - (float) cell_width / 2.0f); i < (int) (centreX + (float) cell_width / 2.0f); i++) {
-        for (j = (int) (centreY - (float) cell_height / 2.0f); j < (int) (centreY + (float) cell_height / 2.0f); j++) {
+    for (i = (int) (centreX - (double) cell_width / 2.0f); i < (double) (centreX + (double) cell_width / 2.0f); i++) {
+        for (j = (int) (centreY - (double) cell_height / 2.0f); j < (int) (centreY + (double) cell_height / 2.0f); j++) {
             memp = new MemAgent(m_single_cell_agents[cell_number-1], this->m_world);
             memp->Mx = (float) i;
             memp->My = (float) j;
@@ -311,7 +316,7 @@ void Tissue_Container::create_2d_square_cell(int cell_number,
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Container::connect_2d_square_cell(int cell_number) {
+void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
     int e,i;
     int uptoM;
     MemAgent* mp;
@@ -319,7 +324,7 @@ void Tissue_Container::connect_2d_square_cell(int cell_number) {
     int N;
     int kelp;
 
-    uptoM = m_single_cell_agents[cell_number-1]->nodeAgents.size();
+    uptoM = (int) m_single_cell_agents[cell_number-1]->nodeAgents.size();
 
     for (i = 0; i < uptoM; i++){
         mp = m_single_cell_agents[cell_number-1]->nodeAgents[i];
