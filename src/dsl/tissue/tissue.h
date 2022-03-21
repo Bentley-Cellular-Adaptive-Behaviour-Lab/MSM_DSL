@@ -10,6 +10,7 @@
 
 class Coordinates;
 class EC;
+class MemAgent;
 class Tissue_Container;
 class Tissue_Type;
 class Tissue_Type_Cylindrical;
@@ -74,6 +75,7 @@ public:
 	void store_cell_agent(EC *ecp);
 
     bool checkTissueHasPatterned();
+    static void allocateProteins(Cell_Type* cellType, MemAgent* memAgent);
 };
 
 class Tissue_Vessel : public Tissue {
@@ -121,7 +123,7 @@ public:
                    Tissue_Type_Cylindrical *tissue_type);
 
     void create_vessel();
-    void tissue_vessel_draw_mesh(int i, int j, EC* ecp);
+    void tissue_vessel_draw_mesh(int i, int j, EC* cellAgent);
     void tissue_vessel_connect_mesh();
 
     bool check_boundaries();

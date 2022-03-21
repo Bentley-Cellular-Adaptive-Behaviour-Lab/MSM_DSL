@@ -7,11 +7,13 @@
 
 class Cell;
 class Cell_Type;
+class MemAgent;
 class Tissue_Monolayer;
 class Tissue_Type;
 class Tissue_Type_Cylindrical;
 class Tissue_Type_Flat;
 class Tissue_Vessel;
+
 
 class Tissue_Container {
 public:
@@ -85,6 +87,8 @@ public:
     bool check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2);
     bool check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer);
     bool check_monolayer_monolayer_overlap(Tissue_Monolayer *monolayer_1, Tissue_Monolayer *monolayer_2);
+
+    static void allocateProteins(Cell_Type* cellType, MemAgent* memAgent);
 };
 
 #endif //SRC_SPRINGAGENT_TISSUECONTAINER_H

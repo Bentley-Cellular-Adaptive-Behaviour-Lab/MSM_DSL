@@ -61,7 +61,7 @@ public:
             const double& min,
             const double& max);
     // Copy Constructor for Protein objects.
-    Protein(const Protein &rhs);
+    explicit Protein(Protein *rhs);
     ~Protein();
 };
 

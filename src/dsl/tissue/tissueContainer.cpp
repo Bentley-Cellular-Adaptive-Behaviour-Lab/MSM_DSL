@@ -11,6 +11,9 @@
 #include "tissueContainer.h"
 #include "tissueType.h"
 
+#include "../species/protein.h"
+#include "../utils/shape.h"
+
 #include "../../core/coordinates.h"
 #include "../../core/EC.h"
 #include "../../core/location.h"
@@ -19,7 +22,23 @@
 #include "../../core/spring.h"
 #include "../../core/world.h"
 
-#include "../utils/shape.h"
+
+/*****************************************************************************************
+*  Name:		allocateProteins(CellType*, memAgent*)
+*  Description: Iterates over all proteins owned by a cell type and adds a protein
+ *              object to a given memAgent.
+*  Returns:		void
+******************************************************************************************/
+
+namespace TissueContainerUtils {
+    void allocateProteins(Cell_Type* cellType, MemAgent* memAgent) {
+        for (auto &protein : cellType->proteins) {
+            memAgent->owned_proteins.push_back(new Protein(protein));
+        }
+    }
+}
+
+
 
 /*****************************************************************************************
 *  Name:		define_cell_type
@@ -306,6 +325,8 @@ void Tissue_Container::create_2d_square_cell(const int& cell_number,
             m_single_cell_agents[cell_number-1]->nodeAgents.push_back(memp);
             m_world->setMLocation(int(i), int(j), centreZ, memp);
             memp->node = true;
+            // Distribute proteins belonging to the cell type out to memAgents
+            TissueContainerUtils::allocateProteins(m_single_cell_agents[cell_number-1]->m_cell_type, memp);
         }
     }
 }
@@ -425,13 +446,13 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
 void Tissue_Container::check_positions() {
     Cell *current_cell;
     Tissue *current_tissue;
-    for (int i = 0; i < cells.size(); i++) {
-        current_cell = cells[i];
+    for (auto & cell : cells) {
+        current_cell = cell;
         assert(current_cell->check_boundaries());
     }
 
-    for (int i = 0; i < tissues.size(); i++) {
-        current_tissue = tissues[i];
+    for (auto & tissue : tissues) {
+        current_tissue = tissue;
         assert(current_tissue->check_boundaries());
     }
 }
@@ -655,7 +676,6 @@ bool Tissue_Container::check_monolayer_monolayer_overlap(Tissue_Monolayer *monol
     }
     return false;
 }
-
 
 // Constructor //
 

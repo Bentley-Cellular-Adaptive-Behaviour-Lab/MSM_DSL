@@ -39,14 +39,16 @@ Protein::Protein(const std::string& name,
     this->transcription_delay = 1;
 }
 
-Protein::Protein(const Protein &rhs) {
-    this->m_name = rhs.m_name;
-    this->m_protein_location = rhs.m_protein_location;
-    this->env_level = rhs.env_level;
-    this->m_min = rhs.m_min;
-    this->transcription_delay = rhs.transcription_delay;
-    this->m_max = rhs.m_max;
-    std::copy(rhs.cell_levels.begin(), rhs.cell_levels.end(),std::back_inserter(this->cell_levels));
+Protein::Protein(Protein *rhs) {
+    this->m_name = rhs->m_name;
+    this->m_protein_location = rhs->m_protein_location;
+    this->env_level = rhs->env_level;
+    this->m_min = rhs->m_min;
+    this->transcription_delay = rhs->transcription_delay;
+    this->m_max = rhs->m_max;
+    this->m_memAgent_current_level = rhs->m_memAgent_current_level;
+    this->m_memAgent_buffer_level = rhs->m_memAgent_buffer_level;
+    std::copy(rhs->cell_levels.begin(), rhs->cell_levels.end(),std::back_inserter(this->cell_levels));
 }
 
 

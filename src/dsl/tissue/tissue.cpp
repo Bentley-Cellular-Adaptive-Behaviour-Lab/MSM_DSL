@@ -12,6 +12,7 @@
 #include "tissueType.h"
 #include "tissueContainer.h"
 
+#include "../species/protein.h"
 #include "../utils/shape.h"
 
 #include "../../core/objects.h"
@@ -22,6 +23,22 @@
 #include "../../core/memAgents.h"
 #include "../../core/spring.h"
 #include "../../core/world.h"
+
+namespace TissueUtils {
+/*****************************************************************************************
+*  Name:		allocateProteins(CellType*, memAgent*)
+*  Description: Iterates over all proteins owned by a cell type and adds a protein
+*               object to a given memAgent.
+*  Returns:		void
+******************************************************************************************/
+    void allocateProteins(Cell_Type* cellType, MemAgent* memAgent) {
+        for (auto &protein : cellType->proteins) {
+            memAgent->owned_proteins.push_back(new Protein(protein));
+        }
+    }
+}
+
+
 
 //********************************************************************************************************************//
 
@@ -611,7 +628,7 @@ void Tissue_Vessel::create_vessel() {
 *  Returns:		void
 ******************************************************************************************/
 
-void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
+void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     float theta;
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
     float vesselDelta;
@@ -619,7 +636,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
     int lx;
     float thetaStart, deltaSteps;
     float depth;
-    MemAgent* memp;
+    MemAgent* newMemAgent;
     int circlePosStartAb=0;
     vesselDelta = ((2.0f * (float)Pi) / (float)m_vessel_cells_per_cross_section);
 
@@ -666,37 +683,38 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* ecp) {
     //If within vessel, but not lumen, create a memAgent.
         if (m_world->insideWorld(j + depth + (float)lowerXboundary, k+Y, l+Z)) {
 
-            memp = new MemAgent(ecp, this->m_world);
+            newMemAgent = new MemAgent(cellAgent, this->m_world);
 
-            memp->Mx = (float)j + (float)depth + (float)lowerXboundary;
-            memp->My = k+Y;
-            memp->FA = true;
+            newMemAgent->Mx = (float)j + (float)depth + (float)lowerXboundary;
+            newMemAgent->My = k + Y;
+            newMemAgent->FA = true;
             //---------------------------------------
             ///for CELL_SETUP=2 (lars and rearrangement paper models with sewn up front).
             ///label the front row of nodes so they can be sewn up once gridded
             if (BLINDENDED_SPROUT==true){
                 if ((i == m_cell_number - 1) || (i == m_cell_number - 2)) {
-                    if(j == cell_width - 1) memp->labelledBlindended =  true;
+                    if(j == cell_width - 1) newMemAgent->labelledBlindended =  true;
                 }
             }
             //---------------------------------------
-            memp->Mz = l+Z;
+            newMemAgent->Mz = l + Z;
 
-            memp->setPreviousX(memp->Mx);
-            memp->setPreviousY(memp->My);
-            memp->setPreviousZ(memp->Mz);
+            newMemAgent->setPreviousX(newMemAgent->Mx);
+            newMemAgent->setPreviousY(newMemAgent->My);
+            newMemAgent->setPreviousZ(newMemAgent->Mz);
 
 
-            memp->circlePos=(int)(J+circlePosStartAb);
+            newMemAgent->circlePos=(int)(J + circlePosStartAb);
 
-            if(memp->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
-                memp->circlePos -= ablumenalSteps * m_vessel_cells_per_cross_section;
+            if(newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
+                newMemAgent->circlePos -= ablumenalSteps * m_vessel_cells_per_cross_section;
             }
 
-            ecp->nodeAgents.push_back(memp);
+            cellAgent->nodeAgents.push_back(newMemAgent);
 
-            m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), memp);
+            m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), newMemAgent);
 
+            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
         }
     }
 }
@@ -921,7 +939,7 @@ bool Tissue_Monolayer::check_boundaries() {
 
 void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX, int centreY, int z_coord) {
     int i, j;
-    MemAgent* memp;
+    MemAgent* newMemAgent;
 
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
     int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
@@ -929,13 +947,14 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
     for (i = (int)(centreX-(float)cell_width/2.0f); i < (int)(centreX+(float)cell_width/2.0f); i++) {
         for (j = (int)(centreY-(float)cell_height/2.0f); j < (int)(centreY+(float)cell_height/2.0f); j++) {
 
-            memp = new MemAgent(m_cell_agents[cell_number], (World*) this->m_world);
-            memp->Mx = (float)i;
-            memp->My = (float)j;
-            memp->Mz = (float)z_coord;
-            m_cell_agents[cell_number]->nodeAgents.push_back(memp);
-            m_world->setMLocation(int(i), int(j), z_coord, memp);
-            memp->node=true;
+            newMemAgent = new MemAgent(m_cell_agents[cell_number], (World*) this->m_world);
+            newMemAgent->Mx = (float)i;
+            newMemAgent->My = (float)j;
+            newMemAgent->Mz = (float)z_coord;
+            m_cell_agents[cell_number]->nodeAgents.push_back(newMemAgent);
+            m_world->setMLocation(int(i), int(j), z_coord, newMemAgent);
+            newMemAgent->node=true;
+            TissueUtils::allocateProteins(m_cell_agents[cell_number]->m_cell_type, newMemAgent);
         }
     }
 }
@@ -956,7 +975,7 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
     int kelp;
 
     for (e = 0; e < m_cell_number; e++){
-        uptoM = m_cell_agents[e]->nodeAgents.size();
+        uptoM = (int) m_cell_agents[e]->nodeAgents.size();
 
         for (i = 0; i < uptoM; i++){
             mp = m_cell_agents[e]->nodeAgents[i];
@@ -966,7 +985,6 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
                 if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getType() == const_M) {
                     for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getMids().size(); kelp++) {
                         nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)mp->Mz].getMids()[kelp];
-
                         if(mp->Cell == nmp->Cell) {
                             mp->neigh[N] = nmp;
                             m_cell_agents[e]->createSpringTokenObject(mp, nmp, N);
