@@ -150,7 +150,7 @@ public:
     double get_junction_protein_level(const std::string& protein_name);
 
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
-    void set_protein_next_level(const std::string& protein_name, const double& new_level);
+    void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
 
     double get_memAgent_next_level(const std::string& protein_name) const;
     double get_filopodia_protein_level(const std::string& protein_name);
@@ -168,7 +168,7 @@ public:
                              const int& protein_location);
     std::vector<EC*> find_cells(const bool& add_this_cell);
 
-    void cycle_protein_levels();
+    void passBackBufferLevels();
 
     std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*>& relevantCells,
                                                            const std::string& proteinName,

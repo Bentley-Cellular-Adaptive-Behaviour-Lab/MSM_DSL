@@ -1818,6 +1818,12 @@ void World::updateMemAgents() {
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
+            // Run ODES, then update the cell's level of that particular protein.
+            if (PROTEIN_TESTING) {
+                odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
+                memp->passBackBufferLevels();
+            }
+
             if (SHAPE_TESTING) {
                 memp->shapeResponse(randomChance);
             } else {
@@ -1880,8 +1886,6 @@ void World::updateMemAgents() {
                     }
                 }
             }
-
-
 		}
 	}
 
@@ -1916,9 +1920,9 @@ void World::updateECagents() {
 
 		// TOM
 		if (PROTEIN_TESTING) {
-			// Determine the total level of protein across all memAgents, then report this back to the cell.
-//			ECagents[j]->calculate_cell_protein_levels();
-			// Do gene regulation based on the calculated levels of proteins.
+            // Set the current protein levels to the current buffer levels (as determined by the memAgents).
+            ECagents[j]->updateCurrentProteinLevels();
+			// Do gene regulation based on the current levels of proteins
 			this->odes->check_cell_ODEs(ECagents[j]);
 		}
 		else {
@@ -1949,7 +1953,7 @@ void World::updateECagents() {
 	for (j = 0; j < (int) ECagents.size(); j++) {
 		if (PROTEIN_TESTING) {
             //Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
-//			ECagents[j]->distribute_proteins();
+			ECagents[j]->distribute_proteins();
 		} else {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 			ECagents[j]->allocateProts();
@@ -2154,7 +2158,6 @@ bool World::delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp) {
 		k = 0;
 		flag = 0;
 		do {
-
 			if (memp->Cell->springAgents[k] == memp) {
 				flag = 1;
 				L = memp->Cell->springAgents.begin();
@@ -6588,13 +6591,4 @@ bool World::tissuesHavePatterned() const {
     }
 
     return tissuesHavePatterned;
-}
-
-void World::update_memAgent_protein_levels() {
-    // Goes over all cells in the simulation and updates their memAgent proteins to use the next timestep's value.
-    for (auto &cell : this->ECagents) {
-        for (auto &memAgent : cell->nodeAgents) {
-            memAgent->cycle_protein_levels();
-        }
-    }
 }

@@ -24,7 +24,7 @@ private:
     int m_protein_location;
     // If this protein is at a memAgent, use this value for the current timestep.
     double m_memAgent_current_level = -1;
-    double m_memAgent_next_level = -1;
+    double m_memAgent_buffer_level = -1;
     // If this protein is at an environment agent, use this value.
     double env_level = 0;
     int transcription_delay;
@@ -36,7 +36,7 @@ public:
     [[nodiscard]] double get_memAgent_current_level() const;
     void set_memAgent_current_level(const double& new_level);
     [[nodiscard]] double get_memAgent_next_level() const;
-    void set_memAgent_next_level(const double& new_level);
+    void set_memAgent_buffer_level(const double& new_level);
     [[nodiscard]] double get_env_level() const;
     void set_env_level(const double& new_level);
     [[nodiscard]] int get_location() const;

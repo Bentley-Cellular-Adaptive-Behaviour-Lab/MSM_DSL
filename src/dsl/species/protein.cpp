@@ -110,15 +110,15 @@ int Protein::get_transcription_delay() const {
 }
 
 void Protein::update_protein_level() {
-    this->m_memAgent_current_level = this->m_memAgent_next_level;
+    this->m_memAgent_current_level = this->m_memAgent_buffer_level;
 }
 
 double Protein::get_memAgent_next_level() const {
-    return this->m_memAgent_next_level;
+    return this->m_memAgent_buffer_level;
 }
 
-void Protein::set_memAgent_next_level(const double &new_level) {
-    this->m_memAgent_next_level = new_level;
+void Protein::set_memAgent_buffer_level(const double &new_level) {
+    this->m_memAgent_buffer_level = new_level;
 }
 
 Protein::~Protein() = default;

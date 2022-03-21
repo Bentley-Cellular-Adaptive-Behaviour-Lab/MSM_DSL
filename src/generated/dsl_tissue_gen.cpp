@@ -14,37 +14,38 @@
 
 // Start Value Functions 
 
+
 void Tissue_Container::tissue_set_up(World* world) {
     // Created using: Tissues //
 
     world->setTissueContainer(this);
     // Cell Type Declarations //
-    Cell_Type *EndothelialType_Type;
+    Cell_Type *Endothelial_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Cylindrical *VesselType_Type;
+    Tissue_Type_Cylindrical *TissueType_Type;
 
     // Coordinate Declarations //
-    Coordinates Monolayer_Pos;
+    Coordinates Tissue_Pos;
 
     // Cell Type Creation //
-    EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-    EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_CELL, 1.0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_CELL, 0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.1, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
-    EndothelialType_Type->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
+    Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
 
     // Tissue Type Creation //
-    VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
+    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Monolayer_Pos = Coordinates(0, 0, 0);
-    create_tissue("Monolayer", VesselType_Type, &(Monolayer_Pos));
+    Tissue_Pos = Coordinates(40, 40, 20);
+    create_tissue("Tissue", TissueType_Type, &(Tissue_Pos));
 }
-

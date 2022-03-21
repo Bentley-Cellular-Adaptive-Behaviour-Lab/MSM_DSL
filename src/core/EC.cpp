@@ -16,6 +16,7 @@
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cellType.h"
 
+
 int countbell;
 int analysis_type;
 
@@ -748,6 +749,7 @@ void EC::set_initial_proteins() {
 void EC::distribute_proteins() {
     // Create a vector containing the number of all memAgents that have a particular protein.
 	std::vector<int> protein_counts;
+    protein_counts.reserve(this->m_cell_type->proteins.size());
     for (int i = 0; i <this->m_cell_type->proteins.size(); i++) {
         protein_counts.push_back(0);
     }
@@ -777,30 +779,33 @@ void EC::distribute_proteins() {
     }
 
     // Once counts have been determined, calculate the amount of each protein per memAgent.
-	std::vector<int> protein_totals_per_memAgent;
+	std::vector<double> protein_totals_per_memAgent;
 
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-        float current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
+        double current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
 
-    // Now, set the memAgents level to be equal to the calculated amount.
+    // Now, set the memAgents current and buffer level to be equal to the calculated amount.
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             Protein *current_protein = this->m_cell_type->proteins[i];
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
                     nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-				}
+                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                }
 			}
 			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
 				if (nodeAgent->has_protein(current_protein->get_name())) {
                     nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-				}
+                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                }
 			}
             if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
-                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
+                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
                 }
             }
         }
@@ -856,7 +861,6 @@ void EC::calculate_cell_protein_levels() {
 //    }
 
 
-    // TODO: SET THIS TO BE FOR THE NEXT TIMESTEP
     // Now, set the protein levels for the cell at this current timestep.
     for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
         this->set_cell_protein_level(this->m_cell_type->proteins[i]->get_name(),protein_counts[i],1);
@@ -1984,3 +1988,54 @@ std::list<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
 
+/*****************************************************************************************
+*  Name:		initiateBufferVector
+*  Description: Goes over all proteins owned by a cell, then adds a value corresponding to
+*               the level of that protein. Called once when a cell is created.
+*  Returns:		double
+******************************************************************************************/
+
+void EC::initiateBufferVector() {
+    for (auto protein : this->m_cell_type->proteins) {
+        this->m_protein_delta_buffer.push_back(0);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		resetBufferVector
+*  Description: Goes over all protein levels in the buffer, then sets all values to zero.
+*               Called at the end of cell agent updating.
+*  Returns:		double
+******************************************************************************************/
+
+void EC::resetBufferVector() {
+    for (auto value : this->m_protein_delta_buffer) {
+        value = 0;
+    }
+}
+
+/*****************************************************************************************
+*  Name:		updateBufferEntry
+*  Description: Increments a given protein value in the buffer vector, by a specified amount.
+ *              Called after memAgent ODEs are run during memAgent updating.
+*  Returns:		double
+******************************************************************************************/
+
+void EC::updateBufferEntry(const int& index, const double& new_value) {
+    this->m_protein_delta_buffer.at(index) = this->m_protein_delta_buffer.at(index) + new_value;
+}
+
+/*****************************************************************************************
+*  Name:		updateCurrentProteinLevels
+*  Description: Sets all current protein levels to be equal to their corresponding buffer
+*               values. Called before cell ODEs
+*  Returns:		double
+******************************************************************************************/
+
+void EC::updateCurrentProteinLevels() {
+    int index = 0;
+    for (auto &protein : this->m_cell_type->proteins) {
+        const double buffer_level = this->m_protein_delta_buffer.at(index);
+        protein->set_cell_level(buffer_level, 0);
+    }
+}

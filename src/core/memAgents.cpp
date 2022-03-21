@@ -2305,9 +2305,16 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
 
 	}
 	SpringBelong=NULL;
+
+    // Add proteins to the MemAgent and set their levels to zero, as they're not participating in ODES yet.
+    for (auto &protein : belongsTo->m_cell_type->proteins) {
+        protein->set_memAgent_buffer_level(0);
+    }
 }
 
 MemAgent::~MemAgent(void){
+    // Pass protein levels back to the cell before deleting them.
+    this->passBackBufferLevels();
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
@@ -2371,19 +2378,19 @@ void MemAgent::set_protein_current_level(const std::string& protein_name, const 
 }
 
 /*****************************************************************************************
-*  Name:		set_protein_next_level
-*  Description: Sets the level of a protein for the next timestep, if that memAgent possesses that protein.
+*  Name:		set_protein_buffer_level
+*  Description: Sets the buffer level for given protein at that timestep.
 *  Returns:		boolean
 ******************************************************************************************/
 
-void MemAgent::set_protein_next_level(const std::string& protein_name, const double& new_level) {
+void MemAgent::set_protein_buffer_level(const std::string& protein_name, const double& new_level) {
     assert(this->has_protein(protein_name));
     for (auto protein : this->owned_proteins) {
         if (protein->get_name() == protein_name) {
             if (new_level < 0) {
-                protein->set_memAgent_next_level(0);
+                protein->set_memAgent_buffer_level(0);
             } else {
-                protein->set_memAgent_next_level(new_level);
+                protein->set_memAgent_buffer_level(new_level);
             }
         }
     }
@@ -4580,9 +4587,17 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
     }
 }
 
-void MemAgent::cycle_protein_levels() {
-    // Goes over all proteins owned by a memAgent, then sets the next timestep to be the current one.
-    for (auto *protein : this->owned_proteins) {
-        protein->update_protein_level();
+/*****************************************************************************************
+*  Name:		passBackBufferLevels()
+*  Description: Goes over all proteins owned by this memAgent, and increments the buffer values
+ *              by that amount. Called after memAgent ODEs and during MemAgent deletion.
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgent::passBackBufferLevels() {
+    int index = 0;
+    for (auto &protein : this->owned_proteins) {
+        this->Cell->updateBufferEntry(index, protein->get_memAgent_current_level());
+        index++;
     }
 }

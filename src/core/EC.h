@@ -34,6 +34,7 @@ class EC {
 private:
     std::list<Protrusion*> m_protrusions;
     std::vector<EC*> neigh_cells;
+    std::vector<double> m_protein_delta_buffer;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -146,7 +147,7 @@ public:
     //Stores cell if this agent belongs to a cell.
 	Cell *m_cell;
 
-    //Stores tissue if this agent belongs to a cell
+    //Stores tissue if this agent belongs to a tissue.
     Tissue *m_tissue;
 
     // Enum to track which object an agent belongs to.
@@ -170,5 +171,10 @@ public:
     bool removeProtrusionFromList(Protrusion* protrusion);
     std::list<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
+
+    void initiateBufferVector();
+    void resetBufferVector();
+    void updateBufferEntry(const int& index, const double& new_value);
+    void updateCurrentProteinLevels();
 };
 #endif //SPRINGAGENT_EC_H
