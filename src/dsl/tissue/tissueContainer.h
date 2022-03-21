@@ -28,32 +28,35 @@ public:
 
     void tissue_set_up(World* world);
 
-    Cell_Type *define_cell_type(std::string name, int cell_shape_type, int height, int width);
+    Cell_Type *define_cell_type(const std::string& name,
+                                const int& cell_shape_type,
+                                const int& height,
+                                const int& width);
 
     // Defines a cylindrical configuration.
-    Tissue_Type_Cylindrical *define_tissue_type(std::string name,
+    Tissue_Type_Cylindrical *define_tissue_type(const std::string& name,
                                                 Cell_Type *cell_type,
-                                                int tissue_configuration,
-                                                int cross_section_cells,
-                                                int length_in_cells,
-                                                int total_radius);
+                                                const int& tissue_configuration,
+                                                const int& cross_section_cells,
+                                                const int& length_in_cells,
+                                                const int& total_radius);
 
     // Defines a flat configuration.
-    Tissue_Type_Flat *define_tissue_type(std::string name,
+    Tissue_Type_Flat *define_tissue_type(const std::string& name,
                                          Cell_Type *cell_type,
-                                         int tissue_configuration,
-                                         int height_in_cells,
-                                         int width_in_cells);
+                                         const int& tissue_configuration,
+                                         const int& height_in_cells,
+                                         const int& width_in_cells);
 
-    void create_cell(std::string name,
+    void create_cell(const std::string& name,
                      Cell_Type *cell_type,
                      Coordinates *position);
 
-    void create_tissue(std::string name,
+    void create_tissue(const std::string& name,
                        Tissue_Type_Cylindrical *tissue_type,
                        Coordinates *position);
 
-    void create_tissue(std::string name,
+    void create_tissue(const std::string& name,
                        Tissue_Type_Flat *tissue_type,
                        Coordinates *position);
 
@@ -63,8 +66,13 @@ public:
     void store_tissue_type(Tissue_Type *tissue_type);
 
     // Added definition for
-    void create_2d_square_cell(int cell_number, int centreX, int centreY, int centreZ, int cell_width, int cell_height);
-    void connect_2d_square_cell(int cell_number);
+    void create_2d_square_cell(const int& cell_number,
+                               const int& centreX,
+                               const int& centreY,
+                               const int& centreZ,
+                               const int& cell_width,
+                               const int& cell_height);
+    void connect_2d_square_cell(const int& cell_number);
 
     // Boundary Checking.
     void check_positions();
