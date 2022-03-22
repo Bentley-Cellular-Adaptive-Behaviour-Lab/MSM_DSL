@@ -172,6 +172,7 @@ public:
     std::list<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
 
+    const std::vector<double>& getBufferVector();
     void initiateBufferVector();
     void resetBufferVector();
     void updateBufferEntry(const int& index, const double& new_value);

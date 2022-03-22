@@ -2040,3 +2040,7 @@ void EC::updateCurrentProteinLevels() {
         protein->set_cell_level(buffer_level, 0);
     }
 }
+
+const std::vector<double> &EC::getBufferVector() {
+    return this->m_protein_delta_buffer;
+}

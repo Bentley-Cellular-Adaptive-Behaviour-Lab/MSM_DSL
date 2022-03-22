@@ -165,3 +165,12 @@ TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
         }
     }
 }
+
+TEST_F(CellBufferTest, bufferInitiationTest) {
+    auto tissue = this->getTissue();
+    auto cell1 = tissue->m_cell_agents.at(0);
+    auto cell2 = tissue->m_cell_agents.at(1);
+
+    EXPECT_EQ((int) cell1->getBufferVector().size(), 2);
+    EXPECT_EQ((int) cell2->getBufferVector().size(), 2);
+}

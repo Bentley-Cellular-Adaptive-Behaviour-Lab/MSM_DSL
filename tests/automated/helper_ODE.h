@@ -11,28 +11,20 @@
 typedef boost::array<double, 2> basic_ode_states;
 typedef boost::array<double, 3> JunctionTestStates;
 typedef boost::array<double, 5> multiAgent_ode_states;
-typedef boost::array<double, 3> basicFil_ode_states;
-typedef boost::array<double, 1> basicDistribution_ode_states;
-typedef boost::array<double, 4> cellJunction_ode_states;
-typedef boost::array<double, 6> notch_memAgent_ode_states;
-typedef boost::array<double, 4> notch_cell_ode_states;
 typedef boost::array<double, 4> TranscriptionDelayTest_ode_states;
-typedef boost::array<double, 1> UnequalDistributionTest_ode_states;
-typedef boost::array<double, 9> VenkatramanMemAgentTest_memAgent_ode_states;
-typedef boost::array<double, 7> VenkatramanMemAgentTest_cell_ode_states;
-typedef boost::array<double, 11> VenkatramanCellTest_ode_states;
+
 
 class Cell;
 class Cell_Type;
 class MemAgent;
 class EC;
+class Tissue;
 class Tissue_Container;
 class Tissue_Monolayer;
 class World;
 class World_Container;
 
 void constantODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
-void linearODE_system(const basic_ode_states &x, basic_ode_states &dxdt, double t);
 
 class BasicODEMemAgentTest : public ::testing::Test {
 protected:
@@ -88,8 +80,6 @@ public:
 
 	static void JunctionSystem(const JunctionTestStates &x, JunctionTestStates &dxdt, double t);
 	void setupAgentProteins() const;
-
-	void printMemAgentProteinLevels(int timestep) const;
 };
 
 class FilopodiaTest : public ::testing::Test {
@@ -141,6 +131,20 @@ public:
     void runCellODEs(EC *ec);
     void printProteinLevels(EC *ec);
     static void TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t);
+};
+
+class CellBufferTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+
+    Tissue_Monolayer *m_tissue;
+public:
+    Tissue_Container* createTissueContainer();
+
+    Cell_Type* createCellType(Tissue_Container *container);
+    void createTissue(Tissue_Container *container, Cell_Type* cellType);
+    Tissue_Monolayer *getTissue();
 };
 
 

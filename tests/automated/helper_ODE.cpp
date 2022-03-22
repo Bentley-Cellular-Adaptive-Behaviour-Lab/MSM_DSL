@@ -720,8 +720,6 @@ void TranscriptionDelayTest::runCellODEs(EC *ec) {
 void TranscriptionDelayTest::TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t) {
     double A = x[0];
     double B = x[1];
-    double C = x[2];
-    double D = x[3];
 
     dxdt[0] = 0;
     dxdt[1] = 0;
@@ -734,4 +732,62 @@ void TranscriptionDelayTest::printProteinLevels(EC *ec) {
         std::cout << protein->get_cell_level(0) << ",";
     }
     std::cout << "\n";
+}
+
+void CellBufferTest::SetUp() {
+    auto container = createTissueContainer();
+    auto cellType = createCellType(container);
+    createTissue(container, cellType);
+}
+
+Tissue_Container* CellBufferTest::createTissueContainer() {
+    // Create a tissue container w/ a world.
+    std::vector<double> dummyIncrements;
+    auto w_container = new World_Container();
+    w_container->world_setup(dummyIncrements);
+    auto world = w_container->get_world();
+    auto t_container = new Tissue_Container(world);
+    return t_container;
+}
+
+Cell_Type* CellBufferTest::createCellType(Tissue_Container* container) {
+    // Define a cell type and add proteins to this cell.
+    auto shape = new Shape_Square(1, 5, 5);
+    auto cellType = new Cell_Type(container, "TestCell", shape);
+    auto proteinA = new Protein("ProteinA",
+                                PROTEIN_LOCATION_CELL,
+                                10,
+                                0,
+                                -1,
+                                1);
+    auto proteinB = new Protein("ProteinB",
+                                PROTEIN_LOCATION_CELL,
+                                20,
+                                0,
+                                -1,
+                                1);
+    cellType->add_protein(proteinA);
+    cellType->add_protein(proteinB);
+    return cellType;
+}
+
+void CellBufferTest::createTissue(Tissue_Container *container, Cell_Type* cellType) {
+    // Create tissue in the centre of the world using the defined cell type.
+    auto position = new Coordinates(25, 25, 25);
+    auto monolayerType = new Tissue_Type_Flat(container,
+                                              "TestTissueType",
+                                              cellType,
+                                              CELL_CONFIGURATION_FLAT,
+                                              1,
+                                              2);
+    container->create_tissue("TestTissue", monolayerType, position);
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+}
+
+Tissue_Monolayer* CellBufferTest::getTissue() {
+    return this->m_tissue;
+}
+
+void CellBufferTest::TearDown() {
+    Test::TearDown();
 }
