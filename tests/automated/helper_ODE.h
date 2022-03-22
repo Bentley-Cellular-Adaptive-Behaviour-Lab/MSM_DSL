@@ -133,6 +133,23 @@ public:
     static void TranscriptionDelayTest_system(const TranscriptionDelayTest_ode_states &x, TranscriptionDelayTest_ode_states &dxdt, double t);
 };
 
+class DistributeProteinsTest : public ::testing::Test {
+protected:
+    void SetUp() override;
+    void TearDown() override;
+
+    Tissue_Monolayer *m_tissue;
+public:
+    Tissue_Container* createTissueContainer();
+
+    Cell_Type* createCellType(Tissue_Container *container);
+    void createTissue(Tissue_Container *container, Cell_Type* cellType);
+    Tissue_Monolayer *getTissue();
+    bool correctProteinALevel(MemAgent* memAgent);
+    bool correctProteinBLevel(MemAgent* memAgent);
+    bool correctProteinCLevel(MemAgent* memAgent);
+};
+
 class CellBufferTest : public ::testing::Test {
 protected:
     void SetUp() override;
@@ -145,6 +162,11 @@ public:
     Cell_Type* createCellType(Tissue_Container *container);
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
     Tissue_Monolayer *getTissue();
+    void alterProteinLevels();
+
+    // Runs updateBufferTest setup.
+    void updateBufferVectors();
+
 };
 
 

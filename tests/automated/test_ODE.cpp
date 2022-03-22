@@ -166,11 +166,50 @@ TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
     }
 }
 
+TEST_F(DistributeProteinsTest, DistributionTest) {
+    auto tissue = this->getTissue();
+    auto cell1 = tissue->m_cell_agents.at(1);
+
+    cell1->distributeProteins();
+    for (auto &memAgent : cell1->nodeAgents) {
+        EXPECT_TRUE(correctProteinALevel(memAgent));
+        EXPECT_TRUE(correctProteinBLevel(memAgent));
+        EXPECT_TRUE(correctProteinCLevel(memAgent));
+    }
+}
+
 TEST_F(CellBufferTest, bufferInitiationTest) {
     auto tissue = this->getTissue();
-    auto cell1 = tissue->m_cell_agents.at(0);
-    auto cell2 = tissue->m_cell_agents.at(1);
+    auto vector1 = tissue->m_cell_agents.at(0)->getBufferVector();
 
-    EXPECT_EQ((int) cell1->getBufferVector().size(), 2);
-    EXPECT_EQ((int) cell2->getBufferVector().size(), 2);
+    // Check that one value has been created for each protein (2).
+    EXPECT_EQ((int) vector1.size(), 2);
+
+    // Check that each value is 0.
+    for (auto value : vector1) {
+        EXPECT_EQ(value, 0);
+    }
+}
+
+TEST_F(CellBufferTest, updateBufferTest) {
+    // Run the set up.
+    this->updateBufferVectors();
+    auto tissue = this->getTissue();
+    auto vector1 = &(tissue->m_cell_agents.at(0)->getBufferVector());
+
+    EXPECT_EQ(vector1->at(0), 25); // Check level of Protein A in cell 1 is 25.
+    EXPECT_EQ(vector1->at(1), 50); // Check level of Protein B in cell 1 is 50.
+
+    // Reset the buffer vector, check that all values are now zero.
+    tissue->m_cell_agents.at(0)->resetBufferVector();
+    auto vector2 = tissue->m_cell_agents.at(0)->getBufferVector();
+    for (auto &value : vector2) {
+        EXPECT_EQ(value, 0);
+    }
+    // Change levels in the memAgents during updating.
+    // See what the levels are like afterwards.
+    this->alterProteinLevels();
+    auto vector3 = tissue->m_cell_agents.at(0)->getBufferVector();
+    EXPECT_EQ(vector1->at(0), 12.5); // Check level of Protein A in cell 1 is 25.
+    EXPECT_EQ(vector1->at(1), 62.5); // Check level of Protein B in cell 1 is 50.
 }

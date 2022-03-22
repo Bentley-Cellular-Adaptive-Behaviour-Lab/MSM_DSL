@@ -734,6 +734,137 @@ void TranscriptionDelayTest::printProteinLevels(EC *ec) {
     std::cout << "\n";
 }
 
+/*****************************************************************************************
+*  Name:		DistributeProteinsTest::SetUp()
+*  Description: - Runs two simple ODEs on a cell, then updates the levels for those particular timestep.
+*               - Then cycles the protein level container to update the levels properly.
+*
+*	  			ODE 1: 1A -> 1B (One TimeStep)
+*	  			ODE 2: 1C -> 1D (Five Timesteps from now.)
+*
+*  Returns:		void
+******************************************************************************************/
+
+
+void DistributeProteinsTest::SetUp() {
+    auto container = createTissueContainer();
+    auto cellType = createCellType(container);
+    createTissue(container, cellType);
+}
+
+Tissue_Container* DistributeProteinsTest::createTissueContainer() {
+    // Create a tissue container w/ a world.
+    std::vector<double> dummyIncrements;
+    auto w_container = new World_Container();
+    w_container->world_setup(dummyIncrements);
+    auto world = w_container->get_world();
+    auto t_container = new Tissue_Container(world);
+    return t_container;
+}
+
+Cell_Type* DistributeProteinsTest::createCellType(Tissue_Container* container) {
+    // Define a cell type and add proteins to this cell.
+    auto shape = new Shape_Square(1, 5, 5);
+    auto cellType = new Cell_Type(container, "TestCell", shape);
+    auto proteinA = new Protein("ProteinA",
+                                PROTEIN_LOCATION_CELL,
+                                25,
+                                0,
+                                -1,
+                                1);
+    auto proteinB = new Protein("ProteinB",
+                                PROTEIN_LOCATION_MEMBRANE,
+                                25,
+                                0,
+                                -1,
+                                1);
+    auto proteinC = new Protein("ProteinC",
+                                PROTEIN_LOCATION_JUNCTION,
+                                25,
+                                0,
+                                -1,
+                                1);
+    cellType->add_protein(proteinA);
+    cellType->add_protein(proteinB);
+    cellType->add_protein(proteinC);
+    return cellType;
+}
+
+void DistributeProteinsTest::createTissue(Tissue_Container *container, Cell_Type* cellType) {
+    // Create tissue in the centre of the world using the defined cell type.
+    auto position = new Coordinates(25, 25, 25);
+    auto monolayerType = new Tissue_Type_Flat(container,
+                                              "TestTissueType",
+                                              cellType,
+                                              CELL_CONFIGURATION_FLAT,
+                                              1,
+                                              2);
+    container->create_tissue("TestTissue", monolayerType, position);
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+}
+
+Tissue_Monolayer* DistributeProteinsTest::getTissue() {
+    return this->m_tissue;
+}
+
+bool DistributeProteinsTest::correctProteinALevel(MemAgent* memAgent) {
+    // Check that a memAgent has been allocated the correct level of a cellular protein.
+    bool proteinLevelCorrect = false;
+    if (memAgent->get_memAgent_current_level("ProteinA") == 1) {
+        proteinLevelCorrect = true;
+    }
+    return proteinLevelCorrect;
+}
+
+bool DistributeProteinsTest::correctProteinBLevel(MemAgent* memAgent) {
+    // Check that a memAgent has been allocated the correct level of a membrane protein.
+    bool proteinLevelCorrect = false;
+    double currentLevel = memAgent->get_memAgent_current_level("ProteinB");
+    if (memAgent->junction) {
+        if (currentLevel == 0) {
+            proteinLevelCorrect = true;
+        }
+    } else {
+        if (currentLevel == 1.25) {
+            proteinLevelCorrect = true;
+        }
+    }
+
+    return proteinLevelCorrect;
+}
+
+bool DistributeProteinsTest::correctProteinCLevel(MemAgent* memAgent) {
+    // Check that a memAgent has been allocated the correct level of a junctional protein.
+    // based on its location.
+    bool proteinLevelCorrect = false;
+    if (memAgent->junction) {
+        if (memAgent->get_memAgent_current_level("ProteinC") == 5) {
+            proteinLevelCorrect = true;
+        }
+    } else {
+        if (memAgent->get_memAgent_current_level("ProteinC") == 0) {
+            proteinLevelCorrect = true;
+        }
+    }
+
+    return proteinLevelCorrect;
+}
+
+void DistributeProteinsTest::TearDown() {
+    Test::TearDown();
+}
+
+/*****************************************************************************************
+*  Name:		CellBufferTest::SetUp()
+*  Description: - Runs two simple ODEs on a cell, then updates the levels for those particular timestep.
+*               - Then cycles the protein level container to update the levels properly.
+*
+*	  			ODE 1: 1A -> 1B (One TimeStep)
+*	  			ODE 2: 1C -> 1D (Five Timesteps from now.)
+*
+*  Returns:		void
+******************************************************************************************/
+
 void CellBufferTest::SetUp() {
     auto container = createTissueContainer();
     auto cellType = createCellType(container);
@@ -756,13 +887,13 @@ Cell_Type* CellBufferTest::createCellType(Tissue_Container* container) {
     auto cellType = new Cell_Type(container, "TestCell", shape);
     auto proteinA = new Protein("ProteinA",
                                 PROTEIN_LOCATION_CELL,
-                                10,
+                                25,
                                 0,
                                 -1,
                                 1);
     auto proteinB = new Protein("ProteinB",
                                 PROTEIN_LOCATION_CELL,
-                                20,
+                                50,
                                 0,
                                 -1,
                                 1);
@@ -779,13 +910,47 @@ void CellBufferTest::createTissue(Tissue_Container *container, Cell_Type* cellTy
                                               cellType,
                                               CELL_CONFIGURATION_FLAT,
                                               1,
-                                              2);
+                                              1);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
 }
 
 Tissue_Monolayer* CellBufferTest::getTissue() {
     return this->m_tissue;
+}
+
+void CellBufferTest::updateBufferVectors() {
+    auto tissue = getTissue();
+    auto cell1 = tissue->m_cell_agents.at(0);
+
+    // Distribute proteins.
+    cell1->distributeProteins();
+
+    // Then recalculate the buffer level.
+    for (auto *memAgent : cell1->nodeAgents) {
+        memAgent->passBackBufferLevels();
+    }
+}
+
+void CellBufferTest::alterProteinLevels() {
+    auto tissue = getTissue();
+    auto cell1 = tissue->m_cell_agents.at(0);
+
+    // Distribute proteins.
+    cell1->distributeProteins();
+
+    // Modify protein levels in the memAgents - mimics running an ODE.
+    // Then, pass back the buffer levels.
+    for (auto *memAgent : cell1->nodeAgents) {
+        auto currentLevelA = memAgent->get_memAgent_current_level("A");
+        auto currentLevelB = memAgent->get_memAgent_current_level("B");
+        // Do "ODEs".
+        auto proteinADelta = currentLevelA - 0.5;
+        auto proteinBDelta = currentLevelB + 0.5;
+        memAgent->set_protein_buffer_level("ProteinA", proteinADelta);
+        memAgent->set_protein_buffer_level("ProteinB", proteinBDelta);
+        memAgent->passBackBufferLevels();
+    }
 }
 
 void CellBufferTest::TearDown() {

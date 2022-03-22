@@ -761,17 +761,17 @@ void EC::distributeProteins() {
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             auto current_protein = this->m_cell_type->proteins[i];
-            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
-				if (nodeAgent->has_protein(current_protein->get_name())) {
-					protein_counts[i]++;
-				}
-			}
-            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
+            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
                 }
             }
             if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+                if (nodeAgent->has_protein(current_protein->get_name())) {
+                    protein_counts[i]++;
+                }
+            }
+            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
                 }
@@ -787,29 +787,44 @@ void EC::distributeProteins() {
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
 
+
+    // TODO: REFACTOR THESE FOR LOOPS.
     // Now, set the memAgents current and buffer level to be equal to the calculated amount.
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            Protein *current_protein = this->m_cell_type->proteins[i];
-			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
-				if (nodeAgent->has_protein(current_protein->get_name())) {
-                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                }
-			}
-			if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL && !nodeAgent->junction)) {
-				if (nodeAgent->has_protein(current_protein->get_name())) {
-                    nodeAgent->set_protein_current_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                }
-			}
-            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
-                if (nodeAgent->has_protein(current_protein->get_name())) {
-                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                    nodeAgent->set_protein_buffer_level(current_protein->get_name(), protein_totals_per_memAgent[i]);
-                }
-            }
+            distributeProtein(nodeAgent, this->m_cell_type->proteins[i], protein_totals_per_memAgent[i]);
         }
+    }
+}
+
+void EC::distributeProtein(MemAgent *memAgent, Protein *protein, const double& newLevel) {
+    if (protein->get_location() == PROTEIN_LOCATION_CELL && memAgent->has_protein(protein->get_name())) {
+        memAgent->set_protein_current_level(protein->get_name(), newLevel);
+        memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
+    }
+
+    if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
+        && !memAgent->junction
+        && memAgent->has_protein(protein->get_name())) {
+        memAgent->set_protein_current_level(protein->get_name(), newLevel);
+        memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
+    } else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
+        && memAgent->junction
+        && memAgent->has_protein(protein->get_name())) {
+        memAgent->set_protein_current_level(protein->get_name(), 0);
+        memAgent->set_protein_buffer_level(protein->get_name(), 0);
+    }
+
+    if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
+        && memAgent->junction
+        && memAgent->has_protein(protein->get_name())) {
+        memAgent->set_protein_current_level(protein->get_name(), newLevel);
+        memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
+    } else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
+        && !memAgent->junction
+        && memAgent->has_protein(protein->get_name())) {
+        memAgent->set_protein_current_level(protein->get_name(), 0);
+        memAgent->set_protein_buffer_level(protein->get_name(), 0);
     }
 }
 
@@ -2010,7 +2025,7 @@ void EC::initiateBufferVector() {
 ******************************************************************************************/
 
 void EC::resetBufferVector() {
-    for (auto value : this->m_protein_delta_buffer) {
+    for (auto &value : this->m_protein_delta_buffer) {
         value = 0;
     }
 }

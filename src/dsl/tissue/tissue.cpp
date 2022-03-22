@@ -715,6 +715,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
             cellAgent->nodeAgents.push_back(newMemAgent);
 
             m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), newMemAgent);
+            newMemAgent->JunctionTest(false);
 
             TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
         }
@@ -956,6 +957,7 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
             m_cell_agents[cell_number]->nodeAgents.push_back(newMemAgent);
             m_world->setMLocation(int(i), int(j), z_coord, newMemAgent);
             newMemAgent->node=true;
+            newMemAgent->JunctionTest(false);
             TissueUtils::allocateProteins(m_cell_agents[cell_number]->m_cell_type, newMemAgent);
         }
     }
