@@ -17,6 +17,17 @@
 #include "dsl/tissue/cellType.h"
 #include "dsl/tissue/tissue.h"
 
+/*
+ Needed Tests:
+ - Cell Buffer vector - initiation, resetting and updating based on memAgent values.
+ - Allocation - creation of new protein objects when memAgents are created.
+ - Distribution - assigning the correct values of proteins to the correct memAgent types.
+ - Summation - checking that new cell values after memAgent ODEs have occurred are correct.
+ - Venkatraman Example - Both Cells and MemAgents, check for parity between them.
+ // When finishing up protrusion tests.
+ - MemAgent Deletion and Creation - check that cell values are updated accordingly.
+ - Filopodia cross cell ODES.
+ */
 
 namespace odeint = boost::numeric::odeint;
 
@@ -55,8 +66,8 @@ TEST(test_ODE, multi_ODEConstantRate) {
         integrate_adaptive( controlled_stepper , constantODE_system,  states, 0.0 , 1.0 , 0.1 );
 	}
 
-	EXPECT_DOUBLE_EQ(states[0], 75);
-	EXPECT_DOUBLE_EQ(states[1], 25);
+	EXPECT_FLOAT_EQ(states[0], 75);
+	EXPECT_FLOAT_EQ(states[1], 25);
 
 
     // Do this again, but doing five steps once and check for parity between the two cases.
@@ -67,15 +78,15 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
     integrate_adaptive( controlled_stepper , constantODE_system,  states2, 0.0 , 5.0 , 0.1 );
 
-    EXPECT_DOUBLE_EQ(states[0], states2[0]);
-    EXPECT_DOUBLE_EQ(states[1], states2[1]);
+    EXPECT_FLOAT_EQ(states[0], states2[0]);
+    EXPECT_FLOAT_EQ(states[1], states2[1]);
 }
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_DOUBLE_EQ(memAgent1->get_environment_level("B"), 1);
-	EXPECT_DOUBLE_EQ(memAgent2->get_environment_level("B"), 1);
-	EXPECT_DOUBLE_EQ(memAgent3->get_environment_level("B"), 1);
+    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B"), 1);
+	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B"), 1);
+	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B"), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
@@ -85,49 +96,18 @@ TEST_F(BasicODEMemAgentTest, memAgentTest) {
 }
 
 TEST_F(JunctionTest, JunctionODETest) {
-
+    // Check levels after the first timestep.
+    EXPECT_FLOAT_EQ(this->m_memAgent1_A, 4.9502492);
+    EXPECT_FLOAT_EQ(this->m_memAgent1_B, 0.059999999);
+    EXPECT_FLOAT_EQ(this->m_memAgent2_A, 9.9004984);
+    EXPECT_FLOAT_EQ(this->m_memAgent2_B, 0.059999999);
+    EXPECT_FLOAT_EQ(this->m_memAgent3_A, 14.850747);
+    EXPECT_FLOAT_EQ(this->m_memAgent3_B, 0.059999999);
+    EXPECT_FLOAT_EQ(this->m_memAgent4_A, 5.940299);
+    EXPECT_FLOAT_EQ(this->m_memAgent4_B, 0.1);
 }
 
-// Tests that memAgents are able to check multiple neighbours.
-TEST_F(FilopodiaTest, DISABLED_cellODETest) {
-	EXPECT_FLOAT_EQ(memAgent2->get_memAgent_current_level("A"), 20);
-	EXPECT_FLOAT_EQ(memAgent7->get_memAgent_current_level("C"), 25);
-
-	EXPECT_FLOAT_EQ(memAgent1->get_memAgent_current_level("B"), 5);
-	EXPECT_FLOAT_EQ(memAgent3->get_memAgent_current_level("B"), 5);
-	EXPECT_FLOAT_EQ(memAgent4->get_memAgent_current_level("D"), 5);
-	EXPECT_FLOAT_EQ(memAgent5->get_memAgent_current_level("D"), 5);
-	EXPECT_FLOAT_EQ(memAgent6->get_memAgent_current_level("D"), 5);
-}
-
-TEST_F(BasicFilODEMemAgentTest, DISABLED_basicFilTest) {
-	EXPECT_EQ(round(memAgent1->get_memAgent_current_level("B")), 26);
-	EXPECT_EQ(round(memAgent1->get_memAgent_current_level("C")), 26);
-	EXPECT_EQ(round(memAgent2->get_memAgent_current_level("B")), 26);
-	EXPECT_EQ(round(memAgent2->get_memAgent_current_level("C")), 26);
-}
-
-TEST_F(BasicCellDistributionTest, DISABLED_preDistributionTest) {
-	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 1000);
-	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_current_level("A"), 40);
-}
-
-TEST_F(BasicCellDistributionTest, DISABLED_postDistributionTest) {
-	for (int i = 0; i < 10; i++) {
-		if (i != 0) {
-			this->cell->cell_agent->distribute_proteins();
-		}
-		for (auto memAgent : this->cell->cell_agent->nodeAgents) {
-			runODE(memAgent);
-		}
-		this->cell->cell_agent->calculate_cell_protein_levels();
-		this->printCellProteinLevels(i+1);
-	}
-	EXPECT_EQ(this->cell->cell_agent->get_cell_protein_level("A", 0), 750);
-	EXPECT_EQ(this->cell->cell_agent->nodeAgents[0]->get_memAgent_current_level("A"), 30);
-}
-
-TEST_F(TranscriptionDelayTest, DISABLED_transcriptionDelayTest) {
+TEST_F(TranscriptionDelayTest, transcriptionDelayTest) {
     std::cout << "Timestep,A,B,C,D,\n";
     std::cout << 0 << ",";
     printProteinLevels(this->tissueMonolayer->m_cell_agents[0]);

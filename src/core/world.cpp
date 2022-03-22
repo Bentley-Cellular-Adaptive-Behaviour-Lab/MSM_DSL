@@ -1668,15 +1668,6 @@ void World::creationTimestep(int movie) {
 			ECagents[j]->allocateProts();
 	}
 
-	if (PROTEIN_TESTING) {
-		std::cout << "Allocating cell proteins to memagents." << std::endl;
-		for (int j = 0; j < (int) ECagents.size(); j++) {
-			// TODO: TOM - This is the old version that distributes things like VEGF -> this is eventually going to be removed.
-//			ECagents[j]->allocateProts();
-			ECagents[j]->set_initial_proteins();
-		}
-	}
-
 	//define exposed membrane agents as those with a face adjacent to env not vertex (von neu neighbours)
 	//only these are flagged to do receptor interactions (required to give matching behaviour when scaling grid)
 	label_env_exposed_von_neu_agents();
@@ -1717,9 +1708,6 @@ void World::simulateTimestep() {
 		}
 		updateECagents();
 		updateEnvironment();
-		for (EC *ec :ECagents) {
-			ec->cycle_protein_levels();
-		}
 	}
 }
 
@@ -1918,12 +1906,13 @@ void World::updateECagents() {
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-		// TOM
 		if (PROTEIN_TESTING) {
             // Set the current protein levels to the current buffer levels (as determined by the memAgents).
             ECagents[j]->updateCurrentProteinLevels();
-			// Do gene regulation based on the current levels of proteins
+			// Do gene regulation based on the current levels of proteins.
 			this->odes->check_cell_ODEs(ECagents[j]);
+            // Reset the protein buffer now that we've finished ODEs.
+            ECagents[j]->resetBufferVector();
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
@@ -1944,7 +1933,7 @@ void World::updateECagents() {
 		// Voxelise new spring and surface positions of mesh
 		ECagents[j]->gridAgents();
 
-		//faster way to do it for debugging versions, but not correct to use in main simulations!!!
+		// Faster way to do it for debugging versions, but not correct to use in main simulations!!!
 		if (on_the_fly_surface_agents) {
 			ECagents[j]->remove_DoubledUp_SurfaceAgents();
 		}
@@ -1952,8 +1941,8 @@ void World::updateECagents() {
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
 		if (PROTEIN_TESTING) {
-            //Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
-			ECagents[j]->distribute_proteins();
+            // Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
+            ECagents[j]->distributeProteins();
 		} else {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 			ECagents[j]->allocateProts();
@@ -1961,7 +1950,7 @@ void World::updateECagents() {
 
 		if (PROTEIN_TESTING) {
 		    // Updates the protein levels container for each protein.
-//		    ECagents[j]->cycle_protein_levels();
+		    ECagents[j]->cycle_protein_levels();
 		}
 		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)

@@ -161,20 +161,20 @@ void Tissue_Container::create_cell(const std::string& name,
             cell = new Cell(this, name, m_world, position, cell_type);
             cell->determine_boundaries();
             store_cell(cell);
-            EC *ecp = new EC((World*) m_world, cell_type);
+            EC *newCellAgent = new EC((World*) m_world, cell_type);
 
-            ecp->belongs_to = BELONGS_TO_SINGLECELL;
+            newCellAgent->belongs_to = BELONGS_TO_SINGLECELL;
 
-            m_world->ECagents.push_back(ecp);
+            m_world->ECagents.push_back(newCellAgent);
 
-            ecp->cell_number = (int) m_world->ECagents.size();
+            newCellAgent->cell_number = (int) m_world->ECagents.size();
 
             //Add the cell to list of tissue container's known cell agents.
-            this->m_single_cell_agents.push_back(ecp);
+            this->m_single_cell_agents.push_back(newCellAgent);
 
             //Assign the cell agent to the cell object.
-            cell->cell_agent = ecp;
-            ecp->m_cell = cell;
+            cell->cell_agent = newCellAgent;
+            newCellAgent->m_cell = cell;
             check_position(cell);
 
             create_2d_square_cell(m_single_cell_agents.size(),
@@ -185,6 +185,8 @@ void Tissue_Container::create_cell(const std::string& name,
                                   cell->m_cell_type->m_shape->get_height());
 
             connect_2d_square_cell(m_single_cell_agents.size());
+            newCellAgent->initiateBufferVector();
+            newCellAgent->distributeProteins();
         } else {
             throw 4;
         }

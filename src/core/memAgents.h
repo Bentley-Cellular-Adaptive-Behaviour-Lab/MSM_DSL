@@ -213,6 +213,7 @@ public:
 
     void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
     void doVeilAdvance(const float& randomChance);
+    void cycleProteinLevels();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

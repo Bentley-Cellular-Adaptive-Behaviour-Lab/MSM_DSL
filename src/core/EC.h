@@ -129,7 +129,7 @@ public:
 	std::vector<std::array<int, 3>> filopodiaExtensions;
 	std::vector<std::array<int, 3>> filopodiaRetractions;
 
-    void distribute_proteins();
+    void distributeProteins();
     void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);

@@ -15,7 +15,7 @@ void World_Container::world_setup(std::vector<double>& paramValues) {
 
     // WORLD CREATION
 
-    world = create_world(0, 0, 0, 1.0, paramValues);
+    world = create_world(100, 100, 20, 1.0, paramValues);
     m_world = world;
     world->setWorldContainer(this);
 

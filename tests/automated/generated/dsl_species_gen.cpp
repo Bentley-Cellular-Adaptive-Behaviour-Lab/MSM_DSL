@@ -10,7 +10,7 @@
 ODEs::ODEs() {
 }
 
-void ODEs::check_memAgent_ODEs(std::string cell_type_name, MemAgent *memAgent) {
+void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
     if (cell_type_name == "Endothelial") {
         Endothelial_run_memAgent_ODEs(memAgent);
     }
@@ -21,6 +21,7 @@ void ODEs::check_cell_ODEs(EC *ec) {
         Endothelial_run_cell_ODEs(ec);
     }
 }
+
 void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
     double VEGF = x[0];
     double VEGFR = x[1];

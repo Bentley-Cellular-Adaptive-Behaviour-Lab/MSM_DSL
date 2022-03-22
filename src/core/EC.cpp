@@ -740,13 +740,14 @@ void EC::set_initial_proteins() {
 }
 
 /*****************************************************************************************
-*  Name:		distribute_proteins
+*  Name:		distributeProteins
 *  Description: Iterates over all cell proteins, counts the number of agents in the cell agent
-*               and distributes them out evenly
+*               and distributes them out evenly. Called once when the cell is created and
+ *              after cell level ODEs have occurred.
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::distribute_proteins() {
+void EC::distributeProteins() {
     // Create a vector containing the number of all memAgents that have a particular protein.
 	std::vector<int> protein_counts;
     protein_counts.reserve(this->m_cell_type->proteins.size());
@@ -2028,7 +2029,7 @@ void EC::updateBufferEntry(const int& index, const double& new_value) {
 /*****************************************************************************************
 *  Name:		updateCurrentProteinLevels
 *  Description: Sets all current protein levels to be equal to their corresponding buffer
-*               values. Called before cell ODEs
+*               values. Called before cell ODEs.
 *  Returns:		double
 ******************************************************************************************/
 

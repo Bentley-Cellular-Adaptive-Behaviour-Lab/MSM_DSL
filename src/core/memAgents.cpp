@@ -3214,7 +3214,7 @@ void MemAgent::distribute_calculated_proteins(const std::string& protein_name,
 }
 
 /*****************************************************************************************
-*  Name:		distribute_proteins
+*  Name:		distributeProteins
 *  Description: Takes in the change of a protein level, determines the change per memAgent
  *              then applies that change to the relevant memAgent
 *				Can either distribute proteins to the same memagents from the same cell or to
@@ -4599,5 +4599,11 @@ void MemAgent::passBackBufferLevels() {
     for (auto &protein : this->owned_proteins) {
         this->Cell->updateBufferEntry(index, protein->get_memAgent_current_level());
         index++;
+    }
+}
+
+void MemAgent::cycleProteinLevels() {
+    for (auto &protein : this->owned_proteins) {
+        protein->update_protein_level();
     }
 }

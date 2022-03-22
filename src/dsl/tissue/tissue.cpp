@@ -589,17 +589,17 @@ void Tissue_Vessel::create_vessel() {
         int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
 
         // Creates new cell agent and returns a pointer to it.
-        EC *ecp = new EC((World*) m_world, this->m_tissue_type->m_cell_type);
+        EC *newCellAgent = new EC((World*) m_world, this->m_tissue_type->m_cell_type);
 
         // Put the address into the world vector Ecells
-        m_world->ECagents.push_back(ecp);
+        m_world->ECagents.push_back(newCellAgent);
 
         // Add this agent to the relevant tissue.
-        store_cell_agent(ecp);
-		ecp->m_tissue = this;
-        ecp->belongs_to = BELONGS_TO_CYLINDER;
+        store_cell_agent(newCellAgent);
+        newCellAgent->m_tissue = this;
+        newCellAgent->belongs_to = BELONGS_TO_CYLINDER;
 
-        ecp->cell_number = i;
+        newCellAgent->cell_number = i;
 
         // Set the cell agents' VEGFR level to 0.
 		this->m_cell_agents[i]->VEGFRtot = 0;
@@ -612,12 +612,14 @@ void Tissue_Vessel::create_vessel() {
 		// For each memAgent along the cell's width, create enough memAgents vertically to
 		// complete the cell.
         for (int j = 0; j < cell_width; j++) {
-            this->tissue_vessel_draw_mesh(i, j, ecp);
+            this->tissue_vessel_draw_mesh(i, j, newCellAgent);
         }
 
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
+        newCellAgent->initiateBufferVector();
+        newCellAgent->distributeProteins();
     }
 }
 
@@ -850,21 +852,20 @@ void Tissue_Monolayer::create_monolayer() {
 
     for (int i = 0; i < m_cell_number; i++) {
         //creates new object dynamically of type EC (ecp is the e cell pointer)
-        EC *ecp = new EC( this->m_world, m_tissue_type->m_cell_type);
+        EC *newCellAgent = new EC(this->m_world, m_tissue_type->m_cell_type);
 
-        //TODO: Have run number logging use a variable.
+        newCellAgent->belongs_to = BELONGS_TO_FLAT;
 
-        ecp->belongs_to = BELONGS_TO_FLAT;
+        newCellAgent->m_tissue = this;
 
-        ecp->m_tissue = this;
-
-        ecp->cell_number = i;
+        newCellAgent->cell_number = i;
 
         //put the address into the vector Ecells
-        m_world->ECagents.push_back(ecp);
+        m_world->ECagents.push_back(newCellAgent);
 
         // Add this agent to the relevant tissue.
-        store_cell_agent(ecp);
+        store_cell_agent(newCellAgent);
+        newCellAgent->initiateBufferVector();
     }
 
 	int start_pos_X = (int)this->m_position->get_x_coord() - ((this->m_width_in_cells * cell_width) / 2);
@@ -886,10 +887,11 @@ void Tissue_Monolayer::create_monolayer() {
 
     tissue_connect_monolayer();
 
-    //check for junctions to make junction springs
-    for(int i = 0; i < m_cell_agents.size(); i++) {
-        for( j = 0; j < m_cell_agents[i]->nodeAgents.size();j++) {
-            m_cell_agents[i]->nodeAgents[j]->connectJunctions(false);
+    // Check for junctions to make junction springs and distribute out proteins to memAgents.
+    for (auto &cell_agent : m_cell_agents) {
+        for( j = 0; j < cell_agent->nodeAgents.size();j++) {
+            cell_agent->nodeAgents[j]->connectJunctions(false);
+            cell_agent->distributeProteins();
         }
     }
 }
