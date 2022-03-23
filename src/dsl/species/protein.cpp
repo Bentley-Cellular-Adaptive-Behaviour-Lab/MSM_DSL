@@ -115,7 +115,7 @@ void Protein::update_protein_level() {
     this->m_memAgent_current_level = this->m_memAgent_buffer_level;
 }
 
-double Protein::get_memAgent_next_level() const {
+double Protein::get_memAgent_buffer_level() const {
     return this->m_memAgent_buffer_level;
 }
 

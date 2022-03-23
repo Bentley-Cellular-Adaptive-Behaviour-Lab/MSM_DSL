@@ -2312,6 +2312,68 @@ MemAgent::MemAgent(EC* belongsTo, World* world){
     }
 }
 
+MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
+	int i;
+	diffAd_replaced_cell = NULL;
+	diffAd_replaced_med = NULL;
+
+	MEDIUM = false;
+	mediumNeighs = 0;
+	labelled = false;
+	labelledBlindended = false;
+	labelled2=false;
+	mesh3SpringsOnly=false;
+	Cell = belongsTo;
+	created = 0;
+	FA = false;
+	FIL=NONE;
+
+	worldP=world;
+	retracted = false;
+	junction = false;
+	neighs=0;
+	node = true;
+	filTokens =0;
+	Force[0]=0;
+	Force[1]=0;
+	Force[2]=0;
+	SumVEGF=0;
+	MneighCount=0;
+	deleteFlag=false;
+	VRinactiveCounter=0;
+	filTipTimer=0;
+	plusSite=NULL;
+	minusSite=NULL;
+	filPos = 0;
+	springJunction=false;
+	filNeigh=NULL;
+	FATimer=0;
+	activeNotch = 0.0f;
+	Dll4=0.0f;
+	VEGFR = 0.0f;
+	VEGFRactive=0.0f;
+
+	surgeSpringConst=false;
+	veilAdvancing = false;
+	vonNeu=false;
+	assessed=false;
+	addedJunctionList=false;
+
+	for(i=0;i<meshNeighs+NEIGHSMAX;i++){
+		neigh[i]=NULL;
+		SpringNeigh[i]=NULL;
+
+	}
+	SpringBelong=NULL;
+
+	if (allocateProts) {
+		// Add proteins to the MemAgent and set their levels to zero, as they're not participating in ODES yet.
+		for (auto &protein: belongsTo->m_cell_type->proteins) {
+			protein->set_memAgent_buffer_level(0);
+		}
+	}
+}
+
 MemAgent::~MemAgent(void){
     // Pass protein levels back to the cell before deleting them.
     this->passBackBufferLevels();
@@ -2413,7 +2475,7 @@ double MemAgent::get_memAgent_current_level(const std::string& protein_name) con
 }
 
 /*****************************************************************************************
-*  Name:		get_memAgent_next_level
+*  Name:		get_memAgent_buffer_level
 *  Description: Returns the level of a protein owned by this memAgent, at the next timestep.
 *  Returns:		float
 ******************************************************************************************/
@@ -2422,7 +2484,7 @@ double MemAgent::get_memAgent_next_level(const std::string& protein_name) const 
     if (this->has_protein(protein_name)) {
         for (auto protein : this->owned_proteins) {
             if (protein->get_name() == protein_name) {
-                return protein->get_memAgent_next_level();
+                return protein->get_memAgent_buffer_level();
             }
         }
     }
@@ -4597,7 +4659,7 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
 void MemAgent::passBackBufferLevels() {
     int index = 0;
     for (auto &protein : this->owned_proteins) {
-        this->Cell->updateBufferEntry(index, protein->get_memAgent_current_level());
+        this->Cell->updateBufferEntry(index, protein->get_memAgent_buffer_level());
         index++;
     }
 }

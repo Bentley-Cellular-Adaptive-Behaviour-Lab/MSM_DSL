@@ -2,7 +2,6 @@
 // Created by Thomas Mead on 28/06/2021.
 //
 
-#include <boost/array.hpp>
 #include <boost/numeric/odeint.hpp>
 #include <cmath>
 
@@ -13,16 +12,14 @@
 
 #include "helper_ODE.h"
 
+#include "dsl/species/protein.h"
+
 #include "dsl/tissue/cell.h"
 #include "dsl/tissue/cellType.h"
 #include "dsl/tissue/tissue.h"
 
 /*
  Needed Tests:
- - Cell Buffer vector - initiation, resetting and updating based on memAgent values.
- - Allocation - creation of new protein objects when memAgents are created.
- - Distribution - assigning the correct values of proteins to the correct memAgent types.
- - Summation - checking that new cell values after memAgent ODEs have occurred are correct.
  - Venkatraman Example - Both Cells and MemAgents, check for parity between them.
  // When finishing up protrusion tests.
  - MemAgent Deletion and Creation - check that cell values are updated accordingly.
@@ -206,10 +203,21 @@ TEST_F(CellBufferTest, updateBufferTest) {
     for (auto &value : vector2) {
         EXPECT_EQ(value, 0);
     }
+
     // Change levels in the memAgents during updating.
     // See what the levels are like afterwards.
     this->alterProteinLevels();
     auto vector3 = tissue->m_cell_agents.at(0)->getBufferVector();
-    EXPECT_EQ(vector1->at(0), 12.5); // Check level of Protein A in cell 1 is 25.
-    EXPECT_EQ(vector1->at(1), 62.5); // Check level of Protein B in cell 1 is 50.
+    EXPECT_EQ(vector1->at(0), 12.5); // Check level of Protein A in the buffer is 12.5.
+    EXPECT_EQ(vector1->at(1), 62.5); // Check level of Protein B in the buffer is 62.5.
+
+	// Now update the cell's current levels and check for congruity.
+	auto cell1 = tissue->m_cell_agents.at(0);
+	cell1->updateCurrentProteinLevels();
+	EXPECT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 12.5); // Check level of Protein A in cell 1 is 12.5.
+	EXPECT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 62.5); // Check level of Protein A in cell 1 is 12.5.
+}
+
+TEST_F(VenkatramanMemAgentTest, memAgentTest) {
+
 }

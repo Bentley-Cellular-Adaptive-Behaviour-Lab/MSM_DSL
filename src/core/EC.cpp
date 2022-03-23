@@ -2053,6 +2053,7 @@ void EC::updateCurrentProteinLevels() {
     for (auto &protein : this->m_cell_type->proteins) {
         const double buffer_level = this->m_protein_delta_buffer.at(index);
         protein->set_cell_level(buffer_level, 0);
+		index++;
     }
 }
 

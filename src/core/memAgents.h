@@ -135,6 +135,7 @@ public:
 	MedAgent* diffAd_replaced_med;
 
 	MemAgent(EC* belongsTo, World* world); ///constructor
+	MemAgent(EC* belongsTo, World* world, const bool& allocateProts); ///constructor
 	~MemAgent(void); ///destructor
 
     // DSL related functions.

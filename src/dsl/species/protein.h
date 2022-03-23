@@ -35,7 +35,7 @@ public:
     void set_cell_level(const double& new_level, const int& timestep_delay);
     [[nodiscard]] double get_memAgent_current_level() const;
     void set_memAgent_current_level(const double& new_level);
-    [[nodiscard]] double get_memAgent_next_level() const;
+    [[nodiscard]] double get_memAgent_buffer_level() const;
     void set_memAgent_buffer_level(const double& new_level);
     [[nodiscard]] double get_env_level() const;
     void set_env_level(const double& new_level);
