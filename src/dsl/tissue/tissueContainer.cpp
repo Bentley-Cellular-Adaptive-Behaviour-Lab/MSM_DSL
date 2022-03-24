@@ -215,6 +215,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylind
             check_position(tissue);
             tissue->create_vessel();
             tissue->tissue_vessel_connect_mesh();
+            tissue->determineJunctions();
             store_tissue(tissue);
         }
     } catch (int e) {
@@ -242,6 +243,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Flat *
             tissue->determine_boundaries();
             check_position(tissue);
             tissue->create_monolayer();
+            tissue->determineJunctions();
             store_tissue(tissue);
         }
     } catch (int e) {

@@ -71,6 +71,7 @@ public:
 
     virtual bool check_boundaries();
 	virtual void determine_boundaries();
+    void determineJunctions();
 
 	void store_cell_agent(EC *ecp);
 

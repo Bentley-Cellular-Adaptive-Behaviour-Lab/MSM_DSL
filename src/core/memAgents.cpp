@@ -1158,9 +1158,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
                             junction = true;
                             flagA = 1;
 
-                            if (this->Cell->cell_number == 0 && worldP->timeStep == 0) {
-                                int test = 0;
-                            }
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
                             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
@@ -2252,64 +2249,65 @@ bool MemAgent::meshConnected(MemAgent* tocheck) {
 
 }
 
-MemAgent::MemAgent(EC* belongsTo, World* world){
-	int i;
-	diffAd_replaced_cell = NULL;
-	diffAd_replaced_med = NULL;
+MemAgent::MemAgent(EC* belongsTo, World* world) {
+    int i;
+    diffAd_replaced_cell = NULL;
+    diffAd_replaced_med = NULL;
 
-	MEDIUM = false;
-	mediumNeighs = 0;
-	labelled = false;
-	labelledBlindended = false;
-	labelled2=false;
-	mesh3SpringsOnly=false;
-	Cell = belongsTo;
-	created = 0;
-	FA = false;
-	FIL=NONE;
+    MEDIUM = false;
+    mediumNeighs = 0;
+    labelled = false;
+    labelledBlindended = false;
+    labelled2=false;
+    mesh3SpringsOnly=false;
+    Cell = belongsTo;
+    created = 0;
+    FA = false;
+    FIL=NONE;
 
-	worldP=world;
-	retracted = false;
-	junction = false;
-	neighs=0;
-	node = true;
-	filTokens =0;
-	Force[0]=0;
-	Force[1]=0;
-	Force[2]=0;
-	SumVEGF=0;
-	MneighCount=0;
-	deleteFlag=false;
-	VRinactiveCounter=0;
-	filTipTimer=0;
-	plusSite=NULL;
-	minusSite=NULL;
-	filPos = 0;
-	springJunction=false;
-	filNeigh=NULL;
-	FATimer=0;
-	activeNotch = 0.0f;
-	Dll4=0.0f;
-	VEGFR = 0.0f;
-	VEGFRactive=0.0f;
+    worldP=world;
+    retracted = false;
+    junction = false;
+    neighs=0;
+    node = true;
+    filTokens =0;
+    Force[0]=0;
+    Force[1]=0;
+    Force[2]=0;
+    SumVEGF=0;
+    MneighCount=0;
+    deleteFlag=false;
+    VRinactiveCounter=0;
+    filTipTimer=0;
+    plusSite=NULL;
+    minusSite=NULL;
+    filPos = 0;
+    springJunction=false;
+    filNeigh=NULL;
+    FATimer=0;
+    activeNotch = 0.0f;
+    Dll4=0.0f;
+    VEGFR = 0.0f;
+    VEGFRactive=0.0f;
 
-	surgeSpringConst=false;
-	veilAdvancing = false;
-	vonNeu=false;
-	assessed=false;
-	addedJunctionList=false;
+    surgeSpringConst=false;
+    veilAdvancing = false;
+    vonNeu=false;
+    assessed=false;
+    addedJunctionList=false;
 
-	for(i=0;i<meshNeighs+NEIGHSMAX;i++){
-		neigh[i]=NULL;
-		SpringNeigh[i]=NULL;
+    for(i=0;i<meshNeighs+NEIGHSMAX;i++){
+        neigh[i]=NULL;
+        SpringNeigh[i]=NULL;
 
-	}
-	SpringBelong=NULL;
+    }
+    SpringBelong=NULL;
 
     // Add proteins to the MemAgent and set their levels to zero, as they're not participating in ODES yet.
     for (auto &protein : belongsTo->m_cell_type->proteins) {
         protein->set_memAgent_buffer_level(0);
     }
+
 }
 
 MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){

@@ -134,8 +134,8 @@ public:
 	int mediumNeighs;
 	MedAgent* diffAd_replaced_med;
 
-	MemAgent(EC* belongsTo, World* world); ///constructor
-	MemAgent(EC* belongsTo, World* world, const bool& allocateProts); ///constructor
+    MemAgent(EC* belongsTo, World* world); ///constructor
+    MemAgent(EC* belongsTo, World* world, const bool& allocateProts); /// Test constructor
 	~MemAgent(void); ///destructor
 
     // DSL related functions.
