@@ -32857,10 +32857,40 @@
               </node>
               <node concept="2EixSi" id="2vZs7RNWoSo" role="2EinRH" />
             </node>
+            <node concept="356sEK" id="4jnIIBKi$pK" role="383Ya9">
+              <node concept="373pV1" id="4jnIIBKi_w6" role="356sEH" />
+              <node concept="356sEF" id="4jnIIBKi_wc" role="356sEH">
+                <property role="TrG5h" value="if (level == 0.0) {" />
+              </node>
+              <node concept="2EixSi" id="4jnIIBKi$pM" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="4jnIIBKiAkq" role="383Ya9">
+              <node concept="373pV1" id="4jnIIBKiA$b" role="356sEH" />
+              <node concept="373pV1" id="4jnIIBKiA$l" role="356sEH" />
+              <node concept="356sEF" id="4jnIIBKiA$t" role="356sEH">
+                <property role="TrG5h" value="return 0.0;" />
+              </node>
+              <node concept="2EixSi" id="4jnIIBKiAks" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="4jnIIBKiB7_" role="383Ya9">
+              <node concept="373pV1" id="4jnIIBKiBjr" role="356sEH" />
+              <node concept="356sEF" id="4jnIIBKiBjx" role="356sEH">
+                <property role="TrG5h" value="} else {" />
+              </node>
+              <node concept="2EixSi" id="4jnIIBKiB7B" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="4jnIIBKiBO_" role="383Ya9">
+              <node concept="373pV1" id="4jnIIBKiCCz" role="356sEH" />
+              <node concept="373pV1" id="4jnIIBKiCCD" role="356sEH" />
+              <node concept="356sEF" id="4jnIIBKiCCL" role="356sEH">
+                <property role="TrG5h" value="return level / (float) ec-&gt;getNeighCellVector().size();" />
+              </node>
+              <node concept="2EixSi" id="4jnIIBKiBOB" role="2EinRH" />
+            </node>
             <node concept="356sEK" id="2vZs7RNWoSp" role="383Ya9">
               <node concept="373pV1" id="2vZs7RNWoSq" role="356sEH" />
               <node concept="356sEF" id="2vZs7RNWoSr" role="356sEH">
-                <property role="TrG5h" value="return level / (float) ec-&gt;getNeighCellVector().size();" />
+                <property role="TrG5h" value="}" />
               </node>
               <node concept="2EixSi" id="2vZs7RNWoSs" role="2EinRH" />
             </node>
