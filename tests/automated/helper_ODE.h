@@ -231,7 +231,8 @@ public:
     Tissue_Container* createTissueContainer();
     Cell_Type* createCellType(Tissue_Container* container);
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
-    void runODEs();
+    void runODEs(const int& timestep);
+    Tissue* m_tissue;
 
     // ODE Functions.
 	void check_cell_ODEs(EC *ec);

@@ -1463,6 +1463,7 @@ int CPM_module::connectivity(MemAgent* replaced, MemAgent* replacer) {
     //check if replacer move leaves any of the neighbouring agents stranded...
 
     //
+    return 0;
 }
 //-------------------------------------------------------------------------
 

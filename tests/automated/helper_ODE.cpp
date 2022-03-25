@@ -1222,7 +1222,6 @@ double VenkatramanCellTest::calc_FilopodiaTurnover_rate(double FILOPODIA) {
     return 0.001*FILOPODIA;
 }
 
-
 double VenkatramanCellTest::calc_DLL4_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
@@ -1263,19 +1262,90 @@ void VenkatramanCellTest::TearDown() {
 ******************************************************************************************/
 
 void VenkatramanMemAgentTest::SetUp() {
-	Test::SetUp();
+    auto container = createTissueContainer();
+    auto cellType = createCellType(container);
+    createTissue(container, cellType);
+}
+
+Tissue_Container* VenkatramanMemAgentTest::createTissueContainer() {
+    // Create a tissue container w/ a world.
+    std::vector<double> dummyIncrements;
+    auto w_container = new World_Container();
+    w_container->world_setup(dummyIncrements);
+    auto world = w_container->get_world();
+    auto t_container = new Tissue_Container(world);
+    return t_container;
+}
+
+Cell_Type* VenkatramanMemAgentTest::createCellType(Tissue_Container* container) {
+    // Define a cell type and add proteins to this cell.
+    auto shape = new Shape_Square(1, 5, 5);
+    auto Endothelial_Type = new Cell_Type(container, "Endothelial", shape);
+    Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("NICD", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("HEY", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    return Endothelial_Type;
+}
+
+void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Type* cellType) {
+    // Create tissue in the centre of the world using the defined cell type.
+    auto position = new Coordinates(25, 25, 25);
+    auto monolayerType = new Tissue_Type_Flat(container,
+                                              "TestTissueType",
+                                              cellType,
+                                              CELL_CONFIGURATION_FLAT,
+                                              1,
+                                              2);
+    container->create_tissue("TestTissue", monolayerType, position);
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+}
+
+void VenkatramanMemAgentTest::runODEs(const int& timestep) {
+    for (int i = 0; i < timestep; i++) {
+        // Distribute proteins to memAgents, using current cell level.
+        #pragma acc parallel loop
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->distributeProteins();
+        }
+
+        // Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
+        // Then, update the cell using the current values.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            for (auto nodeAgent : cellAgent->nodeAgents) {
+                check_memAgent_ODEs("Endothelial", nodeAgent);
+                nodeAgent->passBackBufferLevels();
+            }
+            cellAgent->updateCurrentProteinLevels();
+        }
+
+        // Perform cell-level ODEs (i.e. regulation) reactions.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            check_cell_ODEs(cellAgent);
+        }
+
+        // Cycle through the cell-level proteins for the cell agents.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->cycle_protein_levels();
+        }
+    }
 }
 
 void VenkatramanMemAgentTest::check_cell_ODEs(EC *ec) {
-	if (ec->m_cell_type->m_name == "Endothelial") {
-		Endothelial_run_cell_ODEs(ec);
-	}
+    if (ec->m_cell_type->m_name == "Endothelial") {
+        Endothelial_run_cell_ODEs(ec);
+    }
 }
 
 void VenkatramanMemAgentTest::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
-	if (cell_type_name == "Endothelial") {
-		Endothelial_run_memAgent_ODEs(memAgent);
-	}
+    if (cell_type_name == "Endothelial") {
+        Endothelial_run_memAgent_ODEs(memAgent);
+    }
 }
 
 
@@ -1363,6 +1433,7 @@ void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	ec->set_cell_protein_level("DLL4", states[5], 1);
 	ec->set_cell_protein_level("DLL4_NOTCH", states[6], 1);
 	ec->set_cell_protein_level("NICD", states[7], 1);
+    ec->set_cell_protein_level("NOTCH", states[8], 1);
 }
 
 void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x,
@@ -1541,7 +1612,11 @@ double VenkatramanMemAgentTest::calc_DLL4_adjacent_level(EC *ec) {
 	for (auto *neighbour : ec->getNeighCellVector()) {
 		level += neighbour->get_cell_protein_level("DLL4",0);
 	}
-	return level / (float) ec->getNeighCellVector().size();
+    if (level == 0.0 || ec->getNeighCellVector().empty()) {
+        return 0.0;
+    } else {
+        return level / (int) ec->getNeighCellVector().size();
+    }
 }
 
 double VenkatramanMemAgentTest::calc_NOTCH_adjacent_level(EC *ec) {
@@ -1549,7 +1624,11 @@ double VenkatramanMemAgentTest::calc_NOTCH_adjacent_level(EC *ec) {
 	for (auto *neighbour : ec->getNeighCellVector()) {
 		level += neighbour->get_cell_protein_level("NOTCH",0);
 	}
-	return level / (float) ec->getNeighCellVector().size();
+    if (level == 0.0 || ec->getNeighCellVector().empty()) {
+        return 0.0;
+    } else {
+        return level / (int) ec->getNeighCellVector().size();
+    }
 }
 
 void VenkatramanMemAgentTest::TearDown() {
