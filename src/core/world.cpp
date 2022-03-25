@@ -32,11 +32,13 @@
 typedef Location** ppLocation;
 typedef Location* pLocation;
 
+#ifdef __GNUC__
 unsigned long long rdtsc(){
     unsigned int lo,hi;
-    __asm__ __volatile__ ("rdtsc" : "=a" (lo), "=d" (hi));
+    __asm __volatile ("rdtsc" : "=a" (lo), "=d" (hi));
     return ((unsigned long long)hi << 32) | lo;
 }
+#endif
 
 int patternHistory = 0;
 bool patterned = false;
@@ -92,6 +94,15 @@ bool patterned = false;
 //}
 World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s)
 {
+#ifdef _MSC_VER
+    if (TESTING) {
+        srand(100);
+    } else if (s > 0) {
+        seed = s;
+        g = std::mt19937(seed);
+    }
+#endif
+#ifdef __GNUC__
     if (TESTING) {
         srand(100);
     } else if (s > 0) {
@@ -100,6 +111,8 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     } else {
         g = std::mt19937(rdtsc());
     }
+}
+#endif
 
     EPSILON = epsilon;
     VconcST = vconcst;
@@ -161,24 +174,33 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     std::cout << "Creation timestep complete." << std::endl;
 }
 
-World::World()
-{
+World::World() {
+#ifdef __GNUC__
     std::cout << "Creating world..." << std::endl;
-    if (TESTING)
-    {
+    if (TESTING) {
         srand(100);
     }
-    else if (seed > 0)
-    {
+    else if (seed > 0) {
         std::cout << "seeding with value: " << seed << std::endl;
         g = std::mt19937(seed);
         //srand(seed);
     }
-    else
-    {
+    else {
         //srand(rdtsc());
         g = std::mt19937(rdtsc());
     }
+#endif
+#ifdef _MSC_VER
+    std::cout << "Creating world..." << std::endl;
+    if (TESTING) {
+        srand(100);
+    }
+    else if (seed > 0) {
+        std::cout << "seeding with value: " << seed << std::endl;
+        g = std::mt19937(seed);
+        //srand(seed);
+    }
+#endif
 
     //    char outfilename[21];
     //    char outfilename2[21];
@@ -228,8 +250,8 @@ World::World(const int& grid_xMax,
              const int& grid_yMax,
              const int& grid_zMax,
              const double& base_permittivity,
-             const std::vector<double>& paramValues)
-{
+             const std::vector<double>& paramValues) {
+#ifdef __GNUC__
     if (TESTING) {
         srand(100);
     } else if (seed > 0) {
@@ -238,6 +260,16 @@ World::World(const int& grid_xMax,
     } else {
         g = std::mt19937(rdtsc());
     }
+#endif
+
+#ifdef _MSC_VER
+    if (TESTING) {
+        srand(100);
+    } else if (seed > 0) {
+        std::cout << "seeding with value: " << seed << std::endl;
+        g = std::mt19937(seed);
+    }
+#endif
 
 //    createLogger();
 
@@ -290,7 +322,7 @@ World::World(const int& grid_xMax,
 
 //-----------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------
-World::~World(void){
+World::~World(void) {
 
     destroyWorld();
     dataFile.close();
@@ -3050,16 +3082,18 @@ void World::createNewEnvAgent(int x, int y, int z){
 
 void World::createAstrocytes(void){
 
-
     int i, j, k, m;
     int centreX, centreY;
 
-    int howMany =(int)((float)xMAX/(float)(astroWidth+astroSpacer));
+    const int howMany =(int)((float)xMAX/(float)(astroWidth+astroSpacer));
 
     int W=(int)((float)astroWidth/2.0f);
     int V=(int)((float)astroSpacer/2.0f);
-    int p1[howMany];int p2[howMany];
-    int b1[howMany];int b2[howMany];
+
+    std::array<int, howMany> p1{};
+    std::array<int, howMany> p2{};
+    std::array<int, howMany> b1{};
+    std::array<int, howMany> b2{};
     //-------------------------------------------
     //uniform layer of astrocytes
     if(ASTRO==UNIFORM){
@@ -3324,12 +3358,15 @@ bool World::replaceAstrocytes(int i, int j, bool checkOnly){
 #define Cradius 8
 #define Cgap 4
     int flagA=0;
-    int howMany =(int)((float)xMAX/(float)(astroWidth+astroSpacer));
+    const int howMany =(int)((float)xMAX/(float)(astroWidth+astroSpacer));
 
     int W=(int)((float)astroWidth/2.0f);
     int V=(int)((float)astroSpacer/2.0f);
-    int p1[howMany];int p2[howMany];
-    int b1[howMany];int b2[howMany];
+    std::array<int, howMany> p1{};
+    std::array<int, howMany> p2{};
+    std::array<int, howMany> b1{};
+    std::array<int, howMany> b2{};
+
     int centreX, centreY;
 
     //-------------------------------------------
@@ -4041,7 +4078,7 @@ void World::createMacrophages(void){
 void World::initialise_macrophage_VEGF(void){
 
     int i, j, m;
-    float Dist[MACROS];
+    std::array<float, MACROS> Dist{};
     float accum;
 
     for (i = 0; i < xMAX; i++){
@@ -5902,7 +5939,8 @@ void World::calcEnvAgentVEGF(Env* ep){
     int J;
     float accum;
     int m;
-    float Dist[MACROS], CD[MACROS];
+    std::array<float, MACROS> Dist{};
+    std::array<float, MACROS> CD{};
     float XA, YA, ZA;
     int CentreVEGF;
     int div =4;

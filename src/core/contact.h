@@ -11,11 +11,11 @@ class Contact {
 public:
     Filopodia* fil1;
     Filopodia* fil2;
-    int startTime;
+    int startTime{};
     int lifeTime;
     bool finished;
-    bool updated;
-    Contact(void);
+    bool updated{};
+    Contact();
 };
 
 #endif //SRC_SPRINGAGENT_CONTACT_H

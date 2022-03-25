@@ -37,6 +37,8 @@ private:
     WorldLogger *m_worldLogger;
 public:
 
+    const float m_VCONCST = 0.04;
+
     ///general
     std::vector <EC *> ECagents;
     int Pause;

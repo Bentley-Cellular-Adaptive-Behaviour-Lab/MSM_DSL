@@ -23,13 +23,13 @@ class CPM_module{
 
 public:
     World* worldP;
-    float Hamiltonian;
-    float J_sum;
-    float area_sum;
-    float new_Hamiltonian;
+    float Hamiltonian{};
+    float J_sum{};
+    float area_sum{};
+    float new_Hamiltonian{};
     std::vector <MedAgent*> mediumAgents;
 
-    int Temp;
+    int Temp{};
 
     bool check_gradient(MemAgent* replaced_mem, MemAgent* replacer_mem);
     CPM_module(World* WorldP);

@@ -1309,7 +1309,6 @@ void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Typ
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
         // Distribute proteins to memAgents, using current cell level.
-        #pragma acc parallel loop
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->distributeProteins();
         }

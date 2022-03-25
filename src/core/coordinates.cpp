@@ -22,11 +22,7 @@ float Coordinates::get_z_coord() const {
     return this->z;
 }
 
-Coordinates::Coordinates(void){
+Coordinates::Coordinates(void)= default;
 
-}
-
-Coordinates::~Coordinates(void){
-
-}
+Coordinates::~Coordinates(void)= default;
 

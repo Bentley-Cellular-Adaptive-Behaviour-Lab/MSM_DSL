@@ -22,6 +22,7 @@ float VEGFRNORM; //total of receptors it will maintain if all else is equal - di
 float VEGFRmin;
 float VEGFconc = 0.8f; //for uniform VEGF above a vessel JTB 2008
 float VconcST = 0.04;
+float VconcSTMACRO = 0.15f; // Macrophage point source for PLoS CB 2009
 float actinMax = 512;
 float delta = 2.0; //2.0f normal
 float dll4_SIG = 7.0f;

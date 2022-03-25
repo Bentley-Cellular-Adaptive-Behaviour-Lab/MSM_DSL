@@ -3,6 +3,7 @@
 //
 
 #include <cassert>
+#include <iterator>
 #include "protein.h"
 
 Protein::Protein(const std::string& name,

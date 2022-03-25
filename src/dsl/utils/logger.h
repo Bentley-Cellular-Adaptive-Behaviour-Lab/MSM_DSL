@@ -36,8 +36,8 @@ public:
     std::string& getProteinFileName();
     void determineProteinFileName();
 
-    std::string& constructHeaderString();
-    std::string& constructProteinLevelString();
+    const std::string & constructHeaderString();
+    const std::string & constructProteinLevelString();
 
     void writeProteinLevels();
 };

@@ -31,6 +31,10 @@ class Cell_Type;
 class Hysteresis;
 class Tissue;
 
+namespace ECUtils {
+    static void distributeProtein(MemAgent *memAgent, Protein *protein, const double &totalPerMemAgent);
+}
+
 class EC {
 private:
     std::list<Protrusion*> m_protrusions;
@@ -131,7 +135,7 @@ public:
 	std::vector<std::array<int, 3>> filopodiaRetractions;
 
     void distributeProteins();
-    void distributeProtein(MemAgent *memAgent, Protein* protein, const double& totalPerMemAgent);
+
     void set_initial_proteins();
     void calculate_cell_protein_levels();
     void set_cell_type(Cell_Type *cell_type);

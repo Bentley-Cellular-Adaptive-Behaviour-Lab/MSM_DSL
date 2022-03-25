@@ -688,8 +688,8 @@ void MemAgent::calcForce(void) {
 
     int i, k, T;
     float denom, length;
-    float sumDN[3];
-    int upto = meshNeighs + 5;
+    std::array<float, 3> sumDN{};
+    const int upto = meshNeighs + 5;
     int DONE = 0;
     float newX, newY, newZ;
     float SL = 0;
@@ -697,16 +697,21 @@ void MemAgent::calcForce(void) {
 
     int flagFil = 0;
     float oldDist, newDist;
-    float PN[upto][3];
-    float SN[upto][3];
-    float DN[upto][3];
+    // Changed from VLA to std::array.
+    std::array<std::array<float, 3>, upto> PN{};
+    std::array<std::array<float, 3>, upto> SN{};
+    std::array<std::array<float, 3>, upto> DN{};
 
+    for (k = 0; k < 3; k++) {
+        Force[k] = 0;
+    }
 
-    for (k = 0; k < 3; k++) Force[k] = 0;
-    for (k = 0; k < 3; k++) sumDN[k] = 0.0f;
+    for (k = 0; k < 3; k++) {
+        sumDN.at(k) = 0.0f;
+    }
 
     //have different lengths and constants for different types of spring
-    if ((FIL == TIP)&&(FA==false)) {
+    if ((FIL == TIP) && !FA) {
 
         sConst = filSpringConstant;
         SL = filSpringLength;
@@ -1907,7 +1912,7 @@ void MemAgent::calcRetractDist(void) {
     int i, k;
     float denom, length;
     float sumDN[3];
-    int upto = meshNeighs + 5;
+    const int upto = meshNeighs + 5;
     int DONE = 0;
     float newX, newY, newZ;
     float SL;
@@ -1926,12 +1931,10 @@ void MemAgent::calcRetractDist(void) {
         oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
 
     float newDist;
-    float PN[upto][3];
-    float SN[upto][3];
-    float DN[upto][3];
+    std::array<std::array<float, 3>, upto> PN{};
+    std::array<std::array<float, 3>, upto> SN{};
+    std::array<std::array<float, 3>, upto> DN{};
 
-
-   
     for (k = 0; k < 3; k++) sumDN[k] = 0.0f;
 
     //have different lengths and constants for different types of spring
@@ -1985,14 +1988,13 @@ void MemAgent::calcRetractDist(void) {
 
         if (DONE == 0) {
 
-            if (sqrt(PN[i][0] * PN[i][0]) >= (float) xMAX / 2.0f) {
+            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) xMAX / 2.0f) {
 
                 if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
                 else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
-                length = fabs(xMAX - PN[i][0]);
-
+                length = fabs((float) (xMAX - PN[i][0]));
             }
-            denom = sqrt((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2]));
+            denom = sqrt((float) ((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2])));
 
             //only apply force when spring is longer than it should be, not smaller -as membranes dont ping outwards, they ruffle - should avoid 'sagging of membrane'
             if (length > SL) {
@@ -2004,7 +2006,9 @@ void MemAgent::calcRetractDist(void) {
                     DN[i][k] = PN[i][k] - SN[i][k];
                 }
 
-                for (k = 0; k < 3; k++) sumDN[k] += (sConst * DN[i][k]);
+                for (k = 0; k < 3; k++) {
+                    sumDN[k] += (sConst * DN[i][k]);
+                }
             }
         }
         i++;

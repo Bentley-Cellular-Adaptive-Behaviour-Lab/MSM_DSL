@@ -27,27 +27,25 @@ CPM_module::CPM_module(World* WorldP){
 
 //----------------------------------------------------------------------------------
 
-void CPM_module::run_CPM(void) {
+void CPM_module::run_CPM() {
 
     float changeH;
     bool accept;
-    int uptoN, upto;
+    int upto;
     int choseReplacer;
 
     MemAgent* replacer_mem;
     MemAgent* replaced_mem;
     MedAgent* replacer_med;
     MedAgent* replaced_med;
-    int f;
     int steps;
 
     int MCS_STEPS = MCS;//10*(16*ECELLS);//400; how Glazier and Graner set it...
 
     int flag = 0;
     int flag2=0;
-    int i, j, k,pos;
+    int k, pos;
     int chose;
-    int choseReplace;
     int count;
     int counter=0;
     bool biasAccept;
@@ -82,12 +80,12 @@ void CPM_module::run_CPM(void) {
             //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             //add medium agents to all agents list..
 
-            upto = worldP->JunctionAgents.size();
+            upto = (int) worldP->JunctionAgents.size();
             flag = 0;
-            replaced_med = NULL;
-            replaced_mem = NULL;
-            replacer_mem = NULL;
-            replacer_med = NULL;
+            replaced_med = nullptr;
+            replaced_mem = nullptr;
+            replacer_mem = nullptr;
+            replacer_med = nullptr;
             do {
                 //chose = rand() % upto;
                 chose = worldP->new_rand() % upto;
@@ -403,12 +401,12 @@ void CPM_module::calc_J_sum(void) {
 
 void CPM_module::calc_area_sum(void) {
 
-    int i, j, k;
+    int i;
     EC* ecp;
     //for now define cell area as simply no. of memAgents.. will prob need to redefine for vessel version.. just von neigh agents.. or actual grid sites occupied, once agents bunch up..
     area_sum = 0;
     int Q;
-    for (i = 0; i < worldP->ECagents.size(); i++) {
+    for (i = 0; i < (int) worldP->ECagents.size(); i++) {
         Q = 0; //rand()%(ECwidth*2);
         ecp = worldP->ECagents[i];
         area_sum += ( ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ecp->ideal_Cell_area - ((float) ECwidth / 2.0f) + Q))*((ecp->nodeAgents.size() + ecp->surfaceAgents.size()) - (ideal_Area - ((float) ECwidth / 2.0f) + Q)));
@@ -483,7 +481,6 @@ void CPM_module::replace_agent(MemAgent* replacer_mem, MemAgent* replaced_mem, M
 
     int flag = 0;
     int i = 0;
-    int m;
 	std::vector<MemAgent*>::iterator L;
 	std::vector<MemAgent*>::iterator Q;
 	std::vector<MemAgent*>::iterator L2;
@@ -676,12 +673,12 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 				}
 				j++;
 				
-			}while((flag==0)&&(j<replaced_mem->Cell->Springs.size()));
+			} while((flag==0)&&( j < (int) replaced_mem->Cell->Springs.size()));
                         if(flag==0){
                             j=0;
                             flag=0;
-                            for(k=0;k<worldP->ECagents.size();k++){
-                                for(m=0;m<worldP->ECagents[k]->Springs.size();m++)
+                            for(k=0; k < (int) worldP->ECagents.size();k++){
+                                for(m=0; m < (int) worldP->ECagents[k]->Springs.size();m++)
 				if(worldP->ECagents[k]->Springs[m]==replaced_mem->SpringNeigh[i]) {
 				//replaced_mem->Cell->Springs.erase(S+j);
 					flag=1;
@@ -756,7 +753,7 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 				}
 				k++;
 
-			}while((flag==0)&&(j<replaced_mem->neigh[i]->Cell->Springs.size()));
+			} while((flag==0)&&(j < (int)replaced_mem->neigh[i]->Cell->Springs.size()));
 
 
 
@@ -790,15 +787,12 @@ void CPM_module::replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, 
 float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_mem, MedAgent* replacer_med, MedAgent* replaced_med) {
 
 
-    float old_Jsum, oldAsum, oldPsum;
-    float new_Jsum, newAsum, newPsum;
+    float old_Jsum, oldAsum;
+    float new_Jsum, newAsum;
     EC* ecp;
-    EC* ecp2;
     int i;
-    int oldPsumC, newPsumC, oldPsumD, newPsumD;
     bool Do1 = false;
     bool Do2 = false;
-    int first, second;
     int conec_score;
     int area =0;
     int area2=0;
@@ -885,22 +879,22 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
 
         ecp = replaced_mem->Cell;
         //if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-        for(i=0;i<ecp->nodeAgents.size();i++){
+        for(i=0;i < (int) ecp->nodeAgents.size();i++){
             if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area++;
         }
         //cout<<"mem replaced area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
+            oldAsum = (float) ((area - ecp->ideal_Cell_area)*(area  - ecp->ideal_Cell_area));
 
         //}
 
         if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
           //   if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            for(i=0;i<ecp->nodeAgents.size();i++){
+            for(i = 0; i < (int) ecp->nodeAgents.size();i++){
             if((ecp->nodeAgents[i]->FIL!=TIP)&&(ecp->nodeAgents[i]->FIL!=STALK)) area2++;
         }
             //cout<<"mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum += ((area2  - ecp->ideal_Cell_area)*(area2  - ecp->ideal_Cell_area));
+            oldAsum += (float) ((area2  - ecp->ideal_Cell_area)*(area2  - ecp->ideal_Cell_area));
         }
         //}
         
@@ -911,7 +905,7 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
 
         ecp = replacer_mem->Cell;
         //cout<<"medium overtaken, mem replacer area: "<<ecp->nodeAgents.size() + ecp->surfaceAgents.size() <<endl;
-            oldAsum = ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
+            oldAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size() - ecp->ideal_Cell_area));
      }
 
     //cout<<"oldAsum "<<oldAsum<<endl;
@@ -933,13 +927,13 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
 
             ecp = replaced_mem->Cell;
            //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            newAsum = ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
+            newAsum = (float) ((area -1 - ecp->ideal_Cell_area)*(area-1 - ecp->ideal_Cell_area));
             // }
 
         if (replacer_mem != NULL) {
             ecp = replacer_mem->Cell;
            //  if(ecp->VEGFRtot<(float)VEGFRnorm/2.0f){
-            newAsum += ((area2 +1 - ecp->ideal_Cell_area)*(area2 +1  - ecp->ideal_Cell_area));
+            newAsum += (float) ((area2 +1 - ecp->ideal_Cell_area)*(area2 +1  - ecp->ideal_Cell_area));
            //  }
         }
          //calc with change
@@ -948,7 +942,7 @@ float CPM_module::calc_local_change(MemAgent* replacer_mem, MemAgent* replaced_m
     else {
 
         ecp = replacer_mem->Cell;
-            newAsum = ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
+            newAsum = (float) ((ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area)*(ecp->nodeAgents.size() + ecp->surfaceAgents.size()+1 - ecp->ideal_Cell_area));
      }
        
 
@@ -1110,7 +1104,7 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
         if(worldP->insideWorld(m,n,p)){
         if (worldP->grid[m][n][p].getType() == const_M) {
             //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
-            for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
+            for (zed = 0; zed < (int) worldP->grid[m][n][p].getMids().size(); zed++) {
                 if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                     connected = replaced_mem->meshConnected(worldP->grid[m][n][p].getMids()[zed]);
                     if (connected) {
@@ -1144,7 +1138,7 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
 //----------------------------------------------------------------------------------------
 
 float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) {
-	int i, j, k;
+	int j;
     MemAgent* mp = individual;
     float J_sumL = 0;
 	
@@ -1159,7 +1153,7 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
             //cout << "J1 " << J_sum << endl;
             J_sumL += mp->mediumNeighs*J_MC;
 			
-            for (j = 0; j < mp->DiffAd_neighs.size(); j++) {
+            for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
 				
                 //decide types
                 if (mp->diffAd_replaced_cell->activeVEGFRtot <  M1_neta) {
@@ -1197,7 +1191,7 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
             
             J_sumL += mp->mediumNeighs*J_MC;
 			
-            for (j = 0; j < mp->DiffAd_neighs.size(); j++) {
+            for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
                 //cout<<j<<endl;
                 if (mp->DiffAd_neighs[j]->diffAd_replaced_cell != NULL) {
                     //cout<<"J2"<<endl;

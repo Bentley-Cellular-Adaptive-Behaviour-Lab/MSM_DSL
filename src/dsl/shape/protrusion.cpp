@@ -772,12 +772,12 @@ void Protrusion::releaseCytoProtein(MemAgent *memAgent) {
 }
 
 void Protrusion::calcRetractForces(World *world, MemAgent *memAgent, MemAgent *filNeighbour, float (&outForces)[3]) {
-    int upto = meshNeighs + 5;
+    const int upto = meshNeighs + 5;
     float denom, length, sConst, SL;
-    float PN[upto][3];
-    float SN[upto][3];
-    float DN[upto][3];
-    float sumDN[3];
+    std::array<std::array<float, 3>, upto> PN{};
+    std::array<std::array<float, 3>, upto> SN{};
+    std::array<std::array<float, 3>, upto> DN{};
+    std::array<float, 3> sumDN{};
 
     bool flagFil = false;
     bool finished = false;
@@ -829,15 +829,15 @@ void Protrusion::calcRetractForces(World *world, MemAgent *memAgent, MemAgent *f
         }
 
         if (!finished) {
-            if (std::sqrt(PN[i][0] * PN[i][0]) >= (float) xMax / 2.0f) {
+            if (std::sqrt( (float) (PN[i][0] * PN[i][0])) >= (float) xMax / 2.0f) {
                 if (PN[i][0] > 0) {
                     PN[i][0] = -((float) xMax - PN[i][0]);
                 } else {
-                    PN[i][0] = (float) xMax - std::fabs(PN[i][0]);
+                    PN[i][0] = (float) xMax - std::fabs( (float) (PN[i][0]));
                 }
                 length = std::fabs((float) xMax - PN[i][0]);
             }
-            denom = std::sqrt((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2]));
+            denom = std::sqrt((float) ((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2])));
 
             // Only apply force when spring is longer than it should be, not smaller -as membranes dont ping outwards, they ruffle - should avoid 'sagging of membrane'
             if (length > SL) {
