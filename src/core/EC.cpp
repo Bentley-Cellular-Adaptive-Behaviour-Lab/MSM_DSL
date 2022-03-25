@@ -1,6 +1,7 @@
 
 #include <cmath>
 #include <numeric>
+#include <thread>
 
 #include "coordinates.h"
 #include "EC.h"
@@ -791,7 +792,6 @@ void EC::distributeProteins() {
 
     // Go over all the memAgents - if they use any protein that the cell has, increase the relevant count by one.
     // TODO: We need to iterate over agents twice, because we don't know the count beforehand. Find a better way to do this.
-    // TODO: Have some sort of filter preventing proteins being allocated to filopodia, thus adjusting the count.
     for (auto nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             auto current_protein = this->m_cell_type->proteins[i];
@@ -821,10 +821,12 @@ void EC::distributeProteins() {
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }
 
-    // Now, set the memAgents current and buffer level to be equal to the calculated amount.
-    for (auto nodeAgent : this->nodeAgents) {
+    for (auto &nodeAgent : this->nodeAgents) {
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
-            ECUtils::distributeProtein(nodeAgent, this->m_cell_type->proteins[i], protein_totals_per_memAgent[i]);
+            ECUtils::distributeProtein(
+                               nodeAgent,
+                               this->m_cell_type->proteins[i],
+                               protein_totals_per_memAgent[i]);
         }
     }
 }

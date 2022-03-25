@@ -1306,6 +1306,12 @@ void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Typ
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
 }
 
+void VenkatramanMemAgentTest::printTimeStep(const int &timestep) {
+    if (timestep % 10 == 0) {
+        std::cout << "Timestep: " << timestep << "\n";
+    }
+}
+
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
         // Distribute proteins to memAgents, using current cell level.

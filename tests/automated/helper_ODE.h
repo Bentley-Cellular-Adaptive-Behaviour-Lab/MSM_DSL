@@ -232,6 +232,7 @@ public:
     Cell_Type* createCellType(Tissue_Container* container);
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
     void runODEs(const int& timestep);
+    void printTimeStep(const int& timestep);
     Tissue* m_tissue;
 
     // ODE Functions.
