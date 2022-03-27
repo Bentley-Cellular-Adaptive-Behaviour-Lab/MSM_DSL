@@ -1412,28 +1412,21 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 
 void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
-//	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
-	typedef odeint::rosenbrock4<Endothelial_cell_ode_states> type;
+
+    states.insert_element(0, ec->get_cell_protein_level("FILOPODIA", 0));
+    states.insert_element(1, ec->get_cell_protein_level("VEGF", 0));
+    states.insert_element(2, ec->get_cell_protein_level("HEY", 0));
+    states.insert_element(3, ec->get_cell_protein_level("VEGFR", 0));
+    states.insert_element(4, ec->get_cell_protein_level("VEGF_VEGFR", 0));
+    states.insert_element(5, ec->get_cell_protein_level("DLL4", 0));
+    states.insert_element(6, ec->get_cell_protein_level("DLL4_NOTCH", 0));
+    states.insert_element(7, ec->get_cell_protein_level("NICD", 0));
+    states.insert_element(8, ec->get_cell_protein_level("NOTCH", 0));
+    states.insert_element(9, calc_DLL4_adjacent_level(ec));
+    states.insert_element(10, calc_NOTCH_adjacent_level(ec));
+
     auto stepper = odeint::make_dense_output< odeint::rosenbrock4< double > >( 1.0e-6 , 1.0e-6 );
-
-	states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
-	states[1] = ec->get_cell_protein_level("VEGF", 0);
-	states[2] = ec->get_cell_protein_level("HEY", 0);
-	states[3] = ec->get_cell_protein_level("VEGFR", 0);
-	states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-	states[5] = ec->get_cell_protein_level("DLL4", 0);
-	states[6] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-	states[7] = ec->get_cell_protein_level("NICD", 0);
-	states[8] = ec->get_cell_protein_level("NOTCH", 0);
-	states[9] = calc_DLL4_adjacent_level(ec);
-	states[10] = calc_NOTCH_adjacent_level(ec);
-
-//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-
-//	controlled_stepper_type controlled_stepper;
-//    auto stepper1 = make_controlled( 1.0e-6 , 1.0e-6 , odeint::rosrunge_kutta_cash_karp54<Endothelial_cell_ode_states>() );
-	std::cout << "Cell Step: " << integrate_const(stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1) << "\n";
+    std::cout << "Cell Step: " << integrate_adaptive(stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1) << "\n";
 
 	ec->set_cell_protein_level("FILOPODIA", states[0], 1);
 	ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1482,23 +1475,22 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 
 void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	Endothelial_memAgent_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
-	states[0] = memAgent->get_memAgent_current_level("FILOPODIA");
-	states[1] = memAgent->get_memAgent_current_level("VEGF");
-	states[2] = memAgent->get_memAgent_current_level("HEY");
-	states[3] = memAgent->get_memAgent_current_level("VEGFR");
-	states[4] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-	states[5] = memAgent->get_memAgent_current_level("DLL4");
-	states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-	states[7] = memAgent->get_memAgent_current_level("NICD");
-	states[8] = memAgent->get_memAgent_current_level("NOTCH");
-	states[9] = memAgent->get_junction_protein_level("DLL4");
-	states[10] = memAgent->get_junction_protein_level("NOTCH");
 
-	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
+    states.insert_element(0, memAgent->get_memAgent_current_level("FILOPODIA"));
+    states.insert_element(1, memAgent->get_memAgent_current_level("VEGF"));
+    states.insert_element(2, memAgent->get_memAgent_current_level("HEY"));
+    states.insert_element(3, memAgent->get_memAgent_current_level("VEGFR"));
+    states.insert_element(4, memAgent->get_memAgent_current_level("VEGF_VEGFR"));
+    states.insert_element(5, memAgent->get_memAgent_current_level("DLL4"));
+    states.insert_element(6, memAgent->get_memAgent_current_level("DLL4_NOTCH"));
+    states.insert_element(7, memAgent->get_memAgent_current_level("NICD"));
+    states.insert_element(8, memAgent->get_memAgent_current_level("NOTCH"));
+    states.insert_element(9, memAgent->get_junction_protein_level("DLL4"));
+    states.insert_element(10, memAgent->get_junction_protein_level("NOTCH"));
+
+    auto stepper = odeint::make_dense_output< odeint::rosenbrock4< double > >( 1.0e-6 , 1.0e-6 );
+    integrate_adaptive(stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
 
 	memAgent->set_protein_buffer_level("VEGF", states[0]);
 	memAgent->set_protein_buffer_level("VEGFR", states[1]);

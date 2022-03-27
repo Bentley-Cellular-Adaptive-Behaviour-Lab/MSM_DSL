@@ -10,8 +10,6 @@
 
 typedef boost::array<double, 2> basic_ode_states;
 typedef boost::array<double, 3> JunctionTestStates;
-typedef boost::array<double, 5> multiAgent_ode_states;
-typedef boost::array<double, 4> TranscriptionDelayTest_ode_states;
 
 
 class Cell;
@@ -87,7 +85,9 @@ protected:
 	void SetUp() override;
 	void TearDown() override;
 public:
-	World *world;
+    typedef boost::array<double, 5> multiAgent_ode_states;
+
+    World *world;
 	World_Container *worldContainer;
 
 	// Scenario 1.
@@ -120,6 +120,8 @@ protected:
     void SetUp() override;
     void TearDown() override;
 public:
+    typedef boost::array<double, 4> TranscriptionDelayTest_ode_states;
+
     World *world;
     World_Container *worldContainer;
     Tissue_Container *tissueContainer;
@@ -221,8 +223,11 @@ public:
 
 class VenkatramanMemAgentTest : public ::testing::Test {
 private:
-	typedef boost::array<double, 11> Endothelial_cell_ode_states;
-	typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
+//	typedef boost::array<double, 11> Endothelial_cell_ode_states;
+//	typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
+
+    typedef boost::numeric::ublas::vector<double> Endothelial_cell_ode_states;
+    typedef boost::numeric::ublas::vector<double> Endothelial_memAgent_ode_states;
 protected:
 	void SetUp() override;
 	void TearDown() override;
