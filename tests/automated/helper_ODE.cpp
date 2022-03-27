@@ -1412,7 +1412,9 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 
 void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+//	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+	typedef odeint::rosenbrock4<Endothelial_cell_ode_states> type;
+    auto stepper = odeint::make_dense_output< odeint::rosenbrock4< double > >( 1.0e-6 , 1.0e-6 );
 
 	states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
 	states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -1426,9 +1428,12 @@ void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	states[9] = calc_DLL4_adjacent_level(ec);
 	states[10] = calc_NOTCH_adjacent_level(ec);
 
-	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+
+//	controlled_stepper_type controlled_stepper;
+//    auto stepper1 = make_controlled( 1.0e-6 , 1.0e-6 , odeint::rosrunge_kutta_cash_karp54<Endothelial_cell_ode_states>() );
+	std::cout << "Cell Step: " << integrate_const(stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1) << "\n";
 
 	ec->set_cell_protein_level("FILOPODIA", states[0], 1);
 	ec->set_cell_protein_level("VEGF", states[1], 1);
