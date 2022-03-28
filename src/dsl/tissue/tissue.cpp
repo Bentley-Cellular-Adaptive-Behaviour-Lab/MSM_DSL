@@ -175,7 +175,7 @@ Tissue::Tissue( Tissue_Container *tissue_container,
 void Tissue::determineJunctions() {
     for (auto &cellAgent : this->m_cell_agents) {
         for (auto &memAgent : cellAgent->nodeAgents) {
-            memAgent->JunctionTest(false);
+            memAgent->JunctionTest(true);
         }
     }
 }

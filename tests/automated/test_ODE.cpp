@@ -218,6 +218,200 @@ TEST_F(CellBufferTest, updateBufferTest) {
 	EXPECT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 62.5); // Check level of Protein A in cell 1 is 12.5.
 }
 
+TEST_F(WholeCellODETest, OneTimestepTest) {
+    // Run ODEs once.
+    runODEs(1);
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Assert that protein A levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(0));
+
+    // Assert that protein B levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(0));
+
+    // Assert that protein C levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(0));
+
+    // Assert that protein D levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(0));
+
+    // Check ProteinA levels in both cells-> should be 100.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 2.
+
+    // Check ProteinB levels in both cells-> should be 10.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 10); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 10); // Cell 2.
+
+    // Check ProteinC levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 2.
+
+    // Check ProteinD levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 2.
+}
+
+TEST_F(WholeCellODETest, TwoTimestepTest) {
+    // Run ODEs twice.
+    runODEs(2);
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Assert that protein A levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(0));
+
+    // Assert that protein B levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(0));
+
+    // Assert that protein C levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(0));
+
+    // Assert that protein D levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(0));
+
+    // Check ProteinA levels in both cells-> should be 100.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 2.
+
+    // Check ProteinB levels in both cells-> should be 20.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 20); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 20); // Cell 2.
+
+    // Check ProteinC levels in both cells-> should be 1.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 1); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 1); // Cell 2.
+
+    // Check ProteinD levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 2.
+}
+
+TEST_F(WholeCellODETest, ThreeTimestepTest) {
+    // Run ODEs thrice.
+    runODEs(3);
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Assert that protein A levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(0));
+
+    // Assert that protein B levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(0));
+
+    // Assert that protein C levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(0));
+
+    // Assert that protein D levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(0));
+
+    // Check ProteinA levels in both cells-> should be 100.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 2.
+
+    // Check ProteinB levels in both cells-> should be 30.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 30); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 30); // Cell 2.
+
+    // Check ProteinC levels in both cells-> should be 3.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 3); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 3); // Cell 2.
+
+    // Check ProteinD levels in both cells-> should be 0.1.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0.1); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0.1); // Cell 2.
+}
+
+TEST_F(MemAgentODETest, OneTimestepTest) {
+    // Run ODEs once.
+    runODEs(1);
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Assert that protein A levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(0));
+
+    // Assert that protein B levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(0));
+
+    // Assert that protein C levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(0));
+
+    // Assert that protein D levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(0));
+
+    // Check ProteinA levels in both cells-> should be 100.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 2.
+
+    // Check ProteinB levels in both cells-> should be 10.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 10); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 10); // Cell 2.
+
+    // Check ProteinC levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 2.
+
+    // Check ProteinD levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 2.
+}
+
+TEST_F(MemAgentODETest, TwoTimestepTest) {
+    // Run ODEs twice.
+    runODEs(2);
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    // Assert that protein A levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(0)->get_cell_level(0));
+
+    // Assert that protein B levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(1)->get_cell_level(0));
+
+    // Assert that protein C levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(2)->get_cell_level(0));
+
+    // Assert that protein D levels are equal.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                    cell2->m_cell_type->proteins.at(3)->get_cell_level(0));
+
+    // Check ProteinA levels in both cells-> should be 100.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 100); // Cell 2.
+
+    // Check ProteinB levels in both cells-> should be 20.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 20); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 20); // Cell 2.
+
+    // Check ProteinC levels in both cells-> should be 1.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 1); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 1); // Cell 2.
+
+    // Check ProteinD levels in both cells-> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 2.
+}
 
 TEST_F(VenkatramanCellTest, VenkatramanCellProductionTest) {
     // Run ODEs once.

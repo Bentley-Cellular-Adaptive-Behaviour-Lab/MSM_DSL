@@ -11,7 +11,6 @@
 typedef boost::array<double, 2> basic_ode_states;
 typedef boost::array<double, 3> JunctionTestStates;
 
-
 class Cell;
 class Cell_Type;
 class MemAgent;
@@ -170,6 +169,59 @@ public:
     void updateBufferVectors();
 };
 
+class WholeCellODETest : public  ::testing::Test {
+private:
+    typedef boost::array<double, 5> WholeCellODEStates;
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    Tissue_Monolayer *m_tissue;
+
+    // Set-up Functions.
+    Tissue_Container* createTissueContainer();
+    Cell_Type* createCellType(Tissue_Container* container);
+    void createTissue(Tissue_Container *container, Cell_Type* cellType);
+    void runODEs(const int& timestep);
+
+    void check_cell_ODEs(EC *ec);
+    static void WholeCell_system(const WholeCellODEStates &x,
+                                 WholeCellODEStates &dxdt,
+                                 double t);
+    void WholeCellODEStates_run_ODEs(EC *ec);
+    double calc_ProteinB_adjacent_level(EC *ec);
+};
+
+class MemAgentODETest : public  ::testing::Test {
+private:
+    typedef boost::array<double, 4> CellODEStates;
+    typedef boost::array<double, 5> MemAgentODEStates;
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    Tissue_Monolayer *m_tissue;
+
+    // Set-up Functions.
+    Tissue_Container* createTissueContainer();
+    Cell_Type* createCellType(Tissue_Container* container);
+    void createTissue(Tissue_Container *container, Cell_Type* cellType);
+    void runODEs(const int& timestep);
+
+    void check_cell_ODEs(EC *ec);
+    void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent);
+    static void cell_system(const CellODEStates &x,
+                            CellODEStates &dxdt,
+                            double t);
+    static void memAgent_system(const MemAgentODEStates &x,
+                                MemAgentODEStates &dxdt,
+                                double t);
+    void run_Cell_ODEs(EC *ec);
+    void run_memAgent_ODEs(MemAgent *memAgent);
+
+    double calc_ProteinB_adjacent_level(EC *ec);
+};
+
 class VenkatramanCellTest : public ::testing::Test {
 private:
     typedef boost::array<double, 11> Endothelial_cell_ode_states;
@@ -223,11 +275,9 @@ public:
 
 class VenkatramanMemAgentTest : public ::testing::Test {
 private:
-//	typedef boost::array<double, 11> Endothelial_cell_ode_states;
-//	typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
+	typedef boost::array<double, 11> Endothelial_cell_ode_states;
+	typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
 
-    typedef boost::numeric::ublas::vector<double> Endothelial_cell_ode_states;
-    typedef boost::numeric::ublas::vector<double> Endothelial_memAgent_ode_states;
 protected:
 	void SetUp() override;
 	void TearDown() override;

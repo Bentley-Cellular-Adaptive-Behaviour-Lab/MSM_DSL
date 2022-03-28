@@ -111,7 +111,7 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     } else {
         g = std::mt19937(rdtsc());
     }
-}
+
 #endif
 
     EPSILON = epsilon;

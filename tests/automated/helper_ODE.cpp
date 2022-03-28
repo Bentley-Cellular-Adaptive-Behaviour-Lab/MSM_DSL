@@ -955,6 +955,361 @@ void CellBufferTest::TearDown() {
 }
 
 /*****************************************************************************************
+*  Name:		WholeCellODETest::SetUp()
+*  Description: - Runs three simple ODEs on between two cells, then updates the levels for
+*               those particular proteins.
+*               - ODEs behave like regulation reactions (i.e.) no change in reactant levels.
+*               - Uses fixed-step Euler solver for simplicity.
+*
+*	  			ODE 1: 0.1A (Cell) -> 0.1B (Junction)
+*	  			ODE 2: 0.1B -> 0.1C (Junction)
+*	  			ODE 3: 0.1C -> 0.1D (Cell)
+*
+*  Returns:		void
+******************************************************************************************/
+
+void WholeCellODETest::SetUp() {
+    auto container = createTissueContainer();
+    auto cellType = createCellType(container);
+    createTissue(container, cellType);
+}
+
+Tissue_Container* WholeCellODETest::createTissueContainer() {
+    // Create a tissue container w/ a world.
+    std::vector<double> dummyIncrements;
+    auto w_container = new World_Container();
+    w_container->world_setup(dummyIncrements);
+    auto world = w_container->get_world();
+    auto t_container = new Tissue_Container(world);
+    return t_container;
+}
+
+Cell_Type* WholeCellODETest::createCellType(Tissue_Container* container) {
+    // Define a cell type and add proteins to this cell.
+    auto shape = new Shape_Square(1, 5, 5);
+    auto cellType = new Cell_Type(container, "TestCell", shape);
+    auto proteinA = new Protein("ProteinA",
+                                PROTEIN_LOCATION_CELL,
+                                100,
+                                0,
+                                -1,
+                                1);
+    auto proteinB = new Protein("ProteinB",
+                                PROTEIN_LOCATION_JUNCTION,
+                                0,
+                                0,
+                                -1,
+                                1);
+    auto proteinC = new Protein("ProteinC",
+                                PROTEIN_LOCATION_JUNCTION,
+                                0,
+                                0,
+                                -1,
+                                1);
+    auto proteinD = new Protein("ProteinD",
+                                PROTEIN_LOCATION_CELL,
+                                0,
+                                0,
+                                -1,
+                                1);
+    cellType->add_protein(proteinA);
+    cellType->add_protein(proteinB);
+    cellType->add_protein(proteinC);
+    cellType->add_protein(proteinD);
+    return cellType;
+}
+
+void WholeCellODETest::createTissue(Tissue_Container *container, Cell_Type* cellType) {
+    // Create tissue in the centre of the world using the defined cell type.
+    auto position = new Coordinates(25, 25, 25);
+    auto monolayerType = new Tissue_Type_Flat(container,
+                                              "TestTissueType",
+                                              cellType,
+                                              CELL_CONFIGURATION_FLAT,
+                                              1,
+                                              2);
+    container->create_tissue("TestTissue", monolayerType, position);
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+}
+
+void WholeCellODETest::runODEs(const int& timestep) {
+    for (int i = 0; i < timestep; i++) {
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            check_cell_ODEs(cellAgent);
+        }
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->cycle_protein_levels();
+        }
+    }
+}
+
+void WholeCellODETest::check_cell_ODEs(EC *ec) {
+    if (ec->m_cell_type->m_name == "TestCell") {
+        WholeCellODEStates_run_ODEs(ec);
+    }
+}
+
+void WholeCellODETest::WholeCellODEStates_run_ODEs(EC *ec) {
+    WholeCellODEStates states;
+    auto stepper = odeint::euler<WholeCellODEStates>();
+
+    states[0] = ec->get_cell_protein_level("ProteinA", 0);
+    states[1] = ec->get_cell_protein_level("ProteinB", 0);
+    states[2] = ec->get_cell_protein_level("ProteinC", 0);
+    states[3] = ec->get_cell_protein_level("ProteinD", 0);
+    states[4] = calc_ProteinB_adjacent_level(ec);
+
+    stepper.do_step(WholeCell_system, states, 0.0, 1.0);
+
+    ec->set_cell_protein_level("ProteinA", states[0], 1);
+    ec->set_cell_protein_level("ProteinB", states[1], 1);
+    ec->set_cell_protein_level("ProteinC", states[2], 1);
+    ec->set_cell_protein_level("ProteinD", states[3], 1);
+}
+
+void WholeCellODETest::WholeCell_system(const WholeCellODEStates &x,
+                             WholeCellODEStates &dxdt,
+                             double t) {
+    double ProteinA = x[0];
+    double ProteinB = x[1];
+    double ProteinC = x[2];
+    double ProteinD = x[3];
+    double adjacent_ProteinB = x[4];
+
+    dxdt[0] = 0;
+    dxdt[1] = 0.1 * ProteinA;
+    dxdt[2] = 0.1 * adjacent_ProteinB;
+    dxdt[3] = 0.1 * ProteinC;
+    dxdt[4] = 0;
+}
+
+double WholeCellODETest::calc_ProteinB_adjacent_level(EC *ec) {
+    double level = 0.0;
+    for (auto *neighbour : ec->getNeighCellVector()) {
+        level += neighbour->get_cell_protein_level("ProteinB",0);
+    }
+    if (level == 0.0 || ec->getNeighCellVector().empty()) {
+        return 0.0;
+    } else {
+        return level / (int) ec->getNeighCellVector().size();
+    }
+}
+
+void WholeCellODETest::WholeCellODETest::TearDown() {
+
+}
+
+/*****************************************************************************************
+*  Name:		MemAgentODETest::SetUp()
+*  Description: - Runs three simple ODEs on between two cells, then updates the levels for
+*               those particular proteins. Runs both the cell and memAgent versions.
+*               - ODEs behave like regulation reactions (i.e.) no change in reactant levels.
+*               - Uses fixed-step Euler solver for simplicity.
+*
+*	  			ODE 1: 0.1A (Cell) -> 0.1B (Junction)
+*	  			ODE 2: 0.1B -> 0.1C (Junction)
+*	  			ODE 3: 0.1C -> 0.1D (Cell)
+*
+*  Returns:		void
+******************************************************************************************/
+
+void MemAgentODETest::SetUp() {
+    auto container = createTissueContainer();
+    auto cellType = createCellType(container);
+    createTissue(container, cellType);
+}
+
+Tissue_Container* MemAgentODETest::createTissueContainer() {
+    // Create a tissue container w/ a world.
+    std::vector<double> dummyIncrements;
+    auto w_container = new World_Container();
+    w_container->world_setup(dummyIncrements);
+    auto world = w_container->get_world();
+    auto t_container = new Tissue_Container(world);
+    return t_container;
+}
+
+Cell_Type* MemAgentODETest::createCellType(Tissue_Container* container) {
+    // Define a cell type and add proteins to this cell.
+    auto shape = new Shape_Square(1, 5, 5);
+    auto cellType = new Cell_Type(container, "TestCell", shape);
+    auto proteinA = new Protein("ProteinA",
+                                PROTEIN_LOCATION_CELL,
+                                100,
+                                0,
+                                -1,
+                                1);
+    auto proteinB = new Protein("ProteinB",
+                                PROTEIN_LOCATION_JUNCTION,
+                                0,
+                                0,
+                                -1,
+                                1);
+    auto proteinC = new Protein("ProteinC",
+                                PROTEIN_LOCATION_JUNCTION,
+                                0,
+                                0,
+                                -1,
+                                1);
+    auto proteinD = new Protein("ProteinD",
+                                PROTEIN_LOCATION_CELL,
+                                0,
+                                0,
+                                -1,
+                                1);
+    cellType->add_protein(proteinA);
+    cellType->add_protein(proteinB);
+    cellType->add_protein(proteinC);
+    cellType->add_protein(proteinD);
+    return cellType;
+}
+
+void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellType) {
+    // Create tissue in the centre of the world using the defined cell type.
+    auto position = new Coordinates(25, 25, 25);
+    auto monolayerType = new Tissue_Type_Flat(container,
+                                              "TestTissueType",
+                                              cellType,
+                                              CELL_CONFIGURATION_FLAT,
+                                              1,
+                                              2);
+    container->create_tissue("TestTissue", monolayerType, position);
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+}
+
+void MemAgentODETest::runODEs(const int& timestep) {
+    for (int i = 0; i < timestep; i++) {
+
+        if (i == 1) {
+            int test = 0;
+        }
+
+        // Distribute proteins to memAgents, using current cell level.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->distributeProteins();
+        }
+
+        // Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
+        // Then, update the cell using the current values.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            for (auto nodeAgent : cellAgent->nodeAgents) {
+                check_memAgent_ODEs("TestCell", nodeAgent);
+                nodeAgent->passBackBufferLevels();
+            }
+            cellAgent->updateCurrentProteinLevels();
+        }
+
+        // Perform cell-level ODEs (i.e. regulation) reactions.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            check_cell_ODEs(cellAgent);
+        }
+
+        // Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->cycle_protein_levels();
+            cellAgent->resetBufferVector();
+        }
+    }
+}
+
+
+void MemAgentODETest::check_cell_ODEs(EC *ec) {
+    if (ec->m_cell_type->m_name == "TestCell") {
+        run_Cell_ODEs(ec);
+    }
+}
+
+void MemAgentODETest::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
+    if (cell_type_name == "TestCell") {
+        run_memAgent_ODEs(memAgent);
+    }
+}
+
+void MemAgentODETest::run_Cell_ODEs(EC *ec) {
+    CellODEStates states;
+    auto stepper = odeint::euler<CellODEStates>();
+
+    states[0] = ec->get_cell_protein_level("ProteinA", 0);
+    states[1] = ec->get_cell_protein_level("ProteinB", 0);
+    states[2] = ec->get_cell_protein_level("ProteinC", 0);
+    states[3] = ec->get_cell_protein_level("ProteinD", 0);
+
+    stepper.do_step(cell_system, states, 0.0, 1.0);
+
+    ec->set_cell_protein_level("ProteinA", states[0], 1);
+    ec->set_cell_protein_level("ProteinB", states[1], 1);
+    ec->set_cell_protein_level("ProteinC", states[2], 1);
+    ec->set_cell_protein_level("ProteinD", states[3], 1);
+}
+
+void MemAgentODETest::cell_system(const CellODEStates &x,
+                                  CellODEStates &dxdt,
+                                  double t) {
+    double ProteinA = x[0];
+    double ProteinB = x[1];
+    double ProteinC = x[2];
+    double ProteinD = x[3];
+
+    dxdt[0] = 0;
+    dxdt[1] = 0.1 * ProteinA;
+    dxdt[2] = 0;
+    dxdt[3] = 0.1 * ProteinC;
+}
+
+
+void MemAgentODETest::run_memAgent_ODEs(MemAgent* memAgent) {
+    MemAgentODEStates states;
+    auto stepper = odeint::euler<MemAgentODEStates>();
+
+
+    states[0] = memAgent->get_memAgent_current_level("ProteinA");
+    states[1] = memAgent->get_memAgent_current_level("ProteinB");
+    states[2] = memAgent->get_memAgent_current_level("ProteinC");
+    states[3] = memAgent->get_memAgent_current_level("ProteinD");
+    states[4] = memAgent->get_junction_protein_level("ProteinB");
+
+    stepper.do_step(memAgent_system, states, 0.0, 1.0);
+
+    memAgent->set_protein_buffer_level("ProteinA", states[0]);
+    memAgent->set_protein_buffer_level("ProteinB", states[1]);
+    memAgent->set_protein_buffer_level("ProteinC", states[2]);
+    memAgent->set_protein_buffer_level("ProteinD", states[3]);
+}
+
+void MemAgentODETest::memAgent_system(const MemAgentODEStates &x,
+                                      MemAgentODEStates &dxdt,
+                                      double t) {
+    double ProteinA = x[0];
+    double ProteinB = x[1];
+    double ProteinC = x[2];
+    double ProteinD = x[3];
+    double adjacent_ProteinB = x[4];
+
+    dxdt[0] = 0;
+    dxdt[1] = 0;
+    dxdt[2] = 0.1 * adjacent_ProteinB;
+    dxdt[3] = 0;
+    dxdt[4] = 0;
+
+}
+
+double MemAgentODETest::calc_ProteinB_adjacent_level(EC *ec) {
+    double level = 0.0;
+    for (auto *neighbour : ec->getNeighCellVector()) {
+        level += neighbour->get_cell_protein_level("ProteinB",0);
+    }
+    if (level == 0.0 || ec->getNeighCellVector().empty()) {
+        return 0.0;
+    } else {
+        return level / (int) ec->getNeighCellVector().size();
+    }
+}
+
+void MemAgentODETest::TearDown() {
+
+}
+
+/*****************************************************************************************
 *  Name:		VenkatramanCellTest::SetUp()
 *  Description: - Runs two simple ODEs on a cell, then updates the levels for those particular timestep.
 *               - Then cycles the protein level container to update the levels properly.
@@ -1412,21 +1767,21 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 
 void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
+    auto stepper = odeint::euler<Endothelial_cell_ode_states>();
 
-    states.insert_element(0, ec->get_cell_protein_level("FILOPODIA", 0));
-    states.insert_element(1, ec->get_cell_protein_level("VEGF", 0));
-    states.insert_element(2, ec->get_cell_protein_level("HEY", 0));
-    states.insert_element(3, ec->get_cell_protein_level("VEGFR", 0));
-    states.insert_element(4, ec->get_cell_protein_level("VEGF_VEGFR", 0));
-    states.insert_element(5, ec->get_cell_protein_level("DLL4", 0));
-    states.insert_element(6, ec->get_cell_protein_level("DLL4_NOTCH", 0));
-    states.insert_element(7, ec->get_cell_protein_level("NICD", 0));
-    states.insert_element(8, ec->get_cell_protein_level("NOTCH", 0));
-    states.insert_element(9, calc_DLL4_adjacent_level(ec));
-    states.insert_element(10, calc_NOTCH_adjacent_level(ec));
+    states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
+    states[1] = ec->get_cell_protein_level("VEGF", 0);
+    states[2] = ec->get_cell_protein_level("HEY", 0);
+    states[3] = ec->get_cell_protein_level("VEGFR", 0);
+    states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+    states[5] = ec->get_cell_protein_level("DLL4", 0);
+    states[6] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+    states[7] = ec->get_cell_protein_level("NICD", 0);
+    states[8] = ec->get_cell_protein_level("NOTCH", 0);
+    states[9] = calc_DLL4_adjacent_level(ec);
+    states[10] = calc_NOTCH_adjacent_level(ec);
 
-    auto stepper = odeint::make_dense_output< odeint::rosenbrock4< double > >( 1.0e-6 , 1.0e-6 );
-    std::cout << "Cell Step: " << integrate_adaptive(stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1) << "\n";
+    stepper.do_step( Endothelial_cell_system, states, 0.0, 0.1);
 
 	ec->set_cell_protein_level("FILOPODIA", states[0], 1);
 	ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1475,24 +1830,23 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 
 void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	Endothelial_memAgent_ode_states states;
+    auto stepper = odeint::euler<Endothelial_cell_ode_states>();
 
+    states[0] = memAgent->get_memAgent_current_level("FILOPODIA");
+    states[1] = memAgent->get_memAgent_current_level("VEGF");
+    states[2] = memAgent->get_memAgent_current_level("HEY");
+    states[3] = memAgent->get_memAgent_current_level("VEGFR");
+    states[4] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+    states[5] = memAgent->get_memAgent_current_level("DLL4");
+    states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
+    states[7] = memAgent->get_memAgent_current_level("NICD");
+    states[8] = memAgent->get_memAgent_current_level("NOTCH");
+    states[9] = memAgent->get_junction_protein_level("DLL4");
+    states[10] = memAgent->get_junction_protein_level("NOTCH");
 
-    states.insert_element(0, memAgent->get_memAgent_current_level("FILOPODIA"));
-    states.insert_element(1, memAgent->get_memAgent_current_level("VEGF"));
-    states.insert_element(2, memAgent->get_memAgent_current_level("HEY"));
-    states.insert_element(3, memAgent->get_memAgent_current_level("VEGFR"));
-    states.insert_element(4, memAgent->get_memAgent_current_level("VEGF_VEGFR"));
-    states.insert_element(5, memAgent->get_memAgent_current_level("DLL4"));
-    states.insert_element(6, memAgent->get_memAgent_current_level("DLL4_NOTCH"));
-    states.insert_element(7, memAgent->get_memAgent_current_level("NICD"));
-    states.insert_element(8, memAgent->get_memAgent_current_level("NOTCH"));
-    states.insert_element(9, memAgent->get_junction_protein_level("DLL4"));
-    states.insert_element(10, memAgent->get_junction_protein_level("NOTCH"));
+    stepper.do_step( Endothelial_cell_system, states, 0.0, 0.1);
 
-    auto stepper = odeint::make_dense_output< odeint::rosenbrock4< double > >( 1.0e-6 , 1.0e-6 );
-    integrate_adaptive(stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
-
-	memAgent->set_protein_buffer_level("VEGF", states[0]);
+    memAgent->set_protein_buffer_level("VEGF", states[0]);
 	memAgent->set_protein_buffer_level("VEGFR", states[1]);
 	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
 	memAgent->set_protein_buffer_level("DLL4", states[3]);
