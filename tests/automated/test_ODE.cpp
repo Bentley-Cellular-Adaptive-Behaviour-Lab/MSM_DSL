@@ -179,12 +179,15 @@ TEST_F(CellBufferTest, bufferInitiationTest) {
     auto tissue = this->getTissue();
     auto vector1 = tissue->m_cell_agents.at(0)->getBufferVector();
 
-    // Check that one value has been created for each protein (2).
+    // Check that a tuple has been created for each protein (2).
     EXPECT_EQ((int) vector1.size(), 2);
 
     // Check that each value is 0.
-    for (auto value : vector1) {
-        EXPECT_EQ(value, 0);
+    for (auto tuple : vector1) {
+        auto currentValue = std::get<0>(tuple);
+        auto nextValue = std::get<1>(tuple);
+        EXPECT_EQ(currentValue, 0);
+        EXPECT_EQ(nextValue, 0);
     }
 }
 
@@ -194,28 +197,39 @@ TEST_F(CellBufferTest, updateBufferTest) {
     auto tissue = this->getTissue();
     auto vector1 = &(tissue->m_cell_agents.at(0)->getBufferVector());
 
-    EXPECT_EQ(vector1->at(0), 25); // Check level of Protein A in cell 1 is 25.
-    EXPECT_EQ(vector1->at(1), 50); // Check level of Protein B in cell 1 is 50.
+    // Get buffer values.
+    auto proteinACurrentValue = std::get<0>(vector1->at(0));
+    auto proteinBCurrentValue = std::get<0>(vector1->at(1));
+    auto proteinANextValue = std::get<1>(vector1->at(0));
+    auto proteinBNextValue = std::get<1>(vector1->at(1));
 
-    // Reset the buffer vector, check that all values are now zero.
-    tissue->m_cell_agents.at(0)->resetBufferVector();
-    auto vector2 = tissue->m_cell_agents.at(0)->getBufferVector();
-    for (auto &value : vector2) {
-        EXPECT_EQ(value, 0);
-    }
+    EXPECT_EQ(proteinANextValue, 25); // Check level of Protein A in cell 1 is 25.
+    EXPECT_EQ(proteinBNextValue, 50); // Check level of Protein B in cell 1 is 50.
+
+    // Reset the buffer vector, check that the current values are now equal to the
+    // previous values for the next timestep.
+    tissue->m_cell_agents.at(0)->cycleBufferVector();
+    auto vector2 = &(tissue->m_cell_agents.at(0)->getBufferVector());
+    proteinACurrentValue = std::get<0>(vector2->at(0));
+    proteinBCurrentValue = std::get<0>(vector2->at(1));
+
+    EXPECT_EQ(proteinACurrentValue, 25); // Check level of Protein A in cell 1 is 25.
+    EXPECT_EQ(proteinBCurrentValue, 50); // Check level of Protein B in cell 1 is 50.
 
     // Change levels in the memAgents during updating.
-    // See what the levels are like afterwards.
+    // See what the levels for the next timestep are like afterwards.
     this->alterProteinLevels();
-    auto vector3 = tissue->m_cell_agents.at(0)->getBufferVector();
-    EXPECT_EQ(vector1->at(0), 12.5); // Check level of Protein A in the buffer is 12.5.
-    EXPECT_EQ(vector1->at(1), 62.5); // Check level of Protein B in the buffer is 62.5.
+    auto vector3 = &(tissue->m_cell_agents.at(0)->getBufferVector());
+    proteinANextValue = std::get<1>(vector3->at(0));
+    proteinBNextValue = std::get<1>(vector3->at(1));
+    EXPECT_EQ(proteinANextValue, 12.5); // Check level of Protein A in the buffer is 12.5.
+    EXPECT_EQ(proteinBNextValue, 62.5); // Check level of Protein B in the buffer is 62.5.
 
 	// Now update the cell's current levels and check for congruity.
 	auto cell1 = tissue->m_cell_agents.at(0);
 	cell1->updateCurrentProteinLevels();
-	EXPECT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 12.5); // Check level of Protein A in cell 1 is 12.5.
-	EXPECT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 62.5); // Check level of Protein A in cell 1 is 12.5.
+	EXPECT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 25); // Check level of Protein A in cell 1 is 25.
+	EXPECT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 50); // Check level of Protein B in cell 1 is 50.
 }
 
 TEST_F(WholeCellODETest, OneTimestepTest) {

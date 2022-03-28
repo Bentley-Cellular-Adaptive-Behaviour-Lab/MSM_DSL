@@ -4662,6 +4662,7 @@ void MemAgent::passBackBufferLevels() {
     int index = 0;
 
     for (auto &protein : this->owned_proteins) {
+        auto bufferLevel = protein->get_memAgent_buffer_level();
         this->Cell->updateBufferEntry(index, protein->get_memAgent_buffer_level());
         index++;
     }
