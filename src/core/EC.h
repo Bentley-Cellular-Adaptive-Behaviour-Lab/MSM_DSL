@@ -39,7 +39,7 @@ class EC {
 private:
     std::list<Protrusion*> m_protrusions;
     std::vector<EC*> neigh_cells;
-    std::vector<double> m_protein_delta_buffer;
+    std::vector<std::tuple<double, double>> m_protein_delta_buffer;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -178,10 +178,10 @@ public:
     std::list<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
 
-    const std::vector<double>& getBufferVector();
+    const std::vector<std::tuple<double, double>>& getBufferVector();
     void initiateBufferVector();
-    void resetBufferVector();
-    void updateBufferEntry(const int& index, const double& new_value);
+    void cycleBufferVector();
+    void updateBufferEntry(const int& index, const double& delta);
     void updateCurrentProteinLevels();
 };
 #endif //SPRINGAGENT_EC_H
