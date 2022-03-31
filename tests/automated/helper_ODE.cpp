@@ -1175,24 +1175,22 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+	for (auto cellAgent : this->m_tissue->m_cell_agents) {
+		cellAgent->distributeProteins();
+	}
 }
 
 void MemAgentODETest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-        // Distribute proteins to memAgents, using current cell level.
-        for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            cellAgent->distributeProteins();
-        }
-
-        // Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
+		// Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
         // Then, update the cell using the current values.
-        for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            for (auto nodeAgent : cellAgent->nodeAgents) {
-                check_memAgent_ODEs("TestCell", nodeAgent);
-                nodeAgent->passBackBufferLevels();
-            }
-            cellAgent->updateCurrentProteinLevels();
-        }
+		for (auto cellAgent : this->m_tissue->m_cell_agents) {
+			for (auto nodeAgent : cellAgent->nodeAgents) {
+				check_memAgent_ODEs("TestCell", nodeAgent);
+				nodeAgent->passBackBufferLevels();
+			}
+			cellAgent->updateCurrentProteinLevels();
+		}
 
         // Perform cell-level ODEs (i.e. regulation) reactions.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
@@ -1204,6 +1202,22 @@ void MemAgentODETest::runODEs(const int& timestep) {
             cellAgent->cycle_protein_levels();
             cellAgent->resetBufferVector();
         }
+
+		// Distribute proteins to memAgents, using current cell level.
+		for (auto cellAgent : this->m_tissue->m_cell_agents) {
+			cellAgent->distributeProteins();
+		}
+		auto proteinA = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinA",0);
+		auto proteinB = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinB",0);
+		auto proteinC = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinC",0);
+		auto proteinD = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinD",0);
+
+		auto proteinA_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinA",1);
+		auto proteinB_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinB",1);
+		auto proteinC_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinC",1);
+		auto proteinD_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinD",1);
+
+		int test = 0;
     }
 }
 
@@ -1256,7 +1270,6 @@ void MemAgentODETest::run_memAgent_ODEs(MemAgent* memAgent) {
     MemAgentODEStates states;
     auto stepper = odeint::euler<MemAgentODEStates>();
 
-
     states[0] = memAgent->get_memAgent_current_level("ProteinA");
     states[1] = memAgent->get_memAgent_current_level("ProteinB");
     states[2] = memAgent->get_memAgent_current_level("ProteinC");
@@ -1285,19 +1298,6 @@ void MemAgentODETest::memAgent_system(const MemAgentODEStates &x,
     dxdt[2] = 0.1 * adjacent_ProteinB;
     dxdt[3] = 0;
     dxdt[4] = 0;
-
-}
-
-double MemAgentODETest::calc_ProteinB_adjacent_level(EC *ec) {
-    double level = 0.0;
-    for (auto *neighbour : ec->getNeighCellVector()) {
-        level += neighbour->get_cell_protein_level("ProteinB",0);
-    }
-    if (level == 0.0 || ec->getNeighCellVector().empty()) {
-        return 0.0;
-    } else {
-        return level / (int) ec->getNeighCellVector().size();
-    }
 }
 
 void MemAgentODETest::TearDown() {
@@ -1455,8 +1455,7 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
 
 void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     Endothelial_cell_ode_states states;
-//    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
-	auto stepper = odeint::euler<Endothelial_cell_ode_states>();
+    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
     states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -1470,10 +1469,9 @@ void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     states[9] = calc_DLL4_adjacent_level(ec);
     states[10] = calc_NOTCH_adjacent_level(ec);
 
-//    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-//    controlled_stepper_type controlled_stepper;
-//    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
-	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
+    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+    controlled_stepper_type controlled_stepper;
+    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
 
     ec->set_cell_protein_level("FILOPODIA", states[0], 1);
     ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1706,24 +1704,28 @@ void VenkatramanMemAgentTest::printProteinLevels(const int& timestep, const int&
 
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-        // Distribute proteins to memAgents, using current cell level.
+        // Distribute proteins to memAgents evenly,
+		// using current cell levels.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->distributeProteins();
         }
-
-        // Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
+        // Run local memAgent ODEs (i.e. binding reactions)
+		// and pass the result back to the cell buffer.
         // Then, update the cell using the current values.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             for (auto nodeAgent : cellAgent->nodeAgents) {
-                check_memAgent_ODEs("Endothelial", nodeAgent);
+                check_memAgent_ODEs("Endothelial", nodeAgent, i);
                 nodeAgent->passBackBufferLevels();
             }
+			// Updating protein levels here means
+			// that the cell ODEs use the memAgent
+			// buffer levels for their calculations.
             cellAgent->updateCurrentProteinLevels();
         }
 
         // Perform cell-level ODEs (i.e. regulation) reactions.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            check_cell_ODEs(cellAgent);
+            check_cell_ODEs(cellAgent, i);
         }
 
         // Cycle through the cell-level proteins for the cell agents and reset the buffers.
@@ -1734,18 +1736,30 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     }
 }
 
-void VenkatramanMemAgentTest::check_cell_ODEs(EC *ec) {
+void VenkatramanMemAgentTest::check_cell_ODEs(EC *ec, const int &timestep) {
     if (ec->m_cell_type->m_name == "Endothelial") {
-        Endothelial_run_cell_ODEs(ec);
+        Endothelial_run_cell_ODEs(ec, timestep);
     }
 }
 
-void VenkatramanMemAgentTest::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
+void VenkatramanMemAgentTest::check_memAgent_ODEs(const std::string& cell_type_name,
+												  MemAgent *memAgent,
+												  const int &timestep) {
     if (cell_type_name == "Endothelial") {
-        Endothelial_run_memAgent_ODEs(memAgent);
+        Endothelial_run_memAgent_ODEs(memAgent, timestep);
     }
 }
 
+void VenkatramanMemAgentTest::printArray(const Endothelial_cell_ode_states &arr,
+										 const int &timestep,
+										 const int &mod) {
+	if (timestep % mod == 0) {
+		for (int i = 0; i < (int) arr.size(); i++) {
+			std::cout << arr[i] << ",";
+		}
+		std::cout << "\n";
+	}
+}
 
 void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
 	// Species Definitions
@@ -1803,28 +1817,35 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 	dxdt[10] = 0;
 }
 
-void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
+void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec, const int &timestep) {
 	Endothelial_cell_ode_states states;
-	auto stepper = odeint::euler<Endothelial_cell_ode_states>();
-//	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+//	Endothelial_cell_ode_states end_states;
+//	Endothelial_memAgent_ode_states change_arr;
 
-    states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
-    states[1] = ec->get_cell_protein_level("VEGF", 0);
-    states[2] = ec->get_cell_protein_level("HEY", 0);
-    states[3] = ec->get_cell_protein_level("VEGFR", 0);
-    states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-    states[5] = ec->get_cell_protein_level("DLL4", 0);
-    states[6] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-    states[7] = ec->get_cell_protein_level("NICD", 0);
-    states[8] = ec->get_cell_protein_level("NOTCH", 0);
-    states[9] = calc_DLL4_adjacent_level(ec);
-    states[10] = calc_NOTCH_adjacent_level(ec);
+//	auto stepper = odeint::euler<Endothelial_cell_ode_states>();
+	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
-//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-//	controlled_stepper_type controlled_stepper;
-//	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+	states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
+	states[1] = ec->get_cell_protein_level("VEGF", 0);
+	states[2] = ec->get_cell_protein_level("HEY", 0);
+	states[3] = ec->get_cell_protein_level("VEGFR", 0);
+	states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+	states[5] = ec->get_cell_protein_level("DLL4", 0);
+	states[6] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+	states[7] = ec->get_cell_protein_level("NICD", 0);
+	states[8] = ec->get_cell_protein_level("NOTCH", 0);
+	states[9] = calc_DLL4_adjacent_level(ec);
+	states[10] = calc_NOTCH_adjacent_level(ec);
 
-	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
+	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+	controlled_stepper_type controlled_stepper;
+	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+
+//	stepper.do_step(Endothelial_cell_system, start_states, 0.0, end_states, 0.1);
+//	if (ec->cell_number == 0) {
+//		calcDXDT(start_states, end_states, change_arr);
+//		printArray(change_arr, timestep, 100);
+//	}
 
 	ec->set_cell_protein_level("FILOPODIA", states[0], 1);
 	ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1871,28 +1892,30 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 	dxdt[10] = 0;
 }
 
-void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
+void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent, const int &timestep) {
 	Endothelial_memAgent_ode_states states;
-	Endothelial_memAgent_ode_states states;
-	auto stepper = odeint::euler<Endothelial_memAgent_ode_states>();
-//	typedef odeint::runge_kutta_cash_karp54<Endothelial_memAgent_ode_states> error_stepper_type;
+//	Endothelial_memAgent_ode_states end_states;
+//	Endothelial_memAgent_ode_states change_arr;
+
+//	auto stepper = odeint::euler<Endothelial_memAgent_ode_states>();
+	typedef odeint::runge_kutta_cash_karp54<Endothelial_memAgent_ode_states> error_stepper_type;
 
     states[0] = memAgent->get_memAgent_current_level("FILOPODIA");
-    states[1] = memAgent->get_memAgent_current_level("VEGF");
-    states[2] = memAgent->get_memAgent_current_level("HEY");
-    states[3] = memAgent->get_memAgent_current_level("VEGFR");
-    states[4] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-    states[5] = memAgent->get_memAgent_current_level("DLL4");
-    states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-    states[7] = memAgent->get_memAgent_current_level("NICD");
-    states[8] = memAgent->get_memAgent_current_level("NOTCH");
-    states[9] = memAgent->get_junction_protein_level("DLL4");
-    states[10] = memAgent->get_junction_protein_level("NOTCH");
+	states[1] = memAgent->get_memAgent_current_level("VEGF");
+	states[2] = memAgent->get_memAgent_current_level("HEY");
+	states[3] = memAgent->get_memAgent_current_level("VEGFR");
+	states[4] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+	states[5] = memAgent->get_memAgent_current_level("DLL4");
+	states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
+	states[7] = memAgent->get_memAgent_current_level("NICD");
+	states[8] = memAgent->get_memAgent_current_level("NOTCH");
+	states[9] = memAgent->get_junction_protein_level("DLL4");
+	states[10] = memAgent->get_junction_protein_level("NOTCH");
 
-//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-//	controlled_stepper_type controlled_stepper;
-//	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
-	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
+	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+	controlled_stepper_type controlled_stepper;
+	integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
+//	stepper.do_step(Endothelial_memAgent_system, start_states, 0.0, end_states, 0.1);
 
     memAgent->set_protein_buffer_level("VEGF", states[0]);
 	memAgent->set_protein_buffer_level("VEGFR", states[1]);
@@ -1900,6 +1923,20 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
 	memAgent->set_protein_buffer_level("DLL4", states[3]);
 	memAgent->set_protein_buffer_level("NOTCH", states[4]);
 	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[5]);
+}
+
+void VenkatramanMemAgentTest::calcDXDT(const Endothelial_memAgent_ode_states &start_states,
+			  const Endothelial_memAgent_ode_states &end_states,
+			  Endothelial_memAgent_ode_states &change_arr) {
+	// These should all be the same size, but just in case.
+	assert((int) start_states.size() == (int) end_states.size());
+	assert((int) start_states.size() == (int) change_arr.size());
+
+	int test = (int) start_states.size();
+
+	for (int i = 0; i < (int) start_states.size(); i++) {
+		change_arr[i] = end_states[i] - start_states[i];
+	}
 }
 
 

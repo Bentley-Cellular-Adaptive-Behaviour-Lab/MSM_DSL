@@ -218,8 +218,6 @@ public:
                                 double t);
     void run_Cell_ODEs(EC *ec);
     void run_memAgent_ODEs(MemAgent *memAgent);
-
-    double calc_ProteinB_adjacent_level(EC *ec);
 };
 
 class VenkatramanCellTest : public ::testing::Test {
@@ -290,18 +288,25 @@ public:
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
     void runODEs(const int& timestep);
     void printTimeStep(const int& timestep);
-    Tissue* m_tissue;
+	void printArray(const Endothelial_cell_ode_states &arr,
+					const int &timestep,
+					const int &mod);
+
+	Tissue* m_tissue;
 
 	void printProteinNames();
 	void printProteinLevels(const int& timestep, const int& mod);
 
     // ODE Functions.
-	void check_cell_ODEs(EC *ec);
-	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
+	void check_cell_ODEs(EC *ec, const int &timestep);
+	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent, const int &timestep);
 	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
-	void Endothelial_run_cell_ODEs(EC *ec);
+	void Endothelial_run_cell_ODEs(EC *ec, const int &timestep);
 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
-	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
+	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent, const int &timestep);
+	void calcDXDT(const Endothelial_memAgent_ode_states &start_states,
+				  const Endothelial_memAgent_ode_states &end_states,
+				  Endothelial_memAgent_ode_states &change_arr);
 
 	static double calc_V0_rate();
 	static double calc_Theta_rate();
