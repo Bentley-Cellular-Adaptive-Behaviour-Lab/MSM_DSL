@@ -236,6 +236,8 @@ public:
     Cell_Type* createCellType(Tissue_Container* container);
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
     void runODEs(const int& timestep);
+	void printProteinNames();
+	void printProteinLevels(const int& timestep, const int& mod);
 
     // ODE Functions.
     void check_cell_ODEs(EC *ec);
@@ -289,6 +291,9 @@ public:
     void runODEs(const int& timestep);
     void printTimeStep(const int& timestep);
     Tissue* m_tissue;
+
+	void printProteinNames();
+	void printProteinLevels(const int& timestep, const int& mod);
 
     // ODE Functions.
 	void check_cell_ODEs(EC *ec);

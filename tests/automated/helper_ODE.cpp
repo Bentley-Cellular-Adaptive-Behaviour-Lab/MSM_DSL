@@ -1179,11 +1179,6 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
 
 void MemAgentODETest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-
-        if (i == 1) {
-            int test = 0;
-        }
-
         // Distribute proteins to memAgents, using current cell level.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->distributeProteins();
@@ -1382,6 +1377,26 @@ void VenkatramanCellTest::runODEs(const int& timestep) {
     }
 }
 
+void VenkatramanCellTest::printProteinNames() {
+	for (auto &cellAgent : this->m_tissue->m_cell_agents) {
+		for (auto &protein : cellAgent->m_cell_type->proteins) {
+			std::cout << protein->get_name() << ",";
+		}
+	}
+	std::cout << "\n";
+}
+
+void VenkatramanCellTest::printProteinLevels(const int& timestep, const int& mod) {
+	if (timestep % mod == 0) {
+		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
+			for (auto &protein: cellAgent->m_cell_type->proteins) {
+				std::cout << protein->get_cell_level(0) << ",";
+			}
+		}
+		std::cout << "\n";
+	}
+}
+
 void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
     // Species Definitions
     double FILOPODIA = x[0];
@@ -1440,7 +1455,8 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
 
 void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     Endothelial_cell_ode_states states;
-    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+//    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+	auto stepper = odeint::euler<Endothelial_cell_ode_states>();
 
     states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -1454,9 +1470,10 @@ void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     states[9] = calc_DLL4_adjacent_level(ec);
     states[10] = calc_NOTCH_adjacent_level(ec);
 
-    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-    controlled_stepper_type controlled_stepper;
-    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+//    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//    controlled_stepper_type controlled_stepper;
+//    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
 
     ec->set_cell_protein_level("FILOPODIA", states[0], 1);
     ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1667,6 +1684,26 @@ void VenkatramanMemAgentTest::printTimeStep(const int &timestep) {
     }
 }
 
+void VenkatramanMemAgentTest::printProteinNames() {
+	for (auto &cellAgent : this->m_tissue->m_cell_agents) {
+		for (auto &protein : cellAgent->m_cell_type->proteins) {
+			std::cout << protein->get_name() << ",";
+		}
+	}
+	std::cout << "\n";
+}
+
+void VenkatramanMemAgentTest::printProteinLevels(const int& timestep, const int& mod) {
+	if (timestep % mod == 0) {
+		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
+			for (auto &protein: cellAgent->m_cell_type->proteins) {
+				std::cout << protein->get_cell_level(0) << ",";
+			}
+		}
+		std::cout << "\n";
+	}
+}
+
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
         // Distribute proteins to memAgents, using current cell level.
@@ -1689,10 +1726,11 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
             check_cell_ODEs(cellAgent);
         }
 
-        // Cycle through the cell-level proteins for the cell agents.
+        // Cycle through the cell-level proteins for the cell agents and reset the buffers.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-        }
+			cellAgent->resetBufferVector();
+		}
     }
 }
 
@@ -1767,7 +1805,8 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 
 void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
-    auto stepper = odeint::euler<Endothelial_cell_ode_states>();
+	auto stepper = odeint::euler<Endothelial_cell_ode_states>();
+//	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
     states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -1781,7 +1820,11 @@ void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
     states[9] = calc_DLL4_adjacent_level(ec);
     states[10] = calc_NOTCH_adjacent_level(ec);
 
-    stepper.do_step( Endothelial_cell_system, states, 0.0, 0.1);
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	controlled_stepper_type controlled_stepper;
+//	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+
+	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
 
 	ec->set_cell_protein_level("FILOPODIA", states[0], 1);
 	ec->set_cell_protein_level("VEGF", states[1], 1);
@@ -1830,7 +1873,9 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 
 void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	Endothelial_memAgent_ode_states states;
-    auto stepper = odeint::euler<Endothelial_cell_ode_states>();
+	Endothelial_memAgent_ode_states states;
+	auto stepper = odeint::euler<Endothelial_memAgent_ode_states>();
+//	typedef odeint::runge_kutta_cash_karp54<Endothelial_memAgent_ode_states> error_stepper_type;
 
     states[0] = memAgent->get_memAgent_current_level("FILOPODIA");
     states[1] = memAgent->get_memAgent_current_level("VEGF");
@@ -1844,7 +1889,10 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
     states[9] = memAgent->get_junction_protein_level("DLL4");
     states[10] = memAgent->get_junction_protein_level("NOTCH");
 
-    stepper.do_step( Endothelial_cell_system, states, 0.0, 0.1);
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	controlled_stepper_type controlled_stepper;
+//	integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
+	stepper.do_step(Endothelial_cell_system, states, 0.0, 0.1);
 
     memAgent->set_protein_buffer_level("VEGF", states[0]);
 	memAgent->set_protein_buffer_level("VEGFR", states[1]);
