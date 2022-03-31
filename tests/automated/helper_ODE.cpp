@@ -1207,17 +1207,6 @@ void MemAgentODETest::runODEs(const int& timestep) {
 		for (auto cellAgent : this->m_tissue->m_cell_agents) {
 			cellAgent->distributeProteins();
 		}
-		auto proteinA = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinA",0);
-		auto proteinB = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinB",0);
-		auto proteinC = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinC",0);
-		auto proteinD = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinD",0);
-
-		auto proteinA_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinA",1);
-		auto proteinB_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinB",1);
-		auto proteinC_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinC",1);
-		auto proteinD_dash = this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("ProteinD",1);
-
-		int test = 0;
     }
 }
 
