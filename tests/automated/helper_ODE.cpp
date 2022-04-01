@@ -1182,6 +1182,16 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
 
 void MemAgentODETest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
+		// Distribute proteins to memAgents, using current cell level.
+		for (auto cellAgent : this->m_tissue->m_cell_agents) {
+			cellAgent->distributeProteins();
+		}
+
+		std::cout << "C\': " ;
+		printCurrentLevels(i, 1);
+		std::cout << "F\': " ;
+		printFutureLevels(i, 1);
+
 		// Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
         // Then, update the cell using the current values.
 		for (auto cellAgent : this->m_tissue->m_cell_agents) {
@@ -1192,22 +1202,32 @@ void MemAgentODETest::runODEs(const int& timestep) {
 			cellAgent->updateCurrentProteinLevels();
 		}
 
+		std::cout << "C\'\': ";
+		printCurrentLevels(i, 1);
+		std::cout << "F\'\': ";
+		printFutureLevels(i, 1);
+
         // Perform cell-level ODEs (i.e. regulation) reactions.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
         }
 
-        // Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
+		std::cout << "C\'\'\': ";
+		printCurrentLevels(i, 1);
+		std::cout << "F\'\'\': ";
+		printFutureLevels(i, 1);
+
+		// Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-            cellAgent->resetBufferVector();
+            cellAgent->cycleBufferVector();
         }
 
-		// Distribute proteins to memAgents, using current cell level.
-		for (auto cellAgent : this->m_tissue->m_cell_agents) {
-			cellAgent->distributeProteins();
-		}
-    }
+		std::cout << "C\'\'\'\': " ;
+		printCurrentLevels(i, 1);
+		std::cout << "F\'\'\'\': " ;
+		printFutureLevels(i, 1);
+	}
 }
 
 
@@ -1287,6 +1307,30 @@ void MemAgentODETest::memAgent_system(const MemAgentODEStates &x,
     dxdt[2] = 0.1 * adjacent_ProteinB;
     dxdt[3] = 0;
     dxdt[4] = 0;
+}
+
+void MemAgentODETest::printCurrentLevels(const int &timestep,
+						const int &mod) {
+	if (timestep % mod == 0) {
+		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
+			for (auto &protein: cellAgent->m_cell_type->proteins) {
+				std::cout << protein->get_cell_level(0) << ",";
+			}
+		}
+		std::cout << "\n";
+	}
+}
+
+void MemAgentODETest::printFutureLevels(const int &timestep,
+										 const int &mod) {
+	if (timestep % mod == 0) {
+		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
+			for (auto &protein: cellAgent->m_cell_type->proteins) {
+				std::cout << protein->get_cell_level(1) << ",";
+			}
+		}
+		std::cout << "\n";
+	}
 }
 
 void MemAgentODETest::TearDown() {
@@ -1693,6 +1737,7 @@ void VenkatramanMemAgentTest::printProteinLevels(const int& timestep, const int&
 
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
+		printProteinLevels(i, 100); // Get P'
         // Distribute proteins to memAgents evenly,
 		// using current cell levels.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
@@ -1712,7 +1757,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
             cellAgent->updateCurrentProteinLevels();
         }
 
-        // Perform cell-level ODEs (i.e. regulation) reactions.
+		// Perform cell-level ODEs (i.e. regulation) reactions.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent, i);
         }
@@ -1720,7 +1765,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         // Cycle through the cell-level proteins for the cell agents and reset the buffers.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-			cellAgent->resetBufferVector();
+			cellAgent->cycleBufferVector();
 		}
     }
 }

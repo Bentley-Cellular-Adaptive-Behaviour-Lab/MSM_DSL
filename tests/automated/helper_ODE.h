@@ -218,6 +218,10 @@ public:
                                 double t);
     void run_Cell_ODEs(EC *ec);
     void run_memAgent_ODEs(MemAgent *memAgent);
+	void printCurrentLevels(const int &timestep,
+							const int &mod);
+	void printFutureLevels(const int &timestep,
+						   const int &mod);
 };
 
 class VenkatramanCellTest : public ::testing::Test {

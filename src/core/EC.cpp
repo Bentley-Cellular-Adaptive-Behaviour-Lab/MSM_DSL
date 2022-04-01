@@ -2047,8 +2047,8 @@ void EC::cycleBufferVector() {
 ******************************************************************************************/
 
 void EC::updateBufferEntry(const int& index, const double& deltaValue) {
-    auto nextValue = std::get<1>(this->m_protein_delta_buffer.at(index));
-    std::get<1>(this->m_protein_delta_buffer.at(index)) = nextValue + deltaValue;
+    auto nextValue = std::get<0>(this->m_protein_delta_buffer.at(index));
+    std::get<0>(this->m_protein_delta_buffer.at(index)) = nextValue + deltaValue;
 }
 
 /*****************************************************************************************
