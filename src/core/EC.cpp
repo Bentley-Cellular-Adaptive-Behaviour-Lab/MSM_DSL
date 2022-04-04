@@ -1064,7 +1064,6 @@ void EC::set_cell_protein_level(const std::string& protein_name,
 
 void EC::cycle_protein_levels() const {
     for (auto *protein : this->m_cell_type->proteins) {
-        // This does work with both the species and regulation delays though.
         auto size = protein->cell_levels.size();
         auto newProteinValue = protein->cell_levels[0];
         // Remove first element of the container - i.e. the current timestep.

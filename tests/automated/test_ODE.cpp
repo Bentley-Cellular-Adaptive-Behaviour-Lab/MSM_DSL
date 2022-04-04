@@ -391,7 +391,7 @@ TEST_F(MemAgentODETest, OneTimestepTest) {
 
 TEST_F(MemAgentODETest, TwoTimestepTest) {
     // Run ODEs twice.
-    runODEs(2);
+    runODEs(3);
     auto cell1 = this->m_tissue->m_cell_agents.at(0);
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
 

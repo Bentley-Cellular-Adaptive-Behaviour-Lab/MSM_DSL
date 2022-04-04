@@ -1182,51 +1182,46 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
 
 void MemAgentODETest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-		// Distribute proteins to memAgents, using current cell level.
-		for (auto cellAgent : this->m_tissue->m_cell_agents) {
-			cellAgent->distributeProteins();
-		}
-
-		std::cout << "C\': " ;
-		printCurrentLevels(i, 1);
-		std::cout << "F\': " ;
-		printFutureLevels(i, 1);
-
-		// Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer.
-        // Then, update the cell using the current values.
-		for (auto cellAgent : this->m_tissue->m_cell_agents) {
-			for (auto nodeAgent : cellAgent->nodeAgents) {
-				check_memAgent_ODEs("TestCell", nodeAgent);
-				nodeAgent->passBackBufferLevels();
-			}
-			cellAgent->updateCurrentProteinLevels();
-		}
-
-		std::cout << "C\'\': ";
-		printCurrentLevels(i, 1);
-		std::cout << "F\'\': ";
-		printFutureLevels(i, 1);
-
-        // Perform cell-level ODEs (i.e. regulation) reactions.
-        for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            check_cell_ODEs(cellAgent);
-        }
-
-		std::cout << "C\'\'\': ";
-		printCurrentLevels(i, 1);
-		std::cout << "F\'\'\': ";
-		printFutureLevels(i, 1);
-
-		// Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
+        // Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
             cellAgent->cycleBufferVector();
         }
 
-		std::cout << "C\'\'\'\': " ;
+		std::cout << "CycleStack\': " ;
 		printCurrentLevels(i, 1);
-		std::cout << "F\'\'\'\': " ;
+		std::cout << "CycleStack\'\': " ;
 		printFutureLevels(i, 1);
+
+		// Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer as they occur.
+        // After memAgent ODEs, add the results of the buffer to the stack.
+		for (auto cellAgent : this->m_tissue->m_cell_agents) {
+			for (auto nodeAgent : cellAgent->nodeAgents) {
+				check_memAgent_ODEs("TestCell", nodeAgent);
+				nodeAgent->passBackBufferLevels();
+			}
+			cellAgent->updateFutureProteinLevels();
+		}
+
+		std::cout << "MemAgentODEs\': ";
+		printCurrentLevels(i, 1);
+		std::cout << "MemAgentODEs\'\': ";
+		printFutureLevels(i, 1);
+
+        // Perform cell-level ODEs (i.e. regulation) reactions. Set the result to be the new current level.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            check_cell_ODEs(cellAgent);
+        }
+
+		std::cout << "CellODEs\': ";
+		printCurrentLevels(i, 1);
+		std::cout << "CellODEs\'\': ";
+		printFutureLevels(i, 1);
+
+        // Distribute proteins to memAgents, using current cell level.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->distributeProteins();
+        }
 	}
 }
 
