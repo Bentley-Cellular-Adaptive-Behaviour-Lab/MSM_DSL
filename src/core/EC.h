@@ -183,5 +183,7 @@ public:
     void cycleBufferVector();
     void updateBufferEntry(const int& index, const double& delta);
     void updateCurrentProteinLevels();
+    void updateFutureProteinLevels();
+
 };
 #endif //SPRINGAGENT_EC_H

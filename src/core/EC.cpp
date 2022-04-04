@@ -2067,6 +2067,23 @@ void EC::updateCurrentProteinLevels() {
     }
 }
 
+/*****************************************************************************************
+*  Name:		updateFutureProteinLevels
+*  Description: Adds newly calculated values from memAgent ODEs to GRN stack. Called before
+*               cell ODEs.
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::updateFutureProteinLevels() {
+    int index = 0;
+    for (auto &protein : this->m_cell_type->proteins) {
+        const int delay = protein->get_transcription_delay();
+        const double currentValue = std::get<0>(this->m_protein_delta_buffer.at(index));
+        protein->set_cell_level(currentValue, delay);
+        index++;
+    }
+}
+
 const std::vector<std::tuple<double, double>> &EC::getBufferVector() {
     return this->m_protein_delta_buffer;
 }

@@ -1254,10 +1254,10 @@ void MemAgentODETest::run_Cell_ODEs(EC *ec) {
 
     stepper.do_step(cell_system, states, 0.0, 1.0);
 
-    ec->set_cell_protein_level("ProteinA", states[0], 1);
-    ec->set_cell_protein_level("ProteinB", states[1], 1);
-    ec->set_cell_protein_level("ProteinC", states[2], 1);
-    ec->set_cell_protein_level("ProteinD", states[3], 1);
+    ec->set_cell_protein_level("ProteinA", states[0], 0);
+    ec->set_cell_protein_level("ProteinB", states[1], 0);
+    ec->set_cell_protein_level("ProteinC", states[2], 0);
+    ec->set_cell_protein_level("ProteinD", states[3], 0);
 }
 
 void MemAgentODETest::cell_system(const CellODEStates &x,
