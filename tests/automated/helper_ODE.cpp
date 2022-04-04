@@ -1180,48 +1180,70 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
 	}
 }
 
+void MemAgentODETest::initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
+                                             std::vector<std::vector<double>>& cellDeltaLevels) {
+    for (auto cellAgent : this->m_tissue->m_cell_agents) {
+        cellStartLevels.emplace_back();
+        cellDeltaLevels.emplace_back();
+    }
+}
+
 void MemAgentODETest::runODEs(const int& timestep) {
+
+
     for (int i = 0; i < timestep; i++) {
-        // Cycle through the cell-level proteins for the cell agents and clear the buffer vectors.
+        // Get delta for this timestep by minusing new current levels
+        // after cell ODEs from levels at the start of the timestep.
+        // Then apply the delta to the incoming timestep.
+        std::vector<std::vector<double>> cellStartLevels;
+        std::vector<std::vector<double>> cellDeltaLevels;
+        initialiseLevelVectors(cellStartLevels, cellDeltaLevels);
+
+        // Cycle through the protein level stacks for
+        // the cell agents and clear the buffer vectors.
+        // Set these values to be the start levels
+        // before distributing proteins to memAgents.
+        int cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
             cellAgent->cycleBufferVector();
+            cellAgent->storeStartLevels(cellIndex, cellStartLevels);
+            cellAgent->distributeProteins();
+            cellIndex++;
         }
 
-		std::cout << "CycleStack\': " ;
-		printCurrentLevels(i, 1);
-		std::cout << "CycleStack\'\': " ;
-		printFutureLevels(i, 1);
-
-		// Run local memAgent ODEs (i.e. binding reactions) and pass the result back to the cell buffer as they occur.
-        // After memAgent ODEs, add the results of the buffer to the stack.
-		for (auto cellAgent : this->m_tissue->m_cell_agents) {
+		// Run local memAgent ODEs (i.e. binding reactions)
+        // and pass the result back to a buffer as they occur.
+        // After, add the buffer totals to the end of the stack.
+        for (auto cellAgent : this->m_tissue->m_cell_agents) {
 			for (auto nodeAgent : cellAgent->nodeAgents) {
 				check_memAgent_ODEs("TestCell", nodeAgent);
 				nodeAgent->passBackBufferLevels();
 			}
 			cellAgent->updateFutureProteinLevels();
-		}
+        }
 
 		std::cout << "MemAgentODEs\': ";
 		printCurrentLevels(i, 1);
 		std::cout << "MemAgentODEs\'\': ";
 		printFutureLevels(i, 1);
 
-        // Perform cell-level ODEs (i.e. regulation) reactions. Set the result to be the new current level.
+        // Perform cell-level ODEs (i.e. regulation) reactions.
+        // Set the result to be the new current level.
+        // Calculate deltas then apply the delta values
+        // the incoming level in the cell stack.
+        cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
+            cellAgent->calculateDeltaValues(cellIndex, cellStartLevels, cellDeltaLevels);
+            cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
+            cellIndex++;
         }
 
-		std::cout << "CellODEs\': ";
-		printCurrentLevels(i, 1);
-		std::cout << "CellODEs\'\': ";
-		printFutureLevels(i, 1);
-
-        // Distribute proteins to memAgents, using current cell level.
-        for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            cellAgent->distributeProteins();
-        }
+        std::cout << "CellODEs\': ";
+        printCurrentLevels(i, 1);
+        std::cout << "CellODEs\'\': ";
+        printFutureLevels(i, 1);
 	}
 }
 
@@ -1307,11 +1329,9 @@ void MemAgentODETest::memAgent_system(const MemAgentODEStates &x,
 void MemAgentODETest::printCurrentLevels(const int &timestep,
 						const int &mod) {
 	if (timestep % mod == 0) {
-		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
-			for (auto &protein: cellAgent->m_cell_type->proteins) {
-				std::cout << protein->get_cell_level(0) << ",";
-			}
-		}
+        for (auto &protein: this->m_tissue->m_cell_agents.at(0)->m_cell_type->proteins) {
+            std::cout << protein->get_cell_level(0) << ",";
+        }
 		std::cout << "\n";
 	}
 }
@@ -1319,11 +1339,9 @@ void MemAgentODETest::printCurrentLevels(const int &timestep,
 void MemAgentODETest::printFutureLevels(const int &timestep,
 										 const int &mod) {
 	if (timestep % mod == 0) {
-		for (auto &cellAgent: this->m_tissue->m_cell_agents) {
-			for (auto &protein: cellAgent->m_cell_type->proteins) {
-				std::cout << protein->get_cell_level(1) << ",";
-			}
-		}
+        for (auto &protein: this->m_tissue->m_cell_agents.at(0)->m_cell_type->proteins) {
+            std::cout << protein->get_cell_level(1) << ",";
+        }
 		std::cout << "\n";
 	}
 }

@@ -2083,6 +2083,63 @@ void EC::updateFutureProteinLevels() {
     }
 }
 
+/*****************************************************************************************
+*  Name:		storeStartLevels
+*  Description: Stores cell protein levels at the start of a tick. Used for calculating cell
+*               delta values later. Called after cycling protein levels
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::storeStartLevels(const int& cellIndex,
+                         std::vector<std::vector<double>>& cellStartLevels) {
+    for (auto &protein : this->m_cell_type->proteins) {
+        const double startLevel = protein->get_cell_level(0);
+        cellStartLevels.at(cellIndex).push_back(startLevel);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		storeNextLevels
+*  Description: Takes levels calculated from start of a tick and determines the delta after the
+*               cell level odes have been run. Updates a vector of vectors with these values.
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::calculateDeltaValues(const int& cellIndex,
+                              std::vector<std::vector<double>>& cellStartLevels,
+                              std::vector<std::vector<double>>& cellDeltaLevels) {
+    int proteinIndex = 0;
+    for (auto &protein : this->m_cell_type->proteins) {
+        // Level before ODES.
+        const double startLevel = cellStartLevels.at(cellIndex).at(proteinIndex);
+        // Level after ODES.
+        const double currentLevel = protein->get_cell_level(0);
+        // Delta to be applied to incoming cell level.
+        const double deltaLevel = currentLevel - startLevel;
+        cellDeltaLevels.at(cellIndex).push_back(deltaLevel);
+        proteinIndex++;
+    }
+}
+
+/*****************************************************************************************
+*  Name:		syncDeltaValues
+*  Description: Takes protein level deltas calculated from start of a tick and updates the
+*               next value in the cell protein stack.
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::syncDeltaValues(const int& cellIndex,
+                         std::vector<std::vector<double>>& cellDeltaLevels) {
+    int proteinIndex = 0;
+    for (auto &protein : this->m_cell_type->proteins) {
+        const double nextLevel = protein->get_cell_level(1);
+        const double deltaValue = cellDeltaLevels.at(cellIndex).at(proteinIndex);
+        const double newNextLevel = nextLevel + deltaValue;
+        this->set_cell_protein_level(protein->get_name(), newNextLevel, 1);
+        proteinIndex++;
+    }
+}
+
 const std::vector<std::tuple<double, double>> &EC::getBufferVector() {
     return this->m_protein_delta_buffer;
 }

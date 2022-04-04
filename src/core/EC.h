@@ -184,6 +184,11 @@ public:
     void updateBufferEntry(const int& index, const double& delta);
     void updateCurrentProteinLevels();
     void updateFutureProteinLevels();
-
+    void storeStartLevels(const int& cellIndex, std::vector<std::vector<double>>& cellNextLevels);
+    void calculateDeltaValues(const int& cellIndex,
+                              std::vector<std::vector<double>>& cellStartLevels,
+                              std::vector<std::vector<double>>& cellDeltaLevels);
+    void syncDeltaValues(const int& cellIndex,
+                         std::vector<std::vector<double>>& cellDeltaLevels);
 };
 #endif //SPRINGAGENT_EC_H

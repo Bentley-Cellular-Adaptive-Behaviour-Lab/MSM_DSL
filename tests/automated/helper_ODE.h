@@ -222,6 +222,8 @@ public:
 							const int &mod);
 	void printFutureLevels(const int &timestep,
 						   const int &mod);
+    void initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
+                                std::vector<std::vector<double>>& cellDeltaLevels);
 };
 
 class VenkatramanCellTest : public ::testing::Test {
@@ -240,6 +242,8 @@ public:
     void runODEs(const int& timestep);
 	void printProteinNames();
 	void printProteinLevels(const int& timestep, const int& mod);
+
+
 
     // ODE Functions.
     void check_cell_ODEs(EC *ec);
