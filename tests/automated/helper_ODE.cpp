@@ -1223,11 +1223,6 @@ void MemAgentODETest::runODEs(const int& timestep) {
 			cellAgent->updateFutureProteinLevels();
         }
 
-		std::cout << "MemAgentODEs\': ";
-		printCurrentLevels(i, 1);
-		std::cout << "MemAgentODEs\'\': ";
-		printFutureLevels(i, 1);
-
         // Perform cell-level ODEs (i.e. regulation) reactions.
         // Set the result to be the new current level.
         // Calculate deltas then apply the delta values
@@ -1239,11 +1234,6 @@ void MemAgentODETest::runODEs(const int& timestep) {
             cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
             cellIndex++;
         }
-
-        std::cout << "CellODEs\': ";
-        printCurrentLevels(i, 1);
-        std::cout << "CellODEs\'\': ";
-        printFutureLevels(i, 1);
 	}
 }
 
