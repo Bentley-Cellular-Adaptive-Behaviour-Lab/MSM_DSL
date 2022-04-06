@@ -1204,7 +1204,7 @@ void MemAgentODETest::runODEs(const int& timestep) {
         int cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-            cellAgent->cycleBufferVector();
+            cellAgent->resetBufferVector();
             cellAgent->storeStartLevels(cellIndex, cellStartLevels);
             cellAgent->distributeProteins();
             cellIndex++;
@@ -1760,7 +1760,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         int cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-            cellAgent->cycleBufferVector();
+            cellAgent->resetBufferVector();
             cellAgent->storeStartLevels(cellIndex, cellStartLevels);
             cellAgent->distributeProteins();
             cellIndex++;
@@ -1771,7 +1771,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         // After, add the buffer totals to the end of the stack.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             for (auto nodeAgent : cellAgent->nodeAgents) {
-                check_memAgent_ODEs("Endothelial", nodeAgent, i);
+                check_memAgent_ODEs("Endothelial", nodeAgent);
                 nodeAgent->passBackBufferLevels();
             }
             cellAgent->updateFutureProteinLevels();
@@ -1783,7 +1783,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         // the incoming level in the cell stack.
         cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
-            check_cell_ODEs(cellAgent, i);
+            check_cell_ODEs(cellAgent);
             cellAgent->calculateDeltaValues(cellIndex, cellStartLevels, cellDeltaLevels);
             cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
             cellIndex++;
@@ -1791,29 +1791,17 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     }
 }
 
-void VenkatramanMemAgentTest::check_cell_ODEs(EC *ec, const int &timestep) {
+void VenkatramanMemAgentTest::check_cell_ODEs(EC *ec) {
     if (ec->m_cell_type->m_name == "Endothelial") {
-        Endothelial_run_cell_ODEs(ec, timestep);
+        Endothelial_run_cell_ODEs(ec);
     }
 }
 
 void VenkatramanMemAgentTest::check_memAgent_ODEs(const std::string& cell_type_name,
-												  MemAgent *memAgent,
-												  const int &timestep) {
+												  MemAgent *memAgent) {
     if (cell_type_name == "Endothelial") {
-        Endothelial_run_memAgent_ODEs(memAgent, timestep);
+        Endothelial_run_memAgent_ODEs(memAgent);
     }
-}
-
-void VenkatramanMemAgentTest::printArray(const Endothelial_cell_ode_states &arr,
-										 const int &timestep,
-										 const int &mod) {
-	if (timestep % mod == 0) {
-		for (int i = 0; i < (int) arr.size(); i++) {
-			std::cout << arr[i] << ",";
-		}
-		std::cout << "\n";
-	}
 }
 
 void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
@@ -1872,7 +1860,7 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 	dxdt[10] = 0;
 }
 
-void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec, const int &timestep) {
+void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
@@ -1937,7 +1925,7 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 	dxdt[10] = 0;
 }
 
-void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent, const int &timestep) {
+void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	Endothelial_memAgent_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<Endothelial_memAgent_ode_states> error_stepper_type;
 
@@ -1957,28 +1945,16 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent, 
 	controlled_stepper_type controlled_stepper;
 	integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
 
-    memAgent->set_protein_buffer_level("VEGF", states[0]);
-	memAgent->set_protein_buffer_level("VEGFR", states[1]);
-	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
-	memAgent->set_protein_buffer_level("DLL4", states[3]);
-	memAgent->set_protein_buffer_level("NOTCH", states[4]);
-	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[5]);
+    memAgent->set_protein_buffer_level("FILOPODIA", states[0]);
+    memAgent->set_protein_buffer_level("VEGF", states[1]);
+    memAgent->set_protein_buffer_level("HEY", states[2]);
+    memAgent->set_protein_buffer_level("VEGFR", states[3]);
+    memAgent->set_protein_buffer_level("VEGF_VEGFR", states[4]);
+    memAgent->set_protein_buffer_level("DLL4", states[5]);
+    memAgent->set_protein_buffer_level("DLL4_NOTCH", states[6]);
+    memAgent->set_protein_buffer_level("NICD", states[7]);
+    memAgent->set_protein_buffer_level("NOTCH", states[8]);
 }
-
-void VenkatramanMemAgentTest::calcDXDT(const Endothelial_memAgent_ode_states &start_states,
-			  const Endothelial_memAgent_ode_states &end_states,
-			  Endothelial_memAgent_ode_states &change_arr) {
-	// These should all be the same size, but just in case.
-	assert((int) start_states.size() == (int) end_states.size());
-	assert((int) start_states.size() == (int) change_arr.size());
-
-	int test = (int) start_states.size();
-
-	for (int i = 0; i < (int) start_states.size(); i++) {
-		change_arr[i] = end_states[i] - start_states[i];
-	}
-}
-
 
 double VenkatramanMemAgentTest::calc_V0_rate() {
 	return 0.0;

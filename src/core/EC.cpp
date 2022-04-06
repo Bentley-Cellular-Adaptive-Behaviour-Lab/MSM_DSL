@@ -705,7 +705,7 @@ EC::EC(World *world, Cell_Type *cell_type) {
         VEGFRlastsArray.push_back(0.0f);
     }
 
-
+    initialiseProteinStartLevel();
 
     VonNeighs = 0;
 }
@@ -2009,7 +2009,7 @@ std::list<Protrusion*>& EC::getProtrusionList() {
 /*****************************************************************************************
 *  Name:		initiateBufferVector
 *  Description: Goes over all proteins owned by a cell, then adds a value corresponding to
-*               the current level of that protein and the level on the next timestep.
+*               the current level of that protein.
 *               Called once when a cell is created.
 *  Returns:		double
 ******************************************************************************************/
@@ -2017,53 +2017,34 @@ std::list<Protrusion*>& EC::getProtrusionList() {
 void EC::initiateBufferVector() {
     for (auto protein : this->m_cell_type->proteins) {
         double currentLevel = protein->get_cell_level(0);
-        this->m_protein_delta_buffer.push_back(std::tuple {currentLevel,0});
+        this->m_protein_memAgent_buffer.push_back(0);
     }
 }
 
 /*****************************************************************************************
-*  Name:		cycleBufferVector
-*  Description: Goes over all protein level tuple in the buffer, then sets the first value,
-*               corresponding to the current timestep, to the value of the next timestep.
-*               Also sets the next timestep to 0.
+*  Name:		resetBufferVector
+*  Description: Goes over all protein level levels in the buffer and sets them to 0.
 *               Called at the end of cell agent updating.
 *  Returns:		double
 ******************************************************************************************/
 
-void EC::cycleBufferVector() {
-    for (auto &tuple : this->m_protein_delta_buffer) {
-        std::get<0>(tuple) = std::get<1>(tuple);
-        std::get<1>(tuple) = 0;
+void EC::resetBufferVector() {
+    for (auto &value : this->m_protein_memAgent_buffer) {
+        value = 0;
     }
 }
 
 /*****************************************************************************************
 *  Name:		updateBufferEntry
-*  Description: Increments a given protein value for the next timestep in the buffer vector,
+*  Description: Increments a given protein value this timstep in the buffer vector,
 *               by a specified amount.
 *               Called after memAgent ODEs are run during memAgent updating.
 *  Returns:		double
 ******************************************************************************************/
 
 void EC::updateBufferEntry(const int& index, const double& deltaValue) {
-    auto nextValue = std::get<0>(this->m_protein_delta_buffer.at(index));
-    std::get<0>(this->m_protein_delta_buffer.at(index)) = nextValue + deltaValue;
-}
-
-/*****************************************************************************************
-*  Name:		updateCurrentProteinLevels
-*  Description: Sets all current protein levels to be equal to their corresponding buffer
-*               values. Called before cell ODEs.
-*  Returns:		double
-******************************************************************************************/
-
-void EC::updateCurrentProteinLevels() {
-    int index = 0;
-    for (auto &protein : this->m_cell_type->proteins) {
-        const double currentValue = std::get<0>(this->m_protein_delta_buffer.at(index));
-        protein->set_cell_level(currentValue, 0);
-		index++;
-    }
+    auto nextValue = this->m_protein_memAgent_buffer.at(index);
+    this->m_protein_memAgent_buffer.at(index) = nextValue + deltaValue;
 }
 
 /*****************************************************************************************
@@ -2077,7 +2058,7 @@ void EC::updateFutureProteinLevels() {
     int index = 0;
     for (auto &protein : this->m_cell_type->proteins) {
         const int delay = protein->get_transcription_delay();
-        const double currentValue = std::get<0>(this->m_protein_delta_buffer.at(index));
+        const double currentValue = this->m_protein_memAgent_buffer.at(index);
         protein->set_cell_level(currentValue, delay);
         index++;
     }
@@ -2140,6 +2121,19 @@ void EC::syncDeltaValues(const int& cellIndex,
     }
 }
 
-const std::vector<std::tuple<double, double>> &EC::getBufferVector() {
-    return this->m_protein_delta_buffer;
+/*****************************************************************************************
+*  Name:		initialiseProteinStartBuffer
+*  Description: Adds a value to the protein start buffer for each protein owned by a cell
+*               type. Called during EC constructor.
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::initialiseProteinStartLevel() {
+    for (auto& protein : this->m_cell_type->proteins) {
+        this->m_protein_start_buffer.push_back(0);
+    }
+}
+
+const std::vector<double> &EC::getBufferVector() {
+    return this->m_protein_memAgent_buffer;
 }

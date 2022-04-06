@@ -296,9 +296,6 @@ public:
     void createTissue(Tissue_Container *container, Cell_Type* cellType);
     void runODEs(const int& timestep);
     void printTimeStep(const int& timestep);
-	void printArray(const Endothelial_cell_ode_states &arr,
-					const int &timestep,
-					const int &mod);
 
 	Tissue* m_tissue;
 
@@ -306,15 +303,13 @@ public:
 	void printProteinLevels(const int& timestep, const int& mod);
 
     // ODE Functions.
-	void check_cell_ODEs(EC *ec, const int &timestep);
-	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent, const int &timestep);
+	void check_cell_ODEs(EC *ec);
+	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
 	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
-	void Endothelial_run_cell_ODEs(EC *ec, const int &timestep);
+	void Endothelial_run_cell_ODEs(EC *ec);
 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
-	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent, const int &timestep);
-	void calcDXDT(const Endothelial_memAgent_ode_states &start_states,
-				  const Endothelial_memAgent_ode_states &end_states,
-				  Endothelial_memAgent_ode_states &change_arr);
+	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
+
 
     void initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
                                 std::vector<std::vector<double>>& cellDeltaLevels);
