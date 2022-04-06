@@ -705,7 +705,8 @@ EC::EC(World *world, Cell_Type *cell_type) {
         VEGFRlastsArray.push_back(0.0f);
     }
 
-    initialiseProteinStartLevel();
+    initialiseProteinStartBuffer();
+    initialiseProteinDeltaBuffer();
 
     VonNeighs = 0;
 }
@@ -2067,15 +2068,15 @@ void EC::updateFutureProteinLevels() {
 /*****************************************************************************************
 *  Name:		storeStartLevels
 *  Description: Stores cell protein levels at the start of a tick. Used for calculating cell
-*               delta values later. Called after cycling protein levels
+*               delta values later. Called after cycling protein levels.
 *  Returns:	    void
 ******************************************************************************************/
 
-void EC::storeStartLevels(const int& cellIndex,
-                         std::vector<std::vector<double>>& cellStartLevels) {
+void EC::storeStartLevels() {
+    unsigned int index = 0;
     for (auto &protein : this->m_cell_type->proteins) {
-        const double startLevel = protein->get_cell_level(0);
-        cellStartLevels.at(cellIndex).push_back(startLevel);
+        const double startLevel = this->get_cell_protein_level(protein->get_name(),0);
+        this->m_protein_start_buffer.at(index) = startLevel;
     }
 }
 
@@ -2124,14 +2125,38 @@ void EC::syncDeltaValues(const int& cellIndex,
 /*****************************************************************************************
 *  Name:		initialiseProteinStartBuffer
 *  Description: Adds a value to the protein start buffer for each protein owned by a cell
-*               type. Called during EC constructor.
+*               type. Called once during EC constructor.
 *  Returns:	    void
 ******************************************************************************************/
 
-void EC::initialiseProteinStartLevel() {
+void EC::initialiseProteinStartBuffer() {
     for (auto& protein : this->m_cell_type->proteins) {
         this->m_protein_start_buffer.push_back(0);
     }
+}
+
+/*****************************************************************************************
+*  Name:		initialiseProteinDeltaBuffer
+*  Description: Adds a value to the protein delta buffer for each protein owned by a cell
+*               type. Called once during EC constructor.
+*  Returns:	    void
+******************************************************************************************/
+
+void EC::initialiseProteinDeltaBuffer() {
+    for (auto& protein : this->m_cell_type->proteins) {
+        this->m_protein_start_buffer.push_back(0);
+    }
+}
+
+/*****************************************************************************************
+*  Name:		getProteinStartBuffer
+*  Description: Returns a const reference to this cell's levels at the start of the timestep.
+*               Used when determining adjacent values.
+*  Returns:	    const std::vector<double>&
+******************************************************************************************/
+
+const std::vector<double>& EC::getProteinStartBuffer() {
+    return this->m_protein_start_buffer;
 }
 
 const std::vector<double> &EC::getBufferVector() {

@@ -310,10 +310,6 @@ public:
 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
 	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
 
-
-    void initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
-                                std::vector<std::vector<double>>& cellDeltaLevels);
-
 	static double calc_V0_rate();
 	static double calc_Theta_rate();
 	static double calc_beta_rate();

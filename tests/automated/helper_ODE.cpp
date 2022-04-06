@@ -1736,22 +1736,8 @@ void VenkatramanMemAgentTest::printProteinLevels(const int& timestep, const int&
 	}
 }
 
-void VenkatramanMemAgentTest::initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
-                                             std::vector<std::vector<double>>& cellDeltaLevels) {
-    for (auto cellAgent : this->m_tissue->m_cell_agents) {
-        cellStartLevels.emplace_back();
-        cellDeltaLevels.emplace_back();
-    }
-}
-
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-        // Get delta for this timestep by minusing new current levels
-        // after cell ODEs from levels at the start of the timestep.
-        // Then apply the delta to the incoming timestep.
-        std::vector<std::vector<double>> cellStartLevels;
-        std::vector<std::vector<double>> cellDeltaLevels;
-        initialiseLevelVectors(cellStartLevels, cellDeltaLevels);
 
         // Cycle through the protein level stacks for
         // the cell agents and clear the buffer vectors.
@@ -1761,7 +1747,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
             cellAgent->resetBufferVector();
-            cellAgent->storeStartLevels(cellIndex, cellStartLevels);
+            cellAgent->storeStartLevels();
             cellAgent->distributeProteins();
             cellIndex++;
         }
@@ -1784,7 +1770,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
-            cellAgent->calculateDeltaValues(cellIndex, cellStartLevels, cellDeltaLevels);
+            cellAgent->calculateDeltaValues(cellIndex,  cellDeltaLevels);
             cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
             cellIndex++;
         }
