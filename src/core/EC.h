@@ -6,6 +6,7 @@
 #define SPRINGAGENT_EC_H
 
 #include <array>
+#include <map>
 #include <string>
 #include <list>
 #include <vector>
@@ -39,9 +40,9 @@ class EC {
 private:
     std::list<Protrusion*> m_protrusions;
     std::vector<EC*> neigh_cells;
-    std::vector<double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
-    std::vector<double> m_protein_start_buffer; // Stores protein levels at start of tick.
-    std::vector<double> m_protein_delta_buffer; // Stores changes determined by cell ODEs.
+    std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
+    std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
+    std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -180,19 +181,16 @@ public:
     std::list<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
 
-    const std::vector<double>& getBufferVector();
-    void initiateBufferVector();
-    void resetBufferVector();
-    void updateBufferEntry(const int& index, const double& delta);
+    const std::map<std::string, double>& getProteinMemAgentBuffer();
+    void initialiseProteinMemAgentBuffer();
+    void resetProteinMemAgentBuffer();
+    void updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue);
     void updateFutureProteinLevels();
     void storeStartLevels();
-    void calculateDeltaValues(const int& cellIndex,
-                              std::vector<std::vector<double>>& cellStartLevels,
-                              std::vector<std::vector<double>>& cellDeltaLevels);
-    void syncDeltaValues(const int& cellIndex,
-                         std::vector<std::vector<double>>& cellDeltaLevels);
+    void calculateDeltaValues();
+    void syncDeltaValues();
     void initialiseProteinStartBuffer();
     void initialiseProteinDeltaBuffer();
-    const std::vector<double>& getProteinStartBuffer();
+    const std::map<std::string, double>& getProteinStartBuffer();
 };
 #endif //SPRINGAGENT_EC_H

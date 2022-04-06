@@ -1943,7 +1943,7 @@ void World::updateECagents() {
 			// Do gene regulation based on the current levels of proteins.
 			this->odes->check_cell_ODEs(ECagents[j]);
             // Reset the protein buffer now that we've finished ODEs.
-            ECagents[j]->resetBufferVector();
+            ECagents[j]->resetProteinMemAgentBuffer();
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks

@@ -185,7 +185,7 @@ void Tissue_Container::create_cell(const std::string& name,
                                   cell->m_cell_type->m_shape->get_height());
 
             connect_2d_square_cell(m_single_cell_agents.size());
-            newCellAgent->initiateBufferVector();
+            newCellAgent->initialiseProteinMemAgentBuffer();
             newCellAgent->distributeProteins();
         } else {
             throw 4;

@@ -626,7 +626,7 @@ void Tissue_Vessel::create_vessel() {
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
-        newCellAgent->initiateBufferVector();
+        newCellAgent->initialiseProteinMemAgentBuffer();
         newCellAgent->distributeProteins();
     }
 }
@@ -873,7 +873,7 @@ void Tissue_Monolayer::create_monolayer() {
 
         // Add this agent to the relevant tissue.
         store_cell_agent(newCellAgent);
-        newCellAgent->initiateBufferVector();
+        newCellAgent->initialiseProteinMemAgentBuffer();
     }
 
 	int start_pos_X = (int)this->m_position->get_x_coord() - ((this->m_width_in_cells * cell_width) / 2);

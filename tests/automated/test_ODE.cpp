@@ -21,6 +21,7 @@
 /*
  Needed Tests:
  - Venkatraman Example - Both Cells and MemAgents, check for parity between them.
+ - Tests for protein delta and start buffers - initialising and updating.
  // When finishing up protrusion tests.
  - MemAgent Deletion and Creation - check that cell values are updated accordingly.
  - Filopodia cross cell ODES.
@@ -177,14 +178,14 @@ TEST_F(DistributeProteinsTest, DistributionTest) {
 
 TEST_F(CellBufferTest, bufferInitiationTest) {
     auto tissue = this->getTissue();
-    auto vector1 = tissue->m_cell_agents.at(0)->getBufferVector();
+    auto map = tissue->m_cell_agents.at(0)->getProteinMemAgentBuffer();
 
     // Check that a value has been created for each protein (2).
-    EXPECT_EQ((int) vector1.size(), 2);
+    EXPECT_EQ((int) map.size(), 2);
 
     // Check that each value is 0.
-    for (auto value : vector1) {
-        EXPECT_EQ(value, 0);
+    for (auto &pair : map) {
+        EXPECT_EQ(std::get<1>(pair), 0);
     }
 }
 
@@ -192,20 +193,20 @@ TEST_F(CellBufferTest, updateBufferTest) {
     // Run the set up.
     this->updateBufferVectors();
     auto tissue = this->getTissue();
-    auto vector1 = &(tissue->m_cell_agents.at(0)->getBufferVector());
+    auto map1 = tissue->m_cell_agents.at(0)->getProteinMemAgentBuffer();
 
     // Get buffer values.
-    auto proteinAValue = vector1->at(0);
-    auto proteinBValue = vector1->at(1);
+    auto proteinAValue = map1["ProteinA"];
+    auto proteinBValue = map1["ProteinB"];
 
     EXPECT_EQ(proteinAValue, 25); // Check level of Protein A in cell 1 is 25.
     EXPECT_EQ(proteinBValue, 50); // Check level of Protein B in cell 1 is 50.
 
     // Reset the buffer vector, check that the current values are now equal to 0.
-    tissue->m_cell_agents.at(0)->resetBufferVector();
-    auto vector2 = &(tissue->m_cell_agents.at(0)->getBufferVector());
-    proteinAValue = vector2->at(0);
-    proteinBValue = vector2->at(1);
+    tissue->m_cell_agents.at(0)->resetProteinMemAgentBuffer();
+    auto map2 = tissue->m_cell_agents.at(0)->getProteinMemAgentBuffer();
+    proteinAValue = map2["ProteinA"];
+    proteinBValue = map2["ProteinB"];
 
     EXPECT_EQ(proteinAValue, 0); // Level of ProteinA in buffer.
     EXPECT_EQ(proteinBValue, 0); // Level of ProteinA in buffer.
@@ -213,9 +214,9 @@ TEST_F(CellBufferTest, updateBufferTest) {
     // Change levels in the memAgents during updating.
     // See what the levels for the next timestep are like afterwards.
     this->alterProteinLevels();
-    auto vector3 = &(tissue->m_cell_agents.at(0)->getBufferVector());
-    proteinAValue = vector3->at(0);
-    proteinBValue = vector3->at(1);
+    auto map3 = tissue->m_cell_agents.at(0)->getProteinMemAgentBuffer();
+    proteinAValue = map3["ProteinA"];
+    proteinBValue = map3["ProteinB"];
     EXPECT_EQ(proteinAValue, 12.5); // Check level of Protein A in the buffer is 12.5.
     EXPECT_EQ(proteinBValue, 62.5); // Check level of Protein B in the buffer is 62.5.
 

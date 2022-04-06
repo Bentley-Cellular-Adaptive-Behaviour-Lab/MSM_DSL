@@ -1204,8 +1204,8 @@ void MemAgentODETest::runODEs(const int& timestep) {
         int cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-            cellAgent->resetBufferVector();
-            cellAgent->storeStartLevels(cellIndex, cellStartLevels);
+            cellAgent->resetProteinMemAgentBuffer();
+            cellAgent->storeStartLevels();
             cellAgent->distributeProteins();
             cellIndex++;
         }
@@ -1228,8 +1228,8 @@ void MemAgentODETest::runODEs(const int& timestep) {
         cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
-            cellAgent->calculateDeltaValues(cellIndex, cellStartLevels, cellDeltaLevels);
-            cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
+            cellAgent->calculateDeltaValues();
+            cellAgent->syncDeltaValues();
             cellIndex++;
         }
 	}
@@ -1738,18 +1738,15 @@ void VenkatramanMemAgentTest::printProteinLevels(const int& timestep, const int&
 
 void VenkatramanMemAgentTest::runODEs(const int& timestep) {
     for (int i = 0; i < timestep; i++) {
-
         // Cycle through the protein level stacks for
         // the cell agents and clear the buffer vectors.
         // Set these values to be the start levels
         // before distributing proteins to memAgents.
-        int cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             cellAgent->cycle_protein_levels();
-            cellAgent->resetBufferVector();
+            cellAgent->resetProteinMemAgentBuffer();
             cellAgent->storeStartLevels();
             cellAgent->distributeProteins();
-            cellIndex++;
         }
 
         // Run local memAgent ODEs (i.e. binding reactions)
@@ -1767,12 +1764,10 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         // Set the result to be the new current level.
         // Calculate deltas then apply the delta values
         // the incoming level in the cell stack.
-        cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
-            cellAgent->calculateDeltaValues(cellIndex,  cellDeltaLevels);
-            cellAgent->syncDeltaValues(cellIndex, cellDeltaLevels);
-            cellIndex++;
+            cellAgent->calculateDeltaValues();
+            cellAgent->syncDeltaValues();
         }
     }
 }
