@@ -316,6 +316,9 @@ public:
 				  const Endothelial_memAgent_ode_states &end_states,
 				  Endothelial_memAgent_ode_states &change_arr);
 
+    void initialiseLevelVectors(std::vector<std::vector<double>>& cellStartLevels,
+                                std::vector<std::vector<double>>& cellDeltaLevels);
+
 	static double calc_V0_rate();
 	static double calc_Theta_rate();
 	static double calc_beta_rate();
