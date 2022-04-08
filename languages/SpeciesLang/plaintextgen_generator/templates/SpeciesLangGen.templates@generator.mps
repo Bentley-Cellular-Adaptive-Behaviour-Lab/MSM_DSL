@@ -25544,35 +25544,7 @@
               </node>
             </node>
             <node concept="356sEF" id="1A8JECtPHha" role="356sEH">
-              <property role="TrG5h" value="], " />
-            </node>
-            <node concept="356sEF" id="1A8JECtPHhb" role="356sEH">
-              <property role="TrG5h" value="TRANSCRIPTION_DELAY" />
-              <node concept="17Uvod" id="1A8JECtPHhc" role="lGtFl">
-                <property role="2qtEX9" value="name" />
-                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-                <node concept="3zFVjK" id="1A8JECtPHhd" role="3zH0cK">
-                  <node concept="3clFbS" id="1A8JECtPHhe" role="2VODD2">
-                    <node concept="3clFbF" id="1A8JECtPHhf" role="3cqZAp">
-                      <node concept="2YIFZM" id="1A8JECtPHhg" role="3clFbG">
-                        <ref role="37wK5l" to="wyt6:~String.valueOf(int)" resolve="valueOf" />
-                        <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                        <node concept="2OqwBi" id="1A8JECtPHhh" role="37wK5m">
-                          <node concept="2OqwBi" id="1A8JECtPHhi" role="2Oq$k0">
-                            <node concept="30H73N" id="1A8JECtPHhj" role="2Oq$k0" />
-                            <node concept="3TrEf2" id="1A8JECtPHhk" role="2OqNvi">
-                              <ref role="3Tt5mk" to="w3cn:3h7BZk97_g8" resolve="targetSpecies" />
-                            </node>
-                          </node>
-                          <node concept="3TrcHB" id="1A8JECtPHhl" role="2OqNvi">
-                            <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
+              <property role="TrG5h" value="], 0" />
             </node>
             <node concept="356sEF" id="1A8JECtPHhm" role="356sEH">
               <property role="TrG5h" value=");" />
@@ -30190,7 +30162,7 @@
             <node concept="356sEK" id="1A8JECunisx" role="383Ya9">
               <node concept="373pV1" id="1A8JECunALA" role="356sEH" />
               <node concept="356sEF" id="1A8JECunALG" role="356sEH">
-                <property role="TrG5h" value="memAgent-&gt;set_protein_next_level(&quot;" />
+                <property role="TrG5h" value="memAgent-&gt;set_protein_buffer_level(&quot;" />
               </node>
               <node concept="356sEF" id="1A8JECuof2g" role="356sEH">
                 <property role="TrG5h" value="PROTEIN_NAME" />
@@ -32824,19 +32796,27 @@
               <node concept="373pV1" id="2vZs7RNWoS8" role="356sEH" />
               <node concept="373pV1" id="2vZs7RNWoS9" role="356sEH" />
               <node concept="356sEF" id="2vZs7RNWoSa" role="356sEH">
-                <property role="TrG5h" value="level += neighbour-&gt;get_cell_protein_level(&quot;" />
+                <property role="TrG5h" value="map = neighbour-&gt;get_start_values();" />
               </node>
-              <node concept="356sEF" id="2vZs7RNWoSb" role="356sEH">
+              <node concept="2EixSi" id="2vZs7RNWoSk" role="2EinRH" />
+            </node>
+            <node concept="356sEK" id="5yJNCTFrjeX" role="383Ya9">
+              <node concept="373pV1" id="5yJNCTFrjtU" role="356sEH" />
+              <node concept="373pV1" id="5yJNCTFrju0" role="356sEH" />
+              <node concept="356sEF" id="5yJNCTFrju8" role="356sEH">
+                <property role="TrG5h" value="level += map[&quot;" />
+              </node>
+              <node concept="356sEF" id="5yJNCTFrjup" role="356sEH">
                 <property role="TrG5h" value="SPECIES_NAME" />
-                <node concept="17Uvod" id="2vZs7RNWoSc" role="lGtFl">
+                <node concept="17Uvod" id="5yJNCTFrjuG" role="lGtFl">
                   <property role="2qtEX9" value="name" />
                   <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-                  <node concept="3zFVjK" id="2vZs7RNWoSd" role="3zH0cK">
-                    <node concept="3clFbS" id="2vZs7RNWoSe" role="2VODD2">
-                      <node concept="3clFbF" id="2vZs7RNWoSf" role="3cqZAp">
-                        <node concept="2OqwBi" id="2vZs7RNWoSg" role="3clFbG">
-                          <node concept="30H73N" id="2vZs7RNWoSh" role="2Oq$k0" />
-                          <node concept="3TrcHB" id="2vZs7RNWoSi" role="2OqNvi">
+                  <node concept="3zFVjK" id="5yJNCTFrjuH" role="3zH0cK">
+                    <node concept="3clFbS" id="5yJNCTFrjuI" role="2VODD2">
+                      <node concept="3clFbF" id="5yJNCTFrjzZ" role="3cqZAp">
+                        <node concept="2OqwBi" id="5yJNCTFrjLI" role="3clFbG">
+                          <node concept="30H73N" id="5yJNCTFrjzY" role="2Oq$k0" />
+                          <node concept="3TrcHB" id="5yJNCTFrld4" role="2OqNvi">
                             <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
@@ -32845,10 +32825,10 @@
                   </node>
                 </node>
               </node>
-              <node concept="356sEF" id="2vZs7RNWoSj" role="356sEH">
-                <property role="TrG5h" value="&quot;,0);" />
+              <node concept="356sEF" id="5yJNCTFrjuq" role="356sEH">
+                <property role="TrG5h" value="&quot;];" />
               </node>
-              <node concept="2EixSi" id="2vZs7RNWoSk" role="2EinRH" />
+              <node concept="2EixSi" id="5yJNCTFrjeZ" role="2EinRH" />
             </node>
             <node concept="356sEK" id="2vZs7RNWoSl" role="383Ya9">
               <node concept="373pV1" id="2vZs7RNWoSm" role="356sEH" />
