@@ -1444,10 +1444,10 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
     double NOTCH = x[8];
     double adjacent_DLL4 = x[9];
     double adjacent_NOTCH = x[10];
+
     // Parameter Definitions
     double V0 = calc_V0_rate();
     double Nu = calc_Nu_rate();
-
     double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
     double k4 = calc_k4_rate(DLL4_NOTCH);
     double Theta = calc_Theta_rate(); // Fine.
@@ -1801,7 +1801,6 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 	// Parameter Definitions
 	double V0 = calc_V0_rate();
 	double Nu = calc_Nu_rate();
-
 	double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
 	double k4 = calc_k4_rate(DLL4_NOTCH);
 	double Theta = calc_Theta_rate(); // Fine.
@@ -2048,7 +2047,9 @@ double VenkatramanMemAgentTest::calc_FilopodiaTurnover_rate(double FILOPODIA) {
 double VenkatramanMemAgentTest::calc_DLL4_adjacent_level(EC *ec) {
 	double level = 0.0;
 	for (auto *neighbour : ec->getNeighCellVector()) {
-		level += neighbour->get_cell_protein_level("DLL4",0);
+//		level += neighbour->get_cell_protein_level("DLL4",0);
+        auto startBuffer = neighbour->getProteinStartBuffer();
+        level += startBuffer["DLL4"];
 	}
     if (level == 0.0 || ec->getNeighCellVector().empty()) {
         return 0.0;
@@ -2060,7 +2061,8 @@ double VenkatramanMemAgentTest::calc_DLL4_adjacent_level(EC *ec) {
 double VenkatramanMemAgentTest::calc_NOTCH_adjacent_level(EC *ec) {
 	double level = 0.0;
 	for (auto *neighbour : ec->getNeighCellVector()) {
-		level += neighbour->get_cell_protein_level("NOTCH",0);
+        auto startBuffer = neighbour->getProteinStartBuffer();
+        level += startBuffer["NOTCH"];
 	}
     if (level == 0.0 || ec->getNeighCellVector().empty()) {
         return 0.0;

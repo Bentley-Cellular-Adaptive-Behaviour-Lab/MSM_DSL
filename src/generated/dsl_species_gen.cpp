@@ -41,10 +41,9 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     // Parameter Definitions
     double V0 = calc_V0_rate();
     double Nu = calc_Nu_rate();
-
     double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
     double k4 = calc_k4_rate(DLL4_NOTCH);
-    double Theta = calc_Theta_rate(); // Fine.
+    double Theta = calc_Theta_rate();
     double k1 = calc_k1_rate(VEGF, VEGFR);
     double k_1 = calc_k_1_rate(VEGF_VEGFR);
     double k2 = calc_k2_rate(DLL4, NOTCH);
@@ -67,6 +66,7 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     double N_Production = calc_N_Production_rate(NOTCH_Diff);
     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
     double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
+
     // ODE Definitions
     dxdt[0] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction);
     dxdt[1] = +(k6_VEGFSensing);
@@ -101,14 +101,14 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
     controlled_stepper_type controlled_stepper;
     integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
 
-    ec->set_cell_protein_level("FILOPODIA", states[0], 1);
-    ec->set_cell_protein_level("VEGF", states[1], 1);
-    ec->set_cell_protein_level("HEY", states[2], 1);
-    ec->set_cell_protein_level("VEGFR", states[3], 1);
-    ec->set_cell_protein_level("VEGF_VEGFR", states[4], 1);
-    ec->set_cell_protein_level("DLL4", states[5], 1);
-    ec->set_cell_protein_level("DLL4_NOTCH", states[6], 1);
-    ec->set_cell_protein_level("NICD", states[7], 1);
+    ec->set_cell_protein_level("FILOPODIA", states[0], 0);
+    ec->set_cell_protein_level("VEGF", states[1], 0);
+    ec->set_cell_protein_level("HEY", states[2], 0);
+    ec->set_cell_protein_level("VEGFR", states[3], 0);
+    ec->set_cell_protein_level("VEGF_VEGFR", states[4], 0);
+    ec->set_cell_protein_level("DLL4", states[5], 0);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[6], 0);
+    ec->set_cell_protein_level("NICD", states[7], 0);
 }
 
 void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
@@ -163,13 +163,14 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent){
     controlled_stepper_type controlled_stepper;
     integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
 
-    memAgent->set_protein_buffer_level("VEGF", states[0]);
-    memAgent->set_protein_buffer_level("VEGFR", states[1]);
-    memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
-    memAgent->set_protein_buffer_level("DLL4", states[3]);
-    memAgent->set_protein_buffer_level("NOTCH", states[4]);
-    memAgent->set_protein_buffer_level("DLL4_NOTCH", states[5]);
+    memAgent->set_protein_buffer_level("VEGF", states[1]);
+    memAgent->set_protein_buffer_level("VEGFR", states[3]);
+    memAgent->set_protein_buffer_level("VEGF_VEGFR", states[4]);
+    memAgent->set_protein_buffer_level("DLL4", states[5]);
+    memAgent->set_protein_buffer_level("DLL4_NOTCH", states[6]);
+    memAgent->set_protein_buffer_level("NOTCH", states[8]);
 }
+
 
 
 static double calc_V0_rate() {
@@ -284,15 +285,25 @@ static double calc_FilopodiaTurnover_rate(double FILOPODIA) {
 static double calc_DLL4_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
-        level += neighbour->get_cell_protein_level("DLL4",0);
+        auto map = neighbour->getProteinStartBuffer();
+        level += map["DLL4"];
     }
-    return level / (float) ec->getNeighCellVector().size();
+    if (level == 0.0) {
+        return 0.0;
+    } else {
+        return level / (float) ec->getNeighCellVector().size();
+    }
 }
 
 static double calc_NOTCH_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
-        level += neighbour->get_cell_protein_level("NOTCH",0);
+        auto map = neighbour->getProteinStartBuffer();
+        level += map["NOTCH"];
     }
-    return level / (float) ec->getNeighCellVector().size();
+    if (level == 0.0) {
+        return 0.0;
+    } else {
+        return level / (float) ec->getNeighCellVector().size();
+    }
 }

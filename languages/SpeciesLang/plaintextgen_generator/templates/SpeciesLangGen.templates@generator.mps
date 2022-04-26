@@ -29457,7 +29457,7 @@
                 </node>
               </node>
               <node concept="356sEF" id="1A8JECuobyT" role="356sEH">
-                <property role="TrG5h" value="_run_memAgent_ODEs(MemAgent* memAgent){" />
+                <property role="TrG5h" value="_run_memAgent_ODEs(MemAgent* memAgent) {" />
               </node>
               <node concept="2EixSi" id="1A8JECubipr" role="2EinRH" />
             </node>
@@ -33069,7 +33069,7 @@
               <node concept="373pV1" id="2vZs7RNWoS8" role="356sEH" />
               <node concept="373pV1" id="2vZs7RNWoS9" role="356sEH" />
               <node concept="356sEF" id="2vZs7RNWoSa" role="356sEH">
-                <property role="TrG5h" value="map = neighbour-&gt;get_start_values();" />
+                <property role="TrG5h" value="auto map = neighbour-&gt;getProteinStartBuffer();" />
               </node>
               <node concept="2EixSi" id="2vZs7RNWoSk" role="2EinRH" />
             </node>
