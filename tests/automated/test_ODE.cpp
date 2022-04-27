@@ -718,12 +718,12 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentCompletionTest) {
     EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(4)->get_cell_level(0), 0.49990553); // Cell 2.
 
     // Check DLL4_Notch levels -> should be 0.0005.
-    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(0), 0.00047348696); // Cell 1.
-    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(5)->get_cell_level(0), 0.00047348696); // Cell 2.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(0), 0.000094438074); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(5)->get_cell_level(0), 0.000094438074); // Cell 2.
 
     // Check NICD levels -> should be 0.01.
-    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0094697392); // Cell 1.
-    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0094697392); // Cell 2.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0018934873); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0018934873); // Cell 2.
 
     // Check HEY levels -> should be 0.20.
     EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(0), 0.20007171); // Cell 1.

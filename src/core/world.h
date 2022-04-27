@@ -287,6 +287,8 @@ public:
                                 const double& newValue,
                                 const bool& changeVEGF = false,
                                 const bool& changeDLL4 = false);
+
+    void resetCellLevels();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

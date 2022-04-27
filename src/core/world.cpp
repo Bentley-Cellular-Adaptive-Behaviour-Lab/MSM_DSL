@@ -1579,8 +1579,8 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 
 void World::runSimulation() {
 	while (timeStep <= MAXtime) {
-        if (timeStep % 50 == 0) {
-            printProteinLevels(50);
+        if (timeStep % 1 == 0) {
+            printProteinLevels(1);
         }
         simulateTimestep();
 
@@ -1734,6 +1734,8 @@ void World::simulateTimestep() {
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
 		}
+        // Resets cell levels in preparation for ODES.
+        resetCellLevels();
 		updateMemAgents();
 		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
@@ -1939,11 +1941,15 @@ void World::updateECagents() {
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
 		if (PROTEIN_TESTING) {
-            // Set the current protein levels to the current buffer levels (as determined by the memAgents).
-			// Do gene regulation based on the current levels of proteins.
-			this->odes->check_cell_ODEs(ECagents[j]);
-            // Reset the protein buffer now that we've finished ODEs.
-            ECagents[j]->resetProteinMemAgentBuffer();
+            // Set the future levels of proteins now that the memAgent ODEs have occured.
+            ECagents[j]->updateFutureProteinLevels();
+
+            // Perform cell-level ODEs (i.e. regulation) reactions.
+            // Calculate deltas then apply the delta values
+            // the incoming level in the cell stack.
+            this->odes->check_cell_ODEs(ECagents[j]);
+            ECagents[j]->calculateDeltaValues();
+            ECagents[j]->syncDeltaValues();
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
@@ -6617,4 +6623,13 @@ bool World::tissuesHavePatterned() const {
     }
 
     return tissuesHavePatterned;
+}
+
+void World::resetCellLevels() {
+    for (auto cellAgent : this->ECagents) {
+        cellAgent->cycle_protein_levels();
+        cellAgent->resetProteinMemAgentBuffer();
+        cellAgent->storeStartLevels();
+        cellAgent->distributeProteins();
+    }
 }

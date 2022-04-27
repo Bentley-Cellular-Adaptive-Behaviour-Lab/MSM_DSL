@@ -1757,7 +1757,6 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
                 check_memAgent_ODEs("Endothelial", nodeAgent);
                 nodeAgent->passBackBufferLevels();
             }
-            cellAgent->updateFutureProteinLevels();
         }
 
         // Perform cell-level ODEs (i.e. regulation) reactions.
@@ -1765,6 +1764,7 @@ void VenkatramanMemAgentTest::runODEs(const int& timestep) {
         // Calculate deltas then apply the delta values
         // the incoming level in the cell stack.
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
+            cellAgent->updateFutureProteinLevels();
             check_cell_ODEs(cellAgent);
             cellAgent->calculateDeltaValues();
             cellAgent->syncDeltaValues();
