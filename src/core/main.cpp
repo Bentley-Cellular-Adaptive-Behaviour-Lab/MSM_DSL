@@ -231,8 +231,6 @@ int main(int argc, char * argv[]) {
 //        varyParams(param_values.at(0), 0.1, 0.5);
 //        varyParams(param_values.at(1), 0.1, 0.5);
 
-//        bool changeVEGF = true;
-//
         auto tissue = world->getTissueContainer()->tissues.at(0);
         auto cell1 = tissue->m_cell_agents.at(0);
         auto cell2 = tissue->m_cell_agents.at(1);
@@ -241,28 +239,12 @@ int main(int argc, char * argv[]) {
         // Junction testing may not happen quickly enough for this test to be valid.
         cell1->add_to_neighbour_list(cell2);
         cell2->add_to_neighbour_list(cell1);
-//
-//        if (changeVEGF) {
-////            std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-////            std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
-////
-////            world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
-////
-////            std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-////            std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
-//
-//
-//        } else {
-//            std::cout << "Cell 1 DLL4 level set at: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
-//            std::cout << "Cell 2 DLL4 level set at: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
-//
-//            world->adjustCellProteinValue(cell1,param_values.at(0),false,true);
-//            world->adjustCellProteinValue(cell2,param_values.at(1),false,true);
-//
-//            std::cout << "Cell 1 DLL4 level changed to: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
-//            std::cout << "Cell 2 DLL4 level changed to: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
-//        }
 
+        auto cell1_VEGF = cell1->get_cell_protein_level("VEGF",0);
+        auto cell2_VEGF = cell2->get_cell_protein_level("VEGF",0);
+
+        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF << "\n";
+        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF << "\n";
 
         // -----------------------------------------------------------------------------------------------------------//
 

@@ -90,6 +90,10 @@
         <reference id="7376055817164471388" name="ReverseRate" index="3JPVZN" />
       </concept>
       <concept id="3125878369731540209" name="SpeciesLang.structure.Parameter" flags="ng" index="3_zqOx">
+        <property id="8011215656704852465" name="_doingParameterSteps" index="2zRkZ0" />
+        <property id="2119442298962767096" name="_valueSteps" index="2UXi_M" />
+        <child id="8011215656704852488" name="Max_Expression" index="2zRkKT" />
+        <child id="8011215656704852493" name="Min_Expression" index="2zRkKW" />
         <child id="7336638036545683448" name="Uses" index="Cf4qk" />
         <child id="7336638036545643201" name="UsedBy" index="CfdIH" />
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
@@ -221,7 +225,7 @@
     <ref role="1AQzTG" node="4jUcCWydmv6" resolve="World" />
     <node concept="2rk7l3" id="4jUcCWycOcU" role="2rk6u4" />
     <node concept="2rk7nQ" id="4jUcCWycOcV" role="2rk6u2">
-      <property role="2rk6ya" value="10" />
+      <property role="2rk6ya" value="1" />
       <property role="2rk6$c" value="72wB6_dUsui/SLURM" />
     </node>
     <node concept="2rk7kT" id="4jUcCWycOcW" role="2rFWTJ" />
@@ -433,11 +437,19 @@
     </node>
     <node concept="3_zqOx" id="4MFt7FoZpnd" role="3_zqUl">
       <property role="TrG5h" value="V0" />
+      <property role="2zRkZ0" value="true" />
+      <property role="2UXi_M" value="10" />
       <node concept="30bXRB" id="4MFt7FoZpo7" role="3_zqNk">
         <property role="30bXRw" value="0.0" />
       </node>
       <node concept="Cfe3L" id="4MFt7FoZppY" role="CfdIH">
         <ref role="Cfe3M" node="4MFt7FoZpfv" resolve="calc_k6_VEGFSensing" />
+      </node>
+      <node concept="30bXRB" id="2MPpPXQ2hNi" role="2zRkKW">
+        <property role="30bXRw" value="0.0" />
+      </node>
+      <node concept="30bXRB" id="2MPpPXQ9ATp" role="2zRkKT">
+        <property role="30bXRw" value="0.2" />
       </node>
     </node>
     <node concept="3_zqOx" id="4MFt7FoZpuU" role="3_zqUl">
