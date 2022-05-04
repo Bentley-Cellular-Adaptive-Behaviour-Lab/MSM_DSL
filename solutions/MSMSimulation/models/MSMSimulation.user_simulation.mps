@@ -217,7 +217,7 @@
     </language>
   </registry>
   <node concept="2rkfJA" id="4jUcCWycOcT">
-    <property role="2rFPwA" value="1000" />
+    <property role="2rFPwA" value="10000" />
     <property role="TrG5h" value="Simulation" />
     <ref role="1ATblI" node="4jUcCWydoHB" resolve="Tissues" />
     <ref role="1AQzZR" node="6m1Il21eG9A" resolve="Species" />

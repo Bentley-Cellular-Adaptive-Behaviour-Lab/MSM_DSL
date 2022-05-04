@@ -1579,8 +1579,8 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 
 void World::runSimulation() {
 	while (timeStep <= MAXtime) {
-        if (timeStep % 1 == 0) {
-            printProteinLevels(1);
+        if (timeStep % 100 == 0) {
+            printProteinLevels(100);
         }
         simulateTimestep();
 

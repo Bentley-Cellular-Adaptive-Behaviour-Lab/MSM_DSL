@@ -161,6 +161,7 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1206060495898" name="jetbrains.mps.baseLanguage.structure.ElsifClause" flags="ng" index="3eNFk2">
@@ -3908,7 +3909,7 @@
                 <property role="TrG5h" value="address" />
                 <node concept="17QB3L" id="1vG5M8CvHp5" role="1tU5fm" />
                 <node concept="Xl_RD" id="1vG5M8CvHp6" role="33vP2m">
-                  <property role="Xl_RC" value="login.camp.thecrick.org:./CLUSTER_TEST" />
+                  <property role="Xl_RC" value="login.camp.thecrick.org:./CLUSTER_MSM" />
                 </node>
               </node>
             </node>
@@ -6848,8 +6849,8 @@
                             <node concept="1PxgMI" id="3vcTe5vyuQt" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="30H73N" id="3vcTe5vyuQu" role="1m5AlR" />
-                              <node concept="chp4Y" id="3vcTe5vyuQv" role="3oSUPX">
-                                <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                              <node concept="chp4Y" id="7_Jh6MgpOZf" role="3oSUPX">
+                                <ref role="cht4Q" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
                               </node>
                             </node>
                             <node concept="3TrcHB" id="1bFKLjhLJxV" role="2OqNvi">
@@ -6950,7 +6951,7 @@
       </node>
       <node concept="356sEK" id="112TUCABrRo" role="383Ya9">
         <node concept="356sEF" id="112TUCABrRp" role="356sEH">
-          <property role="TrG5h" value="#endif //SPRINGAGENT_CLUSTERPARAMS_H\n" />
+          <property role="TrG5h" value="#endif //SPRINGAGENT_CLUSTERPARAMS_H" />
         </node>
         <node concept="2EixSi" id="112TUCABrRq" role="2EinRH" />
       </node>
@@ -6977,7 +6978,7 @@
       </node>
       <node concept="356sEK" id="6dETgET7PBU" role="383Ya9">
         <node concept="356sEF" id="6dETgET7PBV" role="356sEH">
-          <property role="TrG5h" value="ssh login.camp.thecrick.org  &quot;cd " />
+          <property role="TrG5h" value="#ssh login.camp.thecrick.org  &quot;cd " />
         </node>
         <node concept="356sEF" id="4LUnzNQHIt_" role="356sEH">
           <property role="TrG5h" value="CAMP_FOLDER_NAME" />
@@ -6988,7 +6989,7 @@
               <node concept="3clFbS" id="4LUnzNQHJrH" role="2VODD2">
                 <node concept="3cpWs6" id="4LUnzNQHJwp" role="3cqZAp">
                   <node concept="Xl_RD" id="4LUnzNQHJwq" role="3cqZAk">
-                    <property role="Xl_RC" value="CLUSTER_TEST" />
+                    <property role="Xl_RC" value="CLUSTER_MSM" />
                   </node>
                 </node>
               </node>
@@ -6999,9 +7000,9 @@
           <property role="TrG5h" value=" ; ml purge; ml foss; ml Boost; ./buildSpringAgent.sh" />
         </node>
         <node concept="356sEF" id="6dETgET7SMV" role="356sEH">
-          <property role="TrG5h" value="; sbatch slurmMSM.sh; exit;&quot;" />
+          <property role="TrG5h" value="; sbatch slurmMSM.sh; exit; exit;&quot;" />
         </node>
-        <node concept="2EixSi" id="6dETgET7PBW" role="2EinRH" />
+        <node concept="2EixSi" id="7_Jh6MgtT1$" role="2EinRH" />
       </node>
     </node>
     <node concept="n94m4" id="2D4cW4vuj2L" role="lGtFl">
@@ -7100,17 +7101,33 @@
             <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
             <node concept="3zFVjK" id="6dETgETjNCc" role="3zH0cK">
               <node concept="3clFbS" id="6dETgETjNCd" role="2VODD2">
+                <node concept="3SKdUt" id="7_Jh6Mgorl6" role="3cqZAp">
+                  <node concept="1PaTwC" id="7_Jh6Mgorl7" role="1aUNEU">
+                    <node concept="3oM_SD" id="7_Jh6MgosbP" role="1PaTwD">
+                      <property role="3oM_SC" value="DOING" />
+                    </node>
+                    <node concept="3oM_SD" id="7_Jh6Mgosc7" role="1PaTwD">
+                      <property role="3oM_SC" value="THE" />
+                    </node>
+                    <node concept="3oM_SD" id="7_Jh6MgpLJy" role="1PaTwD">
+                      <property role="3oM_SC" value="SQUARE" />
+                    </node>
+                    <node concept="3oM_SD" id="7_Jh6Mgoscp" role="1PaTwD">
+                      <property role="3oM_SC" value="FOR" />
+                    </node>
+                    <node concept="3oM_SD" id="7_Jh6MgoscF" role="1PaTwD">
+                      <property role="3oM_SC" value="VENKATRAMAN" />
+                    </node>
+                    <node concept="3oM_SD" id="7_Jh6Mgosd6" role="1PaTwD">
+                      <property role="3oM_SC" value="EXAMPLE" />
+                    </node>
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="6dETgETjPp9" role="3cqZAp">
                   <node concept="3cpWsn" id="6dETgETjPpc" role="3cpWs9">
                     <property role="TrG5h" value="result" />
                     <node concept="10Oyi0" id="6dETgETjPp8" role="1tU5fm" />
                     <node concept="17qRlL" id="6dETgETjSod" role="33vP2m">
-                      <node concept="2OqwBi" id="6dETgETjSIE" role="3uHU7w">
-                        <node concept="30H73N" id="6dETgETjSp8" role="2Oq$k0" />
-                        <node concept="2qgKlT" id="6dETgETjT6l" role="2OqNvi">
-                          <ref role="37wK5l" to="5ycg:6dETgET9gW9" resolve="getCombinationNumber" />
-                        </node>
-                      </node>
                       <node concept="2OqwBi" id="6dETgETjQj8" role="3uHU7B">
                         <node concept="2OqwBi" id="6dETgETjPKY" role="2Oq$k0">
                           <node concept="30H73N" id="6dETgETjPuI" role="2Oq$k0" />
@@ -7120,6 +7137,36 @@
                         </node>
                         <node concept="3TrcHB" id="6dETgETjQOW" role="2OqNvi">
                           <ref role="3TsBF5" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
+                        </node>
+                      </node>
+                      <node concept="1eOMI4" id="7_Jh6MguvwS" role="3uHU7w">
+                        <node concept="17qRlL" id="7_Jh6MgooV2" role="1eOMHV">
+                          <node concept="1eOMI4" id="7_Jh6Mgus42" role="3uHU7B">
+                            <node concept="3cpWsd" id="7_Jh6MgpJmw" role="1eOMHV">
+                              <node concept="2OqwBi" id="6dETgETjSIE" role="3uHU7B">
+                                <node concept="30H73N" id="6dETgETjSp8" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="6dETgETjT6l" role="2OqNvi">
+                                  <ref role="37wK5l" to="5ycg:6dETgET9gW9" resolve="getCombinationNumber" />
+                                </node>
+                              </node>
+                              <node concept="3cmrfG" id="7_Jh6MgpJm$" role="3uHU7w">
+                                <property role="3cmrfH" value="1" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="1eOMI4" id="7_Jh6MgusNB" role="3uHU7w">
+                            <node concept="3cpWsd" id="7_Jh6MgpKYU" role="1eOMHV">
+                              <node concept="2OqwBi" id="7_Jh6Mgoq7C" role="3uHU7B">
+                                <node concept="30H73N" id="7_Jh6MgopKM" role="2Oq$k0" />
+                                <node concept="2qgKlT" id="7_Jh6MgorcN" role="2OqNvi">
+                                  <ref role="37wK5l" to="5ycg:6dETgET9gW9" resolve="getCombinationNumber" />
+                                </node>
+                              </node>
+                              <node concept="3cmrfG" id="7_Jh6MgpKYY" role="3uHU7w">
+                                <property role="3cmrfH" value="1" />
+                              </node>
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -8876,7 +8923,7 @@
           </node>
         </node>
         <node concept="356sEF" id="6dETgETgyhi" role="356sEH">
-          <property role="TrG5h" value=")*INCREMENT_" />
+          <property role="TrG5h" value=")*$INCREMENT_" />
         </node>
         <node concept="356sEF" id="6dETgETgyhj" role="356sEH">
           <property role="TrG5h" value="NUMBER" />
@@ -10142,7 +10189,7 @@
           </node>
         </node>
         <node concept="356sEF" id="1d4L5EtV6Qq" role="356sEH">
-          <property role="TrG5h" value="$replicate_number " />
+          <property role="TrG5h" value=" &quot;$replicate_number&quot; " />
         </node>
         <node concept="356sEF" id="1d4L5EtV7ij" role="356sEH">
           <property role="TrG5h" value="ANALYSIS_TYPE" />
