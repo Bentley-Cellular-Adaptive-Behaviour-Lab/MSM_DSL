@@ -859,6 +859,7 @@ void Tissue_Monolayer::create_monolayer() {
 	int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
     for (int i = 0; i < m_cell_number; i++) {
+		auto cellType = m_tissue_type->m_cell_type;
         //creates new object dynamically of type EC (ecp is the e cell pointer)
         EC *newCellAgent = new EC(this->m_world, m_tissue_type->m_cell_type);
 
@@ -964,7 +965,6 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
             m_cell_agents[cell_number]->nodeAgents.push_back(newMemAgent);
             m_world->setMLocation(int(i), int(j), z_coord, newMemAgent);
             newMemAgent->node=true;
-            TissueUtils::allocateProteins(m_cell_agents[cell_number]->m_cell_type, newMemAgent);
         }
     }
 }

@@ -1734,13 +1734,61 @@ void World::simulateTimestep() {
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
 		}
-        // Resets cell levels in preparation for ODES.
+
+		auto cell1 = this->ECagents.at(0);
+		auto VEGF_LEVEL = cell1->m_cell_type->proteins.at(0)->get_cell_level(1);
+		auto VEGFR_LEVEL = cell1->m_cell_type->proteins.at(1)->get_cell_level(1);
+		auto VEGFR_VEGFR_LEVEL = cell1->m_cell_type->proteins.at(2)->get_cell_level(1);
+		auto DLL4_LEVEL = cell1->m_cell_type->proteins.at(3)->get_cell_level(1);
+		auto NOTCH_LEVEL = cell1->m_cell_type->proteins.at(4)->get_cell_level(1);
+		auto DLL4_NOTCH_LEVEL = cell1->m_cell_type->proteins.at(5)->get_cell_level(1);
+		auto NICD_LEVEL = cell1->m_cell_type->proteins.at(6)->get_cell_level(1);
+		auto HEY_LEVEL = cell1->m_cell_type->proteins.at(7)->get_cell_level(1);
+		auto FILOPODIA_LEVEL = cell1->m_cell_type->proteins.at(8)->get_cell_level(1);
+
+		// Resets cell levels in preparation for ODES.
         resetCellLevels();
+
+		cell1 = this->ECagents.at(0);
+		VEGF_LEVEL = cell1->m_cell_type->proteins.at(0)->get_cell_level(1);
+		VEGFR_LEVEL = cell1->m_cell_type->proteins.at(1)->get_cell_level(1);
+		VEGFR_VEGFR_LEVEL = cell1->m_cell_type->proteins.at(2)->get_cell_level(1);
+		DLL4_LEVEL = cell1->m_cell_type->proteins.at(3)->get_cell_level(1);
+		NOTCH_LEVEL = cell1->m_cell_type->proteins.at(4)->get_cell_level(1);
+		DLL4_NOTCH_LEVEL = cell1->m_cell_type->proteins.at(5)->get_cell_level(1);
+		NICD_LEVEL = cell1->m_cell_type->proteins.at(6)->get_cell_level(1);
+		HEY_LEVEL = cell1->m_cell_type->proteins.at(7)->get_cell_level(1);
+		FILOPODIA_LEVEL = cell1->m_cell_type->proteins.at(8)->get_cell_level(1);
+
 		updateMemAgents();
+
+		cell1 = this->ECagents.at(0);
+		VEGF_LEVEL = cell1->m_cell_type->proteins.at(0)->get_cell_level(1);
+		VEGFR_LEVEL = cell1->m_cell_type->proteins.at(1)->get_cell_level(1);
+		VEGFR_VEGFR_LEVEL = cell1->m_cell_type->proteins.at(2)->get_cell_level(1);
+		DLL4_LEVEL = cell1->m_cell_type->proteins.at(3)->get_cell_level(1);
+		NOTCH_LEVEL = cell1->m_cell_type->proteins.at(4)->get_cell_level(1);
+		DLL4_NOTCH_LEVEL = cell1->m_cell_type->proteins.at(5)->get_cell_level(1);
+		NICD_LEVEL = cell1->m_cell_type->proteins.at(6)->get_cell_level(1);
+		HEY_LEVEL = cell1->m_cell_type->proteins.at(7)->get_cell_level(1);
+		FILOPODIA_LEVEL = cell1->m_cell_type->proteins.at(8)->get_cell_level(1);
+
 		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
 		}
 		updateECagents();
+
+		cell1 = this->ECagents.at(0);
+		VEGF_LEVEL = cell1->m_cell_type->proteins.at(0)->get_cell_level(1);
+		VEGFR_LEVEL = cell1->m_cell_type->proteins.at(1)->get_cell_level(1);
+		VEGFR_VEGFR_LEVEL = cell1->m_cell_type->proteins.at(2)->get_cell_level(1);
+		DLL4_LEVEL = cell1->m_cell_type->proteins.at(3)->get_cell_level(1);
+		NOTCH_LEVEL = cell1->m_cell_type->proteins.at(4)->get_cell_level(1);
+		DLL4_NOTCH_LEVEL = cell1->m_cell_type->proteins.at(5)->get_cell_level(1);
+		NICD_LEVEL = cell1->m_cell_type->proteins.at(6)->get_cell_level(1);
+		HEY_LEVEL = cell1->m_cell_type->proteins.at(7)->get_cell_level(1);
+		FILOPODIA_LEVEL = cell1->m_cell_type->proteins.at(8)->get_cell_level(1);
+
 		updateEnvironment();
 	}
 }

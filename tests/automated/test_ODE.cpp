@@ -191,8 +191,10 @@ TEST_F(CellBufferTest, bufferInitiationTest) {
 
 TEST_F(CellBufferTest, updateBufferTest) {
     // Run the set up.
-    this->updateBufferVectors();
-    auto tissue = this->getTissue();
+	auto tissue = this->getTissue();
+	auto testMemAgent = tissue->m_cell_agents.at(0)->nodeAgents.at(0);
+
+	this->updateBufferVectors();
     auto map1 = tissue->m_cell_agents.at(0)->getProteinMemAgentBuffer();
 
     // Get buffer values.

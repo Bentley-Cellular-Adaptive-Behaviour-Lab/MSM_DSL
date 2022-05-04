@@ -817,7 +817,7 @@ void EC::distributeProteins() {
     // Once counts have been determined, calculate the amount of each protein per memAgent.
 	std::vector<double> protein_totals_per_memAgent;
 
-    for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+	for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
         double current_protein_level = this->m_cell_type->proteins[i]->get_cell_level(0);
         protein_totals_per_memAgent.push_back(current_protein_level / protein_counts[i]);
     }

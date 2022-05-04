@@ -920,7 +920,7 @@ void CellBufferTest::updateBufferVectors() {
     auto tissue = getTissue();
     auto cell1 = tissue->m_cell_agents.at(0);
 
-    // Distribute proteins.
+	// Distribute proteins.
     cell1->distributeProteins();
 
     // Then recalculate the buffer level.
