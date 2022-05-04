@@ -243,8 +243,6 @@ public:
 	void printProteinNames();
 	void printProteinLevels(const int& timestep, const int& mod);
 
-
-
     // ODE Functions.
     void check_cell_ODEs(EC *ec);
     static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);

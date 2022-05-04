@@ -4,10 +4,14 @@
 #include "objects.h"
 #include "world.h"
 
+#include "../dsl/species/protein.h"
 #include "../dsl/utils/utils.h"
+#include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 #include "../dsl/world/worldContainer.h"
+
+#include "../generated/clusterParams.h"
 
 #if GRAPHICS
 #include "../graphics/display.h"
@@ -78,10 +82,6 @@ int GRADIENT = STEADY;
 float randFilExtend = -1;
 float RAND_FILRETRACT_CHANCE = -1;
 long long seed = -1;
-
-
-//------------------------------------------------------------------------------
-//#define BAHTI_ANALYSIS true
 
 void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& replicate_number) {
     // Argument structure: no. of params being varied, increment numbers.
@@ -231,8 +231,6 @@ int main(int argc, char * argv[]) {
 //        varyParams(param_values.at(0), 0.1, 0.5);
 //        varyParams(param_values.at(1), 0.1, 0.5);
 
-//        bool changeVEGF = true;
-//
         auto tissue = world->getTissueContainer()->tissues.at(0);
         auto cell1 = tissue->m_cell_agents.at(0);
         auto cell2 = tissue->m_cell_agents.at(1);
@@ -241,28 +239,20 @@ int main(int argc, char * argv[]) {
         // Junction testing may not happen quickly enough for this test to be valid.
         cell1->add_to_neighbour_list(cell2);
         cell2->add_to_neighbour_list(cell1);
-//
-//        if (changeVEGF) {
-////            std::cout << "Cell 1 VEGF level set at: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-////            std::cout << "Cell 2 VEGF level set at: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
-////
-////            world->adjustCellProteinValue(cell2,param_values.at(1),true,false);
-////
-////            std::cout << "Cell 1 VEGF level changed to: " << cell1->get_cell_protein_level("VEGF",0) << "\n";
-////            std::cout << "Cell 2 VEGF level changed to: " << cell2->get_cell_protein_level("VEGF",0) << "\n";
-//
-//
-//        } else {
-//            std::cout << "Cell 1 DLL4 level set at: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
-//            std::cout << "Cell 2 DLL4 level set at: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
-//
-//            world->adjustCellProteinValue(cell1,param_values.at(0),false,true);
-//            world->adjustCellProteinValue(cell2,param_values.at(1),false,true);
-//
-//            std::cout << "Cell 1 DLL4 level changed to: " << cell1->get_cell_protein_level("DLL4",0) << "\n";
-//            std::cout << "Cell 2 DLL4 level changed to: " << cell2->get_cell_protein_level("DLL4",0) << "\n";
-//        }
 
+        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
+        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
+
+        auto val1 = world->getParamValue(V0_VALUE);
+        auto val2 = world->getParamValue(V1_VALUE);
+
+        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
+        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
+
+        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+        cell1->distributeProteins();
+        cell2->distributeProteins();
 
         // -----------------------------------------------------------------------------------------------------------//
 

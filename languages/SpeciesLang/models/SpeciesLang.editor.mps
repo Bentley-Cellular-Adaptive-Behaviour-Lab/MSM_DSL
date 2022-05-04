@@ -1421,9 +1421,6 @@
           <node concept="VSNWy" id="3CIYR339KzO" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
-          <node concept="11LMrY" id="59qBf2E8mL3" role="3F10Kt">
-            <property role="VOm3f" value="true" />
-          </node>
         </node>
         <node concept="3F0ifn" id="59qBf2E1YPh" role="3EZMnx">
           <property role="3F0ifm" value="; Steps:" />

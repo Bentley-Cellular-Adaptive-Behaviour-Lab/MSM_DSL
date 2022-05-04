@@ -15,15 +15,16 @@ typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
 
 class ODEs {
 public:
-    ODEs();
-    void check_cell_ODEs(EC *ec);
-    void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
-    static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
-    void Endothelial_run_cell_ODEs(EC *ec);
-    static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
-    void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
+	ODEs();
+	void check_cell_ODEs(EC *ec);
+	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
+ 	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
+ 	void Endothelial_run_cell_ODEs(EC *ec);
+ 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
+ 	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
 };
 
+static double get_V0_sweep_value(World *world);
 
 static double calc_V0_rate();
 static double calc_Theta_rate();
@@ -38,8 +39,8 @@ static double calc_k4_rate(double DLL4_NOTCH);
 static double calc_k5_FilProduction_rate(double VEGF_VEGFR, double Nu);
 static double calc_k6_VEGFSensing_rate(double FILOPODIA, double V0);
 static double calc_N_Production_rate(double NOTCH_Diff);
-static double calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu);
-static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu);
+static double calc_DLL4_Reg_rate();
+static double calc_HEY_Reg_rate();
 static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4);
 static double calc_NOTCH_Diff_rate(double NOTCH, double adjacent_NOTCH);
 static double calc_Phi_rate();
@@ -53,7 +54,7 @@ static double calc_I_Degradation_rate(double NICD, double Phi);
 static double calc_HEY_Degradation_rate(double Phi, double HEY);
 static double calc_FilopodiaTurnover_rate(double FILOPODIA);
 
-static double calc_DLL4_adjacent_level(EC *ec);
-static double calc_NOTCH_adjacent_level(EC *ec);
+static double calc_DLL4_adjacent_level(EC *ec); 
+static double calc_NOTCH_adjacent_level(EC *ec); 
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/

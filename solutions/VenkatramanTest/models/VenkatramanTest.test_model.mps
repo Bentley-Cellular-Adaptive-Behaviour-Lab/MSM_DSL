@@ -246,7 +246,7 @@
     <ref role="1ANuJI" node="7ZEZEd$U2kP" resolve="VenkatramanSimulation" />
     <node concept="3ZP1sZ" id="13EEdumPOKX" role="3ZP1sP">
       <property role="TrG5h" value="Monolayer" />
-      <ref role="1v2cpI" node="13EEdumPOKQ" resolve="MonolayerType" />
+      <ref role="1v2cpI" node="13EEdumPOKQ" resolve="VesselType" />
       <node concept="3ZP1sY" id="13EEdumPOKY" role="3ZPHa7">
         <node concept="2_hQR_" id="13EEdumPOKZ" role="2IF2Ql">
           <node concept="2_n9WQ" id="13EEdumPOL0" role="2_hQRE">
@@ -276,7 +276,7 @@
     </node>
     <node concept="1apGoc" id="13EEdumPOKQ" role="1v2izi">
       <property role="TrG5h" value="VesselType" />
-      <ref role="1apGrN" node="13EEdumPOIR" resolve="Endothelial" />
+      <ref role="1apGrN" node="13EEdumPOIR" resolve="EndothelialType" />
       <node concept="3ZP1sC" id="1bFKLjhBZ2g" role="1v2cpK">
         <property role="2zQflb" value="1" />
         <property role="2zQfls" value="1" />

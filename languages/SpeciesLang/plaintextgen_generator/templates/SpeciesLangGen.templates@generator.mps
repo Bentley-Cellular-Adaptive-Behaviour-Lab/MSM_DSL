@@ -29457,7 +29457,7 @@
                 </node>
               </node>
               <node concept="356sEF" id="1A8JECuobyT" role="356sEH">
-                <property role="TrG5h" value="_run_memAgent_ODEs(MemAgent* memAgent){" />
+                <property role="TrG5h" value="_run_memAgent_ODEs(MemAgent* memAgent) {" />
               </node>
               <node concept="2EixSi" id="1A8JECubipr" role="2EinRH" />
             </node>
@@ -33069,7 +33069,7 @@
               <node concept="373pV1" id="2vZs7RNWoS8" role="356sEH" />
               <node concept="373pV1" id="2vZs7RNWoS9" role="356sEH" />
               <node concept="356sEF" id="2vZs7RNWoSa" role="356sEH">
-                <property role="TrG5h" value="map = neighbour-&gt;get_start_values();" />
+                <property role="TrG5h" value="auto map = neighbour-&gt;getProteinStartBuffer();" />
               </node>
               <node concept="2EixSi" id="2vZs7RNWoSk" role="2EinRH" />
             </node>
@@ -33278,6 +33278,22 @@
     </node>
     <node concept="n94m4" id="1A8JECtOsLB" role="lGtFl">
       <ref role="n9lRv" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+    </node>
+    <node concept="17Uvod" id="7_Jh6MgGp$D" role="lGtFl">
+      <property role="2qtEX9" value="name" />
+      <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+      <node concept="3zFVjK" id="7_Jh6MgGp$E" role="3zH0cK">
+        <node concept="3clFbS" id="7_Jh6MgGp$F" role="2VODD2">
+          <node concept="3clFbF" id="7_Jh6MgGOkj" role="3cqZAp">
+            <node concept="2OqwBi" id="7_Jh6MgGOxC" role="3clFbG">
+              <node concept="30H73N" id="7_Jh6MgGOki" role="2Oq$k0" />
+              <node concept="3TrcHB" id="7_Jh6MgGP5q" role="2OqNvi">
+                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node concept="356sEV" id="59qBf2EGF1h">

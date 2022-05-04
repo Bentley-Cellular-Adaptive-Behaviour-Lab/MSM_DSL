@@ -2309,6 +2309,8 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
 
     // Add proteins to the MemAgent and set their levels to zero, as they're not participating in ODES yet.
     for (auto &protein : belongsTo->m_cell_type->proteins) {
+        auto newProtein = new Protein(protein);
+        this->owned_proteins.push_back(newProtein);
         protein->set_memAgent_buffer_level(0);
     }
 
@@ -2467,12 +2469,11 @@ void MemAgent::set_protein_buffer_level(const std::string& protein_name, const d
 ******************************************************************************************/
 
 double MemAgent::get_memAgent_current_level(const std::string& protein_name) const {
-    if (this->has_protein(protein_name)) {
-		for (auto protein : this->owned_proteins) {
-			if (protein->get_name() == protein_name) {
-				return protein->get_memAgent_current_level();
-			}
-		}
+    assert(this->has_protein(protein_name));
+    for (auto protein : this->owned_proteins) {
+        if (protein->get_name() == protein_name) {
+            return protein->get_memAgent_current_level();
+        }
     }
 }
 
