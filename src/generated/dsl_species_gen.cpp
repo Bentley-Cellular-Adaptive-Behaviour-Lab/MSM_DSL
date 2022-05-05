@@ -8,6 +8,8 @@
 #include "clusterParams.h"
 #include "dsl_species_gen.h"
 
+int cell_number = 0;
+
 // Created using: Species //
 ODEs::ODEs() {
 }
@@ -39,12 +41,11 @@ void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memA
  	double adjacent_DLL4 = x[9];
  	double adjacent_NOTCH = x[10];
  // Parameter Definitions
- 	double V0 = get_V0_sweep_value(WORLDpointer);
+    double V0 = calc_V0_rate();
+    double Theta = calc_Theta_rate();
  	double Nu = calc_Nu_rate();
- 	double DLL4_Reg = calc_DLL4_Reg_rate();
  	double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
  	double k4 = calc_k4_rate(DLL4_NOTCH);
- 	double HEY_Reg = calc_HEY_Reg_rate();
  	double k1 = calc_k1_rate(VEGF, VEGFR);
  	double k_1 = calc_k_1_rate(VEGF_VEGFR);
  	double k2 = calc_k2_rate(DLL4, NOTCH);
@@ -64,8 +65,11 @@ void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memA
  	double k6_VEGFSensing = calc_k6_VEGFSensing_rate(FILOPODIA, V0);
  	double k3 = calc_k3_rate(VEGFR, HEY, Nu);
  	double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
- 	double N_Production = calc_N_Production_rate(NOTCH_Diff);
- // ODE Definitions
+     double N_Production = calc_N_Production_rate(NOTCH_Diff);
+     double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
+     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
+
+     // ODE Definitions
  	dxdt[0] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction);
  	dxdt[1] = +(k6_VEGFSensing);
  	dxdt[2] = +(beta)-(HEY_Degradation)+(HEY_Reg);
@@ -82,6 +86,8 @@ void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memA
  void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
  	Endothelial_cell_ode_states states;
  	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+
+     cell_number = ec->cell_number;
 
  	states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
  	states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -169,9 +175,17 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	memAgent->set_protein_buffer_level("NOTCH", states[8]);
 }
 
-
 static double get_V0_sweep_value(World *world) {
 	return world->getParamValue(V0_VALUE);
+}
+
+static double calc_V0_rate() {
+    if (cell_number == 0) {
+        return WORLDpointer->getParamValue(V0_VALUE);
+    }
+    if (cell_number == 1) {
+        return WORLDpointer->getParamValue(V1_VALUE);
+    }
 }
 
 static double calc_Theta_rate() {
@@ -222,12 +236,12 @@ static double calc_N_Production_rate(double NOTCH_Diff) {
 	return (0.005/2)+NOTCH_Diff;
 }
 
-static double calc_DLL4_Reg_rate() {
-	return 1;
+static double calc_DLL4_Reg_rate(double Theta, double VEGF_VEGFR, double Nu) {
+	return (0.001 + Theta * pow(VEGF_VEGFR, Nu) / (1 + pow(VEGF_VEGFR, Nu))) / 2;
 }
 
-static double calc_HEY_Reg_rate() {
-	return 1;
+static double calc_HEY_Reg_rate(double Theta, double NICD, double Nu) {
+	return Theta * pow(NICD, Nu) / (1 + pow(NICD, Nu));
 }
 
 static double calc_DLL4_Diff_rate(double DLL4, double adjacent_DLL4) {
