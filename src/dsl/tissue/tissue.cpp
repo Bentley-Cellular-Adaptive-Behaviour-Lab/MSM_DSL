@@ -1106,7 +1106,8 @@ static bool tipCellTest(EC *cellAgent)  {
 
     // We consider a cell to be active (and therefore tip-like) at a certain threshold of DLL4.
     // Changed from 13.
-    if (cellAgent->get_cell_protein_level("DLL4", 0) > 10) {
+    // Changed from 10.
+    if (cellAgent->get_cell_protein_level("DLL4", 0) > 4.25) {
         cellIsActive = true;
     }
 
@@ -1115,9 +1116,10 @@ static bool tipCellTest(EC *cellAgent)  {
     // Look for neighbouring cells that have some level of activity.
     // If any are somewhat active, then we haven't patterned yet.
     // Only bother doing this if this cell is active.
+    // Changed from 1.0
     if (cellIsActive) {
         for (auto *neighEC: cellAgent->getNeighCellVector()) {
-            if ((double) neighEC->get_cell_protein_level("DLL4", 0) > 1.0) {
+            if ((double) neighEC->get_cell_protein_level("DLL4", 0) > 0.5) {
                 noActiveNeighbours = false;
             }
         }

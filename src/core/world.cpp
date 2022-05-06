@@ -1736,42 +1736,14 @@ void World::simulateTimestep() {
 		}
 
 		// Resets cell levels in preparation for ODES.
-//        resetCellLevels();
-
-        for (auto cellAgent : this->ECagents) {
-            cellAgent->cycle_protein_levels();
-            cellAgent->resetProteinMemAgentBuffer();
-            cellAgent->storeStartLevels();
-            cellAgent->distributeProteins();
-        }
-
-        auto map = this->ECagents.at(0)->getProteinMemAgentBuffer();
-        auto DLL4_NOTCH_BUFFER = map["DLL4_NOTCH"];
-        auto CURRENT_DLL4_NOTCH_LEVEL = this->ECagents.at(0)->get_cell_protein_level("DLL4_NOTCH",0);
-        auto DLL4_NOTCH_LEVEL1 = this->ECagents.at(0)->get_cell_protein_level("DLL4_NOTCH",1);
-
+        resetCellLevels();
         updateMemAgents();
-
-        for (auto cellAgent : this->ECagents) {
-            for (auto nodeAgent : cellAgent->nodeAgents) {
-                odes->check_memAgent_ODEs("Endothelial", nodeAgent);
-                nodeAgent->passBackBufferLevels();
-            }
-        }
 
         if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
 		}
 
 		updateECagents();
-
-        for (auto cellAgent : this->ECagents) {
-            cellAgent->updateFutureProteinLevels();
-            odes->check_cell_ODEs(cellAgent);
-            cellAgent->calculateDeltaValues();
-            cellAgent->syncDeltaValues();
-        }
-
 		updateEnvironment();
 
 	}
@@ -1874,8 +1846,8 @@ void World::updateMemAgents() {
 
             // Run ODES, then update the cell's level of that particular protein.
             if (PROTEIN_TESTING) {
-//                odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
-//                memp->passBackBufferLevels();
+                odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
+                memp->passBackBufferLevels();
             }
 
             if (SHAPE_TESTING) {
@@ -1974,15 +1946,13 @@ void World::updateECagents() {
 
 		if (PROTEIN_TESTING) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
-
-            // Set the future levels of proteins now that the memAgent ODEs have occurred.
-//            ECagents[j]->updateFutureProteinLevels();
+            ECagents[j]->updateFutureProteinLevels();
             // Perform cell-level ODEs (i.e. regulation) reactions.
             // Calculate deltas then apply the delta values
             // the incoming level in the cell stack.
-//            this->odes->check_cell_ODEs(ECagents[j]);
-//            ECagents[j]->calculateDeltaValues();
-//            ECagents[j]->syncDeltaValues();
+            this->odes->check_cell_ODEs(ECagents[j]);
+            ECagents[j]->calculateDeltaValues();
+            ECagents[j]->syncDeltaValues();
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
@@ -2010,18 +1980,11 @@ void World::updateECagents() {
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
-		if (PROTEIN_TESTING) {
-            // Distributes out proteins to their locations in the cell (i.e. junction, membrane etc.)
-            ECagents[j]->distributeProteins();
-		} else {
+		if (!PROTEIN_TESTING) {
 			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
 			ECagents[j]->allocateProts();
 		}
 
-		if (PROTEIN_TESTING) {
-		    // Updates the protein levels container for each protein.
-		    ECagents[j]->cycle_protein_levels();
-		}
 		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
 			ECagents[j]->calcStability();

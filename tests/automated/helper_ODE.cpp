@@ -1669,6 +1669,7 @@ void VenkatramanMemAgentTest::SetUp() {
     auto container = createTissueContainer();
     auto cellType = createCellType(container);
     createTissue(container, cellType);
+    this->m_tissue->m_cell_agents.at(0)->set_cell_protein_level("VEGF",0.5,0);
 }
 
 Tissue_Container* VenkatramanMemAgentTest::createTissueContainer() {
@@ -1937,7 +1938,7 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
 }
 
 double VenkatramanMemAgentTest::calc_V0_rate() {
-	return 0.0;
+    return 0.0;
 }
 
 double VenkatramanMemAgentTest::calc_Theta_rate() {
