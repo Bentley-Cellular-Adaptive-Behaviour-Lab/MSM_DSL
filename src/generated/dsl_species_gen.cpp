@@ -113,6 +113,7 @@ void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memA
  	ec->set_cell_protein_level("DLL4", states[5], 0);
  	ec->set_cell_protein_level("DLL4_NOTCH", states[6], 0);
  	ec->set_cell_protein_level("NICD", states[7], 0);
+     ec->set_cell_protein_level("NOTCH", states[8], 0);
  }
 
 void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
@@ -167,12 +168,15 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	controlled_stepper_type controlled_stepper;
 	integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
 
-	memAgent->set_protein_buffer_level("VEGF", states[1]);
-	memAgent->set_protein_buffer_level("VEGFR", states[3]);
+    memAgent->set_protein_buffer_level("FILOPODIA", states[0]);
+    memAgent->set_protein_buffer_level("VEGF", states[1]);
+    memAgent->set_protein_buffer_level("HEY", states[2]);
+    memAgent->set_protein_buffer_level("VEGFR", states[3]);
 	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[4]);
 	memAgent->set_protein_buffer_level("DLL4", states[5]);
 	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[6]);
-	memAgent->set_protein_buffer_level("NOTCH", states[8]);
+    memAgent->set_protein_buffer_level("NICD", states[7]);
+    memAgent->set_protein_buffer_level("NOTCH", states[8]);
 }
 
 static double get_V0_sweep_value(World *world) {

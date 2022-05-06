@@ -23,13 +23,13 @@ void Tissue_Container::tissue_set_up(World* world) {
     Cell_Type *Endothelial_Type;
 
     // Tissue Type Declarations //
-    Tissue_Type_Cylindrical *TissueType_Type;
+    Tissue_Type_Flat *TissueType_Type;
 
     // Coordinate Declarations //
     Coordinates Tissue_Pos;
 
     // Cell Type Creation //
-    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
+    Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 5, 5);
     Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
@@ -41,11 +41,11 @@ void Tissue_Container::tissue_set_up(World* world) {
     Endothelial_Type->add_protein(new Protein("FILOPODIA", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
 
     // Tissue Type Creation //
-    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
+    TissueType_Type = define_tissue_type("TissueType", Endothelial_Type, CELL_CONFIGURATION_FLAT, 1, 2);
 
     // Cell Creation //
 
     // Tissue Creation //
-    Tissue_Pos = Coordinates(40, 40, 20);
+    Tissue_Pos = Coordinates(50, 50, 20);
     create_tissue("Tissue", TissueType_Type, &(Tissue_Pos));
 }

@@ -1726,7 +1726,8 @@ void World::simulateTimestep() {
 	if (timeStep == 0) {
 		creationTimestep(movie);
 	} else {
-		for (EC* ec : ECagents) {
+
+        for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
                 ec->getNeighCellVector().clear();
@@ -1745,6 +1746,7 @@ void World::simulateTimestep() {
 
 		updateECagents();
 		updateEnvironment();
+
 	}
 }
 
@@ -1945,8 +1947,9 @@ void World::updateECagents() {
 
 		if (PROTEIN_TESTING) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
-            ECagents[j]->updateFutureProteinLevels();
 
+            // Set the future levels of proteins now that the memAgent ODEs have occurred.
+            ECagents[j]->updateFutureProteinLevels();
             // Perform cell-level ODEs (i.e. regulation) reactions.
             // Calculate deltas then apply the delta values
             // the incoming level in the cell stack.
