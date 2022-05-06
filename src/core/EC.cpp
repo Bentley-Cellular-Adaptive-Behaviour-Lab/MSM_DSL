@@ -2043,6 +2043,9 @@ void EC::resetProteinMemAgentBuffer() {
 ******************************************************************************************/
 
 void EC::updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue) {
+    if (protein->get_name() == "NICD") {
+        int test = 0;
+    }
     auto currentValue = this->m_protein_memAgent_buffer[protein->get_name()];
     this->m_protein_memAgent_buffer[protein->get_name()] = currentValue + deltaValue;
 }

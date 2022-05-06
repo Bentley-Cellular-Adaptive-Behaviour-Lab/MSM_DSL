@@ -1726,7 +1726,6 @@ void World::simulateTimestep() {
 	if (timeStep == 0) {
 		creationTimestep(movie);
 	} else {
-
         for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
@@ -1737,14 +1736,42 @@ void World::simulateTimestep() {
 		}
 
 		// Resets cell levels in preparation for ODES.
-        resetCellLevels();
-		updateMemAgents();
+//        resetCellLevels();
 
-		if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
+        for (auto cellAgent : this->ECagents) {
+            cellAgent->cycle_protein_levels();
+            cellAgent->resetProteinMemAgentBuffer();
+            cellAgent->storeStartLevels();
+            cellAgent->distributeProteins();
+        }
+
+        auto map = this->ECagents.at(0)->getProteinMemAgentBuffer();
+        auto DLL4_NOTCH_BUFFER = map["DLL4_NOTCH"];
+        auto CURRENT_DLL4_NOTCH_LEVEL = this->ECagents.at(0)->get_cell_protein_level("DLL4_NOTCH",0);
+        auto DLL4_NOTCH_LEVEL1 = this->ECagents.at(0)->get_cell_protein_level("DLL4_NOTCH",1);
+
+        updateMemAgents();
+
+        for (auto cellAgent : this->ECagents) {
+            for (auto nodeAgent : cellAgent->nodeAgents) {
+                odes->check_memAgent_ODEs("Endothelial", nodeAgent);
+                nodeAgent->passBackBufferLevels();
+            }
+        }
+
+        if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
 		}
 
 		updateECagents();
+
+        for (auto cellAgent : this->ECagents) {
+            cellAgent->updateFutureProteinLevels();
+            odes->check_cell_ODEs(cellAgent);
+            cellAgent->calculateDeltaValues();
+            cellAgent->syncDeltaValues();
+        }
+
 		updateEnvironment();
 
 	}
@@ -1847,8 +1874,8 @@ void World::updateMemAgents() {
 
             // Run ODES, then update the cell's level of that particular protein.
             if (PROTEIN_TESTING) {
-                odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
-                memp->passBackBufferLevels();
+//                odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
+//                memp->passBackBufferLevels();
             }
 
             if (SHAPE_TESTING) {
@@ -1949,13 +1976,13 @@ void World::updateECagents() {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
 
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
-            ECagents[j]->updateFutureProteinLevels();
+//            ECagents[j]->updateFutureProteinLevels();
             // Perform cell-level ODEs (i.e. regulation) reactions.
             // Calculate deltas then apply the delta values
             // the incoming level in the cell stack.
-            this->odes->check_cell_ODEs(ECagents[j]);
-            ECagents[j]->calculateDeltaValues();
-            ECagents[j]->syncDeltaValues();
+//            this->odes->check_cell_ODEs(ECagents[j]);
+//            ECagents[j]->calculateDeltaValues();
+//            ECagents[j]->syncDeltaValues();
 		}
 		else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
