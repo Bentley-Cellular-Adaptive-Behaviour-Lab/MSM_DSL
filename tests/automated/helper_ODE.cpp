@@ -1448,11 +1448,12 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
     // Parameter Definitions
     double V0 = calc_V0_rate();
     double Nu = calc_Nu_rate();
+    double Theta = calc_Theta_rate(); // Fine.
     double k5_FilProduction = calc_k5_FilProduction_rate(VEGF_VEGFR, Nu);
     double k4 = calc_k4_rate(DLL4_NOTCH);
-    double Theta = calc_Theta_rate(); // Fine.
-    double k1 = calc_k1_rate(VEGF, VEGFR);
+    double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
     double k_1 = calc_k_1_rate(VEGF_VEGFR);
+    double k1 = calc_k1_rate(VEGF, VEGFR);
     double k2 = calc_k2_rate(DLL4, NOTCH);
     double k_2 = calc_k_2_rate(DLL4_NOTCH);
     double FilopodiaTurnover = calc_FilopodiaTurnover_rate(FILOPODIA);
@@ -1472,7 +1473,6 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
     double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
     double N_Production = calc_N_Production_rate(NOTCH_Diff);
     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
-    double HEY_Reg = calc_HEY_Reg_rate(Theta, NICD, Nu);
     // ODE Definitions
     dxdt[0] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction);
     dxdt[1] = +(k6_VEGFSensing)-(k1)*1+(k_1)*1;
@@ -1487,9 +1487,13 @@ void VenkatramanCellTest::Endothelial_cell_system(const Endothelial_cell_ode_sta
     dxdt[10] = 0;
 }
 
+extern int venkatramanCellNumber = -1;
+
 void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     Endothelial_cell_ode_states states;
     typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+
+    venkatramanCellNumber = ec->cell_number;
 
     states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
     states[1] = ec->get_cell_protein_level("VEGF", 0);
@@ -1518,8 +1522,53 @@ void VenkatramanCellTest::Endothelial_run_cell_ODEs(EC *ec) {
     ec->set_cell_protein_level("NOTCH", states[8], 1);
 }
 
+void VenkatramanCellTest::setCell1VEGF(float VEGFLevel) {
+    this->m_tissue->m_cell_agents.at(0)->set_cell_protein_level("VEGF", VEGFLevel, 0);
+}
+
+void VenkatramanCellTest::setCell2VEGF(float VEGFLevel) {
+    this->m_tissue->m_cell_agents.at(1)->set_cell_protein_level("VEGF", VEGFLevel, 0);
+}
+
+bool VenkatramanCellTest::tissueHasPatterned() {
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    auto DLL4_1 = cell1->get_cell_protein_level("DLL4", 0);
+    auto DLL4_2 = cell2->get_cell_protein_level("DLL4", 0);
+    if (DLL4_1 > 4 && DLL4_2 < 1.0) {
+        this->m_tissue->set_patterned(true);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+float venkatramanCell_V0_1 = 0;
+float venkatramanCell_V0_2 = 0;
+
+void VenkatramanCellTest::set_V0_1(float newV0) {
+    venkatramanCell_V0_1 = newV0;
+}
+void VenkatramanCellTest::set_V0_2(float newV0) {
+    venkatramanCell_V0_2 = newV0;
+}
+
+float VenkatramanCellTest::get_V0_1() {
+    return venkatramanCell_V0_1;
+}
+
+float VenkatramanCellTest::get_V0_2() {
+    return venkatramanCell_V0_2;
+}
+
 double VenkatramanCellTest::calc_V0_rate() {
-    return 0.0;
+    if (venkatramanCellNumber == 0) {
+        return venkatramanCell_V0_1;
+    } else {
+        return venkatramanCell_V0_2;
+    }
 }
 
 double VenkatramanCellTest::calc_Theta_rate() {

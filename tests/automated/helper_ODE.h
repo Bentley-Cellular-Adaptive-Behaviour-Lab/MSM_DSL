@@ -233,6 +233,9 @@ protected:
     void SetUp() override;
     void TearDown() override;
 public:
+    int cellNumber = -1;
+    float V0 = 0;
+    float V1 = 0;
     Tissue_Monolayer *m_tissue;
 
     // Set-up Functions.
@@ -242,6 +245,18 @@ public:
     void runODEs(const int& timestep);
 	void printProteinNames();
 	void printProteinLevels(const int& timestep, const int& mod);
+
+    // Patterning test functions.
+    void setCell1VEGF(float VEGFLevel);
+    void setCell2VEGF(float VEGFLevel);
+
+    void set_V0_1(float newV0);
+    void set_V0_2(float newV0);
+
+    float get_V0_1();
+    float get_V0_2();
+
+    bool tissueHasPatterned();
 
     // ODE Functions.
     void check_cell_ODEs(EC *ec);

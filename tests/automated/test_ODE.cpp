@@ -589,6 +589,50 @@ TEST_F(VenkatramanCellTest, VenkatramanCellCompletionTest) {
     EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(0), 1); // Cell 2.
 }
 
+TEST_F(VenkatramanCellTest, VenkatramanPatteringTest) {
+    // Set the level of VEGF in both cells.
+    // Run ODEs to completion (i.e. 20,000 timesteps).
+    int timestep = 1;
+
+    float test_V0_1 = 0.12;
+    float test_V0_2 = 0.08;
+
+    this->setCell1VEGF(test_V0_1);
+    this->setCell2VEGF(test_V0_2);
+
+    std::cout << "Start Cell 1 VEGF: " << this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("VEGF",0) << "\n";
+    std::cout << "Start Cell 2 VEGF: " << this->m_tissue->m_cell_agents.at(1)->get_cell_protein_level("VEGF",0) << "\n";
+    std::cout << "End Cell 1 DLL4: " << this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("DLL4",0) << "\n";
+    std::cout << "End Cell 2 DLL4: " << this->m_tissue->m_cell_agents.at(1)->get_cell_protein_level("DLL4",0) << "\n";
+
+    this->set_V0_1(test_V0_1);
+    this->set_V0_2(test_V0_2);
+
+    std::cout << "Start V0_1: " << this->get_V0_1() << "\n";
+    std::cout << "Start V0_2: " << this->get_V0_2() << "\n";
+
+    std::cout << "Running ODEs..." << "\n";
+    for (int i = 0; i < 20000; i ++) {
+        runODEs(1);
+        if (this->tissueHasPatterned()) {
+            break;
+        }
+        timestep++;
+    }
+    this->set_V0_1(0);
+    this->set_V0_2(0);
+    std::cout << "End Cell 1 DLL4: " << this->m_tissue->m_cell_agents.at(0)->get_cell_protein_level("DLL4",0) << "\n";
+    std::cout << "End Cell 2 DLL4: " << this->m_tissue->m_cell_agents.at(1)->get_cell_protein_level("DLL4",0) << "\n";
+
+    // Check the tissue patterns.
+    EXPECT_TRUE(this->m_tissue->is_patterned());
+    if (this->m_tissue->is_patterned()) {
+        std::cout << "Timestep: " << timestep << std::endl;
+    }
+    // Check that the tissue has patterned at a particular point in time.
+//    EXPECT_EQ(timestep, 10000);
+}
+
 TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentProductionTest) {
     // Run ODEs once.
     runODEs(1);
@@ -668,6 +712,82 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanMemAgentCompletionTest) {
     for (int i = 0; i < 20000; i ++) {
         runODEs(1);
 		printProteinLevels(i, 500);
+//		Check cell values are equal as we perform the timesteps.
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(0)->get_cell_level(0)); // VEGF
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(1)->get_cell_level(0)); // VEGFR
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(2)->get_cell_level(0)); // VEGF_VEGFR
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(3)->get_cell_level(0)); // DLL4
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(4)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(4)->get_cell_level(0)); // NOTCH
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(5)->get_cell_level(0)); // DLL4_NOTCH
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(6)->get_cell_level(0)); // NICD
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(7)->get_cell_level(0)); // HEY
+
+        ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(8)->get_cell_level(0),
+                        cell2->m_cell_type->proteins.at(8)->get_cell_level(0)); // FILOPODIA
+    }
+
+    // Check the final values in both cells are correct. Taken from Matlab scenario.
+
+//    Check VEGF levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(0)->get_cell_level(0), 0); // Cell 2.
+
+    // Check VEGFR levels -> should be 0.961.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(1)->get_cell_level(0), 0.96151191); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(1)->get_cell_level(0), 0.96151191); // Cell 2.
+
+    // Check VEGF_VEGFR levels -> should be 0.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 2.
+
+    // Check DLL4 levels -> should be 0.10.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(0), 0.099905536); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0.099905536); // Cell 2.
+
+    // Check Notch levels -> should be 0.50.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(4)->get_cell_level(0), 0.49990553); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(4)->get_cell_level(0), 0.49990553); // Cell 2.
+
+    // Check DLL4_Notch levels -> should be 0.0005.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(5)->get_cell_level(0), 0.000094438074); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(5)->get_cell_level(0), 0.000094438074); // Cell 2.
+
+    // Check NICD levels -> should be 0.01.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0018934873); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(6)->get_cell_level(0), 0.0018934873); // Cell 2.
+
+    // Check HEY levels -> should be 0.20.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(7)->get_cell_level(0), 0.20007171); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(7)->get_cell_level(0), 0.20007171); // Cell 2.
+
+    // Check FILOPODIA levels -> should be 1.
+    EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(8)->get_cell_level(0), 1); // Cell 1.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(8)->get_cell_level(0), 1); // Cell 2.
+}
+
+TEST_F(VenkatramanMemAgentTest, VenkatramanPatterningTest) {
+    this->printProteinNames();
+    // Run ODEs to completion (i.e. 20,000 timesteps).
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+    for (int i = 0; i < 20000; i ++) {
+        runODEs(1);
+        printProteinLevels(i, 500);
 //		Check cell values are equal as we perform the timesteps.
         ASSERT_FLOAT_EQ(cell1->m_cell_type->proteins.at(0)->get_cell_level(0),
                         cell2->m_cell_type->proteins.at(0)->get_cell_level(0)); // VEGF
