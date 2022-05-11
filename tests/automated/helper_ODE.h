@@ -323,6 +323,18 @@ public:
 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
 	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
 
+    // Patterning test functions.
+    void setCell1VEGF(float VEGFLevel);
+    void setCell2VEGF(float VEGFLevel);
+
+    void set_V0_1(float newV0);
+    void set_V0_2(float newV0);
+
+    float get_V0_1();
+    float get_V0_2();
+
+    bool tissueHasPatterned();
+
 	static double calc_V0_rate();
 	static double calc_Theta_rate();
 	static double calc_beta_rate();

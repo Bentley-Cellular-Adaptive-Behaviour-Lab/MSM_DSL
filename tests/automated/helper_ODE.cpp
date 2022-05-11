@@ -1544,7 +1544,6 @@ bool VenkatramanCellTest::tissueHasPatterned() {
     }
 }
 
-
 float venkatramanCell_V0_1 = 0;
 float venkatramanCell_V0_2 = 0;
 
@@ -1890,11 +1889,16 @@ void VenkatramanMemAgentTest::Endothelial_cell_system(const Endothelial_cell_ode
 	dxdt[10] = 0;
 }
 
+extern int venkatramanMemAgentNumber = -1;
+
+
 void VenkatramanMemAgentTest::Endothelial_run_cell_ODEs(EC *ec) {
 	Endothelial_cell_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
 
-	states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
+    venkatramanMemAgentNumber = ec->cell_number;
+
+    states[0] = ec->get_cell_protein_level("FILOPODIA", 0);
 	states[1] = ec->get_cell_protein_level("VEGF", 0);
 	states[2] = ec->get_cell_protein_level("HEY", 0);
 	states[3] = ec->get_cell_protein_level("VEGFR", 0);
@@ -1955,6 +1959,7 @@ void VenkatramanMemAgentTest::Endothelial_memAgent_system(const Endothelial_memA
 	dxdt[10] = 0;
 }
 
+
 void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 	Endothelial_memAgent_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<Endothelial_memAgent_ode_states> error_stepper_type;
@@ -1986,8 +1991,53 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
     memAgent->set_protein_buffer_level("NOTCH", states[8]);
 }
 
+void VenkatramanMemAgentTest::setCell1VEGF(float VEGFLevel) {
+    this->m_tissue->m_cell_agents.at(0)->set_cell_protein_level("VEGF", VEGFLevel, 0);
+}
+
+void VenkatramanMemAgentTest::setCell2VEGF(float VEGFLevel) {
+    this->m_tissue->m_cell_agents.at(1)->set_cell_protein_level("VEGF", VEGFLevel, 0);
+}
+
+bool VenkatramanMemAgentTest::tissueHasPatterned() {
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    auto DLL4_1 = cell1->get_cell_protein_level("DLL4", 0);
+    auto DLL4_2 = cell2->get_cell_protein_level("DLL4", 0);
+    if (DLL4_1 > 4 && DLL4_2 < 1.0) {
+        this->m_tissue->set_patterned(true);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+float venkatramanMemAgent_V0_1 = 0;
+float venkatramanMemAgent_V0_2 = 0;
+
+void VenkatramanMemAgentTest::set_V0_1(float newV0) {
+    venkatramanMemAgent_V0_1 = newV0;
+}
+
+void VenkatramanMemAgentTest::set_V0_2(float newV0) {
+    venkatramanMemAgent_V0_2 = newV0;
+}
+
+float VenkatramanMemAgentTest::get_V0_1() {
+    return venkatramanMemAgent_V0_1;
+}
+
+float VenkatramanMemAgentTest::get_V0_2() {
+    return venkatramanMemAgent_V0_2;
+}
+
 double VenkatramanMemAgentTest::calc_V0_rate() {
-    return 0.0;
+    if (venkatramanMemAgentNumber == 0) {
+        return venkatramanMemAgent_V0_1;
+    } else {
+        return venkatramanMemAgent_V0_2;
+    }
 }
 
 double VenkatramanMemAgentTest::calc_Theta_rate() {
