@@ -1527,6 +1527,7 @@ bool World::is_within_triangle(Env *ep, std::tuple<float, float> v1, std::tuple<
 void World::setup_ODEs() {
     ODEs *new_odes = new ODEs();
     this->odes = new_odes;
+    this->odes->set_ODE_TYPE();
 }
 
 /*****************************************************************************************
@@ -1579,9 +1580,11 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 
 void World::runSimulation() {
 	while (timeStep <= MAXtime) {
+
         if (timeStep % 100 == 0) {
             printProteinLevels(100);
         }
+
         simulateTimestep();
 
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
@@ -1596,22 +1599,10 @@ void World::runSimulation() {
 
         if (MEM_LEAK_OCCURRING) {
             timeStep = MAXtime;
-//			RUNSfile<<"MEMORY LEAKED!!!...quit run"<< std::endl;
-//            getWorldLogger()->getHysteresisFile() << "MEMORY LEAKED!!!...quit run" << std::endl;
             std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
             MEM_LEAK_OCCURRING = false;
         }
 
-        if (timeStep == MAXtime) {
-
-        }
-//            getWorldLogger()->getHysteresisFile() << std::endl << std::endl;
-        //RUNSFILE << std::endl << std::endl;
-//        if (timeStep ==3)
-//        {
-//            getGridSiteData();
-//        }
-//        printScores(RUNSfile, RUNSfile2, RUNSfile3);
 	}
 	std::cout << "end of run simulation" << std::endl;
 }
@@ -1721,8 +1712,6 @@ void World::creationTimestep(int movie) {
 void World::simulateTimestep() {
 	int movie = 0;
 	timeStep++;
-	//TODO: maybe move this out of simulate timestep? bit misleading that its in here
-	//could just call creation timestep func from here.. and have timesteps start from zero instead of -1
 	if (timeStep == 0) {
 		creationTimestep(movie);
 	} else {
@@ -1735,7 +1724,8 @@ void World::simulateTimestep() {
 			ec->filopodiaRetractions.clear();
 		}
 
-		// Resets cell levels in preparation for ODES.
+		// Resets cell levels in preparation for ODES
+        // and distributes proteins out to memAgents.
         resetCellLevels();
         updateMemAgents();
 
@@ -1845,7 +1835,7 @@ void World::updateMemAgents() {
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
             // Run ODES, then update the cell's level of that particular protein.
-            if (PROTEIN_TESTING) {
+            if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_MEMAGENT) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
                 memp->passBackBufferLevels();
             }
@@ -1944,7 +1934,7 @@ void World::updateECagents() {
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-		if (PROTEIN_TESTING) {
+		if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_MEMAGENT) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
             ECagents[j]->updateFutureProteinLevels();
             // Perform cell-level ODEs (i.e. regulation) reactions.
@@ -1953,8 +1943,9 @@ void World::updateECagents() {
             this->odes->check_cell_ODEs(ECagents[j]);
             ECagents[j]->calculateDeltaValues();
             ECagents[j]->syncDeltaValues();
-		}
-		else {
+		} else if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_CELL) {
+            this->odes->check_cell_ODEs(ECagents[j]);
+        } else {
 			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
 		}
 

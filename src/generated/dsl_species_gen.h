@@ -14,8 +14,11 @@ typedef boost::array<double, 11> Endothelial_cell_ode_states;
 typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
 
 class ODEs {
+private:
+    int ODE_TYPE = -1;
 public:
 	ODEs();
+    void set_ODE_TYPE() const;
 	void check_cell_ODEs(EC *ec);
 	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
  	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);

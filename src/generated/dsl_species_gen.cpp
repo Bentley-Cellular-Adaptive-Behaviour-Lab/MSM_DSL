@@ -14,6 +14,11 @@ int cell_number = 0;
 ODEs::ODEs() {
 }
 
+void ODEs::set_ODE_TYPE() const {
+    this->ODE_TYPE == ODE_TYPE_MEMAGENT;
+}
+
+
 void ODEs::check_cell_ODEs(EC *ec) {
 	if (ec->m_cell_type->m_name == "Endothelial") {
 		Endothelial_run_cell_ODEs(ec);

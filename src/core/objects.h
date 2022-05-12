@@ -55,6 +55,15 @@ enum ANALYSIS_TYPE {
     N_ANALYSIS_TYPES
 };
 
+// ODE Type - determines whether memAgent or
+// cell level ODEs are used for signalling.
+
+enum ODE_TYPE {
+    ODE_TYPE_CELL,
+    ODE_TYPE_MEMAGENT,
+    N_ODE_TYPES
+};
+
 /// below defines are set through makefile
 #if PROTEIN_TESTING
 //#define ANALYSIS_HYSTERESIS false
