@@ -1527,7 +1527,6 @@ bool World::is_within_triangle(Env *ep, std::tuple<float, float> v1, std::tuple<
 void World::setup_ODEs() {
     ODEs *new_odes = new ODEs();
     this->odes = new_odes;
-    this->odes->set_ODE_TYPE();
 }
 
 /*****************************************************************************************
@@ -1835,7 +1834,7 @@ void World::updateMemAgents() {
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
             // Run ODES, then update the cell's level of that particular protein.
-            if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_MEMAGENT) {
+            if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
                 memp->passBackBufferLevels();
             }
@@ -1934,19 +1933,20 @@ void World::updateECagents() {
 
 		ECagents[j]->calcCurrentActinUsed(); //determine overall actin level after filopodia dynamics in memAgent update.
 
-		if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_MEMAGENT) {
+		if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
             ECagents[j]->updateFutureProteinLevels();
-            // Perform cell-level ODEs (i.e. regulation) reactions.
-            // Calculate deltas then apply the delta values
+            // Then, calculate deltas then apply the delta values
             // the incoming level in the cell stack.
             this->odes->check_cell_ODEs(ECagents[j]);
             ECagents[j]->calculateDeltaValues();
             ECagents[j]->syncDeltaValues();
-		} else if (PROTEIN_TESTING && ODE_TYPE == ODE_TYPE_CELL) {
-            this->odes->check_cell_ODEs(ECagents[j]);
+		} else if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
+            // Perform ODEs.
+            this->odes->check_cell_only_ODEs(ECagents[j]);
         } else {
-			ECagents[j]->updateProteinTotals(); //total up the memAgents new active receptor levels, add to time delay stacks
+            // Total up the memAgents new active receptor levels, add to time delay stacks.
+			ECagents[j]->updateProteinTotals();
 		}
 
 		ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to get to nucleus+transcription) to calculate gene expression changes
@@ -6614,9 +6614,13 @@ bool World::tissuesHavePatterned() const {
 
 void World::resetCellLevels() {
     for (auto cellAgent : this->ECagents) {
-        cellAgent->cycle_protein_levels();
-        cellAgent->resetProteinMemAgentBuffer();
-        cellAgent->storeStartLevels();
-        cellAgent->distributeProteins();
+        if (odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
+            cellAgent->resetProteinMemAgentBuffer();
+            cellAgent->storeStartLevels();
+        }
+        if (odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
+            cellAgent->cycle_protein_levels();
+            cellAgent->distributeProteins();
+        }
     }
 }
