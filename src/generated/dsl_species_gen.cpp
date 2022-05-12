@@ -15,8 +15,8 @@ ODEs::ODEs() {
     this->set_ODE_TYPE();
 }
 
-void ODEs::set_ODE_TYPE() const {
-    this->ODE_TYPE == ODE_TYPE_MEMAGENT;
+void ODEs::set_ODE_TYPE() {
+    this->ODE_TYPE = ODE_TYPE_MEMAGENT;
 }
 
 int ODEs::get_ODE_TYPE() const {
@@ -238,7 +238,6 @@ void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, En
     double HEY_Degradation = calc_HEY_Degradation_rate(Phi, HEY);
     double N_Production = calc_N_Production_rate(NOTCH_Diff);
     double DLL4_Reg = calc_DLL4_Reg_rate(Theta, VEGF_VEGFR, Nu);
-
     // ODE Definitions
     dxdt[0] = +(beta)-(FilopodiaTurnover)+(k5_FilProduction);
     dxdt[1] = +(k6_VEGFSensing)-(k1)*1+(k_1)*1;

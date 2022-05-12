@@ -19,7 +19,7 @@ private:
     int ODE_TYPE = -1;
 public:
 	ODEs();
-    void set_ODE_TYPE() const;
+    void set_ODE_TYPE();
     [[nodiscard]] int get_ODE_TYPE() const;
 
     // MemAgent ODEs.
