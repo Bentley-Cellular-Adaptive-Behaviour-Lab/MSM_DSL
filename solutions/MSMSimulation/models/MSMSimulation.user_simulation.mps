@@ -447,7 +447,7 @@
         <property role="30bXRw" value="0.0" />
       </node>
       <node concept="Cfe3L" id="4MFt7FoZppY" role="CfdIH">
-        <ref role="Cfe3M" node="4MFt7FoZpfv" resolve="calc_k6_VEGFSensing" />
+        <ref role="Cfe3M" node="4MFt7FoZpfv" resolve="k6_VEGFSensing" />
       </node>
       <node concept="30bXRB" id="2MPpPXQ2hNi" role="2zRkKW">
         <property role="30bXRw" value="0.0" />
@@ -621,7 +621,7 @@
       <property role="TrG5h" value="N_Production" />
       <node concept="30dDZf" id="4MFt7FpdCiX" role="3_zqNk">
         <node concept="3JPVZe" id="4MFt7FpdCUK" role="30dEs_">
-          <ref role="n1ZU3" node="4MFt7FpdCkT" resolve="Notch_Diff" />
+          <ref role="n1ZU3" node="4MFt7FpdCkT" resolve="NOTCH_Diff" />
         </node>
         <node concept="30bsCy" id="4MFt7FpdCeO" role="30dEsF">
           <node concept="30dvO6" id="4MFt7FpdCeP" role="30bsDf">
@@ -893,7 +893,7 @@
         <node concept="3bpmH6" id="59qBf2Ds7sD" role="3lUA2W" />
       </node>
       <node concept="3rtiFT" id="4MFt7FpdFrV" role="3rqWia">
-        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="DLL4_REG" />
+        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="VEGFR_INHIBITION" />
       </node>
       <node concept="DdDr8" id="7yhQDA1raOZ" role="3_z4RZ">
         <ref role="DdDrb" node="4MFt7FpdFnu" resolve="VEGF_VEGF_BINDING" />
@@ -940,7 +940,7 @@
         <node concept="3bpmH6" id="59qBf2Ds7v4" role="3lUA2W" />
       </node>
       <node concept="DdDr8" id="4MFt7FpdFpz" role="3_z4RZ">
-        <ref role="DdDrb" node="4MFt7FpdFpe" resolve="DLL4_NOTCH" />
+        <ref role="DdDrb" node="4MFt7FpdFpe" resolve="DLL4_NOTCH_BINDING" />
       </node>
       <node concept="3rtiFT" id="4MFt7FpdFz1" role="3rqWia">
         <ref role="3rtiFY" node="4MFt7FpdFya" resolve="DLL4_UPREGULATION" />
@@ -1025,7 +1025,7 @@
         <node concept="3bpmH6" id="59qBf2Ds7_e" role="3lUA2W" />
       </node>
       <node concept="3rtiFT" id="4MFt7FpdFs5" role="3rtiFW">
-        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="DLL4_REG" />
+        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="VEGFR_INHIBITION" />
       </node>
       <node concept="3rtiFT" id="4MFt7FpdFtf" role="3rqWia">
         <ref role="3rtiFY" node="4MFt7FpdFsA" resolve="HEY_UPREGULATION" />
