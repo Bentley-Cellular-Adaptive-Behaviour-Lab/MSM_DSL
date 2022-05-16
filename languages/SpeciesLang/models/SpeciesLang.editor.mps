@@ -372,7 +372,7 @@
                 <property role="1rj3mz" value="Calibri" />
               </node>
               <node concept="VSNWy" id="6m1Il21ncat" role="3F10Kt">
-                <property role="1lJzqX" value="16" />
+                <property role="1lJzqX" value="12" />
               </node>
             </node>
             <node concept="1iCGBv" id="2jdW4eN_NDK" role="3EZMnx">
@@ -385,7 +385,7 @@
                     <property role="1rj3mz" value="Calibri" />
                   </node>
                   <node concept="VSNWy" id="6m1Il21rIwc" role="3F10Kt">
-                    <property role="1lJzqX" value="16" />
+                    <property role="1lJzqX" value="12" />
                   </node>
                 </node>
               </node>
@@ -599,7 +599,81 @@
         </node>
         <node concept="2iRfu4" id="6m1Il21i$My" role="2iSdaV" />
       </node>
-      <node concept="3XFhqQ" id="109yD1sEHsq" role="3EZMnx" />
+      <node concept="3F0ifn" id="3CMDXCk$95E" role="3EZMnx">
+        <node concept="2biZxu" id="3CMDXCk$95F" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="3CMDXCk$95G" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="3CMDXCk$9as" role="3EZMnx">
+        <node concept="VPM3Z" id="3CMDXCk$9au" role="3F10Kt" />
+        <node concept="3XFhqQ" id="3CMDXCkF7UM" role="3EZMnx" />
+        <node concept="1j7BWu" id="3CMDXCk$9e0" role="3EZMnx">
+          <node concept="3EZMnI" id="3CMDXCk$9ee" role="1j7ClA">
+            <node concept="3F0ifn" id="3CMDXCk$9eo" role="3EZMnx">
+              <property role="3F0ifm" value="Set whether ODEs occur on a" />
+              <node concept="2biZxu" id="3CMDXCk$9fN" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="3CMDXCk$9fO" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="3CMDXCk$9ey" role="3EZMnx">
+              <property role="3F0ifm" value="whole cell-level, or with" />
+              <node concept="2biZxu" id="3CMDXCk$9fR" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="3CMDXCk$9fS" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="3CMDXCk$9eA" role="3EZMnx">
+              <property role="3F0ifm" value="both cells and memAgents." />
+              <node concept="2biZxu" id="3CMDXCk$9fV" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="3CMDXCk$9fW" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="3CMDXCk$9eh" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="3CMDXCk$9eb" role="1j7Clw">
+            <property role="3F0ifm" value="4. Set ODE Type" />
+            <node concept="VQ3r3" id="3CMDXCk$9f$" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+            <node concept="2biZxu" id="3CMDXCk$9f_" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="3CMDXCk$9fA" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="3CMDXCk$9dS" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
+        <node concept="3F0A7n" id="3CMDXCk$9eP" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:3CMDXCk$8Rx" resolve="_odeType" />
+          <node concept="VechU" id="3CMDXCk$9fZ" role="3F10Kt">
+            <property role="Vb096" value="fLwANPu/blue" />
+          </node>
+          <node concept="Vb9p2" id="3CMDXCk$9g0" role="3F10Kt">
+            <property role="Vbekb" value="g1_k_vY/BOLD" />
+          </node>
+          <node concept="2biZxu" id="3CMDXCk$9g1" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="3CMDXCk$9g2" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="3CMDXCk$9ax" role="2iSdaV" />
+      </node>
       <node concept="2iRkQZ" id="2Hxmt3eVgJc" role="2iSdaV" />
     </node>
   </node>

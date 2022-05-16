@@ -37,6 +37,9 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
+      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
+        <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -47,6 +50,7 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
+      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -333,49 +337,6 @@
           <property role="TrG5h" value=";" />
         </node>
       </node>
-      <node concept="356sEK" id="2D6O8IwY_Wv" role="383Ya9">
-        <node concept="373pV1" id="2D6O8IwY_X4" role="356sEH" />
-        <node concept="356sEF" id="2D6O8IwY_X7" role="356sEH">
-          <property role="TrG5h" value="CytoProtein *" />
-        </node>
-        <node concept="356sEF" id="3vcTe5weKYN" role="356sEH">
-          <property role="TrG5h" value="CYTOPROTEIN" />
-          <node concept="17Uvod" id="3vcTe5weLad" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="3vcTe5weLae" role="3zH0cK">
-              <node concept="3clFbS" id="3vcTe5weLaf" role="2VODD2">
-                <node concept="3clFbF" id="3vcTe5weLfp" role="3cqZAp">
-                  <node concept="2OqwBi" id="3vcTe5weLte" role="3clFbG">
-                    <node concept="30H73N" id="3vcTe5weLfo" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="3vcTe5weN16" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="2EixSi" id="2D6O8IwY_Wx" role="2EinRH" />
-        <node concept="1WS0z7" id="1wi3sbu3PE3" role="lGtFl">
-          <node concept="3JmXsc" id="1wi3sbu3PE6" role="3Jn$fo">
-            <node concept="3clFbS" id="1wi3sbu3PE7" role="2VODD2">
-              <node concept="3clFbF" id="1wi3sbu3PEd" role="3cqZAp">
-                <node concept="2OqwBi" id="1wi3sbu3PE8" role="3clFbG">
-                  <node concept="3Tsc0h" id="1wi3sbu3PEb" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
-                  </node>
-                  <node concept="30H73N" id="1wi3sbu3PEc" role="2Oq$k0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu3RI7" role="356sEH">
-          <property role="TrG5h" value=";" />
-        </node>
-      </node>
       <node concept="356sEK" id="2D6O8IwY_Vs" role="383Ya9">
         <node concept="373pV1" id="2D6O8IwY_VX" role="356sEH" />
         <node concept="2EixSi" id="2D6O8IwY_Vu" role="2EinRH" />
@@ -534,7 +495,13 @@
           </node>
         </node>
         <node concept="356sEF" id="1wi3sbu3Oxk" role="356sEH">
-          <property role="TrG5h" value=");" />
+          <property role="TrG5h" value=", &quot;" />
+        </node>
+        <node concept="356sEF" id="5sLUxN1yPzn" role="356sEH">
+          <property role="TrG5h" value="CYTOPROTEIN_NAME" />
+        </node>
+        <node concept="356sEF" id="5sLUxN1yPzo" role="356sEH">
+          <property role="TrG5h" value="&quot;);" />
         </node>
         <node concept="2EixSi" id="2D6O8IwYzn1" role="2EinRH" />
         <node concept="1WS0z7" id="3FNuJRsgKNk" role="lGtFl">
@@ -1109,214 +1076,13 @@
           </node>
         </node>
       </node>
-      <node concept="356sEK" id="2D6O8IwYzy4" role="383Ya9">
-        <node concept="2EixSi" id="2D6O8IwYzy6" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="2D6O8IwYzyT" role="383Ya9">
-        <node concept="373pV1" id="2D6O8IwY_Wp" role="356sEH" />
-        <node concept="356sEF" id="1wi3sbu4zGg" role="356sEH">
-          <property role="TrG5h" value="CYTOPROTEIN" />
-          <node concept="17Uvod" id="1wi3sbu4zSY" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="1wi3sbu4zSZ" role="3zH0cK">
-              <node concept="3clFbS" id="1wi3sbu4zT0" role="2VODD2">
-                <node concept="3clFbF" id="1wi3sbu4zX_" role="3cqZAp">
-                  <node concept="2OqwBi" id="1wi3sbu4$bc" role="3clFbG">
-                    <node concept="30H73N" id="1wi3sbu4zX$" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="1wi3sbu4$ya" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4zGh" role="356sEH">
-          <property role="TrG5h" value=" = new CytoProtein(&quot;" />
-        </node>
-        <node concept="356sEF" id="1wi3sbu4yTk" role="356sEH">
-          <property role="TrG5h" value="CYTOPROTEIN_NAME" />
-          <node concept="17Uvod" id="1wi3sbu4$IV" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="1wi3sbu4$IW" role="3zH0cK">
-              <node concept="3clFbS" id="1wi3sbu4$IX" role="2VODD2">
-                <node concept="3clFbF" id="1wi3sbu4$Jl" role="3cqZAp">
-                  <node concept="2OqwBi" id="1wi3sbu4$Kl" role="3clFbG">
-                    <node concept="30H73N" id="1wi3sbu4$Jk" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="1wi3sbu4_8g" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4yTl" role="356sEH">
-          <property role="TrG5h" value="&quot;, " />
-        </node>
-        <node concept="356sEF" id="1wi3sbu4z5T" role="356sEH">
-          <property role="TrG5h" value="START_LEVEL" />
-          <node concept="17Uvod" id="5CquPnWxjRN" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="5CquPnWxjRO" role="3zH0cK">
-              <node concept="3clFbS" id="5CquPnWxjRP" role="2VODD2">
-                <node concept="3clFbF" id="5CquPnWzf41" role="3cqZAp">
-                  <node concept="2YIFZM" id="5CquPnWzf4Y" role="3clFbG">
-                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                    <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
-                    <node concept="2OqwBi" id="5CquPnWzfrn" role="37wK5m">
-                      <node concept="30H73N" id="5CquPnWzf6p" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="5CquPnWzfLI" role="2OqNvi">
-                        <ref role="37wK5l" to="cyrx:3fk35jmCFN3" resolve="getStartConcentrationValue" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4zmI" role="356sEH">
-          <property role="TrG5h" value=", " />
-        </node>
-        <node concept="356sEF" id="1wi3sbu4zva" role="356sEH">
-          <property role="TrG5h" value="REQUIRED_AMOUNT" />
-          <node concept="17Uvod" id="5CquPnWzjZY" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="5CquPnWzjZZ" role="3zH0cK">
-              <node concept="3clFbS" id="5CquPnWzk00" role="2VODD2">
-                <node concept="3clFbF" id="5CquPnWzk8Q" role="3cqZAp">
-                  <node concept="2YIFZM" id="5CquPnWzk8R" role="3clFbG">
-                    <ref role="37wK5l" to="wyt6:~String.valueOf(float)" resolve="valueOf" />
-                    <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
-                    <node concept="2OqwBi" id="5CquPnWzk8S" role="37wK5m">
-                      <node concept="30H73N" id="5CquPnWzk8T" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="5CquPnWzk8U" role="2OqNvi">
-                        <ref role="37wK5l" to="cyrx:5CquPnWzgKu" resolve="getRequiredConcentrationValue" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4zvb" role="356sEH">
-          <property role="TrG5h" value=");" />
-        </node>
-        <node concept="2EixSi" id="2D6O8IwYzyV" role="2EinRH" />
-        <node concept="1WS0z7" id="1wi3sbu4ycF" role="lGtFl">
-          <node concept="3JmXsc" id="1wi3sbu4ycI" role="3Jn$fo">
-            <node concept="3clFbS" id="1wi3sbu4ycJ" role="2VODD2">
-              <node concept="3clFbF" id="1wi3sbu4ycP" role="3cqZAp">
-                <node concept="2OqwBi" id="1wi3sbu4ycK" role="3clFbG">
-                  <node concept="3Tsc0h" id="1wi3sbu4ycN" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
-                  </node>
-                  <node concept="30H73N" id="1wi3sbu4ycO" role="2Oq$k0" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="356sEK" id="3FNuJRsgpxv" role="383Ya9">
-        <node concept="373pV1" id="3FNuJRsgpyk" role="356sEH" />
-        <node concept="356sEF" id="3FNuJRsgpyn" role="356sEH">
-          <property role="TrG5h" value="add_cytoprotein(" />
-        </node>
-        <node concept="356sEF" id="1wi3sbu4Ox_" role="356sEH">
-          <property role="TrG5h" value="CYTOPROTEIN" />
-          <node concept="17Uvod" id="1wi3sbu4OQz" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="1wi3sbu4OQ$" role="3zH0cK">
-              <node concept="3clFbS" id="1wi3sbu4OQ_" role="2VODD2">
-                <node concept="3clFbF" id="1wi3sbu4OVa" role="3cqZAp">
-                  <node concept="2OqwBi" id="1wi3sbu5j4A" role="3clFbG">
-                    <node concept="1PxgMI" id="1wi3sbu5iNF" role="2Oq$k0">
-                      <property role="1BlNFB" value="true" />
-                      <node concept="chp4Y" id="1wi3sbu5iTu" role="3oSUPX">
-                        <ref role="cht4Q" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
-                      </node>
-                      <node concept="2OqwBi" id="1wi3sbu4P8L" role="1m5AlR">
-                        <node concept="30H73N" id="1wi3sbu4OV9" role="2Oq$k0" />
-                        <node concept="1mfA1w" id="1wi3sbu5iCp" role="2OqNvi" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="1wi3sbu5jj8" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4OxA" role="356sEH">
-          <property role="TrG5h" value=", &quot;" />
-        </node>
-        <node concept="356sEF" id="1wi3sbu4OIa" role="356sEH">
-          <property role="TrG5h" value="CELL_TYPE_NAME" />
-          <node concept="17Uvod" id="1wi3sbu4PHI" role="lGtFl">
-            <property role="2qtEX9" value="name" />
-            <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-            <node concept="3zFVjK" id="1wi3sbu4PHJ" role="3zH0cK">
-              <node concept="3clFbS" id="1wi3sbu4PHK" role="2VODD2">
-                <node concept="3clFbF" id="1wi3sbu5jq3" role="3cqZAp">
-                  <node concept="2OqwBi" id="1wi3sbu5kj6" role="3clFbG">
-                    <node concept="2OqwBi" id="1wi3sbu5jAI" role="2Oq$k0">
-                      <node concept="30H73N" id="1wi3sbu5jq2" role="2Oq$k0" />
-                      <node concept="3TrEf2" id="1wi3sbu5jZG" role="2OqNvi">
-                        <ref role="3Tt5mk" to="nguq:1z0V6VU7ELe" resolve="_cellTypeRef" />
-                      </node>
-                    </node>
-                    <node concept="3TrcHB" id="1wi3sbu5kyb" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="356sEF" id="1wi3sbu4OIb" role="356sEH">
-          <property role="TrG5h" value="&quot;);" />
-        </node>
-        <node concept="2EixSi" id="3FNuJRsgpxx" role="2EinRH" />
-        <node concept="1WS0z7" id="1wi3sbu4yij" role="lGtFl">
-          <node concept="3JmXsc" id="1wi3sbu4yim" role="3Jn$fo">
-            <node concept="3clFbS" id="1wi3sbu4yin" role="2VODD2">
-              <node concept="3clFbF" id="1wi3sbu4yit" role="3cqZAp">
-                <node concept="2OqwBi" id="1wi3sbu5fUZ" role="3clFbG">
-                  <node concept="2OqwBi" id="1wi3sbu4yio" role="2Oq$k0">
-                    <node concept="3Tsc0h" id="1wi3sbu4yir" role="2OqNvi">
-                      <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
-                    </node>
-                    <node concept="30H73N" id="1wi3sbu4yis" role="2Oq$k0" />
-                  </node>
-                  <node concept="13MTOL" id="1wi3sbu5i4k" role="2OqNvi">
-                    <ref role="13MTZf" to="jl3b:1wi3sbu4Qli" resolve="FoundInCellTypes" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="356sEK" id="2D6O8IwYA1r" role="383Ya9">
         <node concept="2EixSi" id="2D6O8IwYA1t" role="2EinRH" />
       </node>
       <node concept="356WMU" id="5CquPnWzlc3" role="383Ya9">
         <node concept="356sEK" id="2D6O8IwYA24" role="383Ya9">
           <node concept="356sEF" id="5CquPnWzn8R" role="356sEH">
-            <property role="TrG5h" value="bool Cytoprotein::checkCondition(){" />
+            <property role="TrG5h" value="bool Protrusion::checkCondition(){" />
           </node>
           <node concept="2EixSi" id="2D6O8IwYA26" role="2EinRH" />
         </node>
@@ -1335,6 +1101,29 @@
           </node>
           <node concept="356sEF" id="5CquPnWApR$" role="356sEH">
             <property role="TrG5h" value="CONDITION" />
+            <node concept="17Uvod" id="5sLUxN1FR7E" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="5sLUxN1FR7F" role="3zH0cK">
+                <node concept="3clFbS" id="5sLUxN1FR7G" role="2VODD2">
+                  <node concept="3cpWs8" id="5sLUxN1FR84" role="3cqZAp">
+                    <node concept="3cpWsn" id="5sLUxN1FR87" role="3cpWs9">
+                      <property role="TrG5h" value="condition" />
+                      <node concept="17QB3L" id="5sLUxN1FR83" role="1tU5fm" />
+                      <node concept="Xl_RD" id="5sLUxN1FRed" role="33vP2m">
+                        <property role="Xl_RC" value="" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbH" id="5sLUxN1FRkH" role="3cqZAp" />
+                  <node concept="3cpWs6" id="5sLUxN1FRjn" role="3cqZAp">
+                    <node concept="Xl_RD" id="5sLUxN1FRkc" role="3cqZAk">
+                      <property role="Xl_RC" value="" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="2EixSi" id="5CquPnWApyr" role="2EinRH" />
         </node>
@@ -1468,17 +1257,12 @@
                     <node concept="3Tqbb2" id="1wi3sbu4WKB" role="1tU5fm">
                       <ref role="ehGHo" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
                     </node>
-                    <node concept="2OqwBi" id="1wi3sbu4WMs" role="33vP2m">
-                      <node concept="2OqwBi" id="1wi3sbu4WMt" role="2Oq$k0">
-                        <node concept="2GrUjf" id="1wi3sbu4WMu" role="2Oq$k0">
-                          <ref role="2Gs0qQ" node="1wi3sbu4ScC" resolve="cytoprotein" />
-                        </node>
-                        <node concept="3TrEf2" id="1wi3sbu4WMv" role="2OqNvi">
-                          <ref role="3Tt5mk" to="jl3b:2Jfy4gq$4CD" resolve="TriggersProtrusion" />
-                        </node>
+                    <node concept="2OqwBi" id="1wi3sbu4WMt" role="33vP2m">
+                      <node concept="2GrUjf" id="1wi3sbu4WMu" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="1wi3sbu4ScC" resolve="cytoprotein" />
                       </node>
-                      <node concept="3TrEf2" id="1wi3sbu4WMw" role="2OqNvi">
-                        <ref role="3Tt5mk" to="jl3b:2Jfy4gq$2gw" resolve="target" />
+                      <node concept="3TrEf2" id="1wi3sbu4WMv" role="2OqNvi">
+                        <ref role="3Tt5mk" to="jl3b:5sLUxN1ucMa" resolve="targetProtrusion" />
                       </node>
                     </node>
                   </node>

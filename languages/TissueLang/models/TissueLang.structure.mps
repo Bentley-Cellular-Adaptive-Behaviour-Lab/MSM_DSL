@@ -360,7 +360,7 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1z0V6VU7ELe" role="1TKVEi">
       <property role="IQ2ns" value="1783685413825588302" />
-      <property role="20kJfa" value="_cellTypeRef" />
+      <property role="20kJfa" value="_target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
     </node>

@@ -28,9 +28,9 @@
       </concept>
     </language>
   </registry>
-  <node concept="1M2fIO" id="2Jfy4gq$zva">
-    <property role="3GE5qa" value="Protrusion" />
-    <ref role="1M2myG" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
+  <node concept="1M2fIO" id="5sLUxN1lGUh">
+    <property role="3GE5qa" value="Structure" />
+    <ref role="1M2myG" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
   </node>
 </model>
 

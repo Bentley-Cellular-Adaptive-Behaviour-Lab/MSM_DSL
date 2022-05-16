@@ -1551,7 +1551,7 @@
         </node>
       </node>
       <node concept="1iCGBv" id="2Jfy4gqv_3C" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:1z0V6VU7ELe" resolve="_cellTypeRef" />
+        <ref role="1NtTu8" to="nguq:1z0V6VU7ELe" resolve="_target" />
         <node concept="1sVBvm" id="2Jfy4gqv_3E" role="1sWHZn">
           <node concept="3F0A7n" id="2Jfy4gqv_3L" role="2wV5jI">
             <property role="1Intyy" value="true" />

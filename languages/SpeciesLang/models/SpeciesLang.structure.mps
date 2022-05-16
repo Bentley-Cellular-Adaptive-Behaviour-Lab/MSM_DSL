@@ -70,6 +70,11 @@
     <property role="19KtqR" value="true" />
     <property role="3GE5qa" value="Species" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3CMDXCk$8Rx" role="1TKVEl">
+      <property role="IQ2nx" value="4193598758125080033" />
+      <property role="TrG5h" value="_odeType" />
+      <ref role="AX2Wp" node="3CMDXCknVe0" resolve="ODE_TYPE_ENUM" />
+    </node>
     <node concept="1TJgyj" id="2Hxmt3eVft0" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540800" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -646,6 +651,20 @@
     <property role="EcuMT" value="5556784659771445015" />
     <property role="TrG5h" value="RandExpression" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="25R3W" id="3CMDXCknVe0">
+    <property role="3F6X1D" value="4193598758121878400" />
+    <property role="TrG5h" value="odeTypeEnum" />
+    <node concept="25R33" id="3CMDXCknVe1" role="25R1y">
+      <property role="3tVfz5" value="4193598758121878401" />
+      <property role="TrG5h" value="CELL_ODE_TYPE" />
+      <property role="1L1pqM" value="Cell-Only ODEs" />
+    </node>
+    <node concept="25R33" id="3CMDXCknVea" role="25R1y">
+      <property role="3tVfz5" value="4193598758121878410" />
+      <property role="TrG5h" value="MEMAGENT_ODE_TYPE" />
+      <property role="1L1pqM" value="MemAgent ODEs (EXPERIMENTAL)" />
+    </node>
   </node>
 </model>
 

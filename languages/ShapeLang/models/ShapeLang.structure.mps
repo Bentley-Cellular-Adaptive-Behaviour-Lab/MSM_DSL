@@ -18,6 +18,7 @@
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
+        <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
@@ -26,6 +27,10 @@
         <property id="1096454100552" name="rootable" index="19KtqR" />
         <reference id="1071489389519" name="extends" index="1TJDcQ" />
         <child id="1169129564478" name="implements" index="PzmwI" />
+      </concept>
+      <concept id="1071489288299" name="jetbrains.mps.lang.structure.structure.PropertyDeclaration" flags="ig" index="1TJgyi">
+        <property id="241647608299431129" name="propertyId" index="IQ2nx" />
+        <reference id="1082985295845" name="dataType" index="AX2Wp" />
       </concept>
       <concept id="1071489288298" name="jetbrains.mps.lang.structure.structure.LinkDeclaration" flags="ig" index="1TJgyj">
         <property id="1071599776563" name="role" index="20kJfa" />
@@ -77,46 +82,86 @@
     <property role="TrG5h" value="Protrusion" />
     <property role="3GE5qa" value="Protrusion" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="5sLUxN1l$Zm" role="1TKVEi">
+      <property role="IQ2ns" value="6283060364382195670" />
+      <property role="20kJfa" value="targetCytoprotein" />
+      <ref role="20lvS9" node="Qd9PzECg3s" resolve="CytoskeletalProtein" />
+    </node>
+    <node concept="1TJgyj" id="5sLUxN1v48J" role="1TKVEi">
+      <property role="IQ2ns" value="6283060364384682543" />
+      <property role="20kJfa" value="targetCellType" />
+      <ref role="20lvS9" to="nguq:5qSYbADreYb" resolve="CellType" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN0S1A0" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364374448512" />
+      <property role="TrG5h" value="stallTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN14mPF" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364377681259" />
+      <property role="TrG5h" value="extensionTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN14mPI" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364377681262" />
+      <property role="TrG5h" value="retractionTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN15kmJ" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364377933231" />
+      <property role="TrG5h" value="showStallTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN15ksw" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364377933600" />
+      <property role="TrG5h" value="showExtensionTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5sLUxN15kyi" role="1TKVEl">
+      <property role="IQ2nx" value="6283060364377933970" />
+      <property role="TrG5h" value="showRetractionTime" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="Qd9PzECg7f" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="2Jfy4gqzEXt" role="1TKVEi">
       <property role="IQ2ns" value="3156891689894719325" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="followsEnvSpecies" />
+      <property role="20kJfa" value="_followsEnvSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     </node>
     <node concept="1TJgyj" id="Qd9PzECghE" role="1TKVEi">
       <property role="IQ2ns" value="976479957056291946" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="maxLength" />
+      <property role="20kJfa" value="_maxLength" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="2Jfy4gqzJze" role="1TKVEi">
       <property role="IQ2ns" value="3156891689894738126" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="thickness" />
+      <property role="20kJfa" value="_thickness" />
       <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
     </node>
     <node concept="1TJgyj" id="Qd9PzECgjG" role="1TKVEi">
       <property role="IQ2ns" value="976479957056292076" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="allowedProteins" />
+      <property role="20kJfa" value="_allowedProteins" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     </node>
     <node concept="1TJgyj" id="Qd9PzECgHP" role="1TKVEi">
       <property role="IQ2ns" value="976479957056293749" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="sensitivity" />
+      <property role="20kJfa" value="_sensitivity" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Jfy4gq$TM0" resolve="SensitivityExpression" />
     </node>
     <node concept="1TJgyj" id="2gDfFgAH$AS" role="1TKVEi">
       <property role="IQ2ns" value="2605682802875058616" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="allowedCellTypes" />
+      <property role="20kJfa" value="_allowedCellTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
     </node>
@@ -133,26 +178,12 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
-    <node concept="1TJgyj" id="1wi3sbu4_Kf" role="1TKVEi">
-      <property role="IQ2ns" value="1734463937091623951" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="StartConcentration" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
-    </node>
-    <node concept="1TJgyj" id="2gDfFgAHpi9" role="1TKVEi">
-      <property role="IQ2ns" value="2605682802875012233" />
+    <node concept="1TJgyj" id="5sLUxN1iK6T" role="1TKVEi">
+      <property role="IQ2ns" value="6283060364381454777" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="AmountNeeded" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmT" resolve="Concentration" />
-    </node>
-    <node concept="1TJgyj" id="2Jfy4gq$4CD" role="1TKVEi">
-      <property role="IQ2ns" value="3156891689894824489" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="TriggersProtrusion" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Jfy4gq$2g4" resolve="ProtrusionReference" />
     </node>
     <node concept="1TJgyj" id="1wi3sbu4Qli" role="1TKVEi">
       <property role="IQ2ns" value="1734463937091691858" />
@@ -163,6 +194,18 @@
     </node>
     <node concept="PrWs8" id="2Jfy4gqzRBc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyj" id="5sLUxN1iK6H" role="1TKVEi">
+      <property role="IQ2ns" value="6283060364381454765" />
+      <property role="20kJfa" value="targetSpecies" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+    <node concept="1TJgyj" id="5sLUxN1ucMa" role="1TKVEi">
+      <property role="IQ2ns" value="6283060364384455818" />
+      <property role="20kJfa" value="targetProtrusion" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="Qd9PzECg1V" resolve="Protrusion" />
     </node>
   </node>
   <node concept="1TIwiD" id="Qd9PzECg5m">

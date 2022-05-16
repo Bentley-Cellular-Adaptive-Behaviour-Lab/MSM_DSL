@@ -16,6 +16,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -153,6 +154,7 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
+      <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -14305,6 +14307,77 @@
         <property role="TrG5h" value="querySpecies" />
         <node concept="3Tqbb2" id="4MFt7FnVQfB" role="1tU5fm">
           <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="5sLUxN1l2sk" role="13h7CS">
+      <property role="TrG5h" value="hasCytoprotein" />
+      <node concept="3Tm1VV" id="5sLUxN1l2sl" role="1B3o_S" />
+      <node concept="10P_77" id="5sLUxN1l2$A" role="3clF45" />
+      <node concept="3clFbS" id="5sLUxN1l2sn" role="3clF47">
+        <node concept="3cpWs8" id="5sLUxN1l323" role="3cqZAp">
+          <node concept="3cpWsn" id="5sLUxN1l326" role="3cpWs9">
+            <property role="TrG5h" value="hasCytoprotein" />
+            <node concept="10P_77" id="5sLUxN1l321" role="1tU5fm" />
+            <node concept="3clFbT" id="5sLUxN1l38P" role="33vP2m" />
+          </node>
+        </node>
+        <node concept="2Gpval" id="5sLUxN1l2_Q" role="3cqZAp">
+          <node concept="2GrKxI" id="5sLUxN1l2_R" role="2Gsz3X">
+            <property role="TrG5h" value="species" />
+          </node>
+          <node concept="2OqwBi" id="5sLUxN1l2JW" role="2GsD0m">
+            <node concept="13iPFW" id="5sLUxN1l2AY" role="2Oq$k0" />
+            <node concept="3Tsc0h" id="5sLUxN1l2Wx" role="2OqNvi">
+              <ref role="3TtcxE" to="nguq:2GjRzF0SzVv" resolve="_ownedSpecies" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="5sLUxN1l2_T" role="2LFqv$">
+            <node concept="3clFbJ" id="5sLUxN1l39A" role="3cqZAp">
+              <node concept="17R0WA" id="5sLUxN1l3ZQ" role="3clFbw">
+                <node concept="2OqwBi" id="5sLUxN1l4kr" role="3uHU7w">
+                  <node concept="2GrUjf" id="5sLUxN1l45G" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="5sLUxN1l2_R" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="5sLUxN1l4v8" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="5sLUxN1l3lM" role="3uHU7B">
+                  <node concept="37vLTw" id="5sLUxN1l3cr" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5sLUxN1l2_a" resolve="cytoprotein" />
+                  </node>
+                  <node concept="3TrEf2" id="5sLUxN1l3yF" role="2OqNvi">
+                    <ref role="3Tt5mk" to="jl3b:5sLUxN1iK6H" resolve="targetSpecies" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="5sLUxN1l39C" role="3clFbx">
+                <node concept="3clFbF" id="5sLUxN1l4y3" role="3cqZAp">
+                  <node concept="37vLTI" id="5sLUxN1l4RF" role="3clFbG">
+                    <node concept="3clFbT" id="5sLUxN1l4Wi" role="37vLTx">
+                      <property role="3clFbU" value="true" />
+                    </node>
+                    <node concept="37vLTw" id="5sLUxN1l4y2" role="37vLTJ">
+                      <ref role="3cqZAo" node="5sLUxN1l326" resolve="hasCytoprotein" />
+                    </node>
+                  </node>
+                </node>
+                <node concept="3zACq4" id="5sLUxN1l4Yv" role="3cqZAp" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5sLUxN1l5b4" role="3cqZAp">
+          <node concept="37vLTw" id="5sLUxN1l5cI" role="3cqZAk">
+            <ref role="3cqZAo" node="5sLUxN1l326" resolve="hasCytoprotein" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="5sLUxN1l2_a" role="3clF46">
+        <property role="TrG5h" value="cytoprotein" />
+        <node concept="3Tqbb2" id="5sLUxN1l2_9" role="1tU5fm">
+          <ref role="ehGHo" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
         </node>
       </node>
     </node>
