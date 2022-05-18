@@ -122,6 +122,26 @@
       <property role="TrG5h" value="showRetractionTime" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="4iosasLbkOk" role="1TKVEl">
+      <property role="IQ2nx" value="4942824454426021140" />
+      <property role="TrG5h" value="showThickness" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4iosasLbl6y" role="1TKVEl">
+      <property role="IQ2nx" value="4942824454426022306" />
+      <property role="TrG5h" value="showMaxLength" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4iosasLblpv" role="1TKVEl">
+      <property role="IQ2nx" value="4942824454426023519" />
+      <property role="TrG5h" value="showSensitivity" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="4iosasLdeJ_" role="1TKVEl">
+      <property role="IQ2nx" value="4942824454426520549" />
+      <property role="TrG5h" value="showShuttledSpecies" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="PrWs8" id="Qd9PzECg7f" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -155,7 +175,6 @@
       <property role="IQ2ns" value="976479957056293749" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_sensitivity" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Jfy4gq$TM0" resolve="SensitivityExpression" />
     </node>
     <node concept="1TJgyj" id="2gDfFgAH$AS" role="1TKVEi">

@@ -9,7 +9,6 @@
   <imports>
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
-    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="cyrx" ref="r:3c8d3693-7ec8-46bd-bcf9-c972a7d36151(ShapeLang.behavior)" implicit="true" />
@@ -37,9 +36,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
-        <property id="1070475926801" name="value" index="Xl_RC" />
-      </concept>
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
@@ -50,7 +46,6 @@
         <reference id="1068581517664" name="variableDeclaration" index="3cqZAo" />
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
-      <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -246,6 +241,12 @@
       <node concept="356sEK" id="3vcTe5vJDm3" role="383Ya9">
         <node concept="2EixSi" id="3vcTe5vJDm5" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="4iosasL9IXh" role="383Ya9">
+        <node concept="356sEF" id="4iosasL9IXi" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/protein/species.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4iosasL9IXj" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="3vcTe5vJJuL" role="383Ya9">
         <node concept="356sEF" id="3vcTe5vJJuM" role="356sEH">
           <property role="TrG5h" value="#include &quot;../dsl/shape/cytoprotein.h&quot;" />
@@ -400,7 +401,7 @@
                       <node concept="2OqwBi" id="1wi3sbu3P8O" role="2Oq$k0">
                         <node concept="30H73N" id="1wi3sbu3OVc" role="2Oq$k0" />
                         <node concept="3TrEf2" id="5CquPnW_H_g" role="2OqNvi">
-                          <ref role="3Tt5mk" to="jl3b:2Jfy4gqzEXt" resolve="followsEnvSpecies" />
+                          <ref role="3Tt5mk" to="jl3b:2Jfy4gqzEXt" resolve="_followsEnvSpecies" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="5CquPnW_I6W" role="2OqNvi">
@@ -595,7 +596,7 @@
                     <node concept="30H73N" id="3FNuJRslV01" role="2Oq$k0" />
                   </node>
                   <node concept="13MTOL" id="3FNuJRsm0MF" role="2OqNvi">
-                    <ref role="13MTZf" to="jl3b:Qd9PzECgjG" resolve="allowedProteins" />
+                    <ref role="13MTZf" to="jl3b:Qd9PzECgjG" resolve="_allowedProteins" />
                   </node>
                 </node>
               </node>
@@ -810,7 +811,7 @@
                         <ref role="2Gs0qQ" node="3FNuJRsrDhi" resolve="protrusion" />
                       </node>
                       <node concept="3Tsc0h" id="3FNuJRsrRXw" role="2OqNvi">
-                        <ref role="3TtcxE" to="jl3b:Qd9PzECgjG" resolve="allowedProteins" />
+                        <ref role="3TtcxE" to="jl3b:Qd9PzECgjG" resolve="_allowedProteins" />
                       </node>
                     </node>
                   </node>
@@ -1067,7 +1068,7 @@
               <node concept="3clFbF" id="5CquPnWCXWX" role="3cqZAp">
                 <node concept="2OqwBi" id="5CquPnWCXWS" role="3clFbG">
                   <node concept="3Tsc0h" id="5CquPnWCXWV" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:2gDfFgAH$AS" resolve="allowedCellTypes" />
+                    <ref role="3TtcxE" to="jl3b:2gDfFgAH$AS" resolve="_allowedCellTypes" />
                   </node>
                   <node concept="30H73N" id="5CquPnWCXWW" role="2Oq$k0" />
                 </node>
@@ -1082,20 +1083,19 @@
       <node concept="356WMU" id="5CquPnWzlc3" role="383Ya9">
         <node concept="356sEK" id="2D6O8IwYA24" role="383Ya9">
           <node concept="356sEF" id="5CquPnWzn8R" role="356sEH">
-            <property role="TrG5h" value="bool Protrusion::checkCondition(){" />
+            <property role="TrG5h" value="bool Protrusion::checkCondition(MemAgent *memAgent){" />
           </node>
           <node concept="2EixSi" id="2D6O8IwYA26" role="2EinRH" />
         </node>
-        <node concept="356sEK" id="5CquPnWApcK" role="383Ya9">
-          <node concept="373pV1" id="5CquPnWApjn" role="356sEH" />
-          <node concept="356sEF" id="5CquPnWApjq" role="356sEH">
-            <property role="TrG5h" value="if (this-&gt;getName() == &quot;CYTOPROTEIN_NAME&quot;) {" />
+        <node concept="356sEK" id="4iosasL9GWo" role="383Ya9">
+          <node concept="373pV1" id="4iosasL9GZR" role="356sEH" />
+          <node concept="356sEF" id="4iosasL9GZX" role="356sEH">
+            <property role="TrG5h" value="auto SPECIES_NAME = memAgent-&gt;get_memAgent_current_level(&quot;SPECIES_NAME&quot;);" />
           </node>
-          <node concept="2EixSi" id="5CquPnWApcM" role="2EinRH" />
+          <node concept="2EixSi" id="4iosasL9GWq" role="2EinRH" />
         </node>
         <node concept="356sEK" id="5CquPnWApyp" role="383Ya9">
           <node concept="373pV1" id="5CquPnWApJJ" role="356sEH" />
-          <node concept="373pV1" id="5CquPnWAq52" role="356sEH" />
           <node concept="356sEF" id="5CquPnWApJM" role="356sEH">
             <property role="TrG5h" value="return " />
           </node>
@@ -1106,19 +1106,23 @@
               <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
               <node concept="3zFVjK" id="5sLUxN1FR7F" role="3zH0cK">
                 <node concept="3clFbS" id="5sLUxN1FR7G" role="2VODD2">
-                  <node concept="3cpWs8" id="5sLUxN1FR84" role="3cqZAp">
-                    <node concept="3cpWsn" id="5sLUxN1FR87" role="3cpWs9">
-                      <property role="TrG5h" value="condition" />
-                      <node concept="17QB3L" id="5sLUxN1FR83" role="1tU5fm" />
-                      <node concept="Xl_RD" id="5sLUxN1FRed" role="33vP2m">
-                        <property role="Xl_RC" value="" />
+                  <node concept="3cpWs6" id="6a3sfLVYGmv" role="3cqZAp">
+                    <node concept="2OqwBi" id="6a3sfLVYU5a" role="3cqZAk">
+                      <node concept="30H73N" id="6a3sfLVYTRk" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6a3sfLVYV86" role="2OqNvi">
+                        <ref role="37wK5l" to="cyrx:6a3sfLVYLG8" resolve="getString" />
+                        <node concept="2OqwBi" id="6a3sfLVYWV5" role="37wK5m">
+                          <node concept="2OqwBi" id="6a3sfLVYVpW" role="2Oq$k0">
+                            <node concept="30H73N" id="6a3sfLVYV9o" role="2Oq$k0" />
+                            <node concept="3TrEf2" id="6a3sfLVYWxL" role="2OqNvi">
+                              <ref role="3Tt5mk" to="jl3b:5sLUxN1l$Zm" resolve="targetCytoprotein" />
+                            </node>
+                          </node>
+                          <node concept="3TrEf2" id="6a3sfLVYX9q" role="2OqNvi">
+                            <ref role="3Tt5mk" to="jl3b:Qd9PzECjWa" resolve="TriggersWhen" />
+                          </node>
+                        </node>
                       </node>
-                    </node>
-                  </node>
-                  <node concept="3clFbH" id="5sLUxN1FRkH" role="3cqZAp" />
-                  <node concept="3cpWs6" id="5sLUxN1FRjn" role="3cqZAp">
-                    <node concept="Xl_RD" id="5sLUxN1FRkc" role="3cqZAk">
-                      <property role="Xl_RC" value="" />
                     </node>
                   </node>
                 </node>
@@ -1126,13 +1130,6 @@
             </node>
           </node>
           <node concept="2EixSi" id="5CquPnWApyr" role="2EinRH" />
-        </node>
-        <node concept="356sEK" id="5CquPnWApkr" role="383Ya9">
-          <node concept="373pV1" id="5CquPnWApxK" role="356sEH" />
-          <node concept="356sEF" id="5CquPnWApks" role="356sEH">
-            <property role="TrG5h" value="}" />
-          </node>
-          <node concept="2EixSi" id="5CquPnWApkt" role="2EinRH" />
         </node>
         <node concept="356sEK" id="2D6O8IwYA2N" role="383Ya9">
           <node concept="356sEF" id="2D6O8IwYA2O" role="356sEH">
@@ -1146,7 +1143,7 @@
               <node concept="3clFbF" id="5CquPnWzmLc" role="3cqZAp">
                 <node concept="2OqwBi" id="5CquPnWzmL7" role="3clFbG">
                   <node concept="3Tsc0h" id="5CquPnWzmLa" role="2OqNvi">
-                    <ref role="3TtcxE" to="jl3b:Qd9PzECkkr" resolve="_cytoskeletalProteins" />
+                    <ref role="3TtcxE" to="jl3b:Qd9PzECgia" resolve="_protrusions" />
                   </node>
                   <node concept="30H73N" id="5CquPnWzmLb" role="2Oq$k0" />
                 </node>
@@ -1295,7 +1292,7 @@
                       <ref role="3cqZAo" node="1wi3sbu4WKG" resolve="targetProtrusion" />
                     </node>
                     <node concept="3Tsc0h" id="1wi3sbu4YDR" role="2OqNvi">
-                      <ref role="3TtcxE" to="jl3b:2gDfFgAH$AS" resolve="allowedCellTypes" />
+                      <ref role="3TtcxE" to="jl3b:2gDfFgAH$AS" resolve="_allowedCellTypes" />
                     </node>
                   </node>
                 </node>

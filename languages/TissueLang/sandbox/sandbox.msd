@@ -16,8 +16,8 @@
     <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)</dependency>
   </dependencies>
   <languageVersions>
-    <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueSetup" version="0" />
-    <language slang="l:276cd304-748c-4d5d-aad0-4b34e2a42ced:WorldSetup" version="0" />
+    <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueLang" version="0" />
+    <language slang="l:276cd304-748c-4d5d-aad0-4b34e2a42ced:WorldLang" version="0" />
     <language slang="l:ceab5195-25ea-4f22-9b92-103b95ca8c0c:jetbrains.mps.lang.core" version="2" />
   </languageVersions>
   <dependencyVersions>

@@ -789,7 +789,7 @@
               <node concept="3clFbJ" id="5sLUxN1xAqk" role="3cqZAp">
                 <node concept="17QLQc" id="5sLUxN1xAHl" role="3clFbw">
                   <node concept="2GrUjf" id="5sLUxN1xAKA" role="3uHU7w">
-                    <ref role="2Gs0qQ" node="5sLUxN1x_Zl" resolve="targetCytoProtein" />
+                    <ref role="2Gs0qQ" node="5sLUxN1x_Zl" resolve="comparedCytoProtein" />
                   </node>
                   <node concept="2GrUjf" id="5sLUxN1xAqw" role="3uHU7B">
                     <ref role="2Gs0qQ" node="5sLUxN1x_yQ" resolve="queryCytoProtein" />
@@ -856,6 +856,43 @@
     <node concept="1YaCAy" id="5sLUxN1x_yA" role="1YuTPh">
       <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4iosasL9Y6j">
+    <property role="TrG5h" value="check_noParametersInCondition" />
+    <node concept="3clFbS" id="4iosasL9Y6k" role="18ibNy">
+      <node concept="3clFbJ" id="4iosasLaFYU" role="3cqZAp">
+        <node concept="2OqwBi" id="4iosasLaG9h" role="3clFbw">
+          <node concept="1YBJjd" id="4iosasLaFZ6" role="2Oq$k0">
+            <ref role="1YBMHb" node="4iosasL9Y6m" resolve="cytoProtein" />
+          </node>
+          <node concept="2qgKlT" id="4iosasLaGiF" role="2OqNvi">
+            <ref role="37wK5l" to="cyrx:4iosasL9ZPK" resolve="expressionContainsParameter" />
+            <node concept="2OqwBi" id="4iosasLaGtq" role="37wK5m">
+              <node concept="1YBJjd" id="4iosasLaGnb" role="2Oq$k0">
+                <ref role="1YBMHb" node="4iosasL9Y6m" resolve="cytoProtein" />
+              </node>
+              <node concept="3TrEf2" id="4iosasLaGuB" role="2OqNvi">
+                <ref role="3Tt5mk" to="jl3b:Qd9PzECjWa" resolve="TriggersWhen" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="4iosasLaFYW" role="3clFbx">
+          <node concept="2MkqsV" id="4iosasLaGv9" role="3cqZAp">
+            <node concept="Xl_RD" id="4iosasLaGvl" role="2MkJ7o">
+              <property role="Xl_RC" value="Cytoskeletal protein conditions cannot currently use parameters." />
+            </node>
+            <node concept="1YBJjd" id="4iosasLaGwC" role="1urrMF">
+              <ref role="1YBMHb" node="4iosasL9Y6m" resolve="cytoProtein" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4iosasL9Y6m" role="1YuTPh">
+      <property role="TrG5h" value="cytoProtein" />
+      <ref role="1YaFvo" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
     </node>
   </node>
 </model>

@@ -8,7 +8,6 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="g4nc" ref="r:ccc912a6-16e8-466b-b48a-0e82310c4cc7(de.itemis.mps.tooltips.editor)" />
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -322,9 +321,21 @@
           <node concept="3EZMnI" id="3CMDXCkMzHE" role="1j7ClA">
             <node concept="3F0ifn" id="3CMDXCkMzHO" role="3EZMnx">
               <property role="3F0ifm" value="The species a protrusion seeks" />
+              <node concept="2biZxu" id="4iosasLbObJ" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObK" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="3F0ifn" id="3CMDXCkMzHR" role="3EZMnx">
               <property role="3F0ifm" value="out during a simulation." />
+              <node concept="2biZxu" id="4iosasLbObF" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObG" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="2iRkQZ" id="3CMDXCkMzHH" role="2iSdaV" />
           </node>
@@ -353,12 +364,30 @@
           <node concept="3EZMnI" id="3CMDXCkMzJF" role="1j7ClA">
             <node concept="3F0ifn" id="3CMDXCkMzJM" role="3EZMnx">
               <property role="3F0ifm" value="Probability that a protrusion follows" />
+              <node concept="2biZxu" id="4iosasLbOby" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObz" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="3F0ifn" id="3CMDXCkMzJS" role="3EZMnx">
               <property role="3F0ifm" value="the highest concentration it sees." />
+              <node concept="2biZxu" id="4iosasLbObq" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObr" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="3F0ifn" id="3CMDXCkMzJW" role="3EZMnx">
               <property role="3F0ifm" value="Accepts a number between 0 and 1." />
+              <node concept="2biZxu" id="4iosasLbObu" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObv" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="2iRkQZ" id="3CMDXCkMzJI" role="2iSdaV" />
           </node>
@@ -382,6 +411,18 @@
           </node>
         </node>
         <node concept="2iRfu4" id="2Jfy4gqvuR2" role="2iSdaV" />
+        <node concept="pkWqt" id="4iosasLbNkD" role="pqm2j">
+          <node concept="3clFbS" id="4iosasLbNkE" role="2VODD2">
+            <node concept="3clFbF" id="4iosasLbNoD" role="3cqZAp">
+              <node concept="2OqwBi" id="4iosasLbNAC" role="3clFbG">
+                <node concept="pncrf" id="4iosasLbNoC" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4iosasLbO4N" role="2OqNvi">
+                  <ref role="3TsBF5" to="jl3b:4iosasLblpv" resolve="showSensitivity" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="2Hxmt3eVhgl" role="3EZMnx">
         <node concept="VPM3Z" id="2Hxmt3eVhgm" role="3F10Kt" />
@@ -432,6 +473,24 @@
                 <property role="1lJzqX" value="12" />
               </node>
             </node>
+            <node concept="3F0ifn" id="4iosasLbObS" role="3EZMnx">
+              <property role="3F0ifm" value="If left empty, all species expressed by the cell will" />
+              <node concept="2biZxu" id="4iosasLbOc8" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbOc9" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="4iosasLbObY" role="3EZMnx">
+              <property role="3F0ifm" value="be shown on the protrusion surface." />
+              <node concept="2biZxu" id="4iosasLbOc4" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbOc5" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
             <node concept="2iRkQZ" id="3CMDXCkMzX4" role="2iSdaV" />
           </node>
           <node concept="3F0ifn" id="3CMDXCkMzWM" role="1j7Clw">
@@ -452,6 +511,18 @@
           <node concept="2iRkQZ" id="2Jfy4gqzETG" role="2czzBx" />
         </node>
         <node concept="2iRfu4" id="2Jfy4gqzETH" role="2iSdaV" />
+        <node concept="pkWqt" id="4iosasLdOyD" role="pqm2j">
+          <node concept="3clFbS" id="4iosasLdOyE" role="2VODD2">
+            <node concept="3clFbF" id="4iosasLdOAD" role="3cqZAp">
+              <node concept="2OqwBi" id="4iosasLdOOC" role="3clFbG">
+                <node concept="pncrf" id="4iosasLdOAC" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4iosasLdP6t" role="2OqNvi">
+                  <ref role="3TsBF5" to="jl3b:4iosasLdeJ_" resolve="showShuttledSpecies" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="2Jfy4gqvvJF" role="3EZMnx">
         <node concept="VPM3Z" id="2Jfy4gqvvJG" role="3F10Kt" />
@@ -486,6 +557,18 @@
           <ref role="1NtTu8" to="jl3b:Qd9PzECghE" resolve="_maxLength" />
         </node>
         <node concept="2iRfu4" id="2Jfy4gqvvJN" role="2iSdaV" />
+        <node concept="pkWqt" id="4iosasLcuH1" role="pqm2j">
+          <node concept="3clFbS" id="4iosasLcuH2" role="2VODD2">
+            <node concept="3clFbF" id="4iosasLcuL1" role="3cqZAp">
+              <node concept="2OqwBi" id="4iosasLcv1g" role="3clFbG">
+                <node concept="pncrf" id="4iosasLcuL0" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4iosasLcvfp" role="2OqNvi">
+                  <ref role="3TsBF5" to="jl3b:4iosasLbl6y" resolve="showMaxLength" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="2Jfy4gqvw0x" role="3EZMnx">
         <node concept="VPM3Z" id="2Jfy4gqvw0y" role="3F10Kt" />
@@ -520,6 +603,18 @@
           <ref role="1NtTu8" to="jl3b:2Jfy4gqzJze" resolve="_thickness" />
         </node>
         <node concept="2iRfu4" id="2Jfy4gqvw0C" role="2iSdaV" />
+        <node concept="pkWqt" id="4iosasLbMGu" role="pqm2j">
+          <node concept="3clFbS" id="4iosasLbMGv" role="2VODD2">
+            <node concept="3clFbF" id="4iosasLbMKu" role="3cqZAp">
+              <node concept="2OqwBi" id="4iosasLbMYt" role="3clFbG">
+                <node concept="pncrf" id="4iosasLbMKt" role="2Oq$k0" />
+                <node concept="3TrcHB" id="4iosasLbNau" role="2OqNvi">
+                  <ref role="3TsBF5" to="jl3b:4iosasLbkOk" resolve="showThickness" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="3EZMnI" id="5sLUxN16QKF" role="3EZMnx">
         <node concept="2iRfu4" id="5sLUxN16QKG" role="2iSdaV" />
@@ -537,6 +632,12 @@
             </node>
             <node concept="3F0ifn" id="5sLUxN0S1pS" role="3EZMnx">
               <property role="3F0ifm" value="stays extended before retracting." />
+              <node concept="2biZxu" id="4iosasLbObm" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="4iosasLbObn" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
             </node>
             <node concept="2iRkQZ" id="5sLUxN0S1nS" role="2iSdaV" />
           </node>
