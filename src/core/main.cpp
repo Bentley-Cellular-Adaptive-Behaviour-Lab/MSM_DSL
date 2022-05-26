@@ -232,28 +232,28 @@ int main(int argc, char * argv[]) {
 //        varyParams(param_values.at(0), 0.1, 0.5);
 //        varyParams(param_values.at(1), 0.1, 0.5);
 
-        auto tissue = world->getTissueContainer()->tissues.at(0);
-        auto cell1 = tissue->m_cell_agents.at(0);
-        auto cell2 = tissue->m_cell_agents.at(1);
+//        auto tissue = world->getTissueContainer()->tissues.at(0);
+//        auto cell1 = tissue->m_cell_agents.at(0);
+//        auto cell2 = tissue->m_cell_agents.at(1);
+////
+//        // Force add the cells to each others neighbour lists.
+//        // Junction testing may not happen quickly enough for this test to be valid.
+//        cell1->add_to_neighbour_list(cell2);
+//        cell2->add_to_neighbour_list(cell1);
 //
-        // Force add the cells to each others neighbour lists.
-        // Junction testing may not happen quickly enough for this test to be valid.
-        cell1->add_to_neighbour_list(cell2);
-        cell2->add_to_neighbour_list(cell1);
-
-        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
-        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
-
-        auto val1 = world->getParamValue(V0_VALUE);
-        auto val2 = world->getParamValue(V1_VALUE);
-
-        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
-        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
-
-        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-        cell1->distributeProteins();
-        cell2->distributeProteins();
+//        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
+//        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
+//
+//        auto val1 = world->getParamValue(V0_VALUE);
+//        auto val2 = world->getParamValue(V1_VALUE);
+//
+//        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
+//        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
+//
+//        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+//        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+//        cell1->distributeProteins();
+//        cell2->distributeProteins();
 
         // -----------------------------------------------------------------------------------------------------------//
 

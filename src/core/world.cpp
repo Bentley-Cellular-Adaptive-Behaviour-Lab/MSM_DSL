@@ -1808,6 +1808,9 @@ void World::updateMemAgents() {
 	//pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
 	for (i = 0; i < upto; i++) {
 
+        // Update the level of environmental proteins seen by the cell.
+        memp->update_cell_env_levels();
+
 		tipDeleteFlag = false;
 
 		memp = ALLmemAgents[i];
@@ -6619,6 +6622,7 @@ void World::resetCellLevels() {
             cellAgent->storeStartLevels();
         }
         if (odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
+            cellAgent->resetEnvProteinLevels();
             cellAgent->cycle_protein_levels();
             cellAgent->distributeProteins();
         }
