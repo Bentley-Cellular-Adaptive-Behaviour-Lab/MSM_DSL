@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="SemaPlexinSim" uuid="1771e893-97dd-4ea9-a72d-891ea4558b2d" moduleVersion="0" compileInMPS="true">
+<solution name="SemaPlexinSim" uuid="ceceba71-3e41-454f-a7cc-6020d60449df" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -41,7 +41,7 @@
     <language slang="l:6b277d9a-d52d-416f-a209-1919bd737f50:org.iets3.core.expr.simpleTypes" version="1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="1771e893-97dd-4ea9-a72d-891ea4558b2d(SemaPlexinSim)" version="0" />
+    <module reference="ceceba71-3e41-454f-a7cc-6020d60449df(SemaPlexinSim)" version="0" />
   </dependencyVersions>
 </solution>
 

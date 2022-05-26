@@ -215,6 +215,9 @@ public:
     void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
     void doVeilAdvance(const float& randomChance);
     void cycleProteinLevels();
+
+    void update_cell_env_levels();
+    double env_protein_search(const std::string& proteinName);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

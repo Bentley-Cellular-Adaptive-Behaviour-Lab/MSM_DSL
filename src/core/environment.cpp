@@ -350,7 +350,8 @@ float Env::get_protein_level(std::string protein_name) {
             }
         }
         if (!protein_found) {
-            throw std::invalid_argument(protein_name);
+//            throw std::invalid_argument(protein_name);
+            return 0;
         }
     } catch (std::invalid_argument) {
 		std::cerr << "Attempted to get the level of a protein at an environment agent which did not possess it." << std::endl;

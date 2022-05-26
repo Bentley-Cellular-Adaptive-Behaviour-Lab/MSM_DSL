@@ -43,6 +43,10 @@ private:
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
+
+    // Stores values of environmental proteins. Only used during cell-only ODES.
+    // Key: protein name, value: protein level.
+    std::map<std::string, double> m_env_protein_values;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -192,5 +196,10 @@ public:
     void initialiseProteinStartBuffer();
     void initialiseProteinDeltaBuffer();
     const std::map<std::string, double>& getProteinStartBuffer();
+
+    void store_env_protein(const std::string& proteinName);
+    std::map<std::string, double> get_env_protein_values();
+    void resetEnvProteinLevels();
+    double get_env_protein_level(const std::string& proteinName);
 };
 #endif //SPRINGAGENT_EC_H

@@ -4670,3 +4670,27 @@ void MemAgent::cycleProteinLevels() {
         protein->update_protein_level();
     }
 }
+
+void MemAgent::update_cell_env_levels() {
+    for (auto pair : this->Cell->get_env_protein_values()) {
+        pair.second += env_protein_search(pair.first);
+    }
+}
+
+double MemAgent::env_protein_search(const std::string& proteinName) {
+    double result = 0;
+    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
+        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
+            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+                if (worldP->insideWorld(x, y, z)
+                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    if (worldP->grid[x][y][z].getType() == const_E) {
+                        auto env = worldP->grid[x][y][z].getEid();
+                        result += env->get_protein_level(proteinName);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+}

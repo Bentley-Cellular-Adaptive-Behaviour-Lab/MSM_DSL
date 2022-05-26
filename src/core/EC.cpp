@@ -2035,6 +2035,19 @@ void EC::resetProteinMemAgentBuffer() {
 }
 
 /*****************************************************************************************
+*  Name:		resetProteinMemAgentBuffer
+*  Description: Goes over all protein level levels in the buffer and sets them to 0.
+*               Called at the end of cell agent updating.
+*  Returns:		double
+******************************************************************************************/
+
+void EC::resetEnvProteinLevels() {
+    for (auto &pair : this->m_env_protein_values) {
+        std::get<1>(pair) = 0;
+    }
+}
+
+/*****************************************************************************************
 *  Name:		updateProteinMemAgentBuffer
 *  Description: Increments a given protein value this timestep in the buffer vector,
 *               by a specified amount.
@@ -2152,4 +2165,16 @@ const std::map<std::string, double>& EC::getProteinStartBuffer() {
 
 const std::map<std::string, double>& EC::getProteinMemAgentBuffer() {
     return this->m_protein_memAgent_buffer;
+}
+
+std::map<std::string, double> EC::get_env_protein_values() {
+    return this->m_env_protein_values;
+}
+
+void EC::store_env_protein(const std::string& proteinName) {
+    this->m_env_protein_values.emplace(std::make_pair(proteinName, 0));
+}
+
+double EC::get_env_protein_level(const std::string& proteinName) {
+    return this->m_env_protein_values[proteinName];
 }
