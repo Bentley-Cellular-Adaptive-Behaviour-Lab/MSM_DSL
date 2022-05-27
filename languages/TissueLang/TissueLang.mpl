@@ -27,6 +27,7 @@
       <dependencies>
         <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
         <dependency reexport="false">3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)</dependency>
+        <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:990507d3-3527-4c54-bfe9-0ca3c9c6247a:com.dslfoundry.plaintextgen" version="0" />
@@ -55,6 +56,7 @@
         <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
+        <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
         <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
         <module reference="d5bc41a4-09e4-47ba-9e46-e4c6bf115597(TissueLang)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
@@ -78,6 +80,7 @@
         <module reference="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" version="0" />
         <module reference="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" version="0" />
         <module reference="e39e4a59-8cb6-498e-860e-8fa8361c0d90(jetbrains.mps.baseLanguage.scopes)" version="0" />
+        <module reference="4caf0310-491e-41f5-8a9b-2006b3a94898(jetbrains.mps.execution.util)" version="0" />
         <module reference="23865718-e2ed-41b5-a132-0da1d04e266d(jetbrains.mps.ide.httpsupport.manager)" version="0" />
         <module reference="ae6d8005-36be-4cb6-945b-8c8cfc033c51(jetbrains.mps.ide.httpsupport.runtime)" version="0" />
         <module reference="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" version="0" />

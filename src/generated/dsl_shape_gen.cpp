@@ -1,5 +1,6 @@
 #include "../core/memAgents.h"
 
+#include "../dsl/species/protein.h"
 #include "../dsl/shape/cytoprotein.h"
 #include "../dsl/shape/shapeContainer.h"
 #include "../dsl/shape/protrusion.h"
@@ -10,6 +11,5 @@ void MemAgent::checkConditions(MemAgent* memAgent, std::vector<ProtrusionType*>&
 
 void ShapeContainer::setup() {
 	
-
 
 }

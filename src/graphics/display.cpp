@@ -34,20 +34,20 @@
 
 #include <GL/gl.h>
 
-#include <glui.h>
+//#include <glui.h>
 
 #endif
 
 #include <math.h>
 
-GLUI_Button* startRecordButton;
-GLUI_Button* endRecordButton;
-GLUI_StaticText* statText;
-GLUI_EditText *counter_edittext;
+//GLUI_Button* startRecordButton;
+//GLUI_Button* endRecordButton;
+//GLUI_StaticText* statText;
+//GLUI_EditText *counter_edittext;
 
 bool    g_key[255];             // Lookup Table For Key's State (NEW)
 
-GLUI *glui, *glui2;
+//GLUI *glui, *glui2;
 
 // Global Variables
 int WinWidth = 1300;

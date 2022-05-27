@@ -2167,7 +2167,7 @@ const std::map<std::string, double>& EC::getProteinMemAgentBuffer() {
     return this->m_protein_memAgent_buffer;
 }
 
-std::map<std::string, double> EC::get_env_protein_values() {
+std::map<std::string, double>& EC::get_env_protein_values() {
     return this->m_env_protein_values;
 }
 

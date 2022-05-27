@@ -1580,8 +1580,8 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
-        if (timeStep % 100 == 0) {
-            printProteinLevels(100);
+        if (timeStep % 1 == 0) {
+            printProteinLevels(1);
         }
 
         simulateTimestep();
@@ -1809,7 +1809,6 @@ void World::updateMemAgents() {
 	for (i = 0; i < upto; i++) {
 
         // Update the level of environmental proteins seen by the cell.
-        memp->update_cell_env_levels();
 
 		tipDeleteFlag = false;
 
@@ -1817,7 +1816,9 @@ void World::updateMemAgents() {
 		memp->assessed = true;
 		memp->addedJunctionList = false;
 
-		//delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
+        memp->update_cell_env_levels();
+
+        //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
 
 		if (!deleted) {
@@ -6560,6 +6561,9 @@ void World::printProteinNames() {
 		for (auto *protein : cell->m_cell_type->proteins) {
 			std::cout << protein->get_name() << "_" << count << ",";
 		}
+        for (const auto& pair : cell->get_env_protein_values()) {
+            std::cout << pair.first << "_" << count << ",";
+        }
 		count++;
 	}
 	std::cout << std::endl;
@@ -6572,6 +6576,9 @@ void World::printProteinLevels(int timestepInterval) {
 			for (auto *protein : cell->m_cell_type->proteins) {
 				std::cout << protein->get_cell_level(0)  << ",";
 			}
+            for (const auto& pair : cell->get_env_protein_values()) {
+                std::cout << pair.second << ",";
+            }
 		}
 		std::cout << std::endl;
 	}

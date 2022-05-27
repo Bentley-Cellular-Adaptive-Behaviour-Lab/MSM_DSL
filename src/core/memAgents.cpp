@@ -4673,7 +4673,8 @@ void MemAgent::cycleProteinLevels() {
 
 void MemAgent::update_cell_env_levels() {
     for (auto pair : this->Cell->get_env_protein_values()) {
-        pair.second += env_protein_search(pair.first);
+        auto newLevel = pair.second + env_protein_search(pair.first);
+        this->Cell->get_env_protein_values()[pair.first] = newLevel;
     }
 }
 
@@ -4691,6 +4692,6 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
                 }
             }
         }
-        return result;
     }
+    return result;
 }

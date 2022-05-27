@@ -12,8 +12,9 @@ Protein::Protein(const std::string& name,
                  const double& min,
                  const double& max,
                  const int& max_transcription_delay) {
-    // Used when setting up cellular proteins.
-    assert(max_transcription_delay > 0);
+    // Used when setting up cellular proteins and gradients.
+    assert(max_transcription_delay > 0
+        || (max_transcription_delay == -1 && protein_location == PROTEIN_LOCATION_ENVIRONMENT));
     this->m_name = name;
 	this->m_protein_location = protein_location;
     this->m_min = min;
@@ -21,9 +22,14 @@ Protein::Protein(const std::string& name,
     this->transcription_delay = max_transcription_delay;
 
     // Set up levels vector by filling it with zeros for each timestep, then add the initial level to the end of the vector.
-    for (int i = 0; i <= max_transcription_delay; i++) {
-        this->cell_levels.push_back(initial_level);
+    if (protein_location == PROTEIN_LOCATION_ENVIRONMENT) {
+        this->env_level = initial_level;
+    } else {
+        for (int i = 0; i <= max_transcription_delay; i++) {
+            this->cell_levels.push_back(initial_level);
+        }
     }
+
 }
 
 Protein::Protein(const std::string& name,
@@ -31,7 +37,7 @@ Protein::Protein(const std::string& name,
                  const double& env_level,
                  const double& min,
                  const double& max) {
-    // Used when setting up environment proteins.
+    // Used when setting up proteins at env agents.
     this->m_name = name;
     this->m_protein_location = protein_location;
     this->env_level = env_level;

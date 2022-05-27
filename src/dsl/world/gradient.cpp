@@ -554,23 +554,20 @@ void Gradient::apply_gradient_to_cuboid() {
                     ep = m_parent_world->grid[x][y][z].getEid();
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            if (PROTEIN_TESTING) {
-                                calc_linear_env_protein(ep);
-                            } else {
+                            calc_linear_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_linear_env_VEGF(ep);
                             }
                         }
                         if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                            if (PROTEIN_TESTING) {
-                                calc_exp_env_protein(ep);
-                            } else {
+                            calc_exp_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_exp_env_VEGF(ep);
                             }
                         }
                         if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                            if (PROTEIN_TESTING) {
-                                calc_constant_env_protein(ep);
-                            } else {
+                            calc_constant_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_constant_env_VEGF(ep);
                             }
                         }
@@ -641,23 +638,20 @@ void Gradient::apply_gradient_to_sinkandsource() {
                     ep = m_parent_world->grid[i][j][k].getEid();
                     if (ep != nullptr) {
                         if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                            if (PROTEIN_TESTING) {
-                                calc_linear_env_protein(ep);
-                            } else {
+                            calc_linear_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_linear_env_VEGF(ep);
                             }
                         }
                         if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                            if (PROTEIN_TESTING) {
-                                calc_exp_env_protein(ep);
-                            } else {
+                            calc_exp_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_exp_env_VEGF(ep);
                             }
                         }
                         if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                            if (PROTEIN_TESTING) {
-                                calc_constant_env_protein(ep);
-                            } else {
+                            calc_constant_env_protein(ep);
+                            if (m_legacy_VEGF) {
                                 calc_constant_env_VEGF(ep);
                             }
                         }
@@ -709,23 +703,20 @@ void Gradient::apply_gradient_to_sphere() {
                                         ((m_centre_position->z - z) * (m_centre_position->z - z)));
                                 if (dist_from_centre <= radius) {
                                     if (m_gradient_type == GRADIENT_TYPE_LINEAR) {
-                                        if (PROTEIN_TESTING) {
-                                            calc_linear_env_protein(ep);
-                                        } else {
+                                        calc_linear_env_protein(ep);
+                                        if (m_legacy_VEGF) {
                                             calc_linear_env_VEGF(ep);
                                         }
                                     }
                                     if (m_gradient_type == GRADIENT_TYPE_EXPONENTIAL) {
-                                        if (PROTEIN_TESTING) {
-                                            calc_exp_env_protein(ep);
-                                        } else {
+                                        calc_exp_env_protein(ep);
+                                        if (m_legacy_VEGF) {
                                             calc_exp_env_VEGF(ep);
                                         }
                                     }
                                     if (m_gradient_type == GRADIENT_TYPE_CONSTANT) {
-                                        if (PROTEIN_TESTING) {
-                                            calc_constant_env_protein(ep);
-                                        } else {
+                                        calc_constant_env_protein(ep);
+                                        if (m_legacy_VEGF) {
                                             calc_constant_env_VEGF(ep);
                                         }
                                     }
@@ -802,4 +793,12 @@ Gradient::Gradient(World_Container *container,
     this->m_spherical_radius = sphere_radius;
     this->m_centre_position = centre_position;
     this->m_gradient_shape = GRADIENT_SHAPE_POINT;
+}
+
+bool Gradient::uses_legacy_VEGF() const {
+    return this->m_legacy_VEGF;
+}
+
+void Gradient::set_uses_legacy_VEGF(bool flag) {
+    this->m_legacy_VEGF = flag;
 }

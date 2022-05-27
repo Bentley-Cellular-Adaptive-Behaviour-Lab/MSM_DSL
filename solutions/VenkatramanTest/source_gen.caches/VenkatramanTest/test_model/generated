@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<product version="3" modelHash="ekvpf604u5yc2buki2doc7c8ah6723f">
-  <files names="RunSimulation.java:Shapes.cpp:Signalling.cpp:Signalling_header.h:Tissues.cpp:World.cpp:buildSpringAgent.sh:clusterParams.h:runParameterSweep.sh:slurmMSM.sh" />
-</product>
-

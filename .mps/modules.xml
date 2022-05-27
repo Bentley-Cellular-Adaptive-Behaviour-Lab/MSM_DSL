@@ -9,6 +9,7 @@
       <modulePath path="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/SemaPlexinSim/SemaPlexinSim.msd" folder="" />
     </projectModules>
   </component>
 </project>

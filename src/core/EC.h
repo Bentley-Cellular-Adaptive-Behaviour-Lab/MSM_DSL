@@ -198,7 +198,7 @@ public:
     const std::map<std::string, double>& getProteinStartBuffer();
 
     void store_env_protein(const std::string& proteinName);
-    std::map<std::string, double> get_env_protein_values();
+    std::map<std::string, double>& get_env_protein_values();
     void resetEnvProteinLevels();
     double get_env_protein_level(const std::string& proteinName);
 };

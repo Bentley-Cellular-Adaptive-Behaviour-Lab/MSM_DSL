@@ -681,6 +681,14 @@ bool Tissue_Container::check_monolayer_monolayer_overlap(Tissue_Monolayer *monol
     return false;
 }
 
+void Tissue_Container::add_env_protein_to_tissues(const std::string& protein_name) {
+    for (auto tissue : this->tissues) {
+        for (auto cell_agent : tissue->m_cell_agents) {
+            cell_agent->store_env_protein(protein_name);
+        }
+    }
+}
+
 // Constructor //
 
 Tissue_Container::Tissue_Container(World *world): m_world(world) {
