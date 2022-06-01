@@ -10,6 +10,6 @@ void MemAgent::checkConditions(MemAgent* memAgent, std::vector<ProtrusionType*>&
 }
 
 void ShapeContainer::setup() {
-	
+
 
 }

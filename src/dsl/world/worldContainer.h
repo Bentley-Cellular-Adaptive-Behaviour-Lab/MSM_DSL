@@ -42,20 +42,23 @@ public:
     void create_gradient(int gradient_type,
                          Protein *protein,
                          Coordinates *source_position,
-                         Coordinates *sink_position);
+                         Coordinates *sink_position,
+                         bool legacyVEGF);
 
     void create_gradient(int gradient_type,
                          Protein *protein,
                          Coordinates *centre_position,
                          int gradient_direction,
-                         int height,
                          int width,
-                         int depth);
+                         int height,
+                         int depth,
+                         bool legacyVEGF);
 
     void create_gradient(int gradient_type,
                          Protein *protein,
                          Coordinates *centre_position,
-                         int sphere_radius);
+                         int sphere_radius,
+                         bool legacyVEGF);
 
     void store_substrate(Substrate *gradient);
     void store_gradient(Gradient *gradient);

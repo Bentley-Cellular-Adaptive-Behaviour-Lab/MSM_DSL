@@ -11,17 +11,14 @@
 void World_Container::world_setup(std::vector<double>& paramValues) {
     // Created using: World // 
     // WORLD CREATION
-    auto world = create_world(200, 200, 40, 1.0, paramValues);
+    auto world = create_world(80, 240, 80, 1.0, paramValues);
     m_world = world;
     world->setWorldContainer(this);
     world->fillParamVector(paramValues);
 
     // GRADIENT CREATION
-    auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 1.0, 0, -1, -1);
-    auto SEMA3E_protein = new Protein("SEMA3E", PROTEIN_LOCATION_ENVIRONMENT, 1.0, 0, -1, -1);
-    auto VEGF_Gradient_centre = Coordinates(100, 100, 20);
-    auto Sema_Gradient_centre = Coordinates(100, 100, 20);
-    create_gradient(GRADIENT_TYPE_CONSTANT, VEGF_protein, &(VEGF_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 40);
-    create_gradient(GRADIENT_TYPE_CONSTANT, SEMA3E_protein, &(Sema_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 40);
+    auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.2, 0, -1, -1);
+    auto VEGF_centre = Coordinates(40, 120, 40);
+    create_gradient(GRADIENT_TYPE_LINEAR, VEGF_protein, &(VEGF_centre), GRADIENT_DIRECTION_DEC_Y, 40, 200, 40, true);
     // SUBSTRATE CREATION
 }

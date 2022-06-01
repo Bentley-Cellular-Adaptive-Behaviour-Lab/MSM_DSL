@@ -159,6 +159,11 @@
     <property role="R4oN_" value="Describes a protein gradient within the simulation world." />
     <property role="3GE5qa" value="Gradients" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="3EojsBVloFX" role="1TKVEl">
+      <property role="IQ2nx" value="4222210180560292605" />
+      <property role="TrG5h" value="_legacyVEGF" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="CB_Y3MvTaJ" role="1TKVEi">
       <property role="IQ2ns" value="731720456867910319" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

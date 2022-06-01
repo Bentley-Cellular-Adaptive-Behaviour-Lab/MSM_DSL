@@ -62,13 +62,15 @@
 void World_Container::create_gradient(int gradient_type,
                                       Protein *protein,
                                       Coordinates *source_position,
-                                      Coordinates *sink_position) {
+                                      Coordinates *sink_position,
+                                      bool legacyVEGF = false) {
     std::cout << "Creating sink and source gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
                                       protein,
                                       source_position,
                                       sink_position);
+    new_gradient->set_uses_legacy_VEGF(legacyVEGF);
     new_gradient->determine_source_to_sink_dists();
     new_gradient->determine_directionality();
     new_gradient->apply_gradient_to_sinkandsource();
@@ -87,17 +89,19 @@ void World_Container::create_gradient(int gradient_type,
                                       Protein *protein,
                                       Coordinates *centre_position,
                                       int gradient_direction,
-                                      int height,
                                       int width,
-                                      int depth) {
+                                      int height,
+                                      int depth,
+                                      bool legacyVEGF = false) {
     std::cout << "Creating cuboidal gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
                                       protein,
                                       centre_position,
-                                      height,
                                       width,
+                                      height,
                                       depth);
+    new_gradient->set_uses_legacy_VEGF(legacyVEGF);
     new_gradient->m_gradient_direction = gradient_direction;
     new_gradient->apply_gradient_to_cuboid();
     std::cout << "Gradient created." <<  std::endl;
@@ -107,13 +111,15 @@ void World_Container::create_gradient(int gradient_type,
 void World_Container::create_gradient(int gradient_type,
                                       Protein *protein,
                                       Coordinates *centre_position,
-                                      int sphere_radius) {
+                                      int sphere_radius,
+                                      bool legacyVEGF = false) {
     std::cout << "Creating spherical, point-source gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
                                       protein,
                                       centre_position,
                                       sphere_radius);
+    new_gradient->set_uses_legacy_VEGF(legacyVEGF);
     new_gradient->x_varying = true;
     new_gradient->y_varying = true;
     new_gradient->z_varying = true;

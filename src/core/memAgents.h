@@ -218,6 +218,8 @@ public:
 
     void update_cell_env_levels();
     double env_protein_search(const std::string& proteinName);
+
+    bool vonNeighSearch();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

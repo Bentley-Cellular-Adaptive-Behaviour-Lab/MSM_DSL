@@ -117,7 +117,7 @@ public:
     void apply_gradient_to_sinkandsource();
     void apply_gradient_to_cuboid();
 
-    bool uses_legacy_VEGF() const;
+    [[nodiscard]] bool uses_legacy_VEGF() const;
     void set_uses_legacy_VEGF(bool flag);
 };
 

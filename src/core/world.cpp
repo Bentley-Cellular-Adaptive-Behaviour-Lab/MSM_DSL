@@ -1684,11 +1684,11 @@ void World::creationTimestep(int movie) {
 	//give Env objects correct VEGF level depending on chosen gradients
 //    setInitialVEGF();
 
-	//divide out cells overall levels of proteins to their memAgents once created
-	if (!PROTEIN_TESTING) {
-		for (int j = 0; j < (int) ECagents.size(); j++)
-			ECagents[j]->allocateProts();
-	}
+	// Divide out cells overall levels of proteins to their memAgents once created
+
+    for (int j = 0; j < (int) ECagents.size(); j++) {
+        ECagents[j]->allocateProts();
+    }
 
 	//define exposed membrane agents as those with a face adjacent to env not vertex (von neu neighbours)
 	//only these are flagged to do receptor interactions (required to give matching behaviour when scaling grid)
@@ -1815,6 +1815,7 @@ void World::updateMemAgents() {
 		memp = ALLmemAgents[i];
 		memp->assessed = true;
 		memp->addedJunctionList = false;
+        memp->vonNeighSearch();
 
         memp->update_cell_env_levels();
 
@@ -1948,12 +1949,12 @@ void World::updateECagents() {
 		} else if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
             // Perform ODEs.
             this->odes->check_cell_only_ODEs(ECagents[j]);
-        } else {
-            // Total up the memAgents new active receptor levels, add to time delay stacks.
-			ECagents[j]->updateProteinTotals();
-		}
+        }
 
-		ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to get to nucleus+transcription) to calculate gene expression changes
+        // Total up the memAgents new active receptor levels, add to time delay stacks.
+        ECagents[j]->updateProteinTotals();
+
+        ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
 
 		ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
 
@@ -1975,12 +1976,10 @@ void World::updateECagents() {
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
-		if (!PROTEIN_TESTING) {
-			//distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
-			ECagents[j]->allocateProts();
-		}
+        // Distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
+        ECagents[j]->allocateProts();
 
-		//use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
+        //use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
 			ECagents[j]->calcStability();
 	}
@@ -6559,7 +6558,7 @@ void World::printProteinNames() {
 	int count = 0;
 	for (auto *cell : ECagents) {
 		for (auto *protein : cell->m_cell_type->proteins) {
-			std::cout << protein->get_name() << "_" << count << ",";
+            std::cout << protein->get_name() << "_" << count << ",";
 		}
         for (const auto& pair : cell->get_env_protein_values()) {
             std::cout << pair.first << "_" << count << ",";
@@ -6574,7 +6573,7 @@ void World::printProteinLevels(int timestepInterval) {
 		std::cout << timeStep << ",";
 		for (auto *cell : ECagents) {
 			for (auto *protein : cell->m_cell_type->proteins) {
-				std::cout << protein->get_cell_level(0)  << ",";
+                std::cout << protein->get_cell_level(0) << ",";
 			}
             for (const auto& pair : cell->get_env_protein_values()) {
                 std::cout << pair.second << ",";

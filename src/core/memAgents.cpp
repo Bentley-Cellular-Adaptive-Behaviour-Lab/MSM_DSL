@@ -590,12 +590,8 @@ bool MemAgent::checkNeighsVonForEnv(void) {
 
     if (flag == 1) return true;
     else {
-       
         return false;
-
     }
-   
-
 }
 //-----------------------------------
 //------------------------------------------------------------------------------
@@ -4694,4 +4690,66 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
         }
     }
     return result;
+}
+
+bool MemAgent::vonNeighSearch() {
+    // Searches the von Neumann neighbourhood
+    // for environment agents. If any are found,
+    // set the memAgent vonNeu flag to true,
+    // and return true.
+    bool hasVonNeighs = false;
+    int index = 0;
+    int currentX, currentY, currentZ;
+    auto memAgentX = (int) Mx;
+    auto memAgentY = (int) My;
+    auto memAgentZ = (int) Mz;
+    //same layer
+    do {
+        if (index == 0) {
+            currentX = memAgentX;
+            currentY = memAgentY + 1;
+            currentZ = memAgentZ;
+        } else if (index == 1) {
+            currentX = memAgentX;
+            currentY = memAgentY - 1;
+            currentZ = memAgentZ;
+        } else if (index == 2) {
+            currentX = memAgentX + 1;
+            currentY = memAgentY;
+            currentZ = memAgentZ;
+        } else if (index == 3) {
+            currentX = memAgentX;
+            currentY = memAgentY;
+            currentZ = memAgentZ + 1;
+        } else if (index == 4) {
+            currentX = memAgentX;
+            currentY = memAgentY;
+            currentZ = memAgentZ - 1;
+        } else if (index == 5) {
+            currentX = memAgentX - 1;
+            currentY = memAgentY;
+            currentZ = memAgentZ;
+        }
+
+        //-------------------------------
+        //toroidal only X
+        if (TOROIDAL_X_env){
+            if (currentX >= this->worldP->gridXDimensions)
+                currentX = 0;
+            if (currentX < 0)
+                currentX = this->worldP->gridXDimensions - 1;
+        }
+        if (worldP->insideWorld(currentX, currentY, currentZ)) {
+            if (worldP->grid[currentX][currentY][currentZ].getType() == const_E) {
+                hasVonNeighs = true;
+            } else if ((worldP->grid[currentX][currentY][currentZ].getType() == const_E) && (worldP->grid[currentX][currentY][currentZ].getEid()->Astro)) {
+                hasVonNeighs = true;
+            }
+        }
+
+        index++;
+    } while (index < 6 && !hasVonNeighs);
+
+    this->vonNeu = hasVonNeighs;
+    return hasVonNeighs;
 }

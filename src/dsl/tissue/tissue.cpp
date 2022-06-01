@@ -849,18 +849,12 @@ void Tissue_Vessel::tissue_vessel_connect_mesh() {
 ******************************************************************************************/
 
 void Tissue_Monolayer::create_monolayer() {
-    int j, I;
-    j=0;
-    I=0;
-    int k;
-    int chose;
 
-    int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
-	int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
+    auto cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
+	auto cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
     for (int i = 0; i < m_cell_number; i++) {
-		auto cellType = m_tissue_type->m_cell_type;
-        //creates new object dynamically of type EC (ecp is the e cell pointer)
+        // Create a new cell agent with this cell type.
         EC *newCellAgent = new EC(this->m_world, m_tissue_type->m_cell_type);
 
         newCellAgent->belongs_to = BELONGS_TO_FLAT;
@@ -877,19 +871,18 @@ void Tissue_Monolayer::create_monolayer() {
         newCellAgent->initialiseProteinMemAgentBuffer();
     }
 
-	int start_pos_X = (int)this->m_position->get_x_coord() - ((this->m_width_in_cells * cell_width) / 2);
-	int start_pos_Y = (int)this->m_position->get_y_coord() - ((this->m_height_in_cells * cell_height) / 2);
-
-	int count = 0;
-	int current_pos_Y = start_pos_Y;
+	auto start_pos_X = (int) std::floor(this->m_position->get_x_coord() - ((float) (this->m_width_in_cells * cell_width) / 2));
+	auto start_pos_Y = (int) std::floor(this->m_position->get_y_coord() - ((float) (this->m_height_in_cells * cell_height) / 2));
+    auto current_pos_Y = start_pos_Y;
+	int cellNumber = 0;
 	for (int i = 0; i < this->m_height_in_cells; i++) {
-		int current_pos_X = start_pos_X;
+		auto current_pos_X =  start_pos_X;
 		for (int j = 0; j < this->m_width_in_cells; j++) {
-			int centre_X = (int) (current_pos_X + (cell_width / 2.0f));
-			int centre_Y = (int) (current_pos_Y + (cell_height / 2.0f));
-			tissue_create_2D_square_cell(count, centre_X, centre_Y,(int) this->m_position->get_z_coord());
-			count++;
-			current_pos_X += cell_width;
+			auto centre_X = std::floor((float) current_pos_X + ((float) cell_width / 2.0f));
+			auto centre_Y = std::floor((float) current_pos_Y + ((float) cell_height / 2.0f));
+			tissue_create_2D_square_cell(cellNumber, (int) centre_X, (int) centre_Y,(int) this->m_position->get_z_coord());
+			cellNumber++;
+			current_pos_X += (int) cell_width;
 		}
 		current_pos_Y += cell_height;
 	}
@@ -898,7 +891,7 @@ void Tissue_Monolayer::create_monolayer() {
 
     // Check for junctions to make junction springs and distribute out proteins to memAgents.
     for (auto &cell_agent : m_cell_agents) {
-        for( j = 0; j < cell_agent->nodeAgents.size();j++) {
+        for(int j = 0; j < cell_agent->nodeAgents.size();j++) {
             cell_agent->nodeAgents[j]->connectJunctions(false);
             cell_agent->distributeProteins();
         }
