@@ -30,6 +30,7 @@ class World;
 #define ECpack 1
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
+#define GRAPHICS false
 #define DSL_TESTING true
 #define WORLD_TESTING true
 #define TISSUE_TESTING true
