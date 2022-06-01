@@ -262,8 +262,8 @@
           </node>
           <node concept="2_hQR_" id="Sq0uhnau8n" role="2IF2Qn">
             <node concept="2_n9WQ" id="Sq0uhnau8p" role="2_hQRE">
-              <node concept="30bXRB" id="Sq0uhnaubG" role="2_n9WR">
-                <property role="30bXRw" value="40" />
+              <node concept="30bXRB" id="3Ig6X3XcU1B" role="2_n9WR">
+                <property role="30bXRw" value="20" />
               </node>
             </node>
             <node concept="2_hRrN" id="Sq0uhnaudd" role="2_hQ4V" />
@@ -288,7 +288,7 @@
         <node concept="2_hQR_" id="Sq0uhnau8J" role="2_kRI7">
           <node concept="2_n9WQ" id="Sq0uhnau8L" role="2_hQRE">
             <node concept="30bXRB" id="Sq0uhnaugR" role="2_n9WR">
-              <property role="30bXRw" value="100" />
+              <property role="30bXRw" value="50" />
             </node>
           </node>
           <node concept="2_hRrN" id="Sq0uhnauhd" role="2_hQ4V" />
@@ -308,10 +308,10 @@
     </node>
     <node concept="1yko03" id="ZGTwll$apb" role="1yko01">
       <property role="3cJDZq" value="-40" />
-      <property role="3cJDZs" value="-40" />
+      <property role="3cJDZs" value="-30" />
       <property role="3cJDZ5" value="-40" />
       <property role="3bD6N$" value="80" />
-      <property role="3bD6ND" value="240" />
+      <property role="3bD6ND" value="140" />
       <property role="3bD6NH" value="80" />
       <node concept="2_hQR_" id="ZGTwll$apc" role="3bEhY_">
         <node concept="2_n9WQ" id="ZGTwll$apd" role="2_hQRE">

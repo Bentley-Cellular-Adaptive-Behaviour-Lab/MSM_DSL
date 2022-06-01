@@ -33,7 +33,7 @@ void Tissue_Container::tissue_set_up(World* world) {
     // Cell Creation //
 
     // Tissue Creation //
-    auto Vessel_Pos = Coordinates(40, 40, 40);
+    auto Vessel_Pos = Coordinates(40, 30, 40);
     create_tissue("Vessel", Vessel_Type, &(Vessel_Pos));
 
     // Track environmental proteins //
