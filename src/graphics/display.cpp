@@ -40,14 +40,14 @@
 
 #include <math.h>
 
-//GLUI_Button* startRecordButton;
-//GLUI_Button* endRecordButton;
-//GLUI_StaticText* statText;
-//GLUI_EditText *counter_edittext;
+GLUI_Button* startRecordButton;
+GLUI_Button* endRecordButton;
+GLUI_StaticText* statText;
+GLUI_EditText *counter_edittext;
 
 bool    g_key[255];             // Lookup Table For Key's State (NEW)
 
-//GLUI *glui, *glui2;
+GLUI *glui, *glui2;
 
 // Global Variables
 int WinWidth = 1300;
@@ -96,7 +96,7 @@ float camposz= - 250*/;
 
 float camposx = 0.0f;
 float camposy = 0.0f;////sectY2/2.0f-10;
-float camposz = -100.0f;
+float camposz = 100.0f;
 
 float camPitch=1;
 float camHeading=1;
@@ -1729,10 +1729,10 @@ void display(void) {
             WORLDpointer->simulateTimestep();
             screenRecording();
             counter_edittext->set_int_val(WORLDpointer->timeStep);
-            if (ANALYSIS_HYSTERESIS)
-                WORLDpointer->hysteresisAnalysis();
-            if (ANALYSIS_TIME_TO_PATTERN)
-                WORLDpointer->evaluateSandP();
+//            if (ANALYSIS_HYSTERESIS)
+//                WORLDpointer->hysteresisAnalysis();
+//            if (ANALYSIS_TIME_TO_PATTERN)
+//                WORLDpointer->evaluateSandP();
         }
 
         if (WORLDpointer->timeStep >= MAXtime && screenRecordState == Recording)
