@@ -201,5 +201,8 @@ public:
     std::map<std::string, double>& get_env_protein_values();
     void resetEnvProteinLevels();
     double get_env_protein_level(const std::string& proteinName);
+
+    double calc_fil_length(MemAgent* tipMemAgent);
+    double get_longest_fil_length();
 };
 #endif //SPRINGAGENT_EC_H

@@ -279,7 +279,9 @@ public:
     void setWorldLogger(WorldLogger *logger);
 
 	void printProteinNames();
-	void printProteinLevels(int timestepInterval);
+    void printCellNumbers();
+    void printProteinLevels(int timestepInterval);
+    void printLongestFilLength(int timestepInterval);
 
     bool tissuesHavePatterned() const;
 

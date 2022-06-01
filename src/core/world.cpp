@@ -1581,7 +1581,8 @@ void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
         if (timeStep % 1 == 0) {
-            printProteinLevels(1);
+//            printProteinLevels(1);
+            printLongestFilLength(1);
         }
 
         simulateTimestep();
@@ -6553,6 +6554,15 @@ void World::setWorldLogger(WorldLogger *logger) {
     this->m_worldLogger = logger;
 }
 
+void World::printCellNumbers() {
+    std::cout << "Timestep,";
+    int count = 0;
+    for (auto *cell : ECagents) {
+        std::cout << "Cell_" << count << ",";
+    }
+    std::cout << std::endl;
+}
+
 void World::printProteinNames() {
 	std::cout << "Timestep,";
 	int count = 0;
@@ -6581,6 +6591,16 @@ void World::printProteinLevels(int timestepInterval) {
 		}
 		std::cout << std::endl;
 	}
+}
+
+void World::printLongestFilLength(int timestepInterval) {
+    if (timeStep % timestepInterval == 0) {
+        std::cout << timeStep << ",";
+        for (auto *cell : ECagents) {
+            std::cout << cell->get_longest_fil_length() << ",";
+        }
+        std::cout << std::endl;
+    }
 }
 
 void World::fillParamVector(const std::vector<double>& param_values) {

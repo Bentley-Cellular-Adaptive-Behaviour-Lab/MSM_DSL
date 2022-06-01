@@ -1,4 +1,5 @@
 
+#include <cassert>
 #include <cmath>
 #include <numeric>
 #include <thread>
@@ -2177,4 +2178,37 @@ void EC::store_env_protein(const std::string& proteinName) {
 
 double EC::get_env_protein_level(const std::string& proteinName) {
     return this->m_env_protein_values[proteinName];
+}
+
+double EC::calc_fil_length(MemAgent* tipMemAgent) {
+    // Gets Euclidean distance between a tip and
+    // base memAgent.
+    assert(tipMemAgent->FIL == TIP);
+    auto currentAgent = tipMemAgent;
+    auto currentNeighbour = tipMemAgent->filNeigh;
+    // Traverse filopodia until we hit the base.
+    do {
+        currentAgent = currentNeighbour;
+        currentNeighbour = currentAgent->filNeigh;
+    } while (currentAgent->FIL != BASE);
+    // Get distance between base and tip.
+    return worldP->getDist(tipMemAgent->Mx,
+                           tipMemAgent->My,
+                           tipMemAgent->Mz,
+                           currentAgent->Mx,
+                           currentAgent->My,
+                           currentAgent->Mz);
+}
+
+double EC::get_longest_fil_length() {
+    double longest_fil_length = 0;
+    for (auto & nodeAgent : this->nodeAgents) {
+        if (nodeAgent->FIL == TIP) {
+            auto currentLength = calc_fil_length(nodeAgent);
+            if (currentLength > longest_fil_length) {
+                longest_fil_length = currentLength;
+            }
+        }
+    }
+    return longest_fil_length;
 }
