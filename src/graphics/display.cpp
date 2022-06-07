@@ -95,8 +95,8 @@ float camposy= -1000;
 float camposz= - 250*/;
 
 float camposx = 0.0f;
-float camposy = 0.0f;////sectY2/2.0f-10;
-float camposz = 100.0f;
+float camposy = -20.0f;////sectY2/2.0f-10;
+float camposz = -100.0f;
 
 float camPitch=1;
 float camHeading=1;

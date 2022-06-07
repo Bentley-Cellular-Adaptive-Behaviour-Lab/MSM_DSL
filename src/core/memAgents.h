@@ -142,6 +142,7 @@ public:
 
 	std::vector<Protein*> owned_proteins;
 
+	int get_n_nodes();
 	void add_cell_proteins();
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
@@ -220,6 +221,9 @@ public:
     double env_protein_search(const std::string& proteinName);
 
     bool vonNeighSearch();
+
+	// DEBUG: Remove at some point.
+	double DLL4_search();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

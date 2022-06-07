@@ -2,6 +2,7 @@
 // Created by Tom on 12/11/2020.
 //
 
+#include <unordered_map>
 #include <random>
 
 #include "CPM_module.h"
@@ -275,7 +276,7 @@ World::World(const int& grid_xMax,
 
     this->fillParamVector(paramValues);
 
-    Pause = 0;
+    Pause = 1;
     timeStep = -1;
 
     gridXDimensions = grid_xMax;
@@ -1580,9 +1581,10 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
-        if (timeStep % 1 == 0) {
-//            printProteinLevels(1);
-            printLongestFilLength(1);
+        if (timeStep % 10 == 0) {
+            printProteinLevels(10);
+//            printLongestFilLength(1);
+//			get_MSM_metrics(1);
         }
 
         simulateTimestep();
@@ -6526,20 +6528,24 @@ int World::new_rand() {
 }
 
 template <class _RandomAccessIterator>
-void World::new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last ) {
-    if (first != last)
-        for (_RandomAccessIterator i = first + 1; i != last; ++i)
-        {
-            // XXX rand() % N is not uniformly distributed
-            _RandomAccessIterator j = first + new_rand() % ((i - first) + 1);
-            if (i != j)
-                std::iter_swap(i, j);
-        }
+void World::new_random_shuffle(_RandomAccessIterator first, _RandomAccessIterator last) {
+    if (first != last) {
+		for (_RandomAccessIterator i = first + 1; i != last; ++i) {
+			_RandomAccessIterator j = first + new_rand() % ((i - first) + 1);
+			if (i != j)
+				std::iter_swap(i, j);
+		}
+	}
 }
 
-void World::shuffleEnvAgents(std::vector<Env*> envAgents) {
+void World::shuffleEnvAgents(std::vector<Env*> &envAgents) {
     // Hacky way to get the shuffle function working.
-    new_random_shuffle(envAgents.begin(),envAgents.end());
+	new_random_shuffle(envAgents.begin(), envAgents.end());
+}
+
+void World::shuffleLocations(std::vector<Location*> &locations) {
+	// Hacky way to get the shuffle function working.
+	new_random_shuffle(locations.begin(), locations.end());
 }
 
 void World::createLogger() {
@@ -6556,9 +6562,10 @@ void World::setWorldLogger(WorldLogger *logger) {
 
 void World::printCellNumbers() {
     std::cout << "Timestep,";
-    int count = 0;
+    int count = 1;
     for (auto *cell : ECagents) {
         std::cout << "Cell_" << count << ",";
+		count++;
     }
     std::cout << std::endl;
 }
@@ -6583,10 +6590,14 @@ void World::printProteinLevels(int timestepInterval) {
 		std::cout << timeStep << ",";
 		for (auto *cell : ECagents) {
 			for (auto *protein : cell->m_cell_type->proteins) {
-                std::cout << protein->get_cell_level(0) << ",";
+//				if (protein->get_name() == "DLL4") {
+//					std::cout << protein->get_cell_level(0) << ",";
+//				}
 			}
             for (const auto& pair : cell->get_env_protein_values()) {
-                std::cout << pair.second << ",";
+				if (pair.first == "VEGF") {
+					std::cout << pair.second << ",";
+				}
             }
 		}
 		std::cout << std::endl;
@@ -6653,4 +6664,85 @@ void World::resetCellLevels() {
             cellAgent->distributeProteins();
         }
     }
+}
+
+void World::get_MSM_metrics(int timestepInterval) {
+	if (timeStep % timestepInterval == 0) {
+		std::cout << timeStep << ",";
+		for (auto &cell: this->ECagents) {
+			std::cout << cell->actNotCurrent << ",";
+		}
+		std::cout << std::endl;
+	}
+}
+
+bool contains_protein_name(const std::vector<std::string> &protein_names,
+						   const std::string &query_name) {
+	if (std::find(protein_names.begin(), protein_names.end(), query_name) != protein_names.end()) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+void World::create_outfiles() {
+	for (auto cell : ECagents) {
+		for (auto protein : cell->m_cell_type->proteins) {
+			if (!contains_protein_name(m_proteinNames, protein->get_name())) {
+				m_proteinNames.push_back(protein->get_name());
+			}
+		}
+	}
+	for (auto name : m_proteinNames) {
+		create_outfile(name);
+		create_outfile_headers(name);
+	}
+}
+
+void World::write_to_outfiles() {
+	for (auto cell : ECagents) {
+		for (auto protein : cell->m_cell_type->proteins) {
+			if (!contains_protein_name(m_proteinNames, protein->get_name())) {
+				m_proteinNames.push_back(protein->get_name());
+			}
+		}
+	}
+	for (auto name : m_proteinNames) {
+		create_outfile(name);
+		create_outfile_headers(name);
+	}
+}
+
+void World::create_outfile(const std::string &protein_name) {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+	std::string file_string = "results_" + protein_name + ".csv";
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_outfile_headers(const std::string &protein_name) {
+	std::ofstream file;
+	std::string file_string = "results_" + protein_name + ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	if (file.is_open()) {
+		file << "Timestep" << ",";
+		int count = 1;
+		for (auto &cell : ECagents) {
+			file << "cell_" << count << ", ";
+			count++;
+		}
+	}
+}
+
+void World::write_to_outfile(const std::string &protein_name) {
+	std::ofstream file;
+	std::string file_string = "results_" + protein_name + ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	if (file.is_open()) {
+		file << timeStep << ",";
+		for (auto &cell : ECagents) {
+			file << cell->get_cell_protein_level(protein_name,0) << ", ";
+		}
+	}
+	file.close();
 }

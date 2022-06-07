@@ -246,10 +246,12 @@ public:
 
     int new_rand();
     template <class _RandomAccessIterator>
-    void new_random_shuffle( _RandomAccessIterator first, _RandomAccessIterator last );
+    void new_random_shuffle(_RandomAccessIterator first, _RandomAccessIterator last);
 
-    //Hacky way to avoid linker errors.
-    void shuffleEnvAgents(std::vector<Env*> envAgents);
+
+	//Hacky way to avoid linker errors.
+    void shuffleEnvAgents(std::vector<Env*>& envAgents);
+	void shuffleLocations(std::vector<Location*> &locations);
 
     //
     World_Container* getWorldContainer() {
@@ -291,6 +293,18 @@ public:
                                 const bool& changeDLL4 = false);
 
     void resetCellLevels();
+
+	void get_MSM_metrics(int timestepInterval);
+
+	// Used in logging.
+	std::vector<std::string> m_proteinNames;
+	void create_outfile(const std::string &protein_name);
+
+	void write_to_outfile(const std::string &protein_name);
+
+	void create_outfile_headers(const std::string &protein_name);
+
+	void create_outfiles();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

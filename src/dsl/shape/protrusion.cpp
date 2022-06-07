@@ -22,15 +22,8 @@
 
 // TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
 
-// void MemAgent::TokenTrading() OR void MemAgent::ActinFlow()
+// RETRACTION BEHAVIOUR?
 
-// void EC::calcCurrentActinUsed() -> EC:: calcCytoProteinUsed()
-
-// void MemAgent::veilAdvance()
-
-// void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) ->
-
-// void MemAgent::VEGFRresponse() ->
 
 Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType) {
     assert(baseMemAgent->FIL == NONE);

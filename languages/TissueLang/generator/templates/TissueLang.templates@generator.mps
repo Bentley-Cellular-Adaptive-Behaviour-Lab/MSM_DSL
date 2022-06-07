@@ -1718,7 +1718,7 @@
                           </node>
                         </node>
                         <node concept="3TrcHB" id="5$qoOFygaFi" role="2OqNvi">
-                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
+                          <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_delay" />
                         </node>
                       </node>
                     </node>

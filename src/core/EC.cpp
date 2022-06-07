@@ -261,6 +261,10 @@ void EC::allocateProts(void) {
     calcVonNeighs();
     div = VonNeighs;//nodeAgents.size()+springAgents.size()+surfaceAgents.size();
 
+	if (worldP->timeStep == 30) {
+		int test = 0;
+	}
+
     //count how many agents are at the junction-----------------------------------------------
     for (i = 0; i < nodeAgents.size(); i++) {
         nodeAgents[i]->assessed=false;
@@ -301,8 +305,15 @@ void EC::allocateProts(void) {
         }
         
         if (nodeAgents[j]->junction) {
+			auto currentAgent = nodeAgents[j];
             nodeAgents[j]->Notch1 = (float)NotchNorm / (float)divJunction;
             nodeAgents[j]->Dll4 = (float)Dll4tot / (float)divJunction;
+			if (worldP->timeStep == 30) {
+				auto num = nodeAgents[j]->Dll4;
+				if (num > 0) {
+					int test = 0;
+				}
+			}
         } else {
             nodeAgents[j]->Notch1 = 0.0f;
             nodeAgents[j]->Dll4 = 0.0f;
@@ -441,6 +452,10 @@ void EC::updateProteinTotals(void){
     activeNotchtot=0.0f;
     activeVEGFRtot=0.0f;
     int junctionAgents=0;
+
+	if (worldP->timeStep == 30) {
+		int test = 0;
+	}
 
     for(m=0;m<uptoN;m++){
         
@@ -1011,13 +1026,15 @@ bool EC::cellIsNeighbour(EC *query_ec) {
 
 double EC::get_cell_protein_level(const std::string& protein_name,
                                   const int& timestep_value) {
+	double value = -1;
 	if (this->has_protein(protein_name)) {
 		for (auto protein : this->m_cell_type->proteins) {
 			if (protein->get_name() == protein_name) {
-				return protein->get_cell_level(timestep_value);
+				value = protein->get_cell_level(timestep_value);
 			}
 		}
 	}
+	return value;
 }
 
 /*****************************************************************************************

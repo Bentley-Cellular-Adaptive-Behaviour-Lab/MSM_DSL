@@ -263,7 +263,7 @@ int main(int argc, char * argv[]) {
 #else
         std::cout << "World created." << "\n";
 //        world->printProteinNames();
-        world->printCellNumbers();
+//        world->printCellNumbers();
         world->runSimulation();
 
         //Get end time, and calculate elapsed time -> add these to results file.
