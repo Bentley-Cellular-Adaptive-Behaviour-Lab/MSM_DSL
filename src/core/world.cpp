@@ -1582,7 +1582,7 @@ void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
         if (timeStep % 10 == 0) {
-			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
+//			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
 			write_to_outfiles();
 		}
 
@@ -6759,7 +6759,8 @@ void World::write_to_env_outfile(const std::string &protein_name) {
 	if (file.is_open()) {
 		file << timeStep << ",";
 		for (auto &cell : ECagents) {
-			file << cell->get_env_protein_level(protein_name) << ", ";
+            unsigned int agents = cell->nodeAgents.size() + cell->springAgents.size() + cell->surfaceAgents.size();
+			file << cell->get_env_protein_level(protein_name) / agents << ", ";
 		}
 		file << "\n";
 	}
