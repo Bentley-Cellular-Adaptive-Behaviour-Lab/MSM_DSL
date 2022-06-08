@@ -111,7 +111,7 @@
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
-        <property id="6420553392043975787" name="_transcriptionDelay" index="2VbSsx" />
+        <property id="6420553392043975787" name="_delay" index="2VbSsx" />
         <property id="3125878369731567265" name="_location" index="3_z0tL" />
         <property id="5550369704152692997" name="_showDeg" index="3L6Erj" />
         <property id="5550369704152692991" name="_showProd" index="3L6EsD" />

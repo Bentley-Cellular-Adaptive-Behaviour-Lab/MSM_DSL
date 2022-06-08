@@ -1582,10 +1582,9 @@ void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
         if (timeStep % 10 == 0) {
-            printProteinLevels(10);
-//            printLongestFilLength(1);
-//			get_MSM_metrics(1);
-        }
+			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
+			write_to_outfiles();
+		}
 
         simulateTimestep();
 
@@ -6686,30 +6685,34 @@ bool contains_protein_name(const std::vector<std::string> &protein_names,
 }
 
 void World::create_outfiles() {
-	for (auto cell : ECagents) {
-		for (auto protein : cell->m_cell_type->proteins) {
-			if (!contains_protein_name(m_proteinNames, protein->get_name())) {
-				m_proteinNames.push_back(protein->get_name());
+	for (auto cell: ECagents) {
+		for (auto protein: cell->m_cell_type->proteins) {
+			if (!contains_protein_name(m_cellProteinNames, protein->get_name())) {
+				m_cellProteinNames.push_back(protein->get_name());
+			}
+		}
+		for (auto protein: cell->get_env_protein_values()) {
+			if (!contains_protein_name(m_envProteinNames, protein.first)) {
+				m_envProteinNames.push_back(protein.first);
 			}
 		}
 	}
-	for (auto name : m_proteinNames) {
+	for (auto name: m_cellProteinNames) {
+		create_outfile(name);
+		create_outfile_headers(name);
+	}
+	for (const auto& name: m_envProteinNames) {
 		create_outfile(name);
 		create_outfile_headers(name);
 	}
 }
 
 void World::write_to_outfiles() {
-	for (auto cell : ECagents) {
-		for (auto protein : cell->m_cell_type->proteins) {
-			if (!contains_protein_name(m_proteinNames, protein->get_name())) {
-				m_proteinNames.push_back(protein->get_name());
-			}
-		}
+	for (const auto& name : m_cellProteinNames) {
+		write_to_cell_outfile(name);
 	}
-	for (auto name : m_proteinNames) {
-		create_outfile(name);
-		create_outfile_headers(name);
+	for (const auto& name : m_envProteinNames) {
+		write_to_env_outfile(name);
 	}
 }
 
@@ -6731,10 +6734,11 @@ void World::create_outfile_headers(const std::string &protein_name) {
 			file << "cell_" << count << ", ";
 			count++;
 		}
+		file << "\n";
 	}
 }
 
-void World::write_to_outfile(const std::string &protein_name) {
+void World::write_to_cell_outfile(const std::string &protein_name) {
 	std::ofstream file;
 	std::string file_string = "results_" + protein_name + ".csv";
 	file.open(file_string.c_str(), std::ios_base::app);
@@ -6743,6 +6747,21 @@ void World::write_to_outfile(const std::string &protein_name) {
 		for (auto &cell : ECagents) {
 			file << cell->get_cell_protein_level(protein_name,0) << ", ";
 		}
+		file << "\n";
+	}
+	file.close();
+}
+
+void World::write_to_env_outfile(const std::string &protein_name) {
+	std::ofstream file;
+	std::string file_string = "results_" + protein_name + ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	if (file.is_open()) {
+		file << timeStep << ",";
+		for (auto &cell : ECagents) {
+			file << cell->get_env_protein_level(protein_name) << ", ";
+		}
+		file << "\n";
 	}
 	file.close();
 }

@@ -297,14 +297,15 @@ public:
 	void get_MSM_metrics(int timestepInterval);
 
 	// Used in logging.
-	std::vector<std::string> m_proteinNames;
+	std::vector<std::string> m_cellProteinNames;
+	std::vector<std::string> m_envProteinNames;
+	void create_outfiles();
+	void write_to_outfiles();
 	void create_outfile(const std::string &protein_name);
-
-	void write_to_outfile(const std::string &protein_name);
-
+	void write_to_cell_outfile(const std::string &protein_name);
 	void create_outfile_headers(const std::string &protein_name);
 
-	void create_outfiles();
+	void write_to_env_outfile(const std::string &protein_name);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

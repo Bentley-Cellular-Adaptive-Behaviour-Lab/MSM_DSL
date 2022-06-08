@@ -262,9 +262,9 @@ int main(int argc, char * argv[]) {
         glutMainLoop();
 #else
         std::cout << "World created." << "\n";
-//        world->printProteinNames();
-//        world->printCellNumbers();
-        world->runSimulation();
+		world->create_outfiles();
+		std::cout << "Running simulation." << "\n";
+		world->runSimulation();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();
