@@ -1,5 +1,5 @@
 
-#if GRAPHICS
+//#if GRAPHICS
 
 #include "display.h"
 #include "ScreenRecording.h"
@@ -775,6 +775,8 @@ void World::viewMesh(void) {
 
                                 //red=0.4; green=0.2245098; blue = 0.545098;
 
+                                unsigned int agents = mp->Cell->nodeAgents.size() + mp->Cell->surfaceAgents.size() + mp->Cell->surfaceAgents.size();
+
                                 if(viewType==1){ red=(float)mp->Cell->VEGFRtot/((float)VEGFRNORM); green=0.2245098; blue = 0.545098;
                                 //if(red<0.5) red = 0.5;
                                 }
@@ -787,8 +789,21 @@ void World::viewMesh(void) {
                                 else if(viewType==8){ red= 0.0f;green=0.0f; blue = 0.0f;}
                                 else if(viewType==9){ red= 0.2f;green=0.8f; blue = mp->Force[0]+mp->Force[1]+mp->Force[2];}
                                 else if(viewType==10){ red= mp->Cell->red;green=mp->Cell->green; blue = mp->Cell->blue;}
+                                else if(viewType==11){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
+                                else if(viewType==12){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
+                                else if(viewType==13){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                else if(viewType==14){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
+                                else if(viewType==15){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
+                                else if(viewType==16){ red = 0.534f;
+                                    green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
 
-                                //if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
+
+                               //if(flag3er==true){ red = 1.0; green = 1.0; blue = 0.8;}
 
                     if(mutantView==1){
                         if(mp->Cell->mutant==true){
@@ -854,6 +869,8 @@ void World::viewMesh(void) {
 
                     //if(j%2==1){
                     //red=1.0f; green = 0.0f; blue = 1.0f;
+                    unsigned int agents = mp->Cell->nodeAgents.size() + mp->Cell->surfaceAgents.size() + mp->Cell->surfaceAgents.size();
+
 
                     if(viewType==1){ red=(float)mp->Cell->VEGFRtot/((float)VEGFRNORM); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
                     else if(viewType==3){ red=(float)mp->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
@@ -865,6 +882,18 @@ void World::viewMesh(void) {
                     else if(viewType==8){ red= 0.0f;green=0.0f; blue = 0.0f;}
                     else if(viewType==9){ red= 0.2f;green=0.8f; blue = (mp->Force[0]+mp->Force[1]+mp->Force[2])*10;}
                     else if(viewType==10){ red= mp->Cell->red;green=mp->Cell->green; blue = mp->Cell->blue;}
+                    else if(viewType==11){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
+                    else if(viewType==12){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
+                    else if(viewType==13){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                    else if(viewType==14){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
+                    else if(viewType==15){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
+                    else if(viewType==16){ red = 0.534f;
+                        green = 0.0623f+mp->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
 
 
                    
@@ -1232,6 +1261,7 @@ void World::viewGrid(void){
                                 if((nodeAgentView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
                                 if((springAgentsView==1)&&(grid[i][j][k].getFids()[m]->node)) flag=1;
                                 if(flag==1){
+                                    unsigned int agents = grid[i][j][k].getFids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getFids()[m]->Cell->surfaceAgents.size();
                                     if(viewType==1){ red=((float)grid[i][j][k].getFids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
                                     else if(viewType==3){ red=(float)grid[i][j][k].getFids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
                                     else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getFids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
@@ -1243,8 +1273,19 @@ void World::viewGrid(void){
 									
                                     if(grid[i][j][k].getFids()[m]->node==false){red= 0.7f;green=0.7f; blue = 0.7f;}
                                     else{red= 0.0f;green=0.0f; blue = 0.0f;}
-}else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
-
+                                    }else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
+                                    else if(viewType==11){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
+                                    else if(viewType==12){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==13){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==14){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
+                                    else if(viewType==15){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
+                                    else if(viewType==16){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
                                     if((junctionView==1)&&(grid[i][j][k].getFids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
                                     if((FAview==1)&&(grid[i][j][k].getFids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
                                     
@@ -1308,7 +1349,9 @@ void World::viewGrid(void){
                                 }*/
                                 
                                 if((surfaceAgentsView==1)&&(grid[i][j][k].getMids()[m]->triangle.size()!=0)){
-                                    
+
+                                    unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
+
                                     //if(grid[i][j][k].Mids[m]->FIL==NONE) cout<<"left over"<<endl;
                                     red=0.30f; green = 0.40f; blue = 1.0f;
                                     //if(grid[i][j][k].Mids.size()>1)cout<<"doubled up!"<<grid[i][j][k].Mids.size()<<endl;
@@ -1321,7 +1364,18 @@ void World::viewGrid(void){
                                     else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getMids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
                                     else if(viewType==8){ red= 0.3f;green=0.3f; blue = 0.3f;}
                                     else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
-
+                                    else if(viewType==11){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
+                                    else if(viewType==12){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==13){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==14){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
+                                    else if(viewType==15){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
+                                    else if(viewType==16){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
 
 									
                                     if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)) {red=1.03f; green = 1.8f; blue = 1.2f;}
@@ -1334,7 +1388,9 @@ void World::viewGrid(void){
                                 }
                                 
                                 if((nodeAgentView==1)&&(grid[i][j][k].getMids()[m]->node)){
-                                    
+                                    unsigned int agents = grid[i][j][k].getMids()[m]->Cell->nodeAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size() + grid[i][j][k].getMids()[m]->Cell->surfaceAgents.size();
+
+
                                     if(viewType==1){ red=((float)grid[i][j][k].getMids()[m]->Cell->VEGFRtot/((float)VEGFRNORM/(float)ECcross)); green=0.2245098; blue = 0.545098;}//if(red<0.5) red = 0.5;}
                                     else if(viewType==3){ red=(float)grid[i][j][k].getMids()[m]->filTokens/5.0f;green=0.2245098; blue = 0.545098;}
                                     else if(viewType==2){ red= 0.534f;green=0.0623f+grid[i][j][k].getMids()[m]->Cell->Dll4tot/(float)MAX_dll4; blue = 0.5923f;}
@@ -1346,6 +1402,18 @@ void World::viewGrid(void){
                                     }
                                     else if(viewType==8){ red= 0.0f;green=0.0f; blue = 0.0f;}
                     else if(viewType==10){ red= grid[i][j][k].getMids()[m]->Cell->red;green=grid[i][j][k].getMids()[m]->Cell->green; blue =grid[i][j][k].getMids()[m]->Cell->blue;}
+                                    else if(viewType==11){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
+                                    else if(viewType==12){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==13){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("VEGF_VEGFR",0); blue = 0.5923f;}
+                                    else if(viewType==14){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4",0); blue = 0.5923f;}
+                                    else if(viewType==15){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
+                                    else if(viewType==16){ red = 0.534f;
+                                        green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
 				
                                     if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)){ red=1.03f; green = 1.8f; blue = 1.2f;}
                                     if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
@@ -1904,9 +1972,13 @@ void displayGlui(int * argc, char  ** argv) {
     listbox->add_item(8, "black and white");
     listbox->add_item(9, "force");
     listbox->add_item(10, "cell colours");
-    
+    listbox->add_item(11, "DSL - VEGF");
+    listbox->add_item(12, "DSL - VEGFR");
+    listbox->add_item(13, "DSL - VEGF_VEGFR");
+    listbox->add_item(14, "DSL - DLL4");
+    listbox->add_item(15, "DSL - NOTCH");
+    listbox->add_item(16, "DSL - DLL4_NOTCH");
 
-	
     GLUI_Panel *vessels= glui->add_panel("Display elements", true);
     glui->add_checkbox_to_panel( vessels, "Mesh", &meshView);
     glui->add_checkbox_to_panel( vessels, "grid", &gridView);
@@ -2019,4 +2091,4 @@ void displayGlui(int * argc, char  ** argv) {
     GLUI_Master.set_glutIdleFunc( myGlutIdle );
 }
 
-#endif
+//#endif
