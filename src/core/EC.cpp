@@ -2013,7 +2013,7 @@ bool EC::removeProtrusionFromList(Protrusion* protrusion) {
     bool protrusionRemoved = false;
     for (auto *currentProtrusion :this->m_protrusions) {
         if (protrusion == currentProtrusion) {
-            this->m_protrusions.remove(protrusion);
+			std::remove(this->m_protrusions.begin(), this->m_protrusions.end(), protrusion);
             protrusionRemoved = true;
             break;
         }
@@ -2021,7 +2021,7 @@ bool EC::removeProtrusionFromList(Protrusion* protrusion) {
     return protrusionRemoved;
 }
 
-std::list<Protrusion*>& EC::getProtrusionList() {
+std::vector<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
 

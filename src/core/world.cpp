@@ -1582,7 +1582,7 @@ void World::runSimulation() {
 	while (timeStep <= MAXtime) {
 
         if (timeStep % 10 == 0) {
-//			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
+			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
 			write_to_outfiles();
 		}
 

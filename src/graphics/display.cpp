@@ -1,5 +1,5 @@
 
-//#if GRAPHICS
+#if GRAPHICS
 
 #include "display.h"
 #include "ScreenRecording.h"
@@ -1414,7 +1414,7 @@ void World::viewGrid(void){
                                         green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("NOTCH",0); blue = 0.5923f;}
                                     else if(viewType==16){ red = 0.534f;
                                         green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_cell_protein_level("DLL4_NOTCH",0); blue = 0.5923f;}
-				
+
                                     if((junctionView==1)&&(grid[i][j][k].getMids()[m]->junction)){ red=1.03f; green = 1.8f; blue = 1.2f;}
                                     if((FAview==1)&&(grid[i][j][k].getMids()[m]->FA)) {red=0.03f; green = 1.8f; blue = 0.2f;}
                                     if((grid[i][j][k].getMids()[m]->labelled)&&(labelledView))green = 0.8;
@@ -2091,4 +2091,4 @@ void displayGlui(int * argc, char  ** argv) {
     GLUI_Master.set_glutIdleFunc( myGlutIdle );
 }
 
-//#endif
+#endif

@@ -6,9 +6,9 @@
 #define SPRINGAGENT_EC_H
 
 #include <array>
+#include <list>
 #include <map>
 #include <string>
-#include <list>
 #include <vector>
 
 class Coordinates;
@@ -38,7 +38,7 @@ namespace ECUtils {
 
 class EC {
 private:
-    std::list<Protrusion*> m_protrusions;
+    std::vector<Protrusion*> m_protrusions;
     std::vector<EC*> neigh_cells;
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
@@ -182,7 +182,7 @@ public:
     void destroyProtrusion(Protrusion *protrusion);
     void addProtrusionToList(Protrusion* protrusion);
     bool removeProtrusionFromList(Protrusion* protrusion);
-    std::list<Protrusion*>& getProtrusionList();
+    std::vector<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
 
     const std::map<std::string, double>& getProteinMemAgentBuffer();

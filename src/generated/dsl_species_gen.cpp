@@ -59,10 +59,8 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     double Theta = calc_Theta_rate();
     double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
     double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-    double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_1_rate(DLL4, adjacent_NOTCH);
-    double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_1_rate(adjacent_DLL4_NOTCH);
-    double DLL4_NOTCH_ON_2 = calc_DLL4_NOTCH_ON_2_rate(adjacent_DLL4, NOTCH);
-    double DLL4_NOTCH_OFF_2 = calc_DLL4_NOTCH_OFF_2_rate(DLL4_NOTCH);
+    double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_rate(DLL4, adjacent_NOTCH);
+    double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_rate(adjacent_DLL4_NOTCH);
     double DLL4_NOTCH_DEG = calc_DLL4_NOTCH_DEG_rate(DLL4_NOTCH);
     double VEGFR_DEG = calc_VEGFR_DEG_rate(VEGFR);
     double VEGFR_PROD = calc_VEGFR_PROD_rate();
@@ -121,17 +119,15 @@ void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x,
 // Parameter Definitions
     double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
     double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-    double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_1_rate(DLL4, adjacent_NOTCH);
-    double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_1_rate(adjacent_DLL4_NOTCH);
-    double DLL4_NOTCH_ON_2 = calc_DLL4_NOTCH_ON_2_rate(adjacent_DLL4, NOTCH);
-    double DLL4_NOTCH_OFF_2 = calc_DLL4_NOTCH_OFF_2_rate(DLL4_NOTCH);
+    double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_rate(DLL4, adjacent_NOTCH);
+    double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_rate(adjacent_DLL4_NOTCH);
 // ODE Definitions
-    dxdt[0] = +(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1+(DLL4_NOTCH_ON_2)*1-(DLL4_NOTCH_OFF_2)*1;
+    dxdt[0] = +(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1;
     dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
     dxdt[2] = +(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-    dxdt[3] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1;
+    dxdt[3] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1;
     dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-    dxdt[5] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1;
+    dxdt[5] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1;
     dxdt[6] = 0;
     dxdt[7] = 0;
     dxdt[8] = 0;
@@ -180,10 +176,8 @@ void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, En
     double Theta = calc_Theta_rate();
     double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
     double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
-    double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_1_rate(DLL4, adjacent_NOTCH);
-    double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_1_rate(adjacent_DLL4_NOTCH);
-    double DLL4_NOTCH_ON_2 = calc_DLL4_NOTCH_ON_2_rate(adjacent_DLL4, NOTCH);
-    double DLL4_NOTCH_OFF_2 = calc_DLL4_NOTCH_OFF_2_rate(DLL4_NOTCH);
+    double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(DLL4, NOTCH);
+    double DLL4_NOTCH_OFF = calc_DLL4_NOTCH_OFF_rate(DLL4_NOTCH);
     double DLL4_NOTCH_DEG = calc_DLL4_NOTCH_DEG_rate(DLL4_NOTCH);
     double VEGFR_DEG = calc_VEGFR_DEG_rate(VEGFR);
     double VEGFR_PROD = calc_VEGFR_PROD_rate();
@@ -193,27 +187,21 @@ void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, En
     double NOTCH_PROD = calc_NOTCH_PROD_rate();
     double VEGFR_INHIB = calc_VEGFR_INHIB_rate(VEGFR, DLL4_NOTCH, Nu);
     double DLL4_UPREG = calc_DLL4_UPREG_rate(Theta, VEGF_VEGFR, Nu);
-    // ODE Definitions
-    dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1+(DLL4_NOTCH_ON_2)*1-(DLL4_NOTCH_OFF_2)*1;
+
+	double NOTCH_DIFF = calc_NOTCH_DIFF_rate(NOTCH, adjacent_NOTCH);
+	double DLL4_DIFF = calc_DLL4_DIFF_rate(DLL4, adjacent_DLL4);
+
+	// ODE Definitions
+    dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_OFF)*1;
     dxdt[1] = +(VEGFR_PROD)-(VEGFR_DEG)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB);
     dxdt[2] = -(VEGF_VEGFR_DEG)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-    dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1+(DLL4_UPREG);
+    dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1+(DLL4_UPREG)+(DLL4_DIFF);
     dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-    dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1;
-    dxdt[6] = 0;
+//    dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1+(NOTCH_DIFF);
+	dxdt[5] = 0; // Changed Notch dxdt to 0.
+	dxdt[6] = 0;
     dxdt[7] = 0;
     dxdt[8] = 0;
-
-    // Testing : No production or degradation terms.
-//    dxdt[0] = +(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1+(DLL4_NOTCH_ON_2)*1-(DLL4_NOTCH_OFF_2)*1;
-//    dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB);
-//    dxdt[2] = +(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-//    dxdt[3] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1+(DLL4_UPREG);
-//    dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
-//    dxdt[5] = -(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1;
-//    dxdt[6] = 0;
-//    dxdt[7] = 0;
-//    dxdt[8] = 0;
 }
 
 void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
@@ -287,37 +275,32 @@ static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR) {
     return VEGF_VEGFR*0.01;
 }
 
-static double calc_DLL4_NOTCH_ON_1_rate(double DLL4, double adjacent_NOTCH) {
-    return DLL4*adjacent_NOTCH*0.1;
+static double calc_DLL4_NOTCH_ON_rate(double DLL4, double NOTCH) {
+    return DLL4*NOTCH*0.1;
 }
 
-static double calc_DLL4_NOTCH_OFF_1_rate(double adjacent_DLL4_NOTCH) {
-    return adjacent_DLL4_NOTCH*0.01;
-}
-
-static double calc_DLL4_NOTCH_ON_2_rate(double adjacent_DLL4, double NOTCH) {
-    return adjacent_DLL4*NOTCH*0.1;
-}
-
-static double calc_DLL4_NOTCH_OFF_2_rate(double DLL4_NOTCH) {
+static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH) {
     return DLL4_NOTCH*0.01;
 }
 
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu) {
+	Nu = 3;
     return (0.001+Theta*pow(VEGF_VEGFR,Nu)/1+pow(VEGF_VEGFR,Nu)/2)/2;
 }
 
 static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu) {
-    return 0.005*VEGFR*pow(DLL4_NOTCH,Nu);
+	Nu = 3;
+    return 0.5*VEGFR*pow(DLL4_NOTCH,Nu); // Changed to 0.5
 }
 
 
 static double calc_NOTCH_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
-        auto map = neighbour->getProteinStartBuffer();
-        level += map["NOTCH"];
-    }
+//        auto map = neighbour->getProteinStartBuffer();
+//        level += map["NOTCH"];
+		level += neighbour->get_cell_protein_level("NOTCH",0);
+	}
     if (level == 0.0) {
         return 0.0;
     } else {
@@ -328,9 +311,10 @@ static double calc_NOTCH_adjacent_level(EC *ec) {
 static double calc_DLL4_NOTCH_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
-        auto map = neighbour->getProteinStartBuffer();
-        level += map["DLL4_NOTCH"];
-    }
+//        auto map = neighbour->getProteinStartBuffer();
+//        level += map["DLL4_NOTCH"];
+		level += neighbour->get_cell_protein_level("DLL4_NOTCH",0);
+	}
     if (level == 0.0) {
         return 0.0;
     } else {
@@ -341,12 +325,21 @@ static double calc_DLL4_NOTCH_adjacent_level(EC *ec) {
 static double calc_DLL4_adjacent_level(EC *ec) {
     double level = 0.0;
     for (auto *neighbour : ec->getNeighCellVector()) {
-        auto map = neighbour->getProteinStartBuffer();
-        level += map["DLL4"];
+//        auto map = neighbour->getProteinStartBuffer();
+//        level += map["DLL4"];
+		level += neighbour->get_cell_protein_level("DLL4",0);
     }
     if (level == 0.0) {
         return 0.0;
     } else {
         return level / (float) ec->getNeighCellVector().size();
     }
+}
+
+static double calc_NOTCH_DIFF_rate(double NOTCH, double adjacent_NOTCH) {
+	return 0.001*((NOTCH+adjacent_NOTCH)/2-NOTCH);
+}
+
+static double calc_DLL4_DIFF_rate(double DLL4, double adjacent_DLL4) {
+	return 0.001*((DLL4+adjacent_DLL4)/2-DLL4);
 }

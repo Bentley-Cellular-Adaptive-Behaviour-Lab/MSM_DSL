@@ -426,7 +426,7 @@ int Protrusion::retraction(MemAgent* memAgent) {
         if (neighbourMemAgent->FIL == BASE) {
             // We've reached the end of the protrusion, so fully deconstruct it and delete the object.
             deconstructProtrusion(memAgent, neighbourMemAgent, adjustedLength);
-            m_cell->getProtrusionList().remove(this);
+            m_cell->removeProtrusionFromList(this);
             delete this;
             return 0;
         } else {
