@@ -84,7 +84,11 @@ float RAND_FILRETRACT_CHANCE = -1;
 long long seed = -1;
 
 
-void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& replicate_number) {
+void readArgs(int argc,
+              char * argv[],
+              std::vector<double>& param_values,
+              int& replicate_number,
+              int& current_run_number) {
     // Argument structure: no. of params being varied, increment numbers.
     int i;
     // Read in parameter values, if being used.
@@ -94,7 +98,7 @@ void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& r
         current_value = atoi(argv[i]);
     }
 
-    for (i = 1; i < argc - 2; i++) {
+    for (i = 1; i < argc - 3; i++) {
         param_values.push_back(atof(argv[i]));
     }
 
@@ -104,6 +108,10 @@ void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& r
     // Set analysis type.
     i++;
     analysis_type = atoi(argv[i]);
+
+    // Set run number.
+    i++;
+    current_run_number = atoi(argv[i]);
 }
 
 void checkArgValues(int argc, char * argv[])
@@ -179,14 +187,14 @@ int main(int argc, char * argv[]) {
         int file_buffer_size = 200;
         char file_buffer[file_buffer_size];
         std::vector<double> param_values;
-        int replicate_no;
-        readArgs(argc, argv, param_values, replicate_no);
+        int replicate_no, current_run_number;
+        readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
         // Create output file.
-        std::string file_string;
-        construct_file_string(replicate_no, param_values, file_string);
-        sprintf(file_buffer, "%s", file_string.c_str());
-		write_args_to_outfile(file_string, replicate_no, param_values);
+//        std::string file_string;
+//        construct_file_string(replicate_no, param_values, file_string);
+//        sprintf(file_buffer, "%s", file_string.c_str());
+//		write_args_to_outfile(file_string, replicate_no, param_values);
 
     } else {
 
@@ -199,9 +207,12 @@ int main(int argc, char * argv[]) {
         int file_buffer_size = 200;
         char file_buffer[file_buffer_size];
         std::vector<double> param_values;
-        int replicate_no;
-        readArgs(argc, argv, param_values, replicate_no);
+        int replicate_no, current_run_number;
+        readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
+        std::cout << "Replicate number: " << std::to_string(replicate_no) << "\n";
+
+        std::cout << "Run number: " << std::to_string(run_number) << "\n";
 
         // Create output file.
         std::string file_string;
@@ -213,7 +224,6 @@ int main(int argc, char * argv[]) {
 
         char outfilename[500];
 
-        std::cout << "output file name: " << outfilename << std::endl;
 
 //    RUNSfile.open(outfilename);
 
@@ -222,6 +232,7 @@ int main(int argc, char * argv[]) {
 
         w_container->world_setup(param_values); // Set the current increments that we are at.
         world = w_container->get_world();
+        world->set_run_number(current_run_number);
         WORLDpointer = world;
 
 
@@ -262,8 +273,8 @@ int main(int argc, char * argv[]) {
         glutMainLoop();
 #else
         std::cout << "World created." << "\n";
-		world->create_outfiles();
-		std::cout << "Running simulation." << "\n";
+		world->create_outfiles(param_values);
+		std::cout << "Running simulation." << std::endl;
 		world->runSimulation();
 
         //Get end time, and calculate elapsed time -> add these to results file.

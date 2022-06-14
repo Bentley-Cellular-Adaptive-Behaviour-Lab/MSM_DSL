@@ -44,6 +44,8 @@ unsigned long long rdtsc(){
 int patternHistory = 0;
 bool patterned = false;
 
+void write_time_to_outfile(const std::string &basicString, const int pattern);
+
 #define hysteresisFileName "hysteresisFileTest.txt"
 
 //World::World(void){
@@ -1593,6 +1595,7 @@ void World::runSimulation() {
         } else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
             // Checks that all tissues have patterned, if so, end the simulation.
             if (tissuesHavePatterned()) {
+                write_time_to_pattern(timeStep);
                 timeStep = MAXtime;
                 break;
             }
@@ -6684,26 +6687,26 @@ bool contains_protein_name(const std::vector<std::string> &protein_names,
 	}
 }
 
-void World::create_outfiles() {
-	for (auto cell: ECagents) {
+void World::create_outfiles(std::vector<double>& param_values) {
+	for (const auto& cell: ECagents) {
 		for (auto protein: cell->m_cell_type->proteins) {
 			if (!contains_protein_name(m_cellProteinNames, protein->get_name())) {
 				m_cellProteinNames.push_back(protein->get_name());
 			}
 		}
-		for (auto protein: cell->get_env_protein_values()) {
+		for (const auto& protein: cell->get_env_protein_values()) {
 			if (!contains_protein_name(m_envProteinNames, protein.first)) {
 				m_envProteinNames.push_back(protein.first);
 			}
 		}
 	}
-	for (auto name: m_cellProteinNames) {
+	for (const auto& name: m_cellProteinNames) {
 		create_outfile(name);
-		create_outfile_headers(name);
+		create_outfile_headers(name, param_values);
 	}
 	for (const auto& name: m_envProteinNames) {
 		create_outfile(name);
-		create_outfile_headers(name);
+		create_outfile_headers(name, param_values);
 	}
 }
 
@@ -6716,53 +6719,134 @@ void World::write_to_outfiles() {
 	}
 }
 
+void World::write_time_to_pattern(const int time_to_pattern) {
+    for (const auto& name : m_cellProteinNames) {
+        write_time_to_outfile(name, time_to_pattern);
+    }
+    for (const auto& name : m_envProteinNames) {
+        write_time_to_outfile(name, time_to_pattern);
+    }
+}
+
+void World::write_time_to_outfile(const std::string &protein_name,
+                           const int time_to_pattern) {
+    std::ofstream file;
+    std::string file_string = "results/" +
+                              protein_name +
+                              "_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+    file.open(file_string.c_str(), std::ios_base::app);
+    if (file.is_open()) {
+        file << "Patterned at timestep : " << time_to_pattern << "\n";
+
+    }
+    file.close();
+}
+
 void World::create_outfile(const std::string &protein_name) {
 	int file_buffer_size = 200;
 	char file_buffer[file_buffer_size];
-	std::string file_string = "results_" + protein_name + ".csv";
+
+    std::string file_string = "results/" +
+                              protein_name +
+                              "_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
 	sprintf(file_buffer, "%s", file_string.c_str());
 }
 
-void World::create_outfile_headers(const std::string &protein_name) {
+void World::create_outfile_headers(const std::string &protein_name,
+                                   std::vector<double>& param_values) {
 	std::ofstream file;
-	std::string file_string = "results_" + protein_name + ".csv";
+
+    std::string file_string = "results/" +
+                              protein_name +
+                              "_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
 	file.open(file_string.c_str(), std::ios_base::app);
-	if (file.is_open()) {
-		file << "Timestep" << ",";
-		int count = 1;
-		for (auto &cell : ECagents) {
-			file << "cell_" << count << ", ";
-			count++;
-		}
-		file << "\n";
-	}
+    try {
+        if (file.is_open()) {
+            // Write parameter values to file.
+            file << "Parameter Arguments: ";
+            for (auto &value : param_values) {
+                file << value << ",";
+            }
+            file << "\n";
+            file << "Timestep" << ",";
+            int count = 1;
+            for (const auto &cell : ECagents) {
+                file << "cell_" << count << ", ";
+                count++;
+            }
+            file << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open results file for protein " << protein_name
+                  << ". Please check the results directory exists.";
+        exit(e);
+    }
 }
 
 void World::write_to_cell_outfile(const std::string &protein_name) {
 	std::ofstream file;
-	std::string file_string = "results_" + protein_name + ".csv";
+    std::string file_string = "results/" +
+                              protein_name +
+                              "_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
 	file.open(file_string.c_str(), std::ios_base::app);
-	if (file.is_open()) {
-		file << timeStep << ",";
-		for (auto &cell : ECagents) {
-			file << cell->get_cell_protein_level(protein_name,0) << ", ";
-		}
-		file << "\n";
-	}
-	file.close();
+    try {
+	    if (file.is_open()) {
+		    file << timeStep << ",";
+		    for (const auto &cell : ECagents) {
+			    file << cell->get_cell_protein_level(protein_name,0) << ", ";
+		    }
+		    file << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open results file for protein " << protein_name
+                << ". Please check the results directory exists.";
+        exit(e);
+    }
 }
 
 void World::write_to_env_outfile(const std::string &protein_name) {
 	std::ofstream file;
 	std::string file_string = "results_" + protein_name + ".csv";
 	file.open(file_string.c_str(), std::ios_base::app);
-	if (file.is_open()) {
-		file << timeStep << ",";
-		for (auto &cell : ECagents) {
-            unsigned int agents = cell->nodeAgents.size() + cell->springAgents.size() + cell->surfaceAgents.size();
-			file << cell->get_env_protein_level(protein_name) / agents << ", ";
-		}
-		file << "\n";
-	}
-	file.close();
+    try {
+        if (file.is_open()) {
+            file << timeStep << ",";
+            for (const auto &cell: ECagents) {
+                unsigned int agents = cell->nodeAgents.size() + cell->springAgents.size() + cell->surfaceAgents.size();
+                file << cell->get_env_protein_level(protein_name) / agents << ", ";
+            }
+            file << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open results file for protein " << protein_name
+                  << ". Please check the results directory exists.";
+        exit(e);
+    }
+}
+
+void World::set_run_number(const int run_number) {
+    this->m_run_number = run_number;
+}
+
+int World::get_run_number() const {
+    return this->m_run_number;
 }

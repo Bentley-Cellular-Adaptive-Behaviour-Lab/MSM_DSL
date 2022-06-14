@@ -2011,13 +2011,16 @@ void EC::addProtrusionToList(Protrusion* protrusion) {
 
 bool EC::removeProtrusionFromList(Protrusion* protrusion) {
     bool protrusionRemoved = false;
-    for (auto *currentProtrusion :this->m_protrusions) {
+
+    for (auto it = this->m_protrusions.begin(); it != this->m_protrusions.end(); ++it) {
+        auto currentProtrusion = *it;
         if (protrusion == currentProtrusion) {
-			std::remove(this->m_protrusions.begin(), this->m_protrusions.end(), protrusion);
+            this->m_protrusions.erase((it));
             protrusionRemoved = true;
             break;
         }
     }
+
     return protrusionRemoved;
 }
 

@@ -31,6 +31,7 @@ class WorldLogger;
 
 class World {
 private:
+    int m_run_number;
     std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
     World_Container* m_worldContainer;
@@ -299,13 +300,18 @@ public:
 	// Used in logging.
 	std::vector<std::string> m_cellProteinNames;
 	std::vector<std::string> m_envProteinNames;
-	void create_outfiles();
+	void create_outfiles(std::vector<double>& param_values);
 	void write_to_outfiles();
 	void create_outfile(const std::string &protein_name);
 	void write_to_cell_outfile(const std::string &protein_name);
-	void create_outfile_headers(const std::string &protein_name);
+	void create_outfile_headers(const std::string &protein_name, std::vector<double>& param_values);
 
 	void write_to_env_outfile(const std::string &protein_name);
+    void set_run_number(const int run_number);
+    int get_run_number() const;
+
+    void write_time_to_pattern(const int time_to_pattern);
+    void write_time_to_outfile(const std::string &protein_name, const int time_to_pattern);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
