@@ -81,7 +81,7 @@ enum ODE_TYPE {
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.
 #define TIP_MEMS 1.2///lower limit on no. of Magents needed to qualify as a tip cell, X times the initial value TIP_MEMS is X
 
-#define TESTING  false //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
+#define TESTING true //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
 #define on_the_fly_surface_agents false ///faster as doesnt do voxellisatoin but cant use for full runs as not correct
 #define oldVersion false ///old VEGFR-2 activatoin function from JTB 2008
 

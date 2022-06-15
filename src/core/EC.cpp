@@ -2011,16 +2011,14 @@ void EC::addProtrusionToList(Protrusion* protrusion) {
 
 bool EC::removeProtrusionFromList(Protrusion* protrusion) {
     bool protrusionRemoved = false;
-
-    for (auto it = this->m_protrusions.begin(); it != this->m_protrusions.end(); ++it) {
-        auto currentProtrusion = *it;
-        if (protrusion == currentProtrusion) {
-            this->m_protrusions.erase((it));
+    unsigned int index = 0;
+    for (auto pr = this->m_protrusions.begin(); pr != this->m_protrusions.end(); ++pr) {
+        if (protrusion == *pr) {
+            this->m_protrusions.erase(pr);
             protrusionRemoved = true;
             break;
         }
     }
-
     return protrusionRemoved;
 }
 

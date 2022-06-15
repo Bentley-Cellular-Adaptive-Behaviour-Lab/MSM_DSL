@@ -6989,7 +6989,7 @@
           <property role="TrG5h" value=" ; ml purge; ml foss; ml Boost; ./buildSpringAgent.sh" />
         </node>
         <node concept="356sEF" id="6dETgET7SMV" role="356sEH">
-          <property role="TrG5h" value="; sbatch slurmMSM.sh; exit; exit;&quot;" />
+          <property role="TrG5h" value="; sbatch slurmMSM.sh; make clean; exit; exit;&quot;" />
         </node>
         <node concept="2EixSi" id="7_Jh6MgtT1$" role="2EinRH" />
       </node>
@@ -10232,6 +10232,9 @@
           </node>
         </node>
         <node concept="2EixSi" id="6dETgETeh2d" role="2EinRH" />
+        <node concept="356sEF" id="5k$GbZWwE3D" role="356sEH">
+          <property role="TrG5h" value="&quot;$run_number&quot;" />
+        </node>
       </node>
     </node>
     <node concept="n94m4" id="6dETgET6Px5" role="lGtFl">

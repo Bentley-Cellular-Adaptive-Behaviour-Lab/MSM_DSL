@@ -10,9 +10,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 9> Endothelial_cell_ode_states;
-typedef boost::array<double, 9> Endothelial_memAgent_ode_states;
-typedef boost::array<double, 9> Endothelial_cell_only_ode_states;
+typedef boost::array<double, 11> Endothelial_cell_ode_states;
+typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
+typedef boost::array<double, 11> Endothelial_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -32,7 +32,6 @@ public:
     void Endothelial_run_cell_only_ODEs(EC *ec);
 };
 
-
 static double calc_Theta_rate();
 static double calc_Nu_rate();
 static double calc_VEGFR_PROD_rate();
@@ -49,11 +48,18 @@ static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH);
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu);
 static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu);
 
-static double calc_NOTCH_adjacent_level(EC *ec);
-static double calc_DLL4_NOTCH_adjacent_level(EC *ec);
-static double calc_DLL4_adjacent_level(EC *ec);
+static double calc_NOTCH_adjacent_level(EC *ec, bool memAgentODEs);
+static double calc_DLL4_NOTCH_adjacent_level(EC *ec, bool memAgentODEs);
+static double calc_DLL4_adjacent_level(EC *ec, bool memAgentODEs);
 
 static double calc_NOTCH_DIFF_rate(double NOTCH, double adjacent_NOTCH);
 static double calc_DLL4_DIFF_rate(double DLL4, double adjacent_DLL4);
+
+static double calc_SEMA_PLEXIN_ON_rate(double SEMA3E, double PLEXIND1);
+static double calc_SEMA_PLEXIN_OFF_rate(double SEMA_PLEXIN);
+static double calc_PLEXIND1_PROD_rate();
+static double calc_PLEXIND1_DEG_rate(double PLEXIND1);
+static double calc_SEMA_PLEXIN_DEG_rate(double SEMA_PLEXIN);
+static double calc_DLL4_INHIB_rate(double DLL4, double SEMA_PLEXIN, double Nu);
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/
