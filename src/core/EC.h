@@ -204,5 +204,7 @@ public:
 
     double calc_fil_length(MemAgent* tipMemAgent);
     double get_longest_fil_length();
+
+    double get_protein_initial_value(const std::string &protein_name);
 };
 #endif //SPRINGAGENT_EC_H

@@ -224,6 +224,8 @@ public:
 
 	// DEBUG: Remove at some point.
 	double DLL4_search();
+
+    double mean_env_protein_search(const std::string &proteinName);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

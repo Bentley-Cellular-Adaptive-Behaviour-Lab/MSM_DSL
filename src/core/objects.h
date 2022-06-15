@@ -32,6 +32,8 @@ class World;
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
 //#define GRAPHICS false
 #define DSL_TESTING true
+#define FEEDBACK_TESTING true
+#define SCALE_BY_INIT true
 #define WORLD_TESTING true
 #define TISSUE_TESTING true
 #define SHAPE_TESTING false

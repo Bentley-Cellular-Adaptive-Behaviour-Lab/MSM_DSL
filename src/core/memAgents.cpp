@@ -218,7 +218,6 @@ void MemAgent::veilAdvance(void) {
  * @return bool retracted
  */
 bool MemAgent::filRetract(void) {
-
     int flag = 0;
     int i, k;
     float B, D;
@@ -247,11 +246,11 @@ bool MemAgent::filRetract(void) {
     //toroidal adjustments
     if(TOROIDAL_X){
     if (sqrt(XA * XA) >= (int) ((float) this->worldP->gridXDimensions / 2.0f)) {
-
-        if (XA > 0) XA = -(this->worldP->gridXDimensions - XA);
-        else XA = this->worldP->gridXDimensions - abs(XA);
+        if (XA > 0)
+            XA = -(this->worldP->gridXDimensions - XA);
+        else
+            XA = this->worldP->gridXDimensions - abs(XA);
         length = sqrt((XA * XA)+(B * B)+(D * D));
-
     } else {
         length = worldP->getDist(Mx, My, Mz, mp->Mx, mp->My, mp->Mz);
     }
@@ -645,7 +644,7 @@ bool MemAgent::checkNeighsVonForEnv(void) {
  */
 void MemAgent::VEGFRresponse(void) {
 
-    float Prob, chance;
+    double Prob, chance;
 
     int upto = Cell->VonNeighs; 
     float VEGFRactiveProp;
@@ -656,57 +655,76 @@ void MemAgent::VEGFRresponse(void) {
     bool moved = false;
 
     bool filopodiaOn = true;
-   
-    //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF.. 
-    VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
-    VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
 
-    //done exceed max level
-    if (VEGFRactive > VEGFR) {
-        VEGFRactive = VEGFR;
-    }
+    if (FEEDBACK_TESTING && !SCALE_BY_INIT) {
+        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
+        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
 
-	// Test - getting length of extended filopodia.
-	// FORCE FILOPODIA THAT ARE LONG TO HAVE HIGH ACTIVATION.
+        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
+        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
+        const auto propActive = ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
 
-	bool test = false;
-	if (FIL == TIP) {
-		auto n_nodes = get_n_nodes();
-		if (n_nodes > 1) {
-			test = true;
-		}
-	}
+        // TODO: Check that this is the correct way to implement scaling.
+        Prob = propActive * (double) Cell->filCONST;
 
-    //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
-    if (filopodiaOn) {
-    	//***** RANDFIL here
-    	if (randFilExtend >= 0 && randFilExtend <= 1) {
-			// 0-1 continuous value input at runtime.
-			// If randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0
-			// i.e. fully random direction and extension,
-			// with no bias from VR->actin or VR gradient to direction.
-			Prob = randFilExtend;
-		} else {
-			Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
-		}
-        //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
+    } else if (FEEDBACK_TESTING && SCALE_BY_INIT) {
+        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
+        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
+
+        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
+        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
+        auto propActive = ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
+        // Scale the active proportion by the initial level of VEGFR divided by the total number of memAgents.
+        const auto init_VEGFR_scalar = Cell->get_protein_initial_value("VEGFR") / upto;
+
+
+        // TODO: Check that this is the correct way to implement scaling.
+        Prob = (propActive / init_VEGFR_scalar) * (double) Cell->filCONST;
     } else {
-		Prob = 0;
-	}
+        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF..
+        VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
+        VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
+
+        //done exceed max level
+        if (VEGFRactive > VEGFR) {
+            VEGFRactive = VEGFR;
+        }
+
+        // Test - getting length of extended filopodia.
+        // FORCE FILOPODIA THAT ARE LONG TO HAVE HIGH ACTIVATION.
+
+        bool test = false;
+        if (FIL == TIP) {
+            auto n_nodes = get_n_nodes();
+            if (n_nodes > 1) {
+                test = true;
+            }
+        }
+
+        //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
+        if (filopodiaOn) {
+            //***** RANDFIL here
+            if (randFilExtend >= 0 && randFilExtend <= 1) {
+                // 0-1 continuous value input at runtime.
+                // If randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0
+                // i.e. fully random direction and extension,
+                // with no bias from VR->actin or VR gradient to direction.
+                Prob = randFilExtend;
+            } else {
+                Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+            }
+            //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
+        } else {
+            Prob = 0;
+        }
+    }
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-	auto activeVEFGR = (float) VEGFRactive;
-	auto normVEGFR = (float) Cell->VEGFRnorm;
-	auto UPTO = upto;
 
-    //-----------------------------------------------------------------------
     if (chance < Prob) {
-		if (test) {
-			int test2 = 0;
-		}
     
-        //award actin tokens
+        // Award actin tokens
 
         filTokens++;
 
@@ -4755,6 +4773,26 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
         }
     }
     return result;
+}
+
+double MemAgent::mean_env_protein_search(const std::string& proteinName) {
+    double result = 0;
+    double count = 0;
+    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
+        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
+            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+                if (worldP->insideWorld(x, y, z)
+                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    if (worldP->grid[x][y][z].getType() == const_E) {
+                        auto env = worldP->grid[x][y][z].getEid();
+                        count += 1;
+                        result += env->get_protein_level(proteinName);
+                    }
+                }
+            }
+        }
+    }
+    return result / count;
 }
 
 bool MemAgent::vonNeighSearch() {

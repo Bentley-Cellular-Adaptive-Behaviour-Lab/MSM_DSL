@@ -1788,7 +1788,6 @@ void World::updateMemAgents() {
 
 	JunctionAgents.clear();
 	ALLmemAgents.clear();
-	//set all agents lists to then pick current memAgent for update from---------------------------------------------------------------------------------------------------------------------------------------------------------
 	for (i = 0; i < uptoE; i++) {
 
 		uptoN = ECagents[i]->nodeAgents.size();
@@ -1849,13 +1848,12 @@ void World::updateMemAgents() {
                 memp->passBackBufferLevels();
             }
 
+
             if (SHAPE_TESTING) {
                 memp->shapeResponse(randomChance);
             } else {
                 //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
                 if (memp->FIL == TIP) {
-
-                    //randomChance = rand() / (float) RAND_MAX;
 
                     //veil advance for cell migration------------------------
                     if (VEIL_ADVANCE) {
@@ -1867,8 +1865,8 @@ void World::updateMemAgents() {
                             }
                         }
                     }
-                    //------------------------------------
-                    //retract fils if inactive------------
+
+                    // Retract filopodia if inactive.
                     if (((RAND_FILRETRACT_CHANCE==-1)&&(memp->filTipTimer > FILTIPMAX)) || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
                         if (memp->filRetract()) {
                             tipDeleteFlag = true;
@@ -1959,7 +1957,9 @@ void World::updateECagents() {
         // Total up the memAgents new active receptor levels, add to time delay stacks.
         ECagents[j]->updateProteinTotals();
 
-        ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
+        if (!FEEDBACK_TESTING) {
+            ECagents[j]->GRN(); //use the time delayed active receptor levels (time to get to nucleus+transcription) to calculate gene expression changes
+        }
 
 		ECagents[j]->newNodes(); //add new nodes or delete them if springs size is too long/too short (as filopodia have nodes and adhesions along them at 2 micron intervals
 

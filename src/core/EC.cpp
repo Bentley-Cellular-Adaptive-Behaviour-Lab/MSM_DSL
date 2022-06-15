@@ -2230,3 +2230,14 @@ double EC::get_longest_fil_length() {
     }
     return longest_fil_length;
 }
+
+double EC::get_protein_initial_value(const std::string &protein_name) {
+    double initial_level = -1;
+    for (const auto &protein : m_cell_type->proteins) {
+        if (protein->get_name() == protein_name) {
+            initial_level = protein->get_initial_level();
+            break;
+        }
+    }
+    return initial_level;
+}
