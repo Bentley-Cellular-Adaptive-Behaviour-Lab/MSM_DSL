@@ -253,7 +253,7 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
 
     unsigned int agents = (int) ec->nodeAgents.size() + (int) ec->springAgents.size() + ec->surfaceAgents.size();
 
-	if (ec->cell_number == 4) {
+	if (ec->cell_number == 3) {
 		int test = 0;
 	}
 
