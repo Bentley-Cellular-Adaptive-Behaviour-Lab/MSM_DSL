@@ -216,6 +216,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylind
             tissue->create_vessel();
             tissue->tissue_vessel_connect_mesh();
             tissue->determineJunctions();
+			set_vessel_neighbours(tissue);
             store_tissue(tissue);
         }
     } catch (int e) {
@@ -687,6 +688,26 @@ void Tissue_Container::add_env_protein_to_tissues(const std::string& protein_nam
             cell_agent->store_env_protein(protein_name);
         }
     }
+}
+
+void Tissue_Container::set_vessel_neighbours(Tissue_Vessel *vessel) {
+	// TODO: Hardcoded to set cell neighbours in a vessel properly.
+	// TODO: This should be done during neighbour checking.
+	for (int i = 0; i < (int) vessel->m_cell_agents.size(); i++) {
+		auto currentAgent = vessel->m_cell_agents[i];
+		if (i == 0) {
+			auto neighAgent = vessel->m_cell_agents[i + 1];
+			currentAgent->getNeighCellVector().push_back(neighAgent);
+		} else if (i == vessel->m_cell_agents.size() - 1) {
+			auto neighAgent = vessel->m_cell_agents[i - 1];
+			currentAgent->getNeighCellVector().push_back(neighAgent);
+		} else {
+			auto neighAgent1 = vessel->m_cell_agents[i - 1];
+			auto neighAgent2 = vessel->m_cell_agents[i + 1];
+			currentAgent->getNeighCellVector().push_back(neighAgent1);
+			currentAgent->getNeighCellVector().push_back(neighAgent2);
+		}
+	}
 }
 
 // Constructor //

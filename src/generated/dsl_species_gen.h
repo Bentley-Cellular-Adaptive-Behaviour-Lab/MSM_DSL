@@ -10,9 +10,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 11> Endothelial_cell_ode_states;
-typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
-typedef boost::array<double, 11> Endothelial_cell_only_ode_states;
+typedef boost::array<double, 12> Endothelial_cell_ode_states;
+typedef boost::array<double, 12> Endothelial_memAgent_ode_states;
+typedef boost::array<double, 12> Endothelial_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -43,8 +43,14 @@ static double calc_NOTCH_DEG_rate(double NOTCH);
 static double calc_DLL4_NOTCH_DEG_rate(double DLL4_NOTCH);
 static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR);
 static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR);
+static double calc_DLL4_NOTCH_ON_1_rate(double DLL4, double adjacent_NOTCH);
+static double calc_DLL4_NOTCH_OFF_1_rate(double adjacent_DLL4_NOTCH);
+static double calc_DLL4_NOTCH_ON_2_rate(double adjacent_DLL4, double NOTCH);
+static double calc_DLL4_NOTCH_OFF_2_rate(double DLL4_NOTCH);
+
 static double calc_DLL4_NOTCH_ON_rate(double DLL4, double NOTCH);
 static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH);
+
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu);
 static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu);
 

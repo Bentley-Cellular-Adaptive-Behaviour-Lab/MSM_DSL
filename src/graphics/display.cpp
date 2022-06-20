@@ -1269,11 +1269,13 @@ void World::viewGrid(void){
                                     else if(viewType==5){ red=(grid[i][j][k].getFids()[m]->VEGFR/20.0f); green=0.2245098; blue = 0.545098;}
                                     else if(viewType==6){ red=grid[i][j][k].getFids()[m]->VEGFRactive/5.0f; green=0.2245098; blue = 0.545098;}
                                     else if(viewType==7){ red= 0.534f;green=0.0623f+(float)grid[i][j][k].getFids()[m]->activeNotch/(float)NotchNorm; blue = 0.5923f;}
-                                    else if(viewType==8){
-									
-                                    if(grid[i][j][k].getFids()[m]->node==false){red= 0.7f;green=0.7f; blue = 0.7f;}
-                                    else{red= 0.0f;green=0.0f; blue = 0.0f;}
-                                    }else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
+                                    else if(viewType==8) {
+										if(!grid[i][j][k].getFids()[m]->node==false) {
+											red= 0.7f;green=0.7f; blue = 0.7f;}
+										else {
+											red= 0.0f;green=0.0f; blue = 0.0f;
+										}
+                                    } else if(viewType==10){ red= grid[i][j][k].getFids()[m]->Cell->red;green=grid[i][j][k].getFids()[m]->Cell->green; blue =grid[i][j][k].getFids()[m]->Cell->blue;}
                                     else if(viewType==11){ red = 0.534f;
                                         green = 0.0623f+grid[i][j][k].getFids()[m]->Cell->get_env_protein_level("VEGF") / agents; blue = 0.5923f;}
                                     else if(viewType==12){ red = 0.534f;
@@ -1788,13 +1790,14 @@ void display(void) {
 
     
     if(WORLDpointer->Pause==0){
-        
-       
         //simulate_multiple();
         //WORLDpointer->simulate(movie);
-        if (WORLDpointer->timeStep < MAXtime)
-        {
-            WORLDpointer->simulateTimestep();
+        if (WORLDpointer->timeStep < MAXtime) {
+			if (WORLDpointer->timeStep % 10 == 0) {
+				std::cout << "Writing to results files. Timestep: " << WORLDpointer->timeStep << "\n";
+				WORLDpointer->write_to_outfiles();
+			}
+            WORLDpointer->simulateTimestep_MSM();
             screenRecording();
             counter_edittext->set_int_val(WORLDpointer->timeStep);
 //            if (ANALYSIS_HYSTERESIS)

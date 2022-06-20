@@ -644,7 +644,7 @@ bool MemAgent::checkNeighsVonForEnv(void) {
  */
 void MemAgent::VEGFRresponse(void) {
 
-    double Prob, chance;
+    double prob, chance;
 
     int upto = Cell->VonNeighs; 
     float VEGFRactiveProp;
@@ -656,34 +656,31 @@ void MemAgent::VEGFRresponse(void) {
 
     bool filopodiaOn = true;
 
-    if (FEEDBACK_TESTING && !SCALE_BY_INIT) {
+    if (FEEDBACK_TESTING) {
         const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
         const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
 
         // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
         const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-        const auto propActive = ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
+		double scalar = ((float) VEGFRNORM / (float) upto);
+		if (ODE_activeVEGFR == 0) {
+			prob = 0;
+		} else {
+			prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * Cell->filCONST;
+		}
 
-        // TODO: Check that this is the correct way to implement scaling.
-        Prob = propActive * (double) Cell->filCONST;
-
-    } else if (FEEDBACK_TESTING && SCALE_BY_INIT) {
-        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
-        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
-
-        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
-        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-        auto propActive = ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
-        // Scale the active proportion by the initial level of VEGFR divided by the total number of memAgents.
-        const auto init_VEGFR_scalar = Cell->get_protein_initial_value("VEGFR") / upto;
-
-
-        // TODO: Check that this is the correct way to implement scaling.
-        Prob = (propActive / init_VEGFR_scalar) * (double) Cell->filCONST;
+		if (worldP->timeStep % 9 == 0) {
+			Cell->get_extension_probs().push_back(prob);
+		}
     } else {
-        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF..
-        VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
+        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
+		float scalar = ((float) VEGFRNORM / (float) upto);
+        VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
+
+		if (SumVEGF > 0) {
+			int test = 0;
+		}
 
         //done exceed max level
         if (VEGFRactive > VEGFR) {
@@ -709,20 +706,24 @@ void MemAgent::VEGFRresponse(void) {
                 // If randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0
                 // i.e. fully random direction and extension,
                 // with no bias from VR->actin or VR gradient to direction.
-                Prob = randFilExtend;
+                prob = randFilExtend;
             } else {
-                Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+				prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+				if (worldP->timeStep % 9 == 0) {
+					Cell->get_extension_probs().push_back(prob);
+				}
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
         } else {
-            Prob = 0;
+			prob = 0;
         }
     }
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
 
-    if (chance < Prob) {
+
+    if (chance < prob) {
     
         // Award actin tokens
 
@@ -1092,10 +1093,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
     bool previousJunction = junction;
 
-    if (worldP->timeStep == 2) {
-        int test = 0;
-    }
-
     i = (int) Mx;
     j = (int) My;
     k = (int) Mz;
@@ -1244,13 +1241,14 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
-                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
-                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == 0) {
-                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-                            }
+//                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
+//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+//                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == -1) {
+//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+//                            }
+//							this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
 
-                            worldP->grid[m][n][p].getMids()[y]->junction = true;
+							worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells
                                 if(StoreInJunctionList!=true){

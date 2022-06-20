@@ -30,7 +30,8 @@ namespace ECUtils {
         }
         if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
             && !memAgent->junction
-            && memAgent->has_protein(protein->get_name())) {
+            && memAgent->has_protein(protein->get_name())
+			&& memAgent->vonNeu) {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
@@ -260,10 +261,6 @@ void EC::allocateProts(void) {
     
     calcVonNeighs();
     div = VonNeighs;//nodeAgents.size()+springAgents.size()+surfaceAgents.size();
-
-	if (worldP->timeStep == 30) {
-		int test = 0;
-	}
 
     //count how many agents are at the junction-----------------------------------------------
     for (i = 0; i < nodeAgents.size(); i++) {
@@ -817,12 +814,15 @@ void EC::distributeProteins() {
                     protein_counts[i]++;
                 }
             }
-            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE && !nodeAgent->junction)) {
+            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE
+				&& !nodeAgent->junction)
+				&& nodeAgent->vonNeu) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
                 }
             }
-            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
+            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION
+			&& nodeAgent->junction) {
                 if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
                 }
@@ -981,14 +981,14 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 void EC::add_to_neighbour_list(EC* query_ec) {
     bool cell_found = false;
 	// Check we don't already know about this cell.
-    for (auto *current_ec : this->neigh_cells) {
+    for (auto *current_ec : this->m_neigh_cells) {
         if (current_ec == query_ec) {
             cell_found = true;
             break;
         }
     }
 	if (!cellIsNeighbour(query_ec) && !cell_found) {
-		this->neigh_cells.push_back(query_ec);
+		this->m_neigh_cells.push_back(query_ec);
 	}
 }
 
@@ -999,7 +999,7 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 ******************************************************************************************/
 
 std::vector<EC*>& EC::getNeighCellVector() {
-    return this->neigh_cells;
+    return this->m_neigh_cells;
 }
 
 /*****************************************************************************************
@@ -1010,7 +1010,7 @@ std::vector<EC*>& EC::getNeighCellVector() {
 
 bool EC::cellIsNeighbour(EC *query_ec) {
     bool cell_found = false;
-    for (auto current_ec : this->neigh_cells) {
+    for (auto current_ec : this->m_neigh_cells) {
         if (current_ec != query_ec) {
             cell_found = true;
         }
@@ -2240,4 +2240,8 @@ double EC::get_protein_initial_value(const std::string &protein_name) {
         }
     }
     return initial_level;
+}
+
+std::vector<float>& EC::get_extension_probs() {
+	return this->m_extension_probabilities;
 }

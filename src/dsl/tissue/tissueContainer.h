@@ -90,6 +90,8 @@ public:
 
     static void allocateProteins(Cell_Type* cellType, MemAgent* memAgent);
     void add_env_protein_to_tissues(const std::string& protein_name);
+
+	void set_vessel_neighbours(Tissue_Vessel *vessel);
 };
 
 #endif //SRC_SPRINGAGENT_TISSUECONTAINER_H

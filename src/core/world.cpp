@@ -29,7 +29,6 @@
 #include "../dsl/utils/utils.h"
 #include "../dsl/world/worldContainer.h"
 
-
 typedef Location** ppLocation;
 typedef Location* pLocation;
 
@@ -172,7 +171,7 @@ World::World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*
     std::cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << std::endl;
     std::cout << "World created!" << std::endl;
     //run simulateTimestep once to perform creation timestep
-    simulateTimestep();
+	simulateTimestep_MSM();
 
     std::cout << "Creation timestep complete." << std::endl;
 }
@@ -244,7 +243,7 @@ World::World() {
     std::cout << "Grid size " << gridXDimensions << "x" << gridYDimensions << "x" << gridZDimensions << std::endl;
     std::cout << "World created!" << std::endl;
     //run simulateTimestep once to perform creation timestep
-    simulateTimestep();
+	simulateTimestep_MSM();
 
     std::cout << "Creation timestep complete." << std::endl;
 }
@@ -314,7 +313,7 @@ World::World(const int& grid_xMax,
     this->setup_ODEs();
 
     std::cout << "World created!" << "\n";
-    simulateTimestep();
+	simulateTimestep_MSM();
 
     std::cout << "Creation timestep complete." << std::endl;
 
@@ -1205,7 +1204,7 @@ void World::simulateTimestep(std::vector<std::vector<float>> cellIncrements) {
         currentCell->Dll4tot += cellIncrements[i][1];
         currentCell->Notchtot += cellIncrements[i][2];
     }
-    simulateTimestep();
+	simulateTimestep_MSM();
 }
 
 std::vector<std::vector<std::vector<float>>> World::getFilopodiaBaseLocationsAndTotalVegfr()
@@ -1574,13 +1573,13 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 }
 
 /*****************************************************************************************
-*  Name:		runSimulation (CORE MSM)
+*  Name:		runSimulation_MSM (CORE MSM)
 *  Description: Controls simulation run - goes over all timesteps and moves world forward
 *			    by one tick for each.
 *  Returns:		void
 ******************************************************************************************/
 
-void World::runSimulation() {
+void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 
         if (timeStep % 10 == 0) {
@@ -1588,7 +1587,7 @@ void World::runSimulation() {
 			write_to_outfiles();
 		}
 
-        simulateTimestep();
+		simulateTimestep_MSM();
 
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
             hysteresisAnalysis();
@@ -1609,6 +1608,41 @@ void World::runSimulation() {
 
 	}
 	std::cout << "end of run simulation" << std::endl;
+}
+
+/*****************************************************************************************
+*  Name:		runSimulation_MSM (CORE MSM)
+*  Description: Controls simulation run - goes over all timesteps and moves world forward
+*			    by one tick for each.
+*  Returns:		void
+******************************************************************************************/
+
+void World::runSimulation_DSL() {
+	while (timeStep <= MAXtime) {
+		if (timeStep % 10 == 0) {
+			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
+			write_to_outfiles();
+		}
+
+		simulateTimestep_MSM();
+
+		if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
+			hysteresisAnalysis();
+		} else if (analysis_type == ANALYSIS_TYPE_TIME_TO_PATTERN) {
+			// Checks that all tissues have patterned, if so, end the simulation.
+			if (tissuesHavePatterned()) {
+				write_time_to_pattern(timeStep);
+				timeStep = MAXtime;
+				break;
+			}
+		}
+
+		if (MEM_LEAK_OCCURRING) {
+			timeStep = MAXtime;
+			std::cout << "MEMORY LEAKED!!!...quit run" << std::endl;
+			MEM_LEAK_OCCURRING = false;
+		}
+	}
 }
 
 /*****************************************************************************************
@@ -1713,7 +1747,7 @@ void World::creationTimestep(int movie) {
 
 }
 
-void World::simulateTimestep() {
+void World::simulateTimestep_MSM() {
 	int movie = 0;
 	timeStep++;
 	if (timeStep == 0) {
@@ -1731,15 +1765,37 @@ void World::simulateTimestep() {
 		// Resets cell levels in preparation for ODES
         // and distributes proteins out to memAgents.
         resetCellLevels();
-        updateMemAgents();
+		updateMemAgents_MSM();
 
         if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
 		}
 
-		updateECagents();
-		updateEnvironment();
+		updateECagents_MSM();
+		updateEnvironment_MSM();
+	}
+}
 
+void World::simulateTimestep_DSL() {
+	timeStep++;
+	if (timeStep == 0) {
+		creationTimestep(0);
+	} else {
+		for (EC* ec : ECagents) {
+			// Clear the vector of neighbouring cells.
+			if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
+				ec->getNeighCellVector().clear();
+			}
+			ec->filopodiaExtensions.clear();
+			ec->filopodiaRetractions.clear();
+		}
+
+		// Resets cell levels in preparation for ODES
+		// and distributes proteins out to memAgents.
+		resetCellLevels();
+		updateMemAgents_MSM();
+		updateECagents_MSM();
+		updateEnvironment_MSM();
 	}
 }
 
@@ -1767,14 +1823,14 @@ void World::hysteresisAnalysis() {
 }
 
 /*****************************************************************************************
-*  Name:		updateMemAgents (CORE MSM)
+*  Name:		updateMemAgents_MSM (CORE MSM)
 *  Description: Asynchronously update all memAgents across all cells, grows/retracts
 *  				filopodia and lamellipodia veil advance, and activates receptors from local
 *   			ligand levels
 *  Returns:		void
 ******************************************************************************************/
 
-void World::updateMemAgents() {
+void World::updateMemAgents_MSM() {
 	int upto;
 	int i, j;
 
@@ -1789,7 +1845,6 @@ void World::updateMemAgents() {
 	JunctionAgents.clear();
 	ALLmemAgents.clear();
 	for (i = 0; i < uptoE; i++) {
-
 		uptoN = ECagents[i]->nodeAgents.size();
 		uptoS = ECagents[i]->springAgents.size();
 		uptoSu = ECagents[i]->surfaceAgents.size();
@@ -1797,7 +1852,6 @@ void World::updateMemAgents() {
 		for (j = 0; j < uptoN; j++) ALLmemAgents.push_back(ECagents[i]->nodeAgents[j]);
 		for (j = 0; j < uptoS; j++) ALLmemAgents.push_back(ECagents[i]->springAgents[j]);
 		for (j = 0; j < uptoSu; j++) ALLmemAgents.push_back(ECagents[i]->surfaceAgents[j]);
-
 	}
 	upto = ALLmemAgents.size();
 	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1812,8 +1866,6 @@ void World::updateMemAgents() {
 	//pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
 	for (i = 0; i < upto; i++) {
 
-        // Update the level of environmental proteins seen by the cell.
-
 		tipDeleteFlag = false;
 
 		memp = ALLmemAgents[i];
@@ -1821,6 +1873,7 @@ void World::updateMemAgents() {
 		memp->addedJunctionList = false;
         memp->vonNeighSearch();
 
+		// Update the level of environmental proteins seen by the cell.
         memp->update_cell_env_levels();
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
@@ -1848,14 +1901,11 @@ void World::updateMemAgents() {
                 memp->passBackBufferLevels();
             }
 
-
             if (SHAPE_TESTING) {
                 memp->shapeResponse(randomChance);
             } else {
                 //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
                 if (memp->FIL == TIP) {
-
-                    //veil advance for cell migration------------------------
                     if (VEIL_ADVANCE) {
                         if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
                             if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
@@ -1867,7 +1917,8 @@ void World::updateMemAgents() {
                     }
 
                     // Retract filopodia if inactive.
-                    if (((RAND_FILRETRACT_CHANCE==-1)&&(memp->filTipTimer > FILTIPMAX)) || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
+                    if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
+						|| ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
                         if (memp->filRetract()) {
                             tipDeleteFlag = true;
                             deleteOldGridRef(memp, true);
@@ -1881,7 +1932,7 @@ void World::updateMemAgents() {
                     //------------------------------------
                 }
 
-                //if memAGent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
+                //if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
                 if (!tipDeleteFlag) {
                     memp->VEGFRactive = 0.0f; //reset VEGFR activation level
                     if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
@@ -1893,8 +1944,7 @@ void World::updateMemAgents() {
                             memp->VEGFRresponse();
                         }
                     }
-
-                    if (memp->junction) {
+                    if (memp->junction && !FEEDBACK_TESTING) {
                         memp->NotchResponse();
                     }
 
@@ -1921,7 +1971,7 @@ void World::updateMemAgents() {
 }
 
 /*****************************************************************************************
-*  Name:		updateECagents (CORE MSM)
+*  Name:		updateECagents_MSM (CORE MSM)
 *  Description: Synchronously update all cell agents after memAgents have updated.
 *   			Sum new active receptor levels.
 *    			Calculate new gene expression levels.
@@ -1929,7 +1979,7 @@ void World::updateMemAgents() {
 *  Returns:		void
 ******************************************************************************************/
 
-void World::updateECagents() {
+void World::updateECagents_MSM() {
 
 	int i, j;
 	int upto = ECagents.size();
@@ -1991,7 +2041,7 @@ void World::updateECagents() {
 }
 
 /*****************************************************************************************
-*  Name:		updateECagents (CORE MSM)
+*  Name:		updateECagents_MSM (CORE MSM)
 *  Description: Calculate spring forces and move memAgents in the mesh.
 *  				Goes asynchronously in the same order through all memAgents in the cells..
 *  Returns:		void
@@ -5505,7 +5555,7 @@ int uptoN;
     }*/
 
 //---------------------------------------------------------------
-void World::updateEnvironment(void){
+void World::updateEnvironment_MSM(void){
 
     //check_if_InsideVessel();
 
@@ -6701,22 +6751,33 @@ void World::create_outfiles(std::vector<double>& param_values) {
 		}
 	}
 	for (const auto& name: m_cellProteinNames) {
-		create_outfile(name);
-		create_outfile_headers(name, param_values);
+		create_protein_outfile(name);
+		create_protein_outfile_headers(name, param_values);
 	}
 	for (const auto& name: m_envProteinNames) {
-		create_outfile(name);
-		create_outfile_headers(name, param_values);
+		create_protein_outfile(name);
+		create_protein_outfile_headers(name, param_values);
 	}
+	create_probabilities_outfile();
+	create_probabilities_outfile_headers(param_values);
+
+	create_inhib_outfile();
+	create_inhib_outfile_headers(param_values);
+
+	create_upreg_outfile();
+	create_upreg_outfile_headers(param_values);
 }
 
 void World::write_to_outfiles() {
 	for (const auto& name : m_cellProteinNames) {
-		write_to_cell_outfile(name);
+		write_to_protein_cell_outfile(name);
 	}
 	for (const auto& name : m_envProteinNames) {
-		write_to_env_outfile(name);
+		write_to_protein_env_outfile(name);
 	}
+	write_to_probabilities_file();
+	write_to_inhib_file();
+	write_to_upreg_file();
 }
 
 void World::write_time_to_pattern(const int time_to_pattern) {
@@ -6744,7 +6805,7 @@ void World::write_time_to_outfile(const std::string &protein_name,
     file.close();
 }
 
-void World::create_outfile(const std::string &protein_name) {
+void World::create_protein_outfile(const std::string &protein_name) {
 	int file_buffer_size = 200;
 	char file_buffer[file_buffer_size];
 
@@ -6757,8 +6818,8 @@ void World::create_outfile(const std::string &protein_name) {
 	sprintf(file_buffer, "%s", file_string.c_str());
 }
 
-void World::create_outfile_headers(const std::string &protein_name,
-                                   std::vector<double>& param_values) {
+void World::create_protein_outfile_headers(const std::string &protein_name,
+										   std::vector<double>& param_values) {
 	std::ofstream file;
 
     std::string file_string = "results/" +
@@ -6794,7 +6855,7 @@ void World::create_outfile_headers(const std::string &protein_name,
     }
 }
 
-void World::write_to_cell_outfile(const std::string &protein_name) {
+void World::write_to_protein_cell_outfile(const std::string &protein_name) {
 	std::ofstream file;
     std::string file_string = "results/" +
                               protein_name +
@@ -6820,9 +6881,13 @@ void World::write_to_cell_outfile(const std::string &protein_name) {
     }
 }
 
-void World::write_to_env_outfile(const std::string &protein_name) {
+void World::write_to_protein_env_outfile(const std::string &protein_name) {
 	std::ofstream file;
-	std::string file_string = "results_" + protein_name + ".csv";
+	std::string file_string = "results/" +
+							  protein_name +
+							  "_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
 	file.open(file_string.c_str(), std::ios_base::app);
     try {
         if (file.is_open()) {
@@ -6849,4 +6914,233 @@ void World::set_run_number(const int run_number) {
 
 int World::get_run_number() const {
     return this->m_run_number;
+}
+
+void World::print_avg_prob() {
+	std::cout << timeStep << ",";
+	for (auto &cell : this->ECagents) {
+		double sum = 0;
+		for (auto &val : cell->get_extension_probs()) {
+			sum += val;
+		}
+		auto avg_prob = sum / (double) cell->get_extension_probs().size();
+		std::cout << sum / (double) cell->get_extension_probs().size() << ",";
+		cell->get_extension_probs().clear();
+	}
+	std::cout << "\n";
+}
+
+void World::create_probabilities_outfile() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string file_string = "results/probabilities_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_probabilities_outfile_headers(const std::vector<double> &param_values) {
+	std::ofstream file;
+	std::string file_string = "results/probabilities_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Write parameter values to file.
+			file << "Parameter Arguments: ";
+			for (auto &value : param_values) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep" << ",";
+			int count = 1;
+			for (const auto &cell : ECagents) {
+				file << "cell_" << count << ", ";
+				count++;
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_probabilities_file() {
+	std::ofstream file;
+	std::string file_string = "results/probabilities_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &cell : this->ECagents) {
+				double sum = 0;
+				for (auto &val : cell->get_extension_probs()) {
+					sum += val;
+				}
+				auto avg_prob = sum / (double) cell->get_extension_probs().size();
+				file << sum / (double) cell->get_extension_probs().size() << ",";
+				cell->get_extension_probs().clear();
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_inhib_outfile() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string file_string = "results/inhib_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_inhib_outfile_headers(std::vector<double> &param_values) {
+	std::ofstream file;
+
+	std::string file_string = "results/inhib_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Write parameter values to file.
+			file << "Parameter Arguments: ";
+			for (auto &value : param_values) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep" << ",";
+			int count = 1;
+			for (const auto &cell : ECagents) {
+				file << "cell_" << count << ", ";
+				count++;
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_upreg_outfile() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string file_string = "results/upreg_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_upreg_outfile_headers(std::vector<double> &param_values) {
+	std::ofstream file;
+
+	std::string file_string = "results/upreg_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Write parameter values to file.
+			file << "Parameter Arguments: ";
+			for (auto &value : param_values) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep" << ",";
+			int count = 1;
+			for (const auto &cell : ECagents) {
+				file << "cell_" << count << ", ";
+				count++;
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_inhib_file() {
+	std::ofstream file;
+	std::string file_string = "results/inhib_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &cell : this->ECagents) {
+				auto VEGFR = cell->get_cell_protein_level("VEGFR",0);
+				auto DLL4_NOTCH = cell->get_cell_protein_level("DLL4_NOTCH",0);
+				double nu = 2;
+				auto result = VEGFR*pow(DLL4_NOTCH,nu) * 0.05;
+				file << result << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_upreg_file() {
+	std::ofstream file;
+	std::string file_string = "results/upreg_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (auto &cell : this->ECagents) {
+				auto DLL4 = cell->get_cell_protein_level("VEGFR",0);
+				auto VEGF_VEGFR = cell->get_cell_protein_level("VEGF_VEGFR",0);
+				double nu = 2;
+				auto Theta = 0.1;
+				auto result = (0.001+Theta*pow(VEGF_VEGFR,nu)/1+pow(VEGF_VEGFR,nu)/2)/2;
+				file << result << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
 }

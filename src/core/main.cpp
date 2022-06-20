@@ -215,10 +215,10 @@ int main(int argc, char * argv[]) {
         std::cout << "Run number: " << std::to_string(run_number) << "\n";
 
         // Create output file.
-        std::string file_string;
-        construct_file_string(replicate_no, param_values, file_string);
-        sprintf(file_buffer, "%s", file_string.c_str());
-        write_args_to_outfile(file_string, replicate_no, param_values);
+//        std::string file_string;
+//        construct_file_string(replicate_no, param_values, file_string);
+//        sprintf(file_buffer, "%s", file_string.c_str());
+//        write_args_to_outfile(file_string, replicate_no, param_values);
 
         //---------------------------------------------------------------
 
@@ -269,13 +269,16 @@ int main(int argc, char * argv[]) {
         // -----------------------------------------------------------------------------------------------------------//
 
 #if GRAPHICS
+		std::cout << "World created." << "\n";
+		world->create_outfiles(param_values);
+		std::cout << "Running simulation." << std::endl;
         displayGlui(&argc, argv);
         glutMainLoop();
 #else
         std::cout << "World created." << "\n";
 		world->create_outfiles(param_values);
 		std::cout << "Running simulation." << std::endl;
-		world->runSimulation();
+		world->runSimulation_MSM();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();

@@ -39,7 +39,7 @@ namespace ECUtils {
 class EC {
 private:
     std::vector<Protrusion*> m_protrusions;
-    std::vector<EC*> neigh_cells;
+    std::vector<EC*> m_neigh_cells;
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
@@ -47,6 +47,7 @@ private:
     // Stores values of environmental proteins. Only used during cell-only ODES.
     // Key: protein name, value: protein level.
     std::map<std::string, double> m_env_protein_values;
+	std::vector<float> m_extension_probabilities;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -206,5 +207,7 @@ public:
     double get_longest_fil_length();
 
     double get_protein_initial_value(const std::string &protein_name);
+
+	std::vector<float>& get_extension_probs();
 };
 #endif //SPRINGAGENT_EC_H

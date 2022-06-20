@@ -77,9 +77,9 @@ public:
     //TODO: put ybaseline back in
     //World(float epsilon = 0.9, float vconcst = 0.04, int gradientType = 2, /*float yBaseline,*/ float filConstNorm = 2.0f, float filTipMax = 10, float tokenstrength = 1);
     World(float epsilon, float vconcst, int gradientType, /*float yBaseline,*/ float filConstNorm, float filTipMax, float tokenstrength, int filspacing, float randomFilExtend, float randFilRetract, long long s);
-    void runSimulation();
+    void runSimulation_MSM();
     void creationTimestep(int movie);
-    void simulateTimestep();
+    void simulateTimestep_MSM();
     int gridXDimensions;
     int gridYDimensions;
     int gridZDimensions;
@@ -92,9 +92,9 @@ public:
     void hysteresisAnalysis();
 
     ///simulation update functions
-    void updateECagents(void);
-    void updateMemAgents(void);
-    void updateEnvironment(void);
+    void updateECagents_MSM(void);
+    void updateMemAgents_MSM(void);
+    void updateEnvironment_MSM(void);
     void calculateSpringAdjustments(void);
     void movieMaking(int movie);
     bool delete_if_spring_agent_on_a_retracted_fil(MemAgent* memp); ///within memAgent update, doesnt reassess a spring agent if is scheduled for deletion, given asynchronous agent updates this must be checked first
@@ -302,16 +302,40 @@ public:
 	std::vector<std::string> m_envProteinNames;
 	void create_outfiles(std::vector<double>& param_values);
 	void write_to_outfiles();
-	void create_outfile(const std::string &protein_name);
-	void write_to_cell_outfile(const std::string &protein_name);
-	void create_outfile_headers(const std::string &protein_name, std::vector<double>& param_values);
+	void create_protein_outfile(const std::string &protein_name);
+	void write_to_protein_cell_outfile(const std::string &protein_name);
+	void create_protein_outfile_headers(const std::string &protein_name, std::vector<double>& param_values);
 
-	void write_to_env_outfile(const std::string &protein_name);
+	void write_to_protein_env_outfile(const std::string &protein_name);
     void set_run_number(const int run_number);
     int get_run_number() const;
 
     void write_time_to_pattern(const int time_to_pattern);
     void write_time_to_outfile(const std::string &protein_name, const int time_to_pattern);
+
+	void print_avg_prob();
+
+	void runSimulation_DSL();
+
+	void simulateTimestep_DSL();
+
+	void create_probabilities_outfile();
+
+	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;
+
+	void write_to_probabilities_file();
+
+	void create_inhib_outfile();
+
+	void create_inhib_outfile_headers(std::vector<double> &vector);
+
+	void create_upreg_outfile();
+
+	void create_upreg_outfile_headers(std::vector<double> &vector);
+
+	void write_to_inhib_file();
+
+	void write_to_upreg_file();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
