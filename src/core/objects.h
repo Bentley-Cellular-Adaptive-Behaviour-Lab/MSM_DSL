@@ -24,7 +24,7 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-#define MAXtime 1000
+//#define MAXtime 1000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1

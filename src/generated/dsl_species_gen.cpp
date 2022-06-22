@@ -165,7 +165,7 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 
 
 void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
-    // Species Definitions
+    // Species Definitions.
     double DLL4_NOTCH = x[0];
     double VEGFR = x[1];
     double VEGF_VEGFR = x[2];
@@ -176,8 +176,8 @@ void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, En
     double PLEXIND1 = x[7];
     double SEMA_PLEXIN = x[8];
     double adjacent_NOTCH = x[9];
-	double adjacent_DLL4_NOTCH = x[10];
-	double adjacent_DLL4 = x[11];
+	double adjacent_DLL4 = x[10];
+
     // Parameter Definitions
     double Nu = calc_Nu_rate();
     double Theta = calc_Theta_rate();
@@ -201,36 +201,23 @@ void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, En
     double SEMA_PLEXIN_DEG = calc_SEMA_PLEXIN_DEG_rate(SEMA_PLEXIN);
     double DLL4_INHIB = calc_DLL4_INHIB_rate(DLL4, SEMA_PLEXIN, Nu);
 
-	// 2-WAY NOTCH SIGNALLING
-//	double DLL4_NOTCH_ON_1 = calc_DLL4_NOTCH_ON_1_rate(DLL4, adjacent_NOTCH);
-//	double DLL4_NOTCH_OFF_1 = calc_DLL4_NOTCH_OFF_1_rate(adjacent_DLL4_NOTCH);
-//	double DLL4_NOTCH_ON_2 = calc_DLL4_NOTCH_ON_2_rate(adjacent_DLL4, NOTCH);
-//	double DLL4_NOTCH_OFF_2 = calc_DLL4_NOTCH_OFF_2_rate(DLL4_NOTCH);
-//
-//	dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1;
-//	dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON_1)*1+(DLL4_NOTCH_OFF_1)*1-(DLL4_NOTCH_ON_2)*1+(DLL4_NOTCH_OFF_2)*1+(DLL4_UPREG)+(DLL4_INHIB);
-//	dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1+(DLL4_NOTCH_ON_2)*1-(DLL4_NOTCH_OFF_2)*1;
-
 	// 1-WAY NOTCH SIGNALLING
-	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(DLL4, NOTCH);
-	double DLL4_NOTCH_OFF = calc_DLL4_NOTCH_OFF_rate(DLL4_NOTCH);
-	double NOTCH_DIFF = calc_NOTCH_DIFF_rate(NOTCH, adjacent_NOTCH);
-	double DLL4_DIFF = calc_DLL4_DIFF_rate(DLL4, adjacent_DLL4);
+	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
+	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4,adjacent_NOTCH);
 
-	dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1+NOTCH_DIFF;
-	dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_NOTCH_OFF)*1+(DLL4_UPREG)+(DLL4_INHIB);
-	dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_OFF)*1;
+	dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON)*1;
+	dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_UPREG)+(DLL4_INHIB)-(DLL4_UPTAKE);
+	dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON)*1;
 
     // ODE Definitions
-    dxdt[1] = +(VEGFR_PROD)-(VEGFR_DEG)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB);
-    dxdt[2] = -(VEGF_VEGFR_DEG)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-    dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
+    dxdt[1] = +(VEGFR_PROD)-(VEGFR_DEG)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB); // VEGFR
+    dxdt[2] = -(VEGF_VEGFR_DEG)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1; // VEGF_VEGFR
+    dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1; // VEGF
 	dxdt[6] = -(SEMA_PLEXIN_ON)*1+(SEMA_PLEXIN_OFF)*1; // SEMA3E
     dxdt[7] = -(SEMA_PLEXIN_ON)*1+(SEMA_PLEXIN_OFF)*1-(PLEXIND1_DEG)+(PLEXIND1_PROD); // PLEXIND1
     dxdt[8] = +(SEMA_PLEXIN_ON)*1-(SEMA_PLEXIN_OFF)*1-(SEMA_PLEXIN_DEG); // SEMA_PLEXIN
 	dxdt[9] = 0;
 	dxdt[10] = 0;
-	dxdt[11] = 0;
 
 	// Original ODE Definitions
 //	dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON_1)*1-(DLL4_NOTCH_OFF_1)*1+(DLL4_NOTCH_ON_2)*1-(DLL4_NOTCH_OFF_2)*1;
@@ -253,35 +240,26 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
 
     unsigned int agents = (int) ec->nodeAgents.size() + (int) ec->springAgents.size() + ec->surfaceAgents.size();
 
-	if (ec->cell_number == 3) {
-		int test = 0;
-	}
-
+	states[3] = ec->get_cell_protein_level("DLL4", 0);
 	states[0] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
     states[1] = ec->get_cell_protein_level("VEGFR", 0);
     states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-    states[3] = ec->get_cell_protein_level("DLL4", 0);
     states[4] = ec->get_env_protein_level("VEGF") / agents;
     states[5] = ec->get_cell_protein_level("NOTCH", 0);
     states[6] = ec->get_env_protein_level("SEMA3E") / agents;
     states[7] = ec->get_cell_protein_level("PLEXIND1", 0);
     states[8] = ec->get_cell_protein_level("SEMA_PLEXIN", 0);
     states[9] = calc_NOTCH_adjacent_level(ec, false);
-	states[10] = calc_DLL4_NOTCH_adjacent_level(ec, false);
-    states[11] = calc_DLL4_adjacent_level(ec, false);
+    states[10] = calc_DLL4_adjacent_level(ec, false);
 
     typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
     controlled_stepper_type controlled_stepper;
     integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
-    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 27);
+	ec->set_cell_protein_level("DLL4", states[3], 1);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 4);
     ec->set_cell_protein_level("VEGFR", states[1], 1);
-    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 27);
-	if (ec->cell_number == 4) {
-		ec->set_cell_protein_level("DLL4", 1000, 1);
-	} else {
-		ec->set_cell_protein_level("DLL4", states[3], 1);
-	}
+    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 4);
     ec->set_cell_protein_level("NOTCH", states[5], 1);
     ec->set_cell_protein_level("PLEXIND1",states[7], 1);
     ec->set_cell_protein_level("SEMA_PLEXIN",states[8], 1);
@@ -347,8 +325,8 @@ static double calc_DLL4_NOTCH_OFF_2_rate(double DLL4_NOTCH) {
 	return DLL4_NOTCH*0.01;
 }
 
-static double calc_DLL4_NOTCH_ON_rate(double DLL4, double NOTCH) {
-	return DLL4*NOTCH*0.1;
+static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH) {
+	return adjacent_DLL4*NOTCH*0.1;
 }
 
 static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH) {
@@ -356,15 +334,15 @@ static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH) {
 }
 
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu) {
-	Nu = 2;
-    return (0.001+Theta*pow(VEGF_VEGFR,Nu)/1+pow(VEGF_VEGFR,Nu)/2)/2;
-//	return VEGF_VEGFR * Nu;
+	Nu = 0.1;
+    return VEGF_VEGFR*Nu;
+//	return (0.001+Theta*pow(VEGF_VEGFR,Nu)/1+pow(VEGF_VEGFR,Nu)/2)/2;;
 }
 
 static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu) {
-	Nu = 2;
-    return VEGFR*pow(DLL4_NOTCH,Nu)*0.05;
-//	return DLL4_NOTCH * Nu;
+	Nu = 0.1;
+    return DLL4_NOTCH*Nu;
+//	return VEGFR*pow(DLL4_NOTCH,Nu)*0.05;
 }
 
 
@@ -455,6 +433,10 @@ static double calc_SEMA_PLEXIN_DEG_rate(double SEMA_PLEXIN) {
 }
 
 static double calc_DLL4_INHIB_rate(double DLL4, double SEMA_PLEXIN, double Nu) {
-    Nu = 2;
-    return 0.05*DLL4*pow(SEMA_PLEXIN,Nu); // Changed to 0.5
+    Nu = 0.05;
+    return SEMA_PLEXIN * Nu; // Changed to 0.5
+}
+
+static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH) {
+	return DLL4 * adjacent_NOTCH * 0.1;
 }

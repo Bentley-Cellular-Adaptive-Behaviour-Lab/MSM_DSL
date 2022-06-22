@@ -10,9 +10,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 12> Endothelial_cell_ode_states;
-typedef boost::array<double, 12> Endothelial_memAgent_ode_states;
-typedef boost::array<double, 12> Endothelial_cell_only_ode_states;
+typedef boost::array<double, 11> Endothelial_cell_ode_states;
+typedef boost::array<double, 11> Endothelial_memAgent_ode_states;
+typedef boost::array<double, 11> Endothelial_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -48,7 +48,7 @@ static double calc_DLL4_NOTCH_OFF_1_rate(double adjacent_DLL4_NOTCH);
 static double calc_DLL4_NOTCH_ON_2_rate(double adjacent_DLL4, double NOTCH);
 static double calc_DLL4_NOTCH_OFF_2_rate(double DLL4_NOTCH);
 
-static double calc_DLL4_NOTCH_ON_rate(double DLL4, double NOTCH);
+static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH);
 static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH);
 
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu);
@@ -67,5 +67,7 @@ static double calc_PLEXIND1_PROD_rate();
 static double calc_PLEXIND1_DEG_rate(double PLEXIND1);
 static double calc_SEMA_PLEXIN_DEG_rate(double SEMA_PLEXIN);
 static double calc_DLL4_INHIB_rate(double DLL4, double SEMA_PLEXIN, double Nu);
+
+static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH);
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/

@@ -17,7 +17,8 @@ void World_Container::world_setup(std::vector<double>& paramValues) {
 	world->fillParamVector(paramValues);
 
 	// GRADIENT CREATION
-	auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 2.8, 0, -1, -1);
+	// Changed from 2.8
+	auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 10, 0, -1, -1);
 	auto VEGF_Gradient_centre = Coordinates(100, 100, 10);
     auto SEMA3E_protein = new Protein("SEMA3E", PROTEIN_LOCATION_ENVIRONMENT, 0, 0, -1, -1);
     auto SEMA3E_Gradient_centre = Coordinates(100, 100, 10);
