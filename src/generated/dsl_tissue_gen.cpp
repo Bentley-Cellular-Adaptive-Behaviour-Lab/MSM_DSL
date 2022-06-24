@@ -3,8 +3,10 @@
 
 #include "clusterParams.h"
 
-#include "../core/world.h"
 #include "../core/coordinates.h"
+#include "../core/EC.h"
+#include "../core/memAgents.h"
+#include "../core/world.h"
 
 #include "../dsl/species/protein.h"
 #include "../dsl/tissue/cell.h"
@@ -14,7 +16,6 @@
 
 // Start Value Functions 
 
-
 void Tissue_Container::tissue_set_up(World* world) {
 	// Created using: Tissues //
 	world->setTissueContainer(this);
@@ -22,10 +23,10 @@ void Tissue_Container::tissue_set_up(World* world) {
 	// Cell Type Creation //
 	auto Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
 	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 4));
+	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 1));
 	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0, 0, -1, 1));
 	Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 1, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0, 0, -1, 4));
+	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("SEMA_PLEXIN", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 1));
 
@@ -41,4 +42,15 @@ void Tissue_Container::tissue_set_up(World* world) {
 	// Track environmental proteins //
 	add_env_protein_to_tissues("VEGF");
     add_env_protein_to_tissues("SEMA3E");
+}
+
+bool World::can_extend(EC* cell, MemAgent* memAgent) {
+	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
+	if (cell->m_cell_type->m_name == "Endothelial") {
+		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+		auto prob = VEGF_VEGFR / (VEGF_VEGFR + VEGFR);
+		return chance < prob;
+	}
+	return false; // Check has failed, so just return false.
 }

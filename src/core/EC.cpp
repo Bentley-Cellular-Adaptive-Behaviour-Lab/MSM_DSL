@@ -2245,3 +2245,5 @@ double EC::get_protein_initial_value(const std::string &protein_name) {
 std::vector<float>& EC::get_extension_probs() {
 	return this->m_extension_probabilities;
 }
+
+
