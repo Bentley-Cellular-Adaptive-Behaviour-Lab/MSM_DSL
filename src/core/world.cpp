@@ -1582,7 +1582,7 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 
-        if (timeStep % 1 == 0) {
+        if (timeStep % 10 == 0) {
 			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
 			write_to_outfiles();
 		}
@@ -6766,6 +6766,10 @@ void World::create_outfiles(std::vector<double>& param_values) {
 
 	create_upreg_outfile();
 	create_upreg_outfile_headers(param_values);
+
+    create_retraction_outfile();
+    create_creation_outfile();
+    create_lifespan_outfile();
 }
 
 void World::write_to_outfiles() {
@@ -7085,7 +7089,7 @@ void World::create_upreg_outfile_headers(std::vector<double> &param_values) {
 			throw 1;
 		}
 	} catch (int e) {
-		std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+		std::cout << "Error: Could not open upregulation results file. Please check the results directory exists.";
 		exit(e);
 	}
 }
@@ -7112,7 +7116,7 @@ void World::write_to_inhib_file() {
 			throw 1;
 		}
 	} catch (int e) {
-		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		std::cout << "Error: Could not open inhibition results file. Please check the results directory exists.";
 		exit(e);
 	}
 }
@@ -7140,7 +7144,140 @@ void World::write_to_upreg_file() {
 			throw 1;
 		}
 	} catch (int e) {
-		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		std::cout << "Error: Could not open upregulation results file. Please check the results directory exists.";
 		exit(e);
 	}
+}
+
+void World::create_retraction_outfile() {
+    int file_buffer_size = 200;
+    char file_buffer[file_buffer_size];
+
+    std::string file_string = "results/retraction_times_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+
+void World::write_to_retraction_file() {
+    std::ofstream file;
+    std::string file_string = "results/retraction_times_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            int count = 1;
+            for (auto &cell : this->ECagents) {
+                file << "cell_" << count << ",";
+                for (auto &retraction_time : cell->get_retraction_times()) {
+                    file << retraction_time << ",";
+                }
+                file << "\n";
+                count++;
+            }
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open retraction results file. Please check the results directory exists.";
+        exit(e);
+    }
+}
+
+void World::create_lifespan_outfile() {
+    int file_buffer_size = 200;
+    char file_buffer[file_buffer_size];
+
+    std::string file_string = "results/fil_lifespans_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+
+void World::write_to_lifespan_file() {
+    std::ofstream file;
+    std::string file_string = "results/fil_lifespans_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            int count = 1;
+            for (auto &cell : this->ECagents) {
+                file << "cell_" << count << ",";
+                for (auto &fil_lifespan : cell->get_filopodia_lifespans()) {
+                    file << fil_lifespan << ",";
+                }
+                file << "\n";
+                count++;
+            }
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open retraction results file. Please check the results directory exists.";
+        exit(e);
+    }
+}
+
+void World::create_creation_outfile() {
+    int file_buffer_size = 200;
+    char file_buffer[file_buffer_size];
+
+    std::string file_string = "results/creation_times_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+
+void World::write_to_creation_file() {
+    std::ofstream file;
+    std::string file_string = "results/creation_times_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            int count = 1;
+            for (auto &cell : this->ECagents) {
+                file << "cell_" << count << ",";
+                for (auto &creation_time : cell->get_creation_times()) {
+                    file << creation_time << ",";
+                }
+                file << "\n";
+                count++;
+            }
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open retraction results file. Please check the results directory exists.";
+        exit(e);
+    }
+}
+void World::log_filopodia() {
+    // Iterates over all filopodia at the end of a simulation.
+    // Adds filopodia dynamics information to a log file.
+    for (auto &cell : this->ECagents) {
+        for (auto &nodeAgent : cell->nodeAgents) {
+            if (nodeAgent->FIL == BASE) {
+                auto filopodia = nodeAgent->base_fil_belong;
+                // Push back a -1 to indicate that the filopodia
+                // hasn't retracted.
+                cell->add_retraction_time(-1);
+                cell->add_lifespan(timeStep - filopodia->time_created);
+                cell->add_creation_time(filopodia->time_created);
+            }
+        }
+    }
 }

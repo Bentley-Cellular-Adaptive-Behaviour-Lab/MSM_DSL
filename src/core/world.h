@@ -319,23 +319,25 @@ public:
 
 	void simulateTimestep_DSL();
 
+    // Debug filopodia files.
 	void create_probabilities_outfile();
-
 	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;
-
 	void write_to_probabilities_file();
-
 	void create_inhib_outfile();
-
 	void create_inhib_outfile_headers(std::vector<double> &vector);
-
 	void create_upreg_outfile();
-
 	void create_upreg_outfile_headers(std::vector<double> &vector);
-
 	void write_to_inhib_file();
-
 	void write_to_upreg_file();
+    void create_retraction_outfile();
+    void create_retraction_outfile_headers(std::vector<double> &param_values);
+    void write_to_retraction_file();
+    void create_lifespan_outfile();
+    void write_to_lifespan_file();
+    void create_creation_outfile();
+    void write_to_creation_file();
+
+    void log_filopodia();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

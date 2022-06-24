@@ -13,7 +13,7 @@ namespace py = pybind11;
 
 class World;
 
-//#define GRAPHICS true
+#define GRAPHICS false
 ///main switches and settings
 //#ifdef GRAPHICS
 //#define graphics true
@@ -24,7 +24,7 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-//#define MAXtime 1000
+#define MAXtime 200
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -33,6 +33,7 @@ class World;
 //#define GRAPHICS false
 #define DSL_TESTING true
 #define FEEDBACK_TESTING true
+#define FILOPODIA_METRICS true
 #define SCALE_BY_INIT false
 #define WORLD_TESTING true
 #define TISSUE_TESTING true

@@ -2245,3 +2245,29 @@ double EC::get_protein_initial_value(const std::string &protein_name) {
 std::vector<float>& EC::get_extension_probs() {
 	return this->m_extension_probabilities;
 }
+
+std::vector<int>& EC::get_retraction_times() {
+    return this->m_retraction_times;
+}
+
+void EC::add_retraction_time(int retraction_time) {
+    int test = 0;
+    this->m_retraction_times.push_back(retraction_time);
+    test = 1;
+}
+
+std::vector<int>& EC::get_filopodia_lifespans() {
+    return this->m_filopodia_lifespans;
+}
+
+void EC::add_lifespan(int lifespan) {
+    this->m_filopodia_lifespans.push_back(lifespan);
+}
+
+std::vector<int>& EC::get_creation_times() {
+    return this->m_filopodia_creation_times;
+}
+
+void EC::add_creation_time(int creation_time) {
+    this->m_filopodia_creation_times.push_back(creation_time);
+}
