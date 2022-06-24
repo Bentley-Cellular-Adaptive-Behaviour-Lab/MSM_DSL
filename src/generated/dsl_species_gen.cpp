@@ -252,9 +252,9 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
     integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
 	ec->set_cell_protein_level("DLL4", states[3], 1);
-    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 4);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 1);
     ec->set_cell_protein_level("VEGFR", states[1], 1);
-    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 4);
+    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 1);
     ec->set_cell_protein_level("NOTCH", states[5], 1);
     ec->set_cell_protein_level("PLEXIND1",states[7], 1);
     ec->set_cell_protein_level("SEMA_PLEXIN",states[8], 1);

@@ -319,6 +319,8 @@ public:
 
 	void simulateTimestep_DSL();
 
+    bool can_extend(EC* cell, MemAgent* memAgent);
+
     // Debug filopodia files.
 	void create_probabilities_outfile();
 	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;

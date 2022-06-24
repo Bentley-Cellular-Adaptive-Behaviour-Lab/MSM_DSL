@@ -725,10 +725,8 @@ void MemAgent::VEGFRresponse(void) {
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-
-
-    if (chance < prob) {
-    
+//    if (chance < prob) {
+    if (worldP->can_extend(Cell, this)) {
         // Award actin tokens
 
         filTokens++;
@@ -762,8 +760,6 @@ void MemAgent::VEGFRresponse(void) {
     if (!moved)
     	filTipTimer++;
     else filTipTimer = 0;
-
-
 }
 //----------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------

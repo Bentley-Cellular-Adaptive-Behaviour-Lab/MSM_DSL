@@ -38528,19 +38528,6 @@
                   <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
                   <node concept="3zFVjK" id="2vZs7RNVb9T" role="3zH0cK">
                     <node concept="3clFbS" id="2vZs7RNVb9U" role="2VODD2">
-                      <node concept="3SKdUt" id="2vZs7RNVb9V" role="3cqZAp">
-                        <node concept="1PaTwC" id="2vZs7RNVb9W" role="1aUNEU">
-                          <node concept="3oM_SD" id="2vZs7RNVb9X" role="1PaTwD">
-                            <property role="3oM_SC" value="CONTSTRUCTING" />
-                          </node>
-                          <node concept="3oM_SD" id="2vZs7RNVb9Y" role="1PaTwD">
-                            <property role="3oM_SC" value="EXPRESSION" />
-                          </node>
-                          <node concept="3oM_SD" id="2vZs7RNVb9Z" role="1PaTwD">
-                            <property role="3oM_SC" value="STRING" />
-                          </node>
-                        </node>
-                      </node>
                       <node concept="3clFbF" id="2vZs7RNVba0" role="3cqZAp">
                         <node concept="2OqwBi" id="2vZs7RNVba1" role="3clFbG">
                           <node concept="30H73N" id="2vZs7RNVba2" role="2Oq$k0" />

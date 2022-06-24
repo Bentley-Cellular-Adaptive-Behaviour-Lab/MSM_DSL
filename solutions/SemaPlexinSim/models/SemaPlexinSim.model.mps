@@ -203,6 +203,10 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
+      <concept id="211905917822935903" name="TissueLang.structure.ExtensionWithProb" flags="ng" index="ZkRgg" />
+      <concept id="211905917822935901" name="TissueLang.structure.ExtensionCondition" flags="ng" index="ZkRgi">
+        <child id="211905917822935904" name="expr" index="ZkRgJ" />
+      </concept>
       <concept id="8255194269358657919" name="TissueLang.structure.TissueType" flags="ng" index="1apGoc">
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
@@ -219,6 +223,7 @@
         <child id="4052263675729341762" name="_cylinderRadius" index="3ob6kl" />
       </concept>
       <concept id="6249017959271690123" name="TissueLang.structure.CellType" flags="ng" index="3ZP1sM">
+        <child id="2647675930457114533" name="_extensionRule" index="Rwuyu" />
         <child id="3104068912113925855" name="_ownedSpecies" index="3FWu3_" />
         <child id="6249017959271690171" name="_shape" index="3ZP1s2" />
       </concept>
@@ -368,6 +373,21 @@
             </node>
           </node>
           <node concept="2_hRrN" id="3_r9aiX1doL" role="2_hQ4V" />
+        </node>
+      </node>
+      <node concept="ZkRgg" id="bKPOWXWsP1" role="Rwuyu">
+        <node concept="30dvO6" id="bKPOWXZ4Si" role="ZkRgJ">
+          <node concept="1cBA6y" id="bKPOWXZ4SS" role="30dEsF">
+            <ref role="1cBA6z" node="3_r9aiWU$jf" resolve="DLL4" />
+          </node>
+          <node concept="30dDZf" id="bKPOWXZ4RP" role="30dEs_">
+            <node concept="1cBA6y" id="bKPOWXZ4RQ" role="30dEs_">
+              <ref role="1cBA6z" node="3_r9aiWU$jf" resolve="DLL4" />
+            </node>
+            <node concept="1cBA6y" id="bKPOWXZ4RR" role="30dEsF">
+              <ref role="1cBA6z" node="3_r9aiWU$jf" resolve="DLL4" />
+            </node>
+          </node>
         </node>
       </node>
     </node>
