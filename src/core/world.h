@@ -328,10 +328,17 @@ public:
 	void create_upreg_outfile_headers(std::vector<double> &vector);
 	void write_to_inhib_file();
 	void write_to_upreg_file();
+    void write_to_memAgent_outfile(const std::string& protein_name);
+    void create_memAgent_outfile();
+    void create_memAgent_outfile_headers(std::vector<double> &param_values);
+    void create_buffer_outfile();
+    void create_buffer_outfile_headers(std::vector<double> &param_values);
+    void write_to_buffer_outfile(const std::string &protein_name);
 
-	bool can_extend(EC* cell, MemAgent* memAgent);
 
-	void write_to_memAgent_outfile(const char *string);
+    bool can_extend(EC* cell, MemAgent* memAgent);
+
+
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

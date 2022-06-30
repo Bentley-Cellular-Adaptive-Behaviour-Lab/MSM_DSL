@@ -2386,7 +2386,6 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
         this->owned_proteins.push_back(newProtein);
         protein->set_memAgent_buffer_level(0);
     }
-
 }
 
 MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
@@ -2558,7 +2557,7 @@ double MemAgent::get_memAgent_current_level(const std::string& protein_name) con
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_memAgent_next_level(const std::string& protein_name) const {
+double MemAgent::get_memAgent_buffer_level(const std::string& protein_name) const {
     if (this->has_protein(protein_name)) {
         for (auto protein : this->owned_proteins) {
             if (protein->get_name() == protein_name) {
@@ -4735,16 +4734,16 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
 ******************************************************************************************/
 
 void MemAgent::passBackBufferLevels() {
-	for (auto &protein : this->owned_proteins) {
+	for (auto &protein : this->Cell->m_cell_type->proteins) {
 		if (protein->get_location() == PROTEIN_LOCATION_CELL) {
-			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+			this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
 		} else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
 			&& this->vonNeu
 			&& !this->junction) {
-			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+			this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
 		} else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
 			&& this->junction) {
-			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+            this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
 		}
     }
 }

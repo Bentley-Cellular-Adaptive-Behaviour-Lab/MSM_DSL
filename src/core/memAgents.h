@@ -154,7 +154,7 @@ public:
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
     void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
 
-    double get_memAgent_next_level(const std::string& protein_name) const;
+    double get_memAgent_buffer_level(const std::string& protein_name) const;
     double get_filopodia_protein_level(const std::string& protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(const std::string& protein_name,

@@ -758,7 +758,7 @@ void EC::set_initial_proteins() {
 
     // Now, create proteins for each memAgent and set the level at each agent to be equal to the calculated amount.
     for (auto nodeAgent : this->nodeAgents) {
-        nodeAgent->add_cell_proteins();
+//        nodeAgent->add_cell_proteins();
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
 			if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION && nodeAgent->junction) {
 				Protein *current_protein = this->m_cell_type->proteins[i];
@@ -2057,8 +2057,9 @@ void EC::resetEnvProteinLevels() {
 ******************************************************************************************/
 
 void EC::updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue) {
-    auto currentValue = this->m_protein_memAgent_buffer[protein->get_name()];
-    this->m_protein_memAgent_buffer[protein->get_name()] = currentValue + deltaValue;
+    auto currentBufferValue = this->m_protein_memAgent_buffer[protein->get_name()];
+    this->m_protein_memAgent_buffer[protein->get_name()] = currentBufferValue + deltaValue;
+    int test = 0;
 }
 
 /*****************************************************************************************

@@ -1772,19 +1772,8 @@ void World::simulateTimestep_MSM() {
 
 		updateMemAgents_MSM();
 
-		for (auto cell : ECagents) {
-			int cell_count = 0;
-			for (auto nodeAgent : cell->nodeAgents) {
-				nodeAgent->passBackBufferLevels();
-				cell_count++;
-			}
-			std::cout << "Passed back from " << cell_count << " memAgents." << "\n";
-		}
-
-		write_to_memAgent_outfile("VEGFR");
-
-		buffers = this->ECagents.at(0)->getProteinMemAgentBuffer();
-		VEGFR_1_LEVEL = buffers["VEGFR"];
+        buffers = this->ECagents.at(0)->getProteinMemAgentBuffer();
+		auto VEGFR_1_LEVEL2 = buffers["VEGFR"];
 
         if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
@@ -1919,7 +1908,7 @@ void World::updateMemAgents_MSM() {
 
             if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
-//                memp->passBackBufferLevels();
+                memp->passBackBufferLevels();
             }
 
             if (SHAPE_TESTING) {
@@ -6793,6 +6782,12 @@ void World::create_outfiles(std::vector<double>& param_values) {
 
 	create_upreg_outfile();
 	create_upreg_outfile_headers(param_values);
+
+    create_memAgent_outfile();
+    create_memAgent_outfile_headers(param_values);
+
+    create_buffer_outfile();
+    create_buffer_outfile_headers(param_values);
 }
 
 void World::write_to_outfiles() {
@@ -7117,6 +7112,84 @@ void World::create_upreg_outfile_headers(std::vector<double> &param_values) {
 	}
 }
 
+void World::create_memAgent_outfile() {
+    int file_buffer_size = 200;
+    char file_buffer[file_buffer_size];
+
+    std::string file_string = "results/memAgents_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_memAgent_outfile_headers(std::vector<double> &param_values) {
+    std::ofstream file;
+
+    std::string file_string = "results/memAgents_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            // Write parameter values to file.
+            file << "Parameter Arguments: ";
+            for (auto &value : param_values) {
+                file << value << ",";
+            }
+            file << "\n";
+            file << "memAgent_no," << "current_level," << "buffer_level,";
+            file << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+        exit(e);
+    }
+}
+
+void World::create_buffer_outfile() {
+    int file_buffer_size = 200;
+    char file_buffer[file_buffer_size];
+
+    std::string file_string = "results/buffer_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_buffer_outfile_headers(std::vector<double> &param_values) {
+    std::ofstream file;
+
+    std::string file_string = "results/buffer_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            // Write parameter values to file.
+            file << "Parameter Arguments: ";
+            for (auto &value : param_values) {
+                file << value << ",";
+            }
+            file << "\n";
+            file << "buffer_level,";
+            file << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open probability results file for protein. Please check the results directory exists.";
+        exit(e);
+    }
+}
+
 void World::write_to_inhib_file() {
 	std::ofstream file;
 	std::string file_string = "results/inhib_run_" +
@@ -7172,7 +7245,7 @@ void World::write_to_upreg_file() {
 	}
 }
 
-void World::write_to_memAgent_outfile(std::string &protein_name) {
+void World::write_to_memAgent_outfile(const std::string &protein_name) {
 	std::ofstream file;
 	std::string file_string = "results/memAgents_run_" +
 							  std::to_string(this->m_run_number) +
@@ -7182,11 +7255,19 @@ void World::write_to_memAgent_outfile(std::string &protein_name) {
 		if (file.is_open()) {
 			auto cell = this->ECagents.at(0);
 			int count = 1;
-			for (auto &nodeAgent : cell->nodeAgents) {
+            double current_level_total = 0;
+            double buffer_level_total = 0;
+            for (auto &nodeAgent : cell->nodeAgents) {
 				file << count << ",";
-				file << nodeAgent->get_memAgent_current_level(protein_name);
-			}
-			file << "\n";
+                auto current_level = nodeAgent->get_memAgent_current_level(protein_name);
+                auto buffer_level = nodeAgent->get_memAgent_buffer_level(protein_name);
+                current_level_total += current_level;
+                buffer_level_total += buffer_level;
+				file << current_level << ",";
+                file << buffer_level << ",";
+                file << "\n";
+            }
+            file << "," << current_level_total << "," << buffer_level_total;
 			file.close();
 		} else {
 			throw 1;
@@ -7195,4 +7276,25 @@ void World::write_to_memAgent_outfile(std::string &protein_name) {
 		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
 		exit(e);
 	}
+}
+
+void World::write_to_buffer_outfile(const std::string &protein_name) {
+    std::ofstream file;
+    std::string file_string = "results/buffer_run_" +
+                              std::to_string(this->m_run_number) +
+                              ".csv";
+    file.open(file_string.c_str(), std::ios_base::app);
+    try {
+        if (file.is_open()) {
+            auto cell = this->ECagents.at(0);
+            auto buffer = cell->getProteinMemAgentBuffer();
+            file << buffer[protein_name] << "\n";
+            file.close();
+        } else {
+            throw 1;
+        }
+    } catch (int e) {
+        std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+        exit(e);
+    }
 }
