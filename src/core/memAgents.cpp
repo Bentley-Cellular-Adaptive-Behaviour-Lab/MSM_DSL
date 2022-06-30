@@ -2453,7 +2453,9 @@ MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
 
 MemAgent::~MemAgent(void){
     // Pass protein levels back to the cell before deleting them.
-    this->passBackBufferLevels();
+	if (node) {
+		this->passBackBufferLevels();
+	}
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
@@ -4733,8 +4735,17 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
 ******************************************************************************************/
 
 void MemAgent::passBackBufferLevels() {
-    for (auto &protein : this->owned_proteins) {
-        this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+	for (auto &protein : this->owned_proteins) {
+		if (protein->get_location() == PROTEIN_LOCATION_CELL) {
+			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+		} else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
+			&& this->vonNeu
+			&& !this->junction) {
+			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+		} else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
+			&& this->junction) {
+			this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+		}
     }
 }
 

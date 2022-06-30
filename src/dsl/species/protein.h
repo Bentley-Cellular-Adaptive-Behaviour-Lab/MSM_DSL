@@ -23,8 +23,8 @@ private:
     double m_max;
     int m_protein_location;
     // If this protein is at a memAgent, use this value for the current timestep.
-    double m_memAgent_current_level = -1;
-    double m_memAgent_buffer_level = -1;
+    double m_memAgent_current_level = 0;
+    double m_memAgent_buffer_level = 0;
     // If this protein is at an environment agent, use this value.
     double env_level = 0;
     int transcription_delay;

@@ -224,7 +224,7 @@ public:
 
 	// DEBUG: Remove at some point.
 	double DLL4_search();
-
+	bool passedBackBufferLevels = false;
     double mean_env_protein_search(const std::string &proteinName);
 };
 

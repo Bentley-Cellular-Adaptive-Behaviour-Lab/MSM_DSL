@@ -14,7 +14,7 @@ ODEs::ODEs() {
 }
 
 void ODEs::set_ODE_TYPE() {
-    this->ODE_TYPE = ODE_TYPE_CELL;
+    this->ODE_TYPE = ODE_TYPE_MEMAGENT;
 }
 
 int ODEs::get_ODE_TYPE() const {
@@ -105,7 +105,6 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
     ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
     ec->set_cell_protein_level("DLL4", states[3], 0);
     ec->set_cell_protein_level("NOTCH", states[5], 0);
-    ec->set_cell_protein_level("SEMA3E", states[6], 0);
     ec->set_cell_protein_level("PLEXIND1", states[7], 0);
     ec->set_cell_protein_level("SEMA_PLEXIN", states[7], 0);
 }
@@ -142,6 +141,7 @@ void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x,
     dxdt[8] = +(SEMA_PLEXIN_ON)*1-(SEMA_PLEXIN_OFF)*1; // SEMA_PLEXIN
     dxdt[9] = 0;
     dxdt[10] = 0;
+
 }
 
 void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
@@ -150,7 +150,7 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 
     states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
     states[1] = memAgent->get_memAgent_current_level("VEGFR");
-    states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
     states[3] = memAgent->get_memAgent_current_level("DLL4");
     states[4] = memAgent->mean_env_protein_search("VEGF");
     states[5] = memAgent->get_memAgent_current_level("NOTCH");
@@ -164,7 +164,7 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
     controlled_stepper_type controlled_stepper;
     integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
 
-    memAgent->set_protein_buffer_level("DLL4_NOTCH", states[0]);
+	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[0]);
     memAgent->set_protein_buffer_level("VEGFR", states[1]);
     memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
     memAgent->set_protein_buffer_level("DLL4", states[3]);
@@ -252,9 +252,9 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
     integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
 	ec->set_cell_protein_level("DLL4", states[3], 1);
-    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 1);
+    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 27);
     ec->set_cell_protein_level("VEGFR", states[1], 1);
-    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 1);
+    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 27);
     ec->set_cell_protein_level("NOTCH", states[5], 1);
     ec->set_cell_protein_level("PLEXIND1",states[7], 1);
     ec->set_cell_protein_level("SEMA_PLEXIN",states[8], 1);
@@ -329,13 +329,13 @@ static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH) {
 }
 
 static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu) {
-	Nu = 0.1;
+	Nu = 0.2;
     return VEGF_VEGFR*Nu;
 //	return (0.001+Theta*pow(VEGF_VEGFR,Nu)/1+pow(VEGF_VEGFR,Nu)/2)/2;;
 }
 
 static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu) {
-	Nu = 0.1;
+	Nu = 0.2;
     return DLL4_NOTCH*Nu;
 //	return VEGFR*pow(DLL4_NOTCH,Nu)*0.05;
 }
@@ -428,8 +428,8 @@ static double calc_SEMA_PLEXIN_DEG_rate(double SEMA_PLEXIN) {
 }
 
 static double calc_DLL4_INHIB_rate(double DLL4, double SEMA_PLEXIN, double Nu) {
-    Nu = 0.05;
-    return SEMA_PLEXIN * Nu; // Changed to 0.5
+    Nu = 0.5;
+    return SEMA_PLEXIN * Nu;
 }
 
 static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH) {

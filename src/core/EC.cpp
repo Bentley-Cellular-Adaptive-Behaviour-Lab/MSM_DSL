@@ -24,31 +24,19 @@ int analysis_type;
 
 namespace ECUtils {
     void distributeProtein(MemAgent *memAgent, Protein *protein, const double& newLevel) {
-        if (protein->get_location() == PROTEIN_LOCATION_CELL && memAgent->has_protein(protein->get_name())) {
-            memAgent->set_protein_current_level(protein->get_name(), newLevel);
-            memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
-        }
-        if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
-            && !memAgent->junction
-            && memAgent->has_protein(protein->get_name())
-			&& memAgent->vonNeu) {
+        if (protein->get_location() == PROTEIN_LOCATION_CELL) {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
-                   && memAgent->junction
-                   && memAgent->has_protein(protein->get_name())) {
-            memAgent->set_protein_current_level(protein->get_name(), 0);
-            memAgent->set_protein_buffer_level(protein->get_name(), 0);
-        }
-
-        if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
-            && memAgent->junction
-            && memAgent->has_protein(protein->get_name())) {
+            && !memAgent->junction
+			&& memAgent->vonNeu) {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
-                   && !memAgent->junction
-                   && memAgent->has_protein(protein->get_name())) {
+            && memAgent->junction) {
+            memAgent->set_protein_current_level(protein->get_name(), newLevel);
+            memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
+        } else {
             memAgent->set_protein_current_level(protein->get_name(), 0);
             memAgent->set_protein_buffer_level(protein->get_name(), 0);
         }
@@ -807,25 +795,18 @@ void EC::distributeProteins() {
     // Go over all the memAgents - if they use any protein that the cell has, increase the relevant count by one.
     // TODO: We need to iterate over agents twice, because we don't know the count beforehand. Find a better way to do this.
     for (auto nodeAgent : this->nodeAgents) {
+		assert(nodeAgent->node);
         for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             auto current_protein = this->m_cell_type->proteins[i];
             if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL) {
-                if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
-                }
-            }
-            if ((this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE
-				&& !nodeAgent->junction)
+            } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE
+				&& !nodeAgent->junction
 				&& nodeAgent->vonNeu) {
-                if (nodeAgent->has_protein(current_protein->get_name())) {
                     protein_counts[i]++;
-                }
-            }
-            if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION
-			&& nodeAgent->junction) {
-                if (nodeAgent->has_protein(current_protein->get_name())) {
+            } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION
+				&& nodeAgent->junction) {
                     protein_counts[i]++;
-                }
             }
         }
     }
@@ -839,7 +820,8 @@ void EC::distributeProteins() {
     }
 
     for (auto &nodeAgent : this->nodeAgents) {
-        for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
+		assert(nodeAgent->node);
+		for (int i = 0; i < this->m_cell_type->proteins.size(); i++) {
             ECUtils::distributeProtein(
                                nodeAgent,
                                this->m_cell_type->proteins[i],
@@ -2050,7 +2032,7 @@ void EC::initialiseProteinMemAgentBuffer() {
 void EC::resetProteinMemAgentBuffer() {
     for (auto &pair : this->m_protein_memAgent_buffer) {
         std::get<1>(pair) = 0;
-    }
+	}
 }
 
 /*****************************************************************************************
@@ -2075,9 +2057,6 @@ void EC::resetEnvProteinLevels() {
 ******************************************************************************************/
 
 void EC::updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue) {
-    if (protein->get_name() == "NICD") {
-        int test = 0;
-    }
     auto currentValue = this->m_protein_memAgent_buffer[protein->get_name()];
     this->m_protein_memAgent_buffer[protein->get_name()] = currentValue + deltaValue;
 }
@@ -2091,8 +2070,8 @@ void EC::updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue)
 
 void EC::updateFutureProteinLevels() {
     for (auto &protein : this->m_cell_type->proteins) {
-        protein->set_cell_level(this->m_protein_memAgent_buffer[protein->get_name()], 
-                                protein->get_transcription_delay());
+		auto futureProteinLevel = this->m_protein_memAgent_buffer[protein->get_name()];
+        protein->set_cell_level(futureProteinLevel, protein->get_transcription_delay());
     }
 }
 

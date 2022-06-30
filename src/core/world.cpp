@@ -1760,12 +1760,31 @@ void World::simulateTimestep_MSM() {
             }
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
+
 		}
 
 		// Resets cell levels in preparation for ODES
         // and distributes proteins out to memAgents.
         resetCellLevels();
+
+		auto buffers = this->ECagents.at(0)->getProteinMemAgentBuffer();
+		auto VEGFR_1_LEVEL = buffers["VEGFR"];
+
 		updateMemAgents_MSM();
+
+		for (auto cell : ECagents) {
+			int cell_count = 0;
+			for (auto nodeAgent : cell->nodeAgents) {
+				nodeAgent->passBackBufferLevels();
+				cell_count++;
+			}
+			std::cout << "Passed back from " << cell_count << " memAgents." << "\n";
+		}
+
+		write_to_memAgent_outfile("VEGFR");
+
+		buffers = this->ECagents.at(0)->getProteinMemAgentBuffer();
+		VEGFR_1_LEVEL = buffers["VEGFR"];
 
         if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
 			this->diffAd->run_CPM();
@@ -1831,6 +1850,7 @@ void World::hysteresisAnalysis() {
 ******************************************************************************************/
 
 void World::updateMemAgents_MSM() {
+
 	int upto;
 	int i, j;
 
@@ -1896,9 +1916,10 @@ void World::updateMemAgents_MSM() {
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
             // Run ODES, then update the cell's level of that particular protein.
-            if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
+
+            if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
-                memp->passBackBufferLevels();
+//                memp->passBackBufferLevels();
             }
 
             if (SHAPE_TESTING) {
@@ -1993,7 +2014,10 @@ void World::updateECagents_MSM() {
 
 		if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
             // Set the future levels of proteins now that the memAgent ODEs have occurred.
-            ECagents[j]->updateFutureProteinLevels();
+			auto buffers = ECagents[j]->getProteinMemAgentBuffer();
+			auto VEGFRLEVEL = buffers["VEGFR"];
+
+			ECagents[j]->updateFutureProteinLevels();
             // Then, calculate deltas then apply the delta values
             // the incoming level in the cell stack.
             this->odes->check_cell_ODEs(ECagents[j]);
@@ -6707,9 +6731,12 @@ bool World::tissuesHavePatterned() const {
 void World::resetCellLevels() {
     for (auto cellAgent : this->ECagents) {
         if (odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT) {
-            cellAgent->resetProteinMemAgentBuffer();
-            cellAgent->storeStartLevels();
-        }
+			cellAgent->resetEnvProteinLevels();
+			cellAgent->cycle_protein_levels();
+			cellAgent->resetProteinMemAgentBuffer();
+			cellAgent->storeStartLevels();
+			cellAgent->distributeProteins();
+		}
         if (odes->get_ODE_TYPE() == ODE_TYPE_CELL) {
             cellAgent->resetEnvProteinLevels();
             cellAgent->cycle_protein_levels();
@@ -7133,6 +7160,31 @@ void World::write_to_upreg_file() {
 				auto Theta = 0.1;
 				auto result = (0.001+Theta*pow(VEGF_VEGFR,nu)/1+pow(VEGF_VEGFR,nu)/2)/2;
 				file << result << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open probabilities results file for protein. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_memAgent_outfile(std::string &protein_name) {
+	std::ofstream file;
+	std::string file_string = "results/memAgents_run_" +
+							  std::to_string(this->m_run_number) +
+							  ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			auto cell = this->ECagents.at(0);
+			int count = 1;
+			for (auto &nodeAgent : cell->nodeAgents) {
+				file << count << ",";
+				file << nodeAgent->get_memAgent_current_level(protein_name);
 			}
 			file << "\n";
 			file.close();

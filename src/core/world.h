@@ -330,6 +330,8 @@ public:
 	void write_to_upreg_file();
 
 	bool can_extend(EC* cell, MemAgent* memAgent);
+
+	void write_to_memAgent_outfile(const char *string);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

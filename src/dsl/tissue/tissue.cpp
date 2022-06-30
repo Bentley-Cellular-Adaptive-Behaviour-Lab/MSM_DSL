@@ -627,7 +627,6 @@ void Tissue_Vessel::create_vessel() {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
         newCellAgent->initialiseProteinMemAgentBuffer();
-        newCellAgent->distributeProteins();
     }
 }
 
