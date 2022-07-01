@@ -78,35 +78,64 @@ void ODEs::Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothe
     dxdt[8] = 0;
 }
 
+//void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
+//    Endothelial_cell_ode_states states;
+//    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+//
+//    unsigned int agents = (int) ec->nodeAgents.size() + (int) ec->springAgents.size() + ec->surfaceAgents.size();
+//
+//    states[0] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+//    states[1] = ec->get_cell_protein_level("VEGFR", 0);
+//    states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+//    states[3] = ec->get_cell_protein_level("DLL4", 0);
+//    states[4] = ec->get_env_protein_level("VEGF") / agents;
+//    states[5] = ec->get_cell_protein_level("NOTCH", 0);
+//    states[6] = ec->get_env_protein_level("SEMA3E") / agents;
+//    states[7] = ec->get_cell_protein_level("PLEXIND1", 0);
+//    states[8] = ec->get_cell_protein_level("SEMA_PLEXIN", 0);
+//    states[9] = calc_NOTCH_adjacent_level(ec, false);
+//    states[10] = calc_DLL4_adjacent_level(ec, false);
+//
+//    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//    controlled_stepper_type controlled_stepper;
+//	std::cout << "Cell number: " << ec->cell_number << "solver steps: ";
+//    std::cout << integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 1.0) << "\n";
+//
+//    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 0);
+//    ec->set_cell_protein_level("VEGFR", states[1], 0);
+//    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
+//    ec->set_cell_protein_level("DLL4", states[3], 0);
+//    ec->set_cell_protein_level("NOTCH", states[5], 0);
+//    ec->set_cell_protein_level("PLEXIND1", states[7], 0);
+//    ec->set_cell_protein_level("SEMA_PLEXIN", states[7], 0);
+//}
+
 void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
-    Endothelial_cell_ode_states states;
-    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+	Endothelial_cell_ode_states states;
+	odeint::runge_kutta4<Endothelial_cell_ode_states> stepper;
+	unsigned int agents = (int) ec->nodeAgents.size() + (int) ec->springAgents.size() + ec->surfaceAgents.size();
 
-    unsigned int agents = (int) ec->nodeAgents.size() + (int) ec->springAgents.size() + ec->surfaceAgents.size();
+	states[0] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+	states[1] = ec->get_cell_protein_level("VEGFR", 0);
+	states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+	states[3] = ec->get_cell_protein_level("DLL4", 0);
+	states[4] = ec->get_env_protein_level("VEGF") / agents;
+	states[5] = ec->get_cell_protein_level("NOTCH", 0);
+	states[6] = ec->get_env_protein_level("SEMA3E") / agents;
+	states[7] = ec->get_cell_protein_level("PLEXIND1", 0);
+	states[8] = ec->get_cell_protein_level("SEMA_PLEXIN", 0);
+	states[9] = calc_NOTCH_adjacent_level(ec, false);
+	states[10] = calc_DLL4_adjacent_level(ec, false);
 
-    states[0] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-    states[1] = ec->get_cell_protein_level("VEGFR", 0);
-    states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
-    states[3] = ec->get_cell_protein_level("DLL4", 0);
-    states[4] = ec->get_env_protein_level("VEGF") / agents;
-    states[5] = ec->get_cell_protein_level("NOTCH", 0);
-    states[6] = ec->get_env_protein_level("SEMA3E") / agents;
-    states[7] = ec->get_cell_protein_level("PLEXIND1", 0);
-    states[8] = ec->get_cell_protein_level("SEMA_PLEXIN", 0);
-    states[9] = calc_NOTCH_adjacent_level(ec, false);
-    states[10] = calc_DLL4_adjacent_level(ec, false);
+	stepper.do_step(Endothelial_cell_system, states, 0, 0.0001);
 
-    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-    controlled_stepper_type controlled_stepper;
-    integrate_adaptive(controlled_stepper, Endothelial_cell_system, states, 0.0, 1.0, 0.1);
-
-    ec->set_cell_protein_level("DLL4_NOTCH", states[0], 0);
-    ec->set_cell_protein_level("VEGFR", states[1], 0);
-    ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
-    ec->set_cell_protein_level("DLL4", states[3], 0);
-    ec->set_cell_protein_level("NOTCH", states[5], 0);
-    ec->set_cell_protein_level("PLEXIND1", states[7], 0);
-    ec->set_cell_protein_level("SEMA_PLEXIN", states[7], 0);
+	ec->set_cell_protein_level("DLL4_NOTCH", states[0], 0);
+	ec->set_cell_protein_level("VEGFR", states[1], 0);
+	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 0);
+	ec->set_cell_protein_level("DLL4", states[3], 0);
+	ec->set_cell_protein_level("NOTCH", states[5], 0);
+	ec->set_cell_protein_level("PLEXIND1", states[7], 0);
+	ec->set_cell_protein_level("SEMA_PLEXIN", states[7], 0);
 }
 
 void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t) {
@@ -144,33 +173,60 @@ void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x,
 
 }
 
+//void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
+//    Endothelial_memAgent_ode_states states;
+//    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+//
+//    states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
+//    states[1] = memAgent->get_memAgent_current_level("VEGFR");
+//	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+//    states[3] = memAgent->get_memAgent_current_level("DLL4");
+//    states[4] = memAgent->mean_env_protein_search("VEGF");
+//    states[5] = memAgent->get_memAgent_current_level("NOTCH");
+//    states[6] = memAgent->mean_env_protein_search("SEMA3E");
+//    states[7] = memAgent->get_memAgent_current_level("PLEXIND1");
+//    states[8] = memAgent->get_memAgent_current_level("SEMA_PLEXIN");
+//    states[9] = memAgent->get_junction_protein_level("NOTCH");
+//    states[10] = memAgent->get_junction_protein_level("DLL4");
+//
+//    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//    controlled_stepper_type controlled_stepper;
+//    integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
+//
+//	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[0]);
+//    memAgent->set_protein_buffer_level("VEGFR", states[1]);
+//    memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
+//    memAgent->set_protein_buffer_level("DLL4", states[3]);
+//    memAgent->set_protein_buffer_level("NOTCH", states[5]);
+//    memAgent->set_protein_buffer_level("PLEXIND1",states[7]);
+//    memAgent->set_protein_buffer_level("SEMA_PLEXIN", states[8]);
+//}
+
 void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
-    Endothelial_memAgent_ode_states states;
-    typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_ode_states> error_stepper_type;
+	Endothelial_memAgent_ode_states states;
+	odeint::runge_kutta4<Endothelial_memAgent_ode_states> stepper;
 
-    states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-    states[1] = memAgent->get_memAgent_current_level("VEGFR");
+	states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
+	states[1] = memAgent->get_memAgent_current_level("VEGFR");
 	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-    states[3] = memAgent->get_memAgent_current_level("DLL4");
-    states[4] = memAgent->mean_env_protein_search("VEGF");
-    states[5] = memAgent->get_memAgent_current_level("NOTCH");
-    states[6] = memAgent->mean_env_protein_search("SEMA3E");
-    states[7] = memAgent->get_memAgent_current_level("PLEXIND1");
-    states[8] = memAgent->get_memAgent_current_level("SEMA_PLEXIN");
-    states[9] = memAgent->get_junction_protein_level("NOTCH");
-    states[10] = memAgent->get_junction_protein_level("DLL4");
+	states[3] = memAgent->get_memAgent_current_level("DLL4");
+	states[4] = memAgent->mean_env_protein_search("VEGF");
+	states[5] = memAgent->get_memAgent_current_level("NOTCH");
+	states[6] = memAgent->mean_env_protein_search("SEMA3E");
+	states[7] = memAgent->get_memAgent_current_level("PLEXIND1");
+	states[8] = memAgent->get_memAgent_current_level("SEMA_PLEXIN");
+	states[9] = memAgent->get_junction_protein_level("NOTCH");
+	states[10] = memAgent->get_junction_protein_level("DLL4");
 
-    typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-    controlled_stepper_type controlled_stepper;
-    integrate_adaptive(controlled_stepper, Endothelial_memAgent_system, states, 0.0, 1.0, 0.1);
+	stepper.do_step(Endothelial_memAgent_system, states, 0, 0.01);
 
 	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[0]);
-    memAgent->set_protein_buffer_level("VEGFR", states[1]);
-    memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
-    memAgent->set_protein_buffer_level("DLL4", states[3]);
-    memAgent->set_protein_buffer_level("NOTCH", states[5]);
-    memAgent->set_protein_buffer_level("PLEXIND1",states[7]);
-    memAgent->set_protein_buffer_level("SEMA_PLEXIN", states[8]);
+	memAgent->set_protein_buffer_level("VEGFR", states[1]);
+	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[2]);
+	memAgent->set_protein_buffer_level("DLL4", states[3]);
+	memAgent->set_protein_buffer_level("NOTCH", states[5]);
+	memAgent->set_protein_buffer_level("PLEXIND1",states[7]);
+	memAgent->set_protein_buffer_level("SEMA_PLEXIN", states[8]);
 }
 
 void ODEs::Endothelial_cell_only_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t) {
