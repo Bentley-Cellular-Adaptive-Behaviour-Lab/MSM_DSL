@@ -319,6 +319,9 @@ public:
 
 	void simulateTimestep_DSL();
 
+    bool can_extend(EC* cell, MemAgent* memAgent);
+
+    // Debug filopodia files.
 	void create_probabilities_outfile();
 	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;
 	void write_to_probabilities_file();
@@ -334,11 +337,14 @@ public:
     void create_buffer_outfile();
     void create_buffer_outfile_headers(std::vector<double> &param_values);
     void write_to_buffer_outfile(const std::string &protein_name);
-
-
-    bool can_extend(EC* cell, MemAgent* memAgent);
-
-
+    void create_retraction_outfile();
+    void create_retraction_outfile_headers(std::vector<double> &param_values);
+    void write_to_retraction_file();
+    void create_lifespan_outfile();
+    void write_to_lifespan_file();
+    void create_creation_outfile();
+    void write_to_creation_file();
+    void log_filopodia();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

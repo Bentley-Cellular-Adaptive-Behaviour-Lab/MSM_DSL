@@ -33,6 +33,7 @@ class World;
 //#define GRAPHICS false
 #define DSL_TESTING true
 #define FEEDBACK_TESTING true
+#define FILOPODIA_METRICS true
 #define SCALE_BY_INIT false
 #define WORLD_TESTING true
 #define TISSUE_TESTING true

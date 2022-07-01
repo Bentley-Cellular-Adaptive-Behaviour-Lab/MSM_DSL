@@ -281,6 +281,12 @@ int main(int argc, char * argv[]) {
 		std::cout << "Running simulation." << std::endl;
 		world->runSimulation_MSM();
 
+        std::cout << "Ending simulation. Logging filopodia dynamics." << "\n";
+        world->log_filopodia();
+        world->write_to_retraction_file();
+        world->write_to_creation_file();
+        world->write_to_lifespan_file();
+
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();
         std::cout << "End time: " << std::ctime(&end_time) << std::endl;

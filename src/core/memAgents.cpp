@@ -273,7 +273,7 @@ bool MemAgent::filRetract(void) {
          
          ///if the nodeAgent at the other end of the spring is the BASE of the filopodium then reset it to NONE state and delete all springs and agents associated
         if (mp->FIL == BASE) {
-            
+
             mp->FIL = NONE;
             
             ///if vessel is blindended dont release adhesion, otherwise do. keeps it fixed and sewn up at front of sprout in this setup
@@ -287,9 +287,13 @@ bool MemAgent::filRetract(void) {
             mp->filTokens += filTokens;
             
             //ANALYSIS of filopodia can be done here
-            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
+            if (FILOPODIA_METRICS) {
                 mp->base_fil_belong->time_retract_complete = worldP->timeStep;
                 mp->base_fil_belong->retracted = true;
+                // Add filopodia dynamics to the cell's list.
+                Cell->add_retraction_time(worldP->timeStep);
+                Cell->add_lifespan(worldP->timeStep - mp->base_fil_belong->time_created);
+                Cell->add_creation_time(mp->base_fil_belong->time_created);
                 mp->base_fil_belong = NULL;
             }
 
@@ -1534,11 +1538,11 @@ bool MemAgent::extendFil(void) {
                             //focalAdhesions();
 
                             //for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
-                            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
+                            if (FILOPODIA_METRICS) {
 
-                                Filopodia* fp = new Filopodia(worldP);
+                                auto fp = new Filopodia(worldP);
 
-                                worldP->filopodia.push_back(fp);
+//                                worldP->filopodia.push_back(fp);
 
                                 base_fil_belong = fp;
                                 fp->time_created = worldP->timeStep;

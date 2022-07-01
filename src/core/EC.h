@@ -47,7 +47,12 @@ private:
     // Stores values of environmental proteins. Only used during cell-only ODES.
     // Key: protein name, value: protein level.
     std::map<std::string, double> m_env_protein_values;
+
+    // DEBUG
 	std::vector<float> m_extension_probabilities;
+    std::vector<int> m_retraction_times;
+    std::vector<int> m_filopodia_lifespans;
+    std::vector<int> m_filopodia_creation_times;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -207,7 +212,16 @@ public:
     double get_longest_fil_length();
 
     double get_protein_initial_value(const std::string &protein_name);
-
+    // Filopodia debug
 	std::vector<float>& get_extension_probs();
+    std::vector<int>& get_retraction_times();
+    std::vector<int>& get_filopodia_lifespans();
+    std::vector<int>& get_creation_times();
+
+    void add_retraction_time(int retraction_time);
+
+    void add_creation_time(int creation_time);
+
+    void add_lifespan(int lifespan);
 };
 #endif //SPRINGAGENT_EC_H
