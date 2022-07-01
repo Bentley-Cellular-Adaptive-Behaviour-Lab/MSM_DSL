@@ -1874,7 +1874,7 @@ void World::updateMemAgents_MSM() {
         memp->vonNeighSearch();
 
 		// Update the level of environmental proteins seen by the cell.
-        memp->update_cell_env_levels();
+        memp->update_env_levels();
 
         //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);

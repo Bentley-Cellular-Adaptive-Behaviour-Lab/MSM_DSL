@@ -2390,6 +2390,10 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
         this->owned_proteins.push_back(newProtein);
         protein->set_memAgent_buffer_level(0);
     }
+
+    for (auto pair : belongsTo->get_env_protein_values()) {
+        this->m_mean_env_proteins_sensed.emplace(std::make_pair(std::get<0>(pair), 0));
+    }
 }
 
 MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
@@ -4758,8 +4762,14 @@ void MemAgent::cycleProteinLevels() {
     }
 }
 
-void MemAgent::update_cell_env_levels() {
-    for (auto pair : this->Cell->get_env_protein_values()) {
+void MemAgent::update_env_levels() {
+    // Update average levels seen by the agent.
+    for (auto &pair : this->m_mean_env_proteins_sensed) {
+        auto newLevel = mean_env_protein_search(pair.first);
+        this->m_mean_env_proteins_sensed[pair.first] = newLevel;
+    }
+    // Update total levels seen by the cell.
+    for (auto &pair : this->Cell->get_env_protein_values()) {
         auto newLevel = pair.second + env_protein_search(pair.first);
         this->Cell->get_env_protein_values()[pair.first] = newLevel;
     }
@@ -4900,4 +4910,8 @@ double MemAgent::DLL4_search() {
 		}
 	}
 	return DLL4_seen;
+}
+
+double MemAgent::get_mean_env_protein(const std::string& name) {
+    return this->m_mean_env_proteins_sensed[name];
 }

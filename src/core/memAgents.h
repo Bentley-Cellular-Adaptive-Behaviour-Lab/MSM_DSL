@@ -32,6 +32,7 @@ private:
     float m_previous_z;
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
+    std::map<std::string, double> m_mean_env_proteins_sensed;
     std::vector<CytoProtein*> m_cytoproteins;
 
     Protrusion* m_belongsToProtrusion;
@@ -217,7 +218,7 @@ public:
     void doVeilAdvance(const float& randomChance);
     void cycleProteinLevels();
 
-    void update_cell_env_levels();
+    void update_env_levels();
     double env_protein_search(const std::string& proteinName);
 
     bool vonNeighSearch();
@@ -226,6 +227,8 @@ public:
 	double DLL4_search();
 	bool passedBackBufferLevels = false;
     double mean_env_protein_search(const std::string &proteinName);
+
+    double get_mean_env_protein(const std::string &name);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H
