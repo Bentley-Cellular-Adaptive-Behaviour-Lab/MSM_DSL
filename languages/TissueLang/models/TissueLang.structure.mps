@@ -395,5 +395,15 @@
     <property role="34LRSv" value="Extends with probability: " />
     <ref role="1TJDcQ" node="bKPOWXCUdt" resolve="ExtensionCondition" />
   </node>
+  <node concept="1TIwiD" id="4d9X0NcW3yg">
+    <property role="EcuMT" value="4848674809656129680" />
+    <property role="TrG5h" value="testNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="4d9X0NcW3yj" role="1TKVEl">
+      <property role="IQ2nx" value="4848674809656129683" />
+      <property role="TrG5h" value="testVal" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
 </model>
 
