@@ -245,6 +245,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Flat *
             check_position(tissue);
             tissue->create_monolayer();
             tissue->determineJunctions();
+
             store_tissue(tissue);
         }
     } catch (int e) {

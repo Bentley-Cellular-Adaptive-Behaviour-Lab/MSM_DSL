@@ -9,6 +9,7 @@
 #define NEIGHSMAX 25
 
 #include <array>
+#include <map>
 #include <string>
 #include <vector>
 

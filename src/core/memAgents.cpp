@@ -635,7 +635,8 @@ bool MemAgent::checkNeighsVonForEnv(void) {
         x++;
     } while ((x < 6) && (flag == 0));
 
-    if (flag == 1) return true;
+    if (flag == 1)
+        return true;
     else {
         return false;
     }
