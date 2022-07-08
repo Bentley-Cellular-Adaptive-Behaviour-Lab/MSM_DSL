@@ -1082,11 +1082,11 @@ void WholeCellODETest::WholeCell_system(const WholeCellODEStates &x,
     double ProteinD = x[3];
     double adjacent_ProteinB = x[4];
 
-    dxdt[0] = 0;
-    dxdt[1] = 0.1 * ProteinA;
-    dxdt[2] = 0.1 * adjacent_ProteinB;
-    dxdt[3] = 0.1 * ProteinC;
-    dxdt[4] = 0;
+    dxdt[0] = 0; // A
+    dxdt[1] = 0.1 * ProteinA; // B
+    dxdt[2] = 0.1 * adjacent_ProteinB; // C
+    dxdt[3] = 0.1 * ProteinC; // D
+    dxdt[4] = 0; // B from neighbour cell.
 }
 
 double WholeCellODETest::calc_ProteinB_adjacent_level(EC *ec) {
@@ -1231,12 +1231,10 @@ void MemAgentODETest::runODEs(const int& timestep) {
         // Set the result to be the new current level.
         // Calculate deltas then apply the delta values
         // the incoming level in the cell stack.
-        cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
             cellAgent->calculateDeltaValues();
             cellAgent->syncDeltaValues();
-            cellIndex++;
         }
 	}
 }

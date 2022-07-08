@@ -20,7 +20,7 @@ private:
 public:
     ODEs();
     void set_ODE_TYPE();
-    [[nodiscard]] int get_ODE_TYPE() const;
+    int get_ODE_TYPE() const;
     void check_cell_ODEs(EC *ec);
     void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
     void check_cell_only_ODEs(EC *ec);
@@ -32,42 +32,33 @@ public:
     void Endothelial_run_cell_only_ODEs(EC *ec);
 };
 
-static double calc_Theta_rate();
-static double calc_Nu_rate();
-static double calc_VEGFR_PROD_rate();
-static double calc_NOTCH_PROD_rate();
-static double calc_VEGFR_DEG_rate(double VEGFR);
-static double calc_VEGF_VEGFR_DEG_rate(double VEGF_VEGFR);
-static double calc_DLL4_DEG_rate(double DLL4);
-static double calc_NOTCH_DEG_rate(double NOTCH);
-static double calc_DLL4_NOTCH_DEG_rate(double DLL4_NOTCH);
+
 static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR);
 static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR);
-static double calc_DLL4_NOTCH_ON_1_rate(double DLL4, double adjacent_NOTCH);
-static double calc_DLL4_NOTCH_OFF_1_rate(double adjacent_DLL4_NOTCH);
-static double calc_DLL4_NOTCH_ON_2_rate(double adjacent_DLL4, double NOTCH);
-static double calc_DLL4_NOTCH_OFF_2_rate(double DLL4_NOTCH);
-
-static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH);
-static double calc_DLL4_NOTCH_OFF_rate(double DLL4_NOTCH);
-
-static double calc_DLL4_UPREG_rate(double Theta, double VEGF_VEGFR, double Nu);
-static double calc_VEGFR_INHIB_rate(double VEGFR, double DLL4_NOTCH, double Nu);
-
-static double calc_NOTCH_adjacent_level(EC *ec, bool memAgentODEs);
-static double calc_DLL4_NOTCH_adjacent_level(EC *ec, bool memAgentODEs);
-static double calc_DLL4_adjacent_level(EC *ec, bool memAgentODEs);
-
-static double calc_NOTCH_DIFF_rate(double NOTCH, double adjacent_NOTCH);
-static double calc_DLL4_DIFF_rate(double DLL4, double adjacent_DLL4);
-
 static double calc_SEMA_PLEXIN_ON_rate(double SEMA3E, double PLEXIND1);
-static double calc_SEMA_PLEXIN_OFF_rate(double SEMA_PLEXIN);
+static double calc_SEMA_PLEXIN_OFF_rate(double SEMA3E_PLEXIND1);
+static double calc_DLL4_INHIB_rate(double SEMA3E_PLEXIND1, double DLL4_INHIB_CONST);
+static double calc_DLL4_INHIB_CONST_rate();
+static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH);
+static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH);
+static double calc_DLL4_DEG_rate(double DLL4, double DLL4_UPTAKE);
+static double calc_VEGFR_PROD_rate();
+static double calc_NOTCH_PROD_rate();
+static double calc_NOTCH_DEG_rate(double NOTCH);
+static double calc_VEGFR_DEG_rate(double VEGFR);
+static double calc_VEGF_VEGFR_DEG_rate(double VEGF_VEGFR);
 static double calc_PLEXIND1_PROD_rate();
 static double calc_PLEXIND1_DEG_rate(double PLEXIND1);
-static double calc_SEMA_PLEXIN_DEG_rate(double SEMA_PLEXIN);
-static double calc_DLL4_INHIB_rate(double DLL4, double SEMA_PLEXIN, double Nu);
+static double calc_SEMA3E_PLEXIND1_DEG_rate(double SEMA3E_PLEXIND1);
+static double calc_DLL4_NOTCH_DEG_rate(double DLL4_NOTCH);
+static double calc_DLL4_UPREG_rate(double VEGF_VEGFR, double DLL4_UPREG_CONST);
+static double calc_DLL4_UPREG_CONST_rate();
+static double calc_VEGFR_INHIB_rate(double DLL4_NOTCH, double VEGFR_INHIB_CONST);
+static double calc_VEGFR_INHIB_CONST_rate();
+static double calc_ACTIVE_VEGFR_rate(double VEGF, double VEGFR);
+static double calc_TOTAL_VEGFR_rate(double ACTIVE_VEGFR, double VEGFR);
 
-static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH);
+static double calc_DLL4_adjacent_level(EC *ec, bool memAgentODEs);
+static double calc_NOTCH_adjacent_level(EC *ec, bool memAgentODEs);
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/

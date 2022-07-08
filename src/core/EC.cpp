@@ -2059,7 +2059,6 @@ void EC::resetEnvProteinLevels() {
 void EC::updateProteinMemAgentBuffer(Protein* protein, const double& deltaValue) {
     auto currentBufferValue = this->m_protein_memAgent_buffer[protein->get_name()];
     this->m_protein_memAgent_buffer[protein->get_name()] = currentBufferValue + deltaValue;
-    int test = 0;
 }
 
 /*****************************************************************************************
