@@ -31,6 +31,7 @@
         <child id="3416854989769302021" name="_height" index="2_kRI7" />
         <child id="3416854989769302025" name="_depth" index="2_kRIb" />
       </concept>
+      <concept id="2940938711094954740" name="WorldLang.structure.GradientTypeLinear" flags="ng" index="_OHFp" />
       <concept id="2940938711094954760" name="WorldLang.structure.GradientTypeConstant" flags="ng" index="_OHG_" />
       <concept id="8343650468779203047" name="WorldLang.structure.Gradient" flags="ng" index="1yko02">
         <child id="1155607132032667046" name="_speciesReference" index="1cJCsQ" />
@@ -123,6 +124,7 @@
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
+        <property id="8011215656704852412" name="_doingParameterSweep" index="2zRkYd" />
         <property id="6420553392043975787" name="_delay" index="2VbSsx" />
         <property id="3125878369731567265" name="_location" index="3_z0tL" />
         <property id="5550369704152692997" name="_showDeg" index="3L6Erj" />
@@ -273,7 +275,7 @@
     <node concept="2rk7l3" id="3_r9aiWUxV1" role="2rk6u4" />
     <node concept="2rk7nQ" id="3_r9aiWUxV2" role="2rk6u2">
       <property role="2rk6ya" value="1" />
-      <property role="2rk6$c" value="72wB6_dUsuC/None" />
+      <property role="2rk6$c" value="72wB6_dUsui/SLURM" />
     </node>
     <node concept="2rk7kT" id="3_r9aiWUxV3" role="2rFWTJ" />
     <node concept="3xrBRZ" id="3_r9aiWUxV4" role="3xrXtm" />
@@ -391,7 +393,7 @@
     <ref role="1ANuJW" node="3_r9aiWUxV0" resolve="Simulation" />
     <node concept="1yko02" id="3_r9aiX1dxj" role="1yko0e">
       <property role="TrG5h" value="VEGF_Gradient" />
-      <node concept="_OHG_" id="7qEJ4WXGjd_" role="3Sm0lf" />
+      <node concept="_OHFp" id="4Lvhlq8PY8x" role="3Sm0lf" />
       <node concept="_K$fF" id="3_r9aiX1dxF" role="3Sm0lh">
         <property role="m_KZ2" value="2S6lVSS$lvQ/Y_Decreasing" />
         <node concept="3ZP1sY" id="3_r9aiX1dxH" role="mqaeu">
@@ -908,6 +910,8 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="VEGF" />
       <property role="3_z0tL" value="2Hxmt3eVjAC/LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+      <property role="2zRkYd" value="true" />
+      <property role="1OajHS" value="20" />
       <node concept="3bpmHq" id="3_r9aiWU$bH" role="1tJpXo">
         <node concept="3bpmH0" id="3_r9aiWU$bI" role="3lUA2Y">
           <node concept="30bXRB" id="4JdBg6HP_Jb" role="3lUA52">
@@ -918,6 +922,22 @@
       </node>
       <node concept="DdDr8" id="2FHpvyX2xra" role="3_z4RZ">
         <ref role="DdDrb" node="7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="3bpmHq" id="4Lvhlq8pzZL" role="2zRkZP">
+        <node concept="3bpmH0" id="4Lvhlq8pzZM" role="3lUA2Y">
+          <node concept="30bXRB" id="4Lvhlq8p$03" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="4Lvhlq8p$0v" role="3lUA2W" />
+      </node>
+      <node concept="3bpmHq" id="4Lvhlq8p$0Q" role="2zRkZY">
+        <node concept="3bpmH0" id="4Lvhlq8p$0R" role="3lUA2Y">
+          <node concept="30bXRB" id="4Lvhlq8p$18" role="3lUA52">
+            <property role="30bXRw" value="1.0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="4Lvhlq8p$1U" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$cM" role="3_zqUg">
@@ -969,7 +989,8 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="SEMA3E" />
       <property role="3_z0tL" value="2Hxmt3eVjAC/LOCATION_EXTRACELLULAR_ENVIRONMENT" />
-      <property role="1OajHS" value="5" />
+      <property role="1OajHS" value="20" />
+      <property role="2zRkYd" value="true" />
       <node concept="3bpmHq" id="3_r9aiWU$fr" role="1tJpXo">
         <node concept="3bpmH0" id="3_r9aiWU$fs" role="3lUA2Y">
           <node concept="30bXRB" id="7qEJ4WXGju1" role="3lUA52">
@@ -989,26 +1010,13 @@
       <node concept="3bpmHq" id="5k$GbZWxQXU" role="2zRkZY">
         <node concept="3bpmH0" id="5k$GbZWxQXV" role="3lUA2Y">
           <node concept="30bXRB" id="5k$GbZWxQYc" role="3lUA52">
-            <property role="30bXRw" value="0.05" />
+            <property role="30bXRw" value="0.1" />
           </node>
         </node>
         <node concept="3bpmH6" id="5k$GbZWxQYS" role="3lUA2W" />
       </node>
       <node concept="DdDr8" id="2FHpvyX2$3H" role="3_z4RZ">
         <ref role="DdDrb" node="2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
-      </node>
-    </node>
-    <node concept="3_zqOZ" id="6oCUiYvXvHG" role="3_zqUg">
-      <property role="2VbSsx" value="1" />
-      <property role="TrG5h" value="Actin" />
-      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
-      <node concept="3bpmHq" id="6oCUiYvXvIH" role="1tJpXo">
-        <node concept="3bpmH0" id="6oCUiYvXvII" role="3lUA2Y">
-          <node concept="30bXRB" id="6oCUiYvXvIZ" role="3lUA52">
-            <property role="30bXRw" value="0" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="6oCUiYvXvJr" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$gw" role="3_zqUg">

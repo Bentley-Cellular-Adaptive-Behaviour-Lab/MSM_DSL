@@ -286,6 +286,96 @@
     <property role="TrG5h" value="dsl_Tissue" />
     <property role="3Le9LX" value=".cpp" />
     <node concept="356WMU" id="h45XYci7cz" role="356KY_">
+      <node concept="356sEK" id="4Lvhlq8B_mU" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8B_mV" role="356sEH">
+          <property role="TrG5h" value="#include &lt;cmath&gt;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8B_mW" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8BqWI" role="383Ya9">
+        <node concept="2EixSi" id="4Lvhlq8BqWK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8BiIF" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8BiIG" role="356sEH">
+          <property role="TrG5h" value="#include &quot;clusterParams.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8BiIH" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8NXWI" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8NXWJ" role="356sEH">
+          <property role="TrG5h" value="#include &quot;dsl_species_gen.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8NXWK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8B8kD" role="383Ya9">
+        <node concept="2EixSi" id="4Lvhlq8B8kF" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8AXUG" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8AXUH" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../core/coordinates.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8AXUI" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8APGT" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8APGU" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../core/EC.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8APGV" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8AFj8" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8AFj9" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../core/memAgents.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8AFja" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8Axvt" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8Axvu" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../core/world.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8Axvv" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8Antt" role="383Ya9">
+        <node concept="2EixSi" id="4Lvhlq8Antv" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8Ad3W" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8Ad3X" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/species/protein.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8Ad3Y" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8_XiQ" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8_XiR" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/cell.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8_XiS" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8_OHm" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8_OHn" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/cellType.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8_OHo" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8x_FX" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8x_FY" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/tissue.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8x_FZ" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8xgTI" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8xgTJ" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/tissue/tissueContainer.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8xgTK" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8xriN" role="383Ya9">
+        <node concept="2EixSi" id="4Lvhlq8xriP" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="4Lvhlq8x6w_" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8x6wA" role="356sEH">
+          <property role="TrG5h" value="void Tissue_Container::tissue_set_up(World* world) {" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8x6wB" role="2EinRH" />
+      </node>
       <node concept="356sEQ" id="4DdJmqSDt29" role="383Ya9">
         <property role="333NGx" value="    " />
         <node concept="356sEK" id="4DdJmqSDx4k" role="383Ya9">
@@ -4396,9 +4486,16 @@
       </node>
       <node concept="356sEK" id="6DcZiwBO42z" role="383Ya9">
         <node concept="2EixSi" id="6DcZiwBO42_" role="2EinRH" />
+        <node concept="373pV1" id="4Lvhlq8Tvfc" role="356sEH" />
         <node concept="356sEF" id="6DcZiwBO71_" role="356sEH">
           <property role="TrG5h" value="}" />
         </node>
+      </node>
+      <node concept="356sEK" id="4Lvhlq8TmCi" role="383Ya9">
+        <node concept="356sEF" id="4Lvhlq8TmCj" role="356sEH">
+          <property role="TrG5h" value="}" />
+        </node>
+        <node concept="2EixSi" id="4Lvhlq8TmCk" role="2EinRH" />
       </node>
     </node>
     <node concept="n94m4" id="h45XYci7c$" role="lGtFl">
