@@ -21,12 +21,12 @@ void Tissue_Container::tissue_set_up(World* world) {
 	// Cell Type Creation //
 	auto Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
 	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 28));
-	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 28));
+	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
 	Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 28));
-	Endothelial_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("SEMA3E_PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 28));
+	Endothelial_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
+	Endothelial_Type->add_protein(new Protein("SEMA3E_PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
 
 	// Tissue Type Creation //
 	auto VesselType_Type = define_tissue_type("VesselType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 10, 6);
@@ -45,14 +45,14 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "Endothelial") {
-//		auto VEGF = memAgent->get_mean_env_protein("VEGF");
-//		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-//		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF, VEGFR);
-//		double TOTAL_VEGFR = calc_TOTAL_VEGFR_rate(ACTIVE_VEGFR, VEGFR);
-//		auto prob = ACTIVE_VEGFR / TOTAL_VEGFR;
+		auto VEGF = memAgent->get_mean_env_protein("VEGF");
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
-		auto prob = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
+		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF, VEGFR);
+		double TOTAL_VEGFR = calc_TOTAL_VEGFR_rate(ACTIVE_VEGFR, VEGFR);
+		auto prob = ACTIVE_VEGFR / TOTAL_VEGFR;
+//		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+//		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+//		auto prob = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
 		return chance < prob;
 	}
     return false;

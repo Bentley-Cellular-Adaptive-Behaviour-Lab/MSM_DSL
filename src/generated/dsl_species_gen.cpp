@@ -244,8 +244,8 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
 	states[5] = ec->get_cell_protein_level("PLEXIND1", 0);
 	states[6] = ec->get_cell_protein_level("SEMA3E_PLEXIND1", 0);
 	states[7] = ec->get_env_protein_level("VEGF") / agents;
-	states[8] = ec->get_env_protein_level("SEMA3E") / agents;
-	states[9] = calc_DLL4_adjacent_level(ec, false);
+    states[8] = ec->get_env_protein_level("SEMA3E") / agents;
+    states[9] = calc_DLL4_adjacent_level(ec, false);
 	states[10] = calc_NOTCH_adjacent_level(ec, false);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
@@ -253,10 +253,10 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
 	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
 	ec->set_cell_protein_level("DLL4_NOTCH", states[0], 27);
-	ec->set_cell_protein_level("VEGFR", states[1], 0);
+	ec->set_cell_protein_level("VEGFR", states[1], 1);
 	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 27);
-	ec->set_cell_protein_level("DLL4", states[3], 0);
-	ec->set_cell_protein_level("SEMA3E_PLEXIND1", states[4], 0);
-	ec->set_cell_protein_level("NOTCH", states[6], 0);
-	ec->set_cell_protein_level("PLEXIND1", states[8], 0);
+	ec->set_cell_protein_level("DLL4", states[3], 1);
+	ec->set_cell_protein_level("SEMA3E_PLEXIND1", states[4], 1);
+	ec->set_cell_protein_level("NOTCH", states[6], 1);
+	ec->set_cell_protein_level("PLEXIND1", states[8], 1);
 }
