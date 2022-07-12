@@ -33,7 +33,7 @@ void World_Container::world_setup(std::vector<double>& paramValues) {
 	auto SEMA3E_protein = new Protein("SEMA3E", PROTEIN_LOCATION_ENVIRONMENT, SEMA3E_initial_conc, 0, -1, -1);
 	auto VEGF_Gradient_centre = Coordinates(100, 100, 10);
 	auto Sema_Gradient_centre = Coordinates(100, 100, 10);
-	create_gradient(GRADIENT_TYPE_CONSTANT, VEGF_protein, &(VEGF_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 20, false);
+	create_gradient(GRADIENT_TYPE_LINEAR, VEGF_protein, &(VEGF_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 20, false);
 	create_gradient(GRADIENT_TYPE_CONSTANT, SEMA3E_protein, &(Sema_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 20, false);
 	// SUBSTRATE CREATION
 }

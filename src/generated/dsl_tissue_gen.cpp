@@ -45,11 +45,14 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "Endothelial") {
-		auto VEGF = memAgent->get_mean_env_protein("VEGF");
+//		auto VEGF = memAgent->get_mean_env_protein("VEGF");
+//		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+//		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF, VEGFR);
+//		double TOTAL_VEGFR = calc_TOTAL_VEGFR_rate(ACTIVE_VEGFR, VEGFR);
+//		auto prob = ACTIVE_VEGFR / TOTAL_VEGFR;
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF, VEGFR);
-		double TOTAL_VEGFR = calc_TOTAL_VEGFR_rate(ACTIVE_VEGFR, VEGFR);
-		auto prob = ACTIVE_VEGFR / TOTAL_VEGFR;
+		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+		auto prob = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
 		return chance < prob;
 	}
 }
