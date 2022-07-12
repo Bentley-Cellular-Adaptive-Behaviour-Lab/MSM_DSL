@@ -34,7 +34,7 @@ void Tissue_Container::tissue_set_up(World* world) {
 	// Cell Creation //
 
 	// Tissue Creation //
-	auto Vessel_Pos = Coordinates(100, 20, 10);
+	auto Vessel_Pos = Coordinates(100, 30, 10);
 	create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
 
 	// Track environmental proteins //
@@ -55,4 +55,5 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 		auto prob = VEGF_VEGFR / (VEGFR + VEGF_VEGFR);
 		return chance < prob;
 	}
+    return false;
 }
