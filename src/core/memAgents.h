@@ -9,6 +9,7 @@
 #define NEIGHSMAX 25
 
 #include <array>
+#include <map>
 #include <string>
 #include <vector>
 
@@ -32,6 +33,7 @@ private:
     float m_previous_z;
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
+    std::map<std::string, double> m_mean_env_proteins_sensed;
     std::vector<CytoProtein*> m_cytoproteins;
 
     Protrusion* m_belongsToProtrusion;
@@ -142,6 +144,7 @@ public:
 
 	std::vector<Protein*> owned_proteins;
 
+	int get_n_nodes();
 	void add_cell_proteins();
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
@@ -153,7 +156,7 @@ public:
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
     void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
 
-    double get_memAgent_next_level(const std::string& protein_name) const;
+    double get_memAgent_buffer_level(const std::string& protein_name) const;
     double get_filopodia_protein_level(const std::string& protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(const std::string& protein_name,
@@ -215,6 +218,18 @@ public:
     void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
     void doVeilAdvance(const float& randomChance);
     void cycleProteinLevels();
+
+    void update_env_levels();
+    double env_protein_search(const std::string& proteinName);
+
+    bool vonNeighSearch();
+
+	// DEBUG: Remove at some point.
+	double DLL4_search();
+	bool passedBackBufferLevels = false;
+    double mean_env_protein_search(const std::string &proteinName);
+
+    double get_mean_env_protein(const std::string &name);
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

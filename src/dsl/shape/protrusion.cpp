@@ -22,15 +22,8 @@
 
 // TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
 
-// void MemAgent::TokenTrading() OR void MemAgent::ActinFlow()
+// RETRACTION BEHAVIOUR?
 
-// void EC::calcCurrentActinUsed() -> EC:: calcCytoProteinUsed()
-
-// void MemAgent::veilAdvance()
-
-// void MemAgent::tryActinPassRadiusN(int x, int y, int z, int N) ->
-
-// void MemAgent::VEGFRresponse() ->
 
 Protrusion::Protrusion(EC* cell, MemAgent *baseMemAgent, ProtrusionType *protrusionType) {
     assert(baseMemAgent->FIL == NONE);
@@ -433,7 +426,7 @@ int Protrusion::retraction(MemAgent* memAgent) {
         if (neighbourMemAgent->FIL == BASE) {
             // We've reached the end of the protrusion, so fully deconstruct it and delete the object.
             deconstructProtrusion(memAgent, neighbourMemAgent, adjustedLength);
-            m_cell->getProtrusionList().remove(this);
+            m_cell->removeProtrusionFromList(this);
             delete this;
             return 0;
         } else {
@@ -475,6 +468,7 @@ bool Protrusion::deconstructProtrusion(MemAgent *memAgent, MemAgent *neighbourMe
 
     /// Analysis of filopodia done here.
     if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
+        auto filopodia = neighbourMemAgent->base_fil_belong;
         neighbourMemAgent->base_fil_belong->time_retract_complete = world->timeStep;
         neighbourMemAgent->base_fil_belong->retracted = true;
         neighbourMemAgent->base_fil_belong = NULL;

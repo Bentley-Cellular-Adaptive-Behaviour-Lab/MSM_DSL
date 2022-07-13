@@ -84,7 +84,11 @@ float RAND_FILRETRACT_CHANCE = -1;
 long long seed = -1;
 
 
-void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& replicate_number) {
+void readArgs(int argc,
+              char * argv[],
+              std::vector<double>& param_values,
+              int& replicate_number,
+              int& current_run_number) {
     // Argument structure: no. of params being varied, increment numbers.
     int i;
     // Read in parameter values, if being used.
@@ -94,7 +98,7 @@ void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& r
         current_value = atoi(argv[i]);
     }
 
-    for (i = 1; i < argc - 2; i++) {
+    for (i = 1; i < argc - 3; i++) {
         param_values.push_back(atof(argv[i]));
     }
 
@@ -104,6 +108,10 @@ void readArgs(int argc, char * argv[], std::vector<double>& param_values, int& r
     // Set analysis type.
     i++;
     analysis_type = atoi(argv[i]);
+
+    // Set run number.
+    i++;
+    current_run_number = atoi(argv[i]);
 }
 
 void checkArgValues(int argc, char * argv[])
@@ -179,14 +187,14 @@ int main(int argc, char * argv[]) {
         int file_buffer_size = 200;
         char file_buffer[file_buffer_size];
         std::vector<double> param_values;
-        int replicate_no;
-        readArgs(argc, argv, param_values, replicate_no);
+        int replicate_no, current_run_number;
+        readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
         // Create output file.
-        std::string file_string;
-        construct_file_string(replicate_no, param_values, file_string);
-        sprintf(file_buffer, "%s", file_string.c_str());
-		write_args_to_outfile(file_string, replicate_no, param_values);
+//        std::string file_string;
+//        construct_file_string(replicate_no, param_values, file_string);
+//        sprintf(file_buffer, "%s", file_string.c_str());
+//		write_args_to_outfile(file_string, replicate_no, param_values);
 
     } else {
 
@@ -199,21 +207,23 @@ int main(int argc, char * argv[]) {
         int file_buffer_size = 200;
         char file_buffer[file_buffer_size];
         std::vector<double> param_values;
-        int replicate_no;
-        readArgs(argc, argv, param_values, replicate_no);
+        int replicate_no, current_run_number;
+        readArgs(argc, argv, param_values, replicate_no, current_run_number);
 
+        std::cout << "Replicate number: " << std::to_string(replicate_no) << "\n";
+
+        std::cout << "Run number: " << std::to_string(run_number) << "\n";
 
         // Create output file.
-        std::string file_string;
-        construct_file_string(replicate_no, param_values, file_string);
-        sprintf(file_buffer, "%s", file_string.c_str());
-        write_args_to_outfile(file_string, replicate_no, param_values);
+//        std::string file_string;
+//        construct_file_string(replicate_no, param_values, file_string);
+//        sprintf(file_buffer, "%s", file_string.c_str());
+//        write_args_to_outfile(file_string, replicate_no, param_values);
 
         //---------------------------------------------------------------
 
         char outfilename[500];
 
-        std::cout << "output file name: " << outfilename << std::endl;
 
 //    RUNSfile.open(outfilename);
 
@@ -222,7 +232,9 @@ int main(int argc, char * argv[]) {
 
         w_container->world_setup(param_values); // Set the current increments that we are at.
         world = w_container->get_world();
+        world->set_run_number(current_run_number);
         WORLDpointer = world;
+
 
 
         // -----------------------------------------------------------------------------------------------------------//
@@ -232,38 +244,48 @@ int main(int argc, char * argv[]) {
 //        varyParams(param_values.at(0), 0.1, 0.5);
 //        varyParams(param_values.at(1), 0.1, 0.5);
 
-        auto tissue = world->getTissueContainer()->tissues.at(0);
-        auto cell1 = tissue->m_cell_agents.at(0);
-        auto cell2 = tissue->m_cell_agents.at(1);
+//        auto tissue = world->getTissueContainer()->tissues.at(0);
+//        auto cell1 = tissue->m_cell_agents.at(0);
+//        auto cell2 = tissue->m_cell_agents.at(1);
+////
+//        // Force add the cells to each others neighbour lists.
+//        // Junction testing may not happen quickly enough for this test to be valid.
+//        cell1->add_to_neighbour_list(cell2);
+//        cell2->add_to_neighbour_list(cell1);
 //
-        // Force add the cells to each others neighbour lists.
-        // Junction testing may not happen quickly enough for this test to be valid.
-        cell1->add_to_neighbour_list(cell2);
-        cell2->add_to_neighbour_list(cell1);
-
-        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
-        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
-
-        auto val1 = world->getParamValue(V0_VALUE);
-        auto val2 = world->getParamValue(V1_VALUE);
-
-        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
-        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
-
-        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
-        cell1->distributeProteins();
-        cell2->distributeProteins();
+//        auto cell1_VEGF = cell1->m_cell_type->get_protein("VEGF");
+//        auto cell2_VEGF = cell2->m_cell_type->get_protein("VEGF");
+//
+//        auto val1 = world->getParamValue(V0_VALUE);
+//        auto val2 = world->getParamValue(V1_VALUE);
+//
+//        cell1_VEGF->set_cell_level(world->getParamValue(V0_VALUE),0);
+//        cell2_VEGF->set_cell_level(world->getParamValue(V1_VALUE),0);
+//
+//        std::cout << "Cell 1 VEGF level set at: " << cell1_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+//        std::cout << "Cell 2 VEGF level set at: " << cell2_VEGF->get_cell_level(0) << ". Distributing proteins to agents." << "\n";
+//        cell1->distributeProteins();
+//        cell2->distributeProteins();
 
         // -----------------------------------------------------------------------------------------------------------//
 
 #if GRAPHICS
+		std::cout << "World created." << "\n";
+		world->create_outfiles(param_values);
+		std::cout << "Running simulation." << std::endl;
         displayGlui(&argc, argv);
         glutMainLoop();
 #else
         std::cout << "World created." << "\n";
-        world->printProteinNames();
-        world->runSimulation();
+		world->create_outfiles(param_values);
+		std::cout << "Running simulation." << std::endl;
+		world->runSimulation_MSM();
+
+        std::cout << "Ending simulation. Logging filopodia dynamics." << "\n";
+        world->log_filopodia();
+        world->write_to_retraction_file();
+        world->write_to_creation_file();
+        world->write_to_lifespan_file();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();

@@ -8,8 +8,8 @@
   <imports>
     <import index="xfg9" ref="r:ac28053f-2041-47f6-806b-ecfaca05a64a(org.iets3.core.expr.base.runtime.runtime)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesSetup.behavior)" />
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesSetup.structure)" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
@@ -5107,41 +5107,6 @@
       <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
     </node>
   </node>
-  <node concept="18kY7G" id="5$qoOFydXas">
-    <property role="3GE5qa" value="Processes" />
-    <property role="TrG5h" value="check_TranscriptionDelay" />
-    <node concept="3clFbS" id="5$qoOFydXat" role="18ibNy">
-      <node concept="3clFbJ" id="5$qoOFydXbo" role="3cqZAp">
-        <node concept="3eOVzh" id="5$qoOFydYEP" role="3clFbw">
-          <node concept="3cmrfG" id="5$qoOFydYHH" role="3uHU7w">
-            <property role="3cmrfH" value="1" />
-          </node>
-          <node concept="2OqwBi" id="5$qoOFydXne" role="3uHU7B">
-            <node concept="1YBJjd" id="5$qoOFydXb$" role="2Oq$k0">
-              <ref role="1YBMHb" node="5$qoOFydXbf" resolve="regulation" />
-            </node>
-            <node concept="3TrcHB" id="5$qoOFydX$7" role="2OqNvi">
-              <ref role="3TsBF5" to="w3cn:6UPd1r3aNjV" resolve="TranscriptionDelay" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbS" id="5$qoOFydXbq" role="3clFbx">
-          <node concept="2MkqsV" id="5$qoOFydYIa" role="3cqZAp">
-            <node concept="Xl_RD" id="5$qoOFydYIm" role="2MkJ7o">
-              <property role="Xl_RC" value="Transcription delays must be greater than zero" />
-            </node>
-            <node concept="1YBJjd" id="5$qoOFydYKd" role="1urrMF">
-              <ref role="1YBMHb" node="5$qoOFydXbf" resolve="regulation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5$qoOFydXbf" role="1YuTPh">
-      <property role="TrG5h" value="regulation" />
-      <ref role="1YaFvo" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
-    </node>
-  </node>
   <node concept="18kY7G" id="5$qoOFydYLz">
     <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="check_SpeciesTranscriptionDelay" />
@@ -5156,7 +5121,7 @@
               <ref role="1YBMHb" node="5$qoOFydYLY" resolve="species" />
             </node>
             <node concept="3TrcHB" id="5$qoOFydZ7x" role="2OqNvi">
-              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
+              <ref role="3TsBF5" to="w3cn:5$qoOFyduhF" resolve="_delay" />
             </node>
           </node>
         </node>

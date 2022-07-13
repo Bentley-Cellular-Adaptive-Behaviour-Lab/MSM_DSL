@@ -1010,7 +1010,7 @@
         <node concept="VPM3Z" id="5$qoOFydujo" role="3F10Kt" />
         <node concept="3XFhqQ" id="5$qoOFydujp" role="3EZMnx" />
         <node concept="3F0ifn" id="5$qoOFydujq" role="3EZMnx">
-          <property role="3F0ifm" value="Transcription Delay:" />
+          <property role="3F0ifm" value="Delay:" />
           <node concept="2biZxu" id="5$qoOFydujr" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1019,7 +1019,7 @@
           </node>
         </node>
         <node concept="3F0A7n" id="5$qoOFydumE" role="3EZMnx">
-          <ref role="1NtTu8" to="w3cn:5$qoOFyduhF" resolve="_transcriptionDelay" />
+          <ref role="1NtTu8" to="w3cn:5$qoOFyduhF" resolve="_delay" />
           <node concept="2biZxu" id="5$qoOFydunT" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

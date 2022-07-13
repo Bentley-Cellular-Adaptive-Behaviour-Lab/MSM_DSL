@@ -9,6 +9,7 @@
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
+    <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -203,6 +204,13 @@
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
     </node>
+    <node concept="1TJgyj" id="2iYrNGjfSu_" role="1TKVEi">
+      <property role="IQ2ns" value="2647675930457114533" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_extensionRule" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="bKPOWXCUdt" resolve="ExtensionCondition" />
+    </node>
     <node concept="PrWs8" id="4dDC3GsoAE3" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
@@ -360,6 +368,41 @@
       <property role="20kJfa" value="_target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreYb" resolve="CellType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bKPOWXCUdt">
+    <property role="EcuMT" value="211905917822935901" />
+    <property role="R5$K7" value="true" />
+    <property role="TrG5h" value="ExtensionCondition" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="bKPOWXCUdw" role="1TKVEi">
+      <property role="IQ2ns" value="211905917822935904" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="expr" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="bKPOWXCUdu">
+    <property role="EcuMT" value="211905917822935902" />
+    <property role="TrG5h" value="AlwaysExtends" />
+    <property role="34LRSv" value="Always extends filopodia when: " />
+    <ref role="1TJDcQ" node="bKPOWXCUdt" resolve="ExtensionCondition" />
+  </node>
+  <node concept="1TIwiD" id="bKPOWXCUdv">
+    <property role="EcuMT" value="211905917822935903" />
+    <property role="TrG5h" value="ExtensionWithProb" />
+    <property role="34LRSv" value="Extends with probability: " />
+    <ref role="1TJDcQ" node="bKPOWXCUdt" resolve="ExtensionCondition" />
+  </node>
+  <node concept="1TIwiD" id="4d9X0NcW3yg">
+    <property role="EcuMT" value="4848674809656129680" />
+    <property role="TrG5h" value="testNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="4d9X0NcW3yj" role="1TKVEl">
+      <property role="IQ2nx" value="4848674809656129683" />
+      <property role="TrG5h" value="testVal" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

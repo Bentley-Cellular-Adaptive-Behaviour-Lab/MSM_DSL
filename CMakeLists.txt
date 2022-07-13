@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 set(CMAKE_CXX_STANDARD 17)
 include_directories(src)
 include_directories(libraries)
+include_directories(/usr/local/include)
 
 # Read in argument to determine whether to create a test executable or not.
 # 0 = no testing

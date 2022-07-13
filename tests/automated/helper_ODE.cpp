@@ -799,6 +799,9 @@ void DistributeProteinsTest::createTissue(Tissue_Container *container, Cell_Type
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    for (auto cell : this->m_tissue->m_cell_agents) {
+        cell->calcVonNeighs();
+    }
 }
 
 Tissue_Monolayer* DistributeProteinsTest::getTissue() {
@@ -827,7 +830,6 @@ bool DistributeProteinsTest::correctProteinBLevel(MemAgent* memAgent) {
             proteinLevelCorrect = true;
         }
     }
-
     return proteinLevelCorrect;
 }
 
@@ -844,7 +846,6 @@ bool DistributeProteinsTest::correctProteinCLevel(MemAgent* memAgent) {
             proteinLevelCorrect = true;
         }
     }
-
     return proteinLevelCorrect;
 }
 
@@ -1030,6 +1031,11 @@ void WholeCellODETest::createTissue(Tissue_Container *container, Cell_Type* cell
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+
+    cell1->getNeighCellVector().push_back(cell2);
+    cell2->getNeighCellVector().push_back(cell1);
 }
 
 void WholeCellODETest::runODEs(const int& timestep) {
@@ -1076,11 +1082,11 @@ void WholeCellODETest::WholeCell_system(const WholeCellODEStates &x,
     double ProteinD = x[3];
     double adjacent_ProteinB = x[4];
 
-    dxdt[0] = 0;
-    dxdt[1] = 0.1 * ProteinA;
-    dxdt[2] = 0.1 * adjacent_ProteinB;
-    dxdt[3] = 0.1 * ProteinC;
-    dxdt[4] = 0;
+    dxdt[0] = 0; // A
+    dxdt[1] = 0.1 * ProteinA; // B
+    dxdt[2] = 0.1 * adjacent_ProteinB; // C
+    dxdt[3] = 0.1 * ProteinC; // D
+    dxdt[4] = 0; // B from neighbour cell.
 }
 
 double WholeCellODETest::calc_ProteinB_adjacent_level(EC *ec) {
@@ -1225,12 +1231,10 @@ void MemAgentODETest::runODEs(const int& timestep) {
         // Set the result to be the new current level.
         // Calculate deltas then apply the delta values
         // the incoming level in the cell stack.
-        cellIndex = 0;
         for (auto cellAgent : this->m_tissue->m_cell_agents) {
             check_cell_ODEs(cellAgent);
             cellAgent->calculateDeltaValues();
             cellAgent->syncDeltaValues();
-            cellIndex++;
         }
 	}
 }
@@ -1392,6 +1396,10 @@ void VenkatramanCellTest::createTissue(Tissue_Container *container, Cell_Type* c
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+    cell1->getNeighCellVector().push_back(cell2);
+    cell2->getNeighCellVector().push_back(cell1);
 }
 
 void VenkatramanCellTest::check_cell_ODEs(EC *ec) {
@@ -1757,6 +1765,10 @@ void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Typ
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
     this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    auto cell1 = this->m_tissue->m_cell_agents.at(0);
+    auto cell2 = this->m_tissue->m_cell_agents.at(1);
+    cell1->getNeighCellVector().push_back(cell2);
+    cell2->getNeighCellVector().push_back(cell1);
 }
 
 void VenkatramanMemAgentTest::printTimeStep(const int &timestep) {

@@ -202,7 +202,7 @@
     </node>
     <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
       <property role="IQ2nx" value="6420553392043975787" />
-      <property role="TrG5h" value="_transcriptionDelay" />
+      <property role="TrG5h" value="_delay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyi" id="4O6RXqW77zQ" role="1TKVEl">
@@ -488,8 +488,8 @@
     <property role="R5$K7" value="true" />
     <property role="34LRSv" value="Regulation" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
-    <node concept="1TJgyi" id="6UPd1r3aNjV" role="1TKVEl">
-      <property role="IQ2nx" value="7977339587325015291" />
+    <node concept="1TJgyi" id="1wC$$UTcoyy" role="1TKVEl">
+      <property role="IQ2nx" value="1740802122790832290" />
       <property role="TrG5h" value="TranscriptionDelay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>

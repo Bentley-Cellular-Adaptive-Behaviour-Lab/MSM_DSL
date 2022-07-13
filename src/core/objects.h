@@ -24,13 +24,17 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-#define MAXtime 20000
+#define MAXtime 10000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
 
 // Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
+//#define GRAPHICS false
 #define DSL_TESTING true
+#define FEEDBACK_TESTING true
+#define FILOPODIA_METRICS true
+#define SCALE_BY_INIT false
 #define WORLD_TESTING true
 #define TISSUE_TESTING true
 #define SHAPE_TESTING false
@@ -80,7 +84,7 @@ enum ODE_TYPE {
 #define TIP_VEGFR 50*(VEGFRnorm/100.0f)///set as over 50% - its the lower limit for no of VEGFR needed to qualify as a tip cell.
 #define TIP_MEMS 1.2///lower limit on no. of Magents needed to qualify as a tip cell, X times the initial value TIP_MEMS is X
 
-#define TESTING  false //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
+#define TESTING true //if testing the behaviour against a deterministic version (random numbers always generated the same throughout for stochastic elements, seeded with 100)
 #define on_the_fly_surface_agents false ///faster as doesnt do voxellisatoin but cant use for full runs as not correct
 #define oldVersion false ///old VEGFR-2 activatoin function from JTB 2008
 

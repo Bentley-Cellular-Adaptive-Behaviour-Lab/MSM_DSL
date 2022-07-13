@@ -426,6 +426,23 @@
         </node>
         <node concept="2iRfu4" id="1z0V6VU8Xy8" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="2iYrNGjfSvi" role="3EZMnx">
+        <node concept="VPM3Z" id="2iYrNGjfSvk" role="3F10Kt" />
+        <node concept="3XFhqQ" id="2iYrNGjfSw3" role="3EZMnx" />
+        <node concept="3F0ifn" id="2iYrNGjfSw9" role="3EZMnx">
+          <property role="3F0ifm" value="Filopodia extend" />
+          <node concept="2biZxu" id="2iYrNGjfSwd" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2iYrNGjfSwe" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="bKPOWXCUvO" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+        </node>
+        <node concept="2iRfu4" id="2iYrNGjfSvn" role="2iSdaV" />
+      </node>
       <node concept="3F0ifn" id="6mloH5uSw4j" role="3EZMnx">
         <node concept="2biZxu" id="2FvyIAlGEPJ" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
@@ -1571,6 +1588,56 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="bKPOWXHII7">
+    <ref role="1XX52x" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+    <node concept="3EZMnI" id="bKPOWXHII9" role="2wV5jI">
+      <node concept="3EZMnI" id="bKPOWXHIIg" role="3EZMnx">
+        <node concept="VPM3Z" id="bKPOWXHIIi" role="3F10Kt" />
+        <node concept="3F0ifn" id="bKPOWXHIIt" role="3EZMnx">
+          <property role="3F0ifm" value="always when -&gt;" />
+          <node concept="2biZxu" id="bKPOWXHIIB" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="bKPOWXHIIC" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="bKPOWXHIIz" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:bKPOWXCUdw" resolve="expr" />
+          <node concept="2biZxu" id="bKPOWXHIIF" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="bKPOWXHIIG" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="bKPOWXHIIl" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="bKPOWXHIIc" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="bKPOWXHIIQ">
+    <ref role="1XX52x" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
+    <node concept="3EZMnI" id="bKPOWXHIIS" role="2wV5jI">
+      <node concept="3EZMnI" id="bKPOWXHIIZ" role="3EZMnx">
+        <node concept="VPM3Z" id="bKPOWXHIJ1" role="3F10Kt" />
+        <node concept="3F0ifn" id="bKPOWXHIJc" role="3EZMnx">
+          <property role="3F0ifm" value="with probability -&gt;" />
+          <node concept="2biZxu" id="bKPOWXHIJm" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="bKPOWXHIJn" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="bKPOWXHIJi" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:bKPOWXCUdw" resolve="expr" />
+        </node>
+        <node concept="2iRfu4" id="bKPOWXHIJ4" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="bKPOWXHIIV" role="2iSdaV" />
     </node>
   </node>
 </model>

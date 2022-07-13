@@ -49,32 +49,76 @@ void MemAgent::NotchResponse(void) {
     int j;
     int flag = 0;
 
-    do {
-        if (worldP->neigh[i]->getType() == const_M) {
-            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
-                if (flag == 0) {
-                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
-                        //if more than number of notch receptors  only take amount needed to activate notches
-                        if (worldP->neigh[i]->getMids()[j]->Dll4 > Notch1) {
-                            worldP->neigh[i]->getMids()[j]->Dll4 -= Notch1;
+	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
+	if (junction) {
+
+		std::vector<Location*> neighLocations;
+		// Get neighbour locations.
+		for (int x = Mx - 1; x <= Mx + 1; x++) {
+			for (int y = My - 1; y <= My + 1; y++) {
+				for (int z = Mz - 1; z <= Mz + 1; z++) {
+					neighLocations.push_back(&(worldP->grid[x][y][z]));
+				}
+			}
+		}
+		// Shuffle chosen locations randomly.
+		worldP->shuffleLocations(neighLocations);
+
+		// Iterate over neighbouring locations. If they have DLL4,
+		// add to our active Notch total until we have no Notch left.
+		bool noMoreNotch = false;
+		for (auto location : neighLocations) {
+			if (location->getType() == const_M) {
+				for (auto &memAgent : location->getMids()) {
+					if (memAgent->Cell != Cell && memAgent->junction) {
+						if (memAgent->Dll4 > Notch1) {
+                            memAgent->Dll4 -= Notch1;
                             activeNotch = activeNotch + Notch1;
                             Notch1 = 0.0f;
-                            flag = 1;
-
-                        }//take all of it if less than it has notch receptors
-                        else {
-                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
-                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
-                            worldP->neigh[i]->getMids()[j]->Dll4 = 0.0f;
+                            noMoreNotch = true;
+                        } else {
+							//take all of it if less than it has notch receptors
+                            Notch1 = Notch1 - memAgent->Dll4;
+                            activeNotch = activeNotch + memAgent->Dll4;
+                            memAgent->Dll4 = 0.0f;
                         }
-                    }
-                }
-            }
-        }
+					}
+				}
+			}
+			// Stop searching locations if we've run out of notch.
+			if (noMoreNotch) {
+				break;
+			}
+		}
+	}
 
-        i++;
 
-    } while ((flag == 0) && (i < NEIGH));
+
+//    do {
+//        if (worldP->neigh[i]->getType() == const_M) {
+//            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
+//                if (flag == 0) {
+//                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
+//                        //if more than number of notch receptors  only take amount needed to activate notches
+//                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
+//                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+//                            activeNotch = activeNotch + Notch1;
+//                            Notch1 = 0.0f;
+//                            flag = 1;
+//
+//                        }//take all of it if less than it has notch receptors
+//                        else {
+//                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+//                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+//                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//        i++;
+//    } while ((flag == 0) && (i < NEIGH));
 
 }
 
@@ -174,7 +218,6 @@ void MemAgent::veilAdvance(void) {
  * @return bool retracted
  */
 bool MemAgent::filRetract(void) {
-
     int flag = 0;
     int i, k;
     float B, D;
@@ -203,11 +246,11 @@ bool MemAgent::filRetract(void) {
     //toroidal adjustments
     if(TOROIDAL_X){
     if (sqrt(XA * XA) >= (int) ((float) this->worldP->gridXDimensions / 2.0f)) {
-
-        if (XA > 0) XA = -(this->worldP->gridXDimensions - XA);
-        else XA = this->worldP->gridXDimensions - abs(XA);
+        if (XA > 0)
+            XA = -(this->worldP->gridXDimensions - XA);
+        else
+            XA = this->worldP->gridXDimensions - abs(XA);
         length = sqrt((XA * XA)+(B * B)+(D * D));
-
     } else {
         length = worldP->getDist(Mx, My, Mz, mp->Mx, mp->My, mp->Mz);
     }
@@ -230,7 +273,7 @@ bool MemAgent::filRetract(void) {
          
          ///if the nodeAgent at the other end of the spring is the BASE of the filopodium then reset it to NONE state and delete all springs and agents associated
         if (mp->FIL == BASE) {
-            
+
             mp->FIL = NONE;
             
             ///if vessel is blindended dont release adhesion, otherwise do. keeps it fixed and sewn up at front of sprout in this setup
@@ -244,9 +287,13 @@ bool MemAgent::filRetract(void) {
             mp->filTokens += filTokens;
             
             //ANALYSIS of filopodia can be done here
-            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
+            if (FILOPODIA_METRICS) {
                 mp->base_fil_belong->time_retract_complete = worldP->timeStep;
                 mp->base_fil_belong->retracted = true;
+                // Add filopodia dynamics to the cell's list.
+                Cell->add_retraction_time(worldP->timeStep);
+                Cell->add_lifespan(worldP->timeStep - mp->base_fil_belong->time_created);
+                Cell->add_creation_time(mp->base_fil_belong->time_created);
                 mp->base_fil_belong = NULL;
             }
 
@@ -588,14 +635,11 @@ bool MemAgent::checkNeighsVonForEnv(void) {
         x++;
     } while ((x < 6) && (flag == 0));
 
-    if (flag == 1) return true;
+    if (flag == 1)
+        return true;
     else {
-       
         return false;
-
     }
-   
-
 }
 //-----------------------------------
 //------------------------------------------------------------------------------
@@ -605,7 +649,7 @@ bool MemAgent::checkNeighsVonForEnv(void) {
  */
 void MemAgent::VEGFRresponse(void) {
 
-    float Prob, chance;
+    double prob, chance;
 
     int upto = Cell->VonNeighs; 
     float VEGFRactiveProp;
@@ -616,36 +660,75 @@ void MemAgent::VEGFRresponse(void) {
     bool moved = false;
 
     bool filopodiaOn = true;
-   
-    //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and vEGF.. 
-    VEGFRactiveProp = (VEGFR / ((float) VEGFRNORM / (float) upto));
-    VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
 
-    //done exceed max level
-    if (VEGFRactive > VEGFR) {
-        VEGFRactive = VEGFR;
+    if (FEEDBACK_TESTING) {
+        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
+        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
+
+        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
+        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
+		double scalar = ((float) VEGFRNORM / (float) upto);
+		if (ODE_activeVEGFR == 0) {
+			prob = 0;
+		} else {
+			prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * Cell->filCONST;
+		}
+
+		if (worldP->timeStep % 9 == 0) {
+			Cell->get_extension_probs().push_back(prob);
+		}
+    } else {
+        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
+		float scalar = ((float) VEGFRNORM / (float) upto);
+        VEGFRactiveProp = VEGFR / scalar;
+        VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
+
+		if (SumVEGF > 0) {
+			int test = 0;
+		}
+
+        //done exceed max level
+        if (VEGFRactive > VEGFR) {
+            VEGFRactive = VEGFR;
+        }
+
+        // Test - getting length of extended filopodia.
+        // FORCE FILOPODIA THAT ARE LONG TO HAVE HIGH ACTIVATION.
+
+        bool test = false;
+        if (FIL == TIP) {
+            auto n_nodes = get_n_nodes();
+            if (n_nodes > 1) {
+                test = true;
+            }
+        }
+
+        //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
+        if (filopodiaOn) {
+            //***** RANDFIL here
+            if (randFilExtend >= 0 && randFilExtend <= 1) {
+                // 0-1 continuous value input at runtime.
+                // If randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0
+                // i.e. fully random direction and extension,
+                // with no bias from VR->actin or VR gradient to direction.
+                prob = randFilExtend;
+            } else {
+				prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+				if (worldP->timeStep % 9 == 0) {
+					Cell->get_extension_probs().push_back(prob);
+				}
+            }
+            //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
+        } else {
+			prob = 0;
+        }
     }
 
-    //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
-    if (filopodiaOn) {
-    	//***** RANDFIL here
-    	if (randFilExtend >= 0 && randFilExtend <= 1) {
-			Prob = randFilExtend; //0-1 continuous value input at runtime. if randFil!=-1 - token Strength forced to 0, and epsilon forced to 0.0 (fully random direction and extension, no bias from VR->actin or VR gradient to direction.
-		} else {
-			Prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
-		}
-        //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
-    } else {
-		Prob = 0;
-	}
-
-    //chance = (float) rand() / (float) RAND_MAX;
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-    //-----------------------------------------------------------------------
-    if (chance < Prob) {
-    
-        //award actin tokens
+//    if (chance < prob) {
+    if (worldP->can_extend(Cell, this)) {
+        // Award actin tokens
 
         filTokens++;
 
@@ -678,8 +761,6 @@ void MemAgent::VEGFRresponse(void) {
     if (!moved)
     	filTipTimer++;
     else filTipTimer = 0;
-
-
 }
 //----------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -1013,10 +1094,6 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
     bool previousJunction = junction;
 
-    if (worldP->timeStep == 2) {
-        int test = 0;
-    }
-
     i = (int) Mx;
     j = (int) My;
     k = (int) Mz;
@@ -1165,13 +1242,14 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
                             // TOM: Add the cell to the list of neighbours.
                             // TOM: Only do this once if we're not doing cell shuffling.
-                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
-                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == 0) {
-                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
-                            }
+//                            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
+//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+//                            } else if (analysis_type != ANALYSIS_TYPE_SHUFFLING && worldP->timeStep == -1) {
+//                                this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
+//                            }
+//							this->Cell->add_to_neighbour_list(worldP->grid[m][n][p].getMids()[y]->Cell);
 
-                            worldP->grid[m][n][p].getMids()[y]->junction = true;
+							worldP->grid[m][n][p].getMids()[y]->junction = true;
                             if (worldP->timeStep > 0) {
                                 //Anastamosis: create new spring junction to allow fusion, only on two tip cells
                                 if(StoreInJunctionList!=true){
@@ -1461,11 +1539,11 @@ bool MemAgent::extendFil(void) {
                             //focalAdhesions();
 
                             //for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
-                            if (analysis_type == ANALYSIS_TYPE_CONTACTS) {
+                            if (FILOPODIA_METRICS) {
 
-                                Filopodia* fp = new Filopodia(worldP);
+                                auto fp = new Filopodia(worldP);
 
-                                worldP->filopodia.push_back(fp);
+//                                worldP->filopodia.push_back(fp);
 
                                 base_fil_belong = fp;
                                 fp->time_created = worldP->timeStep;
@@ -2314,6 +2392,9 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
         protein->set_memAgent_buffer_level(0);
     }
 
+    for (auto pair : belongsTo->get_env_protein_values()) {
+        this->m_mean_env_proteins_sensed.emplace(std::make_pair(std::get<0>(pair), 0));
+    }
 }
 
 MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
@@ -2380,7 +2461,9 @@ MemAgent::MemAgent(EC* belongsTo, World* world, const bool& allocateProts){
 
 MemAgent::~MemAgent(void){
     // Pass protein levels back to the cell before deleting them.
-    this->passBackBufferLevels();
+	if (node) {
+		this->passBackBufferLevels();
+	}
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
@@ -2483,7 +2566,7 @@ double MemAgent::get_memAgent_current_level(const std::string& protein_name) con
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_memAgent_next_level(const std::string& protein_name) const {
+double MemAgent::get_memAgent_buffer_level(const std::string& protein_name) const {
     if (this->has_protein(protein_name)) {
         for (auto protein : this->owned_proteins) {
             if (protein->get_name() == protein_name) {
@@ -4660,8 +4743,17 @@ void MemAgent::doVeilAdvance(const float& randomChance) {
 ******************************************************************************************/
 
 void MemAgent::passBackBufferLevels() {
-    for (auto &protein : this->owned_proteins) {
-        this->Cell->updateProteinMemAgentBuffer(protein, protein->get_memAgent_buffer_level());
+	for (auto &protein : this->Cell->m_cell_type->proteins) {
+		if (protein->get_location() == PROTEIN_LOCATION_CELL) {
+			this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
+		} else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
+			&& this->vonNeu
+			&& !this->junction) {
+			this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
+		} else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
+			&& this->junction) {
+            this->Cell->updateProteinMemAgentBuffer(protein, get_memAgent_buffer_level(protein->get_name()));
+		}
     }
 }
 
@@ -4669,4 +4761,158 @@ void MemAgent::cycleProteinLevels() {
     for (auto &protein : this->owned_proteins) {
         protein->update_protein_level();
     }
+}
+
+void MemAgent::update_env_levels() {
+    // Update average levels seen by the agent.
+    for (auto &pair : this->m_mean_env_proteins_sensed) {
+        auto newLevel = mean_env_protein_search(pair.first);
+        this->m_mean_env_proteins_sensed[pair.first] = newLevel;
+    }
+    // Update total levels seen by the cell.
+    for (auto &pair : this->Cell->get_env_protein_values()) {
+        auto newLevel = pair.second + env_protein_search(pair.first);
+        this->Cell->get_env_protein_values()[pair.first] = newLevel;
+    }
+}
+
+double MemAgent::env_protein_search(const std::string& proteinName) {
+    double result = 0;
+    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
+        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
+            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+                if (worldP->insideWorld(x, y, z)
+                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    if (worldP->grid[x][y][z].getType() == const_E) {
+                        auto env = worldP->grid[x][y][z].getEid();
+                        result += env->get_protein_level(proteinName);
+                    }
+                }
+            }
+        }
+    }
+    return result;
+}
+
+double MemAgent::mean_env_protein_search(const std::string& proteinName) {
+    double result = 0;
+    double count = 0;
+    for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
+        for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
+            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+                if (worldP->insideWorld(x, y, z)
+                    && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
+                    if (worldP->grid[x][y][z].getType() == const_E) {
+                        auto env = worldP->grid[x][y][z].getEid();
+                        count += 1;
+                        result += env->get_protein_level(proteinName);
+                    }
+                }
+            }
+        }
+    }
+    return result / count;
+}
+
+bool MemAgent::vonNeighSearch() {
+    // Searches the von Neumann neighbourhood
+    // for environment agents. If any are found,
+    // set the memAgent vonNeu flag to true,
+    // and return true.
+    bool hasVonNeighs = false;
+    int index = 0;
+    int currentX, currentY, currentZ;
+    auto memAgentX = (int) Mx;
+    auto memAgentY = (int) My;
+    auto memAgentZ = (int) Mz;
+    //same layer
+    do {
+        if (index == 0) {
+            currentX = memAgentX;
+            currentY = memAgentY + 1;
+            currentZ = memAgentZ;
+        } else if (index == 1) {
+            currentX = memAgentX;
+            currentY = memAgentY - 1;
+            currentZ = memAgentZ;
+        } else if (index == 2) {
+            currentX = memAgentX + 1;
+            currentY = memAgentY;
+            currentZ = memAgentZ;
+        } else if (index == 3) {
+            currentX = memAgentX;
+            currentY = memAgentY;
+            currentZ = memAgentZ + 1;
+        } else if (index == 4) {
+            currentX = memAgentX;
+            currentY = memAgentY;
+            currentZ = memAgentZ - 1;
+        } else if (index == 5) {
+            currentX = memAgentX - 1;
+            currentY = memAgentY;
+            currentZ = memAgentZ;
+        }
+
+        //-------------------------------
+        //toroidal only X
+        if (TOROIDAL_X_env){
+            if (currentX >= this->worldP->gridXDimensions)
+                currentX = 0;
+            if (currentX < 0)
+                currentX = this->worldP->gridXDimensions - 1;
+        }
+        if (worldP->insideWorld(currentX, currentY, currentZ)) {
+            if (worldP->grid[currentX][currentY][currentZ].getType() == const_E) {
+                hasVonNeighs = true;
+            } else if ((worldP->grid[currentX][currentY][currentZ].getType() == const_E) && (worldP->grid[currentX][currentY][currentZ].getEid()->Astro)) {
+                hasVonNeighs = true;
+            }
+        }
+
+        index++;
+    } while (index < 6 && !hasVonNeighs);
+
+    this->vonNeu = hasVonNeighs;
+    return hasVonNeighs;
+}
+
+int MemAgent::get_n_nodes() {
+	// If the memAgent is a tip,
+	// get the number of nodes in its
+	// protrusion.
+	assert(this->FIL == TIP);
+	int count = 1;
+	auto currentMemAgent = this; // Start from the tip of the protrusion.
+	auto neighbourMemAgent = currentMemAgent->filNeigh;
+
+	do { // Calculate the length.
+		count++;
+		// Move down the filopodia.
+		currentMemAgent = neighbourMemAgent;
+		neighbourMemAgent = currentMemAgent->filNeigh;
+	} while (currentMemAgent->FIL != BASE);
+	return count;
+}
+
+double MemAgent::DLL4_search() {
+	double DLL4_seen = 0;
+	for (int x = Mx - 1; x <= Mx + 1; x++) {
+		for (int y = My - 1; y <= My + 1; y++) {
+			for (int z = Mz - 1; z <= Mz + 1; z++) {
+				auto location = worldP->grid[x][y][z];
+				if (location.getType() == const_M) {
+					for (auto &memAgent : location.getMids()) {
+						if (memAgent->Cell != Cell && memAgent->junction) {
+							DLL4_seen += memAgent->Dll4;
+						}
+					}
+				}
+			}
+		}
+	}
+	return DLL4_seen;
+}
+
+double MemAgent::get_mean_env_protein(const std::string& name) {
+    return this->m_mean_env_proteins_sensed[name];
 }

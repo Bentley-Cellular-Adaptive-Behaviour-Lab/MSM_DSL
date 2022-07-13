@@ -44,8 +44,6 @@ namespace boost
     template <class T, class A>
     std::size_t hash_value(std::vector<T, A> const&);
     template <class T, class A>
-    std::size_t hash_value(std::list<T, A> const& v);
-    template <class T, class A>
     std::size_t hash_value(std::deque<T, A> const& v);
     template <class K, class C, class A>
     std::size_t hash_value(std::set<K, C, A> const& v);
@@ -70,12 +68,6 @@ namespace boost
 
     template <class T, class A>
     std::size_t hash_value(std::vector<T, A> const& v)
-    {
-        return boost::hash_range(v.begin(), v.end());
-    }
-
-    template <class T, class A>
-    std::size_t hash_value(std::list<T, A> const& v)
     {
         return boost::hash_range(v.begin(), v.end());
     }

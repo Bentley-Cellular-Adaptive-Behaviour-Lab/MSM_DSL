@@ -1,5 +1,6 @@
 #include "core/memAgents.h"
 #include "core/EC.h"
+#include "core/objects.h"
 
 #include "dsl/tissue/cellType.h"
 #include "dsl/species/protein.h"
@@ -7,7 +8,24 @@
 #include "dsl_species_gen.h"
 
 // Created using: Example1_Species //
+
 ODEs::ODEs() {
+    this->set_ODE_TYPE();
+}
+
+void ODEs::set_ODE_TYPE() {
+    this->ODE_TYPE = ODE_TYPE_MEMAGENT;
+}
+
+int ODEs::get_ODE_TYPE() const {
+    return this->ODE_TYPE;
+}
+
+void ODEs::check_cell_ODEs(EC *ec) {
+    assert(this->get_ODE_TYPE() != -1);
+    if (ec->m_cell_type->m_name == "Endothelial") {
+        Endothelial_run_cell_ODEs(ec);
+    }
 }
 
 void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memAgent) {
@@ -16,9 +34,10 @@ void ODEs::check_memAgent_ODEs(const std::string& cell_type_name, MemAgent *memA
     }
 }
 
-void ODEs::check_cell_ODEs(EC *ec) {
+void ODEs::check_cell_only_ODEs(EC *ec) {
+    assert(this->get_ODE_TYPE() != -1);
     if (ec->m_cell_type->m_name == "Endothelial") {
-        Endothelial_run_cell_ODEs(ec);
+        Endothelial_run_cell_only_ODEs(ec);
     }
 }
 
@@ -89,6 +108,11 @@ void ODEs::Endothelial_run_cell_ODEs(EC *ec) {
 
     ec->set_cell_protein_level("VEGFR", new_states[1],1);
     ec->set_cell_protein_level("DLL4", new_states[3],1);
+}
+
+void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
+    Endothelial_cell_ode_states states;
+
 }
 
 static double calc_VEGF_VEGFR_FORWARD_rate() {

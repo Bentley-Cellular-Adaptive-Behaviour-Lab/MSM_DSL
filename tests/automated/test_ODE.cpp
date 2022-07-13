@@ -422,11 +422,11 @@ TEST_F(MemAgentODETest, TwoTimestepTest) {
 
     // Check ProteinC levels in both cells-> should be 1.
     EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(2)->get_cell_level(1), 1); // Cell 1.
-    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(0), 0); // Cell 2.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(2)->get_cell_level(1), 1); // Cell 2.
 
     // Check ProteinD levels in both cells-> should be 0.
     EXPECT_FLOAT_EQ(cell1->m_cell_type->proteins.at(3)->get_cell_level(1), 0); // Cell 1.
-    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(0), 0); // Cell 2.
+    EXPECT_FLOAT_EQ(cell2->m_cell_type->proteins.at(3)->get_cell_level(1), 0); // Cell 2.
 }
 
 TEST_F(MemAgentODETest, ThreeTimestepTest) {

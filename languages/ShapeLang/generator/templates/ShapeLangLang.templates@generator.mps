@@ -243,7 +243,7 @@
       </node>
       <node concept="356sEK" id="4iosasL9IXh" role="383Ya9">
         <node concept="356sEF" id="4iosasL9IXi" role="356sEH">
-          <property role="TrG5h" value="#include &quot;../dsl/protein/species.h&quot;" />
+          <property role="TrG5h" value="#include &quot;../dsl/species/protein.h&quot;" />
         </node>
         <node concept="2EixSi" id="4iosasL9IXj" role="2EinRH" />
       </node>

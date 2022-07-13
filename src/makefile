@@ -54,7 +54,7 @@ ifeq ($(UNAME), Darwin)
 endif
 
 ifeq ($(GRAPHICS), true)
-		LIBS := -framework OpenGL -framework GLUT -lglui
+		LIBS += -framework OpenGL -framework GLUT -L/usr/local/Cellar/glui/2.37 -lglui
 		OBJS += ./graphics/display.o ./graphics/ScreenRecording.o
 endif
 

@@ -37,6 +37,10 @@ enum GRADIENT_DIRECTION {
 };
 
 class Gradient {
+private:
+    // Debug flag, if set to true, the gradient will also place down
+    // VEGF from the legacy version of the MSM in the environment.
+    bool m_legacy_VEGF = false;
 public:
     int m_gradient_type;
     int m_gradient_shape;
@@ -112,6 +116,9 @@ public:
     void apply_gradient_to_sphere();
     void apply_gradient_to_sinkandsource();
     void apply_gradient_to_cuboid();
+
+    [[nodiscard]] bool uses_legacy_VEGF() const;
+    void set_uses_legacy_VEGF(bool flag);
 };
 
 #endif //SRC_SPRINGAGENT_GRADIENT_H

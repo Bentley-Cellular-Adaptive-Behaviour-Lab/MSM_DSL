@@ -12,18 +12,25 @@ Protein::Protein(const std::string& name,
                  const double& min,
                  const double& max,
                  const int& max_transcription_delay) {
-    // Used when setting up cellular proteins.
-    assert(max_transcription_delay > 0);
+    // Used when setting up cellular proteins and gradients.
+    assert(max_transcription_delay > 0
+        || (max_transcription_delay == -1 && protein_location == PROTEIN_LOCATION_ENVIRONMENT));
     this->m_name = name;
 	this->m_protein_location = protein_location;
+    this->m_initial_level = initial_level;
     this->m_min = min;
     this->m_max = max;
     this->transcription_delay = max_transcription_delay;
 
     // Set up levels vector by filling it with zeros for each timestep, then add the initial level to the end of the vector.
-    for (int i = 0; i <= max_transcription_delay; i++) {
-        this->cell_levels.push_back(initial_level);
+    if (protein_location == PROTEIN_LOCATION_ENVIRONMENT) {
+        this->env_level = initial_level;
+    } else {
+        for (int i = 0; i <= max_transcription_delay; i++) {
+            this->cell_levels.push_back(initial_level);
+        }
     }
+
 }
 
 Protein::Protein(const std::string& name,
@@ -31,9 +38,10 @@ Protein::Protein(const std::string& name,
                  const double& env_level,
                  const double& min,
                  const double& max) {
-    // Used when setting up environment proteins.
+    // Used when setting up proteins at env agents.
     this->m_name = name;
     this->m_protein_location = protein_location;
+    this->m_initial_level = env_level;
     this->env_level = env_level;
     this->m_min = min;
     this->m_max = max;
@@ -47,6 +55,7 @@ Protein::Protein(Protein *rhs) {
     this->m_min = rhs->m_min;
     this->transcription_delay = rhs->transcription_delay;
     this->m_max = rhs->m_max;
+    this->m_initial_level = rhs->m_initial_level;
     this->m_memAgent_current_level = rhs->m_memAgent_current_level;
     this->m_memAgent_buffer_level = rhs->m_memAgent_buffer_level;
     std::copy(rhs->cell_levels.begin(), rhs->cell_levels.end(),std::back_inserter(this->cell_levels));
@@ -122,6 +131,10 @@ double Protein::get_memAgent_buffer_level() const {
 
 void Protein::set_memAgent_buffer_level(const double &new_level) {
     this->m_memAgent_buffer_level = new_level;
+}
+
+double Protein::get_initial_level() const {
+    return this->m_initial_level;
 }
 
 Protein::~Protein() = default;

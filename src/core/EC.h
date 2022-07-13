@@ -6,9 +6,9 @@
 #define SPRINGAGENT_EC_H
 
 #include <array>
+#include <list>
 #include <map>
 #include <string>
-#include <list>
 #include <vector>
 
 class Coordinates;
@@ -38,11 +38,21 @@ namespace ECUtils {
 
 class EC {
 private:
-    std::list<Protrusion*> m_protrusions;
-    std::vector<EC*> neigh_cells;
+    std::vector<Protrusion*> m_protrusions;
+    std::vector<EC*> m_neigh_cells;
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
+
+    // Stores values of environmental proteins. Only used during cell-only ODES.
+    // Key: protein name, value: protein level.
+    std::map<std::string, double> m_env_protein_values;
+
+    // DEBUG
+	std::vector<float> m_extension_probabilities;
+    std::vector<int> m_retraction_times;
+    std::vector<int> m_filopodia_lifespans;
+    std::vector<int> m_filopodia_creation_times;
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -178,7 +188,7 @@ public:
     void destroyProtrusion(Protrusion *protrusion);
     void addProtrusionToList(Protrusion* protrusion);
     bool removeProtrusionFromList(Protrusion* protrusion);
-    std::list<Protrusion*>& getProtrusionList();
+    std::vector<Protrusion*>& getProtrusionList();
     std::vector<EC*>& getNeighCellVector();
 
     const std::map<std::string, double>& getProteinMemAgentBuffer();
@@ -192,5 +202,26 @@ public:
     void initialiseProteinStartBuffer();
     void initialiseProteinDeltaBuffer();
     const std::map<std::string, double>& getProteinStartBuffer();
+
+    void store_env_protein(const std::string& proteinName);
+    std::map<std::string, double>& get_env_protein_values();
+    void resetEnvProteinLevels();
+    double get_env_protein_level(const std::string& proteinName);
+
+    double calc_fil_length(MemAgent* tipMemAgent);
+    double get_longest_fil_length();
+
+    double get_protein_initial_value(const std::string &protein_name);
+    // Filopodia debug
+	std::vector<float>& get_extension_probs();
+    std::vector<int>& get_retraction_times();
+    std::vector<int>& get_filopodia_lifespans();
+    std::vector<int>& get_creation_times();
+
+    void add_retraction_time(int retraction_time);
+
+    void add_creation_time(int creation_time);
+
+    void add_lifespan(int lifespan);
 };
 #endif //SPRINGAGENT_EC_H

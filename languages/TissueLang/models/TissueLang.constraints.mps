@@ -459,5 +459,39 @@
   <node concept="1M2fIO" id="6Y2UmXTHQxY">
     <ref role="1M2myG" to="nguq:5qSYbADreYb" resolve="CellType" />
   </node>
+  <node concept="1M2fIO" id="bKPOWXCUdJ">
+    <ref role="1M2myG" to="nguq:bKPOWXCUdt" resolve="ExtensionCondition" />
+    <node concept="9S07l" id="bKPOWXCUdK" role="9Vyp8">
+      <node concept="3clFbS" id="bKPOWXCUdL" role="2VODD2">
+        <node concept="3clFbF" id="bKPOWXCUhK" role="3cqZAp">
+          <node concept="3clFbT" id="bKPOWXCUhJ" role="3clFbG" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="bKPOWXCUim">
+    <ref role="1M2myG" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+    <node concept="9S07l" id="bKPOWXCUin" role="9Vyp8">
+      <node concept="3clFbS" id="bKPOWXCUio" role="2VODD2">
+        <node concept="3clFbF" id="bKPOWXCUiJ" role="3cqZAp">
+          <node concept="3clFbT" id="bKPOWXCUiI" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="bKPOWXCUnb">
+    <ref role="1M2myG" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
+    <node concept="9S07l" id="bKPOWXCUnc" role="9Vyp8">
+      <node concept="3clFbS" id="bKPOWXCUnd" role="2VODD2">
+        <node concept="3clFbF" id="bKPOWXCUrc" role="3cqZAp">
+          <node concept="3clFbT" id="bKPOWXCUrb" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
