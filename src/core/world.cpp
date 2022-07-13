@@ -1582,7 +1582,7 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 
-        if (timeStep % 1 == 0) {
+        if (timeStep % 10 == 0) {
 			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
 			write_to_outfiles();
 		}
