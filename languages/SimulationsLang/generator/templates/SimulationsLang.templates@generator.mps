@@ -6967,7 +6967,7 @@
       </node>
       <node concept="356sEK" id="6dETgET7PBU" role="383Ya9">
         <node concept="356sEF" id="6dETgET7PBV" role="356sEH">
-          <property role="TrG5h" value="#ssh login.camp.thecrick.org  &quot;cd " />
+          <property role="TrG5h" value="ssh login.camp.thecrick.org  &quot;cd " />
         </node>
         <node concept="356sEF" id="4LUnzNQHIt_" role="356sEH">
           <property role="TrG5h" value="CAMP_FOLDER_NAME" />
@@ -8190,12 +8190,6 @@
           <property role="TrG5h" value="done" />
         </node>
         <node concept="2EixSi" id="6dETgETgivY" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="7_Jh6Mgllvd" role="383Ya9">
-        <node concept="356sEF" id="7_Jh6Mgllve" role="356sEH">
-          <property role="TrG5h" value="done" />
-        </node>
-        <node concept="2EixSi" id="7_Jh6Mgllvf" role="2EinRH" />
       </node>
       <node concept="356sEK" id="6dETgETgycD" role="383Ya9">
         <node concept="356sEF" id="6dETgETgycE" role="356sEH">
@@ -10105,11 +10099,11 @@
                     </node>
                   </node>
                   <node concept="3eOVzh" id="7cwCqjUx8s3" role="1Dwp0S">
-                    <node concept="3cmrfG" id="7cwCqjUx8s7" role="3uHU7w">
-                      <property role="3cmrfH" value="2" />
-                    </node>
                     <node concept="37vLTw" id="7cwCqjUx7nW" role="3uHU7B">
                       <ref role="3cqZAo" node="7cwCqjUx78n" resolve="i" />
+                    </node>
+                    <node concept="3cmrfG" id="7HHgWi1aIk7" role="3uHU7w">
+                      <property role="3cmrfH" value="1" />
                     </node>
                   </node>
                   <node concept="3uNrnE" id="7cwCqjUx8KO" role="1Dwrff">

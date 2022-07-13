@@ -5894,7 +5894,7 @@
                   <ref role="3cqZAo" node="5k$GbZW$wlg" resolve="targetSpecies" />
                 </node>
                 <node concept="2GrUjf" id="5k$GbZW$wo9" role="3uHU7B">
-                  <ref role="2Gs0qQ" node="5k$GbZW$wo3" resolve="queryParam" />
+                  <ref role="2Gs0qQ" node="5k$GbZW$wo3" resolve="querySpecies" />
                 </node>
               </node>
               <node concept="3clFbS" id="5k$GbZW$woa" role="3clFbx">
@@ -9478,7 +9478,7 @@
         </node>
         <node concept="3cpWs6" id="2FHpvyXiAGs" role="3cqZAp">
           <node concept="37vLTw" id="2FHpvyXiAHK" role="3cqZAk">
-            <ref role="3cqZAo" node="2FHpvyXiAjM" resolve="species" />
+            <ref role="3cqZAo" node="2FHpvyXiAjM" resolve="parameterSpecies" />
           </node>
         </node>
       </node>
@@ -10295,7 +10295,7 @@
         <node concept="3clFbH" id="2AP3$9H$3vJ" role="3cqZAp" />
         <node concept="3cpWs6" id="2AP3$9H$hM0" role="3cqZAp">
           <node concept="37vLTw" id="2AP3$9H$hRI" role="3cqZAk">
-            <ref role="3cqZAo" node="2AP3$9H$4pI" resolve="processSpecies" />
+            <ref role="3cqZAo" node="2AP3$9H$4pI" resolve="processSpeciesList" />
           </node>
         </node>
       </node>
@@ -10968,7 +10968,7 @@
               <ref role="3TtcxE" to="w3cn:2Hxmt3eVfjT" resolve="Reactant_Terms" />
             </node>
             <node concept="37vLTw" id="5k$GbZWIzFq" role="2Oq$k0">
-              <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="irrReaction" />
+              <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="revReaction" />
             </node>
           </node>
           <node concept="3clFbS" id="5k$GbZWIzFr" role="2LFqv$">
@@ -11040,7 +11040,7 @@
               <ref role="3TtcxE" to="w3cn:2Hxmt3eVfjV" resolve="Product_Terms" />
             </node>
             <node concept="37vLTw" id="5k$GbZWIzFQ" role="2Oq$k0">
-              <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="irrReaction" />
+              <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="revReaction" />
             </node>
           </node>
           <node concept="3clFbS" id="5k$GbZWIzFR" role="2LFqv$">
@@ -11112,7 +11112,7 @@
             <node concept="2OqwBi" id="5k$GbZWIzGh" role="37wK5m">
               <node concept="2OqwBi" id="5k$GbZWIzGi" role="2Oq$k0">
                 <node concept="37vLTw" id="5k$GbZWIzGj" role="2Oq$k0">
-                  <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="irrReaction" />
+                  <ref role="3cqZAo" node="5k$GbZWIzGE" resolve="revReaction" />
                 </node>
                 <node concept="3TrEf2" id="5k$GbZWIzGk" role="2OqNvi">
                   <ref role="3Tt5mk" to="w3cn:6pt0UY9yFLu" resolve="ForwardRate" />

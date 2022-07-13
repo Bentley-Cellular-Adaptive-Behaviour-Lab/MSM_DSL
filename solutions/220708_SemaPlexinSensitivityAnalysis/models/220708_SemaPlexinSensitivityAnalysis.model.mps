@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:efa155c7-8788-4ea6-87d7-9722a4f34659(080722_SemaPlexinSensitivityAnalysis.model)">
+<model ref="r:efa155c7-8788-4ea6-87d7-9722a4f34659(220708_SemaPlexinSensitivityAnalysis.model)">
   <persistence version="9" />
   <attribute name="doNotGenerate" value="false" />
   <languages>
@@ -13,7 +13,9 @@
     <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
     <use id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout" version="0" />
   </languages>
-  <imports />
+  <imports>
+    <import index="yccc" ref="r:43c0fc27-0660-4169-8d01-cf4177cd5ef3(220713_SemaPlexinSensitivityAnalysis.clone.model)" implicit="true" />
+  </imports>
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
       <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
@@ -939,6 +941,9 @@
         </node>
         <node concept="3bpmH6" id="4Lvhlq8p$1U" role="3lUA2W" />
       </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwr" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$cM" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -962,6 +967,12 @@
       <node concept="DdDr8" id="2FHpvyY02jf" role="3_z4RZ">
         <ref role="DdDrb" node="7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
       </node>
+      <node concept="DdDr8" id="6_OhnXE3Qws" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3QwB" role="3rqWia">
+        <ref role="3rtiFY" to="yccc:7qEJ4WXGnXM" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$dZ" role="3_zqUg">
       <property role="2VbSsx" value="28" />
@@ -983,6 +994,12 @@
       </node>
       <node concept="DdDr8" id="2FHpvyY02jg" role="3_z4Rx">
         <ref role="DdDrb" node="7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwt" role="3_z4Rx">
+        <ref role="DdDrb" to="yccc:7qEJ4WXGvGG" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3Qw$" role="3rtiFW">
+        <ref role="3rtiFY" to="yccc:3_r9aiWU$yN" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$fa" role="3_zqUg">
@@ -1018,6 +1035,9 @@
       <node concept="DdDr8" id="2FHpvyX2$3H" role="3_z4RZ">
         <ref role="DdDrb" node="2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
       </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwx" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$gw" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -1038,6 +1058,9 @@
       </node>
       <node concept="DdDr8" id="2FHpvyY02jj" role="3_z4RZ">
         <ref role="DdDrb" node="2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwy" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$hP" role="3_zqUg">
@@ -1060,6 +1083,12 @@
       </node>
       <node concept="DdDr8" id="2FHpvyY02jk" role="3_z4Rx">
         <ref role="DdDrb" node="2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwz" role="3_z4Rx">
+        <ref role="DdDrb" to="yccc:2FHpvyX2$3d" resolve="SEMA_PLEXIN_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3QwC" role="3rtiFW">
+        <ref role="3rtiFY" to="yccc:2FHpvyX2$50" resolve="DLL4_INHIBITION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$jf" role="3_zqUg">
@@ -1086,6 +1115,15 @@
       <node concept="3rtiFT" id="2FHpvyX2$5Y" role="3rqWia">
         <ref role="3rtiFY" node="2FHpvyX2$50" resolve="DLL4_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwu" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3Qw_" role="3rqWia">
+        <ref role="3rtiFY" to="yccc:3_r9aiWU$yN" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3QwD" role="3rqWia">
+        <ref role="3rtiFY" to="yccc:2FHpvyX2$50" resolve="DLL4_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$kI" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -1105,6 +1143,9 @@
       </node>
       <node concept="DdDr8" id="2FHpvyY02jh" role="3_z4RZ">
         <ref role="DdDrb" node="3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6_OhnXE3Qwv" role="3_z4RZ">
+        <ref role="DdDrb" to="yccc:3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="3_r9aiWU$mi" role="3_zqUg">
@@ -1127,6 +1168,12 @@
       </node>
       <node concept="DdDr8" id="2FHpvyY02ji" role="3_z4Rx">
         <ref role="DdDrb" node="3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6_OhnXE3Qww" role="3_z4Rx">
+        <ref role="DdDrb" to="yccc:3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6_OhnXE3QwA" role="3rtiFW">
+        <ref role="3rtiFY" to="yccc:7qEJ4WXGnXM" resolve="VEGFR_INHIBITION" />
       </node>
     </node>
     <node concept="37mRI7" id="7qEJ4WXGqpm" role="lGtFl">

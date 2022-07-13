@@ -363,8 +363,8 @@
     </node>
     <node concept="3_zqcM" id="Sq0uhn2891" role="3_zqUi">
       <property role="TrG5h" value="DLL4_NOTCH_BINDING_1" />
-      <ref role="3JPVZL" node="Sq0uhn289R" resolve="DLL4_NOTCH_ON" />
-      <ref role="3JPVZN" node="Sq0uhn28dW" resolve="DLL4_NOTCH_OFF" />
+      <ref role="3JPVZL" node="Sq0uhn289R" resolve="DLL4_NOTCH_ON_1" />
+      <ref role="3JPVZN" node="Sq0uhn28dW" resolve="DLL4_NOTCH_OFF_1" />
       <node concept="3_zqOy" id="Sq0uhn289B" role="3_zqOF">
         <property role="3_zqOz" value="1" />
         <ref role="3_zqOB" node="Sq0uhn27Hi" resolve="DLL4_NOTCH" />
@@ -420,7 +420,7 @@
       <property role="2x6hFG" value="1" />
       <property role="TrG5h" value="VEGF_UPREGULATION" />
       <ref role="1gv5qF" node="3Ig6X3Xd5Hk" resolve="FILOPODIA" />
-      <ref role="1gufLq" node="3Ig6X3Xd6G1" resolve="VEGF_UPREGULATION" />
+      <ref role="1gufLq" node="3Ig6X3Xd6G1" resolve="VEGF_UPREG" />
       <ref role="1gv5qG" node="Sq0uhn27A5" resolve="VEGF" />
     </node>
     <node concept="3_zqOx" id="3Ig6X3Xd6Xy" role="3_zqUl">
@@ -809,7 +809,7 @@
         <node concept="3bpmH6" id="Sq0uhn27EE" role="3lUA2W" />
       </node>
       <node concept="DdDr8" id="Sq0uhn289m" role="3_z4RZ">
-        <ref role="DdDrb" node="Sq0uhn2891" resolve="DLL4_NOTCH_BINDING" />
+        <ref role="DdDrb" node="Sq0uhn2891" resolve="DLL4_NOTCH_BINDING_1" />
       </node>
       <node concept="3rtiFT" id="Sq0uhnasE9" role="3rqWia">
         <ref role="3rtiFY" node="Sq0uhnasDo" resolve="DLL4_UPREGULATION" />

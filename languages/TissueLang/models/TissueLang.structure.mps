@@ -374,7 +374,7 @@
     <property role="EcuMT" value="211905917822935901" />
     <property role="R5$K7" value="true" />
     <property role="TrG5h" value="ExtensionCondition" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="bKPOWXCUdw" role="1TKVEi">
       <property role="IQ2ns" value="211905917822935904" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -398,7 +398,7 @@
   <node concept="1TIwiD" id="4d9X0NcW3yg">
     <property role="EcuMT" value="4848674809656129680" />
     <property role="TrG5h" value="testNode" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="4d9X0NcW3yj" role="1TKVEl">
       <property role="IQ2nx" value="4848674809656129683" />
       <property role="TrG5h" value="testVal" />
