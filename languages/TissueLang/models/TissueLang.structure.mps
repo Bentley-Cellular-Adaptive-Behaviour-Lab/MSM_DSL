@@ -163,7 +163,7 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreY9">
     <property role="EcuMT" value="6249017959271690121" />
-    <property role="TrG5h" value="Shape" />
+    <property role="TrG5h" value="CellShape" />
     <property role="R5$K7" value="true" />
     <property role="R4oN_" value="Abstract concept for storing the shape type of a cell." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
@@ -195,7 +195,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_shape" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5qSYbADreY9" resolve="Shape" />
+      <ref role="20lvS9" node="5qSYbADreY9" resolve="CellShape" />
     </node>
     <node concept="1TJgyj" id="2GjRzF0SzVv" role="1TKVEi">
       <property role="IQ2ns" value="3104068912113925855" />
@@ -313,10 +313,10 @@
   </node>
   <node concept="1TIwiD" id="5qSYbADreYt">
     <property role="EcuMT" value="6249017959271690141" />
-    <property role="TrG5h" value="ShapeRectangular" />
+    <property role="TrG5h" value="CellShape_Rectangular" />
     <property role="R4oN_" value="Square cell shape type." />
     <property role="34LRSv" value="Rectangular" />
-    <ref role="1TJDcQ" node="5qSYbADreY9" resolve="Shape" />
+    <ref role="1TJDcQ" node="5qSYbADreY9" resolve="CellShape" />
     <node concept="1TJgyi" id="6WHzz7cWd8h" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704856593" />
       <property role="TrG5h" value="_doingParameterSweep" />

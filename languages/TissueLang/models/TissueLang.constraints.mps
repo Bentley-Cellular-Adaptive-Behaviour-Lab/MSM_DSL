@@ -357,7 +357,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGy1">
-    <ref role="1M2myG" to="nguq:5qSYbADreY9" resolve="Shape" />
+    <ref role="1M2myG" to="nguq:5qSYbADreY9" resolve="CellShape" />
     <node concept="9S07l" id="4dDC3GsoGy2" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGy3" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoG_W" role="3cqZAp">
@@ -367,7 +367,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGBd">
-    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
+    <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
     <node concept="9S07l" id="4dDC3GsoGBf" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGBg" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoGF9" role="3cqZAp">

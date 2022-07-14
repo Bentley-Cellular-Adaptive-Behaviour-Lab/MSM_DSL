@@ -16,8 +16,28 @@
   <imports />
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
+      <concept id="638201485731101734" name="ShapeLang.structure.ExtensionWhen" flags="ng" index="2WYUjS" />
+      <concept id="638201485731101730" name="ShapeLang.structure.ExtensionCondition" flags="ng" index="2WYUjW">
+        <child id="638201485731101731" name="expr" index="2WYUjX" />
+      </concept>
       <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
         <reference id="4970340729092560634" name="_simulationContainerRef" index="1ANuhP" />
+        <child id="976479957056291978" name="_protrusions" index="3Bb2fi" />
+        <child id="976479957056308507" name="_cytoskeletalProteins" index="3Bb693" />
+      </concept>
+      <concept id="976479957056290939" name="ShapeLang.structure.Protrusion" flags="ng" index="3Bb2sz">
+        <property id="6283060364377681262" name="retractionTime" index="2m88tM" />
+        <property id="6283060364377681259" name="extensionTime" index="2m88tR" />
+        <property id="6283060364374448512" name="stallTime" index="2nOves" />
+        <reference id="6283060364382195670" name="targetCytoprotein" index="2mpUna" />
+        <child id="2605682802875058616" name="_allowedCellTypes" index="2BRsc" />
+        <child id="3156891689894719325" name="_followsEnvSpecies" index="Lgisp" />
+      </concept>
+      <concept id="976479957056291036" name="ShapeLang.structure.CytoskeletalProtein" flags="ng" index="3Bb2u4">
+        <reference id="6283060364384455818" name="targetProtrusion" index="2miiqm" />
+        <reference id="6283060364381454765" name="targetSpecies" index="2muIIL" />
+        <child id="6283060364381454777" name="AmountNeeded" index="2muII_" />
+        <child id="638201485730952523" name="_extensionCondition" index="2WLuQl" />
       </concept>
     </language>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
@@ -55,10 +75,11 @@
       </concept>
     </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
+      <concept id="7425695345928347719" name="org.iets3.core.expr.base.structure.Expression" flags="ng" index="2vmvVl" />
       <concept id="5115872837157187871" name="org.iets3.core.expr.base.structure.ParensExpression" flags="ng" index="30bsCy">
         <child id="5115872837157187954" name="expr" index="30bsDf" />
       </concept>
-      <concept id="5115872837156652603" name="org.iets3.core.expr.base.structure.DivExpression" flags="ng" index="30dvO6" />
+      <concept id="5115872837156687764" name="org.iets3.core.expr.base.structure.GreaterExpression" flags="ng" index="30d7iD" />
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
       <concept id="5115872837156578546" name="org.iets3.core.expr.base.structure.PlusExpression" flags="ng" index="30dDZf" />
       <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
@@ -204,7 +225,7 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
-      <concept id="211905917822935903" name="TissueLang.structure.ExtensionWithProb" flags="ng" index="ZkRgg" />
+      <concept id="211905917822935902" name="TissueLang.structure.AlwaysExtends" flags="ng" index="ZkRgh" />
       <concept id="211905917822935901" name="TissueLang.structure.ExtensionCondition" flags="ng" index="ZkRgi">
         <child id="211905917822935904" name="expr" index="ZkRgJ" />
       </concept>
@@ -212,7 +233,10 @@
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
       </concept>
-      <concept id="6249017959271690141" name="TissueLang.structure.ShapeRectangular" flags="ng" index="3ZP1s$">
+      <concept id="1783685413825413975" name="TissueLang.structure.CellTypeReference" flags="ng" index="3yReWT">
+        <reference id="1783685413825588302" name="_target" index="3yR$0w" />
+      </concept>
+      <concept id="6249017959271690141" name="TissueLang.structure.CellShape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
@@ -283,6 +307,41 @@
   <node concept="3Bb2si" id="3_r9aiWUxV5">
     <property role="TrG5h" value="Shapes" />
     <ref role="1ANuhP" node="3_r9aiWUxV0" resolve="Simulation" />
+    <node concept="3Bb2sz" id="zrmdUO7F8O" role="3Bb2fi">
+      <property role="2nOves" value="10" />
+      <property role="2m88tR" value="10" />
+      <property role="2m88tM" value="10" />
+      <property role="TrG5h" value="Filopodia" />
+      <ref role="2mpUna" node="zrmdUOaOYu" />
+      <node concept="3yReWT" id="zrmdUO7F8S" role="2BRsc">
+        <ref role="3yR$0w" node="3_r9aiX1dnA" resolve="Endothelial" />
+      </node>
+      <node concept="1csUcq" id="zrmdUO7F8P" role="Lgisp">
+        <ref role="1csUcr" node="3_r9aiWU$bF" resolve="VEGF" />
+      </node>
+    </node>
+    <node concept="3Bb2u4" id="zrmdUOaOYu" role="3Bb693">
+      <ref role="2muIIL" node="zrmdUO7F96" resolve="Actin" />
+      <ref role="2miiqm" node="zrmdUO7F8O" resolve="Filopodia" />
+      <node concept="2WYUjS" id="zrmdUObLKg" role="2WLuQl">
+        <node concept="30d7iD" id="zrmdUObLKB" role="2WYUjX">
+          <node concept="1cBA6y" id="zrmdUObLKQ" role="30dEs_">
+            <ref role="1cBA6z" node="3_r9aiWU$jf" resolve="DLL4" />
+          </node>
+          <node concept="1cBA6y" id="zrmdUObLLg" role="30dEsF">
+            <ref role="1cBA6z" node="3_r9aiWU$dZ" resolve="VEGF_VEGFR" />
+          </node>
+        </node>
+      </node>
+      <node concept="3bpmHq" id="zrmdUObLLA" role="2muII_">
+        <node concept="3bpmH0" id="zrmdUObLLC" role="3lUA2Y">
+          <node concept="30bXRB" id="zrmdUObLLW" role="3lUA52">
+            <property role="30bXRw" value="10" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="zrmdUObLMo" role="3lUA2W" />
+      </node>
+    </node>
   </node>
   <node concept="3ZP1sW" id="3_r9aiWUxV6">
     <property role="TrG5h" value="Tissues" />
@@ -358,6 +417,9 @@
       <node concept="1csUcq" id="3_r9aiX1dqW" role="3FWu3_">
         <ref role="1csUcr" node="3_r9aiWU$hP" resolve="SEMA3E_PLEXIND1" />
       </node>
+      <node concept="1csUcq" id="zrmdUObLMO" role="3FWu3_">
+        <ref role="1csUcr" node="zrmdUO7F96" resolve="Actin" />
+      </node>
       <node concept="3ZP1s$" id="3_r9aiX1dnE" role="3ZP1s2">
         <node concept="2_hQR_" id="3_r9aiX1dnG" role="2IF2Qc">
           <node concept="2_n9WQ" id="3_r9aiX1dnI" role="2_hQRE">
@@ -376,15 +438,8 @@
           <node concept="2_hRrN" id="3_r9aiX1doL" role="2_hQ4V" />
         </node>
       </node>
-      <node concept="ZkRgg" id="bKPOWXWsP1" role="Rwuyu">
-        <node concept="30dvO6" id="BDFw_SWoO3" role="ZkRgJ">
-          <node concept="3JPVZe" id="BDFw_SWoOn" role="30dEs_">
-            <ref role="n1ZU3" node="BDFw_SWoAk" resolve="TOTAL_VEGFR" />
-          </node>
-          <node concept="3JPVZe" id="BDFw_SWoNl" role="30dEsF">
-            <ref role="n1ZU3" node="BDFw_SWozF" resolve="ACTIVE_VEGFR" />
-          </node>
-        </node>
+      <node concept="ZkRgh" id="zrmdUO8fKi" role="Rwuyu">
+        <node concept="2vmvVl" id="zrmdUO8fKk" role="ZkRgJ" />
       </node>
     </node>
   </node>
@@ -1127,6 +1182,19 @@
       </node>
       <node concept="DdDr8" id="6_OhnXE3Q_0" role="3_z4Rx">
         <ref role="DdDrb" node="3_r9aiWU$KY" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="zrmdUO7F96" role="3_zqUg">
+      <property role="2VbSsx" value="1" />
+      <property role="TrG5h" value="Actin" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="zrmdUO7Fak" role="1tJpXo">
+        <node concept="3bpmH0" id="zrmdUO7Fal" role="3lUA2Y">
+          <node concept="30bXRB" id="zrmdUO7FaA" role="3lUA52">
+            <property role="30bXRw" value="1" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="zrmdUO7Fb4" role="3lUA2W" />
       </node>
     </node>
     <node concept="37mRI7" id="7qEJ4WXGqpm" role="lGtFl">

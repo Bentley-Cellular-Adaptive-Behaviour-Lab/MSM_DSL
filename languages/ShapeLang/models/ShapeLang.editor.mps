@@ -898,7 +898,7 @@
         <node concept="VPM3Z" id="6mloH5uQC$C" role="3F10Kt" />
         <node concept="3XFhqQ" id="6mloH5uQC_b" role="3EZMnx" />
         <node concept="3F0ifn" id="6mloH5uQC_h" role="3EZMnx">
-          <property role="3F0ifm" value="When:" />
+          <property role="3F0ifm" value="Extends:" />
           <node concept="2biZxu" id="2FvyIAlEE1f" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -907,7 +907,7 @@
           </node>
         </node>
         <node concept="3F1sOY" id="6mloH5uQC_p" role="3EZMnx">
-          <ref role="1NtTu8" to="jl3b:Qd9PzECjWa" resolve="TriggersWhen" />
+          <ref role="1NtTu8" to="jl3b:zrmdUO7Flb" resolve="_extensionCondition" />
         </node>
         <node concept="2iRfu4" id="6mloH5uQC$F" role="2iSdaV" />
       </node>
@@ -979,6 +979,64 @@
     <ref role="1XX52x" to="jl3b:2Jfy4gq$TM0" resolve="SensitivityExpression" />
     <node concept="3F1sOY" id="2Jfy4gq_fzv" role="2wV5jI">
       <ref role="1NtTu8" to="jl3b:2Jfy4gq_9_7" resolve="expr" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="zrmdUO8Nc4">
+    <property role="3GE5qa" value="ExtensionConditions" />
+    <ref role="1XX52x" to="jl3b:zrmdUO8fKA" resolve="ExtensionWhen" />
+    <node concept="3EZMnI" id="bKPOWXHII9" role="2wV5jI">
+      <node concept="3EZMnI" id="bKPOWXHIIg" role="3EZMnx">
+        <node concept="VPM3Z" id="bKPOWXHIIi" role="3F10Kt" />
+        <node concept="3F0ifn" id="bKPOWXHIIt" role="3EZMnx">
+          <property role="3F0ifm" value="Always When -&gt;" />
+          <node concept="2biZxu" id="bKPOWXHIIB" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="bKPOWXHIIC" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="bKPOWXHIIz" role="3EZMnx">
+          <ref role="1NtTu8" to="jl3b:zrmdUO8fKz" resolve="expr" />
+          <node concept="2biZxu" id="bKPOWXHIIF" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="bKPOWXHIIG" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="bKPOWXHIIl" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="bKPOWXHIIc" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="zrmdUO8Nco">
+    <property role="3GE5qa" value="ExtensionConditions" />
+    <ref role="1XX52x" to="jl3b:zrmdUO8fK_" resolve="ExtensionWithProb" />
+    <node concept="3EZMnI" id="zrmdUO8Ncq" role="2wV5jI">
+      <node concept="3EZMnI" id="zrmdUO8Ncr" role="3EZMnx">
+        <node concept="VPM3Z" id="zrmdUO8Ncs" role="3F10Kt" />
+        <node concept="3F0ifn" id="zrmdUO8Nct" role="3EZMnx">
+          <property role="3F0ifm" value="With Probability -&gt;" />
+          <node concept="2biZxu" id="zrmdUO8Ncu" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="zrmdUO8Ncv" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="zrmdUO8Ncw" role="3EZMnx">
+          <ref role="1NtTu8" to="jl3b:zrmdUO8fKz" resolve="expr" />
+          <node concept="2biZxu" id="zrmdUO8Ncx" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="zrmdUO8Ncy" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="zrmdUO8Ncz" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="zrmdUO8Nc$" role="2iSdaV" />
     </node>
   </node>
 </model>

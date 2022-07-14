@@ -455,7 +455,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FhBQP">
-    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="ShapeRectangular" />
+    <ref role="1XX52x" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
     <node concept="3EZMnI" id="6mloH5uSvZ5" role="2wV5jI">
       <node concept="2iRkQZ" id="6mloH5uSvZ6" role="2iSdaV" />
       <node concept="3EZMnI" id="6mloH5uSvZt" role="3EZMnx">

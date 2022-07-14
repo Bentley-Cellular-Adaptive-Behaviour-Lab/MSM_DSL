@@ -29,9 +29,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
@@ -82,9 +79,6 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
-      <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
-        <child id="1185788644032" name="normalType" index="mwGJk" />
-      </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
@@ -105,14 +99,6 @@
       <concept id="1174650418652" name="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" flags="nn" index="1YBJjd">
         <reference id="1174650432090" name="applicableNode" index="1YBMHb" />
       </concept>
-      <concept id="1174657487114" name="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" flags="nn" index="1Z2H0r">
-        <child id="1174657509053" name="term" index="1Z2MuG" />
-      </concept>
-      <concept id="1174660718586" name="jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement" flags="nn" index="1Zf1VF">
-        <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
-        <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
-      </concept>
-      <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
@@ -386,35 +372,6 @@
     <node concept="1YaCAy" id="3FNuJRsjkwy" role="1YuTPh">
       <property role="TrG5h" value="protrusion" />
       <ref role="1YaFvo" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
-    </node>
-  </node>
-  <node concept="1YbPZF" id="5CquPnWAt2L">
-    <property role="TrG5h" value="typeof_TriggersWhen" />
-    <node concept="3clFbS" id="5CquPnWAt2M" role="18ibNy">
-      <node concept="1ZobV4" id="42_auSu7rbx" role="3cqZAp">
-        <node concept="mw_s8" id="42_auSu7rnb" role="1ZfhKB">
-          <node concept="2YIFZM" id="5CquPnWAtJ7" role="mwGJk">
-            <ref role="37wK5l" to="xfg9:2Qbt$1tTQco" resolve="createBooleanType" />
-            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
-          </node>
-        </node>
-        <node concept="mw_s8" id="42_auSu7rb$" role="1ZfhK$">
-          <node concept="1Z2H0r" id="42_auSu7p_W" role="mwGJk">
-            <node concept="2OqwBi" id="42_auSu7q$E" role="1Z2MuG">
-              <node concept="1YBJjd" id="5CquPnWAtcM" role="2Oq$k0">
-                <ref role="1YBMHb" node="5CquPnWAt3d" resolve="cytoskeletalProtein" />
-              </node>
-              <node concept="3TrEf2" id="5CquPnWAtrc" role="2OqNvi">
-                <ref role="3Tt5mk" to="jl3b:Qd9PzECjWa" resolve="TriggersWhen" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="5CquPnWAt3d" role="1YuTPh">
-      <property role="TrG5h" value="cytoskeletalProtein" />
-      <ref role="1YaFvo" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
     </node>
   </node>
   <node concept="18kY7G" id="5sLUxN17qLN">
@@ -868,12 +825,17 @@
           </node>
           <node concept="2qgKlT" id="4iosasLaGiF" role="2OqNvi">
             <ref role="37wK5l" to="cyrx:4iosasL9ZPK" resolve="expressionContainsParameter" />
-            <node concept="2OqwBi" id="4iosasLaGtq" role="37wK5m">
-              <node concept="1YBJjd" id="4iosasLaGnb" role="2Oq$k0">
-                <ref role="1YBMHb" node="4iosasL9Y6m" resolve="cytoProtein" />
+            <node concept="2OqwBi" id="zrmdUOaM0J" role="37wK5m">
+              <node concept="2OqwBi" id="4iosasLaGtq" role="2Oq$k0">
+                <node concept="1YBJjd" id="4iosasLaGnb" role="2Oq$k0">
+                  <ref role="1YBMHb" node="4iosasL9Y6m" resolve="cytoProtein" />
+                </node>
+                <node concept="3TrEf2" id="4iosasLaGuB" role="2OqNvi">
+                  <ref role="3Tt5mk" to="jl3b:zrmdUO7Flb" resolve="_extensionCondition" />
+                </node>
               </node>
-              <node concept="3TrEf2" id="4iosasLaGuB" role="2OqNvi">
-                <ref role="3Tt5mk" to="jl3b:Qd9PzECjWa" resolve="TriggersWhen" />
+              <node concept="3TrEf2" id="zrmdUOaM4L" role="2OqNvi">
+                <ref role="3Tt5mk" to="jl3b:zrmdUO8fKz" resolve="expr" />
               </node>
             </node>
           </node>
@@ -893,6 +855,14 @@
     <node concept="1YaCAy" id="4iosasL9Y6m" role="1YuTPh">
       <property role="TrG5h" value="cytoProtein" />
       <ref role="1YaFvo" to="jl3b:Qd9PzECg3s" resolve="CytoskeletalProtein" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="zrmdUOb8su">
+    <property role="TrG5h" value="typeof_ExtensionWhen" />
+    <node concept="3clFbS" id="zrmdUOb8sv" role="18ibNy" />
+    <node concept="1YaCAy" id="zrmdUOb8sx" role="1YuTPh">
+      <property role="TrG5h" value="extensionWhen" />
+      <ref role="1YaFvo" to="jl3b:zrmdUO8fKA" resolve="ExtensionWhen" />
     </node>
   </node>
 </model>

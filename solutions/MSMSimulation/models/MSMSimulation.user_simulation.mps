@@ -9,6 +9,8 @@
     <use id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base" version="3" />
     <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
     <use id="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac" name="SimulationsLang" version="0" />
+    <use id="fa13cc63-c476-4d46-9c96-d53670abe7bc" name="de.itemis.mps.editor.diagram" version="0" />
+    <use id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout" version="0" />
   </languages>
   <imports />
   <registry>
@@ -69,6 +71,7 @@
         <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
       <concept id="6116071663379962152" name="SpeciesLang.structure.Regulation" flags="ng" index="1gufZI">
+        <property id="1740802122790832290" name="TranscriptionDelay" index="2x6hFG" />
         <property id="7977339587325015291" name="TranscriptionDelay" index="2HBw3H" />
         <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
@@ -76,6 +79,7 @@
       </concept>
       <concept id="6116071663380262908" name="SpeciesLang.structure.Inhibits" flags="ng" index="1gv4$U" />
       <concept id="6116071663380262909" name="SpeciesLang.structure.Upregulates" flags="ng" index="1gv4$V" />
+      <concept id="6116071663380262963" name="SpeciesLang.structure.Process" flags="ng" index="1gv5rP" />
       <concept id="2321914824001074115" name="SpeciesLang.structure.RegulationReference" flags="ng" index="3rtiFT">
         <reference id="2321914824001074116" name="target" index="3rtiFY" />
       </concept>
@@ -194,6 +198,10 @@
       </concept>
     </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
+      <concept id="211905917822935903" name="TissueLang.structure.ExtensionWithProb" flags="ng" index="ZkRgg" />
+      <concept id="211905917822935901" name="TissueLang.structure.ExtensionCondition" flags="ng" index="ZkRgi">
+        <child id="211905917822935904" name="expr" index="ZkRgJ" />
+      </concept>
       <concept id="8255194269358657919" name="TissueLang.structure.TissueType" flags="ng" index="1apGoc">
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
@@ -210,6 +218,7 @@
         <child id="4052263675729341762" name="_cylinderRadius" index="3ob6kl" />
       </concept>
       <concept id="6249017959271690123" name="TissueLang.structure.CellType" flags="ng" index="3ZP1sM">
+        <child id="2647675930457114533" name="_extensionRule" index="Rwuyu" />
         <child id="3104068912113925855" name="_ownedSpecies" index="3FWu3_" />
         <child id="6249017959271690171" name="_shape" index="3ZP1s2" />
       </concept>
@@ -388,6 +397,11 @@
           <node concept="2_hRrN" id="6m1Il21eGbg" role="2_hQ4V" />
         </node>
       </node>
+      <node concept="ZkRgg" id="1xEElQOpwQx" role="Rwuyu">
+        <node concept="30bXRB" id="1xEElQOpwQB" role="ZkRgJ">
+          <property role="30bXRw" value="1" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="3_zqOV" id="6m1Il21eG9A">
@@ -411,10 +425,10 @@
         <ref role="3_zqOB" node="59qBf2Ds7rU" resolve="VEGFR" />
       </node>
     </node>
-    <node concept="1gv4$V" id="4MFt7FpdFya" role="3_zqUi">
-      <property role="2HBw3H" value="1" />
+    <node concept="1gv4$V" id="1xEElQOvaGh" role="3_zqUi">
+      <property role="2x6hFG" value="1" />
       <property role="TrG5h" value="DLL4_UPREGULATION" />
-      <ref role="1gv5qF" node="59qBf2Ds7t0" resolve="VEGF_VEGFR" />
+      <ref role="1gv5qF" node="59qBf2Ds7rU" resolve="VEGFR" />
       <ref role="1gufLq" node="4MFt7FpdCWQ" resolve="DLL4_Reg" />
       <ref role="1gv5qG" node="59qBf2Ds7ub" resolve="DLL4" />
     </node>
@@ -435,34 +449,28 @@
         <ref role="3_zqOB" node="59qBf2Ds7wQ" resolve="DLL4_NOTCH" />
       </node>
     </node>
-    <node concept="1gv4$U" id="4MFt7FpdFrt" role="3_zqUi">
-      <property role="2HBw3H" value="1" />
+    <node concept="1gv4$U" id="1xEElQOvaIE" role="3_zqUi">
+      <property role="2x6hFG" value="1" />
       <property role="TrG5h" value="VEGFR_INHIBITION" />
-      <ref role="1gv5qG" node="59qBf2Ds7rU" resolve="VEGFR" />
       <ref role="1gv5qF" node="59qBf2Ds7zP" resolve="HEY" />
       <ref role="1gufLq" node="4MFt7FoZp3O" resolve="k3" />
+      <ref role="1gv5qG" node="59qBf2Ds7rU" resolve="VEGFR" />
     </node>
-    <node concept="1gv4$V" id="4MFt7FpdFsA" role="3_zqUi">
-      <property role="2HBw3H" value="1" />
+    <node concept="1gv4$V" id="1xEElQOvaL2" role="3_zqUi">
+      <property role="2x6hFG" value="1" />
       <property role="TrG5h" value="HEY_UPREGULATION" />
+      <ref role="1gv5qF" node="59qBf2Ds7yg" resolve="NICD" />
       <ref role="1gufLq" node="4MFt7FpdCYD" resolve="HEY_Reg" />
       <ref role="1gv5qG" node="59qBf2Ds7zP" resolve="HEY" />
-      <ref role="1gv5qF" node="59qBf2Ds7yg" resolve="NICD" />
     </node>
-    <node concept="1gv4$V" id="4MFt7FpdFtN" role="3_zqUi">
-      <property role="2HBw3H" value="1" />
+    <node concept="1gv4$V" id="1xEElQOvaNq" role="3_zqUi">
+      <property role="2x6hFG" value="1" />
       <property role="TrG5h" value="NICD_CATALYSIS" />
       <ref role="1gv5qF" node="59qBf2Ds7wQ" resolve="DLL4_NOTCH" />
-      <ref role="1gv5qG" node="59qBf2Ds7yg" resolve="NICD" />
       <ref role="1gufLq" node="4MFt7FoZp94" resolve="k4" />
+      <ref role="1gv5qG" node="59qBf2Ds7yg" resolve="NICD" />
     </node>
-    <node concept="1gv4$V" id="4MFt7FpdFvC" role="3_zqUi">
-      <property role="2HBw3H" value="1" />
-      <property role="TrG5h" value="FILOPODIA_UPREGULATION" />
-      <ref role="1gv5qF" node="59qBf2Ds7t0" resolve="VEGF_VEGFR" />
-      <ref role="1gufLq" node="4MFt7FoZpaO" resolve="k5_FilProduction" />
-      <ref role="1gv5qG" node="59qBf2Ds7__" resolve="FILOPODIA" />
-    </node>
+    <node concept="1gv5rP" id="1xEElQOvaPf" role="3_zqUi" />
     <node concept="1gv4$V" id="4MFt7FpdFwS" role="3_zqUi">
       <property role="2HBw3H" value="1" />
       <property role="TrG5h" value="VEGF_SENSING" />
@@ -981,10 +989,13 @@
         </node>
         <node concept="3bpmH6" id="59qBf2Ds7sD" role="3lUA2W" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFrV" role="3rqWia">
-        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="VEGFR_INHIBITION" />
+      <node concept="3rtiFT" id="1xEElQOvaH1" role="3rtiFW">
+        <ref role="3rtiFY" node="1xEElQOvaGh" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="1wC$$UTj0Ll" role="3_z4RZ">
+      <node concept="3rtiFT" id="1xEElQOvaJR" role="3rqWia">
+        <ref role="3rtiFY" node="1xEElQOvaIE" resolve="VEGFR_INHIBITION" />
+      </node>
+      <node concept="DdDr8" id="1xEElQOvaPM" role="3_z4RZ">
         <ref role="DdDrb" node="4MFt7FpdFnu" resolve="VEGF_VEGF_BINDING" />
       </node>
     </node>
@@ -1005,10 +1016,7 @@
       <node concept="3rtiFT" id="4MFt7FpdFw8" role="3rtiFW">
         <ref role="3rtiFY" node="4MFt7FpdFvC" resolve="FILOPODIA_UPREGULATION" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFyG" role="3rtiFW">
-        <ref role="3rtiFY" node="4MFt7FpdFya" resolve="DLL4_UPREGULATION" />
-      </node>
-      <node concept="DdDr8" id="1wC$$UTj0Lm" role="3_z4Rx">
+      <node concept="DdDr8" id="1xEElQOvaPN" role="3_z4Rx">
         <ref role="DdDrb" node="4MFt7FpdFnu" resolve="VEGF_VEGF_BINDING" />
       </node>
     </node>
@@ -1031,11 +1039,11 @@
       <node concept="DdDr8" id="4MFt7FpdFpz" role="3_z4RZ">
         <ref role="DdDrb" node="4MFt7FpdFpe" resolve="DLL4_NOTCH_BINDING" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFz1" role="3rqWia">
-        <ref role="3rtiFY" node="4MFt7FpdFya" resolve="DLL4_UPREGULATION" />
-      </node>
       <node concept="3rtiFT" id="1wC$$UTj0Lr" role="3rqWia">
         <ref role="3rtiFY" node="1wC$$UTj0Kg" resolve="DLL4_INHIBITION" />
+      </node>
+      <node concept="3rtiFT" id="1xEElQOvaHt" role="3rqWia">
+        <ref role="3rtiFY" node="1xEElQOvaGh" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="59qBf2Ds7vr" role="3_zqUg">
@@ -1054,7 +1062,7 @@
         </node>
         <node concept="3bpmH6" id="59qBf2Ds7wv" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="1wC$$UTj0Ln" role="3_z4RZ">
+      <node concept="DdDr8" id="1xEElQOvaPO" role="3_z4RZ">
         <ref role="DdDrb" node="4MFt7FpdFpe" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1072,10 +1080,10 @@
         </node>
         <node concept="3bpmH6" id="59qBf2Ds7xT" role="3lUA2W" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFui" role="3rtiFW">
-        <ref role="3rtiFY" node="4MFt7FpdFtN" resolve="NICD_CATALYSIS" />
+      <node concept="3rtiFT" id="1xEElQOvaOa" role="3rtiFW">
+        <ref role="3rtiFY" node="1xEElQOvaNq" resolve="NICD_CATALYSIS" />
       </node>
-      <node concept="DdDr8" id="1wC$$UTj0Lo" role="3_z4Rx">
+      <node concept="DdDr8" id="1xEElQOvaPP" role="3_z4Rx">
         <ref role="DdDrb" node="4MFt7FpdFpe" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
@@ -1093,11 +1101,11 @@
         </node>
         <node concept="3bpmH6" id="59qBf2Ds7zu" role="3lUA2W" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFtp" role="3rtiFW">
-        <ref role="3rtiFY" node="4MFt7FpdFsA" resolve="HEY_UPREGULATION" />
+      <node concept="3rtiFT" id="1xEElQOvaLM" role="3rtiFW">
+        <ref role="3rtiFY" node="1xEElQOvaL2" resolve="HEY_UPREGULATION" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFut" role="3rqWia">
-        <ref role="3rtiFY" node="4MFt7FpdFtN" resolve="NICD_CATALYSIS" />
+      <node concept="3rtiFT" id="1xEElQOvaOB" role="3rqWia">
+        <ref role="3rtiFY" node="1xEElQOvaNq" resolve="NICD_CATALYSIS" />
       </node>
     </node>
     <node concept="3_zqOZ" id="59qBf2Ds7zP" role="3_zqUg">
@@ -1117,11 +1125,11 @@
         </node>
         <node concept="3bpmH6" id="59qBf2Ds7_e" role="3lUA2W" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFs5" role="3rtiFW">
-        <ref role="3rtiFY" node="4MFt7FpdFrt" resolve="VEGFR_INHIBITION" />
+      <node concept="3rtiFT" id="1xEElQOvaJq" role="3rtiFW">
+        <ref role="3rtiFY" node="1xEElQOvaIE" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="3rtiFT" id="4MFt7FpdFtf" role="3rqWia">
-        <ref role="3rtiFY" node="4MFt7FpdFsA" resolve="HEY_UPREGULATION" />
+      <node concept="3rtiFT" id="1xEElQOvaMf" role="3rqWia">
+        <ref role="3rtiFY" node="1xEElQOvaL2" resolve="HEY_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="59qBf2Ds7__" role="3_zqUg">
@@ -1175,7 +1183,7 @@
         </node>
         <node concept="3bpmH6" id="1wC$$UTj0y0" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="1wC$$UTj0Lp" role="3_z4RZ">
+      <node concept="DdDr8" id="1xEElQOvaPQ" role="3_z4RZ">
         <ref role="DdDrb" node="1wC$$UTj0I8" resolve="SemaPlexin_Binding" />
       </node>
     </node>
@@ -1194,7 +1202,7 @@
       <node concept="3rtiFT" id="1wC$$UTj0KZ" role="3rtiFW">
         <ref role="3rtiFY" node="1wC$$UTj0Kg" resolve="DLL4_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="1wC$$UTj0Lq" role="3_z4Rx">
+      <node concept="DdDr8" id="1xEElQOvaPR" role="3_z4Rx">
         <ref role="DdDrb" node="1wC$$UTj0I8" resolve="SemaPlexin_Binding" />
       </node>
     </node>
