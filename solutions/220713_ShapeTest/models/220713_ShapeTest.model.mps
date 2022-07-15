@@ -16,7 +16,7 @@
   <imports />
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
-      <concept id="638201485731101734" name="ShapeLang.structure.ExtensionWhen" flags="ng" index="2WYUjS" />
+      <concept id="638201485731101733" name="ShapeLang.structure.ExtensionWithProb" flags="ng" index="2WYUjV" />
       <concept id="638201485731101730" name="ShapeLang.structure.ExtensionCondition" flags="ng" index="2WYUjW">
         <child id="638201485731101731" name="expr" index="2WYUjX" />
       </concept>
@@ -79,7 +79,6 @@
       <concept id="5115872837157187871" name="org.iets3.core.expr.base.structure.ParensExpression" flags="ng" index="30bsCy">
         <child id="5115872837157187954" name="expr" index="30bsDf" />
       </concept>
-      <concept id="5115872837156687764" name="org.iets3.core.expr.base.structure.GreaterExpression" flags="ng" index="30d7iD" />
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
       <concept id="5115872837156578546" name="org.iets3.core.expr.base.structure.PlusExpression" flags="ng" index="30dDZf" />
       <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
@@ -307,39 +306,34 @@
   <node concept="3Bb2si" id="3_r9aiWUxV5">
     <property role="TrG5h" value="Shapes" />
     <ref role="1ANuhP" node="3_r9aiWUxV0" resolve="Simulation" />
-    <node concept="3Bb2sz" id="zrmdUO7F8O" role="3Bb2fi">
-      <property role="2nOves" value="10" />
-      <property role="2m88tR" value="10" />
-      <property role="2m88tM" value="10" />
-      <property role="TrG5h" value="Filopodia" />
-      <ref role="2mpUna" node="zrmdUOaOYu" />
-      <node concept="3yReWT" id="zrmdUO7F8S" role="2BRsc">
-        <ref role="3yR$0w" node="3_r9aiX1dnA" resolve="Endothelial" />
-      </node>
-      <node concept="1csUcq" id="zrmdUO7F8P" role="Lgisp">
-        <ref role="1csUcr" node="3_r9aiWU$bF" resolve="VEGF" />
-      </node>
-    </node>
-    <node concept="3Bb2u4" id="zrmdUOaOYu" role="3Bb693">
+    <node concept="3Bb2u4" id="aQhE9aUHdO" role="3Bb693">
       <ref role="2muIIL" node="zrmdUO7F96" resolve="Actin" />
-      <ref role="2miiqm" node="zrmdUO7F8O" resolve="Filopodia" />
-      <node concept="2WYUjS" id="zrmdUObLKg" role="2WLuQl">
-        <node concept="30d7iD" id="zrmdUObLKB" role="2WYUjX">
-          <node concept="1cBA6y" id="zrmdUObLKQ" role="30dEs_">
-            <ref role="1cBA6z" node="3_r9aiWU$jf" resolve="DLL4" />
-          </node>
-          <node concept="1cBA6y" id="zrmdUObLLg" role="30dEsF">
-            <ref role="1cBA6z" node="3_r9aiWU$dZ" resolve="VEGF_VEGFR" />
-          </node>
-        </node>
-      </node>
-      <node concept="3bpmHq" id="zrmdUObLLA" role="2muII_">
-        <node concept="3bpmH0" id="zrmdUObLLC" role="3lUA2Y">
-          <node concept="30bXRB" id="zrmdUObLLW" role="3lUA52">
+      <ref role="2miiqm" node="aQhE9aSRkf" resolve="Protrusion" />
+      <node concept="3bpmHq" id="aQhE9aUHeE" role="2muII_">
+        <node concept="3bpmH0" id="aQhE9aUHeG" role="3lUA2Y">
+          <node concept="30bXRB" id="aQhE9aUJtc" role="3lUA52">
             <property role="30bXRw" value="10" />
           </node>
         </node>
-        <node concept="3bpmH6" id="zrmdUObLMo" role="3lUA2W" />
+        <node concept="3bpmH6" id="aQhE9aUJtC" role="3lUA2W" />
+      </node>
+      <node concept="2WYUjV" id="aQhE9aUHe6" role="2WLuQl">
+        <node concept="30bXRB" id="aQhE9aUHeg" role="2WYUjX">
+          <property role="30bXRw" value="1.0" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Bb2sz" id="aQhE9aSRkf" role="3Bb2fi">
+      <property role="2nOves" value="10" />
+      <property role="2m88tR" value="10" />
+      <property role="2m88tM" value="10" />
+      <property role="TrG5h" value="Protrusion" />
+      <ref role="2mpUna" node="aQhE9aUHdO" />
+      <node concept="1csUcq" id="aQhE9aSRkg" role="Lgisp">
+        <ref role="1csUcr" node="3_r9aiWU$bF" resolve="VEGF" />
+      </node>
+      <node concept="3yReWT" id="aQhE9aSRkj" role="2BRsc">
+        <ref role="3yR$0w" node="3_r9aiX1dnA" resolve="Endothelial" />
       </node>
     </node>
   </node>

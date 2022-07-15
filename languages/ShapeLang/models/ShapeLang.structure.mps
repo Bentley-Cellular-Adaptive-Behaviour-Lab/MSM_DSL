@@ -88,12 +88,8 @@
     <node concept="1TJgyj" id="5sLUxN1l$Zm" role="1TKVEi">
       <property role="IQ2ns" value="6283060364382195670" />
       <property role="20kJfa" value="targetCytoprotein" />
+      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="Qd9PzECg3s" resolve="CytoskeletalProtein" />
-    </node>
-    <node concept="1TJgyj" id="5sLUxN1v48J" role="1TKVEi">
-      <property role="IQ2ns" value="6283060364384682543" />
-      <property role="20kJfa" value="targetCellType" />
-      <ref role="20lvS9" to="nguq:5qSYbADreYb" resolve="CellType" />
     </node>
     <node concept="1TJgyi" id="5sLUxN0S1A0" role="1TKVEl">
       <property role="IQ2nx" value="6283060364374448512" />
@@ -213,9 +209,6 @@
       <property role="20kJfa" value="FoundInCellTypes" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
       <ref role="20lvS9" to="nguq:1z0V6VU70dn" resolve="CellTypeReference" />
-    </node>
-    <node concept="PrWs8" id="2Jfy4gqzRBc" role="PzmwI">
-      <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
     <node concept="1TJgyj" id="5sLUxN1iK6H" role="1TKVEi">
       <property role="IQ2ns" value="6283060364381454765" />
