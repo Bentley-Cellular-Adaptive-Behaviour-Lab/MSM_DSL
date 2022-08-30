@@ -102,6 +102,7 @@
     <dependency reexport="false">dbe08fb5-334d-4b64-86a0-622406fa0e87(org.iets3.core.expr.base.runtime)</dependency>
     <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
     <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:309e0004-4976-4416-b947-ec02ae4ecef2:com.mbeddr.mpsutil.modellisteners" version="0" />

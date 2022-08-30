@@ -9,31 +9,21 @@
 #include "../dsl/world/gradient.h"
 #include "../dsl/world/worldContainer.h"
 
-static double get_VEGF_Gradient_initial_conc(World *world) {
-	return world->getParamValue(VEGF_CONC);
-}
-
-static double get_Sema_Gradient_initial_conc(World *world) {
-	return world->getParamValue(SEMA3E_CONC);
-}
-
 
 void World_Container::world_setup(std::vector<double>& paramValues) {
     // Created using: World // 
     // WORLD CREATION
-    auto world = create_world(200, 200, 20, 1.0, paramValues);
+    auto world = create_world(120, 170, 60, 0.0, paramValues);
     m_world = world;
     world->setWorldContainer(this);
     world->fillParamVector(paramValues);
 
     // GRADIENT CREATION
-    auto VEGF_initial_conc = get_VEGF_Gradient_initial_conc(world);
-    auto SEMA3E_initial_conc = get_Sema_Gradient_initial_conc(world);
-    auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, VEGF_initial_conc, 0, -1, -1);
-    auto SEMA3E_protein = new Protein("SEMA3E", PROTEIN_LOCATION_ENVIRONMENT, SEMA3E_initial_conc, 0, -1, -1);
-    auto VEGF_Gradient_centre = Coordinates(100, 100, 10);
-    auto Sema_Gradient_centre = Coordinates(100, 100, 10);
-    create_gradient(GRADIENT_TYPE_LINEAR, VEGF_protein, &(VEGF_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 20, false);
-    create_gradient(GRADIENT_TYPE_CONSTANT, SEMA3E_protein, &(Sema_Gradient_centre), GRADIENT_DIRECTION_DEC_Y, 200, 200, 20, false);
+    auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 1.0, 0, -1, -1);
+    auto Gradient_centre = Coordinates(60, 60, 30);
+    create_gradient(GRADIENT_TYPE_LINEAR, VEGF_protein, &(Gradient_centre), GRADIENT_DIRECTION_INC_Y, 100, 100, 40, false);
     // SUBSTRATE CREATION
+    auto Substrate_shape = new Shape_Cuboid(SUBSTRATE_SHAPE_CUBOIDAL, 100, 100, 40);
+    auto Substrate_centre = Coordinates(60, 110, 30);
+    create_substrate(Substrate_shape, &(Substrate_centre), NO_DIRECTION, 1.0);
 }

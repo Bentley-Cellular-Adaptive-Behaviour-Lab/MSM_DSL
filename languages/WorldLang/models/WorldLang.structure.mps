@@ -525,32 +525,32 @@
     <node concept="25R33" id="2S6lVSS$lvr" role="25R1y">
       <property role="3tVfz5" value="3316434650109401051" />
       <property role="TrG5h" value="X_Increasing" />
-      <property role="1L1pqM" value="Increasing X" />
+      <property role="1L1pqM" value="Increases with X" />
     </node>
     <node concept="25R33" id="2S6lVSS$lvJ" role="25R1y">
       <property role="3tVfz5" value="3316434650109401071" />
       <property role="TrG5h" value="X_Decreasing" />
-      <property role="1L1pqM" value="Decreasing X" />
+      <property role="1L1pqM" value="Decreases with X" />
     </node>
     <node concept="25R33" id="2S6lVSS$lvM" role="25R1y">
       <property role="3tVfz5" value="3316434650109401074" />
       <property role="TrG5h" value="Y_Increasing" />
-      <property role="1L1pqM" value="Increasing Y" />
+      <property role="1L1pqM" value="Increases with Y" />
     </node>
     <node concept="25R33" id="2S6lVSS$lvQ" role="25R1y">
       <property role="3tVfz5" value="3316434650109401078" />
       <property role="TrG5h" value="Y_Decreasing" />
-      <property role="1L1pqM" value="Decreasing Y" />
+      <property role="1L1pqM" value="Decreases with Y" />
     </node>
     <node concept="25R33" id="2S6lVSS$lvV" role="25R1y">
       <property role="3tVfz5" value="3316434650109401083" />
       <property role="TrG5h" value="Z_Increasing" />
-      <property role="1L1pqM" value="Increasing Z" />
+      <property role="1L1pqM" value="Increases with Z" />
     </node>
     <node concept="25R33" id="2S6lVSS$lw1" role="25R1y">
       <property role="3tVfz5" value="3316434650109401089" />
       <property role="TrG5h" value="Z_Decreasing" />
-      <property role="1L1pqM" value="Decreasing Z" />
+      <property role="1L1pqM" value="Decreases with Z" />
     </node>
   </node>
   <node concept="1TIwiD" id="4KNMtF8hNOJ">

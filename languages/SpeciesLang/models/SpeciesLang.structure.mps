@@ -655,6 +655,7 @@
   <node concept="25R3W" id="3CMDXCknVe0">
     <property role="3F6X1D" value="4193598758121878400" />
     <property role="TrG5h" value="odeTypeEnum" />
+    <ref role="1H5jkz" node="3CMDXCknVe1" resolve="CELL_ODE_TYPE" />
     <node concept="25R33" id="3CMDXCknVe1" role="25R1y">
       <property role="3tVfz5" value="4193598758121878401" />
       <property role="TrG5h" value="CELL_ODE_TYPE" />

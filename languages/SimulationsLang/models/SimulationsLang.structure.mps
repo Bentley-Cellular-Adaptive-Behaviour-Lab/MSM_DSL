@@ -3,12 +3,15 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="5" />
     <devkit ref="78434eb8-b0e5-444b-850d-e7c4ad2da9ab(jetbrains.mps.devkit.aspect.structure)" />
   </languages>
   <imports>
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" />
     <import index="4fqr" ref="r:fa713d69-08ea-4732-b1f2-cb07f9e103ef(jetbrains.mps.execution.util.structure)" />
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
@@ -108,7 +111,6 @@
     <node concept="1TJgyj" id="4jUcCWy80OH" role="1TKVEi">
       <property role="IQ2ns" value="4970340729091001645" />
       <property role="20kJfa" value="_shapeContainerRef" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
     </node>
     <node concept="1TJgyj" id="4jUcCWy80PS" role="1TKVEi">
@@ -155,6 +157,7 @@
     <property role="3F6X1D" value="8115658504614299537" />
     <property role="TrG5h" value="ClusterTypeEnum" />
     <property role="3GE5qa" value="Enums" />
+    <ref role="1H5jkz" node="72wB6_dUsuC" resolve="None" />
     <node concept="25R33" id="72wB6_dUsui" role="25R1y">
       <property role="3tVfz5" value="8115658504614299538" />
       <property role="TrG5h" value="SLURM" />
