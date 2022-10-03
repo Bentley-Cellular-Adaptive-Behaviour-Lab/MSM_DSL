@@ -6,10 +6,9 @@
     <use id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="UnitLang" version="0" />
     <use id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang" version="0" />
     <use id="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac" name="SimulationsLang" version="0" />
-    <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
     <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang" version="0" />
     <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
-    <use id="6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0" name="org.iets3.core.expr.math" version="0" />
+    <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
   </languages>
   <imports />
   <registry>
@@ -666,8 +665,8 @@
       <ref role="3JQo8e" node="3lVsEn81Z8o" resolve="VEGFR_PRODUCTION" />
       <node concept="3bpmHq" id="VvSLdQQwLU" role="1tJpXo">
         <node concept="3bpmH0" id="VvSLdQQwLV" role="3lUA2Y">
-          <node concept="30bXRB" id="VvSLdQQwM$" role="3lUA52">
-            <property role="30bXRw" value="0.0" />
+          <node concept="30bXRB" id="6y6btDi64$e" role="3lUA52">
+            <property role="30bXRw" value="1.0" />
           </node>
         </node>
         <node concept="3bpmH6" id="VvSLdQQwMU" role="3lUA2W" />
@@ -756,6 +755,19 @@
       </node>
       <node concept="DdDr8" id="3lVsEn81Zg5" role="3_z4Rx">
         <ref role="DdDrb" node="VvSLdQV3MS" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="6y6btDi5Q0A" role="3_zqUg">
+      <property role="2VbSsx" value="1" />
+      <property role="TrG5h" value="Test" />
+      <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
+      <node concept="3bpmHq" id="6y6btDi5Q1g" role="1tJpXo">
+        <node concept="3bpmH0" id="6y6btDi5Q1h" role="3lUA2Y">
+          <node concept="30bXRB" id="6y6btDi5Q1y" role="3lUA52">
+            <property role="30bXRw" value="1.0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="6y6btDi5Q20" role="3lUA2W" />
       </node>
     </node>
   </node>
