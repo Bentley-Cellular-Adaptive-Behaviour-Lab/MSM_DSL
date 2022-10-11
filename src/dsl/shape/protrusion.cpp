@@ -2,7 +2,7 @@
 // Created by Tom on 20/09/2021.
 //
 
-#include <assert.h>
+#include <cassert>
 
 #include "cytoprotein.h"
 #include "protrusion.h"
@@ -20,7 +20,7 @@
 #include "../../core/spring.h"
 #include "../../core/world.h"
 
-// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHABE BEHAVIOUR FUNCTIONS.
+// TODO: WRITE REPLACEMENT FUNCTIONS FOR THESE SHAPE BEHAVIOUR FUNCTIONS.
 
 // RETRACTION BEHAVIOUR?
 
