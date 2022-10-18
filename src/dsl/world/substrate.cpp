@@ -175,8 +175,8 @@ void Substrate::apply_substrate_to_triangular_prism() {
 *  Returns:		Substrate*
 ******************************************************************************************/
 
-Substrate::Substrate(World_Container *container, Shape *substrate_shape, Coordinates *centre_coordinates,
-                     int substrate_direction, float adhesiveness) {
+Substrate::Substrate(WorldContainer *container, Shape *substrate_shape, Coordinates *centre_coordinates,
+					 int substrate_direction, float adhesiveness) {
     this->m_parent_container = container;
     this->m_parent_world = container->get_world();
     this->m_substrate_shape = substrate_shape;

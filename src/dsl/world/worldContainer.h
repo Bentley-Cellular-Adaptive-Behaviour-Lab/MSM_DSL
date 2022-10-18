@@ -15,7 +15,7 @@ class Shape;
 class Substrate;
 class World;
 
-class World_Container {
+class WorldContainer {
 public:
     World *m_world;
     std::vector<Substrate*> m_substrates;

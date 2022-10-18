@@ -199,7 +199,7 @@ int main(int argc, char * argv[]) {
     } else {
 
         World *world;
-        auto *w_container = new World_Container();
+        auto *w_container = new WorldContainer();
 
         // Set analysis_type to none in case something goes wrong.
         analysis_type = 0;

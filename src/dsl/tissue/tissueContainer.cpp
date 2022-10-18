@@ -218,7 +218,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylind
             tissue->determineJunctions();
 			set_vessel_neighbours(tissue);
             store_tissue(tissue);
-        }
+		}
     } catch (int e) {
         std::cout <<"Invalid tissue definition called (FLAT) for specified shape type: "
                   << tissue_type->get_tissue_configuration() << ". Exception type: " << e;

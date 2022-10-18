@@ -293,6 +293,12 @@
     <property role="TrG5h" value="Shape" />
     <property role="3Le9LX" value=".cpp" />
     <node concept="356WMU" id="2D6O8IwUPeQ" role="356KY_">
+      <node concept="356sEK" id="Z_fSUib3zt" role="383Ya9">
+        <node concept="356sEF" id="Z_fSUib76$" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../core/EC.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="Z_fSUib3zv" role="2EinRH" />
+      </node>
       <node concept="356sEK" id="2D6O8IwUPfs" role="383Ya9">
         <node concept="356sEF" id="2D6O8IwUPfZ" role="356sEH">
           <property role="TrG5h" value="#include &quot;../core/memAgents.h&quot;" />
@@ -307,12 +313,6 @@
           <property role="TrG5h" value="#include &quot;../dsl/species/protein.h&quot;" />
         </node>
         <node concept="2EixSi" id="4iosasL9IXj" role="2EinRH" />
-      </node>
-      <node concept="356sEK" id="3vcTe5vJJuL" role="383Ya9">
-        <node concept="356sEF" id="3vcTe5vJJuM" role="356sEH">
-          <property role="TrG5h" value="#include &quot;../dsl/shape/cytoprotein.h&quot;" />
-        </node>
-        <node concept="2EixSi" id="3vcTe5vJJuN" role="2EinRH" />
       </node>
       <node concept="356sEK" id="3vcTe5vvVWU" role="383Ya9">
         <node concept="356sEF" id="3vcTe5vvVWV" role="356sEH">
@@ -331,6 +331,12 @@
           <property role="TrG5h" value="#include &quot;../dsl/shape/protrusionType.h&quot;" />
         </node>
         <node concept="2EixSi" id="3vcTe5vvB5S" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="Z_fSUibc6C" role="383Ya9">
+        <node concept="356sEF" id="Z_fSUibc6D" role="356sEH">
+          <property role="TrG5h" value="#include &quot;../dsl/world/worldContainer.h&quot;" />
+        </node>
+        <node concept="2EixSi" id="Z_fSUibc6E" role="2EinRH" />
       </node>
       <node concept="356sEK" id="3vcTe5vvKU6" role="383Ya9">
         <node concept="2EixSi" id="3vcTe5vvKU8" role="2EinRH" />
@@ -1969,7 +1975,7 @@
       <node concept="356sEK" id="aQhE9bfnwG" role="383Ya9">
         <node concept="373pV1" id="aQhE9bftol" role="356sEH" />
         <node concept="356sEF" id="aQhE9bftor" role="356sEH">
-          <property role="TrG5h" value="for (const auto protrusionType : memAgent-&gt;Cell-&gt;getProtrusionTypes()) {" />
+          <property role="TrG5h" value="for (const auto protrusionType : memAgent-&gt;Cell-&gt;getProtrusionTypeList()) {" />
         </node>
         <node concept="2EixSi" id="aQhE9bfnwI" role="2EinRH" />
       </node>

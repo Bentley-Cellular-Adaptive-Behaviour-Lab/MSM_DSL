@@ -59,11 +59,11 @@
 *               Used with cuboidal/constrained gradients.
 *  Returns:		void
 ******************************************************************************************/
-void World_Container::create_gradient(int gradient_type,
-                                      Protein *protein,
-                                      Coordinates *source_position,
-                                      Coordinates *sink_position,
-                                      bool legacyVEGF = false) {
+void WorldContainer::create_gradient(int gradient_type,
+									 Protein *protein,
+									 Coordinates *source_position,
+									 Coordinates *sink_position,
+									 bool legacyVEGF = false) {
     std::cout << "Creating sink and source gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
@@ -85,14 +85,14 @@ void World_Container::create_gradient(int gradient_type,
 *               Used with spherical gradients.
 *  Returns:		void
 ******************************************************************************************/
-void World_Container::create_gradient(int gradient_type,
-                                      Protein *protein,
-                                      Coordinates *centre_position,
-                                      int gradient_direction,
-                                      int width,
-                                      int height,
-                                      int depth,
-                                      bool legacyVEGF = false) {
+void WorldContainer::create_gradient(int gradient_type,
+									 Protein *protein,
+									 Coordinates *centre_position,
+									 int gradient_direction,
+									 int width,
+									 int height,
+									 int depth,
+									 bool legacyVEGF = false) {
     std::cout << "Creating cuboidal gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
@@ -108,11 +108,11 @@ void World_Container::create_gradient(int gradient_type,
     store_gradient(new_gradient);
 }
 
-void World_Container::create_gradient(int gradient_type,
-                                      Protein *protein,
-                                      Coordinates *centre_position,
-                                      int sphere_radius,
-                                      bool legacyVEGF = false) {
+void WorldContainer::create_gradient(int gradient_type,
+									 Protein *protein,
+									 Coordinates *centre_position,
+									 int sphere_radius,
+									 bool legacyVEGF = false) {
     std::cout << "Creating spherical, point-source gradient. Protein: " << protein->get_name() << ".\n";
     auto *new_gradient = new Gradient(this,
                                       gradient_type,
@@ -136,10 +136,10 @@ void World_Container::create_gradient(int gradient_type,
 *  Returns:		void
 ******************************************************************************************/
 
-void World_Container::create_substrate(Shape *substrate_shape,
-                                       Coordinates *centre_coordinates,
-                                       int substrate_direction,
-                                       float adhesiveness) {
+void WorldContainer::create_substrate(Shape *substrate_shape,
+									  Coordinates *centre_coordinates,
+									  int substrate_direction,
+									  float adhesiveness) {
     std::cout << "Creating substrate." << ".\n";
     auto *new_substrate = new Substrate(this,
                                         substrate_shape,
@@ -162,7 +162,7 @@ void World_Container::create_substrate(Shape *substrate_shape,
 *  Returns:		void
 ******************************************************************************************/
 
-void World_Container::store_gradient(Gradient *gradient) {
+void WorldContainer::store_gradient(Gradient *gradient) {
     m_gradients.push_back(gradient);
 }
 
@@ -172,7 +172,7 @@ void World_Container::store_gradient(Gradient *gradient) {
 *  Returns:		void
 ******************************************************************************************/
 
-void World_Container::store_substrate(Substrate *substrate) {
+void WorldContainer::store_substrate(Substrate *substrate) {
     m_substrates.push_back(substrate);
 }
 
@@ -183,11 +183,11 @@ void World_Container::store_substrate(Substrate *substrate) {
 *  Returns:		void
 ******************************************************************************************/
 
-World* World_Container::create_world(const int& xMax,
-                                     const int& yMax,
-                                     const int& zMax,
-                                     const double& base_permittivity,
-                                     const std::vector<double>& paramValues) {
+World* WorldContainer::create_world(const int& xMax,
+									const int& yMax,
+									const int& zMax,
+									const double& base_permittivity,
+									const std::vector<double>& paramValues) {
     auto *new_world = new World(xMax,
                                 yMax,
                                 zMax,
@@ -202,7 +202,7 @@ World* World_Container::create_world(const int& xMax,
 *  Returns:		void
 ******************************************************************************************/
 
-World *World_Container::get_world() {
+World *WorldContainer::get_world() {
     return this->m_world;
 }
 

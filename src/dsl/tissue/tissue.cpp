@@ -627,7 +627,8 @@ void Tissue_Vessel::create_vessel() {
             m_world->ECagents[i]->hyst->Cell = m_world->ECagents[i];
         }
         newCellAgent->initialiseProteinMemAgentBuffer();
-    }
+
+	}
 }
 
 /*****************************************************************************************
@@ -697,6 +698,8 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
             newMemAgent->Mx = (float)j + (float)depth + (float)lowerXboundary;
             newMemAgent->My = k + Y;
             newMemAgent->FA = true;
+
+
             //---------------------------------------
             ///for CELL_SETUP=2 (lars and rearrangement paper models with sewn up front).
             ///label the front row of nodes so they can be sewn up once gridded
@@ -712,7 +715,6 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
             newMemAgent->setPreviousY(newMemAgent->My);
             newMemAgent->setPreviousZ(newMemAgent->Mz);
 
-
             newMemAgent->circlePos=(int)(J + circlePosStartAb);
 
             if(newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
@@ -723,7 +725,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
             m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), newMemAgent);
 
-            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
+//            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
         }
     }
 }

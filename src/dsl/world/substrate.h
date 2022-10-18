@@ -8,7 +8,7 @@
 class Coordinates;
 class Shape;
 class World;
-class World_Container;
+class WorldContainer;
 
 enum SUBSTRATE_DIRECTIONS {
     NO_DIRECTION,
@@ -29,18 +29,18 @@ enum SUBSTRATE_SHAPES {
 
 class Substrate {
 public:
-    World_Container *m_parent_container;
+    WorldContainer *m_parent_container;
     World *m_parent_world;
     Coordinates *m_centre_coordinates;
     Shape *m_substrate_shape;
     int m_substrate_direction;
     float m_adhesiveness;
 
-    Substrate(World_Container *container,
-              Shape *substrate_shape,
-              Coordinates *centre_coordinates,
-              int substrate_direction,
-              float adhesiveness);
+    Substrate(WorldContainer *container,
+			  Shape *substrate_shape,
+			  Coordinates *centre_coordinates,
+			  int substrate_direction,
+			  float adhesiveness);
 
     void apply_substrate_to_cuboid();
     void apply_substrate_to_triangular_prism();

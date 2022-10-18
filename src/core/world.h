@@ -26,7 +26,7 @@ class MemAgent;
 class ODEs;
 class ProtrusionType;
 class Tissue_Container;
-class World_Container;
+class WorldContainer;
 class WorldLogger;
 
 class World {
@@ -34,7 +34,7 @@ private:
     int m_run_number;
     std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
-    World_Container* m_worldContainer;
+    WorldContainer* m_worldContainer;
     WorldLogger *m_worldLogger;
 public:
 
@@ -255,11 +255,11 @@ public:
 	void shuffleLocations(std::vector<Location*> &locations);
 
     //
-    World_Container* getWorldContainer() {
+    WorldContainer* getWorldContainer() {
         return m_worldContainer;
     }
 
-    void setWorldContainer(World_Container* container) {
+    void setWorldContainer(WorldContainer* container) {
         m_worldContainer = container;
     }
 

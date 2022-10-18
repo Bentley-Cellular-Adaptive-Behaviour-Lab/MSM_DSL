@@ -1669,12 +1669,10 @@ void World::creationTimestep(int movie) {
 			createECagents(Junct_arrange);
 			connectMesh();
 		}
-		else if (CELL_SETUP == 3)
-		{
+		else if (CELL_SETUP == 3) {
 			createMonolayer();
 		}
-		else if (CELL_SETUP == 4)
-		{
+		else if (CELL_SETUP == 4) {
 			create_3D_round_cell();
 		}
 	}
@@ -1749,10 +1747,26 @@ void World::creationTimestep(int movie) {
 
 void World::simulateTimestep_MSM() {
 	int movie = 0;
+
+	if (this->timeStep == 50) {
+		this->Pause == 1;
+	}
+	if (this->timeStep == 100) {
+		this->Pause == 1;
+	}
+	if (this->timeStep == 200) {
+		this->Pause == 1;
+	}
+	if (this->timeStep == 500) {
+		this->Pause == 1;
+	}
+
+
 	timeStep++;
 	if (timeStep == 0) {
 		creationTimestep(movie);
 	} else {
+
         for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
@@ -1869,6 +1883,9 @@ void World::updateMemAgents_MSM() {
 		tipDeleteFlag = false;
 
 		memp = ALLmemAgents[i];
+
+		auto memAgent = this->grid[104][15][24].getMids().at(0);
+
 		memp->assessed = true;
 		memp->addedJunctionList = false;
         memp->vonNeighSearch();

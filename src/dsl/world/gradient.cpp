@@ -736,11 +736,11 @@ void Gradient::apply_gradient_to_sphere() {
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *source_position,
-                   Coordinates *sink_position) {
+Gradient::Gradient(WorldContainer *container,
+				   int gradient_type,
+				   Protein *protein,
+				   Coordinates *source_position,
+				   Coordinates *sink_position) {
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;
@@ -756,13 +756,13 @@ Gradient::Gradient(World_Container *container,
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *centre_position,
-                   int width,
-                   int height,
-                   int depth) {
+Gradient::Gradient(WorldContainer *container,
+				   int gradient_type,
+				   Protein *protein,
+				   Coordinates *centre_position,
+				   int width,
+				   int height,
+				   int depth) {
 
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
@@ -781,11 +781,11 @@ Gradient::Gradient(World_Container *container,
 *  Returns:		void
 ******************************************************************************************/
 
-Gradient::Gradient(World_Container *container,
-                   int gradient_type,
-                   Protein *protein,
-                   Coordinates *centre_position,
-                   int sphere_radius) {
+Gradient::Gradient(WorldContainer *container,
+				   int gradient_type,
+				   Protein *protein,
+				   Coordinates *centre_position,
+				   int sphere_radius) {
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
     this->m_gradient_type = gradient_type;

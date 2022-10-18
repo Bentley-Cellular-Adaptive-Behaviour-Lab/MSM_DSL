@@ -2392,6 +2392,10 @@ MemAgent::MemAgent(EC* belongsTo, World* world) {
         protein->set_memAgent_buffer_level(0);
     }
 
+	if (belongsTo->m_cell_type->proteins.size() == 14) {
+		int test = 0;
+	}
+
     for (auto pair : belongsTo->get_env_protein_values()) {
         this->m_mean_env_proteins_sensed.emplace(std::make_pair(std::get<0>(pair), 0));
     }
@@ -2467,9 +2471,6 @@ MemAgent::~MemAgent(void){
 	for (auto *protein : this->owned_proteins) {
 		delete protein;
 	}
-    for (auto *cytoprotein : this->m_cytoproteins) {
-        delete cytoprotein;
-    }
 	EnvNeighs.clear();
 }
 
@@ -4521,80 +4522,6 @@ void MemAgent::add_allowed_protrusion_proteins(ProtrusionType *protrusionType) {
         }
         // Repeat until we've checked all cell proteins.
     }
-}
-
-bool MemAgent::has_cytoprotein(const std::string& cytoproteinName) const {
-    bool hasCytoprotein = false;
-    for (auto *cytoprotein : this->m_cytoproteins) {
-        if (cytoprotein->getName() == cytoproteinName) {
-            hasCytoprotein = true;
-            break;
-        }
-    }
-    return hasCytoprotein;
-}
-
-
-double MemAgent::get_cytoprotein_level(const std::string& cytoproteinName) const {
-    double cytoproteinLevel = 0.0f;
-    if (this->has_cytoprotein(cytoproteinName)) {
-        for (auto *cytoprotein: this->m_cytoproteins) {
-            if (cytoprotein->getName() == cytoproteinName) {
-                cytoproteinLevel = cytoprotein->getMemAgentLevel();
-                break;
-            }
-        }
-    }
-    return cytoproteinLevel;
-}
-void MemAgent::set_cytoprotein_level(const std::string& cytoproteinName, const double& newLevel) {
-    if (this->has_cytoprotein(cytoproteinName)) {
-        for (auto *cytoprotein: this->m_cytoproteins) {
-            if (cytoprotein->getName() == cytoproteinName) {
-                cytoprotein->setMemAgentLevel(newLevel);
-                break;
-            }
-        }
-    }
-}
-
-void MemAgent::add_cytoprotein(CytoProtein* cytoProtein) {
-    this->m_cytoproteins.push_back(cytoProtein);
-}
-
-void MemAgent::tryCytoproteinPass(int x, int y, int z, int N, const std::string& cytoproteinName) {
-    // Attempts to accumulate cytoprotein in a given memAgent using cytoprotein from nearby memAgents.
-    // This function passes from this memAgent to another one.
-    int i, j, k, X, Y, Z, m;
-    bool alreadyPassed = false;
-
-    X = x - N;
-    Y = y - N;
-    Z = z - N;
-
-    for (i = X; i <= X + (2 * N); i++) {
-        for (j = Y; j <= Y + (2 * N); j++) {
-            for (k = Z; k <= Z + (2 * N); k++) {
-                if (worldP->insideWorld(i, j, k)) {
-                    if (worldP->grid[i][j][k].getType() == const_M) {
-                        for (auto *memAgent : worldP->grid[i][j][k].getMids()) {
-                            if (alreadyPassed) {
-                                if ((worldP->grid[i][j][k].getMids()[m]->FIL != NONE) && (worldP->grid[i][j][k].getMids()[m]->Cell == Cell)) {
-                                    float thisLevel = this->get_cytoprotein_level(cytoproteinName);
-                                    float targetLevel = worldP->grid[i][j][k].getMids()[m]->get_cytoprotein_level(cytoproteinName);
-                                    alreadyPassed = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-std::vector<CytoProtein*>& MemAgent::getCytoproteins() {
-    return this->m_cytoproteins;
 }
 
 void MemAgent::update_protein_level(const std::string& protein_name, const double& protein_delta) {

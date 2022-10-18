@@ -2008,6 +2008,10 @@ std::vector<Protrusion*>& EC::getProtrusionList() {
     return this->m_protrusions;
 }
 
+std::vector<ProtrusionType*>& EC::getProtrusionTypeList() {
+	return this->m_protrusion_types;
+}
+
 /*****************************************************************************************
 *  Name:		initialiseProteinMemAgentBuffer
 *  Description: Goes over all proteins owned by a cell, then adds a key-value pair corresponding to

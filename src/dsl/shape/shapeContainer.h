@@ -10,15 +10,16 @@
 class CytoProtein;
 class ProtrusionType;
 class World;
+class WorldContainer;
 
 class ShapeContainer {
 private:
     World *m_world;
 public:
     ShapeContainer();
-    World *getWorld() const;
+    [[nodiscard]] World *getWorld() const;
     void setWorld(World* world);
-    void setup();
+    void setup(WorldContainer *wContainer);
     void add_allowed_protein(ProtrusionType *protrusionType, std::string proteinName);
     void add_protrusion(ProtrusionType *protrusionType, std::string cellTypeName);
     void add_cytoprotein(CytoProtein *cytoProtein, std::string cellTypeName);

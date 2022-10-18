@@ -39,7 +39,8 @@ namespace ECUtils {
 class EC {
 private:
     std::vector<Protrusion*> m_protrusions;
-    std::vector<EC*> m_neigh_cells;
+	std::vector<ProtrusionType*> m_protrusion_types;
+	std::vector<EC*> m_neigh_cells;
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
@@ -189,7 +190,8 @@ public:
     void addProtrusionToList(Protrusion* protrusion);
     bool removeProtrusionFromList(Protrusion* protrusion);
     std::vector<Protrusion*>& getProtrusionList();
-    std::vector<EC*>& getNeighCellVector();
+	std::vector<ProtrusionType*>& getProtrusionTypeList();
+	std::vector<EC*>& getNeighCellVector();
 
     const std::map<std::string, double>& getProteinMemAgentBuffer();
     void initialiseProteinMemAgentBuffer();
@@ -219,9 +221,7 @@ public:
     std::vector<int>& get_creation_times();
 
     void add_retraction_time(int retraction_time);
-
     void add_creation_time(int creation_time);
-
     void add_lifespan(int lifespan);
 };
 #endif //SPRINGAGENT_EC_H
