@@ -1748,19 +1748,6 @@ void World::creationTimestep(int movie) {
 void World::simulateTimestep_MSM() {
 	int movie = 0;
 
-	if (this->timeStep == 50) {
-		this->Pause == 1;
-	}
-	if (this->timeStep == 100) {
-		this->Pause == 1;
-	}
-	if (this->timeStep == 200) {
-		this->Pause == 1;
-	}
-	if (this->timeStep == 500) {
-		this->Pause == 1;
-	}
-
 
 	timeStep++;
 	if (timeStep == 0) {

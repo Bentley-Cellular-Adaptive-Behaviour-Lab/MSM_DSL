@@ -45,13 +45,19 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
-		auto VEGF_VEGFR2 = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
+		// CALC ACTIVE VEGFR USING LOCAL LEVELS.
 		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
-		auto SEMA3A_PLEXIN = memAgent->get_memAgent_current_level("SEMA3A_PLEXIN");
-		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIN");
+		auto VEGF_VEGFR2 = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
 		double ACTIVE_VEGFR2 = calc_ACTIVE_VEGFR2_rate(VEGF_VEGFR2, VEGFR2);
+
+		// CALC ACTIVE SEMA USING LOCAL LEVELS.
+		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIN");
+		auto SEMA3A_PLEXIN = memAgent->get_memAgent_current_level("SEMA3A_PLEXIN");
 		double ACTIVE_PLEXIN = calc_ACTIVE_PLEXIN_rate(SEMA3A_PLEXIN, PLEXIN);
+
+		// CALC PROBABILITY OF EXTENDING.
 		auto prob = ACTIVE_VEGFR2*(1-ACTIVE_PLEXIN);
 		return chance < prob;
 	}
+	return false;
 }

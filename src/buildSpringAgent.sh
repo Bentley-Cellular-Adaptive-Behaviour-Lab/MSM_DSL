@@ -1,1 +1,1 @@
-make clean; make CDBG=-w MAXtime=3000 GRAPHICS=true CLUSTER=false
+make clean; make CDBG=-w MAXtime=3000 GRAPHICS=false CLUSTER=false

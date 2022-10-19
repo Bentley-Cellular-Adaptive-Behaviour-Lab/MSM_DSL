@@ -10,12 +10,33 @@
     <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
     <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
     <use id="6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0" name="org.iets3.core.expr.math" version="0" />
+    <use id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout" version="0" />
   </languages>
   <imports />
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
+      <concept id="638201485731101733" name="ShapeLang.structure.ExtensionWithProb" flags="ng" index="2WYUjV" />
+      <concept id="638201485731101730" name="ShapeLang.structure.ExtensionCondition" flags="ng" index="2WYUjW">
+        <child id="638201485731101731" name="expr" index="2WYUjX" />
+      </concept>
       <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
         <reference id="4970340729092560634" name="_simulationContainerRef" index="1ANuhP" />
+        <child id="976479957056291978" name="_protrusions" index="3Bb2fi" />
+        <child id="976479957056308507" name="_cytoskeletalProteins" index="3Bb693" />
+      </concept>
+      <concept id="976479957056290939" name="ShapeLang.structure.Protrusion" flags="ng" index="3Bb2sz">
+        <property id="6283060364377681262" name="retractionTime" index="2m88tM" />
+        <property id="6283060364377681259" name="extensionTime" index="2m88tR" />
+        <property id="6283060364374448512" name="stallTime" index="2nOves" />
+        <reference id="6283060364382195670" name="targetCytoprotein" index="2mpUna" />
+        <child id="2605682802875058616" name="_allowedCellTypes" index="2BRsc" />
+        <child id="3156891689894719325" name="_followsEnvSpecies" index="Lgisp" />
+      </concept>
+      <concept id="976479957056291036" name="ShapeLang.structure.CytoskeletalProtein" flags="ng" index="3Bb2u4">
+        <reference id="6283060364384455818" name="targetProtrusion" index="2miiqm" />
+        <reference id="6283060364381454765" name="targetSpecies" index="2muIIL" />
+        <child id="6283060364381454777" name="AmountNeeded" index="2muII_" />
+        <child id="638201485730952523" name="_extensionCondition" index="2WLuQl" />
       </concept>
     </language>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
@@ -141,6 +162,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -163,6 +187,38 @@
         <child id="7070710508215227648" name="value" index="3lUA2Y" />
       </concept>
     </language>
+    <language id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout">
+      <concept id="6720495385597071406" name="de.itemis.mps.editor.diagram.layout.structure.Layout_Box" flags="ng" index="gqqVs">
+        <property id="6720495385597071504" name="bounds_height" index="gqqTy" />
+        <property id="6720495385597071502" name="bounds_y" index="gqqTW" />
+        <property id="6720495385597071503" name="bounds_width" index="gqqTX" />
+        <property id="6720495385597071501" name="bounds_x" index="gqqTZ" />
+        <property id="4583510071007917016" name="transform" index="TgtnS" />
+      </concept>
+      <concept id="2319506556913310852" name="de.itemis.mps.editor.diagram.layout.structure.Layout_Connection" flags="ng" index="2VclpC">
+        <child id="2319506556913311101" name="anchors" index="2Vcluh" />
+        <child id="4767615435799372763" name="labels" index="3ul5Gx" />
+      </concept>
+      <concept id="2319506556913310727" name="de.itemis.mps.editor.diagram.layout.structure.Point" flags="ng" index="2VclrF">
+        <property id="2319506556913310861" name="x" index="2Vclpx" />
+        <property id="2319506556913310863" name="y" index="2Vclpz" />
+      </concept>
+      <concept id="8963411245960991886" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMap" flags="ng" index="37mRI7">
+        <child id="8963411245960991904" name="entries" index="37mRID" />
+      </concept>
+      <concept id="8963411245960991903" name="de.itemis.mps.editor.diagram.layout.structure.LayoutMapEntry" flags="ng" index="37mRIm">
+        <property id="8963411245960998400" name="key" index="37mO49" />
+        <child id="8963411245960998404" name="value" index="37mO4d" />
+      </concept>
+      <concept id="4767615435799372731" name="de.itemis.mps.editor.diagram.layout.structure.Layout_EdgeLabel" flags="ng" index="3ul5H1">
+        <property id="4767615435799372759" name="type" index="3ul5GH" />
+        <child id="4767615435799372761" name="position" index="3ul5Gz" />
+      </concept>
+      <concept id="3253043142928125505" name="de.itemis.mps.editor.diagram.layout.structure.RelativePosition" flags="ng" index="3wpmZ1">
+        <child id="3253043142928125557" name="referencePoint" index="3wpmZP" />
+        <child id="3253043142928125559" name="offset" index="3wpmZR" />
+      </concept>
+    </language>
     <language id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang">
       <concept id="211905917822935903" name="TissueLang.structure.ExtensionWithProb" flags="ng" index="ZkRgg" />
       <concept id="211905917822935901" name="TissueLang.structure.ExtensionCondition" flags="ng" index="ZkRgi">
@@ -171,6 +227,9 @@
       <concept id="8255194269358657919" name="TissueLang.structure.TissueType" flags="ng" index="1apGoc">
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
+      </concept>
+      <concept id="1783685413825413975" name="TissueLang.structure.CellTypeReference" flags="ng" index="3yReWT">
+        <reference id="1783685413825588302" name="_target" index="3yR$0w" />
       </concept>
       <concept id="6249017959271690141" name="TissueLang.structure.CellShape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
@@ -447,6 +506,36 @@
   <node concept="3Bb2si" id="3Y6HoqB0F84">
     <property role="TrG5h" value="Shape" />
     <ref role="1ANuhP" node="3Y6HoqB0CTu" resolve="Simulation" />
+    <node concept="3Bb2u4" id="3Cam22k9mQL" role="3Bb693">
+      <ref role="2muIIL" node="3Cam22k9mMq" resolve="Actin" />
+      <ref role="2miiqm" node="3Cam22k9mM3" resolve="TestProtrusion" />
+      <node concept="2WYUjV" id="3Cam22k9mQT" role="2WLuQl">
+        <node concept="30bXRB" id="3Cam22k9mR5" role="2WYUjX">
+          <property role="30bXRw" value="1.0" />
+        </node>
+      </node>
+      <node concept="3bpmHq" id="3Cam22k9mRk" role="2muII_">
+        <node concept="3bpmH0" id="3Cam22k9mRm" role="3lUA2Y">
+          <node concept="30bXRB" id="3Cam22k9mRE" role="3lUA52">
+            <property role="30bXRw" value="10" />
+          </node>
+        </node>
+        <node concept="2llJbL" id="3Cam22k9mSN" role="3lUA2W" />
+      </node>
+    </node>
+    <node concept="3Bb2sz" id="3Cam22k9mM3" role="3Bb2fi">
+      <property role="2nOves" value="10" />
+      <property role="2m88tR" value="10" />
+      <property role="2m88tM" value="10" />
+      <property role="TrG5h" value="TestProtrusion" />
+      <ref role="2mpUna" node="3Cam22k9mQL" />
+      <node concept="1csUcq" id="3Cam22k9mM4" role="Lgisp">
+        <ref role="1csUcr" node="3Y6HoqB0F89" resolve="VEGF" />
+      </node>
+      <node concept="3yReWT" id="3Cam22k9mM7" role="2BRsc">
+        <ref role="3yR$0w" node="2Qy0p_aVoLr" resolve="EndothelialType" />
+      </node>
+    </node>
   </node>
   <node concept="3ZP1sW" id="3Y6HoqB0F85">
     <property role="TrG5h" value="Tissue" />
@@ -521,6 +610,9 @@
       </node>
       <node concept="1csUcq" id="2Qy0p_aV_z4" role="3FWu3_">
         <ref role="1csUcr" node="2Qy0p_aVoan" resolve="DLL4_NOTCH" />
+      </node>
+      <node concept="1csUcq" id="3Cam22k9mTy" role="3FWu3_">
+        <ref role="1csUcr" node="3Cam22k9mMq" resolve="Actin" />
       </node>
       <node concept="3ZP1s$" id="2Qy0p_aVoLz" role="3ZP1s2">
         <node concept="2_hQR_" id="2Qy0p_aVoL_" role="2IF2Qc">
@@ -1045,6 +1137,337 @@
       </node>
       <node concept="DdDr8" id="1G2_QzGeGdX" role="3_z4Rx">
         <ref role="DdDrb" node="2Qy0p_aV_kS" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="3Cam22k9mMq" role="3_zqUg">
+      <property role="2VbSsx" value="1" />
+      <property role="TrG5h" value="Actin" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="3Cam22k9mNl" role="1tJpXo">
+        <node concept="3bpmH0" id="3Cam22k9mNm" role="3lUA2Y">
+          <node concept="30bXRB" id="3Cam22k9mND" role="3lUA52">
+            <property role="30bXRw" value="1.0" />
+          </node>
+        </node>
+        <node concept="2llJbL" id="3Cam22k9mOO" role="3lUA2W" />
+      </node>
+    </node>
+    <node concept="37mRI7" id="3Cam22k9my8" role="lGtFl">
+      <node concept="37mRIm" id="3Cam22k9my9" role="37mRID">
+        <property role="37mO49" value="VEGF" />
+        <node concept="gqqVs" id="3Cam22k9my7" role="37mO4d">
+          <property role="gqqTZ" value="555.0" />
+          <property role="gqqTW" value="492.0007103515625" />
+          <property role="gqqTX" value="298.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myb" role="37mRID">
+        <property role="37mO49" value="SEMA3A" />
+        <node concept="gqqVs" id="3Cam22k9mya" role="37mO4d">
+          <property role="gqqTZ" value="134.1666666666667" />
+          <property role="gqqTW" value="292.1164387575011" />
+          <property role="gqqTX" value="298.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myd" role="37mRID">
+        <property role="37mO49" value="VEGFR2" />
+        <node concept="gqqVs" id="3Cam22k9myc" role="37mO4d">
+          <property role="gqqTZ" value="871.0" />
+          <property role="gqqTW" value="492.0007103515625" />
+          <property role="gqqTX" value="209.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myf" role="37mRID">
+        <property role="37mO49" value="PLEXIN" />
+        <node concept="gqqVs" id="3Cam22k9mye" role="37mO4d">
+          <property role="gqqTZ" value="450.1666666666667" />
+          <property role="gqqTW" value="292.1164387575011" />
+          <property role="gqqTX" value="209.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myh" role="37mRID">
+        <property role="37mO49" value="VEGF_VEGFR2" />
+        <node concept="gqqVs" id="3Cam22k9myg" role="37mO4d">
+          <property role="gqqTZ" value="599.5" />
+          <property role="gqqTW" value="843.0010765625" />
+          <property role="gqqTX" value="209.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myj" role="37mRID">
+        <property role="37mO49" value="SEMA3A_PLEXIN" />
+        <node concept="gqqVs" id="3Cam22k9myi" role="37mO4d">
+          <property role="gqqTZ" value="178.6666666666667" />
+          <property role="gqqTW" value="624.1168354860167" />
+          <property role="gqqTX" value="209.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myl" role="37mRID">
+        <property role="37mO49" value="DLL4" />
+        <node concept="gqqVs" id="3Cam22k9myk" role="37mO4d">
+          <property role="gqqTZ" value="590.0" />
+          <property role="gqqTW" value="1011.0012596679687" />
+          <property role="gqqTX" value="228.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myn" role="37mRID">
+        <property role="37mO49" value="NOTCH" />
+        <node concept="gqqVs" id="3Cam22k9mym" role="37mO4d">
+          <property role="gqqTZ" value="861.5" />
+          <property role="gqqTW" value="12.000100000000003" />
+          <property role="gqqTX" value="228.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myp" role="37mRID">
+        <property role="37mO49" value="DLL4_NOTCH" />
+        <node concept="gqqVs" id="3Cam22k9myo" role="37mO4d">
+          <property role="gqqTZ" value="861.5" />
+          <property role="gqqTW" value="324.0004967285156" />
+          <property role="gqqTX" value="228.0" />
+          <property role="gqqTy" value="108.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myr" role="37mRID">
+        <property role="37mO49" value="SEMA3A_PLEXIN_BINDING" />
+        <node concept="gqqVs" id="3Cam22k9myq" role="37mO4d">
+          <property role="gqqTZ" value="140.6666666666667" />
+          <property role="gqqTW" value="480.1166371217589" />
+          <property role="gqqTX" value="285.0" />
+          <property role="gqqTy" value="84.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myt" role="37mRID">
+        <property role="37mO49" value="DLL4_NOTCH_BINDING" />
+        <node concept="gqqVs" id="3Cam22k9mys" role="37mO4d">
+          <property role="gqqTZ" value="848.0" />
+          <property role="gqqTW" value="180.00029836425782" />
+          <property role="gqqTX" value="255.0" />
+          <property role="gqqTy" value="84.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myv" role="37mRID">
+        <property role="37mO49" value="VEGF_VEGFR_BINDING" />
+        <node concept="gqqVs" id="3Cam22k9myu" role="37mO4d">
+          <property role="gqqTZ" value="563.0" />
+          <property role="gqqTW" value="680.0008934570312" />
+          <property role="gqqTX" value="282.0" />
+          <property role="gqqTy" value="103.0" />
+          <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myx" role="37mRID">
+        <property role="37mO49" value="VEGF_VEGF_VEGFR_BINDING_reactantRelation" />
+        <node concept="2VclpC" id="3Cam22k9myw" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9myy" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9myz" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9my$" role="3wpmZR">
+                <property role="2Vclpx" value="678.1836734693877" />
+                <property role="2Vclpz" value="626.8163265306123" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9my_" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myB" role="37mRID">
+        <property role="37mO49" value="VEGFR2_VEGF_VEGFR_BINDING_reactantRelation" />
+        <node concept="2VclpC" id="3Cam22k9myA" role="37mO4d">
+          <node concept="2VclrF" id="3Cam22k9myC" role="2Vcluh">
+            <property role="2Vclpx" value="975.50005" />
+            <property role="2Vclpz" value="660.0007934570312" />
+          </node>
+          <node concept="2VclrF" id="3Cam22k9myD" role="2Vcluh">
+            <property role="2Vclpx" value="704.00005" />
+            <property role="2Vclpz" value="660.0007934570312" />
+          </node>
+          <node concept="3ul5H1" id="3Cam22k9myE" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9myF" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9myG" role="3wpmZR">
+                <property role="2Vclpx" value="986.50005" />
+                <property role="2Vclpz" value="618.0007934570312" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9myH" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myJ" role="37mRID">
+        <property role="37mO49" value="SEMA3A_SEMA3A_PLEXIN_BINDING_reactantRelation" />
+        <node concept="2VclpC" id="3Cam22k9myI" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9myK" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9myL" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9myM" role="3wpmZR">
+                <property role="2Vclpx" value="263.1667166666667" />
+                <property role="2Vclpz" value="418.1165371217589" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9myN" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myP" role="37mRID">
+        <property role="37mO49" value="PLEXIN_SEMA3A_PLEXIN_BINDING_reactantRelation" />
+        <node concept="2VclpC" id="3Cam22k9myO" role="37mO4d">
+          <node concept="2VclrF" id="3Cam22k9myQ" role="2Vcluh">
+            <property role="2Vclpx" value="554.6667166666666" />
+            <property role="2Vclpz" value="460.1165371217589" />
+          </node>
+          <node concept="2VclrF" id="3Cam22k9myR" role="2Vcluh">
+            <property role="2Vclpx" value="283.1667166666667" />
+            <property role="2Vclpz" value="460.1165371217589" />
+          </node>
+          <node concept="3ul5H1" id="3Cam22k9myS" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9myT" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9myU" role="3wpmZR">
+                <property role="2Vclpx" value="565.6667166666666" />
+                <property role="2Vclpz" value="418.1165371217589" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9myV" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9myX" role="37mRID">
+        <property role="37mO49" value="NOTCH_DLL4_NOTCH_BINDING_reactantRelation" />
+        <node concept="2VclpC" id="3Cam22k9myW" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9myY" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9myZ" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mz0" role="3wpmZR">
+                <property role="2Vclpx" value="955.50005" />
+                <property role="2Vclpz" value="138.0001983642578" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mz1" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9mz3" role="37mRID">
+        <property role="37mO49" value="VEGF_VEGFR_BINDING_VEGF_VEGFR2_productRelation" />
+        <node concept="2VclpC" id="3Cam22k9mz2" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9mz4" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9mz5" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mz6" role="3wpmZR">
+                <property role="2Vclpx" value="684.00005" />
+                <property role="2Vclpz" value="801.0009765625" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mz7" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9mz9" role="37mRID">
+        <property role="37mO49" value="SEMA3A_PLEXIN_BINDING_SEMA3A_PLEXIN_productRelation" />
+        <node concept="2VclpC" id="3Cam22k9mz8" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9mza" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9mzb" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mzc" role="3wpmZR">
+                <property role="2Vclpx" value="263.1667166666667" />
+                <property role="2Vclpz" value="582.1167354860168" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mzd" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9mzf" role="37mRID">
+        <property role="37mO49" value="DLL4_NOTCH_BINDING_DLL4_NOTCH_productRelation" />
+        <node concept="2VclpC" id="3Cam22k9mze" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9mzg" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9mzh" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mzi" role="3wpmZR">
+                <property role="2Vclpx" value="955.50005" />
+                <property role="2Vclpz" value="282.0003967285156" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mzj" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9mzl" role="37mRID">
+        <property role="37mO49" value="DLL4_UPREGULATION" />
+        <node concept="2VclpC" id="3Cam22k9mzk" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9mzm" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9mzn" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mzo" role="3wpmZR">
+                <property role="2Vclpx" value="594.00005" />
+                <property role="2Vclpz" value="969.0011596679688" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mzp" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37mRIm" id="3Cam22k9mzr" role="37mRID">
+        <property role="37mO49" value="VEGFR2_INHIBITION" />
+        <node concept="2VclpC" id="3Cam22k9mzq" role="37mO4d">
+          <node concept="3ul5H1" id="3Cam22k9mzs" role="3ul5Gx">
+            <property role="3ul5GH" value="label" />
+            <node concept="3wpmZ1" id="3Cam22k9mzt" role="3ul5Gz">
+              <node concept="2VclrF" id="3Cam22k9mzu" role="3wpmZR">
+                <property role="2Vclpx" value="845.50005" />
+                <property role="2Vclpz" value="450.0006103515625" />
+              </node>
+              <node concept="2VclrF" id="3Cam22k9mzv" role="3wpmZP">
+                <property role="2Vclpx" value="0.0" />
+                <property role="2Vclpz" value="0.0" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
