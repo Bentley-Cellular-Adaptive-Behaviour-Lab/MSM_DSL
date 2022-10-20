@@ -51,13 +51,14 @@ void MemAgent::NotchResponse(void) {
 
 	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
 	if (junction) {
-
 		std::vector<Location*> neighLocations;
 		// Get neighbour locations.
 		for (int x = Mx - 1; x <= Mx + 1; x++) {
 			for (int y = My - 1; y <= My + 1; y++) {
 				for (int z = Mz - 1; z <= Mz + 1; z++) {
-					neighLocations.push_back(&(worldP->grid[x][y][z]));
+					if (worldP->insideWorld(x, y, z)) {
+						neighLocations.push_back(&(worldP->grid[x][y][z]));
+					}
 				}
 			}
 		}
@@ -683,10 +684,6 @@ void MemAgent::VEGFRresponse(void) {
         VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
 
-		if (SumVEGF > 0) {
-			int test = 0;
-		}
-
         //done exceed max level
         if (VEGFRactive > VEGFR) {
             VEGFRactive = VEGFR;
@@ -729,27 +726,25 @@ void MemAgent::VEGFRresponse(void) {
 //    if (chance < prob) {
     if (worldP->can_extend(Cell, this)) {
         // Award actin tokens
-
         filTokens++;
 
-        if (FIL == NONE)
-        	tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
+        if (FIL == NONE) {
+			tryActinPassRadiusN((int) Mx, (int) My, (int) Mz, FIL_SPACING);
+		}
 
         if (oldVersion) {
             if (FIL == STALK) {
-                //passes its filExtend token to Magent in its plusSite
+                // Passes its filExtend token to Magent in its plusSite
                 plusSite->filTokens++;
                 filTokens--;
             }
         }
 
-        //--------------------------------------------------------------------------------------------
         //filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
             if (!deleteFlag)
             	moved = extendFil();
         }
-        //--------------------------------------------------------------------------------------------
 
         //reset VRinactive counter as now activated
         VRinactiveCounter = 0;
@@ -1440,7 +1435,6 @@ bool testFilMax(EC* cell) {
 
 bool MemAgent::extendFil(void) {
 
-    //cout<<"extending!"<<endl;
     MemAgent* mp;
     Env * highest;
     bool ans = false;
@@ -1452,46 +1446,34 @@ bool MemAgent::extendFil(void) {
     if (node == true) {
 
         //only extend if enough membrane - not limiting individual filopodia size, but overall cell stretch
-        //if((int)(Cell->nodeAgents.size()+Cell->springAgents.size()+Cell->surfaceAgents.size())<memMax){
 
         //find new position----------------------------------------------
         if (EnvNeighs.size() != 0) {
             if (Cell->actinUsed < actinMax) {
-                //if(LUMEN_BM){ for(i=0;i<EnvNeighs.size();i++){
-                 //   allow = false;
-                 //   if((EnvNeighs[i]->inside==false)&&(EnvNeighs[i]->BM!=true)) allow = true;
-                //}
-                //}
-                //else{
-                    allow = true;
-                //}
-                if(allow){
+				allow = true;
+                if (allow) {
                     highest = findHighestConc();
-                    if ((highest != NULL) && (highest->VEGF != 0)) {
+					bool canExtend = true;
+					if (SOLIDNESS_CHECK) {
+						canExtend = worldP->solidness_check(highest);
+					}
+                    if ((highest != NULL) && (highest->VEGF != 0) && canExtend) {
+						if (FIL == NONE) {
+							if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
+								if (highest->Ex > Mx) {
+									distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
+								} else {
+									distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
+								}
+                        	} else {
+								distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
+							}
 
-                    //-----------------------------------------------------------------------
-                        if (FIL == NONE) {
-                        //if(testFilMax(Cell)==false){
-                        //basal focal adhesion - inhibits veil and all cell body advance
+							if ((actinMax - Cell->actinUsed) >= distNeeded) {
 
-
-                        if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
-                            if (highest->Ex > Mx)
-                                distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
-                            else
-                                distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
-
-                        } else
-                            distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
-
-
-                        if ((actinMax - Cell->actinUsed) >= distNeeded) {
-
-                            //cout<<distNeeded<<" B "<<Cell;
                             Cell->actinUsed += distNeeded;
                             FA=true;
-                            //Cell->fil = true;
-                            //create new node, only attached to the current guy. create it in highest VEGF site.
+
                             mp = new MemAgent(Cell, worldP);
                             
                             mp->Mx = highest->Ex;
@@ -1556,7 +1538,6 @@ bool MemAgent::extendFil(void) {
                         }
 
                     } else {
-
                         if (highest->Ex - filNeigh->Mx > xMAX / 2.0f)
                             newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
                         else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f)
@@ -1583,16 +1564,11 @@ bool MemAgent::extendFil(void) {
                             this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
                             ans = true;
                             filTokens -= tokenStrength;
-                            
-
-                            //filTokens=0;
-                        }
-                    }
-                }
-            }
-            }
-
-
+						}
+						}
+					}
+				}
+			}
         }
 
     }

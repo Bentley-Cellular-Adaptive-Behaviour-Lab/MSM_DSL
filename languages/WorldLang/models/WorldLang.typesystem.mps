@@ -1535,5 +1535,113 @@
       <ref role="1YaFvo" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
     </node>
   </node>
+  <node concept="18kY7G" id="32SFKJHOCcI">
+    <property role="TrG5h" value="checkPermissivity" />
+    <node concept="3clFbS" id="32SFKJHOCcJ" role="18ibNy">
+      <node concept="3clFbJ" id="32SFKJHOCcK" role="3cqZAp">
+        <node concept="3clFbS" id="32SFKJHOCcL" role="3clFbx">
+          <node concept="2MkqsV" id="32SFKJHOCcM" role="3cqZAp">
+            <node concept="Xl_RD" id="32SFKJHOCcN" role="2MkJ7o">
+              <property role="Xl_RC" value="Solidness must be a value between 0 and 1. Currently less than 0." />
+            </node>
+            <node concept="1YBJjd" id="32SFKJHOCcO" role="1urrMF">
+              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbC" id="32SFKJHOCcP" role="3clFbw">
+          <node concept="3cmrfG" id="32SFKJHOCcQ" role="3uHU7w">
+            <property role="3cmrfH" value="-1" />
+          </node>
+          <node concept="2OqwBi" id="32SFKJHOCcR" role="3uHU7B">
+            <node concept="2OqwBi" id="32SFKJHOCcS" role="2Oq$k0">
+              <node concept="1YBJjd" id="32SFKJHOCcT" role="2Oq$k0">
+                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+              </node>
+              <node concept="2qgKlT" id="32SFKJHOCcU" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_permissivity_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="32SFKJHOCcV" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal)" resolve="compareTo" />
+              <node concept="10M0yZ" id="32SFKJHOCcW" role="37wK5m">
+                <ref role="3cqZAo" to="xlxw:~BigDecimal.ZERO" resolve="ZERO" />
+                <ref role="1PxDUh" to="xlxw:~BigDecimal" resolve="BigDecimal" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="32SFKJHOCcX" role="3cqZAp" />
+      <node concept="3clFbJ" id="32SFKJHOCcY" role="3cqZAp">
+        <node concept="3clFbS" id="32SFKJHOCcZ" role="3clFbx">
+          <node concept="2MkqsV" id="32SFKJHOCd0" role="3cqZAp">
+            <node concept="Xl_RD" id="32SFKJHOCd1" role="2MkJ7o">
+              <property role="Xl_RC" value="Solidness must be a value between 0 and 1. Currently greater than 1." />
+            </node>
+            <node concept="1YBJjd" id="32SFKJHOCd2" role="1urrMF">
+              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbC" id="32SFKJHOCd3" role="3clFbw">
+          <node concept="3cmrfG" id="32SFKJHOCd4" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
+          </node>
+          <node concept="2OqwBi" id="32SFKJHOCd5" role="3uHU7B">
+            <node concept="2OqwBi" id="32SFKJHOCd6" role="2Oq$k0">
+              <node concept="1YBJjd" id="32SFKJHOCd7" role="2Oq$k0">
+                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+              </node>
+              <node concept="2qgKlT" id="32SFKJHOCd8" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_permissivity_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="32SFKJHOCd9" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.compareTo(java.math.BigDecimal)" resolve="compareTo" />
+              <node concept="10M0yZ" id="32SFKJHOCda" role="37wK5m">
+                <ref role="3cqZAo" to="xlxw:~BigDecimal.ONE" resolve="ONE" />
+                <ref role="1PxDUh" to="xlxw:~BigDecimal" resolve="BigDecimal" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="32SFKJHOCdb" role="1YuTPh">
+      <property role="TrG5h" value="solidness" />
+      <ref role="1YaFvo" to="s9ob:32SFKJHOC6H" resolve="Solidness" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="32SFKJHPeNt">
+    <property role="TrG5h" value="typeof_Solidness" />
+    <node concept="3clFbS" id="32SFKJHPeNu" role="18ibNy">
+      <node concept="1ZobV4" id="32SFKJHPeNv" role="3cqZAp">
+        <node concept="mw_s8" id="32SFKJHPeNw" role="1ZfhKB">
+          <node concept="2YIFZM" id="32SFKJHPeNx" role="mwGJk">
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+            <node concept="10Nm6u" id="32SFKJHPeNy" role="37wK5m" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="32SFKJHPeNz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="32SFKJHPeN$" role="mwGJk">
+            <node concept="2OqwBi" id="32SFKJHPeN_" role="1Z2MuG">
+              <node concept="1YBJjd" id="32SFKJHPeNA" role="2Oq$k0">
+                <ref role="1YBMHb" node="32SFKJHPeNC" resolve="adhesiveness" />
+              </node>
+              <node concept="3TrEf2" id="32SFKJHPeNB" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:2XF6SaaezeR" resolve="expr" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="32SFKJHPeNC" role="1YuTPh">
+      <property role="TrG5h" value="adhesiveness" />
+      <ref role="1YaFvo" to="s9ob:2XF6SaaezeQ" resolve="Adhesiveness" />
+    </node>
+  </node>
 </model>
 

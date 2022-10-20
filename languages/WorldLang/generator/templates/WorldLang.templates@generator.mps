@@ -601,6 +601,33 @@
             </node>
           </node>
           <node concept="356sEF" id="6KnhZ9_cwNK" role="356sEH">
+            <property role="TrG5h" value=", " />
+          </node>
+          <node concept="356sEF" id="32SFKJHY15t" role="356sEH">
+            <property role="TrG5h" value="SOLIDNESS" />
+            <node concept="17Uvod" id="32SFKJHY22Q" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="32SFKJHY22R" role="3zH0cK">
+                <node concept="3clFbS" id="32SFKJHY22S" role="2VODD2">
+                  <node concept="3clFbF" id="32SFKJHY23g" role="3cqZAp">
+                    <node concept="2OqwBi" id="32SFKJHY2GC" role="3clFbG">
+                      <node concept="2OqwBi" id="32SFKJHY2gw" role="2Oq$k0">
+                        <node concept="30H73N" id="32SFKJHY23f" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="32SFKJHY2vM" role="2OqNvi">
+                          <ref role="3Tt5mk" to="s9ob:7faAukhALB$" resolve="_grid" />
+                        </node>
+                      </node>
+                      <node concept="2qgKlT" id="32SFKJHZsJd" role="2OqNvi">
+                        <ref role="37wK5l" to="pxw4:32SFKJHY4Bn" resolve="get_solidness_string" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="32SFKJHY15u" role="356sEH">
             <property role="TrG5h" value=", paramValues);" />
           </node>
           <node concept="2EixSi" id="cUvw_H2Bvl" role="2EinRH" />
@@ -5276,23 +5303,7 @@
             </node>
           </node>
           <node concept="356sEF" id="6KnhZ9_cO5x" role="356sEH">
-            <property role="TrG5h" value="_centre), " />
-          </node>
-          <node concept="356sEF" id="6KnhZ9_cO5N" role="356sEH">
-            <property role="TrG5h" value="SUBSTRATE_DIRECTIONALITY" />
-            <node concept="17Uvod" id="57aaQbDE7rl" role="lGtFl">
-              <property role="2qtEX9" value="name" />
-              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
-              <node concept="3zFVjK" id="57aaQbDE7rm" role="3zH0cK">
-                <node concept="3clFbS" id="57aaQbDE7rn" role="2VODD2">
-                  <node concept="3cpWs6" id="57aaQbDE7vV" role="3cqZAp">
-                    <node concept="Xl_RD" id="57aaQbDE7wF" role="3cqZAk">
-                      <property role="Xl_RC" value="NO_DIRECTION" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
+            <property role="TrG5h" value="_centre)" />
           </node>
           <node concept="356sEF" id="6KnhZ9_cO5U" role="356sEH">
             <property role="TrG5h" value=", " />
@@ -5317,6 +5328,28 @@
             </node>
           </node>
           <node concept="356sEF" id="6KnhZ9_cO6b" role="356sEH">
+            <property role="TrG5h" value=", " />
+          </node>
+          <node concept="356sEF" id="32SFKJHRDdy" role="356sEH">
+            <property role="TrG5h" value="SUBSTRATE_SOLIDNESS" />
+            <node concept="17Uvod" id="32SFKJHRDDY" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="32SFKJHRDDZ" role="3zH0cK">
+                <node concept="3clFbS" id="32SFKJHRDE0" role="2VODD2">
+                  <node concept="3clFbF" id="32SFKJHREe2" role="3cqZAp">
+                    <node concept="2OqwBi" id="32SFKJHRErR" role="3clFbG">
+                      <node concept="30H73N" id="32SFKJHREe1" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="32SFKJHT33K" role="2OqNvi">
+                        <ref role="37wK5l" to="pxw4:32SFKJHRFX9" resolve="get_solidness_string" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="32SFKJHRDdz" role="356sEH">
             <property role="TrG5h" value=");" />
           </node>
           <node concept="2EixSi" id="6KnhZ9_cKpB" role="2EinRH" />

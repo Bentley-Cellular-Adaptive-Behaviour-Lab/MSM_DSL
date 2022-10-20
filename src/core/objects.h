@@ -40,6 +40,8 @@ class World;
 #define SHAPE_TESTING false
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING false
+#define SUBSTRATES_BLOCK_FILS true
+#define SOLIDNESS_CHECK false
 
 // Analysis types for the DSL.
 

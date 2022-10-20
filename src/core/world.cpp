@@ -248,11 +248,12 @@ World::World() {
     std::cout << "Creation timestep complete." << std::endl;
 }
 
-World::World(const int& grid_xMax,
-             const int& grid_yMax,
-             const int& grid_zMax,
-             const double& base_permittivity,
-             const std::vector<double>& paramValues) {
+World::World(const int grid_xMax,
+             const int grid_yMax,
+             const int grid_zMax,
+             const float base_permittivity,
+			 const float base_solidness,
+			 const std::vector<double>& paramValues) {
 #ifdef __GNUC__
     if (TESTING) {
         srand(100);
@@ -306,7 +307,7 @@ World::World(const int& grid_xMax,
               << "Z: " << gridZDimensions << "\n";
 
     std::cout << "Placing environment agents..." << "\n";
-    create_new_environment(base_permittivity);
+    create_new_environment(base_permittivity, base_solidness);
     std::cout << "Environment created." << "\n";
 
     std::cout << "Setting up ODE systems..." << "\n";
@@ -1413,14 +1414,14 @@ std::vector< std::vector<float> > World::getGridSiteData()
 *  Returns:		void
 ******************************************************************************************/
 
-void World::create_new_environment(float base_permittivity) {
+void World::create_new_environment(const float base_adhesiveness, const float base_solidness) {
     Env* ep;
     //Create environment objects and place on grid.
     for (int x = 0; x < gridXDimensions; x++) {
         for (int y = 0; y < gridYDimensions; y++) {
             for (int z = 0; z < gridZDimensions; z++) {
                 if ((grid[x][y][z].getType() == const_E) && (grid[x][y][z].getEid() == NULL)) {
-                    create_env_agent(x, y, z, base_permittivity);
+                    create_env_agent(x, y, z, base_adhesiveness, base_solidness);
                 }
             }
         }
@@ -1434,7 +1435,11 @@ void World::create_new_environment(float base_permittivity) {
 *  Returns:		void
 ******************************************************************************************/
 
-void World::create_env_agent(int x, int y, int z, float base_permittivity) {
+void World::create_env_agent(const int x,
+							 const int y,
+							 const int z,
+							 const float base_permittivity,
+							 const float base_solidness) {
 
 	if (grid[x][y][z].getEid()!=NULL) {
 		std::cout<<"Attempted to assign an environment agent twice."<<std::endl;
@@ -1446,7 +1451,8 @@ void World::create_env_agent(int x, int y, int z, float base_permittivity) {
 	ep->Ey=y;
 	ep->Ez=z;
 
-	ep->adhesiveness = base_permittivity;
+	ep->m_adhesiveness = base_permittivity;
+	ep->m_solidness = base_solidness;
 
 	grid[x][y][z].setEid(ep);
 	grid[x][y][z].setType(const_E);
@@ -1475,7 +1481,7 @@ void World::set_focal_adhesion(MemAgent *memp) {
 		// Check against the adhesiveness of the target environment location.
 		// Higher adhesiveness makes it easier to form an FA, therefore if the chance is less than
 		// a (high) prob, form a FA.
-		memp->FA = chance <= target_ep->adhesiveness;
+		memp->FA = chance <= target_ep->m_adhesiveness;
 	} else {
 		// The mem agent is not on an environment agent and therefore cannot check for adhesiveness.
 		memp->FA = true;
@@ -1870,9 +1876,6 @@ void World::updateMemAgents_MSM() {
 		tipDeleteFlag = false;
 
 		memp = ALLmemAgents[i];
-
-		auto memAgent = this->grid[104][15][24].getMids().at(0);
-
 		memp->assessed = true;
 		memp->addedJunctionList = false;
         memp->vonNeighSearch();
@@ -7429,4 +7432,10 @@ void World::log_filopodia() {
             }
         }
     }
+}
+
+bool World::solidness_check(Env* ep) {
+	float prob = 1 - ep->m_solidness;
+	auto chance = (float) this->new_rand() / (float) NEW_RAND_MAX;
+	return prob <= chance;
 }

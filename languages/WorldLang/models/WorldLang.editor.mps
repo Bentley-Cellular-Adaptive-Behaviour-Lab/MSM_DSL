@@ -777,6 +777,87 @@
         </node>
         <node concept="2iRfu4" id="4JVq81FmDxn" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="32SFKJHUDFH" role="3EZMnx">
+        <node concept="VPM3Z" id="32SFKJHUDFI" role="3F10Kt" />
+        <node concept="1v6uyg" id="32SFKJHUDFJ" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="32SFKJHUDFK" role="wsdo6">
+            <node concept="3F0ifn" id="32SFKJHUDK3" role="3EZMnx">
+              <property role="3F0ifm" value="Solidness affects the probability that a filopodia" />
+              <node concept="2biZxu" id="32SFKJHUDK4" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHUDK5" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHUDK6" role="3EZMnx">
+              <property role="3F0ifm" value="can extend into a given location. A higher solidness" />
+              <node concept="2biZxu" id="32SFKJHUDK7" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHUDK8" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHUDK9" role="3EZMnx">
+              <property role="3F0ifm" value="prevents filopodia extension into that area." />
+              <node concept="2biZxu" id="32SFKJHUDKa" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHUDKb" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHUDKc" role="3EZMnx">
+              <property role="3F0ifm" value="Requires a real number between 0 and 1." />
+              <node concept="2biZxu" id="32SFKJHUDKd" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHUDKe" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="32SFKJHUDFU" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="32SFKJHUDFV" role="1j7Clw">
+            <property role="3F0ifm" value="Solidness" />
+            <node concept="VQ3r3" id="32SFKJHUDFW" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+            <node concept="2biZxu" id="32SFKJHUDFX" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="32SFKJHUDFY" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="32SFKJHUDFZ" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
+        <node concept="1iCGBv" id="32SFKJHUDG0" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:32SFKJHUDCJ" resolve="_solidness" />
+          <node concept="1sVBvm" id="32SFKJHUDG1" role="1sWHZn">
+            <node concept="3F1sOY" id="32SFKJHUDG2" role="2wV5jI">
+              <ref role="1NtTu8" to="s9ob:32SFKJHOC7Q" resolve="expr" />
+              <node concept="VechU" id="32SFKJHUDG3" role="3F10Kt">
+                <property role="Vb096" value="fLwANPs/magenta" />
+              </node>
+              <node concept="2biZxu" id="32SFKJHUDG4" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHUDG5" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
+              </node>
+            </node>
+          </node>
+          <node concept="VechU" id="32SFKJHUDG6" role="3F10Kt">
+            <property role="Vb096" value="fLwANPs/magenta" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="32SFKJHUDG7" role="2iSdaV" />
+      </node>
       <node concept="3EZMnI" id="2XF6SaabILU" role="3EZMnx">
         <node concept="VPM3Z" id="2XF6SaabILW" role="3F10Kt" />
         <node concept="1v6uyg" id="57Wjpeqjntf" role="3EZMnx">
@@ -1220,6 +1301,83 @@
         </node>
         <node concept="2iRfu4" id="4JVq81Foo2h" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="32SFKJHOC9D" role="3EZMnx">
+        <node concept="VPM3Z" id="32SFKJHOC9E" role="3F10Kt" />
+        <node concept="3XFhqQ" id="32SFKJHOC9F" role="3EZMnx" />
+        <node concept="1v6uyg" id="32SFKJHOC9G" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="32SFKJHOC9H" role="wsdo6">
+            <node concept="3F0ifn" id="32SFKJHOC9I" role="3EZMnx">
+              <property role="3F0ifm" value="Solidness affects the probability that a filopodia" />
+              <node concept="2biZxu" id="32SFKJHOC9J" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHOC9K" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHOC9L" role="3EZMnx">
+              <property role="3F0ifm" value="can extend into a given location. A higher solidness" />
+              <node concept="2biZxu" id="32SFKJHOC9M" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHOC9N" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHOHyk" role="3EZMnx">
+              <property role="3F0ifm" value="prevents filopodia extension into that area." />
+              <node concept="2biZxu" id="32SFKJHOHyv" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHOHyw" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="32SFKJHOC9O" role="3EZMnx">
+              <property role="3F0ifm" value="Requires a real number between 0 and 1." />
+              <node concept="2biZxu" id="32SFKJHOC9P" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHOC9Q" role="3F10Kt">
+                <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="32SFKJHOC9R" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="32SFKJHOC9S" role="1j7Clw">
+            <property role="3F0ifm" value="Solidness" />
+            <node concept="VQ3r3" id="32SFKJHOC9T" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+            <node concept="2biZxu" id="32SFKJHOC9U" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="32SFKJHOC9V" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="32SFKJHOC9W" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
+        <node concept="1iCGBv" id="32SFKJHOC9X" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:32SFKJHOC8c" resolve="_Solidness" />
+          <node concept="1sVBvm" id="32SFKJHOC9Y" role="1sWHZn">
+            <node concept="3F1sOY" id="32SFKJHOC9Z" role="2wV5jI">
+              <ref role="1NtTu8" to="s9ob:32SFKJHOC7Q" resolve="expr" />
+              <node concept="2biZxu" id="32SFKJHOCa0" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="32SFKJHOCa1" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="32SFKJHOCa2" role="2iSdaV" />
+      </node>
+      <node concept="3F0ifn" id="32SFKJHOC8O" role="3EZMnx" />
       <node concept="3F0ifn" id="2FvyIAlG0GM" role="3EZMnx">
         <node concept="2biZxu" id="2FvyIAlNnDI" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />

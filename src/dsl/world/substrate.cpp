@@ -65,7 +65,8 @@ void Substrate::apply_substrate_to_cuboid() {
             for (int k = z_start; k < z_end; k++) {
                 if (m_parent_world->grid[i][j][k].getType() == const_E) {
                     ep = m_parent_world->grid[i][j][k].getEid();
-                    ep->adhesiveness = m_adhesiveness;
+                    ep->m_adhesiveness = m_adhesiveness;
+					ep->m_solidness = m_solidness;
                 }
             }
         }
@@ -91,8 +92,6 @@ void Substrate::apply_substrate_to_triangular_prism() {
     vertex_1 = substrate_shape->get_vertex_1();
     vertex_2 = substrate_shape->get_vertex_2();
     vertex_3 = substrate_shape->get_vertex_3();
-
-    //TODO: MOVE THESE IF STATEMENTS TO A SEPARATE FUNCTION FOR LEGIBIILTY.
 
     // Compare x-coordinate values and set x_start to the smallest one.
     x_start = std::get<0>(vertex_1);
@@ -161,7 +160,8 @@ void Substrate::apply_substrate_to_triangular_prism() {
                 if (m_parent_world->grid[i][j][k].getType() == const_E) {
                     ep = m_parent_world->grid[i][j][k].getEid();
                     if (m_parent_world->is_within_triangle(ep, vertex_1, vertex_2, vertex_3)) {
-                        ep->adhesiveness = m_adhesiveness;
+                        ep->m_adhesiveness = m_adhesiveness;
+						ep->m_solidness = m_solidness;
                     }
                 }
             }
@@ -175,12 +175,15 @@ void Substrate::apply_substrate_to_triangular_prism() {
 *  Returns:		Substrate*
 ******************************************************************************************/
 
-Substrate::Substrate(WorldContainer *container, Shape *substrate_shape, Coordinates *centre_coordinates,
-					 int substrate_direction, float adhesiveness) {
+Substrate::Substrate(WorldContainer *container,
+					 Shape *substrate_shape,
+					 Coordinates *centre_coordinates,
+					 const float adhesiveness,
+					 const float solidness) {
     this->m_parent_container = container;
     this->m_parent_world = container->get_world();
     this->m_substrate_shape = substrate_shape;
     this->m_centre_coordinates = centre_coordinates;
-    this->m_substrate_direction = substrate_direction;
     this->m_adhesiveness = adhesiveness;
+	this->m_solidness = solidness;
 }

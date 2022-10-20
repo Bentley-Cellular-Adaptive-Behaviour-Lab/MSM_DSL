@@ -137,6 +137,7 @@ int linesView=0;
 int astro =0;
 int VEGFview=1;
 int AdhesivenessView = 0;
+int SolidnessView = 0;
 int ExternSpeciesView = 1;
 int viewType=2;
 int FAview=0;
@@ -1621,12 +1622,21 @@ void World::viewGrid(void){
 						}
 
 						if (AdhesivenessView == 1) {
-							red = grid[i][j][k].getEid()->adhesiveness;
-							green = grid[i][j][k].getEid()->adhesiveness;
-							grid[i][j][k].getEid()->adhesiveness;
+							red = grid[i][j][k].getEid()->m_adhesiveness;
+							green = grid[i][j][k].getEid()->m_adhesiveness;
+							grid[i][j][k].getEid()->m_adhesiveness;
 							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
-									 (float) grid[i][j][k].getEid()->adhesiveness * 0.1, L);
+									 (float) grid[i][j][k].getEid()->m_adhesiveness * 0.1, L);
 						}
+
+						if (SolidnessView == 1) {
+							red = 0.2f;
+							green = 0.57f;
+							blue = grid[i][j][k].getEid()->m_solidness;
+							DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
+									 (float) grid[i][j][k].getEid()->m_solidness * 0.1, L);
+						}
+
 						// Get all gradients - apply a colour to them.
 						if (ExternSpeciesView == 1) {
 							float count = 0;
@@ -1642,11 +1652,10 @@ void World::viewGrid(void){
 									} else if (proteinName == "SEMA3A") {
 										red = grid[i][j][k].getEid()->get_protein_level("SEMA3A");
 										green = grid[i][j][k].getEid()->get_protein_level("SEMA3A");
-										grid[i][j][k].getEid()->adhesiveness;
+										grid[i][j][k].getEid()->m_adhesiveness;
 										DrawCube(i - recentreX, j - recentreY, k - recentreZ, red, green, blue,
 												 grid[i][j][k].getEid()->get_protein_level("SEMA3A") * 0.01, L);
 									}
-
 								} else {
 									red = 0.2f * count;
 									green = 0.1f*count;
@@ -2173,6 +2182,7 @@ void displayGlui(int * argc, char  ** argv) {
     glui->add_checkbox_to_panel( vessels, "VEGF", &VEGFview);
 	glui->add_checkbox_to_panel( vessels, "External Species", &ExternSpeciesView);
 	glui->add_checkbox_to_panel( vessels, "Adhesiveness", &AdhesivenessView);
+	glui->add_checkbox_to_panel( vessels, "Solidness", &SolidnessView);
 //    glui->add_checkbox_to_panel( vessels, "view light pos", &viewLight);
 //    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);
 //    glui->add_checkbox_to_panel( vessels, "view vessel axes", &vesselView);

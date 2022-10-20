@@ -138,14 +138,14 @@ void WorldContainer::create_gradient(int gradient_type,
 
 void WorldContainer::create_substrate(Shape *substrate_shape,
 									  Coordinates *centre_coordinates,
-									  int substrate_direction,
-									  float adhesiveness) {
+									  const float adhesiveness,
+									  const float solidness) {
     std::cout << "Creating substrate." << ".\n";
     auto *new_substrate = new Substrate(this,
                                         substrate_shape,
                                         centre_coordinates,
-                                        substrate_direction,
-                                        adhesiveness);
+                                        adhesiveness,
+										solidness);
     if (new_substrate->m_substrate_shape->get_shape_type() == SUBSTRATE_SHAPE_CUBOIDAL) {
         new_substrate->apply_substrate_to_cuboid();
     }
@@ -183,16 +183,18 @@ void WorldContainer::store_substrate(Substrate *substrate) {
 *  Returns:		void
 ******************************************************************************************/
 
-World* WorldContainer::create_world(const int& xMax,
-									const int& yMax,
-									const int& zMax,
-									const double& base_permittivity,
+World* WorldContainer::create_world(const int xMax,
+									const int yMax,
+									const int zMax,
+									const float base_permittivity,
+									const float base_solidness,
 									const std::vector<double>& paramValues) {
     auto *new_world = new World(xMax,
                                 yMax,
                                 zMax,
                                 base_permittivity,
-                                paramValues);
+								base_solidness,
+								paramValues);
     return new_world;
 }
 

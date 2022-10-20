@@ -211,8 +211,13 @@ public:
 
     //New world functions (for DSL).
 
-    void create_new_environment(float base_permittivity);
-    void create_env_agent(int x, int y, int z, float base_permittivity);
+    void create_new_environment(const float base_adhesiveness,
+								const float base_solidness);
+    void create_env_agent(const int x,
+						  const int y,
+						  const int z,
+						  const float base_adhesiveness,
+						  const float base_solidness);
     void set_focal_adhesion(MemAgent *memp);
     bool is_within_triangle(Env *ep,
                             std::tuple<float, float> triangle_point_1,
@@ -223,11 +228,12 @@ public:
                    std::tuple<float, float> point_2);
 
     // World constructor for DSL.
-    World(const int& grid_xMax,
-          const int& grid_yMax,
-          const int& grid_zMax,
-          const double& base_permittivity,
-          const std::vector<double>& paramValues);
+    World(const int grid_xMax,
+          const int grid_yMax,
+          const int grid_zMax,
+          const float base_permittivity,
+		  const float base_solidness,
+		  const std::vector<double>& paramValues);
 
     ODEs *odes;
 
@@ -345,6 +351,7 @@ public:
     void create_creation_outfile();
     void write_to_creation_file();
     void log_filopodia();
+	bool solidness_check(Env* ep);
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
