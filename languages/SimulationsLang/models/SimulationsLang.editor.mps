@@ -206,13 +206,19 @@
     <ref role="1XX52x" to="yy1h:7wJJsVzvWzR" resolve="GraphicsFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvE9" role="2wV5jI">
       <property role="2oejA6" value="true" />
-      <node concept="3F0ifn" id="2B5sNxPnvIn" role="wsdo6">
-        <property role="3F0ifm" value="Run the MSM with graphics on or off." />
-        <node concept="2biZxu" id="2FvyIAlAiMW" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
+      <node concept="3EZMnI" id="3VDWMYvj$8F" role="wsdo6">
+        <node concept="2iRkQZ" id="3VDWMYvj$8G" role="2iSdaV" />
+        <node concept="3F0ifn" id="2B5sNxPnvIn" role="3EZMnx">
+          <property role="3F0ifm" value="Run the MSM with graphics on or off." />
+          <node concept="2biZxu" id="2FvyIAlAiMW" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2FvyIAlAiMX" role="3F10Kt">
+            <property role="1lJzqX" value="12" />
+          </node>
         </node>
-        <node concept="VSNWy" id="2FvyIAlAiMX" role="3F10Kt">
-          <property role="1lJzqX" value="12" />
+        <node concept="3F0ifn" id="3VDWMYvj$8P" role="3EZMnx">
+          <property role="3F0ifm" value="Options: - Yes (Runs with graphics)." />
         </node>
       </node>
       <node concept="3EZMnI" id="2B5sNxPnvFU" role="1j7Clw">
