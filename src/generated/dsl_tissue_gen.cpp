@@ -24,10 +24,9 @@ void Tissue_Container::tissue_set_up(World* world) {
 	EndothelialType_Type->add_protein(new Protein("PLEXIN", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
 	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIN", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 27));
-	EndothelialType_Type->add_protein(new Protein("Actin", PROTEIN_LOCATION_CELL, 1.0, 0, -1, 1));
 
 	// Tissue Type Creation //
 	auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 13, 6);
@@ -46,13 +45,23 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
-		auto VEGF_VEGFR2 = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
+		// Set filconst.
+		float filConst = 8000.0f;
+		// Get active VEGFR.
+		auto VEGF = memAgent->get_mean_env_protein("VEGF");
 		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
-		auto SEMA3A_PLEXIN = memAgent->get_memAgent_current_level("SEMA3A_PLEXIN");
+		auto ACTIVE_VEGFR2 = VEGF * VEGFR2 * 0.1;
+
+		// Get active plexin.
+		auto SEMA3A = memAgent->get_mean_env_protein("SEMA3A");
 		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIN");
-		double ACTIVE_VEGFR2 = calc_ACTIVE_VEGFR2_rate(VEGF_VEGFR2, VEGFR2);
-		double ACTIVE_PLEXIN = calc_ACTIVE_PLEXIN_rate(SEMA3A_PLEXIN, PLEXIN);
-		auto prob = ACTIVE_VEGFR2*(1-ACTIVE_PLEXIN);
+		auto ACTIVE_PLEXIN = SEMA3A * PLEXIN * 0.1;
+		auto prob = (ACTIVE_VEGFR2*filConst)*(1-ACTIVE_PLEXIN);
+
+		if (this->timeStep % 9 == 0) {
+			cell->get_extension_probs().push_back(prob);
+		}
+
 		return chance < prob;
 	}
 }

@@ -352,6 +352,9 @@ public:
     void write_to_creation_file();
     void log_filopodia();
 	bool solidness_check(Env* ep);
+	float get_average_DLL4();
+	void create_DLL4_file();
+	void write_to_DLL4_file();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

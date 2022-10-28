@@ -51,11 +51,11 @@ static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH) {
 }
 
 static double calc_VEGFR2_INHIB_rate(double DLL4_NOTCH) {
-	return DLL4_NOTCH*0.2;
+	return DLL4_NOTCH*0.15;
 }
 
 static double calc_DLL4_UPREG_rate(double VEGF_VEGFR2) {
-	return VEGF_VEGFR2*0.2;
+	return VEGF_VEGFR2*0.15;
 }
 
 static double calc_DLL4_DEG_rate(double DLL4) {

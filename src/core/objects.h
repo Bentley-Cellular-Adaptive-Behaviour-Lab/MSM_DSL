@@ -42,6 +42,7 @@ class World;
 #define SWEEP_TESTING false
 #define SUBSTRATES_BLOCK_FILS true
 #define SOLIDNESS_CHECK false
+#define SEMA3A_SIMULATION_GRANT true
 
 // Analysis types for the DSL.
 

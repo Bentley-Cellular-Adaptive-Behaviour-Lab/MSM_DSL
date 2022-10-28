@@ -6769,6 +6769,7 @@ void World::create_outfiles(std::vector<double>& param_values) {
 		create_protein_outfile(name);
 		create_protein_outfile_headers(name, param_values);
 	}
+	create_DLL4_file();
     if (false) {
         create_probabilities_outfile();
         create_probabilities_outfile_headers(param_values);
@@ -6801,6 +6802,7 @@ void World::write_to_outfiles() {
 	write_to_probabilities_file();
 	write_to_inhib_file();
 	write_to_upreg_file();
+	write_to_DLL4_file();
 }
 
 void World::write_time_to_pattern(const int time_to_pattern) {
@@ -6839,6 +6841,40 @@ void World::create_protein_outfile(const std::string &protein_name) {
                               ".csv";
 
 	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::create_DLL4_file() {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	std::string file_string = "results/MSM_DLL4_run_"
+								+ std::to_string(this->m_run_number)
+								+ ".csv";
+
+	sprintf(file_buffer, "%s", file_string.c_str());
+}
+
+void World::write_to_DLL4_file() {
+	std::ofstream file;
+	std::string file_string = "results/MSM_DLL4_run_"
+							+ std::to_string(this->m_run_number)
+							+ ".csv";
+	file.open(file_string.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			file << timeStep << ",";
+			for (const auto &cell: ECagents) {
+				file << cell->Dll4tot << ", ";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open results file for MSM DLL4. Please check the results directory exists.";
+		exit(e);
+	}
 }
 
 void World::create_protein_outfile_headers(const std::string &protein_name,
@@ -7438,4 +7474,17 @@ bool World::solidness_check(Env* ep) {
 	float prob = 1 - ep->m_solidness;
 	auto chance = (float) this->new_rand() / (float) NEW_RAND_MAX;
 	return prob <= chance;
+}
+
+float World::get_average_DLL4() {
+	// Gets average level of DLL4 from
+	// MSM values.
+	float total = 0;
+	for (auto *EC : this->ECagents) {
+		total += EC->Dll4tot;
+	}
+	if (ECagents.size() > 0) {
+		return total / (float) this->ECagents.size();
+	}
+
 }
