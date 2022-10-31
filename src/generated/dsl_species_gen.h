@@ -43,11 +43,11 @@ static double calc_Nu_rate() {
 }
 
 static double calc_VEGFR2_PROD_rate() {
-	return 0.05;
+	return 0.1;
 }
 
 static double calc_NOTCH_PROD_rate() {
-	return 0.05;
+	return 0.1;
 }
 
 static double calc_VEGFR2_DEG_rate(double VEGFR2) {

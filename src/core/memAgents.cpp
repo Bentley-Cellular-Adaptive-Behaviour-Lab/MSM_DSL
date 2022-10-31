@@ -715,7 +715,7 @@ void MemAgent::VEGFRresponse(void) {
 					// Then reduce the probability that a filopodia can extend
 					// by an amount relative to the amount of sema nearby.
 					auto sema = this->get_mean_env_protein("SEMA3A");
-					auto probability_modifier = sema * 0.0;
+					auto probability_modifier = sema * 0.2;
 					prob = (((float) VEGFRactive - probability_modifier) / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
 					if (worldP->timeStep % 9 == 0) {
 						Cell->get_extension_probs().push_back(prob);
@@ -732,8 +732,8 @@ void MemAgent::VEGFRresponse(void) {
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-    if (chance < prob) {
-//    if (worldP->can_extend(Cell, this)) {
+//    if (chance < prob) {
+    if (worldP->can_extend(Cell, this)) {
         // Award actin tokens
         filTokens++;
 

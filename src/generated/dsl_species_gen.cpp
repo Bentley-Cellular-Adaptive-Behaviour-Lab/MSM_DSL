@@ -204,7 +204,7 @@ void ODEs::EndothelialType_cell_only_system(const EndothelialType_cell_ode_state
 	double NOTCH_PROD = calc_NOTCH_PROD_rate();
 	double VEGFR_INHIB = calc_VEGFR2_INHIB_rate(VEGFR2, DLL4_NOTCH, Nu);
 	double DLL4_UPREG = calc_DLL4_UPREG_rate(Theta, VEGF_VEGFR2, Nu);
-	double DLL4_INHIB = calc_DLL4_INHIB_rate(DLL4, SEMA_PLEXIN, Nu);
+//	double DLL4_INHIB = calc_DLL4_INHIB_rate(DLL4, SEMA_PLEXIN, Nu);
 
 	// SEMA_PLEXIN EXAMPLE.
 	double SEMA_PLEXIN_ON = calc_SEMA_PLEXIN_ON_rate(SEMA3E, PLEXIND1);
@@ -218,7 +218,7 @@ void ODEs::EndothelialType_cell_only_system(const EndothelialType_cell_ode_state
 	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4,adjacent_NOTCH);
 
 	dxdt[5] = +(NOTCH_PROD)-(NOTCH_DEG)-(DLL4_NOTCH_ON)*1; // NOTCH
-	dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_UPREG)+(DLL4_INHIB)-(DLL4_UPTAKE); // DLL4
+	dxdt[3] = -(DLL4_DEG)-(DLL4_NOTCH_ON)*1+(DLL4_UPREG)-(DLL4_UPTAKE); // DLL4
 	dxdt[0] = -(DLL4_NOTCH_DEG)+(DLL4_NOTCH_ON)*1; // DLL4_NOTCH
 
 	// ODE Definitions
@@ -246,7 +246,7 @@ void ODEs::EndothelialType_run_cell_only_ODEs(EC *ec) {
 	states[5] = ec->get_cell_protein_level("NOTCH", 0);
 	states[6] = ec->get_env_protein_level("SEMA3E") / agents;
 	states[7] = ec->get_cell_protein_level("PLEXIND1", 0);
-	states[8] = ec->get_cell_protein_level("SEMA_PLEXIN", 0);
+	states[8] = ec->get_cell_protein_level("SEMA3A_PLEXIND1", 0);
 	states[9] = calc_NOTCH_adjacent_level(ec, false);
 	states[10] = calc_DLL4_adjacent_level(ec, false);
 
@@ -260,7 +260,7 @@ void ODEs::EndothelialType_run_cell_only_ODEs(EC *ec) {
 	ec->set_cell_protein_level("VEGF_VEGFR2", states[2], 27);
 	ec->set_cell_protein_level("NOTCH", states[5], 1);
 	ec->set_cell_protein_level("PLEXIND1",states[7], 1);
-	ec->set_cell_protein_level("SEMA_PLEXIN",states[8], 1);
+	ec->set_cell_protein_level("SEMA3A_PLEXIND1",states[8], 1);
 }
 
 

@@ -21,9 +21,9 @@ void Tissue_Container::tissue_set_up(World* world) {
 	// Cell Type Creation //
 	auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
 	EndothelialType_Type->add_protein(new Protein("VEGFR2", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("PLEXIN", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
-	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIN", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 27));
@@ -46,7 +46,7 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
 		// Set filconst.
-		float filConst = 8000.0f;
+		float filConst = 7500.0f;
 		// Get active VEGFR.
 		auto VEGF = memAgent->get_mean_env_protein("VEGF");
 		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
@@ -54,9 +54,13 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 
 		// Get active plexin.
 		auto SEMA3A = memAgent->get_mean_env_protein("SEMA3A");
-		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIN");
+		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIND1");
 		auto ACTIVE_PLEXIN = SEMA3A * PLEXIN * 0.1;
-		auto prob = (ACTIVE_VEGFR2*filConst)*(1-ACTIVE_PLEXIN);
+
+		auto sema = memAgent->get_mean_env_protein("SEMA3A");
+		auto probability_modifier = sema * 0.3;
+
+		auto prob = ACTIVE_VEGFR2*filConst - probability_modifier;
 
 		if (this->timeStep % 9 == 0) {
 			cell->get_extension_probs().push_back(prob);
