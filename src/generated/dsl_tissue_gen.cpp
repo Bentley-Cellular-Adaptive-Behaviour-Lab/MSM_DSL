@@ -45,6 +45,11 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
+		// Normalise to the normal amount of receptors.
+		// Needs to be relative to normal value.
+		// Set up test scenario of one filopodia that's
+		// extending. Predict the correct value for extension
+		// Then check values between the MSM and DSL are correct.
 		// Set filconst.
 		float filConst = 7500.0f;
 		// Get active VEGFR.
