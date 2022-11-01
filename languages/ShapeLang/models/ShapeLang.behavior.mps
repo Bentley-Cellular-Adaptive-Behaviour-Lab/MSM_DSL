@@ -13,7 +13,7 @@
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" implicit="true" />
     <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)" implicit="true" />
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" implicit="true" />
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" implicit="true" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -485,7 +485,7 @@
                       </node>
                       <node concept="1mIQ4w" id="4iosasLaqCw" role="2OqNvi">
                         <node concept="chp4Y" id="4iosasLaqEF" role="cj9EA">
-                          <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                          <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                         </node>
                       </node>
                     </node>
@@ -502,7 +502,7 @@
                                     <ref role="2Gs0qQ" node="4iosasLa0hD" resolve="child" />
                                   </node>
                                   <node concept="chp4Y" id="4iosasLa_YZ" role="3oSUPX">
-                                    <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                                    <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4iosasLa_ue" role="2OqNvi">
@@ -519,7 +519,7 @@
                                     <ref role="2Gs0qQ" node="4iosasLa0hD" resolve="child" />
                                   </node>
                                   <node concept="chp4Y" id="4iosasLaAOr" role="3oSUPX">
-                                    <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                                    <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4iosasLaAOs" role="2OqNvi">
@@ -542,7 +542,7 @@
                       </node>
                       <node concept="1mIQ4w" id="4iosasLariq" role="2OqNvi">
                         <node concept="chp4Y" id="4iosasLaru2" role="cj9EA">
-                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                         </node>
                       </node>
                     </node>
@@ -559,7 +559,7 @@
                                     <ref role="2Gs0qQ" node="4iosasLa0hD" resolve="child" />
                                   </node>
                                   <node concept="chp4Y" id="4iosasLaBoj" role="3oSUPX">
-                                    <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                                    <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4iosasLaBok" role="2OqNvi">
@@ -576,7 +576,7 @@
                                     <ref role="2Gs0qQ" node="4iosasLa0hD" resolve="child" />
                                   </node>
                                   <node concept="chp4Y" id="4iosasLaD5$" role="3oSUPX">
-                                    <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                                    <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4iosasLaFgG" role="2OqNvi">
@@ -1583,7 +1583,7 @@
                 <node concept="1PxgMI" id="6a3sfLVYLGH" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
                   <node concept="chp4Y" id="6a3sfLVYLGI" role="3oSUPX">
-                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                   </node>
                   <node concept="37vLTw" id="6a3sfLVYLGJ" role="1m5AlR">
                     <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -1601,7 +1601,7 @@
                     <node concept="1PxgMI" id="6a3sfLVYLGP" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
                       <node concept="chp4Y" id="6a3sfLVYLGQ" role="3oSUPX">
-                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                       <node concept="37vLTw" id="6a3sfLVYLGR" role="1m5AlR">
                         <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -1627,7 +1627,7 @@
             </node>
             <node concept="1mIQ4w" id="6a3sfLVYLGX" role="2OqNvi">
               <node concept="chp4Y" id="6a3sfLVYLGY" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
               </node>
             </node>
           </node>
@@ -1983,7 +1983,7 @@
                             <node concept="1PxgMI" id="6a3sfLVYLJc" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="6a3sfLVYLJd" role="3oSUPX">
-                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                               </node>
                               <node concept="37vLTw" id="6a3sfLVYLJe" role="1m5AlR">
                                 <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -2005,7 +2005,7 @@
                         <node concept="1PxgMI" id="6a3sfLVYLJj" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="6a3sfLVYLJk" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                           </node>
                           <node concept="37vLTw" id="6a3sfLVYLJl" role="1m5AlR">
                             <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -2030,7 +2030,7 @@
             </node>
             <node concept="1mIQ4w" id="6a3sfLVYLJq" role="2OqNvi">
               <node concept="chp4Y" id="6a3sfLVYLJr" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -2050,7 +2050,7 @@
                         <node concept="1PxgMI" id="6a3sfLVYLJ_" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="6a3sfLVYLJA" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                           </node>
                           <node concept="37vLTw" id="6a3sfLVYLJB" role="1m5AlR">
                             <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -2071,7 +2071,7 @@
                       <node concept="1PxgMI" id="6a3sfLVYLJG" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="6a3sfLVYLJH" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                         </node>
                         <node concept="37vLTw" id="6a3sfLVYLJI" role="1m5AlR">
                           <ref role="3cqZAo" node="6a3sfLVYLJR" resolve="expr" />
@@ -2092,7 +2092,7 @@
             </node>
             <node concept="1mIQ4w" id="6a3sfLVYLJM" role="2OqNvi">
               <node concept="chp4Y" id="6a3sfLVYLJN" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>
@@ -2251,13 +2251,13 @@
               <node concept="3cpWsn" id="3LeNXFi2Hkz" role="3cpWs9">
                 <property role="TrG5h" value="querySpecies" />
                 <node concept="3Tqbb2" id="3LeNXFi2Hkv" role="1tU5fm">
-                  <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                  <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                 </node>
                 <node concept="2OqwBi" id="3LeNXFi2Ijn" role="33vP2m">
                   <node concept="1PxgMI" id="3LeNXFi2I2d" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="3LeNXFi2I5X" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                     </node>
                     <node concept="37vLTw" id="3LeNXFi2HNE" role="1m5AlR">
                       <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
@@ -2290,13 +2290,13 @@
                       <node concept="3cpWsn" id="3LeNXFi2Jv8" role="3cpWs9">
                         <property role="TrG5h" value="currentSpecies" />
                         <node concept="3Tqbb2" id="3LeNXFi2Jv9" role="1tU5fm">
-                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                         </node>
                         <node concept="2OqwBi" id="3LeNXFi2Jva" role="33vP2m">
                           <node concept="1PxgMI" id="3LeNXFi2Jvb" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
                             <node concept="chp4Y" id="3LeNXFi2Jvc" role="3oSUPX">
-                              <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                              <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                             </node>
                             <node concept="2GrUjf" id="3LeNXFi2UuQ" role="1m5AlR">
                               <ref role="2Gs0qQ" node="3LeNXFi2IRs" resolve="argument" />
@@ -2334,7 +2334,7 @@
                   <node concept="2OqwBi" id="3LeNXFi2J2E" role="3clFbw">
                     <node concept="1mIQ4w" id="3LeNXFi2J2G" role="2OqNvi">
                       <node concept="chp4Y" id="3LeNXFi2JlI" role="cj9EA">
-                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                     </node>
                     <node concept="2GrUjf" id="3LeNXFi2PJs" role="2Oq$k0">
@@ -2355,7 +2355,7 @@
                       <node concept="1PxgMI" id="3LeNXFi2T2t" role="25WWJ7">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="3LeNXFi2T2u" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                         </node>
                         <node concept="37vLTw" id="3LeNXFi2T2v" role="1m5AlR">
                           <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
@@ -2378,7 +2378,7 @@
             </node>
             <node concept="1mIQ4w" id="3hjy$RKt3QP" role="2OqNvi">
               <node concept="chp4Y" id="3hjy$RKt496" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
               </node>
             </node>
           </node>
@@ -2689,7 +2689,7 @@
                   <node concept="1PxgMI" id="2G0IbzHayum" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="2G0IbzHayun" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="2G0IbzHayuo" role="1m5AlR">
                       <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
@@ -2711,7 +2711,7 @@
                   <node concept="1PxgMI" id="6a3sfLVZU$K" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="6a3sfLVZU$L" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="6a3sfLVZU$M" role="1m5AlR">
                       <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
@@ -2734,7 +2734,7 @@
             </node>
             <node concept="1mIQ4w" id="2G0IbzHayu_" role="2OqNvi">
               <node concept="chp4Y" id="2G0IbzHayuA" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -2751,7 +2751,7 @@
                       <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
                     </node>
                     <node concept="chp4Y" id="2G0IbzHayuI" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="2G0IbzHayuJ" role="2OqNvi">
@@ -2770,7 +2770,7 @@
                   <node concept="1PxgMI" id="6a3sfLVZUQq" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="6a3sfLVZUQr" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                     <node concept="37vLTw" id="6a3sfLVZUQs" role="1m5AlR">
                       <ref role="3cqZAo" node="3hjy$RKsXGW" resolve="expr" />
@@ -2792,7 +2792,7 @@
             </node>
             <node concept="1mIQ4w" id="2G0IbzHayuV" role="2OqNvi">
               <node concept="chp4Y" id="2G0IbzHayuW" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>
@@ -3023,7 +3023,7 @@
                 <node concept="1PxgMI" id="2G0IbzGGQvb" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
                   <node concept="chp4Y" id="2G0IbzGGRfS" role="3oSUPX">
-                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                   </node>
                   <node concept="37vLTw" id="2G0IbzGGP1P" role="1m5AlR">
                     <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3041,7 +3041,7 @@
                     <node concept="1PxgMI" id="1IP6pj5OFL9" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
                       <node concept="chp4Y" id="1IP6pj5OHu3" role="3oSUPX">
-                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                       <node concept="37vLTw" id="1IP6pj5OFLb" role="1m5AlR">
                         <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3067,7 +3067,7 @@
             </node>
             <node concept="1mIQ4w" id="1IP6pj5OEHs" role="2OqNvi">
               <node concept="chp4Y" id="1IP6pj5OF$j" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
               </node>
             </node>
           </node>
@@ -3423,7 +3423,7 @@
                             <node concept="1PxgMI" id="1IP6pj5u_wG" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="3hjy$RKud2S" role="3oSUPX">
-                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                               </node>
                               <node concept="37vLTw" id="1IP6pj5u$MF" role="1m5AlR">
                                 <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3445,7 +3445,7 @@
                         <node concept="1PxgMI" id="1IP6pj5uDK8" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="3hjy$RKudah" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                           </node>
                           <node concept="37vLTw" id="1IP6pj5uBtA" role="1m5AlR">
                             <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3470,7 +3470,7 @@
             </node>
             <node concept="1mIQ4w" id="1IP6pj5uwwC" role="2OqNvi">
               <node concept="chp4Y" id="3hjy$RKucvT" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -3490,7 +3490,7 @@
                         <node concept="1PxgMI" id="2G0IbzHfaY3" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="2G0IbzHfbpH" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                           </node>
                           <node concept="37vLTw" id="2G0IbzHfa5A" role="1m5AlR">
                             <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3511,7 +3511,7 @@
                       <node concept="1PxgMI" id="2G0IbzHfgWI" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="2G0IbzHfgWJ" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                         </node>
                         <node concept="37vLTw" id="2G0IbzHfgWK" role="1m5AlR">
                           <ref role="3cqZAo" node="5sLUxN1FRmG" resolve="expr" />
@@ -3532,7 +3532,7 @@
             </node>
             <node concept="1mIQ4w" id="2G0IbzHf6Do" role="2OqNvi">
               <node concept="chp4Y" id="2G0IbzHf7hW" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>
@@ -3599,7 +3599,7 @@
                       <node concept="1PxgMI" id="BDFw_Tfayf" role="25WWJ7">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="BDFw_Tfayg" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                         </node>
                         <node concept="37vLTw" id="BDFw_Tfayh" role="1m5AlR">
                           <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3618,7 +3618,7 @@
                     <node concept="1PxgMI" id="BDFw_Tfa9J" role="25WWJ7">
                       <property role="1BlNFB" value="true" />
                       <node concept="chp4Y" id="BDFw_Tfag8" role="3oSUPX">
-                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                       <node concept="37vLTw" id="BDFw_T3n36" role="1m5AlR">
                         <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3635,7 +3635,7 @@
             </node>
             <node concept="1mIQ4w" id="BDFw_T3cSn" role="2OqNvi">
               <node concept="chp4Y" id="BDFw_T3cW8" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
               </node>
             </node>
           </node>
@@ -3751,7 +3751,7 @@
                   <node concept="1PxgMI" id="BDFw_T3uNo" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_T3uNp" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_T3uNq" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3773,7 +3773,7 @@
                   <node concept="1PxgMI" id="BDFw_T3uNw" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_T3uNx" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_T3uNy" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3795,7 +3795,7 @@
             </node>
             <node concept="1mIQ4w" id="BDFw_T3uNB" role="2OqNvi">
               <node concept="chp4Y" id="BDFw_T3uNC" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -3810,7 +3810,7 @@
                   <node concept="1PxgMI" id="BDFw_T3wjf" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_T3wjg" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_T3wjh" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3832,7 +3832,7 @@
                   <node concept="1PxgMI" id="BDFw_T3wjn" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_T3wjo" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_T3wjp" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_T37AG" resolve="expr" />
@@ -3854,7 +3854,7 @@
             </node>
             <node concept="1mIQ4w" id="BDFw_T3wju" role="2OqNvi">
               <node concept="chp4Y" id="BDFw_T3wjv" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>
@@ -3870,7 +3870,7 @@
         <property role="TrG5h" value="speciesExpressionList" />
         <node concept="_YKpA" id="BDFw_T3dPl" role="1tU5fm">
           <node concept="3Tqbb2" id="BDFw_T3dPA" role="_ZDj9">
-            <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+            <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
           </node>
         </node>
       </node>
@@ -3948,14 +3948,14 @@
       <node concept="37vLTG" id="4d9X0NcNHI3" role="3clF46">
         <property role="TrG5h" value="targetExpr" />
         <node concept="3Tqbb2" id="4d9X0NcNHI2" role="1tU5fm">
-          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
         </node>
       </node>
       <node concept="37vLTG" id="4d9X0NcNHI_" role="3clF46">
         <property role="TrG5h" value="exprList" />
         <node concept="_YKpA" id="4d9X0NcNHJe" role="1tU5fm">
           <node concept="3Tqbb2" id="4d9X0NcNHJv" role="_ZDj9">
-            <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+            <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
           </node>
         </node>
       </node>
@@ -4157,7 +4157,7 @@
                   <node concept="1PxgMI" id="BDFw_TaCaV" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_TaCaW" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_TaCaX" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_TaCbz" resolve="expr" />
@@ -4179,7 +4179,7 @@
                   <node concept="1PxgMI" id="BDFw_TaCb3" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_TaCb4" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                      <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_TaCb5" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_TaCbz" resolve="expr" />
@@ -4201,7 +4201,7 @@
             </node>
             <node concept="1mIQ4w" id="BDFw_TaCba" role="2OqNvi">
               <node concept="chp4Y" id="BDFw_TaCbb" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -4216,7 +4216,7 @@
                   <node concept="1PxgMI" id="BDFw_TaCbi" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_TaCbj" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_TaCbk" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_TaCbz" resolve="expr" />
@@ -4238,7 +4238,7 @@
                   <node concept="1PxgMI" id="BDFw_TaCbq" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
                     <node concept="chp4Y" id="BDFw_TaCbr" role="3oSUPX">
-                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                      <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                     </node>
                     <node concept="37vLTw" id="BDFw_TaCbs" role="1m5AlR">
                       <ref role="3cqZAo" node="BDFw_TaCbz" resolve="expr" />
@@ -4260,7 +4260,7 @@
             </node>
             <node concept="1mIQ4w" id="BDFw_TaCbx" role="2OqNvi">
               <node concept="chp4Y" id="BDFw_TaCby" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>
@@ -4582,7 +4582,7 @@
                 <node concept="1PxgMI" id="aQhE9aCNnZ" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
                   <node concept="chp4Y" id="aQhE9aCNo0" role="3oSUPX">
-                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                   </node>
                   <node concept="37vLTw" id="aQhE9aCNo1" role="1m5AlR">
                     <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -4600,7 +4600,7 @@
                     <node concept="1PxgMI" id="aQhE9aCNo7" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
                       <node concept="chp4Y" id="aQhE9aCNo8" role="3oSUPX">
-                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                       <node concept="37vLTw" id="aQhE9aCNo9" role="1m5AlR">
                         <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -4626,7 +4626,7 @@
             </node>
             <node concept="1mIQ4w" id="aQhE9aCNof" role="2OqNvi">
               <node concept="chp4Y" id="aQhE9aCNog" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
               </node>
             </node>
           </node>
@@ -4982,7 +4982,7 @@
                             <node concept="1PxgMI" id="aQhE9aCNqu" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="aQhE9aCNqv" role="3oSUPX">
-                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                               </node>
                               <node concept="37vLTw" id="aQhE9aCNqw" role="1m5AlR">
                                 <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -5004,7 +5004,7 @@
                         <node concept="1PxgMI" id="aQhE9aCNq_" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="aQhE9aCNqA" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                            <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
                           </node>
                           <node concept="37vLTw" id="aQhE9aCNqB" role="1m5AlR">
                             <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -5029,7 +5029,7 @@
             </node>
             <node concept="1mIQ4w" id="aQhE9aCNqG" role="2OqNvi">
               <node concept="chp4Y" id="aQhE9aCNqH" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+                <ref role="cht4Q" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
               </node>
             </node>
           </node>
@@ -5049,7 +5049,7 @@
                         <node concept="1PxgMI" id="aQhE9aCNqR" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="aQhE9aCNqS" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                            <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                           </node>
                           <node concept="37vLTw" id="aQhE9aCNqT" role="1m5AlR">
                             <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -5070,7 +5070,7 @@
                       <node concept="1PxgMI" id="aQhE9aCNqY" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="aQhE9aCNqZ" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                          <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
                         </node>
                         <node concept="37vLTw" id="aQhE9aCNr0" role="1m5AlR">
                           <ref role="3cqZAo" node="1IP6pj5t_P8" resolve="expr" />
@@ -5091,7 +5091,7 @@
             </node>
             <node concept="1mIQ4w" id="aQhE9aCNr4" role="2OqNvi">
               <node concept="chp4Y" id="aQhE9aCNr5" role="cj9EA">
-                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+                <ref role="cht4Q" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
               </node>
             </node>
           </node>

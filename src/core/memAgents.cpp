@@ -4670,7 +4670,7 @@ void MemAgent::extendProtrusions() {
 ProtrusionType* MemAgent::pickProtrusionType() {
     std::vector<ProtrusionType*> eligibleTypes, randomType;
     // Get the protrusion types that the cell can form.
-    checkConditions(this, eligibleTypes);
+//    checkConditions(this, eligibleTypes);
     // Choose one of the eligible protrusion types randomly and return it.
     std::sample(eligibleTypes.begin(),
                 eligibleTypes.end(),

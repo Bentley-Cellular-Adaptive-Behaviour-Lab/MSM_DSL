@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)">
+<model ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)">
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="9" />
@@ -68,7 +68,7 @@
     <property role="EcuMT" value="3125878369731540203" />
     <property role="TrG5h" value="SignallingContainer" />
     <property role="19KtqR" value="true" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3CMDXCk$8Rx" role="1TKVEl">
       <property role="IQ2nx" value="4193598758125080033" />
@@ -80,7 +80,7 @@
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_species" />
       <property role="20lbJX" value="fLJekj5/_0__n" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyj" id="2Hxmt3eVft2" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731540802" />
@@ -131,8 +131,8 @@
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfjJ">
     <property role="EcuMT" value="3125878369731540207" />
-    <property role="TrG5h" value="Species" />
-    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="Component" />
+    <property role="3GE5qa" value="Components" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="2Hxmt3eVfsW" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -198,7 +198,7 @@
     <node concept="1TJgyi" id="2Hxmt3eVlUx" role="1TKVEl">
       <property role="IQ2nx" value="3125878369731567265" />
       <property role="TrG5h" value="_location" />
-      <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
+      <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="ComponentLocation" />
     </node>
     <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
       <property role="IQ2nx" value="6420553392043975787" />
@@ -329,7 +329,7 @@
       <property role="IQ2ns" value="3125878369731540215" />
       <property role="20kJfa" value="Species_Ref" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="2Hxmt3eVfFy">
@@ -366,8 +366,8 @@
   </node>
   <node concept="25R3W" id="2Hxmt3eVjAB">
     <property role="3F6X1D" value="3125878369731557799" />
-    <property role="TrG5h" value="SpeciesLocation" />
-    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="ComponentLocation" />
+    <property role="3GE5qa" value="Components" />
     <node concept="25R33" id="2Hxmt3eVjAC" role="25R1y">
       <property role="3tVfz5" value="3125878369731557800" />
       <property role="TrG5h" value="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -391,20 +391,20 @@
   </node>
   <node concept="1TIwiD" id="109yD1suyAa">
     <property role="EcuMT" value="1155607132028676490" />
-    <property role="TrG5h" value="SpeciesReference" />
-    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="ComponentReference" />
+    <property role="3GE5qa" value="Components" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="109yD1suyAb" role="1TKVEi">
       <property role="IQ2ns" value="1155607132028676491" />
       <property role="20kJfa" value="target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="109yD1s_YGM">
     <property role="EcuMT" value="1155607132030626610" />
-    <property role="TrG5h" value="SpeciesExpression" />
-    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="ComponentExpression" />
+    <property role="3GE5qa" value="Components" />
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
     <node concept="1TJgyi" id="2L_6n0dlqW2" role="1TKVEl">
       <property role="IQ2nx" value="3198991079367356162" />
@@ -415,15 +415,15 @@
       <property role="IQ2ns" value="1155607132030626611" />
       <property role="20kJfa" value="Species" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1TIwiD" id="6pt0UY9yhWg">
     <property role="EcuMT" value="7376055817164365584" />
-    <property role="TrG5h" value="SpeciesPowerExpression" />
+    <property role="TrG5h" value="ComponentPowerExpression" />
     <property role="R4oN_" value="power" />
     <property role="34LRSv" value="power - MSM" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <ref role="1TJDcQ" to="1qv1:4iu6t1eB654" resolve="PowerExpression" />
     <node concept="PrWs8" id="6pt0UY9ylZ$" role="PzmwI">
       <ref role="PrY4T" to="l80j:4OgAv3N4pT3" resolve="ICanBeMappedToSolver" />
@@ -456,7 +456,7 @@
   <node concept="25R3W" id="5jwSz93Vj8N">
     <property role="3F6X1D" value="6116136999484994099" />
     <property role="TrG5h" value="NeighbourValues" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <ref role="1H5jkz" node="5jwSz93Vj8O" resolve="ThisValue" />
     <node concept="25R33" id="5jwSz93Vj8O" role="25R1y">
       <property role="3tVfz5" value="6116136999484994100" />
@@ -503,13 +503,13 @@
       <property role="IQ2ns" value="6116071663380263021" />
       <property role="20kJfa" value="Source" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyj" id="5jwDGo4Bf1E" role="1TKVEi">
       <property role="IQ2ns" value="6116071663380263018" />
       <property role="20kJfa" value="Target" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="PrWs8" id="5jwDGo4Bf3s" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -553,7 +553,7 @@
   </node>
   <node concept="1TIwiD" id="3F9nTx49ScX">
     <property role="EcuMT" value="4236022032101770045" />
-    <property role="TrG5h" value="SpeciesContainerHeader" />
+    <property role="TrG5h" value="ComponentContainerHeader" />
     <property role="19KtqR" value="true" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="3F9nTx4cj8k" role="1TKVEi">
@@ -590,7 +590,7 @@
   </node>
   <node concept="1TIwiD" id="3h7BZk97_g6">
     <property role="EcuMT" value="3767155488087495686" />
-    <property role="TrG5h" value="SpeciesBin" />
+    <property role="TrG5h" value="ComponentBin" />
     <property role="R4oN_" value="Stores the index of a species when constructing function arguments during text generation." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3h7BZk97_g7" role="1TKVEl">
@@ -617,7 +617,7 @@
       <property role="IQ2ns" value="3767155488087495688" />
       <property role="20kJfa" value="targetSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyj" id="3FNuJRsjIjw" role="1TKVEi">
       <property role="IQ2ns" value="4247874104281982176" />
@@ -627,8 +627,8 @@
   </node>
   <node concept="1TIwiD" id="2G0IbzGWWxi">
     <property role="EcuMT" value="3098679648019794002" />
-    <property role="3GE5qa" value="Species" />
-    <property role="TrG5h" value="SpeciesFractionExpression" />
+    <property role="3GE5qa" value="Components" />
+    <property role="TrG5h" value="ComponentFractionExpression" />
     <property role="34LRSv" value="fraction - MSM" />
     <ref role="1TJDcQ" to="1qv1:4iu6t1eAWP6" resolve="FractionExpression" />
     <node concept="PrWs8" id="2G0IbzGWWxj" role="PzmwI">
@@ -638,6 +638,7 @@
   <node concept="1TIwiD" id="EvUBVy5Jz4">
     <property role="EcuMT" value="765588292356208836" />
     <property role="TrG5h" value="ParamRangeLimitExpression" />
+    <property role="3GE5qa" value="Parameters" />
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
     <node concept="1TJgyj" id="EvUBVybStM" role="1TKVEi">
       <property role="IQ2ns" value="765588292357818226" />
@@ -650,6 +651,7 @@
   <node concept="1TIwiD" id="4OtEzjV14Wn">
     <property role="EcuMT" value="5556784659771445015" />
     <property role="TrG5h" value="RandExpression" />
+    <property role="3GE5qa" value="Parameters" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="25R3W" id="3CMDXCknVe0">

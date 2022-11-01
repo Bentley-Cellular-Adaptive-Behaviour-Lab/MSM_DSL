@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SpeciesLang.typesystem)">
+<model ref="r:9e0fbf2a-b9f3-458b-86a2-82f541ac8497(SignallingLang.typesystem)">
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="5" />
@@ -632,7 +632,7 @@
     </node>
   </node>
   <node concept="1YbPZF" id="4dz59nrkACh">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="typeof_PowerExpression" />
     <node concept="3clFbS" id="4dz59nrkACi" role="18ibNy">
       <node concept="1ZobV4" id="4dz59nrkAHU" role="3cqZAp">
@@ -680,11 +680,11 @@
     </node>
     <node concept="1YaCAy" id="4dz59nrkACk" role="1YuTPh">
       <property role="TrG5h" value="power" />
-      <ref role="1YaFvo" to="w3cn:6pt0UY9yhWg" resolve="SpeciesPowerExpression" />
+      <ref role="1YaFvo" to="w3cn:6pt0UY9yhWg" resolve="ComponentPowerExpression" />
     </node>
   </node>
   <node concept="18kY7G" id="J83UdHo7r4">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="updateRelations" />
     <node concept="3clFbS" id="J83UdHo7r5" role="18ibNy">
       <node concept="2Gpval" id="1Ch7j$Nbdhs" role="3cqZAp">
@@ -811,7 +811,7 @@
   </node>
   <node concept="18kY7G" id="4Q3VeFU0AE2">
     <property role="TrG5h" value="SpeciesInReactionRate" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="4Q3VeFU0AE3" role="18ibNy">
       <node concept="2Gpval" id="4Q3VeFU1KB9" role="3cqZAp">
         <node concept="2GrKxI" id="4Q3VeFU1KBb" role="2Gsz3X">
@@ -851,7 +851,7 @@
                     <node concept="3cpWsn" id="4Q3VeFU2zcD" role="3cpWs9">
                       <property role="TrG5h" value="species" />
                       <node concept="3Tqbb2" id="4Q3VeFU2zc_" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="4Q3VeFU2zFV" role="33vP2m">
                         <node concept="2GrUjf" id="4Q3VeFU2zyh" role="2Oq$k0">
@@ -928,7 +928,7 @@
                       <node concept="3cpWsn" id="wnw2CxPIff" role="3cpWs9">
                         <property role="TrG5h" value="species" />
                         <node concept="3Tqbb2" id="wnw2CxPIfg" role="1tU5fm">
-                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                         </node>
                         <node concept="2OqwBi" id="wnw2CxPIfh" role="33vP2m">
                           <node concept="2GrUjf" id="wnw2CxPIfi" role="2Oq$k0">
@@ -1006,7 +1006,7 @@
                       <node concept="3cpWsn" id="wnw2CxPIfF" role="3cpWs9">
                         <property role="TrG5h" value="species" />
                         <node concept="3Tqbb2" id="wnw2CxPIfG" role="1tU5fm">
-                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                         </node>
                         <node concept="2OqwBi" id="wnw2CxPIfH" role="33vP2m">
                           <node concept="2GrUjf" id="wnw2CxPIfI" role="2Oq$k0">
@@ -1098,7 +1098,7 @@
   </node>
   <node concept="18kY7G" id="6UEPGYOx7HN">
     <property role="TrG5h" value="updateParameterRelations" />
-    <property role="3GE5qa" value="Parameters" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="6UEPGYOx7HO" role="18ibNy">
       <node concept="2Gpval" id="ufje78lHGT" role="3cqZAp">
         <node concept="2GrKxI" id="ufje78lHGU" role="2Gsz3X">
@@ -1303,7 +1303,7 @@
   </node>
   <node concept="18kY7G" id="6YT8FA9C$$w">
     <property role="TrG5h" value="check_uniqueParameterNames" />
-    <property role="3GE5qa" value="Parameters" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="6YT8FA9C$$x" role="18ibNy">
       <node concept="2Gpval" id="6YT8FA9C$$X" role="3cqZAp">
         <node concept="2GrKxI" id="6YT8FA9C$$Y" role="2Gsz3X">
@@ -1473,7 +1473,7 @@
   </node>
   <node concept="18kY7G" id="6YT8FA9DRVr">
     <property role="TrG5h" value="check_uniqueReactionNames" />
-    <property role="3GE5qa" value="Processes" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="6YT8FA9DRVs" role="18ibNy">
       <node concept="2Gpval" id="6YT8FA9DS2o" role="3cqZAp">
         <node concept="2GrKxI" id="6YT8FA9DS2p" role="2Gsz3X">
@@ -1643,7 +1643,7 @@
   </node>
   <node concept="18kY7G" id="6YT8FA9DSWx">
     <property role="TrG5h" value="check_uniqueSpeciesNames" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <node concept="3clFbS" id="6YT8FA9DSWy" role="18ibNy">
       <node concept="2Gpval" id="6YT8FA9DSWz" role="3cqZAp">
         <node concept="2GrKxI" id="6YT8FA9DSW$" role="2Gsz3X">
@@ -1812,7 +1812,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfs3d">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_inhibitsValidity" />
     <node concept="3clFbS" id="$XkBXNfs3e" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4sBzB" role="3cqZAp">
@@ -2003,7 +2003,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="5Cso5p4sQ3F" role="37wK5m">
                           <node concept="1XH99k" id="5Cso5p4sQ3G" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="5Cso5p4sQ3H" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2029,7 +2029,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="5Cso5p4sQKk" role="37wK5m">
                           <node concept="1XH99k" id="5Cso5p4sQKl" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="5Cso5p4sR70" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -2056,7 +2056,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="5Cso5p4sRAg" role="37wK5m">
                         <node concept="1XH99k" id="5Cso5p4sRAh" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="5Cso5p4sRI9" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -2085,7 +2085,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                 <node concept="2OqwBi" id="5Cso5p4sBEO" role="37wK5m">
                   <node concept="1XH99k" id="5Cso5p4sBEP" role="2Oq$k0">
-                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                   </node>
                   <node concept="2ViDtV" id="5Cso5p4sBEQ" role="2OqNvi">
                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2213,7 +2213,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="5Cso5p4sU_1" role="37wK5m">
                         <node concept="1XH99k" id="5Cso5p4sU_2" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="$XkBXNfJsy" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2241,7 +2241,7 @@
                   <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="2OqwBi" id="5Cso5p4sBFq" role="37wK5m">
                     <node concept="1XH99k" id="5Cso5p4sBFr" role="2Oq$k0">
-                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                     </node>
                     <node concept="2ViDtV" id="5Cso5p4sBFs" role="2OqNvi">
                       <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -2376,7 +2376,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="5Cso5p4sW5k" role="37wK5m">
                         <node concept="1XH99k" id="5Cso5p4sW5l" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="$XkBXNfJxX" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2404,7 +2404,7 @@
                   <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="2OqwBi" id="5Cso5p4sBFH" role="37wK5m">
                     <node concept="1XH99k" id="5Cso5p4sBFI" role="2Oq$k0">
-                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                     </node>
                     <node concept="2ViDtV" id="5Cso5p4sBFJ" role="2OqNvi">
                       <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -2445,7 +2445,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfLc1">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_upregulatesValidity" />
     <node concept="3clFbS" id="$XkBXNfLc2" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNfLfH" role="3cqZAp">
@@ -2636,7 +2636,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="$XkBXNfLgU" role="37wK5m">
                           <node concept="1XH99k" id="$XkBXNfLgV" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="$XkBXNfLgW" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2662,7 +2662,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="$XkBXNfLh4" role="37wK5m">
                           <node concept="1XH99k" id="$XkBXNfLh5" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="$XkBXNfLh6" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -2689,7 +2689,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="$XkBXNfLhe" role="37wK5m">
                         <node concept="1XH99k" id="$XkBXNfLhf" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="$XkBXNfLhg" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -2718,7 +2718,7 @@
                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                 <node concept="2OqwBi" id="$XkBXNfLho" role="37wK5m">
                   <node concept="1XH99k" id="$XkBXNfLhp" role="2Oq$k0">
-                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                   </node>
                   <node concept="2ViDtV" id="$XkBXNfLhq" role="2OqNvi">
                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2846,7 +2846,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="$XkBXNfLjb" role="37wK5m">
                         <node concept="1XH99k" id="$XkBXNfLjc" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="$XkBXNfLjd" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2874,7 +2874,7 @@
                   <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="2OqwBi" id="$XkBXNfLjl" role="37wK5m">
                     <node concept="1XH99k" id="$XkBXNfLjm" role="2Oq$k0">
-                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                     </node>
                     <node concept="2ViDtV" id="$XkBXNfLjn" role="2OqNvi">
                       <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -3009,7 +3009,7 @@
                       <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                       <node concept="2OqwBi" id="$XkBXNfLkb" role="37wK5m">
                         <node concept="1XH99k" id="$XkBXNfLkc" role="2Oq$k0">
-                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                          <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                         </node>
                         <node concept="2ViDtV" id="$XkBXNfLkd" role="2OqNvi">
                           <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -3037,7 +3037,7 @@
                   <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                   <node concept="2OqwBi" id="$XkBXNfLkl" role="37wK5m">
                     <node concept="1XH99k" id="$XkBXNfLkm" role="2Oq$k0">
-                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                      <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                     </node>
                     <node concept="2ViDtV" id="$XkBXNfLkn" role="2OqNvi">
                       <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -3078,7 +3078,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfTld">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_irreversibleValidity" />
     <node concept="3clFbS" id="$XkBXNfTle" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4t3da" role="3cqZAp">
@@ -3136,7 +3136,7 @@
                 <node concept="3cpWsn" id="5Cso5p4tdI2" role="3cpWs9">
                   <property role="TrG5h" value="reactantSpecies" />
                   <node concept="3Tqbb2" id="5Cso5p4tdHX" role="1tU5fm">
-                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                   <node concept="2OqwBi" id="5Cso5p4teYV" role="33vP2m">
                     <node concept="2GrUjf" id="5Cso5p4teGN" role="2Oq$k0">
@@ -3157,7 +3157,7 @@
                     <node concept="3cpWsn" id="5Cso5p4th$3" role="3cpWs9">
                       <property role="TrG5h" value="productSpecies" />
                       <node concept="3Tqbb2" id="5Cso5p4th$4" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="5Cso5p4th$5" role="33vP2m">
                         <node concept="2GrUjf" id="5Cso5p4tj4e" role="2Oq$k0">
@@ -3295,7 +3295,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="5Cso5p4tjiK" role="37wK5m">
                                   <node concept="1XH99k" id="5Cso5p4tjiL" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="5Cso5p4tjiM" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -3316,7 +3316,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="5Cso5p4tjiU" role="37wK5m">
                                   <node concept="1XH99k" id="5Cso5p4tjiV" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="5Cso5p4tjiW" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -3338,7 +3338,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="5Cso5p4tjj4" role="37wK5m">
                                 <node concept="1XH99k" id="5Cso5p4tjj5" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="5Cso5p4tjj6" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -3362,7 +3362,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="5Cso5p4tjjc" role="37wK5m">
                           <node concept="1XH99k" id="5Cso5p4tjjd" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="5Cso5p4tjje" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -3488,7 +3488,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="5Cso5p4tjjK" role="37wK5m">
                                 <node concept="1XH99k" id="5Cso5p4tjjL" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="5Cso5p4tjjM" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -3511,7 +3511,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="5Cso5p4tjjU" role="37wK5m">
                             <node concept="1XH99k" id="5Cso5p4tjjV" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="5Cso5p4tjjW" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
@@ -3635,7 +3635,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="5Cso5p4tjkt" role="37wK5m">
                                 <node concept="1XH99k" id="5Cso5p4tjku" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="$XkBXNfZt6" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -3658,7 +3658,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="5Cso5p4tjkB" role="37wK5m">
                             <node concept="1XH99k" id="5Cso5p4tjkC" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="5Cso5p4tjkD" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -3789,7 +3789,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="5Cso5p4tjlc" role="37wK5m">
                                   <node concept="1XH99k" id="5Cso5p4tjld" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg04w" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -3810,7 +3810,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="$XkBXNg09r" role="37wK5m">
                                   <node concept="1XH99k" id="$XkBXNg09s" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg0jx" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
@@ -3834,7 +3834,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="5Cso5p4tjlm" role="37wK5m">
                             <node concept="1XH99k" id="5Cso5p4tjln" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="5Cso5p4tjlo" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -3887,7 +3887,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNg5na">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_reversibleValidity" />
     <node concept="3clFbS" id="$XkBXNg5nb" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNg5FJ" role="3cqZAp">
@@ -3945,7 +3945,7 @@
                 <node concept="3cpWsn" id="$XkBXNg5G6" role="3cpWs9">
                   <property role="TrG5h" value="reactantSpecies" />
                   <node concept="3Tqbb2" id="$XkBXNg5G7" role="1tU5fm">
-                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                   <node concept="2OqwBi" id="$XkBXNg5G8" role="33vP2m">
                     <node concept="2GrUjf" id="$XkBXNg5G9" role="2Oq$k0">
@@ -3966,7 +3966,7 @@
                     <node concept="3cpWsn" id="$XkBXNg5Gf" role="3cpWs9">
                       <property role="TrG5h" value="productSpecies" />
                       <node concept="3Tqbb2" id="$XkBXNg5Gg" role="1tU5fm">
-                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                        <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                       </node>
                       <node concept="2OqwBi" id="$XkBXNg5Gh" role="33vP2m">
                         <node concept="2GrUjf" id="$XkBXNg5Gi" role="2Oq$k0">
@@ -4104,7 +4104,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="$XkBXNg5H6" role="37wK5m">
                                   <node concept="1XH99k" id="$XkBXNg5H7" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg5H8" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -4125,7 +4125,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="$XkBXNg5He" role="37wK5m">
                                   <node concept="1XH99k" id="$XkBXNg5Hf" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg5Hg" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -4147,7 +4147,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="$XkBXNg5Hm" role="37wK5m">
                                 <node concept="1XH99k" id="$XkBXNg5Hn" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="$XkBXNg5Ho" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -4171,7 +4171,7 @@
                         <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                         <node concept="2OqwBi" id="$XkBXNg5Hu" role="37wK5m">
                           <node concept="1XH99k" id="$XkBXNg5Hv" role="2Oq$k0">
-                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                            <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                           </node>
                           <node concept="2ViDtV" id="$XkBXNg5Hw" role="2OqNvi">
                             <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -4297,7 +4297,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="$XkBXNg5If" role="37wK5m">
                                 <node concept="1XH99k" id="$XkBXNg5Ig" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="$XkBXNg5Ih" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -4320,7 +4320,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="$XkBXNg5In" role="37wK5m">
                             <node concept="1XH99k" id="$XkBXNg5Io" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="$XkBXNg5Ip" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
@@ -4444,7 +4444,7 @@
                               <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                               <node concept="2OqwBi" id="$XkBXNg5J7" role="37wK5m">
                                 <node concept="1XH99k" id="$XkBXNg5J8" role="2Oq$k0">
-                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                 </node>
                                 <node concept="2ViDtV" id="$XkBXNg5J9" role="2OqNvi">
                                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -4467,7 +4467,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="$XkBXNg5Jf" role="37wK5m">
                             <node concept="1XH99k" id="$XkBXNg5Jg" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="$XkBXNg5Jh" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
@@ -4598,7 +4598,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="$XkBXNg5K2" role="37wK5m">
                                   <node concept="1XH99k" id="$XkBXNg5K3" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg5K4" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -4619,7 +4619,7 @@
                                 <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                                 <node concept="2OqwBi" id="$XkBXNg5Ka" role="37wK5m">
                                   <node concept="1XH99k" id="$XkBXNg5Kb" role="2Oq$k0">
-                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                                    <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                                   </node>
                                   <node concept="2ViDtV" id="$XkBXNg5Kc" role="2OqNvi">
                                     <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
@@ -4643,7 +4643,7 @@
                           <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object)" resolve="equals" />
                           <node concept="2OqwBi" id="$XkBXNg5Ki" role="37wK5m">
                             <node concept="1XH99k" id="$XkBXNg5Kj" role="2Oq$k0">
-                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                              <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                             </node>
                             <node concept="2ViDtV" id="$XkBXNg5Kk" role="2OqNvi">
                               <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
@@ -4696,7 +4696,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="1VQO6m$eSjJ">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_StartingConc" />
     <node concept="3clFbS" id="1VQO6m$eSjK" role="18ibNy">
       <node concept="3clFbJ" id="1VQO6m$eSkm" role="3cqZAp">
@@ -4802,11 +4802,11 @@
     </node>
     <node concept="1YaCAy" id="1VQO6m$eSka" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="15xQgrjuYkE">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_MinConc" />
     <node concept="3clFbS" id="15xQgrjuYkF" role="18ibNy">
       <node concept="3clFbJ" id="15xQgrjuYkG" role="3cqZAp">
@@ -4877,11 +4877,11 @@
     </node>
     <node concept="1YaCAy" id="15xQgrjuYlk" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="15xQgrjv52O">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_MaxConc" />
     <node concept="3clFbS" id="15xQgrjv52P" role="18ibNy">
       <node concept="3clFbJ" id="15xQgrjv52Q" role="3cqZAp">
@@ -4952,7 +4952,7 @@
     </node>
     <node concept="1YaCAy" id="15xQgrjv53g" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="xhYrIU86oV">
@@ -5108,7 +5108,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="5$qoOFydYLz">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_SpeciesTranscriptionDelay" />
     <node concept="3clFbS" id="5$qoOFydYL$" role="18ibNy">
       <node concept="3clFbJ" id="5$qoOFydYM7" role="3cqZAp">
@@ -5139,11 +5139,11 @@
     </node>
     <node concept="1YaCAy" id="5$qoOFydYLY" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="6LsyKwDmUv_">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_EnvSpeciesTerms" />
     <node concept="3clFbS" id="6LsyKwDmUvA" role="18ibNy">
       <node concept="3clFbJ" id="6LsyKwDmUvL" role="3cqZAp">
@@ -5204,12 +5204,12 @@
     </node>
     <node concept="1YaCAy" id="6LsyKwDmUvC" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="1YbPZF" id="2G0IbzH5h78">
     <property role="TrG5h" value="typeof_FractionExpression" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <node concept="3clFbS" id="2G0IbzH5h79" role="18ibNy">
       <node concept="1ZobV4" id="2G0IbzH5h7f" role="3cqZAp">
         <node concept="mw_s8" id="2G0IbzH5h7g" role="1ZfhK$">
@@ -5260,7 +5260,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="4O6RXqWTRdT">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="check_Names" />
     <node concept="3clFbS" id="4O6RXqWTRdU" role="18ibNy">
       <node concept="3cpWs8" id="4O6RXqWO0Fn" role="3cqZAp">
@@ -5734,7 +5734,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR32WKvo" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR32WWsz">
@@ -5825,7 +5825,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR32WWtg" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR32WYjj">
@@ -5940,7 +5940,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR32WYjF" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR32X1aI">
@@ -6089,7 +6089,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR32X1bq" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR32X8tN">
@@ -6238,11 +6238,11 @@
     </node>
     <node concept="1YaCAy" id="3CIYR32X8uH" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR32XFjq">
-    <property role="3GE5qa" value="SpeciesParamValues" />
+    <property role="3GE5qa" value="" />
     <property role="TrG5h" value="check_SpeciesParamValues_ClusterDefined" />
     <node concept="3clFbS" id="3CIYR32XFjr" role="18ibNy">
       <node concept="3cpWs8" id="3CIYR32XFkk" role="3cqZAp">
@@ -6531,7 +6531,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR333$GY" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="3CIYR333F93">
@@ -6603,7 +6603,7 @@
     </node>
     <node concept="1YaCAy" id="3CIYR333F9u" role="1YuTPh">
       <property role="TrG5h" value="species" />
-      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
   </node>
   <node concept="18kY7G" id="EvUBVybStO">
@@ -7068,7 +7068,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="13EEdumPOPx">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <property role="TrG5h" value="check_valueDefined" />
     <node concept="3clFbS" id="13EEdumPOPy" role="18ibNy">
       <node concept="3clFbJ" id="13EEdumPQkc" role="3cqZAp">
@@ -7169,7 +7169,7 @@
   </node>
   <node concept="1YbPZF" id="4MFt7Fp6xBB">
     <property role="TrG5h" value="typeof_SpeciesExpression" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Components" />
     <node concept="3clFbS" id="4MFt7Fp6xBC" role="18ibNy">
       <node concept="1ZobV4" id="4MFt7Fp6yNV" role="3cqZAp">
         <node concept="mw_s8" id="4MFt7Fp6yNW" role="1ZfhK$">
@@ -7210,7 +7210,7 @@
     </node>
     <node concept="1YaCAy" id="4MFt7Fp6xBE" role="1YuTPh">
       <property role="TrG5h" value="speciesExpression" />
-      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
     </node>
     <node concept="bXqS6" id="4MFt7Fp6xBN" role="ujSXK">
       <node concept="3clFbS" id="4MFt7Fp6xBO" role="2VODD2">

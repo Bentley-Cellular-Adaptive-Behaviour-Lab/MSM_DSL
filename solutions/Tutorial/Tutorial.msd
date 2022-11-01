@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="Tutorial" uuid="f92756a8-4d5c-4e20-b879-3daf4af05f64" moduleVersion="0" compileInMPS="true">
+<solution name="Tutorial" uuid="e2ea2fde-1878-4544-93a8-5100d2ecb2b5" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -13,8 +13,8 @@
   <sourcePath />
   <languageVersions>
     <language slang="l:615bc492-e50a-4c3e-8b86-8d639eaba343:ShapeLang" version="0" />
+    <language slang="l:84970ad9-a964-4f15-a393-dc0fcd724c0f:SignallingLang" version="0" />
     <language slang="l:61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac:SimulationsLang" version="0" />
-    <language slang="l:84970ad9-a964-4f15-a393-dc0fcd724c0f:SpeciesLang" version="0" />
     <language slang="l:b1ff4d68-a519-4928-8e36-de776040fb5a:TissueLang" version="0" />
     <language slang="l:3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be:UnitLang" version="0" />
     <language slang="l:276cd304-748c-4d5d-aad0-4b34e2a42ced:WorldLang" version="0" />
@@ -41,7 +41,7 @@
     <language slang="l:6b277d9a-d52d-416f-a209-1919bd737f50:org.iets3.core.expr.simpleTypes" version="1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="f92756a8-4d5c-4e20-b879-3daf4af05f64(Tutorial)" version="0" />
+    <module reference="e2ea2fde-1878-4544-93a8-5100d2ecb2b5(Tutorial)" version="0" />
   </dependencyVersions>
 </solution>
 

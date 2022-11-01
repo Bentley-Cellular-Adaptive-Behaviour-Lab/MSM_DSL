@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SpeciesLang.editor)">
+<model ref="r:725ff64a-a168-4203-83ac-8b25d7f65cd9(SignallingLang.editor)">
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
@@ -359,7 +359,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="2Hxmt3eVgJ7">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     <node concept="3EZMnI" id="2Hxmt3eVgJ9" role="2wV5jI">
       <node concept="3EZMnI" id="109yD1s_yQc" role="3EZMnx">
@@ -438,7 +438,7 @@
         <node concept="3XFhqQ" id="109yD1sEHsn" role="3EZMnx" />
         <node concept="1j7BWu" id="109yD1sCsZk" role="3EZMnx">
           <node concept="3F0ifn" id="109yD1sCsZq" role="1j7Clw">
-            <property role="3F0ifm" value="1. Create Species" />
+            <property role="3F0ifm" value="1. Create Components" />
             <node concept="VQ3r3" id="109yD1sCsZr" role="3F10Kt">
               <property role="2USNnj" value="gtbM8PH/underlined" />
             </node>
@@ -452,7 +452,7 @@
           <node concept="3EZMnI" id="109yD1sCsZE" role="1j7ClA">
             <node concept="2iRkQZ" id="109yD1sCsZH" role="2iSdaV" />
             <node concept="3F0ifn" id="109yD1sCsZQ" role="3EZMnx">
-              <property role="3F0ifm" value="Create proteins or other species that can" />
+              <property role="3F0ifm" value="Create proteins or other entities that can" />
               <node concept="2biZxu" id="2FvyIAlCScz" role="3F10Kt">
                 <property role="1rj3mz" value="Calibri" />
               </node>
@@ -677,8 +677,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eVheJ">
-    <property role="3GE5qa" value="Species" />
-    <ref role="1XX52x" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <property role="3GE5qa" value="Components" />
+    <ref role="1XX52x" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     <node concept="3EZMnI" id="2Hxmt3eVhfd" role="2wV5jI">
       <node concept="3EZMnI" id="2Hxmt3eVqAD" role="3EZMnx">
         <node concept="2iRfu4" id="2Hxmt3eVqAE" role="2iSdaV" />
@@ -1537,7 +1537,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="2Hxmt3eWvNW">
-    <property role="3GE5qa" value="Graphical" />
+    <property role="3GE5qa" value="" />
     <ref role="1XX52x" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     <node concept="2aJ2om" id="2Hxmt3eWvO0" role="CpUAK">
       <ref role="2$4xQ3" node="2Hxmt3eWvNU" resolve="graphical" />
@@ -1625,7 +1625,7 @@
           </node>
         </node>
         <node concept="3Tqbb2" id="2Hxmt3eW$0s" role="2M4AHM">
-          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+          <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
         </node>
         <node concept="37q72E" id="2Hxmt3eWvOj" role="2M4AHN">
           <node concept="3clFbS" id="2Hxmt3eWvOk" role="2VODD2">
@@ -3185,8 +3185,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="109yD1s_Nhj">
-    <property role="3GE5qa" value="Species" />
-    <ref role="1XX52x" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
+    <property role="3GE5qa" value="Components" />
+    <ref role="1XX52x" to="w3cn:109yD1suyAa" resolve="ComponentReference" />
     <node concept="3EZMnI" id="109yD1s_Nhn" role="2wV5jI">
       <node concept="3F0ifn" id="3FNuJRsmnWi" role="3EZMnx">
         <property role="3F0ifm" value="-" />
@@ -3216,8 +3216,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="109yD1s_YGK">
-    <property role="3GE5qa" value="Species" />
-    <ref role="1XX52x" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    <property role="3GE5qa" value="Components" />
+    <ref role="1XX52x" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
     <node concept="3EZMnI" id="109yD1s_YGQ" role="2wV5jI">
       <node concept="3F0ifn" id="109yD1s_YGS" role="3EZMnx">
         <property role="3F0ifm" value="[" />
@@ -3787,8 +3787,8 @@
     </node>
   </node>
   <node concept="24kQdi" id="2G0IbzH19l3">
-    <property role="3GE5qa" value="Species" />
-    <ref role="1XX52x" to="w3cn:2G0IbzGWWxi" resolve="SpeciesFractionExpression" />
+    <property role="3GE5qa" value="Components" />
+    <ref role="1XX52x" to="w3cn:2G0IbzGWWxi" resolve="ComponentFractionExpression" />
     <node concept="jtDVG" id="4r1mNB_wbxJ" role="2wV5jI">
       <node concept="2R9Tw8" id="4iu6t1eBmDL" role="3F10Kt">
         <property role="VOm3f" value="true" />

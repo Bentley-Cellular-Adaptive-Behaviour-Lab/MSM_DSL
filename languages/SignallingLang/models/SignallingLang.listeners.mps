@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:16328b40-52c8-4e87-ac39-18b554bff87d(SpeciesLang.listeners)">
+<model ref="r:16328b40-52c8-4e87-ac39-18b554bff87d(SignallingLang.listeners)">
   <persistence version="9" />
   <languages>
     <use id="309e0004-4976-4416-b947-ec02ae4ecef2" name="com.mbeddr.mpsutil.modellisteners" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
-    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" implicit="true" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SignallingLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -147,7 +147,7 @@
     </node>
   </node>
   <node concept="jA7cl" id="NorXrSjN6a">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     <node concept="3v3Etx" id="NorXrSjN6b" role="j$A37">
       <ref role="j_u2Y" to="w3cn:6pt0UY9x86b" resolve="Degradation_Term" />
       <node concept="3clFbS" id="NorXrSjN6c" role="2VODD2">

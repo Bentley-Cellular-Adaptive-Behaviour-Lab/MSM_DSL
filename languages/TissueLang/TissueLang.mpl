@@ -25,7 +25,7 @@
       </facets>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
         <dependency reexport="false">3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)</dependency>
         <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
       </dependencies>
@@ -56,8 +56,8 @@
         <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
+        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
         <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
-        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
         <module reference="d5bc41a4-09e4-47ba-9e46-e4c6bf115597(TissueLang)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
         <module reference="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)" version="0" />
@@ -102,7 +102,7 @@
     <dependency reexport="false">3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)</dependency>
     <dependency reexport="false">276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
-    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
     <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
     <dependency reexport="false">615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)</dependency>
     <dependency reexport="false">6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)</dependency>
@@ -166,8 +166,8 @@
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" version="0" />
     <module reference="615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)" version="0" />
+    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
     <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
-    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
     <module reference="f3f95abc-aef1-4f78-aa77-fb36d4ba916a(SpeciesSetup)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
     <module reference="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)" version="0" />

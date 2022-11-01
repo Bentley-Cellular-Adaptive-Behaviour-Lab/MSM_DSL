@@ -15,7 +15,7 @@
 #include "../dsl/tissue/tissueContainer.h"
 
 void Tissue_Container::tissue_set_up(World* world) {
-    // Created using: Tissues //
+    // Created using: MyTissue //
     world->setTissueContainer(this);
 
     // Cell Type Creation //
@@ -42,9 +42,9 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "Endothelial") {
-		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-		auto prob = VEGF_VEGFR/VEGFR+VEGF_VEGFR;
+		auto VEGF_VEGFR = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+		auto prob = VEGFR/VEGFR+VEGF_VEGFR;
 		return chance < prob;
 	}
 }

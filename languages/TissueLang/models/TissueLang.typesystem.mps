@@ -15,9 +15,9 @@
     <import index="xfg9" ref="r:ac28053f-2041-47f6-806b-ecfaca05a64a(org.iets3.core.expr.base.runtime.runtime)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SignallingLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1337,7 +1337,7 @@
               </node>
               <node concept="2OqwBi" id="109yD1sCWST" role="3uHU7w">
                 <node concept="1XH99k" id="109yD1sCWlk" role="2Oq$k0">
-                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
+                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="ComponentLocation" />
                 </node>
                 <node concept="2ViDtV" id="109yD1sCX6y" role="2OqNvi">
                   <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
@@ -2240,13 +2240,13 @@
           <property role="TrG5h" value="missingSpecies" />
           <node concept="_YKpA" id="4MFt7FnThYW" role="1tU5fm">
             <node concept="3Tqbb2" id="4MFt7FnThZA" role="_ZDj9">
-              <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+              <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
             </node>
           </node>
           <node concept="2ShNRf" id="4MFt7FnTi0w" role="33vP2m">
             <node concept="Tc6Ow" id="4MFt7FnTi0s" role="2ShVmc">
               <node concept="3Tqbb2" id="4MFt7FnTi0t" role="HW$YZ">
-                <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
               </node>
             </node>
           </node>
@@ -2542,13 +2542,13 @@
             <node concept="3cpWsn" id="2iYrNGjrCTq" role="3cpWs9">
               <property role="TrG5h" value="currentSpecies" />
               <node concept="3Tqbb2" id="2iYrNGjrCTl" role="1tU5fm">
-                <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
               </node>
               <node concept="2OqwBi" id="2iYrNGjrERa" role="33vP2m">
                 <node concept="1PxgMI" id="2iYrNGjrEmH" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
                   <node concept="chp4Y" id="2iYrNGjrEqk" role="3oSUPX">
-                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                    <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                   </node>
                   <node concept="2GrUjf" id="2iYrNGjrCUb" role="1m5AlR">
                     <ref role="2Gs0qQ" node="2iYrNGjruUq" resolve="exprSpecies" />

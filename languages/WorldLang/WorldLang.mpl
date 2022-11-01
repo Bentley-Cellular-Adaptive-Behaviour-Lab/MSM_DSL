@@ -26,7 +26,7 @@
       <external-templates />
       <dependencies>
         <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
-        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:990507d3-3527-4c54-bfe9-0ca3c9c6247a:com.dslfoundry.plaintextgen" version="0" />
@@ -55,7 +55,7 @@
         <module reference="498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)" version="0" />
         <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
-        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
+        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
         <module reference="f3f95abc-aef1-4f78-aa77-fb36d4ba916a(SpeciesSetup)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
         <module reference="276cd304-748c-4d5d-aad0-4b34e2a42ced(WorldLang)" version="0" />
@@ -100,7 +100,7 @@
     <dependency reexport="false">3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)</dependency>
     <dependency reexport="false">cfaa4966-b7d5-4b69-b66a-309a6e1a7290(org.iets3.core.expr.base)</dependency>
     <dependency reexport="false">dbe08fb5-334d-4b64-86a0-622406fa0e87(org.iets3.core.expr.base.runtime)</dependency>
-    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
     <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
@@ -138,8 +138,8 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="ea515ac2-fe2e-495a-a1e2-243a14826d03(ProteinSetup)" version="0" />
+    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
     <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
-    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
     <module reference="f3f95abc-aef1-4f78-aa77-fb36d4ba916a(SpeciesSetup)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
     <module reference="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)" version="0" />

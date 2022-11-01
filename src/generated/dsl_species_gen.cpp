@@ -59,17 +59,17 @@ void ODEs::check_cell_only_ODEs(EC *ec) {
  	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
  	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
  	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
+ 	double DLL4_NOTCH_DEGRADATION = calc_DLL4_NOTCH_DEGRADATION_rate(DLL4_NOTCH);
  	double VEGFR_PRODUCTION = calc_VEGFR_PRODUCTION_rate();
  	double VEGF_VEGFR_DEGRADATION = calc_VEGF_VEGFR_DEGRADATION_rate(VEGF_VEGFR);
  	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4, adjacent_NOTCH);
- 	double NOTCH_PRODUCTION = calc_NOTCH_PRODUCTION_rate();
  // ODE Definitions
- 	dxdt[0] = 0;
- 	dxdt[1] = +(VEGFR_PRODUCTION)-(VEGFR_INHIB);
+ 	dxdt[0] = -(DLL4_NOTCH_DEGRADATION);
+ 	dxdt[1] = +(VEGFR_PRODUCTION)-(VEGFR_INHIB)-(VEGFR_INHIB);
  	dxdt[2] = -(VEGF_VEGFR_DEGRADATION);
- 	dxdt[3] = -(DLL4_UPTAKE)+(DLL4_UPREG);
+ 	dxdt[3] = -(DLL4_UPTAKE)+(DLL4_UPREG)+(DLL4_UPREG);
  	dxdt[4] = 0;
- 	dxdt[5] = +(NOTCH_PRODUCTION);
+ 	dxdt[5] = 0;
  	dxdt[6] = 0;
  	dxdt[7] = 0;
  }
@@ -114,8 +114,8 @@ void ODEs::Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x,
 	dxdt[0] = +(DLL4_NOTCH_ON)*1;
 	dxdt[1] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
 	dxdt[2] = +(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-	dxdt[3] = -(DLL4_NOTCH_ON)*1;
-	dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
+	dxdt[3] = -(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_ON)*1;
+	dxdt[4] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
 	dxdt[5] = -(DLL4_NOTCH_ON)*1;
 	dxdt[6] = 0;
 	dxdt[7] = 0;
@@ -163,17 +163,17 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF, VEGFR);
   	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR);
   	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(adjacent_DLL4, NOTCH);
+  	double DLL4_NOTCH_DEGRADATION = calc_DLL4_NOTCH_DEGRADATION_rate(DLL4_NOTCH);
   	double VEGFR_PRODUCTION = calc_VEGFR_PRODUCTION_rate();
   	double VEGF_VEGFR_DEGRADATION = calc_VEGF_VEGFR_DEGRADATION_rate(VEGF_VEGFR);
   	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4, adjacent_NOTCH);
-  	double NOTCH_PRODUCTION = calc_NOTCH_PRODUCTION_rate();
   // ODE Definitions
-  	dxdt[0] = +(VEGFR_PRODUCTION)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB);
+  	dxdt[0] = +(VEGFR_PRODUCTION)-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGFR_INHIB)-(VEGFR_INHIB);
   	dxdt[1] = -(VEGF_VEGFR_DEGRADATION)+(VEGF_VEGFR_ON)*1-(VEGF_VEGFR_OFF)*1;
-  	dxdt[2] = -(DLL4_UPTAKE)-(DLL4_NOTCH_ON)*1+(DLL4_UPREG);
-  	dxdt[3] = +(NOTCH_PRODUCTION)-(DLL4_NOTCH_ON)*1;
-  	dxdt[4] = +(DLL4_NOTCH_ON)*1;
-  	dxdt[5] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
+  	dxdt[2] = -(DLL4_UPTAKE)-(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_ON)*1+(DLL4_UPREG)+(DLL4_UPREG);
+  	dxdt[3] = -(DLL4_NOTCH_ON)*1;
+  	dxdt[4] = -(DLL4_NOTCH_DEGRADATION)+(DLL4_NOTCH_ON)*1;
+  	dxdt[5] = -(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1-(VEGF_VEGFR_ON)*1+(VEGF_VEGFR_OFF)*1;
   	dxdt[6] = 0;
   	dxdt[7] = 0;
   }

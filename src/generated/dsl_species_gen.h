@@ -66,10 +66,6 @@ static double calc_VEGFR_PRODUCTION_rate() {
 	return 0.05;
 }
 
-static double calc_NOTCH_PRODUCTION_rate() {
-	return 0.05;
-}
-
 static double calc_DLL4_UPTAKE_rate(double DLL4, double adjacent_NOTCH) {
 	return DLL4*adjacent_NOTCH*0.1;
 }

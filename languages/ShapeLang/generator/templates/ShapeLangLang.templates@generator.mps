@@ -8,11 +8,11 @@
   </languages>
   <imports>
     <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" />
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="cyrx" ref="r:3c8d3693-7ec8-46bd-bcf9-c972a7d36151(ShapeLang.behavior)" implicit="true" />
-    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
+    <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SignallingLang.behavior)" implicit="true" />
     <import index="hm2y" ref="r:66e07cb4-a4b0-4bf3-a36d-5e9ed1ff1bd3(org.iets3.core.expr.base.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
@@ -782,13 +782,13 @@
                     <property role="TrG5h" value="speciesExprList" />
                     <node concept="_YKpA" id="BDFw_SPN$Y" role="1tU5fm">
                       <node concept="3Tqbb2" id="BDFw_SPNHB" role="_ZDj9">
-                        <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                     </node>
                     <node concept="2ShNRf" id="BDFw_SPPiJ" role="33vP2m">
                       <node concept="Tc6Ow" id="BDFw_SPPiF" role="2ShVmc">
                         <node concept="3Tqbb2" id="BDFw_SPPiG" role="HW$YZ">
-                          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                         </node>
                       </node>
                     </node>
@@ -847,13 +847,13 @@
                     <property role="TrG5h" value="uniqueExprList" />
                     <node concept="_YKpA" id="4d9X0NcDrwn" role="1tU5fm">
                       <node concept="3Tqbb2" id="4d9X0NcDsGl" role="_ZDj9">
-                        <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                        <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                       </node>
                     </node>
                     <node concept="2ShNRf" id="4d9X0NcD_vo" role="33vP2m">
                       <node concept="Tc6Ow" id="4d9X0NcD_tg" role="2ShVmc">
                         <node concept="3Tqbb2" id="4d9X0NcD_th" role="HW$YZ">
-                          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                          <ref role="ehGHo" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                         </node>
                       </node>
                     </node>
@@ -1072,7 +1072,7 @@
                                   <node concept="1PxgMI" id="zrmdUOsQz6" role="2oxUTC">
                                     <property role="1BlNFB" value="true" />
                                     <node concept="chp4Y" id="zrmdUOsQz7" role="3oSUPX">
-                                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                                     </node>
                                     <node concept="2GrUjf" id="zrmdUOsQz8" role="1m5AlR">
                                       <ref role="2Gs0qQ" node="zrmdUOsQyP" resolve="arg" />
@@ -1087,7 +1087,7 @@
                                   <node concept="1PxgMI" id="zrmdUOsQzc" role="2Oq$k0">
                                     <property role="1BlNFB" value="true" />
                                     <node concept="chp4Y" id="zrmdUOsQzd" role="3oSUPX">
-                                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                                      <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                                     </node>
                                     <node concept="2GrUjf" id="zrmdUOsQze" role="1m5AlR">
                                       <ref role="2Gs0qQ" node="zrmdUOsQyP" resolve="arg" />
@@ -1114,7 +1114,7 @@
                             </node>
                             <node concept="1mIQ4w" id="zrmdUOsQzl" role="2OqNvi">
                               <node concept="chp4Y" id="zrmdUOsQzm" role="cj9EA">
-                                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                                <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                               </node>
                             </node>
                           </node>
@@ -1272,7 +1272,7 @@
                                     <node concept="1PxgMI" id="zrmdUOsQ$r" role="2Oq$k0">
                                       <property role="1BlNFB" value="true" />
                                       <node concept="chp4Y" id="zrmdUOsQ$s" role="3oSUPX">
-                                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                                       </node>
                                       <node concept="37vLTw" id="zrmdUOsQ$t" role="1m5AlR">
                                         <ref role="3cqZAo" node="zrmdUOsQ$c" resolve="binExpr" />
@@ -1308,7 +1308,7 @@
                                     <node concept="1PxgMI" id="zrmdUOsQ$E" role="2Oq$k0">
                                       <property role="1BlNFB" value="true" />
                                       <node concept="chp4Y" id="zrmdUOsQ$F" role="3oSUPX">
-                                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                                        <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                                       </node>
                                       <node concept="37vLTw" id="zrmdUOsQ$G" role="1m5AlR">
                                         <ref role="3cqZAo" node="zrmdUOsQ$c" resolve="binExpr" />
@@ -1334,7 +1334,7 @@
                     <node concept="2OqwBi" id="zrmdUOsQ$K" role="3clFbw">
                       <node concept="1mIQ4w" id="zrmdUOsQ$L" role="2OqNvi">
                         <node concept="chp4Y" id="zrmdUOsQ$M" role="cj9EA">
-                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+                          <ref role="cht4Q" to="w3cn:109yD1s_YGM" resolve="ComponentExpression" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="zrmdUOsQ$N" role="2Oq$k0">

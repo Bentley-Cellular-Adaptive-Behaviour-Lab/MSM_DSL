@@ -13,7 +13,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
@@ -252,7 +252,7 @@
     <node concept="1TJgyj" id="2D4cW4vJ_GE" role="1TKVEi">
       <property role="IQ2ns" value="3045616152563571498" />
       <property role="20kJfa" value="_speciesRef" />
-      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     </node>
     <node concept="1TJgyi" id="2D4cW4vHxMx" role="1TKVEl">
       <property role="IQ2nx" value="3045616152563031201" />

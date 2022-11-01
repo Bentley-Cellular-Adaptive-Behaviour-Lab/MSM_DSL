@@ -25,7 +25,7 @@
       </facets>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+        <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
         <dependency reexport="false">b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)</dependency>
         <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
       </dependencies>
@@ -58,8 +58,8 @@
         <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
         <module reference="615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)" version="0" />
         <module reference="3f6c08fa-2853-4491-90d0-e86840f35428(ShapeLangLang)" version="0" />
+        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
         <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
-        <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
         <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
         <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />
         <module reference="63e0e566-5131-447e-90e3-12ea330e1a00(com.mbeddr.mpsutil.blutil)" version="0" />
@@ -99,7 +99,7 @@
   <sourcePath />
   <dependencies>
     <dependency reexport="false">3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)</dependency>
-    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)</dependency>
+    <dependency reexport="false">84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)</dependency>
     <dependency reexport="false">dbe08fb5-334d-4b64-86a0-622406fa0e87(org.iets3.core.expr.base.runtime)</dependency>
     <dependency reexport="false">61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)</dependency>
     <dependency reexport="false">6b277d9a-d52d-416f-a209-1919bd737f50(org.iets3.core.expr.simpleTypes)</dependency>
@@ -153,8 +153,8 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="615bc492-e50a-4c3e-8b86-8d639eaba343(ShapeLang)" version="0" />
+    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SignallingLang)" version="0" />
     <module reference="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac(SimulationsLang)" version="0" />
-    <module reference="84970ad9-a964-4f15-a393-dc0fcd724c0f(SpeciesLang)" version="0" />
     <module reference="b1ff4d68-a519-4928-8e36-de776040fb5a(TissueLang)" version="0" />
     <module reference="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be(UnitLang)" version="0" />
     <module reference="d4280a54-f6df-4383-aa41-d1b2bffa7eb1(com.mbeddr.core.base)" version="3" />

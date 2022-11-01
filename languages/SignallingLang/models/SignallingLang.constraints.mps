@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SpeciesLang.constraints)">
+<model ref="r:35c42da5-8a10-426d-a8a6-bbb877018d6a(SignallingLang.constraints)">
   <persistence version="9" />
   <languages>
     <use id="5dae8159-ab99-46bb-a40d-0cee30ee7018" name="jetbrains.mps.lang.constraints.rules.kinds" version="0" />
@@ -14,7 +14,7 @@
     <devkit ref="00000000-0000-4000-0000-5604ebd4f22c(jetbrains.mps.devkit.aspect.constraints)" />
   </languages>
   <imports>
-    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SignallingLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -150,10 +150,11 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6Y2UmXTDpk0">
+    <property role="3GE5qa" value="" />
     <ref role="1M2myG" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
   </node>
   <node concept="1M2fIO" id="5$qoOFye2an">
-    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    <ref role="1M2myG" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
     <node concept="EnEH3" id="5$qoOFye2aK" role="1MhHOB">
       <ref role="EomxK" to="w3cn:5$qoOFyduhF" resolve="_delay" />
       <node concept="QB0g5" id="5$qoOFye2eX" role="QCWH9">
@@ -171,7 +172,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4Ei2F7s4c4V">
-    <ref role="1M2myG" to="w3cn:3F9nTx49ScX" resolve="SpeciesContainerHeader" />
+    <ref role="1M2myG" to="w3cn:3F9nTx49ScX" resolve="ComponentContainerHeader" />
     <node concept="9S07l" id="4Ei2F7s4c5k" role="9Vyp8">
       <node concept="3clFbS" id="4Ei2F7s4c5l" role="2VODD2">
         <node concept="3cpWs6" id="4Ei2F7s4dBw" role="3cqZAp">

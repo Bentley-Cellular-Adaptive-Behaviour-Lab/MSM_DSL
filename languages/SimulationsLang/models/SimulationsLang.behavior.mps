@@ -866,7 +866,7 @@
                         <node concept="1PxgMI" id="2D4cW4vzDdZ" role="2Oq$k0">
                           <property role="1BlNFB" value="true" />
                           <node concept="chp4Y" id="2D4cW4vzDzJ" role="3oSUPX">
-                            <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                            <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                           </node>
                           <node concept="2GrUjf" id="2D4cW4vzCtm" role="1m5AlR">
                             <ref role="2Gs0qQ" node="2D4cW4vvp1p" resolve="param" />
@@ -886,7 +886,7 @@
                 </node>
                 <node concept="1mIQ4w" id="2D4cW4vz_a1" role="2OqNvi">
                   <node concept="chp4Y" id="2D4cW4vz_i7" role="cj9EA">
-                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                 </node>
               </node>
@@ -1180,7 +1180,7 @@
                 </node>
                 <node concept="1mIQ4w" id="6dETgETmQKb" role="2OqNvi">
                   <node concept="chp4Y" id="6dETgETmQKc" role="cj9EA">
-                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                 </node>
               </node>
@@ -1728,7 +1728,7 @@
                 </node>
                 <node concept="1mIQ4w" id="5hUuDYP37jN" role="2OqNvi">
                   <node concept="chp4Y" id="5hUuDYP37nF" role="cj9EA">
-                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                 </node>
               </node>
@@ -1741,7 +1741,7 @@
                       <node concept="1PxgMI" id="5hUuDYP4xxk" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
                         <node concept="chp4Y" id="5hUuDYP4xV0" role="3oSUPX">
-                          <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                          <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                         </node>
                         <node concept="2GrUjf" id="5hUuDYP4wGf" role="1m5AlR">
                           <ref role="2Gs0qQ" node="5hUuDYP35w9" resolve="item" />
@@ -2207,7 +2207,7 @@
                             <node concept="1PxgMI" id="6dETgET9Ohm" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
                               <node concept="chp4Y" id="6dETgET9OoF" role="3oSUPX">
-                                <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                                <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                               </node>
                               <node concept="2GrUjf" id="6dETgET9NuG" role="1m5AlR">
                                 <ref role="2Gs0qQ" node="6dETgET9jml" resolve="parameter" />
@@ -2235,7 +2235,7 @@
                 </node>
                 <node concept="1mIQ4w" id="6dETgET9I1u" role="2OqNvi">
                   <node concept="chp4Y" id="6dETgET9I8r" role="cj9EA">
-                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjJ" resolve="Component" />
                   </node>
                 </node>
               </node>
