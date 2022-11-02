@@ -95,6 +95,36 @@
     <property role="TrG5h" value="Tissue" />
     <property role="R4oN_" value="Concept for storing the location and type of a tissue." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5evXM1Eq1wz" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041233955" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_X" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eq1x8" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041233992" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_Y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eq1xB" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041234023" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_Z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eq1xN" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041234035" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_X" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eq1yo" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041234072" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_Y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eq1z0" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545041234112" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_Z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -321,6 +351,16 @@
       <property role="IQ2nx" value="8011215656704856593" />
       <property role="TrG5h" value="_doingParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eyl4_" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545043411237" />
+      <property role="TrG5h" value="_DEBUG_WIDTH_GRIDPOINTS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1Eyl4C" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545043411240" />
+      <property role="TrG5h" value="_DEBUG_HEIGHT_GRIDPOINTS" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263660" />

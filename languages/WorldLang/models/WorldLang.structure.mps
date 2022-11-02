@@ -68,6 +68,36 @@
     <property role="19KtqR" value="true" />
     <property role="R4oN_" value="Concept for describing the gradients, substrate and properties of a simulation world." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="5evXM1EmXXx" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040432993" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_X" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1EmXXz" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040432995" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_Y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1EmXXA" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040432998" />
+      <property role="TrG5h" value="_DEBUG_LOWEST_Z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1EmXXE" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040433002" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_X" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1EmXXJ" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040433007" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_Y" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="5evXM1EmXXP" role="1TKVEl">
+      <property role="IQ2nx" value="6025806545040433013" />
+      <property role="TrG5h" value="_DEBUG_HIGHEST_Z" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
     <node concept="1TJgyj" id="4jUcCWydX_N" role="1TKVEi">
       <property role="IQ2ns" value="4970340729092561267" />
       <property role="20kJfa" value="_simulationContainerRef" />

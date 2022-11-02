@@ -769,7 +769,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="4XZPqyVOpH$" role="13h7CS">
-      <property role="TrG5h" value="get_total_cell_number" />
+      <property role="TrG5h" value="calc_total_cell_number" />
       <property role="13i0it" value="true" />
       <node concept="3Tm1VV" id="4XZPqyVOpH_" role="1B3o_S" />
       <node concept="10Oyi0" id="4XZPqyVOpIi" role="3clF45" />
@@ -1103,8 +1103,8 @@
       <node concept="10Oyi0" id="57WjpeqodGh" role="3clF45" />
     </node>
     <node concept="13i0hz" id="4XZPqyVOpQh" role="13h7CS">
-      <property role="TrG5h" value="get_total_cell_number" />
-      <ref role="13i0hy" node="4XZPqyVOpH$" resolve="get_total_cell_number" />
+      <property role="TrG5h" value="calc_total_cell_number" />
+      <ref role="13i0hy" node="4XZPqyVOpH$" resolve="calc_total_cell_number" />
       <node concept="3clFbS" id="4XZPqyVOpQk" role="3clF47">
         <node concept="3cpWs6" id="4XZPqyVOred" role="3cqZAp">
           <node concept="17qRlL" id="4XZPqyVOt05" role="3cqZAk">
@@ -1204,7 +1204,7 @@
       </node>
     </node>
     <node concept="13i0hz" id="1QpPlI52lcy" role="13h7CS">
-      <property role="TrG5h" value="get_total_length_gridpoints" />
+      <property role="TrG5h" value="calc_total_length_gridpoints" />
       <node concept="3Tm1VV" id="1QpPlI52lcz" role="1B3o_S" />
       <node concept="10Oyi0" id="2xqP3eG1jqw" role="3clF45" />
       <node concept="3clFbS" id="1QpPlI52lc_" role="3clF47">
@@ -1330,47 +1330,51 @@
         <node concept="3clFbH" id="57WjpeqfIqH" role="3cqZAp" />
         <node concept="3clFbJ" id="3wWy5vw7FGr" role="3cqZAp">
           <node concept="3clFbS" id="3wWy5vw7FGt" role="3clFbx">
-            <node concept="3clFbF" id="57Wjpeqf$xP" role="3cqZAp">
-              <node concept="37vLTI" id="57Wjpeqf$Qy" role="3clFbG">
-                <node concept="37vLTw" id="57WjpeqmDXD" role="37vLTJ">
-                  <ref role="3cqZAo" node="3wWy5vw7Hoy" resolve="length_gridpoint_int" />
+            <node concept="3cpWs8" id="5evXM1E$wzx" role="3cqZAp">
+              <node concept="3cpWsn" id="5evXM1E$wz$" role="3cpWs9">
+                <property role="TrG5h" value="cellType" />
+                <node concept="3Tqbb2" id="5evXM1E$wzv" role="1tU5fm">
+                  <ref role="ehGHo" to="nguq:5qSYbADreYb" resolve="CellType" />
                 </node>
-                <node concept="2OqwBi" id="57Wjpeqf$V9" role="37vLTx">
-                  <node concept="2OqwBi" id="57Wjpeqf$Va" role="2Oq$k0">
-                    <node concept="1PxgMI" id="57Wjpeqf$Vb" role="2Oq$k0">
-                      <node concept="chp4Y" id="57Wjpeqf$Vc" role="3oSUPX">
-                        <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
-                      </node>
-                      <node concept="2OqwBi" id="57Wjpeqf$Vd" role="1m5AlR">
-                        <node concept="2OqwBi" id="57Wjpeqf$Ve" role="2Oq$k0">
-                          <node concept="2OqwBi" id="57Wjpeqf$Vf" role="2Oq$k0">
-                            <node concept="13iPFW" id="57Wjpeqf$Vg" role="2Oq$k0" />
-                            <node concept="2Xjw5R" id="57Wjpeqf$Vh" role="2OqNvi">
-                              <node concept="1xMEDy" id="57Wjpeqf$Vi" role="1xVPHs">
-                                <node concept="chp4Y" id="57Wjpeqf$Vj" role="ri$Ld">
-                                  <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                          <node concept="3TrEf2" id="57Wjpeqf$Vk" role="2OqNvi">
-                            <ref role="3Tt5mk" to="nguq:7aglRcSXD60" resolve="_cellTypeRef" />
-                          </node>
-                        </node>
-                        <node concept="3TrEf2" id="57Wjpeqf$Vl" role="2OqNvi">
-                          <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
-                        </node>
-                      </node>
+                <node concept="2OqwBi" id="5evXM1E$$7P" role="33vP2m">
+                  <node concept="1PxgMI" id="5evXM1E$zrg" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="5evXM1E$zv$" role="3oSUPX">
+                      <ref role="cht4Q" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
                     </node>
-                    <node concept="3TrEf2" id="57Wjpeqf$Vm" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nguq:4v4kI3Dq7XG" resolve="_width" />
+                    <node concept="2OqwBi" id="5evXM1E$ysR" role="1m5AlR">
+                      <node concept="13iPFW" id="5evXM1E$y9o" role="2Oq$k0" />
+                      <node concept="1mfA1w" id="5evXM1E$yKI" role="2OqNvi" />
                     </node>
                   </node>
-                  <node concept="2qgKlT" id="57Wjpeqf$Vn" role="2OqNvi">
-                    <ref role="37wK5l" to="ki9o:3wWy5vw4P8z" resolve="get_distance_in_gridpoints" />
-                    <node concept="37vLTw" id="57WjpeqfEjn" role="37wK5m">
-                      <ref role="3cqZAo" node="57WjpeqfAEI" resolve="scale" />
+                  <node concept="3TrEf2" id="5evXM1E$$yn" role="2OqNvi">
+                    <ref role="3Tt5mk" to="nguq:7aglRcSXD60" resolve="_cellTypeRef" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1E$GuS" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1E$I9t" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1E$GuQ" role="37vLTJ">
+                  <ref role="3cqZAo" node="3wWy5vw7Hoy" resolve="length_gridpoint_int" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1E$IFS" role="37vLTx">
+                  <node concept="1PxgMI" id="5evXM1E$IFT" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="5evXM1E$IFU" role="3oSUPX">
+                      <ref role="cht4Q" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
                     </node>
+                    <node concept="2OqwBi" id="5evXM1E$IFV" role="1m5AlR">
+                      <node concept="37vLTw" id="5evXM1E$IFW" role="2Oq$k0">
+                        <ref role="3cqZAo" node="5evXM1E$wz$" resolve="cellType" />
+                      </node>
+                      <node concept="3TrEf2" id="5evXM1E$IFX" role="2OqNvi">
+                        <ref role="3Tt5mk" to="nguq:5qSYbADreYV" resolve="_shape" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="2qgKlT" id="5evXM1E$IFY" role="2OqNvi">
+                    <ref role="37wK5l" node="2siCC6BFJkZ" resolve="get_rectangular_width_gridpoints" />
                   </node>
                 </node>
               </node>
@@ -2988,8 +2992,8 @@
       </node>
     </node>
     <node concept="13i0hz" id="4XZPqyVOuEq" role="13h7CS">
-      <property role="TrG5h" value="get_total_cell_number" />
-      <ref role="13i0hy" node="4XZPqyVOpH$" resolve="get_total_cell_number" />
+      <property role="TrG5h" value="calc_total_cell_number" />
+      <ref role="13i0hy" node="4XZPqyVOpH$" resolve="calc_total_cell_number" />
       <node concept="3clFbS" id="4XZPqyVOuEt" role="3clF47">
         <node concept="3cpWs6" id="4XZPqyVOvnE" role="3cqZAp">
           <node concept="17qRlL" id="4XZPqyVOx77" role="3cqZAk">
@@ -4181,7 +4185,7 @@
                     </node>
                   </node>
                   <node concept="2qgKlT" id="4XZPqyVOF$u" role="2OqNvi">
-                    <ref role="37wK5l" node="4XZPqyVOpH$" resolve="get_total_cell_number" />
+                    <ref role="37wK5l" node="4XZPqyVOpH$" resolve="calc_total_cell_number" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="4XZPqyVODca" role="37vLTJ">
@@ -4288,7 +4292,7 @@
                     </node>
                   </node>
                   <node concept="2qgKlT" id="6yORN46v9s1" role="2OqNvi">
-                    <ref role="37wK5l" node="4XZPqyVOpH$" resolve="get_total_cell_number" />
+                    <ref role="37wK5l" node="4XZPqyVOpH$" resolve="calc_total_cell_number" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="6yORN46v9s2" role="37vLTJ">
@@ -15170,7 +15174,7 @@
                       </node>
                     </node>
                     <node concept="2qgKlT" id="57WjpeqnVi3" role="2OqNvi">
-                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_length_gridpoints" />
+                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="calc_total_length_gridpoints" />
                     </node>
                   </node>
                 </node>
@@ -16304,7 +16308,7 @@
                       </node>
                     </node>
                     <node concept="2qgKlT" id="57Wjpeqov60" role="2OqNvi">
-                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="get_total_length_gridpoints" />
+                      <ref role="37wK5l" node="1QpPlI52lcy" resolve="calc_total_length_gridpoints" />
                     </node>
                   </node>
                 </node>

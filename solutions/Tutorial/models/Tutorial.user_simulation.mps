@@ -10,10 +10,14 @@
     <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang" version="0" />
     <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SignallingLang" version="0" />
   </languages>
-  <imports />
+  <imports>
+    <import index="lsu3" ref="r:74c807f4-75f3-4f08-8a46-5b333e8732f4(LeoTutorial.user_simulation)" implicit="true" />
+  </imports>
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
-      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si" />
+      <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
+        <reference id="4970340729092560634" name="_simulationContainerRef" index="1ANuhP" />
+      </concept>
     </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
@@ -97,6 +101,7 @@
       </concept>
       <concept id="8660349304734434856" name="SimulationsLang.structure.SimulationContainer" flags="ng" index="2rkfJA">
         <property id="8660349304734541288" name="maxTimeSteps" index="2rFPwA" />
+        <reference id="4970340729091001645" name="_shapeContainerRef" index="1AQzYy" />
         <child id="8660349304734472780" name="_clusterContainer" index="2rk6u2" />
         <child id="8660349304734472778" name="_analysisContainer" index="2rk6u4" />
         <child id="8660349304734512033" name="_graphicsContainer" index="2rFWTJ" />
@@ -223,6 +228,9 @@
       <node concept="3rtiFT" id="oymmRcDac8" role="3rqWia">
         <ref role="3rtiFY" node="oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="3rtiFT" id="5evXM1EOSPO" role="3rqWia">
+        <ref role="3rtiFY" to="lsu3:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Na" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -238,6 +246,9 @@
       </node>
       <node concept="3rtiFT" id="oymmRcDabg" role="3rtiFW">
         <ref role="3rtiFY" node="oymmRcDaaZ" resolve="DLL4_UPREG" />
+      </node>
+      <node concept="3rtiFT" id="5evXM1EOSPL" role="3rtiFW">
+        <ref role="3rtiFY" to="lsu3:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Oi" role="3_zqUg">
@@ -261,6 +272,15 @@
       <node concept="3rtiFT" id="oymmRcDabW" role="3rtiFW">
         <ref role="3rtiFY" node="oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="5evXM1EOSPI" role="3_z4RZ">
+        <ref role="DdDrb" to="lsu3:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="5evXM1EOSPM" role="3rqWia">
+        <ref role="3rtiFY" to="lsu3:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="5evXM1EOSPN" role="3rtiFW">
+        <ref role="3rtiFY" to="lsu3:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9PT" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -276,6 +296,9 @@
       </node>
       <node concept="DdDr8" id="oymmRcDac6" role="3_z4RZ">
         <ref role="DdDrb" node="oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="5evXM1EOSPJ" role="3_z4RZ">
+        <ref role="DdDrb" to="lsu3:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9RD" role="3_zqUg">
@@ -293,11 +316,15 @@
       <node concept="DdDr8" id="oymmRcDac7" role="3_z4Rx">
         <ref role="DdDrb" node="oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
+      <node concept="DdDr8" id="5evXM1EOSPK" role="3_z4Rx">
+        <ref role="DdDrb" to="lsu3:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
     </node>
   </node>
   <node concept="2rkfJA" id="oymmRcD7or">
     <property role="2rFPwA" value="100" />
     <property role="TrG5h" value="Simulation" />
+    <ref role="1AQzYy" node="oymmRdeu$t" resolve="Shape" />
     <node concept="2rk7l3" id="oymmRcD7os" role="2rk6u4" />
     <node concept="2rk7nQ" id="oymmRcD7ot" role="2rk6u2">
       <property role="2rk6ya" value="1" />
@@ -307,6 +334,7 @@
   </node>
   <node concept="3Bb2si" id="oymmRdeu$t">
     <property role="TrG5h" value="Shape" />
+    <ref role="1ANuhP" node="oymmRcD7or" resolve="Simulation" />
   </node>
 </model>
 

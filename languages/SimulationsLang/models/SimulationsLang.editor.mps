@@ -487,7 +487,7 @@
       <node concept="3F0ifn" id="5hUuDYPchLW" role="3EZMnx" />
       <node concept="3EZMnI" id="5hUuDYPchL5" role="3EZMnx">
         <node concept="3F0ifn" id="5hUuDYPchL6" role="3EZMnx">
-          <property role="3F0ifm" value="Desired Simulation World:" />
+          <property role="3F0ifm" value="Desired World Set-Up:" />
           <node concept="2biZxu" id="5hUuDYPchL8" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

@@ -6295,6 +6295,53 @@
       <node concept="3Tm1VV" id="57Wjpeqm20o" role="1B3o_S" />
       <node concept="10Oyi0" id="57Wjpeqm20p" role="3clF45" />
       <node concept="3clFbS" id="57Wjpeqm20q" role="3clF47">
+        <node concept="3SKdUt" id="5evXM1EnKaS" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnKaT" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnKjy" role="1PaTwD">
+              <property role="3oM_SC" value="Get" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKjz" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKj$" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKj_" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKjA" role="1PaTwD">
+              <property role="3oM_SC" value="X" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKjB" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5evXM1EnKIU" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnKIV" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnKYS" role="1PaTwD">
+              <property role="3oM_SC" value="based" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYT" role="1PaTwD">
+              <property role="3oM_SC" value="on" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYU" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYV" role="1PaTwD">
+              <property role="3oM_SC" value="placed" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYW" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYX" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnKYY" role="1PaTwD">
+              <property role="3oM_SC" value="world." />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="11q$FfsTCKM" role="3cqZAp">
           <node concept="3cpWsn" id="11q$FfsTCKP" role="3cpWs9">
             <property role="TrG5h" value="lowest_x" />
@@ -6303,6 +6350,18 @@
               <node concept="13iPFW" id="11q$FfsTCNn" role="2Oq$k0" />
               <node concept="2qgKlT" id="11q$FfsTCSE" role="2OqNvi">
                 <ref role="37wK5l" node="57Wjpeqm233" resolve="find_lowestX_gridpoint" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5evXM1EnmhA" role="3cqZAp">
+          <node concept="3cpWsn" id="5evXM1EnmhD" role="3cpWs9">
+            <property role="TrG5h" value="highest_x" />
+            <node concept="10Oyi0" id="5evXM1Enmh$" role="1tU5fm" />
+            <node concept="2OqwBi" id="5evXM1EnmPr" role="33vP2m">
+              <node concept="13iPFW" id="5evXM1EnmPs" role="2Oq$k0" />
+              <node concept="2qgKlT" id="5evXM1EnmPt" role="2OqNvi">
+                <ref role="37wK5l" node="57Wjpeqm24M" resolve="find_highestX_gridpoint" />
               </node>
             </node>
           </node>
@@ -6319,6 +6378,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnJcw" role="3cqZAp" />
         <node concept="3SKdUt" id="11q$FfsTG$3" role="3cqZAp">
           <node concept="1PaTwC" id="11q$FfsTG$4" role="1aUNEU">
             <node concept="3oM_SD" id="11q$FfsTG$5" role="1PaTwD">
@@ -6382,6 +6442,61 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnJBx" role="3cqZAp" />
+        <node concept="3SKdUt" id="5evXM1EntuT" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EntuU" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EntvZ" role="1PaTwD">
+              <property role="3oM_SC" value="Update" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent$p" role="1PaTwD">
+              <property role="3oM_SC" value="member" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent_B" role="1PaTwD">
+              <property role="3oM_SC" value="variables" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent_F" role="1PaTwD">
+              <property role="3oM_SC" value="storing" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent_K" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent_Q" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1Ent_X" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EntA5" role="1PaTwD">
+              <property role="3oM_SC" value="X." />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1Enjlg" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1EnluK" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1EnlYA" role="37vLTx">
+              <ref role="3cqZAo" node="11q$FfsTCKP" resolve="lowest_x" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1EnjGM" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1Enjle" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1Enk0K" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXx" resolve="_DEBUG_LOWEST_X" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1Eno5i" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1EnqKZ" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1Enr4y" role="37vLTx">
+              <ref role="3cqZAo" node="5evXM1EnmhD" resolve="highestX" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1EnozO" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1Eno5g" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1EnoYj" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXE" resolve="_DEBUG_HIGHEST_X" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs6" id="11q$FfsT1XM" role="3cqZAp">
           <node concept="3cpWs3" id="11q$FfsTjOB" role="3cqZAk">
             <node concept="1eOMI4" id="11q$Fft9Iyy" role="3uHU7w">
@@ -6399,11 +6514,8 @@
                 <node concept="37vLTw" id="11q$FfsTDBA" role="3uHU7w">
                   <ref role="3cqZAo" node="11q$FfsTCKP" resolve="lowest_x" />
                 </node>
-                <node concept="2OqwBi" id="11q$FfsT3tw" role="3uHU7B">
-                  <node concept="13iPFW" id="11q$FfsT1XX" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="11q$FfsT3B$" role="2OqNvi">
-                    <ref role="37wK5l" node="57Wjpeqm24M" resolve="find_highestX_gridpoint" />
-                  </node>
+                <node concept="37vLTw" id="5evXM1EnnCc" role="3uHU7B">
+                  <ref role="3cqZAo" node="5evXM1EnmhD" resolve="highestX" />
                 </node>
               </node>
             </node>
@@ -6416,6 +6528,53 @@
       <node concept="3Tm1VV" id="57Wjpeqm20O" role="1B3o_S" />
       <node concept="10Oyi0" id="57Wjpeqm20P" role="3clF45" />
       <node concept="3clFbS" id="57Wjpeqm20Q" role="3clF47">
+        <node concept="3SKdUt" id="5evXM1EnIBk" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnIBl" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnIHm" role="1PaTwD">
+              <property role="3oM_SC" value="Get" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnIHn" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnIHo" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnIHp" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnIHq" role="1PaTwD">
+              <property role="3oM_SC" value="Y" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnIHr" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5evXM1EnJ6n" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnJ6o" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnJci" role="1PaTwD">
+              <property role="3oM_SC" value="based" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJcj" role="1PaTwD">
+              <property role="3oM_SC" value="on" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJck" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJcl" role="1PaTwD">
+              <property role="3oM_SC" value="placed" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJcm" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJcn" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnJco" role="1PaTwD">
+              <property role="3oM_SC" value="world." />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="11q$FfsTGK_" role="3cqZAp">
           <node concept="3cpWsn" id="11q$FfsTGKA" role="3cpWs9">
             <property role="TrG5h" value="lowest_y" />
@@ -6424,6 +6583,18 @@
               <node concept="13iPFW" id="11q$FfsTGKD" role="2Oq$k0" />
               <node concept="2qgKlT" id="11q$FfsTI0v" role="2OqNvi">
                 <ref role="37wK5l" node="57Wjpeqm23A" resolve="find_lowestY_gridpoint" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5evXM1Enu6o" role="3cqZAp">
+          <node concept="3cpWsn" id="5evXM1Enu6r" role="3cpWs9">
+            <property role="TrG5h" value="highest_y" />
+            <node concept="10Oyi0" id="5evXM1Enu6m" role="1tU5fm" />
+            <node concept="2OqwBi" id="5evXM1Env49" role="33vP2m">
+              <node concept="13iPFW" id="5evXM1EnuFl" role="2Oq$k0" />
+              <node concept="2qgKlT" id="5evXM1EnvuL" role="2OqNvi">
+                <ref role="37wK5l" node="57Wjpeqm24Q" resolve="find_highestY_gridpoint" />
               </node>
             </node>
           </node>
@@ -6440,6 +6611,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnHKO" role="3cqZAp" />
         <node concept="3SKdUt" id="11q$FfsTGKF" role="3cqZAp">
           <node concept="1PaTwC" id="11q$FfsTGKG" role="1aUNEU">
             <node concept="3oM_SD" id="11q$FfsTGKH" role="1PaTwD">
@@ -6503,6 +6675,62 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnI9d" role="3cqZAp" />
+        <node concept="3SKdUt" id="5evXM1EnwoJ" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnwoK" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnwoL" role="1PaTwD">
+              <property role="3oM_SC" value="Update" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoM" role="1PaTwD">
+              <property role="3oM_SC" value="member" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoN" role="1PaTwD">
+              <property role="3oM_SC" value="variables" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoO" role="1PaTwD">
+              <property role="3oM_SC" value="storing" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoP" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoQ" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoR" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnwoS" role="1PaTwD">
+              <property role="3oM_SC" value="Y." />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1EnwoT" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1EnwoU" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1EnwoV" role="37vLTx">
+              <ref role="3cqZAo" node="11q$FfsTGKA" resolve="lowest_y" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1EnwoW" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1EnwoX" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1EnwoY" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXz" resolve="_DEBUG_LOWEST_Y" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1EnwoZ" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1Enwp0" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1Enwp1" role="37vLTx">
+              <ref role="3cqZAo" node="5evXM1Enu6r" resolve="highest_y" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1Enwp2" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1Enwp3" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1Enwp4" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXJ" resolve="_DEBUG_HIGHEST_Y" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5evXM1EnwdO" role="3cqZAp" />
         <node concept="3cpWs6" id="11q$FfsT5x5" role="3cqZAp">
           <node concept="3cpWs3" id="11q$FfsTpRh" role="3cqZAk">
             <node concept="1eOMI4" id="11q$FfsTpRn" role="3uHU7B">
@@ -6510,11 +6738,8 @@
                 <node concept="37vLTw" id="11q$FfsTKWw" role="3uHU7w">
                   <ref role="3cqZAo" node="11q$FfsTGKA" resolve="lowest_y" />
                 </node>
-                <node concept="2OqwBi" id="11q$FfsTpRs" role="3uHU7B">
-                  <node concept="13iPFW" id="11q$FfsTpRt" role="2Oq$k0" />
-                  <node concept="2qgKlT" id="11q$FfsTuNw" role="2OqNvi">
-                    <ref role="37wK5l" node="57Wjpeqm24Q" resolve="find_highestY_gridpoint" />
-                  </node>
+                <node concept="37vLTw" id="5evXM1EnzoQ" role="3uHU7B">
+                  <ref role="3cqZAo" node="5evXM1Enu6r" resolve="highest_y" />
                 </node>
               </node>
             </node>
@@ -6537,6 +6762,53 @@
       <node concept="3Tm1VV" id="57Wjpeqm21s" role="1B3o_S" />
       <node concept="10Oyi0" id="57Wjpeqm21t" role="3clF45" />
       <node concept="3clFbS" id="57Wjpeqm21u" role="3clF47">
+        <node concept="3SKdUt" id="5evXM1EnH82" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnH83" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnHdV" role="1PaTwD">
+              <property role="3oM_SC" value="Get" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHdX" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHe0" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHe4" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHe9" role="1PaTwD">
+              <property role="3oM_SC" value="Z" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHf2" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="5evXM1EnHD0" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnHD1" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnHKh" role="1PaTwD">
+              <property role="3oM_SC" value="based" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHKj" role="1PaTwD">
+              <property role="3oM_SC" value="on" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHKm" role="1PaTwD">
+              <property role="3oM_SC" value="coordinates" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHKq" role="1PaTwD">
+              <property role="3oM_SC" value="placed" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHKv" role="1PaTwD">
+              <property role="3oM_SC" value="in" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHK_" role="1PaTwD">
+              <property role="3oM_SC" value="the" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnHKG" role="1PaTwD">
+              <property role="3oM_SC" value="world." />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="11q$FfsTIXL" role="3cqZAp">
           <node concept="3cpWsn" id="11q$FfsTIXM" role="3cpWs9">
             <property role="TrG5h" value="lowest_z" />
@@ -6545,6 +6817,18 @@
               <node concept="13iPFW" id="11q$FfsTIXP" role="2Oq$k0" />
               <node concept="2qgKlT" id="11q$FfsTJV8" role="2OqNvi">
                 <ref role="37wK5l" node="57Wjpeqm24a" resolve="find_lowestZ_gridpoint" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5evXM1En$je" role="3cqZAp">
+          <node concept="3cpWsn" id="5evXM1En$jh" role="3cpWs9">
+            <property role="TrG5h" value="highest_z" />
+            <node concept="10Oyi0" id="5evXM1En$jc" role="1tU5fm" />
+            <node concept="2OqwBi" id="5evXM1En_uO" role="33vP2m">
+              <node concept="13iPFW" id="5evXM1En_60" role="2Oq$k0" />
+              <node concept="2qgKlT" id="5evXM1En_Ts" role="2OqNvi">
+                <ref role="37wK5l" node="57Wjpeqm24U" resolve="find_highestZ_gridpoint" />
               </node>
             </node>
           </node>
@@ -6561,6 +6845,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnGWp" role="3cqZAp" />
         <node concept="3SKdUt" id="11q$FfsTIXQ" role="3cqZAp">
           <node concept="1PaTwC" id="11q$FfsTIXR" role="1aUNEU">
             <node concept="3oM_SD" id="11q$FfsTIXS" role="1PaTwD">
@@ -6624,6 +6909,62 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="5evXM1EnGyH" role="3cqZAp" />
+        <node concept="3SKdUt" id="5evXM1EnGmF" role="3cqZAp">
+          <node concept="1PaTwC" id="5evXM1EnGmG" role="1aUNEU">
+            <node concept="3oM_SD" id="5evXM1EnGnQ" role="1PaTwD">
+              <property role="3oM_SC" value="Update" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnR" role="1PaTwD">
+              <property role="3oM_SC" value="member" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnS" role="1PaTwD">
+              <property role="3oM_SC" value="variables" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnT" role="1PaTwD">
+              <property role="3oM_SC" value="storing" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnU" role="1PaTwD">
+              <property role="3oM_SC" value="highest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnV" role="1PaTwD">
+              <property role="3oM_SC" value="and" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnW" role="1PaTwD">
+              <property role="3oM_SC" value="lowest" />
+            </node>
+            <node concept="3oM_SD" id="5evXM1EnGnX" role="1PaTwD">
+              <property role="3oM_SC" value="Z." />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1EnAsm" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1EnCpq" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1EnCAU" role="37vLTx">
+              <ref role="3cqZAo" node="11q$FfsTIXM" resolve="lowest_z" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1EnAC1" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1EnAsk" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1EnB43" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXA" resolve="_DEBUG_LOWEST_Z" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5evXM1EnDdn" role="3cqZAp">
+          <node concept="37vLTI" id="5evXM1EnFo_" role="3clFbG">
+            <node concept="37vLTw" id="5evXM1EnFAn" role="37vLTx">
+              <ref role="3cqZAo" node="5evXM1En$jh" resolve="highest_z" />
+            </node>
+            <node concept="2OqwBi" id="5evXM1EnD_B" role="37vLTJ">
+              <node concept="13iPFW" id="5evXM1EnDdl" role="2Oq$k0" />
+              <node concept="3TrcHB" id="5evXM1EnEbQ" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:5evXM1EmXXP" resolve="_DEBUG_HIGHEST_Z" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="5evXM1EnzQm" role="3cqZAp" />
         <node concept="3cpWs6" id="11q$FfsTvTp" role="3cqZAp">
           <node concept="3cpWs3" id="11q$FfsTvTq" role="3cqZAk">
             <node concept="1eOMI4" id="11q$FfsTvTw" role="3uHU7B">
@@ -6955,10 +7296,7 @@
           <node concept="3clFbS" id="3V40ltqZD45" role="2LFqv$">
             <node concept="3SKdUt" id="3V40ltr0v4M" role="3cqZAp">
               <node concept="1PaTwC" id="3V40ltr0v4N" role="1aUNEU">
-                <node concept="3oM_SD" id="3V40ltr0u_Y" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="3V40ltr0u_Z" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1Eu8u4" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr0uA0" role="1PaTwD">
@@ -6989,6 +7327,13 @@
                   <property role="3oM_SC" value="the" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr0uA9" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1Eu7cz" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1Eu7cc" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1Eu7cb" role="1PaTwD">
                   <property role="3oM_SC" value="lowest" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr0uAa" role="1PaTwD">
@@ -7030,6 +7375,21 @@
                   </node>
                   <node concept="2qgKlT" id="3V40ltr1K4r" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57Wjpeqov5H" resolve="get_tissue_lowerx_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1Eu256" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1Eu4oJ" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1Eu63T" role="37vLTx">
+                  <ref role="3cqZAo" node="3V40ltr1Hzp" resolve="tissue_lowest_x" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1Eu2W_" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1Eu254" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3V40ltqZD41" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1Eu3_2" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1wz" resolve="_DEBUG_LOWEST_X" />
                   </node>
                 </node>
               </node>
@@ -8406,10 +8766,7 @@
           <node concept="3clFbS" id="3V40ltr2dlG" role="2LFqv$">
             <node concept="3SKdUt" id="3V40ltr2dlH" role="3cqZAp">
               <node concept="1PaTwC" id="3V40ltr2dlI" role="1aUNEU">
-                <node concept="3oM_SD" id="3V40ltr2dlJ" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="3V40ltr2dlK" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1Euayw" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2dlL" role="1PaTwD">
@@ -8440,6 +8797,13 @@
                   <property role="3oM_SC" value="the" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2dlU" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1Eu8uC" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1Eu8uh" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1Eu8ug" role="1PaTwD">
                   <property role="3oM_SC" value="lowest" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2dlV" role="1PaTwD">
@@ -8481,6 +8845,21 @@
                   </node>
                   <node concept="2qgKlT" id="3V40ltr2hnv" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57WjpeqoyKx" resolve="get_tissue_lowery_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1Eucpn" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1Eugkn" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1EugWx" role="37vLTx">
+                  <ref role="3cqZAo" node="3V40ltr2dm5" resolve="tissue_lowest_y" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1EudgQ" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1Eucpl" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3V40ltr2dlC" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1EufwE" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1x8" resolve="_DEBUG_LOWEST_Y" />
                   </node>
                 </node>
               </node>
@@ -9738,10 +10117,7 @@
           <node concept="3clFbS" id="11q$FfsSVNc" role="2LFqv$">
             <node concept="3SKdUt" id="11q$FfsSVNd" role="3cqZAp">
               <node concept="1PaTwC" id="11q$FfsSVNe" role="1aUNEU">
-                <node concept="3oM_SD" id="11q$FfsSVNf" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="11q$FfsSVNg" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1EujGy" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="11q$FfsSVNh" role="1PaTwD">
@@ -9766,6 +10142,13 @@
                   <property role="3oM_SC" value="cell" />
                 </node>
                 <node concept="3oM_SD" id="11q$FfsSVNo" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1Eui33" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1Eui2F" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1Eui2E" role="1PaTwD">
                   <property role="3oM_SC" value="is" />
                 </node>
                 <node concept="3oM_SD" id="11q$FfsSVNp" role="1PaTwD">
@@ -9943,6 +10326,21 @@
                   </node>
                   <node concept="2qgKlT" id="11q$FfsSZhh" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57WjpeqoAXQ" resolve="get_tissue_lowerz_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1EuorB" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1EutxV" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1Euu5Z" role="37vLTx">
+                  <ref role="3cqZAo" node="11q$FfsSVOm" resolve="tissue_lowest_z" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1EuphB" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1Euor_" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="11q$FfsSVNS" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1EurkY" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1xB" resolve="_DEBUG_LOWEST_Z" />
                   </node>
                 </node>
               </node>
@@ -11236,10 +11634,7 @@
           <node concept="3clFbS" id="3V40ltr25nE" role="2LFqv$">
             <node concept="3SKdUt" id="3V40ltr25nF" role="3cqZAp">
               <node concept="1PaTwC" id="3V40ltr25nG" role="1aUNEU">
-                <node concept="3oM_SD" id="3V40ltr25nH" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="3V40ltr25nI" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1EuwI4" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr25nJ" role="1PaTwD">
@@ -11270,6 +11665,13 @@
                   <property role="3oM_SC" value="the" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr25nS" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1EuuEa" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1EuuDM" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1EuuDL" role="1PaTwD">
                   <property role="3oM_SC" value="highest" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr25nT" role="1PaTwD">
@@ -11314,6 +11716,21 @@
                   </node>
                   <node concept="2qgKlT" id="3V40ltr2aHy" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57WjpeqnMK6" resolve="get_tissue_upperx_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1EuxvF" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1EuBV5" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1EuE7c" role="37vLTx">
+                  <ref role="3cqZAo" node="3V40ltr25o3" resolve="tissue_highest_x" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1Euyna" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1EuxvD" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3V40ltr25nA" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1Eu$AZ" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1xN" resolve="_DEBUG_HIGHEST_X" />
                   </node>
                 </node>
               </node>
@@ -12693,10 +13110,7 @@
           <node concept="3clFbS" id="3V40ltr2iCw" role="2LFqv$">
             <node concept="3SKdUt" id="3V40ltr2iCx" role="3cqZAp">
               <node concept="1PaTwC" id="3V40ltr2iCy" role="1aUNEU">
-                <node concept="3oM_SD" id="3V40ltr2iCz" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="3V40ltr2iC$" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1EuIaI" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2iC_" role="1PaTwD">
@@ -12727,6 +13141,13 @@
                   <property role="3oM_SC" value="the" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2iCI" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1EuG6O" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1EuG6s" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1EuG6r" role="1PaTwD">
                   <property role="3oM_SC" value="highest" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2iCJ" role="1PaTwD">
@@ -12771,6 +13192,21 @@
                   </node>
                   <node concept="2qgKlT" id="3V40ltr2muT" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57Wjpeqo8L3" resolve="get_tissue_uppery_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1EuJoa" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1EuQpw" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1EuRf4" role="37vLTx">
+                  <ref role="3cqZAo" node="3V40ltr2iCU" resolve="tissue_highest_y" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1EuKfD" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1EuJo8" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3V40ltr2iCs" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1EuNem" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1yo" resolve="_DEBUG_HIGHEST_Y" />
                   </node>
                 </node>
               </node>
@@ -14155,10 +14591,7 @@
           <node concept="3clFbS" id="3V40ltr2qc8" role="2LFqv$">
             <node concept="3SKdUt" id="3V40ltr2qc9" role="3cqZAp">
               <node concept="1PaTwC" id="3V40ltr2qca" role="1aUNEU">
-                <node concept="3oM_SD" id="3V40ltr2qcb" role="1PaTwD">
-                  <property role="3oM_SC" value="" />
-                </node>
-                <node concept="3oM_SD" id="3V40ltr2qcc" role="1PaTwD">
+                <node concept="3oM_SD" id="5evXM1EuV16" role="1PaTwD">
                   <property role="3oM_SC" value="If" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2qcd" role="1PaTwD">
@@ -14186,6 +14619,13 @@
                   <property role="3oM_SC" value="is" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2qcl" role="1PaTwD">
+                  <property role="3oM_SC" value="" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="5evXM1EuT$j" role="3cqZAp">
+              <node concept="1PaTwC" id="5evXM1EuTzV" role="1aUNEU">
+                <node concept="3oM_SD" id="5evXM1EuTzU" role="1PaTwD">
                   <property role="3oM_SC" value="the" />
                 </node>
                 <node concept="3oM_SD" id="3V40ltr2qcm" role="1PaTwD">
@@ -14233,6 +14673,21 @@
                   </node>
                   <node concept="2qgKlT" id="11q$FfsSVI4" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:57WjpeqopM_" resolve="get_tissue_upperz_gridpoint" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="5evXM1EuWEd" role="3cqZAp">
+              <node concept="37vLTI" id="5evXM1Ev2qu" role="3clFbG">
+                <node concept="37vLTw" id="5evXM1Ev65X" role="37vLTx">
+                  <ref role="3cqZAo" node="3V40ltr2qcy" resolve="tissue_highest_z" />
+                </node>
+                <node concept="2OqwBi" id="5evXM1EuXwd" role="37vLTJ">
+                  <node concept="2GrUjf" id="5evXM1EuWEb" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="3V40ltr2qc4" resolve="tissue" />
+                  </node>
+                  <node concept="3TrcHB" id="5evXM1EuZwN" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:5evXM1Eq1z0" resolve="_DEBUG_HIGHEST_Z" />
                   </node>
                 </node>
               </node>

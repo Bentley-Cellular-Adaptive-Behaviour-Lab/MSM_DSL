@@ -28,6 +28,12 @@
         <child id="5907682107548062262" name="_buffer" index="3bEhY_" />
       </concept>
       <concept id="8343650468779203043" name="WorldLang.structure.WorldContainer" flags="ng" index="1yko06">
+        <property id="6025806545040432993" name="_DEBUG_LOWEST_X" index="TL2x1" />
+        <property id="6025806545040432995" name="_DEBUG_LOWEST_Y" index="TL2x3" />
+        <property id="6025806545040432998" name="_DEBUG_LOWEST_Z" index="TL2x6" />
+        <property id="6025806545040433002" name="_DEBUG_HIGHEST_X" index="TL2xa" />
+        <property id="6025806545040433007" name="_DEBUG_HIGHEST_Y" index="TL2xf" />
+        <property id="6025806545040433013" name="_DEBUG_HIGHEST_Z" index="TL2xl" />
         <reference id="4970340729092561267" name="_simulationContainerRef" index="1ANuJW" />
         <child id="8343650468779203044" name="_grid" index="1yko01" />
       </concept>
@@ -139,10 +145,12 @@
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
       </concept>
       <concept id="6249017959271690141" name="TissueLang.structure.CellShape_Rectangular" flags="ng" index="3ZP1s$">
+        <property id="6025806545043411237" name="_DEBUG_WIDTH_GRIDPOINTS" index="T5Eo5" />
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
       <concept id="6249017959271690129" name="TissueLang.structure.ArrangementCylindrical" flags="ng" index="3ZP1sC">
+        <property id="8062570699132836611" name="_totalLength" index="dFhDm" />
         <property id="8011215656706727893" name="_sweepSteps" index="2y8d7$" />
         <property id="8011215656705162106" name="_sweepMinLength" index="2zQflb" />
         <property id="8011215656705162093" name="_sweepMaxLength" index="2zQfls" />
@@ -166,6 +174,12 @@
         <child id="5171349398070263674" name="_zCoord" index="2IF2Qq" />
       </concept>
       <concept id="6249017959271690118" name="TissueLang.structure.Tissue" flags="ng" index="3ZP1sZ">
+        <property id="6025806545041233955" name="_DEBUG_LOWEST_X" index="TXYW3" />
+        <property id="6025806545041234023" name="_DEBUG_LOWEST_Z" index="TXYX7" />
+        <property id="6025806545041234035" name="_DEBUG_HIGHEST_X" index="TXYXj" />
+        <property id="6025806545041233992" name="_DEBUG_LOWEST_Y" index="TXYXC" />
+        <property id="6025806545041234072" name="_DEBUG_HIGHEST_Y" index="TXYYS" />
+        <property id="6025806545041234112" name="_DEBUG_HIGHEST_Z" index="TXYZw" />
         <reference id="4857589848835450453" name="_tissueTypeRef" index="1v2cpI" />
         <child id="6249017959271770686" name="_position" index="3ZPHa7" />
       </concept>
@@ -208,14 +222,20 @@
   </node>
   <node concept="1yko06" id="3VDWMYvkAbU">
     <property role="TrG5h" value="MyWorld" />
+    <property role="TL2x1" value="-10" />
+    <property role="TL2xa" value="10" />
+    <property role="TL2x3" value="-6" />
+    <property role="TL2xf" value="6" />
+    <property role="TL2x6" value="-6" />
+    <property role="TL2xl" value="6" />
     <ref role="1ANuJW" node="3VDWMYvj$7D" resolve="Simulation" />
     <node concept="1yko03" id="3VDWMYvkAbV" role="1yko01">
-      <property role="3cJDZq" value="-20" />
-      <property role="3cJDZs" value="-16" />
-      <property role="3cJDZ5" value="-16" />
-      <property role="3bD6N$" value="40" />
-      <property role="3bD6ND" value="32" />
-      <property role="3bD6NH" value="32" />
+      <property role="3cJDZq" value="-10" />
+      <property role="3cJDZs" value="-6" />
+      <property role="3cJDZ5" value="-6" />
+      <property role="3bD6N$" value="20" />
+      <property role="3bD6ND" value="12" />
+      <property role="3bD6NH" value="12" />
       <node concept="2_hQR_" id="3VDWMYvkAbW" role="3bEhY_">
         <node concept="2_n9WQ" id="3VDWMYvkAbX" role="2_hQRE">
           <node concept="30bXRB" id="oymmRdpDuO" role="2_n9WR">
@@ -236,6 +256,12 @@
     <ref role="1ANuJI" node="3VDWMYvj$7D" resolve="Simulation" />
     <node concept="3ZP1sZ" id="3VDWMYvkCQi" role="3ZP1sP">
       <property role="TrG5h" value="NewVessel" />
+      <property role="TXYW3" value="-10" />
+      <property role="TXYXj" value="10" />
+      <property role="TXYXC" value="-6" />
+      <property role="TXYYS" value="6" />
+      <property role="TXYX7" value="-6" />
+      <property role="TXYZw" value="6" />
       <ref role="1v2cpI" node="3VDWMYvkCOv" resolve="VesselType" />
       <node concept="3ZP1sY" id="3VDWMYvkCQj" role="3ZPHa7">
         <node concept="2_hQR_" id="3VDWMYvkCQk" role="2IF2Ql">
@@ -282,12 +308,32 @@
         </node>
       </node>
     </node>
+    <node concept="1apGoc" id="5evXM1EDk6i" role="1v2izi">
+      <property role="TrG5h" value="Test" />
+      <ref role="1apGrN" node="3VDWMYvkCM8" resolve="Endothelial" />
+      <node concept="3ZP1sC" id="5evXM1EDk6_" role="1v2cpK">
+        <property role="2zQflb" value="1" />
+        <property role="2zQfls" value="1" />
+        <property role="2y8d7$" value="1" />
+        <property role="dFhDm" value="-1" />
+        <property role="3ZP1sG" value="10" />
+        <node concept="2_hQR_" id="5evXM1EDk6B" role="3ob6kl">
+          <node concept="2_n9WQ" id="5evXM1EDk6D" role="2_hQRE">
+            <node concept="30bXRB" id="5evXM1EDk78" role="2_n9WR">
+              <property role="30bXRw" value="3" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="5evXM1EDk7$" role="2_hQ4V" />
+        </node>
+      </node>
+    </node>
     <node concept="3ZP1sM" id="3VDWMYvkCM8" role="1v2izm">
       <property role="TrG5h" value="Endothelial" />
       <node concept="3ZP1s$" id="3VDWMYvkCMg" role="3ZP1s2">
+        <property role="T5Eo5" value="20" />
         <node concept="2_hQR_" id="3VDWMYvkCMi" role="2IF2Qc">
           <node concept="2_n9WQ" id="3VDWMYvkCMk" role="2_hQRE">
-            <node concept="30bXRB" id="3VDWMYvkCNM" role="2_n9WR">
+            <node concept="30bXRB" id="5evXM1EyeKw" role="2_n9WR">
               <property role="30bXRw" value="10" />
             </node>
           </node>
@@ -295,7 +341,7 @@
         </node>
         <node concept="2_hQR_" id="3VDWMYvkCMq" role="2IF2Qe">
           <node concept="2_n9WQ" id="3VDWMYvkCMs" role="2_hQRE">
-            <node concept="30bXRB" id="3VDWMYvkCMV" role="2_n9WR">
+            <node concept="30bXRB" id="5evXM1EyeJY" role="2_n9WR">
               <property role="30bXRw" value="10" />
             </node>
           </node>
