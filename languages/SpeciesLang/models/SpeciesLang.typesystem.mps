@@ -7222,5 +7222,97 @@
       </node>
     </node>
   </node>
+  <node concept="18kY7G" id="54teBVtUsoR">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_getSumApplicability" />
+    <node concept="3clFbS" id="54teBVtUsoS" role="18ibNy">
+      <node concept="3clFbJ" id="54teBVtUsp3" role="3cqZAp">
+        <node concept="1Wc70l" id="54teBVtUtM$" role="3clFbw">
+          <node concept="2OqwBi" id="54teBVtUu8K" role="3uHU7w">
+            <node concept="1YBJjd" id="54teBVtUtTk" role="2Oq$k0">
+              <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+            </node>
+            <node concept="3TrcHB" id="54teBVtUuqc" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:54teBVtOs6H" resolve="getsSumFromMemAgents" />
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="54teBVtUt9M" role="3uHU7B">
+            <node concept="2OqwBi" id="54teBVtUt9O" role="3fr31v">
+              <node concept="1YBJjd" id="54teBVtUt9P" role="2Oq$k0">
+                <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+              </node>
+              <node concept="3TrcHB" id="54teBVtUt9Q" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="54teBVtUsp5" role="3clFbx">
+          <node concept="2MkqsV" id="54teBVtUuqP" role="3cqZAp">
+            <node concept="Xl_RD" id="54teBVtUur1" role="2MkJ7o">
+              <property role="Xl_RC" value="Species expressions must use neighbour values when attempting to calculate a sum." />
+            </node>
+            <node concept="1YBJjd" id="54teBVtUut1" role="1urrMF">
+              <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="54teBVtUsoU" role="1YuTPh">
+      <property role="TrG5h" value="speciesExpression" />
+      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="54teBVtUuu4">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_normaliseSpeciesExprApplicability" />
+    <node concept="3clFbS" id="54teBVtUuu5" role="18ibNy">
+      <node concept="3clFbJ" id="54teBVtUuu6" role="3cqZAp">
+        <node concept="1Wc70l" id="54teBVtUBv7" role="3clFbw">
+          <node concept="2OqwBi" id="54teBVtUDjd" role="3uHU7w">
+            <node concept="2OqwBi" id="54teBVtUC$C" role="2Oq$k0">
+              <node concept="2OqwBi" id="54teBVtUBOE" role="2Oq$k0">
+                <node concept="1YBJjd" id="54teBVtUBAG" role="2Oq$k0">
+                  <ref role="1YBMHb" node="54teBVtUuuj" resolve="speciesExpression" />
+                </node>
+                <node concept="3TrEf2" id="54teBVtUC65" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                </node>
+              </node>
+              <node concept="3TrEf2" id="54teBVtUCMv" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="54teBVtUDBk" role="2OqNvi">
+              <ref role="37wK5l" to="ki9o:54teBVtUzsL" resolve="is_zero" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="54teBVtUuuc" role="3uHU7B">
+            <node concept="1YBJjd" id="54teBVtUuud" role="2Oq$k0">
+              <ref role="1YBMHb" node="54teBVtUuuj" resolve="speciesExpression" />
+            </node>
+            <node concept="3TrcHB" id="54teBVtUuTs" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:54teBVtOs6E" resolve="normalisedToStartValue" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="54teBVtUuuf" role="3clFbx">
+          <node concept="2MkqsV" id="54teBVtUuug" role="3cqZAp">
+            <node concept="Xl_RD" id="54teBVtUuuh" role="2MkJ7o">
+              <property role="Xl_RC" value="Cannot normalise to a component start value when that value is 0." />
+            </node>
+            <node concept="1YBJjd" id="54teBVtUuui" role="1urrMF">
+              <ref role="1YBMHb" node="54teBVtUuuj" resolve="speciesExpression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="54teBVtUuuj" role="1YuTPh">
+      <property role="TrG5h" value="speciesExpression" />
+      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
 </model>
 

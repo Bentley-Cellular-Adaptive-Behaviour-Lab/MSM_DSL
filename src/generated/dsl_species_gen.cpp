@@ -152,8 +152,8 @@ void ODEs::EndothelialType_run_memAgent_ODEs(MemAgent* memAgent) {
 	EndothelialType_memAgent_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
 
-	states[4] = memAgent->get_environment_level("VEGF");
-	states[5] = memAgent->get_environment_level("SEMA3A");
+	states[4] = memAgent->get_average_environment_level("VEGF");
+	states[5] = memAgent->get_average_environment_level("SEMA3A");
 	states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[1] = memAgent->get_memAgent_current_level("VEGFR2");
 	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR2");

@@ -622,7 +622,7 @@
   <node concept="1TIwiD" id="32SFKJHOC6H">
     <property role="EcuMT" value="3510748375304798637" />
     <property role="TrG5h" value="Solidness" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="32SFKJHOC7Q" role="1TKVEi">
       <property role="IQ2ns" value="3510748375304798710" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

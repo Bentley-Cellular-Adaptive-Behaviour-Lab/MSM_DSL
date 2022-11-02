@@ -322,8 +322,13 @@ void Tissue_Container::create_2d_square_cell(const int& cell_number,
     int i, j;
     MemAgent *memp;
 
-    for (i = (int) (centreX - (double) cell_width / 2.0f); i < (double) (centreX + (double) cell_width / 2.0f); i++) {
-        for (j = (int) (centreY - (double) cell_height / 2.0f); j < (int) (centreY + (double) cell_height / 2.0f); j++) {
+	int i_start = centreX - (int) floor((float) cell_width / 2.0f);
+	int i_end = centreX + (int) floor((float) cell_width / 2.0f);
+	int j_start = centreY - (int) floor((float) cell_height / 2.0f);
+	int j_end = centreY + (int) floor((float) cell_height / 2.0f);
+
+	for (i = i_start; i <= i_end; i++) {
+        for (j = j_start; j <= j_end; j++) {
             memp = new MemAgent(m_single_cell_agents[cell_number-1], this->m_world);
             memp->Mx = (float) i;
             memp->My = (float) j;
@@ -358,12 +363,9 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
         N=0;
 
         if (m_world->insideWorld(mp->Mx-1, mp->My, mp->Mz)) {
-
             if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getType() == const_M) {
-
                 for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids().size(); kelp++) {
                     nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids()[kelp];
-
                     if(mp->Cell == nmp->Cell) {
                         mp->neigh[N] = nmp;
                         m_single_cell_agents[cell_number-1]->createSpringTokenObject(mp, nmp, N);

@@ -45,32 +45,60 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
-		// Normalise to the normal amount of receptors.
-		// Needs to be relative to normal value.
-		// Set up test scenario of one filopodia that's
-		// extending. Predict the correct value for extension
-		// Then check values between the MSM and DSL are correct.
-		// Set filconst.
-		float filConst = 7500.0f;
+		auto upto = cell->VonNeighs;
+		auto scalar = 1.0 / (float) upto; // Normalise by start amount of VEGFR.
+		float sink_VEGFR = cell->Vsink;
+
+		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+		float activeProportion = (float) VEGFR / scalar;
+		auto VEGF = memAgent->get_sum_environment_level("VEGF");
+
 		// Get active VEGFR.
-		auto VEGF = memAgent->get_mean_env_protein("VEGF");
-		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
-		auto ACTIVE_VEGFR2 = VEGF * VEGFR2 * 0.1;
+		float filConst = 2.0f;
+		float activeVEGFR = (float) (VEGF / cell->Vsink) * activeProportion;
 
-		// Get active plexin.
-		auto SEMA3A = memAgent->get_mean_env_protein("SEMA3A");
-		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIND1");
-		auto ACTIVE_PLEXIN = SEMA3A * PLEXIN * 0.1;
+		if (activeVEGFR > VEGFR) {
+			activeVEGFR = VEGFR;
+		}
 
-		auto sema = memAgent->get_mean_env_protein("SEMA3A");
-		auto probability_modifier = sema * 0.3;
-
-		auto prob = ACTIVE_VEGFR2*filConst - probability_modifier;
+		float prob = (float) activeVEGFR / scalar * filConst;
 
 		if (this->timeStep % 9 == 0) {
 			cell->get_extension_probs().push_back(prob);
 		}
-
 		return chance < prob;
 	}
 }
+
+//bool World::can_extend(EC* cell, MemAgent* memAgent) {
+//	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
+//	if (cell->m_cell_type->m_name == "EndothelialType") {
+//		// Normalise to the normal amount of receptors.
+//		// Needs to be relative to normal value.
+//		// Set up test scenario of one filopodia that's
+//		// extending. Predict the correct value for extension
+//		// Then check values between the MSM and DSL are correct.
+//		// Set filconst.
+//		float filConst = 7500.0f;
+//		// Get active VEGFR.
+//		auto VEGF = memAgent->get_mean_env_protein("VEGF");
+//		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
+//		auto ACTIVE_VEGFR2 = VEGF * VEGFR2 * 0.1;
+//
+//		// Get active plexin.
+//		auto SEMA3A = memAgent->get_mean_env_protein("SEMA3A");
+//		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIND1");
+//		auto ACTIVE_PLEXIN = SEMA3A * PLEXIN * 0.1;
+//
+//		auto sema = memAgent->get_mean_env_protein("SEMA3A");
+//		auto probability_modifier = sema * 0.3;
+//
+//		auto prob = ACTIVE_VEGFR2*filConst - probability_modifier;
+//
+//		if (this->timeStep % 9 == 0) {
+//			cell->get_extension_probs().push_back(prob);
+//		}
+//
+//		return chance < prob;
+//	}
+//}

@@ -147,8 +147,9 @@ public:
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
     double get_memAgent_current_level(const std::string& protein_name) const;
-    double get_environment_level(const std::string& protein_name);
-    double get_local_protein_level(const std::string& protein_name);
+    double get_average_environment_level(const std::string& protein_name);
+	double get_sum_environment_level(const std::string& protein_name);
+	double get_local_protein_level(const std::string& protein_name);
     double get_junction_protein_level(const std::string& protein_name);
 
     void set_protein_current_level(const std::string& protein_name, const double& new_level);

@@ -21,7 +21,7 @@
 
 void FindHighestConcTest::SetUp() {
     std::vector<double> params{};
-    this->m_world = new World(50,50,50,1.0, params);
+    this->m_world = new World(50,50,50,1.0, 0.0, params);
     createEnvironment();
     createCell();
     addMemAgent();
@@ -76,7 +76,7 @@ MemAgent *FindHighestConcTest::getMemAgent() {
 
 void ExtendProtrusionTest::SetUp() {
     std::vector<double> params{};
-    this->m_world = new World( 50, 50, 50, 1.0, params);
+    this->m_world = new World( 50, 50, 50, 1.0, 0.0, params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();
@@ -167,7 +167,7 @@ void ExtendProtrusionTest::extend() {
 
 void CalcTotalLengthTest::SetUp() {
     std::vector<double> params{};
-    this->m_world = new World(50, 50, 50, 1.0, params);
+    this->m_world = new World(50, 50, 50, 1.0, 0.0, params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();
@@ -258,7 +258,7 @@ void CalcTotalLengthTest::doExtensions() {
 
 void RetractProtrusionTest::SetUp() {
     std::vector<double> params{};
-    this->m_world = new World(50,50,50,1.0,params);
+    this->m_world = new World(50,50,50,1.0,0.0,params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
     createEnvironment();
     createCell();

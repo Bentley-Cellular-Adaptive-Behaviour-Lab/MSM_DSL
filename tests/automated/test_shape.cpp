@@ -51,13 +51,13 @@ TEST(test_ProtrusionType, ProtrusionTypeConstructor) {
 TEST(test_Protrusion, ProtrusionConstructor) {
     // Initialise all objects needed for a new protrusion.
     std::vector<double> params{};
-    auto *world = new World(5, 5, 5, 1.0, params);
+    auto *world = new World(5, 5, 5, 1.0, 0.0, params);
     auto *cell = new EC(world);
     auto *memAgent = new MemAgent(cell, world);
     auto *protrusionType = new ProtrusionType("ProtrusionType", "TargetSpecies", "RequiredCytoprotein", -1, 1, 1.0);
 
     // Initialise a new protrusion.
-    Protrusion *protrusion = new Protrusion(cell, memAgent, protrusionType);
+    auto protrusion = new Protrusion(cell, memAgent, protrusionType);
 
     // Check getters work properly.
     EXPECT_EQ(protrusion->getCell(), cell);

@@ -1545,7 +1545,7 @@
               <property role="Xl_RC" value="Solidness must be a value between 0 and 1. Currently less than 0." />
             </node>
             <node concept="1YBJjd" id="32SFKJHOCcO" role="1urrMF">
-              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="solidness" />
             </node>
           </node>
         </node>
@@ -1556,10 +1556,10 @@
           <node concept="2OqwBi" id="32SFKJHOCcR" role="3uHU7B">
             <node concept="2OqwBi" id="32SFKJHOCcS" role="2Oq$k0">
               <node concept="1YBJjd" id="32SFKJHOCcT" role="2Oq$k0">
-                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="solidness" />
               </node>
               <node concept="2qgKlT" id="32SFKJHOCcU" role="2OqNvi">
-                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_permissivity_value_decimal" />
+                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_solidness_value_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="32SFKJHOCcV" role="2OqNvi">
@@ -1580,7 +1580,7 @@
               <property role="Xl_RC" value="Solidness must be a value between 0 and 1. Currently greater than 1." />
             </node>
             <node concept="1YBJjd" id="32SFKJHOCd2" role="1urrMF">
-              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+              <ref role="1YBMHb" node="32SFKJHOCdb" resolve="solidness" />
             </node>
           </node>
         </node>
@@ -1591,10 +1591,10 @@
           <node concept="2OqwBi" id="32SFKJHOCd5" role="3uHU7B">
             <node concept="2OqwBi" id="32SFKJHOCd6" role="2Oq$k0">
               <node concept="1YBJjd" id="32SFKJHOCd7" role="2Oq$k0">
-                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="adhesiveness" />
+                <ref role="1YBMHb" node="32SFKJHOCdb" resolve="solidness" />
               </node>
               <node concept="2qgKlT" id="32SFKJHOCd8" role="2OqNvi">
-                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_permissivity_value_decimal" />
+                <ref role="37wK5l" to="pxw4:32SFKJHODDy" resolve="get_solidness_value_decimal" />
               </node>
             </node>
             <node concept="liA8E" id="32SFKJHOCd9" role="2OqNvi">

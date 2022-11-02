@@ -82,9 +82,9 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B"), 1);
+    EXPECT_FLOAT_EQ(memAgent1->get_average_environment_level("B"), 1);
+	EXPECT_FLOAT_EQ(memAgent2->get_average_environment_level("B"), 1);
+	EXPECT_FLOAT_EQ(memAgent3->get_average_environment_level("B"), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
@@ -822,4 +822,11 @@ TEST_F(VenkatramanMemAgentTest, VenkatramanPatteringTest) {
     }
     // Check that the tissue has patterned at a particular point in time.
 //    EXPECT_EQ(timestep, 679);
+}
+
+TEST_F(FilopodiaExtensionTest, checkProbsTest) {
+	auto centreMemAgent = this->getCentreMemAgent();
+	auto MSMProb = this->calcMSMProb(centreMemAgent);
+	auto DSLProb = this->calcDSLProb(centreMemAgent);
+	int test = 0;
 }
