@@ -970,8 +970,63 @@
       <node concept="3EZMnI" id="CB_Y3M8bAE" role="3EZMnx">
         <node concept="VPM3Z" id="CB_Y3M8bAG" role="3F10Kt" />
         <node concept="3XFhqQ" id="CB_Y3M8bB8" role="3EZMnx" />
+        <node concept="1v6uyg" id="2BV4bJDJHdc" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="2BV4bJDJHfh" role="wsdo6">
+            <node concept="2iRkQZ" id="2BV4bJDJHfi" role="2iSdaV" />
+            <node concept="3F0ifn" id="2BV4bJDJHeM" role="3EZMnx">
+              <property role="3F0ifm" value="Choose the shape of the gradient." />
+            </node>
+            <node concept="3F0ifn" id="2BV4bJDJHfn" role="3EZMnx" />
+            <node concept="3F0ifn" id="2BV4bJDJHfq" role="3EZMnx">
+              <property role="3F0ifm" value="Options:" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJHhF" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJHhG" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJHhH" role="3EZMnx">
+                <property role="3F0ifm" value="- Cuboidal" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJHhI" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a three-dimensional, cuboidal substrate.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJHhJ" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJHgz" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJHg$" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJHg_" role="3EZMnx">
+                <property role="3F0ifm" value="- Point" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJHgA" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a three-dimensional, spherical gradient originating from a single point.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJHgB" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJHgC" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJHgD" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJHgE" role="3EZMnx">
+                <property role="3F0ifm" value="- Sink and Source" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJHgF" role="3EZMnx">
+                <property role="3F0ifm" value="(Sets two points - a source where the gradient originates from and a sink where the gradient disappears.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJHgG" role="2iSdaV" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="2BV4bJDJHdv" role="1j7Clw">
+            <property role="3F0ifm" value="Shape" />
+            <node concept="2biZxu" id="2BV4bJDJHdy" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2BV4bJDJHdz" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="2BV4bJDJHeE" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
         <node concept="3F0ifn" id="CB_Y3M8bBe" role="3EZMnx">
-          <property role="3F0ifm" value="Shape :" />
+          <property role="3F0ifm" value=":" />
           <node concept="2biZxu" id="2FvyIAlFjus" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1138,12 +1193,78 @@
       <node concept="3EZMnI" id="4Cy4apMYiMD" role="3EZMnx">
         <node concept="VPM3Z" id="4Cy4apMYiMF" role="3F10Kt" />
         <node concept="3XFhqQ" id="4Cy4apMYiNd" role="3EZMnx" />
-        <node concept="3F0ifn" id="4Cy4apMYiNj" role="3EZMnx">
-          <property role="3F0ifm" value="Shape :" />
-          <node concept="2biZxu" id="2FvyIAlFjC6" role="3F10Kt">
+        <node concept="1v6uyg" id="2BV4bJDJH1W" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="2BV4bJDJH3J" role="wsdo6">
+            <node concept="2iRkQZ" id="2BV4bJDJH3K" role="2iSdaV" />
+            <node concept="3F0ifn" id="2BV4bJDJH2y" role="3EZMnx">
+              <property role="3F0ifm" value="Choose the shape of the substrate." />
+            </node>
+            <node concept="3F0ifn" id="2BV4bJDJH3P" role="3EZMnx" />
+            <node concept="3F0ifn" id="2BV4bJDJH3S" role="3EZMnx">
+              <property role="3F0ifm" value="Options:" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJH41" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJH43" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJH4e" role="3EZMnx">
+                <property role="3F0ifm" value="- Cuboidal" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJH4k" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a three-dimensional, cuboidal substrate.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJH46" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJH5N" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJH5O" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJH5P" role="3EZMnx">
+                <property role="3F0ifm" value="- Triangular" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJH5Q" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a three-dimensional, triangular substrate.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJH5R" role="2iSdaV" />
+            </node>
+            <node concept="3F0ifn" id="2BV4bJDJH5v" role="3EZMnx" />
+            <node concept="3EZMnI" id="2BV4bJDJH4y" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJH4z" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJH4$" role="3EZMnx">
+                <property role="3F0ifm" value="- Point" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJH4_" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a three-dimensional, spherical gradient originating from a single point.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJH4A" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="2BV4bJDJH4P" role="3EZMnx">
+              <node concept="VPM3Z" id="2BV4bJDJH4Q" role="3F10Kt" />
+              <node concept="3F0ifn" id="2BV4bJDJH4R" role="3EZMnx">
+                <property role="3F0ifm" value="- Sink and Source" />
+              </node>
+              <node concept="3F0ifn" id="2BV4bJDJH4S" role="3EZMnx">
+                <property role="3F0ifm" value="(Sets two points - a source where the gradient originates from and a sink where the gradient disappears.)" />
+              </node>
+              <node concept="2iRfu4" id="2BV4bJDJH4T" role="2iSdaV" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="2BV4bJDJH2e" role="1j7Clw">
+            <property role="3F0ifm" value="Shape" />
+            <node concept="2biZxu" id="2BV4bJDJH2h" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="2BV4bJDJH2i" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="2BV4bJDJH2j" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="2BV4bJDJH1g" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="2BV4bJDJH1o" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlFjC7" role="3F10Kt">
+          <node concept="VSNWy" id="2BV4bJDJH1p" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>
