@@ -385,12 +385,46 @@
       <node concept="3EZMnI" id="6mloH5uSw5o" role="3EZMnx">
         <node concept="VPM3Z" id="6mloH5uSw5q" role="3F10Kt" />
         <node concept="3XFhqQ" id="6mloH5uSw6a" role="3EZMnx" />
-        <node concept="3F0ifn" id="6mloH5uSw6g" role="3EZMnx">
-          <property role="3F0ifm" value="Shape :" />
-          <node concept="2biZxu" id="2FvyIAlEDUN" role="3F10Kt">
+        <node concept="1v6uyg" id="10b4B7ykS2_" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="10b4B7ykS36" role="wsdo6">
+            <node concept="3F0ifn" id="10b4B7ykS3d" role="3EZMnx">
+              <property role="3F0ifm" value="Choose the shape of the cell." />
+            </node>
+            <node concept="3F0ifn" id="10b4B7ykS3g" role="3EZMnx" />
+            <node concept="3F0ifn" id="10b4B7ykS3j" role="3EZMnx">
+              <property role="3F0ifm" value="Options:" />
+            </node>
+            <node concept="3EZMnI" id="10b4B7ykS3y" role="3EZMnx">
+              <node concept="2iRfu4" id="10b4B7ykS3z" role="2iSdaV" />
+              <node concept="3F0ifn" id="10b4B7ykS3s" role="3EZMnx">
+                <property role="3F0ifm" value="- Rectangular" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7ykS3I" role="3EZMnx">
+                <property role="3F0ifm" value="(Two-dimensional cell with height and width.)" />
+              </node>
+            </node>
+            <node concept="2iRkQZ" id="10b4B7ykS39" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7ykS2P" role="1j7Clw">
+            <property role="3F0ifm" value="Shape" />
+            <node concept="2biZxu" id="10b4B7ykS2Z" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="10b4B7ykS30" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="10b4B7ynfm0" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="10b4B7ynfjO" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="10b4B7ynfk8" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlEDUO" role="3F10Kt">
+          <node concept="VSNWy" id="10b4B7ynfk9" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>
@@ -574,11 +608,20 @@
         <node concept="VPM3Z" id="6mloH5uS3Ri" role="3F10Kt" />
         <node concept="3XFhqQ" id="6mloH5uS3Rj" role="3EZMnx" />
         <node concept="3F0ifn" id="6mloH5uS3Rk" role="3EZMnx">
-          <property role="3F0ifm" value="Cell Type :" />
+          <property role="3F0ifm" value="Cell Type " />
           <node concept="2biZxu" id="2FvyIAlEE2n" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
           <node concept="VSNWy" id="2FvyIAlEE2o" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="10b4B7ywqL0" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="10b4B7ywqLe" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="10b4B7ywqLf" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>
@@ -608,12 +651,57 @@
       <node concept="3EZMnI" id="6mloH5uS3S$" role="3EZMnx">
         <node concept="VPM3Z" id="6mloH5uS3S_" role="3F10Kt" />
         <node concept="3XFhqQ" id="6mloH5uS3SA" role="3EZMnx" />
-        <node concept="3F0ifn" id="6mloH5uS3SB" role="3EZMnx">
-          <property role="3F0ifm" value="Arrangement :" />
-          <node concept="2biZxu" id="2FvyIAlEE2_" role="3F10Kt">
+        <node concept="1v6uyg" id="10b4B7yurRn" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="10b4B7yurSQ" role="wsdo6">
+            <node concept="2iRkQZ" id="10b4B7yurSR" role="2iSdaV" />
+            <node concept="3F0ifn" id="10b4B7yurSn" role="3EZMnx">
+              <property role="3F0ifm" value="Choose how cells are spatially organised within the tissue." />
+            </node>
+            <node concept="3F0ifn" id="10b4B7yurSW" role="3EZMnx" />
+            <node concept="3F0ifn" id="10b4B7yurSZ" role="3EZMnx">
+              <property role="3F0ifm" value="Options:" />
+            </node>
+            <node concept="3EZMnI" id="10b4B7yurT8" role="3EZMnx">
+              <node concept="VPM3Z" id="10b4B7yurTa" role="3F10Kt" />
+              <node concept="3F0ifn" id="10b4B7yurTc" role="3EZMnx">
+                <property role="3F0ifm" value="Cylindrical" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7yurTo" role="3EZMnx">
+                <property role="3F0ifm" value="(Create a hollow, cylindrical tissue with cells wrapped around the circumference." />
+              </node>
+              <node concept="2iRfu4" id="10b4B7yurTd" role="2iSdaV" />
+            </node>
+            <node concept="3EZMnI" id="10b4B7yurTA" role="3EZMnx">
+              <node concept="VPM3Z" id="10b4B7yurTB" role="3F10Kt" />
+              <node concept="3F0ifn" id="10b4B7yurTC" role="3EZMnx">
+                <property role="3F0ifm" value="Flat" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7yurTD" role="3EZMnx">
+                <property role="3F0ifm" value="(Create a two-dimensional, flat tissue in a square shape." />
+              </node>
+              <node concept="2iRfu4" id="10b4B7yurTE" role="2iSdaV" />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="10b4B7yurRK" role="1j7Clw">
+            <property role="3F0ifm" value="Arrangement" />
+            <node concept="2biZxu" id="10b4B7yurRT" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="10b4B7yurRU" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="10b4B7yurS1" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="10b4B7yurS6" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="10b4B7yurSj" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlEE2A" role="3F10Kt">
+          <node concept="VSNWy" id="10b4B7yurSk" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>

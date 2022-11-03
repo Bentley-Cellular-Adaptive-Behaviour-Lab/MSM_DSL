@@ -217,8 +217,27 @@
             <property role="1lJzqX" value="12" />
           </node>
         </node>
+        <node concept="3F0ifn" id="10b4B7y89QW" role="3EZMnx" />
         <node concept="3F0ifn" id="3VDWMYvj$8P" role="3EZMnx">
-          <property role="3F0ifm" value="Options: - Yes (Runs with graphics)." />
+          <property role="3F0ifm" value="Options: " />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y89S0" role="3EZMnx">
+          <node concept="2iRfu4" id="10b4B7y89S1" role="2iSdaV" />
+          <node concept="3F0ifn" id="10b4B7y89S2" role="3EZMnx">
+            <property role="3F0ifm" value="- No " />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y89S3" role="3EZMnx">
+            <property role="3F0ifm" value="(Runs without graphics.)" />
+          </node>
+        </node>
+        <node concept="3EZMnI" id="10b4B7y89Rz" role="3EZMnx">
+          <node concept="2iRfu4" id="10b4B7y89R$" role="2iSdaV" />
+          <node concept="3F0ifn" id="10b4B7y89Qm" role="3EZMnx">
+            <property role="3F0ifm" value="- Yes " />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y89RL" role="3EZMnx">
+            <property role="3F0ifm" value="(Runs with graphics.)" />
+          </node>
         </node>
       </node>
       <node concept="3EZMnI" id="2B5sNxPnvFU" role="1j7Clw">
@@ -258,13 +277,50 @@
     <ref role="1XX52x" to="yy1h:7wJJsVzvWyd" resolve="AnalysisFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvN9" role="2wV5jI">
       <property role="2oejA6" value="true" />
-      <node concept="3F0ifn" id="2B5sNxPnvRB" role="wsdo6">
-        <property role="3F0ifm" value="Run the MSM with additional analysis (bistability, patterning) or no analysis." />
-        <node concept="2biZxu" id="2FvyIAlAiMM" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
+      <node concept="3EZMnI" id="10b4B7y87ud" role="wsdo6">
+        <node concept="2iRkQZ" id="10b4B7y87ue" role="2iSdaV" />
+        <node concept="3F0ifn" id="2B5sNxPnvRB" role="3EZMnx">
+          <property role="3F0ifm" value="Run the MSM with additional analysis. (bistability, patterning) or no analysis." />
+          <node concept="2biZxu" id="2FvyIAlAiMM" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2FvyIAlAiMN" role="3F10Kt">
+            <property role="1lJzqX" value="12" />
+          </node>
         </node>
-        <node concept="VSNWy" id="2FvyIAlAiMN" role="3F10Kt">
-          <property role="1lJzqX" value="12" />
+        <node concept="3F0ifn" id="10b4B7y87uQ" role="3EZMnx" />
+        <node concept="3F0ifn" id="10b4B7y87us" role="3EZMnx">
+          <property role="3F0ifm" value="Options:" />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y87uC" role="3EZMnx">
+          <node concept="VPM3Z" id="10b4B7y87uE" role="3F10Kt" />
+          <node concept="3F0ifn" id="10b4B7y89OH" role="3EZMnx">
+            <property role="3F0ifm" value="None" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y89ON" role="3EZMnx">
+            <property role="3F0ifm" value="(Do not run any analysis.)" />
+          </node>
+          <node concept="2iRfu4" id="10b4B7y87uH" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y89P3" role="3EZMnx">
+          <node concept="VPM3Z" id="10b4B7y89P4" role="3F10Kt" />
+          <node concept="3F0ifn" id="10b4B7y89P5" role="3EZMnx">
+            <property role="3F0ifm" value="Bistability" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y89P6" role="3EZMnx">
+            <property role="3F0ifm" value="(Run bistability analysis on cells.)" />
+          </node>
+          <node concept="2iRfu4" id="10b4B7y89P7" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y89Po" role="3EZMnx">
+          <node concept="VPM3Z" id="10b4B7y89Pp" role="3F10Kt" />
+          <node concept="3F0ifn" id="10b4B7y89Pq" role="3EZMnx">
+            <property role="3F0ifm" value="Patterning" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y89Pr" role="3EZMnx">
+            <property role="3F0ifm" value="(Run patterning analysis on tissues.)" />
+          </node>
+          <node concept="2iRfu4" id="10b4B7y89Ps" role="2iSdaV" />
         </node>
       </node>
       <node concept="3EZMnI" id="2B5sNxPnvPe" role="1j7Clw">
@@ -304,13 +360,58 @@
     <ref role="1XX52x" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
     <node concept="1v6uyg" id="72wB6_dUsyA" role="2wV5jI">
       <property role="2oejA6" value="true" />
-      <node concept="3F0ifn" id="72wB6_dUsyB" role="wsdo6">
-        <property role="3F0ifm" value="Run the MSM with graphics on or off." />
-        <node concept="2biZxu" id="72wB6_dUsyC" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
+      <node concept="3EZMnI" id="10b4B7y6Ytk" role="wsdo6">
+        <node concept="2iRkQZ" id="10b4B7y6Ytl" role="2iSdaV" />
+        <node concept="3F0ifn" id="72wB6_dUsyB" role="3EZMnx">
+          <property role="3F0ifm" value="Run the MSM on a computing cluster." />
+          <node concept="2biZxu" id="72wB6_dUsyC" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="72wB6_dUsyD" role="3F10Kt">
+            <property role="1lJzqX" value="12" />
+          </node>
         </node>
-        <node concept="VSNWy" id="72wB6_dUsyD" role="3F10Kt">
-          <property role="1lJzqX" value="12" />
+        <node concept="3F0ifn" id="10b4B7y6Y$z" role="3EZMnx">
+          <property role="3F0ifm" value="NOTE: Currently only the Crick computing" />
+          <node concept="2biZxu" id="10b4B7y6Y$J" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="10b4B7y6Y$K" role="3F10Kt">
+            <property role="1lJzqX" value="12" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="10b4B7y6Y$D" role="3EZMnx">
+          <property role="3F0ifm" value="cluster (using SLURM) is supported." />
+          <node concept="2biZxu" id="10b4B7y6Y$N" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="10b4B7y6Y$O" role="3F10Kt">
+            <property role="1lJzqX" value="12" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="10b4B7y87pW" role="3EZMnx" />
+        <node concept="3F0ifn" id="10b4B7y87p$" role="3EZMnx">
+          <property role="3F0ifm" value="Options:" />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y87sL" role="3EZMnx">
+          <node concept="VPM3Z" id="10b4B7y87sN" role="3F10Kt" />
+          <node concept="3F0ifn" id="10b4B7y87t6" role="3EZMnx">
+            <property role="3F0ifm" value="None" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y87tc" role="3EZMnx">
+            <property role="3F0ifm" value="(Do not use a computing cluster.)" />
+          </node>
+          <node concept="2iRfu4" id="10b4B7y87sQ" role="2iSdaV" />
+        </node>
+        <node concept="3EZMnI" id="10b4B7y87ty" role="3EZMnx">
+          <node concept="VPM3Z" id="10b4B7y87tz" role="3F10Kt" />
+          <node concept="3F0ifn" id="10b4B7y87t$" role="3EZMnx">
+            <property role="3F0ifm" value="SLURM" />
+          </node>
+          <node concept="3F0ifn" id="10b4B7y87t_" role="3EZMnx">
+            <property role="3F0ifm" value="(Use the Crick's HPC system.)" />
+          </node>
+          <node concept="2iRfu4" id="10b4B7y87tA" role="2iSdaV" />
         </node>
       </node>
       <node concept="3EZMnI" id="72wB6_dUsyE" role="1j7Clw">

@@ -11,9 +11,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 7> Endothelial_cell_ode_states;
-typedef boost::array<double, 7> Endothelial_memAgent_ode_states;
-typedef boost::array<double, 7> Endothelial_cell_only_ode_states;
+typedef boost::array<double, 7> EndothelialCell_cell_ode_states;
+typedef boost::array<double, 7> EndothelialCell_memAgent_ode_states;
+typedef boost::array<double, 7> EndothelialCell_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -25,12 +25,12 @@ public:
 	void check_cell_ODEs(EC *ec);
 	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
 	void check_cell_only_ODEs(EC *ec);
- 	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
- 	void Endothelial_run_cell_ODEs(EC *ec);
- 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
- 	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
- 	static void Endothelial_cell_only_system(const Endothelial_cell_only_ode_states &x, Endothelial_cell_only_ode_states &dxdt, double t);
- 	void Endothelial_run_cell_only_ODEs(EC *ec);
+ 	static void EndothelialCell_cell_system(const EndothelialCell_cell_ode_states &x, EndothelialCell_cell_ode_states &dxdt, double t);
+ 	void EndothelialCell_run_cell_ODEs(EC *ec);
+ 	static void EndothelialCell_memAgent_system(const EndothelialCell_memAgent_ode_states &x, EndothelialCell_memAgent_ode_states &dxdt, double t);
+ 	void EndothelialCell_run_memAgent_ODEs(MemAgent *memAgent);
+ 	static void EndothelialCell_cell_only_system(const EndothelialCell_cell_only_ode_states &x, EndothelialCell_cell_only_ode_states &dxdt, double t);
+ 	void EndothelialCell_run_cell_only_ODEs(EC *ec);
 };
 
 
@@ -40,6 +40,10 @@ static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR) {
 
 static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH) {
 	return adjacent_DLL4*NOTCH*0.1;
+}
+
+static double calc_VEGFR_PRODUCTION_rate() {
+	return 0.05;
 }
 
 static double calc_DLL4_UPREG_rate(double VEGF_VEGFR) {
@@ -60,10 +64,6 @@ static double calc_VEGF_VEGFR_DEGRADATION_rate(double VEGF_VEGFR) {
 
 static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR) {
 	return VEGF*VEGFR*0.1;
-}
-
-static double calc_LEOS_VEGFR_rate() {
-	return 0.05;
 }
 
 

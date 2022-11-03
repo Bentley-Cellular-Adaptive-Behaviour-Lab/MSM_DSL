@@ -17,9 +17,6 @@
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
-      <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
-        <child id="1154032183016" name="body" index="2LFqv$" />
-      </concept>
       <concept id="1197027756228" name="jetbrains.mps.baseLanguage.structure.DotExpression" flags="nn" index="2OqwBi">
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
@@ -71,14 +68,10 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
-        <reference id="1107535924139" name="classifier" index="3uigEE" />
-      </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
         <child id="8356039341262087992" name="line" index="1aUNEU" />
       </concept>
@@ -179,14 +172,6 @@
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
         <child id="1204796294226" name="closure" index="23t8la" />
-      </concept>
-      <concept id="1153943597977" name="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" flags="nn" index="2Gpval">
-        <child id="1153944400369" name="variable" index="2Gsz3X" />
-        <child id="1153944424730" name="inputSequence" index="2GsD0m" />
-      </concept>
-      <concept id="1153944193378" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" flags="nr" index="2GrKxI" />
-      <concept id="1153944233411" name="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" flags="nn" index="2GrUjf">
-        <reference id="1153944258490" name="variable" index="2Gs0qQ" />
       </concept>
       <concept id="1235566554328" name="jetbrains.mps.baseLanguage.collections.structure.AnyOperation" flags="nn" index="2HwmR7" />
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
@@ -1268,271 +1253,1762 @@
       <ref role="1YaFvo" to="s9ob:7faAukhALBA" resolve="Grid" />
     </node>
   </node>
-  <node concept="18kY7G" id="4O6RXqWPK5l">
-    <property role="TrG5h" value="checkNames" />
-    <node concept="3clFbS" id="4O6RXqWPK5m" role="18ibNy">
-      <node concept="3cpWs8" id="4O6RXqWO0Fn" role="3cqZAp">
-        <node concept="3cpWsn" id="4O6RXqWO0Fo" role="3cpWs9">
-          <property role="TrG5h" value="containerString" />
-          <node concept="3uibUv" id="4O6RXqWO0Fp" role="1tU5fm">
-            <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-          </node>
-          <node concept="2OqwBi" id="4O6RXqWO0P0" role="33vP2m">
-            <node concept="1YBJjd" id="4O6RXqWO0Gd" role="2Oq$k0">
-              <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
+  <node concept="18kY7G" id="10b4B7xTysh">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_GradientName" />
+    <node concept="3clFbS" id="10b4B7xTysi" role="18ibNy">
+      <node concept="3clFbJ" id="10b4B7xTysj" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTysk" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTysl" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTysm" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain spaces." />
             </node>
-            <node concept="2qgKlT" id="4O6RXqWO14S" role="2OqNvi">
-              <ref role="37wK5l" to="pxw4:4O6RXqWNXVe" resolve="checkName" />
-              <node concept="2OqwBi" id="4O6RXqWO18B" role="37wK5m">
-                <node concept="1YBJjd" id="4O6RXqWO17F" role="2Oq$k0">
-                  <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
-                </node>
-                <node concept="3TrcHB" id="4O6RXqWO1cL" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                </node>
-              </node>
+            <node concept="1YBJjd" id="10b4B7xTysn" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyso" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTysp" role="2Oq$k0">
+            <node concept="3TrcHB" id="10b4B7xTysq" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTysr" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyss" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyst" role="37wK5m">
+              <property role="Xl_RC" value=" " />
             </node>
           </node>
         </node>
       </node>
-      <node concept="3SKdUt" id="4O6RXqWO3yI" role="3cqZAp">
-        <node concept="1PaTwC" id="4O6RXqWO3yJ" role="1aUNEU">
-          <node concept="3oM_SD" id="4O6RXqWO3zb" role="1PaTwD">
-            <property role="3oM_SC" value="Check" />
-          </node>
-          <node concept="3oM_SD" id="4O6RXqWO3$W" role="1PaTwD">
-            <property role="3oM_SC" value="that" />
-          </node>
-          <node concept="3oM_SD" id="4O6RXqWO3$Z" role="1PaTwD">
-            <property role="3oM_SC" value="the" />
-          </node>
-          <node concept="3oM_SD" id="4O6RXqWO3_3" role="1PaTwD">
-            <property role="3oM_SC" value="function" />
-          </node>
-          <node concept="3oM_SD" id="4O6RXqWO3_l" role="1PaTwD">
-            <property role="3oM_SC" value="returned" />
-          </node>
-          <node concept="3oM_SD" id="4O6RXqWO3_r" role="1PaTwD">
-            <property role="3oM_SC" value="something." />
-          </node>
-        </node>
-      </node>
-      <node concept="3clFbJ" id="4O6RXqWO1f6" role="3cqZAp">
-        <node concept="3clFbS" id="4O6RXqWO1f8" role="3clFbx">
-          <node concept="2MkqsV" id="4O6RXqWOmcV" role="3cqZAp">
-            <node concept="3cpWs3" id="4O6RXqWOmwB" role="2MkJ7o">
-              <node concept="37vLTw" id="4O6RXqWOmwT" role="3uHU7w">
-                <ref role="3cqZAo" node="4O6RXqWO0Fo" resolve="containerString" />
-              </node>
-              <node concept="Xl_RD" id="4O6RXqWOmda" role="3uHU7B">
-                <property role="Xl_RC" value="Container name contains disallowed characters: " />
-              </node>
+      <node concept="3clFbJ" id="10b4B7xTysu" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTysv" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTysw" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTysx" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain  ,  ." />
             </node>
-            <node concept="1YBJjd" id="4O6RXqWOmxf" role="1urrMF">
-              <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
+            <node concept="1YBJjd" id="10b4B7xTysy" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
             </node>
           </node>
         </node>
-        <node concept="3y3z36" id="4O6RXqWO2Ri" role="3clFbw">
-          <node concept="3cmrfG" id="4O6RXqWO3rN" role="3uHU7w">
-            <property role="3cmrfH" value="0" />
-          </node>
-          <node concept="2OqwBi" id="4O6RXqWO1z4" role="3uHU7B">
-            <node concept="37vLTw" id="4O6RXqWO1gY" role="2Oq$k0">
-              <ref role="3cqZAo" node="4O6RXqWO0Fo" resolve="containerString" />
+        <node concept="2OqwBi" id="10b4B7xTysz" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTys$" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTys_" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
             </node>
-            <node concept="liA8E" id="4O6RXqWO29D" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
+            <node concept="3TrcHB" id="10b4B7xTysA" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTysB" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTysC" role="37wK5m">
+              <property role="Xl_RC" value="," />
             </node>
           </node>
         </node>
       </node>
-      <node concept="2Gpval" id="4O6RXqWNz3l" role="3cqZAp">
-        <node concept="2GrKxI" id="4O6RXqWNz3m" role="2Gsz3X">
-          <property role="TrG5h" value="gradient" />
+      <node concept="3clFbJ" id="10b4B7xTysD" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTysE" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTysF" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTysG" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain - ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTysH" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
         </node>
-        <node concept="2OqwBi" id="4O6RXqWNToh" role="2GsD0m">
-          <node concept="1YBJjd" id="4O6RXqWNTfk" role="2Oq$k0">
-            <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
-          </node>
-          <node concept="3Tsc0h" id="4O6RXqWNT_4" role="2OqNvi">
-            <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="4O6RXqWNz3o" role="2LFqv$">
-          <node concept="3cpWs8" id="4O6RXqWOnzt" role="3cqZAp">
-            <node concept="3cpWsn" id="4O6RXqWOnzu" role="3cpWs9">
-              <property role="TrG5h" value="gradientString" />
-              <node concept="3uibUv" id="4O6RXqWOnzv" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-              </node>
-              <node concept="2OqwBi" id="4O6RXqWOnzw" role="33vP2m">
-                <node concept="1YBJjd" id="4O6RXqWOnzx" role="2Oq$k0">
-                  <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
-                </node>
-                <node concept="2qgKlT" id="4O6RXqWOnzy" role="2OqNvi">
-                  <ref role="37wK5l" to="pxw4:4O6RXqWNXVe" resolve="checkName" />
-                  <node concept="2OqwBi" id="4O6RXqWOnzz" role="37wK5m">
-                    <node concept="2GrUjf" id="4O6RXqWOnU3" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="gradient" />
-                    </node>
-                    <node concept="3TrcHB" id="4O6RXqWOnz_" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+        <node concept="2OqwBi" id="10b4B7xTysI" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTysJ" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTysK" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTysL" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
             </node>
           </node>
-          <node concept="3SKdUt" id="4O6RXqWOnzA" role="3cqZAp">
-            <node concept="1PaTwC" id="4O6RXqWOnzB" role="1aUNEU">
-              <node concept="3oM_SD" id="4O6RXqWOnzC" role="1PaTwD">
-                <property role="3oM_SC" value="Check" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOnzD" role="1PaTwD">
-                <property role="3oM_SC" value="that" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOnzE" role="1PaTwD">
-                <property role="3oM_SC" value="the" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOnzF" role="1PaTwD">
-                <property role="3oM_SC" value="function" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOnzG" role="1PaTwD">
-                <property role="3oM_SC" value="returned" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOnzH" role="1PaTwD">
-                <property role="3oM_SC" value="something." />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbJ" id="4O6RXqWOnzI" role="3cqZAp">
-            <node concept="3clFbS" id="4O6RXqWOnzJ" role="3clFbx">
-              <node concept="2MkqsV" id="4O6RXqWOnzK" role="3cqZAp">
-                <node concept="3cpWs3" id="4O6RXqWOnzL" role="2MkJ7o">
-                  <node concept="37vLTw" id="4O6RXqWOnzM" role="3uHU7w">
-                    <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="gradientString" />
-                  </node>
-                  <node concept="Xl_RD" id="4O6RXqWOnzN" role="3uHU7B">
-                    <property role="Xl_RC" value="Gradient name contains disallowed characters: " />
-                  </node>
-                </node>
-                <node concept="2GrUjf" id="4O6RXqWSEHe" role="1urrMF">
-                  <ref role="2Gs0qQ" node="4O6RXqWNz3m" resolve="gradient" />
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="4O6RXqWOnzP" role="3clFbw">
-              <node concept="3cmrfG" id="4O6RXqWOnzQ" role="3uHU7w">
-                <property role="3cmrfH" value="0" />
-              </node>
-              <node concept="2OqwBi" id="4O6RXqWOnzR" role="3uHU7B">
-                <node concept="37vLTw" id="4O6RXqWOnzS" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4O6RXqWOnzu" resolve="gradientString" />
-                </node>
-                <node concept="liA8E" id="4O6RXqWOnzT" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
-                </node>
-              </node>
+          <node concept="liA8E" id="10b4B7xTysM" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTysN" role="37wK5m">
+              <property role="Xl_RC" value="-" />
             </node>
           </node>
         </node>
       </node>
-      <node concept="2Gpval" id="4O6RXqWOpE$" role="3cqZAp">
-        <node concept="2GrKxI" id="4O6RXqWOpE_" role="2Gsz3X">
-          <property role="TrG5h" value="substrate" />
+      <node concept="3clFbJ" id="10b4B7xTysO" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTysP" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTysQ" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTysR" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain : ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTysS" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
         </node>
-        <node concept="2OqwBi" id="4O6RXqWOpEA" role="2GsD0m">
-          <node concept="1YBJjd" id="4O6RXqWOpEB" role="2Oq$k0">
-            <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
-          </node>
-          <node concept="3Tsc0h" id="4O6RXqWOpEC" role="2OqNvi">
-            <ref role="3TtcxE" to="s9ob:7faAukhALBI" resolve="_substrates" />
-          </node>
-        </node>
-        <node concept="3clFbS" id="4O6RXqWOpED" role="2LFqv$">
-          <node concept="3cpWs8" id="4O6RXqWOpEE" role="3cqZAp">
-            <node concept="3cpWsn" id="4O6RXqWOpEF" role="3cpWs9">
-              <property role="TrG5h" value="substrateString" />
-              <node concept="3uibUv" id="4O6RXqWOpEG" role="1tU5fm">
-                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-              </node>
-              <node concept="2OqwBi" id="4O6RXqWOpEH" role="33vP2m">
-                <node concept="1YBJjd" id="4O6RXqWOpEI" role="2Oq$k0">
-                  <ref role="1YBMHb" node="4O6RXqWPK5H" resolve="container" />
-                </node>
-                <node concept="2qgKlT" id="4O6RXqWOpEJ" role="2OqNvi">
-                  <ref role="37wK5l" to="pxw4:4O6RXqWNXVe" resolve="checkName" />
-                  <node concept="2OqwBi" id="4O6RXqWOpEK" role="37wK5m">
-                    <node concept="2GrUjf" id="4O6RXqWOpEL" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="substrate" />
-                    </node>
-                    <node concept="3TrcHB" id="4O6RXqWOpEM" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+        <node concept="2OqwBi" id="10b4B7xTysT" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTysU" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTysV" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTysW" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
             </node>
           </node>
-          <node concept="3SKdUt" id="4O6RXqWOpEN" role="3cqZAp">
-            <node concept="1PaTwC" id="4O6RXqWOpEO" role="1aUNEU">
-              <node concept="3oM_SD" id="4O6RXqWOpEP" role="1PaTwD">
-                <property role="3oM_SC" value="Check" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOpEQ" role="1PaTwD">
-                <property role="3oM_SC" value="that" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOpER" role="1PaTwD">
-                <property role="3oM_SC" value="the" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOpES" role="1PaTwD">
-                <property role="3oM_SC" value="function" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOpET" role="1PaTwD">
-                <property role="3oM_SC" value="returned" />
-              </node>
-              <node concept="3oM_SD" id="4O6RXqWOpEU" role="1PaTwD">
-                <property role="3oM_SC" value="something." />
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbJ" id="4O6RXqWOpEV" role="3cqZAp">
-            <node concept="3clFbS" id="4O6RXqWOpEW" role="3clFbx">
-              <node concept="2MkqsV" id="4O6RXqWOpEX" role="3cqZAp">
-                <node concept="3cpWs3" id="4O6RXqWOpEY" role="2MkJ7o">
-                  <node concept="37vLTw" id="4O6RXqWOpEZ" role="3uHU7w">
-                    <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="substrateString" />
-                  </node>
-                  <node concept="Xl_RD" id="4O6RXqWOpF0" role="3uHU7B">
-                    <property role="Xl_RC" value="Substrate name contains disallowed characters: " />
-                  </node>
-                </node>
-                <node concept="2GrUjf" id="4O6RXqWSERj" role="1urrMF">
-                  <ref role="2Gs0qQ" node="4O6RXqWOpE_" resolve="substrate" />
-                </node>
-              </node>
-            </node>
-            <node concept="3y3z36" id="4O6RXqWOpF2" role="3clFbw">
-              <node concept="3cmrfG" id="4O6RXqWOpF3" role="3uHU7w">
-                <property role="3cmrfH" value="0" />
-              </node>
-              <node concept="2OqwBi" id="4O6RXqWOpF4" role="3uHU7B">
-                <node concept="37vLTw" id="4O6RXqWOpF5" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4O6RXqWOpEF" resolve="substrateString" />
-                </node>
-                <node concept="liA8E" id="4O6RXqWOpF6" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.length()" resolve="length" />
-                </node>
-              </node>
+          <node concept="liA8E" id="10b4B7xTysX" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTysY" role="37wK5m">
+              <property role="Xl_RC" value=":" />
             </node>
           </node>
         </node>
       </node>
+      <node concept="3clFbJ" id="10b4B7xTysZ" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyt0" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyt1" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyt2" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ; ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyt3" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyt4" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyt5" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyt6" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyt7" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyt8" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyt9" role="37wK5m">
+              <property role="Xl_RC" value=";" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyta" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTytb" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTytc" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTytd" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain \&quot;  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyte" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTytf" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTytg" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyth" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyti" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTytj" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTytk" role="37wK5m">
+              <property role="Xl_RC" value="\&quot;" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTytl" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTytm" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTytn" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyto" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain \\ ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTytp" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTytq" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTytr" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyts" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTytt" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTytu" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTytv" role="37wK5m">
+              <property role="Xl_RC" value="\\" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTytw" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTytx" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyty" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTytz" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain /  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyt$" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyt_" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTytA" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTytB" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTytC" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTytD" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTytE" role="37wK5m">
+              <property role="Xl_RC" value="/" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTytF" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTytG" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTytH" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTytI" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ! ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTytJ" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTytK" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTytL" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTytM" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTytN" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTytO" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTytP" role="37wK5m">
+              <property role="Xl_RC" value="!" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTytQ" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTytR" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTytS" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTytT" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain £ ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTytU" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTytV" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTytW" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTytX" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTytY" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTytZ" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyu0" role="37wK5m">
+              <property role="Xl_RC" value="£" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyu1" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyu2" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyu3" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyu4" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain % ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyu5" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyu6" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyu7" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyu8" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyu9" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyua" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyub" role="37wK5m">
+              <property role="Xl_RC" value="%" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyuc" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyud" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyue" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyuf" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ?  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyug" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyuh" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyui" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyuj" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyuk" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyul" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyum" role="37wK5m">
+              <property role="Xl_RC" value="?" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyun" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyuo" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyup" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyuq" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ^  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyur" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyus" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyut" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyuu" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyuv" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyuw" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyux" role="37wK5m">
+              <property role="Xl_RC" value="^" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyuy" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyuz" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyu$" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyu_" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ^  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyuA" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyuB" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyuC" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyuD" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyuE" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyuF" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyuG" role="37wK5m">
+              <property role="Xl_RC" value="&amp;" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyuH" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyuI" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyuJ" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyuK" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain *  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyuL" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyuM" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyuN" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyuO" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyuP" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyuQ" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyuR" role="37wK5m">
+              <property role="Xl_RC" value="*" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyuS" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyuT" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyuU" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyuV" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain (  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyuW" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyuX" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyuY" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyuZ" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyv0" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyv1" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyv2" role="37wK5m">
+              <property role="Xl_RC" value="(" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyv3" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyv4" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyv5" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyv6" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain )  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyv7" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyv8" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyv9" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyva" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyvb" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyvc" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyvd" role="37wK5m">
+              <property role="Xl_RC" value=")" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyve" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyvf" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyvg" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyvh" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain )  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyvi" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyvj" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyvk" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyvl" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyvm" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyvn" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyvo" role="37wK5m">
+              <property role="Xl_RC" value="@" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyvp" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyvq" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyvr" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyvs" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain #  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyvt" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyvu" role="3clFbw">
+          <node concept="liA8E" id="10b4B7xTyvv" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyvw" role="37wK5m">
+              <property role="Xl_RC" value="#" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="10b4B7xTyvx" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyvy" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyvz" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyv$" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyv_" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyvA" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyvB" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain +  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyvC" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyvD" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyvE" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyvF" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyvG" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyvH" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyvI" role="37wK5m">
+              <property role="Xl_RC" value="+" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyvJ" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyvK" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyvL" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyvM" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain +  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyvN" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyvO" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyvP" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyvQ" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyvR" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyvS" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyvT" role="37wK5m">
+              <property role="Xl_RC" value="=" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyvU" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyvV" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyvW" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyvX" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyvY" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyvZ" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyw0" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyw1" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyw2" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyw3" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyw4" role="37wK5m">
+              <property role="Xl_RC" value="'" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyw5" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyw6" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyw7" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyw8" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyw9" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTywa" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTywb" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTywc" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTywd" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTywe" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTywf" role="37wK5m">
+              <property role="Xl_RC" value="{" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTywg" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTywh" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTywi" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTywj" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTywk" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTywl" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTywm" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTywn" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTywo" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTywp" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTywq" role="37wK5m">
+              <property role="Xl_RC" value="}" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTywr" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyws" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTywt" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTywu" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTywv" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyww" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTywx" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTywy" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTywz" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyw$" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyw_" role="37wK5m">
+              <property role="Xl_RC" value="[" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTywA" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTywB" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTywC" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTywD" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTywE" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTywF" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTywG" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTywH" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTywI" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTywJ" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTywK" role="37wK5m">
+              <property role="Xl_RC" value="]" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTywL" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTywM" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTywN" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTywO" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTywP" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTywQ" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTywR" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTywS" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTywT" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTywU" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTywV" role="37wK5m">
+              <property role="Xl_RC" value="|" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTywW" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTywX" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTywY" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTywZ" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ~  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyx0" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyx1" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyx2" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyx3" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyx4" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyx5" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyx6" role="37wK5m">
+              <property role="Xl_RC" value="~" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyx7" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyx8" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyx9" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyxa" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain `  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyxb" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyxc" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyxd" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyxe" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyxf" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyxg" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyxh" role="37wK5m">
+              <property role="Xl_RC" value="`" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTyxi" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTyxj" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTyxk" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTyxl" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain € ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTyxm" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTyxn" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTyxo" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTyxp" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="cell" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTyxq" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTyxr" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTyxs" role="37wK5m">
+              <property role="Xl_RC" value="€" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xX7og" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xX7oh" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xX7oi" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xX7oj" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain . ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xX7ok" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xX7ol" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xX7om" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xX7on" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTyxt" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xX7oo" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xX7op" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xX7oq" role="37wK5m">
+              <property role="Xl_RC" value="." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="10b4B7xX7j4" role="3cqZAp" />
     </node>
-    <node concept="1YaCAy" id="4O6RXqWPK5H" role="1YuTPh">
-      <property role="TrG5h" value="container" />
-      <ref role="1YaFvo" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
+    <node concept="1YaCAy" id="10b4B7xTyxt" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="10b4B7xTFZX">
+    <property role="3GE5qa" value="Substrates" />
+    <property role="TrG5h" value="check_SubstrateName" />
+    <node concept="3clFbS" id="10b4B7xTFZY" role="18ibNy">
+      <node concept="3clFbJ" id="10b4B7xTFZZ" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG00" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG01" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG02" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain spaces." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG03" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG04" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG05" role="2Oq$k0">
+            <node concept="3TrcHB" id="10b4B7xTG06" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG07" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG08" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG09" role="37wK5m">
+              <property role="Xl_RC" value=" " />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG0a" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG0b" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG0c" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG0d" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain  ,  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG0e" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG0f" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG0g" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG0h" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG0i" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG0j" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG0k" role="37wK5m">
+              <property role="Xl_RC" value="," />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG0l" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG0m" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG0n" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG0o" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain - ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG0p" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG0q" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG0r" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG0s" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG0t" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG0u" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG0v" role="37wK5m">
+              <property role="Xl_RC" value="-" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG0w" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG0x" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG0y" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG0z" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain : ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG0$" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG0_" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG0A" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG0B" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG0C" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG0D" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG0E" role="37wK5m">
+              <property role="Xl_RC" value=":" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG0F" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG0G" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG0H" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG0I" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ; ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG0J" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG0K" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG0L" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG0M" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG0N" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG0O" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG0P" role="37wK5m">
+              <property role="Xl_RC" value=";" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG0Q" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG0R" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG0S" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG0T" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain \&quot;  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG0U" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG0V" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG0W" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG0X" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG0Y" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG0Z" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG10" role="37wK5m">
+              <property role="Xl_RC" value="\&quot;" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG11" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG12" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG13" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG14" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain \\ ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG15" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG16" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG17" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG18" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG19" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG1a" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG1b" role="37wK5m">
+              <property role="Xl_RC" value="\\" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG1c" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG1d" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG1e" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG1f" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain /  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG1g" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG1h" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG1i" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG1j" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG1k" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG1l" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG1m" role="37wK5m">
+              <property role="Xl_RC" value="/" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG1n" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG1o" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG1p" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG1q" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ! ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG1r" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG1s" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG1t" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG1u" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG1v" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG1w" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG1x" role="37wK5m">
+              <property role="Xl_RC" value="!" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG1y" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG1z" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG1$" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG1_" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain £ ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG1A" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG1B" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG1C" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG1D" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG1E" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG1F" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG1G" role="37wK5m">
+              <property role="Xl_RC" value="£" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG1H" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG1I" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG1J" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG1K" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain % ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG1L" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG1M" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG1N" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG1O" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG1P" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG1Q" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG1R" role="37wK5m">
+              <property role="Xl_RC" value="%" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG1S" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG1T" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG1U" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG1V" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ?  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG1W" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG1X" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG1Y" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG1Z" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG20" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG21" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG22" role="37wK5m">
+              <property role="Xl_RC" value="?" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG23" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG24" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG25" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG26" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ^  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG27" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG28" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG29" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG2a" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG2b" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG2c" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG2d" role="37wK5m">
+              <property role="Xl_RC" value="^" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG2e" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG2f" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG2g" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG2h" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ^  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG2i" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG2j" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG2k" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG2l" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG2m" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG2n" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG2o" role="37wK5m">
+              <property role="Xl_RC" value="&amp;" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG2p" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG2q" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG2r" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG2s" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain *  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG2t" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG2u" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG2v" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG2w" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG2x" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG2y" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG2z" role="37wK5m">
+              <property role="Xl_RC" value="*" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG2$" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG2_" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG2A" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG2B" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain (  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG2C" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG2D" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG2E" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG2F" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG2G" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG2H" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG2I" role="37wK5m">
+              <property role="Xl_RC" value="(" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG2J" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG2K" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG2L" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG2M" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain )  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG2N" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG2O" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG2P" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG2Q" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG2R" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG2S" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG2T" role="37wK5m">
+              <property role="Xl_RC" value=")" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG2U" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG2V" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG2W" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG2X" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain )  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG2Y" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG2Z" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG30" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG31" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG32" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG33" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG34" role="37wK5m">
+              <property role="Xl_RC" value="@" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG35" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG36" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG37" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG38" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain #  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG39" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG3a" role="3clFbw">
+          <node concept="liA8E" id="10b4B7xTG3b" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG3c" role="37wK5m">
+              <property role="Xl_RC" value="#" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="10b4B7xTG3d" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG3e" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG3f" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG3g" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG3h" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG3i" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG3j" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain +  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG3k" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG3l" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG3m" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG3n" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG3o" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG3p" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG3q" role="37wK5m">
+              <property role="Xl_RC" value="+" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG3r" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG3s" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG3t" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG3u" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain +  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG3v" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG3w" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG3x" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG3y" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG3z" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG3$" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG3_" role="37wK5m">
+              <property role="Xl_RC" value="=" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG3A" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG3B" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG3C" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG3D" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG3E" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG3F" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG3G" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG3H" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG3I" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG3J" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG3K" role="37wK5m">
+              <property role="Xl_RC" value="'" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG3L" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG3M" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG3N" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG3O" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG3P" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG3Q" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG3R" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG3S" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG3T" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG3U" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG3V" role="37wK5m">
+              <property role="Xl_RC" value="{" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG3W" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG3X" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG3Y" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG3Z" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG40" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG41" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG42" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG43" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG44" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG45" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG46" role="37wK5m">
+              <property role="Xl_RC" value="}" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG47" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG48" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG49" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG4a" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG4b" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG4c" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG4d" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG4e" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG4f" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG4g" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG4h" role="37wK5m">
+              <property role="Xl_RC" value="[" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG4i" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG4j" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG4k" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG4l" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG4m" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG4n" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG4o" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG4p" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG4q" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG4r" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG4s" role="37wK5m">
+              <property role="Xl_RC" value="]" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG4t" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG4u" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG4v" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG4w" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain '  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG4x" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG4y" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG4z" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG4$" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG4_" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG4A" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG4B" role="37wK5m">
+              <property role="Xl_RC" value="|" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG4C" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG4D" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG4E" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG4F" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain ~  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG4G" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG4H" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG4I" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG4J" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG4K" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG4L" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG4M" role="37wK5m">
+              <property role="Xl_RC" value="~" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG4N" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG4O" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG4P" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG4Q" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain `  ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG4R" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG4S" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG4T" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG4U" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG4V" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG4W" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG4X" role="37wK5m">
+              <property role="Xl_RC" value="`" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xTG4Y" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xTG4Z" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xTG50" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xTG51" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain € ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xTG52" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xTG53" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xTG54" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xTG55" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xTG56" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xTG57" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xTG58" role="37wK5m">
+              <property role="Xl_RC" value="€" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="10b4B7xX5r3" role="3cqZAp">
+        <node concept="3clFbS" id="10b4B7xX5r4" role="3clFbx">
+          <node concept="2MkqsV" id="10b4B7xX5r5" role="3cqZAp">
+            <node concept="Xl_RD" id="10b4B7xX5r6" role="2MkJ7o">
+              <property role="Xl_RC" value="Names cannot contain . ." />
+            </node>
+            <node concept="1YBJjd" id="10b4B7xX5r7" role="1urrMF">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="substrate" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="10b4B7xX5r8" role="3clFbw">
+          <node concept="2OqwBi" id="10b4B7xX5r9" role="2Oq$k0">
+            <node concept="1YBJjd" id="10b4B7xX5ra" role="2Oq$k0">
+              <ref role="1YBMHb" node="10b4B7xTG59" resolve="substrate" />
+            </node>
+            <node concept="3TrcHB" id="10b4B7xX5rb" role="2OqNvi">
+              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            </node>
+          </node>
+          <node concept="liA8E" id="10b4B7xX5rc" role="2OqNvi">
+            <ref role="37wK5l" to="wyt6:~String.contains(java.lang.CharSequence)" resolve="contains" />
+            <node concept="Xl_RD" id="10b4B7xX5rd" role="37wK5m">
+              <property role="Xl_RC" value="." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="10b4B7xX5lR" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="10b4B7xTG59" role="1YuTPh">
+      <property role="TrG5h" value="substrate" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBM" resolve="Substrate" />
     </node>
   </node>
 </model>

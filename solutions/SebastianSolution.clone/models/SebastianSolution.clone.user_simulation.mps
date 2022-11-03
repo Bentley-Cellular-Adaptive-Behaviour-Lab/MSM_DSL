@@ -150,7 +150,6 @@
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
       <concept id="6249017959271690129" name="TissueLang.structure.ArrangementCylindrical" flags="ng" index="3ZP1sC">
-        <property id="8062570699132836611" name="_totalLength" index="dFhDm" />
         <property id="8011215656706727893" name="_sweepSteps" index="2y8d7$" />
         <property id="8011215656705162106" name="_sweepMinLength" index="2zQflb" />
         <property id="8011215656705162093" name="_sweepMaxLength" index="2zQfls" />
@@ -305,25 +304,6 @@
             </node>
           </node>
           <node concept="2_hRrN" id="3VDWMYvkCPy" role="2_hQ4V" />
-        </node>
-      </node>
-    </node>
-    <node concept="1apGoc" id="5evXM1EDk6i" role="1v2izi">
-      <property role="TrG5h" value="Test" />
-      <ref role="1apGrN" node="3VDWMYvkCM8" resolve="Endothelial" />
-      <node concept="3ZP1sC" id="5evXM1EDk6_" role="1v2cpK">
-        <property role="2zQflb" value="1" />
-        <property role="2zQfls" value="1" />
-        <property role="2y8d7$" value="1" />
-        <property role="dFhDm" value="-1" />
-        <property role="3ZP1sG" value="10" />
-        <node concept="2_hQR_" id="5evXM1EDk6B" role="3ob6kl">
-          <node concept="2_n9WQ" id="5evXM1EDk6D" role="2_hQRE">
-            <node concept="30bXRB" id="5evXM1EDk78" role="2_n9WR">
-              <property role="30bXRw" value="3" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="5evXM1EDk7$" role="2_hQ4V" />
         </node>
       </node>
     </node>

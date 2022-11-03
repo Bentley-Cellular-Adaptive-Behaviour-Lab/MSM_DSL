@@ -392,7 +392,7 @@
             <node concept="2iRfu4" id="2jdW4eN_NDA" role="2iSdaV" />
           </node>
           <node concept="3F0ifn" id="2jdW4eN_NCd" role="1j7Clw">
-            <property role="3F0ifm" value="Signalling Container Name:" />
+            <property role="3F0ifm" value="Signalling Container Name" />
             <node concept="2biZxu" id="2jdW4eN_NCg" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
@@ -405,6 +405,9 @@
           </node>
         </node>
         <node concept="VPM3Z" id="109yD1s_yQe" role="3F10Kt" />
+        <node concept="3F0ifn" id="10b4B7ynfvJ" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+        </node>
         <node concept="3F0A7n" id="109yD1s_yQj" role="3EZMnx">
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           <node concept="VechU" id="2B5sNxPR5kP" role="3F10Kt">
@@ -577,6 +580,46 @@
               </node>
               <node concept="VSNWy" id="6m1Il21i$O8" role="3F10Kt">
                 <property role="1lJzqX" value="12" />
+              </node>
+            </node>
+            <node concept="3F0ifn" id="10b4B7y9uSp" role="3EZMnx" />
+            <node concept="3F0ifn" id="10b4B7y9uSE" role="3EZMnx">
+              <property role="3F0ifm" value="Options:" />
+            </node>
+            <node concept="3EZMnI" id="10b4B7y9uTk" role="3EZMnx">
+              <node concept="2iRfu4" id="10b4B7y9uTl" role="2iSdaV" />
+              <node concept="3F0ifn" id="10b4B7y9uSY" role="3EZMnx">
+                <property role="3F0ifm" value="- Reversible Reaction" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7y9uTS" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a reaction where reactants and products can interchange.)" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="10b4B7y9uTz" role="3EZMnx">
+              <node concept="2iRfu4" id="10b4B7y9uT$" role="2iSdaV" />
+              <node concept="3F0ifn" id="10b4B7y9uT_" role="3EZMnx">
+                <property role="3F0ifm" value="- Irreversible Reaction" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7y9uUZ" role="3EZMnx">
+                <property role="3F0ifm" value="(Creates a one-way reaction where products cannot convert back to reactants.)" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="10b4B7y9uVU" role="3EZMnx">
+              <node concept="2iRfu4" id="10b4B7y9uVV" role="2iSdaV" />
+              <node concept="3F0ifn" id="10b4B7y9uVW" role="3EZMnx">
+                <property role="3F0ifm" value="- Upregulation" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7y9uVX" role="3EZMnx">
+                <property role="3F0ifm" value="(Increase the level of a component depending on the level of some other component.)" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="10b4B7y9uW$" role="3EZMnx">
+              <node concept="2iRfu4" id="10b4B7y9uW_" role="2iSdaV" />
+              <node concept="3F0ifn" id="10b4B7y9uWA" role="3EZMnx">
+                <property role="3F0ifm" value="- Inhibition" />
+              </node>
+              <node concept="3F0ifn" id="10b4B7y9uWB" role="3EZMnx">
+                <property role="3F0ifm" value="(Decrease the level of a component depending on the level of some other component.)" />
               </node>
             </node>
           </node>

@@ -90,6 +90,18 @@
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="4dDC3GsoDj_">
     <ref role="1M2myG" to="nguq:5qSYbADreYa" resolve="Arrangement" />
@@ -181,11 +193,15 @@
       <ref role="EomxK" to="nguq:6Z$0llyihG3" resolve="_totalLength" />
       <node concept="1LLf8_" id="5evXM1EHc6d" role="1LXaQT">
         <node concept="3clFbS" id="5evXM1EHc6e" role="2VODD2">
-          <node concept="3clFbF" id="5evXM1EHca8" role="3cqZAp">
-            <node concept="2OqwBi" id="5evXM1EHcaa" role="3clFbG">
-              <node concept="EsrRn" id="5evXM1EHcab" role="2Oq$k0" />
-              <node concept="2qgKlT" id="5evXM1EHcac" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:1QpPlI52lcy" resolve="calc_total_length_gridpoints" />
+          <node concept="1X3_iC" id="2BV4bJD_SLF" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3clFbF" id="5evXM1EHca8" role="8Wnug">
+              <node concept="2OqwBi" id="5evXM1EHcaa" role="3clFbG">
+                <node concept="EsrRn" id="5evXM1EHcab" role="2Oq$k0" />
+                <node concept="2qgKlT" id="5evXM1EHcac" role="2OqNvi">
+                  <ref role="37wK5l" to="4ebj:1QpPlI52lcy" resolve="calc_total_length_gridpoints" />
+                </node>
               </node>
             </node>
           </node>
@@ -198,6 +214,15 @@
               <node concept="EsrRn" id="5evXM1EJ9vh" role="2Oq$k0" />
               <node concept="2qgKlT" id="5evXM1EJ9vi" role="2OqNvi">
                 <ref role="37wK5l" to="4ebj:1QpPlI52lcy" resolve="calc_total_length_gridpoints" />
+              </node>
+            </node>
+          </node>
+          <node concept="1X3_iC" id="2BV4bJDBVzK" role="lGtFl">
+            <property role="3V$3am" value="statement" />
+            <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+            <node concept="3cpWs6" id="2BV4bJD_SWB" role="8Wnug">
+              <node concept="3cmrfG" id="2BV4bJD_SXy" role="3cqZAk">
+                <property role="3cmrfH" value="100" />
               </node>
             </node>
           </node>
