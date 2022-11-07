@@ -27,12 +27,12 @@ void Tissue_Container::tissue_set_up(World* world) {
     EndothelialCell_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
 
     // Tissue Type Creation //
-    auto CylindricalTissue_Type = define_tissue_type("CylindricalTissue", EndothelialCell_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 10, 6);
+    auto CylindricalTissue_Type = define_tissue_type("CylindricalTissue", EndothelialCell_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 6, 6);
 
     // Cell Creation //
 
     // Tissue Creation //
-    auto NewVessel_Pos = Coordinates(60, 60, 30);
+    auto NewVessel_Pos = Coordinates(70, 60, 30);
     create_tissue("NewVessel", CylindricalTissue_Type, &(NewVessel_Pos));
 
     // Track environmental proteins //
