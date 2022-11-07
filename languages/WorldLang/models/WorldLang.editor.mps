@@ -1072,7 +1072,7 @@
         <node concept="2iRfu4" id="3EojsBVloNp" role="2iSdaV" />
         <node concept="3XFhqQ" id="3EojsBVloOT" role="3EZMnx" />
         <node concept="3F0ifn" id="4KNMtF8iHjs" role="3EZMnx">
-          <property role="3F0ifm" value="Species :" />
+          <property role="3F0ifm" value="Uses Signalling Component :" />
           <node concept="2biZxu" id="2FvyIAlFju$" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1750,12 +1750,39 @@
       <node concept="3EZMnI" id="2S6lVSS$lzO" role="3EZMnx">
         <node concept="VPM3Z" id="2S6lVSS$lzP" role="3F10Kt" />
         <node concept="3XFhqQ" id="2S6lVSS$lzT" role="3EZMnx" />
-        <node concept="3F0ifn" id="2S6lVSS$lzU" role="3EZMnx">
-          <property role="3F0ifm" value="Direction :" />
-          <node concept="2biZxu" id="2FvyIAlFjvS" role="3F10Kt">
+        <node concept="1v6uyg" id="55rTyJRf0W5" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="55rTyJRf0XD" role="wsdo6">
+            <node concept="3F0ifn" id="55rTyJRf0Yg" role="3EZMnx">
+              <property role="3F0ifm" value="Gradients describe how signalling components vary in space." />
+            </node>
+            <node concept="3F0ifn" id="55rTyJRf0Ym" role="3EZMnx">
+              <property role="3F0ifm" value="When choosing an option, concentration of a species can" />
+            </node>
+            <node concept="3F0ifn" id="55rTyJRf0Yq" role="3EZMnx">
+              <property role="3F0ifm" value="either increase or decrease as the chosen dimension (X,Y, Z) increases." />
+            </node>
+            <node concept="2iRkQZ" id="55rTyJRf0XG" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="55rTyJRf0X8" role="1j7Clw">
+            <property role="3F0ifm" value="Direction" />
+            <node concept="2biZxu" id="55rTyJRf0Xb" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="55rTyJRf0Xc" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="55rTyJRf0Xx" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="55rTyJRf0WP" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="55rTyJRf0X4" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
-          <node concept="VSNWy" id="2FvyIAlFjvT" role="3F10Kt">
+          <node concept="VSNWy" id="55rTyJRf0X5" role="3F10Kt">
             <property role="1lJzqX" value="16" />
           </node>
         </node>

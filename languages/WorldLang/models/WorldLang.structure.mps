@@ -477,7 +477,7 @@
     <property role="3GE5qa" value="Gradients" />
     <property role="TrG5h" value="GradientShapeCuboidal" />
     <property role="R4oN_" value="Gradient confined to a cuboidal area." />
-    <property role="34LRSv" value="Constrained" />
+    <property role="34LRSv" value="Cuboidal" />
     <ref role="1TJDcQ" node="2zgk2Od0CFc" resolve="GradientShape" />
     <node concept="1TJgyi" id="2S6lVSS$lxW" role="1TKVEl">
       <property role="IQ2nx" value="3316434650109401212" />

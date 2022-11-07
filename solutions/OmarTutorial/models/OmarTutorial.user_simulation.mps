@@ -516,8 +516,8 @@
   </node>
   <node concept="1yko06" id="5evXM1ESClc">
     <property role="TrG5h" value="WednesdayWorld" />
-    <property role="TL2x1" value="-50" />
-    <property role="TL2xa" value="50" />
+    <property role="TL2x1" value="-100" />
+    <property role="TL2xa" value="100" />
     <property role="TL2x3" value="-50" />
     <property role="TL2xf" value="100" />
     <property role="TL2x6" value="-20" />
@@ -584,11 +584,8 @@
       </node>
     </node>
     <node concept="1yko02" id="FENom_80UI" role="1yko0e">
-      <property role="TrG5h" value="IncreasingGradient" />
+      <property role="TrG5h" value="Gradient" />
       <node concept="_OHFp" id="FENom_83ps" role="3Sm0lf" />
-      <node concept="1csUcq" id="FENom_80UL" role="1cJCsQ">
-        <ref role="1csUcr" node="FENom_83WS" resolve="VEGF" />
-      </node>
       <node concept="_K$fF" id="FENom_83hF" role="3Sm0lh">
         <property role="m_KZ2" value="2S6lVSS$lvQ/Y_Decreasing" />
         <node concept="3ZP1sY" id="FENom_83hH" role="mqaeu">
@@ -642,12 +639,15 @@
           <node concept="2_hRrN" id="FENom_83ol" role="2_hQ4V" />
         </node>
       </node>
+      <node concept="1csUcq" id="55rTyJRaDuQ" role="1cJCsQ">
+        <ref role="1csUcr" node="FENom_83WS" resolve="VEGF" />
+      </node>
     </node>
     <node concept="1yko03" id="5evXM1ESCld" role="1yko01">
-      <property role="3cJDZq" value="-60" />
+      <property role="3cJDZq" value="-110" />
       <property role="3cJDZs" value="-60" />
       <property role="3cJDZ5" value="-30" />
-      <property role="3bD6N$" value="120" />
+      <property role="3bD6N$" value="220" />
       <property role="3bD6ND" value="170" />
       <property role="3bD6NH" value="60" />
       <node concept="2_hQR_" id="5evXM1ESCle" role="3bEhY_">
@@ -669,8 +669,8 @@
     <property role="TrG5h" value="WednesdayTissue" />
     <ref role="1ANuJI" node="oymmRcD7or" resolve="WednesdaySimulation" />
     <node concept="3ZP1sZ" id="FENom_83Lb" role="3ZP1sP">
-      <property role="TXYW3" value="-10" />
-      <property role="TXYXj" value="10" />
+      <property role="TXYW3" value="-100" />
+      <property role="TXYXj" value="100" />
       <property role="TXYXC" value="-6" />
       <property role="TXYYS" value="6" />
       <property role="TXYX7" value="-6" />

@@ -10506,7 +10506,7 @@
             <node concept="2OqwBi" id="5k$GbZWHGa7" role="37wK5m">
               <node concept="2OqwBi" id="5k$GbZWHGa8" role="2Oq$k0">
                 <node concept="3TrEf2" id="5k$GbZWHGa9" role="2OqNvi">
-                  <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                  <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                 </node>
                 <node concept="37vLTw" id="5k$GbZWHGaa" role="2Oq$k0">
                   <ref role="3cqZAo" node="5k$GbZWHG3p" resolve="regulation" />
@@ -17016,7 +17016,7 @@
                 <node concept="2OqwBi" id="2FHpvyXTeTU" role="2Oq$k0">
                   <node concept="13iPFW" id="2FHpvyXTeDc" role="2Oq$k0" />
                   <node concept="3TrEf2" id="2FHpvyXTfgj" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="2FHpvyXTfJE" role="2OqNvi">

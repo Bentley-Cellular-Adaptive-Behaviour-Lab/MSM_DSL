@@ -17,7 +17,20 @@
         <reference id="4970340729092560634" name="_simulationContainerRef" index="1ANuhP" />
       </concept>
     </language>
+    <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
+      <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
+        <child id="3416854989769421751" name="expr" index="2_kiwP" />
+      </concept>
+      <concept id="8343650468779203046" name="WorldLang.structure.Grid" flags="ng" index="1yko03">
+        <child id="91108499532674622" name="_adhesiveness" index="2nU_yc" />
+        <child id="5907682107548062262" name="_buffer" index="3bEhY_" />
+      </concept>
+      <concept id="8343650468779203043" name="WorldLang.structure.WorldContainer" flags="ng" index="1yko06">
+        <child id="8343650468779203044" name="_grid" index="1yko01" />
+      </concept>
+    </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
+      <concept id="7425695345928347719" name="org.iets3.core.expr.base.structure.Expression" flags="ng" index="2vmvVl" />
       <concept id="5115872837156578671" name="org.iets3.core.expr.base.structure.MulExpression" flags="ng" index="30dDTi" />
       <concept id="5115872837156576277" name="org.iets3.core.expr.base.structure.BinaryExpression" flags="ng" index="30dEsC">
         <child id="5115872837156576280" name="right" index="30dEs_" />
@@ -82,6 +95,14 @@
       </concept>
     </language>
     <language id="3236b0e3-fbdf-4a71-8bfb-69d9a5a4f1be" name="UnitLang">
+      <concept id="3416854989768521319" name="UnitLang.structure.Distance" flags="ng" index="2_hQR_">
+        <child id="3416854989768522425" name="units" index="2_hQ4V" />
+        <child id="3416854989768521320" name="value" index="2_hQRE" />
+      </concept>
+      <concept id="3416854989768517040" name="UnitLang.structure.Unit_Distance" flags="ng" index="2_hRSM" />
+      <concept id="3416854989769245876" name="UnitLang.structure.Distance_Expression" flags="ng" index="2_n9WQ">
+        <child id="3416854989769245877" name="expr" index="2_n9WR" />
+      </concept>
       <concept id="829681453102462370" name="UnitLang.structure.Concentration_Expression" flags="ng" index="3bpmH0">
         <child id="7070710508215227644" name="expr" index="3lUA52" />
       </concept>
@@ -354,6 +375,19 @@
   <node concept="3Bb2si" id="oymmRdeu$t">
     <property role="TrG5h" value="Shape" />
     <ref role="1ANuhP" node="oymmRcD7or" resolve="Simulation" />
+  </node>
+  <node concept="1yko06" id="55rTyJR5sdu">
+    <node concept="1yko03" id="55rTyJR5sdv" role="1yko01">
+      <node concept="2_hQR_" id="55rTyJR5sdw" role="3bEhY_">
+        <node concept="2_n9WQ" id="55rTyJR5sdx" role="2_hQRE">
+          <node concept="2vmvVl" id="55rTyJR5sdy" role="2_n9WR" />
+        </node>
+        <node concept="2_hRSM" id="55rTyJR5sdz" role="2_hQ4V" />
+      </node>
+      <node concept="2_kiwO" id="55rTyJR5sd$" role="2nU_yc">
+        <node concept="2vmvVl" id="55rTyJR5sd_" role="2_kiwP" />
+      </node>
+    </node>
   </node>
 </model>
 
