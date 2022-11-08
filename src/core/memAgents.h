@@ -147,16 +147,15 @@ public:
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
     double get_memAgent_current_level(const std::string& protein_name) const;
-    double get_average_environment_level(const std::string& protein_name);
-	double get_sum_environment_level(const std::string& protein_name);
 	double get_local_protein_level(const std::string& protein_name);
-    double get_junction_protein_level(const std::string& protein_name);
+	double get_environment_level(const std::string& protein_name, const bool& getsAverage);
+	double get_filopodia_protein_level(const std::string& protein_name, const bool &getsAverage);
+	double get_junction_protein_level(const std::string& protein_name, const bool& getsAverage);
 
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
     void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
 
     double get_memAgent_buffer_level(const std::string& protein_name) const;
-    double get_filopodia_protein_level(const std::string& protein_name);
 //    [[deprecated]]
 	void distribute_calculated_proteins(const std::string& protein_name,
                                         const double& total_protein_level,

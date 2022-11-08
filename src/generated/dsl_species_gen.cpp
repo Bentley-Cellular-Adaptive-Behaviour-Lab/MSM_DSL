@@ -152,8 +152,8 @@ void ODEs::EndothelialType_run_memAgent_ODEs(MemAgent* memAgent) {
 	EndothelialType_memAgent_ode_states states;
 	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
 
-	states[4] = memAgent->get_average_environment_level("VEGF");
-	states[5] = memAgent->get_average_environment_level("SEMA3A");
+	states[4] = memAgent->get_environment_level("VEGF", true);
+	states[5] = memAgent->get_environment_level("SEMA3A", true);
 	states[0] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[1] = memAgent->get_memAgent_current_level("VEGFR2");
 	states[2] = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
@@ -161,8 +161,8 @@ void ODEs::EndothelialType_run_memAgent_ODEs(MemAgent* memAgent) {
 	states[6] = memAgent->get_memAgent_current_level("PLEXIN");
 	states[7] = memAgent->get_memAgent_current_level("SEMA3A_PLEXIN");
 	states[8] = memAgent->get_memAgent_current_level("NOTCH");
-	states[9] = memAgent->get_junction_protein_level("DLL4");
-	states[10] = memAgent->get_junction_protein_level("NOTCH");
+	states[9] = memAgent->get_junction_protein_level("DLL4", true);
+	states[10] = memAgent->get_junction_protein_level("NOTCH", true);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;

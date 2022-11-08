@@ -14,6 +14,10 @@
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
 
+static double get_VEGFR_CONC(World *world) {
+	return world->getParamValue(0);
+}
+
 void Tissue_Container::tissue_set_up(World* world) {
 	// Created using: Tissue //
 	world->setTissueContainer(this);
@@ -51,7 +55,7 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 
 		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
 		float activeProportion = (float) VEGFR / scalar;
-		auto VEGF = memAgent->get_sum_environment_level("VEGF");
+		auto VEGF = memAgent->get_environment_level("VEGF", false);
 
 		// Get active VEGFR.
 		float filConst = 2.0f;

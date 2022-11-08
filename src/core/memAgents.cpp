@@ -2567,7 +2567,7 @@ double MemAgent::get_memAgent_buffer_level(const std::string& protein_name) cons
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_average_environment_level(const std::string& protein_name) {
+double MemAgent::get_environment_level(const std::string& protein_name, const bool& getsAverage) {
     Env *ep;
     int m, n, p;
     int i = (int) Mx;
@@ -2700,147 +2700,14 @@ double MemAgent::get_average_environment_level(const std::string& protein_name) 
             }
         }
     }
-    return (double) (protein_level / relevant_envAgents);
-}
 
-/*****************************************************************************************
-*  Name:		get_sum_environment_level
-*  Description: Returns the level of a protein in the nearby environment.
-*  Returns:		float
-******************************************************************************************/
-
-double MemAgent::get_sum_environment_level(const std::string& protein_name) {
-	Env *ep;
-	int m, n, p;
-	int i = (int) Mx;
-	int j = (int) My;
-	int k = (int) Mz;
-
-	double protein_level = 0;
-
-	for (int x = 0; x < 26; x++) {
-		// Same layer.
-		if (x == 0) {
-			m = i + 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 1) {
-			m = i + 1;
-			n = j;
-			p = k;
-		} else if (x == 2) {
-			m = i + 1;
-			n = j + 1;
-			p = k;
-		} else if (x == 3) {
-			m = i;
-			n = j - 1;
-			p = k;
-		} else if (x == 4) {
-			m = i;
-			n = j + 1;
-			p = k;
-		} else if (x == 5) {
-			m = i - 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 6) {
-			m = i - 1;
-			n = j;
-			p = k;
-		} else if (x == 7) {
-			m = i - 1;
-			n = j + 1;
-			p = k;
-		}
-			// Layer below.
-		else if (x == 8) {
-			m = i + 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 9) {
-			m = i + 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 10) {
-			m = i + 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 11) {
-			m = i;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 12) {
-			m = i;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 13) {
-			m = i - 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 14) {
-			m = i - 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 15) {
-			m = i - 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 16) {
-			m = i;
-			n = j;
-			p = k - 1;
-		}
-			// Layer above.
-		else if (x == 17) {
-			m = i + 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 18) {
-			m = i + 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 19) {
-			m = i + 1;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 20) {
-			m = i;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 21) {
-			m = i;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 22) {
-			m = i - 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 23) {
-			m = i - 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 24) {
-			m = i - 1;
-			n = j + 1;
-			p = k + 1;
-		} else {
-			m = i;
-			n = j;
-			p = k + 1;
-		}
-		// If the environment agent at these coordinates is inside the world, and has the relevant protein,
-		// increase the count by the level at those coordinates.
-		if (worldP->insideWorld(m, n, p)) {
-			if (worldP->grid[m][n][p].getType() == const_E) {
-				ep = worldP->grid[m][n][p].getEid();
-				if (ep->has_protein(protein_name)) {
-					protein_level+= ep->get_protein_level(protein_name);
-				}
-			}
-		}
+	if (relevant_envAgents > 0 && getsAverage) {
+		return (double) (protein_level / relevant_envAgents);
+	} else if (!getsAverage) {
+		return protein_level;
+	} else {
+		return 0;
 	}
-	return (double) protein_level;
 }
 
 /*****************************************************************************************
@@ -2970,7 +2837,6 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
             p = k + 1;
         }
 
-
         //Search for protein in nearby memAgents - whether it is in a filopodia or not.
         if (worldP->insideWorld(m, n, p)) {
             if (worldP->grid[m][n][p].getType() == const_M) {
@@ -2998,7 +2864,7 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
+double MemAgent::get_filopodia_protein_level(const std::string& protein_name, const bool& getsAverage) {
 	int m, n, p;
 	int i = (int) Mx;
 	int j = (int) My;
@@ -3133,9 +2999,11 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 		}
 	}
 
-    if (relevant_memAgents > 0) {
+    if (relevant_memAgents > 0 && getsAverage) {
         return (double) (protein_level / relevant_memAgents);
-    } else {
+    } else if (!getsAverage) {
+		return protein_level;
+	} else {
         return 0;
     }
 }
@@ -3147,7 +3015,7 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_junction_protein_level(const std::string& protein_name) {
+double MemAgent::get_junction_protein_level(const std::string& protein_name, const bool& getsAverage) {
     int m, n, p;
     int i = (int) Mx;
     int j = (int) My;
@@ -3268,10 +3136,6 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
             p = k + 1;
         }
 
-        if (m == 25 && n == 26 && p == 25) {
-            int test = 0;
-        }
-
         // If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to different cells,
         // increase the count by the level at those coordinates.
         if (worldP->insideWorld(m, n, p)) {
@@ -3289,9 +3153,11 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name) {
         }
     }
 
-    if (relevant_memAgents > 0) {
+    if (relevant_memAgents > 0 && getsAverage) {
         return (double) (protein_level / relevant_memAgents);
-    } else {
+    } else if (!getsAverage) {
+		return protein_level;
+	} else {
         return 0;
     }
 }

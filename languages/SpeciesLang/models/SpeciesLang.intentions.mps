@@ -848,7 +848,7 @@
             <node concept="2OqwBi" id="54teBVtOzGd" role="3uHU7B">
               <node concept="2Sf5sV" id="54teBVtOzGe" role="2Oq$k0" />
               <node concept="3TrcHB" id="54teBVtOzGf" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                <ref role="3TsBF5" to="w3cn:54teBVtOs6H" resolve="getsSumFromMemAgents" />
               </node>
             </node>
           </node>
@@ -974,7 +974,7 @@
             <node concept="2OqwBi" id="54teBVtO$_U" role="3uHU7B">
               <node concept="2Sf5sV" id="54teBVtO$_V" role="2Oq$k0" />
               <node concept="3TrcHB" id="54teBVtO$_W" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                <ref role="3TsBF5" to="w3cn:54teBVtOs6E" resolve="normalisedToStartValue" />
               </node>
             </node>
           </node>

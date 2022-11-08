@@ -9,6 +9,9 @@
 #include "../dsl/world/gradient.h"
 #include "../dsl/world/worldContainer.h"
 
+static double get_VEGFR_CONC(World *world) {
+	return world->getParamValue(0);
+}
 
 void WorldContainer::world_setup(std::vector<double>& paramValues) {
 	// Created using: World //

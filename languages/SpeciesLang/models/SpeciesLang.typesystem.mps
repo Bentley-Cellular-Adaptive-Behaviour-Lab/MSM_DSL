@@ -18,6 +18,7 @@
     <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" implicit="true" />
     <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" implicit="true" />
     <import index="5qo5" ref="r:6d93ddb1-b0b0-4eee-8079-51303666672a(org.iets3.core.expr.simpleTypes.structure)" implicit="true" />
+    <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -201,6 +202,7 @@
         <reference id="1966870290088668516" name="memberDeclaration" index="2ViDtZ" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -7311,6 +7313,143 @@
     </node>
     <node concept="1YaCAy" id="54teBVtUuuj" role="1YuTPh">
       <property role="TrG5h" value="speciesExpression" />
+      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="35npzpEDuoJ">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_ParamAnalysis" />
+    <node concept="3clFbS" id="35npzpEDuoK" role="18ibNy">
+      <node concept="3clFbJ" id="35npzpEDuoY" role="3cqZAp">
+        <node concept="3clFbS" id="35npzpEDup0" role="3clFbx">
+          <node concept="2MkqsV" id="35npzpEDySM" role="3cqZAp">
+            <node concept="Xl_RD" id="35npzpEDyT1" role="2MkJ7o">
+              <property role="Xl_RC" value="Cannot perform parameter sweep if not doing a cluster run. Choose a cluster type in the main simulation container." />
+            </node>
+            <node concept="1YBJjd" id="35npzpEDyVR" role="1urrMF">
+              <ref role="1YBMHb" node="35npzpEDuoM" resolve="species" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="35npzpEDvju" role="3clFbw">
+          <node concept="3fqX7Q" id="35npzpEDyIA" role="3uHU7w">
+            <node concept="2OqwBi" id="35npzpEDyIC" role="3fr31v">
+              <node concept="2OqwBi" id="35npzpEDyID" role="2Oq$k0">
+                <node concept="1PxgMI" id="35npzpEDyIE" role="2Oq$k0">
+                  <property role="1BlNFB" value="true" />
+                  <node concept="chp4Y" id="35npzpEDyIF" role="3oSUPX">
+                    <ref role="cht4Q" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+                  </node>
+                  <node concept="2OqwBi" id="35npzpEDyIG" role="1m5AlR">
+                    <node concept="1YBJjd" id="35npzpEDyIH" role="2Oq$k0">
+                      <ref role="1YBMHb" node="35npzpEDuoM" resolve="species" />
+                    </node>
+                    <node concept="1mfA1w" id="35npzpEDyII" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="35npzpEDyIJ" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:4jUcCWydX_d" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="35npzpEDyIK" role="2OqNvi">
+                <ref role="37wK5l" to="5ycg:1PDLoEBKYSg" resolve="doingClusterAnalysis" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="35npzpEDuzU" role="3uHU7B">
+            <node concept="1YBJjd" id="35npzpEDupd" role="2Oq$k0">
+              <ref role="1YBMHb" node="35npzpEDuoM" resolve="species" />
+            </node>
+            <node concept="3TrcHB" id="35npzpEDuIE" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:6WHzz7cWc6W" resolve="_doingParameterSweep" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="35npzpEDuoM" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="35npzpEJdWR">
+    <property role="TrG5h" value="check_NoNormalisedNeighbours" />
+    <property role="3GE5qa" value="Species" />
+    <node concept="3clFbS" id="35npzpEJdWS" role="18ibNy">
+      <node concept="3SKdUt" id="35npzpEJdX0" role="3cqZAp">
+        <node concept="1PaTwC" id="35npzpEJdX1" role="1aUNEU">
+          <node concept="3oM_SD" id="35npzpEJdX5" role="1PaTwD">
+            <property role="3oM_SC" value="Checks" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdX7" role="1PaTwD">
+            <property role="3oM_SC" value="that" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXa" role="1PaTwD">
+            <property role="3oM_SC" value="a" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXe" role="1PaTwD">
+            <property role="3oM_SC" value="species" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXj" role="1PaTwD">
+            <property role="3oM_SC" value="expression" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXp" role="1PaTwD">
+            <property role="3oM_SC" value="cannot" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXw" role="1PaTwD">
+            <property role="3oM_SC" value="check" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXC" role="1PaTwD">
+            <property role="3oM_SC" value="for" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXL" role="1PaTwD">
+            <property role="3oM_SC" value="neighbours" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdXV" role="1PaTwD">
+            <property role="3oM_SC" value="and" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJdY6" role="1PaTwD">
+            <property role="3oM_SC" value="does" />
+          </node>
+          <node concept="3oM_SD" id="35npzpEJe5X" role="1PaTwD">
+            <property role="3oM_SC" value="normalisation." />
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="35npzpEJe6s" role="3cqZAp">
+        <node concept="3clFbS" id="35npzpEJe6u" role="3clFbx">
+          <node concept="2MkqsV" id="35npzpEJfLf" role="3cqZAp">
+            <node concept="Xl_RD" id="35npzpEJfLu" role="2MkJ7o">
+              <property role="Xl_RC" value="Cannot normalise to start value when checking nearby locations." />
+            </node>
+            <node concept="1YBJjd" id="35npzpEJfNK" role="1urrMF">
+              <ref role="1YBMHb" node="35npzpEJdWU" resolve="speciesExpr" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="35npzpEJfbe" role="3clFbw">
+          <node concept="2OqwBi" id="35npzpEJfuO" role="3uHU7w">
+            <node concept="1YBJjd" id="35npzpEJfft" role="2Oq$k0">
+              <ref role="1YBMHb" node="35npzpEJdWU" resolve="speciesExpr" />
+            </node>
+            <node concept="3TrcHB" id="35npzpEJfIl" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="35npzpEJejV" role="3uHU7B">
+            <node concept="1YBJjd" id="35npzpEJe6T" role="2Oq$k0">
+              <ref role="1YBMHb" node="35npzpEJdWU" resolve="speciesExpr" />
+            </node>
+            <node concept="3TrcHB" id="35npzpEJeP6" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:54teBVtOs6E" resolve="normalisedToStartValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="35npzpEJejw" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="35npzpEJdWU" role="1YuTPh">
+      <property role="TrG5h" value="speciesExpr" />
       <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
     </node>
   </node>
