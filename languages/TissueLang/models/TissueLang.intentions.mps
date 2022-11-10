@@ -60,6 +60,9 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -67,6 +70,7 @@
   </registry>
   <node concept="2S6QgY" id="5A0f7KHuYO3">
     <property role="TrG5h" value="SetFlatParameterAnalysis" />
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="2ZfgGC" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     <node concept="2S6ZIM" id="5A0f7KHuYO4" role="2ZfVej">
       <node concept="3clFbS" id="5A0f7KHuYO5" role="2VODD2">
@@ -122,6 +126,7 @@
   </node>
   <node concept="2S6QgY" id="5A0f7KHv3rj">
     <property role="TrG5h" value="SetCylinderParameterAnalysis" />
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="2ZfgGC" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     <node concept="2S6ZIM" id="5A0f7KHv3rk" role="2ZfVej">
       <node concept="3clFbS" id="5A0f7KHv3rl" role="2VODD2">

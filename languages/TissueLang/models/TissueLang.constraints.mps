@@ -16,6 +16,7 @@
   <imports>
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
+    <import index="prp3" ref="r:52ea8481-08b2-4cbd-ad9d-1b42825f7d09(jetbrains.mps.lang.constraints.rules.kinds.constraints)" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -84,8 +85,14 @@
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
     </language>
+    <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
+      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+    </language>
   </registry>
   <node concept="1M2fIO" id="4dDC3GsoDj_">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="1M2myG" to="nguq:5qSYbADreYa" resolve="Arrangement" />
     <node concept="EnEH3" id="4JVq81Fl2lk" role="1MhHOB">
       <ref role="EomxK" to="nguq:4JVq81Fl21R" resolve="_totalCellNumber" />
@@ -108,6 +115,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoEOd">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="1M2myG" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     <node concept="EnEH3" id="506$KtOBSnc" role="1MhHOB">
       <ref role="EomxK" to="nguq:5qSYbADreYj" resolve="_crossSectionCells" />
@@ -225,6 +233,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGoF">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="1M2myG" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     <node concept="EnEH3" id="4JVq81Fl2Ga" role="1MhHOB">
       <ref role="EomxK" to="nguq:4JVq81Fl21R" resolve="_totalCellNumber" />
@@ -357,6 +366,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGy1">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1M2myG" to="nguq:5qSYbADreY9" resolve="CellShape" />
     <node concept="9S07l" id="4dDC3GsoGy2" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGy3" role="2VODD2">
@@ -367,6 +377,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGBd">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
     <node concept="9S07l" id="4dDC3GsoGBf" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGBg" role="2VODD2">
@@ -382,6 +393,7 @@
     <ref role="1M2myG" to="nguq:5qSYbADreY7" resolve="Position" />
   </node>
   <node concept="1M2fIO" id="6Z$0lly6dEC">
+    <property role="3GE5qa" value="Cell" />
     <ref role="1M2myG" to="nguq:5qSYbADreY8" resolve="Cell" />
     <node concept="1N5Pfh" id="6Z$0lly6dGT" role="1Mr941">
       <ref role="1N5Vy1" to="nguq:7aglRcSXD5S" resolve="_cellType" />
@@ -405,6 +417,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6Z$0lly7T4o">
+    <property role="3GE5qa" value="TissueType" />
     <ref role="1M2myG" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
     <node concept="1N5Pfh" id="6Z$0lly7T5$" role="1Mr941">
       <ref role="1N5Vy1" to="nguq:7aglRcSXD60" resolve="_cellTypeRef" />
@@ -428,6 +441,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="6Z$0lly7VH8">
+    <property role="3GE5qa" value="TIssue" />
     <ref role="1M2myG" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="1N5Pfh" id="6Z$0lly7VHD" role="1Mr941">
       <ref role="1N5Vy1" to="nguq:4dDC3Gsompl" resolve="_tissueTypeRef" />
@@ -454,12 +468,15 @@
     <ref role="1M2myG" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
   </node>
   <node concept="1M2fIO" id="6Y2UmXTHQtp">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1M2myG" to="nguq:5qSYbADreYb" resolve="CellType" />
   </node>
   <node concept="1M2fIO" id="6Y2UmXTHQxY">
+    <property role="3GE5qa" value="CellType" />
     <ref role="1M2myG" to="nguq:5qSYbADreYb" resolve="CellType" />
   </node>
   <node concept="1M2fIO" id="bKPOWXCUdJ">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1M2myG" to="nguq:bKPOWXCUdt" resolve="ExtensionCondition" />
     <node concept="9S07l" id="bKPOWXCUdK" role="9Vyp8">
       <node concept="3clFbS" id="bKPOWXCUdL" role="2VODD2">
@@ -470,6 +487,7 @@
     </node>
   </node>
   <node concept="1M2fIO" id="bKPOWXCUim">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1M2myG" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
     <node concept="9S07l" id="bKPOWXCUin" role="9Vyp8">
       <node concept="3clFbS" id="bKPOWXCUio" role="2VODD2">
@@ -482,11 +500,49 @@
     </node>
   </node>
   <node concept="1M2fIO" id="bKPOWXCUnb">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1M2myG" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
     <node concept="9S07l" id="bKPOWXCUnc" role="9Vyp8">
       <node concept="3clFbS" id="bKPOWXCUnd" role="2VODD2">
         <node concept="3clFbF" id="bKPOWXCUrc" role="3cqZAp">
           <node concept="3clFbT" id="bKPOWXCUrb" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5j_l9LXEx70">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1M2myG" to="nguq:5j_l9LXEwof" resolve="ShapeBehaviour" />
+    <node concept="9S07l" id="5j_l9LXEx7j" role="9Vyp8">
+      <node concept="3clFbS" id="5j_l9LXEx7k" role="2VODD2">
+        <node concept="3clFbF" id="5j_l9LXExbj" role="3cqZAp">
+          <node concept="3clFbT" id="5j_l9LXExbi" role="3clFbG" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5j_l9LXExcb">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1M2myG" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    <node concept="9S07l" id="5j_l9LXExcu" role="9Vyp8">
+      <node concept="3clFbS" id="5j_l9LXExcv" role="2VODD2">
+        <node concept="3clFbF" id="5j_l9LXExcQ" role="3cqZAp">
+          <node concept="3clFbT" id="5j_l9LXExcP" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="4YEYPh9oP18">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1M2myG" to="nguq:4YEYPh9oOZm" resolve="TestShape" />
+    <node concept="9S07l" id="4YEYPh9oP1r" role="9Vyp8">
+      <node concept="3clFbS" id="4YEYPh9oP1s" role="2VODD2">
+        <node concept="3cpWs6" id="4YEYPh9oP5q" role="3cqZAp">
+          <node concept="3clFbT" id="4YEYPh9oP5Y" role="3cqZAk">
             <property role="3clFbU" value="true" />
           </node>
         </node>

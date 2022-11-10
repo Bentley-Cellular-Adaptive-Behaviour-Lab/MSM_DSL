@@ -248,6 +248,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -288,6 +289,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="4DdJmqSEBGh">
+    <property role="3GE5qa" value="CellType" />
     <ref role="13h7C2" to="nguq:5qSYbADreY9" resolve="CellShape" />
     <node concept="13i0hz" id="4DdJmqSEQ4i" role="13h7CS">
       <property role="TrG5h" value="get_height" />
@@ -320,6 +322,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4DdJmqSEEja">
+    <property role="3GE5qa" value="CellType" />
     <ref role="13h7C2" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
     <node concept="13i0hz" id="2VHjcBpE516" role="13h7CS">
       <property role="TrG5h" value="get_rectangular_width_decimal" />
@@ -715,6 +718,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4DdJmqSF9Y_">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="13h7C2" to="nguq:5qSYbADreYa" resolve="Arrangement" />
     <node concept="13i0hz" id="4DdJmqSF9YK" role="13h7CS">
       <property role="TrG5h" value="get_cross_section_cells" />
@@ -786,6 +790,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4DdJmqSFaUj">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="13h7C2" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
     <node concept="13i0hz" id="2VHjcBpEg27" role="13h7CS">
       <property role="TrG5h" value="get_cross_section_cells" />
@@ -1959,6 +1964,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="4DdJmqSFmsd">
+    <property role="3GE5qa" value="Arrangement" />
     <ref role="13h7C2" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
     <node concept="13i0hz" id="4DdJmqSFmso" role="13h7CS">
       <property role="TrG5h" value="get_height_in_cells" />
@@ -12244,6 +12250,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1QpPlI51wI4">
+    <property role="3GE5qa" value="Cell" />
     <ref role="13h7C2" to="nguq:5qSYbADreY8" resolve="Cell" />
     <node concept="13i0hz" id="1QpPlI51TK3" role="13h7CS">
       <property role="TrG5h" value="check_object_boundaries" />
@@ -14314,6 +14321,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1QpPlI51TNL">
+    <property role="3GE5qa" value="TIssue" />
     <ref role="13h7C2" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="13i0hz" id="1QpPlI51TNW" role="13h7CS">
       <property role="TrG5h" value="check_object_boundaries" />
@@ -17531,6 +17539,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="EX9x3Xxwa_">
+    <property role="3GE5qa" value="CellType" />
     <ref role="13h7C2" to="nguq:5qSYbADreYb" resolve="CellType" />
     <node concept="13i0hz" id="EX9x3XxwaK" role="13h7CS">
       <property role="TrG5h" value="getFixedName" />
@@ -17839,12 +17848,14 @@
     </node>
   </node>
   <node concept="13h7C7" id="bKPOWXCUdy">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="13h7C2" to="nguq:bKPOWXCUdt" resolve="ExtensionCondition" />
     <node concept="13hLZK" id="bKPOWXCUdz" role="13h7CW">
       <node concept="3clFbS" id="bKPOWXCUd$" role="2VODD2" />
     </node>
   </node>
   <node concept="13h7C7" id="bKPOWXCUmY">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="13h7C2" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
     <node concept="13hLZK" id="bKPOWXCUmZ" role="13h7CW">
       <node concept="3clFbS" id="bKPOWXCUn0" role="2VODD2" />

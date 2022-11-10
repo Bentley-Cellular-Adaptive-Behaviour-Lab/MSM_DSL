@@ -143,6 +143,7 @@
         <child id="1174660783413" name="leftExpression" index="1ZfhK$" />
         <child id="1174660783414" name="rightExpression" index="1ZfhKB" />
       </concept>
+      <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
@@ -247,6 +248,7 @@
   </registry>
   <node concept="18kY7G" id="i2Gwg1zb2C">
     <property role="TrG5h" value="duplicateCellTypeName" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="i2Gwg1zb2D" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXH7W" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXH7X" role="1aUNEU">
@@ -379,6 +381,7 @@
   </node>
   <node concept="18kY7G" id="i2Gwg1zrYx">
     <property role="TrG5h" value="duplicateTissueTypeName" />
+    <property role="3GE5qa" value="TissueType" />
     <node concept="3clFbS" id="i2Gwg1zrYy" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXHBn" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXHBo" role="1aUNEU">
@@ -511,6 +514,7 @@
   </node>
   <node concept="18kY7G" id="i2Gwg1zz9z">
     <property role="TrG5h" value="duplicateTissueName" />
+    <property role="3GE5qa" value="TIssue" />
     <node concept="3clFbS" id="i2Gwg1zz9$" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXHnM" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXHnN" role="1aUNEU">
@@ -640,6 +644,7 @@
   </node>
   <node concept="18kY7G" id="i2Gwg1zDpT">
     <property role="TrG5h" value="duplicateCellName" />
+    <property role="3GE5qa" value="Cell" />
     <node concept="3clFbS" id="i2Gwg1zDpU" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXGS6" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXGS7" role="1aUNEU">
@@ -872,7 +877,7 @@
   </node>
   <node concept="18kY7G" id="3$QBVvWAIMR">
     <property role="TrG5h" value="noCellTissueCollision" />
-    <property role="3GE5qa" value="CellCheckingRules" />
+    <property role="3GE5qa" value="Cell" />
     <node concept="3clFbS" id="3$QBVvWAIMS" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXHMp" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXHMq" role="1aUNEU">
@@ -969,7 +974,7 @@
   </node>
   <node concept="18kY7G" id="3$QBVvWAJeO">
     <property role="TrG5h" value="noTissueObjectCollision" />
-    <property role="3GE5qa" value="TissueCheckingRules" />
+    <property role="3GE5qa" value="TIssue" />
     <node concept="3clFbS" id="3$QBVvWAJeP" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXIuu" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXIuv" role="1aUNEU">
@@ -1066,6 +1071,7 @@
   </node>
   <node concept="18kY7G" id="1z0V6VUax68">
     <property role="TrG5h" value="duplicateOwnedProtein" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="1z0V6VUax69" role="18ibNy">
       <node concept="2Gpval" id="1z0V6VUaGRC" role="3cqZAp">
         <node concept="2GrKxI" id="1z0V6VUaGRD" role="2Gsz3X">
@@ -1178,6 +1184,7 @@
   </node>
   <node concept="18kY7G" id="7Eknuda1QPx">
     <property role="TrG5h" value="check_CellTypeValues" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="7Eknuda1QPy" role="18ibNy">
       <node concept="3clFbJ" id="7Eknuda1RtI" role="3cqZAp">
         <node concept="2OqwBi" id="7Eknuda1S7P" role="3clFbw">
@@ -1306,6 +1313,7 @@
   </node>
   <node concept="18kY7G" id="109yD1sCUyE">
     <property role="TrG5h" value="checkSpeciesLocation" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="109yD1sCUyF" role="18ibNy">
       <node concept="2Gpval" id="109yD1sCUz5" role="3cqZAp">
         <node concept="2GrKxI" id="109yD1sCUz6" role="2Gsz3X">
@@ -1878,6 +1886,7 @@
   </node>
   <node concept="18kY7G" id="6WHzz7d2MrR">
     <property role="TrG5h" value="check_CylinderParamValues" />
+    <property role="3GE5qa" value="Arrangement" />
     <node concept="3clFbS" id="6WHzz7d2MrS" role="18ibNy">
       <node concept="3cpWs8" id="6WHzz7d2Mtc" role="3cqZAp">
         <node concept="3cpWsn" id="6WHzz7d2Mtf" role="3cpWs9">
@@ -1991,6 +2000,7 @@
   </node>
   <node concept="18kY7G" id="6WHzz7d2Pta">
     <property role="TrG5h" value="check_FlatParamValues" />
+    <property role="3GE5qa" value="Arrangement" />
     <node concept="3clFbS" id="6WHzz7d2Ptb" role="18ibNy">
       <node concept="3cpWs8" id="6WHzz7d2Ptc" role="3cqZAp">
         <node concept="3cpWsn" id="6WHzz7d2Ptd" role="3cpWs9">
@@ -2160,7 +2170,7 @@
   </node>
   <node concept="18kY7G" id="4MFt7FnTeYx">
     <property role="TrG5h" value="checkCellSpecies" />
-    <property role="3GE5qa" value="CellCheckingRules" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="4MFt7FnTeYy" role="18ibNy">
       <node concept="3SKdUt" id="4MFt7FnVCKL" role="3cqZAp">
         <node concept="1PaTwC" id="4MFt7FnVCKM" role="1aUNEU">
@@ -2512,6 +2522,7 @@
   </node>
   <node concept="18kY7G" id="2iYrNGjrbDg">
     <property role="TrG5h" value="check_filExtendSpecies" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="2iYrNGjrbDh" role="18ibNy">
       <node concept="3cpWs8" id="2iYrNGjrujj" role="3cqZAp">
         <node concept="3cpWsn" id="2iYrNGjrujm" role="3cpWs9">
@@ -2581,13 +2592,22 @@
               </node>
               <node concept="3fqX7Q" id="2iYrNGjrwu8" role="3uHU7B">
                 <node concept="2OqwBi" id="2iYrNGjrKfC" role="3fr31v">
-                  <node concept="1YBJjd" id="2iYrNGjrwAy" role="2Oq$k0">
-                    <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
-                  </node>
                   <node concept="2qgKlT" id="2iYrNGjrKI$" role="2OqNvi">
                     <ref role="37wK5l" to="4ebj:2iYrNGjrG4s" resolve="hasSpecies" />
                     <node concept="37vLTw" id="2iYrNGjrKYt" role="37wK5m">
                       <ref role="3cqZAo" node="2iYrNGjrCTq" resolve="currentSpecies" />
+                    </node>
+                  </node>
+                  <node concept="1PxgMI" id="5j_l9LXHZQl" role="2Oq$k0">
+                    <property role="1BlNFB" value="true" />
+                    <node concept="chp4Y" id="5j_l9LXHZQm" role="3oSUPX">
+                      <ref role="cht4Q" to="nguq:5qSYbADreYb" resolve="CellType" />
+                    </node>
+                    <node concept="2OqwBi" id="5j_l9LXHZQn" role="1m5AlR">
+                      <node concept="1YBJjd" id="5j_l9LXHZQo" role="2Oq$k0">
+                        <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="filopodia" />
+                      </node>
+                      <node concept="1mfA1w" id="5j_l9LXHZQp" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
@@ -2596,7 +2616,7 @@
             <node concept="3clFbS" id="2iYrNGjrwg4" role="3clFbx">
               <node concept="2MkqsV" id="2iYrNGjrL15" role="3cqZAp">
                 <node concept="Xl_RD" id="2iYrNGjrL1h" role="2MkJ7o">
-                  <property role="Xl_RC" value="Extension expressions must use one of the species assigned to its cell type. " />
+                  <property role="Xl_RC" value="Filopodia must use one of the species assigned to its cell type. " />
                 </node>
                 <node concept="1YBJjd" id="2iYrNGjrL3P" role="1urrMF">
                   <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
@@ -2617,7 +2637,7 @@
                   <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
                 </node>
                 <node concept="3TrEf2" id="2iYrNGjrwcd" role="2OqNvi">
-                  <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+                  <ref role="3Tt5mk" to="nguq:5j_l9LXFFwO" resolve="_extensionCondition" />
                 </node>
               </node>
               <node concept="3TrEf2" id="bKPOWXDIek" role="2OqNvi">
@@ -2629,13 +2649,14 @@
       </node>
     </node>
     <node concept="1YaCAy" id="2iYrNGjrbDj" role="1YuTPh">
-      <property role="TrG5h" value="cellType" />
-      <ref role="1YaFvo" to="nguq:5qSYbADreYb" resolve="CellType" />
+      <property role="TrG5h" value="filopodia" />
+      <ref role="1YaFvo" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
     </node>
   </node>
   <node concept="18kY7G" id="bKPOWXROw_">
     <property role="TrG5h" value="check_probabilityBounds" />
     <property role="1$Xk0j" value="true" />
+    <property role="3GE5qa" value="CellType" />
     <node concept="3clFbS" id="bKPOWXROwA" role="18ibNy">
       <node concept="1X3_iC" id="BDFw_SdU0_" role="lGtFl">
         <property role="3V$3am" value="statement" />
@@ -2683,7 +2704,7 @@
                             <ref role="1YBMHb" node="bKPOWXROwC" resolve="cellType" />
                           </node>
                           <node concept="3TrEf2" id="bKPOWXRQoo" role="2OqNvi">
-                            <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+                            <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionCondition" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="bKPOWXRQXv" role="2OqNvi">
@@ -2718,7 +2739,7 @@
                             <ref role="1YBMHb" node="bKPOWXROwC" resolve="cellType" />
                           </node>
                           <node concept="3TrEf2" id="bKPOWXRR97" role="2OqNvi">
-                            <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+                            <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionCondition" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="bKPOWXRR98" role="2OqNvi">
@@ -2743,7 +2764,7 @@
                 <ref role="1YBMHb" node="bKPOWXROwC" resolve="cellType" />
               </node>
               <node concept="3TrEf2" id="bKPOWXUst4" role="2OqNvi">
-                <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionRule" />
+                <ref role="3Tt5mk" to="nguq:2iYrNGjfSu_" resolve="_extensionCondition" />
               </node>
             </node>
             <node concept="1mIQ4w" id="bKPOWXUsUu" role="2OqNvi">
@@ -2762,6 +2783,7 @@
   </node>
   <node concept="1YbPZF" id="BDFw_SqARy">
     <property role="TrG5h" value="typeof_AlwaysExtends" />
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <node concept="3clFbS" id="BDFw_SqARz" role="18ibNy">
       <node concept="1Z5TYs" id="BDFw_SqBmw" role="3cqZAp">
         <node concept="mw_s8" id="BDFw_SqBmy" role="1ZfhK$">
@@ -2791,25 +2813,46 @@
   </node>
   <node concept="1YbPZF" id="BDFw_SqB_G">
     <property role="TrG5h" value="typeof_ExtensionWithProb" />
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <node concept="3clFbS" id="BDFw_SqB_H" role="18ibNy">
-      <node concept="1Z5TYs" id="BDFw_S$gmj" role="3cqZAp">
-        <node concept="mw_s8" id="BDFw_S$gmk" role="1ZfhK$">
-          <node concept="1Z2H0r" id="BDFw_S$gml" role="mwGJk">
-            <node concept="2OqwBi" id="BDFw_S$gmm" role="1Z2MuG">
-              <node concept="1YBJjd" id="BDFw_S$gmn" role="2Oq$k0">
-                <ref role="1YBMHb" node="BDFw_SqB_J" resolve="extensionWithProb" />
-              </node>
-              <node concept="3TrEf2" id="BDFw_S$gmo" role="2OqNvi">
-                <ref role="3Tt5mk" to="nguq:bKPOWXCUdw" resolve="expr" />
-              </node>
+      <node concept="1ZobV4" id="1Rle6qVrRla" role="3cqZAp">
+        <node concept="mw_s8" id="1Rle6qVrRnk" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1Rle6qVrRng" role="mwGJk">
+            <node concept="1YBJjd" id="1Rle6qVrRn_" role="1Z2MuG">
+              <ref role="1YBMHb" node="BDFw_SqB_J" resolve="extensionWithProb" />
             </node>
           </node>
         </node>
-        <node concept="mw_s8" id="BDFw_S$gmp" role="1ZfhKB">
-          <node concept="2YIFZM" id="BDFw_S$gmq" role="mwGJk">
-            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+        <node concept="mw_s8" id="1Rle6qVrRu9" role="1ZfhKB">
+          <node concept="2YIFZM" id="1Rle6qVrRHv" role="mwGJk">
             <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
-            <node concept="10Nm6u" id="BDFw_S$gmr" role="37wK5m" />
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <node concept="10Nm6u" id="1Rle6qVrRJA" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+      <node concept="1X3_iC" id="1Rle6qVrRNx" role="lGtFl">
+        <property role="3V$3am" value="statement" />
+        <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
+        <node concept="1Z5TYs" id="BDFw_S$gmj" role="8Wnug">
+          <node concept="mw_s8" id="BDFw_S$gmk" role="1ZfhK$">
+            <node concept="1Z2H0r" id="BDFw_S$gml" role="mwGJk">
+              <node concept="2OqwBi" id="BDFw_S$gmm" role="1Z2MuG">
+                <node concept="1YBJjd" id="BDFw_S$gmn" role="2Oq$k0">
+                  <ref role="1YBMHb" node="BDFw_SqB_J" resolve="extensionWithProb" />
+                </node>
+                <node concept="3TrEf2" id="BDFw_S$gmo" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:bKPOWXCUdw" resolve="expr" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="mw_s8" id="BDFw_S$gmp" role="1ZfhKB">
+            <node concept="2YIFZM" id="BDFw_S$gmq" role="mwGJk">
+              <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+              <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+              <node concept="10Nm6u" id="BDFw_S$gmr" role="37wK5m" />
+            </node>
           </node>
         </node>
       </node>
