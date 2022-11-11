@@ -514,7 +514,7 @@
   </node>
   <node concept="18kY7G" id="i2Gwg1zz9z">
     <property role="TrG5h" value="duplicateTissueName" />
-    <property role="3GE5qa" value="TIssue" />
+    <property role="3GE5qa" value="Tissue" />
     <node concept="3clFbS" id="i2Gwg1zz9$" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXHnM" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXHnN" role="1aUNEU">
@@ -974,7 +974,7 @@
   </node>
   <node concept="18kY7G" id="3$QBVvWAJeO">
     <property role="TrG5h" value="noTissueObjectCollision" />
-    <property role="3GE5qa" value="TIssue" />
+    <property role="3GE5qa" value="Tissue" />
     <node concept="3clFbS" id="3$QBVvWAJeP" role="18ibNy">
       <node concept="3SKdUt" id="248hPtQXIuu" role="3cqZAp">
         <node concept="1PaTwC" id="248hPtQXIuv" role="1aUNEU">

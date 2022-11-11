@@ -620,17 +620,17 @@
     </node>
     <node concept="1TJgyi" id="5nupkjF4WVy" role="1TKVEl">
       <property role="IQ2nx" value="6187494284729765602" />
-      <property role="TrG5h" value="parameterUsesNeighbour" />
+      <property role="TrG5h" value="speciesExprUsesNeighbour" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="54teBVtO_D6" role="1TKVEl">
       <property role="IQ2nx" value="5844892207958612550" />
-      <property role="TrG5h" value="parameterGetsSumFromNeighbours" />
+      <property role="TrG5h" value="speciesExprGetsSumFromNeighbours" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="54teBVtO_Et" role="1TKVEl">
       <property role="IQ2nx" value="5844892207958612637" />
-      <property role="TrG5h" value="parameterIsNormalisedToStartValue" />
+      <property role="TrG5h" value="speciesExprIsNormalisedToStartValue" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">

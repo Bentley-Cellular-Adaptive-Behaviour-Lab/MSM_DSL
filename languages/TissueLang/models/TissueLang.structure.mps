@@ -97,7 +97,7 @@
     <property role="EcuMT" value="6249017959271690118" />
     <property role="TrG5h" value="Tissue" />
     <property role="R4oN_" value="Concept for storing the location and type of a tissue." />
-    <property role="3GE5qa" value="TIssue" />
+    <property role="3GE5qa" value="Tissue" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5qSYbADryCY" role="1TKVEi">
       <property role="IQ2ns" value="6249017959271770686" />
@@ -367,8 +367,19 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5qSYbADreYa" resolve="Arrangement" />
     </node>
+    <node concept="1TJgyj" id="1Rle6qVWwkq" role="1TKVEi">
+      <property role="IQ2ns" value="2149686411030299930" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_shuffling" />
+      <ref role="20lvS9" node="1Rle6qVWwjh" resolve="CellShuffling" />
+    </node>
     <node concept="PrWs8" id="4dDC3GsoAE5" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
+    </node>
+    <node concept="1TJgyi" id="1Rle6qVWwl2" role="1TKVEl">
+      <property role="IQ2nx" value="2149686411030299970" />
+      <property role="TrG5h" value="showsCellShuffling" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
   </node>
   <node concept="1TIwiD" id="1z0V6VU70dn">
@@ -480,6 +491,19 @@
       <property role="20kJfa" value="_targetSpecies" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="1Rle6qVWwjh">
+    <property role="EcuMT" value="2149686411030299857" />
+    <property role="3GE5qa" value="TissueType" />
+    <property role="TrG5h" value="CellShuffling" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="1Rle6qVWyfD" role="1TKVEi">
+      <property role="IQ2ns" value="2149686411030307817" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="expr" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
   </node>
 </model>

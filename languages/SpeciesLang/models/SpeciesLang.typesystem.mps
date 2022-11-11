@@ -7228,34 +7228,81 @@
     <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="check_getSumApplicability" />
     <node concept="3clFbS" id="54teBVtUsoS" role="18ibNy">
-      <node concept="3clFbJ" id="54teBVtUsp3" role="3cqZAp">
-        <node concept="1Wc70l" id="54teBVtUtM$" role="3clFbw">
-          <node concept="2OqwBi" id="54teBVtUu8K" role="3uHU7w">
-            <node concept="1YBJjd" id="54teBVtUtTk" role="2Oq$k0">
-              <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+      <node concept="3clFbJ" id="7lL7HQ7eMi7" role="3cqZAp">
+        <node concept="3clFbS" id="7lL7HQ7eMi9" role="3clFbx">
+          <node concept="3clFbJ" id="54teBVtUsp3" role="3cqZAp">
+            <node concept="1Wc70l" id="54teBVtUtM$" role="3clFbw">
+              <node concept="2OqwBi" id="54teBVtUu8K" role="3uHU7w">
+                <node concept="1YBJjd" id="54teBVtUtTk" role="2Oq$k0">
+                  <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+                </node>
+                <node concept="3TrcHB" id="54teBVtUuqc" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:54teBVtOs6H" resolve="getsSumFromMemAgents" />
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="54teBVtUt9M" role="3uHU7B">
+                <node concept="2OqwBi" id="54teBVtUt9O" role="3fr31v">
+                  <node concept="1YBJjd" id="54teBVtUt9P" role="2Oq$k0">
+                    <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+                  </node>
+                  <node concept="3TrcHB" id="54teBVtUt9Q" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="3TrcHB" id="54teBVtUuqc" role="2OqNvi">
-              <ref role="3TsBF5" to="w3cn:54teBVtOs6H" resolve="getsSumFromMemAgents" />
+            <node concept="3clFbS" id="54teBVtUsp5" role="3clFbx">
+              <node concept="2MkqsV" id="54teBVtUuqP" role="3cqZAp">
+                <node concept="Xl_RD" id="54teBVtUur1" role="2MkJ7o">
+                  <property role="Xl_RC" value="Membrane or junction species expressions must use neighbour values when attempting to calculate a sum." />
+                </node>
+                <node concept="1YBJjd" id="54teBVtUut1" role="1urrMF">
+                  <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="3fqX7Q" id="54teBVtUt9M" role="3uHU7B">
-            <node concept="2OqwBi" id="54teBVtUt9O" role="3fr31v">
-              <node concept="1YBJjd" id="54teBVtUt9P" role="2Oq$k0">
-                <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
-              </node>
-              <node concept="3TrcHB" id="54teBVtUt9Q" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
-              </node>
-            </node>
-          </node>
+          <node concept="3clFbH" id="7lL7HQ7eMi8" role="3cqZAp" />
         </node>
-        <node concept="3clFbS" id="54teBVtUsp5" role="3clFbx">
-          <node concept="2MkqsV" id="54teBVtUuqP" role="3cqZAp">
-            <node concept="Xl_RD" id="54teBVtUur1" role="2MkJ7o">
-              <property role="Xl_RC" value="Species expressions must use neighbour values when attempting to calculate a sum." />
+        <node concept="22lmx$" id="7lL7HQ7eOih" role="3clFbw">
+          <node concept="2OqwBi" id="7lL7HQ7ePV2" role="3uHU7w">
+            <node concept="2OqwBi" id="7lL7HQ7eOYq" role="2Oq$k0">
+              <node concept="2OqwBi" id="7lL7HQ7eOuB" role="2Oq$k0">
+                <node concept="1YBJjd" id="7lL7HQ7eOnz" role="2Oq$k0">
+                  <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+                </node>
+                <node concept="3TrEf2" id="7lL7HQ7eOHm" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="7lL7HQ7ePhs" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+              </node>
             </node>
-            <node concept="1YBJjd" id="54teBVtUut1" role="1urrMF">
-              <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+            <node concept="21noJN" id="7lL7HQ7eQ5U" role="2OqNvi">
+              <node concept="21nZrQ" id="7lL7HQ7eQ5W" role="21noJM">
+                <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="7lL7HQ7eNIT" role="3uHU7B">
+            <node concept="2OqwBi" id="7lL7HQ7eMOq" role="2Oq$k0">
+              <node concept="2OqwBi" id="7lL7HQ7eMow" role="2Oq$k0">
+                <node concept="1YBJjd" id="7lL7HQ7eMiz" role="2Oq$k0">
+                  <ref role="1YBMHb" node="54teBVtUsoU" resolve="speciesExpression" />
+                </node>
+                <node concept="3TrEf2" id="7lL7HQ7eMCg" role="2OqNvi">
+                  <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="7lL7HQ7eNjx" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+              </node>
+            </node>
+            <node concept="21noJN" id="7lL7HQ7eNTg" role="2OqNvi">
+              <node concept="21nZrQ" id="7lL7HQ7eNTi" role="21noJM">
+                <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
+              </node>
             </node>
           </node>
         </node>

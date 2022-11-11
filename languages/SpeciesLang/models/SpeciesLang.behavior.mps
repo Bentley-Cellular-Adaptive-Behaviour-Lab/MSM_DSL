@@ -17978,7 +17978,7 @@
             <node concept="2OqwBi" id="xhYrITX2w4" role="37vLTJ">
               <node concept="13iPFW" id="xhYrITX2oh" role="2Oq$k0" />
               <node concept="3TrcHB" id="xhYrITX2CM" role="2OqNvi">
-                <ref role="3TsBF5" to="w3cn:5nupkjF4WVy" resolve="parameterUsesNeighbour" />
+                <ref role="3TsBF5" to="w3cn:5nupkjF4WVy" resolve="speciesExprUsesNeighbour" />
               </node>
             </node>
           </node>

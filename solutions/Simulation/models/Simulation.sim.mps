@@ -537,10 +537,10 @@
       </node>
     </node>
     <node concept="1yko03" id="3Y6HoqB0CT$" role="1yko01">
-      <property role="3cJDZq" value="-130" />
+      <property role="3cJDZq" value="-500" />
       <property role="3cJDZs" value="-10" />
       <property role="3cJDZ5" value="-20" />
-      <property role="3bD6N$" value="260" />
+      <property role="3bD6N$" value="1000" />
       <property role="3bD6ND" value="100" />
       <property role="3bD6NH" value="40" />
       <node concept="2_hQR_" id="3Y6HoqB0CT_" role="3bEhY_">

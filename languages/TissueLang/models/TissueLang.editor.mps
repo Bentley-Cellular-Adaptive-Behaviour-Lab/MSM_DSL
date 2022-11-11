@@ -657,6 +657,35 @@
         </node>
         <node concept="2iRfu4" id="6mloH5uS3SE" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="1Rle6qVWxwS" role="3EZMnx">
+        <node concept="VPM3Z" id="1Rle6qVWxwU" role="3F10Kt" />
+        <node concept="3XFhqQ" id="1Rle6qVWxxF" role="3EZMnx" />
+        <node concept="3F0ifn" id="1Rle6qVWxxP" role="3EZMnx">
+          <property role="3F0ifm" value="Shuffling Behaviour:" />
+          <node concept="2biZxu" id="1Rle6qVWxxX" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1Rle6qVWxxY" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="1Rle6qVWy5_" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:1Rle6qVWwkq" resolve="_shuffling" />
+        </node>
+        <node concept="2iRfu4" id="1Rle6qVWxwX" role="2iSdaV" />
+        <node concept="pkWqt" id="1Rle6qVWxy1" role="pqm2j">
+          <node concept="3clFbS" id="1Rle6qVWxy2" role="2VODD2">
+            <node concept="3clFbF" id="1Rle6qVWx_T" role="3cqZAp">
+              <node concept="2OqwBi" id="1Rle6qVWxMu" role="3clFbG">
+                <node concept="pncrf" id="1Rle6qVWx_S" role="2Oq$k0" />
+                <node concept="3TrcHB" id="1Rle6qVWxZk" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:1Rle6qVWwl2" resolve="showsCellShuffling" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3F0ifn" id="6mloH5uS3Nn" role="3EZMnx">
         <node concept="2biZxu" id="2FvyIAlGEVD" role="3F10Kt">
           <property role="1rj3mz" value="Calibri" />
@@ -1131,7 +1160,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="4JVq81FjBZK">
-    <property role="3GE5qa" value="TIssue" />
+    <property role="3GE5qa" value="Tissue" />
     <ref role="1XX52x" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="3EZMnI" id="3mEqLZyeByR" role="2wV5jI">
       <node concept="2iRkQZ" id="3mEqLZyeByS" role="2iSdaV" />
@@ -1935,6 +1964,44 @@
         </node>
       </node>
       <node concept="2iRfu4" id="4YEYPh9qGbp" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="1Rle6qVWy6M">
+    <property role="3GE5qa" value="TissueType" />
+    <ref role="1XX52x" to="nguq:1Rle6qVWwjh" resolve="CellShuffling" />
+    <node concept="3EZMnI" id="1Rle6qVWy79" role="2wV5jI">
+      <node concept="1v6uyg" id="1Rle6qVWy7j" role="3EZMnx">
+        <property role="2oejA6" value="true" />
+        <node concept="3EZMnI" id="1Rle6qVWyeZ" role="wsdo6">
+          <node concept="3F0ifn" id="1Rle6qVWyf1" role="3EZMnx">
+            <property role="3F0ifm" value="Cells that are strongly adhesive will " />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyf6" role="3EZMnx">
+            <property role="3F0ifm" value="tend to cluster together within the tissue." />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyfd" role="3EZMnx">
+            <property role="3F0ifm" value="Weakly adhesive cells will tend to" />
+          </node>
+          <node concept="3F0ifn" id="1Rle6qVWyfi" role="3EZMnx">
+            <property role="3F0ifm" value="disperse to the edges of the tissues." />
+          </node>
+          <node concept="2iRkQZ" id="1Rle6qVWyf2" role="2iSdaV" />
+        </node>
+        <node concept="3F0ifn" id="1Rle6qVWy7t" role="1j7Clw">
+          <property role="3F0ifm" value="Cells are strongly adhesive when" />
+          <node concept="VQ3r3" id="1Rle6qVWy7w" role="3F10Kt">
+            <property role="2USNnj" value="gtbM8PH/underlined" />
+          </node>
+          <node concept="2biZxu" id="1Rle6qVWyeR" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1Rle6qVWyeS" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="1Rle6qVWy7b" role="3EZMnx" />
+      <node concept="2iRfu4" id="1Rle6qVWy7c" role="2iSdaV" />
     </node>
   </node>
 </model>

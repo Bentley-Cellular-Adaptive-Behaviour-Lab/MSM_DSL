@@ -14321,7 +14321,7 @@
     </node>
   </node>
   <node concept="13h7C7" id="1QpPlI51TNL">
-    <property role="3GE5qa" value="TIssue" />
+    <property role="3GE5qa" value="Tissue" />
     <ref role="13h7C2" to="nguq:5qSYbADreY6" resolve="Tissue" />
     <node concept="13i0hz" id="1QpPlI51TNW" role="13h7CS">
       <property role="TrG5h" value="check_object_boundaries" />
@@ -17859,6 +17859,25 @@
     <ref role="13h7C2" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
     <node concept="13hLZK" id="bKPOWXCUmZ" role="13h7CW">
       <node concept="3clFbS" id="bKPOWXCUn0" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1Rle6qVWwsS">
+    <property role="3GE5qa" value="TissueType" />
+    <ref role="13h7C2" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    <node concept="13hLZK" id="1Rle6qVWwsT" role="13h7CW">
+      <node concept="3clFbS" id="1Rle6qVWwsU" role="2VODD2">
+        <node concept="3clFbF" id="1Rle6qVWwtx" role="3cqZAp">
+          <node concept="37vLTI" id="1Rle6qVWxuJ" role="3clFbG">
+            <node concept="3clFbT" id="1Rle6qVWxvc" role="37vLTx" />
+            <node concept="2OqwBi" id="1Rle6qVWw$t" role="37vLTJ">
+              <node concept="13iPFW" id="1Rle6qVWwtv" role="2Oq$k0" />
+              <node concept="3TrcHB" id="1Rle6qVWx0F" role="2OqNvi">
+                <ref role="3TsBF5" to="nguq:1Rle6qVWwl2" resolve="showsCellShuffling" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

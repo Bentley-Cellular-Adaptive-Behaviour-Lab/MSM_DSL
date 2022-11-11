@@ -73,6 +73,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
+        <child id="4705942098322609813" name="member" index="21noJM" />
+      </concept>
+      <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
+        <reference id="4705942098322467736" name="decl" index="21nZrZ" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
@@ -875,50 +881,6 @@
     <node concept="2SaL7w" id="54teBVtOzpV" role="2ZfVeh">
       <node concept="3clFbS" id="54teBVtOzpW" role="2VODD2">
         <node concept="3clFbJ" id="54teBVtOz1x" role="3cqZAp">
-          <node concept="22lmx$" id="54teBVtOz1y" role="3clFbw">
-            <node concept="17R0WA" id="54teBVtOz1z" role="3uHU7w">
-              <node concept="2OqwBi" id="54teBVtOz1$" role="3uHU7B">
-                <node concept="2OqwBi" id="54teBVtOz1_" role="2Oq$k0">
-                  <node concept="2Sf5sV" id="54teBVtOz1A" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="54teBVtOz1B" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
-                  </node>
-                </node>
-                <node concept="3TrcHB" id="54teBVtOz1C" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="54teBVtOz1D" role="3uHU7w">
-                <node concept="1XH99k" id="54teBVtOz1E" role="2Oq$k0">
-                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
-                </node>
-                <node concept="2ViDtV" id="54teBVtOz1F" role="2OqNvi">
-                  <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAD" resolve="LOCATION_MEMBRANE" />
-                </node>
-              </node>
-            </node>
-            <node concept="17R0WA" id="54teBVtOz1G" role="3uHU7B">
-              <node concept="2OqwBi" id="54teBVtOz1H" role="3uHU7B">
-                <node concept="2OqwBi" id="54teBVtOz1I" role="2Oq$k0">
-                  <node concept="2Sf5sV" id="54teBVtOz1J" role="2Oq$k0" />
-                  <node concept="3TrEf2" id="54teBVtOz1K" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
-                  </node>
-                </node>
-                <node concept="3TrcHB" id="54teBVtOz1L" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="54teBVtOz1M" role="3uHU7w">
-                <node concept="1XH99k" id="54teBVtOz1N" role="2Oq$k0">
-                  <ref role="1XH99l" to="w3cn:2Hxmt3eVjAB" resolve="SpeciesLocation" />
-                </node>
-                <node concept="2ViDtV" id="54teBVtOz1O" role="2OqNvi">
-                  <ref role="2ViDtZ" to="w3cn:2Hxmt3eVjAK" resolve="LOCATION_CELL_JUNCTION" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node concept="3clFbS" id="54teBVtOz1P" role="3clFbx">
             <node concept="3cpWs6" id="54teBVtOz1Q" role="3cqZAp">
               <node concept="3clFbT" id="54teBVtOz1R" role="3cqZAk">
@@ -930,6 +892,26 @@
             <node concept="3clFbS" id="54teBVtOz1T" role="9aQI4">
               <node concept="3cpWs6" id="54teBVtOz1U" role="3cqZAp">
                 <node concept="3clFbT" id="54teBVtOz1V" role="3cqZAk" />
+              </node>
+            </node>
+          </node>
+          <node concept="3fqX7Q" id="7lL7HQ7eITq" role="3clFbw">
+            <node concept="2OqwBi" id="7lL7HQ7eKi0" role="3fr31v">
+              <node concept="2OqwBi" id="7lL7HQ7eJyh" role="2Oq$k0">
+                <node concept="2OqwBi" id="7lL7HQ7eJ4x" role="2Oq$k0">
+                  <node concept="2Sf5sV" id="7lL7HQ7eIUp" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7lL7HQ7eJjM" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="7lL7HQ7eK5x" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                </node>
+              </node>
+              <node concept="21noJN" id="7lL7HQ7eKw7" role="2OqNvi">
+                <node concept="21nZrQ" id="7lL7HQ7eKw9" role="21noJM">
+                  <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAG" resolve="LOCATION_CELLULAR_INTERIOR" />
+                </node>
               </node>
             </node>
           </node>
@@ -992,6 +974,46 @@
                     <node concept="3clFbT" id="54teBVtO$A5" role="tz02z" />
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="7lL7HQ7kstO" role="2ZfVeh">
+      <node concept="3clFbS" id="7lL7HQ7kstP" role="2VODD2">
+        <node concept="3clFbJ" id="7lL7HQ7ksvk" role="3cqZAp">
+          <node concept="3fqX7Q" id="7lL7HQ7kuk5" role="3clFbw">
+            <node concept="2OqwBi" id="7lL7HQ7kuk7" role="3fr31v">
+              <node concept="2OqwBi" id="7lL7HQ7kuk8" role="2Oq$k0">
+                <node concept="2OqwBi" id="7lL7HQ7kuk9" role="2Oq$k0">
+                  <node concept="2Sf5sV" id="7lL7HQ7kuka" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="7lL7HQ7kukb" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="7lL7HQ7kukc" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                </node>
+              </node>
+              <node concept="21noJN" id="7lL7HQ7kukd" role="2OqNvi">
+                <node concept="21nZrQ" id="7lL7HQ7kuke" role="21noJM">
+                  <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbS" id="7lL7HQ7ksvm" role="3clFbx">
+            <node concept="3cpWs6" id="7lL7HQ7kuld" role="3cqZAp">
+              <node concept="3clFbT" id="7lL7HQ7kumP" role="3cqZAk">
+                <property role="3clFbU" value="true" />
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="7lL7HQ7kunN" role="9aQIa">
+            <node concept="3clFbS" id="7lL7HQ7kunO" role="9aQI4">
+              <node concept="3cpWs6" id="7lL7HQ7kuoJ" role="3cqZAp">
+                <node concept="3clFbT" id="7lL7HQ7kuxR" role="3cqZAk" />
               </node>
             </node>
           </node>
