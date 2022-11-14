@@ -180,5 +180,21 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="3Y$DpTSaVHe">
+    <property role="TrG5h" value="showCellShuffling" />
+    <ref role="2ZfgGC" to="nguq:7aglRcSXD5Z" resolve="TissueType" />
+    <node concept="2S6ZIM" id="3Y$DpTSaVHf" role="2ZfVej">
+      <node concept="3clFbS" id="3Y$DpTSaVHg" role="2VODD2">
+        <node concept="3clFbF" id="3Y$DpTSaVNM" role="3cqZAp">
+          <node concept="Xl_RD" id="3Y$DpTSaVNL" role="3clFbG">
+            <property role="Xl_RC" value="Show cell shuffling behaviour?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3Y$DpTSaVHh" role="2ZfgGD">
+      <node concept="3clFbS" id="3Y$DpTSaVHi" role="2VODD2" />
+    </node>
+  </node>
 </model>
 

@@ -591,6 +591,16 @@
       <property role="TrG5h" value="expressionChecksAdjacent" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="3Y$DpTRZGAt" role="1TKVEl">
+      <property role="IQ2nx" value="4585972420606609821" />
+      <property role="TrG5h" value="expressionGetsSum" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="3Y$DpTRZGAx" role="1TKVEl">
+      <property role="IQ2nx" value="4585972420606609825" />
+      <property role="TrG5h" value="expressionIsNormalised" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="3LeNXFhUH1L" role="1TKVEi">
       <property role="IQ2ns" value="4345639229190754417" />
       <property role="20kJfa" value="target" />

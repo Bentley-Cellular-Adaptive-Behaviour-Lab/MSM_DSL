@@ -2254,3 +2254,24 @@ std::vector<int>& EC::get_creation_times() {
 void EC::add_creation_time(int creation_time) {
     this->m_filopodia_creation_times.push_back(creation_time);
 }
+
+double EC::calc_adjacent_species_level(const std::string& species_name,
+								   const bool memAgentODEs,
+								   const bool getsAverage) {
+	double level = 0.0;
+	for (auto *neighbour : this->getNeighCellVector()) {
+		if (memAgentODEs) {
+			auto map = neighbour->getProteinStartBuffer();
+			level += map[species_name];
+		} else {
+			level += neighbour->get_cell_protein_level(species_name,0);
+		}
+	}
+	if (getsAverage && this->getNeighCellVector().empty()) {
+		return 0.0;
+	} else if (getsAverage && !this->getNeighCellVector().empty() ) {
+		return level / (float) this->getNeighCellVector().size();
+	} else {
+		return level;
+	}
+}

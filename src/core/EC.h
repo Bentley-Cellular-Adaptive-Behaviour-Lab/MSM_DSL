@@ -223,5 +223,9 @@ public:
     void add_retraction_time(int retraction_time);
     void add_creation_time(int creation_time);
     void add_lifespan(int lifespan);
+
+	double calc_adjacent_species_level(const std::string& species_name,
+									   const bool memAgentODEs,
+									   const bool getsAverage);
 };
 #endif //SPRINGAGENT_EC_H
