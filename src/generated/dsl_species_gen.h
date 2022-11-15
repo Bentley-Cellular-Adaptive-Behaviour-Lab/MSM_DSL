@@ -11,9 +11,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 7> EndothelialCell_cell_ode_states;
-typedef boost::array<double, 7> EndothelialCell_memAgent_ode_states;
-typedef boost::array<double, 7> EndothelialCell_cell_only_ode_states;
+typedef boost::array<double, 6> HUVEC_cell_ode_states;
+typedef boost::array<double, 6> HUVEC_memAgent_ode_states;
+typedef boost::array<double, 6> HUVEC_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -25,12 +25,12 @@ public:
 	void check_cell_ODEs(EC *ec);
 	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
 	void check_cell_only_ODEs(EC *ec);
- 	static void EndothelialCell_cell_system(const EndothelialCell_cell_ode_states &x, EndothelialCell_cell_ode_states &dxdt, double t);
- 	void EndothelialCell_run_cell_ODEs(EC *ec);
- 	static void EndothelialCell_memAgent_system(const EndothelialCell_memAgent_ode_states &x, EndothelialCell_memAgent_ode_states &dxdt, double t);
- 	void EndothelialCell_run_memAgent_ODEs(MemAgent *memAgent);
- 	static void EndothelialCell_cell_only_system(const EndothelialCell_cell_only_ode_states &x, EndothelialCell_cell_only_ode_states &dxdt, double t);
- 	void EndothelialCell_run_cell_only_ODEs(EC *ec);
+ 	static void HUVEC_cell_system(const HUVEC_cell_ode_states &x, HUVEC_cell_ode_states &dxdt, double t);
+ 	void HUVEC_run_cell_ODEs(EC *ec);
+ 	static void HUVEC_memAgent_system(const HUVEC_memAgent_ode_states &x, HUVEC_memAgent_ode_states &dxdt, double t);
+ 	void HUVEC_run_memAgent_ODEs(MemAgent *memAgent);
+ 	static void HUVEC_cell_only_system(const HUVEC_cell_only_ode_states &x, HUVEC_cell_only_ode_states &dxdt, double t);
+ 	void HUVEC_run_cell_only_ODEs(EC *ec);
 };
 
 
@@ -38,12 +38,8 @@ static double calc_VEGF_VEGFR_OFF_rate(double VEGF_VEGFR) {
 	return VEGF_VEGFR*0.01;
 }
 
-static double calc_DLL4_NOTCH_ON_rate(double adjacent_DLL4, double NOTCH) {
-	return adjacent_DLL4*NOTCH*0.1;
-}
-
-static double calc_VEGFR_PRODUCTION_rate() {
-	return 0.05;
+static double calc_DLL4_NOTCH_ON_rate(double DLL4, double NOTCH) {
+	return DLL4*NOTCH*0.1;
 }
 
 static double calc_DLL4_UPREG_rate(double VEGF_VEGFR) {
@@ -66,23 +62,10 @@ static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR) {
 	return VEGF*VEGFR*0.1;
 }
 
-
-static double calc_DLL4_adjacent_level(EC *ec, bool memAgentODEs) {
-	double level = 0.0;
-	for (auto *neighbour : ec->getNeighCellVector()) {
-		if (memAgentODEs) {
-			auto map = neighbour->getProteinStartBuffer();
-			level += map["DLL4"];
-		} else {
-			level += neighbour->get_cell_protein_level("DLL4",0);
-		}
-	}
-	if (level == 0.0) {
-		return 0.0;
-	} else {
-		return level / (float) ec->getNeighCellVector().size();
-	}
+static double calc_VEGFR_Production_rate() {
+	return 0.1;
 }
+
 
 
 #endif /*SRC_SPRINGAGENT_ODE_H*/
