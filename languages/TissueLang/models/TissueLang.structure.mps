@@ -426,7 +426,7 @@
     <property role="EcuMT" value="6117388699950642470" />
     <property role="TrG5h" value="CytoproteinCondition" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5j_l9LXyZox" role="1TKVEi">
       <property role="IQ2ns" value="6117388699950642721" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -473,7 +473,7 @@
     <property role="TrG5h" value="ShapeBehaviour" />
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="4YEYPh9oOZm">
     <property role="EcuMT" value="5740677014464188374" />
@@ -485,7 +485,7 @@
     <property role="EcuMT" value="5740677014464676495" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <property role="TrG5h" value="ExtendsTowards" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="4YEYPh9qGaQ" role="1TKVEi">
       <property role="IQ2ns" value="5740677014464676534" />
       <property role="20kJfa" value="_targetSpecies" />
@@ -497,7 +497,7 @@
     <property role="EcuMT" value="2149686411030299857" />
     <property role="3GE5qa" value="TissueType" />
     <property role="TrG5h" value="CellShuffling" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="1Rle6qVWyfD" role="1TKVEi">
       <property role="IQ2ns" value="2149686411030307817" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

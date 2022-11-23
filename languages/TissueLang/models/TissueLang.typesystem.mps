@@ -2534,7 +2534,7 @@
             <property role="1BlNFB" value="true" />
             <node concept="2OqwBi" id="2iYrNGjrut1" role="1m5AlR">
               <node concept="1YBJjd" id="2iYrNGjruka" role="2Oq$k0">
-                <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
+                <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="filopodia" />
               </node>
               <node concept="1mfA1w" id="2iYrNGjruEp" role="2OqNvi" />
             </node>
@@ -2619,7 +2619,7 @@
                   <property role="Xl_RC" value="Filopodia must use one of the species assigned to its cell type. " />
                 </node>
                 <node concept="1YBJjd" id="2iYrNGjrL3P" role="1urrMF">
-                  <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
+                  <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="filopodia" />
                 </node>
               </node>
             </node>
@@ -2634,7 +2634,7 @@
             <node concept="2OqwBi" id="bKPOWXDHV9" role="37wK5m">
               <node concept="2OqwBi" id="2iYrNGjrvMq" role="2Oq$k0">
                 <node concept="1YBJjd" id="2iYrNGjrvA2" role="2Oq$k0">
-                  <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="cellType" />
+                  <ref role="1YBMHb" node="2iYrNGjrbDj" resolve="filopodia" />
                 </node>
                 <node concept="3TrEf2" id="2iYrNGjrwcd" role="2OqNvi">
                   <ref role="3Tt5mk" to="nguq:5j_l9LXFFwO" resolve="_extensionCondition" />
@@ -2860,6 +2860,36 @@
     <node concept="1YaCAy" id="BDFw_SqB_J" role="1YuTPh">
       <property role="TrG5h" value="extensionWithProb" />
       <ref role="1YaFvo" to="nguq:bKPOWXCUdv" resolve="ExtensionWithProb" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="4AUFZlhDNlM">
+    <property role="TrG5h" value="typeof_CellShuffling" />
+    <property role="3GE5qa" value="TissueType" />
+    <node concept="3clFbS" id="4AUFZlhDNlN" role="18ibNy">
+      <node concept="1Z5TYs" id="4AUFZlhDNXA" role="3cqZAp">
+        <node concept="mw_s8" id="4AUFZlhDNXB" role="1ZfhK$">
+          <node concept="1Z2H0r" id="4AUFZlhDNXC" role="mwGJk">
+            <node concept="2OqwBi" id="4AUFZlhDNXD" role="1Z2MuG">
+              <node concept="3TrEf2" id="4AUFZlhDNXE" role="2OqNvi">
+                <ref role="3Tt5mk" to="nguq:1Rle6qVWyfD" resolve="expr" />
+              </node>
+              <node concept="1YBJjd" id="4AUFZlhDNXF" role="2Oq$k0">
+                <ref role="1YBMHb" node="4AUFZlhDNnx" resolve="cellShuffling" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="4AUFZlhDNXG" role="1ZfhKB">
+          <node concept="2YIFZM" id="4AUFZlhDNXH" role="mwGJk">
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQco" resolve="createBooleanType" />
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4AUFZlhDNnx" role="1YuTPh">
+      <property role="TrG5h" value="cellShuffling" />
+      <ref role="1YaFvo" to="nguq:1Rle6qVWwjh" resolve="CellShuffling" />
     </node>
   </node>
 </model>

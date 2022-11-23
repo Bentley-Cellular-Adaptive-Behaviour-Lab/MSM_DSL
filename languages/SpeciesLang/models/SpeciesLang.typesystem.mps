@@ -813,7 +813,7 @@
   </node>
   <node concept="18kY7G" id="4Q3VeFU0AE2">
     <property role="TrG5h" value="SpeciesInReactionRate" />
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <node concept="3clFbS" id="4Q3VeFU0AE3" role="18ibNy">
       <node concept="2Gpval" id="4Q3VeFU1KB9" role="3cqZAp">
         <node concept="2GrKxI" id="4Q3VeFU1KBb" role="2Gsz3X">
@@ -1094,7 +1094,7 @@
       </node>
     </node>
     <node concept="1YaCAy" id="4Q3VeFU0AE5" role="1YuTPh">
-      <property role="TrG5h" value="speciesContainer" />
+      <property role="TrG5h" value="container" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
     </node>
   </node>
@@ -1814,7 +1814,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfs3d">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="check_inhibitsValidity" />
     <node concept="3clFbS" id="$XkBXNfs3e" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4sBzB" role="3cqZAp">
@@ -2447,7 +2447,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfLc1">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="check_upregulatesValidity" />
     <node concept="3clFbS" id="$XkBXNfLc2" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNfLfH" role="3cqZAp">
@@ -3080,7 +3080,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNfTld">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="check_irreversibleValidity" />
     <node concept="3clFbS" id="$XkBXNfTle" role="18ibNy">
       <node concept="3J1_TO" id="5Cso5p4t3da" role="3cqZAp">
@@ -3889,7 +3889,7 @@
     </node>
   </node>
   <node concept="18kY7G" id="$XkBXNg5na">
-    <property role="3GE5qa" value="Species" />
+    <property role="3GE5qa" value="Processes" />
     <property role="TrG5h" value="check_reversibleValidity" />
     <node concept="3clFbS" id="$XkBXNg5nb" role="18ibNy">
       <node concept="3J1_TO" id="$XkBXNg5FJ" role="3cqZAp">
@@ -7498,6 +7498,161 @@
     <node concept="1YaCAy" id="35npzpEJdWU" role="1YuTPh">
       <property role="TrG5h" value="speciesExpr" />
       <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="3wgUPHa3XMR">
+    <property role="TrG5h" value="typeof_ParameterExpressionLimiter" />
+    <property role="3GE5qa" value="Parameters" />
+    <node concept="3clFbS" id="3wgUPHa3XMS" role="18ibNy">
+      <node concept="1ZobV4" id="3wgUPHa3XMT" role="3cqZAp">
+        <node concept="mw_s8" id="3wgUPHa3XMU" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3wgUPHa3XMV" role="mwGJk">
+            <node concept="2OqwBi" id="3wgUPHa3Y8a" role="1Z2MuG">
+              <node concept="1YBJjd" id="3wgUPHa3XMW" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHa3XN9" resolve="parameterExpression" />
+              </node>
+              <node concept="3TrEf2" id="3wgUPHa3YnU" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3wgUPHa3JuR" resolve="limitedByParameterExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3wgUPHa3XMX" role="1ZfhKB">
+          <node concept="2ShNRf" id="3wgUPHa3XMY" role="mwGJk">
+            <node concept="3zrR0B" id="3wgUPHa3XMZ" role="2ShVmc">
+              <node concept="3Tqbb2" id="3wgUPHa3XN0" role="3zrR0E">
+                <ref role="ehGHo" to="5qo5:4rZeNQ6Oetc" resolve="RealType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1Z5TYs" id="3wgUPHa3XN1" role="3cqZAp">
+        <node concept="mw_s8" id="3wgUPHa3XN2" role="1ZfhKB">
+          <node concept="2ShNRf" id="3wgUPHa3XN3" role="mwGJk">
+            <node concept="3zrR0B" id="3wgUPHa3XN4" role="2ShVmc">
+              <node concept="3Tqbb2" id="3wgUPHa3XN5" role="3zrR0E">
+                <ref role="ehGHo" to="5qo5:4rZeNQ6Oetc" resolve="RealType" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="3wgUPHa3XN6" role="1ZfhK$">
+          <node concept="1Z2H0r" id="3wgUPHa3XN7" role="mwGJk">
+            <node concept="2OqwBi" id="3wgUPHa3YAP" role="1Z2MuG">
+              <node concept="1YBJjd" id="3wgUPHa3XN8" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHa3XN9" resolve="parameterExpression" />
+              </node>
+              <node concept="3TrEf2" id="3wgUPHa3YWG" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3wgUPHa3JuR" resolve="limitedByParameterExpression" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wgUPHa3XN9" role="1YuTPh">
+      <property role="TrG5h" value="parameterExpression" />
+      <ref role="1YaFvo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+    </node>
+    <node concept="bXqS6" id="3wgUPHa3XNa" role="ujSXK">
+      <node concept="3clFbS" id="3wgUPHa3XNb" role="2VODD2">
+        <node concept="3clFbF" id="3wgUPHa3XNc" role="3cqZAp">
+          <node concept="3clFbT" id="3wgUPHa3XNd" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="18kY7G" id="3wgUPHalJDV">
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="warnShowingParamLimit" />
+    <node concept="3clFbS" id="3wgUPHalJDW" role="18ibNy">
+      <node concept="3clFbJ" id="3wgUPHalJGt" role="3cqZAp">
+        <node concept="3clFbS" id="3wgUPHalJGv" role="3clFbx">
+          <node concept="a7r0C" id="3wgUPHalMrZ" role="3cqZAp">
+            <node concept="Xl_RD" id="3wgUPHalMsk" role="a7wSD">
+              <property role="Xl_RC" value="This parameter expression is limited by another expression." />
+            </node>
+            <node concept="1YBJjd" id="3wgUPHalMuM" role="1urrMF">
+              <ref role="1YBMHb" node="3wgUPHalJGe" resolve="parameterExpr" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="3wgUPHalL1h" role="3clFbw">
+          <node concept="2OqwBi" id="3wgUPHalM2K" role="3uHU7w">
+            <node concept="2OqwBi" id="3wgUPHalLiL" role="2Oq$k0">
+              <node concept="1YBJjd" id="3wgUPHalL5F" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHalJGe" resolve="parameterExpr" />
+              </node>
+              <node concept="3TrEf2" id="3wgUPHalL$7" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3wgUPHa3JuR" resolve="limitedByParameterExpression" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="3wgUPHalMl4" role="2OqNvi" />
+          </node>
+          <node concept="3fqX7Q" id="3wgUPHalKut" role="3uHU7B">
+            <node concept="2OqwBi" id="3wgUPHalKuv" role="3fr31v">
+              <node concept="1YBJjd" id="3wgUPHalKuw" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHalJGe" resolve="parameterExpr" />
+              </node>
+              <node concept="3TrcHB" id="3wgUPHalKux" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:3wgUPHa3JuM" resolve="showLimitedBy" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wgUPHalJGe" role="1YuTPh">
+      <property role="TrG5h" value="parameterExpr" />
+      <ref role="1YaFvo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="3wgUPHalMvP">
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="warnShowingNormalised" />
+    <node concept="3clFbS" id="3wgUPHalMvQ" role="18ibNy">
+      <node concept="3clFbJ" id="3wgUPHalMvR" role="3cqZAp">
+        <node concept="3clFbS" id="3wgUPHalMvS" role="3clFbx">
+          <node concept="a7r0C" id="3wgUPHalMvT" role="3cqZAp">
+            <node concept="Xl_RD" id="3wgUPHalMvU" role="a7wSD">
+              <property role="Xl_RC" value="This parameter expression is normalised by a component." />
+            </node>
+            <node concept="1YBJjd" id="3wgUPHalMvV" role="1urrMF">
+              <ref role="1YBMHb" node="3wgUPHalMw6" resolve="parameterExpr" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="3wgUPHalMvW" role="3clFbw">
+          <node concept="2OqwBi" id="3wgUPHalMvX" role="3uHU7w">
+            <node concept="2OqwBi" id="3wgUPHalMvY" role="2Oq$k0">
+              <node concept="1YBJjd" id="3wgUPHalMvZ" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHalMw6" resolve="parameterExpr" />
+              </node>
+              <node concept="3TrEf2" id="3wgUPHalMw0" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:3wgUPHa3JuU" resolve="normalisedToSpecies" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="3wgUPHalMw1" role="2OqNvi" />
+          </node>
+          <node concept="3fqX7Q" id="3wgUPHalMw2" role="3uHU7B">
+            <node concept="2OqwBi" id="3wgUPHalMw3" role="3fr31v">
+              <node concept="1YBJjd" id="3wgUPHalMw4" role="2Oq$k0">
+                <ref role="1YBMHb" node="3wgUPHalMw6" resolve="parameterExpr" />
+              </node>
+              <node concept="3TrcHB" id="3wgUPHalMw5" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:3wgUPHa3JuO" resolve="showNormalisedToSpecies" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="3wgUPHalMw6" role="1YuTPh">
+      <property role="TrG5h" value="parameterExpr" />
+      <ref role="1YaFvo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
     </node>
   </node>
 </model>

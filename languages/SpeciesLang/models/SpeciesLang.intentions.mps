@@ -1021,5 +1021,115 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="3wgUPHa3L2b">
+    <property role="TrG5h" value="showParamNormalisedToSpecies" />
+    <ref role="2ZfgGC" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+    <node concept="2S6ZIM" id="3wgUPHa3L2c" role="2ZfVej">
+      <node concept="3clFbS" id="3wgUPHa3L2d" role="2VODD2">
+        <node concept="3clFbF" id="3wgUPHa3L9l" role="3cqZAp">
+          <node concept="Xl_RD" id="3wgUPHa3L9k" role="3clFbG">
+            <property role="Xl_RC" value="Normalise to component start level?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3wgUPHa3L2e" role="2ZfgGD">
+      <node concept="3clFbS" id="3wgUPHa3L2f" role="2VODD2">
+        <node concept="3clFbJ" id="3wgUPHa3Lrp" role="3cqZAp">
+          <node concept="3clFbS" id="3wgUPHa3Lrr" role="3clFbx">
+            <node concept="3clFbF" id="3wgUPHa3Mgz" role="3cqZAp">
+              <node concept="37vLTI" id="3wgUPHa3MVc" role="3clFbG">
+                <node concept="3clFbT" id="3wgUPHa3MZ_" role="37vLTx" />
+                <node concept="2OqwBi" id="3wgUPHa3MgL" role="37vLTJ">
+                  <node concept="2Sf5sV" id="3wgUPHa3Mgy" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="3wgUPHa3MhX" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:3wgUPHa3JuO" resolve="showNormalisedToSpecies" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3wgUPHa3LCz" role="3clFbw">
+            <node concept="2Sf5sV" id="3wgUPHa3LrP" role="2Oq$k0" />
+            <node concept="3TrcHB" id="3wgUPHa3MfT" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:3wgUPHa3JuO" resolve="showNormalisedToSpecies" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="3wgUPHa3LVX" role="9aQIa">
+            <node concept="3clFbS" id="3wgUPHa3LVY" role="9aQI4">
+              <node concept="3clFbF" id="3wgUPHa3Na8" role="3cqZAp">
+                <node concept="37vLTI" id="3wgUPHa3Na9" role="3clFbG">
+                  <node concept="2OqwBi" id="3wgUPHa3Nab" role="37vLTJ">
+                    <node concept="2Sf5sV" id="3wgUPHa3Nac" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="3wgUPHa3Nad" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:3wgUPHa3JuO" resolve="showNormalisedToSpecies" />
+                    </node>
+                  </node>
+                  <node concept="3clFbT" id="3wgUPHa3Nfr" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="3wgUPHa3Nk8">
+    <property role="TrG5h" value="showParamLimitedBy" />
+    <ref role="2ZfgGC" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
+    <node concept="2S6ZIM" id="3wgUPHa3Nk9" role="2ZfVej">
+      <node concept="3clFbS" id="3wgUPHa3Nka" role="2VODD2">
+        <node concept="3clFbF" id="3wgUPHa3Nkb" role="3cqZAp">
+          <node concept="Xl_RD" id="3wgUPHa3Nkc" role="3clFbG">
+            <property role="Xl_RC" value="Show limiting value?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="3wgUPHa3Nkd" role="2ZfgGD">
+      <node concept="3clFbS" id="3wgUPHa3Nke" role="2VODD2">
+        <node concept="3clFbJ" id="3wgUPHa3Nkf" role="3cqZAp">
+          <node concept="3clFbS" id="3wgUPHa3Nkg" role="3clFbx">
+            <node concept="3clFbF" id="3wgUPHa3Nkh" role="3cqZAp">
+              <node concept="37vLTI" id="3wgUPHa3Nki" role="3clFbG">
+                <node concept="3clFbT" id="3wgUPHa3Nkj" role="37vLTx" />
+                <node concept="2OqwBi" id="3wgUPHa3Nkk" role="37vLTJ">
+                  <node concept="2Sf5sV" id="3wgUPHa3Nkl" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="3wgUPHa3Nkm" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:3wgUPHa3JuM" resolve="showLimitedBy" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="3wgUPHa3Nkn" role="3clFbw">
+            <node concept="2Sf5sV" id="3wgUPHa3Nko" role="2Oq$k0" />
+            <node concept="3TrcHB" id="3wgUPHa3Nkp" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:3wgUPHa3JuM" resolve="showLimitedBy" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="3wgUPHa3Nkq" role="9aQIa">
+            <node concept="3clFbS" id="3wgUPHa3Nkr" role="9aQI4">
+              <node concept="3clFbF" id="3wgUPHa3Nks" role="3cqZAp">
+                <node concept="37vLTI" id="3wgUPHa3Nkt" role="3clFbG">
+                  <node concept="2OqwBi" id="3wgUPHa3Nku" role="37vLTJ">
+                    <node concept="2Sf5sV" id="3wgUPHa3Nkv" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="3wgUPHa3Nkw" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:3wgUPHa3JuM" resolve="showLimitedBy" />
+                    </node>
+                  </node>
+                  <node concept="3clFbT" id="3wgUPHa3Nkx" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

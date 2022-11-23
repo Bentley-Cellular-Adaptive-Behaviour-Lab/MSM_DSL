@@ -444,6 +444,42 @@
     <property role="TrG5h" value="ParameterExpression" />
     <property role="3GE5qa" value="Parameters" />
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    <node concept="1TJgyj" id="3wgUPHa3JuR" role="1TKVEi">
+      <property role="IQ2ns" value="4039987643068381111" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="limitedByParameterExpression" />
+      <ref role="20lvS9" node="6pt0UY9yFLx" resolve="ParameterExpression" />
+    </node>
+    <node concept="1TJgyj" id="3wgUPHa3JuU" role="1TKVEi">
+      <property role="IQ2ns" value="4039987643068381114" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="normalisedToSpecies" />
+      <ref role="20lvS9" node="109yD1suyAa" resolve="SpeciesReference" />
+    </node>
+    <node concept="1TJgyj" id="38H3h5IpKPG" role="1TKVEi">
+      <property role="IQ2ns" value="3615560444366228844" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="UsedBy" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6ngYmLdV1At" resolve="ParameterReference" />
+    </node>
+    <node concept="1TJgyj" id="38H3h5IpKPH" role="1TKVEi">
+      <property role="IQ2ns" value="3615560444366228845" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Uses" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="6ngYmLdV1At" resolve="ParameterReference" />
+    </node>
+    <node concept="1TJgyi" id="3wgUPHa3JuM" role="1TKVEl">
+      <property role="IQ2nx" value="4039987643068381106" />
+      <property role="TrG5h" value="showLimitedBy" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="3wgUPHa3JuO" role="1TKVEl">
+      <property role="IQ2nx" value="4039987643068381108" />
+      <property role="TrG5h" value="showNormalisedToSpecies" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="5jwSz93TLML" role="1TKVEi">
       <property role="IQ2ns" value="6116136999484595377" />
       <property role="20kJfa" value="Parameter" />
@@ -588,17 +624,17 @@
     </node>
     <node concept="1TJgyi" id="4e6e46gPqyv" role="1TKVEl">
       <property role="IQ2nx" value="4865638301674350751" />
-      <property role="TrG5h" value="expressionChecksAdjacent" />
+      <property role="TrG5h" value="speciesExpressionChecksAdjacent" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="3Y$DpTRZGAt" role="1TKVEl">
       <property role="IQ2nx" value="4585972420606609821" />
-      <property role="TrG5h" value="expressionGetsSum" />
+      <property role="TrG5h" value="speciesExpressionGetsSum" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="3Y$DpTRZGAx" role="1TKVEl">
       <property role="IQ2nx" value="4585972420606609825" />
-      <property role="TrG5h" value="expressionIsNormalised" />
+      <property role="TrG5h" value="speciesExpressionIsNormalised" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="3LeNXFhUH1L" role="1TKVEi">
@@ -695,6 +731,23 @@
       <property role="3tVfz5" value="4193598758121878410" />
       <property role="TrG5h" value="MEMAGENT_ODE_TYPE" />
       <property role="1L1pqM" value="MemAgent ODEs (EXPERIMENTAL)" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="38H3h5IzeNq">
+    <property role="EcuMT" value="3615560444368710874" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ParameterBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="5_ZU6FJ3JGP">
+    <property role="EcuMT" value="6449128737392753461" />
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="TestBin" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="5_ZU6FJ3JHq" role="1TKVEl">
+      <property role="IQ2nx" value="6449128737392753498" />
+      <property role="TrG5h" value="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
 </model>

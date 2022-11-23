@@ -508,7 +508,7 @@
                           <node concept="2OqwBi" id="35npzpEAkas" role="3uHU7B">
                             <node concept="2OqwBi" id="35npzpEAi0T" role="2Oq$k0">
                               <node concept="2GrUjf" id="35npzpEAhDX" role="2Oq$k0">
-                                <ref role="2Gs0qQ" node="35npzpEAczU" resolve="species" />
+                                <ref role="2Gs0qQ" node="35npzpEAczU" resolve="speciesRef" />
                               </node>
                               <node concept="3TrEf2" id="35npzpEAiIr" role="2OqNvi">
                                 <ref role="3Tt5mk" to="w3cn:109yD1suyAb" resolve="target" />
@@ -4229,7 +4229,7 @@
                           <node concept="2OqwBi" id="1A8JECtPH1I" role="25WWJ7">
                             <node concept="30H73N" id="1A8JECtPH1J" role="2Oq$k0" />
                             <node concept="2qgKlT" id="1A8JECtPH1K" role="2OqNvi">
-                              <ref role="37wK5l" to="f3yh:3hjy$RKsTtM" resolve="getUniqueSpeciesArgs" />
+                              <ref role="37wK5l" to="f3yh:3hjy$RKsTtM" resolve="getUniqueArgs" />
                             </node>
                           </node>
                         </node>
@@ -5495,7 +5495,7 @@
                         <node concept="10Oyi0" id="35npzpE$JRA" role="1tU5fm" />
                         <node concept="2OqwBi" id="35npzpE$JRB" role="33vP2m">
                           <node concept="37vLTw" id="35npzpE$JRC" role="2Oq$k0">
-                            <ref role="3cqZAo" node="35npzpE$JR6" resolve="container" />
+                            <ref role="3cqZAo" node="35npzpE$JR6" resolve="tissueContainer" />
                           </node>
                           <node concept="2qgKlT" id="35npzpE$JRD" role="2OqNvi">
                             <ref role="37wK5l" to="4ebj:4d9X0NcNFvo" resolve="listContainsSpeciesExpression" />
