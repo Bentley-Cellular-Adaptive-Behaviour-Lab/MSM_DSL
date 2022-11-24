@@ -1643,8 +1643,8 @@
         </node>
         <node concept="3bpmH6" id="2vNHqmUOdEE" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="2vNHqmUOdGg" role="3_z4RZ">
-        <ref role="DdDrb" node="2vNHqmUOdGc" resolve="TEST_REACTION" />
+      <node concept="3rtiFT" id="53LVoeOLGto" role="3rtiFW">
+        <ref role="3rtiFY" node="53LVoeOLGta" resolve="TEST_REGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="2vNHqmUOdF1" role="3_zqUg">
@@ -1672,21 +1672,16 @@
         </node>
         <node concept="3bpmH6" id="2vNHqmUOdIx" role="3lUA2W" />
       </node>
-      <node concept="DdDr8" id="YMBvi45mnJ" role="3_z4Rx">
-        <ref role="DdDrb" node="2vNHqmUOdGc" resolve="TEST_REACTION" />
+      <node concept="3rtiFT" id="53LVoeOLGtr" role="3rqWia">
+        <ref role="3rtiFY" node="53LVoeOLGta" resolve="TEST_REGULATION" />
       </node>
     </node>
-    <node concept="3_zqcU" id="2vNHqmUOdGc" role="3_zqUi">
-      <property role="TrG5h" value="TEST_REACTION" />
-      <ref role="3JPVZP" node="3wgUPHat4IX" resolve="PARAMETER_2" />
-      <node concept="3_zqOy" id="2vNHqmUOdJI" role="3_zqOF">
-        <property role="3_zqOz" value="1" />
-        <ref role="3_zqOB" node="2vNHqmUOdHA" resolve="TEST_SPECIES_3" />
-      </node>
-      <node concept="3_zqOy" id="2vNHqmUOdGe" role="3_zqOD">
-        <property role="3_zqOz" value="1" />
-        <ref role="3_zqOB" node="2vNHqmUObrG" resolve="TEST_SPECIES_1" />
-      </node>
+    <node concept="1gv4$V" id="53LVoeOLGta" role="3_zqUi">
+      <property role="2x6hFG" value="1" />
+      <property role="TrG5h" value="TEST_REGULATION" />
+      <ref role="1gv5qF" node="2vNHqmUObrG" resolve="TEST_SPECIES_1" />
+      <ref role="1gv5qG" node="2vNHqmUOdHA" resolve="TEST_SPECIES_3" />
+      <ref role="1gufLq" node="3wgUPHat4IX" resolve="PARAMETER_2" />
     </node>
   </node>
   <node concept="3ZP1sW" id="YMBvi45_m3">
