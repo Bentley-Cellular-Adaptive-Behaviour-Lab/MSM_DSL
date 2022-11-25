@@ -274,7 +274,6 @@
       <concept id="8660349304734468237" name="SimulationsLang.structure.AnalysisFacet" flags="ng" index="2rk7l3" />
       <concept id="8660349304734468152" name="SimulationsLang.structure.ClusterFacet" flags="ng" index="2rk7nQ">
         <property id="8660349304734471492" name="_replicateNumber" index="2rk6ya" />
-        <property id="8660349304734471362" name="_clusterType" index="2rk6$c" />
       </concept>
       <concept id="8660349304734434856" name="SimulationsLang.structure.SimulationContainer" flags="ng" index="2rkfJA">
         <property id="8660349304734541288" name="maxTimeSteps" index="2rFPwA" />
@@ -295,12 +294,11 @@
     <property role="TrG5h" value="Simulation" />
     <ref role="1AQzTG" node="3Y6HoqB0CTz" resolve="World" />
     <ref role="1AQzYy" node="3Y6HoqB0F84" resolve="Shape" />
-    <ref role="1ATblI" node="YMBvi45_m3" resolve="TESTTISSUE" />
-    <ref role="1AQzZR" node="2vNHqmUObqh" resolve="TESTSIGNALLING" />
+    <ref role="1ATblI" node="3Y6HoqB0F85" resolve="Tissue" />
+    <ref role="1AQzZR" node="3Y6HoqB0F86" resolve="Signalling" />
     <node concept="2rk7l3" id="3Y6HoqB0CTv" role="2rk6u4" />
     <node concept="2rk7nQ" id="3Y6HoqB0CTw" role="2rk6u2">
       <property role="2rk6ya" value="1" />
-      <property role="2rk6$c" value="72wB6_dUsui/SLURM" />
     </node>
     <node concept="2rk7kT" id="3Y6HoqB0CTx" role="2rFWTJ" />
     <node concept="3xrBRZ" id="3Y6HoqB0CTy" role="3xrXtm" />
@@ -1646,6 +1644,9 @@
       <node concept="3rtiFT" id="53LVoeOLGto" role="3rtiFW">
         <ref role="3rtiFY" node="53LVoeOLGta" resolve="TEST_REGULATION" />
       </node>
+      <node concept="DdDr8" id="6fkLiEdcTk1" role="3_z4RZ">
+        <ref role="DdDrb" node="6fkLiEdcTjV" resolve="TEST_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="2vNHqmUOdF1" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -1658,6 +1659,9 @@
           </node>
         </node>
         <node concept="3bpmH6" id="2vNHqmUOdFK" role="3lUA2W" />
+      </node>
+      <node concept="DdDr8" id="6fkLiEdcTk7" role="3_z4Rx">
+        <ref role="DdDrb" node="6fkLiEdcTjV" resolve="TEST_INHIBITION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="2vNHqmUOdHA" role="3_zqUg">
@@ -1682,6 +1686,18 @@
       <ref role="1gv5qF" node="2vNHqmUObrG" resolve="TEST_SPECIES_1" />
       <ref role="1gv5qG" node="2vNHqmUOdHA" resolve="TEST_SPECIES_3" />
       <ref role="1gufLq" node="3wgUPHat4IX" resolve="PARAMETER_2" />
+    </node>
+    <node concept="3_zqcU" id="6fkLiEdcTjV" role="3_zqUi">
+      <property role="TrG5h" value="TEST_INHIBITION" />
+      <ref role="3JPVZP" node="2vNHqmUOdGi" resolve="PARAMETER_1" />
+      <node concept="3_zqOy" id="6fkLiEdcTk3" role="3_zqOF">
+        <property role="3_zqOz" value="1" />
+        <ref role="3_zqOB" node="2vNHqmUOdF1" resolve="TEST_SPECIES_2" />
+      </node>
+      <node concept="3_zqOy" id="6fkLiEdcTjZ" role="3_zqOD">
+        <property role="3_zqOz" value="1" />
+        <ref role="3_zqOB" node="2vNHqmUObrG" resolve="TEST_SPECIES_1" />
+      </node>
     </node>
   </node>
   <node concept="3ZP1sW" id="YMBvi45_m3">
