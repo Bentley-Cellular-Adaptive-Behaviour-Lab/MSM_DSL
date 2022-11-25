@@ -4911,7 +4911,7 @@
                 </node>
                 <node concept="3cpWs8" id="4MFt7Fnwfn9" role="3cqZAp">
                   <node concept="3cpWsn" id="4MFt7Fnwfna" role="3cpWs9">
-                    <property role="TrG5h" value="adjacentMeanSpecies" />
+                    <property role="TrG5h" value="meanSpecies" />
                     <node concept="_YKpA" id="4MFt7Fnwfnb" role="1tU5fm">
                       <node concept="3Tqbb2" id="4MFt7Fnwfnc" role="_ZDj9">
                         <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
@@ -4928,7 +4928,7 @@
                 </node>
                 <node concept="3cpWs8" id="5jk18N7kkZX" role="3cqZAp">
                   <node concept="3cpWsn" id="5jk18N7kkZY" role="3cpWs9">
-                    <property role="TrG5h" value="adjacentSumSpecies" />
+                    <property role="TrG5h" value="sumSpecies" />
                     <node concept="_YKpA" id="5jk18N7kkZZ" role="1tU5fm">
                       <node concept="3Tqbb2" id="5jk18N7kl00" role="_ZDj9">
                         <ref role="ehGHo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
