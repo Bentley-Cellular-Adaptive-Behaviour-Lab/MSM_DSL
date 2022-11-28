@@ -108,11 +108,6 @@
     <node concept="PrWs8" id="5hUuDYPdjKn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="1TJgyj" id="4jUcCWy80OH" role="1TKVEi">
-      <property role="IQ2ns" value="4970340729091001645" />
-      <property role="20kJfa" value="_shapeContainerRef" />
-      <ref role="20lvS9" to="jl3b:Qd9PzECg1a" resolve="ShapeContainer" />
-    </node>
     <node concept="1TJgyj" id="4jUcCWy80PS" role="1TKVEi">
       <property role="IQ2ns" value="4970340729091001720" />
       <property role="20kJfa" value="_signallingContainerRef" />

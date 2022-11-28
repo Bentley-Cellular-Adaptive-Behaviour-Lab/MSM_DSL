@@ -654,51 +654,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="10Fz2Wf_L3E" role="3cqZAp">
-          <node concept="2OqwBi" id="10Fz2Wf_L3F" role="3clFbG">
-            <node concept="10M0yZ" id="10Fz2Wf_L3G" role="2Oq$k0">
-              <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-              <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-            </node>
-            <node concept="liA8E" id="10Fz2Wf_L3H" role="2OqNvi">
-              <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
-              <node concept="3cpWs3" id="10Fz2Wf_L3I" role="37wK5m">
-                <node concept="Xl_RD" id="10Fz2Wf_L3J" role="3uHU7B">
-                  <property role="Xl_RC" value="Using shape setup: " />
-                </node>
-                <node concept="Xl_RD" id="10Fz2Wf_L3K" role="3uHU7w">
-                  <property role="Xl_RC" value="SHAPE" />
-                  <node concept="17Uvod" id="10Fz2Wf_L3L" role="lGtFl">
-                    <property role="2qtEX9" value="value" />
-                    <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                    <node concept="3zFVjK" id="10Fz2Wf_L3M" role="3zH0cK">
-                      <node concept="3clFbS" id="10Fz2Wf_L3N" role="2VODD2">
-                        <node concept="3clFbF" id="10Fz2Wf_L3O" role="3cqZAp">
-                          <node concept="2OqwBi" id="10Fz2Wf_L3P" role="3clFbG">
-                            <node concept="2OqwBi" id="10Fz2Wf_L3Q" role="2Oq$k0">
-                              <node concept="1PxgMI" id="10Fz2Wf_L3R" role="2Oq$k0">
-                                <node concept="30H73N" id="10Fz2Wf_L3S" role="1m5AlR" />
-                                <node concept="chp4Y" id="10Fz2Wf_L3T" role="3oSUPX">
-                                  <ref role="cht4Q" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
-                                </node>
-                              </node>
-                              <node concept="3TrEf2" id="10Fz2Wf_L3U" role="2OqNvi">
-                                <ref role="3Tt5mk" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
-                              </node>
-                            </node>
-                            <node concept="3TrcHB" id="10Fz2Wf_L3V" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="5hUuDYPfLDl" role="3cqZAp" />
         <node concept="3clFbF" id="5IVvCEUQlzG" role="3cqZAp">
           <node concept="2OqwBi" id="5IVvCEUQnTx" role="3clFbG">
@@ -915,14 +870,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="10Fz2WfBA1y" role="3cqZAp">
-          <node concept="3cpWsn" id="10Fz2WfBA1z" role="3cpWs9">
-            <property role="TrG5h" value="old_shape_path" />
-            <node concept="3uibUv" id="10Fz2WfBA1$" role="1tU5fm">
-              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="1PDLoEBTe3L" role="3cqZAp">
           <node concept="3cpWsn" id="1PDLoEBTe3M" role="3cpWs9">
             <property role="TrG5h" value="old_clusterParamsHeader_path" />
@@ -984,14 +931,6 @@
           <node concept="3cpWsn" id="1PDLoEBTe3Z" role="3cpWs9">
             <property role="TrG5h" value="new_speciesHeader_path" />
             <node concept="3uibUv" id="1PDLoEBTe40" role="1tU5fm">
-              <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="10Fz2WfCQ_y" role="3cqZAp">
-          <node concept="3cpWsn" id="10Fz2WfCQ_z" role="3cpWs9">
-            <property role="TrG5h" value="new_shape_path" />
-            <node concept="3uibUv" id="10Fz2WfCQ_$" role="1tU5fm">
               <ref role="3uigEE" to="eoo2:~Path" resolve="Path" />
             </node>
           </node>
@@ -1300,56 +1239,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfDiDa" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfDiDb" role="3clFbG">
-                  <node concept="37vLTw" id="10Fz2WfDiDc" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="2YIFZM" id="10Fz2WfDiDd" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="10Fz2WfDiDe" role="37wK5m">
-                      <node concept="3cpWs3" id="10Fz2WfDiDf" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfDiDg" role="3uHU7B">
-                          <node concept="37vLTw" id="10Fz2WfDiDh" role="3uHU7B">
-                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                          </node>
-                          <node concept="Xl_RD" id="10Fz2WfDiDi" role="3uHU7w">
-                            <property role="Xl_RC" value="\\" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfDiDj" role="3uHU7w">
-                          <property role="Xl_RC" value="dsl_shape" />
-                          <node concept="17Uvod" id="10Fz2WfDiDk" role="lGtFl">
-                            <property role="2qtEX9" value="value" />
-                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                            <node concept="3zFVjK" id="10Fz2WfDiDl" role="3zH0cK">
-                              <node concept="3clFbS" id="10Fz2WfDiDm" role="2VODD2">
-                                <node concept="3clFbF" id="10Fz2WfDiDn" role="3cqZAp">
-                                  <node concept="2OqwBi" id="10Fz2WfDiDo" role="3clFbG">
-                                    <node concept="2OqwBi" id="10Fz2WfDiDp" role="2Oq$k0">
-                                      <node concept="30H73N" id="10Fz2WfDiDq" role="2Oq$k0" />
-                                      <node concept="3TrEf2" id="10Fz2WfDiDr" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
-                                      </node>
-                                    </node>
-                                    <node concept="3TrcHB" id="10Fz2WfDiDs" role="2OqNvi">
-                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="10Fz2WfDiDt" role="3uHU7w">
-                        <property role="Xl_RC" value=".cpp" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8DlekH" role="3cqZAp">
                 <node concept="37vLTI" id="1vG5M8DlekI" role="3clFbG">
                   <node concept="37vLTw" id="1vG5M8DlekJ" role="37vLTJ">
@@ -1462,25 +1351,6 @@
                   </node>
                   <node concept="37vLTw" id="1PDLoEBTe7k" role="37vLTJ">
                     <ref role="3cqZAo" node="1PDLoEBTe3W" resolve="new_speciesSource_path" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfEa1R" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfEa1S" role="3clFbG">
-                  <node concept="2YIFZM" id="10Fz2WfEa1T" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="10Fz2WfEa1U" role="37wK5m">
-                      <node concept="Xl_RD" id="10Fz2WfEa1V" role="3uHU7w">
-                        <property role="Xl_RC" value="\\src\\generated\\dsl_shape_gen.cpp" />
-                      </node>
-                      <node concept="37vLTw" id="10Fz2WfEa1W" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfEa1X" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
                   </node>
                 </node>
               </node>
@@ -1639,35 +1509,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfEGr7" role="3cqZAp">
-                <node concept="2OqwBi" id="10Fz2WfEGr8" role="3clFbG">
-                  <node concept="10M0yZ" id="10Fz2WfEGr9" role="2Oq$k0">
-                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                  </node>
-                  <node concept="liA8E" id="10Fz2WfEGra" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
-                    <node concept="3cpWs3" id="10Fz2WfEGrb" role="37wK5m">
-                      <node concept="37vLTw" id="10Fz2WfEGrc" role="3uHU7w">
-                        <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                      </node>
-                      <node concept="3cpWs3" id="10Fz2WfEGrd" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfEGre" role="3uHU7B">
-                          <node concept="Xl_RD" id="10Fz2WfEGrf" role="3uHU7B">
-                            <property role="Xl_RC" value="Copying shape file " />
-                          </node>
-                          <node concept="37vLTw" id="10Fz2WfEGrg" role="3uHU7w">
-                            <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfEGrh" role="3uHU7w">
-                          <property role="Xl_RC" value=" to " />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8DnVF9" role="3cqZAp">
                 <node concept="2OqwBi" id="1vG5M8DnVFa" role="3clFbG">
                   <node concept="10M0yZ" id="1vG5M8DnVFb" role="2Oq$k0">
@@ -1786,22 +1627,6 @@
                     <ref role="3cqZAo" node="1PDLoEBTe3Z" resolve="new_speciesHeader_path" />
                   </node>
                   <node concept="Rm8GO" id="1PDLoEBTe8t" role="37wK5m">
-                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfFya4" role="3cqZAp">
-                <node concept="2YIFZM" id="10Fz2WfFya5" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
-                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                  <node concept="37vLTw" id="10Fz2WfFya6" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfFya7" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                  </node>
-                  <node concept="Rm8GO" id="10Fz2WfFya8" role="37wK5m">
                     <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
                     <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
                   </node>
@@ -2226,56 +2051,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfG_gv" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfG_gw" role="3clFbG">
-                  <node concept="37vLTw" id="10Fz2WfG_gx" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="2YIFZM" id="10Fz2WfG_gy" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="10Fz2WfG_gz" role="37wK5m">
-                      <node concept="3cpWs3" id="10Fz2WfG_g$" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfG_g_" role="3uHU7B">
-                          <node concept="37vLTw" id="10Fz2WfG_gA" role="3uHU7B">
-                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                          </node>
-                          <node concept="Xl_RD" id="10Fz2WfG_gB" role="3uHU7w">
-                            <property role="Xl_RC" value="/" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfG_gC" role="3uHU7w">
-                          <property role="Xl_RC" value="dsl_shape" />
-                          <node concept="17Uvod" id="10Fz2WfG_gD" role="lGtFl">
-                            <property role="2qtEX9" value="value" />
-                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                            <node concept="3zFVjK" id="10Fz2WfG_gE" role="3zH0cK">
-                              <node concept="3clFbS" id="10Fz2WfG_gF" role="2VODD2">
-                                <node concept="3clFbF" id="3lVsEn84T6V" role="3cqZAp">
-                                  <node concept="2OqwBi" id="3lVsEn859_1" role="3clFbG">
-                                    <node concept="2OqwBi" id="3lVsEn84VCL" role="2Oq$k0">
-                                      <node concept="30H73N" id="3lVsEn84T6U" role="2Oq$k0" />
-                                      <node concept="3TrEf2" id="3lVsEn8572R" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
-                                      </node>
-                                    </node>
-                                    <node concept="3TrcHB" id="3lVsEn85kMf" role="2OqNvi">
-                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="10Fz2WfG_gM" role="3uHU7w">
-                        <property role="Xl_RC" value=".cpp" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8Dpvue" role="3cqZAp">
                 <node concept="37vLTI" id="1vG5M8Dpvuf" role="3clFbG">
                   <node concept="37vLTw" id="1vG5M8Dpvug" role="37vLTJ">
@@ -2388,25 +2163,6 @@
                         <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfH9N$" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfH9N_" role="3clFbG">
-                  <node concept="2YIFZM" id="10Fz2WfH9NA" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="10Fz2WfH9NB" role="37wK5m">
-                      <node concept="Xl_RD" id="10Fz2WfH9NC" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/generated/dsl_shape_gen.cpp" />
-                      </node>
-                      <node concept="37vLTw" id="10Fz2WfH9ND" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfH9NE" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
                   </node>
                 </node>
               </node>
@@ -2565,35 +2321,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfHQEj" role="3cqZAp">
-                <node concept="2OqwBi" id="10Fz2WfI22o" role="3clFbG">
-                  <node concept="10M0yZ" id="10Fz2WfHQJG" role="2Oq$k0">
-                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                  </node>
-                  <node concept="liA8E" id="10Fz2WfIe7M" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
-                    <node concept="3cpWs3" id="10Fz2WfIoUL" role="37wK5m">
-                      <node concept="37vLTw" id="10Fz2WfIoUM" role="3uHU7w">
-                        <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                      </node>
-                      <node concept="3cpWs3" id="10Fz2WfIoUN" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfIoUO" role="3uHU7B">
-                          <node concept="Xl_RD" id="10Fz2WfIoUP" role="3uHU7B">
-                            <property role="Xl_RC" value="Copying shape file " />
-                          </node>
-                          <node concept="37vLTw" id="10Fz2WfIoUQ" role="3uHU7w">
-                            <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfIoUR" role="3uHU7w">
-                          <property role="Xl_RC" value=" to " />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8Drpt5" role="3cqZAp">
                 <node concept="2OqwBi" id="1vG5M8Drpt6" role="3clFbG">
                   <node concept="10M0yZ" id="1vG5M8Drpt7" role="2Oq$k0">
@@ -2714,22 +2441,6 @@
                   <node concept="Rm8GO" id="1jdEj7$mmOi" role="37wK5m">
                     <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
                     <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfIXMI" role="3cqZAp">
-                <node concept="2YIFZM" id="10Fz2WfIXMJ" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
-                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                  <node concept="37vLTw" id="10Fz2WfIXMK" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfIXML" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                  </node>
-                  <node concept="Rm8GO" id="10Fz2WfIXMM" role="37wK5m">
-                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
                   </node>
                 </node>
               </node>
@@ -3153,56 +2864,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfKlrC" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfKlrD" role="3clFbG">
-                  <node concept="37vLTw" id="10Fz2WfKlrE" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="2YIFZM" id="10Fz2WfKlrF" role="37vLTx">
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <node concept="3cpWs3" id="10Fz2WfKlrG" role="37wK5m">
-                      <node concept="3cpWs3" id="10Fz2WfKlrH" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfKlrI" role="3uHU7B">
-                          <node concept="37vLTw" id="10Fz2WfKlrJ" role="3uHU7B">
-                            <ref role="3cqZAo" node="1PDLoEBU2UU" resolve="output_string" />
-                          </node>
-                          <node concept="Xl_RD" id="10Fz2WfKlrK" role="3uHU7w">
-                            <property role="Xl_RC" value="/" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfKlrL" role="3uHU7w">
-                          <property role="Xl_RC" value="dsl_shape" />
-                          <node concept="17Uvod" id="10Fz2WfKlrM" role="lGtFl">
-                            <property role="2qtEX9" value="value" />
-                            <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-                            <node concept="3zFVjK" id="10Fz2WfKlrN" role="3zH0cK">
-                              <node concept="3clFbS" id="10Fz2WfKlrO" role="2VODD2">
-                                <node concept="3clFbF" id="10Fz2WfKlrP" role="3cqZAp">
-                                  <node concept="2OqwBi" id="10Fz2WfKlrQ" role="3clFbG">
-                                    <node concept="2OqwBi" id="10Fz2WfKlrR" role="2Oq$k0">
-                                      <node concept="30H73N" id="10Fz2WfKlrS" role="2Oq$k0" />
-                                      <node concept="3TrEf2" id="10Fz2WfKlrT" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
-                                      </node>
-                                    </node>
-                                    <node concept="3TrcHB" id="10Fz2WfKlrU" role="2OqNvi">
-                                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="10Fz2WfKlrV" role="3uHU7w">
-                        <property role="Xl_RC" value=".cpp" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8Ds53W" role="3cqZAp">
                 <node concept="37vLTI" id="1vG5M8Ds53X" role="3clFbG">
                   <node concept="37vLTw" id="1vG5M8Ds53Y" role="37vLTJ">
@@ -3315,25 +2976,6 @@
                         <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
                       </node>
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfJYP9" role="3cqZAp">
-                <node concept="37vLTI" id="10Fz2WfJYPa" role="3clFbG">
-                  <node concept="2YIFZM" id="10Fz2WfJYPb" role="37vLTx">
-                    <ref role="1Pybhc" to="eoo2:~Paths" resolve="Paths" />
-                    <ref role="37wK5l" to="eoo2:~Paths.get(java.lang.String,java.lang.String...)" resolve="get" />
-                    <node concept="3cpWs3" id="10Fz2WfJYPc" role="37wK5m">
-                      <node concept="Xl_RD" id="10Fz2WfJYPd" role="3uHU7w">
-                        <property role="Xl_RC" value="/src/generated/dsl_shape_gen.cpp" />
-                      </node>
-                      <node concept="37vLTw" id="10Fz2WfJYPe" role="3uHU7B">
-                        <ref role="3cqZAo" node="1PDLoEBTQ24" resolve="root_string" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfJYPf" role="37vLTJ">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
                   </node>
                 </node>
               </node>
@@ -3492,35 +3134,6 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbF" id="10Fz2WfJCFO" role="3cqZAp">
-                <node concept="2OqwBi" id="10Fz2WfJCFP" role="3clFbG">
-                  <node concept="10M0yZ" id="10Fz2WfJCFQ" role="2Oq$k0">
-                    <ref role="3cqZAo" to="wyt6:~System.out" resolve="out" />
-                    <ref role="1PxDUh" to="wyt6:~System" resolve="System" />
-                  </node>
-                  <node concept="liA8E" id="10Fz2WfJCFR" role="2OqNvi">
-                    <ref role="37wK5l" to="guwi:~PrintStream.println(java.lang.String)" resolve="println" />
-                    <node concept="3cpWs3" id="10Fz2WfJCFS" role="37wK5m">
-                      <node concept="37vLTw" id="10Fz2WfJCFT" role="3uHU7w">
-                        <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                      </node>
-                      <node concept="3cpWs3" id="10Fz2WfJCFU" role="3uHU7B">
-                        <node concept="3cpWs3" id="10Fz2WfJCFV" role="3uHU7B">
-                          <node concept="Xl_RD" id="10Fz2WfJCFW" role="3uHU7B">
-                            <property role="Xl_RC" value="Copying shape file " />
-                          </node>
-                          <node concept="37vLTw" id="10Fz2WfJCFX" role="3uHU7w">
-                            <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                          </node>
-                        </node>
-                        <node concept="Xl_RD" id="10Fz2WfJCFY" role="3uHU7w">
-                          <property role="Xl_RC" value=" to " />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="3clFbF" id="1vG5M8Dt7oW" role="3cqZAp">
                 <node concept="2OqwBi" id="1vG5M8Dt7oX" role="3clFbG">
                   <node concept="10M0yZ" id="1vG5M8Dt7oY" role="2Oq$k0">
@@ -3639,22 +3252,6 @@
                     <ref role="3cqZAo" node="1PDLoEBTe3Z" resolve="new_speciesHeader_path" />
                   </node>
                   <node concept="Rm8GO" id="1PDLoEBTefH" role="37wK5m">
-                    <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
-                    <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="10Fz2WfJiob" role="3cqZAp">
-                <node concept="2YIFZM" id="10Fz2WfJioc" role="3clFbG">
-                  <ref role="1Pybhc" node="GHHs3TsNNf" resolve="RunSimulation.utils" />
-                  <ref role="37wK5l" node="GHHs3T$Cv1" resolve="copy_files" />
-                  <node concept="37vLTw" id="10Fz2WfJiod" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfBA1z" resolve="old_shape_path" />
-                  </node>
-                  <node concept="37vLTw" id="10Fz2WfJioe" role="37wK5m">
-                    <ref role="3cqZAo" node="10Fz2WfCQ_z" resolve="new_shape_path" />
-                  </node>
-                  <node concept="Rm8GO" id="10Fz2WfJiof" role="37wK5m">
                     <ref role="Rm8GQ" to="eoo2:~StandardCopyOption.REPLACE_EXISTING" resolve="REPLACE_EXISTING" />
                     <ref role="1Px2BO" to="eoo2:~StandardCopyOption" resolve="StandardCopyOption" />
                   </node>

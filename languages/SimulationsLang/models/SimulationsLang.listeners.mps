@@ -10,7 +10,6 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
-    <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -100,24 +99,6 @@
             </node>
             <node concept="2oxUTD" id="2jdW4eN$B_g" role="2OqNvi">
               <node concept="j_vvf" id="2jdW4eN$B_h" role="2oxUTC" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="3v3Etx" id="2jdW4eN$C46" role="j$A37">
-      <ref role="j_u2Y" to="yy1h:4jUcCWy80OH" resolve="_shapeContainerRef" />
-      <node concept="3clFbS" id="2jdW4eN$C47" role="2VODD2">
-        <node concept="3clFbF" id="2jdW4eN$C48" role="3cqZAp">
-          <node concept="2OqwBi" id="2jdW4eN$C49" role="3clFbG">
-            <node concept="2OqwBi" id="2jdW4eN$C4a" role="2Oq$k0">
-              <node concept="3vtCz9" id="2jdW4eN$C4b" role="2Oq$k0" />
-              <node concept="3TrEf2" id="2jdW4eN$C4c" role="2OqNvi">
-                <ref role="3Tt5mk" to="jl3b:4jUcCWydXrU" resolve="_simulationContainerRef" />
-              </node>
-            </node>
-            <node concept="2oxUTD" id="2jdW4eN$C4d" role="2OqNvi">
-              <node concept="j_vvf" id="2jdW4eN$C4e" role="2oxUTC" />
             </node>
           </node>
         </node>
