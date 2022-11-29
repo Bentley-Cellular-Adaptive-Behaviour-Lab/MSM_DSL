@@ -1254,6 +1254,94 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
 	
 	return (J_sumL);
 }
+
+float CPM_module::calc_Jsum_individual_DSL(MemAgent * individual, MedAgent* medInd) {
+	int j;
+	MemAgent* mp = individual;
+	float J_sumL = 0;
+
+	// Get the cell from either the memAgent or the diffAd_neigh (also a memAgent).
+
+	if (mp != nullptr) {
+		if (mp->diffAd_replaced_cell != nullptr) {
+			J_sumL += (float) mp->mediumNeighs*J_MC;
+			for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
+				// Decide types.
+				// mp->diffAd_replaced_cell->activeVEGFRtot
+				if (adhesion_condition_check(mp, true)) {
+					// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+						J_sumL += J_SS;
+					} else {
+						J_sumL += J_TS;
+					}
+				} else {
+					// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+						J_sumL += J_TS;
+					} else {
+						J_sumL += J_TT;
+					}
+				}
+			}
+		} else if (mp->diffAd_replaced_med != nullptr) {
+			J_sumL += (float) mp->DiffAd_neighs.size() * J_MC;
+		} else {
+			J_sumL += (float) mp->mediumNeighs*J_MC;
+			for (j = 0; j < (int) mp->DiffAd_neighs.size(); j++) {
+				if (mp->DiffAd_neighs[j]->diffAd_replaced_cell != nullptr) {
+					// Decide types.
+					// mp->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp, false)) {
+						// mp->DiffAd_neighs[j]->diffAd_replaced_cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], true)) {
+							J_sumL += J_SS;
+						} else {
+							J_sumL += J_TS;
+						}
+					} else {
+						// mp->DiffAd_neighs[j]->diffAd_replaced_cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], true)) {
+							J_sumL += J_TS;
+						} else {
+							J_sumL += J_TT;
+						}
+					}
+				} else if (mp->DiffAd_neighs[j]->diffAd_replaced_med != nullptr) {
+					J_sumL += J_MC;
+				} else {
+					// Decide types
+					// mp->Cell->activeVEGFRtot
+					if (adhesion_condition_check(mp, false)) {
+						// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+							J_sumL += J_SS;
+						} else {
+							J_sumL += J_TS;
+						}
+					} else {
+						// mp->DiffAd_neighs[j]->Cell->activeVEGFRtot
+						if (adhesion_condition_check(mp->DiffAd_neighs[j], false)) {
+							J_sumL += J_TS;
+						} else {
+							J_sumL += J_TT;
+						}
+					}
+				}
+			}
+		}
+	} else {
+		if (medInd->diffAd_replaced == nullptr) {
+			J_sumL += (float) medInd->DiffAd_neighs.size() * J_MC;
+		}
+		else {
+			J_sumL += (float) medInd->mediumNeighs*J_MC;
+		}
+	}
+
+	return (J_sumL);
+}
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 void MedAgent::checkNeighs(void) {
