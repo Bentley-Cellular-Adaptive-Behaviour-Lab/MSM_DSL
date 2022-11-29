@@ -287,7 +287,7 @@ public:
 	Env* findHighestConcPosition(MemAgent* memAgent,
 								 const std::string& targetProteinName,
 								 const float& prob,
-								 const bool getsFurthestEnv);
+								 bool getsFurthestEnv);
 
 	// World info logger.
 
