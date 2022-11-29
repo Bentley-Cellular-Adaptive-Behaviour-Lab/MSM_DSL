@@ -51,7 +51,7 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	if (cell->m_cell_type->m_name == "EndothelialType") {
 		CURRENT_CELL = cell;
 		auto upto = cell->VonNeighs;
-		auto VEGF_MEAN = memAgent->get_environment_level("SPECIES_NAME", true);
+		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true);
 		auto VEGFR2_scalar = 1.0 / upto;
 		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
 		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
@@ -77,7 +77,7 @@ bool World::cytoprotein_check(EC *cell, MemAgent *mem, Env *env) {
 }
 
 Env* World::highest_search(MemAgent *memAgent) {
-	if (cell->m_cell_type->m_name == "EndothelialType") {
+	if (memAgent->Cell->m_cell_type->m_name == "EndothelialType") {
 		return findHighestConcPosition(memAgent, "VEGF", 1.0, true);
 	}
 	return nullptr;
