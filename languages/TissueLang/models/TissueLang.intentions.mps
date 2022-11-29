@@ -235,5 +235,60 @@
       </node>
     </node>
   </node>
+  <node concept="2S6QgY" id="7lZ8SQtwGXy">
+    <property role="TrG5h" value="showFilSensitivity" />
+    <ref role="2ZfgGC" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    <node concept="2S6ZIM" id="7lZ8SQtwGXz" role="2ZfVej">
+      <node concept="3clFbS" id="7lZ8SQtwGX$" role="2VODD2">
+        <node concept="3clFbF" id="7lZ8SQtwH4m" role="3cqZAp">
+          <node concept="Xl_RD" id="7lZ8SQtwH4l" role="3clFbG">
+            <property role="Xl_RC" value="Show cell sensitivity?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="7lZ8SQtwGX_" role="2ZfgGD">
+      <node concept="3clFbS" id="7lZ8SQtwGXA" role="2VODD2">
+        <node concept="3clFbJ" id="7lZ8SQtwHfj" role="3cqZAp">
+          <node concept="2OqwBi" id="7lZ8SQtwHqB" role="3clFbw">
+            <node concept="2Sf5sV" id="7lZ8SQtwHfG" role="2Oq$k0" />
+            <node concept="3TrcHB" id="7lZ8SQtwI2H" role="2OqNvi">
+              <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="7lZ8SQtwHfl" role="3clFbx">
+            <node concept="3clFbF" id="7lZ8SQtwI5N" role="3cqZAp">
+              <node concept="37vLTI" id="7lZ8SQtwIUI" role="3clFbG">
+                <node concept="3clFbT" id="7lZ8SQtwIVr" role="37vLTx" />
+                <node concept="2OqwBi" id="7lZ8SQtwIea" role="37vLTJ">
+                  <node concept="2Sf5sV" id="7lZ8SQtwI5M" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="7lZ8SQtwIhx" role="2OqNvi">
+                    <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="9aQIb" id="7lZ8SQtwI5m" role="9aQIa">
+            <node concept="3clFbS" id="7lZ8SQtwI5n" role="9aQI4">
+              <node concept="3clFbF" id="7lZ8SQtwIZX" role="3cqZAp">
+                <node concept="37vLTI" id="7lZ8SQtwJ2A" role="3clFbG">
+                  <node concept="3clFbT" id="7lZ8SQtwJcH" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="2OqwBi" id="7lZ8SQtwJ0q" role="37vLTJ">
+                    <node concept="2Sf5sV" id="7lZ8SQtwIZW" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="7lZ8SQtwJ1x" role="2OqNvi">
+                      <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

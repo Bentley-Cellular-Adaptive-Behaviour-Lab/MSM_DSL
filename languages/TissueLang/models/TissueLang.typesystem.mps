@@ -13,6 +13,7 @@
     <import index="5qo5" ref="r:6d93ddb1-b0b0-4eee-8079-51303666672a(org.iets3.core.expr.simpleTypes.structure)" />
     <import index="1qv1" ref="r:c53b8bbc-6142-4787-a6e4-66310b772b37(org.iets3.core.expr.math.structure)" />
     <import index="xfg9" ref="r:ac28053f-2041-47f6-806b-ecfaca05a64a(org.iets3.core.expr.base.runtime.runtime)" />
+    <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
@@ -171,6 +172,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -2890,6 +2892,145 @@
     <node concept="1YaCAy" id="4AUFZlhDNnx" role="1YuTPh">
       <property role="TrG5h" value="cellShuffling" />
       <ref role="1YaFvo" to="nguq:1Rle6qVWwjh" resolve="CellShuffling" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7lZ8SQtxq9f">
+    <property role="TrG5h" value="warn_Sensitivity" />
+    <node concept="3clFbS" id="7lZ8SQtxq9g" role="18ibNy">
+      <node concept="3clFbJ" id="7lZ8SQtxqc0" role="3cqZAp">
+        <node concept="3clFbS" id="7lZ8SQtxqc2" role="3clFbx">
+          <node concept="a7r0C" id="7lZ8SQtxsjg" role="3cqZAp">
+            <node concept="1YBJjd" id="7lZ8SQtxsAq" role="1urrMF">
+              <ref role="1YBMHb" node="7lZ8SQtxqbO" resolve="filopodia" />
+            </node>
+            <node concept="Xl_RD" id="7lZ8SQtxsmA" role="a7wSD">
+              <property role="Xl_RC" value="Sensitivity has been set." />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="7lZ8SQtxr22" role="3clFbw">
+          <node concept="2OqwBi" id="7lZ8SQtxrFB" role="3uHU7w">
+            <node concept="2OqwBi" id="7lZ8SQtxrig" role="2Oq$k0">
+              <node concept="1YBJjd" id="7lZ8SQtxr96" role="2Oq$k0">
+                <ref role="1YBMHb" node="7lZ8SQtxqbO" resolve="filopodia" />
+              </node>
+              <node concept="3TrEf2" id="7lZ8SQtxrwQ" role="2OqNvi">
+                <ref role="3Tt5mk" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="7lZ8SQtxsdY" role="2OqNvi" />
+          </node>
+          <node concept="3fqX7Q" id="7lZ8SQtxr6j" role="3uHU7B">
+            <node concept="2OqwBi" id="7lZ8SQtxr6l" role="3fr31v">
+              <node concept="1YBJjd" id="7lZ8SQtxr6m" role="2Oq$k0">
+                <ref role="1YBMHb" node="7lZ8SQtxqbO" resolve="filopodia" />
+              </node>
+              <node concept="3TrcHB" id="7lZ8SQtxr6n" role="2OqNvi">
+                <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7lZ8SQtxqbO" role="1YuTPh">
+      <property role="TrG5h" value="filopodia" />
+      <ref role="1YaFvo" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7lZ8SQtFrer">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <property role="TrG5h" value="check_sensitivityRange" />
+    <node concept="3clFbS" id="7lZ8SQtFres" role="18ibNy">
+      <node concept="3clFbJ" id="7lZ8SQtFrh9" role="3cqZAp">
+        <node concept="2OqwBi" id="7lZ8SQtFrMY" role="3clFbw">
+          <node concept="2OqwBi" id="7lZ8SQtFrq6" role="2Oq$k0">
+            <node concept="1YBJjd" id="7lZ8SQtFrhl" role="2Oq$k0">
+              <ref role="1YBMHb" node="7lZ8SQtFrh0" resolve="filopodia" />
+            </node>
+            <node concept="3TrEf2" id="7lZ8SQtFrAr" role="2OqNvi">
+              <ref role="3Tt5mk" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+            </node>
+          </node>
+          <node concept="3x8VRR" id="7lZ8SQtFsn6" role="2OqNvi" />
+        </node>
+        <node concept="3clFbS" id="7lZ8SQtFrhb" role="3clFbx">
+          <node concept="3clFbJ" id="7lZ8SQtFsEq" role="3cqZAp">
+            <node concept="3clFbS" id="7lZ8SQtFsEs" role="3clFbx">
+              <node concept="2MkqsV" id="7lZ8SQtG6ZJ" role="3cqZAp">
+                <node concept="Xl_RD" id="7lZ8SQtG6ZV" role="2MkJ7o">
+                  <property role="Xl_RC" value="Error: Sensitivity cannot be greater than one." />
+                </node>
+                <node concept="1YBJjd" id="7lZ8SQtG71V" role="1urrMF">
+                  <ref role="1YBMHb" node="7lZ8SQtFrh0" resolve="filopodia" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7lZ8SQtG6qj" role="3clFbw">
+              <node concept="1YBJjd" id="7lZ8SQtG6hy" role="2Oq$k0">
+                <ref role="1YBMHb" node="7lZ8SQtFrh0" resolve="filopodia" />
+              </node>
+              <node concept="2qgKlT" id="7lZ8SQtG6Xd" role="2OqNvi">
+                <ref role="37wK5l" to="4ebj:7lZ8SQtFXBc" resolve="sensitivity_greater_than_one" />
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="7lZ8SQtG7bX" role="3cqZAp">
+            <node concept="3clFbS" id="7lZ8SQtG7bZ" role="3clFbx">
+              <node concept="2MkqsV" id="7lZ8SQtG84Y" role="3cqZAp">
+                <node concept="1YBJjd" id="7lZ8SQtG86n" role="1urrMF">
+                  <ref role="1YBMHb" node="7lZ8SQtFrh0" resolve="filopodia" />
+                </node>
+                <node concept="Xl_RD" id="7lZ8SQtG85d" role="2MkJ7o">
+                  <property role="Xl_RC" value="Error: Sensitivity cannot be less than zero." />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7lZ8SQtG7uG" role="3clFbw">
+              <node concept="1YBJjd" id="7lZ8SQtG7lV" role="2Oq$k0">
+                <ref role="1YBMHb" node="7lZ8SQtFrh0" resolve="filopodia" />
+              </node>
+              <node concept="2qgKlT" id="7lZ8SQtG83X" role="2OqNvi">
+                <ref role="37wK5l" to="4ebj:7Eknud9Ysql" resolve="sensitivity_less_than_zero" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7lZ8SQtFrh0" role="1YuTPh">
+      <property role="TrG5h" value="filopodia" />
+      <ref role="1YaFvo" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="7lZ8SQtIsbV">
+    <property role="TrG5h" value="typeof_Filopodia" />
+    <node concept="3clFbS" id="7lZ8SQtIsbW" role="18ibNy">
+      <node concept="1ZobV4" id="32SFKJHPeNv" role="3cqZAp">
+        <node concept="mw_s8" id="32SFKJHPeNw" role="1ZfhKB">
+          <node concept="2YIFZM" id="32SFKJHPeNx" role="mwGJk">
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+            <node concept="10Nm6u" id="32SFKJHPeNy" role="37wK5m" />
+          </node>
+        </node>
+        <node concept="mw_s8" id="32SFKJHPeNz" role="1ZfhK$">
+          <node concept="1Z2H0r" id="32SFKJHPeN$" role="mwGJk">
+            <node concept="2OqwBi" id="32SFKJHPeN_" role="1Z2MuG">
+              <node concept="3TrEf2" id="32SFKJHPeNB" role="2OqNvi">
+                <ref role="3Tt5mk" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+              </node>
+              <node concept="1YBJjd" id="7lZ8SQtIstt" role="2Oq$k0">
+                <ref role="1YBMHb" node="7lZ8SQtIsqx" resolve="filopodia" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7lZ8SQtIsqx" role="1YuTPh">
+      <property role="TrG5h" value="filopodia" />
+      <ref role="1YaFvo" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
     </node>
   </node>
 </model>

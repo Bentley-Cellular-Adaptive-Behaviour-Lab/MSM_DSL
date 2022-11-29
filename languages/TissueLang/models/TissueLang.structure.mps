@@ -13,6 +13,17 @@
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
+      <concept id="3348158742936976480" name="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" flags="ng" index="25R33">
+        <property id="1421157252384165432" name="memberId" index="3tVfz5" />
+        <property id="672037151186491528" name="presentation" index="1L1pqM" />
+      </concept>
+      <concept id="3348158742936976479" name="jetbrains.mps.lang.structure.structure.EnumerationDeclaration" flags="ng" index="25R3W">
+        <reference id="1075010451642646892" name="defaultMember" index="1H5jkz" />
+        <child id="3348158742936976577" name="members" index="25R1y" />
+      </concept>
+      <concept id="1082978164218" name="jetbrains.mps.lang.structure.structure.DataTypeDeclaration" flags="ng" index="AxPO6">
+        <property id="7791109065626895363" name="datatypeId" index="3F6X1D" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -446,6 +457,16 @@
     <property role="TrG5h" value="Filopodia" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1TJDcQ" node="5j_l9LXEwof" resolve="ShapeBehaviour" />
+    <node concept="1TJgyi" id="7lZ8SQtwFKE" role="1TKVEl">
+      <property role="IQ2nx" value="8466524915619773482" />
+      <property role="TrG5h" value="_filMaxesDistance" />
+      <ref role="AX2Wp" node="7lZ8SQtwFHl" resolve="FilMaxesDistEnums" />
+    </node>
+    <node concept="1TJgyi" id="7lZ8SQtwFRi" role="1TKVEl">
+      <property role="IQ2nx" value="8466524915619773906" />
+      <property role="TrG5h" value="_showSensitivity" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="5j_l9LXFFwO" role="1TKVEi">
       <property role="IQ2ns" value="6117388699952920628" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -466,6 +487,12 @@
       <property role="20kJfa" value="_extendsTowards" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="4YEYPh9qGaf" resolve="ExtendsTowards" />
+    </node>
+    <node concept="1TJgyj" id="7lZ8SQtwFH6" role="1TKVEi">
+      <property role="IQ2ns" value="8466524915619773254" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_sensitivity" />
+      <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
   </node>
   <node concept="1TIwiD" id="5j_l9LXEwof">
@@ -504,6 +531,22 @@
       <property role="20kJfa" value="expr" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
+    </node>
+  </node>
+  <node concept="25R3W" id="7lZ8SQtwFHl">
+    <property role="3F6X1D" value="8466524915619773269" />
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <property role="TrG5h" value="FilMaxesDistEnum" />
+    <ref role="1H5jkz" node="7lZ8SQtwFHm" resolve="Yes" />
+    <node concept="25R33" id="7lZ8SQtwFHm" role="25R1y">
+      <property role="3tVfz5" value="8466524915619773270" />
+      <property role="TrG5h" value="Yes" />
+      <property role="1L1pqM" value="Yes" />
+    </node>
+    <node concept="25R33" id="7lZ8SQtwFKb" role="25R1y">
+      <property role="3tVfz5" value="8466524915619773451" />
+      <property role="TrG5h" value="No" />
+      <property role="1L1pqM" value="No" />
     </node>
   </node>
 </model>

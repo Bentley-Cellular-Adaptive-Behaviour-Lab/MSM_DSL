@@ -6311,7 +6311,103 @@
             </node>
           </node>
           <node concept="356sEF" id="5j_l9LXEw0w" role="356sEH">
-            <property role="TrG5h" value="&quot;, 1.0, true);" />
+            <property role="TrG5h" value="&quot;, " />
+          </node>
+          <node concept="356sEF" id="7lZ8SQtxV1X" role="356sEH">
+            <property role="TrG5h" value="SENSITIVITY" />
+            <node concept="17Uvod" id="7lZ8SQtxVuY" role="lGtFl">
+              <property role="2qtEX9" value="name" />
+              <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+              <node concept="3zFVjK" id="7lZ8SQtxVuZ" role="3zH0cK">
+                <node concept="3clFbS" id="7lZ8SQtxVv0" role="2VODD2">
+                  <node concept="3clFbJ" id="7lZ8SQtxX5i" role="3cqZAp">
+                    <node concept="2OqwBi" id="7lZ8SQtxZa5" role="3clFbw">
+                      <node concept="2OqwBi" id="7lZ8SQtxXyu" role="2Oq$k0">
+                        <node concept="30H73N" id="7lZ8SQtxXiY" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="7lZ8SQtxYIm" role="2OqNvi">
+                          <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                        </node>
+                      </node>
+                      <node concept="1mIQ4w" id="7lZ8SQtxZNg" role="2OqNvi">
+                        <node concept="chp4Y" id="7lZ8SQtxZZt" role="cj9EA">
+                          <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="3clFbS" id="7lZ8SQtxX5k" role="3clFbx">
+                      <node concept="3clFbJ" id="7lZ8SQtyaT7" role="3cqZAp">
+                        <node concept="3clFbS" id="7lZ8SQtyaT9" role="3clFbx">
+                          <node concept="3cpWs6" id="7lZ8SQtyfqS" role="3cqZAp">
+                            <node concept="2YIFZM" id="7lZ8SQtApD9" role="3cqZAk">
+                              <ref role="37wK5l" to="wyt6:~String.valueOf(java.lang.Object)" resolve="valueOf" />
+                              <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
+                              <node concept="2OqwBi" id="7lZ8SQtA$2E" role="37wK5m">
+                                <node concept="1PxgMI" id="7lZ8SQtAy_K" role="2Oq$k0">
+                                  <property role="1BlNFB" value="true" />
+                                  <node concept="chp4Y" id="7lZ8SQtAzkh" role="3oSUPX">
+                                    <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                                  </node>
+                                  <node concept="2OqwBi" id="7lZ8SQtAsP7" role="1m5AlR">
+                                    <node concept="30H73N" id="7lZ8SQtAsn_" role="2Oq$k0" />
+                                    <node concept="3TrEf2" id="7lZ8SQtAxbz" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="2qgKlT" id="7lZ8SQtA_ht" role="2OqNvi">
+                                  <ref role="37wK5l" to="4ebj:32SFKJHODDy" resolve="get_sensitivity_value_decimal" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="2OqwBi" id="7lZ8SQtycXZ" role="3clFbw">
+                          <node concept="2OqwBi" id="7lZ8SQtybVf" role="2Oq$k0">
+                            <node concept="1PxgMI" id="7lZ8SQtybbj" role="2Oq$k0">
+                              <property role="1BlNFB" value="true" />
+                              <node concept="chp4Y" id="7lZ8SQtybJp" role="3oSUPX">
+                                <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                              </node>
+                              <node concept="2OqwBi" id="7lZ8SQtybbl" role="1m5AlR">
+                                <node concept="30H73N" id="7lZ8SQtybbm" role="2Oq$k0" />
+                                <node concept="3TrEf2" id="7lZ8SQtybbn" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3TrEf2" id="7lZ8SQtycng" role="2OqNvi">
+                              <ref role="3Tt5mk" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+                            </node>
+                          </node>
+                          <node concept="3x8VRR" id="7lZ8SQtydHT" role="2OqNvi" />
+                        </node>
+                        <node concept="9aQIb" id="7lZ8SQtyeAf" role="9aQIa">
+                          <node concept="3clFbS" id="7lZ8SQtyeAg" role="9aQI4">
+                            <node concept="3cpWs6" id="7lZ8SQtyeSb" role="3cqZAp">
+                              <node concept="Xl_RD" id="7lZ8SQtyfcg" role="3cqZAk">
+                                <property role="Xl_RC" value="1.0" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="9aQIb" id="7lZ8SQty0s3" role="9aQIa">
+                      <node concept="3clFbS" id="7lZ8SQty0s4" role="9aQI4">
+                        <node concept="3cpWs6" id="7lZ8SQty0Al" role="3cqZAp">
+                          <node concept="Xl_RD" id="7lZ8SQty7Ez" role="3cqZAk">
+                            <property role="Xl_RC" value="1.0" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="356sEF" id="7lZ8SQtxV1Y" role="356sEH">
+            <property role="TrG5h" value=", true);" />
           </node>
           <node concept="2EixSi" id="5j_l9LXEvCO" role="2EinRH" />
         </node>

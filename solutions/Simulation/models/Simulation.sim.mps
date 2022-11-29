@@ -209,9 +209,11 @@
         <child id="2149686411030307817" name="expr" index="2A9LIf" />
       </concept>
       <concept id="6117388699952612824" name="TissueLang.structure.Filopodia" flags="ng" index="DjP54">
+        <property id="8466524915619773906" name="_showSensitivity" index="3CZpTv" />
         <child id="5740677014464676490" name="_extendsTowards" index="6K3Bu" />
         <child id="6117388699952920628" name="_extensionCondition" index="DiYMC" />
         <child id="6117388699952920645" name="_cytoproteinCondition" index="DiYNp" />
+        <child id="8466524915619773254" name="_sensitivity" index="3CZpzb" />
       </concept>
       <concept id="6117388699950642470" name="TissueLang.structure.CytoproteinCondition" flags="ng" index="DrE6U">
         <reference id="6117388699950642719" name="targetSpecies" index="DrEa3" />
@@ -645,6 +647,7 @@
         </node>
       </node>
       <node concept="DjP54" id="4QPlrvVa0rG" role="DjPbq">
+        <property role="3CZpTv" value="true" />
         <node concept="ZkRgg" id="4QPlrvVa0tb" role="DiYMC">
           <node concept="3JPVZe" id="4nv8iqe4ciR" role="ZkRgJ">
             <ref role="n1ZU3" node="3wgUPHa3JqO" resolve="ACTIVE_VEGFR" />
@@ -663,6 +666,9 @@
         </node>
         <node concept="6K3Br" id="4QPlrvVa0rW" role="6K3Bu">
           <ref role="6K3By" node="3Y6HoqB0F89" resolve="VEGF" />
+        </node>
+        <node concept="30bXRB" id="7lZ8SQtMezJ" role="3CZpzb">
+          <property role="30bXRw" value="1" />
         </node>
       </node>
       <node concept="1csUcq" id="4nv8iqdppiA" role="3FWu3_">

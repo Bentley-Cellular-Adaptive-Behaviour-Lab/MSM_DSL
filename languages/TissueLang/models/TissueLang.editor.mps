@@ -1749,6 +1749,121 @@
         </node>
         <node concept="2iRfu4" id="5j_l9LXFJf$" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="7lZ8SQtwFMT" role="3EZMnx">
+        <node concept="2iRfu4" id="7lZ8SQtwFMU" role="2iSdaV" />
+        <node concept="1v6uyg" id="7lZ8SQtwFOA" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3F0ifn" id="7lZ8SQtwFOO" role="1j7Clw">
+            <property role="3F0ifm" value="Maximises distance from cell" />
+            <node concept="2biZxu" id="7lZ8SQtwFOR" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="7lZ8SQtwFOS" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="7lZ8SQtwFP8" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+          <node concept="3EZMnI" id="7lZ8SQtwFQ9" role="wsdo6">
+            <node concept="2iRkQZ" id="7lZ8SQtwFQa" role="2iSdaV" />
+            <node concept="3F0ifn" id="7lZ8SQtwFPi" role="3EZMnx">
+              <property role="3F0ifm" value="When set, determines whether a filopodia  " />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtwFQi" role="3EZMnx">
+              <property role="3F0ifm" value="always attempts to maximise its" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtwFQm" role="3EZMnx">
+              <property role="3F0ifm" value="distance from the base of the cell." />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtwFQq" role="3EZMnx">
+              <property role="3F0ifm" value="- Options:" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtwFQ_" role="3EZMnx">
+              <property role="3F0ifm" value="- Yes" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtwFQv" role="3EZMnx">
+              <property role="3F0ifm" value="- No" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="7lZ8SQtwFOo" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="2biZxu" id="7lZ8SQtwFNg" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="7lZ8SQtwFNh" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0A7n" id="7lZ8SQtwFNk" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:7lZ8SQtwFKE" resolve="_filMaxesDistance" />
+          <node concept="VechU" id="1S53i998Del" role="3F10Kt">
+            <property role="Vb096" value="fLwANPu/blue" />
+          </node>
+          <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
+            <property role="Vbekb" value="g1_k_vY/BOLD" />
+          </node>
+          <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7lZ8SQtwFNK" role="3EZMnx">
+        <node concept="VPM3Z" id="7lZ8SQtwFNM" role="3F10Kt" />
+        <node concept="1v6uyg" id="7lZ8SQtxpTZ" role="3EZMnx">
+          <property role="2oejA6" value="true" />
+          <node concept="3EZMnI" id="7lZ8SQtxq84" role="wsdo6">
+            <node concept="2iRkQZ" id="7lZ8SQtxq85" role="2iSdaV" />
+            <node concept="3F0ifn" id="7lZ8SQtxq1b" role="3EZMnx">
+              <property role="3F0ifm" value="Determines whether a filopodia always goes to" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8d" role="3EZMnx">
+              <property role="3F0ifm" value="the point with the highest concentration it can" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8l" role="3EZMnx">
+              <property role="3F0ifm" value="find, or randomly chooses a different value." />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8v" role="3EZMnx">
+              <property role="3F0ifm" value="Takes a probability, which determines whether" />
+            </node>
+            <node concept="3F0ifn" id="7lZ8SQtxq8_" role="3EZMnx">
+              <property role="3F0ifm" value="a filopodia performs random selection or not." />
+            </node>
+          </node>
+          <node concept="3F0ifn" id="7lZ8SQtxpUB" role="1j7Clw">
+            <property role="3F0ifm" value="Sensitivity :" />
+            <node concept="2biZxu" id="7lZ8SQtxpUE" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="7lZ8SQtxpUF" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="7lZ8SQtxq13" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="3F1sOY" id="7lZ8SQtwFQU" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:7lZ8SQtwFH6" resolve="_sensitivity" />
+        </node>
+        <node concept="2iRfu4" id="7lZ8SQtwFNP" role="2iSdaV" />
+        <node concept="pkWqt" id="7lZ8SQtwJdx" role="pqm2j">
+          <node concept="3clFbS" id="7lZ8SQtwJdy" role="2VODD2">
+            <node concept="3clFbF" id="7lZ8SQtwJhp" role="3cqZAp">
+              <node concept="2OqwBi" id="7lZ8SQtwJu0" role="3clFbG">
+                <node concept="pncrf" id="7lZ8SQtwJho" role="2Oq$k0" />
+                <node concept="3TrcHB" id="7lZ8SQtwJTO" role="2OqNvi">
+                  <ref role="3TsBF5" to="nguq:7lZ8SQtwFRi" resolve="_showSensitivity" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2iRkQZ" id="5j_l9LXFFyE" role="2iSdaV" />
     </node>
   </node>
