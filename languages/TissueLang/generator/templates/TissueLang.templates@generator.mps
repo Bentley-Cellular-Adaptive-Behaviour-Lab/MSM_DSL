@@ -3986,7 +3986,34 @@
               </node>
             </node>
             <node concept="356sEF" id="35npzpExod1" role="356sEH">
-              <property role="TrG5h" value=" = memAgent-&gt;get_environment_level(&quot;SPECIES_NAME&quot;, " />
+              <property role="TrG5h" value=" = memAgent-&gt;get_environment_level(&quot;" />
+            </node>
+            <node concept="356sEF" id="2QIk3zcQkaS" role="356sEH">
+              <property role="TrG5h" value="SPECIES_NAME" />
+              <node concept="17Uvod" id="2QIk3zcQkHB" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="2QIk3zcQkHC" role="3zH0cK">
+                  <node concept="3clFbS" id="2QIk3zcQkHD" role="2VODD2">
+                    <node concept="3clFbF" id="2QIk3zcQkMq" role="3cqZAp">
+                      <node concept="2OqwBi" id="2QIk3zcQkMr" role="3clFbG">
+                        <node concept="2OqwBi" id="2QIk3zcQkMs" role="2Oq$k0">
+                          <node concept="30H73N" id="2QIk3zcQkMt" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="2QIk3zcQkMu" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="2QIk3zcQkMv" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="356sEF" id="2QIk3zcQkaT" role="356sEH">
+              <property role="TrG5h" value="&quot;, " />
             </node>
             <node concept="356sEF" id="35npzpExCp2" role="356sEH">
               <property role="TrG5h" value="GETS_AVERAGE" />
@@ -7207,6 +7234,27 @@
             </node>
             <node concept="356sEF" id="7lL7HQ7tzQY" role="356sEH">
               <property role="TrG5h" value="SPECIES_NAME" />
+              <node concept="17Uvod" id="2QIk3zcMFeL" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="2QIk3zcMFeM" role="3zH0cK">
+                  <node concept="3clFbS" id="2QIk3zcMFeN" role="2VODD2">
+                    <node concept="3clFbF" id="2QIk3zcMFjw" role="3cqZAp">
+                      <node concept="2OqwBi" id="2QIk3zcMJSg" role="3clFbG">
+                        <node concept="2OqwBi" id="2QIk3zcMFB4" role="2Oq$k0">
+                          <node concept="30H73N" id="2QIk3zcMFjv" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="2QIk3zcMITg" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="2QIk3zcMKQ0" role="2OqNvi">
+                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
             <node concept="356sEF" id="7lL7HQ7tzQZ" role="356sEH">
               <property role="TrG5h" value="&quot;) " />
