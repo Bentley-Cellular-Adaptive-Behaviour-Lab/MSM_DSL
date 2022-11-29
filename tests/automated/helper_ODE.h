@@ -386,5 +386,26 @@ public:
 	float calcDSLProb(MemAgent* targetMemAgent);
 };
 
+class DSL_FilopodiaExtensionTest : public ::testing::Test {
+private:
+	// Member variable.
+	World *m_world;
+	EC *m_cellAgent;
+	Tissue_Container *m_tissueContainer;
+protected:
+	void SetUp() override;
+	void TearDown() override;
+public:
+
+	// Set-up Functions.
+	void createEnvironment();
+	void createCell();
+
+	// Utility functions.
+	MemAgent *getCentreMemAgent();
+	float calcMSMProb(MemAgent* targetMemAgent);
+	float calcDSLProb(MemAgent* targetMemAgent);
+	double calc_ACTIVE_VEGFR_rate(double VEGF_MEAN, double VEGFR2_NORM, const bool memAgent);
+};
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_ODE_H

@@ -2321,4 +2321,128 @@ void FilopodiaExtensionTest::TearDown() {
 
 }
 
+/*****************************************************************************************
+*  Name:		FilopodiaExtensionTest::SetUp()
+*  Description: - Compares MSM filopodia extension rules against
+*
+*  Returns:		void
+******************************************************************************************/
 
+void DSL_FilopodiaExtensionTest::SetUp() {
+	std::vector<double> params{};
+	this->m_world = new World(50,50,50,1.0,0.0,params);
+	this->m_tissueContainer = new Tissue_Container(this->m_world);
+	createEnvironment();
+	createCell();
+}
+
+void DSl_FilopodiaExtensionTest::createEnvironment() {
+	Env *ep;
+	for (int x = 0; x < this->m_world->gridXDimensions; x++) {
+		for (int y = 0; y < m_world->gridYDimensions; y++) {
+			for (int z = 0; z < m_world->gridYDimensions; z++) {
+				if (m_world->grid[x][y][z].getType() == const_E) {
+					auto targetProtein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100);
+					ep = m_world->grid[x][y][z].getEid();
+					ep->owned_proteins.push_back(targetProtein);
+					ep->VEGF = 1;
+				}
+			}
+		}
+	}
+}
+
+void DSL_FilopodiaExtensionTest::createCell() {
+	// Create a cell with VEGFR.
+	auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+	cellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 31714.0, 0, -1, 1));
+	auto ec = new EC(this->m_world);
+	auto cell = new Cell(this->m_tissueContainer, "Cell", this->m_world, new Coordinates(25,25,25), cellType);
+
+	// Assign cell object information
+	cell->cell_agent = ec;
+	this->m_tissueContainer->cells.push_back(cell);
+
+	// Assign cell agent object information.
+	this->m_cellAgent = ec;
+	ec->belongs_to = BELONGS_TO_SINGLECELL;
+	ec->m_cell_type = cellType;
+	m_world->ECagents.push_back(ec);
+
+	this->m_tissueContainer->m_single_cell_agents.push_back(ec);
+	this->m_tissueContainer->create_2d_square_cell(1,
+												   25,
+												   25,
+												   25,
+												   5,
+												   5);
+	this->m_tissueContainer->connect_2d_square_cell(1);
+
+	// Ensure that memAgents know about their environment neighbours.
+	for (auto *memAgent : ec->nodeAgents) {
+		memAgent->checkNeighs(false);
+	}
+	// Calculate vonNeighs for memAgents.
+	ec->calcVonNeighs();
+
+	//Allocate proteins out to memAgents.
+	ec->allocateProts(); // MSM proteins.
+	ec->distributeProteins(); // DSL proteins.
+
+	// Set the cell's VSINK value to 1.
+	ec->Vsink = 1;
+}
+
+MemAgent* DSL_FilopodiaExtensionTest::getCentreMemAgent() {
+	// Get centre memAgent.
+	return m_world->grid[25][25][25].getMids().at(0);
+}
+
+float FilopodiaExtensionTest::calcMSMProb(MemAgent* targetMemAgent) {
+	// Calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
+	auto cell = targetMemAgent->Cell;
+	auto upto = cell->VonNeighs;
+	auto scalar = ((float) VEGFRNORM / (float) upto);
+
+	float VEGFRactiveProp = targetMemAgent->VEGFR / scalar;
+	float sum_VEGF = targetMemAgent->SumVEGF;
+	float sink_VEGFR = cell->Vsink;
+
+	// We should have already checked the environment for VEGF
+	// when running checkNeighs in the createCell function.
+	targetMemAgent->VEGFRactive = (targetMemAgent->SumVEGF / cell->Vsink) * VEGFRactiveProp;
+
+	if (targetMemAgent->VEGFRactive > targetMemAgent->VEGFR) {
+		targetMemAgent->VEGFRactive = targetMemAgent->VEGFR;
+	}
+
+	float active_VEGFR = targetMemAgent->VEGFRactive;
+	float normalised_VEGFR = cell->VEGFRnorm;
+	float filconst = cell->filCONST;
+
+//	float prob2 = ((float) targetMemAgent->VEGFRactive / ((float) cell->VEGFRnorm / (float) upto)) * cell->filCONST;
+	float prob = active_VEGFR / scalar * filconst;
+	return prob;
+}
+
+double DSL_FilopodiaExtensionTest::calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM, const bool memAgent) {
+	return VEGF*VEGFR2_NORM;
+}
+
+float FilopodiaExtensionTest::calcDSLProb(MemAgent* targetMemAgent) {
+	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
+	if (cell->m_cell_type->m_name == "EndothelialType") {
+		auto upto = cell->VonNeighs;
+		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true);
+		auto VEGFR2_scalar = 1.0 / upto;
+		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
+		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
+		auto prob = ACTIVE_VEGFR;
+		return chance < prob;
+	}
+	return false;
+}
+
+void DSL_FilopodiaExtensionTest::TearDown() {
+
+}
