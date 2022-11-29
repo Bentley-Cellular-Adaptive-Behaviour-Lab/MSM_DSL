@@ -1462,6 +1462,7 @@ bool MemAgent::extendFil(void) {
 				allow = true;
                 if (allow) {
                     highest = findHighestConc();
+					// highest_search(EC *cell, MemAgent *memAgent)
 					bool canExtend = true;
 					if (SOLIDNESS_CHECK) {
 						canExtend = worldP->solidness_check(highest);
