@@ -7488,3 +7488,82 @@ float World::get_average_DLL4() {
 	}
 
 }
+
+Env *World::findHighestConcPosition(MemAgent* memAgent,
+									const std::string& targetProteinName,
+									const float& prob,
+									const bool getsFurthestEnv) {
+	// Derived from MemAgent::extendFil()
+	// Finds the env objects with the highest level of the protrusions target protein and returns its address.
+	std::vector<Env*> envNeighs = memAgent->EnvNeighs;
+	World *world = memAgent->worldP;
+
+	float chance = (float) world->new_rand() / (float) NEW_RAND_MAX;
+	float highestProteinConc = 0.0f;
+
+	memAgent->worldP->shuffleEnvAgents(envNeighs);
+
+	auto *currentHighestEnv = envNeighs[0];
+	Env *chosenEnv;
+
+	// Check the level at each position for the desired environment protein - optionally ensure that the environment
+	// agent picked is the one furthest away from the base.
+
+	if (getsFurthestEnv) {
+		MemAgent* filNeigh = memAgent->filNeigh;
+		Env* furthest  = envNeighs[0];
+		float currentDist;
+		float furthestDist = 0;
+
+		if (furthest->get_protein_level(targetProteinName) > 0) {
+			if (memAgent->FIL == NONE) {
+				furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
+			} else {
+				furthestDist = world->getDist((float) furthest->Ex, (float) furthest->Ey, (float) furthest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+			}
+		} else {
+			furthest = nullptr;
+		}
+
+		for (auto & envNeigh : envNeighs) {
+			if (envNeigh->has_protein(targetProteinName)) {
+				auto currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
+				if (currentProteinLevel >= highestProteinConc) {
+					highestProteinConc = currentProteinLevel;
+					currentHighestEnv = envNeigh;
+				}
+
+				if (memAgent->FIL == NONE) {
+					currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, memAgent->Mx, memAgent->My, memAgent->Mz);
+				} else {
+					currentDist = world->getDist((float) envNeigh->Ex, (float) envNeigh->Ey, (float) envNeigh->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+				}
+
+				if (currentDist >= furthestDist) {
+					furthestDist = currentDist;
+					furthest = envNeigh;
+				}
+			}
+		}
+		//TODO: HAVE THE PROTEIN LEVEL FACTOR INTO THE SELECTION PROCESS SOMEHOW?
+		chosenEnv = furthest;
+	} else {
+		for (auto & envNeigh : envNeighs) {
+			if (envNeigh->has_protein(targetProteinName)) {
+				float currentProteinLevel = envNeigh->get_protein_level(targetProteinName);
+				if (currentProteinLevel > highestProteinConc) {
+					highestProteinConc = currentProteinLevel;
+					currentHighestEnv = envNeigh;
+				}
+			}
+		}
+
+		if (chance < prob) {
+			chosenEnv = currentHighestEnv;
+		} else {
+			int chosenIndex = (int) ((float)world->new_rand() * (float)envNeighs.size() / (float)NEW_RAND_MAX);
+			chosenEnv = envNeighs[chosenIndex];
+		}
+	}
+	return chosenEnv;
+}

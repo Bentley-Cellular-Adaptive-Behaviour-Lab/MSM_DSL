@@ -53,7 +53,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/world/worldContainer.cpp
             src/graphics/display.cpp
             src/graphics/ScreenRecording.cpp
-            src/generated/dsl_shape_gen.cpp
             src/generated/dsl_tissue_gen.cpp
             src/generated/dsl_species_gen.cpp
             src/generated/dsl_world_gen.cpp)

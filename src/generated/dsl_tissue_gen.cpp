@@ -4,7 +4,9 @@
 #include "dsl_species_gen.h"
 
 #include "../core/coordinates.h"
+#include "../core/CPM_module.h"
 #include "../core/EC.h"
+#include "../core/environment.h"
 #include "../core/memAgents.h"
 #include "../core/world.h"
 
@@ -12,11 +14,9 @@
 #include "../dsl/tissue/cell.h"
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
+#include "../dsl/tissue/tissueType.h"
 #include "../dsl/tissue/tissueContainer.h"
 
-static double get_VEGFR_CONC(World *world) {
-	return world->getParamValue(0);
-}
 
 void Tissue_Container::tissue_set_up(World* world) {
 	// Created using: Tissue //
@@ -24,21 +24,21 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 	// Cell Type Creation //
 	auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-	EndothelialType_Type->add_protein(new Protein("VEGFR2", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
-	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIND1", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
 	EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 27));
+	EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIN", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("PLEXIN", PROTEIN_LOCATION_MEMBRANE, 10.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("VEGFR2", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
+	EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
 
 	// Tissue Type Creation //
-	auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 13, 6);
+	auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 10, 6);
 
 	// Cell Creation //
 
 	// Tissue Creation //
-	auto Vessel_Pos = Coordinates(130, 6, 20);
+	auto Vessel_Pos = Coordinates(500, 10, 20);
 	create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
 
 	// Track environmental proteins //
@@ -49,60 +49,53 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
+		CURRENT_CELL = cell;
 		auto upto = cell->VonNeighs;
-		auto scalar = 1.0 / (float) upto; // Normalise by start amount of VEGFR.
-		float sink_VEGFR = cell->Vsink;
-
-		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-		float activeProportion = (float) VEGFR / scalar;
-		auto VEGF = memAgent->get_environment_level("VEGF", false);
-
-		// Get active VEGFR.
-		float filConst = 2.0f;
-		float activeVEGFR = (float) (VEGF / cell->Vsink) * activeProportion;
-
-		if (activeVEGFR > VEGFR) {
-			activeVEGFR = VEGFR;
-		}
-
-		float prob = (float) activeVEGFR / scalar * filConst;
-
-		if (this->timeStep % 9 == 0) {
-			cell->get_extension_probs().push_back(prob);
-		}
+		auto VEGF_MEAN = memAgent->get_environment_level("SPECIES_NAME", true);
+		auto VEGFR2_scalar = 1.0 / upto;
+		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
+		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
+		auto prob = ACTIVE_VEGFR;
 		return chance < prob;
 	}
+	return false;
 }
 
-//bool World::can_extend(EC* cell, MemAgent* memAgent) {
-//	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
-//	if (cell->m_cell_type->m_name == "EndothelialType") {
-//		// Normalise to the normal amount of receptors.
-//		// Needs to be relative to normal value.
-//		// Set up test scenario of one filopodia that's
-//		// extending. Predict the correct value for extension
-//		// Then check values between the MSM and DSL are correct.
-//		// Set filconst.
-//		float filConst = 7500.0f;
-//		// Get active VEGFR.
-//		auto VEGF = memAgent->get_mean_env_protein("VEGF");
-//		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
-//		auto ACTIVE_VEGFR2 = VEGF * VEGFR2 * 0.1;
-//
-//		// Get active plexin.
-//		auto SEMA3A = memAgent->get_mean_env_protein("SEMA3A");
-//		auto PLEXIN = memAgent->get_memAgent_current_level("PLEXIND1");
-//		auto ACTIVE_PLEXIN = SEMA3A * PLEXIN * 0.1;
-//
-//		auto sema = memAgent->get_mean_env_protein("SEMA3A");
-//		auto probability_modifier = sema * 0.3;
-//
-//		auto prob = ACTIVE_VEGFR2*filConst - probability_modifier;
-//
-//		if (this->timeStep % 9 == 0) {
-//			cell->get_extension_probs().push_back(prob);
-//		}
-//
-//		return chance < prob;
-//	}
-//}
+bool World::cytoprotein_check(EC *cell, MemAgent *mem, Env *env) {
+	if (cell->m_cell_type->m_name == "EndothelialType") {
+		auto target_species_level = cell->get_cell_protein_level("Actin", 0);
+		auto distance = getDist(mem->Mx, mem->My, mem->Mz, env->Ex, env->Ey, env->Ez);
+		auto required_species_amount = distance * 10;
+		if (target_species_level > required_species_amount) {
+			auto new_cytoprotein_level = target_species_level - required_species_amount;
+			cell->set_cell_protein_level("Actin", new_cytoprotein_level, 0);
+			return true;
+		}
+		return false;
+	}
+	return false;
+}
+
+Env* World::highest_search(MemAgent *memAgent) {
+	if (cell->m_cell_type->m_name == "EndothelialType") {
+		return findHighestConcPosition(memAgent, "VEGF", 1.0, true);
+	}
+	return nullptr;
+}
+
+bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiffAdNeighCell) {
+	// Does cellular-potts model calculation relative to this memAgent or its neighbour.
+	EC *cell;
+
+	if (useDiffAdNeighCell) {
+		cell = memAgent->diffAd_replaced_cell;
+	} else {
+		cell = memAgent->Cell;
+	}
+
+	if (cell->m_tissue->m_tissue_type->m_name == "VesselType") {
+		auto VEGF_VEGFR2 = cell->get_cell_protein_level("VEGF_VEGFR2", 0);
+		return VEGF_VEGFR2 > 100;
+	}
+	return false;
+}

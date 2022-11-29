@@ -281,7 +281,15 @@ public:
     void fillParamVector(const std::vector<double>& param_increments);
     double getParamValue(const int& i);
 
-    /// World info logger.
+	// Tissue gen.
+	bool cytoprotein_check(EC *cell, MemAgent *mem, Env *env);
+	Env* highest_search(MemAgent *memAgent);
+	Env* findHighestConcPosition(MemAgent* memAgent,
+								 const std::string& targetProteinName,
+								 const float& prob,
+								 const bool getsFurthestEnv);
+
+	// World info logger.
 
     void createLogger();
     WorldLogger* getWorldLogger();
@@ -355,6 +363,8 @@ public:
 	float get_average_DLL4();
 	void create_DLL4_file();
 	void write_to_DLL4_file();
+
+
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
