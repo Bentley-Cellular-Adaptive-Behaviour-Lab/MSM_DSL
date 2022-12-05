@@ -1742,9 +1742,15 @@ void World::creationTimestep(int movie) {
 	if (analysis_type == ANALYSIS_TYPE_TOTALVEGF_TOTAL_MEMBRANE)
 		calcEnvVEGFlevel();
 
+	this->set_up_cpm_dsl();
+
 	//on first timestep this sets up the CPM module
-	if (REARRANGEMENT)
+//	if (REARRANGEMENT)
+//		diffAd->run_CPM();
+
+	if (this->does_DSL_CPM()) {
 		diffAd->run_CPM();
+	}
 
 	if (analysis_type == ANALYSIS_TYPE_PROTLEVELS)
 		output_cell_protlevels(dataFile);
@@ -1774,7 +1780,11 @@ void World::simulateTimestep_MSM() {
         resetCellLevels();
 		updateMemAgents_MSM();
 
-        if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
+//        if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
+//			this->diffAd->run_CPM();
+//		}
+
+        if ( (timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
 			this->diffAd->run_CPM();
 		}
 
@@ -7566,4 +7576,12 @@ Env *World::findHighestConcPosition(MemAgent* memAgent,
 		}
 	}
 	return chosenEnv;
+}
+
+unsigned int World::get_start_CPM() {
+	return this->m_start_CPM;
+}
+
+bool World::does_DSL_CPM() {
+	return this->m_DSL_CPM;
 }

@@ -31,7 +31,9 @@ class WorldLogger;
 
 class World {
 private:
-    int m_run_number;
+    unsigned int m_run_number;
+	bool m_DSL_CPM = false; // Used by DSL to determine whether the cellular potts model is run.
+	unsigned int m_start_CPM = 0; // When the cellular potts model runs, if at all.
     std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
     WorldContainer* m_worldContainer;
@@ -288,6 +290,12 @@ public:
 								 const std::string& targetProteinName,
 								 const float& prob,
 								 bool getsFurthestEnv);
+	void set_up_cpm_dsl();
+	bool can_extend(EC* cell, MemAgent* memAgent);
+
+	// DSL CPM control functions.
+	unsigned int get_start_CPM();
+	bool does_DSL_CPM();
 
 	// World info logger.
 
@@ -330,12 +338,10 @@ public:
 	void print_avg_prob();
 
 	void runSimulation_DSL();
-
 	void simulateTimestep_DSL();
 
-    bool can_extend(EC* cell, MemAgent* memAgent);
 
-    // Debug filopodia files.
+    // Debug files.
 	void create_probabilities_outfile();
 	void create_probabilities_outfile_headers(const std::vector<double> &param_values) ;
 	void write_to_probabilities_file();
@@ -363,8 +369,6 @@ public:
 	float get_average_DLL4();
 	void create_DLL4_file();
 	void write_to_DLL4_file();
-
-
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H
