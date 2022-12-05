@@ -18,6 +18,11 @@
 #include "../dsl/tissue/tissueContainer.h"
 
 
+void World::set_up_cpm_dsl() {
+	this->m_DSL_CPM = true;
+	this->m_start_CPM = 0;
+}
+
 void Tissue_Container::tissue_set_up(World* world) {
 	// Created using: Tissue //
 	world->setTissueContainer(this);
