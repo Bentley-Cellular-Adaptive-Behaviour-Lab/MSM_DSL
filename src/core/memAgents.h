@@ -162,12 +162,14 @@ public:
                                         const bool& affects_this_cell,
                                         const bool& affects_neighbour_cell,
                                         const int& protein_location);
+
     void distribute_proteins(const std::string& protein_name,
                              const double& start_protein_level,
                              const double& end_protein_level,
                              const bool& affects_this_cell,
                              const bool& affects_neighbour_cell,
                              const int& protein_location);
+
     std::vector<EC*> find_cells(const bool& add_this_cell);
 
     void passBackBufferLevels();
