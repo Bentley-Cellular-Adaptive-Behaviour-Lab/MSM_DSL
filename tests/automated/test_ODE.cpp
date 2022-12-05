@@ -82,9 +82,9 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_FLOAT_EQ(memAgent1->get_average_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent2->get_average_environment_level("B"), 1);
-	EXPECT_FLOAT_EQ(memAgent3->get_average_environment_level("B"), 1);
+    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B", true), 1);
+	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B", true), 1);
+	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B", true), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
@@ -835,5 +835,5 @@ TEST_F(DSL_FilopodiaExtensionTest, checkProbsTest) {
 	auto centreMemAgent = this->getCentreMemAgent();
 	auto MSMProb = this->calcMSMProb(centreMemAgent);
 	auto DSLProb = this->calcDSLProb(centreMemAgent);
-	int test = 0;
+	EXPECT_DOUBLE_EQ(MSMProb, DSLProb);
 }
