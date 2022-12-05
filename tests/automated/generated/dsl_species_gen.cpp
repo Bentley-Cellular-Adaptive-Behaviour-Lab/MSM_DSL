@@ -65,12 +65,12 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent *memAgent) {
     Endothelial_memAgent_ode_states new_states;
     odeint::euler<Endothelial_memAgent_ode_states> stepper;
 
-    current_states[0] = memAgent->get_average_environment_level("VEGF");
+    current_states[0] = memAgent->get_environment_level("VEGF", true);
     current_states[1] = memAgent->get_local_protein_level("VEGFR");
     current_states[2] = memAgent->get_local_protein_level("VEGF_VEGFR");
-    current_states[3] = memAgent->get_junction_protein_level("NOTCH");
-    current_states[4] = memAgent->get_junction_protein_level("DLL4");
-    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4");
+    current_states[3] = memAgent->get_junction_protein_level("NOTCH", true);
+    current_states[4] = memAgent->get_junction_protein_level("DLL4", true);
+    current_states[5] = memAgent->get_junction_protein_level("NOTCH_DLL4", true);
 
     stepper.do_step(Endothelial_memAgent_system, current_states, 0.0, new_states, 1);
 
