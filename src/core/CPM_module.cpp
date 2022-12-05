@@ -960,15 +960,15 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
         int x, m, n, p, zed;
         int i, j, k;
         bool connected;
-        if(replaced_mem!=NULL){
-        i = (int) replaced_mem->Mx;
-        j = (int) replaced_mem->My;
-        k = (int) replaced_mem->Mz;
-        }
-        else if(replaced_med!=NULL){
-        i = (int) replaced_med->Mx;
-        j = (int) replaced_med->My;
-        k = (int) replaced_med->Mz;
+
+        if (replaced_mem!=NULL) {
+			i = (int) replaced_mem->Mx;
+			j = (int) replaced_mem->My;
+			k = (int) replaced_mem->Mz;
+        } else if(replaced_med!=NULL) {
+			i = (int) replaced_med->Mx;
+			j = (int) replaced_med->My;
+			k = (int) replaced_med->Mz;
         }
         float JsumLocal = 0.0f;
 
@@ -1111,22 +1111,27 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
                         worldP->grid[m][n][p].getMids()[zed]->checkNeighs(true);
                         //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
                         //so for this guy, checkNeighs, then put through Jsum calc..
-                        JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+						if (worldP->does_DSL_CPM()) {
+							JsumLocal += calc_Jsum_individual_DSL(worldP->grid[m][n][p].getMids()[zed], NULL);
+						} else {
+							JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+						}
                     }
                 }
 
             }
         } else if (worldP->grid[m][n][p].getType() == MED) { //for each neighbour around the one to be replaced, and the guy himself, calc Jsum values and save...
-
             worldP->grid[m][n][p].getMed()->checkNeighs();
             //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
             //so for this guy, checkNeighs, then put through Jsum calc..
             //cout<<m<<" "<<n<<" "<<p<<endl;
-            JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].getMed());
-
-
-        }
-        }
+			if (worldP->does_DSL_CPM()) {
+				JsumLocal += calc_Jsum_individual_DSL(NULL, worldP->grid[m][n][p].getMed());
+			} else {
+				JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].getMed());
+			}
+		}
+		}
 
 
 
