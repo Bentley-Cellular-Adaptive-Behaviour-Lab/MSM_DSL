@@ -384,6 +384,7 @@ public:
 	MemAgent *getCentreMemAgent();
 	float calcMSMProb(MemAgent* targetMemAgent);
 	float calcDSLProb(MemAgent* targetMemAgent);
+
 };
 
 class DSL_FilopodiaExtensionTest : public ::testing::Test {
@@ -403,9 +404,13 @@ public:
 
 	// Utility functions.
 	MemAgent *getCentreMemAgent();
-	float calcMSMProb(MemAgent* targetMemAgent);
-	float calcDSLProb(MemAgent* targetMemAgent);
-	double calc_ACTIVE_VEGFR_rate(double VEGF_MEAN, double VEGFR2_NORM, const bool memAgent);
+	double calcMSMProb(MemAgent* targetMemAgent);
+	double calcDSLProb(MemAgent* targetMemAgent);
+	double calc_ACTIVE_VEGFR_rate(double VEGF_MEAN,
+								  double VEGFR2_NORM,
+								  const bool memAgent);
+	double calc_VEGFR2_LIMITER_rate(double VEGFR2,
+									bool memAgent);
 };
 
 #endif //TESTS_AUTOMATED_AUTOSPRINGAGENT_HELPER_ODE_H

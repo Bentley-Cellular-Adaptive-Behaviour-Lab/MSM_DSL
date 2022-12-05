@@ -146,7 +146,7 @@ void BasicODEMemAgentTest::runODE(MemAgent *memAgent) {
     controlled_stepper_type controlled_stepper;
 
 	states[0] = memAgent->get_memAgent_current_level("A"); // Protein A
-	states[1] = memAgent->get_average_environment_level("B"); // Protein B
+	states[1] = memAgent->get_environment_level("B", true); // Protein B
 
     integrate_adaptive(controlled_stepper , BasicMemAgentODE_system,  states, 0.0 , 1.0 , 0.1 );
 
@@ -343,7 +343,7 @@ void JunctionTest::runODE(MemAgent *memAgent) {
 
 	ode_states[0] = memAgent->get_memAgent_current_level("A"); // Protein A (Junctional Protein, This Cell)
 	ode_states[1] = memAgent->get_memAgent_current_level("B"); // Protein B (Junctional Protein, This Cell)
-    ode_states[2] = memAgent->get_junction_protein_level("A"); // Protein A (Junctional Protein, Other Cells)
+    ode_states[2] = memAgent->get_junction_protein_level("A", true); // Protein A (Junctional Protein, Other Cells)
 
     integrate_adaptive(controlled_stepper, JunctionSystem, ode_states, 0.0, 1.0, 0.1);
 
@@ -1292,7 +1292,7 @@ void MemAgentODETest::run_memAgent_ODEs(MemAgent* memAgent) {
     states[1] = memAgent->get_memAgent_current_level("ProteinB");
     states[2] = memAgent->get_memAgent_current_level("ProteinC");
     states[3] = memAgent->get_memAgent_current_level("ProteinD");
-    states[4] = memAgent->get_junction_protein_level("ProteinB");
+    states[4] = memAgent->get_junction_protein_level("ProteinB", true);
 
     stepper.do_step(memAgent_system, states, 0.0, 1.0);
 
@@ -1985,8 +1985,8 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
 	states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[7] = memAgent->get_memAgent_current_level("NICD");
 	states[8] = memAgent->get_memAgent_current_level("NOTCH");
-	states[9] = memAgent->get_junction_protein_level("DLL4");
-	states[10] = memAgent->get_junction_protein_level("NOTCH");
+	states[9] = memAgent->get_junction_protein_level("DLL4", true);
+	states[10] = memAgent->get_junction_protein_level("NOTCH", true);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
@@ -2303,7 +2303,7 @@ float FilopodiaExtensionTest::calcDSLProb(MemAgent* targetMemAgent) {
 
 	auto VEGFR = targetMemAgent->get_memAgent_current_level("VEGFR");
 	float activeProportion = (float) VEGFR / scalar;
-	auto VEGF = targetMemAgent->get_sum_environment_level("VEGF");
+	auto VEGF = targetMemAgent->get_environment_level("VEGF", false);
 
 	// Get active VEGFR.
 	float filConst = 2.0f;
@@ -2336,7 +2336,7 @@ void DSL_FilopodiaExtensionTest::SetUp() {
 	createCell();
 }
 
-void DSl_FilopodiaExtensionTest::createEnvironment() {
+void DSL_FilopodiaExtensionTest::createEnvironment() {
 	Env *ep;
 	for (int x = 0; x < this->m_world->gridXDimensions; x++) {
 		for (int y = 0; y < m_world->gridYDimensions; y++) {
@@ -2355,7 +2355,7 @@ void DSl_FilopodiaExtensionTest::createEnvironment() {
 void DSL_FilopodiaExtensionTest::createCell() {
 	// Create a cell with VEGFR.
 	auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
-	cellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 31714.0, 0, -1, 1));
+	cellType->add_protein(new Protein("VEGFR2", PROTEIN_LOCATION_MEMBRANE, 31714.0, 0, -1, 1));
 	auto ec = new EC(this->m_world);
 	auto cell = new Cell(this->m_tissueContainer, "Cell", this->m_world, new Coordinates(25,25,25), cellType);
 
@@ -2398,14 +2398,14 @@ MemAgent* DSL_FilopodiaExtensionTest::getCentreMemAgent() {
 	return m_world->grid[25][25][25].getMids().at(0);
 }
 
-float FilopodiaExtensionTest::calcMSMProb(MemAgent* targetMemAgent) {
+double DSL_FilopodiaExtensionTest::calcMSMProb(MemAgent* targetMemAgent) {
 	// Calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
 	auto cell = targetMemAgent->Cell;
 	auto upto = cell->VonNeighs;
 	auto scalar = ((float) VEGFRNORM / (float) upto);
-
 	float VEGFRactiveProp = targetMemAgent->VEGFR / scalar;
 	float sum_VEGF = targetMemAgent->SumVEGF;
+
 	float sink_VEGFR = cell->Vsink;
 
 	// We should have already checked the environment for VEGF
@@ -2417,30 +2417,39 @@ float FilopodiaExtensionTest::calcMSMProb(MemAgent* targetMemAgent) {
 	}
 
 	float active_VEGFR = targetMemAgent->VEGFRactive;
-	float normalised_VEGFR = cell->VEGFRnorm;
 	float filconst = cell->filCONST;
 
-//	float prob2 = ((float) targetMemAgent->VEGFRactive / ((float) cell->VEGFRnorm / (float) upto)) * cell->filCONST;
-	float prob = active_VEGFR / scalar * filconst;
+	double prob = active_VEGFR / scalar * filconst;
 	return prob;
 }
 
-double DSL_FilopodiaExtensionTest::calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM, const bool memAgent) {
-	return VEGF*VEGFR2_NORM;
+double DSL_FilopodiaExtensionTest::calc_ACTIVE_VEGFR_rate(const double VEGF,
+														  const double VEGFR2_SUM,
+														  const bool memAgent) {
+	return VEGF*VEGFR2_SUM;
 }
 
-float FilopodiaExtensionTest::calcDSLProb(MemAgent* targetMemAgent) {
-	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
-	if (cell->m_cell_type->m_name == "EndothelialType") {
-		auto upto = cell->VonNeighs;
-		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true);
-		auto VEGFR2_scalar = 1.0 / upto;
-		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
-		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
-		auto prob = ACTIVE_VEGFR;
-		return chance < prob;
+double DSL_FilopodiaExtensionTest::calc_VEGFR2_LIMITER_rate(const double VEGFR2, const bool memAgent) {
+	return VEGFR2;
+}
+
+double DSL_FilopodiaExtensionTest::calcDSLProb(MemAgent* memAgent) {
+	if (memAgent->Cell->m_cell_type->m_name == "CellType") {
+		auto upto = memAgent->Cell->VonNeighs;
+		auto VEGF_SUM = memAgent->get_environment_level("VEGF", false);
+		auto VEGFR2_scalar = 31714.0f / upto;
+		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
+		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
+		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
+		double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
+		if (ACTIVE_VEGFR > VEGFR2_LIMITER) {
+			ACTIVE_VEGFR = VEGFR2_LIMITER;
+		}
+		double FILCONST = 2;
+		auto prob = (ACTIVE_VEGFR / VEGFR2_scalar) * FILCONST;
+		return prob;
 	}
-	return false;
+	return 0.0;
 }
 
 void DSL_FilopodiaExtensionTest::TearDown() {
