@@ -1,7 +1,6 @@
 #include <cmath>
 
 #include "clusterParams.h"
-#include "dsl_species_gen.h"
 
 #include "../core/coordinates.h"
 #include "../core/CPM_module.h"
@@ -17,6 +16,7 @@
 #include "../dsl/tissue/tissueType.h"
 #include "../dsl/tissue/tissueContainer.h"
 
+EC* CURRENT_CELL;
 
 void World::set_up_cpm_dsl() {
 	this->m_DSL_CPM = true;
@@ -29,21 +29,14 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 	// Cell Type Creation //
 	auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-	EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 27));
-	EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("SEMA3A_PLEXIN", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("PLEXIN", PROTEIN_LOCATION_MEMBRANE, 10.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("VEGFR2", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 1));
-	EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
 
 	// Tissue Type Creation //
-	auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 10, 6);
+	auto VesselType_Type = define_tissue_type("VesselType", EndothelialType_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 4, 6);
 
 	// Cell Creation //
 
 	// Tissue Creation //
-	auto Vessel_Pos = Coordinates(500, 10, 20);
+	auto Vessel_Pos = Coordinates(130, 10, 20);
 	create_tissue("Vessel", VesselType_Type, &(Vessel_Pos));
 
 	// Track environmental proteins //
@@ -54,14 +47,14 @@ void Tissue_Container::tissue_set_up(World* world) {
 bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	auto chance = (float) new_rand() / (float) NEW_RAND_MAX;
 	if (cell->m_cell_type->m_name == "EndothelialType") {
-		CURRENT_CELL = cell;
-		auto upto = cell->VonNeighs;
-		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true);
-		auto VEGFR2_scalar = 1.0 / upto;
-		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
-		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
-		auto prob = ACTIVE_VEGFR;
-		return chance < prob;
+//		CURRENT_CELL = cell;
+//		auto upto = cell->VonNeighs;
+//		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true);
+//		auto VEGFR2_scalar = 1.0 / upto;
+//		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
+//		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_MEAN, VEGFR2_NORM, true);
+//		auto prob = ACTIVE_VEGFR;
+//		return chance < prob;
 	}
 	return false;
 }
@@ -99,8 +92,8 @@ bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiff
 	}
 
 	if (cell->m_tissue->m_tissue_type->m_name == "VesselType") {
-		auto VEGF_VEGFR2 = cell->get_cell_protein_level("VEGF_VEGFR2", 0);
-		return VEGF_VEGFR2 > 100;
+		auto VEGF_VEGFR2 = cell->get_cell_protein_level("TEST_CPM_PROTEIN", 0);
+		return VEGF_VEGFR2 > 10;
 	}
 	return false;
 }
