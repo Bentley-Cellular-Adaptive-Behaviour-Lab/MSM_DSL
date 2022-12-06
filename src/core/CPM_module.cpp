@@ -55,7 +55,8 @@ void CPM_module::run_CPM() {
     if (worldP->timeStep == 0) {
         //createMedium();
         Temp = 10;
-        calc_Cell_areas();
+//        calc_Cell_areas();
+		calc_Cell_areas_DSL();
     } else{
         //if (worldP->timeStep > 200) Temp = 15;
         //if(worldP->timeStep>600) Temp = 10;
@@ -423,10 +424,16 @@ void CPM_module::calc_Cell_areas(void) {
     int var = ECwidth * 2;
 
     for (i = 0; i < ECELLS; i++) {
-        //Q = rand() % (var);
+        Q = rand() % (var);
         Q = worldP->new_rand() % (var);
         worldP->ECagents[i]->ideal_Cell_area = ideal_Area;// - ((float) var / 2.0f) + Q;
     }
+}
+
+void CPM_module::calc_Cell_areas_DSL(void) {
+	for (auto cell : worldP->ECagents) {
+		cell->ideal_Cell_area = (int) cell->nodeAgents.size();
+	}
 }
 
 //----------------------------------------------------------------------------------
