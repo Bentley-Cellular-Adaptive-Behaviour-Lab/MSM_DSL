@@ -15,8 +15,6 @@ typedef boost::array<double, 4> EndothelialType_cell_ode_states;
 typedef boost::array<double, 10> EndothelialType_memAgent_ode_states;
 typedef boost::array<double, 10> EndothelialType_cell_only_ode_states;
 
-EC* CURRENT_CELL;
-
 class ODEs {
 private:
 	int ODE_TYPE = -1;
