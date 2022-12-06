@@ -1279,7 +1279,7 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
         //add to list
         //m=0;
         //if(worldP->JunctionAgents.size()>0){
-        if ((junction) && (addedJunctionList)) {
+        if ((junction) && (!addedJunctionList)) {
             //  do{
             //      if(worldP->JunctionAgents[m]==this) flag=1;
             //      m++;
