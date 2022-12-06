@@ -51,7 +51,7 @@ extern int analysis_type;
 // Extern variable for tracking the current
 // cell being used in DSL processes.
 
-extern EC CURRENT_CELL;
+extern EC* CURRENT_CELL;
 
 enum ANALYSIS_TYPE {
     ANALYSIS_TYPE_NONE,
