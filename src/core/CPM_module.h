@@ -44,6 +44,7 @@ public:
     float calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_med);
     float calc_Jsum_individual(MemAgent * individual, MedAgent* medInd);
     void calc_Cell_areas(void);
+	void calc_Cell_areas_DSL(void);
     void createMedium(void);
     void replaceSprings(MemAgent* replaced_mem, MemAgent* replacer_mem, MedAgent* replacer_med, MedAgent* replaced_med);
     int connectivity(MemAgent* replaced, MemAgent* replacer);
