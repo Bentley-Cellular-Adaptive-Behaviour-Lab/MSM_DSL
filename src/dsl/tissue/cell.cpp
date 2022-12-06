@@ -34,7 +34,7 @@ bool Cell::check_boundaries() {
         }
     }
 
-    for (auto & tissue : m_tissue_container->tissues) {
+    for (auto & tissue : m_tissue_container->m_tissues) {
         current_tissue = tissue;
         if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
             auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
