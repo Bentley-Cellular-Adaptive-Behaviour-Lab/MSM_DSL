@@ -295,7 +295,7 @@ void Tissue_Container::store_cell(Cell *cell) {
 
 void Tissue_Container::store_tissue(Tissue *tissue) {
     assert(tissue != nullptr);
-    this->tissues.push_back(tissue);
+    this->m_tissues.push_back(tissue);
 }
 
 /*****************************************************************************************
@@ -459,7 +459,7 @@ void Tissue_Container::check_positions() {
         assert(current_cell->check_boundaries());
     }
 
-    for (auto & tissue : tissues) {
+    for (auto & tissue : m_tissues) {
         current_tissue = tissue;
         assert(current_tissue->check_boundaries());
     }
@@ -686,7 +686,7 @@ bool Tissue_Container::check_monolayer_monolayer_overlap(Tissue_Monolayer *monol
 }
 
 void Tissue_Container::add_env_protein_to_tissues(const std::string& protein_name) {
-    for (auto tissue : this->tissues) {
+    for (auto tissue : this->m_tissues) {
         for (auto cell_agent : tissue->m_cell_agents) {
             cell_agent->store_env_protein(protein_name);
         }
