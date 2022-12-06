@@ -6699,7 +6699,7 @@ bool World::tissuesHavePatterned() const {
 
     try {
         int patternedTissues = 0;
-        for (auto tissue : m_tissueContainer->tissues) {
+        for (auto tissue : m_tissueContainer->m_tissues) {
             // If a tissue has not patterned, check that it has.
             // If it has patterned, don't bother checking.
             if (!tissue->is_patterned()) {
@@ -6709,9 +6709,9 @@ bool World::tissuesHavePatterned() const {
                 patternedTissues++;
             }
 
-            if (patternedTissues == m_tissueContainer->tissues.size()) {
+            if (patternedTissues == m_tissueContainer->m_tissues.size()) {
                 tissuesHavePatterned = true;
-            } else if (patternedTissues > m_tissueContainer->tissues.size()) {
+            } else if (patternedTissues > m_tissueContainer->m_tissues.size()) {
                 throw std::exception();
             }
         }
