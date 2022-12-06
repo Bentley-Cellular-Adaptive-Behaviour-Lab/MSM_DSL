@@ -19,7 +19,7 @@ class Tissue_Container {
 public:
     std::vector <Tissue_Type*> tissue_types;
     std::vector <Cell_Type*> cell_types;
-    std::vector <Tissue*> tissues;
+    std::vector <Tissue*> m_tissues;
     std::vector <Cell*> cells;
 
     std::vector <EC*> m_single_cell_agents;
