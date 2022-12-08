@@ -188,6 +188,12 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="4705942098322609812" name="jetbrains.mps.lang.smodel.structure.EnumMember_IsOperation" flags="ng" index="21noJN">
+        <child id="4705942098322609813" name="member" index="21noJM" />
+      </concept>
+      <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
+        <reference id="4705942098322467736" name="decl" index="21nZrZ" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -19855,12 +19861,36 @@
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="4GZ8Ro2Zjpx" role="3uHU7B">
-                  <node concept="3TrcHB" id="4GZ8Ro2Zjpy" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
-                  </node>
-                  <node concept="37vLTw" id="4GZ8Ro2Zjpz" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4GZ8Ro2Zjpn" resolve="speciesExpr" />
+                <node concept="1eOMI4" id="5_H4mVrLBZl" role="3uHU7B">
+                  <node concept="22lmx$" id="5_H4mVrLBZm" role="1eOMHV">
+                    <node concept="2OqwBi" id="5_H4mVrLBZn" role="3uHU7w">
+                      <node concept="2OqwBi" id="5_H4mVrLBZo" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5_H4mVrLBZp" role="2Oq$k0">
+                          <node concept="37vLTw" id="5_H4mVrLBZq" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4GZ8Ro2Zjpn" resolve="speciesExpr" />
+                          </node>
+                          <node concept="3TrEf2" id="5_H4mVrLBZr" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="5_H4mVrLBZs" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                        </node>
+                      </node>
+                      <node concept="21noJN" id="5_H4mVrLBZt" role="2OqNvi">
+                        <node concept="21nZrQ" id="5_H4mVrLBZu" role="21noJM">
+                          <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="5_H4mVrLBZv" role="3uHU7B">
+                      <node concept="3TrcHB" id="5_H4mVrLBZw" role="2OqNvi">
+                        <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                      </node>
+                      <node concept="37vLTw" id="5_H4mVrLBZx" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4GZ8Ro2Zjpn" resolve="speciesExpr" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -20346,6 +20376,16 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="5_H4mVrb1K7" role="3cqZAp">
+          <node concept="1PaTwC" id="5_H4mVrb1K8" role="1aUNEU">
+            <node concept="3oM_SD" id="5_H4mVrb1Ns" role="1PaTwD">
+              <property role="3oM_SC" value="CELL-ONLY" />
+            </node>
+            <node concept="3oM_SD" id="5_H4mVrb7la" role="1PaTwD">
+              <property role="3oM_SC" value="TESTING" />
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="4GZ8Ro2XAl_" role="3cqZAp">
           <node concept="3cpWsn" id="4GZ8Ro2XAlA" role="3cpWs9">
             <property role="TrG5h" value="speciesList" />
@@ -20402,12 +20442,36 @@
                     <ref role="3TsBF5" to="w3cn:54teBVtOs6H" resolve="getsSumFromMemAgents" />
                   </node>
                 </node>
-                <node concept="2OqwBi" id="4GZ8Ro2XAlY" role="3uHU7B">
-                  <node concept="3TrcHB" id="4GZ8Ro2XAlZ" role="2OqNvi">
-                    <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
-                  </node>
-                  <node concept="37vLTw" id="4GZ8Ro2XAm0" role="2Oq$k0">
-                    <ref role="3cqZAo" node="4GZ8Ro2XAlN" resolve="speciesExpr" />
+                <node concept="1eOMI4" id="5_H4mVrKRWi" role="3uHU7B">
+                  <node concept="22lmx$" id="5_H4mVrKYJS" role="1eOMHV">
+                    <node concept="2OqwBi" id="5_H4mVrLp2n" role="3uHU7w">
+                      <node concept="2OqwBi" id="5_H4mVrLhq2" role="2Oq$k0">
+                        <node concept="2OqwBi" id="5_H4mVrL7c4" role="2Oq$k0">
+                          <node concept="37vLTw" id="5_H4mVrL2pb" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4GZ8Ro2XAlN" resolve="speciesExpr" />
+                          </node>
+                          <node concept="3TrEf2" id="5_H4mVrLd85" role="2OqNvi">
+                            <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                          </node>
+                        </node>
+                        <node concept="3TrcHB" id="5_H4mVrLkKU" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                        </node>
+                      </node>
+                      <node concept="21noJN" id="5_H4mVrLuT3" role="2OqNvi">
+                        <node concept="21nZrQ" id="5_H4mVrLuT5" role="21noJM">
+                          <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="2OqwBi" id="4GZ8Ro2XAlY" role="3uHU7B">
+                      <node concept="3TrcHB" id="4GZ8Ro2XAlZ" role="2OqNvi">
+                        <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                      </node>
+                      <node concept="37vLTw" id="4GZ8Ro2XAm0" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4GZ8Ro2XAlN" resolve="speciesExpr" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -20950,12 +21014,36 @@
                   </node>
                 </node>
                 <node concept="3fqX7Q" id="4GZ8Ro2NNB0" role="3uHU7B">
-                  <node concept="2OqwBi" id="4GZ8Ro2NNB1" role="3fr31v">
-                    <node concept="3TrcHB" id="4GZ8Ro2NNB2" role="2OqNvi">
-                      <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
-                    </node>
-                    <node concept="37vLTw" id="4GZ8Ro2NNB3" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4GZ8Ro2NNAQ" resolve="speciesExpr" />
+                  <node concept="1eOMI4" id="5_H4mVrLLja" role="3fr31v">
+                    <node concept="22lmx$" id="5_H4mVrLLjb" role="1eOMHV">
+                      <node concept="2OqwBi" id="5_H4mVrLLjc" role="3uHU7w">
+                        <node concept="2OqwBi" id="5_H4mVrLLjd" role="2Oq$k0">
+                          <node concept="2OqwBi" id="5_H4mVrLLje" role="2Oq$k0">
+                            <node concept="37vLTw" id="5_H4mVrLLjf" role="2Oq$k0">
+                              <ref role="3cqZAo" node="4GZ8Ro2NNAQ" resolve="speciesExpr" />
+                            </node>
+                            <node concept="3TrEf2" id="5_H4mVrLLjg" role="2OqNvi">
+                              <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                            </node>
+                          </node>
+                          <node concept="3TrcHB" id="5_H4mVrLLjh" role="2OqNvi">
+                            <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                          </node>
+                        </node>
+                        <node concept="21noJN" id="5_H4mVrLLji" role="2OqNvi">
+                          <node concept="21nZrQ" id="5_H4mVrLLjj" role="21noJM">
+                            <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="5_H4mVrLLjk" role="3uHU7B">
+                        <node concept="3TrcHB" id="5_H4mVrLLjl" role="2OqNvi">
+                          <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                        </node>
+                        <node concept="37vLTw" id="5_H4mVrLLjm" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4GZ8Ro2NNAQ" resolve="speciesExpr" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

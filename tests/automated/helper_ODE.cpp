@@ -684,7 +684,7 @@ void TranscriptionDelayTest::setupCell() {
     auto *basicTissueType = new Tissue_Type_Flat(this->tissueContainer,"basicTissueType", basicCellType, CELL_CONFIGURATION_FLAT, 1, 1);
     // Create the tissue using the defined tissue container.
     this->tissueContainer->create_tissue("basicTissue", basicTissueType, new Coordinates(25, 25, 25));
-    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->tissues[0]);
+    this->tissueMonolayer = dynamic_cast<Tissue_Monolayer *>(tissueContainer->m_tissues[0]);
 
     // Force add the proteins to the memAgents and check whether they're at a junction.
     // TODO: ASK KATIE ABOUT WHETHER MEMAGENTS ARE DEFINED AS JUNCTIONAL OR NOT.
@@ -798,7 +798,7 @@ void DistributeProteinsTest::createTissue(Tissue_Container *container, Cell_Type
                                               1,
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
     for (auto cell : this->m_tissue->m_cell_agents) {
         cell->calcVonNeighs();
     }
@@ -910,7 +910,7 @@ void CellBufferTest::createTissue(Tissue_Container *container, Cell_Type* cellTy
                                               1,
                                               1);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
 }
 
 Tissue_Monolayer* CellBufferTest::getTissue() {
@@ -1030,7 +1030,7 @@ void WholeCellODETest::createTissue(Tissue_Container *container, Cell_Type* cell
                                               1,
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
     auto cell1 = this->m_tissue->m_cell_agents.at(0);
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
 
@@ -1180,7 +1180,7 @@ void MemAgentODETest::createTissue(Tissue_Container *container, Cell_Type* cellT
                                               1,
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
 	for (auto cellAgent : this->m_tissue->m_cell_agents) {
 		cellAgent->distributeProteins();
 	}
@@ -1395,7 +1395,7 @@ void VenkatramanCellTest::createTissue(Tissue_Container *container, Cell_Type* c
                                               1,
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
     auto cell1 = this->m_tissue->m_cell_agents.at(0);
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
     cell1->getNeighCellVector().push_back(cell2);
@@ -1764,7 +1764,7 @@ void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Typ
                                               1,
                                               2);
     container->create_tissue("TestTissue", monolayerType, position);
-    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->tissues.at(0));
+    this->m_tissue = dynamic_cast<Tissue_Monolayer *>(container->m_tissues.at(0));
     auto cell1 = this->m_tissue->m_cell_agents.at(0);
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
     cell1->getNeighCellVector().push_back(cell2);
@@ -2388,9 +2388,6 @@ void DSL_FilopodiaExtensionTest::createCell() {
 	//Allocate proteins out to memAgents.
 	ec->allocateProts(); // MSM proteins.
 	ec->distributeProteins(); // DSL proteins.
-
-	// Set the cell's VSINK value to 1.
-	ec->Vsink = 1;
 }
 
 MemAgent* DSL_FilopodiaExtensionTest::getCentreMemAgent() {

@@ -403,6 +403,15 @@
       <node concept="356sEK" id="4Lvhlq8xriN" role="383Ya9">
         <node concept="2EixSi" id="4Lvhlq8xriP" role="2EinRH" />
       </node>
+      <node concept="356sEK" id="3209kK3GocG" role="383Ya9">
+        <node concept="356sEF" id="3209kK3GocH" role="356sEH">
+          <property role="TrG5h" value="EC* CURRENT_CELL;" />
+        </node>
+        <node concept="2EixSi" id="3209kK3GocI" role="2EinRH" />
+      </node>
+      <node concept="356sEK" id="3209kK3FQf$" role="383Ya9">
+        <node concept="2EixSi" id="3209kK3FQfA" role="2EinRH" />
+      </node>
       <node concept="356WMU" id="35npzpE_RqG" role="383Ya9">
         <node concept="356sEK" id="4OESM7x7ZpM" role="383Ya9">
           <node concept="356sEF" id="4OESM7x8hGn" role="356sEH">
@@ -6694,6 +6703,14 @@
             <property role="TrG5h" value="&quot;) {" />
           </node>
           <node concept="2EixSi" id="1Rle6qVZany" role="2EinRH" />
+        </node>
+        <node concept="356sEK" id="_I9vPhoFhE" role="383Ya9">
+          <node concept="373pV1" id="_I9vPhoI0M" role="356sEH" />
+          <node concept="373pV1" id="_I9vPhoI0S" role="356sEH" />
+          <node concept="356sEF" id="_I9vPhoI10" role="356sEH">
+            <property role="TrG5h" value="CURRENT_CELL = cell;" />
+          </node>
+          <node concept="2EixSi" id="_I9vPhoFhG" role="2EinRH" />
         </node>
         <node concept="356sEK" id="1Rle6qW0_8I" role="383Ya9">
           <node concept="373pV1" id="1Rle6qW0_8J" role="356sEH" />
