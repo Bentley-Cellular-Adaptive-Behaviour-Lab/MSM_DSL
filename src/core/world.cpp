@@ -7586,3 +7586,11 @@ unsigned int World::get_start_CPM() {
 bool World::does_DSL_CPM() {
 	return this->m_DSL_CPM;
 }
+
+void World::set_start_CPM(const unsigned int startCPM) {
+	this->m_start_CPM = startCPM;
+}
+
+void World::set_DSL_CPM(const bool DSL_CPM) {
+	this->m_DSL_CPM = DSL_CPM;
+}
