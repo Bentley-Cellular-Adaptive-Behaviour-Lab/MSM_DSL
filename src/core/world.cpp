@@ -1760,7 +1760,6 @@ void World::creationTimestep(int movie) {
 void World::simulateTimestep_MSM() {
 	int movie = 0;
 
-
 	timeStep++;
 	if (timeStep == 0) {
 		creationTimestep(movie);
@@ -2049,10 +2048,12 @@ void World::updateECagents_MSM() {
 	}
 
 	for (j = 0; j < (int) ECagents.size(); j++) {
-        // Distribute back out the new VR-2 and Dll4 and Notch levels to voxelised memAgents across the whole new cell surface.
+        // Distribute back out the new VR-2 and Dll4 and Notch
+		// levels to voxelised memAgents across the whole new cell surface.
         ECagents[j]->allocateProts();
 
-        //use analysis method in JTB paper to obtain tip cell numbers, stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
+        // use analysis method in JTB paper to obtain tip cell numbers,
+		// stability of S&P pattern etc. requird 1 cell per cross section in vessel (PLos/JTB cell setup)
 		if (analysis_type == ANALYSIS_TYPE_JTB_SP_PATTERN)
 			ECagents[j]->calcStability();
 	}
