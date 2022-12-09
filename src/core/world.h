@@ -296,6 +296,9 @@ public:
 	// DSL CPM control functions.
 	unsigned int get_start_CPM();
 	bool does_DSL_CPM();
+	void set_start_CPM(unsigned int startCPM);
+	void set_DSL_CPM(bool DSLCPM);
+
 
 	// World info logger.
 
