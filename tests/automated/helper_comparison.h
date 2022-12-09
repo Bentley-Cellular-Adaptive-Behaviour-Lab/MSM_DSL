@@ -17,16 +17,8 @@
 namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 5> ComparisonType_cell_ode_states;
-typedef boost::array<double, 8> ComparisonType_memAgent_ode_states;
-typedef boost::array<double, 8> ComparisonType_cell_only_ode_states;
-
-static double calc_VEGF_VEGFR_ON_rate(const double VEGF_SUM, const double VEGFR2, const bool memAgent) {
-	return VEGF_SUM*VEGFR2*0.1;
-}
-
-static double calc_VEGF_VEGFR_OFF_rate(const double VEGF_VEGFR2, const bool memAgent) {
-	return VEGF_VEGFR2*0.01;
-}
+typedef boost::array<double, 10> ComparisonType_memAgent_ode_states;
+typedef boost::array<double, 10> ComparisonType_cell_only_ode_states;
 
 static double calc_DLL4_NOTCH_ON_rate(const double DLL4_MEAN, const double NOTCH, const bool memAgent) {
 	return DLL4_MEAN*NOTCH*0.1;
@@ -40,44 +32,8 @@ static double calc_DLL4_UPREG_rate(const double VEGF_VEGFR2, const bool memAgent
 	return VEGF_VEGFR2*0.2;
 }
 
-static double calc_DLL4_DEG_rate(const double DLL4, const bool memAgent) {
-	return DLL4*0.05;
-}
-
-static double calc_NOTCH_PROD_rate(const bool memAgent) {
-	return 0.05;
-}
-
-static double calc_VEGFR_PRODUCTION_rate(const bool memAgent) {
-	return 0.05;
-}
-
-static double calc_PLEXIN_PROD_rate(const bool memAgent) {
-	return 0.05;
-}
-
-static double calc_VEGFR2_DEG_rate(const double VEGFR2, const bool memAgent) {
-	return VEGFR2*0.05;
-}
-
-static double calc_NOTCH_DEG_rate(const double NOTCH, const bool memAgent) {
-	return NOTCH*0.05;
-}
-
-static double calc_VEGF_VEGFR2_DEG_rate(const double VEGF_VEGFR2, const bool memAgent) {
-	return VEGF_VEGFR2*0.05;
-}
-
-static double calc_DLL4_NOTCH_DEG_rate(const double DLL4_NOTCH, const bool memAgent) {
-	return DLL4_NOTCH*0.05;
-}
-
 static double calc_DLL4_UPTAKE_rate(const double DLL4, const double NOTCH_MEAN, const bool memAgent) {
 	return DLL4*NOTCH_MEAN*0.1;
-}
-
-static double calc_DLL4_REMOVAL_rate(const double DLL4_UPTAKE, const double DLL4_DEG, const bool memAgent) {
-	return DLL4_UPTAKE+DLL4_DEG;
 }
 
 static double calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM, const bool memAgent) {
@@ -89,14 +45,6 @@ static double calc_ACTIVE_VEGFR_NORM_LIMITED_rate(double ACTIVE_VEGFR, const dou
 	if (ACTIVE_VEGFR > VEGF_LIMITER){ ACTIVE_VEGFR = VEGF_LIMITER; }
 	if (memAgent) { VEGFR2_scalar = 1.0 / CURRENT_CELL->VonNeighs; } else { VEGFR2_scalar = VEGFR2;}
 	return (ACTIVE_VEGFR / VEGFR2_scalar);
-}
-
-static double calc_FILCONST_rate(const bool memAgent) {
-	return 2;
-}
-
-static double calc_VEGF_LIMITER_rate(const double VEGF, const bool memAgent) {
-	return VEGF;
 }
 
 static double calc_VEGFR2_LIMITER_rate(const double VEGFR2, const bool memAgent) {
