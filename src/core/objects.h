@@ -11,7 +11,11 @@ namespace py = pybind11;
 
 #include <fstream>
 
+class EC;
 class World;
+
+extern EC* CURRENT_CELL;
+
 
 //#define GRAPHICS true
 ///main switches and settings
@@ -24,7 +28,7 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-//#define MAXtime 10000
+#define MAXtime 10000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -47,11 +51,6 @@ class World;
 // Analysis types for the DSL.
 
 extern int analysis_type;
-
-// Extern variable for tracking the current
-// cell being used in DSL processes.
-
-extern EC* CURRENT_CELL;
 
 enum ANALYSIS_TYPE {
     ANALYSIS_TYPE_NONE,
