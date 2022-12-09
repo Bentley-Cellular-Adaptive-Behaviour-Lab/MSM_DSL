@@ -5,12 +5,31 @@
 #include "helper_comparison.h"
 
 #include "../../src/core/EC.h"
+#include "../../src/core/memAgents.h"
 #include "../../src/core/world.h"
 
 
 TEST_F(ComparisonTest, setupTest) {
 	// Empty test to check whether the class
 	// works or not.
+}
+
+TEST_F(ComparisonTest, EnvCheckTest) {
+	auto cornerAgent = getCell()->nodeAgents.at(0);
+	auto middleAgent = getCell()->nodeAgents.at(12);
+
+	// Update MSM VEGF values.
+	cornerAgent->checkNeighs(false);
+	middleAgent->checkNeighs(false);
+	auto cornerMSMVEGF = cornerAgent->SumVEGF;
+	auto middleMSMVEGF = middleAgent->SumVEGF;
+
+	// Get DSL VEGF values.
+	auto cornerDSLVEGF = cornerAgent->env_protein_search("VEGF");
+	auto middleDSLVEGF = middleAgent->env_protein_search("VEGF");
+
+	EXPECT_DOUBLE_EQ(cornerMSMVEGF, cornerDSLVEGF);
+	EXPECT_DOUBLE_EQ(middleMSMVEGF, middleDSLVEGF);
 }
 
 TEST_F(ComparisonTest, startValuesTest) {
@@ -74,13 +93,15 @@ TEST_F(ComparisonTest, comparisonCell1TickTest) {
 	auto DSL_ACTIVE_NOTCH = cell->get_cell_protein_level("DLL4_NOTCH", 0);
 	auto DSL_ACTIVE_VEGFR = cell->get_cell_protein_level("VEGF_VEGFR", 0);
 
+	auto MSM_VEGF = cell->MSM_VEGF;
+	auto DSL_VEGF = cell->get_env_protein_level("VEGF");
+
+	EXPECT_DOUBLE_EQ(MSM_VEGF, DSL_VEGF); // Check VEGF.
 	EXPECT_DOUBLE_EQ(MSM_DLL4, DSL_DLL4); // Check DLL4.
 	EXPECT_DOUBLE_EQ(MSM_VEGFR, DSL_VEGFR); // Check VEGFR.
 	EXPECT_DOUBLE_EQ(MSM_NOTCH, DSL_NOTCH); // Check NOTCH.
 	EXPECT_DOUBLE_EQ(MSM_ACTIVE_NOTCH, DSL_ACTIVE_NOTCH); // Check active NOTCH.
 	EXPECT_DOUBLE_EQ(MSM_ACTIVE_VEGFR, DSL_ACTIVE_VEGFR); // Check active VEGFR.
-
-	int stop = 0;
 }
 
 TEST_F(ComparisonTest, comparison2TickTest) {

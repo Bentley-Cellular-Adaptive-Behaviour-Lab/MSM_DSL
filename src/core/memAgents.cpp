@@ -683,6 +683,7 @@ void MemAgent::VEGFRresponse(void) {
 		float scalar = ((float) VEGFRNORM / (float) upto);
         VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
+		Cell->MSM_VEGF += SumVEGF;
 
         //done exceed max level
         if (VEGFRactive > VEGFR) {
@@ -4698,7 +4699,7 @@ double MemAgent::env_protein_search(const std::string& proteinName) {
     double result = 0;
     for (int x = (int) (Mx - 1); x <= (int) (Mx + 1); x++) {
         for (int y = (int) (My - 1); y <= (int) (My + 1); y++) {
-            for (int z = (int) (Mz - 1); z < (int) (Mz + 1); z++) {
+            for (int z = (int) (Mz - 1); z <= (int) (Mz + 1); z++) {
                 if (worldP->insideWorld(x, y, z)
                     && !(x == (int) Mx && y == (int) My && z == (int) Mz)) {
                     if (worldP->grid[x][y][z].getType() == const_E) {

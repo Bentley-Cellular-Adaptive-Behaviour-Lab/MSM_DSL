@@ -88,6 +88,9 @@ void ComparisonTest::createCell() {
 	// has to look for.
 	ec->store_env_protein("VEGF");
 
+	// Set VSink to 1.
+	ec->Vsink = 1;
+
 	// Allocate proteins out to memAgents.
 	ec->allocateProts(); // MSM proteins.
 	ec->distributeProteins(); // DSL proteins.
@@ -258,9 +261,9 @@ void ComparisonTest::ComparisonType_run_memAgent_ODEs(MemAgent* memAgent) {
 	states[0] = memAgent->get_memAgent_current_level("NOTCH");
 	states[1] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[2] = memAgent->get_memAgent_current_level("DLL4");
-	states[4] = memAgent->get_memAgent_current_level("VEGFR2");
-	states[5] = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
-	states[9] = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
+	states[4] = memAgent->get_memAgent_current_level("VEGFR");
+	states[5] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
+	states[9] = memAgent->get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
 	states[6] = memAgent->get_junction_protein_level("DLL4", true);
 	states[7] = memAgent->get_junction_protein_level("NOTCH", true);
 
@@ -271,8 +274,8 @@ void ComparisonTest::ComparisonType_run_memAgent_ODEs(MemAgent* memAgent) {
 	memAgent->set_protein_buffer_level("NOTCH", states[0]);
 	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[1]);
 	memAgent->set_protein_buffer_level("DLL4", states[2]);
-	memAgent->set_protein_buffer_level("VEGFR2", states[4]);
-	memAgent->set_protein_buffer_level("VEGF_VEGFR2", states[5]);
+	memAgent->set_protein_buffer_level("VEGFR", states[4]);
+	memAgent->set_protein_buffer_level("VEGF_VEGFR", states[5]);
 }
 
 void ComparisonTest::ComparisonType_cell_only_system(const ComparisonType_cell_only_ode_states &x,
@@ -298,10 +301,10 @@ void ComparisonTest::ComparisonType_cell_only_system(const ComparisonType_cell_o
 	double DLL4_UPTAKE = calc_DLL4_UPTAKE_rate(DLL4, NOTCH_MEAN, false);
 	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, false);
 	// ODE Definitions
-	dxdt[0] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
+	dxdt[0] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
 	dxdt[1] = -(DLL4_UPTAKE)+(DLL4_UPREG); // DLL4
 	dxdt[2] = +(DLL4_NOTCH_ON)*1; // DLL4_NOTCH
-	dxdt[3] = -(ACTIVE_VEGFR_NORM_LIMITED)*1-(VEGFR2_INHIB); // VEGFR2
+	dxdt[3] = -(ACTIVE_VEGFR)*1-(VEGFR2_INHIB); // VEGFR2
 	dxdt[4] = -(DLL4_NOTCH_ON)*1; // NOTCH
 	dxdt[5] = 0; // VEGF_MEAN
 	dxdt[6] = 0; // DLL4_MEAN
@@ -317,12 +320,12 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
 
 	auto VEGFR2_scalar = 31714.0;
-	states[0] = ec->get_cell_protein_level("VEGF_VEGFR2", 0);
+	states[0] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
 	states[1] = ec->get_cell_protein_level("DLL4", 0);
 	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-	states[3] = ec->get_cell_protein_level("VEGFR2", 0);
+	states[3] = ec->get_cell_protein_level("VEGFR", 0);
 	states[4] = ec->get_cell_protein_level("NOTCH", 0);
-	states[9] = ec->get_cell_protein_level("VEGFR2", 0) / VEGFR2_scalar;
+	states[9] = ec->get_cell_protein_level("VEGFR", 0) / VEGFR2_scalar;
 	states[5] = ec->get_env_protein_level("VEGF") / agents;
 	states[8] = ec->get_env_protein_level("VEGF");
 	states[6] = ec->calc_adjacent_species_level("DLL4", false, true);
@@ -332,10 +335,10 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 	controlled_stepper_type controlled_stepper;
 	integrate_adaptive(controlled_stepper, ComparisonType_cell_only_system, states, 0.0, 1.0, 0.1);
 
-	ec->set_cell_protein_level("VEGF_VEGFR2", states[0], 1);
+	ec->set_cell_protein_level("VEGF_VEGFR", states[0], 1);
 	ec->set_cell_protein_level("DLL4", states[1], 28);
 	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 1);
-	ec->set_cell_protein_level("VEGFR2", states[3], 28);
+	ec->set_cell_protein_level("VEGFR", states[3], 28);
 	ec->set_cell_protein_level("NOTCH", states[4], 1);
 }
 

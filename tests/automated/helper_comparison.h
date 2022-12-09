@@ -43,7 +43,7 @@ static double calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM
 static double calc_ACTIVE_VEGFR_NORM_LIMITED_rate(double ACTIVE_VEGFR, const double VEGF_LIMITER, const double VEGFR2, const bool memAgent) {
 	double VEGFR2_scalar;
 	if (ACTIVE_VEGFR > VEGF_LIMITER){ ACTIVE_VEGFR = VEGF_LIMITER; }
-	if (memAgent) { VEGFR2_scalar = 1.0 / CURRENT_CELL->VonNeighs; } else { VEGFR2_scalar = VEGFR2;}
+	if (memAgent) { VEGFR2_scalar = 1.0 / CURRENT_CELL->VonNeighs; } else { VEGFR2_scalar = VEGFR2; }
 	return (ACTIVE_VEGFR / VEGFR2_scalar);
 }
 

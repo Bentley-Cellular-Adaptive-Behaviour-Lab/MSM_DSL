@@ -59,6 +59,7 @@ public:
 	Hysteresis *hyst;
 	///general
 	double En_VEGF;
+
 	int VonNeighs; ///how many memAgents with von neumann neighbour Env objects does it have
 	float red, blue, green; ///individual cell colour allocation
 
@@ -87,6 +88,7 @@ public:
 	Coordinates calcCOM_toroidal(void);
 
 	///GRN signalling pathways
+
 	float Vsink; ///VEGFR-1 parameter
 	float VEGFRnorm; //VEGFR2 level
 	float actNotCurrent; ///active Notch after time delay (able to affect Gene expression)
@@ -141,6 +143,11 @@ public:
 	void remove_DoubledUp_SurfaceAgents(void);
 	void gridAgents(void); ///snap continuous space positions of meAgents to the gridded lattice including surface agent creation via voxelisation
 
+	/// DSL FUNCTIONS
+
+	// Debug variable for checking how much VEGF is tracked
+	// during an MSM timestep.
+	float MSM_VEGF = 0;
 
 	EC(World* world);
 	EC(World *world, Cell_Type *cell_type);

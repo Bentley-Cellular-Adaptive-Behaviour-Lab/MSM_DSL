@@ -1772,6 +1772,7 @@ void World::simulateTimestep_MSM() {
             }
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
+			ec->MSM_VEGF = 0;
 		}
 
 		// Resets cell levels in preparation for ODES
