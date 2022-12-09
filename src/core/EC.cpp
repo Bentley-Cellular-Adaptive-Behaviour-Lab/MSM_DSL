@@ -367,7 +367,6 @@ void EC::NotchDelay(void){
         actNotCurrent=actNotCurrent+NotchLastsArray[i];
     }
     
-    
 }
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------
@@ -608,10 +607,7 @@ void EC::characterizeActNotchBoundaries(int which, int other){
 EC::EC(World*  world){
 
 	worldP = world;
-
-
 	mutant = false;
-
 	filCONST = FIL_VARY; //LTK link add user config value link here
 
 	//wt values FLTK link
@@ -658,10 +654,7 @@ EC::EC(World*  world){
 		VEGFRlastsArray.push_back(0.0f);
 	}
 
-
-
 	VonNeighs = 0;
-
 }
 
 
