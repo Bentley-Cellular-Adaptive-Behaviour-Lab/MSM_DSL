@@ -43,6 +43,46 @@ void MemAgent::store_previous_triangle_pos() {
  * 
  * Calculate memAgents Notch receptor activation from local Dll4 ligands seen in grid
  */
+
+void MemAgent::NotchResponseOld() {
+	int i = 0;
+	int j;
+	int flag = 0;
+
+	do {
+        if (worldP->neigh[i]->getType() == const_M) {
+			int test = worldP->neigh[i]->getMids().size();
+            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
+                if (flag == 0) {
+                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
+						auto targetMemAgent = worldP->neigh[i]->getMids().at(0);
+						// grid[24][22][25].getMids().at(0)
+						if (targetMemAgent->Mx == 24 && targetMemAgent->My == 22 && targetMemAgent->Mz == 25) {
+							int test = 0;
+						}
+                        //if more than number of notch receptors  only take amount needed to activate notches
+                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
+                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+                            activeNotch = activeNotch + Notch1;
+                            Notch1 = 0.0f;
+                            flag = 1;
+
+                        }//take all of it if less than it has notch receptors
+                        else {
+                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+                        }
+                    }
+                }
+            }
+        }
+
+        i++;
+    } while ((flag == 0) && (i < NEIGH));
+
+}
+
 void MemAgent::NotchResponse(void) {
 
     int i = 0;
@@ -92,8 +132,6 @@ void MemAgent::NotchResponse(void) {
 			}
 		}
 	}
-
-
 
 //    do {
 //        if (worldP->neigh[i]->getType() == const_M) {
