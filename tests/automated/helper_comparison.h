@@ -20,8 +20,29 @@ typedef boost::array<double, 5> ComparisonType_cell_ode_states;
 typedef boost::array<double, 10> ComparisonType_memAgent_ode_states;
 typedef boost::array<double, 10> ComparisonType_cell_only_ode_states;
 
-static double calc_DLL4_NOTCH_ON_rate(const double DLL4_MEAN, const double NOTCH, const bool memAgent) {
-	return DLL4_MEAN*NOTCH*0.1;
+//static double calc_DLL4_NOTCH_ON_rate(const double DLL4_MEAN, const double NOTCH, const bool memAgent) {
+//	return DLL4_MEAN*NOTCH*0.1;
+//}
+
+static double calc_ACTIVE_NOTCH_rate(const double DLL4_SUM,
+									  const double NOTCH,
+									  const double NOTCH_LIMITER,
+									  const bool memAgent) {
+	auto ACTIVE_NOTCH = DLL4_SUM;
+	if (ACTIVE_NOTCH > NOTCH_LIMITER) {
+		ACTIVE_NOTCH = NOTCH_LIMITER;
+	}
+	return ACTIVE_NOTCH;
+}
+
+static double calc_NOTCH_LIMITER_rate(const double NOTCH,
+									  const bool memAgent) {
+	return NOTCH;
+}
+
+static double calc_DLL4_LIMITER_rate(const double DLL4,
+									  const bool memAgent) {
+	return DLL4;
 }
 
 static double calc_VEGFR2_INHIB_rate(const double DLL4_NOTCH, const bool memAgent) {
@@ -32,8 +53,19 @@ static double calc_DLL4_UPREG_rate(const double VEGF_VEGFR2, const bool memAgent
 	return VEGF_VEGFR2*0.2;
 }
 
-static double calc_DLL4_UPTAKE_rate(const double DLL4, const double NOTCH_MEAN, const bool memAgent) {
-	return DLL4*NOTCH_MEAN*0.1;
+//static double calc_DLL4_UPTAKE_rate(const double DLL4, const double NOTCH_MEAN, const bool memAgent) {
+//	return DLL4*NOTCH_MEAN*0.1;
+//}
+
+static double calc_DLL4_USED_rate(const double DLL4,
+									const double NOTCH_SUM,
+									const double DLL4_LIMITER,
+									const bool memAgent) {
+	auto USED_DLL4 = NOTCH_SUM;
+	if (USED_DLL4 > DLL4_LIMITER) {
+		USED_DLL4 = DLL4_LIMITER;
+	}
+	return USED_DLL4;
 }
 
 static double calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM, const bool memAgent) {
@@ -53,7 +85,7 @@ static double calc_VEGFR2_LIMITER_rate(const double VEGFR2, const bool memAgent)
 
 namespace odeint = boost::numeric::odeint;
 
-class EC;
+class Tissue;
 class Tissue_Container;
 class World;
 
@@ -61,7 +93,7 @@ class ComparisonTest : public ::testing::Test {
 private:
 	// Member variable.
 	World *m_world;
-	EC *m_cellAgent;
+	Tissue *m_tissue;
 	Tissue_Container *m_tissueContainer;
 	unsigned int m_ode_type = ODE_TYPE_CELL;
 protected:
@@ -69,8 +101,8 @@ protected:
 	void TearDown() override;
 public:
 	void createEnvironment();
-	void createCell();
-	EC* getCell();
+	void createTissue();
+	Tissue* getTissue();
 	World* getWorld();
 	void run_DSL_ODEs(EC *ec);
 	void do_memAgent_ODEs(EC *ec);
