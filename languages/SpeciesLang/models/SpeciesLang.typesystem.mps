@@ -7655,5 +7655,49 @@
       <ref role="1YaFvo" to="w3cn:6pt0UY9yFLx" resolve="ParameterExpression" />
     </node>
   </node>
+  <node concept="18kY7G" id="6Ss9Vf0Wzwb">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_VonNeumann" />
+    <node concept="3clFbS" id="6Ss9Vf0Wzwc" role="18ibNy">
+      <node concept="3clFbJ" id="6Ss9Vf0WzxR" role="3cqZAp">
+        <node concept="3clFbS" id="6Ss9Vf0WzxT" role="3clFbx">
+          <node concept="3clFbJ" id="6Ss9Vf0W$nE" role="3cqZAp">
+            <node concept="3clFbS" id="6Ss9Vf0W$nG" role="3clFbx">
+              <node concept="2MkqsV" id="6Ss9Vf0W_a_" role="3cqZAp">
+                <node concept="Xl_RD" id="6Ss9Vf0W_aO" role="2MkJ7o">
+                  <property role="Xl_RC" value="Species expression must be checking adjacent sites before using the Von Neumann neighbourhood." />
+                </node>
+                <node concept="1YBJjd" id="6Ss9Vf0W_fd" role="1urrMF">
+                  <ref role="1YBMHb" node="6Ss9Vf0WzxC" resolve="speciesExpr" />
+                </node>
+              </node>
+            </node>
+            <node concept="3fqX7Q" id="6Ss9Vf0W$C3" role="3clFbw">
+              <node concept="2OqwBi" id="6Ss9Vf0W$C5" role="3fr31v">
+                <node concept="1YBJjd" id="6Ss9Vf0W$C6" role="2Oq$k0">
+                  <ref role="1YBMHb" node="6Ss9Vf0WzxC" resolve="speciesExpr" />
+                </node>
+                <node concept="3TrcHB" id="6Ss9Vf0W_a2" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="6Ss9Vf0WzIN" role="3clFbw">
+          <node concept="1YBJjd" id="6Ss9Vf0Wzy6" role="2Oq$k0">
+            <ref role="1YBMHb" node="6Ss9Vf0WzxC" resolve="speciesExpr" />
+          </node>
+          <node concept="3TrcHB" id="6Ss9Vf0WzXt" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6Ss9Vf0T_xR" resolve="checksVonNeumannNeighs" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6Ss9Vf0WzxC" role="1YuTPh">
+      <property role="TrG5h" value="speciesExpr" />
+      <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
 </model>
 

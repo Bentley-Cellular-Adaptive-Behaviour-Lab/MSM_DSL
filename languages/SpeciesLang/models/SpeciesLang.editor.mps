@@ -3309,6 +3309,21 @@
           </node>
         </node>
       </node>
+      <node concept="3F0ifn" id="6Ss9Vf0TBX8" role="3EZMnx">
+        <property role="3F0ifm" value="&lt;-VN" />
+        <node concept="pkWqt" id="6Ss9Vf0TBZo" role="pqm2j">
+          <node concept="3clFbS" id="6Ss9Vf0TBZp" role="2VODD2">
+            <node concept="3clFbF" id="6Ss9Vf0THob" role="3cqZAp">
+              <node concept="2OqwBi" id="6Ss9Vf0THCI" role="3clFbG">
+                <node concept="pncrf" id="6Ss9Vf0THoa" role="2Oq$k0" />
+                <node concept="3TrcHB" id="6Ss9Vf0TI0h" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:6Ss9Vf0T_xR" resolve="checksVonNeumannNeighs" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2iRfu4" id="109yD1s_YGT" role="2iSdaV" />
     </node>
   </node>

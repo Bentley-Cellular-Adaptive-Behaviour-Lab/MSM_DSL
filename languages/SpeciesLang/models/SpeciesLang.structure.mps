@@ -421,6 +421,11 @@
       <property role="TrG5h" value="getsSumFromMemAgents" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+    <node concept="1TJgyi" id="6Ss9Vf0T_xR" role="1TKVEl">
+      <property role="IQ2nx" value="7934260296508921975" />
+      <property role="TrG5h" value="checksVonNeumannNeighs" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="109yD1s_YGN" role="1TKVEi">
       <property role="IQ2ns" value="1155607132030626611" />
       <property role="20kJfa" value="Species" />
@@ -677,6 +682,11 @@
     <node concept="1TJgyi" id="54teBVtO_Et" role="1TKVEl">
       <property role="IQ2nx" value="5844892207958612637" />
       <property role="TrG5h" value="speciesExprIsNormalisedToStartValue" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="6Ss9Vf13vjg" role="1TKVEl">
+      <property role="IQ2nx" value="7934260296511517904" />
+      <property role="TrG5h" value="speciesExprDoesVonNeumann" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
