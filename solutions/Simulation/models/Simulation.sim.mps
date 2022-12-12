@@ -234,6 +234,16 @@
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
+      <concept id="6249017959271690140" name="TissueLang.structure.ArrangementFlat" flags="ng" index="3ZP1s_">
+        <property id="8011215656706728016" name="_sweepWidthSteps" index="2y8eTx" />
+        <property id="8011215656706728007" name="_sweepHeightSteps" index="2y8eTQ" />
+        <property id="8011215656706673206" name="_sweepMaxWidth" index="2y8gg7" />
+        <property id="8011215656706673199" name="_sweepMinWidth" index="2y8ggu" />
+        <property id="8011215656705162207" name="_sweepMaxHeight" index="2zQfnI" />
+        <property id="8011215656705162181" name="_sweepMinHeight" index="2zQfnO" />
+        <property id="6249017959271690144" name="_width" index="3ZP1sp" />
+        <property id="6249017959271690142" name="_height" index="3ZP1sB" />
+      </concept>
       <concept id="6249017959271690129" name="TissueLang.structure.ArrangementCylindrical" flags="ng" index="3ZP1sC">
         <property id="8011215656706727893" name="_sweepSteps" index="2y8d7$" />
         <property id="8011215656705162106" name="_sweepMinLength" index="2zQflb" />
@@ -2287,20 +2297,6 @@
       <property role="TrG5h" value="VesselType" />
       <property role="2A9NO$" value="true" />
       <ref role="1apGrN" node="_I9vPho5Fp" resolve="EndothelialType" />
-      <node concept="3ZP1sC" id="_I9vPho5Fg" role="1v2cpK">
-        <property role="2zQflb" value="1" />
-        <property role="2zQfls" value="1" />
-        <property role="2y8d7$" value="1" />
-        <property role="3ZP1sG" value="10" />
-        <node concept="2_hQR_" id="_I9vPho5Fh" role="3ob6kl">
-          <node concept="2_n9WQ" id="_I9vPho5Fi" role="2_hQRE">
-            <node concept="30bXRB" id="_I9vPho5Fj" role="2_n9WR">
-              <property role="30bXRw" value="3" />
-            </node>
-          </node>
-          <node concept="2_hRrN" id="_I9vPho5Fk" role="2_hQ4V" />
-        </node>
-      </node>
       <node concept="2A9NMR" id="_I9vPho5Fl" role="2A9NPW">
         <node concept="30d7iD" id="_I9vPho5Fm" role="2A9LIf">
           <node concept="1cBA6y" id="_I9vPho5Fn" role="30dEsF">
@@ -2310,6 +2306,16 @@
             <property role="30bXRw" value="100" />
           </node>
         </node>
+      </node>
+      <node concept="3ZP1s_" id="5_H4mVtpdQ6" role="1v2cpK">
+        <property role="3ZP1sB" value="1" />
+        <property role="3ZP1sp" value="2" />
+        <property role="2y8ggu" value="1" />
+        <property role="2y8gg7" value="1" />
+        <property role="2zQfnO" value="1" />
+        <property role="2zQfnI" value="1" />
+        <property role="2y8eTx" value="1" />
+        <property role="2y8eTQ" value="1" />
       </node>
     </node>
     <node concept="3ZP1sM" id="_I9vPho5Fp" role="1v2izm">
