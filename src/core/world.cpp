@@ -1919,36 +1919,34 @@ void World::updateMemAgents_MSM() {
                 memp->passBackBufferLevels();
             }
 
-            if (SHAPE_TESTING) {
-                memp->shapeResponse(randomChance);
-            } else {
-                //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
-                if (memp->FIL == TIP) {
-                    if (VEIL_ADVANCE) {
-                        if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
-                            if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                                memp->veilAdvance();
-                            } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
-                                memp->veilAdvance();
-                            }
-                        }
-                    }
 
-                    // Retract filopodia if inactive.
-                    if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
-						|| ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
-                        if (memp->filRetract()) {
-                            tipDeleteFlag = true;
-                            deleteOldGridRef(memp, true);
-                            delete memp;
-                        }
-                            //NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
-                        else {
-                            memp->calcRetractDist();
-                        }
-                    }
-                    //------------------------------------
-                }
+			//if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
+			if (memp->FIL == TIP) {
+				if (VEIL_ADVANCE) {
+					if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
+						if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+							memp->veilAdvance();
+						} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+							memp->veilAdvance();
+						}
+					}
+				}
+
+				// Retract filopodia if inactive.
+				if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
+				|| ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
+					if (memp->filRetract()) {
+						tipDeleteFlag = true;
+						deleteOldGridRef(memp, true);
+						delete memp;
+					}
+					//NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
+					else {
+						memp->calcRetractDist();
+					}
+				}
+				//------------------------------------
+
 
                 //if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
                 if (!tipDeleteFlag) {
