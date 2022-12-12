@@ -104,7 +104,7 @@ TEST_F(ComparisonTest, comparisonCell1TickTest) {
 	// AFTER CREATING A WORLD RUN A TIMESTEP WHICH
 	// DOES BOTH MSM AND DSL PROCESSES.
 
-	auto cell = getCell();
+	auto cell = getTissue()->m_cell_agents.at(0);
 	auto world = getWorld();
 	world->set_DSL_CPM(false); // Turn off CPM, if it is being used.
 
