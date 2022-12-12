@@ -224,6 +224,8 @@ public:
     double mean_env_protein_search(const std::string &proteinName);
 
     double get_mean_env_protein(const std::string &name);
+
+	void NotchResponseOld();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H
