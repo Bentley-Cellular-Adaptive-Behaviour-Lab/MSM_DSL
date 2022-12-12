@@ -19,8 +19,9 @@ TEST_F(ComparisonTest, setupTest) {
 }
 
 TEST_F(ComparisonTest, EnvCheckTest) {
-	auto cornerAgent = getCell()->nodeAgents.at(0);
-	auto middleAgent = getCell()->nodeAgents.at(12);
+	auto cell = getTissue()->m_cell_agents.at(0);
+	auto cornerAgent = cell->nodeAgents.at(0);
+	auto middleAgent = cell->nodeAgents.at(12);
 
 	// Update MSM VEGF values.
 	cornerAgent->checkNeighs(false);
@@ -51,7 +52,7 @@ TEST_F(ComparisonTest, startValuesTest) {
 	// Notchtot = 0.0f;
 	// activeNotchtot = 0.0f;
 
-	auto cell = getCell();
+	auto cell = getTissue()->m_cell_agents.at(0);
 
 	EXPECT_DOUBLE_EQ(cell->Dll4tot, 0); // Check MSM DLL4
 	EXPECT_DOUBLE_EQ(cell->VEGFRtot, 31714.0); // Check MSM VEGFR
