@@ -37,6 +37,39 @@ TEST_F(ComparisonTest, EnvCheckTest) {
 	EXPECT_DOUBLE_EQ(middleMSMVEGF, middleDSLVEGF);
 }
 
+TEST_F(ComparisonTest, NotchResponseTest) {
+	auto cell = getTissue()->m_cell_agents.at(0);
+	auto sideAgent = cell->nodeAgents.at(22);
+	auto middleAgent = cell->nodeAgents.at(12);
+
+	// Check assumptions are true. i.e. middleAgent
+	// has no Notch and cannot participate, while the
+	// side agent can.
+	EXPECT_FALSE(middleAgent->junction);
+	EXPECT_TRUE(sideAgent->junction);
+	EXPECT_DOUBLE_EQ(0, middleAgent->Notch1);
+	EXPECT_DOUBLE_EQ(2000, sideAgent->Notch1);
+	EXPECT_DOUBLE_EQ(0, middleAgent->activeNotch);
+	EXPECT_DOUBLE_EQ(0, sideAgent->activeNotch);
+
+	// Get a memAgent from a neighbouring cell, and add DLL4 to it.
+	auto targetMemAgent = getWorld()->grid[24][22][25].getMids().at(0);
+	targetMemAgent->Dll4 = 2000;
+
+	// THIS DOES THE MOORE NEIGHBOURHOOD.
+	// Do the old MSM Notch check
+//	sideAgent->NotchResponseOld();
+//	middleAgent->NotchResponseOld();
+
+	// Check the side agent was able to interact
+	// while the middle was not.
+//	EXPECT_DOUBLE_EQ(0, middleAgent->Notch1);
+//	EXPECT_DOUBLE_EQ(2000, sideAgent->Notch1);
+//	EXPECT_DOUBLE_EQ(0, middleAgent->activeNotch);
+//	EXPECT_DOUBLE_EQ(2000, sideAgent->activeNotch);
+
+}
+
 TEST_F(ComparisonTest, startValuesTest) {
 	// CHECK START VALUES FOR BOTH THE DSL AND MSM
 	// ARE BOTH EQUAL AND ARE THE EXPECTED VALUES.
