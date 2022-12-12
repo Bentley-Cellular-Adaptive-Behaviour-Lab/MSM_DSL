@@ -5,8 +5,12 @@
 #include "helper_comparison.h"
 
 #include "../../src/core/EC.h"
+#include "../../src/core/location.h"
 #include "../../src/core/memAgents.h"
 #include "../../src/core/world.h"
+
+#include "../../src/dsl/tissue/tissue.h"
+
 
 
 TEST_F(ComparisonTest, setupTest) {
