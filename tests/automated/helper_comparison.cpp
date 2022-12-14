@@ -215,7 +215,7 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	double VEGF_MEAN = x[3];
 	double VEGFR2 = x[4];
 	double VEGF_VEGFR2 = x[5];
-	double DLL4_MEAN = x[6];
+	double DLL4_SUM = x[6];
 	double NOTCH_MEAN = x[7];
 	double VEGF_SUM = x[8];
 	double VEGFR2_NORM = x[9];
