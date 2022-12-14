@@ -230,12 +230,12 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
 	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, true);
 	// ODE Definitions
-	dxdt[0] = -(DLL4_NOTCH_ON)*1; // NOTCH
-	dxdt[1] = +(DLL4_NOTCH_ON)*1; // DLL4_NOTCH
+	dxdt[0] = -(NOTCH_BOUND)*1; // NOTCH
+	dxdt[1] = +(NOTCH_BOUND)*1; // DLL4_NOTCH
 	dxdt[2] = 0; // DLL4
 	dxdt[3] = 0; // VEGF_MEAN
-	dxdt[4] = -(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGFR2
-	dxdt[5] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
+	dxdt[4] = -(ACTIVE_VEGFR)*1; // VEGFR2
+	dxdt[5] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
 	dxdt[6] = 0; // DLL4_MEAN
 	dxdt[7] = 0; // NOTCH_MEAN
 	dxdt[8] = 0; // VEGF_SUM
