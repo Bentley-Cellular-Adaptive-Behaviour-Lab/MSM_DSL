@@ -627,24 +627,9 @@
       <property role="TrG5h" value="binIndex" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="4e6e46gPqyv" role="1TKVEl">
-      <property role="IQ2nx" value="4865638301674350751" />
-      <property role="TrG5h" value="speciesExpressionChecksAdjacent" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="3Y$DpTRZGAt" role="1TKVEl">
-      <property role="IQ2nx" value="4585972420606609821" />
-      <property role="TrG5h" value="speciesExpressionGetsSum" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="3Y$DpTRZGAx" role="1TKVEl">
-      <property role="IQ2nx" value="4585972420606609825" />
-      <property role="TrG5h" value="speciesExpressionIsNormalised" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyj" id="3LeNXFhUH1L" role="1TKVEi">
       <property role="IQ2ns" value="4345639229190754417" />
-      <property role="20kJfa" value="target" />
+      <property role="20kJfa" value="targetExpr" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
@@ -652,53 +637,18 @@
   <node concept="1TIwiD" id="3h7BZk97_g6">
     <property role="EcuMT" value="3767155488087495686" />
     <property role="TrG5h" value="SpeciesBin" />
-    <property role="R4oN_" value="Stores the index of a species when constructing function arguments during text generation." />
+    <property role="R4oN_" value="Stores the index of a species expression when constructing function arguments during text generation." />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3h7BZk97_g7" role="1TKVEl">
       <property role="IQ2nx" value="3767155488087495687" />
       <property role="TrG5h" value="binIndex" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
-    <node concept="1TJgyi" id="xhYrITVX8D" role="1TKVEl">
-      <property role="IQ2nx" value="599534810090689065" />
-      <property role="TrG5h" value="reactionUsesNeighbourValue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="5nupkjFf11n" role="1TKVEl">
-      <property role="IQ2nx" value="6187494284732403799" />
-      <property role="TrG5h" value="reactionUsesCellValue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="5nupkjF4WVy" role="1TKVEl">
-      <property role="IQ2nx" value="6187494284729765602" />
-      <property role="TrG5h" value="speciesExprUsesNeighbour" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="54teBVtO_D6" role="1TKVEl">
-      <property role="IQ2nx" value="5844892207958612550" />
-      <property role="TrG5h" value="speciesExprGetsSumFromNeighbours" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="54teBVtO_Et" role="1TKVEl">
-      <property role="IQ2nx" value="5844892207958612637" />
-      <property role="TrG5h" value="speciesExprIsNormalisedToStartValue" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
-    <node concept="1TJgyi" id="6Ss9Vf13vjg" role="1TKVEl">
-      <property role="IQ2nx" value="7934260296511517904" />
-      <property role="TrG5h" value="speciesExprDoesVonNeumann" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
       <property role="IQ2ns" value="3767155488087495688" />
-      <property role="20kJfa" value="targetSpecies" />
+      <property role="20kJfa" value="targetSpeciesExpr" />
       <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
-    </node>
-    <node concept="1TJgyj" id="3FNuJRsjIjw" role="1TKVEi">
-      <property role="IQ2ns" value="4247874104281982176" />
-      <property role="20kJfa" value="targetProtrusion" />
-      <ref role="20lvS9" to="jl3b:Qd9PzECg1V" resolve="Protrusion" />
+      <ref role="20lvS9" node="109yD1s_YGM" resolve="SpeciesExpression" />
     </node>
   </node>
   <node concept="1TIwiD" id="2G0IbzGWWxi">
