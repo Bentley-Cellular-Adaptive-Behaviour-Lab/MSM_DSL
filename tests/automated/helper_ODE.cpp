@@ -146,7 +146,7 @@ void BasicODEMemAgentTest::runODE(MemAgent *memAgent) {
     controlled_stepper_type controlled_stepper;
 
 	states[0] = memAgent->get_memAgent_current_level("A"); // Protein A
-	states[1] = memAgent->get_environment_level("B", true); // Protein B
+	states[1] = memAgent->get_environment_level("B", true, false); // Protein B
 
     integrate_adaptive(controlled_stepper , BasicMemAgentODE_system,  states, 0.0 , 1.0 , 0.1 );
 
@@ -343,7 +343,7 @@ void JunctionTest::runODE(MemAgent *memAgent) {
 
 	ode_states[0] = memAgent->get_memAgent_current_level("A"); // Protein A (Junctional Protein, This Cell)
 	ode_states[1] = memAgent->get_memAgent_current_level("B"); // Protein B (Junctional Protein, This Cell)
-    ode_states[2] = memAgent->get_junction_protein_level("A", true); // Protein A (Junctional Protein, Other Cells)
+    ode_states[2] = memAgent->get_junction_protein_level("A", true, false); // Protein A (Junctional Protein, Other Cells)
 
     integrate_adaptive(controlled_stepper, JunctionSystem, ode_states, 0.0, 1.0, 0.1);
 
@@ -1292,7 +1292,7 @@ void MemAgentODETest::run_memAgent_ODEs(MemAgent* memAgent) {
     states[1] = memAgent->get_memAgent_current_level("ProteinB");
     states[2] = memAgent->get_memAgent_current_level("ProteinC");
     states[3] = memAgent->get_memAgent_current_level("ProteinD");
-    states[4] = memAgent->get_junction_protein_level("ProteinB", true);
+    states[4] = memAgent->get_junction_protein_level("ProteinB", true, false);
 
     stepper.do_step(memAgent_system, states, 0.0, 1.0);
 
@@ -1985,8 +1985,8 @@ void VenkatramanMemAgentTest::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) 
 	states[6] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[7] = memAgent->get_memAgent_current_level("NICD");
 	states[8] = memAgent->get_memAgent_current_level("NOTCH");
-	states[9] = memAgent->get_junction_protein_level("DLL4", true);
-	states[10] = memAgent->get_junction_protein_level("NOTCH", true);
+	states[9] = memAgent->get_junction_protein_level("DLL4", true, false);
+	states[10] = memAgent->get_junction_protein_level("NOTCH", true, false);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
@@ -2303,7 +2303,7 @@ float FilopodiaExtensionTest::calcDSLProb(MemAgent* targetMemAgent) {
 
 	auto VEGFR = targetMemAgent->get_memAgent_current_level("VEGFR");
 	float activeProportion = (float) VEGFR / scalar;
-	auto VEGF = targetMemAgent->get_environment_level("VEGF", false);
+	auto VEGF = targetMemAgent->get_environment_level("VEGF", false, false);
 
 	// Get active VEGFR.
 	float filConst = 2.0f;
@@ -2433,7 +2433,7 @@ double DSL_FilopodiaExtensionTest::calc_VEGFR2_LIMITER_rate(const double VEGFR2,
 double DSL_FilopodiaExtensionTest::calcDSLProb(MemAgent* memAgent) {
 	if (memAgent->Cell->m_cell_type->m_name == "CellType") {
 		auto upto = memAgent->Cell->VonNeighs;
-		auto VEGF_SUM = memAgent->get_environment_level("VEGF", false);
+		auto VEGF_SUM = memAgent->get_environment_level("VEGF", false, false);
 		auto VEGFR2_scalar = 31714.0f / upto;
 		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR2") / VEGFR2_scalar;
 		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR2");
