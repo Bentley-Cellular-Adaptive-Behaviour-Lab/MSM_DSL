@@ -146,7 +146,10 @@ public:
 	void add_cell_proteins();
 	bool has_protein(const std::string& query_name) const;
 	void update_protein_level(const std::string& protein_name, const double& protein_delta);
-    double get_memAgent_current_level(const std::string& protein_name) const;
+	bool is_VonNeu_position(const unsigned int x,
+							const unsigned int y,
+							const unsigned int z);
+    [[nodiscard]] double get_memAgent_current_level(const std::string& protein_name) const;
 	double get_local_protein_level(const std::string& protein_name);
 	double get_environment_level(const std::string& protein_name, const bool& getsAverage);
 	double get_filopodia_protein_level(const std::string& protein_name, const bool &getsAverage);
