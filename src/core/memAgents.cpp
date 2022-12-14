@@ -56,10 +56,7 @@ void MemAgent::NotchResponseOld() {
                 if (flag == 0) {
                     if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
 						auto targetMemAgent = worldP->neigh[i]->getMids().at(0);
-						// grid[24][22][25].getMids().at(0)
-						if (targetMemAgent->Mx == 24 && targetMemAgent->My == 22 && targetMemAgent->Mz == 25) {
-							int test = 0;
-						}
+
                         //if more than number of notch receptors  only take amount needed to activate notches
                         if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
                             worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
