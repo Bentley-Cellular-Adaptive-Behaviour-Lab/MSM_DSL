@@ -2839,135 +2839,49 @@ double MemAgent::get_local_protein_level(const std::string& protein_name) {
 *  Returns:		float
 ******************************************************************************************/
 
-double MemAgent::get_filopodia_protein_level(const std::string& protein_name, const bool& getsAverage) {
-	int m, n, p;
-	int i = (int) Mx;
-	int j = (int) My;
-	int k = (int) Mz;
+double MemAgent::get_filopodia_protein_level(const std::string& protein_name,
+											 const bool getsAverage,
+											 const bool doesVonNeumann) {
 
 	double protein_level = 0;
-    int relevant_memAgents = 0;
+    unsigned int relevant_memAgents = 0;
 
-	for (int x = 0; x < 26; x++) {
-		// Same layer.
-		if (x == 0) {
-			m = i + 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 1) {
-			m = i + 1;
-			n = j;
-			p = k;
-		} else if (x == 2) {
-			m = i + 1;
-			n = j + 1;
-			p = k;
-		} else if (x == 3) {
-			m = i;
-			n = j - 1;
-			p = k;
-		} else if (x == 4) {
-			m = i;
-			n = j + 1;
-			p = k;
-		} else if (x == 5) {
-			m = i - 1;
-			n = j - 1;
-			p = k;
-		} else if (x == 6) {
-			m = i - 1;
-			n = j;
-			p = k;
-		} else if (x == 7) {
-			m = i - 1;
-			n = j + 1;
-			p = k;
-		}
-			// Layer below.
-		else if (x == 8) {
-			m = i + 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 9) {
-			m = i + 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 10) {
-			m = i + 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 11) {
-			m = i;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 12) {
-			m = i;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 13) {
-			m = i - 1;
-			n = j - 1;
-			p = k - 1;
-		} else if (x == 14) {
-			m = i - 1;
-			n = j;
-			p = k - 1;
-		} else if (x == 15) {
-			m = i - 1;
-			n = j + 1;
-			p = k - 1;
-		} else if (x == 16) {
-			m = i;
-			n = j;
-			p = k - 1;
-		}
-			// Layer above.
-		else if (x == 17) {
-			m = i + 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 18) {
-			m = i + 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 19) {
-			m = i + 1;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 20) {
-			m = i;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 21) {
-			m = i;
-			n = j + 1;
-			p = k + 1;
-		} else if (x == 22) {
-			m = i - 1;
-			n = j - 1;
-			p = k + 1;
-		} else if (x == 23) {
-			m = i - 1;
-			n = j;
-			p = k + 1;
-		} else if (x == 24) {
-			m = i - 1;
-			n = j + 1;
-			p = k + 1;
-		} else {
-			m = i;
-			n = j;
-			p = k + 1;
-		}
-		// If the memAgents at these coordinates is inside the world, has the relevant protein and belongs to the same cell,
-		// increase the count by the level at those coordinates.
-
-		if (worldP->insideWorld(m, n, p)) {
-			if (worldP->grid[m][n][p].getType() == const_E) {
-				for (auto memAgent : worldP->grid[m][n][p].getFids()) {
-					if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-						protein_level+= memAgent->get_memAgent_current_level(protein_name);
-                        relevant_memAgents++;
+	// Go over neighbouring sites.
+	// If the environment agent at these coordinates
+	// is inside the world, and has a memAgent with the
+	// relevant protein, increase the count by the level
+	// at those coordinates whilst tracking the number of
+	// memAgents accessed.
+	for (int x = (int) Mx - 1; x < (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y < (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z < (int) Mz + 1; z++) {
+				// Check we can access the site and we are not
+				// checking this memAgent.
+				if (worldP->insideWorld(x, y, z)
+					&& ((int) Mx != x
+					|| (int) My != y
+					|| (int) Mz != z)) {
+					if (worldP->grid[x][y][z].getType() == const_E) {
+						// If we are only checking Von Neumann sites,
+						// then proceed if relevant. Otherwise,
+						// get the memAgent.
+						if (doesVonNeumann) {
+							if (is_VonNeu_position(x, y, z)) {
+								for (auto memAgent : worldP->grid[x][y][z].getFids()) {
+									if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+										protein_level+= memAgent->get_memAgent_current_level(protein_name);
+										relevant_memAgents++;
+									}
+								}
+							}
+						} else {
+							for (auto memAgent : worldP->grid[x][y][z].getFids()) {
+								if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+									protein_level+= memAgent->get_memAgent_current_level(protein_name);
+									relevant_memAgents++;
+								}
+							}
+						}
 					}
 				}
 			}
