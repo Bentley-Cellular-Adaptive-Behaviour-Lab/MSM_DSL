@@ -1,6 +1,7 @@
 #include <cmath>
 
 #include "clusterParams.h"
+#include "dsl_species_gen.h"
 
 #include "../core/coordinates.h"
 #include "../core/CPM_module.h"
