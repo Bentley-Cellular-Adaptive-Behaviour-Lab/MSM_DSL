@@ -249,16 +249,16 @@ void ComparisonTest::ComparisonType_run_memAgent_ODEs(MemAgent* memAgent) {
 
 	auto upTo = CURRENT_CELL->VonNeighs;
 	auto VEGFR2_scalar = 31714.0 / upTo;
-	states[3] = memAgent->get_environment_level("VEGF", true);
-	states[8] = memAgent->get_environment_level("VEGF", false);
+	states[3] = memAgent->get_environment_level("VEGF", true, false);
+	states[8] = memAgent->get_environment_level("VEGF", false, false);
 	states[0] = memAgent->get_memAgent_current_level("NOTCH");
 	states[1] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
 	states[2] = memAgent->get_memAgent_current_level("DLL4");
 	states[4] = memAgent->get_memAgent_current_level("VEGFR");
 	states[5] = memAgent->get_memAgent_current_level("VEGF_VEGFR");
 	states[9] = memAgent->get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
-	states[6] = memAgent->get_junction_protein_level("DLL4", true);
-	states[7] = memAgent->get_junction_protein_level("NOTCH", true);
+	states[6] = memAgent->get_junction_protein_level("DLL4", true, true);
+	states[7] = memAgent->get_junction_protein_level("NOTCH", true, true);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
