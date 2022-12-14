@@ -82,9 +82,9 @@ TEST(test_ODE, multi_ODEConstantRate) {
 
 TEST_F(BasicODEMemAgentTest, environmentCheckTest) {
     // Measures the average environment level of memAgents.
-    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B", true), 1);
-	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B", true), 1);
-	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B", true), 1);
+    EXPECT_FLOAT_EQ(memAgent1->get_environment_level("B", true, false), 1);
+	EXPECT_FLOAT_EQ(memAgent2->get_environment_level("B", true, false), 1);
+	EXPECT_FLOAT_EQ(memAgent3->get_environment_level("B", true, false), 1);
 }
 
 TEST_F(BasicODEMemAgentTest, memAgentTest) {
