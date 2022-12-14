@@ -2599,6 +2599,33 @@ double MemAgent::get_memAgent_buffer_level(const std::string& protein_name) cons
 }
 
 /*****************************************************************************************
+*  Name:		is_VonNeu_position
+*  Description: Checks whether a position relative to a memAgent
+*  Returns:		float
+******************************************************************************************/
+
+bool MemAgent::is_VonNeu_position(const unsigned int x,
+								  const unsigned int y,
+								  const unsigned int z) {
+	unsigned int count = 0;
+	if (x == (int) Mx - 1 ||  x == (int) Mx + 1) {
+		count++;
+	}
+	if (y == (int) My - 1 ||  y == (int) My + 1) {
+		count++;
+	}
+	if (z == (int) Mz - 1 ||  z == (int) Mz + 1) {
+		count++;
+	}
+
+	if (count == 1) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/*****************************************************************************************
 *  Name:		get_environment_level
 *  Description: Returns the level of a protein in the nearby environment.
 *  Returns:		float
