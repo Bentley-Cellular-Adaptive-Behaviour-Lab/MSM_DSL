@@ -51,11 +51,11 @@ void ComparisonTest::createTissue() {
 	auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
 
 	// Create proteins with transcription delays.
-	cellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 31714.0, 689.0, -1, 28));
-	cellType->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 1));
-	cellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, 10000, 28));
-	cellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
-	cellType->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+	cellType->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000.0, 689.0, -1, 1));
+	cellType->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 1000.0, 0, -1, 28));
+	cellType->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1000.0, 0, 10000, 1));
+	cellType->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 1000.0, 0, -1, 1));
+	cellType->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 1000.0, 0, -1, 28));
 
 	auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 1, 2);
 	auto Vessel_Pos = Coordinates(25, 25, 25);
@@ -66,10 +66,19 @@ void ComparisonTest::createTissue() {
 
 	for (auto *cellAgent : this->m_tissue->m_cell_agents) {
 		// Ensure that memAgents know about their environment neighbours.
-
 		for (auto *memAgent : cellAgent->nodeAgents) {
 			memAgent->checkNeighs(false);
 		}
+
+		// Force set the MSM proteins to new values.
+		cellAgent->Dll4tot = 1000.0f;
+		cellAgent->VEGFRtot = 1000.0f;
+		cellAgent->stableVEGFR = 1000.0f;
+		cellAgent->VEGFRnorm = 1000.0f;
+		cellAgent->Notchtot = 1000.0f;
+		cellAgent->activeNotchtot = 1000.0f;
+		cellAgent->activeVEGFRtot = 1000.0f;
+
 		cellAgent->calcVonNeighs();
 		// Add VEGF to the list of DSL proteins the cell
 		// has to look for.
@@ -169,13 +178,13 @@ void ComparisonTest::ComparisonType_cell_system(const ComparisonType_cell_ode_st
 	double VEGFR2 = x[3];
 	double NOTCH_SUM = x[4];
 	// Parameter Definitions
+	double DELTA = calc_DELTA_rate();
+	double SIGMA = calc_SIGMA_rate();
+	double VEGFR_START = calc_VEGFR_START_rate();
 	double DLL4_LIMITER = calc_DLL4_LIMITER_rate(DLL4, false);
-	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, false);
-	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(DLL4_NOTCH, false);
-	double DLL4_USED = calc_DLL4_USED_rate(DLL4,
-										   NOTCH_SUM,
-										   DLL4_LIMITER,
-										   true);
+	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, DELTA, false);
+	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(VEGFR2, VEGFR_START, DLL4_NOTCH, SIGMA, false);
+	double DLL4_USED = calc_DLL4_USED_rate(NOTCH_SUM, DLL4_LIMITER,false);
 	// ODE Definitions
 	dxdt[0] = 0; // VEGF_VEGFR2
 	dxdt[1] = -(DLL4_USED)+(DLL4_UPREG); // DLL4
@@ -220,12 +229,8 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	double VEGF_SUM = x[8];
 	double VEGFR2_NORM = x[9];
 	// Parameter Definitions
-	double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH,
-												   false);
-	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
-												NOTCH,
-												NOTCH_LIMITER,
-												false);
+	double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH,true);
+	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM, NOTCH_LIMITER, true);
 	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
 	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, true);
@@ -234,8 +239,8 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	dxdt[1] = +(NOTCH_BOUND)*1; // DLL4_NOTCH
 	dxdt[2] = 0; // DLL4
 	dxdt[3] = 0; // VEGF_MEAN
-	dxdt[4] = -(ACTIVE_VEGFR)*1; // VEGFR2
-	dxdt[5] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
+	dxdt[4] = -(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGFR2
+	dxdt[5] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
 	dxdt[6] = 0; // DLL4_MEAN
 	dxdt[7] = 0; // NOTCH_MEAN
 	dxdt[8] = 0; // VEGF_SUM
@@ -248,7 +253,7 @@ void ComparisonTest::ComparisonType_run_memAgent_ODEs(MemAgent* memAgent) {
 	typedef odeint::runge_kutta_cash_karp54<ComparisonType_memAgent_ode_states> error_stepper_type;
 
 	auto upTo = CURRENT_CELL->VonNeighs;
-	auto VEGFR2_scalar = 31714.0 / upTo;
+	auto VEGFR2_scalar = 1000.0 / upTo;
 	states[3] = memAgent->get_environment_level("VEGF", true, false);
 	states[8] = memAgent->get_environment_level("VEGF", false, false);
 	states[0] = memAgent->get_memAgent_current_level("NOTCH");
@@ -286,26 +291,23 @@ void ComparisonTest::ComparisonType_cell_only_system(const ComparisonType_cell_o
 	double VEGF_SUM = x[8];
 	double VEGFR2_NORM = x[9];
 	// Parameter Definitions
+	double DELTA = calc_DELTA_rate();
+	double SIGMA = calc_SIGMA_rate();
+	double VEGFR_START = calc_VEGFR_START_rate();
 	double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, false);
 	double DLL4_LIMITER = calc_DLL4_LIMITER_rate(DLL4, false);
-	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, false);
-	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(DLL4_NOTCH, false);
-	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
-												NOTCH,
-												NOTCH_LIMITER,
-												false);
+	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, DELTA, false);
+	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(VEGFR2, VEGFR_START, DLL4_NOTCH, SIGMA, false);
+	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM, NOTCH_LIMITER, false);
 	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, false);
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, false);
-	double DLL4_USED = calc_DLL4_USED_rate(DLL4,
-										   NOTCH_SUM,
-										   DLL4_LIMITER,
-										   false);
+	double DLL4_USED = calc_DLL4_USED_rate(NOTCH_SUM, DLL4_LIMITER, false);
 	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, false);
 	// ODE Definitions
-	dxdt[0] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
+	dxdt[0] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
 	dxdt[1] = -(DLL4_USED)+(DLL4_UPREG); // DLL4
 	dxdt[2] = +(NOTCH_BOUND)*1; // DLL4_NOTCH
-	dxdt[3] = -(ACTIVE_VEGFR)*1-(VEGFR2_INHIB); // VEGFR2
+	dxdt[3] = -(ACTIVE_VEGFR_NORM_LIMITED)*1-(VEGFR2_INHIB); // VEGFR2
 	dxdt[4] = -(NOTCH_BOUND)*1; // NOTCH
 	dxdt[5] = 0; // VEGF_MEAN
 	dxdt[6] = 0; // DLL4_MEAN
@@ -320,7 +322,7 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 	typedef odeint::runge_kutta_cash_karp54<ComparisonType_cell_only_ode_states> error_stepper_type;
 	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
 
-	auto VEGFR2_scalar = 31714.0;
+	auto VEGFR2_scalar = 1000.0;
 	states[0] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
 	states[1] = ec->get_cell_protein_level("DLL4", 0);
 	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
@@ -336,10 +338,10 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 	controlled_stepper_type controlled_stepper;
 	integrate_adaptive(controlled_stepper, ComparisonType_cell_only_system, states, 0.0, 1.0, 0.1);
 
-	ec->set_cell_protein_level("VEGF_VEGFR", states[0], 1);
-	ec->set_cell_protein_level("DLL4", states[1], 28);
-	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 1);
-	ec->set_cell_protein_level("VEGFR", states[3], 28);
+	ec->set_cell_protein_level("VEGF_VEGFR", states[0], 28);
+	ec->set_cell_protein_level("DLL4", states[1], 1);
+	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 28);
+	ec->set_cell_protein_level("VEGFR", states[3], 1);
 	ec->set_cell_protein_level("NOTCH", states[4], 1);
 }
 

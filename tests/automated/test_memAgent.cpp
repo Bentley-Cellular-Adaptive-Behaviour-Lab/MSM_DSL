@@ -51,9 +51,32 @@ TEST_F(VonNeumannTest, EnvironmentTest) {
 	// 3 sites are occupied by Von Neumman neighbours.
 	// 4 sites are occupied in total.
 
-	// Should be 22 ( 26 - 4 )
 	auto sum_env_moore_level = centreMemAgent->get_environment_level("ENVIRONMENT_PROTEIN",false, false);
-	// Should be 5.5 ( (26 - 4)  / 4)
 	auto mean_env_moore_level = centreMemAgent->get_environment_level("ENVIRONMENT_PROTEIN",true, false);
-	int test = 0;
+	EXPECT_DOUBLE_EQ(22.0, sum_env_moore_level);
+	EXPECT_DOUBLE_EQ(1.0, mean_env_moore_level);
+
+	auto sum_env_VN_level = centreMemAgent->get_environment_level("ENVIRONMENT_PROTEIN",false, true);
+	auto mean_env_VN_level = centreMemAgent->get_environment_level("ENVIRONMENT_PROTEIN",true, true);
+	EXPECT_DOUBLE_EQ(3.0, sum_env_VN_level);
+	EXPECT_DOUBLE_EQ(1.0, mean_env_VN_level);
+}
+
+TEST_F(VonNeumannTest, JunctionTest) {
+	auto centreMemAgent = getCentreMemAgent();
+
+	// 26 moore sites can be checked.
+	// 6 Von Neumann sites can be checked.
+	// 3 sites are occupied by Von Neumman neighbours.
+	// 4 sites are occupied in total.
+
+	auto sum_env_moore_level = centreMemAgent->get_junction_protein_level("JUNCTION_PROTEIN",false, false);
+	auto mean_env_moore_level = centreMemAgent->get_junction_protein_level("JUNCTION_PROTEIN",true, false);
+	EXPECT_DOUBLE_EQ(2.0, sum_env_moore_level);
+	EXPECT_DOUBLE_EQ(1.0, mean_env_moore_level);
+
+	auto sum_env_VN_level = centreMemAgent->get_junction_protein_level("JUNCTION_PROTEIN",false, true);
+	auto mean_env_VN_level = centreMemAgent->get_junction_protein_level("JUNCTION_PROTEIN",true, true);
+	EXPECT_DOUBLE_EQ(1.0, sum_env_VN_level);
+	EXPECT_DOUBLE_EQ(1.0, mean_env_VN_level);
 }

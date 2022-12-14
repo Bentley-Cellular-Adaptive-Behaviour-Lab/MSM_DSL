@@ -1919,7 +1919,6 @@ void World::updateMemAgents_MSM() {
                 memp->passBackBufferLevels();
             }
 
-
 			//if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
 			if (memp->FIL == TIP) {
 				if (VEIL_ADVANCE) {

@@ -99,24 +99,32 @@ void VonNeumannTest::createMemAgents() {
 	this->m_world->grid[3][3][2].setType(const_M);
 
 	// Create a junction protein and add it to the memAgents.
+	// N.B. This is creating a single protein object and passing the
+	// same one to all memAgents. This doesn't happen in the simulation
+	// but should be fine assuming I don't try to change the levels.
 	auto junctionProtein = new Protein("JUNCTION_PROTEIN",
 									   PROTEIN_LOCATION_JUNCTION,
 									   1.0,
 									   0,
 									   -1,
 									   1);
+	junctionProtein->set_memAgent_current_level(1.0);
 	vonNeuXAgent->owned_proteins.push_back(junctionProtein);
 	vonNeuYAgent->owned_proteins.push_back(junctionProtein);
 	vonNeuZAgent->owned_proteins.push_back(junctionProtein);
 	mooreAgent->owned_proteins.push_back(junctionProtein);
 
 	// Create a membrane protein and add it to the memAgents.
+	// N.B. This is creating a single protein object and passing the
+	// same one to all memAgents. This doesn't happen in the simulation
+	// but should be fine assuming I don't try to change the levels.
 	auto membraneProtein = new Protein("MEMBRANE_PROTEIN",
 									   PROTEIN_LOCATION_MEMBRANE,
 									   1.0,
 									   0,
 									   -1,
 									   1);
+	membraneProtein->set_memAgent_current_level(1.0);
 
 	vonNeuXAgent->owned_proteins.push_back(membraneProtein);
 	vonNeuYAgent->owned_proteins.push_back(membraneProtein);

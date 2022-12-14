@@ -24,8 +24,19 @@ typedef boost::array<double, 10> ComparisonType_cell_only_ode_states;
 //	return DLL4_MEAN*NOTCH*0.1;
 //}
 
+static double calc_SIGMA_rate() {
+	return 15.0;
+}
+
+static double calc_DELTA_rate() {
+	return 15.0;
+}
+
+static double calc_VEGFR_START_rate() {
+	return 1000.0;
+}
+
 static double calc_ACTIVE_NOTCH_rate(const double DLL4_SUM,
-									  const double NOTCH,
 									  const double NOTCH_LIMITER,
 									  const bool memAgent) {
 	auto ACTIVE_NOTCH = DLL4_SUM;
@@ -45,20 +56,26 @@ static double calc_DLL4_LIMITER_rate(const double DLL4,
 	return DLL4;
 }
 
-static double calc_VEGFR2_INHIB_rate(const double DLL4_NOTCH, const bool memAgent) {
-	return DLL4_NOTCH*0.2;
+static double calc_VEGFR2_INHIB_rate(const double VEGFR2,
+									 const double VEGFR_START,
+									 const double DLL4_NOTCH,
+									 const double SIGMA,
+									 const bool memAgent) {
+	return VEGFR2 - (VEGFR_START - (DLL4_NOTCH*SIGMA)); // ??? Think about this one some more.
 }
 
-static double calc_DLL4_UPREG_rate(const double VEGF_VEGFR2, const bool memAgent) {
-	return VEGF_VEGFR2*0.2;
+static double calc_DLL4_UPREG_rate(const double VEGF_VEGFR2,
+								   const double DELTA,
+								   const bool memAgent) {
+	return VEGF_VEGFR2*DELTA;
 }
 
 //static double calc_DLL4_UPTAKE_rate(const double DLL4, const double NOTCH_MEAN, const bool memAgent) {
 //	return DLL4*NOTCH_MEAN*0.1;
 //}
 
-static double calc_DLL4_USED_rate(const double DLL4,
-								  const double NOTCH_SUM,
+
+static double calc_DLL4_USED_rate(const double NOTCH_SUM,
 								  const double DLL4_LIMITER,
 								  const bool memAgent) {
 	auto USED_DLL4 = NOTCH_SUM;

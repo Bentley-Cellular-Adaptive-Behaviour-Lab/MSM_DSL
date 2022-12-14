@@ -82,79 +82,81 @@ void MemAgent::NotchResponseOld() {
 
 void MemAgent::NotchResponse(void) {
 
-    int i = 0;
-    int j;
-    int flag = 0;
 
-	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
-	if (junction) {
-		std::vector<Location*> neighLocations;
-		// Get neighbour locations.
-		for (int x = Mx - 1; x <= Mx + 1; x++) {
-			for (int y = My - 1; y <= My + 1; y++) {
-				for (int z = Mz - 1; z <= Mz + 1; z++) {
-					if (worldP->insideWorld(x, y, z)) {
-						neighLocations.push_back(&(worldP->grid[x][y][z]));
-					}
-				}
-			}
-		}
-		// Shuffle chosen locations randomly.
-		worldP->shuffleLocations(neighLocations);
-
-		// Iterate over neighbouring locations. If they have DLL4,
-		// add to our active Notch total until we have no Notch left.
-		bool noMoreNotch = false;
-		for (auto location : neighLocations) {
-			if (location->getType() == const_M) {
-				for (auto &memAgent : location->getMids()) {
-					if (memAgent->Cell != Cell && memAgent->junction) {
-						if (memAgent->Dll4 > Notch1) {
-                            memAgent->Dll4 -= Notch1;
-                            activeNotch = activeNotch + Notch1;
-                            Notch1 = 0.0f;
-                            noMoreNotch = true;
-                        } else {
-							//take all of it if less than it has notch receptors
-                            Notch1 = Notch1 - memAgent->Dll4;
-                            activeNotch = activeNotch + memAgent->Dll4;
-                            memAgent->Dll4 = 0.0f;
-                        }
-					}
-				}
-			}
-			// Stop searching locations if we've run out of notch.
-			if (noMoreNotch) {
-				break;
-			}
-		}
-	}
-
-//    do {
-//        if (worldP->neigh[i]->getType() == const_M) {
-//            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
-//                if (flag == 0) {
-//                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
-//                        //if more than number of notch receptors  only take amount needed to activate notches
-//                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
-//                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+//
+//	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
+//	if (junction) {
+//		std::vector<Location*> neighLocations;
+//		// Get neighbour locations.
+//		for (int x = Mx - 1; x <= Mx + 1; x++) {
+//			for (int y = My - 1; y <= My + 1; y++) {
+//				for (int z = Mz - 1; z <= Mz + 1; z++) {
+//					if (worldP->insideWorld(x, y, z)) {
+//						neighLocations.push_back(&(worldP->grid[x][y][z]));
+//					}
+//				}
+//			}
+//		}
+//		// Shuffle chosen locations randomly.
+//		worldP->shuffleLocations(neighLocations);
+//
+//		// Iterate over neighbouring locations. If they have DLL4,
+//		// add to our active Notch total until we have no Notch left.
+//		bool noMoreNotch = false;
+//		for (auto location : neighLocations) {
+//			if (location->getType() == const_M) {
+//				for (auto &memAgent : location->getMids()) {
+//					if (memAgent->Cell != Cell && memAgent->junction) {
+//						if (memAgent->Dll4 > Notch1) {
+//                            memAgent->Dll4 -= Notch1;
 //                            activeNotch = activeNotch + Notch1;
 //                            Notch1 = 0.0f;
-//                            flag = 1;
-//
-//                        }//take all of it if less than it has notch receptors
-//                        else {
-//                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
-//                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
-//                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+//                            noMoreNotch = true;
+//                        } else {
+//							//take all of it if less than it has notch receptors
+//                            Notch1 = Notch1 - memAgent->Dll4;
+//                            activeNotch = activeNotch + memAgent->Dll4;
+//                            memAgent->Dll4 = 0.0f;
 //                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//        i++;
-//    } while ((flag == 0) && (i < NEIGH));
+//					}
+//				}
+//			}
+//			// Stop searching locations if we've run out of notch.
+//			if (noMoreNotch) {
+//				break;
+//			}
+//		}
+//	}
+
+	int i = 0;
+	int j;
+	int flag = 0;
+
+    do {
+        if (worldP->neigh[i]->getType() == const_M) {
+            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
+                if (flag == 0) {
+                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
+                        //if more than number of notch receptors  only take amount needed to activate notches
+                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
+                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+                            activeNotch = activeNotch + Notch1;
+                            Notch1 = 0.0f;
+                            flag = 1;
+
+                        }//take all of it if less than it has notch receptors
+                        else {
+                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+                        }
+                    }
+                }
+            }
+        }
+
+        i++;
+    } while ((flag == 0) && (i < NEIGH));
 
 }
 
@@ -2852,23 +2854,25 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name,
 	// relevant protein, increase the count by the level
 	// at those coordinates whilst tracking the number of
 	// memAgents accessed.
-	for (int x = (int) Mx - 1; x < (int) Mx + 1; x++) {
-		for (int y = (int) My - 1; y < (int) My + 1; y++) {
-			for (int z = (int) Mz - 1; z < (int) Mz + 1; z++) {
+	for (int x = (int) Mx - 1; x <= (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y <= (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z <= (int) Mz + 1; z++) {
 				// Check we can access the site and we are not
 				// checking this memAgent.
 				if (worldP->insideWorld(x, y, z)
 					&& ((int) Mx != x
 					|| (int) My != y
 					|| (int) Mz != z)) {
-					if (worldP->grid[x][y][z].getType() == const_E) {
+					if (worldP->grid[x][y][z].getType() == const_M) {
 						// If we are only checking Von Neumann sites,
 						// then proceed if relevant. Otherwise,
 						// get the memAgent.
 						if (doesVonNeumann) {
 							if (is_VonNeu_position(x, y, z)) {
 								for (auto memAgent : worldP->grid[x][y][z].getFids()) {
-									if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
+									if (memAgent->has_protein(protein_name)
+									&& !memAgent->junction
+									&& memAgent->Cell != this->Cell) {
 										protein_level+= memAgent->get_memAgent_current_level(protein_name);
 										relevant_memAgents++;
 									}
@@ -2876,9 +2880,11 @@ double MemAgent::get_filopodia_protein_level(const std::string& protein_name,
 							}
 						} else {
 							for (auto memAgent : worldP->grid[x][y][z].getFids()) {
-								if (memAgent->has_protein(protein_name) && memAgent->Cell != this->Cell) {
-									protein_level+= memAgent->get_memAgent_current_level(protein_name);
-									relevant_memAgents++;
+								if (memAgent->has_protein(protein_name)
+									&& !memAgent->junction
+									&& memAgent->Cell != this->Cell) {
+										protein_level+= memAgent->get_memAgent_current_level(protein_name);
+										relevant_memAgents++;
 								}
 							}
 						}
@@ -2917,9 +2923,9 @@ double MemAgent::get_junction_protein_level(const std::string& protein_name,
 	// relevant protein, increase the count by the level
 	// at those coordinates whilst tracking the number of
 	// memAgents accessed.
-	for (int x = (int) Mx - 1; x < (int) Mx + 1; x++) {
-		for (int y = (int) My - 1; y < (int) My + 1; y++) {
-			for (int z = (int) Mz - 1; z < (int) Mz + 1; z++) {
+	for (int x = (int) Mx - 1; x <= (int) Mx + 1; x++) {
+		for (int y = (int) My - 1; y <= (int) My + 1; y++) {
+			for (int z = (int) Mz - 1; z <= (int) Mz + 1; z++) {
 				// Check we can access the site and we are not
 				// checking this memAgent.
 				if (worldP->insideWorld(x, y, z)
