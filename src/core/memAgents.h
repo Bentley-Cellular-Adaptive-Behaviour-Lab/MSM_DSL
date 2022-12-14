@@ -151,9 +151,17 @@ public:
 							const unsigned int z);
     [[nodiscard]] double get_memAgent_current_level(const std::string& protein_name) const;
 	double get_local_protein_level(const std::string& protein_name);
-	double get_environment_level(const std::string& protein_name, const bool& getsAverage);
-	double get_filopodia_protein_level(const std::string& protein_name, const bool &getsAverage);
-	double get_junction_protein_level(const std::string& protein_name, const bool& getsAverage);
+	double get_environment_level(const std::string& protein_name,
+								 bool getsAverage,
+								 bool doesVonNeumann);
+
+	double get_filopodia_protein_level(const std::string& protein_name,
+									   bool getsAverage,
+									   bool doesVonNeumann);
+
+	double get_junction_protein_level(const std::string& protein_name,
+									  bool getsAverage,
+									  bool doesVonNeumann);
 
     void set_protein_current_level(const std::string& protein_name, const double& new_level);
     void set_protein_buffer_level(const std::string& protein_name, const double& new_level);
