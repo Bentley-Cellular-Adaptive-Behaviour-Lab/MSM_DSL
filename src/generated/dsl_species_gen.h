@@ -11,9 +11,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 4> EndothelialType_cell_ode_states;
-typedef boost::array<double, 10> EndothelialType_memAgent_ode_states;
-typedef boost::array<double, 10> EndothelialType_cell_only_ode_states;
+typedef boost::array<double, 6> EndothelialType_cell_ode_states;
+typedef boost::array<double, 9> EndothelialType_memAgent_ode_states;
+typedef boost::array<double, 7> EndothelialType_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -40,10 +40,6 @@ static double calc_VEGF_VEGFR_ON_rate(const double VEGF, const double VEGFR2, co
 
 static double calc_VEGF_VEGFR_OFF_rate(const double VEGF_VEGFR2, const bool memAgent) {
 	return VEGF_VEGFR2*0.01;
-}
-
-static double calc_SEMA3A_PLEXIN_ON_rate(const double SEMA3A, const double PLEXIN, const bool memAgent) {
-	return SEMA3A*PLEXIN*0.1;
 }
 
 static double calc_DLL4_NOTCH_ON_rate(const double DLL4_MEAN, const double NOTCH, const bool memAgent) {
@@ -90,14 +86,6 @@ static double calc_DLL4_NOTCH_DEG_rate(const double DLL4_NOTCH, const bool memAg
 	return DLL4_NOTCH*0.05;
 }
 
-static double calc_PLEXIN_DEG_rate(const double PLEXIN, const bool memAgent) {
-	return PLEXIN*0.05;
-}
-
-static double calc_SEMA3A_PLEXIN_DEG_rate(const double SEMA3A_PLEXIN, const bool memAgent) {
-	return SEMA3A_PLEXIN*0.05;
-}
-
 static double calc_DLL4_UPTAKE_rate(const double DLL4, const double NOTCH_MEAN, const bool memAgent) {
 	return DLL4*NOTCH_MEAN*0.1;
 }
@@ -123,6 +111,10 @@ static double calc_FILCONST_rate(const bool memAgent) {
 
 static double calc_VEGF_LIMITER_rate(const double VEGF, const bool memAgent) {
 	return VEGF;
+}
+
+static double calc_VEGFR2_LIMITER_rate(const double VEGFR2, const bool memAgent) {
+	return VEGFR2;
 }
 
 
