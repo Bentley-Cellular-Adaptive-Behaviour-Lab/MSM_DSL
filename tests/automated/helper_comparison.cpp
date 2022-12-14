@@ -220,7 +220,12 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	double VEGF_SUM = x[8];
 	double VEGFR2_NORM = x[9];
 	// Parameter Definitions
-	double DLL4_NOTCH_ON = calc_DLL4_NOTCH_ON_rate(DLL4_MEAN, NOTCH, true);
+	double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH,
+												   false);
+	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
+												NOTCH,
+												NOTCH_LIMITER,
+												false);
 	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
 	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, true);
