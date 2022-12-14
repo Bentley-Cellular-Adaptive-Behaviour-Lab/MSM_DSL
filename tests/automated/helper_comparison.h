@@ -58,9 +58,9 @@ static double calc_DLL4_UPREG_rate(const double VEGF_VEGFR2, const bool memAgent
 //}
 
 static double calc_DLL4_USED_rate(const double DLL4,
-									const double NOTCH_SUM,
-									const double DLL4_LIMITER,
-									const bool memAgent) {
+								  const double NOTCH_SUM,
+								  const double DLL4_LIMITER,
+								  const bool memAgent) {
 	auto USED_DLL4 = NOTCH_SUM;
 	if (USED_DLL4 > DLL4_LIMITER) {
 		USED_DLL4 = DLL4_LIMITER;
