@@ -167,7 +167,7 @@ void ComparisonTest::ComparisonType_cell_system(const ComparisonType_cell_ode_st
 	double DLL4 = x[1];
 	double DLL4_NOTCH = x[2];
 	double VEGFR2 = x[3];
-	double NOTCH_MEAN = x[4];
+	double NOTCH_SUM = x[4];
 	// Parameter Definitions
 	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, false);
 	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(DLL4_NOTCH, false);
