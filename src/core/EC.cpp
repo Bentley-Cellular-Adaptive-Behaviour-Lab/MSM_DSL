@@ -794,7 +794,6 @@ void EC::distributeProteins() {
             if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_CELL) {
                     protein_counts[i]++;
             } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_MEMBRANE
-				&& !nodeAgent->junction
 				&& nodeAgent->vonNeu) {
                     protein_counts[i]++;
             } else if (this->m_cell_type->proteins[i]->get_location() == PROTEIN_LOCATION_JUNCTION
