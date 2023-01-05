@@ -989,5 +989,5 @@ TEST_F(DSL_FilopodiaExtensionTest, checkProbsTest) {
 	auto centreMemAgent = this->getCentreMemAgent();
 	auto MSMProb = this->calcMSMProb(centreMemAgent);
 	auto DSLProb = this->calcDSLProb(centreMemAgent);
-	EXPECT_DOUBLE_EQ(MSMProb, DSLProb);
+	EXPECT_FLOAT_EQ(MSMProb, DSLProb);
 }
