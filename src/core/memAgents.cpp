@@ -81,13 +81,14 @@ void MemAgent::NotchResponseOld() {
 void MemAgent::NotchResponse(void) {
 
 	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
+    // && is_VonNeu_position(x, y, z)
 	if (junction) {
 		std::vector<Location*> neighLocations;
 		// Get neighbour locations.
 		for (int x = Mx - 1; x <= (int) Mx + 1; x++) {
 			for (int y = My - 1; y <= (int) My + 1; y++) {
 				for (int z = Mz - 1; z <= (int) Mz + 1; z++) {
-					if (worldP->insideWorld(x, y, z)) {
+					if (worldP->insideWorld(x, y, z) ) {
 						neighLocations.push_back(&(worldP->grid[x][y][z]));
 					}
 				}
