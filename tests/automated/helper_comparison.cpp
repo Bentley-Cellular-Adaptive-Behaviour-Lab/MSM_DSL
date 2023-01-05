@@ -367,3 +367,89 @@ void ComparisonTest::ComparisonType_run_cell_only_ODEs(EC *ec) {
 void ComparisonTest::TearDown() {
 	Test::TearDown();
 }
+
+/*****************************************************************************************
+******************************************************************************************/
+
+void ComparisonVesselTest::SetUp() {
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0,0.0,params);
+    this->m_tissueContainer = new Tissue_Container(this->m_world);
+    createEnvironment();
+    createTissue();
+    forceAddAgentsToGrid();
+}
+
+void ComparisonVesselTest::createEnvironment() {
+    Env *ep;
+    for (int x = 0; x < this->m_world->gridXDimensions; x++) {
+        for (int y = 0; y < m_world->gridYDimensions; y++) {
+            for (int z = 0; z < m_world->gridYDimensions; z++) {
+                if (m_world->grid[x][y][z].getType() == const_E) {
+                    ep = m_world->grid[x][y][z].getEid();
+                    ep->VEGF = 1;
+                }
+            }
+        }
+    }
+}
+
+void ComparisonVesselTest::createTissue() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 2, 6);
+
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+        }
+
+        // Force set the MSM proteins to new values.
+        cellAgent->Dll4tot = 1000.0f;
+        cellAgent->VEGFRtot = 1000.0f;
+        cellAgent->stableVEGFR = 1000.0f;
+        cellAgent->VEGFRnorm = 1000.0f;
+        cellAgent->Notchtot = 1000.0f;
+        cellAgent->activeNotchtot = 1000.0f;
+        cellAgent->activeVEGFRtot = 1000.0f;
+
+        cellAgent->calcVonNeighs();
+
+        // Allocate proteins out to memAgents.
+        cellAgent->allocateProts(); // MSM proteins.
+    }
+}
+
+Tissue* ComparisonVesselTest::getTissue() {
+    return this->m_tissue;
+}
+
+World* ComparisonVesselTest::getWorld() {
+    return this->m_world;
+}
+
+void ComparisonVesselTest::forceAddAgentsToGrid() {
+    for (auto cellAgent : m_world->ECagents) {
+        for (auto memAgent : cellAgent->nodeAgents) {
+            auto location = this->m_world->grid[(int)memAgent->Mx][(int)memAgent->My][(int)memAgent->Mz];
+            if (location.getMids().empty()) {
+                location.addMemAgent(memAgent);
+            }
+        }
+    }
+}
+
+
+void ComparisonVesselTest::TearDown() {
+    Test::TearDown();
+}
+
+/*****************************************************************************************
+******************************************************************************************/
