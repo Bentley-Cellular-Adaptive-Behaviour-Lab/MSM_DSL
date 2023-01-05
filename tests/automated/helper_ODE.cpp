@@ -1731,7 +1731,7 @@ void VenkatramanMemAgentTest::SetUp() {
     auto container = createTissueContainer();
     auto cellType = createCellType(container);
     createTissue(container, cellType);
-    this->m_tissue->m_cell_agents.at(0)->set_cell_protein_level("VEGF",0.5,0);
+//    this->m_tissue->m_cell_agents.at(0)->set_cell_protein_level("VEGF",0.5,0);
 }
 
 Tissue_Container* VenkatramanMemAgentTest::createTissueContainer() {
