@@ -1748,7 +1748,7 @@ Cell_Type* VenkatramanMemAgentTest::createCellType(Tissue_Container* container) 
     // Define a cell type and add proteins to this cell.
     auto shape = new Shape_Square(1, 5, 5);
     auto Endothelial_Type = new Cell_Type(container, "Endothelial", shape);
-    Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_CELL, 0.0, 0, -1, 1));
+    Endothelial_Type->add_protein(new Protein("VEGF", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
     Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
