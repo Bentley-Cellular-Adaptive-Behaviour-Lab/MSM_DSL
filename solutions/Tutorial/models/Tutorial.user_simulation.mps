@@ -753,7 +753,7 @@
         <node concept="3bpmH6" id="VvSLdQQwLn" role="3lUA2W" />
       </node>
       <node concept="3rtiFT" id="VvSLdQV3Oz" role="3rtiFW">
-        <ref role="3rtiFY" node="VvSLdQV3O6" resolve="VEGF_VEGFR" />
+        <ref role="3rtiFY" node="VvSLdQV3O6" resolve="VEGFR_UPREGULATION" />
       </node>
       <node concept="DdDr8" id="3lVsEn81Zg3" role="3_z4Rx">
         <ref role="DdDrb" node="VvSLdQV3LB" resolve="VEGF_VEGFR_BINDING" />
@@ -777,7 +777,7 @@
         <ref role="DdDrb" node="VvSLdQV3MS" resolve="DLL4_NOTCH_BINDING" />
       </node>
       <node concept="3rtiFT" id="VvSLdQV3OR" role="3rqWia">
-        <ref role="3rtiFY" node="VvSLdQV3O6" resolve="VEGF_VEGFR" />
+        <ref role="3rtiFY" node="VvSLdQV3O6" resolve="VEGFR_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="VvSLdQQwOX" role="3_zqUg">

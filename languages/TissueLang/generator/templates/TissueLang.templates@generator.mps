@@ -3330,7 +3330,7 @@
                   <node concept="2OqwBi" id="35npzpE$en8" role="2GsD0m">
                     <node concept="1iwH7S" id="35npzpE$eaN" role="2Oq$k0" />
                     <node concept="1psM6Z" id="35npzpE$Oe_" role="2OqNvi">
-                      <ref role="1psM6Y" node="35npzpE$FJQ" resolve="uniqueSpecies" />
+                      <ref role="1psM6Y" node="35npzpE$FJQ" resolve="uniqueSpeciesExpr" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="35npzpE$dYH" role="2LFqv$">
@@ -4376,7 +4376,7 @@
                   <node concept="2OqwBi" id="35npzpE$UuC" role="3clFbG">
                     <node concept="1iwH7S" id="35npzpE$RWs" role="2Oq$k0" />
                     <node concept="1psM6Z" id="35npzpE$WhN" role="2OqNvi">
-                      <ref role="1psM6Y" node="35npzpE$FJQ" resolve="uniqueSpecies" />
+                      <ref role="1psM6Y" node="35npzpE$FJQ" resolve="uniqueSpeciesExpr" />
                     </node>
                   </node>
                 </node>
@@ -5764,7 +5764,7 @@
                           <ref role="3cqZAo" node="4d9X0NcsY7V" resolve="tissueContainer" />
                         </node>
                         <node concept="2qgKlT" id="5j_l9LXKwBV" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:BDFw_TaC9_" resolve="getExprParameters" />
+                          <ref role="37wK5l" to="4ebj:BDFw_TaC9_" resolve="findParameters" />
                           <node concept="2OqwBi" id="5j_l9LXKKdN" role="37wK5m">
                             <node concept="2OqwBi" id="5j_l9LXKHBt" role="2Oq$k0">
                               <node concept="1PxgMI" id="5j_l9LXKE35" role="2Oq$k0">
@@ -5948,7 +5948,7 @@
                           <ref role="3cqZAo" node="35npzpE$JR6" resolve="tissueContainer" />
                         </node>
                         <node concept="2qgKlT" id="5j_l9LXKUp3" role="2OqNvi">
-                          <ref role="37wK5l" to="4ebj:BDFw_T37_l" resolve="getExprSpecies" />
+                          <ref role="37wK5l" to="4ebj:BDFw_T37_l" resolve="getSpeciesExprs" />
                           <node concept="2OqwBi" id="5j_l9LXKUp4" role="37wK5m">
                             <node concept="2OqwBi" id="5j_l9LXKUp5" role="2Oq$k0">
                               <node concept="1PxgMI" id="5j_l9LXKUp6" role="2Oq$k0">
@@ -8564,7 +8564,7 @@
                       <ref role="3cqZAo" node="1Rle6qVZyBK" resolve="tissueContainer" />
                     </node>
                     <node concept="2qgKlT" id="1Rle6qVZAo5" role="2OqNvi">
-                      <ref role="37wK5l" to="4ebj:BDFw_TaC9_" resolve="getExprParameters" />
+                      <ref role="37wK5l" to="4ebj:BDFw_TaC9_" resolve="findParameters" />
                       <node concept="2OqwBi" id="1Rle6qVZAo6" role="37wK5m">
                         <node concept="2OqwBi" id="1Rle6qVZAoa" role="2Oq$k0">
                           <node concept="30H73N" id="1Rle6qVZAob" role="2Oq$k0" />
@@ -8704,7 +8704,7 @@
                       <ref role="3cqZAo" node="1Rle6qVZK2k" resolve="tissueContainer" />
                     </node>
                     <node concept="2qgKlT" id="1Rle6qVZMIo" role="2OqNvi">
-                      <ref role="37wK5l" to="4ebj:BDFw_T37_l" resolve="getExprSpecies" />
+                      <ref role="37wK5l" to="4ebj:BDFw_T37_l" resolve="getSpeciesExprs" />
                       <node concept="2OqwBi" id="1Rle6qVZMIp" role="37wK5m">
                         <node concept="2OqwBi" id="1Rle6qVZMIt" role="2Oq$k0">
                           <node concept="30H73N" id="1Rle6qVZMIu" role="2Oq$k0" />

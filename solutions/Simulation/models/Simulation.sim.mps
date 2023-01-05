@@ -720,8 +720,8 @@
     <ref role="1ANuJ2" node="3Y6HoqB0CTu" resolve="Simulation" />
     <node concept="3_zqcM" id="2Qy0p_aV_gL" role="3_zqUi">
       <property role="TrG5h" value="VEGF_VEGFR_BINDING" />
-      <ref role="3JPVZL" node="2Qy0p_aVoc2" resolve="VEGF_VEGFR2_ON" />
-      <ref role="3JPVZN" node="2Qy0p_aVogz" resolve="VEGF_VEGFR2_OFF" />
+      <ref role="3JPVZL" node="2Qy0p_aVoc2" resolve="VEGF_VEGFR_ON" />
+      <ref role="3JPVZN" node="2Qy0p_aVogz" resolve="VEGF_VEGFR_OFF" />
       <node concept="3_zqOy" id="2Qy0p_aV_h1" role="3_zqOF">
         <property role="3_zqOz" value="1" />
         <ref role="3_zqOB" node="2Qy0p_aVo1D" resolve="VEGF_VEGFR2" />

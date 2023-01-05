@@ -156,7 +156,7 @@
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
       </concept>
-      <concept id="6249017959271690141" name="TissueLang.structure.ShapeRectangular" flags="ng" index="3ZP1s$">
+      <concept id="6249017959271690141" name="TissueLang.structure.CellShape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>

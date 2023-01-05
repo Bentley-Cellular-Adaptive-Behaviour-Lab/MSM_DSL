@@ -713,13 +713,13 @@
     <property role="EcuMT" value="3615560444368710874" />
     <property role="3GE5qa" value="Parameters" />
     <property role="TrG5h" value="ParameterBin" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
   <node concept="1TIwiD" id="5_ZU6FJ3JGP">
     <property role="EcuMT" value="6449128737392753461" />
     <property role="3GE5qa" value="Species" />
     <property role="TrG5h" value="TestBin" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="5_ZU6FJ3JHq" role="1TKVEl">
       <property role="IQ2nx" value="6449128737392753498" />
       <property role="TrG5h" value="integer" />
