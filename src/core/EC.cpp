@@ -713,7 +713,7 @@ EC::EC(World *world, Cell_Type *cell_type) {
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::set_initial_proteins() {
+[[deprecated]] void EC::set_initial_proteins() {
     // Create a vector containing the number of all memAgents that have a particular protein.
     std::vector<int> protein_counts;
     for (int i = 0; i <this->m_cell_type->proteins.size(); i++) {
