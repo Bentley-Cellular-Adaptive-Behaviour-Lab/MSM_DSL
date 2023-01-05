@@ -36,6 +36,8 @@ public:
 	void createMemAgents();
 
 	MemAgent *getCentreMemAgent();
+	MemAgent *getVonNeuXAgent();
+	MemAgent *getMooreAgent();
 };
 
 #endif //OBJECTS_H_HELPER_MEMAGENT_H

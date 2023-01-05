@@ -37,8 +37,8 @@ static double calc_VEGFR_START_rate() {
 }
 
 static double calc_ACTIVE_NOTCH_rate(const double DLL4_SUM,
-									  const double NOTCH_LIMITER,
-									  const bool memAgent) {
+									 const double NOTCH_LIMITER,
+									 const bool memAgent) {
 	auto ACTIVE_NOTCH = DLL4_SUM;
 	if (ACTIVE_NOTCH > NOTCH_LIMITER) {
 		ACTIVE_NOTCH = NOTCH_LIMITER;
@@ -85,14 +85,29 @@ static double calc_DLL4_USED_rate(const double NOTCH_SUM,
 	return USED_DLL4;
 }
 
-static double calc_ACTIVE_VEGFR_rate(const double VEGF, const double VEGFR2_NORM, const bool memAgent) {
-	return VEGF*VEGFR2_NORM;
+static double calc_ACTIVE_VEGFR_rate(const double VEGF,
+									 const double VEGFR2_NORM,
+									 const double VEGFR2_LIMITER,
+									 const bool memAgent) {
+	double ACTIVE_VEGFR = VEGF*VEGFR2_NORM;
+	if (ACTIVE_VEGFR > VEGFR2_LIMITER) {
+		ACTIVE_VEGFR = VEGFR2_LIMITER;
+	}
+	return ACTIVE_VEGFR;
 }
 
 static double calc_ACTIVE_VEGFR_NORM_LIMITED_rate(double ACTIVE_VEGFR, const double VEGF_LIMITER, const double VEGFR2, const bool memAgent) {
 	double VEGFR2_scalar;
-	if (ACTIVE_VEGFR > VEGF_LIMITER){ ACTIVE_VEGFR = VEGF_LIMITER; }
-	if (memAgent) { VEGFR2_scalar = 1.0 / CURRENT_CELL->VonNeighs; } else { VEGFR2_scalar = VEGFR2; }
+	if (ACTIVE_VEGFR > VEGF_LIMITER) {
+		ACTIVE_VEGFR = VEGF_LIMITER;
+	}
+
+	if (memAgent) {
+		VEGFR2_scalar = 1000.0 / CURRENT_CELL->VonNeighs;
+	} else {
+		VEGFR2_scalar = VEGFR2;
+	}
+
 	return (ACTIVE_VEGFR / VEGFR2_scalar);
 }
 
@@ -124,6 +139,8 @@ public:
 	void run_DSL_ODEs(EC *ec);
 	void do_memAgent_ODEs(EC *ec);
 	void do_cell_only_ODEs(EC *ec);
+
+	void forceAddAgentsToGrid();
 
 	void set_ODE_TYPE(unsigned int ode_type);
 	[[nodiscard]] unsigned int get_ODE_TYPE() const;

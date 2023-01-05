@@ -6386,8 +6386,6 @@ void World::deleteOldGridRef(MemAgent* memp, bool fil) {
 //------------------------------------------------------------
 
 void World::setMLocation(int x, int y, int z, MemAgent * ident) {
-    // TODO: REMOVE
-    Location loc_test = grid[x][y][z];
     grid[x][y][z].addMemAgent(ident);
     grid[x][y][z].setType(const_M);
     delete grid[x][y][z].getEid();

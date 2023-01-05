@@ -28,6 +28,7 @@ void ComparisonTest::SetUp() {
 	this->m_tissueContainer = new Tissue_Container(this->m_world);
 	createEnvironment();
 	createTissue();
+	forceAddAgentsToGrid();
 }
 
 void ComparisonTest::createEnvironment() {
@@ -41,6 +42,17 @@ void ComparisonTest::createEnvironment() {
 					ep->owned_proteins.push_back(targetProtein);
 					ep->VEGF = 1;
 				}
+			}
+		}
+	}
+}
+
+void ComparisonTest::forceAddAgentsToGrid() {
+	for (auto cellAgent : m_world->ECagents) {
+		for (auto memAgent : cellAgent->nodeAgents) {
+			auto location = this->m_world->grid[(int)memAgent->Mx][(int)memAgent->My][(int)memAgent->Mz];
+			if (location.getMids().empty()) {
+				location.addMemAgent(memAgent);
 			}
 		}
 	}
@@ -231,16 +243,18 @@ void ComparisonTest::ComparisonType_memAgent_system(const ComparisonType_memAgen
 	// Parameter Definitions
 	double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH,true);
 	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM, NOTCH_LIMITER, true);
-	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
-	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, true);
+	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM,
+												 VEGFR2_NORM,
+												 VEGFR2_LIMITER,
+												 true);
 	// ODE Definitions
 	dxdt[0] = -(NOTCH_BOUND)*1; // NOTCH
 	dxdt[1] = +(NOTCH_BOUND)*1; // DLL4_NOTCH
 	dxdt[2] = 0; // DLL4
 	dxdt[3] = 0; // VEGF_MEAN
-	dxdt[4] = -(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGFR2
-	dxdt[5] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
+	dxdt[4] = -(ACTIVE_VEGFR)*1; // VEGFR2
+	dxdt[5] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
 	dxdt[6] = 0; // DLL4_MEAN
 	dxdt[7] = 0; // NOTCH_MEAN
 	dxdt[8] = 0; // VEGF_SUM
@@ -299,15 +313,17 @@ void ComparisonTest::ComparisonType_cell_only_system(const ComparisonType_cell_o
 	double DLL4_UPREG = calc_DLL4_UPREG_rate(VEGF_VEGFR2, DELTA, false);
 	double VEGFR2_INHIB = calc_VEGFR2_INHIB_rate(VEGFR2, VEGFR_START, DLL4_NOTCH, SIGMA, false);
 	double NOTCH_BOUND = calc_ACTIVE_NOTCH_rate(DLL4_SUM, NOTCH_LIMITER, false);
-	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, false);
 	double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, false);
+	double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM,
+												 VEGFR2_NORM,
+												 VEGFR2_LIMITER,
+												 false);
 	double DLL4_USED = calc_DLL4_USED_rate(NOTCH_SUM, DLL4_LIMITER, false);
-	double ACTIVE_VEGFR_NORM_LIMITED = calc_ACTIVE_VEGFR_NORM_LIMITED_rate(ACTIVE_VEGFR, VEGFR2_LIMITER, VEGFR2, false);
 	// ODE Definitions
-	dxdt[0] = +(ACTIVE_VEGFR_NORM_LIMITED)*1; // VEGF_VEGFR2
+	dxdt[0] = +(ACTIVE_VEGFR)*1; // VEGF_VEGFR2
 	dxdt[1] = -(DLL4_USED)+(DLL4_UPREG); // DLL4
 	dxdt[2] = +(NOTCH_BOUND)*1; // DLL4_NOTCH
-	dxdt[3] = -(ACTIVE_VEGFR_NORM_LIMITED)*1-(VEGFR2_INHIB); // VEGFR2
+	dxdt[3] = -(ACTIVE_VEGFR)*1-(VEGFR2_INHIB); // VEGFR2
 	dxdt[4] = -(NOTCH_BOUND)*1; // NOTCH
 	dxdt[5] = 0; // VEGF_MEAN
 	dxdt[6] = 0; // DLL4_MEAN

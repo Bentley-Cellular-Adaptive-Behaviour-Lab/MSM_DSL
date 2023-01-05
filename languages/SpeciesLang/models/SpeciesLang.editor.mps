@@ -1044,7 +1044,101 @@
           </node>
         </node>
       </node>
-      <node concept="3F0ifn" id="xhYrIU6uVJ" role="3EZMnx" />
+      <node concept="3EZMnI" id="9IXz9QxK51" role="3EZMnx">
+        <node concept="VPM3Z" id="9IXz9QxK52" role="3F10Kt" />
+        <node concept="3XFhqQ" id="9IXz9QxK53" role="3EZMnx" />
+        <node concept="3F0ifn" id="57Q_rTbiJU1" role="3EZMnx">
+          <property role="3F0ifm" value="Resets to " />
+          <node concept="2biZxu" id="57Q_rTbiK1i" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="57Q_rTbiK1j" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="57Q_rTbiJHD" role="3EZMnx">
+          <ref role="1NtTu8" to="w3cn:57Q_rTbiJoa" resolve="Resets_To" />
+          <node concept="2biZxu" id="57Q_rTbiK1q" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="57Q_rTbiK1r" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="9IXz9QxK5b" role="2iSdaV" />
+        <node concept="pkWqt" id="9IXz9QxK5c" role="pqm2j">
+          <node concept="3clFbS" id="9IXz9QxK5d" role="2VODD2">
+            <node concept="3clFbF" id="9IXz9QxK5e" role="3cqZAp">
+              <node concept="2OqwBi" id="9IXz9QxK5f" role="3clFbG">
+                <node concept="pncrf" id="9IXz9QxK5g" role="2Oq$k0" />
+                <node concept="3TrcHB" id="9IXz9QxK5h" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:57Q_rTbiJzh" resolve="_showResetsTo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3F0ifn" id="57Q_rTbiK0J" role="3EZMnx">
+          <property role="3F0ifm" value="every timestep." />
+          <node concept="2biZxu" id="57Q_rTbiK1m" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="57Q_rTbiK1n" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="57Q_rTbqCXq" role="3EZMnx">
+        <node concept="VPM3Z" id="57Q_rTbqCXr" role="3F10Kt" />
+        <node concept="3XFhqQ" id="57Q_rTbqCXs" role="3EZMnx" />
+        <node concept="1j7BWu" id="57Q_rTbqDtU" role="3EZMnx">
+          <node concept="3EZMnI" id="57Q_rTbqD_8" role="1j7ClA">
+            <node concept="3F0ifn" id="57Q_rTbqD_o" role="3EZMnx">
+              <property role="3F0ifm" value="When calculating the change in a species over time," />
+            </node>
+            <node concept="3F0ifn" id="57Q_rTbqD_u" role="3EZMnx">
+              <property role="3F0ifm" value="use that value as the new total rather than adding it" />
+            </node>
+            <node concept="3F0ifn" id="57Q_rTbqD_y" role="3EZMnx">
+              <property role="3F0ifm" value="to the current whole cell-level value." />
+            </node>
+            <node concept="2iRkQZ" id="57Q_rTbqD_b" role="2iSdaV" />
+          </node>
+          <node concept="3F0ifn" id="57Q_rTbqDuE" role="1j7Clw">
+            <property role="3F0ifm" value="Uses interaction results as new total." />
+            <node concept="2biZxu" id="57Q_rTbqDuH" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="57Q_rTbqDuI" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VQ3r3" id="57Q_rTbqD_j" role="3F10Kt">
+              <property role="2USNnj" value="gtbM8PH/underlined" />
+            </node>
+          </node>
+        </node>
+        <node concept="2iRfu4" id="57Q_rTbqCXz" role="2iSdaV" />
+        <node concept="pkWqt" id="57Q_rTbqCX$" role="pqm2j">
+          <node concept="3clFbS" id="57Q_rTbqCX_" role="2VODD2">
+            <node concept="3clFbF" id="57Q_rTbqCXA" role="3cqZAp">
+              <node concept="2OqwBi" id="57Q_rTbqCXB" role="3clFbG">
+                <node concept="pncrf" id="57Q_rTbqCXC" role="2Oq$k0" />
+                <node concept="3TrcHB" id="57Q_rTbqCXD" role="2OqNvi">
+                  <ref role="3TsBF5" to="w3cn:57Q_rTbqCGm" resolve="_useDeltaAsTotal" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="57Q_rTbqCQK" role="3EZMnx">
+        <node concept="2biZxu" id="57Q_rTbqDXm" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="57Q_rTbqDXn" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
       <node concept="2iRkQZ" id="2Hxmt3eVhfg" role="2iSdaV" />
     </node>
   </node>

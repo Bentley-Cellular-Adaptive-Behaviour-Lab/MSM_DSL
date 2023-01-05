@@ -7699,5 +7699,93 @@
       <ref role="1YaFvo" to="w3cn:109yD1s_YGM" resolve="SpeciesExpression" />
     </node>
   </node>
+  <node concept="18kY7G" id="57Q_rTbnuTf">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="warn_resetsTo" />
+    <node concept="3clFbS" id="57Q_rTbnuTg" role="18ibNy">
+      <node concept="3clFbJ" id="57Q_rTbnuUS" role="3cqZAp">
+        <node concept="3clFbS" id="57Q_rTbnuUU" role="3clFbx">
+          <node concept="a7r0C" id="57Q_rTbnxbk" role="3cqZAp">
+            <node concept="Xl_RD" id="57Q_rTbnxbD" role="a7wSD">
+              <property role="Xl_RC" value="Species is currently being reset every timestep." />
+            </node>
+            <node concept="1YBJjd" id="57Q_rTbnxdb" role="1urrMF">
+              <ref role="1YBMHb" node="57Q_rTbnuUG" resolve="species" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="57Q_rTbnweB" role="3clFbw">
+          <node concept="3fqX7Q" id="57Q_rTbnx3y" role="3uHU7w">
+            <node concept="2OqwBi" id="57Q_rTbnx3$" role="3fr31v">
+              <node concept="1YBJjd" id="57Q_rTbnx3_" role="2Oq$k0">
+                <ref role="1YBMHb" node="57Q_rTbnuUG" resolve="species" />
+              </node>
+              <node concept="3TrcHB" id="57Q_rTbnx3A" role="2OqNvi">
+                <ref role="3TsBF5" to="w3cn:57Q_rTbiJzh" resolve="_showResetsTo" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="57Q_rTbnvx6" role="3uHU7B">
+            <node concept="2OqwBi" id="57Q_rTbnv5O" role="2Oq$k0">
+              <node concept="1YBJjd" id="57Q_rTbnuV7" role="2Oq$k0">
+                <ref role="1YBMHb" node="57Q_rTbnuUG" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="57Q_rTbnvg$" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:57Q_rTbiJoa" resolve="Resets_To" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="57Q_rTbnvR4" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="57Q_rTbnuUG" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="57Q_rTb$u_b">
+    <property role="3GE5qa" value="Species" />
+    <property role="TrG5h" value="check_DeltaAsTotal" />
+    <node concept="3clFbS" id="57Q_rTb$u_c" role="18ibNy">
+      <node concept="3clFbJ" id="57Q_rTb$uB3" role="3cqZAp">
+        <node concept="1Wc70l" id="57Q_rTb$vXQ" role="3clFbw">
+          <node concept="2OqwBi" id="57Q_rTb$wkl" role="3uHU7w">
+            <node concept="1YBJjd" id="57Q_rTb$w2i" role="2Oq$k0">
+              <ref role="1YBMHb" node="57Q_rTb$uAU" resolve="species" />
+            </node>
+            <node concept="3TrcHB" id="57Q_rTb$wvr" role="2OqNvi">
+              <ref role="3TsBF5" to="w3cn:57Q_rTbqCGm" resolve="_useDeltaAsTotal" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="57Q_rTb$vgl" role="3uHU7B">
+            <node concept="2OqwBi" id="57Q_rTb$uLW" role="2Oq$k0">
+              <node concept="1YBJjd" id="57Q_rTb$uBf" role="2Oq$k0">
+                <ref role="1YBMHb" node="57Q_rTb$uAU" resolve="species" />
+              </node>
+              <node concept="3TrEf2" id="57Q_rTb$uZ8" role="2OqNvi">
+                <ref role="3Tt5mk" to="w3cn:57Q_rTbiJoa" resolve="Resets_To" />
+              </node>
+            </node>
+            <node concept="3x8VRR" id="57Q_rTb$vAj" role="2OqNvi" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="57Q_rTb$uB5" role="3clFbx">
+          <node concept="2MkqsV" id="57Q_rTb$ww4" role="3cqZAp">
+            <node concept="Xl_RD" id="57Q_rTb$wwg" role="2MkJ7o">
+              <property role="Xl_RC" value="Cannot reset reaction results to a value, whilst using the change as the new total. " />
+            </node>
+            <node concept="1YBJjd" id="57Q_rTb$wzo" role="1urrMF">
+              <ref role="1YBMHb" node="57Q_rTb$uAU" resolve="species" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="57Q_rTb$uAU" role="1YuTPh">
+      <property role="TrG5h" value="species" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
 </model>
 

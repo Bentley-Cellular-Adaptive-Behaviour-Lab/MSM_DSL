@@ -121,6 +121,7 @@
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
       <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
+        <property id="5906072605882513617" name="_showResetsTo" index="qJ6PJ" />
         <property id="6420553392043975787" name="_delay" index="2VbSsx" />
         <property id="3125878369731567265" name="_location" index="3_z0tL" />
         <property id="5550369704152692997" name="_showDeg" index="3L6Erj" />
@@ -129,6 +130,7 @@
         <property id="6449221170434213636" name="_concSteps" index="1OajHS" />
         <reference id="7376055817164063137" name="Production_Term" index="3JQo8e" />
         <reference id="7376055817164063115" name="Degradation_Term" index="3JQo8$" />
+        <child id="5906072605882512906" name="Resets_To" index="qJ6eO" />
         <child id="2321914824001510832" name="ModifiedByProcess" index="3rqWia" />
         <child id="2321914824001074118" name="ModifiesProcess" index="3rtiFW" />
         <child id="3989375547139458228" name="Starting_Concentration" index="1tJpXo" />
@@ -1803,6 +1805,7 @@
       <property role="TrG5h" value="VEGF_VEGFR2" />
       <property role="3_z0tL" value="2Hxmt3eVjAD/LOCATION_MEMBRANE" />
       <property role="3L6EsG" value="true" />
+      <property role="qJ6PJ" value="true" />
       <node concept="3bpmHq" id="_I9vPho35A" role="1tJpXo">
         <node concept="3bpmH0" id="_I9vPho35B" role="3lUA2Y">
           <node concept="30bXRB" id="_I9vPho35C" role="3lUA52">
@@ -1816,6 +1819,14 @@
       </node>
       <node concept="DdDr8" id="5_H4mVsCi$9" role="3_z4Rx">
         <ref role="DdDrb" node="5_H4mVsBj2P" resolve="VEGF_VEGFR_BINDING" />
+      </node>
+      <node concept="3bpmHq" id="1TVk_Kn8EOF" role="qJ6eO">
+        <node concept="3bpmH0" id="1TVk_Kn8EOG" role="3lUA2Y">
+          <node concept="30bXRB" id="1TVk_Kn8EOX" role="3lUA52">
+            <property role="30bXRw" value="0" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1TVk_Kn8EPp" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="_I9vPho35M" role="3_zqUg">
@@ -1841,16 +1852,25 @@
       <property role="2VbSsx" value="1" />
       <property role="TrG5h" value="NOTCH" />
       <property role="3_z0tL" value="2Hxmt3eVjAK/LOCATION_CELL_JUNCTION" />
+      <property role="qJ6PJ" value="true" />
       <node concept="3bpmHq" id="_I9vPho35T" role="1tJpXo">
         <node concept="3bpmH0" id="_I9vPho35U" role="3lUA2Y">
           <node concept="30bXRB" id="_I9vPho35V" role="3lUA52">
-            <property role="30bXRw" value="0.0" />
+            <property role="30bXRw" value="100.0" />
           </node>
         </node>
         <node concept="2llJbL" id="_I9vPho35W" role="3lUA2W" />
       </node>
       <node concept="DdDr8" id="_I9vPho35X" role="3_z4RZ">
         <ref role="DdDrb" node="_I9vPho33D" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3bpmHq" id="1TVk_Kn8EQc" role="qJ6eO">
+        <node concept="3bpmH0" id="1TVk_Kn8EQd" role="3lUA2Y">
+          <node concept="30bXRB" id="1TVk_Kn8EQW" role="3lUA52">
+            <property role="30bXRw" value="100" />
+          </node>
+        </node>
+        <node concept="3bpmH6" id="1TVk_Kn8ERy" role="3lUA2W" />
       </node>
     </node>
     <node concept="3_zqOZ" id="_I9vPho35Y" role="3_zqUg">

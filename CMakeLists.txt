@@ -156,9 +156,11 @@ elseif(TEST_TYPE EQUAL 1)
             src/graphics/display.cpp
             src/graphics/ScreenRecording.cpp
             tests/automated/helper_comparison.cpp
+            tests/automated/helper_memAgent.cpp
             tests/automated/helper_ODE.cpp
             tests/automated/helper_shape.cpp
             tests/automated/test_comparison.cpp
+            tests/automated/test_memAgent.cpp
             tests/automated/test_ODE.cpp
             tests/automated/test_setup.cpp
             tests/automated/test_shape.cpp
@@ -201,6 +203,7 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/world/substrate.h
             src/dsl/world/worldContainer.h
             tests/automated/helper_comparison.h
+            tests/automated/helper_memAgent.h
             tests/automated/helper_ODE.h
             tests/automated/helper_shape.h
             tests/automated/generated/dsl_species_gen.h tests/automated/helper_comparison.cpp tests/automated/helper_comparison.h tests/automated/test_comparison.cpp)

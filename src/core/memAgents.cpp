@@ -82,81 +82,79 @@ void MemAgent::NotchResponseOld() {
 
 void MemAgent::NotchResponse(void) {
 
+	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
+	if (junction) {
+		std::vector<Location*> neighLocations;
+		// Get neighbour locations.
+		for (int x = Mx - 1; x <= (int) Mx + 1; x++) {
+			for (int y = My - 1; y <= (int) My + 1; y++) {
+				for (int z = Mz - 1; z <= (int) Mz + 1; z++) {
+					if (worldP->insideWorld(x, y, z)) {
+						neighLocations.push_back(&(worldP->grid[x][y][z]));
+					}
+				}
+			}
+		}
+		// Shuffle chosen locations randomly.
+		worldP->shuffleLocations(neighLocations);
 
-//
-//	// DEBUG: PROBLEM WITH NEIGH, USING THIS FOR NOW.
-//	if (junction) {
-//		std::vector<Location*> neighLocations;
-//		// Get neighbour locations.
-//		for (int x = Mx - 1; x <= Mx + 1; x++) {
-//			for (int y = My - 1; y <= My + 1; y++) {
-//				for (int z = Mz - 1; z <= Mz + 1; z++) {
-//					if (worldP->insideWorld(x, y, z)) {
-//						neighLocations.push_back(&(worldP->grid[x][y][z]));
-//					}
-//				}
-//			}
-//		}
-//		// Shuffle chosen locations randomly.
-//		worldP->shuffleLocations(neighLocations);
-//
-//		// Iterate over neighbouring locations. If they have DLL4,
-//		// add to our active Notch total until we have no Notch left.
-//		bool noMoreNotch = false;
-//		for (auto location : neighLocations) {
-//			if (location->getType() == const_M) {
-//				for (auto &memAgent : location->getMids()) {
-//					if (memAgent->Cell != Cell && memAgent->junction) {
-//						if (memAgent->Dll4 > Notch1) {
-//                            memAgent->Dll4 -= Notch1;
-//                            activeNotch = activeNotch + Notch1;
-//                            Notch1 = 0.0f;
-//                            noMoreNotch = true;
-//                        } else {
-//							//take all of it if less than it has notch receptors
-//                            Notch1 = Notch1 - memAgent->Dll4;
-//                            activeNotch = activeNotch + memAgent->Dll4;
-//                            memAgent->Dll4 = 0.0f;
-//                        }
-//					}
-//				}
-//			}
-//			// Stop searching locations if we've run out of notch.
-//			if (noMoreNotch) {
-//				break;
-//			}
-//		}
-//	}
-
-	int i = 0;
-	int j;
-	int flag = 0;
-
-    do {
-        if (worldP->neigh[i]->getType() == const_M) {
-            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
-                if (flag == 0) {
-                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
-                        //if more than number of notch receptors  only take amount needed to activate notches
-                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
-                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+		// Iterate over neighbouring locations. If they have DLL4,
+		// add to our active Notch total until we have no Notch left.
+		bool noMoreNotch = false;
+		for (auto location : neighLocations) {
+			if (location->getType() == const_M) {
+				for (auto &memAgent : location->getMids()) {
+					if (memAgent->Cell != Cell && memAgent->junction) {
+						if (memAgent->Dll4 > Notch1) {
+                            memAgent->Dll4 -= Notch1;
                             activeNotch = activeNotch + Notch1;
                             Notch1 = 0.0f;
-                            flag = 1;
-
-                        }//take all of it if less than it has notch receptors
-                        else {
-                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
-                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
-                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+                            noMoreNotch = true;
+                        } else {
+							//take all of it if less than it has notch receptors
+                            Notch1 = Notch1 - memAgent->Dll4;
+                            activeNotch = activeNotch + memAgent->Dll4;
+                            memAgent->Dll4 = 0.0f;
                         }
-                    }
-                }
-            }
-        }
+					}
+				}
+			}
+			// Stop searching locations if we've run out of notch.
+			if (noMoreNotch) {
+				break;
+			}
+		}
+	}
 
-        i++;
-    } while ((flag == 0) && (i < NEIGH));
+//	int i = 0;
+//	int j;
+//	int flag = 0;
+//
+//    do {
+//        if (worldP->neigh[i]->getType() == const_M) {
+//            for (j = 0; j < (int) worldP->neigh[i]->getMids().size(); j++) {
+//                if (flag == 0) {
+//                    if (worldP->neigh[i]->getMids()[j]->Cell != Cell) {
+//                        //if more than number of notch receptors  only take amount needed to activate notches
+//                        if (worldP->neigh[i]->getMids().at(j)->Dll4 > Notch1) {
+//                            worldP->neigh[i]->getMids().at(j)->Dll4 -= Notch1;
+//                            activeNotch = activeNotch + Notch1;
+//                            Notch1 = 0.0f;
+//                            flag = 1;
+//
+//                        }//take all of it if less than it has notch receptors
+//                        else {
+//                            Notch1 = Notch1 - worldP->neigh[i]->getMids()[j]->Dll4;
+//                            activeNotch = activeNotch + worldP->neigh[i]->getMids()[j]->Dll4;
+//                            worldP->neigh[i]->getMids().at(j)->Dll4 = 0.0f;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//
+//        i++;
+//    } while ((flag == 0) && (i < NEIGH));
 
 }
 
@@ -717,8 +715,9 @@ void MemAgent::VEGFRresponse(void) {
 		}
     } else {
         //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
-		float scalar = ((float) VEGFRNORM / (float) upto);
-        VEGFRactiveProp = VEGFR / scalar;
+//		float scalar = ((float) VEGFRNORM / (float) upto);
+		float scalar = ((float) Cell->VEGFRnorm / (float) upto);
+		VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
 		Cell->MSM_VEGF += SumVEGF;
 
@@ -1781,9 +1780,9 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
             worldP->neigh[x]->setType(worldP->grid[m][n][p].getType());
             worldP->neigh[x]->setEid(worldP->grid[m][n][p].getEid());
 
-
             if (worldP->neigh[x]->getType() == const_M) {
                 MneighCount++;
+
             } else if (worldP->neigh[x]->getType() == const_E) {
                 Eagent = worldP->neigh[x]->getEid();
                 SumVEGF += Eagent->VEGF;

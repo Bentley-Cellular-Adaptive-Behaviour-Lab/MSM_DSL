@@ -343,7 +343,7 @@ void EC::allocateProts(void) {
 void EC::NotchDelay(void){
     
     int i;
-    std::vector<float>::iterator T=NotchDelayArray.begin();
+    std::vector<float>::iterator T = NotchDelayArray.begin();
     actNotCurrent=0.0f;
     
     //add new activeNotch value to delay array

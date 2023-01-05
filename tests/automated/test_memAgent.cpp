@@ -80,3 +80,21 @@ TEST_F(VonNeumannTest, JunctionTest) {
 	EXPECT_DOUBLE_EQ(1.0, sum_env_VN_level);
 	EXPECT_DOUBLE_EQ(1.0, mean_env_VN_level);
 }
+
+TEST_F(VonNeumannTest, NotchResponseTest) {
+	auto centreMemAgent = getCentreMemAgent();
+	auto vonNeumannMemAgent = getVonNeuXAgent();
+	auto mooreMemAgent = getMooreAgent();
+
+	// Give the centre memAgent some notch,
+	// and the surrounding memAgents some DLL4.
+	centreMemAgent->Notch1 = 500;
+	vonNeumannMemAgent->Dll4 = 100;
+	mooreMemAgent->Dll4 = 100;
+
+	// Check for nearby notch.
+	centreMemAgent->NotchResponse();
+	auto currentNotch = centreMemAgent->Notch1;
+	auto currentActiveNotch = centreMemAgent->activeNotch;
+	int test = 0;
+}

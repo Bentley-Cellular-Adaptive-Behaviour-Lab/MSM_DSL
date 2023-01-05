@@ -136,6 +136,14 @@ MemAgent *VonNeumannTest::getCentreMemAgent() {
 	return this->m_centreMemAgent;
 }
 
+MemAgent *VonNeumannTest::getVonNeuXAgent() {
+	return this->m_VonNeuXAgent;
+}
+
+MemAgent *VonNeumannTest::getMooreAgent() {
+	return this->m_MooreAgent;
+}
+
 void VonNeumannTest::TearDown() {
 
 }

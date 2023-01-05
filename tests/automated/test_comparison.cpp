@@ -90,24 +90,112 @@ TEST_F(ComparisonTest, startValuesTest) {
 
 TEST_F(ComparisonTest, compareVEGFBinding) {
 	auto cell = getTissue()->m_cell_agents.at(0);
+	CURRENT_CELL = cell;
 
-	auto MSM_startVEGFR = cell->VEGFRtot;
-	auto DSL_startVEGFR = cell->get_cell_protein_level("VEGFR", 0);
-	EXPECT_DOUBLE_EQ(MSM_startVEGFR, 1000.0); // Check MSM VEGFR
-	EXPECT_DOUBLE_EQ(DSL_startVEGFR, 1000.0); // Check DSL VEGFR
+	auto START_VEGFR = cell->get_cell_protein_level("VEGFR", 0);
+	auto VEGFR2_scalar = START_VEGFR / cell->VonNeighs;
 
+	double ACTIVE_VEGFR_MEMAGENT = 0;
 	for (auto *memAgent : cell->nodeAgents) {
 		memAgent->checkNeighs(false);
+		memAgent->update_env_levels();
 
+		// Do MSM VEGF VEGFR binding and get values.
 		memAgent->VEGFRresponse();
 
-		auto activeVEGF->
+		// Calculate active VEGFR using memAgent ODE DSL functions.
+		auto VEGF_SUM = memAgent->get_environment_level("VEGF",
+														false,
+														false);
+		EXPECT_DOUBLE_EQ(VEGF_SUM, memAgent->SumVEGF);
+		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR");
+		auto VEGFR2_NORM = VEGFR2 / VEGFR2_scalar;
+		double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2,
+														 true);
+		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM,
+													 VEGFR2_NORM,
+													 VEGFR2_LIMITER,
+													 true);
+
+		ACTIVE_VEGFR_MEMAGENT += ACTIVE_VEGFR;
 	}
 
+	// Determine MSM active VEGFR total level.
+	cell->updateProteinTotals();
+	auto ACTIVE_VEGFR_MSM = cell->activeVEGFRtot;
+
+	// Do a whole cell DSL update.
+	auto VEGF_SUM = cell->get_env_protein_level("VEGF");
+	auto VEGFR2 = cell->get_cell_protein_level("VEGFR",0);
+	auto VEGFR2_NORM = VEGFR2 / 1000.0;
+	auto VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
+	auto ACTIVE_VEGFR_CELL = calc_ACTIVE_VEGFR_rate(VEGF_SUM,
+											   VEGFR2_NORM,
+											   VEGFR2_LIMITER,
+											   false);
+
+	// Compare cell and memAgent ODE values.
+	EXPECT_DOUBLE_EQ(ACTIVE_VEGFR_MEMAGENT, ACTIVE_VEGFR_CELL);
+
+	// Compare DSL and MSM values.
+	EXPECT_DOUBLE_EQ(ACTIVE_VEGFR_MSM, ACTIVE_VEGFR_CELL);
 }
 
 TEST_F(ComparisonTest, compareNOTCHBinding) {
+	auto cell = getTissue()->m_cell_agents.at(0);
+	CURRENT_CELL = cell;
 
+	auto adjacentCell = getTissue()->m_cell_agents.at(1);
+	cell->getNeighCellVector().push_back(adjacentCell);
+
+	for (auto *memAgent : cell->nodeAgents) {
+		memAgent->checkNeighs(false);
+		memAgent->update_env_levels();
+
+		// Do MSM DLL4 NOTCH binding and get values.
+		// Notch is getting set to 10000 at the start of the timestep.
+		// Set it to 200 to match the DSL, as we're just testing whether
+		// the calculation functions are correct.
+		// Furthermore, DLL4 is modified in other memAgents. This
+		// may mean that I can't get an exact match with the ODEs.
+
+		memAgent->Notch1 = 200;
+
+		memAgent->NotchResponse();
+
+		// Calculate active Notch using memAgent ODE DSL functions.
+		auto DLL4_SUM = memAgent->get_junction_protein_level("DLL4", false, true);
+		auto NOTCH = memAgent->get_memAgent_current_level("NOTCH");
+		double NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, true);
+		double ACTIVE_NOTCH = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
+													 NOTCH_LIMITER,
+													 memAgent);
+
+		// Set memAgent buffer level for active Notch and pass it back to the cell.
+		memAgent->set_protein_buffer_level("DLL4_NOTCH", ACTIVE_NOTCH);
+		memAgent->passBackBufferLevels();
+	}
+	// Determine MSM level.
+	cell->updateProteinTotals();
+	auto ACTIVE_NOTCH_MSM = cell->activeNotchtot;
+
+	// Do a whole cell DSL update.
+	auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, true);
+	auto NOTCH = cell->get_cell_protein_level("VEGFR",0);
+	auto NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, true);
+	auto ACTIVE_NOTCH_CELL = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
+														NOTCH_LIMITER,
+														false);
+
+	// GET THE MEMAGENT LEVEL.
+	auto proteinMemAgentBuffer = cell->getProteinMemAgentBuffer();
+	auto ACTIVE_NOTCH_MEMAGENT = proteinMemAgentBuffer["DLL4_NOTCH"];
+
+	// Compare cell and memAgent ODE values.
+	EXPECT_DOUBLE_EQ(ACTIVE_NOTCH_MEMAGENT, ACTIVE_NOTCH_CELL);
+
+	// Compare DSL and MSM values.
+	EXPECT_DOUBLE_EQ(ACTIVE_NOTCH_MSM, ACTIVE_NOTCH_CELL);
 }
 
 TEST_F(ComparisonTest, compareDLL4Upregulation) {
@@ -115,7 +203,38 @@ TEST_F(ComparisonTest, compareDLL4Upregulation) {
 }
 
 TEST_F(ComparisonTest, compareVEGFRInhibition) {
+	auto cell = getTissue()->m_cell_agents.at(0);
+	CURRENT_CELL = cell;
 
+	auto DSL_VEGFR_cell_start = cell->get_cell_protein_level("VEGFR", 0);
+
+	for (auto *memAgent : cell->nodeAgents) {
+		memAgent->checkNeighs(false);
+		memAgent->update_env_levels();
+
+		// Do MSM DLL4-NOTCH binding and get values.
+		memAgent->NotchResponse();
+
+		// Do a whole cell DSL update.
+		auto DLL4_SUM = cell->calc_adjacent_species_level("DLL4", false, false);
+		auto NOTCH = cell->get_cell_protein_level("VEGFR",0);
+		auto NOTCH_LIMITER = calc_NOTCH_LIMITER_rate(NOTCH, true);
+		auto ACTIVE_NOTCH = calc_ACTIVE_NOTCH_rate(DLL4_SUM,
+												   NOTCH_LIMITER,
+												   false);
+
+
+		// Set memAgent buffer level for active Notch and pass it back to the cell.
+		memAgent->set_protein_buffer_level("DLL4_NOTCH", ACTIVE_NOTCH);
+		memAgent->passBackBufferLevels();
+	}
+	// Determine MSM active VEGFR total level.
+	cell->updateProteinTotals();
+
+	// Do an update of predicted receptor values.
+	cell->GRN();
+
+	// Compare DSL and MSM values.
 }
 
 TEST_F(ComparisonTest, comparisonCell1TickTest) {

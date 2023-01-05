@@ -167,6 +167,12 @@
       <property role="20kJfa" value="Max_Concentration" />
       <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
+    <node concept="1TJgyj" id="57Q_rTbiJoa" role="1TKVEi">
+      <property role="IQ2ns" value="5906072605882512906" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="Resets_To" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+    </node>
     <node concept="1TJgyj" id="2Hxmt3eVhgJ" role="1TKVEi">
       <property role="IQ2ns" value="3125878369731548207" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -228,6 +234,16 @@
     <node concept="1TJgyi" id="6WHzz7cWc6W" role="1TKVEl">
       <property role="IQ2nx" value="8011215656704852412" />
       <property role="TrG5h" value="_doingParameterSweep" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="57Q_rTbiJzh" role="1TKVEl">
+      <property role="IQ2nx" value="5906072605882513617" />
+      <property role="TrG5h" value="_showResetsTo" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="57Q_rTbqCGm" role="1TKVEl">
+      <property role="IQ2nx" value="5906072605884582678" />
+      <property role="TrG5h" value="_useDeltaAsTotal" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="5A0f7KHEgs4" role="1TKVEl">
