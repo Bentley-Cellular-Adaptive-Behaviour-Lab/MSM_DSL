@@ -321,3 +321,63 @@ TEST_F(ComparisonTest, comparison2TickTest) {
 	EXPECT_DOUBLE_EQ(MSM_ACTIVE_NOTCH, DSL_ACTIVE_NOTCH); // Check active NOTCH.
 	EXPECT_DOUBLE_EQ(MSM_ACTIVE_VEGFR, DSL_ACTIVE_VEGFR); // Check active VEGFR.
 }
+
+TEST_F(ComparisonVesselTest, NotchResponseTest) {
+    auto cell = getTissue()->m_cell_agents.at(0);
+    CURRENT_CELL = cell;
+
+    auto adjacentCell = getTissue()->m_cell_agents.at(1);
+    cell->getNeighCellVector().push_back(adjacentCell);
+
+    int junctionSizeThis = 0;
+
+    for (auto *memAgent : cell->nodeAgents) {
+        if (memAgent->junction) {
+            junctionSizeThis += 1;
+        }
+    }
+
+    int junctionSizeAdjacent = 0;
+    for (auto *memAgent : adjacentCell->nodeAgents) {
+        if (memAgent->junction) {
+            junctionSizeAdjacent += 1;
+        }
+    }
+
+    EXPECT_DOUBLE_EQ(junctionSizeThis, junctionSizeAdjacent);
+
+    auto newNotch = 1000 / junctionSizeThis;
+    auto newDLL4 = 1000 / junctionSizeThis;
+
+
+    for (auto *memAgent : cell->nodeAgents) {
+        if (memAgent->junction) {
+            memAgent->Notch1 = newNotch;
+            memAgent->Dll4 = newDLL4;
+        }
+    }
+
+    for (auto *memAgent : adjacentCell->nodeAgents) {
+        if (memAgent->junction) {
+            memAgent->Notch1 = newNotch;
+            memAgent->Dll4 = newDLL4;
+        }
+
+    }
+
+    for (auto *memAgent : cell->nodeAgents) {
+        memAgent->checkNeighs(false);
+        memAgent->update_env_levels();
+
+        // Set memAgent Notch level to the "correct" amount.
+        memAgent->Notch1 = 1000 / junctionSizeThis;
+        memAgent->NotchResponse();
+    }
+
+    // Determine MSM level.
+    cell->updateProteinTotals();
+    auto ACTIVE_NOTCH_MSM = cell->activeNotchtot;
+
+    // EXPECT ALL THE NOTCH TO REACT WITH ALL THE DLL4.
+    EXPECT_DOUBLE_EQ(ACTIVE_NOTCH_MSM, 1000);
+}
