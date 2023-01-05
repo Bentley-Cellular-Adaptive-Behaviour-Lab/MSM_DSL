@@ -1400,6 +1400,12 @@ void VenkatramanCellTest::createTissue(Tissue_Container *container, Cell_Type* c
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
     cell1->getNeighCellVector().push_back(cell2);
     cell2->getNeighCellVector().push_back(cell1);
+
+    for (auto cell : this->m_tissue->m_cell_agents) {
+        for (auto memAgent : cell->nodeAgents) {
+            memAgent->vonNeighSearch(false);
+        }
+    }
 }
 
 void VenkatramanCellTest::check_cell_ODEs(EC *ec) {
