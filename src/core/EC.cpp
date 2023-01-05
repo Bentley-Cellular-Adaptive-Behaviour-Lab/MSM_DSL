@@ -28,7 +28,8 @@ namespace ECUtils {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_MEMBRANE
-			&& memAgent->vonNeu) {
+			&& memAgent->vonNeu
+            && !memAgent->junction) {
             memAgent->set_protein_current_level(protein->get_name(), newLevel);
             memAgent->set_protein_buffer_level(protein->get_name(), newLevel);
         } else if (protein->get_location() == PROTEIN_LOCATION_JUNCTION
