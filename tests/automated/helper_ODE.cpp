@@ -1775,6 +1775,12 @@ void VenkatramanMemAgentTest::createTissue(Tissue_Container *container, Cell_Typ
     auto cell2 = this->m_tissue->m_cell_agents.at(1);
     cell1->getNeighCellVector().push_back(cell2);
     cell2->getNeighCellVector().push_back(cell1);
+
+    for (auto cell : this->m_tissue->m_cell_agents) {
+        for (auto memAgent : cell->nodeAgents) {
+            memAgent->vonNeighSearch();
+        }
+    }
 }
 
 void VenkatramanMemAgentTest::printTimeStep(const int &timestep) {
