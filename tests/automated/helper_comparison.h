@@ -170,4 +170,26 @@ public:
 	void ComparisonType_run_cell_only_ODEs(EC *ec);
 };
 
+class ComparisonVesselTest : public ::testing::Test {
+    // Used to compare Moore and VonNeu checking during Notch
+    // response in a blood vessel.
+private:
+    // Member variable.
+    World *m_world;
+    Tissue *m_tissue;
+    Tissue_Container *m_tissueContainer;
+    unsigned int m_ode_type = ODE_TYPE_CELL;
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    void createEnvironment();
+    void createTissue();
+    Tissue* getTissue();
+    World* getWorld();
+
+    void forceAddAgentsToGrid();
+
+};
+
 #endif //OBJECTS_H_HELPER_COMPARISON_H
