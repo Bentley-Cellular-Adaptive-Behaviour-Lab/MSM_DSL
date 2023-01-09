@@ -943,13 +943,17 @@ void Tissue_Monolayer::tissue_create_2D_square_cell(int cell_number, int centreX
     int cell_width = this->m_tissue_type->m_cell_type->m_shape->get_width();
     int cell_height = this->m_tissue_type->m_cell_type->m_shape->get_height();
 
-    for (i = (int)(centreX-(float)cell_width/2.0f); i < (int)(centreX+(float)cell_width/2.0f); i++) {
-        for (j = (int)(centreY-(float)cell_height/2.0f); j < (int)(centreY+(float)cell_height/2.0f); j++) {
+    for (i = (int) (std::floor( (float) centreX - (float)cell_width /2.0f));
+            i < (int)( std::floor((float) centreX + (float) cell_width/2.0f));
+            i++) {
+        for (j = (int) (std::floor( (float) centreY - (float) cell_height / 2.0f));
+                j < (int) (std::floor((float) centreY + (float)cell_height / 2.0f));
+                j++) {
 
             newMemAgent = new MemAgent(m_cell_agents[cell_number], (World*) this->m_world);
-            newMemAgent->Mx = (float)i;
-            newMemAgent->My = (float)j;
-            newMemAgent->Mz = (float)z_coord;
+            newMemAgent->Mx = (float) i;
+            newMemAgent->My = (float) j;
+            newMemAgent->Mz = (float) z_coord;
             m_cell_agents[cell_number]->nodeAgents.push_back(newMemAgent);
             m_world->setMLocation(int(i), int(j), z_coord, newMemAgent);
             newMemAgent->node=true;
@@ -1063,8 +1067,6 @@ void Tissue_Monolayer::tissue_connect_monolayer() {
 ******************************************************************************************/
 
 void Tissue_Monolayer::determine_boundaries() {
-	float x_coord_1, x_coord_2, y_coord_1, y_coord_2;
-	Coordinates monolayer_end_1, monolayer_end_2;
 	std::vector<Coordinates> boundary_coords;
 
 	auto cell_width = float(m_tissue_type->m_cell_type->m_shape->get_width());
