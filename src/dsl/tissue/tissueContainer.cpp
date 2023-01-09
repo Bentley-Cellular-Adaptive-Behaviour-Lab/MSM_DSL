@@ -177,14 +177,14 @@ void Tissue_Container::create_cell(const std::string& name,
             newCellAgent->m_cell = cell;
             check_position(cell);
 
-            create_2d_square_cell(m_single_cell_agents.size(),
-                                  cell->m_position->get_x_coord(),
-                                  cell->m_position->get_y_coord(),
-                                  cell->m_position->get_z_coord(),
+            create_2d_square_cell((int) m_single_cell_agents.size(),
+                                  (int) cell->m_position->get_x_coord(),
+                                  (int) cell->m_position->get_y_coord(),
+                                  (int) cell->m_position->get_z_coord(),
                                   cell->m_cell_type->m_shape->get_width(),
                                   cell->m_cell_type->m_shape->get_height());
 
-            connect_2d_square_cell(m_single_cell_agents.size());
+            connect_2d_square_cell((int) m_single_cell_agents.size());
             newCellAgent->initialiseProteinMemAgentBuffer();
             newCellAgent->distributeProteins();
         } else {
