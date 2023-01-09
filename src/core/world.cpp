@@ -6614,10 +6614,6 @@ void World::shuffleLocations(std::vector<Location*> &locations) {
 	new_random_shuffle(locations.begin(), locations.end());
 }
 
-void World::createLogger() {
-    setWorldLogger(new WorldLogger(this));
-}
-
 WorldLogger* World::getWorldLogger() {
     return this->m_worldLogger;
 }
