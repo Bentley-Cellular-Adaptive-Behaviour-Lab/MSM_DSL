@@ -64,7 +64,7 @@ void Gradient::calc_linear_env_protein(Env* ep) {
     auto protein_level = this->m_protein->get_env_level();
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
-        if (ep->blood == 0.0f) {
+        if (ep->blood == 0.0) {
             std::vector<float> ep_distances = calculate_dist_from_source(ep);
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
             if (x_varying) {
