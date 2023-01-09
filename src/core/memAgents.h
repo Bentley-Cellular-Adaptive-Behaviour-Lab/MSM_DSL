@@ -226,15 +226,9 @@ public:
     [[deprecated]]void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
     [[deprecated]]void doVeilAdvance(const float& randomChance);
 
-    bool vonNeighSearch();
-
-	// DEBUG: Remove at some point.
+	// DEBUG.
 	double DLL4_search();
 	bool passedBackBufferLevels = false;
-    double mean_env_protein_search(const std::string &proteinName);
-
-    double get_mean_env_protein(const std::string &name);
-
 	void NotchResponseOld();
 };
 
