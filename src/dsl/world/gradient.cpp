@@ -60,8 +60,8 @@ void Gradient::calc_constant_env_protein(Env* ep) const {
 ******************************************************************************************/
 
 void Gradient::calc_linear_env_protein(Env* ep) {
-    float weight = 1.00f;
-    float protein_level = this->m_protein->get_env_level();
+    auto weight = 1.00;
+    auto protein_level = this->m_protein->get_env_level();
 
     if (m_gradient_shape == GRADIENT_SHAPE_SINKANDSOURCE || m_gradient_shape == GRADIENT_SHAPE_POINT) {
         if (ep->blood == 0.0f) {
