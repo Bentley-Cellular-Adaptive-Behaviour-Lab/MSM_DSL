@@ -540,9 +540,9 @@ void Gradient::apply_gradient_to_cuboid() {
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
-    for (int x = x_start; x < x_end; x++) {
-        for (int y = y_start; y < y_end; y++) {
-            for (int z = z_start; z < z_end; z++) {
+    for (int x = (int) x_start; x < (int) x_end; x++) {
+        for (int y = (int) y_start; y < (int) y_end; y++) {
+            for (int z = (int) z_start; z < (int) z_end; z++) {
                 assert(x >= 0);
                 assert(y >= 0);
                 assert(z >= 0);
