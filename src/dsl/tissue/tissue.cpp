@@ -1155,19 +1155,19 @@ bool Tissue::checkTissueHasPatterned() {
     }
 }
 
-const int& Tissue::get_pattern_history() {
+int Tissue::get_pattern_history() const {
     return this->m_patternHistory;
 }
 
-void Tissue::set_pattern_history(const int& new_value) {
+void Tissue::set_pattern_history(const int new_value) {
     this->m_patternHistory = new_value;
 }
 
-const bool& Tissue::is_patterned() {
+bool Tissue::is_patterned() const {
     return this->m_hasPatterned;
 }
 
-void Tissue::set_patterned(const bool& hasPatterned) {
+void Tissue::set_patterned(const bool hasPatterned) {
     this->m_hasPatterned = hasPatterned;
 }
 
