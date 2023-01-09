@@ -48,6 +48,9 @@ public:
 
     // Copy operator for Cell Type objects;
     Cell_Type& operator=(const Cell_Type& rhs) {
+        if (this == &rhs)
+            return *this;
+
         this->m_name = rhs.m_name;
         this->m_shape = rhs.m_shape;
         this->m_tissue_container = rhs.m_tissue_container;
