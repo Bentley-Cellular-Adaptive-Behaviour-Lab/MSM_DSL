@@ -208,25 +208,23 @@ public:
     float getPreviousY() const;
     float getPreviousZ() const;
 
-    // DSL functions for controlling protrusion behaviour.
-    void shapeResponse(const float& randomChance);
+    // DSL functions for controlling shape behaviour.
+    // Made these deprecated, but are still being used in case
+    // somebody wants to develop the shape language further.
+    [[deprecated]]void shapeResponse(const float& randomChance);
 
-    void extendProtrusions();
-    ProtrusionType* pickProtrusionType();
-    bool positionHasFormedProtrusion();
-    void setBelongsToProtrusion(Protrusion* protrusion);
-    void getEligibleTypes(std::vector<ProtrusionType*>& types);
+    [[deprecated]]void extendProtrusions();
+    [[deprecated]]ProtrusionType* pickProtrusionType();
+    [[deprecated]]bool positionHasFormedProtrusion();
+    [[deprecated]]void setBelongsToProtrusion(Protrusion* protrusion);
+    [[deprecated]]void getEligibleTypes(std::vector<ProtrusionType*>& types);
 
-    bool retractProtrusions();
-    Protrusion* getBelongsToProtrusion();
-    bool retractionCanOccur(const float& randomChance) const;
+    [[deprecated]]bool retractProtrusions();
+    [[deprecated]]Protrusion* getBelongsToProtrusion();
+    [[deprecated]]bool retractionCanOccur(const float& randomChance) const;
 
-    void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
-    void doVeilAdvance(const float& randomChance);
-    void cycleProteinLevels();
-
-    void update_env_levels();
-    double env_protein_search(const std::string& proteinName);
+    [[deprecated]]void checkConditions(MemAgent *memAgent, std::vector<ProtrusionType*>& outTypes);
+    [[deprecated]]void doVeilAdvance(const float& randomChance);
 
     bool vonNeighSearch();
 
