@@ -62,23 +62,21 @@ bool Cell::check_boundaries() {
 ******************************************************************************************/
 
 void Cell::determine_boundaries() {
-    float x_coord_1, x_coord_2, y_coord_1, y_coord_2;
-    Coordinates cell_end_1, cell_end_2;
     std::vector<Coordinates> boundary_coords;
 
-    float cell_width = float(m_cell_type->m_shape->get_width());
-    float cell_height = float(m_cell_type->m_shape->get_height());
+    auto cell_width = m_cell_type->m_shape->get_width();
+    auto cell_height = m_cell_type->m_shape->get_height();
 
-    x_coord_1 = m_position->get_x_coord() - (cell_width/2.0f);
-    y_coord_1 = m_position->get_y_coord() - (cell_height/2.0f);
+    auto x_coord_1 = std::floor(m_position->get_x_coord() - ((float) cell_width / 2.0f));
+    auto y_coord_1 = std::floor(m_position->get_y_coord() - ((float) cell_height / 2.0f));
 
-    cell_end_1 = Coordinates(x_coord_1, y_coord_1, m_position->get_z_coord());
+    auto cell_end_1 = Coordinates( (int) x_coord_1, (int) y_coord_1, (int) m_position->get_z_coord());
     boundary_coords.push_back(cell_end_1);
 
-    x_coord_2 = m_position->get_x_coord() + (cell_width /2.0f);
-    y_coord_2 = m_position->get_y_coord() + (cell_height /2.0f);
+    auto x_coord_2 = m_position->get_x_coord() + ((float) cell_width /2.0f);
+    auto y_coord_2 = m_position->get_y_coord() + ((float) cell_height /2.0f);
 
-    cell_end_2 = Coordinates(x_coord_2, y_coord_2, m_position->get_z_coord());
+    auto cell_end_2 = Coordinates( (int) x_coord_2, (int) y_coord_2, (int) m_position->get_z_coord());
     boundary_coords.push_back(cell_end_2);
 
     this->m_boundaries = boundary_coords;
