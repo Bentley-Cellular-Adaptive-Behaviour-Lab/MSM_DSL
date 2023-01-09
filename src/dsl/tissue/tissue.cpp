@@ -498,8 +498,7 @@ bool Tissue_Vessel::check_boundaries() {
         }
     }
 
-    for (int i = 0; i < m_tissue_container->m_tissues.size(); i++) {
-        current_tissue = m_tissue_container->m_tissues[i];
+    for (auto *current_tissue : m_tissue_container->m_tissues) {
         if (current_tissue != this) {
             if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
                 auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
