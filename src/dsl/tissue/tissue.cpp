@@ -81,8 +81,8 @@ Tissue_Type* Tissue::get_tissue_type() const {
 // Setters //
 
 /*****************************************************************************************
-*  Name:		get_name
-*  Description: Returns the total number of cells in the tissue.
+*  Name:		set_name
+*  Description: Sets the name of the tissue.
 *  Returns:		string
 ******************************************************************************************/
 
