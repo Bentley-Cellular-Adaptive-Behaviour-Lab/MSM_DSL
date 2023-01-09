@@ -183,6 +183,14 @@ public:
 
     std::vector<EC*> find_cells(const bool& add_this_cell);
 
+    void cycleProteinLevels();
+    void update_env_levels();
+    double env_protein_search(const std::string& proteinName);
+    double mean_env_protein_search(const std::string &proteinName);
+    double get_mean_env_protein(const std::string &proteinName);
+    bool vonNeighSearch();
+
+
     void passBackBufferLevels();
 
     std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*>& relevantCells,
