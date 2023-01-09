@@ -490,13 +490,11 @@ void Tissue_Vessel::set_vessel_centre_z_coord(const float vessel_centre_z_coord)
 ******************************************************************************************/
 
 bool Tissue_Vessel::check_boundaries() {
-    Cell *current_cell;
-    Tissue *current_tissue;
-
-    for (int i = 0; i < m_tissue_container->cells.size(); i++) {
-        current_cell = m_tissue_container->cells[i];
+    for (auto *current_cell : m_tissue_container->cells) {
         if (m_tissue_container->check_cell_vessel_overlap(current_cell, this)) {
-            return false; // <- Overlap detected, send false to the assert statement calling this function.
+            // Overlap detected, send false to
+            // the assert statement calling this function.
+            return false;
         }
     }
 
