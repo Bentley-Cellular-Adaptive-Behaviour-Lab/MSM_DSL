@@ -29,9 +29,7 @@ public:
     // Types of cytoskeletal proteins that a cell type had.
     std::vector<CytoProtein*> m_cytoskeletal_proteins;
 
-    ODE *ode_system;
-
-    Cell_Type(Tissue_Container *tissue_container, std::string name, Shape *shape);
+    Cell_Type(Tissue_Container *tissue_container, const std::string &name, Shape *shape);
     // Copy constructor for Cell Type objects.
     Cell_Type(const Cell_Type& rhs);
 
