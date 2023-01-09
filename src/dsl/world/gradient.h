@@ -96,7 +96,7 @@ public:
 			 Coordinates *centre_position,
 			 int sphere_radius);
 
-    std::vector<float> calculate_dist_from_source(Env* ep);
+    std::vector<float> calculate_dist_from_source(Env* ep) const;
 
     void add_env_protein(Env *ep, float calc_level);
 
