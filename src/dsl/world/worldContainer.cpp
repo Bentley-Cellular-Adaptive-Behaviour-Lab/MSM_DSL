@@ -120,9 +120,9 @@ void WorldContainer::create_gradient(int gradient_type,
                                       centre_position,
                                       sphere_radius);
     new_gradient->set_uses_legacy_VEGF(legacyVEGF);
-    new_gradient->x_varying = true;
-    new_gradient->y_varying = true;
-    new_gradient->z_varying = true;
+    new_gradient->m_x_varying = true;
+    new_gradient->m_y_varying = true;
+    new_gradient->m_z_varying = true;
     new_gradient->determine_source_to_sink_dists();
     new_gradient->apply_gradient_to_sphere();
     std::cout << "Gradient created." <<  std::endl;
