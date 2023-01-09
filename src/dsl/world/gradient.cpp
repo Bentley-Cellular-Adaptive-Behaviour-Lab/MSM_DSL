@@ -591,7 +591,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
 
     // Check if the gradient position vary along each axis, if yes, determine the start and end points for the cuboid loop.
     // If no, then the gradient affects all positions on that axis.
-    if (x_varying) {
+    if (m_x_varying) {
         if (m_source_position->x < m_sink_position->x) {
             x_start = int(m_source_position->x);
             x_end = int(m_sink_position->x);
@@ -604,7 +604,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
         x_end = m_parent_world->gridXDimensions;
     }
 
-    if (y_varying) {
+    if (m_y_varying) {
         if (m_source_position->y < m_sink_position->y) {
             y_start = int(m_source_position->y);
             y_end = int(m_sink_position->y);
@@ -617,7 +617,7 @@ void Gradient::apply_gradient_to_sinkandsource() {
         y_end = m_parent_world->gridYDimensions;
     }
 
-    if (z_varying) {
+    if (m_z_varying) {
         if (m_source_position->z < m_sink_position->z) {
             z_start = int(m_source_position->z);
             z_end = int(m_sink_position->z);
