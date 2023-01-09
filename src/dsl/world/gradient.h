@@ -101,7 +101,7 @@ public:
     void add_env_protein(Env *ep, const double calc_level) const;
 
     //Generic functions for creating new protein gradients.
-    void calc_constant_env_protein(Env* ep);
+    void calc_constant_env_protein(Env* ep) const;
     void calc_exp_env_protein(Env* ep);
     void calc_linear_env_protein(Env* ep);
 
