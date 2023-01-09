@@ -1403,7 +1403,7 @@ void VenkatramanCellTest::createTissue(Tissue_Container *container, Cell_Type* c
 
     for (auto cell : this->m_tissue->m_cell_agents) {
         for (auto memAgent : cell->nodeAgents) {
-            memAgent->vonNeighSearch(false);
+            memAgent->vonNeighSearch();
         }
     }
 }
