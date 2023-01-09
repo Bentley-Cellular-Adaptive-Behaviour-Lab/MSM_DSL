@@ -696,7 +696,7 @@ void Gradient::apply_gradient_to_sphere() {
                         if (m_parent_world->grid[x][y][z].getType() == const_E) {
                             ep = m_parent_world->grid[x][y][z].getEid();
                             if (ep != nullptr) {
-                                dist_from_centre = sqrt(
+                                dist_from_centre = std::sqrt(
                                         ((m_centre_position->x - x) * (m_centre_position->x - x)) +
                                         ((m_centre_position->y - y) * (m_centre_position->y - y)) +
                                         ((m_centre_position->z - z) * (m_centre_position->z - z)));
