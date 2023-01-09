@@ -4283,27 +4283,27 @@ void MemAgent::gridSurfaceAgents(void) {
     //}
 }
 
-void MemAgent::setPreviousX(float previous_x) {
+void MemAgent::setPreviousX(const float previous_x) {
     this->m_previous_x = previous_x;
 }
 
-void MemAgent::setPreviousY(float previous_y) {
+void MemAgent::setPreviousY(const float previous_y) {
     this->m_previous_y = previous_y;
 }
 
-void MemAgent::setPreviousZ(float previous_z) {
+void MemAgent::setPreviousZ(const float previous_z) {
     this->m_previous_z = previous_z;
 }
 
-float MemAgent::getPreviousX() {
+float MemAgent::getPreviousX() const {
     return this->m_previous_x;
 }
 
-float MemAgent::getPreviousY() {
+float MemAgent::getPreviousY() const {
     return this->m_previous_y;
 }
 
-float MemAgent::getPreviousZ() {
+float MemAgent::getPreviousZ() const {
     return this->m_previous_z;
 }
 
