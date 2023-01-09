@@ -43,9 +43,9 @@
 //        new_gradient->determine_directionality();
 //        new_gradient->apply_gradient_to_cuboid();
 //    } else if (gradient_shape == GRADIENT_SHAPE_POINT) {
-//        new_gradient->x_varying = true;
-//        new_gradient->y_varying = true;
-//        new_gradient->z_varying = true;
+//        new_gradient->m_x_varying = true;
+//        new_gradient->m_y_varying = true;
+//        new_gradient->m_z_varying = true;
 //        new_gradient->apply_gradient_to_sphere();
 //    }
 //	std::cout << "Gradient created." <<  endl;
