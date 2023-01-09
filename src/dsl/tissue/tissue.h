@@ -42,19 +42,19 @@ public:
 	// Getters //
 
 	virtual int get_n_cells();
-	std::string get_name();
-	Tissue_Type* get_tissue_type();
-    const int& get_pattern_history();
-    const bool& is_patterned();
+    [[nodiscard]] std::string get_name() const;
+    [[nodiscard]] Tissue_Type* get_tissue_type() const;
+    [[nodiscard]] int get_pattern_history() const;
+    [[nodiscard]] bool is_patterned() const;
 
     // Setters //
 
 	void set_n_cells(int n_cells);
-	void set_name(std::string name);
+	void set_name(const std::string &name);
 	void set_tissue_type(Tissue_Type *tissue_type);
 	void set_tissue_container(Tissue_Container *tissue_container);
-    void set_pattern_history(const int& new_value);
-    void set_patterned(const bool& hasPatterned);
+    void set_pattern_history(const int new_value);
+    void set_patterned(const bool hasPatterned);
 
 	// Constructors //
 
@@ -66,9 +66,6 @@ public:
            Tissue_Type *tissue_type);
 
 	// Tissue setup functions //
-
-	void tissue_create_3d_cell();
-
     virtual bool check_boundaries();
 	virtual void determine_boundaries();
     void determineJunctions();
@@ -94,15 +91,15 @@ private:
 public:
     // Getters //
 
-    int get_vessel_length();
-    int get_vessel_length_in_cells();
-    int get_vessel_cells_per_cross_section();
-    int get_vessel_interior_radius();
-    int get_vessel_total_radius();
-    int get_vessel_dist_from_edge();
+    [[nodiscard]] int get_vessel_length() const;
+    [[nodiscard]] int get_vessel_length_in_cells() const;
+    [[nodiscard]] int get_vessel_cells_per_cross_section() const;
+    [[nodiscard]] int get_vessel_interior_radius() const;
+    [[nodiscard]] int get_vessel_total_radius() const;
+    [[nodiscard]] int get_vessel_dist_from_edge() const;
 
-    float get_vessel_centre_y_coord();
-    float get_vessel_centre_z_coord();
+    float get_vessel_centre_y_coord() const;
+    float get_vessel_centre_z_coord() const;
 
     // Setters //
 
