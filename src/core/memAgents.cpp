@@ -4644,6 +4644,6 @@ double MemAgent::DLL4_search() {
 	return DLL4_seen;
 }
 
-double MemAgent::get_mean_env_protein(const std::string& name) {
-    return this->m_mean_env_proteins_sensed[name];
+double MemAgent::get_mean_env_protein(const std::string& proteinName) {
+    return this->m_mean_env_proteins_sensed[proteinName];
 }
