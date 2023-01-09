@@ -88,7 +88,7 @@ void Gradient::calc_linear_env_protein(Env* ep) {
     }
 
     if (m_gradient_shape == GRADIENT_SHAPE_CUBOIDAL) {
-        if (ep->blood == 0.0f) {
+        if (ep->blood == 0.0) {
             if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
