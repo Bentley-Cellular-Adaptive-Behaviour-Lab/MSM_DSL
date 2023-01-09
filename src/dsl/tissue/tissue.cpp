@@ -54,7 +54,7 @@ namespace TissueUtils {
 *  Returns:		string
 ******************************************************************************************/
 
-std::string Tissue::get_name() {
+std::string Tissue::get_name() const {
     return this->m_name;
 }
 
