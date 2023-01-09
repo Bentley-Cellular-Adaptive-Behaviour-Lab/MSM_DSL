@@ -756,12 +756,12 @@ Gradient::Gradient(WorldContainer *container,
 ******************************************************************************************/
 
 Gradient::Gradient(WorldContainer *container,
-				   int gradient_type,
+				   const int gradient_type,
 				   Protein *protein,
 				   Coordinates *centre_position,
-				   int width,
-				   int height,
-				   int depth) {
+				   const int width,
+				   const int height,
+				   const int depth) {
 
     this->m_parent_container = container;
     this->m_parent_world = container->m_world;
