@@ -52,8 +52,8 @@ public:
 
     std::string get_name();
     int get_tissue_configuration();
-    int get_height_in_cells();
-    int get_width_in_cells();
+    int get_height_in_cells() const;
+    int get_width_in_cells() const;
 };
 
 #endif //SRC_SPRINGAGENT_TISSUETYPE_H
