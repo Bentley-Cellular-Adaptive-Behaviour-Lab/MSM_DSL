@@ -26,9 +26,9 @@ public:
 
     std::string get_name() override;
     int get_tissue_configuration() override;
-    int get_length_in_cells();
+    int get_length_in_cells() const;
     int get_cells_per_cross_section();
-    int get_total_radius();
+    int get_total_radius() const;
     Tissue_Type_Cylindrical(Tissue_Container *tissue_container,
                             std::string name,
                             Cell_Type *cell_type,
