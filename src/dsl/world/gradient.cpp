@@ -508,13 +508,13 @@ std::vector<float> Gradient::calculate_dist_from_source(Env *ep) const {
 
 void Gradient::determine_directionality() {
     if (m_source_position->x != m_sink_position->x) {
-        this->x_varying = true;
+        this->m_x_varying = true;
     }
     if (m_source_position->y != m_sink_position->y) {
-        this->y_varying = true;
+        this->m_y_varying = true;
     }
     if (m_source_position->z != m_sink_position->z) {
-        this->z_varying = true;
+        this->m_z_varying = true;
     }
 }
 
