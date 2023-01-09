@@ -653,10 +653,10 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
     // Tidy this bit up.
     float x = (float)i / (float)m_vessel_cells_per_cross_section;
-    lx = (int)x;
-    depth = cell_width * lx;
-    thetaStart = vesselDelta * (float)i;
-    circlePosStartAb = ablumenalSteps*i;
+    lx = (int) x;
+    depth = (float) cell_width * (float) lx;
+    thetaStart = vesselDelta * (float) i;
+    circlePosStartAb = ablumenalSteps * i;
 
     if (lx % 2 != 0) {
         offset=0.5;
