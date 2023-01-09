@@ -686,9 +686,9 @@ void Gradient::apply_gradient_to_sphere() {
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
-    for (int x = x_start; x < x_end; x++) {
-        for (int y = y_start; y < y_end; y++) {
-            for (int z = z_start; z < z_end; z++) {
+    for (int x = (int) x_start; x < (int) x_end; x++) {
+        for (int y = (int) y_start; y < (int) y_end; y++) {
+            for (int z = (int) z_start; z < (int) z_end; z++) {
                 if (x >= 0 && y >= 0 && z >= 0) {
                     if (x < m_parent_world->gridXDimensions &&
                         y < m_parent_world->gridYDimensions &&
