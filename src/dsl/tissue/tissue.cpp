@@ -96,7 +96,7 @@ void Tissue::set_name(const std::string &name) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue::set_n_cells(int n_cells) {
+void Tissue::set_n_cells(const int n_cells) {
 	this->m_cell_number = n_cells;
 }
 
