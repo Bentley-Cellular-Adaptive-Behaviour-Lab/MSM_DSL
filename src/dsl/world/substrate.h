@@ -32,7 +32,7 @@ public:
 			  float solidness);
 
     void apply_substrate_to_cuboid();
-    void apply_substrate_to_triangular_prism();
+    void apply_substrate_to_triangular_prism() const;
 };
 
 #endif //SRC_SPRINGAGENT_SUBSTRATE_H
