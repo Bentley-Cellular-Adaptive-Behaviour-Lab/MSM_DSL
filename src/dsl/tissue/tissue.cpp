@@ -610,8 +610,8 @@ void Tissue_Vessel::create_vessel() {
 		this->m_cell_agents[i]->green = ((float)rand()/(float)RAND_MAX);
 		this->m_cell_agents[i]->blue = ((float)rand()/(float)RAND_MAX);
 
-		// For each memAgent along the cell's width, create enough memAgents vertically to
-		// complete the cell.
+        // For each memAgent along the cell's width, create
+		// enough memAgents vertically to complete the cell.
         for (int j = 0; j < cell_width; j++) {
             this->tissue_vessel_draw_mesh(i, j, newCellAgent);
         }
