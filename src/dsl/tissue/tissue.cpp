@@ -346,7 +346,7 @@ int Tissue_Vessel::get_vessel_length_in_cells() const {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_cells_per_cross_section() {
+int Tissue_Vessel::get_vessel_cells_per_cross_section() const {
     return this->m_vessel_cells_per_cross_section;
 }
 
@@ -356,7 +356,7 @@ int Tissue_Vessel::get_vessel_cells_per_cross_section() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_interior_radius() {
+int Tissue_Vessel::get_vessel_interior_radius() const {
     return this->m_vessel_interior_radius;
 }
 
@@ -366,7 +366,7 @@ int Tissue_Vessel::get_vessel_interior_radius() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_total_radius() {
+int Tissue_Vessel::get_vessel_total_radius() const {
     return this->m_vessel_total_radius;
 }
 
@@ -377,7 +377,7 @@ int Tissue_Vessel::get_vessel_total_radius() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_dist_from_edge() {
+int Tissue_Vessel::get_vessel_dist_from_edge() const {
     return this->m_vessel_dist_from_edge;
 }
 
@@ -387,7 +387,7 @@ int Tissue_Vessel::get_vessel_dist_from_edge() {
 *  Returns:		int
 ******************************************************************************************/
 
-float Tissue_Vessel::get_vessel_centre_y_coord() {
+float Tissue_Vessel::get_vessel_centre_y_coord() const {
     return this->m_vessel_centre_y_coord;
 }
 
@@ -397,7 +397,7 @@ float Tissue_Vessel::get_vessel_centre_y_coord() {
 *  Returns:		int
 ******************************************************************************************/
 
-float Tissue_Vessel::get_vessel_centre_z_coord() {
+float Tissue_Vessel::get_vessel_centre_z_coord() const {
     return this->m_vessel_centre_z_coord;
 }
 
@@ -410,7 +410,7 @@ float Tissue_Vessel::get_vessel_centre_z_coord() {
 ******************************************************************************************/
 
 
-void Tissue_Vessel::set_vessel_length( int vessel_length ) {
+void Tissue_Vessel::set_vessel_length(const int vessel_length) {
     this->m_vessel_length = vessel_length;
 }
 
@@ -420,7 +420,7 @@ void Tissue_Vessel::set_vessel_length( int vessel_length ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_length_in_cells( int vessel_length_in_cells ) {
+void Tissue_Vessel::set_vessel_length_in_cells(const int vessel_length_in_cells) {
     this->m_vessel_length_in_cells = vessel_length_in_cells;
 }
 
@@ -430,7 +430,7 @@ void Tissue_Vessel::set_vessel_length_in_cells( int vessel_length_in_cells ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_cells_per_cross_section( int vessel_cells_per_cross_section ) {
+void Tissue_Vessel::set_vessel_cells_per_cross_section(const int vessel_cells_per_cross_section) {
     this->m_vessel_cells_per_cross_section = vessel_cells_per_cross_section;
 }
 
@@ -440,7 +440,7 @@ void Tissue_Vessel::set_vessel_cells_per_cross_section( int vessel_cells_per_cro
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_interior_radius( int vessel_interior_radius ) {
+void Tissue_Vessel::set_vessel_interior_radius(const int vessel_interior_radius) {
     this->m_vessel_interior_radius = vessel_interior_radius;
 }
 
@@ -451,7 +451,7 @@ void Tissue_Vessel::set_vessel_interior_radius( int vessel_interior_radius ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_total_radius( int vessel_total_radius ) {
+void Tissue_Vessel::set_vessel_total_radius(const int vessel_total_radius) {
     this->m_vessel_total_radius = vessel_total_radius;
 }
 
@@ -461,7 +461,7 @@ void Tissue_Vessel::set_vessel_total_radius( int vessel_total_radius ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_dist_from_edge( int vessel_dist_from_edge ) {
+void Tissue_Vessel::set_vessel_dist_from_edge(const int vessel_dist_from_edge) {
     this->m_vessel_dist_from_edge = vessel_dist_from_edge;
 }
 
@@ -471,7 +471,7 @@ void Tissue_Vessel::set_vessel_dist_from_edge( int vessel_dist_from_edge ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_centre_y_coord( float vessel_centre_y_coord ) {
+void Tissue_Vessel::set_vessel_centre_y_coord(const float vessel_centre_y_coord) {
     this->m_vessel_centre_y_coord = vessel_centre_y_coord;
 }
 
@@ -481,7 +481,7 @@ void Tissue_Vessel::set_vessel_centre_y_coord( float vessel_centre_y_coord ) {
 *  Returns:		int
 ******************************************************************************************/
 
-void Tissue_Vessel::set_vessel_centre_z_coord( float vessel_centre_z_coord ) {
+void Tissue_Vessel::set_vessel_centre_z_coord(const float vessel_centre_z_coord) {
     this->m_vessel_centre_z_coord = vessel_centre_z_coord;
 }
 
