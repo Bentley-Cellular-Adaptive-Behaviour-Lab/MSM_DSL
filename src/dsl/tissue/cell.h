@@ -29,7 +29,7 @@ public:
 
     EC* cell_agent;
     // Protrusions that a cell currently has.
-    std::vector<Protrusion*> m_protrusions;
+    // std::vector<Protrusion*> m_protrusions;
 
     std::string m_name;
     Cell_Type *m_cell_type;
