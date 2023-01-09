@@ -25,7 +25,6 @@
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/tissue/tissue.h"
 #include "../dsl/tissue/tissueContainer.h"
-#include "../dsl/utils/logger.h"
 #include "../dsl/utils/utils.h"
 #include "../dsl/world/worldContainer.h"
 
