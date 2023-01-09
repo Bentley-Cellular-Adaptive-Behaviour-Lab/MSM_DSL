@@ -1072,16 +1072,16 @@ void Tissue_Monolayer::determine_boundaries() {
 	auto cell_width = float(m_tissue_type->m_cell_type->m_shape->get_width());
 	auto cell_height = float(m_tissue_type->m_cell_type->m_shape->get_height());
 
-	x_coord_1 = m_position->get_x_coord() - ((float(m_width_in_cells) * cell_width)/2.0f);
-	y_coord_1 = m_position->get_y_coord() - ((float(m_height_in_cells) * cell_height)/2.0f);
+	auto x_coord_1 = std::floor(m_position->get_x_coord() - ((float(m_width_in_cells) * cell_width)/2.0f));
+	auto y_coord_1 = std::floor(m_position->get_y_coord() - ((float(m_height_in_cells) * cell_height)/2.0f));
 
-	monolayer_end_1 = Coordinates(x_coord_1, y_coord_1, m_position->get_z_coord());
+	auto monolayer_end_1 = Coordinates((int) x_coord_1, (int) y_coord_1, (int) m_position->get_z_coord());
 	boundary_coords.push_back(monolayer_end_1);
 
-	x_coord_2 = m_position->get_x_coord() + ((float(m_width_in_cells) * cell_width)/2.0f);
-	y_coord_2 = m_position->get_y_coord() + ((float(m_height_in_cells) * cell_height)/2.0f);
+	auto x_coord_2 = m_position->get_x_coord() + ((float(m_width_in_cells) * cell_width)/2.0f);
+	auto y_coord_2 = m_position->get_y_coord() + ((float(m_height_in_cells) * cell_height)/2.0f);
 
-	monolayer_end_2 = Coordinates(x_coord_2, y_coord_2, m_position->get_z_coord());
+	auto monolayer_end_2 = Coordinates((int) x_coord_2, (int) y_coord_2, (int) m_position->get_z_coord());
 	boundary_coords.push_back(monolayer_end_2);
 
 	this->m_boundaries = boundary_coords;
