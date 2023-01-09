@@ -670,7 +670,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
         thetaStart -= 2 * Pi;
     }
 
-    int lowerXboundary = this->m_boundaries[0].x;
+    int lowerXBoundary = (int) this->m_boundaries[0].x;
 
     X = (float)j; // X-Coordinate is not currently set, will need to think about this when changing the periodic boundary.
     Y = (float)m_vessel_centre_y_coord;
