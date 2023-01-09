@@ -34,7 +34,11 @@ public:
     std::string m_name;
     Cell_Type *m_cell_type;
 
-    Cell(Tissue_Container *tissue_container, std::string name, World *world, Coordinates *position, Cell_Type *cell_type);
+    Cell(Tissue_Container *tissue_container,
+         const std::string &name,
+         World *world,
+         Coordinates *position,
+         Cell_Type *cell_type);
 
     bool check_boundaries();
     void determine_boundaries();
