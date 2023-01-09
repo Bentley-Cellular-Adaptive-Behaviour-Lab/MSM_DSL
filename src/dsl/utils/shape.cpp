@@ -76,7 +76,7 @@ int Shape_Triangular_Prism::get_width() {
 	return -1;
 }
 
-int Shape_Triangular_Prism::get_depth() {
+int Shape_Triangular_Prism::get_depth() const {
 	return this->m_depth;
 }
 
