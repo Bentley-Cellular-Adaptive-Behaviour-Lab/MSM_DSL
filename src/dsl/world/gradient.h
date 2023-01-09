@@ -48,9 +48,9 @@ public:
     Protein *m_protein;
 
     // Booleans to check whether the gradient changes along the relevant axis - used by sink and source gradients.
-    bool x_varying = false;
-    bool y_varying = false;
-    bool z_varying = false;
+    bool m_x_varying = false;
+    bool m_y_varying = false;
+    bool m_z_varying = false;
 
     // Dimensions for cuboidal gradients - if not cuboidal, set to -1 (these must always be positive integers otherwise)
     int m_cuboidal_height = -1;
