@@ -523,8 +523,6 @@ bool Tissue_Vessel::check_boundaries() {
 ******************************************************************************************/
 
 void Tissue_Vessel::determine_boundaries() {
-    float x_coord_1, x_coord_2;
-    Coordinates vessel_end_1, vessel_end_2;
 	std::vector<Coordinates> boundary_coords;
 
     x_coord_1 = m_position->get_x_coord() - (float(m_vessel_length)/2.0f);
