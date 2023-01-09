@@ -85,7 +85,7 @@ void Cell::determine_boundaries() {
 // Constructor //
 
 Cell::Cell(Tissue_Container *tissue_container,
-           std::string name,
+           const std::string &name,
            World *world,
            Coordinates *position,
            Cell_Type *cell_type) {
