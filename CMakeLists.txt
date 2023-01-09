@@ -45,7 +45,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/tissue/tissue.cpp
             src/dsl/tissue/tissueContainer.cpp
             src/dsl/tissue/tissueType.cpp
-            src/dsl/utils/logger.cpp
             src/dsl/utils/shape.cpp
             src/dsl/utils/utils.cpp
             src/dsl/world/gradient.cpp
@@ -83,7 +82,6 @@ if(TEST_TYPE EQUAL 0)
             src/dsl/tissue/tissue.h
             src/dsl/tissue/tissueContainer.h
             src/dsl/tissue/tissueType.h
-            src/dsl/utils/logger.h
             src/dsl/utils/shape.h
             src/dsl/utils/utils.h
             src/dsl/world/gradient.h
@@ -147,7 +145,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/tissue/tissue.cpp
             src/dsl/tissue/tissueContainer.cpp
             src/dsl/tissue/tissueType.cpp
-            src/dsl/utils/logger.cpp
             src/dsl/utils/shape.cpp
             src/dsl/utils/utils.cpp
             src/dsl/world/gradient.cpp
@@ -196,7 +193,6 @@ elseif(TEST_TYPE EQUAL 1)
             src/dsl/tissue/tissue.h
             src/dsl/tissue/tissueContainer.h
             src/dsl/tissue/tissueType.h
-            src/dsl/utils/logger.h
             src/dsl/utils/shape.h
             src/dsl/utils/utils.h
             src/dsl/world/gradient.h
