@@ -336,7 +336,7 @@ int Tissue_Vessel::get_vessel_length() const {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Vessel::get_vessel_length_in_cells() {
+int Tissue_Vessel::get_vessel_length_in_cells() const {
     return this->m_vessel_length;
 }
 
