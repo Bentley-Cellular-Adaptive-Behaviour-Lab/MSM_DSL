@@ -717,7 +717,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
             cellAgent->nodeAgents.push_back(newMemAgent);
 
-            m_world->setMLocation(int(j + depth) + lowerXboundary, int(k+Y), int(l+Z), newMemAgent);
+            m_world->setMLocation(int(j + depth) + lowerXBoundary, int(k+Y), int(l+Z), newMemAgent);
 
 //            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
         }
