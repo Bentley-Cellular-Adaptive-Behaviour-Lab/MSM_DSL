@@ -80,7 +80,7 @@ void Substrate::apply_substrate_to_cuboid() {
 *  Returns:		void
 ******************************************************************************************/
 
-void Substrate::apply_substrate_to_triangular_prism() {
+void Substrate::apply_substrate_to_triangular_prism() const {
     int x_start, x_end, y_start, y_end, z_start, z_end;
     std::tuple<float, float> vertex_1, vertex_2, vertex_3;
     Env *ep;
