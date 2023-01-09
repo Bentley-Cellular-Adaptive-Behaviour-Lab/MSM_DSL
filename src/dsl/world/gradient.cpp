@@ -671,18 +671,18 @@ void Gradient::apply_gradient_to_sinkandsource() {
 
 void Gradient::apply_gradient_to_sphere() {
     // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
-    float radius = m_centre_position->x - (float) m_spherical_radius;
+    auto radius = std::floor(m_centre_position->x - (float) m_spherical_radius);
     float dist_from_centre;
     Env *ep;
 
     // Define a bounding box that contains the sphere, centred around the source position.
 
-    x_start = m_centre_position->x - radius;
-    x_end = m_centre_position->x + radius;
-    y_start = m_centre_position->y - radius;
-    y_end = m_centre_position->y + radius;
-    z_start = m_centre_position->y - radius;
-    z_end = m_centre_position->y + radius;
+    auto x_start = m_centre_position->x - radius;
+    auto x_end = m_centre_position->x + radius;
+    auto y_start = m_centre_position->y - radius;
+    auto y_end = m_centre_position->y + radius;
+    auto z_start = m_centre_position->y - radius;
+    auto z_end = m_centre_position->y + radius;
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
