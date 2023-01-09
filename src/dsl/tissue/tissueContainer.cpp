@@ -322,10 +322,10 @@ void Tissue_Container::create_2d_square_cell(const int& cell_number,
     int i, j;
     MemAgent *memp;
 
-	int i_start = centreX - (int) floor((float) cell_width / 2.0f);
-	int i_end = centreX + (int) floor((float) cell_width / 2.0f);
-	int j_start = centreY - (int) floor((float) cell_height / 2.0f);
-	int j_end = centreY + (int) floor((float) cell_height / 2.0f);
+	auto i_start = centreX - (int) std::floor((float) cell_width / 2.0f);
+	auto i_end = centreX + (int) std::floor((float) cell_width / 2.0f);
+	auto j_start = centreY - (int) std::floor((float) cell_height / 2.0f);
+	auto j_end = centreY + (int) std::floor((float) cell_height / 2.0f);
 
 	for (i = i_start; i <= i_end; i++) {
         for (j = j_start; j <= j_end; j++) {
