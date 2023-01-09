@@ -78,20 +78,20 @@ public:
 
     // Boundary Checking.
     void check_positions();
-    void check_position(Cell *cell);
-    void check_position(Tissue *tissue);
+    static void check_position(Cell *cell);
+    static void check_position(Tissue *tissue);
 
-    bool check_cell_cell_overlap(Cell *cell_1, Cell *cell_2);
-    bool check_cell_vessel_overlap(Cell *cell, Tissue_Vessel *vessel);
-    bool check_cell_monolayer_overlap(Cell *cell, Tissue_Monolayer *monolayer);
-    bool check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2);
-    bool check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer);
-    bool check_monolayer_monolayer_overlap(Tissue_Monolayer *monolayer_1, Tissue_Monolayer *monolayer_2);
+    static bool check_cell_cell_overlap(Cell *cell_1, Cell *cell_2);
+    static bool check_cell_vessel_overlap(Cell *cell, Tissue_Vessel *vessel);
+    static bool check_cell_monolayer_overlap(Cell *cell, Tissue_Monolayer *monolayer);
+    static bool check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2);
+    static bool check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer);
+    static bool check_monolayer_monolayer_overlap(Tissue_Monolayer *monolayer_1, Tissue_Monolayer *monolayer_2);
 
     static void allocateProteins(Cell_Type* cellType, MemAgent* memAgent);
     void add_env_protein_to_tissues(const std::string& protein_name);
 
-	void set_vessel_neighbours(Tissue_Vessel *vessel);
+	static void set_vessel_neighbours(Tissue_Vessel *vessel);
 };
 
 #endif //SRC_SPRINGAGENT_TISSUECONTAINER_H
