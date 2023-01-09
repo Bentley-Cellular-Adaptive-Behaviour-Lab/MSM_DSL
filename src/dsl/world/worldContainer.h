@@ -23,31 +23,23 @@ public:
 
     void world_setup(std::vector<double>& paramIncrements);
 
-    World *create_world(const int xMax,
-                        const int yMax,
-                        const int zMax,
-                        const float base_permittivity,
-						const float base_solidness,
+    World *create_world(int xMax,
+                        int yMax,
+                        int zMax,
+                        float base_permittivity,
+						float base_solidness,
 						const std::vector<double>& paramValues);
 
     void create_substrate(Shape *substrate_shape,
 						  Coordinates *centre_coordinates,
-						  const float adhesiveness,
-						  const float solidness);
-
-    [[deprecated("Use overloaded functions specific to each gradient type.")]]
-    void create_gradient(int gradient_type,
-                         int gradient_shape,
-                         std::string protein,
-                         Coordinates *source_position,
-                         float source_starting_amount,
-                         Coordinates *sink_position);
+						  float adhesiveness,
+						  float solidness);
 
     void create_gradient(int gradient_type,
                          Protein *protein,
                          Coordinates *source_position,
                          Coordinates *sink_position,
-                         const bool legacyVEGF);
+                         bool legacyVEGF);
 
     void create_gradient(int gradient_type,
                          Protein *protein,
