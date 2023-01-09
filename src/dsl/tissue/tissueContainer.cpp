@@ -494,7 +494,6 @@ void Tissue_Container::check_position(Tissue *tissue) {
 
 bool Tissue_Container::check_cell_cell_overlap(Cell *cell_1, Cell *cell_2) {
     if (cell_1->m_position->get_z_coord() == cell_2->m_position->get_z_coord()) {
-        // TODO: LOOK INTO CLEVERER WAYS TO DO THIS.
 
         // The following if/else statement checks these conditions:
         // Is this cell's lower x-boundary value within the x-boundaries of the compared cell?
