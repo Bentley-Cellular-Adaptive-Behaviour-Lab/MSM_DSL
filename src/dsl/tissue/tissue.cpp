@@ -326,7 +326,7 @@ void Tissue::determineJunctions() {
 *  Returns:		int
 ******************************************************************************************/
 
-int  Tissue_Vessel::get_vessel_length() {
+int Tissue_Vessel::get_vessel_length() const {
     return this->m_vessel_length;
 }
 
