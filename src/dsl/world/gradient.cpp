@@ -458,7 +458,7 @@ void Gradient::determine_source_to_sink_dists() {
 *  Returns:		std::vector<float>
 ******************************************************************************************/
 
-std::vector<float> Gradient::calculate_dist_from_source(Env *ep) {
+std::vector<float> Gradient::calculate_dist_from_source(Env *ep) const {
     assert(m_gradient_shape != GRADIENT_SHAPE_CUBOIDAL);
 
     std::vector<float> vector;
