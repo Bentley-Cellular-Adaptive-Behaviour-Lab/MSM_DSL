@@ -672,23 +672,24 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
     int lowerXBoundary = (int) this->m_boundaries[0].x;
 
-    X = (float)j; // X-Coordinate is not currently set, will need to think about this when changing the periodic boundary.
-    Y = (float)m_vessel_centre_y_coord;
-    Z = (float)m_vessel_centre_z_coord;
+    // X-Coordinate is not currently set, will need
+    // to think about this when changing the periodic boundary.
+    X = (float) j;
+    Y = (float) m_vessel_centre_y_coord;
+    Z = (float) m_vessel_centre_z_coord;
 
 
     for (int J = 0; J < ablumenalSteps; J++) {
-
         theta = thetaStart + (deltaSteps * (float)J);
-        k = (float)m_vessel_total_radius * cos(theta);
-        l = (float)m_vessel_total_radius * sin(theta);
+        k = (float) m_vessel_total_radius * cos(theta);
+        l = (float) m_vessel_total_radius * sin(theta);
 
     //If within vessel, but not lumen, create a memAgent.
-        if (m_world->insideWorld(j + depth + (float)lowerXboundary, k+Y, l+Z)) {
+        if (m_world->insideWorld(j + depth + (float)lowerXBoundary, k+Y, l+Z)) {
 
             newMemAgent = new MemAgent(cellAgent, this->m_world);
 
-            newMemAgent->Mx = (float)j + (float)depth + (float)lowerXboundary;
+            newMemAgent->Mx = (float)j + (float)depth + (float)lowerXBoundary;
             newMemAgent->My = k + Y;
             newMemAgent->FA = true;
 
