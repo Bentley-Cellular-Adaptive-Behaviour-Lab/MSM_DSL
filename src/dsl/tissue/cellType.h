@@ -34,8 +34,7 @@ public:
     Cell_Type(const Cell_Type& rhs);
 
     void add_protein(Protein* protein);
-    void set_ODE_system(ODE *ode_system);
-    bool has_protein(std::string proteinName);
+    bool has_protein(const std::string &proteinName);
 
     void add_protrusion_type(ProtrusionType *protrusionType);
     void add_cytoprotein(CytoProtein *cytoProtein);
