@@ -670,7 +670,6 @@ void Gradient::apply_gradient_to_sinkandsource() {
 ******************************************************************************************/
 
 void Gradient::apply_gradient_to_sphere() {
-    float x_start, x_end, y_start, y_end, z_start, z_end;
     // Determine the radius of the sphere - this uses the X value, but the radius stays the same regardless of the axis.
     float radius = m_centre_position->x - (float) m_spherical_radius;
     float dist_from_centre;
