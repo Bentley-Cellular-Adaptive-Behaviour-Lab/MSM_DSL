@@ -332,17 +332,17 @@ void Gradient::calc_exp_env_VEGF(Env* ep) {
 
         if (ep->blood == 0.0f) {
             // Get fraction of total distance along varied axis, and reduce weight by appropriate amount for that axis.
-            if (x_varying) {
+            if (m_x_varying) {
                 if (ep_distances[0] != 0 && m_source_to_sink_distances[0] != 0) {
                     weight = weight * (1 - (ep_distances[0] / m_source_to_sink_distances[0]));
                 }
             }
-            if (y_varying) {
+            if (m_y_varying) {
                 if (ep_distances[1] != 0 && m_source_to_sink_distances[1] != 0) {
                     weight = weight * (1 - (ep_distances[1] / m_source_to_sink_distances[1]));
                 }
             }
-            if (z_varying) {
+            if (m_z_varying) {
                 if (ep_distances[2] != 0 && m_source_to_sink_distances[2] != 0) {
                     weight = weight * (1 - (ep_distances[2] / m_source_to_sink_distances[2]));
                 }
