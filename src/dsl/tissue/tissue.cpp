@@ -525,12 +525,12 @@ bool Tissue_Vessel::check_boundaries() {
 void Tissue_Vessel::determine_boundaries() {
 	std::vector<Coordinates> boundary_coords;
 
-    x_coord_1 = m_position->get_x_coord() - (float(m_vessel_length)/2.0f);
-    vessel_end_1 = Coordinates(x_coord_1, m_position->get_y_coord(), m_position->get_z_coord());
+    auto x_coord_1 = std::floor(m_position->get_x_coord() - ( (float) m_vessel_length / 2.0f));
+    auto vessel_end_1 = Coordinates((int) x_coord_1, (int)m_position->get_y_coord(), (int)m_position->get_z_coord());
     boundary_coords.push_back(vessel_end_1);
 
-    x_coord_2 = m_position->get_x_coord() + (float(m_vessel_length)/2.0f);
-    vessel_end_2 = Coordinates(x_coord_2, m_position->get_y_coord(), m_position->get_z_coord());
+    auto x_coord_2 = std::floor(m_position->get_x_coord() + ( (float) m_vessel_length / 2.0f));
+    auto vessel_end_2 = Coordinates((int) x_coord_2, (int)m_position->get_y_coord(), (int)m_position->get_z_coord());
     boundary_coords.push_back(vessel_end_2);
 
     this->m_boundaries = boundary_coords;
