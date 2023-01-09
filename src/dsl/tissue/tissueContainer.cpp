@@ -527,24 +527,24 @@ bool Tissue_Container::check_cell_cell_overlap(Cell *cell_1, Cell *cell_2) {
 
 bool Tissue_Container::check_cell_vessel_overlap(Cell *cell, Tissue_Vessel *vessel) {
 
-    float vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
-    float vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
+    auto vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
+    auto vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
 
-    // If the cell is between the upper and lower z-boundaries of the vessel, work out the Y-coordinate using
-    // Pythagoras' theorem.
+    // If the cell is between the upper and lower z-boundaries of the vessel,
+    // work out the Y-coordinate using Pythagoras' theorem.
     if ((cell->m_boundaries[0].get_z_coord() >= vessel_lower_z_bound
          && cell->m_boundaries[0].get_z_coord() <= vessel_upper_z_bound)
         || (cell->m_boundaries[1].get_z_coord() >= vessel_lower_z_bound
             && cell->m_boundaries[1].get_z_coord() <= vessel_upper_z_bound)) {
 
-        float cell_z_offset = cell->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
+        auto cell_z_offset = cell->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
         cell_z_offset = cell_z_offset * cell_z_offset;
 
-        float vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
+        auto vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
 
-        float vessel_y_boundary_offset = sqrt(vessel_radius_squared - cell_z_offset);
-        float vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
-        float vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
+        auto vessel_y_boundary_offset = std::sqrt(vessel_radius_squared - cell_z_offset);
+        auto vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
+        auto vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
 
         if ((cell->m_boundaries[0].get_y_coord() >= vessel_y_lower_boundary
              && cell->m_boundaries[0].get_y_coord() <= vessel_y_upper_boundary)
@@ -596,19 +596,18 @@ bool Tissue_Container::check_cell_monolayer_overlap(Cell *cell, Tissue_Monolayer
 ******************************************************************************************/
 
 bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tissue_Vessel *vessel_2) {
-    float min_dist, y_offset, z_offset, y_offset_squared, z_offset_squared;
 
-    auto vessel_1_radius = float(vessel_1->get_vessel_total_radius());
-    auto vessel_2_radius = float(vessel_2->get_vessel_total_radius());
+    auto vessel_1_radius = vessel_1->get_vessel_total_radius();
+    auto vessel_2_radius = vessel_2->get_vessel_total_radius();
 
-    y_offset = vessel_1->get_vessel_centre_y_coord() - vessel_2->get_vessel_centre_y_coord();
-    z_offset = vessel_1->get_vessel_centre_z_coord() - vessel_2->get_vessel_centre_z_coord();
-    y_offset_squared = y_offset * y_offset;
-    z_offset_squared = z_offset * z_offset;
+    auto y_offset = vessel_1->get_vessel_centre_y_coord() - vessel_2->get_vessel_centre_y_coord();
+    auto z_offset = vessel_1->get_vessel_centre_z_coord() - vessel_2->get_vessel_centre_z_coord();
+    auto y_offset_squared = y_offset * y_offset;
+    auto z_offset_squared = z_offset * z_offset;
 
-    min_dist = sqrt(y_offset_squared + z_offset_squared);
+    auto min_dist = std::sqrt(y_offset_squared + z_offset_squared);
 
-    if (vessel_1_radius + vessel_2_radius >= min_dist) {
+    if ((float) vessel_1_radius + (float) vessel_2_radius >= min_dist) {
         return true;
     }
     return false;
@@ -623,24 +622,24 @@ bool Tissue_Container::check_vessel_vessel_overlap(Tissue_Vessel *vessel_1, Tiss
 
 bool Tissue_Container::check_vessel_monolayer_overlap(Tissue_Vessel *vessel, Tissue_Monolayer *monolayer) {
 
-    float vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
-    float vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
+    auto vessel_upper_z_bound = float(vessel->get_vessel_total_radius()) + vessel->get_vessel_centre_z_coord();
+    auto vessel_lower_z_bound = float(vessel->get_vessel_total_radius()) - vessel->get_vessel_centre_z_coord();
 
-    // If the monolayer is between the upper and lower z-boundaries of the vessel, work out the Y-coordinate using
-    // Pythagoras' theorem.
+    // If the monolayer is between the upper and lower z-boundaries of the vessel,
+    // work out the Y-coordinate using Pythagoras' theorem.
     if ((monolayer->m_boundaries[0].get_z_coord() >= vessel_lower_z_bound
          && monolayer->m_boundaries[0].get_z_coord() <= vessel_upper_z_bound)
         || (monolayer->m_boundaries[1].get_z_coord() >= vessel_lower_z_bound
             && monolayer->m_boundaries[1].get_z_coord() <= vessel_upper_z_bound)) {
 
-        float monolayer_z_offset = monolayer->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
+        auto monolayer_z_offset = monolayer->m_position->get_z_coord() - vessel->get_vessel_centre_z_coord();
         monolayer_z_offset = monolayer_z_offset * monolayer_z_offset;
 
-        float vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
+        auto vessel_radius_squared = float(vessel->get_vessel_total_radius()) * float(vessel->get_vessel_total_radius());
 
-        float vessel_y_boundary_offset = sqrt(vessel_radius_squared - monolayer_z_offset);
-        float vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
-        float vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
+        auto vessel_y_boundary_offset = std::sqrt(vessel_radius_squared - monolayer_z_offset);
+        auto vessel_y_lower_boundary = vessel->get_vessel_centre_y_coord() - vessel_y_boundary_offset;
+        auto vessel_y_upper_boundary = vessel->get_vessel_centre_y_coord() + vessel_y_boundary_offset;
 
         if ((monolayer->m_boundaries[0].get_y_coord() >= vessel_y_lower_boundary
              && monolayer->m_boundaries[0].get_y_coord() <= vessel_y_upper_boundary)
