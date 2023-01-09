@@ -401,8 +401,6 @@ float Tissue_Vessel::get_vessel_centre_z_coord() const {
     return this->m_vessel_centre_z_coord;
 }
 
-// SETTERS //
-
 /*****************************************************************************************
 *  Name:		set_vessel_length
 *  Description: Records the length of the vessel in memAgents.
