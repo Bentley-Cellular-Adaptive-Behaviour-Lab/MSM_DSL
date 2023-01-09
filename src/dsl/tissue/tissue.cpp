@@ -904,15 +904,15 @@ bool Tissue_Monolayer::check_boundaries() {
     Cell *current_cell;
     Tissue *current_tissue;
 
-    for (int i = 0; i < m_tissue_container->cells.size(); i++) {
-        current_cell = m_tissue_container->cells[i];
+    for (auto & cell : m_tissue_container->cells) {
+        current_cell = cell;
         if (m_tissue_container->check_cell_monolayer_overlap(current_cell, this)) {
             return false; // <- Overlap detected, send false to the assert statement calling this function.
         }
     }
 
-    for (int i = 0; i < m_tissue_container->m_tissues.size(); i++) {
-        current_tissue = m_tissue_container->m_tissues[i];
+    for (auto & m_tissue : m_tissue_container->m_tissues) {
+        current_tissue = m_tissue;
         if (current_tissue != this) {
             if (current_tissue->m_tissue_type->m_tissue_configuration == CELL_CONFIGURATION_FLAT) {
                 auto *current_monolayer = dynamic_cast<Tissue_Monolayer *>(current_tissue);
