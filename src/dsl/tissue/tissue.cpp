@@ -74,7 +74,7 @@ int Tissue::get_n_cells() {
 *  Returns:		*Tissue_Type
 ******************************************************************************************/
 
-Tissue_Type* Tissue::get_tissue_type() {
+Tissue_Type* Tissue::get_tissue_type() const {
     return this->m_tissue_type;
 }
 
