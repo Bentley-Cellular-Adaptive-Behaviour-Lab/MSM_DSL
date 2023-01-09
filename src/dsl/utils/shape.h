@@ -57,7 +57,7 @@ public:
 
 	int get_height() override;
 	int get_width() override;
-	int get_depth();
+	int get_depth() const;
 
 	std::tuple<float, float> get_vertex_1();
 	std::tuple<float, float> get_vertex_2();
