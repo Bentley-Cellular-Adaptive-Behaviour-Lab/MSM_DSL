@@ -362,7 +362,7 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
         mp = m_single_cell_agents[cell_number-1]->nodeAgents[i];
         N=0;
 
-        if (m_world->insideWorld(mp->Mx-1, mp->My, mp->Mz)) {
+        if (m_world->insideWorld((int) mp->Mx-1, (int) mp->My, (int) mp->Mz)) {
             if (m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getType() == const_M) {
                 for (kelp = 0; kelp < m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids().size(); kelp++) {
                     nmp = m_world->grid[(int)mp->Mx-1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getMids()[kelp];
@@ -377,7 +377,7 @@ void Tissue_Container::connect_2d_square_cell(const int& cell_number) {
                 }
             }
         }
-        if (m_world->insideWorld(mp->Mx+1, mp->My, mp->Mz)) {
+        if (m_world->insideWorld((int) mp->Mx+1, (int) mp->My, (int) mp->Mz)) {
 
             if (m_world->grid[(int)mp->Mx+1][(int)mp->My][(int)cells[cell_number-1]->m_position->get_z_coord()].getType() == const_M) {
 
