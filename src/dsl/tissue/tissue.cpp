@@ -86,7 +86,7 @@ Tissue_Type* Tissue::get_tissue_type() const {
 *  Returns:		string
 ******************************************************************************************/
 
-void Tissue::set_name(std::string name) {
+void Tissue::set_name(const std::string &name) {
     this->m_name = name;
 }
 
