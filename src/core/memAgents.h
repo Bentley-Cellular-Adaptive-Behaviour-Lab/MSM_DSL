@@ -200,20 +200,13 @@ public:
                                                            const int& proteinLocation);
     void add_allowed_protrusion_proteins(ProtrusionType *protrusionType);
 
-    void setPreviousX(float previous_x);
-    void setPreviousY(float previous_y);
-    void setPreviousZ(float previous_Z);
+    void setPreviousX(const float previous_x);
+    void setPreviousY(const float previous_y);
+    void setPreviousZ(const float previous_Z);
 
-    float getPreviousX();
-    float getPreviousY();
-    float getPreviousZ();
-
-    // Checking and updating of neighbouring location objects.
-    std::array<Location*, 26> getNeighbourLocations();
-    void setNeighbourLocations(std::array<Location*, 26> *arr);
-    void calcNeighbourLocations();
-    Location* getStoredLocation(int index);
-    void setStoredLocation(Location* location, int index);
+    float getPreviousX() const;
+    float getPreviousY() const;
+    float getPreviousZ() const;
 
     // DSL functions for controlling protrusion behaviour.
     void shapeResponse(const float& randomChance);
