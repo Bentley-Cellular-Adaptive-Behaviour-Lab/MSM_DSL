@@ -92,7 +92,7 @@ void Gradient::calc_linear_env_protein(Env* ep) {
             if (m_gradient_direction == GRADIENT_DIRECTION_DEC_X) {
                 // Check how far along the x axis from the upper x bound the env agent is and set weight according to
                 // that value as a percentage.
-                float x_dist = (m_centre_position->x + m_cuboidal_width / 2) - ep->Ex;
+                auto x_dist = ((float) m_centre_position->x + (float) m_cuboidal_width / 2) - (float) ep->Ex;
                 weight = 1 - (x_dist / m_cuboidal_width); // When fully traversed, x_dist = cuboidal width, so set weight to zero.
                 this->add_env_protein(ep, weight * protein_level);
             }
