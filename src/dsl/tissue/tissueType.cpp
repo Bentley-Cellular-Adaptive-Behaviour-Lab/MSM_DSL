@@ -74,7 +74,7 @@ int Tissue_Type_Cylindrical::get_tissue_configuration() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Cylindrical::get_length_in_cells() {
+int Tissue_Type_Cylindrical::get_length_in_cells() const {
     return this->m_cylinder_length_in_cells;
 }
 
@@ -94,7 +94,7 @@ int Tissue_Type_Cylindrical::get_cells_per_cross_section() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Cylindrical::get_total_radius() {
+int Tissue_Type_Cylindrical::get_total_radius() const {
     return this->m_cylinder_total_radius;
 }
 
@@ -156,7 +156,7 @@ int Tissue_Type_Flat::get_tissue_configuration() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Flat::get_height_in_cells() {
+int Tissue_Type_Flat::get_height_in_cells() const {
     return this->m_flat_height_in_cells;
 }
 
@@ -166,7 +166,7 @@ int Tissue_Type_Flat::get_height_in_cells() {
 *  Returns:		int
 ******************************************************************************************/
 
-int Tissue_Type_Flat::get_width_in_cells() {
+int Tissue_Type_Flat::get_width_in_cells() const {
     return this->m_flat_width_in_cells;
 }
 
