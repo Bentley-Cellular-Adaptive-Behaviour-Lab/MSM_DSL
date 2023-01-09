@@ -24,7 +24,7 @@
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::add_env_protein(Env *ep, float calc_level) {
+void Gradient::add_env_protein(Env *ep, const double calc_level) const {
     bool protein_found = false;
     for (auto protein : ep->owned_proteins) {
         if (protein->get_name() == this->m_protein->get_name()) {
