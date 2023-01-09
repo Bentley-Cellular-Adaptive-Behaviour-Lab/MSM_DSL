@@ -45,9 +45,9 @@ void Gradient::add_env_protein(Env *ep, const double calc_level) const {
 *  Returns:		void
 ******************************************************************************************/
 
-void Gradient::calc_constant_env_protein(Env* ep) {
-    float protein_level = this->m_protein->get_env_level();
-    if (ep->blood == 0.0f) {
+void Gradient::calc_constant_env_protein(Env* ep) const {
+    auto protein_level = this->m_protein->get_env_level();
+    if (ep->blood == 0.0) {
         this->add_env_protein(ep, protein_level);
     }
 }
