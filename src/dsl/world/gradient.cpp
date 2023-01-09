@@ -528,12 +528,12 @@ void Gradient::determine_directionality() {
 ******************************************************************************************/
 
 void Gradient::apply_gradient_to_cuboid() {
-    float x_start = m_centre_position->x - ((float) m_cuboidal_width / 2);
-    float x_end = m_centre_position->x + ((float) m_cuboidal_width / 2);
-    float y_start = m_centre_position->y - ((float) m_cuboidal_height / 2);
-    float y_end = m_centre_position->y + ((float) m_cuboidal_height / 2);
-    float z_start = m_centre_position->z - ((float) m_cuboidal_depth / 2);
-    float z_end = m_centre_position->z + ((float) m_cuboidal_depth / 2);
+    auto x_start = std::floor(m_centre_position->x - ((float) m_cuboidal_width / 2));
+    auto x_end = std::floor(m_centre_position->x + ((float) m_cuboidal_width / 2));
+    auto y_start = std::floor(m_centre_position->y - ((float) m_cuboidal_height / 2));
+    auto y_end = std::floor(m_centre_position->y + ((float) m_cuboidal_height / 2));
+    auto z_start = std::floor(m_centre_position->z - ((float) m_cuboidal_depth / 2));
+    auto z_end = std::floor(m_centre_position->z + ((float) m_cuboidal_depth / 2));
     Env *ep;
 
     // Define a bounding box that contains the cuboidal gradient, centred around the centre position.
