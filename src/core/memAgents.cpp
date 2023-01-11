@@ -4598,3 +4598,57 @@ double MemAgent::DLL4_search() {
 double MemAgent::get_mean_env_protein(const std::string& proteinName) {
     return this->m_mean_env_proteins_sensed[proteinName];
 }
+
+void MemAgent::neighCellSearch(const bool doesVonNeumann) {
+    assert(this->junction);
+    // Goes over local neighbourhood.
+    // If another cell is found, attempt to
+    // add it to the cell's list.
+
+    // When doesVonNeumann is true,
+    // only check non-diagonal positions.
+
+    for (int x = (int) this->Mx - 1; x <= (int) this->Mx + 1; x++) {
+        for (int y = (int) this->My - 1; y <= (int) this->My + 1; y++) {
+            for (int z = (int) this->Mz - 1; z <= (int) this->Mz + 1; z++) {
+                // Check we're not investigating this memAgent.
+                auto notThisMemAgent = (x != (int) this->Mx)
+                                       || (y != (int) this->My)
+                                       || (z != (int) this->Mz);
+
+                // If we're checking VonNeumann positions,
+                // check whether we're at one, otherwise
+                // continue as normal.
+                auto allowedPosition = true;
+                if (doesVonNeumann) {
+                    allowedPosition = is_VonNeu_position(x, y, z);
+                }
+
+                auto insideWorld = worldP->insideWorld(x, y, z);
+
+                if (notThisMemAgent && allowedPosition && insideWorld) {
+                    auto location = worldP->grid[x][y][z];
+                    // If grid site is a memAgent and is in the world,
+                    // check if it belongs to a different cell.
+                    // If so, attempt to add it to a cell.
+                    if (location.getType() == const_M) {
+                        for (auto memAgent : location.getMids()) {
+                            if (memAgent->Cell != this->Cell) {
+                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 1) {
+                                    int test = 0;
+                                }
+                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 3) {
+                                    int test = 0;
+                                }
+                                if (this->Cell->cell_number == 0 && memAgent->Cell->cell_number == 4) {
+                                    int test = 0;
+                                }
+                                this->Cell->attempt_neigh_list_addition(memAgent->Cell);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
