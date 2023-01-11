@@ -10,7 +10,7 @@
 #include "../../src/core/world.h"
 
 #include "../../src/dsl/tissue/tissue.h"
-
+#include "../../src/dsl/tissue/tissueContainer.h"
 
 
 TEST_F(ComparisonTest, setupTest) {
