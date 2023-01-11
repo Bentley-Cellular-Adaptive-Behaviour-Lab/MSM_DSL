@@ -204,9 +204,9 @@ public:
     void setPreviousY(const float previous_y);
     void setPreviousZ(const float previous_Z);
 
-    float getPreviousX() const;
-    float getPreviousY() const;
-    float getPreviousZ() const;
+    [[nodiscard]] float getPreviousX() const;
+    [[nodiscard]] float getPreviousY() const;
+    [[nodiscard]] float getPreviousZ() const;
 
     // DSL functions for controlling shape behaviour.
     // Made these deprecated, but are still being used in case
