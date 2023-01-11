@@ -174,7 +174,6 @@ class ComparisonVesselTest : public ::testing::Test {
     // Used to compare Moore and VonNeu checking during Notch
     // response in a blood vessel.
 private:
-    // Member variable.
     World *m_world;
     Tissue *m_tissue;
     Tissue_Container *m_tissueContainer;
