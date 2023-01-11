@@ -1297,41 +1297,13 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
     if (flagA == 0) {
 		junction = false;
     }
-    //StoreInJunctionList=false;
+
     if ((StoreInJunctionList) && (node) && (FIL == NONE)) {//&&(previousJunction!=junction)){
-        //vector<MemAgent*>::iterator L;
-        //L = worldP->JunctionAgents.begin();
-        //flag=0;
-        //add to list
-        //m=0;
-        //if(worldP->JunctionAgents.size()>0){
+
         if ((junction) && (!addedJunctionList)) {
-            //  do{
-            //      if(worldP->JunctionAgents[m]==this) flag=1;
-            //      m++;
-            //  }while((flag==0)&&(m<worldP->JunctionAgents.size()));
-            //if(flag==1) cout<<"even without adding here it seems to be already in here:)"<<endl;
-            // if(flag==0)
             worldP->JunctionAgents.push_back(this);
             addedJunctionList = true;
         }
-
-        //remove from list
-
-        /*else{
-            m=0;
-        flag=0;
-           do{
-               if(worldP->JunctionAgents[m]==this){ worldP->JunctionAgents.erase(L+m); flag=1;}
-               m++;
-           }while((flag==0)&&(m<worldP->JunctionAgents.size()));
-        }
-    }
-    else{
-        if(junction==true){
-            worldP->JunctionAgents.push_back(this);
-        }
-    }*/
     }
 }
 //-------------------------------------------------------------------------------------------------------------------
