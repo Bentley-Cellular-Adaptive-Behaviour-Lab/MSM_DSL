@@ -453,3 +453,183 @@ void ComparisonVesselTest::TearDown() {
 
 /*****************************************************************************************
 ******************************************************************************************/
+
+void NeighCellVectorTest::SetUp() {
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0,0.0,params);
+    this->m_tissueContainer = new Tissue_Container(this->m_world);
+}
+
+void NeighCellVectorTest::createTissue(const unsigned int test_mode) {
+    try {
+        if (test_mode == NEIGH_CELL_VESSEL_MODE) {
+            createVessel();
+        } else if (test_mode == NEIGH_CELL_MONOLAYER_MODE) {
+            createMonolayer();
+        } else if (test_mode == NEIGH_CELL_HORIZONTAL_MODE) {
+            createHorizontalMonolayer();
+        } else if (test_mode == NEIGH_CELL_VERTICAL_MODE) {
+            createVerticalMonolayer();
+        } else {
+            const std::invalid_argument exc = std::invalid_argument("Passed incorrect mode to create tissue.");
+            throw exc;
+        }
+    } catch (const std::invalid_argument &arg) {
+        arg.what();
+    }
+}
+
+void NeighCellVectorTest::createVessel() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
+
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+        cellAgent->calcVonNeighs();
+    }
+}
+
+void NeighCellVectorTest::createMonolayer() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 3, 3));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        cellAgent->calcVonNeighs();
+    }
+}
+
+void NeighCellVectorTest::createHorizontalMonolayer() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 1, 2);
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        cellAgent->calcVonNeighs();
+    }
+}
+
+void NeighCellVectorTest::createVerticalMonolayer() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 3, 3));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 2, 1);
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        cellAgent->calcVonNeighs();
+    }
+}
+
+
+
+Tissue_Container* NeighCellVectorTest::getTissueContainer() {
+    return this->m_tissueContainer;
+}
+
+void NeighCellVectorTest::TearDown() {
+
+}
+
+/*****************************************************************************************
+******************************************************************************************/
+
+void ShufflingTest::SetUp() {
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0,0.0,params);
+    this->m_tissueContainer = new Tissue_Container(this->m_world);
+
+    // Turn on cell shuffling.
+    this->m_world->set_DSL_CPM(true);
+    // Set
+}
+
+void ShufflingTest::run_MSM_timestep() {
+    this->m_world->simulateTimestep_MSM();
+}
+
+void ShufflingTest::createTissue() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 3, 3));
+
+    // Add VEGF_VEGFR2 to cell type.
+
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        cellAgent->calcVonNeighs();
+    }
+}
+
+Tissue_Container* ShufflingTest::getTissueContainer() {
+    return this->m_tissueContainer;
+}
+
+void ShufflingTest::TearDown() {
+
+}
+
+/*****************************************************************************************
+******************************************************************************************/
