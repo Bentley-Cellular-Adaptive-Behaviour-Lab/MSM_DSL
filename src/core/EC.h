@@ -199,6 +199,7 @@ public:
     std::vector<Protrusion*>& getProtrusionList();
 	std::vector<ProtrusionType*>& getProtrusionTypeList();
 	std::vector<EC*>& getNeighCellVector();
+    void removeDuplicateNeighCells();
 
     const std::map<std::string, double>& getProteinMemAgentBuffer();
     void initialiseProteinMemAgentBuffer();
