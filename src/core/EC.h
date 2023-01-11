@@ -186,7 +186,7 @@ public:
 	// Tracks which cells are neighbouring this one i.e. have formed junctions.
 	// TODO: HAVE THIS LIST UPDATE WHEN INTRODUCING CELL SHUFFLING.
     bool cellIsNeighbour(EC *query_ec);
-	void add_to_neighbour_list(EC *query_ec);
+	void attempt_neigh_list_addition(EC *query_ec);
 	void cycle_protein_levels() const;
 
     double getCellCytoproteinLevel(const std::string& cytoproteinName) const;
