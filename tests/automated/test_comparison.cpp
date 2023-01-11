@@ -381,3 +381,211 @@ TEST_F(ComparisonVesselTest, NotchResponseTest) {
     // EXPECT ALL THE NOTCH TO REACT WITH ALL THE DLL4.
     EXPECT_DOUBLE_EQ(ACTIVE_NOTCH_MSM, 1000);
 }
+
+TEST_F(NeighCellVectorTest, VesselTest) {
+    // Creates a vessel consisting of three cells.
+    // Checks that the cells neighbour lists are updated
+    // with each other.
+    createTissue(NEIGH_CELL_VESSEL_MODE);
+    auto tissueContainer = this->getTissueContainer();
+    auto tissue = tissueContainer->m_tissues.at(0);
+    for (auto *cell : tissue->m_cell_agents) {
+        for (auto *nodeAgent : cell->nodeAgents) {
+            // Do cell search on junction memAgents.
+            if (nodeAgent->junction) {
+                nodeAgent->neighCellSearch(false);
+            }
+        }
+    }
+
+    // Get each of the cells in the vessel.
+    auto leftmostCell = tissue->m_cell_agents.at(0);
+    auto middleCell = tissue->m_cell_agents.at(1);
+    auto rightmostCell = tissue->m_cell_agents.at(2);
+
+    // Check that the leftmost cell has exactly one neighbour,
+    // which is the middle cell.
+    auto vector1 = leftmostCell->getNeighCellVector();
+    auto size1 = vector1.size();
+    auto cell1 = vector1.at(0); // Middle cell.
+    ASSERT_EQ(size1, 1);
+    EXPECT_EQ(cell1, middleCell);
+
+    // Check that the middle cell has exactly two neighbours.
+    auto vector2 = middleCell->getNeighCellVector();
+    auto size2 = vector2.size();
+    auto cell2 = vector2.at(0); // Leftmost cell.
+    auto cell3 = vector2.at(1); // Rightmost cell.
+    ASSERT_EQ(size2, 2);
+    EXPECT_EQ(cell2, leftmostCell);
+    EXPECT_EQ(cell3, rightmostCell);
+
+    // Check that the rightmost cell has one neighbour.
+    auto vector3 = rightmostCell->getNeighCellVector();
+    auto size3 = vector3.size();
+    auto cell4 = vector3.at(0); // Middle cell.
+    ASSERT_EQ(size3, 1);
+    EXPECT_EQ(cell4, middleCell);
+}
+
+TEST_F(NeighCellVectorTest, HorizontalMonolayerTest) {
+    // Creates a monolayer consisting of two horizontally
+    // arranged cells. Checks that the cells neighbour lists
+    // are updated with the other cell.
+    createTissue(NEIGH_CELL_HORIZONTAL_MODE);
+    auto tissueContainer = this->getTissueContainer();
+    auto tissue = tissueContainer->m_tissues.at(0);
+
+    for (auto *cell : tissue->m_cell_agents) {
+        for (auto *nodeAgent : cell->nodeAgents) {
+            // Do cell search on junction memAgents.
+            nodeAgent->JunctionTest(false);
+            if (nodeAgent->junction) {
+                nodeAgent->neighCellSearch(false);
+            }
+        }
+    }
+
+    auto leftCell = tissue->m_cell_agents.at(0); // Left cell.
+    auto rightCell = tissue->m_cell_agents.at(1); // Right cell.
+
+    auto vector1 = leftCell->getNeighCellVector();
+    auto size1 = vector1.size();
+    ASSERT_EQ(size1, 1);
+    auto cell1 = vector1.at(0);
+    EXPECT_EQ(cell1, rightCell);
+
+    auto vector2 = rightCell->getNeighCellVector();
+    auto size2 = vector2.size();
+    ASSERT_EQ(size2, 1);
+    auto cell2 = vector2.at(0);
+    EXPECT_EQ(cell2, leftCell);
+}
+
+TEST_F(NeighCellVectorTest, VerticalMonolayerTest) {
+    // Creates a monolayer consisting of two horizontally
+    // arranged cells. Checks that the cells neighbour lists
+    // are updated with the other cell.
+    createTissue(NEIGH_CELL_VERTICAL_MODE);
+    auto tissueContainer = this->getTissueContainer();
+    auto tissue = tissueContainer->m_tissues.at(0);
+
+    for (auto *cell : tissue->m_cell_agents) {
+        for (auto *nodeAgent : cell->nodeAgents) {
+            // Do cell search on junction memAgents.
+            nodeAgent->JunctionTest(false);
+            if (nodeAgent->junction) {
+                nodeAgent->neighCellSearch(false);
+            }
+        }
+    }
+
+    auto leftCell = tissue->m_cell_agents.at(0); // Lower cell.
+    auto rightCell = tissue->m_cell_agents.at(1); // Upper cell.
+
+    auto vector1 = leftCell->getNeighCellVector();
+    auto size1 = vector1.size();
+    ASSERT_EQ(size1, 1);
+    auto cell1 = vector1.at(0);
+    EXPECT_EQ(cell1, rightCell);
+
+    auto vector2 = rightCell->getNeighCellVector();
+    auto size2 = vector2.size();
+    ASSERT_EQ(size2, 1);
+    auto cell2 = vector2.at(0);
+    EXPECT_EQ(cell2, leftCell);
+}
+
+TEST_F(NeighCellVectorTest, MonolayerTest) {
+    createTissue(NEIGH_CELL_MONOLAYER_MODE);
+    auto tissueContainer = this->getTissueContainer();
+    auto tissue = tissueContainer->m_tissues.at(0);
+
+    for (auto *cell : tissue->m_cell_agents) {
+        for (auto *nodeAgent : cell->nodeAgents) {
+            // Do cell search on junction memAgents.
+            nodeAgent->JunctionTest(false);
+            if (nodeAgent->junction) {
+                nodeAgent->neighCellSearch(false);
+            }
+        }
+    }
+
+    // Get two the cells in the 3x3 monolayer.
+    auto cell_1 = tissue->m_cell_agents.at(0); // Bottom left.
+    auto cell_5 = tissue->m_cell_agents.at(4); // Middle.
+
+    // Check that the bottom left cell has exactly three neighbours.
+    auto vector1 = cell_1->getNeighCellVector();
+    auto size1 = vector1.size();
+    ASSERT_EQ(size1, 3);
+    // Check that the correct cells have been added.
+    auto cell_2_found = false;
+    auto cell_4_found = false;
+    auto cell_5_found = false;
+    for (auto *cell : vector1) {
+        if (cell->cell_number == 1) {
+            cell_2_found = true;
+        }
+        if (cell->cell_number == 3) {
+            cell_4_found = true;
+        }
+        if (cell->cell_number == 4) {
+            cell_5_found = true;
+        }
+    }
+    EXPECT_TRUE(cell_2_found);
+    EXPECT_TRUE(cell_4_found);
+    EXPECT_TRUE(cell_5_found);
+
+    // Check that the middle cell has exactly 8 neighbours.
+    auto vector2 = cell_5->getNeighCellVector();
+    auto size2 = vector2.size();
+    ASSERT_EQ(size2, 8);
+
+    //Check that all the cells are included in the neighbour list.
+    auto cell_1_found = false;
+    cell_2_found = false;
+    auto cell_3_found = false;
+    cell_4_found = false;
+    auto cell_6_found = false;
+    auto cell_7_found = false;
+    auto cell_8_found = false;
+    auto cell_9_found = false;
+
+    for (auto *cell : vector2) {
+        if (cell->cell_number == 0) {
+            cell_1_found = true;
+        }
+        if (cell->cell_number == 1) {
+            cell_2_found = true;
+        }
+        if (cell->cell_number == 2) {
+            cell_3_found = true;
+        }
+        if (cell->cell_number == 3) {
+            cell_4_found = true;
+        }
+        if (cell->cell_number == 5) {
+            cell_6_found = true;
+        }
+        if (cell->cell_number == 6) {
+            cell_7_found = true;
+        }
+        if (cell->cell_number == 7) {
+            cell_8_found = true;
+        }
+        if (cell->cell_number == 8) {
+            cell_9_found = true;
+        }
+    }
+
+    EXPECT_TRUE(cell_1_found);
+    EXPECT_TRUE(cell_2_found);
+    EXPECT_TRUE(cell_3_found);
+    EXPECT_TRUE(cell_4_found);
+    EXPECT_TRUE(cell_6_found);
+    EXPECT_TRUE(cell_7_found);
+    EXPECT_TRUE(cell_8_found);
+    EXPECT_TRUE(cell_9_found);
+}
