@@ -191,4 +191,44 @@ public:
 
 };
 
+enum NEIGH_CELL_MODE {
+    NEIGH_CELL_VESSEL_MODE,
+    NEIGH_CELL_MONOLAYER_MODE,
+    NEIGH_CELL_HORIZONTAL_MODE,
+    NEIGH_CELL_VERTICAL_MODE,
+    N_MODES
+};
+
+class NeighCellVectorTest : public ::testing::Test {
+private:
+    World *m_world;
+    Tissue *m_tissue;
+    Tissue_Container *m_tissueContainer;
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    void createTissue(unsigned int test_mode);
+    void createVessel();
+    void createMonolayer();
+    void createHorizontalMonolayer();
+    void createVerticalMonolayer();
+
+    Tissue_Container* getTissueContainer();
+};
+
+class ShufflingTest : public ::testing::Test {
+private:
+    World *m_world;
+    Tissue *m_tissue;
+    Tissue_Container *m_tissueContainer;
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    void createTissue();
+    void run_MSM_timestep();
+    Tissue_Container* getTissueContainer();
+};
+
 #endif //OBJECTS_H_HELPER_COMPARISON_H
