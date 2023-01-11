@@ -1746,12 +1746,6 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                 EnvNeighs.push_back(Eagent);
             }
             
-            /*else if((node==true)&&(worldP->neigh[x].type==AS)){
-             *
-             * if(FATimer>=0) FA=true;
-             *
-             * }*/
-            //-----------NEW BIT!
 
             //for differential adhesion..
             //will need to add a lot to make sure dont think filagents are neighbours here for vessel version etc...!!!!
