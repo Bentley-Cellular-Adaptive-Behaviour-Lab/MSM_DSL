@@ -1772,7 +1772,7 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                         for (zed = 0; zed < worldP->grid[m][n][p].getMids().size(); zed++) {
                             if ((worldP->grid[m][n][p].getMids()[zed]->FIL != TIP) && (worldP->grid[m][n][p].getMids()[zed]->FIL != STALK)) {
                                 connected = meshConnected(worldP->grid[m][n][p].getMids()[zed]);
-                                if (connected == true) {
+                                if (connected) {
                                     //cout<<"*"<<endl;
                                     if (worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != NULL) {
                                         if ((worldP->grid[m][n][p].getMids()[zed]->diffAd_replaced_cell != this->Cell)) {
