@@ -1784,7 +1784,6 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
                                             DiffAd_neighs.push_back(worldP->grid[m][n][p].getMids()[zed]);
                                             //worldP->grid[m][n][p].Mids[zed]->labelled2 = true;
                                         }
-
                                     }
                                 }
                             }
