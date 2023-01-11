@@ -3,6 +3,7 @@
 #include <cmath>
 #include <numeric>
 #include <thread>
+#include <algorithm>
 
 #include "coordinates.h"
 #include "EC.h"
@@ -946,14 +947,15 @@ void EC::print_memAgent_protein_levels(int timestep_interval) {
 }
 
 /*****************************************************************************************
-*  Name:		add_to_neighbour_list
+*  Name:		attempt_neigh_list_addition
 *  Description: If a queried cell is not already included in this cell's list of neighbours,
 *  				then add it. This should only be called when a cell is determining junction
 *  				agents.
 *  Returns:		void
 ******************************************************************************************/
 
-void EC::add_to_neighbour_list(EC* query_ec) {
+void EC::attempt_neigh_list_addition(EC* query_ec) {
+    assert(query_ec != this);
     bool cell_found = false;
 	// Check we don't already know about this cell.
     for (auto *current_ec : this->m_neigh_cells) {
@@ -962,9 +964,12 @@ void EC::add_to_neighbour_list(EC* query_ec) {
             break;
         }
     }
-	if (!cellIsNeighbour(query_ec) && !cell_found) {
+
+//    bool cellIsNeighbour = this->cellIsNeighbour(query_ec);
+
+	if (!cell_found) {
 		this->m_neigh_cells.push_back(query_ec);
-	}
+    }
 }
 
 /*****************************************************************************************
@@ -975,6 +980,22 @@ void EC::add_to_neighbour_list(EC* query_ec) {
 
 std::vector<EC*>& EC::getNeighCellVector() {
     return this->m_neigh_cells;
+}
+
+/*****************************************************************************************
+*  Name:		removeDuplicateNeighCells()
+*  Description: Removes duplicate cells from m_neigh_cells.
+*  Returns:		std::vector<EC*>&
+******************************************************************************************/
+
+void EC::removeDuplicateNeighCells() {
+    // For some reason, cells are being added twice
+    // to the neigh cell vector. I can't work out
+    // why - so this is a temporary fix.
+    std::sort(this->m_neigh_cells.begin(), this->m_neigh_cells.end());
+    this->m_neigh_cells.erase(unique(this->m_neigh_cells.begin(),
+                                     this->m_neigh_cells.end()),
+                              this->m_neigh_cells.end() );
 }
 
 /*****************************************************************************************
