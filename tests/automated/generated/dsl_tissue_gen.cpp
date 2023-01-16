@@ -84,7 +84,7 @@ bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiff
 
 	if (cell->m_tissue->m_tissue_type->m_name == "VesselType") {
 		auto VEGF_VEGFR2 = cell->get_cell_protein_level("VEGF_VEGFR2", 0);
-		return VEGF_VEGFR2 > 100;
+		return VEGF_VEGFR2 < 200;
 	}
 	return false;
 }

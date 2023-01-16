@@ -184,7 +184,7 @@ extern float delta;
 #define VEGFR_dll4_lasts 1///no of time steps the active effect of VEGFR has on dll4 up reg - before it goes back to normal.
 
 ///Rearrangement
-#define REARRANGEMENT false
+#define MSM_REARRANGEMENT false
 #define TIME_DIFFAD_STARTS 100000
 #define ideal_Cell_area_init 90
 #define biased_mig_diffAd true

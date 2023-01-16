@@ -33,6 +33,7 @@ class World {
 private:
     unsigned int m_run_number;
 	bool m_DSL_CPM = false; // Used by DSL to determine whether the cellular potts model is run.
+    bool m_MSM_CPM = false; // Used by MSM to determine whether the cellular potts model is run.
 	unsigned int m_start_CPM = 0; // When the cellular potts model runs, if at all.
     std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
@@ -294,13 +295,16 @@ public:
 	bool can_extend(EC* cell, MemAgent* memAgent);
 
 	// DSL CPM control functions.
-	unsigned int get_start_CPM();
-	bool does_DSL_CPM();
+	unsigned int get_start_CPM() const;
 	void set_start_CPM(unsigned int startCPM);
-	void set_DSL_CPM(bool DSLCPM);
+	void set_DSL_CPM(bool DSL_CPM);
+    void set_MSM_CPM(bool MSM_CPM);
+    bool does_MSM_CPM() const;
+    bool does_DSL_CPM() const;
 
 
-	// World info logger.
+
+    // World info logger.
 
     void createLogger();
     WorldLogger* getWorldLogger();

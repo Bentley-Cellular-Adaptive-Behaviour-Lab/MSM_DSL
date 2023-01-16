@@ -1744,7 +1744,7 @@ void World::creationTimestep(int movie) {
 	this->set_up_cpm_dsl();
 
 	//on first timestep this sets up the CPM module
-//	if (REARRANGEMENT)
+//	if (MSM_REARRANGEMENT)
 //		diffAd->run_CPM();
 
 	if (this->does_DSL_CPM()) {
@@ -1779,12 +1779,16 @@ void World::simulateTimestep_MSM() {
         resetCellLevels();
 		updateMemAgents_MSM();
 
-//        if ( (timeStep > TIME_DIFFAD_STARTS) && REARRANGEMENT) {
+//        if ( (timeStep > TIME_DIFFAD_STARTS) && MSM_REARRANGEMENT) {
 //			this->diffAd->run_CPM();
 //		}
 
-        if ( (timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
-			this->diffAd->run_CPM();
+        if (this->does_MSM_CPM() && (timeStep > this->get_start_CPM())) {
+            assert(!this->does_DSL_CPM());
+            this->diffAd->run_CPM();
+        } else if ((timeStep > this->get_start_CPM()) && this->does_DSL_CPM()) {
+            assert(!this->does_MSM_CPM());
+            this->diffAd->run_CPM();
 		}
 
 		updateECagents_MSM();
@@ -7570,12 +7574,8 @@ Env *World::findHighestConcPosition(MemAgent* memAgent,
 	return chosenEnv;
 }
 
-unsigned int World::get_start_CPM() {
+unsigned int World::get_start_CPM() const {
 	return this->m_start_CPM;
-}
-
-bool World::does_DSL_CPM() {
-	return this->m_DSL_CPM;
 }
 
 void World::set_start_CPM(const unsigned int startCPM) {
@@ -7584,4 +7584,16 @@ void World::set_start_CPM(const unsigned int startCPM) {
 
 void World::set_DSL_CPM(const bool DSL_CPM) {
 	this->m_DSL_CPM = DSL_CPM;
+}
+
+void World::set_MSM_CPM(bool MSM_CPM) {
+    this->m_MSM_CPM = MSM_CPM;
+}
+
+bool World::does_MSM_CPM() const {
+    return this->m_MSM_CPM;
+}
+
+bool World::does_DSL_CPM() const {
+    return this->m_DSL_CPM;
 }

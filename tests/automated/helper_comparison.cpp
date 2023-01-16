@@ -2,8 +2,14 @@
 // Created by Thomas Mead on 06/12/2022.
 //
 
+#include <sys/stat.h>
+#include <unistd.h>
+#include <string>
+#include <fstream>
+
 #include "helper_comparison.h"
 
+#include "../../src/core/CPM_module.h"
 #include "../../src/core/coordinates.h"
 #include "../../src/core/environment.h"
 #include "../../src/core/EC.h"
@@ -587,23 +593,80 @@ void ShufflingTest::SetUp() {
     std::vector<double> params{};
     this->m_world = new World(50,50,50,1.0,0.0,params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
-
-    // Turn on cell shuffling.
-    this->m_world->set_DSL_CPM(true);
-    // Set
+    createTissue();
 }
 
-void ShufflingTest::run_MSM_timestep() {
-    this->m_world->simulateTimestep_MSM();
+void ShufflingTest::run_test_timestep() {
+    int movie = 0;
+
+    this->m_world->timeStep++;
+    if (this->m_world->timeStep == 0) {
+        this->m_world->creationTimestep(movie);
+    } else {
+        std::cout << "Time : " << this->m_world->timeStep << "\n";
+        for (EC* ec : this->m_world->ECagents) {
+            // Clear the vector of neighbouring cells.
+            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
+                ec->getNeighCellVector().clear();
+            }
+            ec->filopodiaExtensions.clear();
+            ec->filopodiaRetractions.clear();
+            ec->MSM_VEGF = 0;
+        }
+
+        this->m_world->resetCellLevels();
+        this->m_world->updateMemAgents_MSM();
+
+        // Before evaluating CPM, force the
+        // cell levels of active VEGFR to a
+        // particular level.
+        std::cout << "Updating cell levels." << "\n";
+
+        for (auto *cellAgent : this->m_world->ECagents) {
+            if (cellAgent->cell_number % 2 == 0) {
+                cellAgent->activeVEGFRtot = 1000;
+            } else {
+                cellAgent->activeVEGFRtot = 0;
+            }
+        }
+
+        std::cout << "Running CPM." << "\n";
+
+        if (this->m_world->does_MSM_CPM()) {
+            assert(!this->m_world->does_DSL_CPM());
+        }
+
+        if (this->m_world->does_DSL_CPM()) {
+            assert(!this->m_world->does_MSM_CPM());
+        }
+
+        if ((this->m_world->does_MSM_CPM() || this->m_world->does_DSL_CPM())
+            && (this->m_world->timeStep > this->m_world->get_start_CPM())) {
+            this->m_world->diffAd->run_CPM();
+            // After the CPM has run,
+            // evaluate the cells and
+            // log the results.
+            std::cout << "Evaluating cells." << "\n";
+            m_results.push_back(evaluate_cells(this->m_world->timeStep));
+        }
+
+        this->m_world->updateECagents_MSM();
+        this->m_world->updateEnvironment_MSM();
+    }
+}
+
+void ShufflingTest::run(const unsigned int timestep) {
+    for (unsigned int i = 0; i <= timestep; i++) {
+        run_test_timestep();
+    }
 }
 
 void ShufflingTest::createTissue() {
-    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 3, 3));
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
 
-    // Add VEGF_VEGFR2 to cell type.
+    cellType->add_protein(new Protein("VEGF_VEGFR2", PROTEIN_LOCATION_MEMBRANE, 0, 0, -1, 1));
 
-
-    auto tissueType = this->m_tissueContainer->define_tissue_type("TissueType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
     auto Vessel_Pos = Coordinates(25, 25, 25);
     this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
 
@@ -617,19 +680,142 @@ void ShufflingTest::createTissue() {
             memAgent->JunctionTest(false);
         }
 
+        // Get every other cell and set its
+        // level of VEGF_VEGFR2 to 1000.
+        if (cellAgent->cell_number % 2 == 0) {
+            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 1000, 0);
+            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 1000, 1);
+        }
+
         // Ensure that memAgents know about their environment neighbours.
         // We do the junction test separately in the actual test body.
         cellAgent->calcVonNeighs();
     }
 }
 
-Tissue_Container* ShufflingTest::getTissueContainer() {
-    return this->m_tissueContainer;
+World* ShufflingTest::getWorld() {
+    return this->m_world;
+}
+
+unsigned int ShufflingTest::count_inactive_cells(EC* ec) {
+    unsigned int count = 0;
+    // If we're not using the DSL CPM,
+    // then we're using the MSM CPM by
+    // default.
+    auto uses_DSL_CPM = getWorld()->does_DSL_CPM();
+
+    // Check just in case I've set these both to true or false.
+    // One of these should always be active, and the other inactive.
+    assert(uses_DSL_CPM != getWorld()->does_MSM_CPM());
+    for (auto *neighCell : ec->getNeighCellVector()) {
+        if (uses_DSL_CPM) {
+            if (neighCell->get_cell_protein_level("VEGF_VEGFR2", 0) < 10) {
+                count++;
+            }
+        } else {
+            if (neighCell->activeVEGFRtot > 10) {
+                count++;
+            }
+        }
+
+    }
+    return count;
+}
+
+unsigned int ShufflingTest::count_active_cells(EC* ec) {
+    unsigned int count = 0;
+    // If we're not using the DSL CPM,
+    // then we're using the MSM CPM by
+    // default.
+    auto uses_DSL_CPM = getWorld()->does_DSL_CPM();
+
+    // Check just in case I've set these both to true or false.
+    // One of these should always be active, and the other inactive.
+    assert(uses_DSL_CPM != getWorld()->does_MSM_CPM());
+    for (auto *neighCell : ec->getNeighCellVector()) {
+        if (uses_DSL_CPM) {
+            if (neighCell->get_cell_protein_level("VEGF_VEGFR2", 0) > 10) {
+                count++;
+            }
+        } else {
+            if (neighCell->activeVEGFRtot > 10) {
+                count++;
+            }
+        }
+
+    }
+    return count;
+}
+
+std::vector<unsigned int> *ShufflingTest::evaluate_cells(const unsigned int timestep) {
+    // Create a vector. Add the timestep to it.
+    // Go over all cells.
+    // For each cell, add the number of inactive
+    // and active neighbours.
+    auto *values = new std::vector<unsigned int>();
+    values->push_back(timestep);
+    for (auto *cell : m_world->ECagents) {
+        values->push_back(count_inactive_cells(cell));
+        values->push_back(count_active_cells(cell));
+    }
+    return values;
+}
+
+// https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exists-using-standard-c-c11-14-17-c
+inline bool ShufflingTest::file_exists(const std::string& name) {
+    struct stat buffer;
+    return (stat (name.c_str(), &buffer) == 0);
+}
+
+
+void ShufflingTest::create_outfile() {
+    if (m_world->does_DSL_CPM() && !m_world->does_MSM_CPM()) {
+        std::string file_string = "test_DSL_CPM.csv";
+        // Delete file if it already exists.
+        if (file_exists(file_string)) {
+            std::remove(file_string.c_str());
+        }
+        save_results(file_string);
+
+    } else if (!m_world->does_DSL_CPM() && m_world->does_MSM_CPM()) {
+        std::string file_string = "test_MSM_CPM.csv";
+        // Delete file if it already exists.
+        if (file_exists(file_string)) {
+            std::remove(file_string.c_str());
+        }
+        save_results(file_string);
+    }
+}
+
+void ShufflingTest::save_results(const std::string &file_string) {
+    std::ofstream file;
+    file.open(file_string.c_str(), std::ios_base::app);
+    std::string header = "Timestep,";
+    const unsigned int n_cells = (m_results.at(0)->size() - 1) / 2;
+    for (unsigned int i = 1; i <= n_cells; i++) {
+        header += "cell_" + std::to_string(i) + "_inactive_neighs,";
+        header += "cell_" + std::to_string(i) + "_active_neighs,";
+    }
+    header += "\n";
+
+    file << header;
+
+    for (auto *result : this->m_results) {
+        for (auto value : *result) {
+            file << std::to_string(value) << ",";
+        }
+        file << "\n";
+    }
+    file.close();
 }
 
 void ShufflingTest::TearDown() {
-
+    for (auto *result : m_results) {
+        delete result;
+    }
 }
+
+
 
 /*****************************************************************************************
 ******************************************************************************************/

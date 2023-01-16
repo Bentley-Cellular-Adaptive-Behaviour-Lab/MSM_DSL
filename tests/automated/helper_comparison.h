@@ -222,13 +222,21 @@ private:
     World *m_world;
     Tissue *m_tissue;
     Tissue_Container *m_tissueContainer;
+    std::vector<std::vector<unsigned int>*> m_results;
 protected:
     void SetUp() override;
     void TearDown() override;
 public:
+    void run(const unsigned int timestep);
     void createTissue();
-    void run_MSM_timestep();
-    Tissue_Container* getTissueContainer();
+    void run_test_timestep();
+    World* getWorld();
+    unsigned int count_inactive_cells(EC* ec);
+    unsigned int count_active_cells(EC* ec);
+    std::vector<unsigned int>* evaluate_cells(unsigned int timestep);
+    void create_outfile();
+    void save_results(const std::string &file_string);
+    inline bool file_exists(const std::string& name);
 };
 
 #endif //OBJECTS_H_HELPER_COMPARISON_H
