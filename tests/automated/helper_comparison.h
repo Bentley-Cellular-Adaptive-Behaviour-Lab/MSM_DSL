@@ -234,8 +234,8 @@ public:
     unsigned int count_inactive_cells(EC* ec);
     unsigned int count_active_cells(EC* ec);
     std::vector<unsigned int>* evaluate_cells(unsigned int timestep);
-    void create_outfile();
-    void save_results(const std::string &file_string);
+    void create_outfiles();
+    void save_neigh_results(const std::string &file_string);
     inline bool file_exists(const std::string& name);
 };
 
