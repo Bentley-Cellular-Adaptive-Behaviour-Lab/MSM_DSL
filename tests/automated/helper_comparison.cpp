@@ -734,15 +734,14 @@ unsigned int ShufflingTest::count_active_cells(EC* ec) {
     assert(uses_DSL_CPM != getWorld()->does_MSM_CPM());
     for (auto *neighCell : ec->getNeighCellVector()) {
         if (uses_DSL_CPM) {
-            if (neighCell->get_cell_protein_level("VEGF_VEGFR2", 0) > 10) {
+            if (neighCell->get_cell_protein_level("VEGF_VEGFR2", 0) > 200) {
                 count++;
             }
         } else {
-            if (neighCell->activeVEGFRtot > 10) {
+            if (neighCell->activeVEGFRtot > 200) {
                 count++;
             }
         }
-
     }
     return count;
 }
