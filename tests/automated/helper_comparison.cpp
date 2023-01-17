@@ -682,10 +682,10 @@ void ShufflingTest::createTissue() {
         }
 
         // Get every other cell and set its
-        // level of VEGF_VEGFR2 to 1000.
+        // level of VEGF_VEGFR2 to 500
         if (cellAgent->cell_number % 2 == 0) {
-            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 1000, 0);
-            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 1000, 1);
+            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 500, 0);
+            cellAgent->set_cell_protein_level("VEGF_VEGFR2", 500, 1);
         }
 
         // Ensure that memAgents know about their environment neighbours.
