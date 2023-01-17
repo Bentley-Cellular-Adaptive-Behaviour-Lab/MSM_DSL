@@ -1915,6 +1915,10 @@ void World::updateMemAgents_MSM() {
 
 			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
 
+            if (memp->junction) {
+                memp->neighCellSearch(false);
+            }
+
             // Run ODES, then update the cell's level of that particular protein.
 
             if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
