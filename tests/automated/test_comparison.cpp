@@ -590,33 +590,22 @@ TEST_F(NeighCellVectorTest, MonolayerTest) {
     EXPECT_TRUE(cell_9_found);
 }
 
-TEST_F(ShufflingTest, ShuffleMSMTest) {
-    // Checks that the shuffling is able to occur
-    // with the MSM cellular potts model.
-    // Turn on MSM CPM - uses activeVEGFRtot.
-    getWorld()->set_MSM_CPM(true);
-    getWorld()->set_DSL_CPM(false);
-    run(10);
-}
-
-TEST_F(ShufflingTest, ShuffleDSLTest) {
-    // Checks that the shuffling is able to occur
-    // with the DSL cellular potts model.
-    // Turn on MSM CPM - uses activeVEGFRtot.
-    getWorld()->set_MSM_CPM(false);
-    getWorld()->set_DSL_CPM(true);
-    run(10);
-    create_outfile();
-}
-
 TEST_F(ShufflingTest, MSMResultsTest) {
     // Checks that the shuffling is able to occur
     // with the MSM cellular potts model.
     // Turn on MSM CPM - uses activeVEGFRtot.
     getWorld()->set_MSM_CPM(true);
     getWorld()->set_DSL_CPM(false);
-    run(500);
+    run(200);
+    create_outfiles();
 }
 
 TEST_F(ShufflingTest, DSLResultsTest) {
+    // Checks that the shuffling is able to occur
+    // with the MSM cellular potts model.
+    // Turn on MSM CPM - uses activeVEGFRtot.
+    getWorld()->set_MSM_CPM(false);
+    getWorld()->set_DSL_CPM(true);
+    run(200);
+    create_outfiles();
 }
