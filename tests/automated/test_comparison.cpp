@@ -598,6 +598,11 @@ TEST_F(ShufflingTest, MSMResultsTest) {
     getWorld()->set_DSL_CPM(false);
     run(200);
     create_outfiles();
+    std::vector<float> target = std::vector<float> {3,3,5,5,3,3,5,5,4,4,5,5,3,3,5,5,3,3};
+    auto last = getResults().back();
+    for (unsigned int i = 1; i < (int) target.size(); i++) {
+        EXPECT_EQ(last->at(i), target.at(i - 1));
+    }
 }
 
 TEST_F(ShufflingTest, DSLResultsTest) {
@@ -608,4 +613,9 @@ TEST_F(ShufflingTest, DSLResultsTest) {
     getWorld()->set_DSL_CPM(true);
     run(200);
     create_outfiles();
+    std::vector<int> target = std::vector<int> {3,3,5,5,3,3,5,5,4,4,5,5,3,3,5,5,3,3};
+    auto last = getResults().back();
+    for (unsigned int i = 1; i < (int) target.size(); i++) {
+        EXPECT_EQ(last->at(i), target.at(i - 1));
+    }
 }

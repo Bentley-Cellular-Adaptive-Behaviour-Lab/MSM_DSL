@@ -807,6 +807,10 @@ void ShufflingTest::save_neigh_results(const std::string &file_string) {
     file.close();
 }
 
+std::vector<std::vector<unsigned int>*> ShufflingTest::getResults() {
+    return this->m_results;
+}
+
 void ShufflingTest::TearDown() {
     for (auto *result : m_results) {
         delete result;
@@ -817,3 +821,240 @@ void ShufflingTest::TearDown() {
 
 /*****************************************************************************************
 ******************************************************************************************/
+
+// RUN MSM TIMESTEPS. CHECK USAGE OF "ACTIN" OVER TIME.
+
+void ProteinUsageTest::SetUp() {
+    std::vector<double> params{};
+    this->m_world = new World(50,50,50,1.0,0.0,params);
+    this->m_tissueContainer = new Tissue_Container(this->m_world);
+    createTissue();
+}
+
+void ProteinUsageTest::createTissue() {
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+
+    // Add "actin", which will decrease when the filopodia extends.
+    cellType->add_protein(new Protein("ACTIN", PROTEIN_LOCATION_CELL, 512, 0, -1, 1));
+
+    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+    auto Vessel_Pos = Coordinates(25, 25, 25);
+    this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
+
+    // Assign tissue object information to fixture.
+    this->m_tissue = this->m_tissueContainer->m_tissues.at(0);
+
+    for (auto *cellAgent : this->m_tissue->m_cell_agents) {
+        // Ensure that memAgents know about their environment neighbours.
+        for (auto *memAgent : cellAgent->nodeAgents) {
+            memAgent->checkNeighs(false);
+            memAgent->JunctionTest(false);
+        }
+
+        // Ensure that memAgents know about their environment neighbours.
+        // We do the junction test separately in the actual test body.
+        cellAgent->calcVonNeighs();
+    }
+}
+
+World* ProteinUsageTest::getWorld() {
+    return this->m_world;
+}
+
+void ProteinUsageTest::setDSLExtension(const bool doesDSLExtension) {
+    this->m_DSL_extension = doesDSLExtension;
+}
+
+bool ProteinUsageTest::doesDSLExtension() const {
+    return this->m_DSL_extension;
+}
+
+void ProteinUsageTest::do_MSM_timestep() {
+    int movie = 0;
+
+    this->m_world->timeStep++;
+    if (this->m_world->timeStep == 0) {
+        this->m_world->creationTimestep(movie);
+    } else {
+        std::cout << "Time : " << this->m_world->timeStep << "\n";
+        for (EC* ec : this->m_world->ECagents) {
+            // Clear the vector of neighbouring cells.
+            if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
+                ec->getNeighCellVector().clear();
+            }
+            ec->filopodiaExtensions.clear();
+            ec->filopodiaRetractions.clear();
+            ec->MSM_VEGF = 0;
+        }
+
+        this->m_world->resetCellLevels();
+        this->m_world->updateMemAgents_MSM();
+
+        std::cout << "Running CPM." << "\n";
+
+        if (this->m_world->does_MSM_CPM()) {
+            assert(!this->m_world->does_DSL_CPM());
+        }
+
+        if (this->m_world->does_DSL_CPM()) {
+            assert(!this->m_world->does_MSM_CPM());
+        }
+
+        this->m_world->updateECagents_MSM();
+        this->m_world->updateEnvironment_MSM();
+    }
+}
+
+void ProteinUsageTest::do_MSM_memAgent_update() {
+    int upto;
+    int i, j;
+
+    MemAgent * memp;
+    int uptoE = m_world->ECagents.size();
+    int uptoN, uptoS, uptoSu;
+    bool tipDeleteFlag;
+    float randomChance;
+
+    bool deleted;
+
+    m_world->JunctionAgents.clear();
+    m_world->ALLmemAgents.clear();
+    for (i = 0; i < uptoE; i++) {
+        uptoN = m_world->ECagents[i]->nodeAgents.size();
+        uptoS = m_world->ECagents[i]->springAgents.size();
+        uptoSu = m_world->ECagents[i]->surfaceAgents.size();
+
+        for (j = 0; j < uptoN; j++) m_world->ALLmemAgents.push_back(m_world->ECagents[i]->nodeAgents[j]);
+        for (j = 0; j < uptoS; j++) m_world->ALLmemAgents.push_back(m_world->ECagents[i]->springAgents[j]);
+        for (j = 0; j < uptoSu; j++) m_world->ALLmemAgents.push_back(m_world->ECagents[i]->surfaceAgents[j]);
+    }
+    upto = m_world->ALLmemAgents.size();
+    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //reorder agents randomly
+    //random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
+    m_world->new_random_shuffle(m_world->ALLmemAgents.begin(), m_world->ALLmemAgents.end());
+    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
+    for (i = 0; i < upto; i++) {
+
+        tipDeleteFlag = false;
+
+        memp = m_world->ALLmemAgents[i];
+        memp->assessed = true;
+        memp->addedJunctionList = false;
+        memp->vonNeighSearch();
+
+        // Update the level of environmental proteins seen by the cell.
+        memp->update_env_levels();
+
+        //delete spring agents sitting along filopodia scheduled for deletion during previous fil retraction
+        deleted = m_world->delete_if_spring_agent_on_a_retracted_fil(memp);
+
+        if (!deleted) {
+            //reset memAgents active Notch level ready for new binding
+            memp->activeNotch = 0.0f;
+
+            //this is needed to tell if triangle positions have changed
+            //on the fly surface agent coverage code
+            if (on_the_fly_surface_agents) {
+                memp->store_previous_triangle_pos();
+            }
+
+            randomChance = m_world->new_rand() / (float) NEW_RAND_MAX;
+
+            memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
+
+            memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
+
+            if (memp->junction) {
+                memp->neighCellSearch(false);
+            }
+
+            // Run ODES, then update the cell's level of that particular protein.
+
+            if (PROTEIN_TESTING && m_world->odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
+                m_world->odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
+                memp->passBackBufferLevels();
+            }
+
+            //if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
+            if (memp->FIL == TIP) {
+                if (VEIL_ADVANCE) {
+                    if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
+                        if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != m_world->ECagents[0])&&(memp->Cell != m_world->ECagents[ECELLS - 1])) {
+                            memp->veilAdvance();
+                        } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+                            memp->veilAdvance();
+                        }
+                    }
+                }
+
+                // Retract filopodia if inactive.
+                if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
+                    || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
+                    if (memp->filRetract()) {
+                        tipDeleteFlag = true;
+                        m_world->deleteOldGridRef(memp, true);
+                        delete memp;
+                    }
+                        //NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
+                    else {
+                        memp->calcRetractDist();
+                    }
+                }
+                //------------------------------------
+
+
+                //if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
+                if (!tipDeleteFlag) {
+                    memp->VEGFRactive = 0.0f; //reset VEGFR activation level
+                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != m_world->ECagents[0])&&(memp->Cell != m_world->ECagents[ECELLS - 1])) {
+                        if (memp->vonNeu) {
+                            memp->VEGFRresponse();
+                        }
+                    } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
+                        if (memp->vonNeu) {
+                            memp->VEGFRresponse();
+                        }
+                    }
+                    if (memp->junction && !FEEDBACK_TESTING) {
+                        memp->NotchResponse();
+                    }
+
+                    ///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
+                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != m_world->ECagents[0])&&(memp->Cell != m_world->ECagents[ECELLS - 1])) {
+                        //memp->ActinFlow();
+                        memp->TokenTrading();
+                    }
+                    else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
+                        //memp->ActinFlow();
+                        memp->TokenTrading();
+                    }
+                }
+            }
+        }
+    }
+
+    // the force of new memAgent movements made in functions above are conveyed through the springs following Hookes Law to move all memAgents within the mesh
+    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != m_world->ECagents[0]) && (memp->Cell != m_world->ECagents[ECELLS - 1])) {
+        m_world->calculateSpringAdjustments();
+    } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+        m_world->calculateSpringAdjustments();
+    }
+}
+
+void ProteinUsageTest::do_VEGFR_response() {
+
+}
+
+void ProteinUsageTest::do_filopodia_extension() {
+
+}
+
+void ProteinUsageTest::TearDown() {
+
+}

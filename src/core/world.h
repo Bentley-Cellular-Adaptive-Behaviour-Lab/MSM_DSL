@@ -302,8 +302,6 @@ public:
     bool does_MSM_CPM() const;
     bool does_DSL_CPM() const;
 
-
-
     // World info logger.
 
     void createLogger();

@@ -1070,7 +1070,7 @@ float CPM_module::calc_Jsum_individual(MemAgent * individual, MedAgent* medInd) 
                             J_sumL += J_TS;
                         } else {
                             J_sumL += J_TT;
-							
+
                         }
 						
                     }

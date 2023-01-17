@@ -231,12 +231,34 @@ public:
     void createTissue();
     void run_test_timestep();
     World* getWorld();
+    std::vector<std::vector<unsigned int>*> getResults();
     unsigned int count_inactive_cells(EC* ec);
     unsigned int count_active_cells(EC* ec);
     std::vector<unsigned int>* evaluate_cells(unsigned int timestep);
     void create_outfiles();
     void save_neigh_results(const std::string &file_string);
     inline bool file_exists(const std::string& name);
+};
+
+class ProteinUsageTest : public ::testing::Test {
+private:
+    World *m_world;
+    Tissue_Container *m_tissueContainer;
+    Tissue *m_tissue;
+    float m_protein_usage_val;
+    bool m_DSL_extension = false; // If false (default), do MSM extension.
+protected:
+    void SetUp() override;
+    void TearDown() override;
+public:
+    void createTissue();
+    World* getWorld();
+    void setDSLExtension(bool doesDSLExtension);
+    [[nodiscard]] bool doesDSLExtension() const;
+    void do_MSM_timestep();
+    void do_MSM_memAgent_update();
+    void do_VEGFR_response();
+    void do_filopodia_extension();
 };
 
 #endif //OBJECTS_H_HELPER_COMPARISON_H
