@@ -767,7 +767,7 @@ inline bool ShufflingTest::file_exists(const std::string& name) {
 }
 
 
-void ShufflingTest::create_outfile() {
+void ShufflingTest::create_outfiles() {
     if (m_world->does_DSL_CPM() && !m_world->does_MSM_CPM()) {
         std::string file_string = "test_DSL_CPM.csv";
         // Delete file if it already exists.
