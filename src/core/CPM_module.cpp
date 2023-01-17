@@ -965,9 +965,10 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
                         worldP->grid[m][n][p].getMids()[zed]->checkNeighs(true);
                         //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
                         //so for this guy, checkNeighs, then put through Jsum calc..
-						if (worldP->does_DSL_CPM()) {
-							JsumLocal += calc_Jsum_individual_DSL(worldP->grid[m][n][p].getMids()[zed], NULL);
-						} else {
+						if (worldP->does_DSL_CPM() && !worldP->does_MSM_CPM()) {
+                            JsumLocal += calc_Jsum_individual_DSL(worldP->grid[m][n][p].getMids()[zed], NULL);
+                        }
+						if (worldP->does_MSM_CPM() && !worldP->does_DSL_CPM()) {
 							JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
 						}
                     }
@@ -979,11 +980,12 @@ float CPM_module::calcLocal_Jsum(MemAgent * replaced_mem, MedAgent * replaced_me
             //cout<<worldP->grid[m][n][p].Mids[zed]->DiffAd_neighs.size()<<endl;
             //so for this guy, checkNeighs, then put through Jsum calc..
             //cout<<m<<" "<<n<<" "<<p<<endl;
-			if (worldP->does_DSL_CPM()) {
+			if (worldP->does_DSL_CPM() && !worldP->does_MSM_CPM()) {
 				JsumLocal += calc_Jsum_individual_DSL(NULL, worldP->grid[m][n][p].getMed());
-			} else {
-				JsumLocal += calc_Jsum_individual(NULL, worldP->grid[m][n][p].getMed());
 			}
+            if (worldP->does_MSM_CPM() && !worldP->does_DSL_CPM()) {
+                JsumLocal += calc_Jsum_individual(worldP->grid[m][n][p].getMids()[zed], NULL);
+            }
 		}
 		}
 
