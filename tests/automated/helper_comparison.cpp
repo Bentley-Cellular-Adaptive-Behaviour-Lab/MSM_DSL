@@ -774,19 +774,18 @@ void ShufflingTest::create_outfiles() {
         if (file_exists(file_string)) {
             std::remove(file_string.c_str());
         }
-        save_results(file_string);
-
+        save_neigh_results(file_string);
     } else if (!m_world->does_DSL_CPM() && m_world->does_MSM_CPM()) {
         std::string file_string = "test_MSM_CPM.csv";
         // Delete file if it already exists.
         if (file_exists(file_string)) {
             std::remove(file_string.c_str());
         }
-        save_results(file_string);
+        save_neigh_results(file_string);
     }
 }
 
-void ShufflingTest::save_results(const std::string &file_string) {
+void ShufflingTest::save_neigh_results(const std::string &file_string) {
     std::ofstream file;
     file.open(file_string.c_str(), std::ios_base::app);
     std::string header = "Timestep,";
