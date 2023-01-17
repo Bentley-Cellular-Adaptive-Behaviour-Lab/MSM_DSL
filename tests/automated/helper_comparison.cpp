@@ -624,7 +624,8 @@ void ShufflingTest::run_test_timestep() {
 
         for (auto *cellAgent : this->m_world->ECagents) {
             if (cellAgent->cell_number % 2 == 0) {
-                cellAgent->activeVEGFRtot = 1000;
+                cellAgent->activeVEGFRtot = 500;
+                cellAgent->set_cell_protein_level("VEGF_VEGFR2", 500, 0);
             } else {
                 cellAgent->activeVEGFRtot = 0;
             }
