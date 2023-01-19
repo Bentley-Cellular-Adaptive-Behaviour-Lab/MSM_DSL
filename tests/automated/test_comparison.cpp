@@ -597,7 +597,9 @@ TEST_F(ShufflingTest, MSMResultsTest) {
     getWorld()->set_MSM_CPM(true);
     getWorld()->set_DSL_CPM(false);
     run(200);
-    create_outfiles();
+//    create_outfiles();
+    // Check we have the results we expect. This should
+    // be the same as the MSM.
     std::vector<float> target = std::vector<float> {3,3,5,5,3,3,5,5,4,4,5,5,3,3,5,5,3,3};
     auto last = getResults().back();
     for (unsigned int i = 1; i < (int) target.size(); i++) {
