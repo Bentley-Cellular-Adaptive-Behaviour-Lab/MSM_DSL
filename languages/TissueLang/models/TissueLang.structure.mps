@@ -352,16 +352,6 @@
       <property role="TrG5h" value="_doingParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="5evXM1Eyl4_" role="1TKVEl">
-      <property role="IQ2nx" value="6025806545043411237" />
-      <property role="TrG5h" value="_DEBUG_WIDTH_GRIDPOINTS" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
-    <node concept="1TJgyi" id="5evXM1Eyl4C" role="1TKVEl">
-      <property role="IQ2nx" value="6025806545043411240" />
-      <property role="TrG5h" value="_DEBUG_HEIGHT_GRIDPOINTS" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyj" id="4v4kI3Dq7XG" role="1TKVEi">
       <property role="IQ2ns" value="5171349398070263660" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />

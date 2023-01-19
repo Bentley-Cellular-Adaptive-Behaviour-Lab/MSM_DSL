@@ -11,7 +11,9 @@
     <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang" version="0" />
     <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SignallingLang" version="0" />
   </languages>
-  <imports />
+  <imports>
+    <import index="rh4m" ref="r:cdead37a-42a7-4f39-9c0d-cf55bfbbc260(TestingTutorial.user_simulation)" implicit="true" />
+  </imports>
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
       <concept id="976479957056290890" name="ShapeLang.structure.ShapeContainer" flags="ng" index="3Bb2si">
@@ -229,6 +231,9 @@
       <node concept="3rtiFT" id="2qZrtTbPOkx" role="3rqWia">
         <ref role="3rtiFY" node="oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="3rtiFT" id="5H03a9kDJfq" role="3rqWia">
+        <ref role="3rtiFY" to="rh4m:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Na" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -244,6 +249,9 @@
       </node>
       <node concept="3rtiFT" id="2qZrtTbPOka" role="3rtiFW">
         <ref role="3rtiFY" node="oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="5H03a9kDJfn" role="3rtiFW">
+        <ref role="3rtiFY" to="rh4m:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Oi" role="3_zqUg">
@@ -267,6 +275,15 @@
       <node concept="3rtiFT" id="2qZrtTbPOko" role="3rtiFW">
         <ref role="3rtiFY" node="oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="5H03a9kDJfk" role="3_z4RZ">
+        <ref role="DdDrb" to="rh4m:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="5H03a9kDJfo" role="3rqWia">
+        <ref role="3rtiFY" to="rh4m:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="5H03a9kDJfp" role="3rtiFW">
+        <ref role="3rtiFY" to="rh4m:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9PT" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -283,6 +300,9 @@
       <node concept="DdDr8" id="2qZrtTbPOky" role="3_z4RZ">
         <ref role="DdDrb" node="oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
+      <node concept="DdDr8" id="5H03a9kDJfl" role="3_z4RZ">
+        <ref role="DdDrb" to="rh4m:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9RD" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -298,6 +318,9 @@
       </node>
       <node concept="DdDr8" id="2qZrtTbPOkz" role="3_z4Rx">
         <ref role="DdDrb" node="oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="5H03a9kDJfm" role="3_z4Rx">
+        <ref role="DdDrb" to="rh4m:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
   </node>

@@ -443,60 +443,6 @@
   </node>
   <node concept="1M2fIO" id="4dDC3GsoGBd">
     <ref role="1M2myG" to="nguq:5qSYbADreYt" resolve="CellShape_Rectangular" />
-    <node concept="EnEH3" id="5evXM1EDkLG" role="1MhHOB">
-      <ref role="EomxK" to="nguq:5evXM1Eyl4C" resolve="_DEBUG_HEIGHT_GRIDPOINTS" />
-      <node concept="1LLf8_" id="5evXM1EDkMH" role="1LXaQT">
-        <node concept="3clFbS" id="5evXM1EDkMI" role="2VODD2">
-          <node concept="3clFbF" id="5evXM1EDlg_" role="3cqZAp">
-            <node concept="2OqwBi" id="5evXM1EDkYS" role="3clFbG">
-              <node concept="EsrRn" id="5evXM1EDkPN" role="2Oq$k0" />
-              <node concept="2qgKlT" id="5evXM1EDl9M" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:2siCC6BFTh5" resolve="get_rectangular_height_gridpoints" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="Eqf_E" id="5evXM1EL3Z9" role="EtsB7">
-        <node concept="3clFbS" id="5evXM1EL3Za" role="2VODD2">
-          <node concept="3cpWs6" id="5evXM1EL41U" role="3cqZAp">
-            <node concept="2OqwBi" id="5evXM1EL4vq" role="3cqZAk">
-              <node concept="EsrRn" id="5evXM1EL4vr" role="2Oq$k0" />
-              <node concept="2qgKlT" id="5evXM1EL4vs" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:2siCC6BFTh5" resolve="get_rectangular_height_gridpoints" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="EnEH3" id="5evXM1EDlmp" role="1MhHOB">
-      <ref role="EomxK" to="nguq:5evXM1Eyl4_" resolve="_DEBUG_WIDTH_GRIDPOINTS" />
-      <node concept="1LLf8_" id="5evXM1EDlpu" role="1LXaQT">
-        <node concept="3clFbS" id="5evXM1EDlpv" role="2VODD2">
-          <node concept="3clFbF" id="5evXM1EDlpN" role="3cqZAp">
-            <node concept="2OqwBi" id="5evXM1EDlyz" role="3clFbG">
-              <node concept="EsrRn" id="5evXM1EDlpM" role="2Oq$k0" />
-              <node concept="2qgKlT" id="5evXM1EDm7y" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:2siCC6BFJkZ" resolve="get_rectangular_width_gridpoints" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="Eqf_E" id="5evXM1EL3hO" role="EtsB7">
-        <node concept="3clFbS" id="5evXM1EL3hP" role="2VODD2">
-          <node concept="3cpWs6" id="5evXM1EL3rx" role="3cqZAp">
-            <node concept="2OqwBi" id="5evXM1EL3T1" role="3cqZAk">
-              <node concept="EsrRn" id="5evXM1EL3T2" role="2Oq$k0" />
-              <node concept="2qgKlT" id="5evXM1EL3T3" role="2OqNvi">
-                <ref role="37wK5l" to="4ebj:2siCC6BFJkZ" resolve="get_rectangular_width_gridpoints" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="9S07l" id="4dDC3GsoGBf" role="9Vyp8">
       <node concept="3clFbS" id="4dDC3GsoGBg" role="2VODD2">
         <node concept="3cpWs6" id="4dDC3GsoGF9" role="3cqZAp">
