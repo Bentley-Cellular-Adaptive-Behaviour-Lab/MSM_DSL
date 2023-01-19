@@ -831,6 +831,22 @@ void ProteinUsageTest::SetUp() {
     createTissue();
 }
 
+void ProteinUsageTest::createEnvironment() {
+    Env *ep;
+    for (int x = 0; x < m_world->gridXDimensions; x++) {
+        for (int y = 0; y < m_world->gridYDimensions; y++) {
+            for (int z = 0; z < m_world->gridYDimensions; z++) {
+                if (m_world->grid[x][y][z].getType() == const_E) {
+                    auto targetProtein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100);
+                    ep = m_world->grid[x][y][z].getEid();
+                    ep->owned_proteins.push_back(targetProtein);
+                    ep->VEGF = 0.8;
+                }
+            }
+        }
+    }
+}
+
 void ProteinUsageTest::createTissue() {
     auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
 
