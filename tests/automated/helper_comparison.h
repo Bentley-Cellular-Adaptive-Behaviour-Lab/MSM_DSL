@@ -247,6 +247,7 @@ private:
     Tissue *m_tissue;
     float m_protein_usage_val;
     bool m_DSL_extension = false; // If false (default), do MSM extension.
+    std::vector<std::vector<float>*> m_results;
 protected:
     void SetUp() override;
     void TearDown() override;
