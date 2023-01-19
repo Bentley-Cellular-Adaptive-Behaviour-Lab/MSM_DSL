@@ -12,10 +12,10 @@
 #include "../../src/core/CPM_module.h"
 #include "../../src/core/coordinates.h"
 #include "../../src/core/environment.h"
-#include "../../src/core/EC.h"
+#include "../../src/core/filopodia.h"
 #include "../../src/core/memAgents.h"
 #include "../../src/core/location.h"
-#include "../../src/core/objects.h"
+#include "../../src/core/spring.h"
 #include "../../src/core/world.h"
 
 #include "../../src/dsl/species/protein.h"
