@@ -59,6 +59,7 @@
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
       <concept id="3125878369731540203" name="SignallingLang.structure.SignallingContainer" flags="ng" index="3_zqOV">
+        <reference id="4970340729092561229" name="_simulationContainerRef" index="1ANuJ2" />
         <child id="3125878369731540800" name="_species" index="3_zqUg" />
         <child id="3125878369731540802" name="_processes" index="3_zqUi" />
         <child id="3125878369731540805" name="_parameters" index="3_zqUl" />
@@ -111,6 +112,7 @@
   </registry>
   <node concept="3_zqOV" id="oymmRcD7oq">
     <property role="TrG5h" value="DLL4_Notch_Pathway" />
+    <ref role="1ANuJ2" node="oymmRcD7or" resolve="S" />
     <node concept="3_zqcU" id="oymmRcDa8q" role="3_zqUi">
       <property role="TrG5h" value="DLL4_NOTCH_BINDING" />
       <ref role="3JPVZP" node="oymmRcD9ZN" resolve="DLL4_NOTCH_ON" />
@@ -301,7 +303,7 @@
   </node>
   <node concept="2rkfJA" id="oymmRcD7or">
     <property role="2rFPwA" value="100" />
-    <property role="TrG5h" value="Simulation" />
+    <property role="TrG5h" value="S" />
     <ref role="1AQzYy" node="oymmRdeu$t" resolve="Shape" />
     <node concept="2rk7l3" id="oymmRcD7os" role="2rk6u4" />
     <node concept="2rk7nQ" id="oymmRcD7ot" role="2rk6u2">

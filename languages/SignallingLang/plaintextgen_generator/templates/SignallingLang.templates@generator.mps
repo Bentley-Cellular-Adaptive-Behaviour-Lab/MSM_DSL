@@ -2530,7 +2530,7 @@
                                     </node>
                                   </node>
                                   <node concept="3TrEf2" id="1A8JECtPHdm" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                                   </node>
                                 </node>
                                 <node concept="3TrcHB" id="1A8JECtPHdn" role="2OqNvi">
@@ -2580,7 +2580,7 @@
                                     </node>
                                   </node>
                                   <node concept="3TrEf2" id="1A8JECtPHdE" role="2OqNvi">
-                                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                                    <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                                   </node>
                                 </node>
                                 <node concept="3TrcHB" id="1A8JECtPHdF" role="2OqNvi">
@@ -4554,7 +4554,7 @@
                             <ref role="2Gs0qQ" node="1A8JECtPHrb" resolve="regulation" />
                           </node>
                           <node concept="3TrEf2" id="1A8JECtPHro" role="2OqNvi">
-                            <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                            <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                           </node>
                         </node>
                       </node>
@@ -12019,7 +12019,7 @@
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="6H13_o3q54s" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                                        <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="6H13_o3q54t" role="2OqNvi">
@@ -12069,7 +12069,7 @@
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="6H13_o3q54K" role="2OqNvi">
-                                        <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                                        <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="6H13_o3q54L" role="2OqNvi">
@@ -14396,7 +14396,7 @@
                                 <ref role="2Gs0qQ" node="6H13_o3q5ip" resolve="regulation" />
                               </node>
                               <node concept="3TrEf2" id="6H13_o3q5iA" role="2OqNvi">
-                                <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Modifier" />
+                                <ref role="3Tt5mk" to="w3cn:5jwDGo4A5Es" resolve="Parameter" />
                               </node>
                             </node>
                           </node>

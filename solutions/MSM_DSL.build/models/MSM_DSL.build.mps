@@ -375,13 +375,13 @@
       <node concept="55IIr" id="7VSzufWyu5J" role="398pKh" />
     </node>
     <node concept="2sgV4H" id="7VSzufWx5dk" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:1diLdO26mQ6" />
+      <ref role="1l3spb" to="ffeo:1diLdO26mQ6" resolve="mpsStandalone" />
       <node concept="398BVA" id="7VSzufWx5dl" role="2JcizS">
         <ref role="398BVh" node="7VSzufWx5dj" resolve="mps_home" />
       </node>
     </node>
     <node concept="2sgV4H" id="7VSzufWx5dm" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:5rNMDvYzelV" />
+      <ref role="1l3spb" to="ffeo:5rNMDvYzelV" resolve="mpsMakePlugin" />
       <node concept="398BVA" id="7VSzufWx5dn" role="2JcizS">
         <ref role="398BVh" node="7VSzufWx5dj" resolve="mps_home" />
         <node concept="2Ry0Ak" id="7VSzufWx5do" role="iGT6I">
@@ -490,10 +490,10 @@
     </node>
     <node concept="1l3spV" id="7VSzufWx5eD" role="1l3spN">
       <node concept="3_I8Xc" id="7VSzufWx5eL" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:1diLdO26H79" />
+        <ref role="3_I8Xa" to="ffeo:1diLdO26H79" resolve="languages" />
       </node>
       <node concept="3_I8Xc" id="7VSzufWx5eM" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:1aRUp2KiMC$" />
+        <ref role="3_I8Xa" to="ffeo:1aRUp2KiMC$" resolve="license" />
       </node>
       <node concept="3_I8Xc" id="7VSzufWx5eN" role="39821P">
         <ref role="3_I8Xa" to="ffeo:5HYJdC4wsjv" />
@@ -505,7 +505,7 @@
           </node>
         </node>
         <node concept="3ygNvl" id="7VSzufWx5eR" role="39821P">
-          <ref role="3ygNvj" to="ffeo:3cxBkkDa4_O" />
+          <ref role="3ygNvj" to="ffeo:3cxBkkDa4_O" resolve="bin" />
           <node concept="3LWZYx" id="7VSzufWx5eS" role="1juEy9">
             <property role="3LWZYw" value="log.xml" />
           </node>
@@ -541,7 +541,7 @@
           </node>
         </node>
         <node concept="3ygNvl" id="7VSzufWx5f1" role="39821P">
-          <ref role="3ygNvj" to="ffeo:1diLdO26H7f" />
+          <ref role="3ygNvj" to="ffeo:1diLdO26H7f" resolve="lib" />
           <node concept="3LWZYq" id="7VSzufWx5f2" role="1juEy9">
             <property role="3LWZYl" value="MPS-src.zip" />
           </node>
@@ -559,22 +559,22 @@
             </node>
           </node>
           <node concept="1zDrgl" id="7VSzufWx5f9" role="39821P">
-            <ref role="1zDrgn" node="7VSzufWx5ds" resolve="MSM_DSL 1.0" />
+            <ref role="1zDrgn" node="7VSzufWx5ds" resolve="MSM_DSL 0.9" />
           </node>
         </node>
       </node>
       <node concept="398223" id="7VSzufWx5fa" role="39821P">
         <node concept="3_I8Xc" id="7VSzufWx5fb" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" />
+          <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="svn4idea" />
         </node>
         <node concept="3_I8Xc" id="7VSzufWx5fc" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" />
+          <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
         </node>
         <node concept="3_I8Xc" id="7VSzufWx5fd" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:4EdAnGErOtx" />
+          <ref role="3_I8Xa" to="ffeo:4EdAnGErOtx" resolve="mps-core" />
         </node>
         <node concept="3_I8Xc" id="7VSzufWx5fe" role="39821P">
-          <ref role="3_I8Xa" to="ffeo:1x6h9EwqP32" />
+          <ref role="3_I8Xa" to="ffeo:1x6h9EwqP32" resolve="mps-make" />
         </node>
         <node concept="m$_wl" id="7VSzufWx5ff" role="39821P">
           <ref role="m_rDy" node="7VSzufWx5es" resolve="MSM_DSL" />
@@ -634,7 +634,7 @@
         <ref role="m$f5T" node="7VSzufWx5er" resolve="MSM_DSL" />
       </node>
       <node concept="m$_yC" id="7VSzufWx5ey" role="m$_yJ">
-        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" />
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
       <node concept="m$_yC" id="1mg59dvZC$7" role="m$_yJ">
         <ref role="m$_y1" to="ffeo:6EN03E8oSte" resolve="jetbrains.mps.ide.make" />
@@ -1957,7 +1957,7 @@
     <property role="26EafI" value="-" />
     <property role="26FY9R" value="jetbrains.mps.Launcher" />
     <property role="TrG5h" value="MSM_DSLScripts" />
-    <ref role="1_kbm$" node="7VSzufWx5ds" resolve="MSM_DSL 1.0" />
+    <ref role="1_kbm$" node="7VSzufWx5ds" resolve="MSM_DSL 0.9" />
     <node concept="26Ea6D" id="7VSzufWx5l6" role="26FZ21">
       <property role="26Ea6C" value="Common IntelliJ Platform options:" />
       <property role="2eq24a" value="true" />

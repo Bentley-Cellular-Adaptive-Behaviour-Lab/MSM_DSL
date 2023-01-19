@@ -41,7 +41,7 @@
     <language slang="l:6b277d9a-d52d-416f-a209-1919bd737f50:org.iets3.core.expr.simpleTypes" version="1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="e2ea2fde-1878-4544-93a8-5100d2ecb2b5(Tutorial)" version="0" />
+    <module reference="1b5d9269-8b40-4fc9-a989-0ef19a9c17b2(BaseTutorial)" version="0" />
   </dependencyVersions>
 </solution>
 

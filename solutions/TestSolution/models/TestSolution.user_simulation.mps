@@ -79,7 +79,7 @@
       </concept>
       <concept id="6116071663379962152" name="SignallingLang.structure.Regulation" flags="ng" index="1gufZI">
         <property id="1740802122790832290" name="TranscriptionDelay" index="2x6hFG" />
-        <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
+        <reference id="6116071663379962524" name="Parameter" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
         <reference id="6116071663380263018" name="Target" index="1gv5qG" />
       </concept>

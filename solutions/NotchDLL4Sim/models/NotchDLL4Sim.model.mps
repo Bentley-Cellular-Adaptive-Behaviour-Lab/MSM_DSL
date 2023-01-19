@@ -8,7 +8,7 @@
     <use id="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac" name="SimulationsLang" version="0" />
     <use id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base" version="3" />
     <use id="b1ff4d68-a519-4928-8e36-de776040fb5a" name="TissueLang" version="0" />
-    <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang" version="0" />
+    <use id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SignallingLang" version="0" />
     <use id="6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0" name="org.iets3.core.expr.math" version="0" />
     <use id="6b277d9a-d52d-416f-a209-1919bd737f50" name="org.iets3.core.expr.simpleTypes" version="1" />
   </languages>
@@ -55,56 +55,56 @@
         <property id="5115872837157054173" name="value" index="30bXRw" />
       </concept>
     </language>
-    <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SpeciesLang">
-      <concept id="7336638036545640861" name="SpeciesLang.structure.ParameterReference" flags="ng" index="Cfe3L">
+    <language id="84970ad9-a964-4f15-a393-dc0fcd724c0f" name="SignallingLang">
+      <concept id="7336638036545640861" name="SignallingLang.structure.ParameterReference" flags="ng" index="Cfe3L">
         <reference id="7336638036545640862" name="target" index="Cfe3M" />
       </concept>
-      <concept id="1878314651098778609" name="SpeciesLang.structure.Reaction_Reference" flags="ng" index="DdDr8">
+      <concept id="1878314651098778609" name="SignallingLang.structure.Reaction_Reference" flags="ng" index="DdDr8">
         <reference id="1878314651098778610" name="ReactionReference" index="DdDrb" />
       </concept>
-      <concept id="1155607132028676490" name="SpeciesLang.structure.SpeciesReference" flags="ng" index="1csUcq">
+      <concept id="1155607132028676490" name="SignallingLang.structure.ComponentReference" flags="ng" index="1csUcq">
         <reference id="1155607132028676491" name="target" index="1csUcr" />
       </concept>
-      <concept id="1155607132030626610" name="SpeciesLang.structure.SpeciesExpression" flags="ng" index="1cBA6y">
+      <concept id="1155607132030626610" name="SignallingLang.structure.ComponentExpression" flags="ng" index="1cBA6y">
         <property id="3198991079367356162" name="usesNeighbourValue" index="xcbpM" />
         <reference id="1155607132030626611" name="Species" index="1cBA6z" />
       </concept>
-      <concept id="6116071663379962152" name="SpeciesLang.structure.Regulation" flags="ng" index="1gufZI">
+      <concept id="6116071663379962152" name="SignallingLang.structure.Regulation" flags="ng" index="1gufZI">
         <property id="1740802122790832290" name="TranscriptionDelay" index="2x6hFG" />
-        <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
+        <reference id="6116071663379962524" name="Parameter" index="1gufLq" />
         <reference id="6116071663380263021" name="Source" index="1gv5qF" />
         <reference id="6116071663380263018" name="Target" index="1gv5qG" />
       </concept>
-      <concept id="6116071663380262908" name="SpeciesLang.structure.Inhibits" flags="ng" index="1gv4$U" />
-      <concept id="6116071663380262909" name="SpeciesLang.structure.Upregulates" flags="ng" index="1gv4$V" />
-      <concept id="2321914824001074115" name="SpeciesLang.structure.RegulationReference" flags="ng" index="3rtiFT">
+      <concept id="6116071663380262908" name="SignallingLang.structure.Inhibits" flags="ng" index="1gv4$U" />
+      <concept id="6116071663380262909" name="SignallingLang.structure.Upregulates" flags="ng" index="1gv4$V" />
+      <concept id="2321914824001074115" name="SignallingLang.structure.RegulationReference" flags="ng" index="3rtiFT">
         <reference id="2321914824001074116" name="target" index="3rtiFY" />
       </concept>
-      <concept id="3125878369731541730" name="SpeciesLang.structure.ReversibleReaction" flags="ng" index="3_zqcM">
+      <concept id="3125878369731541730" name="SignallingLang.structure.ReversibleReaction" flags="ng" index="3_zqcM">
         <reference id="7376055817164471390" name="ForwardRate" index="3JPVZL" />
         <reference id="7376055817164471388" name="ReverseRate" index="3JPVZN" />
       </concept>
-      <concept id="3125878369731540209" name="SpeciesLang.structure.Parameter" flags="ng" index="3_zqOx">
+      <concept id="3125878369731540209" name="SignallingLang.structure.Parameter" flags="ng" index="3_zqOx">
         <child id="7336638036545683448" name="Uses" index="Cf4qk" />
         <child id="7336638036545643201" name="UsedBy" index="CfdIH" />
         <child id="3125878369731540228" name="Expression" index="3_zqNk" />
       </concept>
-      <concept id="3125878369731540210" name="SpeciesLang.structure.Reaction_Term" flags="ng" index="3_zqOy">
+      <concept id="3125878369731540210" name="SignallingLang.structure.Reaction_Term" flags="ng" index="3_zqOy">
         <property id="3125878369731540211" name="Stoichiometry" index="3_zqOz" />
         <reference id="3125878369731540215" name="Species_Ref" index="3_zqOB" />
       </concept>
-      <concept id="3125878369731540203" name="SpeciesLang.structure.SignallingContainer" flags="ng" index="3_zqOV">
+      <concept id="3125878369731540203" name="SignallingLang.structure.SignallingContainer" flags="ng" index="3_zqOV">
         <property id="4193598758125080033" name="_odeType" index="ICyCV" />
         <reference id="4970340729092561229" name="_simulationContainerRef" index="1ANuJ2" />
         <child id="3125878369731540800" name="_species" index="3_zqUg" />
         <child id="3125878369731540802" name="_processes" index="3_zqUi" />
         <child id="3125878369731540805" name="_parameters" index="3_zqUl" />
       </concept>
-      <concept id="3125878369731540206" name="SpeciesLang.structure.Reaction" flags="ng" index="3_zqOY">
+      <concept id="3125878369731540206" name="SignallingLang.structure.Reaction" flags="ng" index="3_zqOY">
         <child id="3125878369731540217" name="Reactant_Terms" index="3_zqOD" />
         <child id="3125878369731540219" name="Product_Terms" index="3_zqOF" />
       </concept>
-      <concept id="3125878369731540207" name="SpeciesLang.structure.Species" flags="ng" index="3_zqOZ">
+      <concept id="3125878369731540207" name="SignallingLang.structure.Component" flags="ng" index="3_zqOZ">
         <property id="6420553392043975787" name="_delay" index="2VbSsx" />
         <property id="3125878369731567265" name="_location" index="3_z0tL" />
         <property id="5550369704152692997" name="_showDeg" index="3L6Erj" />
@@ -117,8 +117,8 @@
         <child id="3125878369731548209" name="ProductOfProcess" index="3_z4Rx" />
         <child id="3125878369731548207" name="ReactsInProcess" index="3_z4RZ" />
       </concept>
-      <concept id="7376055817164365584" name="SpeciesLang.structure.SpeciesPowerExpression" flags="ng" index="3JP1MZ" />
-      <concept id="7376055817164471393" name="SpeciesLang.structure.ParameterExpression" flags="ng" index="3JPVZe">
+      <concept id="7376055817164365584" name="SignallingLang.structure.ComponentPowerExpression" flags="ng" index="3JP1MZ" />
+      <concept id="7376055817164471393" name="SignallingLang.structure.ParameterExpression" flags="ng" index="3JPVZe">
         <reference id="6116136999484595377" name="Parameter" index="n1ZU3" />
       </concept>
     </language>
@@ -156,7 +156,7 @@
         <reference id="8255194269358657920" name="_cellTypeRef" index="1apGrN" />
         <child id="4857589848835450443" name="_arrangement" index="1v2cpK" />
       </concept>
-      <concept id="6249017959271690141" name="TissueLang.structure.ShapeRectangular" flags="ng" index="3ZP1s$">
+      <concept id="6249017959271690141" name="TissueLang.structure.CellShape_Rectangular" flags="ng" index="3ZP1s$">
         <child id="5171349398070263660" name="_width" index="2IF2Qc" />
         <child id="5171349398070263662" name="_height" index="2IF2Qe" />
       </concept>
