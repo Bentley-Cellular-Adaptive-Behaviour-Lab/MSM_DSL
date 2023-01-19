@@ -849,12 +849,12 @@ void ProteinUsageTest::createEnvironment() {
 }
 
 void ProteinUsageTest::createTissue() {
-    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 10, 10));
 
     // Add "actin", which will decrease when the filopodia extends.
     cellType->add_protein(new Protein("ACTIN", PROTEIN_LOCATION_CELL, 512, 0, -1, 1));
 
-    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
     auto Vessel_Pos = Coordinates(25, 25, 25);
     this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
 
