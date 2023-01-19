@@ -2083,8 +2083,6 @@ void MemAgent::calcRetractDist(void) {
     else
         newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
 
-
-
     Cell->actinUsed -= (oldDist - newDist);
     //cout<<(oldDist-worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz))<<endl;
 }
