@@ -886,6 +886,13 @@ bool ProteinUsageTest::doesDSLExtension() const {
     return this->m_DSL_extension;
 }
 
+void ProteinUsageTest::run(const unsigned int timestep) {
+    for (unsigned int i = 1; i < timestep; i++) {
+        do_MSM_timestep();
+        logActinLevels(i);
+    }
+}
+
 void ProteinUsageTest::do_MSM_timestep() {
     int movie = 0;
 
