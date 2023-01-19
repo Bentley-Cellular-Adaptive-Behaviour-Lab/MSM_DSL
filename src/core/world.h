@@ -83,9 +83,9 @@ public:
     void runSimulation_MSM();
     void creationTimestep(int movie);
     void simulateTimestep_MSM();
-    int gridXDimensions;
-    int gridYDimensions;
-    int gridZDimensions;
+    unsigned int gridXDimensions;
+    unsigned int gridYDimensions;
+    unsigned int gridZDimensions;
     void simulateTimestep(std::vector< std::vector<float> > cellIncrements);
     std::vector< std::vector<float> > getGridSiteData();
     std::vector< std::vector< std::vector<float> > > getFilopodiaBaseLocationsAndTotalVegfr();
