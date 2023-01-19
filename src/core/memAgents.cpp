@@ -478,7 +478,7 @@ MemAgent* MemAgent::find_nearest_triangle_node(void) {
 }
 //---------------------------------------------------------------------------------------------
 //--------------------
-void MemAgent:: TokenTrading(void){
+void MemAgent::TokenTrading(void){
     //older version of actinFlow used in original papers.
     int flag=0;
     MemAgent* nearest;
