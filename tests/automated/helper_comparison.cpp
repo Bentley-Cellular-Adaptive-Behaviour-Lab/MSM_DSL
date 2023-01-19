@@ -951,16 +951,9 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
         for (j = 0; j < uptoSu; j++) m_world->ALLmemAgents.push_back(m_world->ECagents[i]->surfaceAgents[j]);
     }
     upto = m_world->ALLmemAgents.size();
-    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //reorder agents randomly
-    //random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
     m_world->new_random_shuffle(m_world->ALLmemAgents.begin(), m_world->ALLmemAgents.end());
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
     for (i = 0; i < upto; i++) {
 
         tipDeleteFlag = false;
