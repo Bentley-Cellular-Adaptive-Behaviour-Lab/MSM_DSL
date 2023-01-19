@@ -254,12 +254,20 @@ protected:
 public:
     void createTissue();
     World* getWorld();
+    void run(unsigned int timestep);
     void setDSLExtension(bool doesDSLExtension);
+    void createEnvironment();
     [[nodiscard]] bool doesDSLExtension() const;
     void do_MSM_timestep();
     void do_MSM_memAgent_update();
-    void do_VEGFR_response();
-    void do_filopodia_extension();
+    void do_VEGFR_response(MemAgent *memAgent);
+    bool do_filopodia_extension(MemAgent *memAgent) const;
+    bool do_filopodia_retraction(MemAgent *memAgent) const;
+    void logActinLevels(unsigned int timestep);
+    void do_retraction_distance_calculation(MemAgent *memAgent);
+    inline bool file_exists(const std::string& name);
+    void create_outfiles();
+    void save_results(const std::string &file_string);
 };
 
 #endif //OBJECTS_H_HELPER_COMPARISON_H
