@@ -828,6 +828,7 @@ void ProteinUsageTest::SetUp() {
     std::vector<double> params{};
     this->m_world = new World(50,50,50,1.0,0.0,params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
+    createEnvironment();
     createTissue();
 }
 
