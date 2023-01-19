@@ -285,7 +285,9 @@ public:
     double getParamValue(const int& i);
 
 	// Tissue gen.
-	bool cytoprotein_check(EC *cell, MemAgent *mem, Env *env);
+	bool cytoprotein_check(EC *cell,
+                           float distance,
+                           const bool extendingFil);
 	Env* highest_search(MemAgent *memAgent);
 	Env* findHighestConcPosition(MemAgent* memAgent,
 								 const std::string& targetProteinName,
