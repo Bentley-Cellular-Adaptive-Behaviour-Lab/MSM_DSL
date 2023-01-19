@@ -1011,14 +1011,16 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
                 // Retract filopodia if inactive.
                 if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
                     || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
-                    if (memp->filRetract()) {
-                        tipDeleteFlag = true;
+                    // if (memp->filRetract()) {
+                    if (do_filopodia_retraction(memp)) {
+                            tipDeleteFlag = true;
                         m_world->deleteOldGridRef(memp, true);
                         delete memp;
                     }
                         //NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
                     else {
-                        memp->calcRetractDist();
+                        // memp->calcRetractDist();
+                        do_retraction_distance_calculation(memp);
                     }
                 }
                 //------------------------------------
@@ -1029,11 +1031,13 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
                     memp->VEGFRactive = 0.0f; //reset VEGFR activation level
                     if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != m_world->ECagents[0])&&(memp->Cell != m_world->ECagents[ECELLS - 1])) {
                         if (memp->vonNeu) {
-                            memp->VEGFRresponse();
+//                            memp->VEGFRresponse();
+                            do_VEGFR_response(memp);
                         }
                     } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
                         if (memp->vonNeu) {
-                            memp->VEGFRresponse();
+//                            memp->VEGFRresponse();
+                            do_VEGFR_response(memp);
                         }
                     }
                     if (memp->junction && !FEEDBACK_TESTING) {
