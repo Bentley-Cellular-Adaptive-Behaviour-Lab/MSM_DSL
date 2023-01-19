@@ -6107,7 +6107,7 @@
       </node>
       <node concept="356sEK" id="5j_l9LXt7UF" role="383Ya9">
         <node concept="356sEF" id="5j_l9LXt7UG" role="356sEH">
-          <property role="TrG5h" value="bool World::cytoprotein_check(EC *cell, MemAgent *mem, Env *env) {" />
+          <property role="TrG5h" value="bool World::cytoprotein_check(EC *cell, float distance, const bool extendingFil) {" />
         </node>
         <node concept="2EixSi" id="5j_l9LXt7UH" role="2EinRH" />
       </node>
@@ -6219,14 +6219,6 @@
             </node>
             <node concept="2EixSi" id="5j_l9LXw8de" role="2EinRH" />
           </node>
-          <node concept="356sEK" id="5j_l9LXCI4K" role="383Ya9">
-            <node concept="373pV1" id="5j_l9LXCIjQ" role="356sEH" />
-            <node concept="373pV1" id="5j_l9LXCIjW" role="356sEH" />
-            <node concept="356sEF" id="5j_l9LXCIk4" role="356sEH">
-              <property role="TrG5h" value="auto distance = getDist(mem-&gt;Mx, mem-&gt;My, mem-&gt;Mz, env-&gt;Ex, env-&gt;Ey, env-&gt;Ez);" />
-            </node>
-            <node concept="2EixSi" id="5j_l9LXCI4M" role="2EinRH" />
-          </node>
           <node concept="356sEK" id="5j_l9LXCIzx" role="383Ya9">
             <node concept="373pV1" id="5j_l9LXCIAC" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXCIAI" role="356sEH" />
@@ -6304,9 +6296,18 @@
               <property role="TrG5h" value=";" />
             </node>
           </node>
+          <node concept="356sEK" id="wxgZ087uIq" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087vBe" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087vBk" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087vBs" role="356sEH">
+              <property role="TrG5h" value="if (extendingFil) {" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087uIs" role="2EinRH" />
+          </node>
           <node concept="356sEK" id="5j_l9LXwhvp" role="383Ya9">
             <node concept="373pV1" id="5j_l9LXwhvH" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXwhvN" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087vBA" role="356sEH" />
             <node concept="356sEF" id="5j_l9LXwhvV" role="356sEH">
               <property role="TrG5h" value="if (target_species_level &gt; required_species_amount) {" />
             </node>
@@ -6316,6 +6317,7 @@
             <node concept="373pV1" id="5j_l9LXws3w" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXws3A" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXws3I" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087vBM" role="356sEH" />
             <node concept="2EixSi" id="5j_l9LXws39" role="2EinRH" />
             <node concept="356sEF" id="5j_l9LXws3S" role="356sEH">
               <property role="TrG5h" value="auto new_cytoprotein_level = target_species_level - required_species_amount;" />
@@ -6325,6 +6327,7 @@
             <node concept="373pV1" id="5j_l9LXw_kW" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXw_l2" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXw_la" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087vXw" role="356sEH" />
             <node concept="356sEF" id="5j_l9LXw_lk" role="356sEH">
               <property role="TrG5h" value="cell-&gt;set_cell_protein_level(&quot;" />
             </node>
@@ -6403,18 +6406,132 @@
             <node concept="373pV1" id="5j_l9LXwICE" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXwICK" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXwICS" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087w0V" role="356sEH" />
             <node concept="356sEF" id="5j_l9LXwID2" role="356sEH">
               <property role="TrG5h" value="return true;" />
             </node>
             <node concept="2EixSi" id="5j_l9LXwIC2" role="2EinRH" />
           </node>
+          <node concept="356sEK" id="wxgZ087wTU" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087xMR" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087xMX" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087xN5" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087xNf" role="356sEH">
+              <property role="TrG5h" value="}" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087wTW" role="2EinRH" />
+          </node>
           <node concept="356sEK" id="5j_l9LXws4o" role="383Ya9">
             <node concept="373pV1" id="5j_l9LXws4R" role="356sEH" />
             <node concept="373pV1" id="5j_l9LXws55" role="356sEH" />
             <node concept="356sEF" id="5j_l9LXws4X" role="356sEH">
-              <property role="TrG5h" value="}" />
+              <property role="TrG5h" value="} else {" />
             </node>
             <node concept="2EixSi" id="5j_l9LXws4q" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="wxgZ087$vP" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087$KP" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087$KV" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087$L3" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087$Ld" role="356sEH">
+              <property role="TrG5h" value="auto new_cytoprotein_level = target_species_level + required_species_amount;" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087$vR" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="wxgZ087Nkj" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087Ody" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087Odz" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087Od$" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087Od_" role="356sEH">
+              <property role="TrG5h" value="cell-&gt;set_cell_protein_level(&quot;" />
+            </node>
+            <node concept="356sEF" id="wxgZ087Ola" role="356sEH">
+              <property role="TrG5h" value="TARGET_SPECIES" />
+              <node concept="17Uvod" id="wxgZ087OsH" role="lGtFl">
+                <property role="2qtEX9" value="name" />
+                <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
+                <node concept="3zFVjK" id="wxgZ087OsI" role="3zH0cK">
+                  <node concept="3clFbS" id="wxgZ087OsJ" role="2VODD2">
+                    <node concept="3clFbJ" id="wxgZ087Oxr" role="3cqZAp">
+                      <node concept="3clFbS" id="wxgZ087Oxs" role="3clFbx">
+                        <node concept="3cpWs6" id="wxgZ087Oxt" role="3cqZAp">
+                          <node concept="2OqwBi" id="wxgZ087Oxu" role="3cqZAk">
+                            <node concept="2OqwBi" id="wxgZ087Oxv" role="2Oq$k0">
+                              <node concept="2OqwBi" id="wxgZ087Oxw" role="2Oq$k0">
+                                <node concept="1PxgMI" id="wxgZ087Oxx" role="2Oq$k0">
+                                  <property role="1BlNFB" value="true" />
+                                  <node concept="chp4Y" id="wxgZ087Oxy" role="3oSUPX">
+                                    <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                                  </node>
+                                  <node concept="2OqwBi" id="wxgZ087Oxz" role="1m5AlR">
+                                    <node concept="30H73N" id="wxgZ087Ox$" role="2Oq$k0" />
+                                    <node concept="3TrEf2" id="wxgZ087Ox_" role="2OqNvi">
+                                      <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                                    </node>
+                                  </node>
+                                </node>
+                                <node concept="3TrEf2" id="wxgZ087OxA" role="2OqNvi">
+                                  <ref role="3Tt5mk" to="nguq:5j_l9LXFFx5" resolve="_cytoproteinCondition" />
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="wxgZ087OxB" role="2OqNvi">
+                                <ref role="3Tt5mk" to="nguq:5j_l9LXyZov" resolve="targetSpecies" />
+                              </node>
+                            </node>
+                            <node concept="3TrcHB" id="wxgZ087OxC" role="2OqNvi">
+                              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="2OqwBi" id="wxgZ087OxD" role="3clFbw">
+                        <node concept="2OqwBi" id="wxgZ087OxE" role="2Oq$k0">
+                          <node concept="30H73N" id="wxgZ087OxF" role="2Oq$k0" />
+                          <node concept="3TrEf2" id="wxgZ087OxG" role="2OqNvi">
+                            <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                          </node>
+                        </node>
+                        <node concept="1mIQ4w" id="wxgZ087OxH" role="2OqNvi">
+                          <node concept="chp4Y" id="wxgZ087OxI" role="cj9EA">
+                            <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="9aQIb" id="wxgZ087OxJ" role="9aQIa">
+                        <node concept="3clFbS" id="wxgZ087OxK" role="9aQI4">
+                          <node concept="3cpWs6" id="wxgZ087OxL" role="3cqZAp">
+                            <node concept="Xl_RD" id="wxgZ087OxM" role="3cqZAk">
+                              <property role="Xl_RC" value="BAD_SHAPE_BEHAVIOUR" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="356sEF" id="wxgZ087Olb" role="356sEH">
+              <property role="TrG5h" value="&quot;, new_cytoprotein_level, 0);" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087Nkl" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="wxgZ087Q_w" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087Ry3" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087Ry9" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087Ryh" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087Ryr" role="356sEH">
+              <property role="TrG5h" value="return false;" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087Q_y" role="2EinRH" />
+          </node>
+          <node concept="356sEK" id="wxgZ087yHs" role="383Ya9">
+            <node concept="373pV1" id="wxgZ087zAv" role="356sEH" />
+            <node concept="373pV1" id="wxgZ087zA_" role="356sEH" />
+            <node concept="356sEF" id="wxgZ087zAH" role="356sEH">
+              <property role="TrG5h" value="}" />
+            </node>
+            <node concept="2EixSi" id="wxgZ087yHu" role="2EinRH" />
           </node>
           <node concept="356sEK" id="5j_l9LXx0OE" role="383Ya9">
             <node concept="373pV1" id="5j_l9LXx0Pq" role="356sEH" />
