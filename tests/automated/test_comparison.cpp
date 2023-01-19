@@ -623,3 +623,9 @@ TEST_F(ShufflingTest, DSLResultsTest) {
         EXPECT_EQ(last->at(i), target.at(i - 1));
     }
 }
+
+TEST_F(ProteinUsageTest, MSMActinTest) {
+    setDSLExtension(false);
+    run(100);
+    create_outfiles();
+}
