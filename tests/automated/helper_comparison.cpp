@@ -905,9 +905,7 @@ void ProteinUsageTest::do_MSM_timestep() {
         }
 
         this->m_world->resetCellLevels();
-        this->m_world->updateMemAgents_MSM();
-
-        std::cout << "Running CPM." << "\n";
+        do_MSM_memAgent_update();
 
         if (this->m_world->does_MSM_CPM()) {
             assert(!this->m_world->does_DSL_CPM());
