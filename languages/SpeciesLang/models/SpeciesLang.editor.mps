@@ -588,14 +588,6 @@
           <ref role="1NtTu8" to="w3cn:2Hxmt3eVft2" resolve="_processes" />
           <node concept="2iRkQZ" id="6m1Il21i$Ob" role="2czzBx" />
         </node>
-        <node concept="3F0ifn" id="6m1Il21i$Mv" role="3EZMnx">
-          <node concept="2biZxu" id="6m1Il21i$Mw" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="6m1Il21i$Mx" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
         <node concept="2iRfu4" id="6m1Il21i$My" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="3CMDXCk$95E" role="3EZMnx">

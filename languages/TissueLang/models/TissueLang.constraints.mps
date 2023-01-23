@@ -535,13 +535,13 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="4YEYPh9oP18">
+  <node concept="1M2fIO" id="6fJRP9Ov4LO">
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1M2myG" to="nguq:4YEYPh9oOZm" resolve="TestShape" />
-    <node concept="9S07l" id="4YEYPh9oP1r" role="9Vyp8">
-      <node concept="3clFbS" id="4YEYPh9oP1s" role="2VODD2">
-        <node concept="3cpWs6" id="4YEYPh9oP5q" role="3cqZAp">
-          <node concept="3clFbT" id="4YEYPh9oP5Y" role="3cqZAk">
+    <ref role="1M2myG" to="nguq:21y0$1xK5WP" resolve="NoShapeBehaviour" />
+    <node concept="9S07l" id="6fJRP9Ov4M7" role="9Vyp8">
+      <node concept="3clFbS" id="6fJRP9Ov4M8" role="2VODD2">
+        <node concept="3clFbF" id="6fJRP9Ov4Q7" role="3cqZAp">
+          <node concept="3clFbT" id="6fJRP9Ov4Q6" role="3clFbG">
             <property role="3clFbU" value="true" />
           </node>
         </node>
