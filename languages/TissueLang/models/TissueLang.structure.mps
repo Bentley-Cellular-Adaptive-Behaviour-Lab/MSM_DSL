@@ -435,7 +435,7 @@
   </node>
   <node concept="1TIwiD" id="5j_l9LXyZkA">
     <property role="EcuMT" value="6117388699950642470" />
-    <property role="TrG5h" value="CytoproteinCondition" />
+    <property role="TrG5h" value="CytoskeletalProteinUsage" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyj" id="5j_l9LXyZox" role="1TKVEi">
@@ -456,6 +456,7 @@
     <property role="EcuMT" value="6117388699952612824" />
     <property role="TrG5h" value="Filopodia" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <property role="34LRSv" value="Can extend filopodia." />
     <ref role="1TJDcQ" node="5j_l9LXEwof" resolve="ShapeBehaviour" />
     <node concept="1TJgyi" id="7lZ8SQtwFKE" role="1TKVEl">
       <property role="IQ2nx" value="8466524915619773482" />
@@ -477,9 +478,8 @@
     <node concept="1TJgyj" id="5j_l9LXFFx5" role="1TKVEi">
       <property role="IQ2ns" value="6117388699952920645" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_cytoproteinCondition" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="5j_l9LXyZkA" resolve="CytoproteinCondition" />
+      <property role="20kJfa" value="_cytoskeletalProteinUsage" />
+      <ref role="20lvS9" node="5j_l9LXyZkA" resolve="CytoskeletalProteinUsage" />
     </node>
     <node concept="1TJgyj" id="4YEYPh9qGaa" role="1TKVEi">
       <property role="IQ2ns" value="5740677014464676490" />
@@ -501,12 +501,6 @@
     <property role="R5$K7" value="true" />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-  </node>
-  <node concept="1TIwiD" id="4YEYPh9oOZm">
-    <property role="EcuMT" value="5740677014464188374" />
-    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <property role="TrG5h" value="TestShape" />
-    <ref role="1TJDcQ" node="5j_l9LXEwof" resolve="ShapeBehaviour" />
   </node>
   <node concept="1TIwiD" id="4YEYPh9qGaf">
     <property role="EcuMT" value="5740677014464676495" />
@@ -548,6 +542,13 @@
       <property role="TrG5h" value="No" />
       <property role="1L1pqM" value="No" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="21y0$1xK5WP">
+    <property role="EcuMT" value="2333430032472497973" />
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <property role="TrG5h" value="NoShapeBehaviour" />
+    <property role="34LRSv" value="No shape behaviour." />
+    <ref role="1TJDcQ" node="5j_l9LXEwof" resolve="ShapeBehaviour" />
   </node>
 </model>
 

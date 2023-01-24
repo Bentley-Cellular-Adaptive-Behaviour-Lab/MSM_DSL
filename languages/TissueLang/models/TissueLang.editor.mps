@@ -1716,38 +1716,38 @@
     <ref role="1XX52x" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
     <node concept="3EZMnI" id="5j_l9LXFFyB" role="2wV5jI">
       <node concept="3EZMnI" id="1Rle6qVo2Pi" role="3EZMnx">
+        <node concept="3F0ifn" id="2q_vzDInT0u" role="3EZMnx">
+          <property role="3F0ifm" value="Creates filopodia, which extend towards" />
+          <node concept="2biZxu" id="2q_vzDInT0_" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2q_vzDInT0A" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
         <node concept="2iRfu4" id="1Rle6qVo2Pj" role="2iSdaV" />
         <node concept="3F1sOY" id="4YEYPh9qGd2" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:4YEYPh9qGaa" resolve="_extendsTowards" />
         </node>
-        <node concept="3F0ifn" id="1Rle6qVo2Pz" role="3EZMnx">
-          <property role="3F0ifm" value="." />
-          <node concept="2biZxu" id="1Rle6qVo2Q7" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="1Rle6qVo2Q8" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-      </node>
-      <node concept="3F1sOY" id="4YEYPh9imns" role="3EZMnx">
-        <ref role="1NtTu8" to="nguq:5j_l9LXFFx5" resolve="_cytoproteinCondition" />
-      </node>
-      <node concept="3EZMnI" id="5j_l9LXFJfv" role="3EZMnx">
-        <node concept="VPM3Z" id="5j_l9LXFJfx" role="3F10Kt" />
-        <node concept="3F0ifn" id="5j_l9LXFJNu" role="3EZMnx">
-          <property role="3F0ifm" value="Extends" />
-          <node concept="2biZxu" id="4YEYPh9l8R8" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="4YEYPh9l8R9" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="3F1sOY" id="5j_l9LXFJi9" role="3EZMnx">
+        <node concept="3F1sOY" id="2q_vzDInThC" role="3EZMnx">
           <ref role="1NtTu8" to="nguq:5j_l9LXFFwO" resolve="_extensionCondition" />
         </node>
-        <node concept="2iRfu4" id="5j_l9LXFJf$" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="2q_vzDIv7UP" role="3EZMnx">
+        <node concept="VPM3Z" id="2q_vzDIv7UR" role="3F10Kt" />
+        <node concept="3F0ifn" id="2q_vzDIv7UT" role="3EZMnx">
+          <property role="3F0ifm" value="Uses " />
+          <node concept="2biZxu" id="2q_vzDIv8kM" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="2q_vzDIv8kN" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="2q_vzDIv7Wl" role="3EZMnx">
+          <ref role="1NtTu8" to="nguq:5j_l9LXFFx5" resolve="_cytoskeletalProteinUsage" />
+        </node>
+        <node concept="2iRfu4" id="2q_vzDIv7UU" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="7lZ8SQtwFMT" role="3EZMnx">
         <node concept="2iRfu4" id="7lZ8SQtwFMU" role="2iSdaV" />
@@ -1774,7 +1774,7 @@
               <property role="3F0ifm" value="always attempts to maximise its" />
             </node>
             <node concept="3F0ifn" id="7lZ8SQtwFQm" role="3EZMnx">
-              <property role="3F0ifm" value="distance from the base of the cell." />
+              <property role="3F0ifm" value="distance from the base of the filopodia." />
             </node>
             <node concept="3F0ifn" id="7lZ8SQtwFQq" role="3EZMnx">
               <property role="3F0ifm" value="- Options:" />
@@ -1869,7 +1869,7 @@
   </node>
   <node concept="24kQdi" id="4YEYPh9ilwC">
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1XX52x" to="nguq:5j_l9LXyZkA" resolve="CytoproteinCondition" />
+    <ref role="1XX52x" to="nguq:5j_l9LXyZkA" resolve="CytoskeletalProteinUsage" />
     <node concept="3EZMnI" id="4YEYPh9ilwW" role="2wV5jI">
       <node concept="3F0ifn" id="4YEYPh9ilxC" role="3EZMnx">
         <property role="3F0ifm" value="Uses " />
@@ -2045,18 +2045,6 @@
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1XX52x" to="nguq:4YEYPh9qGaf" resolve="ExtendsTowards" />
     <node concept="3EZMnI" id="4YEYPh9qGbm" role="2wV5jI">
-      <node concept="3F0ifn" id="4YEYPh9qGbo" role="3EZMnx">
-        <property role="3F0ifm" value="Creates filopodia, which extend towards" />
-        <node concept="Vb9p2" id="4YEYPh9qGbW" role="3F10Kt">
-          <property role="Vbekb" value="g1_k_vY/BOLD" />
-        </node>
-        <node concept="2biZxu" id="4YEYPh9qGbX" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
-        </node>
-        <node concept="VSNWy" id="4YEYPh9qGbY" role="3F10Kt">
-          <property role="1lJzqX" value="16" />
-        </node>
-      </node>
       <node concept="1iCGBv" id="4YEYPh9qGbw" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:4YEYPh9qGaQ" resolve="_targetSpecies" />
         <node concept="1sVBvm" id="4YEYPh9qGby" role="1sWHZn">
@@ -2119,6 +2107,22 @@
         <ref role="1NtTu8" to="nguq:1Rle6qVWyfD" resolve="expr" />
       </node>
       <node concept="2iRfu4" id="1Rle6qVWy7c" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="21y0$1xK5XN">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <ref role="1XX52x" to="nguq:21y0$1xK5WP" resolve="NoShapeBehaviour" />
+    <node concept="3EZMnI" id="21y0$1xK5Y7" role="2wV5jI">
+      <node concept="3F0ifn" id="21y0$1xK5Ye" role="3EZMnx">
+        <property role="3F0ifm" value="None" />
+        <node concept="2biZxu" id="6fJRP9O$Uvu" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="6fJRP9O$Uvv" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="2iRfu4" id="21y0$1xK5Ya" role="2iSdaV" />
     </node>
   </node>
 </model>

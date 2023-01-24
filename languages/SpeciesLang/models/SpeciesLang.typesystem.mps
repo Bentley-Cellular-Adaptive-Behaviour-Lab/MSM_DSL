@@ -19,6 +19,7 @@
     <import index="xlxw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.math(JDK/)" implicit="true" />
     <import index="5qo5" ref="r:6d93ddb1-b0b0-4eee-8079-51303666672a(org.iets3.core.expr.simpleTypes.structure)" implicit="true" />
     <import index="5ycg" ref="r:8a58a87d-0c06-4e91-a81a-74d21ad7f81e(SimulationsLang.behavior)" implicit="true" />
+    <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -7785,6 +7786,85 @@
     <node concept="1YaCAy" id="57Q_rTb$uAU" role="1YuTPh">
       <property role="TrG5h" value="species" />
       <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="6fJRP9OXqj2">
+    <property role="3GE5qa" value="ParamRange" />
+    <property role="TrG5h" value="check_SweepOnParamCanBePerformed" />
+    <node concept="3clFbS" id="6fJRP9OXqj3" role="18ibNy">
+      <node concept="3clFbJ" id="6fJRP9OXqmk" role="3cqZAp">
+        <node concept="2OqwBi" id="6fJRP9OXqxd" role="3clFbw">
+          <node concept="1YBJjd" id="6fJRP9OXqmw" role="2Oq$k0">
+            <ref role="1YBMHb" node="6fJRP9OXqlT" resolve="parameter" />
+          </node>
+          <node concept="3TrcHB" id="6fJRP9OXqIp" role="2OqNvi">
+            <ref role="3TsBF5" to="w3cn:6WHzz7cWc7L" resolve="_doingParameterSteps" />
+          </node>
+        </node>
+        <node concept="3clFbS" id="6fJRP9OXqmm" role="3clFbx">
+          <node concept="3cpWs8" id="6fJRP9OXrev" role="3cqZAp">
+            <node concept="3cpWsn" id="6fJRP9OXrey" role="3cpWs9">
+              <property role="TrG5h" value="container" />
+              <node concept="3Tqbb2" id="6fJRP9OXreu" role="1tU5fm">
+                <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
+              </node>
+              <node concept="2OqwBi" id="6fJRP9OXsbx" role="33vP2m">
+                <node concept="1PxgMI" id="6fJRP9OXrUg" role="2Oq$k0">
+                  <property role="1BlNFB" value="true" />
+                  <node concept="chp4Y" id="6fJRP9OXrXd" role="3oSUPX">
+                    <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
+                  </node>
+                  <node concept="2OqwBi" id="6fJRP9OXrte" role="1m5AlR">
+                    <node concept="1YBJjd" id="6fJRP9OXrfd" role="2Oq$k0">
+                      <ref role="1YBMHb" node="6fJRP9OXqlT" resolve="param" />
+                    </node>
+                    <node concept="1mfA1w" id="6fJRP9OXrHc" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="3TrEf2" id="6fJRP9OXsph" role="2OqNvi">
+                  <ref role="3Tt5mk" to="nguq:4jUcCWydX_x" resolve="_simulationContainerRef" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbJ" id="6fJRP9OXsvo" role="3cqZAp">
+            <node concept="3clFbS" id="6fJRP9OXsvq" role="3clFbx">
+              <node concept="2MkqsV" id="6fJRP9OXsZZ" role="3cqZAp">
+                <node concept="Xl_RD" id="6fJRP9OXt0e" role="2MkJ7o">
+                  <property role="Xl_RC" value="Cannot perform a sweep if the simulation is not being run on a computing cluster." />
+                </node>
+                <node concept="1YBJjd" id="6fJRP9OXt2M" role="1urrMF">
+                  <ref role="1YBMHb" node="6fJRP9OXqlT" resolve="param" />
+                </node>
+              </node>
+            </node>
+            <node concept="2OqwBi" id="2q_vzDI9Mi6" role="3clFbw">
+              <node concept="2OqwBi" id="2q_vzDI9Lxc" role="2Oq$k0">
+                <node concept="2OqwBi" id="6fJRP9OXsFO" role="2Oq$k0">
+                  <node concept="37vLTw" id="6fJRP9OXsw1" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6fJRP9OXrey" resolve="container" />
+                  </node>
+                  <node concept="3TrEf2" id="2q_vzDI9LmG" role="2OqNvi">
+                    <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+                  </node>
+                </node>
+                <node concept="3TrcHB" id="2q_vzDI9LIj" role="2OqNvi">
+                  <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
+                </node>
+              </node>
+              <node concept="21noJN" id="2q_vzDI9MxR" role="2OqNvi">
+                <node concept="21nZrQ" id="2q_vzDI9MxT" role="21noJM">
+                  <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6fJRP9OXqlT" role="1YuTPh">
+      <property role="TrG5h" value="param" />
+      <ref role="1YaFvo" to="w3cn:2Hxmt3eVfjL" resolve="Parameter" />
     </node>
   </node>
 </model>
