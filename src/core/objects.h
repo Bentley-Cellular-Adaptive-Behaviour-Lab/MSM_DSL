@@ -14,9 +14,6 @@ namespace py = pybind11;
 class EC;
 class World;
 
-extern EC* CURRENT_CELL;
-
-
 //#define GRAPHICS true
 ///main switches and settings
 //#ifdef GRAPHICS

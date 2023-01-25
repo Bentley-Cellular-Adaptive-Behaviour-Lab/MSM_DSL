@@ -248,11 +248,13 @@ private:
     float m_protein_usage_val;
     bool m_DSL_extension = false; // If false (default), do MSM extension.
     std::vector<std::vector<float>*> m_results;
+    MemAgent *m_centreMemAgent;
 protected:
     void SetUp() override;
     void TearDown() override;
 public:
     void createTissue();
+    MemAgent *getCentreMemAgent();
     World* getWorld();
     void run(unsigned int timestep);
     void setDSLExtension(bool doesDSLExtension);

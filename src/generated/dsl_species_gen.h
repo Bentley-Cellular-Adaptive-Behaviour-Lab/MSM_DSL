@@ -9,11 +9,14 @@
 class MemAgent;
 class World;
 
+extern EC* CURRENT_CELL;
+
+
 namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 6> EndothelialType_cell_ode_states;
 typedef boost::array<double, 9> EndothelialType_memAgent_ode_states;
-typedef boost::array<double, 7> EndothelialType_cell_only_ode_states;
+typedef boost::array<double, 8> EndothelialType_cell_only_ode_states;
 
 class ODEs {
 private:

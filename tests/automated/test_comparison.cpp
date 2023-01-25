@@ -626,6 +626,6 @@ TEST_F(ShufflingTest, DSLResultsTest) {
 
 TEST_F(ProteinUsageTest, MSMActinTest) {
     setDSLExtension(false);
-    run(100);
-    create_outfiles();
+    auto memAgent = getCentreMemAgent();
+    do_VEGFR_response(memAgent);
 }

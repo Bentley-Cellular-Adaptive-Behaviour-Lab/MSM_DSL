@@ -838,14 +838,22 @@ void ProteinUsageTest::createEnvironment() {
         for (int y = 0; y < m_world->gridYDimensions; y++) {
             for (int z = 0; z < m_world->gridYDimensions; z++) {
                 if (m_world->grid[x][y][z].getType() == const_E) {
-                    auto targetProtein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100);
+                    auto targetProtein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,0,0,100);
                     ep = m_world->grid[x][y][z].getEid();
                     ep->owned_proteins.push_back(targetProtein);
-                    ep->VEGF = 0.8;
+                    ep->VEGF = 0.0;
                 }
             }
         }
     }
+
+    ep = m_world->grid[25][25][26].getEid();
+    ep->owned_proteins.push_back(new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100));
+    ep->VEGF = 1;
+
+    ep = m_world->grid[25][25][27].getEid();
+    ep->owned_proteins.push_back(new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100));
+    ep->VEGF = 1;
 }
 
 void ProteinUsageTest::createTissue() {
@@ -854,6 +862,7 @@ void ProteinUsageTest::createTissue() {
     // Add "actin", which will decrease when the filopodia extends.
     cellType->add_protein(new Protein("ACTIN", PROTEIN_LOCATION_CELL, 512, 0, -1, 1));
 
+//    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
     auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
     auto Vessel_Pos = Coordinates(25, 25, 25);
     this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
@@ -1788,6 +1797,10 @@ void ProteinUsageTest::save_results(const std::string &file_string) {
         file << "\n";
     }
     file.close();
+}
+
+MemAgent *ProteinUsageTest::getCentreMemAgent() {
+    return this->m_centreMemAgent;
 }
 
 void ProteinUsageTest::TearDown() {
