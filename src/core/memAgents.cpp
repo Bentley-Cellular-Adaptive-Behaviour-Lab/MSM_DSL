@@ -478,7 +478,7 @@ MemAgent* MemAgent::find_nearest_triangle_node(void) {
 }
 //---------------------------------------------------------------------------------------------
 //--------------------
-void MemAgent:: TokenTrading(void){
+void MemAgent::TokenTrading(void){
     //older version of actinFlow used in original papers.
     int flag=0;
     MemAgent* nearest;
@@ -2082,8 +2082,6 @@ void MemAgent::calcRetractDist(void) {
         newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
     else
         newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-
-
 
     Cell->actinUsed -= (oldDist - newDist);
     //cout<<(oldDist-worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz))<<endl;

@@ -1,11 +1,9 @@
-#include <cmath>
 
 #include "clusterParams.h"
 #include "dsl_species_gen.h"
 
 #include "../core/coordinates.h"
 #include "../core/CPM_module.h"
-#include "../core/EC.h"
 #include "../core/environment.h"
 #include "../core/memAgents.h"
 #include "../core/world.h"
@@ -60,19 +58,30 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 	return false;
 }
 
-bool World::cytoprotein_check(EC *cell, MemAgent *mem, Env *env) {
-	if (cell->m_cell_type->m_name == "EndothelialType") {
-		auto target_species_level = cell->get_cell_protein_level("Actin", 0);
-		auto distance = getDist(mem->Mx, mem->My, mem->Mz, env->Ex, env->Ey, env->Ez);
-		auto required_species_amount = distance * 10;
-		if (target_species_level > required_species_amount) {
-			auto new_cytoprotein_level = target_species_level - required_species_amount;
-			cell->set_cell_protein_level("Actin", new_cytoprotein_level, 0);
-			return true;
-		}
-		return false;
-	}
-	return false;
+bool World::cytoprotein_check(EC *cell,
+                              float distance,
+                              const bool extendingFil) {
+    if (cell->m_cell_type->m_name == "EndothelialType") {
+        auto target_species_level = cell->get_cell_protein_level("Actin", 0);
+        auto required_species_amount = distance * 10;
+        // Check if we're extending a filopodia
+        // and we have enough protein to do so,
+        // otherwise add the protein back
+        // depending on the distance travelled.
+        if (extendingFil) {
+            if (target_species_level > required_species_amount) {
+                auto new_cytoprotein_level = target_species_level - required_species_amount;
+                cell->set_cell_protein_level("Actin", new_cytoprotein_level, 0);
+                return true;
+            }
+        } else {
+            auto new_cytoprotein_level = target_species_level + required_species_amount;
+            cell->set_cell_protein_level("Actin", new_cytoprotein_level, 0);
+            return true;
+        }
+        return false;
+    }
+    return false;
 }
 
 Env* World::highest_search(MemAgent *memAgent) {

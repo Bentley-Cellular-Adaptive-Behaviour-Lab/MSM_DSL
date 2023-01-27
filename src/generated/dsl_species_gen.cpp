@@ -1,3 +1,7 @@
+
+#include "clusterParams.h"
+#include "dsl_species_gen.h"
+
 #include "../core/memAgents.h"
 #include "../core/EC.h"
 #include "../core/objects.h"
@@ -5,10 +9,7 @@
 
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/species/protein.h"
-#include "clusterParams.h"
-#include "dsl_species_gen.h"
 
-EC* CURRENT_CELL;
 
 // Created using: SignallingNoSema //
 
@@ -74,24 +75,24 @@ void ODEs::EndothelialType_cell_system(const EndothelialType_cell_ode_states &x,
 }
 
 void ODEs::EndothelialType_run_cell_ODEs(EC *ec) {
-	CURRENT_CELL = ec;
-	EndothelialType_cell_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
-	states[0] = ec->get_cell_protein_level("VEGF_VEGFR2", 0);
-	states[1] = ec->get_cell_protein_level("DLL4", 27);
-	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-	states[3] = ec->get_cell_protein_level("VEGFR2", 27);
-	states[4] = ec->calc_adjacent_species_level("NOTCH", true, true);
-
-	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, EndothelialType_cell_system, states, 0.0, 1.0, 0.1);
-
-	ec->set_cell_protein_level("VEGF_VEGFR2", states[0], 0);
-	ec->set_cell_protein_level("DLL4", states[1], 0);
-	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 0);
-	ec->set_cell_protein_level("VEGFR2", states[3], 0);
-	ec->set_cell_protein_level("NOTCH", states[4], 0);
+//	CURRENT_CELL = ec;
+//	EndothelialType_cell_ode_states states;
+//	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
+//	states[0] = ec->get_cell_protein_level("VEGF_VEGFR2", 0);
+//	states[1] = ec->get_cell_protein_level("DLL4", 27);
+//	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+//	states[3] = ec->get_cell_protein_level("VEGFR2", 27);
+//	states[4] = ec->calc_adjacent_species_level("NOTCH", true, true);
+//
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	controlled_stepper_type controlled_stepper;
+//	integrate_adaptive(controlled_stepper, EndothelialType_cell_system, states, 0.0, 1.0, 0.1);
+//
+//	ec->set_cell_protein_level("VEGF_VEGFR2", states[0], 0);
+//	ec->set_cell_protein_level("DLL4", states[1], 0);
+//	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 0);
+//	ec->set_cell_protein_level("VEGFR2", states[3], 0);
+//	ec->set_cell_protein_level("NOTCH", states[4], 0);
 }
 
 void ODEs::EndothelialType_memAgent_system(const EndothelialType_memAgent_ode_states &x, EndothelialType_memAgent_ode_states &dxdt, double t) {
@@ -120,31 +121,31 @@ void ODEs::EndothelialType_memAgent_system(const EndothelialType_memAgent_ode_st
 }
 
 void ODEs::EndothelialType_run_memAgent_ODEs(MemAgent* memAgent) {
-	CURRENT_CELL = memAgent->Cell;
-	EndothelialType_memAgent_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
-
-	auto upTo = memAgent->Cell->VonNeighs;
-	states[3] = memAgent->get_environment_level("VEGF", true);
-	states[0] = memAgent->get_memAgent_current_level("NOTCH");
-	states[1] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
-	states[2] = memAgent->get_memAgent_current_level("DLL4");
-	states[4] = memAgent->get_memAgent_current_level("VEGFR2");
-	states[5] = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
-	states[6] = memAgent->get_junction_protein_level("DLL4", true);
-	states[7] = memAgent->get_junction_protein_level("NOTCH", true);
-
-	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, EndothelialType_memAgent_system, states, 0.0, 1.0, 0.1);
-
-	memAgent->set_protein_buffer_level("NOTCH", states[0]);
-	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[1]);
-	memAgent->set_protein_buffer_level("DLL4", states[2]);
-	memAgent->set_protein_buffer_level("VEGFR2", states[4]);
-	memAgent->set_protein_buffer_level("VEGF_VEGFR2", states[5]);
-	memAgent->set_protein_buffer_level("DLL4", states[6]);
-	memAgent->set_protein_buffer_level("NOTCH", states[7]);
+//	CURRENT_CELL = memAgent->Cell;
+//	EndothelialType_memAgent_ode_states states;
+//	typedef odeint::runge_kutta_cash_karp54<EndothelialType_memAgent_ode_states> error_stepper_type;
+//
+//	auto upTo = memAgent->Cell->VonNeighs;
+//	states[3] = memAgent->get_environment_level("VEGF", true, false);
+//	states[0] = memAgent->get_memAgent_current_level("NOTCH");
+//	states[1] = memAgent->get_memAgent_current_level("DLL4_NOTCH");
+//	states[2] = memAgent->get_memAgent_current_level("DLL4");
+//	states[4] = memAgent->get_memAgent_current_level("VEGFR2");
+//	states[5] = memAgent->get_memAgent_current_level("VEGF_VEGFR2");
+//	states[6] = memAgent->get_junction_protein_level("DLL4", true, false);
+//	states[7] = memAgent->get_junction_protein_level("NOTCH", true, false);
+//
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	controlled_stepper_type controlled_stepper;
+//	integrate_adaptive(controlled_stepper, EndothelialType_memAgent_system, states, 0.0, 1.0, 0.1);
+//
+//	memAgent->set_protein_buffer_level("NOTCH", states[0]);
+//	memAgent->set_protein_buffer_level("DLL4_NOTCH", states[1]);
+//	memAgent->set_protein_buffer_level("DLL4", states[2]);
+//	memAgent->set_protein_buffer_level("VEGFR2", states[4]);
+//	memAgent->set_protein_buffer_level("VEGF_VEGFR2", states[5]);
+//	memAgent->set_protein_buffer_level("DLL4", states[6]);
+//	memAgent->set_protein_buffer_level("NOTCH", states[7]);
 }
 
 
@@ -185,27 +186,27 @@ void ODEs::EndothelialType_cell_only_system(const EndothelialType_cell_only_ode_
 }
 
 void ODEs::EndothelialType_run_cell_only_ODEs(EC *ec) {
-	CURRENT_CELL = ec;
-	EndothelialType_cell_ode_states states;
-	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_ode_states> error_stepper_type;
-	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
-
-	states[0] = ec->get_cell_protein_level("VEGF_VEGFR2", 0);
-	states[1] = ec->get_cell_protein_level("DLL4", 0);
-	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
-	states[3] = ec->get_cell_protein_level("VEGFR2", 0);
-	states[4] = ec->get_cell_protein_level("NOTCH", 0);
-	states[5] = ec->get_env_protein_level("VEGF") / agents;
-	states[6] = ec->calc_adjacent_species_level("DLL4", false, true);
-	states[7] = ec->calc_adjacent_species_level("NOTCH", false, true);
-
-	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
-	controlled_stepper_type controlled_stepper;
-	integrate_adaptive(controlled_stepper, EndothelialType_cell_only_system, states, 0.0, 1.0, 0.1);
-
-	ec->set_cell_protein_level("VEGF_VEGFR2", states[0], 0);
-	ec->set_cell_protein_level("DLL4", states[1], 27);
-	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 0);
-	ec->set_cell_protein_level("VEGFR2", states[3], 27);
-	ec->set_cell_protein_level("NOTCH", states[4], 0);
+//	CURRENT_CELL = ec;
+//	EndothelialType_cell_only_ode_states states;
+//	typedef odeint::runge_kutta_cash_karp54<EndothelialType_cell_only_ode_states> error_stepper_type;
+//	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
+//
+//	states[0] = ec->get_cell_protein_level("VEGF_VEGFR2", 0);
+//	states[1] = ec->get_cell_protein_level("DLL4", 0);
+//	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+//	states[3] = ec->get_cell_protein_level("VEGFR2", 0);
+//	states[4] = ec->get_cell_protein_level("NOTCH", 0);
+//	states[5] = ec->get_env_protein_level("VEGF") / agents;
+//	states[6] = ec->calc_adjacent_species_level("DLL4", false, true);
+//	states[7] = ec->calc_adjacent_species_level("NOTCH", false, true);
+//
+//	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
+//	controlled_stepper_type controlled_stepper;
+//	integrate_adaptive(controlled_stepper, EndothelialType_cell_only_system, states, 0.0, 1.0, 0.1);
+//
+//	ec->set_cell_protein_level("VEGF_VEGFR2", states[0], 0);
+//	ec->set_cell_protein_level("DLL4", states[1], 27);
+//	ec->set_cell_protein_level("DLL4_NOTCH", states[2], 0);
+//	ec->set_cell_protein_level("VEGFR2", states[3], 27);
+//	ec->set_cell_protein_level("NOTCH", states[4], 0);
 }

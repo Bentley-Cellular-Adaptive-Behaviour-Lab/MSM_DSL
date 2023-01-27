@@ -597,7 +597,9 @@ TEST_F(ShufflingTest, MSMResultsTest) {
     getWorld()->set_MSM_CPM(true);
     getWorld()->set_DSL_CPM(false);
     run(200);
-    create_outfiles();
+//    create_outfiles();
+    // Check we have the results we expect. This should
+    // be the same as the MSM.
     std::vector<float> target = std::vector<float> {3,3,5,5,3,3,5,5,4,4,5,5,3,3,5,5,3,3};
     auto last = getResults().back();
     for (unsigned int i = 1; i < (int) target.size(); i++) {
@@ -607,15 +609,23 @@ TEST_F(ShufflingTest, MSMResultsTest) {
 
 TEST_F(ShufflingTest, DSLResultsTest) {
     // Checks that the shuffling is able to occur
-    // with the MSM cellular potts model.
-    // Turn on MSM CPM - uses activeVEGFRtot.
+    // with the DSL cellular potts model.
+    // Turn on DSL CPM - uses activeVEGFRtot.
     getWorld()->set_MSM_CPM(false);
     getWorld()->set_DSL_CPM(true);
     run(200);
-    create_outfiles();
+//    create_outfiles();
+    // Check we have the results we expect. This should
+    // be the same as the MSM.
     std::vector<int> target = std::vector<int> {3,3,5,5,3,3,5,5,4,4,5,5,3,3,5,5,3,3};
     auto last = getResults().back();
     for (unsigned int i = 1; i < (int) target.size(); i++) {
         EXPECT_EQ(last->at(i), target.at(i - 1));
     }
+}
+
+TEST_F(ProteinUsageTest, MSMActinTest) {
+    setDSLExtension(false);
+    auto memAgent = getCentreMemAgent();
+    do_VEGFR_response(memAgent);
 }

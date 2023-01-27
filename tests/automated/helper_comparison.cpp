@@ -12,10 +12,10 @@
 #include "../../src/core/CPM_module.h"
 #include "../../src/core/coordinates.h"
 #include "../../src/core/environment.h"
-#include "../../src/core/EC.h"
+#include "../../src/core/filopodia.h"
 #include "../../src/core/memAgents.h"
 #include "../../src/core/location.h"
-#include "../../src/core/objects.h"
+#include "../../src/core/spring.h"
 #include "../../src/core/world.h"
 
 #include "../../src/dsl/species/protein.h"
@@ -828,16 +828,42 @@ void ProteinUsageTest::SetUp() {
     std::vector<double> params{};
     this->m_world = new World(50,50,50,1.0,0.0,params);
     this->m_tissueContainer = new Tissue_Container(this->m_world);
+    createEnvironment();
     createTissue();
 }
 
+void ProteinUsageTest::createEnvironment() {
+    Env *ep;
+    for (int x = 0; x < m_world->gridXDimensions; x++) {
+        for (int y = 0; y < m_world->gridYDimensions; y++) {
+            for (int z = 0; z < m_world->gridYDimensions; z++) {
+                if (m_world->grid[x][y][z].getType() == const_E) {
+                    auto targetProtein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,0,0,100);
+                    ep = m_world->grid[x][y][z].getEid();
+                    ep->owned_proteins.push_back(targetProtein);
+                    ep->VEGF = 0.0;
+                }
+            }
+        }
+    }
+
+    ep = m_world->grid[25][25][26].getEid();
+    ep->owned_proteins.push_back(new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100));
+    ep->VEGF = 1;
+
+    ep = m_world->grid[25][25][27].getEid();
+    ep->owned_proteins.push_back(new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT,1,0,100));
+    ep->VEGF = 1;
+}
+
 void ProteinUsageTest::createTissue() {
-    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 5, 5));
+    auto cellType = new Cell_Type(this->m_tissueContainer, "CellType", new Shape_Square(CELL_SHAPE_SQUARE, 10, 10));
 
     // Add "actin", which will decrease when the filopodia extends.
     cellType->add_protein(new Protein("ACTIN", PROTEIN_LOCATION_CELL, 512, 0, -1, 1));
 
-    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_FLAT, 3, 3);
+//    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
+    auto tissueType = this->m_tissueContainer->define_tissue_type("VesselType", cellType, CELL_CONFIGURATION_CYLINDRICAL, 1, 3, 6);
     auto Vessel_Pos = Coordinates(25, 25, 25);
     this->m_tissueContainer->create_tissue("Vessel", tissueType, &(Vessel_Pos));
 
@@ -869,6 +895,13 @@ bool ProteinUsageTest::doesDSLExtension() const {
     return this->m_DSL_extension;
 }
 
+void ProteinUsageTest::run(const unsigned int timestep) {
+    for (unsigned int i = 1; i < timestep; i++) {
+        do_MSM_timestep();
+        logActinLevels(i);
+    }
+}
+
 void ProteinUsageTest::do_MSM_timestep() {
     int movie = 0;
 
@@ -888,9 +921,7 @@ void ProteinUsageTest::do_MSM_timestep() {
         }
 
         this->m_world->resetCellLevels();
-        this->m_world->updateMemAgents_MSM();
-
-        std::cout << "Running CPM." << "\n";
+        do_MSM_memAgent_update();
 
         if (this->m_world->does_MSM_CPM()) {
             assert(!this->m_world->does_DSL_CPM());
@@ -929,16 +960,9 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
         for (j = 0; j < uptoSu; j++) m_world->ALLmemAgents.push_back(m_world->ECagents[i]->surfaceAgents[j]);
     }
     upto = m_world->ALLmemAgents.size();
-    //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //reorder agents randomly
-    //random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
     m_world->new_random_shuffle(m_world->ALLmemAgents.begin(), m_world->ALLmemAgents.end());
-    //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-    //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    //pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
     for (i = 0; i < upto; i++) {
 
         tipDeleteFlag = false;
@@ -996,14 +1020,16 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
                 // Retract filopodia if inactive.
                 if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
                     || ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
-                    if (memp->filRetract()) {
-                        tipDeleteFlag = true;
+                    // if (memp->filRetract()) {
+                    if (do_filopodia_retraction(memp)) {
+                            tipDeleteFlag = true;
                         m_world->deleteOldGridRef(memp, true);
                         delete memp;
                     }
                         //NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
                     else {
-                        memp->calcRetractDist();
+                        // memp->calcRetractDist();
+                        do_retraction_distance_calculation(memp);
                     }
                 }
                 //------------------------------------
@@ -1014,11 +1040,13 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
                     memp->VEGFRactive = 0.0f; //reset VEGFR activation level
                     if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != m_world->ECagents[0])&&(memp->Cell != m_world->ECagents[ECELLS - 1])) {
                         if (memp->vonNeu) {
-                            memp->VEGFRresponse();
+//                            memp->VEGFRresponse();
+                            do_VEGFR_response(memp);
                         }
                     } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
                         if (memp->vonNeu) {
-                            memp->VEGFRresponse();
+//                            memp->VEGFRresponse();
+                            do_VEGFR_response(memp);
                         }
                     }
                     if (memp->junction && !FEEDBACK_TESTING) {
@@ -1047,12 +1075,732 @@ void ProteinUsageTest::do_MSM_memAgent_update() {
     }
 }
 
-void ProteinUsageTest::do_VEGFR_response() {
+void ProteinUsageTest::do_VEGFR_response(MemAgent *memAgent) {
+    double prob, chance;
+
+    int upto = memAgent->Cell->VonNeighs;
+    float VEGFRactiveProp;
+    int i, j, k;
+    i = (int) memAgent->Mx;
+    j = (int) memAgent->My;
+    k = (int) memAgent->Mz;
+    bool moved = false;
+
+    bool filopodiaOn = true;
+
+    // calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
+    // float scalar = ((float) VEGFRNORM / (float) upto);
+    float scalar = ((float) memAgent->Cell->VEGFRnorm / (float) upto);
+    VEGFRactiveProp = memAgent->VEGFR / scalar;
+    memAgent->VEGFRactive = (memAgent->SumVEGF / memAgent->Cell->Vsink) * VEGFRactiveProp;
+    memAgent->Cell->MSM_VEGF += memAgent->SumVEGF;
+
+    // Done exceed max level
+    if (memAgent->VEGFRactive > memAgent->VEGFR) {
+        memAgent->VEGFRactive = memAgent->VEGFR;
+    }
+
+    // Calculate probability of extending
+    // a filopodium as a function of VEGFR
+    // activity, if no filopodia needed set to 0.
+    if (filopodiaOn) {
+        if (randFilExtend >= 0 && randFilExtend <= 1) {
+            prob = randFilExtend;
+        } else {
+            prob = ((float) memAgent->VEGFRactive / ((float) memAgent->Cell->VEGFRnorm / (float) upto)) * memAgent->Cell->filCONST;
+        }
+    } else {
+        prob = 0;
+    }
+
+    chance = (float) memAgent->worldP->new_rand() / (float) NEW_RAND_MAX;
+
+    if (chance < prob) {
+        // Award actin tokens
+        memAgent->filTokens++;
+
+        if (memAgent->FIL == NONE) {
+            memAgent->tryActinPassRadiusN((int) memAgent->Mx,
+                                          (int) memAgent->My,
+                                          (int) memAgent->Mz,
+                                          FIL_SPACING);
+        }
+
+        // Filopodia extension.
+        if (((memAgent->FIL == TIP) || (memAgent->FIL == NONE)) && (memAgent->filTokens >= tokenStrength)) {
+            if (!memAgent->deleteFlag) {
+                moved = do_filopodia_extension(memAgent);
+//                    moved = memAgent->extendFil();
+            }
+        }
+
+        memAgent->VRinactiveCounter = 0;
+
+    } else  {
+        memAgent->VRinactiveCounter++;
+    }
+
+    if (!moved) {
+        memAgent->filTipTimer++;
+    } else {
+        memAgent->filTipTimer = 0;
+    }
 
 }
 
-void ProteinUsageTest::do_filopodia_extension() {
+bool ProteinUsageTest::do_filopodia_extension(MemAgent *memAgent) const {
+    MemAgent* mp;
+    Env * highest;
+    bool extended = false;
+    Filopodia* fp;
+    float distNeeded;
+    float newDist, oldDist;
+    int i;
 
+    unsigned int xMax = m_world->gridXDimensions;
+
+    bool hasEnoughActin;
+
+    if (memAgent->node) {
+        if (memAgent->EnvNeighs.empty()) {
+            if (memAgent->Cell->actinUsed < actinMax) {
+                highest = memAgent->findHighestConc(); // MSM version.
+
+                // highest_search(EC *cell, MemAgent *memAgent)
+                bool canExtend = true;
+                if (SOLIDNESS_CHECK) {
+                    canExtend = memAgent->worldP->solidness_check(highest);
+                }
+                if ((highest != NULL) && (highest->VEGF != 0) && canExtend) {
+                    if (memAgent->FIL == NONE) {
+                        if (sqrt((highest->Ex - memAgent->Mx)*(highest->Ex - memAgent->Mx)) > xMax / 2.0f) {
+                            if (highest->Ex > memAgent->Mx) {
+                                distNeeded = memAgent->worldP->getDist(highest->Ex - xMax,
+                                                                       highest->Ey,
+                                                                       highest->Ez,
+                                                                       memAgent->Mx,
+                                                                       memAgent->My,
+                                                                       memAgent->Mz);
+                            } else {
+                                distNeeded = memAgent->worldP->getDist(highest->Ex,
+                                                                       highest->Ey,
+                                                                       highest->Ez,
+                                                                       memAgent->Mx - xMax,
+                                                                       memAgent->My,
+                                                                       memAgent->Mz);
+                            }
+                        } else {
+                            distNeeded = memAgent->worldP->getDist(highest->Ex,
+                                                                   highest->Ey,
+                                                                   highest->Ez,
+                                                                   memAgent->Mx,
+                                                                   memAgent->My,
+                                                                   memAgent->Mz);
+                        }
+
+                        // Check if the cell has enough
+                        // protein to reach a point.
+                        if (doesDSLExtension()) {
+                            hasEnoughActin = memAgent->worldP->cytoprotein_check(memAgent->Cell,
+                                                                                distNeeded,
+                                                                                 true);
+                            assert((actinMax - memAgent->Cell->actinUsed) >= distNeeded);
+                        } else {
+                            hasEnoughActin = (actinMax - memAgent->Cell->actinUsed) >= distNeeded;
+                        }
+
+                        if (hasEnoughActin) {
+                            memAgent->Cell->actinUsed += distNeeded;
+                            memAgent->FA=true;
+
+                            mp = new MemAgent(memAgent->Cell, memAgent->worldP);
+
+                            mp->Mx = highest->Ex;
+                            mp->My = highest->Ey;
+                            mp->Mz = highest->Ez;
+
+                            if (DSL_TESTING) {
+                                memAgent->worldP->set_focal_adhesion(mp);
+                            } else {
+                                mp->FA = true;
+                            }
+
+                            mp->setPreviousX(mp->Mx);
+                            mp->setPreviousY(mp->My);
+                            mp->setPreviousZ(mp->Mz);
+
+                            mp->FIL = TIP;
+                            memAgent->FIL = BASE;
+
+                            memAgent->Cell->nodeAgents.push_back(mp);
+                            memAgent->worldP->setFilLocation((int) mp->Mx,
+                                                             (int) mp->My,
+                                                             (int) mp->Mz,
+                                                             mp);
+
+                            // Connect the two nodes.
+                            memAgent->neigh[memAgent->neighs] = mp;
+                            memAgent->Cell->createSpringTokenObject(memAgent, mp, memAgent->neighs);
+                            memAgent->neighs++;
+
+                            //this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
+                            mp->filNeigh = memAgent;
+
+                            //link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
+                            memAgent->plusSite = mp;
+                            mp->minusSite = memAgent;
+
+                            // Confirms the extension has succeeded.
+                            extended = true;
+
+                            //spend the actin tokens
+                            memAgent->filTokens -= tokenStrength;
+                            memAgent->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)mp->Mx,
+                                                                                            (int)mp->My,
+                                                                                            (int)mp->Mz});
+                            //mp->filTokens=filTokens;
+                            //focalAdhesions();
+
+                            // For testing filopodia contacts.
+                            // Giovanni data comparison from PLoS CB paper.
+                            if (FILOPODIA_METRICS) {
+                                auto fp = new Filopodia(memAgent->worldP);
+
+//                              worldP->filopodia.push_back(fp);
+                                memAgent->base_fil_belong = fp;
+                                fp->time_created = memAgent->worldP->timeStep;
+                                fp->base = memAgent;
+                                fp->Cell = memAgent->Cell;
+                            }
+                        }
+                    } else {
+                        if (highest->Ex - memAgent->filNeigh->Mx > xMax / 2.0f)
+                            newDist = memAgent->worldP->getDist(highest->Ex - xMax,
+                                                                highest->Ey,
+                                                                highest->Ez,
+                                                                memAgent->filNeigh->Mx,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        else if (memAgent->filNeigh->Mx - highest->Ex > xMax / 2.0f) {
+                            newDist = memAgent->worldP->getDist(highest->Ex,
+                                                                highest->Ey,
+                                                                highest->Ez,
+                                                                memAgent->filNeigh->Mx - xMax,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        } else {
+                            newDist = memAgent->worldP->getDist(highest->Ex,
+                                                                highest->Ey,
+                                                                highest->Ez,
+                                                                memAgent->filNeigh->Mx,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        }
+
+                        if (memAgent->Mx - memAgent->filNeigh->Mx > xMAX / 2.0f) {
+                            oldDist = memAgent->worldP->getDist(memAgent->Mx - xMax,
+                                                                memAgent->My,
+                                                                memAgent->Mz,
+                                                                memAgent->filNeigh->Mx,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        } else if (memAgent->filNeigh->Mx - memAgent->Mx > xMax / 2.0f) {
+                            oldDist = memAgent->worldP->getDist(memAgent->Mx,
+                                                                memAgent->My,
+                                                                memAgent->Mz,
+                                                                memAgent->filNeigh->Mx - xMax,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        } else {
+                            oldDist = memAgent->worldP->getDist(memAgent->Mx,
+                                                                memAgent->My,
+                                                                memAgent->Mz,
+                                                                memAgent->filNeigh->Mx,
+                                                                memAgent->filNeigh->My,
+                                                                memAgent->filNeigh->Mz);
+                        }
+
+                        // Check if the cell has enough
+                        // protein to reach a point.
+                        if (doesDSLExtension()) {
+                            hasEnoughActin = memAgent->worldP->cytoprotein_check(memAgent->Cell,
+                                                                                 distNeeded,
+                                                                                 true);
+                            assert((actinMax - memAgent->Cell->actinUsed) >= distNeeded);
+                        } else {
+                            hasEnoughActin = (actinMax - memAgent->Cell->actinUsed) >= distNeeded;
+                        }
+
+                        distNeeded = newDist - oldDist;
+
+                        if (hasEnoughActin) {
+                            memAgent->Cell->actinUsed += distNeeded;
+                            memAgent->moveAgent(highest->Ex,
+                                                highest->Ey,
+                                                highest->Ez,
+                                                true);
+                            memAgent->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)memAgent->Mx,
+                                                                                            (int)memAgent->My,
+                                                                                            (int)memAgent->Mz});
+                            extended = true;
+                            memAgent->filTokens -= tokenStrength;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return extended;
+}
+
+bool ProteinUsageTest::do_filopodia_retraction(MemAgent *memAgent) const {
+    int flag = 0;
+    int i, k;
+    float B, D;
+    int FLAG = 0;
+
+    std::vector<Spring*>::iterator Q;
+    std::vector<MemAgent*>::iterator L;
+    Spring* neighStp;
+    int XA;
+    float length;
+    MemAgent* memp;
+    std::vector<MemAgent*>::iterator T;
+
+    // Release this memAgents adhesion (FIL=TIP for this node)
+    memAgent->FA = false;
+    // Flag it for deletion, which will also stop it being assessed in any further update functions e.g. receptor activation
+    memAgent->deleteFlag = true;
+
+    // Locate its nearest nodeAgent back in the fil then calculate length of its spring.
+    MemAgent* mp = memAgent->filNeigh;
+
+    XA = (int) memAgent->Mx - (int) mp->Mx;
+    B = (int) memAgent->My - (int) mp->My;
+    D = (int) memAgent->Mz - (int) mp->Mz;
+
+    //toroidal adjustments
+    if(TOROIDAL_X){
+        if (sqrt(XA * XA) >= (int) ((float) memAgent->worldP->gridXDimensions / 2.0f)) {
+            if (XA > 0)
+                XA = -(memAgent->worldP->gridXDimensions - XA);
+            else
+                XA = memAgent->worldP->gridXDimensions - abs(XA);
+            length = sqrt((XA * XA)+(B * B)+(D * D));
+        } else {
+            length = memAgent->worldP->getDist(memAgent->Mx,
+                                               memAgent->My,
+                                               memAgent->Mz,
+                                               mp->Mx,
+                                               mp->My,
+                                               mp->Mz);
+        }
+    } else {
+        length = memAgent->worldP->getDist(memAgent->Mx,
+                                           memAgent->My,
+                                           memAgent->Mz,
+                                           mp->Mx,
+                                           mp->My,
+                                           mp->Mz);
+    }
+
+    // if its spring length > 1 (so nodeAgents either end of spring are not nearest neighbours in grid,
+    // return false and stop function. It will reassess next timestep after the spring has retracted further
+    if ((int) length > 1) {
+        return false;
+    }
+        // Else, the current tip has retracted the spring back to the node agents adhered at the other end of the current spring
+    else {
+        i = 0;
+        flag = 0;
+        memAgent->Cell->filopodiaRetractions.push_back(std::array<int, 3>{ (int)mp->Mx,
+                                                                           (int)mp->My,
+                                                                           (int)mp->Mz });
+        // Update current actin usage by minusing the current length of the
+        // spring from cells list, as this spring is now going to be deleted
+
+        // Check if we're doing DSL extension, then add back
+        // whichever protein is being used as the cytoskeletal
+        // protein.
+        if (doesDSLExtension()) {
+            m_world->cytoprotein_check(memAgent->Cell, length, false);
+        } else {
+            memAgent->Cell->actinUsed -= length;
+        }
+
+
+        // If the nodeAgent at the other end of the spring is
+        // the BASE of the filopodium then reset it to NONE
+        // state and delete all springs and agents associated.
+        if (mp->FIL == BASE) {
+
+            mp->FIL = NONE;
+
+            // If vessel is blindended dont release adhesion, otherwise do.
+            // keeps it fixed and sewn up at front of sprout in this setup
+            // releasing adhesion keeps cell brod moving freely, filopodia
+            // adhesion can root it stuck while they exist.
+            if (BLINDENDED_SPROUT) {
+                if (!mp->labelledBlindended) {
+                    mp->FA=false;
+                }
+            }
+            //else mp->FA=false;
+
+            // Send the actin back to the filNeigh as tip node to be deleted.
+            mp->filTokens += memAgent->filTokens;
+
+            //ANALYSIS of filopodia can be done here
+            if (FILOPODIA_METRICS) {
+                mp->base_fil_belong->time_retract_complete = memAgent->worldP->timeStep;
+                mp->base_fil_belong->retracted = true;
+                // Add filopodia dynamics to the cell's list.
+                memAgent->Cell->add_retraction_time(memAgent->worldP->timeStep);
+                memAgent->Cell->add_lifespan(memAgent->worldP->timeStep - mp->base_fil_belong->time_created);
+                memAgent->Cell->add_creation_time(mp->base_fil_belong->time_created);
+                mp->base_fil_belong = NULL;
+            }
+
+            // The BASE->NONE state returns to not
+            // veil advancing state in case it had
+            // been previously advancing.
+            mp->veilAdvancing = false;
+
+            // Find where this spring is listed in each memAgent and remove
+            for (i = 0; i < mp->neighs; i++) {
+                if (mp->neigh[i] == memAgent) {
+
+                    neighStp = mp->SpringNeigh[i];
+                    mp->neigh[i] = NULL;
+                    mp->SpringNeigh[i] = NULL;
+                    FLAG = 1;
+                }
+
+                if ((FLAG == 1) && (mp->neighs > i + 1)) {
+                    mp->neigh[i] = mp->neigh[i + 1];
+                    mp->SpringNeigh[i] = mp->SpringNeigh[i + 1];
+                    mp->neigh[i + 1] = NULL;
+                    mp->SpringNeigh[i + 1] = NULL;
+                }
+            }
+
+            mp->neighs--;
+        } else {
+            ///if filNeigh !=BASE then it is a stalk node within the filopodium. so just rename it the new current tip and delete the old tipnode
+            mp->FIL = TIP;
+            //set its filtip timer so that it will be retracted in this same way on next assessment
+            mp->filTipTimer = FILTIPMAX + 1;
+            neighStp = mp->SpringNeigh[0];
+            mp->neigh[0] = NULL;
+            mp->SpringNeigh[0] = NULL;
+            mp->neighs = 0;
+            //flag as deleted so dont assess receptors etc.
+            mp->deleteFlag = true;
+            //pass down tipnodes actin to this new tip as the old will be deleted
+            mp->filTokens += memAgent->filTokens;
+        }
+
+        mp->plusSite = NULL;
+
+        //remove the spring from list
+        i = 0;
+        flag = 0;
+        do {
+            if (memAgent->Cell->Springs[i] == neighStp) {
+                flag = 1;
+                Q = memAgent->Cell->Springs.begin();
+                memAgent->Cell->Springs.erase(Q + i);
+                i--;
+            }
+            i++;
+
+        } while ((i < (int) memAgent->Cell->Springs.size()) && (flag == 0));
+        if (flag == 0) {
+            std::cout << "filRetract: hasn't found spring in list" << std::endl;
+            std::cout.flush();
+        }
+
+        // Remove the tip node from cells list.
+        i = 0;
+        flag = 0;
+        do {
+            if (memAgent->Cell->nodeAgents[i] == memAgent) {
+                flag = 1;
+                L = memAgent->Cell->nodeAgents.begin();
+                memAgent->Cell->nodeAgents.erase(L + i);
+            }
+            i++;
+        } while ((i < (int) memAgent->Cell->nodeAgents.size()) && (flag == 0));
+        if (flag == 0) {
+            std::cout << "filRetract: hasnt found in node list" << std::endl;
+            std::cout.flush();
+        }
+
+        // Need to go through and remove springAgents from grid,
+        // though really shouldn't have any as its less than 1 distance.
+        // just to be sure.
+        //delete old grid ref
+        if (neighStp->agents.size() > 0) {
+            for (i = 0; i < (int) neighStp->agents.size(); i++) {
+                memp = neighStp->agents[i];
+                memAgent->worldP->deleteOldGridRef(memp, true);
+                memp->deleteFlag = true;
+
+                if (memp->assessed) {
+                    k = 0;
+                    flag = 0;
+                    do {
+                        if (memp->Cell->springAgents[k] == memp) {
+                            flag = 1;
+                            L = memp->Cell->springAgents.begin();
+                            memp->Cell->springAgents.erase(L + k);
+                        }
+                        k++;
+                    } while ((k < (int) memp->Cell->springAgents.size()) && (flag == 0));
+                    if (flag == 0) {
+                        std::cout << "deleting spring agent in main: hasnt found in list" << std::endl;
+                        std::cout.flush();
+                    }
+                    delete memp;
+                }
+            }
+        }
+        delete neighStp;
+        return true;
+    }
+}
+
+void ProteinUsageTest::logActinLevels(const unsigned int timestep) {
+    auto results = new std::vector<float>();
+    results->push_back((float) timestep);
+    for (auto *cell : getWorld()->ECagents) {
+        // Push back the current levels of actin.
+        if (doesDSLExtension()) {
+            results->push_back((float) cell->get_cell_protein_level("Actin", 0));
+        } else {
+            results->push_back(512 - cell->actinUsed);
+        }
+    }
+    this->m_results.push_back(results);
+}
+
+void ProteinUsageTest::do_retraction_distance_calculation(MemAgent *memAgent) {
+
+    int i, k;
+    float denom, length;
+    float sumDN[3];
+    const int upto = meshNeighs + 5;
+    int DONE = 0;
+    float newX, newY, newZ;
+    float SL;
+    float sConst;
+
+    int flagFil = 0;
+    float ForceTemp[3];
+    float oldDist;
+
+    unsigned int xMax = m_world->gridXDimensions;
+
+    if (memAgent->Mx - memAgent->filNeigh->Mx >= xMax / 2.0f) {
+        oldDist = memAgent->worldP->getDist(memAgent->Mx - xMax,
+                                            memAgent->My,
+                                            memAgent->Mz,
+                                            memAgent->filNeigh->Mx,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    } else if (memAgent->filNeigh->Mx - memAgent->Mx >= xMax / 2.0f) {
+        oldDist = memAgent->worldP->getDist(memAgent->Mx,
+                                            memAgent->My,
+                                            memAgent->Mz,
+                                            memAgent->filNeigh->Mx - xMax,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    } else {
+        oldDist = memAgent->worldP->getDist(memAgent->Mx,
+                                            memAgent->My,
+                                            memAgent->Mz,
+                                            memAgent->filNeigh->Mx,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    }
+
+    float newDist;
+    std::array<std::array<float, 3>, upto> PN{};
+    std::array<std::array<float, 3>, upto> SN{};
+    std::array<std::array<float, 3>, upto> DN{};
+
+    for (k = 0; k < 3; k++) sumDN[k] = 0.0f;
+
+    // Have different lengths and constants for different types of spring
+    if (memAgent->FIL == TIP) {
+        sConst = filSpringConstant;
+        SL = filSpringLength;
+    }
+    // Calculate new force by summing neighbour vectors minused from
+    // current point PN1, PN2... then calculate the projection of S
+    // onto spring direction and get the difference, then
+    // sum the elongated regions of each and times by k constant.n
+
+    i = 0;
+    do {
+        if (memAgent->neigh[i] != NULL) {
+            PN[i][0] = memAgent->Mx - memAgent->neigh[i]->Mx;
+            PN[i][1] = memAgent->My - memAgent->neigh[i]->My;
+            PN[i][2] = memAgent->Mz - memAgent->neigh[i]->Mz;
+            length = memAgent->worldP->getDist(memAgent->Mx,
+                                               memAgent->My,
+                                               memAgent->Mz,
+                                               memAgent->neigh[i]->Mx,
+                                               memAgent->neigh[i]->My,
+                                               memAgent->neigh[i]->Mz);
+
+            if (memAgent->neigh[i]->FA) {
+                sConst = FAspringConstant; //filBaseConstant;
+                SL = springLength;
+            }
+            if (((memAgent->FIL == BASE)
+                || (memAgent->FIL == STALK))
+                && (memAgent->veilAdvancing)
+                && ((memAgent->neigh[i]->FIL == STALK)
+                || (memAgent->neigh[i]->FIL == TIP))) {
+                sConst = filBaseConstant;
+                SL = filSpringLength;
+            } else if (memAgent->neigh[i]->Cell != memAgent->Cell) {
+                sConst = junctionConstant;
+                SL = JunctionSpringLength;
+            } else {
+                sConst = springConstant;
+                SL = springLength;
+            }
+        } else if ((memAgent->FIL == TIP) && (flagFil == 0)) {
+            flagFil = 1;
+            PN[i][0] = memAgent->Mx - memAgent->filNeigh->Mx;
+            PN[i][1] = memAgent->My - memAgent->filNeigh->My;
+            PN[i][2] = memAgent->Mz - memAgent->filNeigh->Mz;
+            length = memAgent->worldP->getDist(memAgent->Mx,
+                                               memAgent->My,
+                                               memAgent->Mz,
+                                               memAgent->filNeigh->Mx,
+                                               memAgent->filNeigh->My,
+                                               memAgent->filNeigh->Mz);
+        } else {
+            DONE = 1;
+        }
+
+        if (DONE == 0) {
+
+            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) xMAX / 2.0f) {
+                if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
+                else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
+                length = fabs((float) (xMAX - PN[i][0]));
+            }
+            denom = sqrt((float) ((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2])));
+
+            // Only apply force when spring is longer than it should be,
+            // not smaller - as membranes don't ping outwards, they ruffle
+            // - should avoid 'sagging of membrane'
+            if (length > SL) {
+                for (k = 0; k < 3; k++) {
+                    SN[i][k] = SL * (PN[i][k] / denom);
+                }
+
+                for (k = 0; k < 3; k++) {
+                    DN[i][k] = PN[i][k] - SN[i][k];
+                }
+
+                for (k = 0; k < 3; k++) {
+                    sumDN[k] += (sConst * DN[i][k]);
+                }
+            }
+        }
+        i++;
+    } while ((i < upto) && (DONE == 0));
+
+    for (k = 0; k < 3; k++) {
+        ForceTemp[k] = sumDN[k];
+    }
+
+    newX = memAgent->Mx - (ForceTemp[0] / 2.0f);
+    newY = memAgent->My - (ForceTemp[1] / 2.0f);
+    newZ = memAgent->Mz - (ForceTemp[2] / 2.0f);
+
+    if (newX - memAgent->filNeigh->Mx >= xMax / 2.0f) {
+        newDist = memAgent->worldP->getDist(newX - xMax,
+                                            newY,
+                                            newZ,
+                                            memAgent->filNeigh->Mx,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    } else if (memAgent->filNeigh->Mx - newX >= xMax / 2.0f) {
+        newDist = memAgent->worldP->getDist(newX,
+                                            newY,
+                                            newZ,
+                                            memAgent->filNeigh->Mx - xMax,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    } else {
+        newDist = memAgent->worldP->getDist(newX,
+                                            newY,
+                                            newZ,
+                                            memAgent->filNeigh->Mx,
+                                            memAgent->filNeigh->My,
+                                            memAgent->filNeigh->Mz);
+    }
+
+    if (doesDSLExtension()) {
+        m_world->cytoprotein_check(memAgent->Cell, (oldDist - newDist), false);
+    } else {
+        memAgent->Cell->actinUsed -= (oldDist - newDist);
+    }
+}
+
+// https://stackoverflow.com/questions/12774207/fastest-way-to-check-if-a-file-exists-using-standard-c-c11-14-17-c
+inline bool ProteinUsageTest::file_exists(const std::string& name) {
+    struct stat buffer;
+    return (stat (name.c_str(), &buffer) == 0);
+}
+
+void ProteinUsageTest::create_outfiles() {
+    if (doesDSLExtension()) {
+        std::string file_string = "test_DSL_actin_usage.csv";
+        // Delete file if it already exists.
+        if (file_exists(file_string)) {
+            std::remove(file_string.c_str());
+        }
+        save_results(file_string);
+    } else {
+        std::string file_string = "test_MSM_actin_usage.csv";
+        // Delete file if it already exists.
+        if (file_exists(file_string)) {
+            std::remove(file_string.c_str());
+        }
+        save_results(file_string);
+    }
+}
+
+void ProteinUsageTest::save_results(const std::string &file_string) {
+    std::ofstream file;
+    file.open(file_string.c_str(), std::ios_base::app);
+    std::string header = "Timestep,";
+    const unsigned int n_cells = (m_results.at(0)->size() - 1) / 2;
+    for (unsigned int i = 1; i <= n_cells; i++) {
+        header += "cell_" + std::to_string(i) + "_actin,";
+    }
+    header += "\n";
+
+    file << header;
+
+    for (auto *result : this->m_results) {
+        for (auto value : *result) {
+            file << std::to_string(value) << ",";
+        }
+        file << "\n";
+    }
+    file.close();
+}
+
+MemAgent *ProteinUsageTest::getCentreMemAgent() {
+    return this->m_centreMemAgent;
 }
 
 void ProteinUsageTest::TearDown() {
