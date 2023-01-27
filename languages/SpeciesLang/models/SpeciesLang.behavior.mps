@@ -16371,12 +16371,34 @@
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="YMBvi4Ovl2" role="3clFbw">
-                <node concept="37vLTw" id="YMBvi4Ov0F" role="2Oq$k0">
-                  <ref role="3cqZAo" node="YMBvi4Oq3G" resolve="speciesExpr" />
+              <node concept="22lmx$" id="7sDGLhum7l7" role="3clFbw">
+                <node concept="2OqwBi" id="7sDGLhumcij" role="3uHU7w">
+                  <node concept="2OqwBi" id="7sDGLhumaU_" role="2Oq$k0">
+                    <node concept="2OqwBi" id="7sDGLhum8wj" role="2Oq$k0">
+                      <node concept="37vLTw" id="7sDGLhum85J" role="2Oq$k0">
+                        <ref role="3cqZAo" node="YMBvi4Oq3G" resolve="speciesExpr" />
+                      </node>
+                      <node concept="3TrEf2" id="7sDGLhum9MP" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:109yD1s_YGN" resolve="Species" />
+                      </node>
+                    </node>
+                    <node concept="3TrcHB" id="7sDGLhumbUP" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                    </node>
+                  </node>
+                  <node concept="21noJN" id="7sDGLhumd7p" role="2OqNvi">
+                    <node concept="21nZrQ" id="7sDGLhumd7r" role="21noJM">
+                      <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                    </node>
+                  </node>
                 </node>
-                <node concept="3TrcHB" id="YMBvi4OvFj" role="2OqNvi">
-                  <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                <node concept="2OqwBi" id="YMBvi4Ovl2" role="3uHU7B">
+                  <node concept="37vLTw" id="YMBvi4Ov0F" role="2Oq$k0">
+                    <ref role="3cqZAo" node="YMBvi4Oq3G" resolve="speciesExpr" />
+                  </node>
+                  <node concept="3TrcHB" id="YMBvi4OvFj" role="2OqNvi">
+                    <ref role="3TsBF5" to="w3cn:2L_6n0dlqW2" resolve="usesNeighbourValue" />
+                  </node>
                 </node>
               </node>
               <node concept="9aQIb" id="YMBvi4OvPE" role="9aQIa">
