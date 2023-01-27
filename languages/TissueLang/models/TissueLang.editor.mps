@@ -1871,15 +1871,6 @@
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1XX52x" to="nguq:5j_l9LXyZkA" resolve="CytoskeletalProteinUsage" />
     <node concept="3EZMnI" id="4YEYPh9ilwW" role="2wV5jI">
-      <node concept="3F0ifn" id="4YEYPh9ilxC" role="3EZMnx">
-        <property role="3F0ifm" value="Uses " />
-        <node concept="2biZxu" id="4YEYPh9l96b" role="3F10Kt">
-          <property role="1rj3mz" value="Calibri" />
-        </node>
-        <node concept="VSNWy" id="4YEYPh9l96c" role="3F10Kt">
-          <property role="1lJzqX" value="16" />
-        </node>
-      </node>
       <node concept="3F1sOY" id="4YEYPh9ilXV" role="3EZMnx">
         <ref role="1NtTu8" to="nguq:5j_l9LXyZox" resolve="requiredAmount" />
         <node concept="2biZxu" id="4YEYPh9l96f" role="3F10Kt">

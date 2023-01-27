@@ -213,14 +213,15 @@
         <property id="8466524915619773906" name="_showSensitivity" index="3CZpTv" />
         <child id="5740677014464676490" name="_extendsTowards" index="6K3Bu" />
         <child id="6117388699952920628" name="_extensionCondition" index="DiYMC" />
-        <child id="6117388699952920645" name="_cytoproteinCondition" index="DiYNp" />
+        <child id="6117388699952920645" name="_cytoskeletalProteinUsage" index="DiYNp" />
         <child id="8466524915619773254" name="_sensitivity" index="3CZpzb" />
       </concept>
-      <concept id="6117388699950642470" name="TissueLang.structure.CytoproteinCondition" flags="ng" index="DrE6U">
+      <concept id="6117388699950642470" name="TissueLang.structure.CytoskeletalProteinUsage" flags="ng" index="DrE6U">
         <reference id="6117388699950642719" name="targetSpecies" index="DrEa3" />
         <child id="6117388699950642721" name="requiredAmount" index="DrEaX" />
       </concept>
       <concept id="211905917822935903" name="TissueLang.structure.ExtensionWithProb" flags="ng" index="ZkRgg" />
+      <concept id="211905917822935902" name="TissueLang.structure.AlwaysExtends" flags="ng" index="ZkRgh" />
       <concept id="211905917822935901" name="TissueLang.structure.ExtensionCondition" flags="ng" index="ZkRgi">
         <child id="211905917822935904" name="expr" index="ZkRgJ" />
       </concept>
@@ -1686,7 +1687,7 @@
       </node>
     </node>
     <node concept="3ZP1sM" id="_I9vPho5Fp" role="1v2izm">
-      <property role="TrG5h" value="EndothelialType" />
+      <property role="TrG5h" value="CellType" />
       <node concept="3ZP1s$" id="_I9vPho5Fq" role="3ZP1s2">
         <node concept="2_hQR_" id="_I9vPho5Fr" role="2IF2Qc">
           <node concept="2_n9WQ" id="_I9vPho5Fs" role="2_hQRE">
@@ -1707,24 +1708,6 @@
       </node>
       <node concept="DjP54" id="_I9vPho5Fz" role="DjPbq">
         <property role="3CZpTv" value="true" />
-        <node concept="ZkRgg" id="_I9vPho5F$" role="DiYMC">
-          <node concept="30dDTi" id="5_H4mVsCiHG" role="ZkRgJ">
-            <node concept="30bXRB" id="5_H4mVsCiIf" role="30dEs_">
-              <property role="30bXRw" value="2" />
-            </node>
-            <node concept="3JPVZe" id="_I9vPho5F_" role="30dEsF">
-              <property role="1M7xND" value="true" />
-              <property role="1M7xNJ" value="true" />
-              <ref role="n1ZU3" node="3wgUPHa3JqO" resolve="ACTIVE_VEGFR" />
-              <node concept="3JPVZe" id="_I9vPho5FA" role="1M7xNG">
-                <ref role="n1ZU3" node="1RJrJFw2tk6" resolve="VEGFR2_LIMITER" />
-              </node>
-              <node concept="1csUcq" id="_I9vPho5FB" role="1M7xNx">
-                <ref role="1csUcr" node="2Qy0p_aVnWr" resolve="VEGFR2" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="DrE6U" id="_I9vPho5FC" role="DiYNp">
           <ref role="DrEa3" node="3Cam22k9mMq" resolve="Actin" />
           <node concept="3bpmHq" id="_I9vPho5FD" role="DrEaX">
@@ -1742,21 +1725,16 @@
         <node concept="30bXRB" id="_I9vPho5FI" role="3CZpzb">
           <property role="30bXRw" value="1.0" />
         </node>
-      </node>
-      <node concept="1csUcq" id="_I9vPho5FJ" role="3FWu3_">
-        <ref role="1csUcr" node="_I9vPho35M" resolve="DLL4" />
-      </node>
-      <node concept="1csUcq" id="_I9vPho5FK" role="3FWu3_">
-        <ref role="1csUcr" node="_I9vPho35Y" resolve="DLL4_NOTCH" />
-      </node>
-      <node concept="1csUcq" id="_I9vPho5FL" role="3FWu3_">
-        <ref role="1csUcr" node="_I9vPho35S" resolve="NOTCH" />
-      </node>
-      <node concept="1csUcq" id="_I9vPho5FO" role="3FWu3_">
-        <ref role="1csUcr" node="_I9vPho35o" resolve="VEGFR2" />
-      </node>
-      <node concept="1csUcq" id="_I9vPho5FP" role="3FWu3_">
-        <ref role="1csUcr" node="_I9vPho35_" resolve="VEGF_VEGFR2" />
+        <node concept="ZkRgh" id="66DdVtQ3O4R" role="DiYMC">
+          <node concept="30d7iD" id="66DdVtQ3O5C" role="ZkRgJ">
+            <node concept="30bXRB" id="66DdVtQ3O5I" role="30dEs_">
+              <property role="30bXRw" value="100" />
+            </node>
+            <node concept="1cBA6y" id="66DdVtQ3O5k" role="30dEsF">
+              <ref role="1cBA6z" node="2Qy0p_aVo5m" resolve="DLL4" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
