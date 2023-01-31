@@ -13,6 +13,7 @@
   </languages>
   <imports>
     <import index="rh4m" ref="r:cdead37a-42a7-4f39-9c0d-cf55bfbbc260(TestingTutorial.user_simulation)" implicit="true" />
+    <import index="fggn" ref="r:3189bffa-8305-47e7-8dcb-887a8684f370(31012301.user_simulation)" implicit="true" />
   </imports>
   <registry>
     <language id="615bc492-e50a-4c3e-8b86-8d639eaba343" name="ShapeLang">
@@ -234,6 +235,9 @@
       <node concept="3rtiFT" id="5H03a9kDJfq" role="3rqWia">
         <ref role="3rtiFY" to="rh4m:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="3rtiFT" id="6xkEuJ9yKDk" role="3rqWia">
+        <ref role="3rtiFY" to="fggn:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Na" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -252,6 +256,9 @@
       </node>
       <node concept="3rtiFT" id="5H03a9kDJfn" role="3rtiFW">
         <ref role="3rtiFY" to="rh4m:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="6xkEuJ9yKDh" role="3rtiFW">
+        <ref role="3rtiFY" to="fggn:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Oi" role="3_zqUg">
@@ -284,6 +291,15 @@
       <node concept="3rtiFT" id="5H03a9kDJfp" role="3rtiFW">
         <ref role="3rtiFY" to="rh4m:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="6xkEuJ9yKDe" role="3_z4RZ">
+        <ref role="DdDrb" to="fggn:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="6xkEuJ9yKDi" role="3rqWia">
+        <ref role="3rtiFY" to="fggn:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="6xkEuJ9yKDj" role="3rtiFW">
+        <ref role="3rtiFY" to="fggn:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9PT" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -302,6 +318,9 @@
       </node>
       <node concept="DdDr8" id="5H03a9kDJfl" role="3_z4RZ">
         <ref role="DdDrb" to="rh4m:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="6xkEuJ9yKDf" role="3_z4RZ">
+        <ref role="DdDrb" to="fggn:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9RD" role="3_zqUg">
@@ -322,6 +341,9 @@
       <node concept="DdDr8" id="5H03a9kDJfm" role="3_z4Rx">
         <ref role="DdDrb" to="rh4m:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
+      <node concept="DdDr8" id="6xkEuJ9yKDg" role="3_z4Rx">
+        <ref role="DdDrb" to="fggn:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
     </node>
   </node>
   <node concept="2rkfJA" id="oymmRcD7or">
@@ -337,7 +359,7 @@
   </node>
   <node concept="3Bb2si" id="oymmRdeu$t">
     <property role="TrG5h" value="Shape" />
-    <ref role="1ANuhP" node="oymmRcD7or" resolve="Simulation" />
+    <ref role="1ANuhP" node="oymmRcD7or" resolve="S" />
   </node>
 </model>
 
