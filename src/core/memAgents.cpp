@@ -757,7 +757,9 @@ void MemAgent::VEGFRresponse(void) {
 						Cell->get_extension_probs().push_back(prob);
 					}
 				} else {
-					prob = ((float) VEGFRactive / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
+					prob = ((float) VEGFRactive /
+							((float) Cell->VEGFRnorm /
+							(float) upto)) * Cell->filCONST;
 				}
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
@@ -768,8 +770,14 @@ void MemAgent::VEGFRresponse(void) {
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-//    if (chance < prob) {
-    if (worldP->can_extend(Cell, this)) {
+	bool success;
+	if (DSL_EXTENSION_PROB) {
+		success = worldP->can_extend(Cell, this);
+	} else {
+		success = chance < prob;
+	}
+
+    if (success) {
         // Award actin tokens
         filTokens++;
 
@@ -1459,7 +1467,11 @@ bool MemAgent::extendFil(void) {
             if (Cell->actinUsed < actinMax) {
 				allow = true;
                 if (allow) {
-                    highest = findHighestConc();
+					if (DSL_ENV_SELECTION) {
+						highest = worldP->highest_search(Cell, this);
+					} else {
+						highest = findHighestConc();
+					}
 					// highest_search(EC *cell, MemAgent *memAgent)
 					bool canExtend = true;
 					if (SOLIDNESS_CHECK) {

@@ -28,7 +28,6 @@ OBJS = ./core/contact.o \
 	   ./dsl/tissue/tissue.o \
 	   ./dsl/tissue/tissueContainer.o \
 	   ./dsl/tissue/tissueType.o \
-	   ./dsl/utils/logger.o \
 	   ./dsl/utils/shape.o \
 	   ./dsl/utils/utils.o \
 	   ./dsl/world/gradient.o \

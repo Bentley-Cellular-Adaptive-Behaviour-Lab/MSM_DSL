@@ -6552,12 +6552,96 @@
           <node concept="1WS0z7" id="5j_l9LXx0PI" role="lGtFl">
             <node concept="3JmXsc" id="5j_l9LXx0PL" role="3Jn$fo">
               <node concept="3clFbS" id="5j_l9LXx0PM" role="2VODD2">
-                <node concept="3clFbF" id="5j_l9LXx0PS" role="3cqZAp">
-                  <node concept="2OqwBi" id="5j_l9LXx0PN" role="3clFbG">
-                    <node concept="3Tsc0h" id="5j_l9LXx0PQ" role="2OqNvi">
+                <node concept="3cpWs8" id="5_GtOUyQsqO" role="3cqZAp">
+                  <node concept="3cpWsn" id="5_GtOUyQsqR" role="3cpWs9">
+                    <property role="TrG5h" value="cellTypes" />
+                    <node concept="_YKpA" id="5_GtOUyQsqM" role="1tU5fm">
+                      <node concept="3Tqbb2" id="5_GtOUyQsIk" role="_ZDj9">
+                        <ref role="ehGHo" to="nguq:5qSYbADreYb" resolve="CellType" />
+                      </node>
+                    </node>
+                    <node concept="2ShNRf" id="5_GtOUyQvVH" role="33vP2m">
+                      <node concept="Tc6Ow" id="5_GtOUyQvjU" role="2ShVmc">
+                        <node concept="3Tqbb2" id="5_GtOUyQvjV" role="HW$YZ">
+                          <ref role="ehGHo" to="nguq:5qSYbADreYb" resolve="CellType" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="2Gpval" id="5_GtOUyQ_TY" role="3cqZAp">
+                  <node concept="2GrKxI" id="5_GtOUyQ_U0" role="2Gsz3X">
+                    <property role="TrG5h" value="cellType" />
+                  </node>
+                  <node concept="2OqwBi" id="5_GtOUyQJqX" role="2GsD0m">
+                    <node concept="30H73N" id="5_GtOUyQI$m" role="2Oq$k0" />
+                    <node concept="3Tsc0h" id="5_GtOUyQLiS" role="2OqNvi">
                       <ref role="3TtcxE" to="nguq:4dDC3Gso8zH" resolve="_cellTypes" />
                     </node>
-                    <node concept="30H73N" id="5j_l9LXx0PR" role="2Oq$k0" />
+                  </node>
+                  <node concept="3clFbS" id="5_GtOUyQ_U4" role="2LFqv$">
+                    <node concept="3clFbJ" id="5_GtOUyQMjl" role="3cqZAp">
+                      <node concept="2OqwBi" id="5_GtOUyQSWg" role="3clFbw">
+                        <node concept="2OqwBi" id="5_GtOUyQPBv" role="2Oq$k0">
+                          <node concept="2GrUjf" id="5_GtOUyQOsq" role="2Oq$k0">
+                            <ref role="2Gs0qQ" node="5_GtOUyQ_U0" resolve="cellType" />
+                          </node>
+                          <node concept="3TrEf2" id="5_GtOUyQRK5" role="2OqNvi">
+                            <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                          </node>
+                        </node>
+                        <node concept="1mIQ4w" id="5_GtOUyQUbC" role="2OqNvi">
+                          <node concept="chp4Y" id="5_GtOUyQUUz" role="cj9EA">
+                            <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbS" id="5_GtOUyQMjn" role="3clFbx">
+                        <node concept="3clFbJ" id="5_GtOUyR28M" role="3cqZAp">
+                          <node concept="2OqwBi" id="5_GtOUyRfdI" role="3clFbw">
+                            <node concept="2OqwBi" id="5_GtOUyRbEa" role="2Oq$k0">
+                              <node concept="1PxgMI" id="5_GtOUyR8R$" role="2Oq$k0">
+                                <property role="1BlNFB" value="true" />
+                                <node concept="chp4Y" id="5_GtOUyRa7C" role="3oSUPX">
+                                  <ref role="cht4Q" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+                                </node>
+                                <node concept="2OqwBi" id="5_GtOUyR4ON" role="1m5AlR">
+                                  <node concept="2GrUjf" id="5_GtOUyR3Dm" role="2Oq$k0">
+                                    <ref role="2Gs0qQ" node="5_GtOUyQ_U0" resolve="cellType" />
+                                  </node>
+                                  <node concept="3TrEf2" id="5_GtOUyR6Nc" role="2OqNvi">
+                                    <ref role="3Tt5mk" to="nguq:5j_l9LXEwp6" resolve="_shapeBehaviour" />
+                                  </node>
+                                </node>
+                              </node>
+                              <node concept="3TrEf2" id="5_GtOUyRdqX" role="2OqNvi">
+                                <ref role="3Tt5mk" to="nguq:5j_l9LXFFx5" resolve="_cytoskeletalProteinUsage" />
+                              </node>
+                            </node>
+                            <node concept="3x8VRR" id="5_GtOUyRgu5" role="2OqNvi" />
+                          </node>
+                          <node concept="3clFbS" id="5_GtOUyR28O" role="3clFbx">
+                            <node concept="3clFbF" id="5_GtOUyRi34" role="3cqZAp">
+                              <node concept="2OqwBi" id="5_GtOUyRkDA" role="3clFbG">
+                                <node concept="37vLTw" id="5_GtOUyRi33" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="5_GtOUyQsqR" resolve="cellTypes" />
+                                </node>
+                                <node concept="TSZUe" id="5_GtOUyRoe4" role="2OqNvi">
+                                  <node concept="2GrUjf" id="5_GtOUyRpTx" role="25WWJ7">
+                                    <ref role="2Gs0qQ" node="5_GtOUyQ_U0" resolve="cellType" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="3cpWs6" id="5_GtOUyQylN" role="3cqZAp">
+                  <node concept="37vLTw" id="5_GtOUyQz1L" role="3cqZAk">
+                    <ref role="3cqZAo" node="5_GtOUyQsqR" resolve="cellTypes" />
                   </node>
                 </node>
               </node>

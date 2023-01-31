@@ -11,6 +11,8 @@
 #include <random>
 #include <vector>
 
+#include "../dsl/world/worldContainer.h"
+
 #define NEIGH 26
 #define NEW_RAND_MAX 32767
 
@@ -270,6 +272,7 @@ public:
 
     void setWorldContainer(WorldContainer* container) {
         m_worldContainer = container;
+		container->m_world = this;
     }
 
     Tissue_Container* getTissueContainer() {
@@ -288,7 +291,7 @@ public:
 	bool cytoprotein_check(EC *cell,
                            float distance,
                            const bool extendingFil);
-	Env* highest_search(MemAgent *memAgent);
+	Env* highest_search(EC *cell, MemAgent *memAgent);
 	Env* findHighestConcPosition(MemAgent* memAgent,
 								 const std::string& targetProteinName,
 								 const float& prob,

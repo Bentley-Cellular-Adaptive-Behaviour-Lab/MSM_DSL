@@ -35,15 +35,15 @@ class World;
 #define DSL_TESTING true
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
-#define SCALE_BY_INIT false
-#define WORLD_TESTING true
-#define TISSUE_TESTING true
-#define SHAPE_TESTING false
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING false
 #define SUBSTRATES_BLOCK_FILS true
 #define SOLIDNESS_CHECK false
-#define SEMA3A_SIMULATION_GRANT true
+#define SEMA3A_SIMULATION_GRANT false
+
+#define DSL_EXTENSION_PROB true
+#define DSL_ENV_SELECTION false
+#define DSL_EXTENSION_PROTEIN_USAGE false
 
 // Analysis types for the DSL.
 

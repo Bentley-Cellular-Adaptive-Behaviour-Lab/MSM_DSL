@@ -1930,57 +1930,57 @@ void World::updateMemAgents_MSM() {
 			if (memp->FIL == TIP) {
 				if (VEIL_ADVANCE) {
 					if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
-						if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+						if ((analysis_type != ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0]) &&
+							(memp->Cell != ECagents[ECELLS - 1])) {
 							memp->veilAdvance();
-						} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+						} else if (analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
 							memp->veilAdvance();
 						}
 					}
 				}
 
 				// Retract filopodia if inactive.
-				if (((RAND_FILRETRACT_CHANCE==-1) &&(memp->filTipTimer > FILTIPMAX))
-				|| ((RAND_FILRETRACT_CHANCE>-1) && (randomChance < RAND_FILRETRACT_CHANCE)) ) {
+				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > FILTIPMAX))
+					|| ((RAND_FILRETRACT_CHANCE > -1) && (randomChance < RAND_FILRETRACT_CHANCE))) {
 					if (memp->filRetract()) {
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);
 						delete memp;
 					}
-					//NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
+						//NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension
 					else {
 						memp->calcRetractDist();
 					}
 				}
-				//------------------------------------
+			}
 
+			//------------------------------------
+			//if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
 
-                //if memagent has not deleted in behaviours above, then update receptor activities and possibly extend a fil
-                if (!tipDeleteFlag) {
-                    memp->VEGFRactive = 0.0f; //reset VEGFR activation level
-                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                        if (memp->vonNeu) {
-                            memp->VEGFRresponse();
-                        }
-                    } else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
-                        if (memp->vonNeu) {
-                            memp->VEGFRresponse();
-                        }
-                    }
-                    if (memp->junction && !FEEDBACK_TESTING) {
-                        memp->NotchResponse();
-                    }
+			if (!tipDeleteFlag) {
+				memp->VEGFRactive = 0.0f; //reset VEGFR activation level
+				if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS) && (memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+					if (memp->vonNeu) {
+						memp->VEGFRresponse();
+					}
+				} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
+					if (memp->vonNeu) {
+						memp->VEGFRresponse();
+					}
+				}
+				if (memp->junction && !FEEDBACK_TESTING) {
+					memp->NotchResponse();
+				}
 
-                    ///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
-                    if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
-                        //memp->ActinFlow();
-                        memp->TokenTrading();
-                    }
-                    else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS){
-                        //memp->ActinFlow();
-                        memp->TokenTrading();
-                    }
-                }
-            }
+				///pass actin to nearest nodes Agent if a surfaceAgent, or further towards tip nodeagent if in a filopodium; lose all if not active
+				if ((analysis_type == ANALYSIS_TYPE_HYSTERESIS)&&(memp->Cell != ECagents[0])&&(memp->Cell != ECagents[ECELLS - 1])) {
+					//memp->ActinFlow();
+					memp->TokenTrading();
+				} else if(analysis_type != ANALYSIS_TYPE_HYSTERESIS) {
+					//memp->ActinFlow();
+					memp->TokenTrading();
+				}
+			}
 		}
 	}
 
