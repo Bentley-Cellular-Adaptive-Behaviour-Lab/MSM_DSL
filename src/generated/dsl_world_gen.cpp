@@ -18,7 +18,7 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
     world->fillParamVector(paramValues);
 
 	// GRADIENT CREATION
-	auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 3.4, 0, -1, -1);
+	auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 3.8, 0, -1, -1);
 	auto VEGFGradient_centre = Coordinates(60, 45, 20);
 	create_gradient(GRADIENT_TYPE_LINEAR, VEGF_protein, &(VEGFGradient_centre), GRADIENT_DIRECTION_DEC_Y, 120, 90, 40, true);
 	// SUBSTRATE CREATION

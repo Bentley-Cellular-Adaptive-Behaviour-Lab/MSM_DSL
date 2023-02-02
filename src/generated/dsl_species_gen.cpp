@@ -219,5 +219,4 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	ec->set_cell_protein_level("DLL4", states[3], 1);
   	ec->set_cell_protein_level("NOTCH", states[4], 1);
   	ec->set_cell_protein_level("DLL4_NOTCH", states[5], 1);
-
   }

@@ -56,19 +56,25 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 		// NO MODIFIERS
 		const auto ODE_MEMAGENT_VEGF = memAgent->mean_env_protein_search("VEGF"); // <- Get average.
 		const auto ODE_MEMAGENT_VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-
-		// Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
+//
+//		// Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
 		const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
 		auto prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * cell->filCONST;
 		return chance < prob;
 
 		// MODIFIERS - SCALAR
-//		const auto ODE_MEMAGENT_VEGF = memAgent->mean_env_protein_search("VEGF"); // <- Get average.
-//		const auto ODE_MEMAGENT_VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-//
-//		// Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
-//		const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-//		auto prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * cell->filCONST;
+//		auto upto = memAgent->Cell->VonNeighs;
+//		auto VEGF_SUM = memAgent->get_environment_level("VEGF", false, false);
+//		auto VEGFR2_scalar = 1.0f / upto;
+//		auto VEGFR2_NORM = memAgent->get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
+//		auto VEGFR2 = memAgent->get_memAgent_current_level("VEGFR");
+//		double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
+//		double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
+//		if (ACTIVE_VEGFR > VEGFR2_LIMITER) {
+//			ACTIVE_VEGFR = VEGFR2_LIMITER;
+//		}
+//		double FILCONST = 2;
+//		auto prob = (ACTIVE_VEGFR / VEGFR2_scalar) * FILCONST;
 //		return chance < prob;
 	}
 	return false; // Prevent extension if the cell type isn't found.
