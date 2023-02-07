@@ -30,8 +30,8 @@ class World;
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
 
-// Define for turning DSL-specific features (i.e. tissue set-up and world set-up).
-//#define GRAPHICS false
+// Defines for turning DSL-specific features
+// (i.e. tissue set-up and world set-up).
 #define DSL_TESTING true
 #define FEEDBACK_TESTING false
 #define FILOPODIA_METRICS true
@@ -41,9 +41,13 @@ class World;
 #define SOLIDNESS_CHECK false
 #define SEMA3A_SIMULATION_GRANT false
 
-#define DSL_EXTENSION_PROB true
+#define DSL_EXTENSION_PROB false
 #define DSL_ENV_SELECTION false
 #define DSL_EXTENSION_PROTEIN_USAGE false
+#define DSL_MAX_FILS true
+#define DSL_LOG_EXTENSIONS true
+#define DSL_LOG_RETRACTIONS false
+
 
 // Analysis types for the DSL.
 

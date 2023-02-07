@@ -1943,6 +1943,9 @@ void World::updateMemAgents_MSM() {
 				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > FILTIPMAX))
 					|| ((RAND_FILRETRACT_CHANCE > -1) && (randomChance < RAND_FILRETRACT_CHANCE))) {
 					if (memp->filRetract()) {
+						if (DSL_LOG_RETRACTIONS) {
+							log_retraction_event(memp);
+						}
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);
 						delete memp;
@@ -7600,4 +7603,109 @@ bool World::does_MSM_CPM() const {
 
 bool World::does_DSL_CPM() const {
     return this->m_DSL_CPM;
+}
+
+void World::create_extension_file(const std::string& extension_file_name) {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	this->m_extensionFile = extension_file_name;
+
+	sprintf(file_buffer, "%s", extension_file_name.c_str());
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	file << "Timestep,filopodia_id,cell_id,memAgent_type,new_tip_X,new_tip_Y,new_tip_Z,MSM_prob,DSL_prob,DSL_mod_prob\n";
+	file.close();
+}
+
+void World::log_extension_event(MemAgent* memAgent) {
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
+			// Add memAgent type to file.
+			file << memAgent->FIL << ",";
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::add_prob_to_extension_file(const double prob, bool add_new_line=false) {
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add probability.
+			file << prob;
+			if (add_new_line) {
+				file << "\n";
+			} else {
+				file << ",";
+			}
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_retraction_file(const std::string& retraction_file_name) {
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	this->m_retractionFile = retraction_file_name;
+
+	sprintf(file_buffer, "%s", retraction_file_name.c_str());
+	std::ofstream file;
+	file.open(this->m_retractionFile.c_str(), std::ios_base::app);
+	file << "Timestep,new_tip_X,new_tip_Y,new_tip_Z,filTipTimer\n";
+	file.close();
+}
+
+void World::log_retraction_event(MemAgent* memAgent) {
+	std::ofstream file;
+	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	try {
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add memAgent address to file.
+			file << &memAgent;
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+			// Add base memAgent location to file.
+			// Add filtiptimer to file.
+			file << memAgent->filTipTimer << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not open extensions results file. Please check the results directory exists.";
+		exit(e);
+	}
+}
+
+void World::increment_unique_fils() {
+	this->m_unique_fils++;
+}
+
+unsigned int World::get_unique_fils() {
+	return this->m_unique_fils;
 }

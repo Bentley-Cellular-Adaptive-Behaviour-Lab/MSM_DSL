@@ -275,6 +275,7 @@ int main(int argc, char * argv[]) {
 #if GRAPHICS
 		std::cout << "World created." << "\n";
 		world->create_outfiles(param_values);
+		world->create_extension_file("results/extensions.csv");
 		std::cout << "Running simulation." << std::endl;
         displayGlui(&argc, argv);
         glutMainLoop();
@@ -282,6 +283,7 @@ int main(int argc, char * argv[]) {
         std::cout << "World created." << "\n";
 		world->create_outfiles(param_values);
 		std::cout << "Running simulation." << std::endl;
+		world->create_extension_file("results/extensions.csv");
 		world->runSimulation_MSM();
 
         std::cout << "Ending simulation. Logging filopodia dynamics." << "\n";

@@ -2270,7 +2270,6 @@ void CPM_module::clearUpSmallSeparatedBitsOfCells(void) {
 
                     do {
                         //score++;
-
                         if (Mcurrent->FIL == TIP) {
                             Mcurrent->filTipTimer = FILTIPMAX + 1;
                             flag = 1;

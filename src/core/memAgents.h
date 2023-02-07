@@ -30,6 +30,7 @@ private:
     float m_previous_x;
     float m_previous_y;
     float m_previous_z;
+	unsigned int m_fil_id; // If a tip agent, then track the filopodia id.
 
     std::array<Location*, 26> m_stored_locations; // 26 = number of Von Neumann neighbours.
     std::map<std::string, double> m_mean_env_proteins_sensed;
@@ -230,6 +231,8 @@ public:
 	double DLL4_search();
 	bool passedBackBufferLevels = false;
 	void NotchResponseOld();
+	void set_fil_id(const unsigned int fil_id);
+	unsigned int get_fil_id();
 };
 
 #endif //SPRINGAGENT_MEMAGENTS_H

@@ -215,8 +215,8 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
   	ec->set_cell_protein_level("VEGFR", states[1], 1);
-  	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 1);
+  	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 8);
   	ec->set_cell_protein_level("DLL4", states[3], 1);
   	ec->set_cell_protein_level("NOTCH", states[4], 1);
-  	ec->set_cell_protein_level("DLL4_NOTCH", states[5], 1);
+  	ec->set_cell_protein_level("DLL4_NOTCH", states[5], 8);
   }

@@ -40,12 +40,12 @@ class EC {
 private:
     std::vector<Protrusion*> m_protrusions;
 	std::vector<ProtrusionType*> m_protrusion_types;
-	std::vector<EC*> m_neigh_cells;
+	std::vector<EC*> m_neigh_cells = {};
     std::map<std::string, double> m_protein_memAgent_buffer; // Stores total results from memAgent ODEs.
     std::map<std::string, double> m_protein_start_buffer; // Stores protein levels at start of tick. Key: protein name, value: protein level.
     std::map<std::string, double> m_protein_delta_buffer; // Stores changes determined by cell ODEs. Key: protein name, value: protein level.
 
-    // Stores values of environmental proteins. Only used during cell-only ODES.
+    // Store values of environmental proteins. Only used during cell-only ODES.
     // Key: protein name, value: protein level.
     std::map<std::string, double> m_env_protein_values;
 
@@ -54,6 +54,12 @@ private:
     std::vector<int> m_retraction_times;
     std::vector<int> m_filopodia_lifespans;
     std::vector<int> m_filopodia_creation_times;
+	int m_max_filopodia = 1;
+	int m_current_filopodia = 0;
+
+	std::vector<float> m_msm_extension_probabilities;
+	std::vector<float> m_dsl_extension_probabilities;
+
 public:
 	World *worldP;
 	Hysteresis *hyst;
@@ -235,5 +241,10 @@ public:
 	double calc_adjacent_species_level(const std::string& species_name,
 									   const bool memAgentODEs,
 									   const bool getsAverage);
+
+	int get_max_fils();
+	int get_current_fils();
+	void decrement_current_fils();
+	void increment_current_fils();
 };
 #endif //SPRINGAGENT_EC_H

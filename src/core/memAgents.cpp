@@ -20,6 +20,8 @@
 #include "../dsl/tissue/cellType.h"
 #include "../dsl/utils/utils.h"
 
+#include "../generated/dsl_species_gen.h"
+
 float steps = 0.5f;
 float overallVEGF = 0.0f;
 int overallflag = 0;
@@ -308,6 +310,10 @@ bool MemAgent::filRetract(void) {
          
          ///if the nodeAgent at the other end of the spring is the BASE of the filopodium then reset it to NONE state and delete all springs and agents associated
         if (mp->FIL == BASE) {
+
+			// If we start to remove this filopodia,
+			// then decrement the level of filopodia.
+			Cell->decrement_current_fils();
 
             mp->FIL = NONE;
             
@@ -728,14 +734,6 @@ void MemAgent::VEGFRresponse(void) {
         // Test - getting length of extended filopodia.
         // FORCE FILOPODIA THAT ARE LONG TO HAVE HIGH ACTIVATION.
 
-        bool test = false;
-        if (FIL == TIP) {
-            auto n_nodes = get_n_nodes();
-            if (n_nodes > 1) {
-                test = true;
-            }
-        }
-
         //calculate probability of extending a filopdium as a function of VEGFR activity, if no filopodia needed set to 0
         if (filopodiaOn) {
             //***** RANDFIL here
@@ -760,6 +758,7 @@ void MemAgent::VEGFRresponse(void) {
 					prob = ((float) VEGFRactive /
 							((float) Cell->VEGFRnorm /
 							(float) upto)) * Cell->filCONST;
+
 				}
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
@@ -793,22 +792,51 @@ void MemAgent::VEGFRresponse(void) {
             }
         }
 
-        //filopodia extension
+        // Filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
-            if (!deleteFlag)
-            	moved = extendFil();
-        }
+            if (!deleteFlag) {
+				moved = extendFil();
+				if (moved && DSL_LOG_EXTENSIONS) {
+					worldP->log_extension_event(this);
+					// DEBUG - REMOVE LATER //
+					// NO MODIFIERS
+					const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
+					const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
+					const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
+					auto DSL_prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR));
 
+					// MODIFIERS
+					auto upto = Cell->VonNeighs;
+					auto VEGF_SUM = get_environment_level("VEGF", false, false);
+					auto VEGFR2_scalar = 1.0f / upto;
+					auto VEGFR2_NORM = get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
+					auto VEGFR2 = get_memAgent_current_level("VEGFR");
+					double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
+					double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
+					if (ACTIVE_VEGFR > VEGFR2_LIMITER) {
+						ACTIVE_VEGFR = VEGFR2_LIMITER;
+					}
+					double FILCONST = 2;
+					auto DSL_prob_mod = (ACTIVE_VEGFR / VEGFR2_scalar) * FILCONST;
+					// Add probabilities to extension file.
+					worldP->add_prob_to_extension_file(prob, false);
+					worldP->add_prob_to_extension_file(DSL_prob, false);
+					worldP->add_prob_to_extension_file(DSL_prob_mod, true);
+					// --------------------//
+				}
+			}
+        }
         //reset VRinactive counter as now activated
         VRinactiveCounter = 0;
-
     } else  {
         VRinactiveCounter++;
     }
 
-    if (!moved)
-    	filTipTimer++;
-    else filTipTimer = 0;
+    if (!moved) {
+		filTipTimer++;
+	} else {
+		filTipTimer = 0;
+	}
 }
 //----------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------
@@ -1474,6 +1502,7 @@ bool MemAgent::extendFil(void) {
 					}
 					// highest_search(EC *cell, MemAgent *memAgent)
 					bool canExtend = true;
+
 					if (SOLIDNESS_CHECK) {
 						canExtend = worldP->solidness_check(highest);
 					}
@@ -1489,75 +1518,78 @@ bool MemAgent::extendFil(void) {
 								distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
 							}
 
-							if ((actinMax - Cell->actinUsed) >= distNeeded) {
-
-                            Cell->actinUsed += distNeeded;
-                            FA=true;
-
-                            mp = new MemAgent(Cell, worldP);
-                            
-                            mp->Mx = highest->Ex;
-                            mp->My = highest->Ey;
-                            mp->Mz = highest->Ez;
-
-							if (DSL_TESTING) {
-								this->worldP->set_focal_adhesion(mp);
-							} else {
-								mp->FA = true;
+							bool maxFilCheck = true;
+							if (DSL_MAX_FILS) {
+								maxFilCheck = Cell->get_current_fils() < Cell->get_max_fils();
 							}
+							if ((actinMax - Cell->actinUsed) >= distNeeded && maxFilCheck) {
+								Cell->increment_current_fils();
+                            	Cell->actinUsed += distNeeded;
+                            	FA=true;
 
-                            mp->setPreviousX(mp->Mx);
-                            mp->setPreviousY(mp->My);
-                            mp->setPreviousZ(mp->Mz);
-
-                            mp->FIL = TIP;
-                            FIL = BASE;
-
-
-                            Cell->nodeAgents.push_back(mp);
-
-                            worldP->setFilLocation((int) mp->Mx, (int) mp->My, (int) mp->Mz, mp);
-
-                            //connect the two nodes
-
-                            neigh[neighs] = mp;
-                            Cell->createSpringTokenObject(this, mp, neighs);
-                            neighs++;
-
-                            //this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
-                            mp->filNeigh = this;
-
-                            //link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
-                            plusSite = mp;
-                            mp->minusSite = this;
-
-                            //confirms the extension has succeeded
-                            ans = true;
-
-                            //spend the actin tokens
-                            filTokens -= tokenStrength;
-                            this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)mp->Mx, (int)mp->My, (int)mp->Mz});
-                            //mp->filTokens=filTokens;
-                            //focalAdhesions();
-
-                            //for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
-                            if (FILOPODIA_METRICS) {
-
-                                auto fp = new Filopodia(worldP);
-
-//                                worldP->filopodia.push_back(fp);
-
-                                base_fil_belong = fp;
-                                fp->time_created = worldP->timeStep;
-                                fp->base = this;
-                                fp->Cell = this->Cell;
-                            }
-                            //------------------------------------------
+                            	mp = new MemAgent(Cell, worldP);
                             
+                            	mp->Mx = highest->Ex;
+                            	mp->My = highest->Ey;
+                            	mp->Mz = highest->Ez;
 
-                        }
+								if (DSL_TESTING) {
+									this->worldP->set_focal_adhesion(mp);
+								} else {
+								mp->FA = true;
+								}
+								mp->setPreviousX(mp->Mx);
+                            	mp->setPreviousY(mp->My);
+                            	mp->setPreviousZ(mp->Mz);
 
-                    } else {
+                            	mp->FIL = TIP;
+								worldP->increment_unique_fils();
+								// Set unique id for both the base and tip filopodia.
+								this->m_fil_id = worldP->get_unique_fils();
+								mp->m_fil_id = worldP->get_unique_fils();
+                            	FIL = BASE;
+                            	Cell->nodeAgents.push_back(mp);
+
+                            	worldP->setFilLocation((int) mp->Mx, (int) mp->My, (int) mp->Mz, mp);
+
+                            	//connect the two nodes
+
+                            	neigh[neighs] = mp;
+                            	Cell->createSpringTokenObject(this, mp, neighs);
+                            	neighs++;
+
+                            	//this is so the tip knows which node it is connected to, rather than having a full spring as we dont want the tip to be pulled back down.
+                            	mp->filNeigh = this;
+
+                            	//link the two for polarity for passing of tokens up filopodia (always passes up to plus site)
+                            	plusSite = mp;
+                            	mp->minusSite = this;
+
+                            	//confirms the extension has succeeded
+                            	ans = true;
+
+                            	//spend the actin tokens
+								filTokens -= tokenStrength;
+								this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)mp->Mx, (int)mp->My, (int)mp->Mz});
+                            	//mp->filTokens=filTokens;
+                            	//focalAdhesions();
+
+                            	//for testing filopodia contacts (giovanni data comparison from PLoS CB paper)------------
+                            	if (FILOPODIA_METRICS) {
+
+                                	auto fp = new Filopodia(worldP);
+
+//                               	 worldP->filopodia.push_back(fp);
+
+                                	base_fil_belong = fp;
+                                	fp->time_created = worldP->timeStep;
+                                	fp->base = this;
+                                	fp->Cell = this->Cell;
+                            	}
+                            //------------------------------------------
+                        	}
+
+                    	} else {
                         if (highest->Ex - filNeigh->Mx > xMAX / 2.0f)
                             newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
                         else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f)
@@ -1592,6 +1624,7 @@ bool MemAgent::extendFil(void) {
         }
 
     }
+
     return (ans);
 
 }
@@ -4661,4 +4694,12 @@ void MemAgent::neighCellSearch(const bool doesVonNeumann) {
             }
         }
     }
+}
+
+unsigned int MemAgent::get_fil_id() {
+	return this->m_fil_id;
+}
+
+void MemAgent::set_fil_id(const unsigned int fil_id) {
+	this->m_fil_id = fil_id;
 }

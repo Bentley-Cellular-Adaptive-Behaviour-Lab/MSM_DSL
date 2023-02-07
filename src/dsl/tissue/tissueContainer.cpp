@@ -216,7 +216,7 @@ void Tissue_Container::create_tissue(const std::string& name, Tissue_Type_Cylind
             tissue->create_vessel();
             tissue->tissue_vessel_connect_mesh();
             tissue->determineJunctions();
-			set_vessel_neighbours(tissue);
+//			set_vessel_neighbours(tissue);
             store_tissue(tissue);
 		}
     } catch (int e) {

@@ -37,7 +37,11 @@ private:
 	bool m_DSL_CPM = false; // Used by DSL to determine whether the cellular potts model is run.
     bool m_MSM_CPM = false; // Used by MSM to determine whether the cellular potts model is run.
 	unsigned int m_start_CPM = 0; // When the cellular potts model runs, if at all.
-    std::vector<double> m_param_increments;
+	unsigned int m_unique_fils = 0; // Tracks the number of fils in the simulation
+
+	std::string m_extensionFile;
+	std::string m_retractionFile;
+	std::vector<double> m_param_increments;
     Tissue_Container *m_tissueContainer;
     WorldContainer* m_worldContainer;
     WorldLogger *m_worldLogger;
@@ -379,6 +383,15 @@ public:
 	float get_average_DLL4();
 	void create_DLL4_file();
 	void write_to_DLL4_file();
+
+	// Debug
+	void create_extension_file(const std::string& extension_file_name);
+	void log_extension_event(MemAgent* memAgent);
+	void add_prob_to_extension_file(const double prob, bool add_new_line);
+	void create_retraction_file(const std::string& retraction_file_name);
+	void log_retraction_event(MemAgent* memAgent);
+	void increment_unique_fils();
+	unsigned int get_unique_fils();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

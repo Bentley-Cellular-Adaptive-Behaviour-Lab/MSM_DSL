@@ -2289,3 +2289,19 @@ double EC::calc_adjacent_species_level(const std::string& species_name,
 		return level;
 	}
 }
+
+int EC::get_max_fils() {
+	return m_max_filopodia;
+}
+
+int EC::get_current_fils() {
+	return m_current_filopodia;
+}
+
+void EC::decrement_current_fils() {
+	m_current_filopodia--;
+}
+
+void EC::increment_current_fils() {
+	m_current_filopodia++;
+}
