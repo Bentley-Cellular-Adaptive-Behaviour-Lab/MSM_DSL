@@ -3,13 +3,14 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/ShapeLang/ShapeLang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/SignallingLang/SignallingLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/SimulationsLang/SimulationsLang.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/languages/SpeciesLang/SpeciesLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/TissueLang/TissueLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/UnitLang/UnitLang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/WorldLang/WorldLang.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/MSMSimulation/MSMSimulation.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/SemaPlexinSim/SemaPlexinSim.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/230208/230208.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/BaseTutorial/BaseTutorial.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/test/test.msd" folder="" />
     </projectModules>
   </component>
 </project>

@@ -11,9 +11,9 @@ class World;
 
 namespace odeint = boost::numeric::odeint;
 
-typedef boost::array<double, 6> HUVEC_cell_ode_states;
-typedef boost::array<double, 6> HUVEC_memAgent_ode_states;
-typedef boost::array<double, 6> HUVEC_cell_only_ode_states;
+typedef boost::array<double, 6> Endothelial_cell_ode_states;
+typedef boost::array<double, 6> Endothelial_memAgent_ode_states;
+typedef boost::array<double, 6> Endothelial_cell_only_ode_states;
 
 class ODEs {
 private:
@@ -25,12 +25,12 @@ public:
 	void check_cell_ODEs(EC *ec);
 	void check_memAgent_ODEs(const std::string& cell_type_name, MemAgent* memAgent);
 	void check_cell_only_ODEs(EC *ec);
- 	static void HUVEC_cell_system(const HUVEC_cell_ode_states &x, HUVEC_cell_ode_states &dxdt, double t);
- 	void HUVEC_run_cell_ODEs(EC *ec);
- 	static void HUVEC_memAgent_system(const HUVEC_memAgent_ode_states &x, HUVEC_memAgent_ode_states &dxdt, double t);
- 	void HUVEC_run_memAgent_ODEs(MemAgent *memAgent);
- 	static void HUVEC_cell_only_system(const HUVEC_cell_only_ode_states &x, HUVEC_cell_only_ode_states &dxdt, double t);
- 	void HUVEC_run_cell_only_ODEs(EC *ec);
+ 	static void Endothelial_cell_system(const Endothelial_cell_ode_states &x, Endothelial_cell_ode_states &dxdt, double t);
+ 	void Endothelial_run_cell_ODEs(EC *ec);
+ 	static void Endothelial_memAgent_system(const Endothelial_memAgent_ode_states &x, Endothelial_memAgent_ode_states &dxdt, double t);
+ 	void Endothelial_run_memAgent_ODEs(MemAgent *memAgent);
+ 	static void Endothelial_cell_only_system(const Endothelial_cell_only_ode_states &x, Endothelial_cell_only_ode_states &dxdt, double t);
+ 	void Endothelial_run_cell_only_ODEs(EC *ec);
 };
 
 
@@ -58,12 +58,12 @@ static double calc_VEGF_VEGFR_DEGRADATION_rate(double VEGF_VEGFR) {
 	return VEGF_VEGFR*0.05;
 }
 
-static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR) {
-	return VEGF*VEGFR*0.1;
+static double calc_VEGFR_PRODUCTION_rate() {
+	return 0.05;
 }
 
-static double calc_VEGFR_Production_rate() {
-	return 0.1;
+static double calc_VEGF_VEGFR_ON_rate(double VEGF, double VEGFR) {
+	return VEGF*VEGFR*0.1;
 }
 
 
