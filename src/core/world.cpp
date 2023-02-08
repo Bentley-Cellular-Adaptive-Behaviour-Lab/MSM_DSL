@@ -7674,22 +7674,23 @@ void World::create_retraction_file(const std::string& retraction_file_name) {
 	sprintf(file_buffer, "%s", retraction_file_name.c_str());
 	std::ofstream file;
 	file.open(this->m_retractionFile.c_str(), std::ios_base::app);
-	file << "Timestep,new_tip_X,new_tip_Y,new_tip_Z,filTipTimer\n";
+	file << "Timestep,filopodia_id,cell_id,memAgent_type,new_tip_X,new_tip_Y,new_tip_Z\n";
 	file.close();
 }
 
 void World::log_retraction_event(MemAgent* memAgent) {
 	std::ofstream file;
-	file.open(this->m_extensionFile.c_str(), std::ios_base::app);
+	file.open(this->m_retractionFile.c_str(), std::ios_base::app);
 	try {
 		if (file.is_open()) {
 			// Add timestep.
 			file << timeStep << ",";
-			// Add memAgent address to file.
-			file << &memAgent;
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
 			// Add tip memAgent location to file.
 			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
-			// Add base memAgent location to file.
 			// Add filtiptimer to file.
 			file << memAgent->filTipTimer << "\n";
 			file.close();

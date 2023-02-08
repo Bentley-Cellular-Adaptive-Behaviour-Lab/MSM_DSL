@@ -284,11 +284,21 @@
         <reference id="4970340729091001571" name="_worldContainerRef" index="1AQzTG" />
         <reference id="4970340729091001720" name="_signallingContainerRef" index="1AQzZR" />
         <reference id="4970340729090901985" name="_tissueContainerRef" index="1ATblI" />
-        <child id="8660349304734472780" name="_clusterContainer" index="2rk6u2" />
-        <child id="8660349304734472778" name="_analysisContainer" index="2rk6u4" />
-        <child id="8660349304734512033" name="_graphicsContainer" index="2rFWTJ" />
+        <child id="8660349304734472780" name="_clusterFacet" index="2rk6u2" />
+        <child id="8660349304734472778" name="_analysisFacet" index="2rk6u4" />
+        <child id="8660349304734512033" name="_graphicsFacet" index="2rFWTJ" />
+        <child id="3918753748559085337" name="_loggingContainer" index="2JuwFs" />
         <child id="6087312672701132233" name="_incrementCombinations" index="3xrXtm" />
       </concept>
+      <concept id="3918753748559058349" name="SimulationsLang.structure.LoggingStatement" flags="ng" index="2Jtu1C">
+        <child id="3918753748559522152" name="_logTarget" index="2JvdMH" />
+        <child id="3918753748559522154" name="_logFormat" index="2JvdMJ" />
+      </concept>
+      <concept id="3918753748559058348" name="SimulationsLang.structure.LoggingFacet" flags="ng" index="2Jtu1D">
+        <child id="3918753748559058352" name="_statements" index="2Jtu1P" />
+      </concept>
+      <concept id="3918753748559522151" name="SimulationsLang.structure.LogTarget" flags="ng" index="2JvdMy" />
+      <concept id="3918753748559522157" name="SimulationsLang.structure.LogFormat" flags="ng" index="2JvdMC" />
       <concept id="6087312672701024096" name="SimulationsLang.structure.IncrementCombination" flags="ng" index="3xrBRZ" />
     </language>
   </registry>
@@ -2725,6 +2735,22 @@
           <property role="gqqTy" value="108.0" />
           <property role="TgtnS" value="1.0;0.0;0.0;1.0;0.0;0.0" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2rkfJA" id="3pydsmple1d">
+    <property role="2rFPwA" value="100" />
+    <property role="TrG5h" value="Test" />
+    <node concept="2rk7l3" id="3pydsmple1e" role="2rk6u4" />
+    <node concept="2rk7nQ" id="3pydsmple1f" role="2rk6u2">
+      <property role="2rk6ya" value="1" />
+    </node>
+    <node concept="2rk7kT" id="3pydsmple1g" role="2rFWTJ" />
+    <node concept="3xrBRZ" id="3pydsmple1h" role="3xrXtm" />
+    <node concept="2Jtu1D" id="3pydsmpmfIs" role="2JuwFs">
+      <node concept="2Jtu1C" id="3pydsmpni_8" role="2Jtu1P">
+        <node concept="2JvdMy" id="3pydsmpni_9" role="2JvdMH" />
+        <node concept="2JvdMC" id="3pydsmpni_a" role="2JvdMJ" />
       </node>
     </node>
   </node>

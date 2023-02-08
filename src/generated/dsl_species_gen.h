@@ -47,11 +47,11 @@ static double calc_DLL4_NOTCH_ON_rate(double DLL4_MEAN, double NOTCH, const bool
 }
 
 static double calc_VEGFR_INHIB_rate(double DLL4_NOTCH, const bool memAgent) {
-	return DLL4_NOTCH*0.2;
+	return DLL4_NOTCH*0.15;
 }
 
 static double calc_DLL4_UPREG_rate(double VEGF_VEGFR, const bool memAgent) {
-	return VEGF_VEGFR*0.2;
+	return VEGF_VEGFR*0.15;
 }
 
 static double calc_DLL4_UPTAKE_rate(double DLL4, double NOTCH_MEAN, const bool memAgent) {

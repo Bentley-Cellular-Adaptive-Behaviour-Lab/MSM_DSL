@@ -20,6 +20,9 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="7418278005949660372" name="jetbrains.mps.lang.editor.structure.FontFamilyStyleClassItem" flags="ln" index="2biZxu" />
+      <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <child id="1140524464360" name="cellLayout" index="2czzBx" />
+      </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
       <concept id="1106270571710" name="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" flags="nn" index="2iRkQZ" />
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
@@ -74,6 +77,7 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073389882823" name="jetbrains.mps.lang.editor.structure.CellModel_RefNode" flags="sg" stub="730538219795960754" index="3F1sOY" />
+      <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
       <concept id="1176474535556" name="jetbrains.mps.lang.editor.structure.QueryFunction_JComponent" flags="in" index="3Fmcul" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -202,7 +206,7 @@
     </language>
   </registry>
   <node concept="24kQdi" id="7wJJsVzvW$D">
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1XX52x" to="yy1h:7wJJsVzvWzR" resolve="GraphicsFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvE9" role="2wV5jI">
       <property role="2oejA6" value="true" />
@@ -248,7 +252,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7wJJsVzvX04">
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1XX52x" to="yy1h:7wJJsVzvWyd" resolve="AnalysisFacet" />
     <node concept="1v6uyg" id="2B5sNxPnvN9" role="2wV5jI">
       <property role="2oejA6" value="true" />
@@ -294,7 +298,7 @@
     </node>
   </node>
   <node concept="24kQdi" id="7wJJsVzvX1K">
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1XX52x" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
     <node concept="1v6uyg" id="72wB6_dUsyA" role="2wV5jI">
       <property role="2oejA6" value="true" />
@@ -468,15 +472,15 @@
       </node>
       <node concept="3F0ifn" id="2B5sNxPnwgp" role="3EZMnx" />
       <node concept="3F1sOY" id="7wJJsVzwepi" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:7wJJsVzvXDa" resolve="_analysisContainer" />
+        <ref role="1NtTu8" to="yy1h:7wJJsVzvXDa" resolve="_analysisFacet" />
       </node>
       <node concept="3F0ifn" id="2B5sNxPnwaR" role="3EZMnx" />
       <node concept="3F1sOY" id="7wJJsVzwehf" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:7wJJsVzvXDc" resolve="_clusterContainer" />
+        <ref role="1NtTu8" to="yy1h:7wJJsVzvXDc" resolve="_clusterFacet" />
       </node>
       <node concept="3F0ifn" id="72wB6_dUsw5" role="3EZMnx" />
       <node concept="3F1sOY" id="7wJJsVzwel_" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:7wJJsVzw7ex" resolve="_graphicsContainer" />
+        <ref role="1NtTu8" to="yy1h:7wJJsVzw7ex" resolve="_graphicsFacet" />
       </node>
       <node concept="3F0ifn" id="5hUuDYPchLW" role="3EZMnx" />
       <node concept="3EZMnI" id="5hUuDYPchL5" role="3EZMnx">
@@ -580,7 +584,22 @@
         </node>
         <node concept="2iRfu4" id="5hUuDYPci4i" role="2iSdaV" />
       </node>
-      <node concept="3F0ifn" id="5hUuDYPci5q" role="3EZMnx" />
+      <node concept="3F0ifn" id="3pydsmp7IBo" role="3EZMnx" />
+      <node concept="3EZMnI" id="3pydsmp7IFX" role="3EZMnx">
+        <node concept="3F0ifn" id="3pydsmp7IFY" role="3EZMnx">
+          <property role="3F0ifm" value="Logging: " />
+          <node concept="2biZxu" id="3pydsmp7IFZ" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="3pydsmp7IG0" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="3pydsmp7IG8" role="2iSdaV" />
+      </node>
+      <node concept="3F1sOY" id="3pydsmp7INv" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:3pydsmp63Wp" resolve="_loggingContainer" />
+      </node>
       <node concept="1X3_iC" id="35npzpEaW1l" role="lGtFl">
         <property role="3V$3am" value="childCellModel" />
         <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
@@ -761,6 +780,62 @@
         </node>
       </node>
       <node concept="2iRkQZ" id="6JBqwuek7XS" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3pydsmp5XmX">
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1XX52x" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
+    <node concept="3EZMnI" id="3pydsmp7I_J" role="2wV5jI">
+      <node concept="3F0ifn" id="3pydsmp7I_Q" role="3EZMnx">
+        <property role="3F0ifm" value="Log" />
+      </node>
+      <node concept="3F1sOY" id="3pydsmp7I_W" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+      </node>
+      <node concept="3F1sOY" id="3pydsmp7IAe" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:3pydsmp7I_E" resolve="_logFormat" />
+      </node>
+      <node concept="2iRfu4" id="3pydsmp7I_M" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3pydsmp5Xn9">
+    <property role="3GE5qa" value="Facets" />
+    <ref role="1XX52x" to="yy1h:3pydsmp5XmG" resolve="LoggingFacet" />
+    <node concept="3EZMnI" id="3pydsmp5Xne" role="2wV5jI">
+      <node concept="3F0ifn" id="3pydsmp5Xng" role="3EZMnx">
+        <property role="3F0ifm" value="Statements:" />
+      </node>
+      <node concept="3F2HdR" id="3pydsmp5Xns" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:3pydsmp5XmK" resolve="_statements" />
+        <node concept="2iRkQZ" id="3pydsmp5Xnu" role="2czzBx" />
+      </node>
+      <node concept="2iRkQZ" id="3pydsmp5Xnh" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3pydsmp7IAr">
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1XX52x" to="yy1h:3pydsmp7I_I" resolve="LogCSVFormat" />
+    <node concept="3F0ifn" id="3pydsmp7IAt" role="2wV5jI">
+      <property role="3F0ifm" value="as CSV." />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3pydsmp7IAD">
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1XX52x" to="yy1h:3pydsmp7I__" resolve="LogSpeciesTarget" />
+    <node concept="3EZMnI" id="3pydsmp7IAI" role="2wV5jI">
+      <node concept="3F0ifn" id="3pydsmp7IAP" role="3EZMnx">
+        <property role="3F0ifm" value="species" />
+      </node>
+      <node concept="1iCGBv" id="3pydsmp7IAV" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:3pydsmp7IAw" resolve="_species" />
+        <node concept="1sVBvm" id="3pydsmp7IAX" role="1sWHZn">
+          <node concept="3F0A7n" id="3pydsmp7IBb" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="3pydsmp7IAL" role="2iSdaV" />
     </node>
   </node>
 </model>

@@ -38,7 +38,7 @@ void Tissue_Container::tissue_set_up(World* world) {
 	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 8));
 
 	// Tissue Type Creation //
-	auto VesselType_Type = define_tissue_type("VesselType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 1, 6);
+	auto VesselType_Type = define_tissue_type("VesselType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 6, 6);
 
 	// Cell Creation //
 
@@ -60,7 +60,7 @@ bool World::can_extend(EC* cell, MemAgent* memAgent) {
 		// Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
 		const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
 //		auto prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * cell->filCONST;
-		auto prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR));
+		auto prob = pow((ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR)), 0.65) - 0.08;
 
 		return chance < prob;
 

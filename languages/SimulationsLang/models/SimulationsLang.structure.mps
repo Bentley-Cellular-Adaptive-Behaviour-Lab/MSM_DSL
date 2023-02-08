@@ -72,21 +72,21 @@
     <node concept="1TJgyj" id="7wJJsVzvXDa" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472778" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_analysisContainer" />
+      <property role="20kJfa" value="_analysisFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWyd" resolve="AnalysisFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzvXDc" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734472780" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_clusterContainer" />
+      <property role="20kJfa" value="_clusterFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWwS" resolve="ClusterFacet" />
     </node>
     <node concept="1TJgyj" id="7wJJsVzw7ex" role="1TKVEi">
       <property role="IQ2ns" value="8660349304734512033" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_graphicsContainer" />
+      <property role="20kJfa" value="_graphicsFacet" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="7wJJsVzvWzR" resolve="GraphicsFacet" />
     </node>
@@ -96,6 +96,13 @@
       <property role="20kJfa" value="_incrementCombinations" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="5hUuDYP50tw" resolve="IncrementCombination" />
+    </node>
+    <node concept="1TJgyj" id="3pydsmp63Wp" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559085337" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_loggingContainer" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3pydsmp5XmG" resolve="LoggingFacet" />
     </node>
     <node concept="1TJgyi" id="7wJJsVzwenC" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734541288" />
@@ -183,7 +190,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWwS">
     <property role="EcuMT" value="8660349304734468152" />
     <property role="TrG5h" value="ClusterFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXj2" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471362" />
@@ -199,7 +206,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWyd">
     <property role="EcuMT" value="8660349304734468237" />
     <property role="TrG5h" value="AnalysisFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXk3" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471427" />
@@ -210,7 +217,7 @@
   <node concept="1TIwiD" id="7wJJsVzvWzR">
     <property role="EcuMT" value="8660349304734468343" />
     <property role="TrG5h" value="GraphicsFacet" />
-    <property role="3GE5qa" value="SubAspects" />
+    <property role="3GE5qa" value="Facets" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="7wJJsVzvXhY" role="1TKVEl">
       <property role="IQ2nx" value="8660349304734471294" />
@@ -269,6 +276,75 @@
       <property role="TrG5h" value="_containsWidth" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp5XmG">
+    <property role="EcuMT" value="3918753748559058348" />
+    <property role="TrG5h" value="LoggingFacet" />
+    <property role="3GE5qa" value="Facets" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="3pydsmp5XmK" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559058352" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_statements" />
+      <property role="20lbJX" value="fLJekj5/_0__n" />
+      <ref role="20lvS9" node="3pydsmp5XmH" resolve="LoggingStatement" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp5XmH">
+    <property role="EcuMT" value="3918753748559058349" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LoggingStatement" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="3pydsmp7I_C" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559522152" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_logTarget" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3pydsmp7I_B" resolve="LogTarget" />
+    </node>
+    <node concept="1TJgyj" id="3pydsmp7I_E" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559522154" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_logFormat" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="3pydsmp7I_H" resolve="LogFormat" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I__">
+    <property role="EcuMT" value="3918753748559522149" />
+    <property role="TrG5h" value="LogSpeciesTarget" />
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
+    <node concept="1TJgyj" id="3pydsmp7IAw" role="1TKVEi">
+      <property role="IQ2ns" value="3918753748559522208" />
+      <property role="20kJfa" value="_species" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_A">
+    <property role="EcuMT" value="3918753748559522150" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogFilopodiaTarget" />
+    <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_B">
+    <property role="EcuMT" value="3918753748559522151" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogTarget" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_H">
+    <property role="EcuMT" value="3918753748559522157" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogFormat" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+  </node>
+  <node concept="1TIwiD" id="3pydsmp7I_I">
+    <property role="EcuMT" value="3918753748559522158" />
+    <property role="3GE5qa" value="Logging" />
+    <property role="TrG5h" value="LogCSVFormat" />
+    <ref role="1TJDcQ" node="3pydsmp7I_H" resolve="LogFormat" />
   </node>
 </model>
 

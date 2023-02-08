@@ -41,12 +41,12 @@ class World;
 #define SOLIDNESS_CHECK false
 #define SEMA3A_SIMULATION_GRANT false
 
-#define DSL_EXTENSION_PROB false
+#define DSL_EXTENSION_PROB true
 #define DSL_ENV_SELECTION false
 #define DSL_EXTENSION_PROTEIN_USAGE false
-#define DSL_MAX_FILS true
+#define DSL_MAX_FILS false
 #define DSL_LOG_EXTENSIONS true
-#define DSL_LOG_RETRACTIONS false
+#define DSL_LOG_RETRACTIONS true
 
 
 // Analysis types for the DSL.
