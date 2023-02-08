@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/UserTesting_MSM_DSL.iml" filepath="$PROJECT_DIR$/.idea/UserTesting_MSM_DSL.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/tests/automated/autoSpringAgent.iml" filepath="$PROJECT_DIR$/.idea/tests/automated/autoSpringAgent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/objects.h.iml" filepath="$PROJECT_DIR$/.idea/objects.h.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/src/springAgent.iml" filepath="$PROJECT_DIR$/.idea/src/springAgent.iml" />
     </modules>
   </component>
