@@ -32,6 +32,7 @@
         <child id="4052263675728681442" name="_height" index="3oe_6P" />
       </concept>
       <concept id="8343650468779203047" name="WorldLang.structure.Gradient" flags="ng" index="1yko02">
+        <property id="4222210180560292605" name="_legacyVEGF" index="31NssO" />
         <child id="1155607132032667046" name="_speciesReference" index="1cJCsQ" />
         <child id="731720456867910319" name="_gradientType" index="3Sm0lf" />
         <child id="731720456867910321" name="_gradientShape" index="3Sm0lh" />
@@ -559,6 +560,7 @@
     </node>
     <node concept="1yko02" id="4MhpsBnf$kJ" role="1yko0e">
       <property role="TrG5h" value="Gradient" />
+      <property role="31NssO" value="true" />
       <node concept="_OHFp" id="4MhpsBnf$sD" role="3Sm0lf" />
       <node concept="_K$fF" id="4MhpsBnf$l9" role="3Sm0lh">
         <property role="m_KZ2" value="2S6lVSS$lvQ/Y_Decreasing" />
