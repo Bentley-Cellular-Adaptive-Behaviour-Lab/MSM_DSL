@@ -202,10 +202,10 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
 
   	states[1] = ec->get_cell_protein_level("VEGFR", 0);
-  	states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
+  	states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 99);
   	states[3] = ec->get_cell_protein_level("DLL4", 0);
   	states[4] = ec->get_cell_protein_level("NOTCH", 0);
-  	states[5] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
+  	states[5] = ec->get_cell_protein_level("DLL4_NOTCH", 99);
   	states[0] = ec->get_env_protein_level("VEGF") / agents;
   	states[6] = ec->calc_adjacent_species_level("DLL4", false, true);
   	states[7] = ec->calc_adjacent_species_level("NOTCH", false, true);
@@ -215,8 +215,8 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
   	ec->set_cell_protein_level("VEGFR", states[1], 1);
-  	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 8);
+  	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 100);
   	ec->set_cell_protein_level("DLL4", states[3], 1);
   	ec->set_cell_protein_level("NOTCH", states[4], 1);
-  	ec->set_cell_protein_level("DLL4_NOTCH", states[5], 8);
+  	ec->set_cell_protein_level("DLL4_NOTCH", states[5], 100);
   }
