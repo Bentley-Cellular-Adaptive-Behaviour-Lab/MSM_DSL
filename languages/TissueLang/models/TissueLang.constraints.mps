@@ -487,7 +487,7 @@
   </node>
   <node concept="1M2fIO" id="bKPOWXCUim">
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1M2myG" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+    <ref role="1M2myG" to="nguq:bKPOWXCUdu" resolve="ExtensionWhen" />
     <node concept="9S07l" id="bKPOWXCUin" role="9Vyp8">
       <node concept="3clFbS" id="bKPOWXCUio" role="2VODD2">
         <node concept="3clFbF" id="bKPOWXCUiJ" role="3cqZAp">

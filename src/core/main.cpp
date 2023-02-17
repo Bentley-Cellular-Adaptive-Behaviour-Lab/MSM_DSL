@@ -73,7 +73,8 @@ bool MEM_LEAK_OCCURRING = false; //core removal
 
 float dll4_SIG = 7.0f;
 float FIL_VARY = 2;
-float EPSILON = 0.9;
+//float EPSILON = 0.9;  // TOM: Testing env selection. Move back to 0.9 at some point.
+float EPSILON = 1.0;  // TOM: Testing env selection. Move back to 0.9 at some point.
 float tokenStrength = 1;
 float FILTIPMAX = 15;
 int FIL_SPACING = 2;
@@ -233,8 +234,9 @@ int main(int argc, char * argv[]) {
         w_container->world_setup(param_values); // Set the current increments that we are at.
         world = w_container->get_world();
         world->set_run_number(current_run_number);
+		world->set_replicate_number(replicate_no);
+		world->create_outfiles();
         WORLDpointer = world;
-
 
 
         // -----------------------------------------------------------------------------------------------------------//
@@ -283,17 +285,8 @@ int main(int argc, char * argv[]) {
         glutMainLoop();
 #else
         std::cout << "World created." << "\n";
-		world->create_outfiles(param_values);
 		std::cout << "Running simulation." << std::endl;
-		world->create_extension_file("results/extensions.csv");
-		world->create_retraction_file("results/retractions.csv");
 		world->runSimulation_MSM();
-
-        std::cout << "Ending simulation. Logging filopodia dynamics." << "\n";
-        world->log_filopodia();
-        world->write_to_retraction_file();
-        world->write_to_creation_file();
-        world->write_to_lifespan_file();
 
         //Get end time, and calculate elapsed time -> add these to results file.
         std::time_t end_time = get_current_time();

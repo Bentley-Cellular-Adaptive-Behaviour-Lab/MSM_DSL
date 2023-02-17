@@ -2810,7 +2810,7 @@
     </node>
     <node concept="1YaCAy" id="BDFw_SqAR_" role="1YuTPh">
       <property role="TrG5h" value="alwaysExtends" />
-      <ref role="1YaFvo" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+      <ref role="1YaFvo" to="nguq:bKPOWXCUdu" resolve="ExtensionWhen" />
     </node>
   </node>
   <node concept="1YbPZF" id="BDFw_SqB_G">

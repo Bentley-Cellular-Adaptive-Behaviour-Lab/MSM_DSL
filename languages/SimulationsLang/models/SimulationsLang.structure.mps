@@ -32,6 +32,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
@@ -295,29 +296,31 @@
     <property role="3GE5qa" value="Logging" />
     <property role="TrG5h" value="LoggingStatement" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="DsR2vrfdjx" role="1TKVEl">
+      <property role="IQ2nx" value="746713701976691937" />
+      <property role="TrG5h" value="_interval" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="DsR2vrqXhF" role="1TKVEl">
+      <property role="IQ2nx" value="746713701979772011" />
+      <property role="TrG5h" value="_format" />
+      <ref role="AX2Wp" node="DsR2vrqXgw" resolve="Format_Enum" />
+    </node>
     <node concept="1TJgyj" id="3pydsmp7I_C" role="1TKVEi">
       <property role="IQ2ns" value="3918753748559522152" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
       <property role="20kJfa" value="_logTarget" />
-      <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3pydsmp7I_B" resolve="LogTarget" />
-    </node>
-    <node concept="1TJgyj" id="3pydsmp7I_E" role="1TKVEi">
-      <property role="IQ2ns" value="3918753748559522154" />
-      <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_logFormat" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" node="3pydsmp7I_H" resolve="LogFormat" />
     </node>
   </node>
   <node concept="1TIwiD" id="3pydsmp7I__">
     <property role="EcuMT" value="3918753748559522149" />
-    <property role="TrG5h" value="LogSpeciesTarget" />
+    <property role="TrG5h" value="LogComponentTarget" />
     <property role="3GE5qa" value="Logging" />
     <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
     <node concept="1TJgyj" id="3pydsmp7IAw" role="1TKVEi">
       <property role="IQ2ns" value="3918753748559522208" />
-      <property role="20kJfa" value="_species" />
+      <property role="20kJfa" value="_component" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     </node>
@@ -326,6 +329,7 @@
     <property role="EcuMT" value="3918753748559522150" />
     <property role="3GE5qa" value="Logging" />
     <property role="TrG5h" value="LogFilopodiaTarget" />
+    <property role="R4oN_" value="Filopodia" />
     <ref role="1TJDcQ" node="3pydsmp7I_B" resolve="LogTarget" />
   </node>
   <node concept="1TIwiD" id="3pydsmp7I_B">
@@ -334,17 +338,16 @@
     <property role="TrG5h" value="LogTarget" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" />
   </node>
-  <node concept="1TIwiD" id="3pydsmp7I_H">
-    <property role="EcuMT" value="3918753748559522157" />
+  <node concept="25R3W" id="DsR2vrqXgw">
+    <property role="3F6X1D" value="746713701979771936" />
     <property role="3GE5qa" value="Logging" />
-    <property role="TrG5h" value="LogFormat" />
-    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
-  </node>
-  <node concept="1TIwiD" id="3pydsmp7I_I">
-    <property role="EcuMT" value="3918753748559522158" />
-    <property role="3GE5qa" value="Logging" />
-    <property role="TrG5h" value="LogCSVFormat" />
-    <ref role="1TJDcQ" node="3pydsmp7I_H" resolve="LogFormat" />
+    <property role="TrG5h" value="FormatEnum" />
+    <ref role="1H5jkz" node="DsR2vrqXgx" resolve="CSV" />
+    <node concept="25R33" id="DsR2vrqXgx" role="25R1y">
+      <property role="3tVfz5" value="746713701979771937" />
+      <property role="TrG5h" value="FORMAT_CSV" />
+      <property role="1L1pqM" value="CSV" />
+    </node>
   </node>
 </model>
 

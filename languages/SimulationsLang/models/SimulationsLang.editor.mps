@@ -173,7 +173,13 @@
       <concept id="4705942098322467729" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="ng" index="21nZrQ">
         <reference id="4705942098322467736" name="decl" index="21nZrZ" />
       </concept>
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
@@ -787,13 +793,167 @@
     <ref role="1XX52x" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
     <node concept="3EZMnI" id="3pydsmp7I_J" role="2wV5jI">
       <node concept="3F0ifn" id="3pydsmp7I_Q" role="3EZMnx">
-        <property role="3F0ifm" value="Log" />
+        <property role="3F0ifm" value="- Log" />
+        <node concept="2biZxu" id="DsR2vrTTzN" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTTzO" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
       </node>
       <node concept="3F1sOY" id="3pydsmp7I_W" role="3EZMnx">
         <ref role="1NtTu8" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
       </node>
-      <node concept="3F1sOY" id="3pydsmp7IAe" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:3pydsmp7I_E" resolve="_logFormat" />
+      <node concept="3F0ifn" id="DsR2vrqXji" role="3EZMnx">
+        <property role="3F0ifm" value="as" />
+        <node concept="2biZxu" id="DsR2vrTTzX" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTTzY" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+      </node>
+      <node concept="3F0A7n" id="DsR2vrqXj2" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:DsR2vrqXhF" resolve="_format" />
+        <node concept="2biZxu" id="DsR2vrTT$H" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTT$I" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="VechU" id="DsR2vrTT$J" role="3F10Kt">
+          <property role="Vb096" value="fLwANPu/blue" />
+        </node>
+        <node concept="Vb9p2" id="DsR2vrTT$K" role="3F10Kt">
+          <property role="Vbekb" value="g1_k_vY/BOLD" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="DsR2vs2dyy" role="3EZMnx">
+        <property role="3F0ifm" value="." />
+        <node concept="2biZxu" id="DsR2vs2dz1" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vs2dz2" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="pkWqt" id="DsR2vs2dz5" role="pqm2j">
+          <node concept="3clFbS" id="DsR2vs2dz6" role="2VODD2">
+            <node concept="3clFbF" id="DsR2vs2dB5" role="3cqZAp">
+              <node concept="2OqwBi" id="DsR2vs2eAJ" role="3clFbG">
+                <node concept="2OqwBi" id="DsR2vs2eAK" role="2Oq$k0">
+                  <node concept="pncrf" id="DsR2vs2eAL" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="DsR2vs2eAM" role="2OqNvi">
+                    <ref role="3Tt5mk" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+                  </node>
+                </node>
+                <node concept="1mIQ4w" id="DsR2vs2eAN" role="2OqNvi">
+                  <node concept="chp4Y" id="DsR2vs2eFz" role="cj9EA">
+                    <ref role="cht4Q" to="yy1h:3pydsmp7I_A" resolve="LogFilopodiaTarget" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="DsR2vrfdk0" role="3EZMnx">
+        <property role="3F0ifm" value="every" />
+        <node concept="2biZxu" id="DsR2vrTT$1" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTT$2" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="pkWqt" id="DsR2vs2du5" role="pqm2j">
+          <node concept="3clFbS" id="DsR2vs2du6" role="2VODD2">
+            <node concept="3clFbF" id="DsR2vs2gCY" role="3cqZAp">
+              <node concept="3fqX7Q" id="DsR2vs2gCZ" role="3clFbG">
+                <node concept="2OqwBi" id="DsR2vs2gD0" role="3fr31v">
+                  <node concept="2OqwBi" id="DsR2vs2gD1" role="2Oq$k0">
+                    <node concept="pncrf" id="DsR2vs2gD2" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="DsR2vs2gD3" role="2OqNvi">
+                      <ref role="3Tt5mk" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="DsR2vs2gD4" role="2OqNvi">
+                    <node concept="chp4Y" id="DsR2vs2gD5" role="cj9EA">
+                      <ref role="cht4Q" to="yy1h:3pydsmp7I_A" resolve="LogFilopodiaTarget" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0A7n" id="DsR2vrfdkc" role="3EZMnx">
+        <ref role="1NtTu8" to="yy1h:DsR2vrfdjx" resolve="_interval" />
+        <node concept="2biZxu" id="DsR2vrTT$P" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTT$Q" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="Vb9p2" id="DsR2vrTT$S" role="3F10Kt">
+          <property role="Vbekb" value="g1_k_vY/BOLD" />
+        </node>
+        <node concept="VechU" id="DsR2vrU3ED" role="3F10Kt">
+          <property role="Vb096" value="fLwANPr/green" />
+          <node concept="1iSF2X" id="DsR2vrU3EE" role="VblUZ">
+            <property role="1iTho6" value="5cb85c" />
+          </node>
+        </node>
+        <node concept="pkWqt" id="DsR2vs2h0Z" role="pqm2j">
+          <node concept="3clFbS" id="DsR2vs2h10" role="2VODD2">
+            <node concept="3clFbF" id="DsR2vs2h14" role="3cqZAp">
+              <node concept="3fqX7Q" id="DsR2vs2h16" role="3clFbG">
+                <node concept="2OqwBi" id="DsR2vs2h17" role="3fr31v">
+                  <node concept="2OqwBi" id="DsR2vs2h18" role="2Oq$k0">
+                    <node concept="pncrf" id="DsR2vs2h19" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="DsR2vs2h1a" role="2OqNvi">
+                      <ref role="3Tt5mk" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="DsR2vs2h1b" role="2OqNvi">
+                    <node concept="chp4Y" id="DsR2vs2h1c" role="cj9EA">
+                      <ref role="cht4Q" to="yy1h:3pydsmp7I_A" resolve="LogFilopodiaTarget" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="DsR2vrfdkq" role="3EZMnx">
+        <property role="3F0ifm" value="timesteps." />
+        <node concept="2biZxu" id="DsR2vrTT$5" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrTT$6" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
+        <node concept="pkWqt" id="DsR2vs2h6E" role="pqm2j">
+          <node concept="3clFbS" id="DsR2vs2h6F" role="2VODD2">
+            <node concept="3clFbF" id="DsR2vs2h6J" role="3cqZAp">
+              <node concept="3fqX7Q" id="DsR2vs2h6L" role="3clFbG">
+                <node concept="2OqwBi" id="DsR2vs2h6M" role="3fr31v">
+                  <node concept="2OqwBi" id="DsR2vs2h6N" role="2Oq$k0">
+                    <node concept="pncrf" id="DsR2vs2h6O" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="DsR2vs2h6P" role="2OqNvi">
+                      <ref role="3Tt5mk" to="yy1h:3pydsmp7I_C" resolve="_logTarget" />
+                    </node>
+                  </node>
+                  <node concept="1mIQ4w" id="DsR2vs2h6Q" role="2OqNvi">
+                    <node concept="chp4Y" id="DsR2vs2h6R" role="cj9EA">
+                      <ref role="cht4Q" to="yy1h:3pydsmp7I_A" resolve="LogFilopodiaTarget" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="2iRfu4" id="3pydsmp7I_M" role="2iSdaV" />
     </node>
@@ -802,9 +962,6 @@
     <property role="3GE5qa" value="Facets" />
     <ref role="1XX52x" to="yy1h:3pydsmp5XmG" resolve="LoggingFacet" />
     <node concept="3EZMnI" id="3pydsmp5Xne" role="2wV5jI">
-      <node concept="3F0ifn" id="3pydsmp5Xng" role="3EZMnx">
-        <property role="3F0ifm" value="Statements:" />
-      </node>
       <node concept="3F2HdR" id="3pydsmp5Xns" role="3EZMnx">
         <ref role="1NtTu8" to="yy1h:3pydsmp5XmK" resolve="_statements" />
         <node concept="2iRkQZ" id="3pydsmp5Xnu" role="2czzBx" />
@@ -812,30 +969,60 @@
       <node concept="2iRkQZ" id="3pydsmp5Xnh" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="3pydsmp7IAr">
-    <property role="3GE5qa" value="Logging" />
-    <ref role="1XX52x" to="yy1h:3pydsmp7I_I" resolve="LogCSVFormat" />
-    <node concept="3F0ifn" id="3pydsmp7IAt" role="2wV5jI">
-      <property role="3F0ifm" value="as CSV." />
-    </node>
-  </node>
   <node concept="24kQdi" id="3pydsmp7IAD">
     <property role="3GE5qa" value="Logging" />
-    <ref role="1XX52x" to="yy1h:3pydsmp7I__" resolve="LogSpeciesTarget" />
+    <ref role="1XX52x" to="yy1h:3pydsmp7I__" resolve="LogComponentTarget" />
     <node concept="3EZMnI" id="3pydsmp7IAI" role="2wV5jI">
       <node concept="3F0ifn" id="3pydsmp7IAP" role="3EZMnx">
-        <property role="3F0ifm" value="species" />
+        <property role="3F0ifm" value="component" />
+        <node concept="2biZxu" id="DsR2vrSRRX" role="3F10Kt">
+          <property role="1rj3mz" value="Calibri" />
+        </node>
+        <node concept="VSNWy" id="DsR2vrSRRY" role="3F10Kt">
+          <property role="1lJzqX" value="16" />
+        </node>
       </node>
       <node concept="1iCGBv" id="3pydsmp7IAV" role="3EZMnx">
-        <ref role="1NtTu8" to="yy1h:3pydsmp7IAw" resolve="_species" />
+        <ref role="1NtTu8" to="yy1h:3pydsmp7IAw" resolve="_component" />
         <node concept="1sVBvm" id="3pydsmp7IAX" role="1sWHZn">
           <node concept="3F0A7n" id="3pydsmp7IBb" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+            <node concept="2biZxu" id="DsR2vrSRRP" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
+            </node>
+            <node concept="VSNWy" id="DsR2vrSRRQ" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
+            </node>
+            <node concept="VechU" id="DsR2vrSRRR" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
+            </node>
+            <node concept="Vb9p2" id="DsR2vrSRRS" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
+            </node>
           </node>
         </node>
       </node>
       <node concept="2iRfu4" id="3pydsmp7IAL" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="DsR2vrqXjO">
+    <property role="3GE5qa" value="Logging" />
+    <ref role="1XX52x" to="yy1h:3pydsmp7I_A" resolve="LogFilopodiaTarget" />
+    <node concept="3F0ifn" id="DsR2vrqXk8" role="2wV5jI">
+      <property role="3F0ifm" value="filopodia" />
+      <node concept="2biZxu" id="DsR2vrSROI" role="3F10Kt">
+        <property role="1rj3mz" value="Calibri" />
+      </node>
+      <node concept="VSNWy" id="DsR2vrSROJ" role="3F10Kt">
+        <property role="1lJzqX" value="16" />
+      </node>
+      <node concept="VechU" id="DsR2vrSRPY" role="3F10Kt">
+        <property role="Vb096" value="fLwANPu/blue" />
+      </node>
+      <node concept="Vb9p2" id="DsR2vrSRPZ" role="3F10Kt">
+        <property role="Vbekb" value="g1_k_vY/BOLD" />
+      </node>
     </node>
   </node>
 </model>

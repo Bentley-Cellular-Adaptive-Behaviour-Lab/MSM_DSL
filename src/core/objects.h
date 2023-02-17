@@ -41,12 +41,11 @@ class World;
 #define SOLIDNESS_CHECK false
 #define SEMA3A_SIMULATION_GRANT false
 
-#define DSL_EXTENSION_PROB true
-#define DSL_ENV_SELECTION false
+#define DSL_EXTENSION_PROB false
+#define DSL_ENV_SELECTION true
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
-#define DSL_LOG_EXTENSIONS true
-#define DSL_LOG_RETRACTIONS true
+
 
 
 // Analysis types for the DSL.
@@ -127,7 +126,6 @@ enum ODE_TYPE {
 
 ///ENVIRONMENT SETUP
 #define ENV_SETUP 1//6 /////Environment types:
-
 
 //Environment 1 (with CELL_SETUP=1): 3D VEGF gradient (increasing in y axis) (as in Bentley et al JTB 2008), Environment 2 with CELL_SETUP=1): 2D VEGF gradient adhered to astrocyte grid (as in PLoS Comp Biol), Environment 3 with CELL_SETUP=1): 2D uniform gradient , Environment 4 with CELL_SETUP=1): 3D uniform gradient (as in Bentley et al JTB 2008), Environment 5 with CELL_SETUP=2):  VEGF radiating around horizontal/vertical sprout (Jakobsson et al 2010), Environment 6 with CELL_SETUP=2): VEGF increasing in x axis (Bentley et al rearrangement submitted), Environment 7 with CELL_SETUP=3): VEGF above monolayer (Ubezio et al 2013); Environment 8: RETINA ( VIllefranc 2012)
 #define VEGFbase 0//2.1 ///normal 2.1

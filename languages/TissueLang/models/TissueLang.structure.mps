@@ -421,8 +421,8 @@
   </node>
   <node concept="1TIwiD" id="bKPOWXCUdu">
     <property role="EcuMT" value="211905917822935902" />
-    <property role="TrG5h" value="AlwaysExtends" />
-    <property role="34LRSv" value="Always extends filopodia when: " />
+    <property role="TrG5h" value="ExtensionWhen" />
+    <property role="34LRSv" value="extends filopodia when: " />
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
     <ref role="1TJDcQ" node="bKPOWXCUdt" resolve="ExtensionCondition" />
   </node>

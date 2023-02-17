@@ -90,7 +90,7 @@ public:
 	Filopodia* base_fil_belong; ///involved in quantification of filopidia dynamics
 	void tryActinPassRadiusN(int x, int y, int z, int N); ///pass actin to nearest neighbours with filopodia
 	void veilAdvance(void); ///control release of filopida FAs and movement of lamella
-	bool extendFil(void); ///extend filopodia
+	bool extendFil(const double prob); ///extend filopodia -> TOM: Added prob for
 	bool filRetract(void); ///retract filopodia
 	void ActinFlow(void); ///actin dynamics, simple and high level at present.. degradation after 5 timesteps
 	void calcRetractDist(void); ///NEEDED TO CALC CURRENT ACTIN USAEAGE for limit on fil extension

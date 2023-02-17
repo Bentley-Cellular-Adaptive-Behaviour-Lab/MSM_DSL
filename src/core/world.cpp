@@ -4,6 +4,7 @@
 
 #include <unordered_map>
 #include <random>
+#include <sys/stat.h>
 
 #include "CPM_module.h"
 #include "contact.h"
@@ -276,6 +277,7 @@ World::World(const int grid_xMax,
 //    createLogger();
 
     this->fillParamVector(paramValues);
+	unsigned int paramSize = paramValues.size();
 
     Pause = 1;
     timeStep = -1;
@@ -1587,11 +1589,6 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
 
-        if (timeStep % 1 == 0) {
-			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
-			write_to_outfiles();
-		}
-
 		simulateTimestep_MSM();
 
         if (analysis_type == ANALYSIS_TYPE_HYSTERESIS) {
@@ -1626,7 +1623,7 @@ void World::runSimulation_DSL() {
 	while (timeStep <= MAXtime) {
 		if (timeStep % 10 == 0) {
 			std::cout << "Writing to results files. Timestep: " << timeStep << "\n";
-			write_to_outfiles();
+			write_to_component_outfiles();
 		}
 
 		simulateTimestep_MSM();
@@ -1762,8 +1759,9 @@ void World::simulateTimestep_MSM() {
 	timeStep++;
 	if (timeStep == 0) {
 		creationTimestep(movie);
+		// DSL logging.
+		write_to_component_outfiles();
 	} else {
-
         for (EC* ec : ECagents) {
             // Clear the vector of neighbouring cells.
             if (analysis_type == ANALYSIS_TYPE_SHUFFLING) {
@@ -1771,17 +1769,12 @@ void World::simulateTimestep_MSM() {
             }
 			ec->filopodiaExtensions.clear();
 			ec->filopodiaRetractions.clear();
-			ec->MSM_VEGF = 0;
 		}
 
 		// Resets cell levels in preparation for ODES
         // and distributes proteins out to memAgents.
         resetCellLevels();
 		updateMemAgents_MSM();
-
-//        if ( (timeStep > TIME_DIFFAD_STARTS) && MSM_REARRANGEMENT) {
-//			this->diffAd->run_CPM();
-//		}
 
         if (this->does_MSM_CPM() && (timeStep > this->get_start_CPM())) {
             assert(!this->does_DSL_CPM());
@@ -1793,6 +1786,8 @@ void World::simulateTimestep_MSM() {
 
 		updateECagents_MSM();
 		updateEnvironment_MSM();
+		// DSL logging.
+		write_to_component_outfiles();
 	}
 }
 
@@ -1864,6 +1859,7 @@ void World::updateMemAgents_MSM() {
 
 	JunctionAgents.clear();
 	ALLmemAgents.clear();
+
 	for (i = 0; i < uptoE; i++) {
 		uptoN = ECagents[i]->nodeAgents.size();
 		uptoS = ECagents[i]->springAgents.size();
@@ -1873,24 +1869,22 @@ void World::updateMemAgents_MSM() {
 		for (j = 0; j < uptoS; j++) ALLmemAgents.push_back(ECagents[i]->springAgents[j]);
 		for (j = 0; j < uptoSu; j++) ALLmemAgents.push_back(ECagents[i]->surfaceAgents[j]);
 	}
+
 	upto = ALLmemAgents.size();
-	//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//reorder agents randomly
-	//random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
+	// Reorder agents randomly.
 	new_random_shuffle(ALLmemAgents.begin(), ALLmemAgents.end());
-	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-	//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//pick one at a time and update its prot levels and try to extend/retract filopodia/lamellapodia.
+	// Pick one agent at a time and update its protein levels,
+	// and try to extend/retract filopodia/lamellipodia.
 	for (i = 0; i < upto; i++) {
 
-		tipDeleteFlag = false;
+		tipDeleteFlag = false; // Tracks whether a tip agent is scheduled to be deleted.
 
 		memp = ALLmemAgents[i];
 		memp->assessed = true;
 		memp->addedJunctionList = false;
+
+		// Check whether an agent has an environment agent
+		// in its von Neumann neighbourhood.
         memp->vonNeighSearch();
 
 		// Update the level of environmental proteins seen by the cell.
@@ -1900,33 +1894,36 @@ void World::updateMemAgents_MSM() {
 		deleted = delete_if_spring_agent_on_a_retracted_fil(memp);
 
 		if (!deleted) {
-			//reset memAgents active Notch level ready for new binding
+			// Reset memAgents active Notch level ready for new binding
 			memp->activeNotch = 0.0f;
 
-			//this is needed to tell if triangle positions have changed
-			//on the fly surface agent coverage code
+			// This is needed to tell if triangle positions have changed.
+			// on the fly surface agent coverage code.
 			if (on_the_fly_surface_agents) {
 				memp->store_previous_triangle_pos();
 			}
 
             randomChance = new_rand() / (float) NEW_RAND_MAX;
 
-            memp->checkNeighs(false); //assess local Moore neighbourhood and store data (includes diagonal neighs)
+			// Assess local Moore neighbourhood and store data (includes diagonal neighs).
+            memp->checkNeighs(false);
 
-			memp->JunctionTest(true); //determine if agent is on a junctoin for junctional behaviours
+			// Determine if an agent is on a junction for junctional behaviours.
+			memp->JunctionTest(true);
 
+			// Add neighbouring cells to the neighbour cell list.
             if (memp->junction) {
                 memp->neighCellSearch(false);
             }
 
-            // Run ODES, then update the cell's level of that particular protein.
-
+            // Run MEMAGENT ODES, then update the cell's level of that particular protein.
             if (PROTEIN_TESTING && odes->get_ODE_TYPE() == ODE_TYPE_MEMAGENT && memp->node) {
                 odes->check_memAgent_ODEs(memp->Cell->m_cell_type->m_name, memp);
                 memp->passBackBufferLevels();
             }
 
-			//if the memAgent resides at the tip of a filopodium (note TIP state of a memAgent is to do with filopodia not tip cells.)
+			// If the memAgent resides at the tip of a filopodium,
+			// do veil advance/retraction behaviours.
 			if (memp->FIL == TIP) {
 				if (VEIL_ADVANCE) {
 					if ((memp->form_filopodia_contact()) || (randomChance < RAND_VEIL_ADVANCE_CHANCE)) {
@@ -1943,9 +1940,6 @@ void World::updateMemAgents_MSM() {
 				if (((RAND_FILRETRACT_CHANCE == -1) && (memp->filTipTimer > FILTIPMAX))
 					|| ((RAND_FILRETRACT_CHANCE > -1) && (randomChance < RAND_FILRETRACT_CHANCE))) {
 					if (memp->filRetract()) {
-						if (DSL_LOG_RETRACTIONS) {
-							log_retraction_event(memp);
-						}
 						tipDeleteFlag = true;
 						deleteOldGridRef(memp, true);
 						delete memp;
@@ -6805,18 +6799,18 @@ void World::create_outfiles(std::vector<double>& param_values) {
     }
 }
 
-void World::write_to_outfiles() {
-	for (const auto& name : m_cellProteinNames) {
-		write_to_protein_cell_outfile(name);
-	}
-	for (const auto& name : m_envProteinNames) {
-		write_to_protein_env_outfile(name);
-	}
-	write_to_probabilities_file();
-	write_to_inhib_file();
-	write_to_upreg_file();
-	write_to_DLL4_file();
-}
+//void World::write_to_component_outfiles() {
+//	for (const auto& name : m_cellProteinNames) {
+//		write_to_protein_cell_outfile(name);
+//	}
+//	for (const auto& name : m_envProteinNames) {
+//		write_to_protein_env_outfile(name);
+//	}
+//	write_to_probabilities_file();
+//	write_to_inhib_file();
+//	write_to_upreg_file();
+//	write_to_DLL4_file();
+//}
 
 void World::write_time_to_pattern(const int time_to_pattern) {
     for (const auto& name : m_cellProteinNames) {
@@ -6986,6 +6980,14 @@ void World::set_run_number(const int run_number) {
 
 int World::get_run_number() const {
     return this->m_run_number;
+}
+
+void World::set_replicate_number(const int replicate_number) {
+	this->m_replicate_number = replicate_number;
+}
+
+int World::get_replicate_number() const {
+	return this->m_replicate_number;
 }
 
 void World::print_avg_prob() {
@@ -7558,7 +7560,6 @@ Env *World::findHighestConcPosition(MemAgent* memAgent,
 				}
 			}
 		}
-		//TODO: HAVE THE PROTEIN LEVEL FACTOR INTO THE SELECTION PROCESS SOMEHOW?
 		chosenEnv = furthest;
 	} else {
 		for (auto & envNeigh : envNeighs) {
@@ -7709,4 +7710,152 @@ void World::increment_unique_fils() {
 
 unsigned int World::get_unique_fils() {
 	return this->m_unique_fils;
+}
+
+static const bool file_exists(const std::string &name) {
+	struct stat buffer;
+	return (stat (name.c_str(), &buffer) == 0);
+}
+
+void World::create_component_outfile_csv(const std::string &protein_name) {
+	// Create file.
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+	auto file_name = "results/" + protein_name
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	// Add header information to file.
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Parameter Arguments: ";
+			for (auto &value : m_param_increments) {
+				file << value << ",";
+			}
+			file << "\n";
+			file << "Timestep,";
+			unsigned int count = 1;
+			for (auto &cell : ECagents) {
+				file << "cellID_" << std::to_string(count) << "_" << cell->m_tissue->m_name << ",";
+				count++;
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create results file for " + protein_name + ". Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::create_filopodia_outfile_csv() {
+	auto file_name = "results/filopodiaEvents_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+
+	std::ofstream file;
+	int file_buffer_size = 200;
+	char file_buffer[file_buffer_size];
+
+	// Delete results files that exist already.
+	// Create a new file in either case.
+
+	std::remove(file_name.c_str());
+	sprintf(file_buffer, "%s", file_name.c_str());
+
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			file << "Timestep,filopodiaID,cellID,tissueName,eventType,newTip_X,newTip_Y,newTip_Z,extensionProb\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_to_component_outfile_csv(const std::string &protein_name) {
+	auto file_name = "results/" + protein_name
+					 + "_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			for (auto &cell : ECagents) {
+				file << timeStep << ",";
+				file << std::to_string(cell->get_cell_protein_level(protein_name, 0)) << ",";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not write to results file for " + protein_name + ". Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
+}
+
+void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgent, const double prob= 0.0) {
+	auto file_name = "results/filopodiaEvents_replicate_" + std::to_string(m_replicate_number)
+					 + "_run_" + std::to_string(m_run_number)
+					 + ".csv";
+	std::ofstream file;
+	try {
+		file.open(file_name.c_str(), std::ios_base::app);
+		if (file.is_open()) {
+			// Add timestep.
+			file << timeStep << ",";
+			// Add filopodia id to file.
+			file << memAgent->get_fil_id() << ",";
+			// Add cell id to file.
+			file << memAgent->Cell->cell_number << ",";
+			// Add tissue name to the file.
+			file << memAgent->Cell->m_tissue->m_name << ",";
+
+			// Add event type to the file.
+			if (eventID == FIL_EVENT_CREATION) {
+				file << "creation,";
+			} else if (eventID == FIL_EVENT_EXTENSION) {
+				file << "extension,";
+			} else if (eventID == FIL_EVENT_RETRACTION) {
+				file << "retraction,";
+			} else if (eventID == FIL_EVENT_DISASSEMBLY) {
+				file << "disassembly,";
+			}
+
+			// Add tip memAgent location to file.
+			file << memAgent->Mx << "," << memAgent->My << "," << memAgent->Mz << ",";
+
+			// Add extension probability to file,
+			// if the event is a creation or extension event.
+			if (eventID == FIL_EVENT_CREATION || eventID == FIL_EVENT_EXTENSION) {
+				file << std::to_string(prob) << ",";
+			} else {
+				file << "n/a,";
+			}
+			file << "\n";
+			file.close();
+		} else {
+			throw 1;
+		}
+	} catch (int e) {
+		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
+		exit(e);
+	}
 }

@@ -30,13 +30,28 @@
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
+      </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
+      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
+        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
+        <child id="1212097481299" name="propertyValidator" index="QCWH9" />
+      </concept>
+      <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
+        <child id="1213098023997" name="property" index="1MhHOB" />
       </concept>
+      <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -57,7 +72,7 @@
   </node>
   <node concept="1M2fIO" id="3pydsmpmfSt">
     <property role="3GE5qa" value="Logging" />
-    <ref role="1M2myG" to="yy1h:3pydsmp7I__" resolve="LogSpeciesTarget" />
+    <ref role="1M2myG" to="yy1h:3pydsmp7I__" resolve="LogComponentTarget" />
     <node concept="9S07l" id="3pydsmpmfSK" role="9Vyp8">
       <node concept="3clFbS" id="3pydsmpmfSL" role="2VODD2">
         <node concept="3clFbF" id="3pydsmpmfWK" role="3cqZAp">
@@ -81,26 +96,39 @@
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="3pydsmpmga9">
-    <property role="3GE5qa" value="Logging" />
-    <ref role="1M2myG" to="yy1h:3pydsmp7I_I" resolve="LogCSVFormat" />
-    <node concept="9S07l" id="3pydsmpmgas" role="9Vyp8">
-      <node concept="3clFbS" id="3pydsmpmgat" role="2VODD2">
-        <node concept="3clFbF" id="3pydsmpmgaO" role="3cqZAp">
-          <node concept="3clFbT" id="3pydsmpmgaN" role="3clFbG">
-            <property role="3clFbU" value="true" />
+  <node concept="1M2fIO" id="DsR2vrUXgv">
+    <ref role="1M2myG" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
+    <node concept="EnEH3" id="DsR2vrUXh4" role="1MhHOB">
+      <ref role="EomxK" to="yy1h:7wJJsVzwenC" resolve="maxTimeSteps" />
+      <node concept="QB0g5" id="DsR2vrUXi1" role="QCWH9">
+        <node concept="3clFbS" id="DsR2vrUXi2" role="2VODD2">
+          <node concept="3clFbF" id="DsR2vrUXmW" role="3cqZAp">
+            <node concept="3eOSWO" id="DsR2vrUX_e" role="3clFbG">
+              <node concept="1Wqviy" id="DsR2vrUXO$" role="3uHU7B" />
+              <node concept="3cmrfG" id="DsR2vrUYcl" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node concept="1M2fIO" id="3pydsmpmgfk">
+  <node concept="1M2fIO" id="DsR2vrUYdY">
     <property role="3GE5qa" value="Logging" />
-    <ref role="1M2myG" to="yy1h:3pydsmp7I_H" resolve="LogFormat" />
-    <node concept="9S07l" id="3pydsmpmgfB" role="9Vyp8">
-      <node concept="3clFbS" id="3pydsmpmgfC" role="2VODD2">
-        <node concept="3clFbF" id="3pydsmpmgfZ" role="3cqZAp">
-          <node concept="3clFbT" id="3pydsmpmgfY" role="3clFbG" />
+    <ref role="1M2myG" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
+    <node concept="EnEH3" id="DsR2vrUYez" role="1MhHOB">
+      <ref role="EomxK" to="yy1h:DsR2vrfdjx" resolve="_interval" />
+      <node concept="QB0g5" id="DsR2vrUYfw" role="QCWH9">
+        <node concept="3clFbS" id="DsR2vrUYfx" role="2VODD2">
+          <node concept="3clFbF" id="DsR2vrUYgN" role="3cqZAp">
+            <node concept="3eOSWO" id="DsR2vrV00l" role="3clFbG">
+              <node concept="3cmrfG" id="DsR2vrV027" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="1Wqviy" id="DsR2vrUYgM" role="3uHU7B" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

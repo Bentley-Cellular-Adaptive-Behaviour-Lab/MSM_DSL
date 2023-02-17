@@ -1655,12 +1655,12 @@
   </node>
   <node concept="24kQdi" id="bKPOWXHII7">
     <property role="3GE5qa" value="CellType.ShapeBehaviour" />
-    <ref role="1XX52x" to="nguq:bKPOWXCUdu" resolve="AlwaysExtends" />
+    <ref role="1XX52x" to="nguq:bKPOWXCUdu" resolve="ExtensionWhen" />
     <node concept="3EZMnI" id="bKPOWXHII9" role="2wV5jI">
       <node concept="3EZMnI" id="bKPOWXHIIg" role="3EZMnx">
         <node concept="VPM3Z" id="bKPOWXHIIi" role="3F10Kt" />
         <node concept="3F0ifn" id="bKPOWXHIIt" role="3EZMnx">
-          <property role="3F0ifm" value="always when -&gt;" />
+          <property role="3F0ifm" value="when -&gt;" />
           <node concept="2biZxu" id="bKPOWXHIIB" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>

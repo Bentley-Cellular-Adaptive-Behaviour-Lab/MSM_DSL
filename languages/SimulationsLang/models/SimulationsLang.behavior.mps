@@ -2390,5 +2390,26 @@
       <node concept="3clFbS" id="3pydsmpmfIS" role="2VODD2" />
     </node>
   </node>
+  <node concept="13h7C7" id="DsR2vs2eTf">
+    <property role="3GE5qa" value="Logging" />
+    <ref role="13h7C2" to="yy1h:3pydsmp5XmH" resolve="LoggingStatement" />
+    <node concept="13hLZK" id="DsR2vs2eTg" role="13h7CW">
+      <node concept="3clFbS" id="DsR2vs2eTh" role="2VODD2">
+        <node concept="3clFbF" id="DsR2vs2f50" role="3cqZAp">
+          <node concept="37vLTI" id="DsR2vs2goa" role="3clFbG">
+            <node concept="3cmrfG" id="DsR2vs2go$" role="37vLTx">
+              <property role="3cmrfH" value="10" />
+            </node>
+            <node concept="2OqwBi" id="DsR2vs2fd2" role="37vLTJ">
+              <node concept="13iPFW" id="DsR2vs2f4Z" role="2Oq$k0" />
+              <node concept="3TrcHB" id="DsR2vs2fv_" role="2OqNvi">
+                <ref role="3TsBF5" to="yy1h:DsR2vrfdjx" resolve="_interval" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

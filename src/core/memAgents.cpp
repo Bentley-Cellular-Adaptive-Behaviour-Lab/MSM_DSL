@@ -360,6 +360,9 @@ bool MemAgent::filRetract(void) {
                 }
             }
 
+			// Log disassembly event.
+			worldP->write_to_filopodia_outfile(FIL_EVENT_DISASSEMBLY, mp, -1);
+
             mp->neighs--;
         } else {
            ///if filNeigh !=BASE then it is a stalk node within the filopodium. so just rename it the new current tip and delete the old tipnode
@@ -374,6 +377,8 @@ bool MemAgent::filRetract(void) {
             mp->deleteFlag = true;
             //pass down tipnodes actin to this new tip as the old will be deleted
             mp->filTokens += filTokens;
+			// Log retraction event.
+			worldP->write_to_filopodia_outfile(FIL_EVENT_RETRACTION, mp, -1);
         }
 
         mp->plusSite = NULL;
@@ -702,25 +707,10 @@ void MemAgent::VEGFRresponse(void) {
 
     bool filopodiaOn = true;
 
-    if (FEEDBACK_TESTING) {
-        const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
-        const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
-
-        // Predict the proportion of local "active VEGFR" level as a function of VEGFR and VEGF.
-        const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-		double scalar = ((float) VEGFRNORM / (float) upto);
-		if (ODE_activeVEGFR == 0) {
-			prob = 0;
-		} else {
-			prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR))  * Cell->filCONST;
-		}
-
-		if (worldP->timeStep % 9 == 0) {
-			Cell->get_extension_probs().push_back(prob);
-		}
+    if (DSL_EXTENSION_PROB) {
+		prob = worldP->calc_extension_prob(Cell, this);
     } else {
-        //calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
-//		float scalar = ((float) VEGFRNORM / (float) upto);
+        // Calculate the active VEGFR level as a function of VEGFR-2, VEGFR1 level and VEGF.
 		float scalar = ((float) Cell->VEGFRnorm / (float) upto);
 		VEGFRactiveProp = VEGFR / scalar;
         VEGFRactive = (SumVEGF / Cell->Vsink) * VEGFRactiveProp;
@@ -744,22 +734,9 @@ void MemAgent::VEGFRresponse(void) {
                 // with no bias from VR->actin or VR gradient to direction.
                 prob = randFilExtend;
             } else {
-				if (SEMA3A_SIMULATION_GRANT) {
-					// Get the average amount of sema in the environment.
-					// Then reduce the probability that a filopodia can extend
-					// by an amount relative to the amount of sema nearby.
-					auto sema = this->get_mean_env_protein("SEMA3A");
-					auto probability_modifier = sema * 0.2;
-					prob = (((float) VEGFRactive - probability_modifier) / ((float) Cell->VEGFRnorm / (float) upto)) * Cell->filCONST;
-					if (worldP->timeStep % 9 == 0) {
-						Cell->get_extension_probs().push_back(prob);
-					}
-				} else {
-					prob = ((float) VEGFRactive /
-							((float) Cell->VEGFRnorm /
-							(float) upto)) * Cell->filCONST;
-
-				}
+				prob = ((float) VEGFRactive /
+						((float) Cell->VEGFRnorm /
+						 (float) upto)) * Cell->filCONST;
             }
             //else Prob = ((float) VEGFRactive / (((float) VEGFRnorm/2.0f) / (float) upto)) * Cell->filCONST;
         } else {
@@ -769,14 +746,7 @@ void MemAgent::VEGFRresponse(void) {
 
     chance = (float) worldP->new_rand() / (float) NEW_RAND_MAX;
 
-	bool success;
-	if (DSL_EXTENSION_PROB) {
-		success = worldP->can_extend(Cell, this);
-	} else {
-		success = chance < prob;
-	}
-
-    if (success) {
+    if (chance < prob) {
         // Award actin tokens
         filTokens++;
 
@@ -795,35 +765,7 @@ void MemAgent::VEGFRresponse(void) {
         // Filopodia extension
         if (((FIL == TIP) || (FIL == NONE)) && (filTokens >= tokenStrength)) {
             if (!deleteFlag) {
-				moved = extendFil();
-				if (moved && DSL_LOG_EXTENSIONS) {
-					worldP->log_extension_event(this);
-					// DEBUG - REMOVE LATER //
-					// NO MODIFIERS
-					const auto ODE_MEMAGENT_VEGF = mean_env_protein_search("VEGF"); // <- Get average.
-					const auto ODE_MEMAGENT_VEGFR = get_memAgent_current_level("VEGFR");
-					const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-					auto DSL_prob = (ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR));
-
-					// MODIFIERS
-					auto upto = Cell->VonNeighs;
-					auto VEGF_SUM = get_environment_level("VEGF", false, false);
-					auto VEGFR2_scalar = 1.0f / upto;
-					auto VEGFR2_NORM = get_memAgent_current_level("VEGFR") / VEGFR2_scalar;
-					auto VEGFR2 = get_memAgent_current_level("VEGFR");
-					double ACTIVE_VEGFR = calc_ACTIVE_VEGFR_rate(VEGF_SUM, VEGFR2_NORM, true);
-					double VEGFR2_LIMITER = calc_VEGFR2_LIMITER_rate(VEGFR2, true);
-					if (ACTIVE_VEGFR > VEGFR2_LIMITER) {
-						ACTIVE_VEGFR = VEGFR2_LIMITER;
-					}
-					double FILCONST = 2;
-					auto DSL_prob_mod = (ACTIVE_VEGFR / VEGFR2_scalar) * FILCONST;
-					// Add probabilities to extension file.
-					worldP->add_prob_to_extension_file(prob, false);
-					worldP->add_prob_to_extension_file(DSL_prob, false);
-					worldP->add_prob_to_extension_file(DSL_prob_mod, true);
-					// --------------------//
-				}
+				moved = extendFil(prob);
 			}
         }
         //reset VRinactive counter as now activated
@@ -1476,8 +1418,9 @@ bool testFilMax(EC* cell) {
 //---------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------
 
-bool MemAgent::extendFil(void) {
-
+bool MemAgent::extendFil(const double prob) {
+	// TOM: Prob is the value returned by the calculation
+	//
     MemAgent* mp;
     Env * highest;
     bool ans = false;
@@ -1495,14 +1438,9 @@ bool MemAgent::extendFil(void) {
             if (Cell->actinUsed < actinMax) {
 				allow = true;
                 if (allow) {
-					if (DSL_ENV_SELECTION) {
-						highest = worldP->highest_search(Cell, this);
-					} else {
-						highest = findHighestConc();
-					}
-					// highest_search(EC *cell, MemAgent *memAgent)
-					bool canExtend = true;
+					highest = findHighestConc();
 
+					bool canExtend = true;
 					if (SOLIDNESS_CHECK) {
 						canExtend = worldP->solidness_check(highest);
 					}
@@ -1586,43 +1524,41 @@ bool MemAgent::extendFil(void) {
                                 	fp->base = this;
                                 	fp->Cell = this->Cell;
                             	}
-                            //------------------------------------------
+								worldP->write_to_filopodia_outfile(FIL_EVENT_CREATION, mp, prob);
                         	}
-
                     	} else {
-                        if (highest->Ex - filNeigh->Mx > xMAX / 2.0f)
-                            newDist = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                        else if (filNeigh->Mx - highest->Ex > xMAX / 2.0f)
-                            newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                        else
-                            newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							auto xMax = worldP->gridXDimensions;
+                        	if (highest->Ex - filNeigh->Mx > xMax / 2.0f) {
+								newDist = worldP->getDist(highest->Ex - xMax, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							} else if (filNeigh->Mx - highest->Ex > xMax / 2.0f) {
+								newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx - xMax, filNeigh->My, filNeigh->Mz);
+							} else {
+								newDist = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							}
 
+                        	if (Mx - filNeigh->Mx > xMax / 2.0f) {
+								oldDist = worldP->getDist(Mx - xMax, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							} else if (filNeigh->Mx - Mx > xMax / 2.0f) {
+								oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMax, filNeigh->My, filNeigh->Mz);
+							} else {
+								oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+							}
 
-                        if (Mx - filNeigh->Mx > xMAX / 2.0f)
-                            oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-                        else if (filNeigh->Mx - Mx > xMAX / 2.0f)
-                            oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
-                        else
-                            oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+                        	distNeeded = newDist - oldDist;
 
-                        distNeeded = newDist - oldDist;
-
-
-                        if ((actinMax - Cell->actinUsed) >= distNeeded) {
-                            
-                            Cell->actinUsed += distNeeded;
-
-                            moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
-                            this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
-                            ans = true;
-                            filTokens -= tokenStrength;
-						}
+                        	if ((actinMax - Cell->actinUsed) >= distNeeded) {
+                            	Cell->actinUsed += distNeeded;
+                            	moveAgent(highest->Ex, highest->Ey, highest->Ez, true);
+                            	this->Cell->filopodiaExtensions.push_back(std::array<int,3>{(int)Mx, (int)My, (int)Mz});
+                            	ans = true;
+								worldP->write_to_filopodia_outfile(FIL_EVENT_EXTENSION, this, prob);
+                            	filTokens -= tokenStrength;
+							}
 						}
 					}
 				}
 			}
         }
-
     }
 
     return (ans);
@@ -1877,124 +1813,159 @@ Env *MemAgent::findHighestConc(void){
     float furthestDist=0;
     Env* straight=NULL;
     float currLength;
-    
-   /* if(BAHTI_ANALYSIS==true){
-        
-        //memagent ID
-        worldP->dataFile2<<this<<"\t";
-        
-        //env neighbour coords and vegf level.
-        for(i=0;i<EnvNeighs.size();i++)
-        {
-            worldP->dataFile2<<EnvNeighs[i]->Ex<<"\t"<<EnvNeighs[i]->Ey<<"\t"<<EnvNeighs[i]->Ez<<"\t"<<EnvNeighs[i]->VEGF<<"\t";
-            
-        }
-        
-        worldP->dataFile2<<endl;
-    }*/
 
-    //if(FIL==TIP){
-    //   currLength = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    //}
-    //start=(int)((double)rand()*(double)EnvNeighs.size()/(double)RAND_MAX);
+	worldP->shuffleEnvAgents(EnvNeighs);
 
-    //direction=((double)rand()*2.00/(double)RAND_MAX);
-    //random_shuffle(EnvNeighs.begin(), EnvNeighs.end());
-    worldP->shuffleEnvAgents(EnvNeighs);
     highest=EnvNeighs[0];
+
+	double target;
+	if (DSL_ENV_SELECTION) {
+		//getTarget();
+	} else {
+		target = EnvNeighs[0]->VEGF;
+	}
     
-    if (EnvNeighs[0]->VEGF > 0)
-    {
+    if (target > 0) {
         furthest = EnvNeighs[0];
-        if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-            furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
-        else
-            furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+        if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) {
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
+		} else {
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+		}
     } else {
         furthest=NULL;
     }
     
     upto=EnvNeighs.size();
     
-    //direction = (int)((double)rand()*(double)2/(double)RAND_MAX);
-    
-    //if(direction==0) picked = start++;
-    //else picked = start--;
-    
-    //cout<<" D= "<<direction<<" S= "<<start;
-    
-    for(i=1;i<upto;i++){
-        //if(picked==upto)picked=0;
-        //else if(picked<0)picked=upto-1;
-        //if((EnvNeighs[i]->Ex==Mx)&&(EnvNeighs[i]->Ey==My+1)&&(EnvNeighs[i]->Ez==Mz)) straight = EnvNeighs[i];
-        //if(FIL==TIP)
-        //   if((EnvNeighs[i]->VEGF>=highest->VEGF)&&(worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
-        //       highest=EnvNeighs[i];
-        //  else
+    for(i = 1; i < upto; i++) {
 
-        if(EnvNeighs[i]->VEGF>=highest->VEGF)
+        if(EnvNeighs[i]->VEGF >= highest->VEGF)
             highest=EnvNeighs[i];
-        if(EnvNeighs[i]->VEGF>0){
-            if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-                dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)Mx, (int)My, (int)Mz);
-            else
-                dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
-            
-            if(dist>=furthestDist){
-                furthestDist = dist;
-                furthest = EnvNeighs[i];
-            }
-        }
-        
-        //if(direction==0)
-        
-        //else picked--;
-        
+        if(EnvNeighs[i]->VEGF>0) {
+			if ((FIL == NONE && !DSL_TESTING) ||
+				(DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) Mx, (int) My,
+									   (int) Mz);
+			else
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) filNeigh->Mx,
+									   (int) filNeigh->My, (int) filNeigh->Mz);
+
+			if (dist >= furthestDist) {
+				furthestDist = dist;
+				furthest = EnvNeighs[i];
+			}
+		}
     }
-    //chance = (float)rand()/(float)RAND_MAX;
+
     chance = (float)worldP->new_rand()/(float)NEW_RAND_MAX;
-    prob = EPSILON; //epsilon high (1) = greedy, always choses highest otherwise random.
-    if(chance<prob){
+    prob = EPSILON;
+    if (chance < prob){
         chosen = highest;
-        //cout<<"highest"<<endl;
-    }
-    
-    //picking one that extends length, not necessarily the furthest one tho..
-    
-    //if((FIL==TIP)&&(worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
-    //chosen=highest;
-    //else if(FIL==NONE)
-    //chosen = highest;
-    else{
-        //pick a random direction to extend fil in -more realistic than always picking correct direction
-        //could randomly pick the correct one of course..
-        
-        //chosen  = EnvNeighs[(int)(((float)rand()*(float)EnvNeighs.size()/(float)RAND_MAX))];
-        chosen  = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
-        //chosen = furthest;
-        //if(straight!=NULL){
-        //cout<<"found straight!"<<endl;
-        //chosen = straight;
-        //}
-        //else
-        //chosen = furthest;
-        
-        //cout<<furthestDist<<endl;
-    }
-
-    //stats
-    /*if((chosen->Ex==Mx+1)&&(chosen->Ey==My+1)) right1++;
-     * if((chosen->Ex==Mx)&&(chosen->Ey==My+1)) middle++;
-     * if((chosen->Ex==Mx-1)&&(chosen->Ey==My+1)) left1++;
-     * if((chosen->Ex==Mx-1)&&(chosen->Ey==My)) left2++;
-     * if((chosen->Ex==Mx+1)&&(chosen->Ey==My)) right2++;
-     * count3++;*/
-
-    if (analysis_type == ANALYSIS_TYPE_BAHTI_ANALYSIS){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
-        
+    } else{
+        chosen = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
     }
     
     return(chosen);
+
+}
+
+Env *MemAgent::test_findHighestConc(void){
+
+	int i, direction;
+	int start, picked;
+	int upto;
+	Env * highest;
+	Env * chosen;
+	float chance, prob;
+	Env* furthest;
+	float dist;
+	float furthestDist=0;
+	Env* straight=NULL;
+	float currLength;
+
+	worldP->shuffleEnvAgents(EnvNeighs);
+
+	highest=EnvNeighs[0];
+
+	if (EnvNeighs[0]->VEGF > 0)
+	{
+		furthest = EnvNeighs[0];
+		if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
+		else
+			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+	} else {
+		furthest=NULL;
+	}
+
+	upto=EnvNeighs.size();
+
+	for(i=1;i<upto;i++){
+
+		if(EnvNeighs[i]->VEGF>=highest->VEGF)
+			highest=EnvNeighs[i];
+		if(EnvNeighs[i]->VEGF>0){
+			if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)Mx, (int)My, (int)Mz);
+			else
+				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
+
+			if(dist>=furthestDist){
+				furthestDist = dist;
+				furthest = EnvNeighs[i];
+			}
+		}
+
+		//if(direction==0)
+
+		//else picked--;
+
+	}
+	//chance = (float)rand()/(float)RAND_MAX;
+	chance = (float)worldP->new_rand()/(float)NEW_RAND_MAX;
+	prob = EPSILON; //epsilon high (1) = greedy, always choses highest otherwise random.
+	if(chance<prob){
+		chosen = highest;
+		//cout<<"highest"<<endl;
+	}
+
+		//picking one that extends length, not necessarily the furthest one tho..
+
+		//if((FIL==TIP)&&(worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
+		//chosen=highest;
+		//else if(FIL==NONE)
+		//chosen = highest;
+	else{
+		//pick a random direction to extend fil in -more realistic than always picking correct direction
+		//could randomly pick the correct one of course..
+
+		//chosen  = EnvNeighs[(int)(((float)rand()*(float)EnvNeighs.size()/(float)RAND_MAX))];
+		chosen  = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
+		//chosen = furthest;
+		//if(straight!=NULL){
+		//cout<<"found straight!"<<endl;
+		//chosen = straight;
+		//}
+		//else
+		//chosen = furthest;
+
+		//cout<<furthestDist<<endl;
+	}
+
+	//stats
+	/*if((chosen->Ex==Mx+1)&&(chosen->Ey==My+1)) right1++;
+	 * if((chosen->Ex==Mx)&&(chosen->Ey==My+1)) middle++;
+	 * if((chosen->Ex==Mx-1)&&(chosen->Ey==My+1)) left1++;
+	 * if((chosen->Ex==Mx-1)&&(chosen->Ey==My)) left2++;
+	 * if((chosen->Ex==Mx+1)&&(chosen->Ey==My)) right2++;
+	 * count3++;*/
+
+	if (analysis_type == ANALYSIS_TYPE_BAHTI_ANALYSIS){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
+
+	}
+
+	return(chosen);
 
 }
 
