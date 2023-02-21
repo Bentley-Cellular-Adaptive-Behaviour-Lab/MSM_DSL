@@ -1816,16 +1816,18 @@ Env *MemAgent::findHighestConc(void){
 
 	worldP->shuffleEnvAgents(EnvNeighs);
 
-    highest=EnvNeighs[0];
+    highest = EnvNeighs[0];
 
-	double target;
+	double highestProtein = 0;
 	if (DSL_ENV_SELECTION) {
-		//getTarget();
+		highestProtein = EnvNeighs[0]->get_extension_target(this);
 	} else {
-		target = EnvNeighs[0]->VEGF;
+		highestProtein = EnvNeighs[0]->VEGF;
 	}
+
+	// target = EnvNeighs[0]->VEGF; <- OLD VERSION.
     
-    if (target > 0) {
+    if (highestProtein > 0) {
         furthest = EnvNeighs[0];
         if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) {
 			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
@@ -1839,17 +1841,32 @@ Env *MemAgent::findHighestConc(void){
     upto=EnvNeighs.size();
     
     for(i = 1; i < upto; i++) {
+		double queryTargetProtein = 0;
+		if (DSL_ENV_SELECTION) {
+			queryTargetProtein = EnvNeighs[i]->get_extension_target(this);
+		} else {
+			queryTargetProtein = EnvNeighs[i]->VEGF;
+		}
 
-        if(EnvNeighs[i]->VEGF >= highest->VEGF)
-            highest=EnvNeighs[i];
-        if(EnvNeighs[i]->VEGF>0) {
+		// OLD VERSION
+//        if (EnvNeighs[i]->VEGF >= highest->VEGF) {
+//			highest = EnvNeighs[i];
+//		}
+
+		if (queryTargetProtein >= highestProtein) {
+			highestProtein = queryTargetProtein;
+			highest = EnvNeighs[i];
+		}
+
+        if (queryTargetProtein > 0) {
 			if ((FIL == NONE && !DSL_TESTING) ||
-				(DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
+				(DSL_TESTING & (FIL == BASE || FIL == NONE))) {
 				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) Mx, (int) My,
 									   (int) Mz);
-			else
+			} else {
 				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int) filNeigh->Mx,
 									   (int) filNeigh->My, (int) filNeigh->Mz);
+			}
 
 			if (dist >= furthestDist) {
 				furthestDist = dist;
@@ -1860,116 +1877,22 @@ Env *MemAgent::findHighestConc(void){
 
     chance = (float)worldP->new_rand()/(float)NEW_RAND_MAX;
     prob = EPSILON;
+
+	if (DSL_SENSITIVITY) {
+		prob = get_sensitivity();
+	} else {
+		prob = EPSILON;
+	}
+
     if (chance < prob){
         chosen = highest;
     } else{
         chosen = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
     }
     
-    return(chosen);
+    return (chosen);
 
 }
-
-Env *MemAgent::test_findHighestConc(void){
-
-	int i, direction;
-	int start, picked;
-	int upto;
-	Env * highest;
-	Env * chosen;
-	float chance, prob;
-	Env* furthest;
-	float dist;
-	float furthestDist=0;
-	Env* straight=NULL;
-	float currLength;
-
-	worldP->shuffleEnvAgents(EnvNeighs);
-
-	highest=EnvNeighs[0];
-
-	if (EnvNeighs[0]->VEGF > 0)
-	{
-		furthest = EnvNeighs[0];
-		if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)Mx, (int)My, (int)Mz);
-		else
-			furthestDist = worldP->getDist(furthest->Ex, furthest->Ey, furthest->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
-	} else {
-		furthest=NULL;
-	}
-
-	upto=EnvNeighs.size();
-
-	for(i=1;i<upto;i++){
-
-		if(EnvNeighs[i]->VEGF>=highest->VEGF)
-			highest=EnvNeighs[i];
-		if(EnvNeighs[i]->VEGF>0){
-			if ((FIL == NONE && !DSL_TESTING) || (DSL_TESTING & (FIL == BASE || FIL == NONE))) // TOM: ADDED CHECK SO THAT TESTS WORK.
-				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)Mx, (int)My, (int)Mz);
-			else
-				dist = worldP->getDist(EnvNeighs[i]->Ex, EnvNeighs[i]->Ey, EnvNeighs[i]->Ez, (int)filNeigh->Mx, (int)filNeigh->My, (int)filNeigh->Mz);
-
-			if(dist>=furthestDist){
-				furthestDist = dist;
-				furthest = EnvNeighs[i];
-			}
-		}
-
-		//if(direction==0)
-
-		//else picked--;
-
-	}
-	//chance = (float)rand()/(float)RAND_MAX;
-	chance = (float)worldP->new_rand()/(float)NEW_RAND_MAX;
-	prob = EPSILON; //epsilon high (1) = greedy, always choses highest otherwise random.
-	if(chance<prob){
-		chosen = highest;
-		//cout<<"highest"<<endl;
-	}
-
-		//picking one that extends length, not necessarily the furthest one tho..
-
-		//if((FIL==TIP)&&(worldP->getDist(highest->Ex, highest->Ey, highest->Ez, filNeigh->Mx, filNeigh->My, filNeigh->Mz)>currLength))
-		//chosen=highest;
-		//else if(FIL==NONE)
-		//chosen = highest;
-	else{
-		//pick a random direction to extend fil in -more realistic than always picking correct direction
-		//could randomly pick the correct one of course..
-
-		//chosen  = EnvNeighs[(int)(((float)rand()*(float)EnvNeighs.size()/(float)RAND_MAX))];
-		chosen  = EnvNeighs[(int)(((float)worldP->new_rand()*(float)EnvNeighs.size()/(float)NEW_RAND_MAX))];
-		//chosen = furthest;
-		//if(straight!=NULL){
-		//cout<<"found straight!"<<endl;
-		//chosen = straight;
-		//}
-		//else
-		//chosen = furthest;
-
-		//cout<<furthestDist<<endl;
-	}
-
-	//stats
-	/*if((chosen->Ex==Mx+1)&&(chosen->Ey==My+1)) right1++;
-	 * if((chosen->Ex==Mx)&&(chosen->Ey==My+1)) middle++;
-	 * if((chosen->Ex==Mx-1)&&(chosen->Ey==My+1)) left1++;
-	 * if((chosen->Ex==Mx-1)&&(chosen->Ey==My)) left2++;
-	 * if((chosen->Ex==Mx+1)&&(chosen->Ey==My)) right2++;
-	 * count3++;*/
-
-	if (analysis_type == ANALYSIS_TYPE_BAHTI_ANALYSIS){ //worldP->dataFile2<<"chose "<<chosen->Ex<<"\t"<<chosen->Ey<<"\t"<<chosen->Ez<<endl;
-
-	}
-
-	return(chosen);
-
-}
-
-
 
 //------------------------------------------------------------------------------------------
 

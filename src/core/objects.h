@@ -37,16 +37,13 @@ class World;
 #define FILOPODIA_METRICS true
 #define PROTEIN_TESTING true
 #define SWEEP_TESTING false
-#define SUBSTRATES_BLOCK_FILS true
 #define SOLIDNESS_CHECK false
-#define SEMA3A_SIMULATION_GRANT false
 
-#define DSL_EXTENSION_PROB false
-#define DSL_ENV_SELECTION true
+#define DSL_EXTENSION_PROB true
+#define DSL_ENV_SELECTION false
+#define DSL_SENSITIVITY false
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
-
-
 
 // Analysis types for the DSL.
 
@@ -74,16 +71,6 @@ enum ODE_TYPE {
     ODE_TYPE_MEMAGENT,
     N_ODE_TYPES
 };
-
-/// below defines are set through makefile
-#if PROTEIN_TESTING
-//#define ANALYSIS_HYSTERESIS false
-//#define ANALYSIS_TIME_TO_PATTERN false
-//#define BAHTI_ANALYSIS false //TODO: add bahti stuff back in
-//#define GRAPHICS false
-//#define ECpack 2
-//#define MAXtime 10000 ///2000 ///480 for fil lifetime
-#endif
 
 //extern std::ofstream RUNSfile;
 ///analysis/quantification

@@ -31,11 +31,11 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 	// Cell Type Creation //
 	auto Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
-	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 100));
-	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
+	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 27));
+	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 1));
+	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 27));
 	Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
-	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 100));
+	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 1));
 
 	// Tissue Type Creation //
 	auto VesselType_Type = define_tissue_type("VesselType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 6, 6);
@@ -56,7 +56,9 @@ double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
 		const auto ODE_MEMAGENT_VEGFR = memAgent->get_memAgent_current_level("VEGFR");
 
 		const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-		auto prob = pow((ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR)), 0.65) - 0.08;
+		auto prob = pow((ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR)), 0.6)*2;
+//		auto prob =(ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
+
 		return prob;
 	}
 
@@ -83,13 +85,6 @@ bool World::cytoprotein_check(EC *cell, float distance, const bool extendingFil)
 	return false;
 }
 
-Env* World::highest_search(EC *cell, MemAgent *memAgent) {
-	if (cell->m_cell_type->m_name == "Endothelial") {
-		return findHighestConcPosition(memAgent, "VEGF", 1.0, true);
-	}
-	return nullptr;
-}
-
 bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiffAdNeighCell) {
 	EC *cell;
 
@@ -100,4 +95,22 @@ bool CPM_module::adhesion_condition_check(MemAgent *memAgent, const bool useDiff
 	}
 
 	return false;
+}
+
+// Returns the value of a species needed when a filopodia is extending,
+// depending on the memAgent that is needed by this function.
+double Env::get_extension_target(MemAgent *memAgent) {
+	if (memAgent->Cell->m_cell_type->m_name == "Endothelial") {
+		return this->get_protein_level("VEGF");
+	}
+	// Return zero if the cell type isn't found.
+	return 0;
+}
+
+float MemAgent::get_sensitivity() {
+	if (this->Cell->m_cell_type->m_name == "Endothelial") {
+		return 1.0;
+	}
+	// Return 1 if the cell type is not found.
+	return 1.0;
 }

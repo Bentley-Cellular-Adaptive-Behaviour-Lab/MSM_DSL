@@ -19,6 +19,7 @@
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="f3yh" ref="r:4c08ad96-2d82-4bc8-96c4-1aa46e6ec133(SpeciesLang.behavior)" implicit="true" />
+    <import index="jl3b" ref="r:bf19c051-f7ef-47e0-90f3-93c1f0b653f7(ShapeLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -2833,7 +2834,7 @@
           </node>
         </node>
       </node>
-      <node concept="1X3_iC" id="1Rle6qVrRNx" role="lGtFl">
+      <node concept="1X3_iC" id="5gt2Vd$h4ww" role="lGtFl">
         <property role="3V$3am" value="statement" />
         <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
         <node concept="1Z5TYs" id="BDFw_S$gmj" role="8Wnug">
@@ -3031,6 +3032,32 @@
     <node concept="1YaCAy" id="7lZ8SQtIsqx" role="1YuTPh">
       <property role="TrG5h" value="filopodia" />
       <ref role="1YaFvo" to="nguq:5j_l9LXEwno" resolve="Filopodia" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5gt2Vd$h4iA">
+    <property role="3GE5qa" value="CellType.ShapeBehaviour" />
+    <property role="TrG5h" value="typeof_SensitivityExpression" />
+    <node concept="3clFbS" id="5gt2Vd$h4iB" role="18ibNy">
+      <node concept="1ZobV4" id="5gt2Vd$h4yq" role="3cqZAp">
+        <node concept="mw_s8" id="5gt2Vd$h4yr" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5gt2Vd$h4ys" role="mwGJk">
+            <node concept="1YBJjd" id="5gt2Vd$h4E3" role="1Z2MuG">
+              <ref role="1YBMHb" node="5gt2Vd$h4Ac" resolve="sensitivityExpression" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5gt2Vd$h4yu" role="1ZfhKB">
+          <node concept="2YIFZM" id="5gt2Vd$h4yv" role="mwGJk">
+            <ref role="1Pybhc" to="xfg9:2Qbt$1tTQaH" resolve="PTF" />
+            <ref role="37wK5l" to="xfg9:2Qbt$1tTQdc" resolve="createRealType" />
+            <node concept="10Nm6u" id="5gt2Vd$h4yw" role="37wK5m" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5gt2Vd$h4Ac" role="1YuTPh">
+      <property role="TrG5h" value="sensitivityExpression" />
+      <ref role="1YaFvo" to="jl3b:2Jfy4gq$TM0" resolve="SensitivityExpression" />
     </node>
   </node>
 </model>

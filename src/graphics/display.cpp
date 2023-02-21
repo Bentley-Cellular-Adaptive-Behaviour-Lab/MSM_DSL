@@ -1980,10 +1980,6 @@ void display(void) {
         //simulate_multiple();
         //WORLDpointer->simulate(movie);
         if (WORLDpointer->timeStep < MAXtime) {
-			if (WORLDpointer->timeStep % 10 == 0) {
-				std::cout << "Writing to results files. Timestep: " << WORLDpointer->timeStep << "\n";
-				WORLDpointer->write_to_outfiles();
-			}
             WORLDpointer->simulateTimestep_MSM();
             screenRecording();
             counter_edittext->set_int_val(WORLDpointer->timeStep);

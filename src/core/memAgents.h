@@ -191,7 +191,6 @@ public:
     double get_mean_env_protein(const std::string &proteinName);
     bool vonNeighSearch();
     void neighCellSearch(bool doesVonNeumann);
-
     void passBackBufferLevels();
 
     std::vector<std::vector<MemAgent*>> findRelevantAgents(std::vector<EC*>& relevantCells,
@@ -208,6 +207,8 @@ public:
     [[nodiscard]] float getPreviousX() const;
     [[nodiscard]] float getPreviousY() const;
     [[nodiscard]] float getPreviousZ() const;
+
+	float get_sensitivity();  // <- Generated.
 
     // DSL functions for controlling shape behaviour.
     // Made these deprecated, but are still being used in case

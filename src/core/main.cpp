@@ -238,7 +238,6 @@ int main(int argc, char * argv[]) {
 		world->create_outfiles();
         WORLDpointer = world;
 
-
         // -----------------------------------------------------------------------------------------------------------//
         // Venkatraman Example Specific Stuff.
 
@@ -276,10 +275,6 @@ int main(int argc, char * argv[]) {
 
 #if GRAPHICS
 		std::cout << "World created." << "\n";
-		world->create_outfiles(param_values);
-		world->create_extension_file("results/extensions.csv");
-		world->create_retraction_file("results/retractions.csv");
-
 		std::cout << "Running simulation." << std::endl;
         displayGlui(&argc, argv);
         glutMainLoop();

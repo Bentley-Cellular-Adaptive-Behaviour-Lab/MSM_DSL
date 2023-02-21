@@ -1588,6 +1588,9 @@ void World::adjustCellProteinValue(EC *ec, const double& newValue, const bool& c
 
 void World::runSimulation_MSM() {
 	while (timeStep <= MAXtime) {
+		if (timeStep % 10 == 0) {
+			std::cout << "Timestep: " << timeStep << "\n";
+		}
 
 		simulateTimestep_MSM();
 
@@ -1609,7 +1612,6 @@ void World::runSimulation_MSM() {
         }
 
 	}
-	std::cout << "end of run simulation" << std::endl;
 }
 
 /*****************************************************************************************
@@ -7796,8 +7798,8 @@ void World::write_to_component_outfile_csv(const std::string &protein_name) {
 	try {
 		file.open(file_name.c_str(), std::ios_base::app);
 		if (file.is_open()) {
+			file << timeStep << ",";
 			for (auto &cell : ECagents) {
-				file << timeStep << ",";
 				file << std::to_string(cell->get_cell_protein_level(protein_name, 0)) << ",";
 			}
 			file << "\n";
@@ -7845,9 +7847,9 @@ void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgen
 			// Add extension probability to file,
 			// if the event is a creation or extension event.
 			if (eventID == FIL_EVENT_CREATION || eventID == FIL_EVENT_EXTENSION) {
-				file << std::to_string(prob) << ",";
+				file << std::to_string(prob);
 			} else {
-				file << "n/a,";
+				file << "n/a";
 			}
 			file << "\n";
 			file.close();

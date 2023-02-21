@@ -120,6 +120,14 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+        <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
+      </concept>
+      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
+        <property id="709746936026609031" name="linkId" index="3V$3ak" />
+        <property id="709746936026609029" name="role_DebugInfo" index="3V$3am" />
+      </concept>
+      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
+        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="b1ab8c10-c118-4755-bf2a-cebab35cf533" name="jetbrains.mps.lang.editor.tooltips">
@@ -1736,7 +1744,7 @@
       <node concept="3EZMnI" id="2q_vzDIv7UP" role="3EZMnx">
         <node concept="VPM3Z" id="2q_vzDIv7UR" role="3F10Kt" />
         <node concept="3F0ifn" id="2q_vzDIv7UT" role="3EZMnx">
-          <property role="3F0ifm" value="Uses " />
+          <property role="3F0ifm" value="Uses up " />
           <node concept="2biZxu" id="2q_vzDIv8kM" role="3F10Kt">
             <property role="1rj3mz" value="Calibri" />
           </node>
@@ -1749,66 +1757,70 @@
         </node>
         <node concept="2iRfu4" id="2q_vzDIv7UU" role="2iSdaV" />
       </node>
-      <node concept="3EZMnI" id="7lZ8SQtwFMT" role="3EZMnx">
-        <node concept="2iRfu4" id="7lZ8SQtwFMU" role="2iSdaV" />
-        <node concept="1v6uyg" id="7lZ8SQtwFOA" role="3EZMnx">
-          <property role="2oejA6" value="true" />
-          <node concept="3F0ifn" id="7lZ8SQtwFOO" role="1j7Clw">
-            <property role="3F0ifm" value="Maximises distance from cell" />
-            <node concept="2biZxu" id="7lZ8SQtwFOR" role="3F10Kt">
+      <node concept="1X3_iC" id="5gt2Vd$4i7H" role="lGtFl">
+        <property role="3V$3am" value="childCellModel" />
+        <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389446423/1073389446424" />
+        <node concept="3EZMnI" id="7lZ8SQtwFMT" role="8Wnug">
+          <node concept="2iRfu4" id="7lZ8SQtwFMU" role="2iSdaV" />
+          <node concept="1v6uyg" id="7lZ8SQtwFOA" role="3EZMnx">
+            <property role="2oejA6" value="true" />
+            <node concept="3F0ifn" id="7lZ8SQtwFOO" role="1j7Clw">
+              <property role="3F0ifm" value="Maximises distance from cell" />
+              <node concept="2biZxu" id="7lZ8SQtwFOR" role="3F10Kt">
+                <property role="1rj3mz" value="Calibri" />
+              </node>
+              <node concept="VSNWy" id="7lZ8SQtwFOS" role="3F10Kt">
+                <property role="1lJzqX" value="16" />
+              </node>
+              <node concept="VQ3r3" id="7lZ8SQtwFP8" role="3F10Kt">
+                <property role="2USNnj" value="gtbM8PH/underlined" />
+              </node>
+            </node>
+            <node concept="3EZMnI" id="7lZ8SQtwFQ9" role="wsdo6">
+              <node concept="2iRkQZ" id="7lZ8SQtwFQa" role="2iSdaV" />
+              <node concept="3F0ifn" id="7lZ8SQtwFPi" role="3EZMnx">
+                <property role="3F0ifm" value="When set, determines whether a filopodia  " />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQi" role="3EZMnx">
+                <property role="3F0ifm" value="always attempts to maximise its" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQm" role="3EZMnx">
+                <property role="3F0ifm" value="distance from the base of the filopodia." />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQq" role="3EZMnx">
+                <property role="3F0ifm" value="- Options:" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQ_" role="3EZMnx">
+                <property role="3F0ifm" value="- Yes" />
+              </node>
+              <node concept="3F0ifn" id="7lZ8SQtwFQv" role="3EZMnx">
+                <property role="3F0ifm" value="- No" />
+              </node>
+            </node>
+          </node>
+          <node concept="3F0ifn" id="7lZ8SQtwFOo" role="3EZMnx">
+            <property role="3F0ifm" value=":" />
+            <node concept="2biZxu" id="7lZ8SQtwFNg" role="3F10Kt">
               <property role="1rj3mz" value="Calibri" />
             </node>
-            <node concept="VSNWy" id="7lZ8SQtwFOS" role="3F10Kt">
+            <node concept="VSNWy" id="7lZ8SQtwFNh" role="3F10Kt">
               <property role="1lJzqX" value="16" />
             </node>
-            <node concept="VQ3r3" id="7lZ8SQtwFP8" role="3F10Kt">
-              <property role="2USNnj" value="gtbM8PH/underlined" />
-            </node>
           </node>
-          <node concept="3EZMnI" id="7lZ8SQtwFQ9" role="wsdo6">
-            <node concept="2iRkQZ" id="7lZ8SQtwFQa" role="2iSdaV" />
-            <node concept="3F0ifn" id="7lZ8SQtwFPi" role="3EZMnx">
-              <property role="3F0ifm" value="When set, determines whether a filopodia  " />
+          <node concept="3F0A7n" id="7lZ8SQtwFNk" role="3EZMnx">
+            <ref role="1NtTu8" to="nguq:7lZ8SQtwFKE" resolve="_filMaxesDistance" />
+            <node concept="VechU" id="1S53i998Del" role="3F10Kt">
+              <property role="Vb096" value="fLwANPu/blue" />
             </node>
-            <node concept="3F0ifn" id="7lZ8SQtwFQi" role="3EZMnx">
-              <property role="3F0ifm" value="always attempts to maximise its" />
+            <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
+              <property role="Vbekb" value="g1_k_vY/BOLD" />
             </node>
-            <node concept="3F0ifn" id="7lZ8SQtwFQm" role="3EZMnx">
-              <property role="3F0ifm" value="distance from the base of the filopodia." />
+            <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
+              <property role="1rj3mz" value="Calibri" />
             </node>
-            <node concept="3F0ifn" id="7lZ8SQtwFQq" role="3EZMnx">
-              <property role="3F0ifm" value="- Options:" />
+            <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
+              <property role="1lJzqX" value="16" />
             </node>
-            <node concept="3F0ifn" id="7lZ8SQtwFQ_" role="3EZMnx">
-              <property role="3F0ifm" value="- Yes" />
-            </node>
-            <node concept="3F0ifn" id="7lZ8SQtwFQv" role="3EZMnx">
-              <property role="3F0ifm" value="- No" />
-            </node>
-          </node>
-        </node>
-        <node concept="3F0ifn" id="7lZ8SQtwFOo" role="3EZMnx">
-          <property role="3F0ifm" value=":" />
-          <node concept="2biZxu" id="7lZ8SQtwFNg" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="7lZ8SQtwFNh" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
-          </node>
-        </node>
-        <node concept="3F0A7n" id="7lZ8SQtwFNk" role="3EZMnx">
-          <ref role="1NtTu8" to="nguq:7lZ8SQtwFKE" resolve="_filMaxesDistance" />
-          <node concept="VechU" id="1S53i998Del" role="3F10Kt">
-            <property role="Vb096" value="fLwANPu/blue" />
-          </node>
-          <node concept="Vb9p2" id="59YMCJZX0Te" role="3F10Kt">
-            <property role="Vbekb" value="g1_k_vY/BOLD" />
-          </node>
-          <node concept="2biZxu" id="2FvyIAlFjJe" role="3F10Kt">
-            <property role="1rj3mz" value="Calibri" />
-          </node>
-          <node concept="VSNWy" id="2FvyIAlFjJf" role="3F10Kt">
-            <property role="1lJzqX" value="16" />
           </node>
         </node>
       </node>
