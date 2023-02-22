@@ -640,7 +640,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     float thetaStart, deltaSteps;
     float depth;
     MemAgent* newMemAgent;
-    int circlePosStartAb=0;
+    int circlePosStartAb = 0;
     vesselDelta = ((2.0f * (float)Pi) / (float)m_vessel_cells_per_cross_section);
 
     //Calculate the total number of memAgents that form the vessel circumference, and therefore the number per cell.
@@ -652,7 +652,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     float offsetPercentage;
 
     // Tidy this bit up.
-    float x = (float)i / (float)m_vessel_cells_per_cross_section;
+    float x = (float) i / (float)m_vessel_cells_per_cross_section;
     lx = (int) x;
     depth = (float) cell_width * (float) lx;
     thetaStart = vesselDelta * (float) i;
@@ -666,7 +666,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
     circlePosStartAb = circlePosStartAb % int(ablumenalSteps * m_vessel_cells_per_cross_section);
 
-    if( thetaStart >= 2 * Pi ) {
+    if ( thetaStart >= 2 * Pi ) {
         thetaStart -= 2 * Pi;
     }
 
@@ -677,7 +677,6 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     X = (float) j;
     Y = (float) m_vessel_centre_y_coord;
     Z = (float) m_vessel_centre_z_coord;
-
 
     for (int J = 0; J < ablumenalSteps; J++) {
         theta = thetaStart + (deltaSteps * (float)J);
@@ -693,16 +692,6 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
             newMemAgent->My = k + Y;
             newMemAgent->FA = true;
 
-
-            //---------------------------------------
-            ///for CELL_SETUP=2 (lars and rearrangement paper models with sewn up front).
-            ///label the front row of nodes so they can be sewn up once gridded
-            if (BLINDENDED_SPROUT==true){
-                if ((i == m_cell_number - 1) || (i == m_cell_number - 2)) {
-                    if(j == cell_width - 1) newMemAgent->labelledBlindended =  true;
-                }
-            }
-            //---------------------------------------
             newMemAgent->Mz = l + Z;
 
             newMemAgent->setPreviousX(newMemAgent->Mx);
@@ -711,15 +700,11 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
             newMemAgent->circlePos=(int)(J + circlePosStartAb);
 
-            if(newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
+            if (newMemAgent->circlePos >= ablumenalSteps * m_vessel_cells_per_cross_section) {
                 newMemAgent->circlePos -= ablumenalSteps * m_vessel_cells_per_cross_section;
             }
-
             cellAgent->nodeAgents.push_back(newMemAgent);
-
             m_world->setMLocation(int(j + depth) + lowerXBoundary, int(k+Y), int(l+Z), newMemAgent);
-
-//            TissueUtils::allocateProteins(cellAgent->m_cell_type, newMemAgent);
         }
     }
 }

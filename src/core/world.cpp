@@ -7800,7 +7800,17 @@ void World::write_to_component_outfile_csv(const std::string &protein_name) {
 		if (file.is_open()) {
 			file << timeStep << ",";
 			for (auto &cell : ECagents) {
-				file << std::to_string(cell->get_cell_protein_level(protein_name, 0)) << ",";
+				// Check if the protein is an environmental protein that
+				// the cell knows about.
+				// If so, get the value from the map.
+				// Otherwise, attempt to get the cellular protein level.
+				double protein_value;
+				if (cell->get_env_protein_values().count(protein_name)) {
+					protein_value = cell->get_env_protein_level(protein_name);
+				} else {
+					protein_value = cell->get_cell_protein_level(protein_name, 0);
+				}
+				file << std::to_string(protein_value) << ",";
 			}
 			file << "\n";
 			file.close();

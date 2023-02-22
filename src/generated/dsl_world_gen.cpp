@@ -26,11 +26,16 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
 
 void World::create_outfiles() {
 	create_component_outfile_csv("DLL4");
+	create_component_outfile_csv("VEGF");
 	create_filopodia_outfile_csv();
 	write_to_component_outfile_csv("DLL4");
+	write_to_component_outfile_csv("VEGF");
 }
 
 void World::write_to_component_outfiles() {
+	if (timeStep % 1 == 0 && timeStep != 0) {
+		write_to_component_outfile_csv("VEGF");
+	}
 	if (timeStep % 10 == 0 && timeStep != 0) {
 		write_to_component_outfile_csv("DLL4");
 	}
