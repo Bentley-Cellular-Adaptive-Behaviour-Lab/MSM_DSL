@@ -644,8 +644,8 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
     vesselDelta = ((2.0f * (float)Pi) / (float)m_vessel_cells_per_cross_section);
 
     //Calculate the total number of memAgents that form the vessel circumference, and therefore the number per cell.
-    int totalAbSteps = (int)(2.0f * (float)Pi * (float)m_vessel_total_radius);
-    int ablumenalSteps = (int)((float)totalAbSteps / (float)m_vessel_cells_per_cross_section);
+    int totalAbSteps = (int) std::floor((2.0f * (float)Pi * (float) m_vessel_total_radius));
+    int ablumenalSteps = (int) std::floor((float) totalAbSteps / (float) m_vessel_cells_per_cross_section);
 
     deltaSteps = vesselDelta / float(ablumenalSteps);
     float offset;
@@ -653,24 +653,24 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
     // Tidy this bit up.
     float x = (float) i / (float)m_vessel_cells_per_cross_section;
-    lx = (int) x;
+    lx = (int) std::floor(x);
     depth = (float) cell_width * (float) lx;
     thetaStart = vesselDelta * (float) i;
     circlePosStartAb = ablumenalSteps * i;
 
-    if (lx % 2 != 0) {
-        offset=0.5;
-        thetaStart+=offset*vesselDelta;
-        circlePosStartAb+=(int)(offset*ablumenalSteps);
-    }
+//    if (lx % 2 != 0) {
+//        offset=0.5;
+//        thetaStart+=offset*vesselDelta;
+//        circlePosStartAb += (int) std::floor(offset * (float) ablumenalSteps);
+//    }
 
-    circlePosStartAb = circlePosStartAb % int(ablumenalSteps * m_vessel_cells_per_cross_section);
+    circlePosStartAb = circlePosStartAb % (int) std::floor(ablumenalSteps * m_vessel_cells_per_cross_section);
 
     if ( thetaStart >= 2 * Pi ) {
         thetaStart -= 2 * Pi;
     }
 
-    int lowerXBoundary = (int) this->m_boundaries[0].x;
+    int lowerXBoundary = (int) std::floor(this->m_boundaries[0].x);
 
     // X-Coordinate is not currently set, will need
     // to think about this when changing the periodic boundary.
@@ -688,7 +688,7 @@ void Tissue_Vessel::tissue_vessel_draw_mesh(int i, int j, EC* cellAgent) {
 
             newMemAgent = new MemAgent(cellAgent, this->m_world);
 
-            newMemAgent->Mx = (float)j + (float)depth + (float)lowerXBoundary;
+            newMemAgent->Mx = (float) j + (float) depth + (float) lowerXBoundary;
             newMemAgent->My = k + Y;
             newMemAgent->FA = true;
 
