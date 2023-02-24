@@ -215,9 +215,9 @@
         <reference id="4970340729091001571" name="_worldContainerRef" index="1AQzTG" />
         <reference id="4970340729091001720" name="_signallingContainerRef" index="1AQzZR" />
         <reference id="4970340729090901985" name="_tissueContainerRef" index="1ATblI" />
-        <child id="8660349304734472780" name="_clusterContainer" index="2rk6u2" />
-        <child id="8660349304734472778" name="_analysisContainer" index="2rk6u4" />
-        <child id="8660349304734512033" name="_graphicsContainer" index="2rFWTJ" />
+        <child id="8660349304734472780" name="_clusterFacet" index="2rk6u2" />
+        <child id="8660349304734472778" name="_analysisFacet" index="2rk6u4" />
+        <child id="8660349304734512033" name="_graphicsFacet" index="2rFWTJ" />
         <child id="6087312672701132233" name="_incrementCombinations" index="3xrXtm" />
       </concept>
       <concept id="6087312672701024096" name="SimulationsLang.structure.IncrementCombination" flags="ng" index="3xrBRZ" />

@@ -16,6 +16,7 @@
     <import index="v1bg" ref="r:6b9a3b79-6d91-4f91-9560-1dc06bac4644(230208.user_simulation)" implicit="true" />
     <import index="7tjv" ref="r:ae6e066a-7db6-4714-8fbe-2a308007c615(230208.user_simulation)" implicit="true" />
     <import index="uuba" ref="r:9b68b5d7-ad4f-487a-8207-89394464e262(230209.user_simulation)" implicit="true" />
+    <import index="vxvv" ref="r:f13c51be-4c51-4d3d-a778-25067aa79bce(230223_1.user_simulation)" implicit="true" />
   </imports>
   <registry>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
@@ -252,6 +253,9 @@
       <node concept="3rtiFT" id="3hCpyScPTkl" role="3rqWia">
         <ref role="3rtiFY" to="uuba:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="3rtiFT" id="7kv2Qr83mUZ" role="3rqWia">
+        <ref role="3rtiFY" to="vxvv:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Na" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -285,6 +289,9 @@
       </node>
       <node concept="3rtiFT" id="3hCpyScPTki" role="3rtiFW">
         <ref role="3rtiFY" to="uuba:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="7kv2Qr83mUW" role="3rtiFW">
+        <ref role="3rtiFY" to="vxvv:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Oi" role="3_zqUg">
@@ -362,6 +369,15 @@
       <node concept="3rtiFT" id="3hCpyScPTkk" role="3rtiFW">
         <ref role="3rtiFY" to="uuba:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="7kv2Qr83mUT" role="3_z4RZ">
+        <ref role="DdDrb" to="vxvv:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="7kv2Qr83mUX" role="3rqWia">
+        <ref role="3rtiFY" to="vxvv:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="7kv2Qr83mUY" role="3rtiFW">
+        <ref role="3rtiFY" to="vxvv:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9PT" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -390,6 +406,9 @@
       <node concept="DdDr8" id="3hCpyScPTkg" role="3_z4RZ">
         <ref role="DdDrb" to="uuba:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
+      <node concept="DdDr8" id="7kv2Qr83mUU" role="3_z4RZ">
+        <ref role="DdDrb" to="vxvv:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9RD" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -417,6 +436,9 @@
       </node>
       <node concept="DdDr8" id="3hCpyScPTkh" role="3_z4Rx">
         <ref role="DdDrb" to="uuba:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="7kv2Qr83mUV" role="3_z4Rx">
+        <ref role="DdDrb" to="vxvv:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
   </node>
