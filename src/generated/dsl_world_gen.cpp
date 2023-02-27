@@ -36,7 +36,7 @@ void World::write_to_component_outfiles() {
 	if (timeStep % 1 == 0 && timeStep != 0) {
 		write_to_component_outfile_csv("VEGF");
 	}
-	if (timeStep % 10 == 0 && timeStep != 0) {
+	if (timeStep % 1 == 0 && timeStep != 0) {
 		write_to_component_outfile_csv("DLL4");
 	}
 }

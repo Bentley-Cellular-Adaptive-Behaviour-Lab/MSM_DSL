@@ -201,7 +201,7 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	typedef odeint::runge_kutta_cash_karp54<Endothelial_cell_only_ode_states> error_stepper_type;
   	auto agents = (int) ec->nodeAgents.size() + (int) ec->surfaceAgents.size() + (int) ec->springAgents.size();
 
-  	states[1] = ec->get_cell_protein_level("VEGFR", 26);
+  	states[1] = ec->get_cell_protein_level("VEGFR", 0);
   	states[2] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
   	states[3] = ec->get_cell_protein_level("DLL4", 26);
   	states[4] = ec->get_cell_protein_level("NOTCH", 0);
@@ -214,7 +214,7 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
   	controlled_stepper_type controlled_stepper;
   	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
-  	ec->set_cell_protein_level("VEGFR", states[1], 27);
+  	ec->set_cell_protein_level("VEGFR", states[1], 1);
   	ec->set_cell_protein_level("VEGF_VEGFR", states[2], 1);
   	ec->set_cell_protein_level("DLL4", states[3], 27);
   	ec->set_cell_protein_level("NOTCH", states[4], 1);
