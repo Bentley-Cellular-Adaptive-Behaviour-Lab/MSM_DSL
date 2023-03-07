@@ -211,11 +211,6 @@
       <property role="TrG5h" value="_showMinMax" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="4O6RXqW77zU" role="1TKVEl">
-      <property role="IQ2nx" value="5550369704152692986" />
-      <property role="TrG5h" value="_showDelay" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1TJgyi" id="4O6RXqW77zZ" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692991" />
       <property role="TrG5h" value="_showProd" />
