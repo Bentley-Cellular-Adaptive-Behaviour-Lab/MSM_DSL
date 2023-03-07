@@ -206,11 +206,6 @@
       <property role="TrG5h" value="_location" />
       <ref role="AX2Wp" node="2Hxmt3eVjAB" resolve="SpeciesLocation" />
     </node>
-    <node concept="1TJgyi" id="5$qoOFyduhF" role="1TKVEl">
-      <property role="IQ2nx" value="6420553392043975787" />
-      <property role="TrG5h" value="_delay" />
-      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
-    </node>
     <node concept="1TJgyi" id="4O6RXqW77zQ" role="1TKVEl">
       <property role="IQ2nx" value="5550369704152692982" />
       <property role="TrG5h" value="_showMinMax" />

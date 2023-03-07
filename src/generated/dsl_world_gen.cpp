@@ -26,21 +26,42 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
 
 void World::create_outfiles() {
 	create_component_outfile_csv("DLL4");
+	create_component_outfile_csv("DLL4_NOTCH");
+	create_component_outfile_csv("NOTCH");
 	create_component_outfile_csv("VEGF");
-	create_filopodia_outfile_csv();
-	write_to_component_outfile_csv("DLL4");
-	write_to_component_outfile_csv("VEGF");
+	create_component_outfile_csv("VEGFR");
+	create_component_outfile_csv("VEGF_VEGFR");
+//	create_filopodia_outfile_csv();
+	write_to_component_outfile_csv("DLL4", 60);
+	write_to_component_outfile_csv("DLL4_NOTCH", 60);
+	write_to_component_outfile_csv("NOTCH", 60);
+	write_to_component_outfile_csv("VEGF", 60);
+	write_to_component_outfile_csv("VEGFR", 60);
+	write_to_component_outfile_csv("VEGF_VEGFR", 60);
+
 }
 
 void World::write_to_component_outfiles() {
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("VEGF");
+		write_to_component_outfile_csv("VEGF", 60);
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("DLL4");
+		write_to_component_outfile_csv("DLL4", 60);
+	}
+	if (timeStep % 1 == 0 && timeStep != 0) {
+		write_to_component_outfile_csv("DLL4_NOTCH", 60);
+	}
+	if (timeStep % 1 == 0 && timeStep != 0) {
+		write_to_component_outfile_csv("NOTCH", 60);
+	}
+	if (timeStep % 1 == 0 && timeStep != 0) {
+		write_to_component_outfile_csv("VEGFR", 60);
+	}
+	if (timeStep % 1 == 0 && timeStep != 0) {
+		write_to_component_outfile_csv("VEGF_VEGFR", 60);
 	}
 }
 
 void World::write_to_filopodia_outfile(const unsigned int eventID, MemAgent *memAgent, const double prob) {
-	write_fil_event_to_csv(eventID, memAgent, prob);
+//	write_fil_event_to_csv(eventID, memAgent, prob);
 }

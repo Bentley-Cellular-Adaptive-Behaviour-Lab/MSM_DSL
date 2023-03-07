@@ -7789,7 +7789,8 @@ void World::create_filopodia_outfile_csv() {
 	}
 }
 
-void World::write_to_component_outfile_csv(const std::string &protein_name) {
+void World::write_to_component_outfile_csv(const std::string &protein_name,
+										   const unsigned int max_delay) {
 	auto file_name = "results/" + protein_name
 					 + "_replicate_" + std::to_string(m_replicate_number)
 					 + "_run_" + std::to_string(m_run_number)
@@ -7808,7 +7809,7 @@ void World::write_to_component_outfile_csv(const std::string &protein_name) {
 				if (cell->get_env_protein_values().count(protein_name)) {
 					protein_value = cell->get_env_protein_level(protein_name);
 				} else {
-					protein_value = cell->get_cell_protein_level(protein_name, 0);
+					protein_value = cell->get_cell_protein_level(protein_name, max_delay);
 				}
 				file << std::to_string(protein_value) << ",";
 			}

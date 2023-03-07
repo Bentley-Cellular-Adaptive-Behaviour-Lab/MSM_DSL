@@ -416,7 +416,8 @@ public:
 	void create_outfiles();  // <- Generated function.
 	void write_to_component_outfiles();  // <- Generated function.
 	void create_component_outfile_csv(const std::string &protein_name);
-	void write_to_component_outfile_csv(const std::string &protein_name);
+	void write_to_component_outfile_csv(const std::string &protein_name,
+										const unsigned int max_delay);
 
 	void create_filopodia_outfile_csv(); // <- Generated function.
 	void write_to_filopodia_outfile(const unsigned int eventID, MemAgent *memAgent,const  double prob);

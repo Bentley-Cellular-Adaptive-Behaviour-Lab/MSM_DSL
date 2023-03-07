@@ -2271,7 +2271,8 @@ void EC::add_creation_time(int creation_time) {
 
 double EC::calc_adjacent_species_level(const std::string& species_name,
 								   const bool memAgentODEs,
-								   const bool getsAverage) {
+								   const bool getsAverage,
+								   const unsigned int timestep) {
 	double level = 0.0;
 	for (auto *neighbour : this->getNeighCellVector()) {
 		if (memAgentODEs) {

@@ -13,7 +13,7 @@ namespace odeint = boost::numeric::odeint;
 
 typedef boost::array<double, 5> Endothelial_cell_ode_states;
 typedef boost::array<double, 7> Endothelial_memAgent_ode_states;
-typedef boost::array<double, 8> Endothelial_cell_only_ode_states;
+typedef boost::array<double, 10> Endothelial_cell_only_ode_states;
 
 class ODEs {
 private:
