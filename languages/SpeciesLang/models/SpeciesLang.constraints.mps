@@ -27,16 +27,31 @@
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
+      <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
+        <child id="1081773367579" name="rightExpression" index="3uHU7w" />
+        <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
       <concept id="6702802731807351367" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="9S07l" />
+      <concept id="1147467115080" name="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" flags="ng" index="EnEH3">
+        <reference id="1147467295099" name="applicableProperty" index="EomxK" />
+        <child id="1212097481299" name="propertyValidator" index="QCWH9" />
+      </concept>
+      <concept id="1212096972063" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator" flags="in" index="QB0g5" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="6702802731807737306" name="canBeChild" index="9Vyp8" />
+        <child id="1213098023997" name="property" index="1MhHOB" />
       </concept>
+      <concept id="1153138554286" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" flags="nn" index="1Wqviy" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -84,6 +99,21 @@
   <node concept="1M2fIO" id="5jwDGo4A5$F">
     <property role="3GE5qa" value="Processes" />
     <ref role="1M2myG" to="w3cn:5jwDGo4A5$C" resolve="Regulation" />
+    <node concept="EnEH3" id="7tkDipCuzUD" role="1MhHOB">
+      <ref role="EomxK" to="w3cn:7tkDipCsRot" resolve="_delay" />
+      <node concept="QB0g5" id="7tkDipCuzVN" role="QCWH9">
+        <node concept="3clFbS" id="7tkDipCuzVO" role="2VODD2">
+          <node concept="3cpWs6" id="7tkDipCu_o6" role="3cqZAp">
+            <node concept="3eOSWO" id="7tkDipCuBfj" role="3cqZAk">
+              <node concept="1Wqviy" id="7tkDipCu_yJ" role="3uHU7B" />
+              <node concept="3cmrfG" id="7tkDipCuBiO" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="9S07l" id="5jwDGo4A5$G" role="9Vyp8">
       <node concept="3clFbS" id="5jwDGo4A5$H" role="2VODD2">
         <node concept="3cpWs6" id="5jwDGo4A5CA" role="3cqZAp">

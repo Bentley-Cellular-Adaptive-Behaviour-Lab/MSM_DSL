@@ -545,9 +545,9 @@
     <property role="R5$K7" value="true" />
     <property role="34LRSv" value="Regulation" />
     <ref role="1TJDcQ" node="5jwDGo4Bf0N" resolve="Process" />
-    <node concept="1TJgyi" id="1wC$$UTcoyy" role="1TKVEl">
-      <property role="IQ2nx" value="1740802122790832290" />
-      <property role="TrG5h" value="TranscriptionDelay" />
+    <node concept="1TJgyi" id="7tkDipCsRot" role="1TKVEl">
+      <property role="IQ2nx" value="8598679172936857117" />
+      <property role="TrG5h" value="_delay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="5jwDGo4A5Es" role="1TKVEi">
