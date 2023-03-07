@@ -414,27 +414,32 @@
     <ref role="1TJDcQ" to="hm2y:6sdnDbSla17" resolve="Expression" />
     <node concept="1TJgyi" id="2L_6n0dlqW2" role="1TKVEl">
       <property role="IQ2nx" value="3198991079367356162" />
-      <property role="TrG5h" value="usesNeighbourValue" />
+      <property role="TrG5h" value="_usesNeighbourValue" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="54teBVtOs6E" role="1TKVEl">
       <property role="IQ2nx" value="5844892207958573482" />
-      <property role="TrG5h" value="normalisedToStartValue" />
+      <property role="TrG5h" value="_normalisedToStartValue" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="54teBVtOs6H" role="1TKVEl">
       <property role="IQ2nx" value="5844892207958573485" />
-      <property role="TrG5h" value="getsSumFromMemAgents" />
+      <property role="TrG5h" value="_getsSumFromMemAgents" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyi" id="6Ss9Vf0T_xR" role="1TKVEl">
       <property role="IQ2nx" value="7934260296508921975" />
-      <property role="TrG5h" value="checksVonNeumannNeighs" />
+      <property role="TrG5h" value="_checksVonNeumannNeighs" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="7tkDipDbnkO" role="1TKVEl">
+      <property role="IQ2nx" value="8598679172949046580" />
+      <property role="TrG5h" value="_delay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="109yD1s_YGN" role="1TKVEi">
       <property role="IQ2ns" value="1155607132030626611" />
-      <property role="20kJfa" value="Species" />
+      <property role="20kJfa" value="_speciesTarget" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
@@ -552,19 +557,19 @@
     </node>
     <node concept="1TJgyj" id="5jwDGo4A5Es" role="1TKVEi">
       <property role="IQ2ns" value="6116071663379962524" />
-      <property role="20kJfa" value="Modifier" />
+      <property role="20kJfa" value="_modifier" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjL" resolve="Parameter" />
     </node>
     <node concept="1TJgyj" id="5jwDGo4Bf1H" role="1TKVEi">
       <property role="IQ2ns" value="6116071663380263021" />
-      <property role="20kJfa" value="Source" />
+      <property role="20kJfa" value="_source" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
     <node concept="1TJgyj" id="5jwDGo4Bf1E" role="1TKVEi">
       <property role="IQ2ns" value="6116071663380263018" />
-      <property role="20kJfa" value="Target" />
+      <property role="20kJfa" value="_target" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2Hxmt3eVfjJ" resolve="Species" />
     </node>
@@ -647,12 +652,17 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="1TJgyi" id="3h7BZk97_g7" role="1TKVEl">
       <property role="IQ2nx" value="3767155488087495687" />
-      <property role="TrG5h" value="binIndex" />
+      <property role="TrG5h" value="_binIndex" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="7tkDipD248o" role="1TKVEl">
+      <property role="IQ2nx" value="8598679172946608664" />
+      <property role="TrG5h" value="_delay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
     <node concept="1TJgyj" id="3h7BZk97_g8" role="1TKVEi">
       <property role="IQ2ns" value="3767155488087495688" />
-      <property role="20kJfa" value="targetSpeciesExpr" />
+      <property role="20kJfa" value="_targetSpeciesExpr" />
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="109yD1s_YGM" resolve="SpeciesExpression" />
     </node>
@@ -713,6 +723,42 @@
     <node concept="1TJgyi" id="5_ZU6FJ3JHq" role="1TKVEl">
       <property role="IQ2nx" value="6449128737392753498" />
       <property role="TrG5h" value="integer" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7tkDipDnY7C">
+    <property role="EcuMT" value="8598679172952351208" />
+    <property role="TrG5h" value="SpeciesExprDelayBin" />
+    <property role="R4oN_" value="Groups a delay and a species expression together." />
+    <property role="3GE5qa" value="DelayBins" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyi" id="7tkDipDnY8v" role="1TKVEl">
+      <property role="IQ2nx" value="8598679172952351263" />
+      <property role="TrG5h" value="_delay" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyj" id="7tkDipDnY95" role="1TKVEi">
+      <property role="IQ2ns" value="8598679172952351301" />
+      <property role="20kJfa" value="_speciesExprTarget" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="109yD1s_YGM" resolve="SpeciesExpression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7tkDipDnY97">
+    <property role="EcuMT" value="8598679172952351303" />
+    <property role="3GE5qa" value="DelayBins" />
+    <property role="TrG5h" value="ParamExprDelayBin" />
+    <property role="R4oN_" value="Groups a delay and a parameter expression together." />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" />
+    <node concept="1TJgyj" id="7tkDipDnYbq" role="1TKVEi">
+      <property role="IQ2ns" value="8598679172952351450" />
+      <property role="20kJfa" value="_paramExprTarget" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="6pt0UY9yFLx" resolve="ParameterExpression" />
+    </node>
+    <node concept="1TJgyi" id="7tkDipDnYay" role="1TKVEl">
+      <property role="IQ2nx" value="8598679172952351394" />
+      <property role="TrG5h" value="_delay" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
   </node>
