@@ -80,14 +80,14 @@
         <reference id="1155607132028676491" name="target" index="1csUcr" />
       </concept>
       <concept id="1155607132030626610" name="SpeciesLang.structure.SpeciesExpression" flags="ng" index="1cBA6y">
-        <property id="3198991079367356162" name="usesNeighbourValue" index="xcbpM" />
-        <reference id="1155607132030626611" name="Species" index="1cBA6z" />
+        <property id="3198991079367356162" name="_usesNeighbourValue" index="xcbpM" />
+        <reference id="1155607132030626611" name="_speciesTarget" index="1cBA6z" />
       </concept>
       <concept id="6116071663379962152" name="SpeciesLang.structure.Regulation" flags="ng" index="1gufZI">
         <property id="8598679172936857117" name="_delay" index="v9XcV" />
-        <reference id="6116071663379962524" name="Modifier" index="1gufLq" />
-        <reference id="6116071663380263021" name="Source" index="1gv5qF" />
-        <reference id="6116071663380263018" name="Target" index="1gv5qG" />
+        <reference id="6116071663379962524" name="_modifier" index="1gufLq" />
+        <reference id="6116071663380263021" name="_source" index="1gv5qF" />
+        <reference id="6116071663380263018" name="_target" index="1gv5qG" />
       </concept>
       <concept id="6116071663380262908" name="SpeciesLang.structure.Inhibits" flags="ng" index="1gv4$U" />
       <concept id="6116071663380262909" name="SpeciesLang.structure.Upregulates" flags="ng" index="1gv4$V" />
@@ -771,6 +771,9 @@
           <property role="30bXRw" value="0.1" />
         </node>
       </node>
+      <node concept="Cfe3L" id="6G4ld6Rrb1j" role="CfdIH">
+        <ref role="Cfe3M" node="7tkDipCLPZd" resolve="ACTIVE_PROP_VEGFR" />
+      </node>
     </node>
     <node concept="3_zqOx" id="2JQq8uHlb69" role="3_zqUl">
       <property role="TrG5h" value="VEGF_VEGFR_OFF" />
@@ -963,6 +966,9 @@
           </node>
         </node>
       </node>
+      <node concept="Cfe3L" id="6G4ld6Rrb1i" role="Cf4qk">
+        <ref role="Cfe3M" node="2JQq8uHlb63" resolve="VEGF_VEGFR_ON" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vjF" role="3_zqUg">
       <property role="TrG5h" value="VEGF" />
@@ -997,7 +1003,7 @@
       <node concept="3rtiFT" id="7tkDipCGca0" role="3rqWia">
         <ref role="3rtiFY" node="7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="7tkDipCLQzP" role="3_z4RZ">
+      <node concept="DdDr8" id="6G4ld6Rrdta" role="3_z4RZ">
         <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -1017,7 +1023,7 @@
       <node concept="3rtiFT" id="7tkDipCFmYF" role="3rtiFW">
         <ref role="3rtiFY" node="7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
       </node>
-      <node concept="DdDr8" id="7tkDipCLQzQ" role="3_z4Rx">
+      <node concept="DdDr8" id="6G4ld6Rrdtb" role="3_z4Rx">
         <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
@@ -1071,8 +1077,20 @@
       <node concept="3rtiFT" id="7tkDipCGc9G" role="3rtiFW">
         <ref role="3rtiFY" node="7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
       </node>
-      <node concept="DdDr8" id="7tkDipCLQzR" role="3_z4Rx">
+      <node concept="DdDr8" id="6G4ld6Rrdtc" role="3_z4Rx">
         <ref role="DdDrb" node="2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+    </node>
+    <node concept="3_zqOZ" id="6G4ld6Rrb1U" role="3_zqUg">
+      <property role="TrG5h" value="PROTEIN_A" />
+      <property role="3_z0tL" value="2Hxmt3eVjAG/LOCATION_CELLULAR_INTERIOR" />
+      <node concept="3bpmHq" id="6G4ld6Rrb2z" role="1tJpXo">
+        <node concept="3bpmH0" id="6G4ld6Rrb2$" role="3lUA2Y">
+          <node concept="30bXRB" id="6G4ld6Rrb2P" role="3lUA52">
+            <property role="30bXRw" value="0.0" />
+          </node>
+        </node>
+        <node concept="2llJbL" id="6G4ld6Rrb3h" role="3lUA2W" />
       </node>
     </node>
     <node concept="37mRI7" id="2JQq8uHlb8w" role="lGtFl">
