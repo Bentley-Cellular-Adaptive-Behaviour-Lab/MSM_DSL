@@ -154,8 +154,6 @@ void ODEs::Endothelial_run_memAgent_ODEs(MemAgent* memAgent) {
 */
 }
 
-
-
 void ODEs::Endothelial_cell_only_system(const Endothelial_cell_only_ode_states &x, Endothelial_cell_only_ode_states &dxdt, double t) {
   // Species Definitions
   // 0 -> 1
@@ -224,28 +222,28 @@ void ODEs::Endothelial_run_cell_only_ODEs(EC *ec) {
 
 	//
 	states[0] = ec->get_env_protein_level("VEGF") / agents;
-	states[1] = ec->get_cell_protein_level("VEGF_VEGFR", 29);
+	states[1] = ec->get_cell_protein_level("VEGF_VEGFR", 0);
 	states[2] = ec->get_cell_protein_level("DLL4_NOTCH", 0);
 
 	// 29 -> 30
-	states[3] = ec->get_cell_protein_level("VEGFR", 59);
-	states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 59);
-	states[5] = ec->get_cell_protein_level("DLL4", 59);
-	states[6] = ec->get_cell_protein_level("NOTCH", 59);
-	states[7] = ec->get_cell_protein_level("DLL4_NOTCH", 59);
+	states[3] = ec->get_cell_protein_level("VEGFR", 29);
+	states[4] = ec->get_cell_protein_level("VEGF_VEGFR", 29);
+	states[5] = ec->get_cell_protein_level("DLL4", 29);
+	states[6] = ec->get_cell_protein_level("NOTCH", 29);
+	states[7] = ec->get_cell_protein_level("DLL4_NOTCH", 29);
 
 	// ADJACENT LEVELS
-	states[8] = ec->calc_adjacent_species_level("DLL4", false, true, 59);
-	states[9] = ec->calc_adjacent_species_level("NOTCH", false, true, 59);
+	states[8] = ec->calc_adjacent_species_level("DLL4", false, true, 29);
+	states[9] = ec->calc_adjacent_species_level("NOTCH", false, true, 29);
 
 	typedef odeint::controlled_runge_kutta< error_stepper_type > controlled_stepper_type;
 	controlled_stepper_type controlled_stepper;
 	integrate_adaptive(controlled_stepper, Endothelial_cell_only_system, states, 0.0, 1.0, 0.1);
 
 	// 29 -> 30
-	ec->set_cell_protein_level("VEGFR", states[3], 60);
-	ec->set_cell_protein_level("VEGF_VEGFR", states[4], 60);
-	ec->set_cell_protein_level("DLL4", states[5], 60);
-	ec->set_cell_protein_level("NOTCH", states[6], 60);
-	ec->set_cell_protein_level("DLL4_NOTCH", states[7], 60);
+	ec->set_cell_protein_level("VEGFR", states[3], 30);
+	ec->set_cell_protein_level("VEGF_VEGFR", states[4], 30);
+	ec->set_cell_protein_level("DLL4", states[5], 30);
+	ec->set_cell_protein_level("NOTCH", states[6], 30);
+	ec->set_cell_protein_level("DLL4_NOTCH", states[7], 30);
 }

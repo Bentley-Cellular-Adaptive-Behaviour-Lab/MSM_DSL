@@ -52,6 +52,8 @@ private:
 	unsigned int m_analysis_type = -1;
 	unsigned int m_run_number = -1;
 
+	unsigned int m_max_delay = 0;
+
 	bool m_DSL_CPM = false; // Used by DSL to determine whether the cellular potts model is run.
     bool m_MSM_CPM = false; // Used by MSM to determine whether the cellular potts model is run.
 	unsigned int m_start_CPM = 0; // When the cellular potts model runs, if at all.
@@ -416,12 +418,14 @@ public:
 	void create_outfiles();  // <- Generated function.
 	void write_to_component_outfiles();  // <- Generated function.
 	void create_component_outfile_csv(const std::string &protein_name);
-	void write_to_component_outfile_csv(const std::string &protein_name,
-										const unsigned int max_delay);
+	void write_to_component_outfile_csv(const std::string &protein_name);
 
 	void create_filopodia_outfile_csv(); // <- Generated function.
 	void write_to_filopodia_outfile(const unsigned int eventID, MemAgent *memAgent,const  double prob);
 	void write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgent, const double prob);
+
+	void set_max_delay(unsigned int new_delay);
+	unsigned int get_max_delay();
 };
 
 #endif //MEMAGENTSPRINGMODEL_DSL_WORLD_H

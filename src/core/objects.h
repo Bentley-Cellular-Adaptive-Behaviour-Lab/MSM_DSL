@@ -40,8 +40,8 @@ class World;
 #define SOLIDNESS_CHECK false
 
 #define DSL_EXTENSION_PROB true
-#define DSL_ENV_SELECTION false
-#define DSL_SENSITIVITY false
+#define DSL_ENV_SELECTION true
+#define DSL_SENSITIVITY true
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
 

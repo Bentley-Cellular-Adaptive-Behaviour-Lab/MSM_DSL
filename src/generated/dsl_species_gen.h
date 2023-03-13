@@ -90,4 +90,12 @@ static double calc_DLL4_REMOVAL_rate(double DLL4_UPTAKE, double DLL4_DEG, const 
 	return DLL4_UPTAKE+DLL4_DEG;
 }
 
+static double calc_FILCONST_rate(const bool memAgent) {
+	return 2;
+}
+
+static double calc_ACTIVE_PROP_VEGFR_rate(double VEGF_VEGFR_ON, double VEGFR, const bool memAgent) {
+	return (VEGF_VEGFR_ON/(VEGF_VEGFR_ON+VEGFR));
+}
+
 #endif /*SRC_SPRINGAGENT_ODE_H*/

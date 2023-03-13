@@ -31,11 +31,11 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 	// Cell Type Creation //
 	auto Endothelial_Type = define_cell_type("Endothelial", CELL_SHAPE_SQUARE, 20, 20);
-	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 60));
-	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 60));
-	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 60));
-	Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 60));
-	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 60));
+	Endothelial_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
+	Endothelial_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
+	Endothelial_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
+	Endothelial_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
+	Endothelial_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
 
 	// Tissue Type Creation //
 	auto VesselType_Type = define_tissue_type("VesselType", Endothelial_Type, CELL_CONFIGURATION_CYLINDRICAL, 1, 6, 6);
@@ -52,14 +52,14 @@ void Tissue_Container::tissue_set_up(World* world) {
 
 double World::calc_extension_prob(EC* cell, MemAgent* memAgent) {
 	if (cell->m_cell_type->m_name == "Endothelial") {
-		const auto ODE_MEMAGENT_VEGF = memAgent->mean_env_protein_search("VEGF"); // <- Get average.
-		const auto ODE_MEMAGENT_VEGFR = memAgent->get_memAgent_current_level("VEGFR");
-
-		const auto ODE_activeVEGFR = ODE_MEMAGENT_VEGFR * ODE_MEMAGENT_VEGF * 0.1;
-		auto prob = pow((ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR)), 0.6)*2;
-//		auto prob =(ODE_activeVEGFR / (ODE_activeVEGFR + ODE_MEMAGENT_VEGFR);
-
-		return prob;
+		CURRENT_CELL = cell;
+		auto VEGF_MEAN = memAgent->get_environment_level("VEGF", true, false);
+		auto VEGFR = memAgent->get_memAgent_current_level("VEGFR");
+		double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true);
+		double FILCONST = calc_FILCONST_rate(true);
+		double ACTIVE_PROP_VEGFR = calc_ACTIVE_PROP_VEGFR_rate(VEGF_VEGFR_ON, VEGFR, true);
+		auto prob = pow(ACTIVE_PROP_VEGFR,0.6) * FILCONST;
+		if (prob > 1) {return 1;} else if (prob < 0) {return 0;} else {return prob;}
 	}
 
 	return -1; // Prevent extension if the cell type isn't found.

@@ -16,6 +16,7 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
 	auto world = create_world(120, 104, 40, 1.0, 0.0, paramValues);
     world->setWorldContainer(this);
     world->fillParamVector(paramValues);
+	world->set_max_delay(30);
 
 	// GRADIENT CREATION
 	auto VEGF_protein = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 10000, 0, -1, -1);
@@ -32,33 +33,32 @@ void World::create_outfiles() {
 	create_component_outfile_csv("VEGFR");
 	create_component_outfile_csv("VEGF_VEGFR");
 //	create_filopodia_outfile_csv();
-	write_to_component_outfile_csv("DLL4", 60);
-	write_to_component_outfile_csv("DLL4_NOTCH", 60);
-	write_to_component_outfile_csv("NOTCH", 60);
-	write_to_component_outfile_csv("VEGF", 60);
-	write_to_component_outfile_csv("VEGFR", 60);
-	write_to_component_outfile_csv("VEGF_VEGFR", 60);
-
+	write_to_component_outfile_csv("DLL4");
+	write_to_component_outfile_csv("DLL4_NOTCH");
+	write_to_component_outfile_csv("NOTCH");
+	write_to_component_outfile_csv("VEGF");
+	write_to_component_outfile_csv("VEGFR");
+	write_to_component_outfile_csv("VEGF_VEGFR");
 }
 
 void World::write_to_component_outfiles() {
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("VEGF", 60);
+		write_to_component_outfile_csv("VEGF");
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("DLL4", 60);
+		write_to_component_outfile_csv("DLL4");
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("DLL4_NOTCH", 60);
+		write_to_component_outfile_csv("DLL4_NOTCH");
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("NOTCH", 60);
+		write_to_component_outfile_csv("NOTCH");
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("VEGFR", 60);
+		write_to_component_outfile_csv("VEGFR");
 	}
 	if (timeStep % 1 == 0 && timeStep != 0) {
-		write_to_component_outfile_csv("VEGF_VEGFR", 60);
+		write_to_component_outfile_csv("VEGF_VEGFR");
 	}
 }
 

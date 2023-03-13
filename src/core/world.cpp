@@ -7789,8 +7789,7 @@ void World::create_filopodia_outfile_csv() {
 	}
 }
 
-void World::write_to_component_outfile_csv(const std::string &protein_name,
-										   const unsigned int max_delay) {
+void World::write_to_component_outfile_csv(const std::string &protein_name) {
 	auto file_name = "results/" + protein_name
 					 + "_replicate_" + std::to_string(m_replicate_number)
 					 + "_run_" + std::to_string(m_run_number)
@@ -7809,7 +7808,7 @@ void World::write_to_component_outfile_csv(const std::string &protein_name,
 				if (cell->get_env_protein_values().count(protein_name)) {
 					protein_value = cell->get_env_protein_level(protein_name);
 				} else {
-					protein_value = cell->get_cell_protein_level(protein_name, max_delay);
+					protein_value = cell->get_cell_protein_level(protein_name, this->m_max_delay);
 				}
 				file << std::to_string(protein_value) << ",";
 			}
@@ -7871,4 +7870,12 @@ void World::write_fil_event_to_csv(const unsigned int eventID, MemAgent* memAgen
 		std::cout << "Error: Could not create filopodia results file. Please check the MSM_DSL/src/results/ directory exists.";
 		exit(e);
 	}
+}
+
+void World::set_max_delay(unsigned int new_delay) {
+	this->m_max_delay = new_delay;
+}
+
+unsigned int World::get_max_delay() {
+	return this->m_max_delay;
 }
