@@ -54,7 +54,7 @@ public:
     double get_protein_level(const std::string &protein_name);
     void set_protein_level(const std::string &protein_name, float new_level);
 
-	double get_extension_target(MemAgent *memAgent);  // <- Generated function.
+	double get_extension_target_level(MemAgent *memAgent);  // <- Generated function.
 
 };
 

@@ -25,7 +25,7 @@ class World;
 /// below defines are set through makefile
 //#define GRAPHICS false
 
-//#define MAXtime 1000
+#define MAXtime 1000
 
 // ECpack no longer does anything - set to 1 to avoid breaking code.
 #define ECpack 1
@@ -41,13 +41,16 @@ class World;
 
 #define DSL_EXTENSION_PROB true
 #define DSL_ENV_SELECTION true
-#define DSL_SENSITIVITY true
+#define DSL_SENSITIVITY false
 #define DSL_EXTENSION_PROTEIN_USAGE false
 #define DSL_MAX_FILS false
 
 // Analysis types for the DSL.
 
 extern int analysis_type;
+
+// Track current cell for DSL.
+extern EC* CURRENT_CELL;
 
 enum ANALYSIS_TYPE {
     ANALYSIS_TYPE_NONE,

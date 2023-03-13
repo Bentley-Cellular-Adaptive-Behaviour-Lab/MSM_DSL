@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="Simulation" uuid="40bcbd9e-665b-41d9-bf55-6dab9769ce55" moduleVersion="0" compileInMPS="true">
+<solution name="DorsalAortaSimulation" uuid="140b66da-9244-40a2-9a99-35e479d6f1a6" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
@@ -42,7 +42,7 @@
     <language slang="l:6b277d9a-d52d-416f-a209-1919bd737f50:org.iets3.core.expr.simpleTypes" version="1" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="40bcbd9e-665b-41d9-bf55-6dab9769ce55(Simulation)" version="0" />
+    <module reference="140b66da-9244-40a2-9a99-35e479d6f1a6(DorsalAortaSimulation)" version="0" />
   </dependencyVersions>
 </solution>
 

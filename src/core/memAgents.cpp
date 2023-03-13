@@ -1444,7 +1444,15 @@ bool MemAgent::extendFil(const double prob) {
 					if (SOLIDNESS_CHECK) {
 						canExtend = worldP->solidness_check(highest);
 					}
-                    if ((highest != NULL) && (highest->VEGF != 0) && canExtend) {
+
+					bool notZero;
+					if (DSL_ENV_SELECTION) {
+						notZero = highest->get_extension_target_level(this) > 0;
+					} else {
+						notZero = highest->VEGF > 0;
+					}
+
+                    if ((highest != NULL) && notZero && canExtend) {
 						if (FIL == NONE) {
 							if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
 								if (highest->Ex > Mx) {
@@ -1820,7 +1828,7 @@ Env *MemAgent::findHighestConc(void){
 
 	double highestProtein = 0;
 	if (DSL_ENV_SELECTION) {
-		highestProtein = EnvNeighs[0]->get_extension_target(this);
+		highestProtein = EnvNeighs[0]->get_extension_target_level(this);
 	} else {
 		highestProtein = EnvNeighs[0]->VEGF;
 	}
@@ -1843,7 +1851,7 @@ Env *MemAgent::findHighestConc(void){
     for(i = 1; i < upto; i++) {
 		double queryTargetProtein = 0;
 		if (DSL_ENV_SELECTION) {
-			queryTargetProtein = EnvNeighs[i]->get_extension_target(this);
+			queryTargetProtein = EnvNeighs[i]->get_extension_target_level(this);
 		} else {
 			queryTargetProtein = EnvNeighs[i]->VEGF;
 		}
