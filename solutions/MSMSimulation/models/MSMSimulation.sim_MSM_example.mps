@@ -12,9 +12,7 @@
     <use id="6fadc44e-69c2-4a4a-9d16-7ebf5f8d3ba0" name="org.iets3.core.expr.math" version="0" />
     <use id="8ca79d43-eb45-4791-bdd4-0d6130ff895b" name="de.itemis.mps.editor.diagram.layout" version="0" />
   </languages>
-  <imports>
-    <import index="90qr" ref="r:b9735469-e16c-4a48-a50a-8b715cc40a53(MicropatternsSimulation.sim_MSM_example)" implicit="true" />
-  </imports>
+  <imports />
   <registry>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
       <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
@@ -837,7 +835,7 @@
         <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
       <node concept="DdDr8" id="2zIg5Js0eOP" role="3_z4RZ">
-        <ref role="DdDrb" to="90qr:2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
+        <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vlQ" role="3_zqUg">
@@ -862,10 +860,10 @@
         <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
       <node concept="DdDr8" id="2zIg5Js0eOQ" role="3_z4RZ">
-        <ref role="DdDrb" to="90qr:2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
+        <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
       <node concept="3rtiFT" id="2zIg5Js0eOX" role="3rqWia">
-        <ref role="3rtiFY" to="90qr:7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
+        <ref role="3rtiFY" node="7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vxk" role="3_zqUg">
@@ -888,10 +886,10 @@
         <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
       <node concept="DdDr8" id="2zIg5Js0eOR" role="3_z4Rx">
-        <ref role="DdDrb" to="90qr:2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
+        <ref role="DdDrb" node="2JQq8uHlb5Q" resolve="VEGF_VEGFR_BINDING" />
       </node>
       <node concept="3rtiFT" id="2zIg5Js0eOU" role="3rtiFW">
-        <ref role="3rtiFY" to="90qr:7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
+        <ref role="3rtiFY" node="7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vzC" role="3_zqUg">
@@ -911,7 +909,7 @@
         <ref role="3rtiFY" node="7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
       </node>
       <node concept="3rtiFT" id="2zIg5Js0eOV" role="3rqWia">
-        <ref role="3rtiFY" to="90qr:7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
+        <ref role="3rtiFY" node="7tkDipCFmYe" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vEb" role="3_zqUg">
@@ -931,7 +929,7 @@
         <ref role="DdDrb" node="2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
       </node>
       <node concept="DdDr8" id="2zIg5Js0eOS" role="3_z4RZ">
-        <ref role="DdDrb" to="90qr:2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
+        <ref role="DdDrb" node="2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
     <node concept="3_zqOZ" id="7tkDipC_vHe" role="3_zqUg">
@@ -954,10 +952,10 @@
         <ref role="DdDrb" node="2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
       </node>
       <node concept="DdDr8" id="2zIg5Js0eOT" role="3_z4Rx">
-        <ref role="DdDrb" to="90qr:2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
+        <ref role="DdDrb" node="2JQq8uHlb5Y" resolve="DLL4_NOTCH_BINDING" />
       </node>
       <node concept="3rtiFT" id="2zIg5Js0eOW" role="3rtiFW">
-        <ref role="3rtiFY" to="90qr:7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
+        <ref role="3rtiFY" node="7tkDipCGc9e" resolve="VEGFR_INHIBITION" />
       </node>
     </node>
     <node concept="37mRI7" id="2JQq8uHlb8w" role="lGtFl">

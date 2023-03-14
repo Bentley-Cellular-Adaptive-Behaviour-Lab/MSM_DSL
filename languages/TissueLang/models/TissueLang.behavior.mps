@@ -8198,7 +8198,7 @@
                 <node concept="2OqwBi" id="6B5I$h9p4qg" role="33vP2m">
                   <node concept="2OqwBi" id="6B5I$h9p4qh" role="2Oq$k0">
                     <node concept="2qgKlT" id="6B5I$h9p4qi" role="2OqNvi">
-                      <ref role="37wK5l" node="2xqP3eG1cnO" resolve="get_tissue_upperx_decimal" />
+                      <ref role="37wK5l" node="2xqP3eG233W" resolve="get_tissue_uppery_decimal" />
                     </node>
                     <node concept="37vLTw" id="6B5I$h9pctV" role="2Oq$k0">
                       <ref role="3cqZAo" node="1p5qYO3gMAv" resolve="monolayer_2" />
@@ -8419,7 +8419,7 @@
       <node concept="P$JXv" id="248hPtQX0o6" role="lGtFl">
         <node concept="TZ5HA" id="248hPtQX0yd" role="TZ5H$">
           <node concept="1dT_AC" id="248hPtQX0ye" role="1dT_Ay">
-            <property role="1dT_AB" value="Compares the locations of two vessel-like objects and checks that there is no overlap based on their shapes and sizes " />
+            <property role="1dT_AB" value="Compares the locations of two monolayer-like objects and checks that there is no overlap based on their shapes and sizes " />
           </node>
         </node>
         <node concept="TZ5HA" id="248hPtQX0yf" role="TZ5H$">
@@ -13143,28 +13143,29 @@
           <node concept="3clFbS" id="1QpPlI51WZD" role="2LFqv$">
             <node concept="3clFbJ" id="1QpPlI521YR" role="3cqZAp">
               <node concept="3clFbS" id="1QpPlI521YT" role="3clFbx">
-                <node concept="3clFbJ" id="1QpPlI52N8B" role="3cqZAp">
-                  <node concept="3clFbS" id="1QpPlI52N8D" role="3clFbx">
-                    <node concept="3cpWs6" id="1QpPlI52O2J" role="3cqZAp">
-                      <node concept="3clFbT" id="2AY95d_7UyV" role="3cqZAk">
+                <node concept="3clFbJ" id="7MLRBd9KQUx" role="3cqZAp">
+                  <node concept="3clFbS" id="7MLRBd9KQUy" role="3clFbx">
+                    <node concept="3cpWs6" id="7MLRBd9KQUz" role="3cqZAp">
+                      <node concept="3clFbT" id="7MLRBd9KQU$" role="3cqZAk">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="1QpPlI52NN5" role="3clFbw">
-                    <node concept="1PxgMI" id="1QpPlI52NzX" role="2Oq$k0">
-                      <node concept="chp4Y" id="1QpPlI52NCr" role="3oSUPX">
+                  <node concept="2OqwBi" id="7MLRBd9KQU_" role="3clFbw">
+                    <node concept="1PxgMI" id="7MLRBd9KRDA" role="2Oq$k0">
+                      <property role="1BlNFB" value="true" />
+                      <node concept="chp4Y" id="7MLRBd9KRKa" role="3oSUPX">
                         <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
                       </node>
-                      <node concept="2OqwBi" id="1QpPlI52NiQ" role="1m5AlR">
-                        <node concept="13iPFW" id="1QpPlI52N94" role="2Oq$k0" />
-                        <node concept="1mfA1w" id="1QpPlI52Nrh" role="2OqNvi" />
+                      <node concept="2OqwBi" id="7MLRBd9KQUC" role="1m5AlR">
+                        <node concept="13iPFW" id="7MLRBd9KQUD" role="2Oq$k0" />
+                        <node concept="1mfA1w" id="7MLRBd9KQUE" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="1QpPlI52NXt" role="2OqNvi">
+                    <node concept="2qgKlT" id="7MLRBd9KQUF" role="2OqNvi">
                       <ref role="37wK5l" node="1QpPlI522xB" resolve="check_cell_cell_overlap" />
-                      <node concept="13iPFW" id="1QpPlI52Zuw" role="37wK5m" />
-                      <node concept="2GrUjf" id="1QpPlI52ZD5" role="37wK5m">
+                      <node concept="13iPFW" id="7MLRBd9KQUG" role="37wK5m" />
+                      <node concept="2GrUjf" id="7MLRBd9KQUH" role="37wK5m">
                         <ref role="2Gs0qQ" node="1QpPlI51WZ_" resolve="cell" />
                       </node>
                     </node>
@@ -13180,121 +13181,122 @@
             </node>
           </node>
         </node>
-        <node concept="2Gpval" id="1QpPlI520Bc" role="3cqZAp">
-          <node concept="2GrKxI" id="1QpPlI520Be" role="2Gsz3X">
+        <node concept="2Gpval" id="7MLRBd9KSl6" role="3cqZAp">
+          <node concept="2GrKxI" id="7MLRBd9KSl7" role="2Gsz3X">
             <property role="TrG5h" value="tissue" />
           </node>
-          <node concept="2OqwBi" id="1QpPlI521fU" role="2GsD0m">
-            <node concept="1PxgMI" id="1QpPlI5213T" role="2Oq$k0">
-              <node concept="chp4Y" id="1QpPlI5214W" role="3oSUPX">
+          <node concept="2OqwBi" id="7MLRBd9KSl8" role="2GsD0m">
+            <node concept="1PxgMI" id="7MLRBd9KTSH" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="7MLRBd9KUih" role="3oSUPX">
                 <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
-              <node concept="2OqwBi" id="1QpPlI520MW" role="1m5AlR">
-                <node concept="13iPFW" id="1QpPlI520CU" role="2Oq$k0" />
-                <node concept="1mfA1w" id="1QpPlI520Vj" role="2OqNvi" />
+              <node concept="2OqwBi" id="7MLRBd9KSlb" role="1m5AlR">
+                <node concept="13iPFW" id="7MLRBd9KSlc" role="2Oq$k0" />
+                <node concept="1mfA1w" id="7MLRBd9KSld" role="2OqNvi" />
               </node>
             </node>
-            <node concept="3Tsc0h" id="1QpPlI521qe" role="2OqNvi">
+            <node concept="3Tsc0h" id="7MLRBd9KSle" role="2OqNvi">
               <ref role="3TtcxE" to="nguq:5qSYbADreYc" resolve="_tissues" />
             </node>
           </node>
-          <node concept="3clFbS" id="1QpPlI520Bi" role="2LFqv$">
-            <node concept="3clFbJ" id="1QpPlI530AC" role="3cqZAp">
-              <node concept="3clFbS" id="1QpPlI530AE" role="3clFbx">
-                <node concept="3clFbJ" id="1QpPlI531Ww" role="3cqZAp">
-                  <node concept="3clFbS" id="1QpPlI531Wx" role="3clFbx">
-                    <node concept="3cpWs6" id="1QpPlI531Wy" role="3cqZAp">
-                      <node concept="3clFbT" id="6leo5vIfA4f" role="3cqZAk">
+          <node concept="3clFbS" id="7MLRBd9KSlf" role="2LFqv$">
+            <node concept="3clFbJ" id="7MLRBd9KSlg" role="3cqZAp">
+              <node concept="3clFbS" id="7MLRBd9KSlh" role="3clFbx">
+                <node concept="3clFbJ" id="7MLRBd9KSli" role="3cqZAp">
+                  <node concept="3clFbS" id="7MLRBd9KSlj" role="3clFbx">
+                    <node concept="3cpWs6" id="7MLRBd9KSlk" role="3cqZAp">
+                      <node concept="3clFbT" id="7MLRBd9KSll" role="3cqZAk">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="1QpPlI531W$" role="3clFbw">
-                    <node concept="1PxgMI" id="1QpPlI531W_" role="2Oq$k0">
-                      <node concept="chp4Y" id="1QpPlI531WA" role="3oSUPX">
+                  <node concept="2OqwBi" id="7MLRBd9KSlm" role="3clFbw">
+                    <node concept="1PxgMI" id="7MLRBd9KSln" role="2Oq$k0">
+                      <node concept="chp4Y" id="7MLRBd9KSlo" role="3oSUPX">
                         <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
                       </node>
-                      <node concept="2OqwBi" id="1QpPlI531WB" role="1m5AlR">
-                        <node concept="13iPFW" id="1QpPlI531WC" role="2Oq$k0" />
-                        <node concept="1mfA1w" id="1QpPlI531WD" role="2OqNvi" />
+                      <node concept="2OqwBi" id="7MLRBd9KSlp" role="1m5AlR">
+                        <node concept="13iPFW" id="7MLRBd9KSlq" role="2Oq$k0" />
+                        <node concept="1mfA1w" id="7MLRBd9KSlr" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="1QpPlI531WE" role="2OqNvi">
+                    <node concept="2qgKlT" id="7MLRBd9KSls" role="2OqNvi">
                       <ref role="37wK5l" node="1QpPlI522M$" resolve="check_cell_vessel_overlap" />
-                      <node concept="13iPFW" id="1QpPlI531WF" role="37wK5m" />
-                      <node concept="2GrUjf" id="6leo5vIfzlE" role="37wK5m">
-                        <ref role="2Gs0qQ" node="1QpPlI520Be" resolve="tissue" />
+                      <node concept="13iPFW" id="7MLRBd9KSlt" role="37wK5m" />
+                      <node concept="2GrUjf" id="7MLRBd9KSlu" role="37wK5m">
+                        <ref role="2Gs0qQ" node="7MLRBd9KSl7" resolve="tissue" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="1QpPlI531CO" role="3clFbw">
-                <node concept="2OqwBi" id="1QpPlI531j_" role="2Oq$k0">
-                  <node concept="2OqwBi" id="1QpPlI530Pb" role="2Oq$k0">
-                    <node concept="2GrUjf" id="1QpPlI530Fi" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="1QpPlI520Be" resolve="tissue" />
+              <node concept="2OqwBi" id="7MLRBd9KSlv" role="3clFbw">
+                <node concept="2OqwBi" id="7MLRBd9KSlw" role="2Oq$k0">
+                  <node concept="2OqwBi" id="7MLRBd9KSlx" role="2Oq$k0">
+                    <node concept="2GrUjf" id="7MLRBd9KSly" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="7MLRBd9KSl7" resolve="tissue" />
                     </node>
-                    <node concept="3TrEf2" id="1QpPlI5316C" role="2OqNvi">
+                    <node concept="3TrEf2" id="7MLRBd9KSlz" role="2OqNvi">
                       <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="_tissueTypeRef" />
                     </node>
                   </node>
-                  <node concept="3TrEf2" id="1QpPlI531wZ" role="2OqNvi">
+                  <node concept="3TrEf2" id="7MLRBd9KSl$" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                   </node>
                 </node>
-                <node concept="1mIQ4w" id="1QpPlI531R3" role="2OqNvi">
-                  <node concept="chp4Y" id="1QpPlI531Tp" role="cj9EA">
+                <node concept="1mIQ4w" id="7MLRBd9KSl_" role="2OqNvi">
+                  <node concept="chp4Y" id="7MLRBd9KSlA" role="cj9EA">
                     <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                   </node>
                 </node>
               </node>
-              <node concept="3eNFk2" id="6leo5vIf$tv" role="3eNLev">
-                <node concept="3clFbS" id="6leo5vIf$tx" role="3eOfB_">
-                  <node concept="3clFbJ" id="6leo5vIf$El" role="3cqZAp">
-                    <node concept="3clFbS" id="6leo5vIf$En" role="3clFbx">
-                      <node concept="3cpWs6" id="6leo5vIf_z2" role="3cqZAp">
-                        <node concept="3clFbT" id="6leo5vIf_Cw" role="3cqZAk">
+              <node concept="3eNFk2" id="7MLRBd9KSlB" role="3eNLev">
+                <node concept="3clFbS" id="7MLRBd9KSlC" role="3eOfB_">
+                  <node concept="3clFbJ" id="7MLRBd9KSlD" role="3cqZAp">
+                    <node concept="3clFbS" id="7MLRBd9KSlE" role="3clFbx">
+                      <node concept="3cpWs6" id="7MLRBd9KSlF" role="3cqZAp">
+                        <node concept="3clFbT" id="7MLRBd9KSlG" role="3cqZAk">
                           <property role="3clFbU" value="true" />
                         </node>
                       </node>
                     </node>
-                    <node concept="2OqwBi" id="6leo5vIf_9T" role="3clFbw">
-                      <node concept="1PxgMI" id="6leo5vIf_9U" role="2Oq$k0">
-                        <node concept="chp4Y" id="6leo5vIf_9V" role="3oSUPX">
+                    <node concept="2OqwBi" id="7MLRBd9KSlH" role="3clFbw">
+                      <node concept="1PxgMI" id="7MLRBd9KSlI" role="2Oq$k0">
+                        <node concept="chp4Y" id="7MLRBd9KSlJ" role="3oSUPX">
                           <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
                         </node>
-                        <node concept="2OqwBi" id="6leo5vIf_9W" role="1m5AlR">
-                          <node concept="13iPFW" id="6leo5vIf_9X" role="2Oq$k0" />
-                          <node concept="1mfA1w" id="6leo5vIf_9Y" role="2OqNvi" />
+                        <node concept="2OqwBi" id="7MLRBd9KSlK" role="1m5AlR">
+                          <node concept="13iPFW" id="7MLRBd9KSlL" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="7MLRBd9KSlM" role="2OqNvi" />
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="6leo5vIf_9Z" role="2OqNvi">
+                      <node concept="2qgKlT" id="7MLRBd9KSlN" role="2OqNvi">
                         <ref role="37wK5l" node="1QpPlI5237t" resolve="check_cell_monolayer_overlap" />
-                        <node concept="13iPFW" id="6leo5vIf_a0" role="37wK5m" />
-                        <node concept="2GrUjf" id="6leo5vIf_a1" role="37wK5m">
-                          <ref role="2Gs0qQ" node="1QpPlI520Be" resolve="tissue" />
+                        <node concept="13iPFW" id="7MLRBd9KSlO" role="37wK5m" />
+                        <node concept="2GrUjf" id="7MLRBd9KSlP" role="37wK5m">
+                          <ref role="2Gs0qQ" node="7MLRBd9KSl7" resolve="tissue" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
-                <node concept="2OqwBi" id="6leo5vIf$xC" role="3eO9$A">
-                  <node concept="2OqwBi" id="6leo5vIf$xD" role="2Oq$k0">
-                    <node concept="2OqwBi" id="6leo5vIf$xE" role="2Oq$k0">
-                      <node concept="2GrUjf" id="6leo5vIf$xF" role="2Oq$k0">
-                        <ref role="2Gs0qQ" node="1QpPlI520Be" resolve="tissue" />
+                <node concept="2OqwBi" id="7MLRBd9KSlQ" role="3eO9$A">
+                  <node concept="2OqwBi" id="7MLRBd9KSlR" role="2Oq$k0">
+                    <node concept="2OqwBi" id="7MLRBd9KSlS" role="2Oq$k0">
+                      <node concept="2GrUjf" id="7MLRBd9KSlT" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="7MLRBd9KSl7" resolve="tissue" />
                       </node>
-                      <node concept="3TrEf2" id="6leo5vIf$xG" role="2OqNvi">
+                      <node concept="3TrEf2" id="7MLRBd9KSlU" role="2OqNvi">
                         <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="_tissueTypeRef" />
                       </node>
                     </node>
-                    <node concept="3TrEf2" id="6leo5vIf$xH" role="2OqNvi">
+                    <node concept="3TrEf2" id="7MLRBd9KSlV" role="2OqNvi">
                       <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                     </node>
                   </node>
-                  <node concept="1mIQ4w" id="6leo5vIf$xI" role="2OqNvi">
-                    <node concept="chp4Y" id="6leo5vIf_3o" role="cj9EA">
+                  <node concept="1mIQ4w" id="7MLRBd9KSlW" role="2OqNvi">
+                    <node concept="chp4Y" id="7MLRBd9KSlX" role="cj9EA">
                       <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
                     </node>
                   </node>
@@ -15230,17 +15232,18 @@
           <node concept="2GrKxI" id="6leo5vIfAIH" role="2Gsz3X">
             <property role="TrG5h" value="cell" />
           </node>
-          <node concept="2OqwBi" id="6leo5vIfAII" role="2GsD0m">
-            <node concept="1PxgMI" id="6leo5vIfAIJ" role="2Oq$k0">
-              <node concept="chp4Y" id="6leo5vIfAIK" role="3oSUPX">
+          <node concept="2OqwBi" id="7MLRBd9L4Tk" role="2GsD0m">
+            <node concept="1PxgMI" id="7MLRBd9L3Qh" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="7MLRBd9L4k3" role="3oSUPX">
                 <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
               </node>
-              <node concept="2OqwBi" id="6leo5vIfAIL" role="1m5AlR">
-                <node concept="13iPFW" id="6leo5vIfAIM" role="2Oq$k0" />
-                <node concept="1mfA1w" id="6leo5vIfAIN" role="2OqNvi" />
+              <node concept="2OqwBi" id="6leo5vIfAII" role="1m5AlR">
+                <node concept="1mfA1w" id="7MLRBd9L3iS" role="2OqNvi" />
+                <node concept="13iPFW" id="7MLRBd9L2jG" role="2Oq$k0" />
               </node>
             </node>
-            <node concept="3Tsc0h" id="6leo5vIfAIO" role="2OqNvi">
+            <node concept="3Tsc0h" id="7MLRBd9L5xB" role="2OqNvi">
               <ref role="3TtcxE" to="nguq:5qSYbADreYe" resolve="_cells" />
             </node>
           </node>
@@ -15294,51 +15297,51 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbJ" id="6leo5vIfFHk" role="3cqZAp">
-              <node concept="3clFbS" id="6leo5vIfFHl" role="3clFbx">
-                <node concept="3clFbJ" id="6leo5vIfFHm" role="3cqZAp">
-                  <node concept="3clFbS" id="6leo5vIfFHn" role="3clFbx">
-                    <node concept="3cpWs6" id="6leo5vIfFHo" role="3cqZAp">
-                      <node concept="3clFbT" id="6leo5vIfFHp" role="3cqZAk">
+            <node concept="3clFbJ" id="7MLRBd9KZW7" role="3cqZAp">
+              <node concept="3clFbS" id="7MLRBd9KZW8" role="3clFbx">
+                <node concept="3clFbJ" id="7MLRBd9KZW9" role="3cqZAp">
+                  <node concept="3clFbS" id="7MLRBd9KZWa" role="3clFbx">
+                    <node concept="3cpWs6" id="7MLRBd9KZWb" role="3cqZAp">
+                      <node concept="3clFbT" id="7MLRBd9KZWc" role="3cqZAk">
                         <property role="3clFbU" value="true" />
                       </node>
                     </node>
                   </node>
-                  <node concept="2OqwBi" id="6leo5vIfFHq" role="3clFbw">
-                    <node concept="1PxgMI" id="6leo5vIfFHr" role="2Oq$k0">
-                      <node concept="chp4Y" id="6leo5vIfFHs" role="3oSUPX">
+                  <node concept="2OqwBi" id="7MLRBd9KZWd" role="3clFbw">
+                    <node concept="1PxgMI" id="7MLRBd9KZWe" role="2Oq$k0">
+                      <node concept="chp4Y" id="7MLRBd9KZWf" role="3oSUPX">
                         <ref role="cht4Q" to="nguq:5qSYbADreY5" resolve="TissueContainer" />
                       </node>
-                      <node concept="2OqwBi" id="6leo5vIfFHt" role="1m5AlR">
-                        <node concept="13iPFW" id="6leo5vIfFHu" role="2Oq$k0" />
-                        <node concept="1mfA1w" id="6leo5vIfFHv" role="2OqNvi" />
+                      <node concept="2OqwBi" id="7MLRBd9KZWg" role="1m5AlR">
+                        <node concept="13iPFW" id="7MLRBd9KZWh" role="2Oq$k0" />
+                        <node concept="1mfA1w" id="7MLRBd9KZWi" role="2OqNvi" />
                       </node>
                     </node>
-                    <node concept="2qgKlT" id="6leo5vIfFHw" role="2OqNvi">
-                      <ref role="37wK5l" node="1QpPlI5237t" resolve="check_cell_monolayer_overlap" />
-                      <node concept="2GrUjf" id="6leo5vIfFHx" role="37wK5m">
+                    <node concept="2qgKlT" id="7MLRBd9KZWj" role="2OqNvi">
+                      <ref role="37wK5l" node="1QpPlI522M$" resolve="check_cell_vessel_overlap" />
+                      <node concept="2GrUjf" id="7MLRBd9KZWk" role="37wK5m">
                         <ref role="2Gs0qQ" node="6leo5vIfAIH" resolve="cell" />
                       </node>
-                      <node concept="13iPFW" id="6leo5vIfFHy" role="37wK5m" />
+                      <node concept="13iPFW" id="7MLRBd9KZWl" role="37wK5m" />
                     </node>
                   </node>
                 </node>
               </node>
-              <node concept="2OqwBi" id="6leo5vIfFH$" role="3clFbw">
-                <node concept="2OqwBi" id="6leo5vIfFH_" role="2Oq$k0">
-                  <node concept="2OqwBi" id="6leo5vIfFHA" role="2Oq$k0">
-                    <node concept="13iPFW" id="6leo5vIfFHB" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="6leo5vIfFHC" role="2OqNvi">
+              <node concept="2OqwBi" id="7MLRBd9KZWm" role="3clFbw">
+                <node concept="2OqwBi" id="7MLRBd9KZWn" role="2Oq$k0">
+                  <node concept="2OqwBi" id="7MLRBd9KZWo" role="2Oq$k0">
+                    <node concept="13iPFW" id="7MLRBd9KZWp" role="2Oq$k0" />
+                    <node concept="3TrEf2" id="7MLRBd9KZWq" role="2OqNvi">
                       <ref role="3Tt5mk" to="nguq:4dDC3Gsompl" resolve="_tissueTypeRef" />
                     </node>
                   </node>
-                  <node concept="3TrEf2" id="6leo5vIfFHD" role="2OqNvi">
+                  <node concept="3TrEf2" id="7MLRBd9KZWr" role="2OqNvi">
                     <ref role="3Tt5mk" to="nguq:4dDC3Gsompb" resolve="_arrangement" />
                   </node>
                 </node>
-                <node concept="1mIQ4w" id="6leo5vIfFHE" role="2OqNvi">
-                  <node concept="chp4Y" id="6leo5vIfFHF" role="cj9EA">
-                    <ref role="cht4Q" to="nguq:5qSYbADreYs" resolve="ArrangementFlat" />
+                <node concept="1mIQ4w" id="7MLRBd9KZWs" role="2OqNvi">
+                  <node concept="chp4Y" id="7MLRBd9KZWt" role="cj9EA">
+                    <ref role="cht4Q" to="nguq:5qSYbADreYh" resolve="ArrangementCylindrical" />
                   </node>
                 </node>
               </node>
