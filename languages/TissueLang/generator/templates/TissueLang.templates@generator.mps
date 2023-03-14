@@ -8836,7 +8836,7 @@
       <node concept="356sEK" id="5j_l9LXC$S3" role="383Ya9">
         <node concept="2EixSi" id="5j_l9LXC$S5" role="2EinRH" />
         <node concept="356sEF" id="5gt2VdzWBdw" role="356sEH">
-          <property role="TrG5h" value="double Env::get_extension_target(MemAgent *memAgent) {" />
+          <property role="TrG5h" value="double Env::get_extension_target_level(MemAgent *memAgent) {" />
         </node>
       </node>
       <node concept="356WMU" id="5gt2VdzZ_cf" role="383Ya9">

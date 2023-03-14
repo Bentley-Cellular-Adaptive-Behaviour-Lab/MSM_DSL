@@ -10,6 +10,7 @@
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
@@ -236,7 +237,7 @@
   <node concept="13h7C7" id="6WHzz7cW0Bm">
     <ref role="13h7C2" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
     <node concept="13i0hz" id="6WHzz7cW0BQ" role="13h7CS">
-      <property role="TrG5h" value="getParameters" />
+      <property role="TrG5h" value="getSweepTargets" />
       <node concept="3Tm1VV" id="6WHzz7cW0BR" role="1B3o_S" />
       <node concept="3clFbS" id="6WHzz7cW0BT" role="3clF47">
         <node concept="3SKdUt" id="6WHzz7cW0F2" role="3cqZAp">
@@ -248,7 +249,10 @@
               <property role="3oM_SC" value="the" />
             </node>
             <node concept="3oM_SD" id="6WHzz7cW0FF" role="1PaTwD">
-              <property role="3oM_SC" value="species" />
+              <property role="3oM_SC" value="species," />
+            </node>
+            <node concept="3oM_SD" id="JH8k64EQJg" role="1PaTwD">
+              <property role="3oM_SC" value="gradients" />
             </node>
             <node concept="3oM_SD" id="6WHzz7cW14D" role="1PaTwD">
               <property role="3oM_SC" value="and" />
@@ -284,7 +288,7 @@
         </node>
         <node concept="3cpWs8" id="1PDLoEB_L0b" role="3cqZAp">
           <node concept="3cpWsn" id="1PDLoEB_L0e" role="3cpWs9">
-            <property role="TrG5h" value="parameters" />
+            <property role="TrG5h" value="sweepTargets" />
             <node concept="_YKpA" id="1PDLoEB_L07" role="1tU5fm">
               <node concept="3Tqbb2" id="1PDLoEBBp0w" role="_ZDj9" />
             </node>
@@ -309,6 +313,20 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="JH8k64ENfu" role="3cqZAp">
+          <node concept="3cpWsn" id="JH8k64ENfx" role="3cpWs9">
+            <property role="TrG5h" value="worldContainer" />
+            <node concept="3Tqbb2" id="JH8k64ENfs" role="1tU5fm">
+              <ref role="ehGHo" to="s9ob:7faAukhALBz" resolve="WorldContainer" />
+            </node>
+            <node concept="2OqwBi" id="JH8k64EU4i" role="33vP2m">
+              <node concept="13iPFW" id="JH8k64ESxY" role="2Oq$k0" />
+              <node concept="3TrEf2" id="JH8k64EVwf" role="2OqNvi">
+                <ref role="3Tt5mk" to="yy1h:4jUcCWy80Nz" resolve="_worldContainerRef" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="1PDLoEB_Nju" role="3cqZAp">
           <node concept="3cpWsn" id="1PDLoEB_Njx" role="3cpWs9">
             <property role="TrG5h" value="signallingContainer" />
@@ -323,6 +341,7 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="JH8k64EFsi" role="3cqZAp" />
         <node concept="3clFbH" id="1PDLoEB_SWg" role="3cqZAp" />
         <node concept="3SKdUt" id="1PDLoEB_XXz" role="3cqZAp">
           <node concept="1PaTwC" id="1PDLoEB_XX$" role="1aUNEU">
@@ -653,6 +672,47 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbH" id="JH8k64EWTN" role="3cqZAp" />
+        <node concept="2Gpval" id="JH8k64EZFD" role="3cqZAp">
+          <node concept="2GrKxI" id="JH8k64EZFF" role="2Gsz3X">
+            <property role="TrG5h" value="gradient" />
+          </node>
+          <node concept="2OqwBi" id="JH8k64F9F8" role="2GsD0m">
+            <node concept="37vLTw" id="JH8k64F89z" role="2Oq$k0">
+              <ref role="3cqZAo" node="JH8k64ENfx" resolve="worldContainer" />
+            </node>
+            <node concept="3Tsc0h" id="JH8k64Fb9Q" role="2OqNvi">
+              <ref role="3TtcxE" to="s9ob:7faAukhALBF" resolve="_gradients" />
+            </node>
+          </node>
+          <node concept="3clFbS" id="JH8k64EZFJ" role="2LFqv$">
+            <node concept="3clFbJ" id="JH8k64Fc6G" role="3cqZAp">
+              <node concept="2OqwBi" id="JH8k64Fe_F" role="3clFbw">
+                <node concept="2GrUjf" id="JH8k64Fd39" role="2Oq$k0">
+                  <ref role="2Gs0qQ" node="JH8k64EZFF" resolve="gradient" />
+                </node>
+                <node concept="3TrcHB" id="JH8k64FfI2" role="2OqNvi">
+                  <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+                </node>
+              </node>
+              <node concept="3clFbS" id="JH8k64Fc6I" role="3clFbx">
+                <node concept="3clFbF" id="JH8k64FhyJ" role="3cqZAp">
+                  <node concept="2OqwBi" id="JH8k64FjnK" role="3clFbG">
+                    <node concept="37vLTw" id="JH8k64FhyI" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1PDLoEB_L0e" resolve="sweepTargets" />
+                    </node>
+                    <node concept="TSZUe" id="JH8k64Fm6p" role="2OqNvi">
+                      <node concept="2GrUjf" id="JH8k64Fn3C" role="25WWJ7">
+                        <ref role="2Gs0qQ" node="JH8k64EZFF" resolve="gradient" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbH" id="JH8k64EXTE" role="3cqZAp" />
         <node concept="3cpWs6" id="6WHzz7cW0Dx" role="3cqZAp">
           <node concept="37vLTw" id="1PDLoEB_Lde" role="3cqZAk">
             <ref role="3cqZAo" node="1PDLoEB_L0e" resolve="parameters" />

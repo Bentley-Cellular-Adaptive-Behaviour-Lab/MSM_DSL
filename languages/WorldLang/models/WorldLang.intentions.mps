@@ -6,7 +6,7 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldSetup.structure)" implicit="true" />
+    <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldLang.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -159,6 +159,61 @@
                     <node concept="2Sf5sV" id="3EojsBVltFm" role="2Oq$k0" />
                     <node concept="3TrcHB" id="3EojsBVltFn" role="2OqNvi">
                       <ref role="3TsBF5" to="s9ob:3EojsBVloFX" resolve="_legacyVEGF" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="JH8k64Mxtl">
+    <property role="TrG5h" value="setGradientParamSweep" />
+    <ref role="2ZfgGC" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    <node concept="2S6ZIM" id="JH8k64Mxtm" role="2ZfVej">
+      <node concept="3clFbS" id="JH8k64Mxtn" role="2VODD2">
+        <node concept="3clFbF" id="JH8k64Mxyl" role="3cqZAp">
+          <node concept="Xl_RD" id="JH8k64Mxyk" role="3clFbG">
+            <property role="Xl_RC" value="Use in parameter sweep?" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2Sbjvc" id="JH8k64Mxto" role="2ZfgGD">
+      <node concept="3clFbS" id="JH8k64Mxtp" role="2VODD2">
+        <node concept="3clFbJ" id="JH8k64MxFw" role="3cqZAp">
+          <node concept="3clFbS" id="JH8k64MxFy" role="3clFbx">
+            <node concept="3clFbF" id="JH8k64My43" role="3cqZAp">
+              <node concept="37vLTI" id="JH8k64MyGZ" role="3clFbG">
+                <node concept="3clFbT" id="JH8k64MyHt" role="37vLTx" />
+                <node concept="2OqwBi" id="JH8k64MycN" role="37vLTJ">
+                  <node concept="2Sf5sV" id="JH8k64My42" role="2Oq$k0" />
+                  <node concept="3TrcHB" id="JH8k64MynH" role="2OqNvi">
+                    <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="JH8k64MxQE" role="3clFbw">
+            <node concept="2Sf5sV" id="JH8k64MxFW" role="2Oq$k0" />
+            <node concept="3TrcHB" id="JH8k64My1x" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="JH8k64MyJB" role="9aQIa">
+            <node concept="3clFbS" id="JH8k64MyJC" role="9aQI4">
+              <node concept="3clFbF" id="JH8k64MyM$" role="3cqZAp">
+                <node concept="37vLTI" id="JH8k64MzA0" role="3clFbG">
+                  <node concept="3clFbT" id="JH8k64MzEj" role="37vLTx">
+                    <property role="3clFbU" value="true" />
+                  </node>
+                  <node concept="2OqwBi" id="JH8k64MyVk" role="37vLTJ">
+                    <node concept="2Sf5sV" id="JH8k64MyMz" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="JH8k64MziL" role="2OqNvi">
+                      <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
                     </node>
                   </node>
                 </node>

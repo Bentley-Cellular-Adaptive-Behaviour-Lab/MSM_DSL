@@ -166,9 +166,25 @@
     <property role="R4oN_" value="Describes a protein gradient within the simulation world." />
     <property role="3GE5qa" value="Gradients" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="JH8k64jx3w" role="1TKVEi">
+      <property role="IQ2ns" value="859379669173932256" />
+      <property role="20kJfa" value="_speciesTarget" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
+    </node>
     <node concept="1TJgyi" id="3EojsBVloFX" role="1TKVEl">
       <property role="IQ2nx" value="4222210180560292605" />
       <property role="TrG5h" value="_legacyVEGF" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="JH8k64hAvu" role="1TKVEl">
+      <property role="IQ2nx" value="859379669173430238" />
+      <property role="TrG5h" value="_steps" />
+      <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
+    </node>
+    <node concept="1TJgyi" id="JH8k64hAAc" role="1TKVEl">
+      <property role="IQ2nx" value="859379669173430668" />
+      <property role="TrG5h" value="_doesParameterSweep" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1TJgyj" id="CB_Y3MvTaJ" role="1TKVEi">
@@ -185,12 +201,23 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="2zgk2Od0CFc" resolve="GradientShape" />
     </node>
-    <node concept="1TJgyj" id="109yD1sHKQA" role="1TKVEi">
-      <property role="IQ2ns" value="1155607132032667046" />
+    <node concept="1TJgyj" id="JH8k64hAg0" role="1TKVEi">
+      <property role="IQ2ns" value="859379669173429248" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
-      <property role="20kJfa" value="_speciesReference" />
-      <property role="20lbJX" value="fLJekj4/_1" />
-      <ref role="20lvS9" to="w3cn:109yD1suyAa" resolve="SpeciesReference" />
+      <property role="20kJfa" value="_startConcentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+    </node>
+    <node concept="1TJgyj" id="JH8k64hAg5" role="1TKVEi">
+      <property role="IQ2ns" value="859379669173429253" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_minStartConcentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+    </node>
+    <node concept="1TJgyj" id="JH8k64hAgb" role="1TKVEi">
+      <property role="IQ2ns" value="859379669173429259" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_maxStartConcentration" />
+      <ref role="20lvS9" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
     </node>
     <node concept="PrWs8" id="2OHr9yL5zIc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
@@ -461,7 +488,7 @@
     <property role="3GE5qa" value="Gradients" />
     <property role="TrG5h" value="GradientShapeCuboidal" />
     <property role="R4oN_" value="Gradient confined to a cuboidal area." />
-    <property role="34LRSv" value="Constrained" />
+    <property role="34LRSv" value="Cuboidal" />
     <ref role="1TJDcQ" node="2zgk2Od0CFc" resolve="GradientShape" />
     <node concept="1TJgyi" id="2S6lVSS$lxW" role="1TKVEl">
       <property role="IQ2nx" value="3316434650109401212" />
@@ -536,6 +563,7 @@
     <property role="3F6X1D" value="3316434650109401050" />
     <property role="TrG5h" value="GradientDirectionEnum" />
     <property role="3GE5qa" value="Gradients" />
+    <ref role="1H5jkz" node="2S6lVSS$lvr" resolve="X_Increasing" />
     <node concept="25R33" id="2S6lVSS$lvr" role="25R1y">
       <property role="3tVfz5" value="3316434650109401051" />
       <property role="TrG5h" value="X_Increasing" />

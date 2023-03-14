@@ -16,6 +16,7 @@
     <import index="4ebj" ref="r:1cbb7d27-4e75-4500-88f5-733437c6a66c(TissueLang.behavior)" implicit="true" />
     <import index="nguq" ref="r:605f0fb2-d908-425e-a0fd-c230fac458ce(TissueLang.structure)" implicit="true" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
+    <import index="ottv" ref="r:9dfc7f60-2dfb-474a-b564-7f6f97c60f46(UnitLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -190,7 +191,9 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -15840,6 +15843,120 @@
     </node>
     <node concept="13hLZK" id="32SFKJHODEe" role="13h7CW">
       <node concept="3clFbS" id="32SFKJHODEf" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="JH8k64omqB">
+    <property role="3GE5qa" value="Gradients" />
+    <ref role="13h7C2" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    <node concept="13i0hz" id="JH8k64ueoM" role="13h7CS">
+      <property role="TrG5h" value="getStartConcentrationValue" />
+      <node concept="3Tm1VV" id="JH8k64ueoN" role="1B3o_S" />
+      <node concept="10OMs4" id="JH8k64v22A" role="3clF45" />
+      <node concept="3clFbS" id="JH8k64ueoP" role="3clF47">
+        <node concept="3cpWs6" id="4O6RXqWjTSX" role="3cqZAp">
+          <node concept="2OqwBi" id="4O6RXqWjTSY" role="3cqZAk">
+            <node concept="2OqwBi" id="4O6RXqWjTSZ" role="2Oq$k0">
+              <node concept="1PxgMI" id="4O6RXqWjTT0" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="4O6RXqWjTT1" role="3oSUPX">
+                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                </node>
+                <node concept="2OqwBi" id="4O6RXqWjTT2" role="1m5AlR">
+                  <node concept="13iPFW" id="4O6RXqWjTT3" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="4O6RXqWjTT4" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:JH8k64hAg0" resolve="_startConcentration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2qgKlT" id="4O6RXqWjTT5" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4O6RXqWjTT6" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="JH8k64QiS1" role="13h7CS">
+      <property role="TrG5h" value="getMaxStartConcentrationValue" />
+      <node concept="3Tm1VV" id="JH8k64QiS2" role="1B3o_S" />
+      <node concept="10OMs4" id="JH8k64QiS3" role="3clF45" />
+      <node concept="3clFbS" id="JH8k64QiS4" role="3clF47">
+        <node concept="3cpWs6" id="JH8k64QiS5" role="3cqZAp">
+          <node concept="2OqwBi" id="JH8k64QiS6" role="3cqZAk">
+            <node concept="2OqwBi" id="JH8k64QiS7" role="2Oq$k0">
+              <node concept="1PxgMI" id="JH8k64QiS8" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="JH8k64QiS9" role="3oSUPX">
+                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                </node>
+                <node concept="2OqwBi" id="JH8k64QiSa" role="1m5AlR">
+                  <node concept="13iPFW" id="JH8k64QiSb" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="JH8k64QiSc" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:JH8k64hAgb" resolve="_maxStartConcentration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2qgKlT" id="JH8k64QiSd" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="JH8k64QiSe" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="JH8k64QjmG" role="13h7CS">
+      <property role="TrG5h" value="getMinStartConcentrationValue" />
+      <node concept="3Tm1VV" id="JH8k64QjmH" role="1B3o_S" />
+      <node concept="10OMs4" id="JH8k64QjmI" role="3clF45" />
+      <node concept="3clFbS" id="JH8k64QjmJ" role="3clF47">
+        <node concept="3cpWs6" id="JH8k64QjmK" role="3cqZAp">
+          <node concept="2OqwBi" id="JH8k64QjmL" role="3cqZAk">
+            <node concept="2OqwBi" id="JH8k64QjmM" role="2Oq$k0">
+              <node concept="1PxgMI" id="JH8k64QjmN" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="JH8k64QjmO" role="3oSUPX">
+                  <ref role="cht4Q" to="ottv:I3BIb0TJmS" resolve="Amount_Concentration" />
+                </node>
+                <node concept="2OqwBi" id="JH8k64QjmP" role="1m5AlR">
+                  <node concept="13iPFW" id="JH8k64QjmQ" role="2Oq$k0" />
+                  <node concept="3TrEf2" id="JH8k64QjmR" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:JH8k64hAg5" resolve="_minStartConcentration" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2qgKlT" id="JH8k64QjmS" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:7Eknuda0RxM" resolve="get_amountconc_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="JH8k64QjmT" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="JH8k64omqC" role="13h7CW">
+      <node concept="3clFbS" id="JH8k64omqD" role="2VODD2">
+        <node concept="3clFbF" id="JH8k64omqF" role="3cqZAp">
+          <node concept="37vLTI" id="JH8k64oniq" role="3clFbG">
+            <node concept="3cmrfG" id="JH8k64oniG" role="37vLTx">
+              <property role="3cmrfH" value="1" />
+            </node>
+            <node concept="2OqwBi" id="JH8k64omxv" role="37vLTJ">
+              <node concept="13iPFW" id="JH8k64omqE" role="2Oq$k0" />
+              <node concept="3TrcHB" id="JH8k64omFI" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:JH8k64hAvu" resolve="_steps" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

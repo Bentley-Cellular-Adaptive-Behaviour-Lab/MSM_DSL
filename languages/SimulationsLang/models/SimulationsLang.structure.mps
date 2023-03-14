@@ -257,6 +257,11 @@
       <property role="20kJfa" value="_speciesRef" />
       <ref role="20lvS9" to="w3cn:2Hxmt3eVfjJ" resolve="Species" />
     </node>
+    <node concept="1TJgyj" id="JH8k64GCQY" role="1TKVEi">
+      <property role="IQ2ns" value="859379669180517822" />
+      <property role="20kJfa" value="_gradientRef" />
+      <ref role="20lvS9" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
     <node concept="1TJgyi" id="2D4cW4vHxMx" role="1TKVEl">
       <property role="IQ2nx" value="3045616152563031201" />
       <property role="TrG5h" value="_increment" />

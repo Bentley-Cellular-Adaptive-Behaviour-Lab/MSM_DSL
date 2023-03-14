@@ -108,6 +108,9 @@
         <child id="1206060619838" name="condition" index="3eO9$A" />
         <child id="1206060644605" name="statementList" index="3eOfB_" />
       </concept>
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
@@ -6461,28 +6464,49 @@
                 </node>
               </node>
             </node>
-            <node concept="22lmx$" id="3CIYR333GHL" role="3clFbw">
-              <node concept="2OqwBi" id="3CIYR333HPM" role="3uHU7w">
-                <node concept="2OqwBi" id="3CIYR333H52" role="2Oq$k0">
-                  <node concept="1YBJjd" id="3CIYR333GU9" role="2Oq$k0">
-                    <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+            <node concept="1Wc70l" id="JH8k649UQA" role="3clFbw">
+              <node concept="1eOMI4" id="JH8k649UQE" role="3uHU7B">
+                <node concept="22lmx$" id="JH8k649UQF" role="1eOMHV">
+                  <node concept="2OqwBi" id="JH8k649UQG" role="3uHU7B">
+                    <node concept="2OqwBi" id="JH8k649UQH" role="2Oq$k0">
+                      <node concept="1YBJjd" id="JH8k649UQI" role="2Oq$k0">
+                        <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                      </node>
+                      <node concept="3TrEf2" id="JH8k649UQJ" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                      </node>
+                    </node>
+                    <node concept="3w_OXm" id="JH8k649UQK" role="2OqNvi" />
                   </node>
-                  <node concept="3TrEf2" id="3CIYR333HAC" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                  <node concept="2OqwBi" id="JH8k649UQL" role="3uHU7w">
+                    <node concept="2OqwBi" id="JH8k649UQM" role="2Oq$k0">
+                      <node concept="1YBJjd" id="JH8k649UQN" role="2Oq$k0">
+                        <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                      </node>
+                      <node concept="3TrEf2" id="JH8k649UQO" role="2OqNvi">
+                        <ref role="3Tt5mk" to="w3cn:6WHzz7cWc7f" resolve="Max_Start_Concentration" />
+                      </node>
+                    </node>
+                    <node concept="3w_OXm" id="JH8k649UQP" role="2OqNvi" />
                   </node>
                 </node>
-                <node concept="3w_OXm" id="3CIYR333II7" role="2OqNvi" />
               </node>
-              <node concept="2OqwBi" id="3CIYR333AHo" role="3uHU7B">
-                <node concept="2OqwBi" id="3CIYR333_YG" role="2Oq$k0">
-                  <node concept="1YBJjd" id="3CIYR333_NR" role="2Oq$k0">
-                    <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+              <node concept="3fqX7Q" id="JH8k649Vsp" role="3uHU7w">
+                <node concept="2OqwBi" id="JH8k649Wpl" role="3fr31v">
+                  <node concept="2OqwBi" id="JH8k649VKH" role="2Oq$k0">
+                    <node concept="1YBJjd" id="JH8k649V$Q" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR333$GY" resolve="species" />
+                    </node>
+                    <node concept="3TrcHB" id="JH8k649VWA" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                    </node>
                   </node>
-                  <node concept="3TrEf2" id="3CIYR333Acx" role="2OqNvi">
-                    <ref role="3Tt5mk" to="w3cn:6WHzz7cWc74" resolve="Min_Start_Concentration" />
+                  <node concept="21noJN" id="JH8k649W$4" role="2OqNvi">
+                    <node concept="21nZrQ" id="JH8k649W$6" role="21noJM">
+                      <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                    </node>
                   </node>
                 </node>
-                <node concept="3w_OXm" id="3CIYR333Blc" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -6544,16 +6568,35 @@
                 </node>
               </node>
             </node>
-            <node concept="2OqwBi" id="3CIYR333F9l" role="3clFbw">
-              <node concept="2OqwBi" id="3CIYR333F9m" role="2Oq$k0">
-                <node concept="1YBJjd" id="3CIYR333F9n" role="2Oq$k0">
-                  <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
-                </node>
-                <node concept="3TrEf2" id="3CIYR333F9o" role="2OqNvi">
-                  <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+            <node concept="1Wc70l" id="JH8k649Xhh" role="3clFbw">
+              <node concept="3fqX7Q" id="JH8k649Xtf" role="3uHU7w">
+                <node concept="2OqwBi" id="JH8k649YtY" role="3fr31v">
+                  <node concept="2OqwBi" id="JH8k649XHB" role="2Oq$k0">
+                    <node concept="1YBJjd" id="JH8k649XyC" role="2Oq$k0">
+                      <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
+                    </node>
+                    <node concept="3TrcHB" id="JH8k649Y1x" role="2OqNvi">
+                      <ref role="3TsBF5" to="w3cn:2Hxmt3eVlUx" resolve="_location" />
+                    </node>
+                  </node>
+                  <node concept="21noJN" id="JH8k649YCh" role="2OqNvi">
+                    <node concept="21nZrQ" id="JH8k649YCj" role="21noJM">
+                      <ref role="21nZrZ" to="w3cn:2Hxmt3eVjAC" resolve="LOCATION_EXTRACELLULAR_ENVIRONMENT" />
+                    </node>
+                  </node>
                 </node>
               </node>
-              <node concept="3w_OXm" id="3CIYR333F9p" role="2OqNvi" />
+              <node concept="2OqwBi" id="3CIYR333F9l" role="3uHU7B">
+                <node concept="2OqwBi" id="3CIYR333F9m" role="2Oq$k0">
+                  <node concept="1YBJjd" id="3CIYR333F9n" role="2Oq$k0">
+                    <ref role="1YBMHb" node="3CIYR333F9u" resolve="species" />
+                  </node>
+                  <node concept="3TrEf2" id="3CIYR333F9o" role="2OqNvi">
+                    <ref role="3Tt5mk" to="w3cn:3tt6YLES8iO" resolve="Starting_Concentration" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="3CIYR333F9p" role="2OqNvi" />
+              </node>
             </node>
           </node>
         </node>

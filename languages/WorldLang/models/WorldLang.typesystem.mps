@@ -12,6 +12,8 @@
     <import index="s9ob" ref="r:ac90398f-4621-42b8-934a-18edad968821(WorldLang.structure)" implicit="true" />
     <import index="pxw4" ref="r:5322c38e-ce93-4359-8292-b969eaac576a(WorldLang.behavior)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
+    <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
+    <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -67,6 +69,9 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
+      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
+        <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -143,10 +148,13 @@
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
+        <property id="1238684351431" name="asCast" index="1BlNFB" />
+      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1641,6 +1649,128 @@
     <node concept="1YaCAy" id="32SFKJHPeNC" role="1YuTPh">
       <property role="TrG5h" value="adhesiveness" />
       <ref role="1YaFvo" to="s9ob:2XF6SaaezeQ" resolve="Adhesiveness" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="JH8k64AA6R">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_startConcentrationDefined" />
+    <node concept="3clFbS" id="JH8k64AA6S" role="18ibNy">
+      <node concept="3clFbJ" id="JH8k64AA76" role="3cqZAp">
+        <node concept="3clFbS" id="JH8k64AA78" role="3clFbx">
+          <node concept="2MkqsV" id="JH8k64AC38" role="3cqZAp">
+            <node concept="Xl_RD" id="JH8k64AC3n" role="2MkJ7o">
+              <property role="Xl_RC" value="Error: Must use a start concentration if not performing a parameter sweep." />
+            </node>
+            <node concept="1YBJjd" id="JH8k64AC6v" role="1urrMF">
+              <ref role="1YBMHb" node="JH8k64AA6U" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="JH8k64AByt" role="3clFbw">
+          <node concept="3fqX7Q" id="JH8k64AC2j" role="3uHU7w">
+            <node concept="2OqwBi" id="JH8k64AC2l" role="3fr31v">
+              <node concept="1YBJjd" id="JH8k64AC2m" role="2Oq$k0">
+                <ref role="1YBMHb" node="JH8k64AA6U" resolve="gradient" />
+              </node>
+              <node concept="3TrcHB" id="JH8k64AC2n" role="2OqNvi">
+                <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+              </node>
+            </node>
+          </node>
+          <node concept="2OqwBi" id="JH8k64AAC_" role="3uHU7B">
+            <node concept="2OqwBi" id="JH8k64AAg6" role="2Oq$k0">
+              <node concept="1YBJjd" id="JH8k64AA7l" role="2Oq$k0">
+                <ref role="1YBMHb" node="JH8k64AA6U" resolve="gradient" />
+              </node>
+              <node concept="3TrEf2" id="JH8k64AAqt" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:JH8k64hAg0" resolve="_startConcentration" />
+              </node>
+            </node>
+            <node concept="3w_OXm" id="JH8k64ABey" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="JH8k64AA6U" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="JH8k64AC6R">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_canPerformGradientSweep" />
+    <node concept="3clFbS" id="JH8k64AC6S" role="18ibNy">
+      <node concept="3cpWs8" id="JH8k64AC77" role="3cqZAp">
+        <node concept="3cpWsn" id="JH8k64AC7a" role="3cpWs9">
+          <property role="TrG5h" value="simContainer" />
+          <node concept="3Tqbb2" id="JH8k64AC75" role="1tU5fm">
+            <ref role="ehGHo" to="yy1h:7wJJsVzvOoC" resolve="SimulationContainer" />
+          </node>
+          <node concept="2OqwBi" id="JH8k64ACSj" role="33vP2m">
+            <node concept="1PxgMI" id="JH8k64ACHX" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="JH8k64ACIH" role="3oSUPX">
+                <ref role="cht4Q" to="w3cn:2Hxmt3eVfjF" resolve="SignallingContainer" />
+              </node>
+              <node concept="2OqwBi" id="JH8k64ACh7" role="1m5AlR">
+                <node concept="1YBJjd" id="JH8k64AC8g" role="2Oq$k0">
+                  <ref role="1YBMHb" node="JH8k64AC6U" resolve="gradient" />
+                </node>
+                <node concept="1mfA1w" id="JH8k64ACA$" role="2OqNvi" />
+              </node>
+            </node>
+            <node concept="3TrEf2" id="JH8k64AD4v" role="2OqNvi">
+              <ref role="3Tt5mk" to="w3cn:4jUcCWydX_d" resolve="_simulationContainerRef" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="JH8k64ADix" role="3cqZAp">
+        <node concept="3clFbS" id="JH8k64ADiz" role="3clFbx">
+          <node concept="2MkqsV" id="JH8k64AF9w" role="3cqZAp">
+            <node concept="Xl_RD" id="JH8k64AF9J" role="2MkJ7o">
+              <property role="Xl_RC" value="Error: Can only perform a parameter sweep if the cluster type is not \&quot;None\&quot;." />
+            </node>
+            <node concept="1YBJjd" id="JH8k64AFcs" role="1urrMF">
+              <ref role="1YBMHb" node="JH8k64AC6U" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="JH8k64AEAy" role="3clFbw">
+          <node concept="2OqwBi" id="JH8k64AESv" role="3uHU7w">
+            <node concept="1YBJjd" id="JH8k64AEJs" role="2Oq$k0">
+              <ref role="1YBMHb" node="JH8k64AC6U" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="JH8k64AF6j" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="JH8k64AEmY" role="3uHU7B">
+            <node concept="2OqwBi" id="JH8k64AEmZ" role="2Oq$k0">
+              <node concept="2OqwBi" id="JH8k64AEn0" role="2Oq$k0">
+                <node concept="37vLTw" id="JH8k64AEn1" role="2Oq$k0">
+                  <ref role="3cqZAo" node="JH8k64AC7a" resolve="simContainer" />
+                </node>
+                <node concept="3TrEf2" id="JH8k64AEn2" role="2OqNvi">
+                  <ref role="3Tt5mk" to="yy1h:7wJJsVzvXDc" resolve="_clusterFacet" />
+                </node>
+              </node>
+              <node concept="3TrcHB" id="JH8k64AEn3" role="2OqNvi">
+                <ref role="3TsBF5" to="yy1h:7wJJsVzvXj2" resolve="_clusterType" />
+              </node>
+            </node>
+            <node concept="21noJN" id="JH8k64AEn4" role="2OqNvi">
+              <node concept="21nZrQ" id="JH8k64AEn5" role="21noJM">
+                <ref role="21nZrZ" to="yy1h:72wB6_dUsuC" resolve="None" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="JH8k64AC6U" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
     </node>
   </node>
 </model>
