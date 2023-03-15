@@ -17,6 +17,7 @@
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
+      <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
       <concept id="1154032098014" name="jetbrains.mps.baseLanguage.structure.AbstractLoopStatement" flags="nn" index="2LF5Ji">
@@ -67,6 +68,9 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081506773034" name="jetbrains.mps.baseLanguage.structure.LessThanExpression" flags="nn" index="3eOVzh" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
@@ -1769,6 +1773,229 @@
       </node>
     </node>
     <node concept="1YaCAy" id="JH8k64AC6U" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4qT40jvaNs3">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_startConcentrationValidity" />
+    <node concept="3clFbS" id="4qT40jvaNs4" role="18ibNy">
+      <node concept="3clFbJ" id="4qT40jvaNuU" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvaNuW" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvaOUD" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvaOUS" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Start concentrations for gradients cannot be less than zero. " />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvaOWb" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvaNuC" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="4qT40jvaOFu" role="3clFbw">
+          <node concept="3cmrfG" id="4qT40jvaOG1" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="4qT40jvaNBU" role="3uHU7B">
+            <node concept="1YBJjd" id="4qT40jvaNv9" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvaNuC" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvaNMh" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64ueoM" resolve="getStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4qT40jvaNuC" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4qT40jvaQ2L">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_MinMaxConcentrationsDefined" />
+    <node concept="3clFbS" id="4qT40jvaQ2M" role="18ibNy">
+      <node concept="3clFbJ" id="4qT40jvaQeP" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvaQeQ" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvaQeR" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvaQeS" role="2MkJ7o">
+              <property role="Xl_RC" value="Error: Must use both min and max start concentration if performing a parameter sweep." />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvaQeT" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvaQhz" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="4qT40jvaQeU" role="3clFbw">
+          <node concept="2OqwBi" id="4qT40jvaQeW" role="3uHU7w">
+            <node concept="1YBJjd" id="4qT40jvaQeX" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvaQhz" resolve="gradient" />
+            </node>
+            <node concept="3TrcHB" id="4qT40jvaQeY" role="2OqNvi">
+              <ref role="3TsBF5" to="s9ob:JH8k64hAAc" resolve="_doesParameterSweep" />
+            </node>
+          </node>
+          <node concept="1eOMI4" id="4qT40jvaS7C" role="3uHU7B">
+            <node concept="22lmx$" id="4qT40jvaRlK" role="1eOMHV">
+              <node concept="2OqwBi" id="4qT40jvaQeZ" role="3uHU7B">
+                <node concept="2OqwBi" id="4qT40jvaQf0" role="2Oq$k0">
+                  <node concept="1YBJjd" id="4qT40jvaQf1" role="2Oq$k0">
+                    <ref role="1YBMHb" node="4qT40jvaQhz" resolve="gradient" />
+                  </node>
+                  <node concept="3TrEf2" id="4qT40jvaQf2" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:JH8k64hAg5" resolve="_minStartConcentration" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="4qT40jvaQf3" role="2OqNvi" />
+              </node>
+              <node concept="2OqwBi" id="4qT40jvaSa7" role="3uHU7w">
+                <node concept="2OqwBi" id="4qT40jvaRFg" role="2Oq$k0">
+                  <node concept="1YBJjd" id="4qT40jvaRyr" role="2Oq$k0">
+                    <ref role="1YBMHb" node="4qT40jvaQhz" resolve="gradient" />
+                  </node>
+                  <node concept="3TrEf2" id="4qT40jvaRTL" role="2OqNvi">
+                    <ref role="3Tt5mk" to="s9ob:JH8k64hAgb" resolve="_maxStartConcentration" />
+                  </node>
+                </node>
+                <node concept="3w_OXm" id="4qT40jvaSGj" role="2OqNvi" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4qT40jvaQhz" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4qT40jvd7sU">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_minStartConcentrationValidity" />
+    <node concept="3clFbS" id="4qT40jvd7sV" role="18ibNy">
+      <node concept="3clFbJ" id="4qT40jvd7sW" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvd7sX" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvd7sY" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvd7sZ" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Minimum start concentrations for gradients cannot be less than zero. " />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvd7t0" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvd7t6" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="4qT40jvd7t1" role="3clFbw">
+          <node concept="3cmrfG" id="4qT40jvd7t2" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="4qT40jvd7t3" role="3uHU7B">
+            <node concept="1YBJjd" id="4qT40jvd7t4" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvd7t6" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvd7t5" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QjmG" resolve="getMinStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="4qT40jvd8jS" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvd8jU" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvdaRU" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvdaS6" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Minimum start concentrations cannot be greater than maximum start concentrations." />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvdaXB" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvd7t6" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOSWO" id="4qT40jvdac8" role="3clFbw">
+          <node concept="2OqwBi" id="4qT40jvd8t3" role="3uHU7B">
+            <node concept="1YBJjd" id="4qT40jvd8kF" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvd7t6" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvd9dc" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QjmG" resolve="getMinStartConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4qT40jvdauQ" role="3uHU7w">
+            <node concept="1YBJjd" id="4qT40jvdadi" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvd7t6" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvdaQp" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QiS1" resolve="getMaxStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4qT40jvd7t6" role="1YuTPh">
+      <property role="TrG5h" value="gradient" />
+      <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="4qT40jvdcfj">
+    <property role="3GE5qa" value="Gradients" />
+    <property role="TrG5h" value="check_maxStartConcentrationValidity" />
+    <node concept="3clFbS" id="4qT40jvdcfk" role="18ibNy">
+      <node concept="3clFbJ" id="4qT40jvdcfl" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvdcfm" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvdcfn" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvdcfo" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Maximum start concentrations for gradients cannot be less than zero. " />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvdcfp" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvdcfF" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="4qT40jvdcfq" role="3clFbw">
+          <node concept="3cmrfG" id="4qT40jvdcfr" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="4qT40jvdcfs" role="3uHU7B">
+            <node concept="1YBJjd" id="4qT40jvdcft" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvdcfF" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvdcfu" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QiS1" resolve="getMaxStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="4qT40jvdcfv" role="3cqZAp">
+        <node concept="3clFbS" id="4qT40jvdcfw" role="3clFbx">
+          <node concept="2MkqsV" id="4qT40jvdcfx" role="3cqZAp">
+            <node concept="Xl_RD" id="4qT40jvdcfy" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Maximum start concentrations cannot be greater than minimum start concentrations." />
+            </node>
+            <node concept="1YBJjd" id="4qT40jvdcfz" role="1urrMF">
+              <ref role="1YBMHb" node="4qT40jvdcfF" resolve="gradient" />
+            </node>
+          </node>
+        </node>
+        <node concept="3eOSWO" id="4qT40jvdcf$" role="3clFbw">
+          <node concept="2OqwBi" id="4qT40jvdcf_" role="3uHU7B">
+            <node concept="1YBJjd" id="4qT40jvdcfA" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvdcfF" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvdcfB" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QjmG" resolve="getMinStartConcentrationValue" />
+            </node>
+          </node>
+          <node concept="2OqwBi" id="4qT40jvdcfC" role="3uHU7w">
+            <node concept="1YBJjd" id="4qT40jvdcfD" role="2Oq$k0">
+              <ref role="1YBMHb" node="4qT40jvdcfF" resolve="gradient" />
+            </node>
+            <node concept="2qgKlT" id="4qT40jvdcfE" role="2OqNvi">
+              <ref role="37wK5l" to="pxw4:JH8k64QiS1" resolve="getMaxStartConcentrationValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="4qT40jvdcfF" role="1YuTPh">
       <property role="TrG5h" value="gradient" />
       <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
     </node>
