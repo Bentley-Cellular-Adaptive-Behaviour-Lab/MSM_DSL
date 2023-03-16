@@ -659,5 +659,27 @@
       <ref role="20lvS9" to="hm2y:6sdnDbSla17" resolve="Expression" />
     </node>
   </node>
+  <node concept="1TIwiD" id="cPxbW3tFrO">
+    <property role="EcuMT" value="231236911811180276" />
+    <property role="TrG5h" value="SubstrateShapeSpherical" />
+    <property role="R4oN_" value="Concept for describing a spherical substrate." />
+    <property role="3GE5qa" value="Substrates" />
+    <property role="34LRSv" value="Spherical" />
+    <ref role="1TJDcQ" node="57aaQbDDBXe" resolve="SubstrateShape" />
+    <node concept="1TJgyj" id="cPxbW3tFrP" role="1TKVEi">
+      <property role="IQ2ns" value="231236911811180277" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_centre" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="nguq:5qSYbADreY7" resolve="Position" />
+    </node>
+    <node concept="1TJgyj" id="cPxbW3tFrQ" role="1TKVEi">
+      <property role="IQ2ns" value="231236911811180278" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="_radius" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" to="ottv:2XF6Saab7pB" resolve="Distance" />
+    </node>
+  </node>
 </model>
 

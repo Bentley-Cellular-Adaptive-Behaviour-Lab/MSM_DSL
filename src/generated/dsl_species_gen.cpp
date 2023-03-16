@@ -70,9 +70,9 @@ void ODEs::check_cell_only_ODEs(EC *ec) {
  	double DLL4_REMOVAL = calc_DLL4_REMOVAL_rate(DLL4_UPTAKE, DLL4_DEG, false);
  	// ODE Definitions
  	dxdt[0] = -(VEGF_VEGFR2_DEG); // VEGF_VEGFR
- 	dxdt[1] = -(DLL4_REMOVAL)+(DLL4_UPREG); // DLL4
+ 	dxdt[1] = -(DLL4_REMOVAL)+(DLL4_UPREG)+(DLL4_UPREG); // DLL4
  	dxdt[2] = -(DLL4_NOTCH_DEG); // DLL4_NOTCH
- 	dxdt[3] = +(PROD_RATE)-(VEGFR_DEG)-(VEGFR_INHIB); // VEGFR
+ 	dxdt[3] = +(PROD_RATE)-(VEGFR_DEG)-(VEGFR_INHIB)-(VEGFR_INHIB); // VEGFR
  	dxdt[4] = 0; // NOTCH_MEAN
  */
  }
@@ -116,7 +116,7 @@ void ODEs::EndothelialType_memAgent_system(const EndothelialType_memAgent_ode_st
 	double VEGF_VEGFR_ON = calc_VEGF_VEGFR_ON_rate(VEGF_MEAN, VEGFR, true);
 	double VEGF_VEGFR_OFF = calc_VEGF_VEGFR_OFF_rate(VEGF_VEGFR, true);
 	// ODE Definitions
-	dxdt[0] = -(DLL4_NOTCH_ON)*1; // NOTCH
+	dxdt[0] = -(DLL4_NOTCH_ON)*1-(DLL4_NOTCH_ON)*1; // NOTCH
 	dxdt[1] = +(DLL4_NOTCH_ON)*1; // DLL4_NOTCH
 	dxdt[2] = 0; // DLL4
 	dxdt[3] = 0; // VEGF_MEAN
@@ -182,11 +182,11 @@ void ODEs::EndothelialType_run_memAgent_ODEs(MemAgent* memAgent) {
   	double DLL4_UPREG_0 = calc_DLL4_UPREG_rate(VEGF_VEGFR_0, false);
   	double VEGFR_INHIB_0 = calc_VEGFR_INHIB_rate(DLL4_NOTCH_0, false);
   // ODE Definitions
-  	dxdt[0] = +(PROD_RATE_29)-(DLL4_NOTCH_ON_29)*1; // NOTCH_1
+  	dxdt[0] = +(PROD_RATE_29)-(DLL4_NOTCH_ON_29)*1-(DLL4_NOTCH_ON_29)*1; // NOTCH_1
   	dxdt[1] = -(DLL4_NOTCH_DEG_29)+(DLL4_NOTCH_ON_29)*1; // DLL4_NOTCH_1
-  	dxdt[2] = -(DLL4_REMOVAL_29)+(DLL4_UPREG_0); // DLL4_1
+  	dxdt[2] = -(DLL4_REMOVAL_29)+(DLL4_UPREG_0)+(DLL4_UPREG_0); // DLL4_1
   	dxdt[3] = 0; // VEGF_MEAN_1
-  	dxdt[4] = +(PROD_RATE_29)-(VEGFR_DEG_29)-(VEGF_VEGFR_ON_29)*1+(VEGF_VEGFR_OFF_29)*1-(VEGFR_INHIB_0); // VEGFR_1
+  	dxdt[4] = +(PROD_RATE_29)-(VEGFR_DEG_29)-(VEGF_VEGFR_ON_29)*1+(VEGF_VEGFR_OFF_29)*1-(VEGFR_INHIB_0)-(VEGFR_INHIB_0); // VEGFR_1
   	dxdt[5] = -(VEGF_VEGFR2_DEG_29)+(VEGF_VEGFR_ON_29)*1-(VEGF_VEGFR_OFF_29)*1; // VEGF_VEGFR_1
   	dxdt[6] = 0; // DLL4_MEAN_1
   	dxdt[7] = 0; // NOTCH_MEAN_1

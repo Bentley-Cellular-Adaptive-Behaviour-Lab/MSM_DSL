@@ -16,6 +16,10 @@
   <imports />
   <registry>
     <language id="276cd304-748c-4d5d-aad0-4b34e2a42ced" name="WorldLang">
+      <concept id="231236911811180276" name="WorldLang.structure.SubstrateShapeSpherical" flags="ng" index="0gN9b">
+        <child id="231236911811180278" name="_radius" index="0gN99" />
+        <child id="231236911811180277" name="_centre" index="0gN9a" />
+      </concept>
       <concept id="3416854989769421750" name="WorldLang.structure.Adhesiveness" flags="ng" index="2_kiwO">
         <child id="3416854989769421751" name="expr" index="2_kiwP" />
       </concept>
@@ -36,11 +40,8 @@
       </concept>
       <concept id="8343650468779203047" name="WorldLang.structure.Gradient" flags="ng" index="1yko02">
         <property id="859379669173430238" name="_steps" index="2fEOqv" />
-        <property id="859379669173430668" name="_doesParameterSweep" index="2fEOzd" />
         <reference id="859379669173932256" name="_speciesTarget" index="2fCN6x" />
         <child id="859379669173429248" name="_startConcentration" index="2fEOl1" />
-        <child id="859379669173429253" name="_minStartConcentration" index="2fEOl4" />
-        <child id="859379669173429259" name="_maxStartConcentration" index="2fEOla" />
         <child id="731720456867910319" name="_gradientType" index="3Sm0lf" />
         <child id="731720456867910321" name="_gradientShape" index="3Sm0lh" />
       </concept>
@@ -58,7 +59,13 @@
       <concept id="8343650468779203043" name="WorldLang.structure.WorldContainer" flags="ng" index="1yko06">
         <reference id="4970340729092561267" name="_simulationContainerRef" index="1ANuJW" />
         <child id="8343650468779203044" name="_grid" index="1yko01" />
+        <child id="8343650468779203054" name="_substrates" index="1yko0b" />
         <child id="8343650468779203051" name="_gradients" index="1yko0e" />
+      </concept>
+      <concept id="8343650468779203058" name="WorldLang.structure.Substrate" flags="ng" index="1yko0n">
+        <child id="5893570766194507605" name="_shape" index="2Sr5gR" />
+        <child id="4052263675728673910" name="_adhesiveness" index="3oezgx" />
+        <child id="3510748375304798732" name="_Solidness" index="3tqyO7" />
       </concept>
     </language>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
@@ -1296,6 +1303,55 @@
   <node concept="1yko06" id="7MLRBd9QxSI">
     <property role="TrG5h" value="World_VEGF_Beads" />
     <ref role="1ANuJW" node="3Y6HoqB0CTu" resolve="Simulation" />
+    <node concept="1yko0n" id="ZNkh68v2eq" role="1yko0b">
+      <property role="TrG5h" value="Bead_1_Substrate" />
+      <node concept="0gN9b" id="ZNkh68wJcU" role="2Sr5gR">
+        <node concept="3ZP1sY" id="ZNkh68wJcW" role="0gN9a">
+          <node concept="2_hQR_" id="ZNkh68wJcY" role="2IF2Ql">
+            <node concept="2_n9WQ" id="ZNkh68wJd0" role="2_hQRE">
+              <node concept="30bXRB" id="ZNkh68wJeO" role="2_n9WR">
+                <property role="30bXRw" value="30" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="ZNkh68wJfi" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="ZNkh68wJd6" role="2IF2Qn">
+            <node concept="2_n9WQ" id="ZNkh68wJd8" role="2_hQRE">
+              <node concept="30bXRB" id="ZNkh68wJfH" role="2_n9WR">
+                <property role="30bXRw" value="10" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="ZNkh68wJfJ" role="2_hQ4V" />
+          </node>
+          <node concept="2_hQR_" id="ZNkh68wJde" role="2IF2Qq">
+            <node concept="2_n9WQ" id="ZNkh68wJdg" role="2_hQRE">
+              <node concept="30bXRB" id="ZNkh68wJgg" role="2_n9WR">
+                <property role="30bXRw" value="0" />
+              </node>
+            </node>
+            <node concept="2_hRrN" id="ZNkh68wJgA" role="2_hQ4V" />
+          </node>
+        </node>
+        <node concept="2_hQR_" id="ZNkh68wJdm" role="0gN99">
+          <node concept="2_n9WQ" id="ZNkh68wJdo" role="2_hQRE">
+            <node concept="30bXRB" id="ZNkh68wJji" role="2_n9WR">
+              <property role="30bXRw" value="5" />
+            </node>
+          </node>
+          <node concept="2_hRrN" id="ZNkh68wJiD" role="2_hQ4V" />
+        </node>
+      </node>
+      <node concept="2_kiwO" id="ZNkh68v2es" role="3oezgx">
+        <node concept="30bXRB" id="ZNkh68wJjM" role="2_kiwP">
+          <property role="30bXRw" value="0.0" />
+        </node>
+      </node>
+      <node concept="3tqyUA" id="ZNkh68v2eu" role="3tqyO7">
+        <node concept="30bXRB" id="ZNkh68wJkt" role="3tqyVX">
+          <property role="30bXRw" value="1.0" />
+        </node>
+      </node>
+    </node>
     <node concept="1yko02" id="JH8k64CEYR" role="1yko0e">
       <property role="2fEOqv" value="1" />
       <property role="TrG5h" value="Bead_1" />
@@ -1399,7 +1455,6 @@
     <node concept="1yko02" id="JH8k64CFeD" role="1yko0e">
       <property role="2fEOqv" value="5" />
       <property role="TrG5h" value="Basal_VEGF" />
-      <property role="2fEOzd" value="true" />
       <ref role="2fCN6x" node="7tkDipC_vjF" resolve="VEGF" />
       <node concept="_OHG_" id="JH8k64EpBq" role="3Sm0lf" />
       <node concept="_K$fF" id="JH8k64CFgo" role="3Sm0lh">
@@ -1461,22 +1516,6 @@
           </node>
         </node>
         <node concept="3bpmH6" id="JH8k64EpCB" role="3lUA2W" />
-      </node>
-      <node concept="3bpmHq" id="JH8k64PU86" role="2fEOl4">
-        <node concept="3bpmH0" id="JH8k64PU87" role="3lUA2Y">
-          <node concept="30bXRB" id="JH8k64PU8Q" role="3lUA52">
-            <property role="30bXRw" value="0" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="JH8k64PU9M" role="3lUA2W" />
-      </node>
-      <node concept="3bpmHq" id="JH8k64PUa9" role="2fEOla">
-        <node concept="3bpmH0" id="JH8k64PUaa" role="3lUA2Y">
-          <node concept="30bXRB" id="JH8k64PUaN" role="3lUA52">
-            <property role="30bXRw" value="10" />
-          </node>
-        </node>
-        <node concept="3bpmH6" id="JH8k64PUbj" role="3lUA2W" />
       </node>
     </node>
     <node concept="1yko03" id="7MLRBd9QxTc" role="1yko01">

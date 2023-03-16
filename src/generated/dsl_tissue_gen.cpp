@@ -18,7 +18,6 @@
 #include "../dsl/tissue/tissueType.h"
 #include "../dsl/tissue/tissueContainer.h"
 
-//EC* CURRENT_CELL;
 
 void World::set_up_cpm_dsl() {
 	this->m_DSL_CPM = false;
@@ -31,10 +30,10 @@ void Tissue_Container::tissue_set_up(World* world) {
 
     // Cell Type Creation //
     auto EndothelialType_Type = define_cell_type("EndothelialType", CELL_SHAPE_SQUARE, 20, 20);
-    EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
+    EndothelialType_Type->add_protein(new Protein("DLL4", PROTEIN_LOCATION_JUNCTION, 1.0, 0, -1, 30));
     EndothelialType_Type->add_protein(new Protein("DLL4_NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
     EndothelialType_Type->add_protein(new Protein("NOTCH", PROTEIN_LOCATION_JUNCTION, 0.0, 0, -1, 30));
-    EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
+    EndothelialType_Type->add_protein(new Protein("VEGFR", PROTEIN_LOCATION_MEMBRANE, 1.0, 0, -1, 30));
     EndothelialType_Type->add_protein(new Protein("VEGF_VEGFR", PROTEIN_LOCATION_MEMBRANE, 0.0, 0, -1, 30));
 
     // Tissue Type Creation //

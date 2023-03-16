@@ -13,7 +13,8 @@ class WorldContainer;
 enum SUBSTRATE_SHAPES {
     SUBSTRATE_SHAPE_CUBOIDAL,
     SUBSTRATE_SHAPE_TRIANGULAR,
-    N_SUBSTRATE_SHAPES
+	SUBSTRATE_SHAPE_SPHERICAL,
+	N_SUBSTRATE_SHAPES
 };
 
 class Substrate {
@@ -33,6 +34,7 @@ public:
 
     void apply_substrate_to_cuboid();
     void apply_substrate_to_triangular_prism() const;
+	void apply_substrate_to_sphere();
 };
 
 #endif //SRC_SPRINGAGENT_SUBSTRATE_H

@@ -2484,5 +2484,71 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="cPxbW3tFtv">
+    <property role="3GE5qa" value="Substrates" />
+    <ref role="1XX52x" to="s9ob:cPxbW3tFrO" resolve="SubstrateShapeSpherical" />
+    <node concept="3EZMnI" id="cPxbW3tFtN" role="2wV5jI">
+      <node concept="3EZMnI" id="cPxbW3tFtO" role="3EZMnx">
+        <node concept="VPM3Z" id="cPxbW3tFtP" role="3F10Kt" />
+        <node concept="2iRfu4" id="cPxbW3tFtQ" role="2iSdaV" />
+        <node concept="3F0ifn" id="cPxbW3tFtR" role="3EZMnx">
+          <property role="3F0ifm" value="Spherical" />
+          <node concept="VechU" id="cPxbW3tFtS" role="3F10Kt">
+            <property role="Vb096" value="fLwANPu/blue" />
+          </node>
+          <node concept="2biZxu" id="cPxbW3tFtT" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="cPxbW3tFtU" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="cPxbW3tFtV" role="3EZMnx">
+          <property role="3F0ifm" value="--&gt;" />
+          <node concept="2biZxu" id="cPxbW3tFtW" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="cPxbW3tFtX" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+      </node>
+      <node concept="3EZMnI" id="cPxbW3tFtY" role="3EZMnx">
+        <node concept="VPM3Z" id="cPxbW3tFtZ" role="3F10Kt" />
+        <node concept="3XFhqQ" id="cPxbW3tFu0" role="3EZMnx" />
+        <node concept="3F0ifn" id="cPxbW3tFu1" role="3EZMnx">
+          <property role="3F0ifm" value="Centre :" />
+          <node concept="2biZxu" id="cPxbW3tFu2" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="cPxbW3tFu3" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="cPxbW3tFu4" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:cPxbW3tFrP" resolve="_centre" />
+        </node>
+        <node concept="2iRfu4" id="cPxbW3tFu5" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="cPxbW3tFu6" role="3EZMnx">
+        <node concept="VPM3Z" id="cPxbW3tFu7" role="3F10Kt" />
+        <node concept="3XFhqQ" id="cPxbW3tFu8" role="3EZMnx" />
+        <node concept="3F0ifn" id="cPxbW3tFu9" role="3EZMnx">
+          <property role="3F0ifm" value="Radius :" />
+          <node concept="2biZxu" id="cPxbW3tFua" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="cPxbW3tFub" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="cPxbW3tFuc" role="3EZMnx">
+          <ref role="1NtTu8" to="s9ob:cPxbW3tFrQ" resolve="_radius" />
+        </node>
+        <node concept="2iRfu4" id="cPxbW3tFud" role="2iSdaV" />
+      </node>
+      <node concept="2iRkQZ" id="cPxbW3tFux" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

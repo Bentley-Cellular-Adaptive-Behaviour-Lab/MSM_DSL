@@ -152,6 +152,9 @@ void WorldContainer::create_substrate(Shape *substrate_shape,
     if (new_substrate->m_substrate_shape->get_shape_type() == SUBSTRATE_SHAPE_TRIANGULAR) {
         new_substrate->apply_substrate_to_triangular_prism();
     }
+	if (new_substrate->m_substrate_shape->get_shape_type() == SUBSTRATE_SHAPE_SPHERICAL) {
+		new_substrate->apply_substrate_to_sphere();
+	}
     std::cout << "Substrate created." <<  std::endl;
     store_substrate(new_substrate);
 }

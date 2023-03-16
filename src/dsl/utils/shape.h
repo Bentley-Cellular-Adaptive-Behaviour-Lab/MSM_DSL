@@ -68,4 +68,13 @@ public:
 	std::tuple<float, float> set_vertex_3();
 };
 
+class Shape_Sphere : public Shape {
+private:
+	int m_radius;
+public:
+	Shape_Sphere(int shapeType,
+				 int radius);
+	int get_radius();
+};
+
 #endif //MEMAGENTSPRINGMODEL_DSL_SPACE_H

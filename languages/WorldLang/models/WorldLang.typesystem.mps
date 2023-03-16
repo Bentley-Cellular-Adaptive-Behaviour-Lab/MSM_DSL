@@ -14,6 +14,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="yy1h" ref="r:db8c1e2e-d1c9-4c3a-9b8b-0bb868ade479(SimulationsLang.structure)" implicit="true" />
     <import index="w3cn" ref="r:d106886d-5be7-42b5-b3d4-98be927e7b91(SpeciesLang.structure)" implicit="true" />
+    <import index="ki9o" ref="r:afd14f4d-8b49-4bbd-acdd-77c7d66cb64b(UnitLang.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1998,6 +1999,302 @@
     <node concept="1YaCAy" id="4qT40jvdcfF" role="1YuTPh">
       <property role="TrG5h" value="gradient" />
       <ref role="1YaFvo" to="s9ob:7faAukhALBB" resolve="Gradient" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="cPxbW3rOUH">
+    <property role="TrG5h" value="check_cuboidalGradientDistances" />
+    <property role="3GE5qa" value="Gradients" />
+    <node concept="3clFbS" id="cPxbW3rOUI" role="18ibNy">
+      <node concept="3clFbJ" id="cPxbW3twT8" role="3cqZAp">
+        <node concept="3clFbS" id="cPxbW3twTa" role="3clFbx">
+          <node concept="2MkqsV" id="cPxbW3t$80" role="3cqZAp">
+            <node concept="Xl_RD" id="cPxbW3t$8f" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Gradient width cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="cPxbW3t$i0" role="1urrMF">
+              <node concept="1YBJjd" id="cPxbW3t$aN" role="2Oq$k0">
+                <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="cPxbW3t$RC" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="_width" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="cPxbW3tzGW" role="3clFbw">
+          <node concept="3cmrfG" id="cPxbW3tzR5" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="cPxbW3tyv3" role="3uHU7B">
+            <node concept="2OqwBi" id="cPxbW3txXo" role="2Oq$k0">
+              <node concept="2OqwBi" id="cPxbW3twVB" role="2Oq$k0">
+                <node concept="1YBJjd" id="cPxbW3twTs" role="2Oq$k0">
+                  <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+                </node>
+                <node concept="3TrEf2" id="cPxbW3txml" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:2XF6Saae602" resolve="_width" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="cPxbW3ty81" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:3wWy5vw4PXg" resolve="get_distance_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="cPxbW3tyQC" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="cPxbW3txn0" role="3cqZAp">
+        <node concept="3clFbS" id="cPxbW3txn2" role="3clFbx">
+          <node concept="2MkqsV" id="cPxbW3t_lJ" role="3cqZAp">
+            <node concept="Xl_RD" id="cPxbW3t_lK" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Gradient height cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="cPxbW3t_lL" role="1urrMF">
+              <node concept="1YBJjd" id="cPxbW3t_lM" role="2Oq$k0">
+                <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="cPxbW3t_lN" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="_height" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="cPxbW3t$Tm" role="3clFbw">
+          <node concept="3cmrfG" id="cPxbW3t$Tn" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="cPxbW3t$To" role="3uHU7B">
+            <node concept="2OqwBi" id="cPxbW3t$Tp" role="2Oq$k0">
+              <node concept="2OqwBi" id="cPxbW3t$Tq" role="2Oq$k0">
+                <node concept="1YBJjd" id="cPxbW3t$Tr" role="2Oq$k0">
+                  <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+                </node>
+                <node concept="3TrEf2" id="cPxbW3t$Ts" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:2XF6Saae605" resolve="_height" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="cPxbW3t$Tt" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:3wWy5vw4PXg" resolve="get_distance_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="cPxbW3t$Tu" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="cPxbW3twxj" role="3cqZAp">
+        <node concept="3eOVzh" id="cPxbW3tBVQ" role="3clFbw">
+          <node concept="3cmrfG" id="cPxbW3tCkK" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="cPxbW3tALt" role="3uHU7B">
+            <node concept="2OqwBi" id="cPxbW3t_Jr" role="2Oq$k0">
+              <node concept="2OqwBi" id="cPxbW3twEs" role="2Oq$k0">
+                <node concept="1YBJjd" id="cPxbW3twxF" role="2Oq$k0">
+                  <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+                </node>
+                <node concept="3TrEf2" id="cPxbW3twON" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="_depth" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="cPxbW3tAuz" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:3wWy5vw4PXg" resolve="get_distance_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="cPxbW3tBtj" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbS" id="cPxbW3twxl" role="3clFbx">
+          <node concept="2MkqsV" id="cPxbW3tClO" role="3cqZAp">
+            <node concept="Xl_RD" id="cPxbW3tClP" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Gradient depth cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="cPxbW3tClQ" role="1urrMF">
+              <node concept="1YBJjd" id="cPxbW3tClR" role="2Oq$k0">
+                <ref role="1YBMHb" node="cPxbW3rOUK" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="cPxbW3tClS" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:2XF6Saae609" resolve="_depth" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbH" id="cPxbW3txDe" role="3cqZAp" />
+    </node>
+    <node concept="1YaCAy" id="cPxbW3rOUK" role="1YuTPh">
+      <property role="TrG5h" value="shape" />
+      <ref role="1YaFvo" to="s9ob:2zgk2Od4xf6" resolve="GradientShapeCuboidal" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="cPxbW3tD_I">
+    <property role="TrG5h" value="check_sphericalSubstrateDistances" />
+    <property role="3GE5qa" value="Substrates" />
+    <node concept="3clFbS" id="cPxbW3tD_J" role="18ibNy">
+      <node concept="3clFbJ" id="cPxbW3tD_K" role="3cqZAp">
+        <node concept="3clFbS" id="cPxbW3tD_L" role="3clFbx">
+          <node concept="2MkqsV" id="cPxbW3tD_M" role="3cqZAp">
+            <node concept="Xl_RD" id="cPxbW3tD_N" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Substrate radius cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="cPxbW3tD_O" role="1urrMF">
+              <node concept="1YBJjd" id="cPxbW3tD_P" role="2Oq$k0">
+                <ref role="1YBMHb" node="cPxbW3tDAx" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="cPxbW3tD_Q" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:cPxbW3tFrQ" resolve="_radius" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="cPxbW3tD_R" role="3clFbw">
+          <node concept="3cmrfG" id="cPxbW3tD_S" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="cPxbW3tD_T" role="3uHU7B">
+            <node concept="2OqwBi" id="cPxbW3tD_U" role="2Oq$k0">
+              <node concept="2OqwBi" id="cPxbW3tD_V" role="2Oq$k0">
+                <node concept="1YBJjd" id="cPxbW3tD_W" role="2Oq$k0">
+                  <ref role="1YBMHb" node="cPxbW3tDAx" resolve="shape" />
+                </node>
+                <node concept="3TrEf2" id="cPxbW3tD_X" role="2OqNvi">
+                  <ref role="3Tt5mk" to="s9ob:cPxbW3tFrQ" resolve="_radius" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="cPxbW3tD_Y" role="2OqNvi">
+                <ref role="37wK5l" to="ki9o:3wWy5vw4PXg" resolve="get_distance_value_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="cPxbW3tD_Z" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="cPxbW3tDAx" role="1YuTPh">
+      <property role="TrG5h" value="substrateShapeSpherical" />
+      <ref role="1YaFvo" to="s9ob:cPxbW3tFrO" resolve="SubstrateShapeSpherical" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="ZNkh68t5oS">
+    <property role="TrG5h" value="check_cuboidalSubstrateDistances" />
+    <property role="3GE5qa" value="Substrates" />
+    <node concept="3clFbS" id="ZNkh68t5oT" role="18ibNy">
+      <node concept="3clFbJ" id="ZNkh68t7ef" role="3cqZAp">
+        <node concept="3clFbS" id="ZNkh68t7eg" role="3clFbx">
+          <node concept="2MkqsV" id="ZNkh68t7eh" role="3cqZAp">
+            <node concept="Xl_RD" id="ZNkh68t7ei" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Substrate width cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="ZNkh68t7ej" role="1urrMF">
+              <node concept="1YBJjd" id="ZNkh68t7ek" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="ZNkh68t7el" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBv" resolve="_width" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="ZNkh68t7em" role="3clFbw">
+          <node concept="3cmrfG" id="ZNkh68t7en" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="ZNkh68t7eo" role="3uHU7B">
+            <node concept="2OqwBi" id="ZNkh68t7ep" role="2Oq$k0">
+              <node concept="1YBJjd" id="ZNkh68t7eq" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
+              </node>
+              <node concept="2qgKlT" id="ZNkh68t7er" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3wWy5vw1VrE" resolve="get_cuboid_width_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="ZNkh68t7es" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="ZNkh68t7$H" role="3cqZAp">
+        <node concept="3clFbS" id="ZNkh68t7$I" role="3clFbx">
+          <node concept="2MkqsV" id="ZNkh68t7$J" role="3cqZAp">
+            <node concept="Xl_RD" id="ZNkh68t7$K" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Substrate height cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="ZNkh68t7$L" role="1urrMF">
+              <node concept="1YBJjd" id="ZNkh68t7$M" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
+              </node>
+              <node concept="3TrEf2" id="ZNkh68t7$N" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBy" resolve="_height" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="ZNkh68t7$O" role="3clFbw">
+          <node concept="3cmrfG" id="ZNkh68t7$P" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="ZNkh68t7$Q" role="3uHU7B">
+            <node concept="2OqwBi" id="ZNkh68t7$R" role="2Oq$k0">
+              <node concept="1YBJjd" id="ZNkh68t7$S" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
+              </node>
+              <node concept="2qgKlT" id="ZNkh68t7$T" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3wWy5vw1P6d" resolve="get_cuboid_height_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="ZNkh68t7$U" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="ZNkh68t5oU" role="3cqZAp">
+        <node concept="3clFbS" id="ZNkh68t5oV" role="3clFbx">
+          <node concept="2MkqsV" id="ZNkh68t5oW" role="3cqZAp">
+            <node concept="Xl_RD" id="ZNkh68t5oX" role="2MkJ7o">
+              <property role="Xl_RC" value="Error : Substrate depth cannot be less than 0." />
+            </node>
+            <node concept="2OqwBi" id="ZNkh68t5oY" role="1urrMF">
+              <node concept="1YBJjd" id="ZNkh68t5oZ" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="substrateShapeSpherical" />
+              </node>
+              <node concept="3TrEf2" id="ZNkh68t5p0" role="2OqNvi">
+                <ref role="3Tt5mk" to="s9ob:3wWy5vw1HBA" resolve="_depth" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3eOVzh" id="ZNkh68t5p1" role="3clFbw">
+          <node concept="3cmrfG" id="ZNkh68t5p2" role="3uHU7w">
+            <property role="3cmrfH" value="0" />
+          </node>
+          <node concept="2OqwBi" id="ZNkh68t5p3" role="3uHU7B">
+            <node concept="2OqwBi" id="ZNkh68t5p5" role="2Oq$k0">
+              <node concept="1YBJjd" id="ZNkh68t5p6" role="2Oq$k0">
+                <ref role="1YBMHb" node="ZNkh68t5pa" resolve="shape" />
+              </node>
+              <node concept="2qgKlT" id="ZNkh68t6ox" role="2OqNvi">
+                <ref role="37wK5l" to="pxw4:3wWy5vw22iw" resolve="get_cuboid_depth_decimal" />
+              </node>
+            </node>
+            <node concept="liA8E" id="ZNkh68t5p9" role="2OqNvi">
+              <ref role="37wK5l" to="xlxw:~BigDecimal.floatValue()" resolve="floatValue" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="ZNkh68t5pa" role="1YuTPh">
+      <property role="TrG5h" value="shape" />
+      <ref role="1YaFvo" to="s9ob:57aaQbDDBXg" resolve="SubstrateShapeCuboid" />
     </node>
   </node>
 </model>

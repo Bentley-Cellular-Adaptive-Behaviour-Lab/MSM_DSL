@@ -91,3 +91,12 @@ std::tuple<float, float> Shape_Triangular_Prism::get_vertex_2() {
 std::tuple<float, float> Shape_Triangular_Prism::get_vertex_3() {
 	return this->vertex_3;
 }
+
+Shape_Sphere::Shape_Sphere(int shapeType,
+						   int radius) : Shape(shapeType, radius, radius) {
+	this->m_radius = radius;
+}
+
+int Shape_Sphere::get_radius() {
+	return this->m_radius;
+}

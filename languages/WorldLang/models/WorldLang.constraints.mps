@@ -232,5 +232,18 @@
       </node>
     </node>
   </node>
+  <node concept="1M2fIO" id="cPxbW3tFzY">
+    <property role="3GE5qa" value="Substrates" />
+    <ref role="1M2myG" to="s9ob:cPxbW3tFrO" resolve="SubstrateShapeSpherical" />
+    <node concept="9S07l" id="cPxbW3tF$h" role="9Vyp8">
+      <node concept="3clFbS" id="cPxbW3tF$i" role="2VODD2">
+        <node concept="3cpWs6" id="cPxbW3tFC8" role="3cqZAp">
+          <node concept="3clFbT" id="cPxbW3tFCw" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

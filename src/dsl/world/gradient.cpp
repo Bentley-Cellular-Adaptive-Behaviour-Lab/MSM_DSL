@@ -681,8 +681,8 @@ void Gradient::apply_gradient_to_sphere() {
     auto x_end = m_centre_position->x + radius;
     auto y_start = m_centre_position->y - radius;
     auto y_end = m_centre_position->y + radius;
-    auto z_start = m_centre_position->y - radius;
-    auto z_end = m_centre_position->y + radius;
+    auto z_start = m_centre_position->z - radius;
+    auto z_end = m_centre_position->z + radius;
 
     // Visit all points in the bounding box, if they are within the radius and within the world, apply the gradient.
 
