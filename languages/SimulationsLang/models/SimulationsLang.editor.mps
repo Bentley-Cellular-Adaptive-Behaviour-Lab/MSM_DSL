@@ -347,7 +347,13 @@
         </node>
         <node concept="2iRfu4" id="72wB6_dUsyO" role="2iSdaV" />
         <node concept="3F0ifn" id="72wB6_dUsAQ" role="3EZMnx">
-          <property role="3F0ifm" value="- Number of replicates: " />
+          <property role="3F0ifm" value="-&gt; Number of replicates:" />
+          <node concept="2biZxu" id="1EhJTlaMHLn" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1EhJTlaMHLo" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
           <node concept="pkWqt" id="72wB6_dUsB$" role="pqm2j">
             <node concept="3clFbS" id="72wB6_dUsB_" role="2VODD2">
               <node concept="3clFbF" id="72wB6_dUsFs" role="3cqZAp">
@@ -372,6 +378,21 @@
         </node>
         <node concept="3F0A7n" id="72wB6_dUsBm" role="3EZMnx">
           <ref role="1NtTu8" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
+          <node concept="VechU" id="1EhJTlaMHEr" role="3F10Kt">
+            <property role="Vb096" value="fLwANPr/green" />
+            <node concept="1iSF2X" id="1EhJTlaMHEs" role="VblUZ">
+              <property role="1iTho6" value="5cb85c" />
+            </node>
+          </node>
+          <node concept="Vb9p2" id="1EhJTlaMHEt" role="3F10Kt">
+            <property role="Vbekb" value="g1_k_vY/BOLD" />
+          </node>
+          <node concept="2biZxu" id="1EhJTlaMHEu" role="3F10Kt">
+            <property role="1rj3mz" value="Calibri" />
+          </node>
+          <node concept="VSNWy" id="1EhJTlaMHEv" role="3F10Kt">
+            <property role="1lJzqX" value="16" />
+          </node>
           <node concept="pkWqt" id="72wB6_dUtRj" role="pqm2j">
             <node concept="3clFbS" id="72wB6_dUtRk" role="2VODD2">
               <node concept="3clFbF" id="72wB6_dUu2y" role="3cqZAp">

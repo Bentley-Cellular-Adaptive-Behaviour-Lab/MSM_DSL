@@ -93,7 +93,7 @@ std::tuple<float, float> Shape_Triangular_Prism::get_vertex_3() {
 }
 
 Shape_Sphere::Shape_Sphere(int shapeType,
-						   int radius) : Shape(shapeType, radius, radius) {
+						   int radius) : Shape(shapeType) {
 	this->m_radius = radius;
 }
 

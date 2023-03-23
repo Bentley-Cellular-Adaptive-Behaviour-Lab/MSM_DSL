@@ -17,7 +17,7 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
     m_world = world;
     world->setWorldContainer(this);
     world->fillParamVector(paramValues);
-    world->set_max_delay(30);
+    world->set_max_delay(50);
 
     // GRADIENT CREATION
     auto VEGF_GRADIENT_VEGF = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.5, 0, -1, -1);
