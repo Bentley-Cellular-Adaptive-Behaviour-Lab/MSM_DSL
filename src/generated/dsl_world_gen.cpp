@@ -17,10 +17,10 @@ void WorldContainer::world_setup(std::vector<double>& paramValues) {
     m_world = world;
     world->setWorldContainer(this);
     world->fillParamVector(paramValues);
-    world->set_max_delay(50);
+    world->set_max_delay(10);
 
     // GRADIENT CREATION
-    auto VEGF_GRADIENT_VEGF = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 0.5, 0, -1, -1);
+    auto VEGF_GRADIENT_VEGF = new Protein("VEGF", PROTEIN_LOCATION_ENVIRONMENT, 10000.0, 0, -1, -1);
     auto VEGF_GRADIENT_centre = Coordinates(60, 58, 20);
     create_gradient(GRADIENT_TYPE_LINEAR, VEGF_GRADIENT_VEGF, &(VEGF_GRADIENT_centre), GRADIENT_DIRECTION_INC_Y, 120, 100, 40, false);
     // SUBSTRATE CREATION

@@ -35,7 +35,7 @@ public:
 
 
 static double calc_DEG_RATE_rate(const bool memAgent) {
-	return 0.075;
+	return 0.125;
 }
 
 static double calc_VEGF_VEGFR_ON_rate(double VEGF_MEAN, double VEGFR, const bool memAgent) {

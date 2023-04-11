@@ -33,6 +33,9 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
+      <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
+        <child id="1068581517676" name="expression" index="3cqZAk" />
+      </concept>
       <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -127,6 +130,25 @@
                 <property role="3cmrfH" value="0" />
               </node>
               <node concept="1Wqviy" id="DsR2vrUYgM" role="3uHU7B" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="ytE75flcw9">
+    <property role="3GE5qa" value="Facets" />
+    <ref role="1M2myG" to="yy1h:7wJJsVzvWwS" resolve="ClusterFacet" />
+    <node concept="EnEH3" id="ytE75flcws" role="1MhHOB">
+      <ref role="EomxK" to="yy1h:7wJJsVzvXl4" resolve="_replicateNumber" />
+      <node concept="QB0g5" id="ytE75flcxp" role="QCWH9">
+        <node concept="3clFbS" id="ytE75flcxq" role="2VODD2">
+          <node concept="3cpWs6" id="ytE75fldXF" role="3cqZAp">
+            <node concept="3eOSWO" id="ytE75fleFF" role="3cqZAk">
+              <node concept="3cmrfG" id="ytE75fleFJ" role="3uHU7w">
+                <property role="3cmrfH" value="0" />
+              </node>
+              <node concept="1Wqviy" id="ytE75fldYl" role="3uHU7B" />
             </node>
           </node>
         </node>
