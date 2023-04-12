@@ -20,6 +20,7 @@
     <import index="acza" ref="r:adf9859e-6cee-4992-95fa-018b9da990b1(230309_1.user_simulation)" implicit="true" />
     <import index="zeji" ref="r:f6745fb9-5242-4e5a-af41-d6871bc05d3a(230309_2.user_simulation)" implicit="true" />
     <import index="96ri" ref="r:24d498a8-5b92-493e-95cc-957122fc3b99(230316.user_simulation)" implicit="true" />
+    <import index="b4ca" ref="r:19d03c7c-4026-4899-90bd-5e7e95a4a021(110423.user_simulation)" implicit="true" />
   </imports>
   <registry>
     <language id="cfaa4966-b7d5-4b69-b66a-309a6e1a7290" name="org.iets3.core.expr.base">
@@ -105,9 +106,9 @@
       </concept>
       <concept id="8660349304734434856" name="SimulationsLang.structure.SimulationContainer" flags="ng" index="2rkfJA">
         <property id="8660349304734541288" name="maxTimeSteps" index="2rFPwA" />
-        <child id="8660349304734472780" name="_clusterContainer" index="2rk6u2" />
-        <child id="8660349304734472778" name="_analysisContainer" index="2rk6u4" />
-        <child id="8660349304734512033" name="_graphicsContainer" index="2rFWTJ" />
+        <child id="8660349304734472780" name="_clusterFacet" index="2rk6u2" />
+        <child id="8660349304734472778" name="_analysisFacet" index="2rk6u4" />
+        <child id="8660349304734512033" name="_graphicsFacet" index="2rFWTJ" />
         <child id="6087312672701132233" name="_incrementCombinations" index="3xrXtm" />
       </concept>
       <concept id="6087312672701024096" name="SimulationsLang.structure.IncrementCombination" flags="ng" index="3xrBRZ" />
@@ -268,6 +269,9 @@
       <node concept="3rtiFT" id="UDSxgySHod" role="3rqWia">
         <ref role="3rtiFY" to="96ri:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="3rtiFT" id="3VELdSsQJJ" role="3rqWia">
+        <ref role="3rtiFY" to="b4ca:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Na" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -313,6 +317,9 @@
       </node>
       <node concept="3rtiFT" id="UDSxgySHoa" role="3rtiFW">
         <ref role="3rtiFY" to="96ri:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="3VELdSsQJG" role="3rtiFW">
+        <ref role="3rtiFY" to="b4ca:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
       </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9Oi" role="3_zqUg">
@@ -426,6 +433,15 @@
       <node concept="3rtiFT" id="UDSxgySHoc" role="3rtiFW">
         <ref role="3rtiFY" to="96ri:oymmRcDabE" resolve="VEGFR_INHIBITION" />
       </node>
+      <node concept="DdDr8" id="3VELdSsQJD" role="3_z4RZ">
+        <ref role="DdDrb" to="b4ca:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="3rtiFT" id="3VELdSsQJH" role="3rqWia">
+        <ref role="3rtiFY" to="b4ca:oymmRcDaaZ" resolve="DLL4_UPREGULATION" />
+      </node>
+      <node concept="3rtiFT" id="3VELdSsQJI" role="3rtiFW">
+        <ref role="3rtiFY" to="b4ca:oymmRcDabE" resolve="VEGFR_INHIBITION" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9PT" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -466,6 +482,9 @@
       <node concept="DdDr8" id="UDSxgySHo8" role="3_z4RZ">
         <ref role="DdDrb" to="96ri:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
+      <node concept="DdDr8" id="3VELdSsQJE" role="3_z4RZ">
+        <ref role="DdDrb" to="b4ca:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
     </node>
     <node concept="3_zqOZ" id="oymmRcD9RD" role="3_zqUg">
       <property role="2VbSsx" value="1" />
@@ -505,6 +524,9 @@
       </node>
       <node concept="DdDr8" id="UDSxgySHo9" role="3_z4Rx">
         <ref role="DdDrb" to="96ri:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
+      </node>
+      <node concept="DdDr8" id="3VELdSsQJF" role="3_z4Rx">
+        <ref role="DdDrb" to="b4ca:oymmRcDa8q" resolve="DLL4_NOTCH_BINDING" />
       </node>
     </node>
   </node>
