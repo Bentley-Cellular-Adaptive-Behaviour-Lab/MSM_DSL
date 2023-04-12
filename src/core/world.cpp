@@ -222,15 +222,15 @@ World::World() {
     gridYDimensions = yMAX;
     gridZDimensions = zMAX;
 
-    std::cout << "xMax: " << xMAX << " yMax: " << yMAX<< " zMax: " << zMAX << std::endl;
+    std::cout << "xMax: " << this->gridXDimensions << " yMax: " << this->gridYDimensions << " zMax: " << this->gridZDimensions << std::endl;
 
     int i, j;
-    grid = new ppLocation[xMAX];
-    for ( int i = 0; i < xMAX; i++)
+    grid = new ppLocation[this->gridXDimensions];
+    for ( int i = 0; i < this->gridXDimensions; i++)
     {
-        grid[i] = new pLocation[yMAX];
-        for (int j = 0; j < yMAX; j++)
-            grid[i][j] = new Location[zMAX];
+        grid[i] = new pLocation[this->gridYDimensions];
+        for (int j = 0; j < this->gridYDimensions; j++)
+            grid[i][j] = new Location[this->gridZDimensions];
     }
 
     VEGFgradient = GRADIENT;
@@ -331,9 +331,9 @@ World::~World(void) {
     destroyWorld();
     dataFile.close();
 
-    for(int i = 0; i < xMAX; i++)
+    for(int i = 0; i < this->gridXDimensions; i++)
     {
-        for (int j = 0; j < yMAX; j++)
+        for (int j = 0; j < this->gridYDimensions; j++)
         {
             delete[] grid[i][j];
         }
@@ -1090,8 +1090,8 @@ void World::getCellNeighbours(void) {
 
                     //-------------------------------
                     //toroidal only X
-                    if (m >= xMAX) m = 0;
-                    if (m < 0) m = xMAX - 1;
+                    if (m >= this->gridXDimensions) m = 0;
+                    if (m < 0) m = this->gridXDimensions - 1;
                     //-------------------------------
 
                     if (insideWorld(m, n, p) == true) {
@@ -1263,7 +1263,7 @@ std::vector<std::vector<std::vector<float>>> World::getFilopodiaBaseLocationsAnd
 
 std::vector< std::vector< std::vector < std::array<int,2> > > > World::getGridMapOfFilopodiaMovement()
 {
-    std::vector < std::vector < std::vector < std::array<int, 2> > > > retval(xMAX, std::vector < std::vector < std::array<int, 2> > >(yMAX, std::vector < std::array<int, 2> >(zMAX, {0,0})));
+    std::vector < std::vector < std::vector < std::array<int, 2> > > > retval(this->gridXDimensions, std::vector < std::vector < std::array<int, 2> > >(yMAX, std::vector < std::array<int, 2> >(zMAX, {0,0})));
 
     int totalExtenstions = 0;
     int totalRetractions = 0;
@@ -1300,11 +1300,11 @@ std::vector< std::vector<float> > World::getGridSiteData()
 //        }
 //    }
 
-    for (int x = 0; x < xMAX; x++)
+    for (int x = 0; x < this->gridXDimensions; x++)
     {
-        for (int y = 0; y < yMAX; y++)
+        for (int y = 0; y < this->gridYDimensions; y++)
         {
-            for (int z = 0; z < zMAX; z++)
+            for (int z = 0; z < this->gridZDimensions; z++)
             {
                 std::vector<float> gridSiteValues;
                 gridSiteValues.push_back(x);
@@ -2693,7 +2693,7 @@ void World::create_3D_round_cell(void){
     float dist;
     bool allow=false;
     MemAgent* memp;
-    int centreX = (int)((float)xMAX/2.0f);
+    int centreX = (int)((float)this->gridXDimensions/2.0f);
     int centreY = 10;//(int)((float)yMAX/2.0f);
     std::cout<<centreX<<" "<<centreY<<std::endl;
 
@@ -3041,8 +3041,8 @@ void World::connectMesh(void){
 
                 if(POS==0) POSminus=ablumenalSteps*ECcross-1;
                 else if(POS==ablumenalSteps*ECcross-1) POSplus=0;
-                if(Xplus==xMAX) Xplus = 0;
-                else if(Xminus<0) Xminus = xMAX-1;
+                if (Xplus == this->gridXDimensions) Xplus = 0;
+                else if(Xminus<0) Xminus = this->gridXDimensions-1;
 
                 //go through all other agents, in each cell and find the ones it should be neighs with
                 for(m=0;m<uptoE; m++){
@@ -5654,9 +5654,9 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
 
     range = findRange(Coords);
 
-    if (abs(range[0] - range[1]) >= xMAX / 2) {
+    if (abs(range[0] - range[1]) >= this->gridXDimensions / 2) {
 
-        diff = xMAX - abs(range[0] - range[1]);
+        diff = this->gridXDimensions - abs(range[0] - range[1]);
         range[0] = range[1];
         range[1] = range[0] + diff;
         r0 = range[0];
@@ -5670,7 +5670,7 @@ void World::voxeliseTriangle(std::vector<Coordinates> Coords, std::vector<MemAge
                 for (Z = range[4]; Z <= range[5]; Z++) {
 
                     if (toroidal == true) {
-                        if (X >= xMAX) {
+                        if (X >= this->gridXDimensions) {
                             range[1] = r0;
                             range[0] = 0;
                             X = range[0];
@@ -5817,10 +5817,10 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
     //wrap round for springs that cros x axis toroidal boundary-------------------------------------
     //displace N to outside of grid to calculate then create spring ni correct position
     if ((toroidal == true) && (N[0] > P[0])) {
-        N[0] -= xMAX;
+        N[0] -= this->gridXDimensions;
         flag = 1;
     } else if ((toroidal == true) && (N[0] < P[0])) {
-        N[0] += xMAX;
+        N[0] += this->gridXDimensions;
         flag = 2;
     }
     //-------------------------------------------------------------------------------------------------------------
@@ -5848,10 +5848,10 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
                         //have to do the extra -1 here as otherwise it rounds -0.5 to 0 instead of -1..
-                    else if (flag == 1) createSurfaceAgent((int) (x - 1) + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) (x - 1) + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 x += steps;
             }
@@ -5868,9 +5868,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 x -= steps;
             }
@@ -5887,9 +5887,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 y += steps;
             }
@@ -5905,9 +5905,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 y -= steps;
             }
@@ -5923,9 +5923,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX))createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions))createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 z += steps;
             } //cout<<"z2>z1 ";
@@ -5940,9 +5940,9 @@ void World::gridSurfaceTriangleEdges(Coordinates A, Coordinates B, EC* cell, std
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 1) createSurfaceAgent((int) x - 1 + xMAX, (int) y, (int) z, cell, triangleNodes, up);
-                    else if (flag == 2) createSurfaceAgent((int) x - xMAX, (int) y, (int) z, cell, triangleNodes, up);
+                    if ((x >= 0) && (x < this->gridXDimensions)) createSurfaceAgent((int) x, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 1) createSurfaceAgent((int) x - 1 + this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
+                    else if (flag == 2) createSurfaceAgent((int) x - this->gridXDimensions, (int) y, (int) z, cell, triangleNodes, up);
                 }
                 z -= steps;
             }
