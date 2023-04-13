@@ -35,7 +35,11 @@ public:
 
 
 static double calc_DEG_RATE_rate(const bool memAgent) {
-	return 0.125;
+	return 0.05;
+}
+
+static double calc_DLL4_NOTCH_DEG_RATE_rate(const bool memAgent) {
+	return 0.1;
 }
 
 static double calc_VEGF_VEGFR_ON_rate(double VEGF_MEAN, double VEGFR, const bool memAgent) {
@@ -78,8 +82,8 @@ static double calc_VEGF_VEGFR2_DEG_rate(double VEGF_VEGFR, double DEG_RATE, cons
 	return VEGF_VEGFR*DEG_RATE;
 }
 
-static double calc_DLL4_NOTCH_DEG_rate(double DLL4_NOTCH, double DEG_RATE, const bool memAgent) {
-	return DLL4_NOTCH*DEG_RATE;
+static double calc_DLL4_NOTCH_DEG_rate(double DLL4_NOTCH, double DLL4_NOTCH_DEG_RATE, const bool memAgent) {
+	return DLL4_NOTCH*DLL4_NOTCH_DEG_RATE;
 }
 
 static double calc_DLL4_UPTAKE_rate(double DLL4, double NOTCH_MEAN, const bool memAgent) {

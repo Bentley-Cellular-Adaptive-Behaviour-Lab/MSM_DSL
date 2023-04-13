@@ -786,6 +786,11 @@
                 <ref role="37wK5l" node="7wJJsVzsNnd" resolve="buildLocalSpringAgent" />
               </node>
             </node>
+            <node concept="3clFbF" id="44N$AKWk6B4" role="3cqZAp">
+              <node concept="1rXfSq" id="44N$AKWk6B5" role="3clFbG">
+                <ref role="37wK5l" node="1vG5M8DurGE" resolve="fixBuildScriptPermissions" />
+              </node>
+            </node>
             <node concept="3clFbF" id="1PDLoEC0AGJ" role="3cqZAp">
               <node concept="1rXfSq" id="1PDLoEC0AGH" role="3clFbG">
                 <ref role="37wK5l" node="7wJJsVzsc5G" resolve="runLocalSpringAgent" />

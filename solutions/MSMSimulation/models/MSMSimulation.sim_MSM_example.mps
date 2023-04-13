@@ -255,7 +255,9 @@
       </concept>
     </language>
     <language id="61c03c83-97f6-4fe2-a1e0-3cd2a86c24ac" name="SimulationsLang">
-      <concept id="8660349304734468343" name="SimulationsLang.structure.GraphicsFacet" flags="ng" index="2rk7kT" />
+      <concept id="8660349304734468343" name="SimulationsLang.structure.GraphicsFacet" flags="ng" index="2rk7kT">
+        <property id="8660349304734471294" name="_graphicsType" index="2rk6AK" />
+      </concept>
       <concept id="8660349304734468237" name="SimulationsLang.structure.AnalysisFacet" flags="ng" index="2rk7l3" />
       <concept id="8660349304734468152" name="SimulationsLang.structure.ClusterFacet" flags="ng" index="2rk7nQ">
         <property id="8660349304734471492" name="_replicateNumber" index="2rk6ya" />
@@ -294,7 +296,9 @@
     <node concept="2rk7nQ" id="3Y6HoqB0CTw" role="2rk6u2">
       <property role="2rk6ya" value="50" />
     </node>
-    <node concept="2rk7kT" id="3Y6HoqB0CTx" role="2rFWTJ" />
+    <node concept="2rk7kT" id="3Y6HoqB0CTx" role="2rFWTJ">
+      <property role="2rk6AK" value="6JBqwuek81o/Graphics_On" />
+    </node>
     <node concept="3xrBRZ" id="3Y6HoqB0CTy" role="3xrXtm" />
     <node concept="2Jtu1D" id="DsR2vr$hwo" role="2JuwFs">
       <node concept="2Jtu1C" id="5XE9quKR81V" role="2Jtu1P">
@@ -398,8 +402,8 @@
       </node>
       <node concept="3bpmHq" id="6pPM3a4k8yE" role="2fEOl1">
         <node concept="3bpmH0" id="6pPM3a4k8yF" role="3lUA2Y">
-          <node concept="30bXRB" id="3hVap28O2E5" role="3lUA52">
-            <property role="30bXRw" value="10000" />
+          <node concept="30bXRB" id="3Sz8QsbZhFU" role="3lUA52">
+            <property role="30bXRw" value="0.5" />
           </node>
         </node>
         <node concept="3bpmH6" id="6pPM3a4k8zO" role="3lUA2W" />
