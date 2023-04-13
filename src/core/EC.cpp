@@ -65,7 +65,7 @@ Coordinates EC::calcCOM_toroidal(void){
     int s=0;
     do{
         if(Springs[s]->filopodia==false){
-            if(sqrt((Springs[s]->end->Mx-Springs[s]->start->Mx)*(Springs[s]->end->Mx-Springs[s]->start->Mx))>xMAX/2.0f){
+            if(sqrt((Springs[s]->end->Mx-Springs[s]->start->Mx)*(Springs[s]->end->Mx-Springs[s]->start->Mx))>worldP->gridXDimensions/2.0f){
                 flag=1;
             }
         }
@@ -76,7 +76,7 @@ Coordinates EC::calcCOM_toroidal(void){
     if(flag==1){
         //cout<<"toroidal..";
         for(i=0;i<nodeAgents.size();i++){
-            if(nodeAgents[i]->Mx<xMAX/2.0f) xstart++;
+            if(nodeAgents[i]->Mx<worldP->gridXDimensions/2.0f) xstart++;
             else xend++;
 
         }
@@ -105,8 +105,8 @@ Coordinates EC::calcCOM_toroidal(void){
     for(i=0;i<uptoN;i++){
         if((nodeAgents[i]->FIL==BASE)||(nodeAgents[i]->FIL==NONE)){
             nodesUsed++;
-            if((toroidal==1)&&(nodeAgents[i]->Mx>xMAX/2.0f)) X = nodeAgents[i]->Mx-xMAX;
-            else if((toroidal==2)&&(nodeAgents[i]->Mx<xMAX/2.0f)) X = nodeAgents[i]->Mx+xMAX;
+            if((toroidal==1)&&(nodeAgents[i]->Mx>worldP->gridXDimensions/2.0f)) X = nodeAgents[i]->Mx-worldP->gridXDimensions;
+            else if((toroidal==2)&&(nodeAgents[i]->Mx<worldP->gridXDimensions/2.0f)) X = nodeAgents[i]->Mx+worldP->gridXDimensions;
             else
                 X = nodeAgents[i]->Mx;
 
@@ -125,8 +125,8 @@ Coordinates EC::calcCOM_toroidal(void){
 
     for(i=0;i<uptoSu;i++){
 
-        if((toroidal==1)&&(surfaceAgents[i]->Mx>xMAX/2.0f)) X = surfaceAgents[i]->Mx-xMAX;
-        else if((toroidal==2)&&(surfaceAgents[i]->Mx<xMAX/2.0f)) X = surfaceAgents[i]->Mx+xMAX;
+        if((toroidal==1)&&(surfaceAgents[i]->Mx>worldP->gridXDimensions/2.0f)) X = surfaceAgents[i]->Mx-worldP->gridXDimensions;
+        else if((toroidal==2)&&(surfaceAgents[i]->Mx<worldP->gridXDimensions/2.0f)) X = surfaceAgents[i]->Mx+worldP->gridXDimensions;
         else X = surfaceAgents[i]->Mx;
 
         aveX+=X;
@@ -1612,10 +1612,10 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
     //wrap round for springs that cros x axis toroidal boundary-------------------------------------
     //displace N to outside of grid to calculate then create spring ni correct position
     if ((toroidal == true) && (N[0] > P[0])) {
-        N[0] -= xMAX;
+        N[0] -= worldP->gridXDimensions;
         flag = 1;
     } else if ((toroidal == true) && (N[0] < P[0])) {
-        N[0] += xMAX;
+        N[0] += worldP->gridXDimensions;
         flag = 2;
     }
     //-------------------------------------------------------------------------------------------------------------
@@ -1643,10 +1643,10 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
                         //have to do the extra -1 here as otherwise it rounds -0.5 to 0 instead of -1..
-                    else if (flag == 1) createSpringAgent((int) (x - 1) + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) (x - 1) + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 x += steps;
             }
@@ -1663,9 +1663,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     y = (((x - x1) / PN[0]) * PN[1]) + y1;
                     z = (((x - x1) / PN[0]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 x -= steps;
             }
@@ -1682,9 +1682,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 y += steps;
             }
@@ -1700,9 +1700,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((y - y1) / PN[1]) * PN[0]) + x1;
                     z = (((y - y1) / PN[1]) * PN[2]) + z1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 y -= steps;
             }
@@ -1718,9 +1718,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX))createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions))createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 z += steps;
             } //cout<<"z2>z1 ";
@@ -1735,9 +1735,9 @@ void EC::gridSpringAgents(float P[3], float N[3], bool toroidal, Spring* stp) {
                     x = (((z - z1) / PN[2]) * PN[0]) + x1;
                     y = (((z - z1) / PN[2]) * PN[1]) + y1;
 
-                    if ((x >= 0) && (x < xMAX)) createSpringAgent((int) x, (int) y, (int) z, stp);
-                    else if (flag == 1) createSpringAgent((int) x - 1 + xMAX, (int) y, (int) z, stp);
-                    else if (flag == 2) createSpringAgent((int) x - xMAX, (int) y, (int) z, stp);
+                    if ((x >= 0) && (x < worldP->gridXDimensions)) createSpringAgent((int) x, (int) y, (int) z, stp);
+                    else if (flag == 1) createSpringAgent((int) x - 1 + worldP->gridXDimensions, (int) y, (int) z, stp);
+                    else if (flag == 2) createSpringAgent((int) x - worldP->gridXDimensions, (int) y, (int) z, stp);
                 }
                 z -= steps;
             }

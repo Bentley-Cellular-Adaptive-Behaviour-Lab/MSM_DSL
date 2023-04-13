@@ -861,11 +861,11 @@ void MemAgent::calcForce(void) {
 
         if (DONE == 0) {
 
-            if (sqrt(PN[i][0] * PN[i][0]) >= (float) xMAX / 2.0f) {
+            if (sqrt(PN[i][0] * PN[i][0]) >= (float) worldP->gridXDimensions / 2.0f) {
 
-                if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
-                else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
-                length = fabs(xMAX - PN[i][0]);
+                if (PN[i][0] > 0) PN[i][0] = -((float) worldP->gridXDimensions - PN[i][0]);
+                else PN[i][0] = (float) worldP->gridXDimensions - fabs(PN[i][0]);
+                length = fabs(worldP->gridXDimensions - PN[i][0]);
 
             }
             denom = sqrt((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2]));
@@ -900,21 +900,21 @@ void MemAgent::calcForce(void) {
     //toroidal on x axis
     if(TOROIDAL_X==true){
     if(newX<0){
-        newX =  (float)xMAX+newX;
+        newX =  (float)worldP->gridXDimensions+newX;
     }
-    if(newX>=(float)xMAX){
+    if(newX>=(float)worldP->gridXDimensions){
         
-        newX = newX - (float)xMAX;
+        newX = newX - (float)worldP->gridXDimensions;
     }
     }
     if(TOROIDAL_Y==true){
     
     //roof on y ans z axis
     if(newY<0) newY = 0;
-    else if(newY>yMAX-1) newY = yMAX-1;
+    else if(newY>worldP->gridYDimensions-1) newY = worldP->gridYDimensions-1;
     
     if(newZ<0) newZ=0;
-    else if(newZ>zMAX-1) newZ = zMAX-1;
+    else if(newZ>worldP->gridZDimensions-1) newZ = worldP->gridZDimensions-1;
     }
     //----------------------------------------------------------------
 
@@ -1235,17 +1235,17 @@ void MemAgent::JunctionTest( bool StoreInJunctionList) {
 
             //-------------------------------
             //toroidal only X
-            if (m >= xMAX) {
+            if (m >= worldP->gridXDimensions) {
 				m = 0;
             }
             if (m < 0) {
-				m = xMAX - 1;
+				m = worldP->gridXDimensions - 1;
             }
-            if (n >= yMAX) {
+            if (n >= worldP->gridYDimensions) {
 				n = 0;
             }
             if (n < 0) {
-				n = yMAX - 1;
+				n = worldP->gridYDimensions - 1;
             }
 
             //-------------------------------
@@ -1454,11 +1454,11 @@ bool MemAgent::extendFil(const double prob) {
 
                     if ((highest != NULL) && notZero && canExtend) {
 						if (FIL == NONE) {
-							if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > xMAX / 2.0f) {
+							if (sqrt((highest->Ex - Mx)*(highest->Ex - Mx)) > worldP->gridXDimensions / 2.0f) {
 								if (highest->Ex > Mx) {
-									distNeeded = worldP->getDist(highest->Ex - xMAX, highest->Ey, highest->Ez, Mx, My, Mz);
+									distNeeded = worldP->getDist(highest->Ex - worldP->gridXDimensions, highest->Ey, highest->Ez, Mx, My, Mz);
 								} else {
-									distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - xMAX, My, Mz);
+									distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx - worldP->gridXDimensions, My, Mz);
 								}
                         	} else {
 								distNeeded = worldP->getDist(highest->Ex, highest->Ey, highest->Ez, Mx, My, Mz);
@@ -1709,13 +1709,13 @@ void MemAgent::checkNeighs(bool called_fron_differentialAdhesion) {
         //-------------------------------
         //toroidal only X
         if(TOROIDAL_X){
-        if (m >= xMAX) m = 0;
-        if (m < 0) m = xMAX - 1;
+        if (m >= worldP->gridXDimensions) m = 0;
+        if (m < 0) m = worldP->gridXDimensions - 1;
         }
 
         if(TOROIDAL_Y){
-        if (n >= yMAX) n = 0;
-        if (n < 0) n = yMAX - 1;
+        if (n >= worldP->gridYDimensions) n = 0;
+        if (n < 0) n = worldP->gridYDimensions - 1;
         }
 
 
@@ -1920,10 +1920,10 @@ void MemAgent::calcRetractDist(void) {
     float oldDist;
 
 
-    if (Mx - filNeigh->Mx >= xMAX / 2.0f)
-        oldDist = worldP->getDist(Mx - xMAX, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    else if (filNeigh->Mx - Mx >= xMAX / 2.0f)
-        oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+    if (Mx - filNeigh->Mx >= worldP->gridXDimensions / 2.0f)
+        oldDist = worldP->getDist(Mx - worldP->gridXDimensions, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+    else if (filNeigh->Mx - Mx >= worldP->gridXDimensions / 2.0f)
+        oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx - worldP->gridXDimensions, filNeigh->My, filNeigh->Mz);
     else
         oldDist = worldP->getDist(Mx, My, Mz, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
 
@@ -1985,11 +1985,11 @@ void MemAgent::calcRetractDist(void) {
 
         if (DONE == 0) {
 
-            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) xMAX / 2.0f) {
+            if (sqrt((float) (PN[i][0] * PN[i][0])) >= (float) worldP->gridXDimensions / 2.0f) {
 
-                if (PN[i][0] > 0) PN[i][0] = -((float) xMAX - PN[i][0]);
-                else PN[i][0] = (float) xMAX - fabs(PN[i][0]);
-                length = fabs((float) (xMAX - PN[i][0]));
+                if (PN[i][0] > 0) PN[i][0] = -((float) worldP->gridXDimensions - PN[i][0]);
+                else PN[i][0] = (float) worldP->gridXDimensions - fabs(PN[i][0]);
+                length = fabs((float) (worldP->gridXDimensions - PN[i][0]));
             }
             denom = sqrt((float) ((PN[i][0] * PN[i][0])+(PN[i][1] * PN[i][1])+(PN[i][2] * PN[i][2])));
 
@@ -2023,10 +2023,10 @@ void MemAgent::calcRetractDist(void) {
     newZ = Mz - (ForceTemp[2] / 2.0f);
 
 
-    if (newX - filNeigh->Mx >= xMAX / 2.0f)
-        newDist = worldP->getDist(newX - xMAX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
-    else if (filNeigh->Mx - newX >= xMAX / 2.0f)
-        newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx - xMAX, filNeigh->My, filNeigh->Mz);
+    if (newX - filNeigh->Mx >= worldP->gridXDimensions / 2.0f)
+        newDist = worldP->getDist(newX - worldP->gridXDimensions, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
+    else if (filNeigh->Mx - newX >= worldP->gridXDimensions / 2.0f)
+        newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx - worldP->gridXDimensions, filNeigh->My, filNeigh->Mz);
     else
         newDist = worldP->getDist(newX, newY, newZ, filNeigh->Mx, filNeigh->My, filNeigh->Mz);
 
